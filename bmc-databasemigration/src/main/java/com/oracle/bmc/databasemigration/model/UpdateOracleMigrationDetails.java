@@ -152,12 +152,12 @@ public final class UpdateOracleMigrationDetails extends UpdateMigrationDetails {
             this.__explicitlySet__.add("advancedParameters");
             return this;
         }
-        /** The OCID of the resource being referenced. */
+        /** The OCID of the resource being updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
         private String sourceContainerDatabaseConnectionId;
 
         /**
-         * The OCID of the resource being referenced.
+         * The OCID of the resource being updated.
          *
          * @param sourceContainerDatabaseConnectionId the value to set
          * @return this builder
@@ -334,12 +334,12 @@ public final class UpdateOracleMigrationDetails extends UpdateMigrationDetails {
         return advancedParameters;
     }
 
-    /** The OCID of the resource being referenced. */
+    /** The OCID of the resource being updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
     private final String sourceContainerDatabaseConnectionId;
 
     /**
-     * The OCID of the resource being referenced.
+     * The OCID of the resource being updated.
      *
      * @return the value
      */

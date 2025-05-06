@@ -11,16 +11,16 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GenerateComplianceReportRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class GenerateComplianceReportRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.GenerateComplianceReportDetails> {
 
-    /** Details for generating Compliance Report for the Fleet. */
+    /** Details for generating compliance report for the Fleet. */
     private com.oracle.bmc.fleetappsmanagement.model.GenerateComplianceReportDetails
             generateComplianceReportDetails;
 
-    /** Details for generating Compliance Report for the Fleet. */
+    /** Details for generating compliance report for the Fleet. */
     public com.oracle.bmc.fleetappsmanagement.model.GenerateComplianceReportDetails
             getGenerateComplianceReportDetails() {
         return generateComplianceReportDetails;
@@ -77,12 +77,12 @@ public class GenerateComplianceReportRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for generating Compliance Report for the Fleet. */
+        /** Details for generating compliance report for the Fleet. */
         private com.oracle.bmc.fleetappsmanagement.model.GenerateComplianceReportDetails
                 generateComplianceReportDetails = null;
 
         /**
-         * Details for generating Compliance Report for the Fleet.
+         * Details for generating compliance report for the Fleet.
          *
          * @param generateComplianceReportDetails the value to set
          * @return this builder instance

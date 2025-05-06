@@ -57,6 +57,13 @@ public class ListEffectivePropertiesRequest
     public Integer getPatternId() {
         return patternId;
     }
+    /** The pattern id (long). */
+    private Long patternIdLong;
+
+    /** The pattern id (long). */
+    public Long getPatternIdLong() {
+        return patternIdLong;
+    }
     /** The property name used for filtering. */
     private String name;
 
@@ -264,6 +271,20 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
+        /** The pattern id (long). */
+        private Long patternIdLong = null;
+
+        /**
+         * The pattern id (long).
+         *
+         * @param patternIdLong the value to set
+         * @return this builder instance
+         */
+        public Builder patternIdLong(Long patternIdLong) {
+            this.patternIdLong = patternIdLong;
+            return this;
+        }
+
         /** The property name used for filtering. */
         private String name = null;
 
@@ -388,6 +409,7 @@ public class ListEffectivePropertiesRequest
             isIncludePatterns(o.getIsIncludePatterns());
             entityId(o.getEntityId());
             patternId(o.getPatternId());
+            patternIdLong(o.getPatternIdLong());
             name(o.getName());
             limit(o.getLimit());
             page(o.getPage());
@@ -434,6 +456,7 @@ public class ListEffectivePropertiesRequest
             request.isIncludePatterns = isIncludePatterns;
             request.entityId = entityId;
             request.patternId = patternId;
+            request.patternIdLong = patternIdLong;
             request.name = name;
             request.limit = limit;
             request.page = page;
@@ -442,8 +465,8 @@ public class ListEffectivePropertiesRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListEffectivePropertiesRequest(namespaceName, agentId, sourceName,
-            // isIncludePatterns, entityId, patternId, name, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // isIncludePatterns, entityId, patternId, patternIdLong, name, limit, page, sortOrder,
+            // sortBy, opcRequestId);
         }
     }
 
@@ -460,6 +483,7 @@ public class ListEffectivePropertiesRequest
                 .isIncludePatterns(isIncludePatterns)
                 .entityId(entityId)
                 .patternId(patternId)
+                .patternIdLong(patternIdLong)
                 .name(name)
                 .limit(limit)
                 .page(page)
@@ -488,6 +512,7 @@ public class ListEffectivePropertiesRequest
         sb.append(",isIncludePatterns=").append(String.valueOf(this.isIncludePatterns));
         sb.append(",entityId=").append(String.valueOf(this.entityId));
         sb.append(",patternId=").append(String.valueOf(this.patternId));
+        sb.append(",patternIdLong=").append(String.valueOf(this.patternIdLong));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -515,6 +540,7 @@ public class ListEffectivePropertiesRequest
                 && java.util.Objects.equals(this.isIncludePatterns, other.isIncludePatterns)
                 && java.util.Objects.equals(this.entityId, other.entityId)
                 && java.util.Objects.equals(this.patternId, other.patternId)
+                && java.util.Objects.equals(this.patternIdLong, other.patternIdLong)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -537,6 +563,9 @@ public class ListEffectivePropertiesRequest
                         + (this.isIncludePatterns == null ? 43 : this.isIncludePatterns.hashCode());
         result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
         result = (result * PRIME) + (this.patternId == null ? 43 : this.patternId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patternIdLong == null ? 43 : this.patternIdLong.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

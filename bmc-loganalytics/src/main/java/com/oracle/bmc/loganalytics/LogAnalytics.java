@@ -280,6 +280,22 @@ public interface LogAnalytics extends AutoCloseable {
                     ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest request);
 
     /**
+     * Moves the specified lookup to a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeLookupCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeLookupCompartment API.
+     */
+    ChangeLookupCompartmentResponse changeLookupCompartment(ChangeLookupCompartmentRequest request);
+
+    /**
      * Move the scheduled task into a different compartment within the same tenancy.
      *
      * @param request The request object containing the details to send
@@ -1054,6 +1070,21 @@ public interface LogAnalytics extends AutoCloseable {
     GetFieldResponse getField(GetFieldRequest request);
 
     /**
+     * Gets usage information about the field with the specified name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetFieldUsagesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFieldUsages API.
+     */
+    GetFieldUsagesResponse getFieldUsages(GetFieldUsagesRequest request);
+
+    /**
      * Returns the count of fields. You may optionally specify isShowDetail=true to view a summary
      * of each field data type.
      *
@@ -1539,6 +1570,21 @@ public interface LogAnalytics extends AutoCloseable {
      *     GetStorageWorkRequest API.
      */
     GetStorageWorkRequestResponse getStorageWorkRequest(GetStorageWorkRequestRequest request);
+
+    /**
+     * Gets detailed information about the template with the specified ocid.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetTemplateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplate API.
+     */
+    GetTemplateResponse getTemplate(GetTemplateRequest request);
 
     /**
      * This API retrieves details of the configured bucket that stores unprocessed payloads.
@@ -2052,6 +2098,23 @@ public interface LogAnalytics extends AutoCloseable {
     ListOverlappingRecallsResponse listOverlappingRecalls(ListOverlappingRecallsRequest request);
 
     /**
+     * Returns a list of parser actions. You may limit the number of results and provide sorting
+     * order.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListParserActionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListParserActions
+     *     API.
+     */
+    ListParserActionsResponse listParserActions(ListParserActionsRequest request);
+
+    /**
      * Lists the parser functions defined for the specified parser.
      *
      * @param request The request object containing the details to send
@@ -2147,6 +2210,22 @@ public interface LogAnalytics extends AutoCloseable {
      *     API.
      */
     ListRecalledDataResponse listRecalledData(ListRecalledDataRequest request);
+
+    /**
+     * This API returns the list of recalled data of a tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListRecalledInfoExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecalledInfo
+     *     API.
+     */
+    ListRecalledInfoResponse listRecalledInfo(ListRecalledInfoRequest request);
 
     /**
      * Returns a list of resources and their category assignments. You may limit the number of
@@ -2382,6 +2461,23 @@ public interface LogAnalytics extends AutoCloseable {
      *     ListSupportedTimezones API.
      */
     ListSupportedTimezonesResponse listSupportedTimezones(ListSupportedTimezonesRequest request);
+
+    /**
+     * Returns a list of templates, containing detailed information about them. You may limit the
+     * number of results, provide sorting order, and filter by information such as template name,
+     * type, display name and description.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListTemplatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTemplates API.
+     */
+    ListTemplatesResponse listTemplates(ListTemplatesRequest request);
 
     /**
      * Gets list of files in an upload along with its processing state.
@@ -2632,8 +2728,7 @@ public interface LogAnalytics extends AutoCloseable {
     RecallArchivedDataResponse recallArchivedData(RecallArchivedDataRequest request);
 
     /**
-     * Creates a lookup with the specified name, type and description. The csv file containing the
-     * lookup content is passed in as binary data in the request.
+     * Creates a lookup with the specified name, type and description.
      *
      * <p>Note: This operation consumes a stream.
      *
@@ -3242,6 +3337,51 @@ public interface LogAnalytics extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadLogFile API.
      */
     UploadLogFileResponse uploadLogFile(UploadLogFileRequest request);
+
+    /**
+     * Accepts log data in OTLP JSON-encoded Protobuf format.
+     *
+     * <p>Note: This operation consumes a stream.
+     *
+     * <p>If the stream supports {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, when a retry is necessary, the stream is reset so it starts at
+     * the beginning (or whatever the stream's position was at the time this operation is called}.
+     *
+     * <p>Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before,
+     * then the mark will not be the same anymore after this operation, and a subsequent call to
+     * {@link java.io.InputStream#reset()} by the caller will reset the stream not to the caller's
+     * mark, but to the position the stream was in when this operation was called.
+     *
+     * <p>If the stream is a {@link java.io.FileInputStream}, and the stream's {@link
+     * java.nio.channels.FileChannel} position can be changed (like for a regular file), the stream
+     * will be wrapped in such a way that it does provide support for {@link
+     * java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same
+     * procedure as above is followed. If the stream's {@link java.nio.channels.FileChannel}
+     * position cannot be changed (like for a named pipe), then the stream's contents will be
+     * buffered in memory, as described below.
+     *
+     * <p>If the stream does not support {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, then the stream is wrapped in a {@link
+     * java.io.BufferedInputStream}, which means the entire contents may be buffered in memory. Then
+     * the same procedure as above is followed.
+     *
+     * <p>The contents of the stream, except when the stream is a {@link java.io.FileInputStream}
+     * whose {@link java.nio.channels.FileChannel} position can be changed, should be less than 2
+     * GiB in size if retries are used. This is because streams 2 GiB in size or larger do no
+     * guarantee that mark-and-reset can be performed. If the stream is larger, do not use built-in
+     * retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadOtlpLogsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadOtlpLogs API.
+     */
+    UploadOtlpLogsResponse uploadOtlpLogs(UploadOtlpLogsRequest request);
 
     /**
      * Creates or updates associations between sources and entities. All entities should belong to

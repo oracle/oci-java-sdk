@@ -10,16 +10,16 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetResourceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateFleetResourceRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class CreateFleetResourceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.CreateFleetResourceDetails> {
 
-    /** Details for the new FleetResource. */
+    /** Details for the new fleet resource. */
     private com.oracle.bmc.fleetappsmanagement.model.CreateFleetResourceDetails
             createFleetResourceDetails;
 
-    /** Details for the new FleetResource. */
+    /** Details for the new fleet resource. */
     public com.oracle.bmc.fleetappsmanagement.model.CreateFleetResourceDetails
             getCreateFleetResourceDetails() {
         return createFleetResourceDetails;
@@ -76,12 +76,12 @@ public class CreateFleetResourceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new FleetResource. */
+        /** Details for the new fleet resource. */
         private com.oracle.bmc.fleetappsmanagement.model.CreateFleetResourceDetails
                 createFleetResourceDetails = null;
 
         /**
-         * Details for the new FleetResource.
+         * Details for the new fleet resource.
          *
          * @param createFleetResourceDetails the value to set
          * @return this builder instance

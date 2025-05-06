@@ -10,7 +10,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListScheduledFleetsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListScheduledFleetsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListScheduledFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** unique SchedulerDefinition identifier */
@@ -19,13 +19,6 @@ public class ListScheduledFleetsRequest extends com.oracle.bmc.requests.BmcReque
     /** unique SchedulerDefinition identifier */
     public String getSchedulerDefinitionId() {
         return schedulerDefinitionId;
-    }
-    /** The ID of the compartment in which to list resources. */
-    private String compartmentId;
-
-    /** The ID of the compartment in which to list resources. */
-    public String getCompartmentId() {
-        return compartmentId;
     }
     /** A filter to return only resources that match the entire display name given. */
     private String displayName;
@@ -135,20 +128,6 @@ public class ListScheduledFleetsRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder schedulerDefinitionId(String schedulerDefinitionId) {
             this.schedulerDefinitionId = schedulerDefinitionId;
-            return this;
-        }
-
-        /** The ID of the compartment in which to list resources. */
-        private String compartmentId = null;
-
-        /**
-         * The ID of the compartment in which to list resources.
-         *
-         * @param compartmentId the value to set
-         * @return this builder instance
-         */
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
             return this;
         }
 
@@ -275,7 +254,6 @@ public class ListScheduledFleetsRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder copy(ListScheduledFleetsRequest o) {
             schedulerDefinitionId(o.getSchedulerDefinitionId());
-            compartmentId(o.getCompartmentId());
             displayName(o.getDisplayName());
             limit(o.getLimit());
             page(o.getPage());
@@ -317,7 +295,6 @@ public class ListScheduledFleetsRequest extends com.oracle.bmc.requests.BmcReque
         public ListScheduledFleetsRequest buildWithoutInvocationCallback() {
             ListScheduledFleetsRequest request = new ListScheduledFleetsRequest();
             request.schedulerDefinitionId = schedulerDefinitionId;
-            request.compartmentId = compartmentId;
             request.displayName = displayName;
             request.limit = limit;
             request.page = page;
@@ -325,8 +302,8 @@ public class ListScheduledFleetsRequest extends com.oracle.bmc.requests.BmcReque
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListScheduledFleetsRequest(schedulerDefinitionId, compartmentId, displayName,
-            // limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListScheduledFleetsRequest(schedulerDefinitionId, displayName, limit, page,
+            // sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -338,7 +315,6 @@ public class ListScheduledFleetsRequest extends com.oracle.bmc.requests.BmcReque
     public Builder toBuilder() {
         return new Builder()
                 .schedulerDefinitionId(schedulerDefinitionId)
-                .compartmentId(compartmentId)
                 .displayName(displayName)
                 .limit(limit)
                 .page(page)
@@ -362,7 +338,6 @@ public class ListScheduledFleetsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",schedulerDefinitionId=").append(String.valueOf(this.schedulerDefinitionId));
-        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -385,7 +360,6 @@ public class ListScheduledFleetsRequest extends com.oracle.bmc.requests.BmcReque
         ListScheduledFleetsRequest other = (ListScheduledFleetsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.schedulerDefinitionId, other.schedulerDefinitionId)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -403,9 +377,6 @@ public class ListScheduledFleetsRequest extends com.oracle.bmc.requests.BmcReque
                         + (this.schedulerDefinitionId == null
                                 ? 43
                                 : this.schedulerDefinitionId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

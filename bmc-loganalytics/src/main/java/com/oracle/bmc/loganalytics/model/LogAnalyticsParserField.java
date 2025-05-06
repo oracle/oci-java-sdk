@@ -33,7 +33,8 @@ public final class LogAnalyticsParserField
         "parserName",
         "parserFieldSequence",
         "parser",
-        "structuredColumnInfo"
+        "structuredColumnInfo",
+        "actions"
     })
     public LogAnalyticsParserField(
             LogAnalyticsField field,
@@ -45,7 +46,8 @@ public final class LogAnalyticsParserField
             String parserName,
             Long parserFieldSequence,
             LogAnalyticsParser parser,
-            String structuredColumnInfo) {
+            String structuredColumnInfo,
+            java.util.List<ParserAction> actions) {
         super();
         this.field = field;
         this.parserFieldId = parserFieldId;
@@ -57,6 +59,7 @@ public final class LogAnalyticsParserField
         this.parserFieldSequence = parserFieldSequence;
         this.parser = parser;
         this.structuredColumnInfo = structuredColumnInfo;
+        this.actions = actions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -199,6 +202,21 @@ public final class LogAnalyticsParserField
             this.__explicitlySet__.add("structuredColumnInfo");
             return this;
         }
+        /** List of actions/operations to be performed while fetching or parsing the logs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("actions")
+        private java.util.List<ParserAction> actions;
+
+        /**
+         * List of actions/operations to be performed while fetching or parsing the logs.
+         *
+         * @param actions the value to set
+         * @return this builder
+         */
+        public Builder actions(java.util.List<ParserAction> actions) {
+            this.actions = actions;
+            this.__explicitlySet__.add("actions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -215,7 +233,8 @@ public final class LogAnalyticsParserField
                             this.parserName,
                             this.parserFieldSequence,
                             this.parser,
-                            this.structuredColumnInfo);
+                            this.structuredColumnInfo,
+                            this.actions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -253,6 +272,9 @@ public final class LogAnalyticsParserField
             }
             if (model.wasPropertyExplicitlySet("structuredColumnInfo")) {
                 this.structuredColumnInfo(model.getStructuredColumnInfo());
+            }
+            if (model.wasPropertyExplicitlySet("actions")) {
+                this.actions(model.getActions());
             }
             return this;
         }
@@ -385,6 +407,19 @@ public final class LogAnalyticsParserField
         return structuredColumnInfo;
     }
 
+    /** List of actions/operations to be performed while fetching or parsing the logs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("actions")
+    private final java.util.List<ParserAction> actions;
+
+    /**
+     * List of actions/operations to be performed while fetching or parsing the logs.
+     *
+     * @return the value
+     */
+    public java.util.List<ParserAction> getActions() {
+        return actions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -411,6 +446,7 @@ public final class LogAnalyticsParserField
         sb.append(", parserFieldSequence=").append(String.valueOf(this.parserFieldSequence));
         sb.append(", parser=").append(String.valueOf(this.parser));
         sb.append(", structuredColumnInfo=").append(String.valueOf(this.structuredColumnInfo));
+        sb.append(", actions=").append(String.valueOf(this.actions));
         sb.append(")");
         return sb.toString();
     }
@@ -436,6 +472,7 @@ public final class LogAnalyticsParserField
                 && java.util.Objects.equals(this.parserFieldSequence, other.parserFieldSequence)
                 && java.util.Objects.equals(this.parser, other.parser)
                 && java.util.Objects.equals(this.structuredColumnInfo, other.structuredColumnInfo)
+                && java.util.Objects.equals(this.actions, other.actions)
                 && super.equals(other);
     }
 
@@ -475,6 +512,7 @@ public final class LogAnalyticsParserField
                         + (this.structuredColumnInfo == null
                                 ? 43
                                 : this.structuredColumnInfo.hashCode());
+        result = (result * PRIME) + (this.actions == null ? 43 : this.actions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

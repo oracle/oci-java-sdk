@@ -10,16 +10,16 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetPropertyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateFleetPropertyRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class CreateFleetPropertyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.CreateFleetPropertyDetails> {
 
-    /** Details for the new FleetProperty. */
+    /** Details for the new fleet property. */
     private com.oracle.bmc.fleetappsmanagement.model.CreateFleetPropertyDetails
             createFleetPropertyDetails;
 
-    /** Details for the new FleetProperty. */
+    /** Details for the new fleet property. */
     public com.oracle.bmc.fleetappsmanagement.model.CreateFleetPropertyDetails
             getCreateFleetPropertyDetails() {
         return createFleetPropertyDetails;
@@ -76,12 +76,12 @@ public class CreateFleetPropertyRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new FleetProperty. */
+        /** Details for the new fleet property. */
         private com.oracle.bmc.fleetappsmanagement.model.CreateFleetPropertyDetails
                 createFleetPropertyDetails = null;
 
         /**
-         * Details for the new FleetProperty.
+         * Details for the new fleet property.
          *
          * @param createFleetPropertyDetails the value to set
          * @return this builder instance

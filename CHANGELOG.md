@@ -3,6 +3,106 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.64.0 - 2025-05-06
+### Added
+- Support for dry run while creating cloud exadata Infrastructure and VM clusters in the Database service
+- Support for filters to get latest versions on list system versions API in the Database service
+- Support for generic fleets without fleet type in the Fleet Application Management service
+- Support for creating resources and changing compartment in the Fleet Application Management service
+- Support for infrastructure management via provisioning with terraform based catalog items and deployments in the Fleet Application Management service
+- Support for platform configuration metadata management in the Fleet Application Management service
+- Support for managing runbook versions in the Fleet Application Management service
+- Support for provisioning runbooks in the Fleet Application Management service
+- Support for resource inventory in the Fleet Application Management service
+- Support for changing compartment for fleets, platforms configurations, properties, patches, runbooks and task resources in the Fleet Application Management service
+- Support for new migration phase in the Database migration service
+
+### Breaking Changes
+- Method `public java.lang.String getSubState()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.requests.ListSchedulerJobsRequest` in the Fleet Application Management service
+- Return type of method `public com.oracle.bmc.fleetappsmanagement.requests.ListTargetsRequest$SortBy getSortBy()` has been changed to `com.oracle.bmc.fleetappsmanagement.model.SortBy` in the model `com.oracle.bmc.fleetappsmanagement.requests.ListTargetsRequest` in the Fleet Application Management service
+- Class `com.oracle.bmc.fleetappsmanagement.requests.ListTargetsRequest$SortBy` has been removed from the Fleet Application Management service
+- Return type of method `public com.oracle.bmc.fleetappsmanagement.requests.ListTaskRecordsRequest$SortBy getSortBy()` has been changed to `com.oracle.bmc.fleetappsmanagement.model.TaskRecordSortBy` in the model `com.oracle.bmc.fleetappsmanagement.requests.ListTaskRecordsRequest` in the Fleet Application Management service
+- Class `com.oracle.bmc.fleetappsmanagement.requests.ListTaskRecordsRequest$SortBy` has been removed from the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.responses.GetWorkRequestResponse getWorkRequest(com.oracle.bmc.fleetappsmanagement.requests.GetWorkRequestRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagement` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.responses.ListWorkRequestErrorsResponse listWorkRequestErrors(com.oracle.bmc.fleetappsmanagement.requests.ListWorkRequestErrorsRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagement` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.responses.ListWorkRequestLogsResponse listWorkRequestLogs(com.oracle.bmc.fleetappsmanagement.requests.ListWorkRequestLogsRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagement` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.responses.ListWorkRequestsResponse listWorkRequests(com.oracle.bmc.fleetappsmanagement.requests.ListWorkRequestsRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagement` in the Fleet Application Management service
+- Method `public java.lang.Iterable listWorkRequestErrorsRecordIterator(com.oracle.bmc.fleetappsmanagement.requests.ListWorkRequestErrorsRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagementPaginators` in the Fleet Application Management service
+- Method `public java.lang.Iterable listWorkRequestErrorsResponseIterator(com.oracle.bmc.fleetappsmanagement.requests.ListWorkRequestErrorsRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagementPaginators` in the Fleet Application Management service
+- Method `public java.lang.Iterable listWorkRequestLogsRecordIterator(com.oracle.bmc.fleetappsmanagement.requests.ListWorkRequestLogsRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagementPaginators` in the Fleet Application Management service
+- Method `public java.lang.Iterable listWorkRequestLogsResponseIterator(com.oracle.bmc.fleetappsmanagement.requests.ListWorkRequestLogsRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagementPaginators` in the Fleet Application Management service
+- Method `public java.lang.Iterable listWorkRequestsRecordIterator(com.oracle.bmc.fleetappsmanagement.requests.ListWorkRequestsRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagementPaginators` in the Fleet Application Management service
+- Method `public java.lang.Iterable listWorkRequestsResponseIterator(com.oracle.bmc.fleetappsmanagement.requests.ListWorkRequestsRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagementPaginators` in the Fleet Application Management service
+- Method `public com.oracle.bmc.waiter.Waiter forWorkRequest(com.oracle.bmc.fleetappsmanagement.requests.GetWorkRequestRequest)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagementWaiters` in the Fleet Application Management service
+- Method `public com.oracle.bmc.waiter.Waiter forWorkRequest(com.oracle.bmc.fleetappsmanagement.requests.GetWorkRequestRequest, com.oracle.bmc.waiter.TerminationStrategy, com.oracle.bmc.waiter.DelayStrategy)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagementWaiters` in the Fleet Application Management service
+- Method `public com.oracle.bmc.waiter.Waiter forWorkRequest(com.oracle.bmc.fleetappsmanagement.requests.GetWorkRequestRequest, com.oracle.bmc.waiter.TerminationStrategy, com.oracle.bmc.waiter.DelayStrategy)` has been removed from the model `com.oracle.bmc.fleetappsmanagement.FleetAppsManagementWaiters` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.ActionGroup$Builder builder()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public java.lang.String getApplicationType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public java.lang.String getLifecycleOperation()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public java.lang.String getProduct()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public java.lang.String getResourceId()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public java.lang.String getRunbookId()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public java.util.List getSubjects()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public java.lang.String getTargetId()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.LifeCycleActionGroupType getType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.ActionGroup$Builder toBuilder()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.ActionGroup$Builder toBuilder()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroup` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.ActionGroupDetails$Builder builder()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroupDetails` in the Fleet Application Management service
+- Method `public java.lang.String getApplicationType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroupDetails` in the Fleet Application Management service
+- Method `public java.lang.String getName()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroupDetails` in the Fleet Application Management service
+- Method `public java.lang.String getResourceId()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroupDetails` in the Fleet Application Management service
+- Method `public java.lang.String getRunbookId()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroupDetails` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.LifeCycleActionGroupType getType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroupDetails` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.ActionGroupDetails$Builder toBuilder()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ActionGroupDetails` in the Fleet Application Management service
+- Method `public java.lang.String getTenancyId()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.AssociatedSchedulerDefinition` in the Fleet Application Management service
+- Class `com.oracle.bmc.fleetappsmanagement.model.Associations` has been removed from the Fleet Application Management service
+- Method `public java.util.List getPatchType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyRule` in the Fleet Application Management service
+- Method `public java.util.List getPatchType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyRuleSummary` in the Fleet Application Management service
+- Method `public java.lang.String getCondition()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.ComponentProperties` in the Fleet Application Management service
+- Return type of method `public java.lang.String getRunOn()` has been changed to `com.oracle.bmc.fleetappsmanagement.model.RunOnDetails` in the model `com.oracle.bmc.fleetappsmanagement.model.ComponentProperties` in the Fleet Application Management service
+- Method `public java.lang.String getCompartmentId()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateCompliancePolicyRuleDetails` in the Fleet Application Management service
+- Method `public java.util.List getPatchType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateCompliancePolicyRuleDetails` in the Fleet Application Management service
+- Method `public java.lang.String getCompartmentId()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateFleetCredentialDetails` in the Fleet Application Management service
+- Method `public java.lang.String getApplicationType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateFleetDetails` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Fleet$FleetType getFleetType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateFleetDetails` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Fleet$GroupType getGroupType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateFleetDetails` in the Fleet Application Management service
+- Return type of method `public com.oracle.bmc.fleetappsmanagement.model.NotificationPreferences getNotificationPreferences()` has been changed to `java.util.List` in the model `com.oracle.bmc.fleetappsmanagement.model.CreateFleetDetails` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Fleet$ResourceSelectionType getResourceSelectionType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateFleetDetails` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.SelectionCriteria getRuleSelectionCriteria()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateFleetDetails` in the Fleet Application Management service
+- Method `public java.lang.String getCompartmentId()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateFleetPropertyDetails` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindowType getMaintenanceWindowType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateMaintenanceWindowDetails` in the Fleet Application Management service
+- Method `public java.lang.Integer getTaskInitiationCutoff()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateMaintenanceWindowDetails` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Associations getAssociations()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateRunbookDetails` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Runbook$RunbookRelevance getRunbookRelevance()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateRunbookDetails` in the Fleet Application Management service
+- Method `public java.lang.Integer getActivityInitiationCutOff()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.CreateSchedulerDefinitionDetails` in the Fleet Application Management service
+- Method `public java.lang.String getApplicationType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.Fleet` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Fleet$FleetType getFleetType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.Fleet` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Fleet$GroupType getGroupType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.Fleet` in the Fleet Application Management service
+- Return type of method `public com.oracle.bmc.fleetappsmanagement.model.NotificationPreferences getNotificationPreferences()` has been changed to `java.util.List` in the model `com.oracle.bmc.fleetappsmanagement.model.Fleet` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Fleet$ResourceSelectionType getResourceSelectionType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.Fleet` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.SelectionCriteria getRuleSelectionCriteria()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.Fleet` in the Fleet Application Management service
+- Class `com.oracle.bmc.fleetappsmanagement.model.Fleet$FleetType` has been removed from the Fleet Application Management service
+- Class `com.oracle.bmc.fleetappsmanagement.model.Fleet$GroupType` has been removed from the Fleet Application Management service
+- Class `com.oracle.bmc.fleetappsmanagement.model.Fleet$ResourceSelectionType` has been removed from the Fleet Application Management service
+- Method `public java.lang.String getApplicationType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.FleetResource` in the Fleet Application Management service
+- Method `public java.lang.String getApplicationType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.FleetResourceSummary` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Fleet$FleetType getFleetType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.FleetSummary` in the Fleet Application Management service
+- Return type of method `public com.oracle.bmc.fleetappsmanagement.model.ContentDetails getContent()` has been changed to `com.oracle.bmc.fleetappsmanagement.model.PatchFileContentDetails` in the model `com.oracle.bmc.fleetappsmanagement.model.GenericArtifact` in the Fleet Application Management service
+- Class `com.oracle.bmc.fleetappsmanagement.model.LifeCycleActionGroupType` has been removed from the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindowType getMaintenanceWindowType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindow` in the Fleet Application Management service
+- Method `public java.lang.Integer getTaskInitiationCutoff()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindow` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindowType getMaintenanceWindowType()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindowSummary` in the Fleet Application Management service
+- Method `public java.lang.Integer getTaskInitiationCutoff()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindowSummary` in the Fleet Application Management service
+- Class `com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindowType` has been removed from the Fleet Application Management service
+- Class `com.oracle.bmc.fleetappsmanagement.model.NotificationPreferences` has been removed from the Fleet Application Management service
+- Method `public java.lang.String getId()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.OperationRunbook` in the Fleet Application Management service
+- Return type of method `public com.oracle.bmc.fleetappsmanagement.model.ContentDetails getContent()` has been changed to `com.oracle.bmc.fleetappsmanagement.model.PatchFileContentDetails` in the model `com.oracle.bmc.fleetappsmanagement.model.PlatformSpecificArtifact` in the Fleet Application Management service
+- Method `public java.lang.Boolean getOnUpcomingSchedule()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.Preferences` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Associations getAssociations()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.Runbook` in the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Runbook$RunbookRelevance getRunbookRelevance()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.Runbook` in the Fleet Application Management service
+- Class `com.oracle.bmc.fleetappsmanagement.model.Runbook$RunbookRelevance` has been removed from the Fleet Application Management service
+- Method `public com.oracle.bmc.fleetappsmanagement.model.Runbook$RunbookRelevance getRunbookRelevance()` has been removed from the model `com.oracle.bmc.fleetappsmanagement.model.RunbookSummary` in the Fleet Application Management service
+
 ## 3.63.3 - 2025-04-29
 ### Added 
 - Support for custom headers for model retirement in the Generative AI service 
@@ -25,7 +125,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## 3.63.1 - 2025-04-15
 ### Added 
 - Support for applying guardrails, enabling content moderation and detection of Prompt Injection and Personally Identifiable Information (PII) in the Generative AI Inference service 
-- Support for providing customer contacts for operational notifications in the Database service   ## Fixed 
+- Support for providing customer contacts for operational notifications in the Database service
+
+### Fixed 
 - Fixed field shadowing in `ResourcePrincipalsV3FederationClient`, which could cause inconsistent token management
 
 ## 3.63.0 - 2025-04-08

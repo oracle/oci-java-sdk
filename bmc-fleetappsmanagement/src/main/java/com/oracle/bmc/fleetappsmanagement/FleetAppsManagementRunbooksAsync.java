@@ -12,7 +12,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * management tasks, validate patch compliance, and enhance operational efficiency across an
  * enterprise.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -64,7 +64,43 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a new Runbook.
+     * Moves a Runbook into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRunbookCompartmentResponse> changeRunbookCompartment(
+            ChangeRunbookCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeRunbookCompartmentRequest, ChangeRunbookCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a task record into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeTaskRecordCompartmentResponse> changeTaskRecordCompartment(
+            ChangeTaskRecordCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeTaskRecordCompartmentRequest, ChangeTaskRecordCompartmentResponse>
+                    handler);
+
+    /**
+     * Creates a runbook.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -79,7 +115,23 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Task.
+     * Add RunbookVersion in\u00A0Fleet Application Management.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRunbookVersionResponse> createRunbookVersion(
+            CreateRunbookVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateRunbookVersionRequest, CreateRunbookVersionResponse>
+                    handler);
+
+    /**
+     * Creates a new task record.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -94,7 +146,7 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Runbook resource by identifier
+     * Deletes a runbook specified by the identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -109,7 +161,23 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Task Record resource by identifier
+     * Removes a Runbook Version from the runbook in Fleet Application Management.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRunbookVersionResponse> deleteRunbookVersion(
+            DeleteRunbookVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRunbookVersionRequest, DeleteRunbookVersionResponse>
+                    handler);
+
+    /**
+     * Deletes the task record specified by an identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -138,7 +206,23 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetRunbookRequest, GetRunbookResponse> handler);
 
     /**
-     * Gets a Task by identifier
+     * Gets a Runbook Version by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRunbookVersionResponse> getRunbookVersion(
+            GetRunbookVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetRunbookVersionRequest, GetRunbookVersionResponse>
+                    handler);
+
+    /**
+     * Gets information for the specified task record.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -153,7 +237,24 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List runbooks in Fleet Application Management.
+     * List versions for a runbook in Fleet Application Management.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRunbookVersionsResponse> listRunbookVersions(
+            ListRunbookVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRunbookVersionsRequest, ListRunbookVersionsResponse>
+                    handler);
+
+    /**
+     * Returns a list of all the runbooks in the specified compartment. The query parameter
+     * `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -168,7 +269,8 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of TaskRecords.
+     * Returns a list of all the task records in the specified compartment. The query parameter
+     * `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -183,7 +285,8 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Publish a Runbook.
+     * Publish the specified version of the runbook. The specified version of the runbook becomes
+     * acitve when it is published.Only active versions of runbook can be used in execution.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -198,7 +301,7 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Publish a Runbook.
+     * Set a runbook as default.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -214,7 +317,7 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Ronbook
+     * Updates the runbook specified by the identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -229,7 +332,23 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Task
+     * Updates the RunbookVersion.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRunbookVersionResponse> updateRunbookVersion(
+            UpdateRunbookVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRunbookVersionRequest, UpdateRunbookVersionResponse>
+                    handler);
+
+    /**
+     * Updates certain attributes for the specified task record.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

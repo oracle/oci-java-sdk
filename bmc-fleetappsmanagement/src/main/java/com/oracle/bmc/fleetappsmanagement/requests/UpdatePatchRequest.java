@@ -10,15 +10,15 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdatePatchExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdatePatchRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class UpdatePatchRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.UpdatePatchDetails> {
 
-    /** unique Patch identifier */
+    /** Unique Patch identifier. */
     private String patchId;
 
-    /** unique Patch identifier */
+    /** Unique Patch identifier. */
     public String getPatchId() {
         return patchId;
     }
@@ -72,11 +72,11 @@ public class UpdatePatchRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Patch identifier */
+        /** Unique Patch identifier. */
         private String patchId = null;
 
         /**
-         * unique Patch identifier
+         * Unique Patch identifier.
          *
          * @param patchId the value to set
          * @return this builder instance

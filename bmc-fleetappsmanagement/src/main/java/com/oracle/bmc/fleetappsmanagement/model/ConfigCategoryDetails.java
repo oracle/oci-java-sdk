@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,8 +35,14 @@ package com.oracle.bmc.fleetappsmanagement.model;
             value = PatchTypeConfigCategoryDetails.class,
             name = "PATCH_TYPE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = LifecycleOperationConfigCategoryDetails.class,
+            name = "LIFECYCLE_OPERATION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ProductConfigCategoryDetails.class,
-            name = "PRODUCT")
+            name = "PRODUCT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = SelfHostedInstanceConfigCategoryDetails.class,
+            name = "SELF_HOSTED_INSTANCE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -95,6 +101,8 @@ public class ConfigCategoryDetails
         Environment("ENVIRONMENT"),
         PatchType("PATCH_TYPE"),
         Credential("CREDENTIAL"),
+        SelfHostedInstance("SELF_HOSTED_INSTANCE"),
+        LifecycleOperation("LIFECYCLE_OPERATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

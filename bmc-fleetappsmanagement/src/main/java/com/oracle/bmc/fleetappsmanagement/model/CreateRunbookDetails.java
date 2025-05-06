@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateRunbookDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -26,13 +26,13 @@ public final class CreateRunbookDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
-        "runbookRelevance",
         "operation",
         "osType",
         "platform",
         "isDefault",
+        "isSudoAccessNeeded",
         "estimatedTime",
-        "associations",
+        "runbookVersion",
         "compartmentId",
         "freeformTags",
         "definedTags"
@@ -40,26 +40,26 @@ public final class CreateRunbookDetails
     public CreateRunbookDetails(
             String displayName,
             String description,
-            Runbook.RunbookRelevance runbookRelevance,
             String operation,
             OsType osType,
             String platform,
             Boolean isDefault,
+            Boolean isSudoAccessNeeded,
             String estimatedTime,
-            Associations associations,
+            Version runbookVersion,
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
-        this.runbookRelevance = runbookRelevance;
         this.operation = operation;
         this.osType = osType;
         this.platform = platform;
         this.isDefault = isDefault;
+        this.isSudoAccessNeeded = isSudoAccessNeeded;
         this.estimatedTime = estimatedTime;
-        this.associations = associations;
+        this.runbookVersion = runbookVersion;
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -107,21 +107,6 @@ public final class CreateRunbookDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
-            return this;
-        }
-        /** Type of runbook structure. */
-        @com.fasterxml.jackson.annotation.JsonProperty("runbookRelevance")
-        private Runbook.RunbookRelevance runbookRelevance;
-
-        /**
-         * Type of runbook structure.
-         *
-         * @param runbookRelevance the value to set
-         * @return this builder
-         */
-        public Builder runbookRelevance(Runbook.RunbookRelevance runbookRelevance) {
-            this.runbookRelevance = runbookRelevance;
-            this.__explicitlySet__.add("runbookRelevance");
             return this;
         }
         /** The lifecycle operation performed by the task. */
@@ -184,12 +169,27 @@ public final class CreateRunbookDetails
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-        /** Estimated time to successfully complete the runbook execution */
+        /** Does this runbook need SUDO access to execute? */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSudoAccessNeeded")
+        private Boolean isSudoAccessNeeded;
+
+        /**
+         * Does this runbook need SUDO access to execute?
+         *
+         * @param isSudoAccessNeeded the value to set
+         * @return this builder
+         */
+        public Builder isSudoAccessNeeded(Boolean isSudoAccessNeeded) {
+            this.isSudoAccessNeeded = isSudoAccessNeeded;
+            this.__explicitlySet__.add("isSudoAccessNeeded");
+            return this;
+        }
+        /** Estimated time to successfully complete the runbook execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedTime")
         private String estimatedTime;
 
         /**
-         * Estimated time to successfully complete the runbook execution
+         * Estimated time to successfully complete the runbook execution.
          *
          * @param estimatedTime the value to set
          * @return this builder
@@ -200,12 +200,12 @@ public final class CreateRunbookDetails
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("associations")
-        private Associations associations;
+        @com.fasterxml.jackson.annotation.JsonProperty("runbookVersion")
+        private Version runbookVersion;
 
-        public Builder associations(Associations associations) {
-            this.associations = associations;
-            this.__explicitlySet__.add("associations");
+        public Builder runbookVersion(Version runbookVersion) {
+            this.runbookVersion = runbookVersion;
+            this.__explicitlySet__.add("runbookVersion");
             return this;
         }
         /** OCID of the compartment to which the resource belongs to. */
@@ -271,13 +271,13 @@ public final class CreateRunbookDetails
                     new CreateRunbookDetails(
                             this.displayName,
                             this.description,
-                            this.runbookRelevance,
                             this.operation,
                             this.osType,
                             this.platform,
                             this.isDefault,
+                            this.isSudoAccessNeeded,
                             this.estimatedTime,
-                            this.associations,
+                            this.runbookVersion,
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags);
@@ -295,9 +295,6 @@ public final class CreateRunbookDetails
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
-            if (model.wasPropertyExplicitlySet("runbookRelevance")) {
-                this.runbookRelevance(model.getRunbookRelevance());
-            }
             if (model.wasPropertyExplicitlySet("operation")) {
                 this.operation(model.getOperation());
             }
@@ -310,11 +307,14 @@ public final class CreateRunbookDetails
             if (model.wasPropertyExplicitlySet("isDefault")) {
                 this.isDefault(model.getIsDefault());
             }
+            if (model.wasPropertyExplicitlySet("isSudoAccessNeeded")) {
+                this.isSudoAccessNeeded(model.getIsSudoAccessNeeded());
+            }
             if (model.wasPropertyExplicitlySet("estimatedTime")) {
                 this.estimatedTime(model.getEstimatedTime());
             }
-            if (model.wasPropertyExplicitlySet("associations")) {
-                this.associations(model.getAssociations());
+            if (model.wasPropertyExplicitlySet("runbookVersion")) {
+                this.runbookVersion(model.getRunbookVersion());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -376,19 +376,6 @@ public final class CreateRunbookDetails
         return description;
     }
 
-    /** Type of runbook structure. */
-    @com.fasterxml.jackson.annotation.JsonProperty("runbookRelevance")
-    private final Runbook.RunbookRelevance runbookRelevance;
-
-    /**
-     * Type of runbook structure.
-     *
-     * @return the value
-     */
-    public Runbook.RunbookRelevance getRunbookRelevance() {
-        return runbookRelevance;
-    }
-
     /** The lifecycle operation performed by the task. */
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
@@ -441,12 +428,25 @@ public final class CreateRunbookDetails
         return isDefault;
     }
 
-    /** Estimated time to successfully complete the runbook execution */
+    /** Does this runbook need SUDO access to execute? */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSudoAccessNeeded")
+    private final Boolean isSudoAccessNeeded;
+
+    /**
+     * Does this runbook need SUDO access to execute?
+     *
+     * @return the value
+     */
+    public Boolean getIsSudoAccessNeeded() {
+        return isSudoAccessNeeded;
+    }
+
+    /** Estimated time to successfully complete the runbook execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedTime")
     private final String estimatedTime;
 
     /**
-     * Estimated time to successfully complete the runbook execution
+     * Estimated time to successfully complete the runbook execution.
      *
      * @return the value
      */
@@ -454,11 +454,11 @@ public final class CreateRunbookDetails
         return estimatedTime;
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("associations")
-    private final Associations associations;
+    @com.fasterxml.jackson.annotation.JsonProperty("runbookVersion")
+    private final Version runbookVersion;
 
-    public Associations getAssociations() {
-        return associations;
+    public Version getRunbookVersion() {
+        return runbookVersion;
     }
 
     /** OCID of the compartment to which the resource belongs to. */
@@ -525,13 +525,13 @@ public final class CreateRunbookDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
-        sb.append(", runbookRelevance=").append(String.valueOf(this.runbookRelevance));
         sb.append(", operation=").append(String.valueOf(this.operation));
         sb.append(", osType=").append(String.valueOf(this.osType));
         sb.append(", platform=").append(String.valueOf(this.platform));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append(", isSudoAccessNeeded=").append(String.valueOf(this.isSudoAccessNeeded));
         sb.append(", estimatedTime=").append(String.valueOf(this.estimatedTime));
-        sb.append(", associations=").append(String.valueOf(this.associations));
+        sb.append(", runbookVersion=").append(String.valueOf(this.runbookVersion));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -551,13 +551,13 @@ public final class CreateRunbookDetails
         CreateRunbookDetails other = (CreateRunbookDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.runbookRelevance, other.runbookRelevance)
                 && java.util.Objects.equals(this.operation, other.operation)
                 && java.util.Objects.equals(this.osType, other.osType)
                 && java.util.Objects.equals(this.platform, other.platform)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.isSudoAccessNeeded, other.isSudoAccessNeeded)
                 && java.util.Objects.equals(this.estimatedTime, other.estimatedTime)
-                && java.util.Objects.equals(this.associations, other.associations)
+                && java.util.Objects.equals(this.runbookVersion, other.runbookVersion)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -570,17 +570,21 @@ public final class CreateRunbookDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.runbookRelevance == null ? 43 : this.runbookRelevance.hashCode());
         result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
         result = (result * PRIME) + (this.osType == null ? 43 : this.osType.hashCode());
         result = (result * PRIME) + (this.platform == null ? 43 : this.platform.hashCode());
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
         result =
                 (result * PRIME)
+                        + (this.isSudoAccessNeeded == null
+                                ? 43
+                                : this.isSudoAccessNeeded.hashCode());
+        result =
+                (result * PRIME)
                         + (this.estimatedTime == null ? 43 : this.estimatedTime.hashCode());
-        result = (result * PRIME) + (this.associations == null ? 43 : this.associations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runbookVersion == null ? 43 : this.runbookVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

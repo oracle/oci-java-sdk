@@ -11,14 +11,20 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListMaintenanceWindowsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListMaintenanceWindowsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -52,14 +58,14 @@ public class ListMaintenanceWindowsRequest
         return timeScheduleStartGreaterThanOrEqualTo;
     }
     /**
-     * A filter to return only the Maintenance Windows whose identifier matches the given
-     * identifier.
+     * Unique identifier or OCID for listing a single maintenance window by id. Either compartmentId
+     * or id must be provided.
      */
     private String id;
 
     /**
-     * A filter to return only the Maintenance Windows whose identifier matches the given
-     * identifier.
+     * Unique identifier or OCID for listing a single maintenance window by id. Either compartmentId
+     * or id must be provided.
      */
     public String getId() {
         return id;
@@ -95,50 +101,13 @@ public class ListMaintenanceWindowsRequest
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    private SortBy sortBy;
+    private com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindowSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindowSortBy getSortBy() {
         return sortBy;
     }
     /** The client request ID for tracing. */
@@ -155,11 +124,15 @@ public class ListMaintenanceWindowsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -222,14 +195,14 @@ public class ListMaintenanceWindowsRequest
         }
 
         /**
-         * A filter to return only the Maintenance Windows whose identifier matches the given
-         * identifier.
+         * Unique identifier or OCID for listing a single maintenance window by id. Either
+         * compartmentId or id must be provided.
          */
         private String id = null;
 
         /**
-         * A filter to return only the Maintenance Windows whose identifier matches the given
-         * identifier.
+         * Unique identifier or OCID for listing a single maintenance window by id. Either
+         * compartmentId or id must be provided.
          *
          * @param id the value to set
          * @return this builder instance
@@ -289,7 +262,7 @@ public class ListMaintenanceWindowsRequest
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for displayName is ascending.
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindowSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
@@ -298,7 +271,8 @@ public class ListMaintenanceWindowsRequest
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(
+                com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindowSortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }

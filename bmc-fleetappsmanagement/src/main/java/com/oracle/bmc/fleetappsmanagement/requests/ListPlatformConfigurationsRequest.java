@@ -11,14 +11,20 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListPlatformConfigurationsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListPlatformConfigurationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -38,10 +44,16 @@ public class ListPlatformConfigurationsRequest
     public String getDisplayName() {
         return displayName;
     }
-    /** unique PlatformConfiguration identifier */
+    /**
+     * Unique identifier or OCID for listing a single Platform Configuration by id. Either
+     * compartmentId or id must be provided.
+     */
     private String id;
 
-    /** unique PlatformConfiguration identifier */
+    /**
+     * Unique identifier or OCID for listing a single Platform Configuration by id. Either
+     * compartmentId or id must be provided.
+     */
     public String getId() {
         return id;
     }
@@ -53,6 +65,28 @@ public class ListPlatformConfigurationsRequest
     public com.oracle.bmc.fleetappsmanagement.model.ConfigCategoryDetails.ConfigCategory
             getConfigCategory() {
         return configCategory;
+    }
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all
+     * compartments which descend from it. Which resources are returned and their field contents
+     * depends on the value of accessLevel.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all
+     * compartments which descend from it. Which resources are returned and their field contents
+     * depends on the value of accessLevel.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+    /** A filter to return Platform Configurations whose type matches the given type. */
+    private com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration.Type type;
+
+    /** A filter to return Platform Configurations whose type matches the given type. */
+    public com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration.Type getType() {
+        return type;
     }
     /** The maximum number of items to return. */
     private Integer limit;
@@ -85,50 +119,13 @@ public class ListPlatformConfigurationsRequest
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    private SortBy sortBy;
+    private com.oracle.bmc.fleetappsmanagement.model.PlatformConfigurationSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.PlatformConfigurationSortBy getSortBy() {
         return sortBy;
     }
     /** The client request ID for tracing. */
@@ -145,11 +142,15 @@ public class ListPlatformConfigurationsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -192,11 +193,15 @@ public class ListPlatformConfigurationsRequest
             return this;
         }
 
-        /** unique PlatformConfiguration identifier */
+        /**
+         * Unique identifier or OCID for listing a single Platform Configuration by id. Either
+         * compartmentId or id must be provided.
+         */
         private String id = null;
 
         /**
-         * unique PlatformConfiguration identifier
+         * Unique identifier or OCID for listing a single Platform Configuration by id. Either
+         * compartmentId or id must be provided.
          *
          * @param id the value to set
          * @return this builder instance
@@ -220,6 +225,41 @@ public class ListPlatformConfigurationsRequest
                 com.oracle.bmc.fleetappsmanagement.model.ConfigCategoryDetails.ConfigCategory
                         configCategory) {
             this.configCategory = configCategory;
+            return this;
+        }
+
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all
+         * compartments which descend from it. Which resources are returned and their field contents
+         * depends on the value of accessLevel.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all
+         * compartments which descend from it. Which resources are returned and their field contents
+         * depends on the value of accessLevel.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /** A filter to return Platform Configurations whose type matches the given type. */
+        private com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration.Type type = null;
+
+        /**
+         * A filter to return Platform Configurations whose type matches the given type.
+         *
+         * @param type the value to set
+         * @return this builder instance
+         */
+        public Builder type(
+                com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration.Type type) {
+            this.type = type;
             return this;
         }
 
@@ -273,7 +313,7 @@ public class ListPlatformConfigurationsRequest
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for displayName is ascending.
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.PlatformConfigurationSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
@@ -282,7 +322,8 @@ public class ListPlatformConfigurationsRequest
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(
+                com.oracle.bmc.fleetappsmanagement.model.PlatformConfigurationSortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }
@@ -336,6 +377,8 @@ public class ListPlatformConfigurationsRequest
             displayName(o.getDisplayName());
             id(o.getId());
             configCategory(o.getConfigCategory());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
+            type(o.getType());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -380,6 +423,8 @@ public class ListPlatformConfigurationsRequest
             request.displayName = displayName;
             request.id = id;
             request.configCategory = configCategory;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
+            request.type = type;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -387,7 +432,8 @@ public class ListPlatformConfigurationsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListPlatformConfigurationsRequest(compartmentId, lifecycleState, displayName, id,
-            // configCategory, limit, page, sortOrder, sortBy, opcRequestId);
+            // configCategory, compartmentIdInSubtree, type, limit, page, sortOrder, sortBy,
+            // opcRequestId);
         }
     }
 
@@ -403,6 +449,8 @@ public class ListPlatformConfigurationsRequest
                 .displayName(displayName)
                 .id(id)
                 .configCategory(configCategory)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
+                .type(type)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -429,6 +477,8 @@ public class ListPlatformConfigurationsRequest
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",configCategory=").append(String.valueOf(this.configCategory));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(",type=").append(String.valueOf(this.type));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -454,6 +504,9 @@ public class ListPlatformConfigurationsRequest
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.configCategory, other.configCategory)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -476,6 +529,12 @@ public class ListPlatformConfigurationsRequest
         result =
                 (result * PRIME)
                         + (this.configCategory == null ? 43 : this.configCategory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

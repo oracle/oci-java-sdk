@@ -577,6 +577,45 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeLookupCompartmentResponse> changeLookupCompartment(
+            ChangeLookupCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeLookupCompartmentRequest, ChangeLookupCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        Validate.notBlank(request.getLookupName(), "lookupName must not be blank");
+        Objects.requireNonNull(
+                request.getChangeLookupCompartmentDetails(),
+                "changeLookupCompartmentDetails is required");
+
+        return clientCall(request, ChangeLookupCompartmentResponse::builder)
+                .logger(LOG, "changeLookupCompartment")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "ChangeLookupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/ChangeLookupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeLookupCompartmentRequest::builder)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("lookups")
+                .appendPathParam(request.getLookupName())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeLookupCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeScheduledTaskCompartmentResponse>
             changeScheduledTaskCompartment(
                     ChangeScheduledTaskCompartmentRequest request,
@@ -1148,6 +1187,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam(request.getNamespaceName())
                 .appendPathParam("logAnalyticsEntities")
                 .appendPathParam(request.getLogAnalyticsEntityId())
+                .appendQueryParam("isForceDelete", request.getIsForceDelete())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -2269,6 +2309,41 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetFieldUsagesResponse> getFieldUsages(
+            GetFieldUsagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetFieldUsagesRequest, GetFieldUsagesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        Validate.notBlank(request.getFieldName(), "fieldName must not be blank");
+
+        return clientCall(request, GetFieldUsagesResponse::builder)
+                .logger(LOG, "getFieldUsages")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "GetFieldUsages",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetFieldUsages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFieldUsagesRequest::builder)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("fields")
+                .appendPathParam(request.getFieldName())
+                .appendPathParam("usages")
+                .accept("application/json;charset=UTF-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.loganalytics.model.LogAnalyticsFieldUsages.class,
+                        GetFieldUsagesResponse.Builder::logAnalyticsFieldUsages)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFieldUsagesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetFieldsSummaryResponse> getFieldsSummary(
             GetFieldsSummaryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2537,6 +2612,8 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam(request.getNamespaceName())
                 .appendPathParam("logAnalyticsEntities")
                 .appendPathParam(request.getLogAnalyticsEntityId())
+                .appendQueryParam(
+                        "isShowAssociatedSourcesCount", request.getIsShowAssociatedSourcesCount())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -2784,6 +2861,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam("namespaces")
                 .appendPathParam(request.getNamespaceName())
                 .appendPathParam("lookupSummary")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -3317,6 +3395,40 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetTemplateResponse> getTemplate(
+            GetTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetTemplateRequest, GetTemplateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        Validate.notBlank(request.getTemplateId(), "templateId must not be blank");
+
+        return clientCall(request, GetTemplateResponse::builder)
+                .logger(LOG, "getTemplate")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "GetTemplate",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsTemplate/GetTemplate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTemplateRequest::builder)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("templates")
+                .appendPathParam(request.getTemplateId())
+                .accept("application/json;charset=UTF-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.loganalytics.model.LogAnalyticsTemplate.class,
+                        GetTemplateResponse.Builder::logAnalyticsTemplate)
+                .handleResponseHeaderString("etag", GetTemplateResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTemplateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUnprocessedDataBucketResponse> getUnprocessedDataBucket(
             GetUnprocessedDataBucketRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3704,6 +3816,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("isIncludePatterns", request.getIsIncludePatterns())
                 .appendQueryParam("entityId", request.getEntityId())
                 .appendQueryParam("patternId", request.getPatternId())
+                .appendQueryParam("patternIdLong", request.getPatternIdLong())
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -4161,6 +4274,24 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "metadataEquals",
                         request.getMetadataEquals(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "isShowAssociatedSourcesCount", request.getIsShowAssociatedSourcesCount())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4210,6 +4341,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "metadataEquals",
                         request.getMetadataEquals(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("context", request.getContext())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4428,6 +4560,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("status", request.getStatus())
                 .appendQueryParam("categories", request.getCategories())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("isHideSpecial", request.getIsHideSpecial())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -4554,6 +4687,47 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-next-page", ListOverlappingRecallsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListOverlappingRecallsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListParserActionsResponse> listParserActions(
+            ListParserActionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListParserActionsRequest, ListParserActionsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        return clientCall(request, ListParserActionsResponse::builder)
+                .logger(LOG, "listParserActions")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "ListParserActions",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserActions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListParserActionsRequest::builder)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("parserActions")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("actionDisplayText", request.getActionDisplayText())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json;charset=UTF-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.loganalytics.model.ParserActionSummaryCollection.class,
+                        ListParserActionsResponse.Builder::parserActionSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListParserActionsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListParserActionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListParserActionsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -4814,6 +4988,54 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListRecalledInfoResponse> listRecalledInfo(
+            ListRecalledInfoRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRecalledInfoRequest, ListRecalledInfoResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        return clientCall(request, ListRecalledInfoResponse::builder)
+                .logger(LOG, "listRecalledInfo")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "ListRecalledInfo",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListRecalledInfo")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRecalledInfoRequest::builder)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("storage")
+                .appendPathParam("recalledInfoCollection")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam(
+                        "timeDataStartedGreaterThanOrEqual",
+                        request.getTimeDataStartedGreaterThanOrEqual())
+                .appendQueryParam("timeDataEndedLessThan", request.getTimeDataEndedLessThan())
+                .appendListQueryParam(
+                        "logSets",
+                        request.getLogSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.loganalytics.model.RecalledInfoCollection.class,
+                        ListRecalledInfoResponse.Builder::recalledInfoCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRecalledInfoResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRecalledInfoResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListRecalledInfoResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourceCategoriesResponse> listResourceCategories(
             ListResourceCategoriesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4838,6 +5060,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("categories", request.getCategories())
                 .appendQueryParam("resourceTypes", request.getResourceTypes())
                 .appendQueryParam("resourceIds", request.getResourceIds())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("limit", request.getLimit())
@@ -4931,6 +5154,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("templateId", request.getTemplateId())
                 .appendQueryParam("savedSearchId", request.getSavedSearchId())
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
                 .appendQueryParam("targetService", request.getTargetService())
@@ -5246,6 +5470,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("sourceType", request.getSourceType())
                 .appendQueryParam("categories", request.getCategories())
+                .appendQueryParam("patternText", request.getPatternText())
                 .appendQueryParam("isSimplified", request.getIsSimplified())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json;charset=UTF-8")
@@ -5431,6 +5656,51 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-next-page", ListSupportedTimezonesResponse.Builder::opcNextPage)
                 .handleResponseHeaderLong(
                         "opc-total-items", ListSupportedTimezonesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTemplatesResponse> listTemplates(
+            ListTemplatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListTemplatesRequest, ListTemplatesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListTemplatesResponse::builder)
+                .logger(LOG, "listTemplates")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "ListTemplates",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsTemplate/ListTemplates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTemplatesRequest::builder)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("templates")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("type", request.getType())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("templateDisplayText", request.getTemplateDisplayText())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json;charset=UTF-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.loganalytics.model.LogAnalyticsTemplateCollection.class,
+                        ListTemplatesResponse.Builder::logAnalyticsTemplateCollection)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListTemplatesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTemplatesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTemplatesResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -6058,6 +6328,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("charEncoding", request.getCharEncoding())
                 .appendQueryParam("isHidden", request.getIsHidden())
                 .appendEnumQueryParam("type", request.getType())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -7088,8 +7359,6 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     handler) {
 
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Objects.requireNonNull(request.getUploadName(), "uploadName is required");
-
         Objects.requireNonNull(request.getLogSourceName(), "logSourceName is required");
 
         Objects.requireNonNull(request.getFilename(), "filename is required");
@@ -7140,6 +7409,54 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-content-md5", UploadLogFileResponse.Builder::opcContentMd5)
                 .handleResponseHeaderString(
                         "opc-object-id", UploadLogFileResponse.Builder::opcObjectId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UploadOtlpLogsResponse> uploadOtlpLogs(
+            UploadOtlpLogsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UploadOtlpLogsRequest, UploadOtlpLogsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Objects.requireNonNull(request.getOpcMetaLoggrpid(), "opcMetaLoggrpid is required");
+
+        Objects.requireNonNull(
+                request.getUploadOtlpLogsDetails(), "uploadOtlpLogsDetails is required");
+
+        return clientCall(request, UploadOtlpLogsResponse::builder)
+                .logger(LOG, "uploadOtlpLogs")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "UploadOtlpLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadOtlpLogs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UploadOtlpLogsRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("actions")
+                .appendPathParam("otlp")
+                .appendPathParam("v1")
+                .appendPathParam("logs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-meta-loggrpid", request.getOpcMetaLoggrpid())
+                .appendHeader("log-set", request.getLogSet())
+                .appendHeader("content-type", request.getContentType())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-meta-properties", request.getOpcMetaProperties())
+                .appendHeader("expect", request.getExpect())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UploadOtlpLogsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-object-id", UploadOtlpLogsResponse.Builder::opcObjectId)
+                .handleResponseHeaderDate(
+                        "timeCreated", UploadOtlpLogsResponse.Builder::timeCreated)
                 .callAsync(handler);
     }
 

@@ -10,7 +10,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetResourcesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFleetResourcesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Unique Fleet identifier. */
@@ -19,13 +19,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
     /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
-    }
-    /** Resource Tenancy Id */
-    private String tenancyId;
-
-    /** Resource Tenancy Id */
-    public String getTenancyId() {
-        return tenancyId;
     }
     /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.fleetappsmanagement.model.FleetResource.LifecycleState lifecycleState;
@@ -87,50 +80,13 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    private SortBy sortBy;
+    private com.oracle.bmc.fleetappsmanagement.model.FleetResourceSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.FleetResourceSortBy getSortBy() {
         return sortBy;
     }
     /** The client request ID for tracing. */
@@ -158,20 +114,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
-            return this;
-        }
-
-        /** Resource Tenancy Id */
-        private String tenancyId = null;
-
-        /**
-         * Resource Tenancy Id
-         *
-         * @param tenancyId the value to set
-         * @return this builder instance
-         */
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = tenancyId;
             return this;
         }
 
@@ -286,7 +228,7 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for displayName is ascending.
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.FleetResourceSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
@@ -295,7 +237,7 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.fleetappsmanagement.model.FleetResourceSortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }
@@ -345,7 +287,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder copy(ListFleetResourcesRequest o) {
             fleetId(o.getFleetId());
-            tenancyId(o.getTenancyId());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
             id(o.getId());
@@ -390,7 +331,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
         public ListFleetResourcesRequest buildWithoutInvocationCallback() {
             ListFleetResourcesRequest request = new ListFleetResourcesRequest();
             request.fleetId = fleetId;
-            request.tenancyId = tenancyId;
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
             request.id = id;
@@ -401,7 +341,7 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListFleetResourcesRequest(fleetId, tenancyId, lifecycleState, displayName, id,
+            // new ListFleetResourcesRequest(fleetId, lifecycleState, displayName, id,
             // fleetResourceType, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
@@ -414,7 +354,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
     public Builder toBuilder() {
         return new Builder()
                 .fleetId(fleetId)
-                .tenancyId(tenancyId)
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
                 .id(id)
@@ -441,7 +380,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",fleetId=").append(String.valueOf(this.fleetId));
-        sb.append(",tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",id=").append(String.valueOf(this.id));
@@ -467,7 +405,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
         ListFleetResourcesRequest other = (ListFleetResourcesRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
-                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.id, other.id)
@@ -484,7 +421,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.fleetId == null ? 43 : this.fleetId.hashCode());
-        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

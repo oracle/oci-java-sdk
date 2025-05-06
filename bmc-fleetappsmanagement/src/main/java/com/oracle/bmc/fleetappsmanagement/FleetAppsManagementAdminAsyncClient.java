@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementAdminAsyncClient
         extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements FleetAppsManagementAdminAsync {
@@ -97,6 +97,86 @@ public class FleetAppsManagementAdminAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ChangePlatformConfigurationCompartmentResponse>
+            changePlatformConfigurationCompartment(
+                    ChangePlatformConfigurationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePlatformConfigurationCompartmentRequest,
+                                    ChangePlatformConfigurationCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getPlatformConfigurationId(), "platformConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePlatformConfigurationCompartmentDetails(),
+                "changePlatformConfigurationCompartmentDetails is required");
+
+        return clientCall(request, ChangePlatformConfigurationCompartmentResponse::builder)
+                .logger(LOG, "changePlatformConfigurationCompartment")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ChangePlatformConfigurationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfiguration/ChangePlatformConfigurationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePlatformConfigurationCompartmentRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("platformConfigurations")
+                .appendPathParam(request.getPlatformConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangePlatformConfigurationCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangePlatformConfigurationCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangePropertyCompartmentResponse> changePropertyCompartment(
+            ChangePropertyCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangePropertyCompartmentRequest, ChangePropertyCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPropertyId(), "propertyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePropertyCompartmentDetails(),
+                "changePropertyCompartmentDetails is required");
+
+        return clientCall(request, ChangePropertyCompartmentResponse::builder)
+                .logger(LOG, "changePropertyCompartment")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ChangePropertyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Property/ChangePropertyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePropertyCompartmentRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("properties")
+                .appendPathParam(request.getPropertyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangePropertyCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangePropertyCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCompliancePolicyRuleResponse>
             createCompliancePolicyRule(
                     CreateCompliancePolicyRuleRequest request,
@@ -113,10 +193,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "CreateCompliancePolicyRule",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/CreateCompliancePolicyRule")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyRule/CreateCompliancePolicyRule")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCompliancePolicyRuleRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("compliancePolicyRules")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -154,11 +234,11 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "CreateOnboarding",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/CreateOnboarding")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/CreateOnboarding")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOnboardingRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("Onboardings")
+                .basePath("/20250228")
+                .appendPathParam("onboardings")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -194,10 +274,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "CreatePlatformConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/CreatePlatformConfiguration")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfiguration/CreatePlatformConfiguration")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePlatformConfigurationRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("platformConfigurations")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -207,7 +287,15 @@ public class FleetAppsManagementAdminAsyncClient
                         com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration.class,
                         CreatePlatformConfigurationResponse.Builder::platformConfiguration)
                 .handleResponseHeaderString(
+                        "location", CreatePlatformConfigurationResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreatePlatformConfigurationResponse.Builder::contentLocation)
+                .handleResponseHeaderString(
                         "etag", CreatePlatformConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreatePlatformConfigurationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreatePlatformConfigurationResponse.Builder::opcRequestId)
                 .callAsync(handler);
@@ -227,10 +315,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "CreateProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/CreateProperty")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Property/CreateProperty")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePropertyRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("properties")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -262,10 +350,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "DeleteCompliancePolicyRule",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/DeleteCompliancePolicyRule")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyRule/DeleteCompliancePolicyRule")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCompliancePolicyRuleRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("compliancePolicyRules")
                 .appendPathParam(request.getCompliancePolicyRuleId())
                 .accept("application/json")
@@ -293,11 +381,11 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "DeleteOnboarding",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/DeleteOnboarding")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/DeleteOnboarding")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOnboardingRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("Onboardings")
+                .basePath("/20250228")
+                .appendPathParam("onboardings")
                 .appendPathParam(request.getOnboardingId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
@@ -326,10 +414,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "DeletePlatformConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/DeletePlatformConfiguration")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfiguration/DeletePlatformConfiguration")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePlatformConfigurationRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("platformConfigurations")
                 .appendPathParam(request.getPlatformConfigurationId())
                 .accept("application/json")
@@ -357,10 +445,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "DeleteProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/DeleteProperty")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Property/DeleteProperty")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePropertyRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("properties")
                 .appendPathParam(request.getPropertyId())
                 .accept("application/json")
@@ -387,11 +475,11 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "EnableLatestPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/EnableLatestPolicy")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/EnableLatestPolicy")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableLatestPolicyRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("Onboardings")
+                .basePath("/20250228")
+                .appendPathParam("onboardings")
                 .appendPathParam(request.getOnboardingId())
                 .appendPathParam("actions")
                 .appendPathParam("enableLatestPolicy")
@@ -419,10 +507,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "GetCompliancePolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicy/GetCompliancePolicy")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicy/GetCompliancePolicy")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCompliancePolicyRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("compliancePolicies")
                 .appendPathParam(request.getCompliancePolicyId())
                 .accept("application/json")
@@ -451,10 +539,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "GetCompliancePolicyRule",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/GetCompliancePolicyRule")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyRule/GetCompliancePolicyRule")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCompliancePolicyRuleRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("compliancePolicyRules")
                 .appendPathParam(request.getCompliancePolicyRuleId())
                 .accept("application/json")
@@ -481,11 +569,11 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "GetOnboarding",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/GetOnboarding")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/GetOnboarding")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOnboardingRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("Onboardings")
+                .basePath("/20250228")
+                .appendPathParam("onboardings")
                 .appendPathParam(request.getOnboardingId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -513,10 +601,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "GetPlatformConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/GetPlatformConfiguration")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfiguration/GetPlatformConfiguration")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPlatformConfigurationRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("platformConfigurations")
                 .appendPathParam(request.getPlatformConfigurationId())
                 .accept("application/json")
@@ -543,10 +631,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "GetProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/GetProperty")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Property/GetProperty")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPropertyRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("properties")
                 .appendPathParam(request.getPropertyId())
                 .accept("application/json")
@@ -572,14 +660,15 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "ListCompliancePolicies",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyCollection/ListCompliancePolicies")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyCollection/ListCompliancePolicies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCompliancePoliciesRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("compliancePolicies")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("type", request.getType())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -609,10 +698,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "ListCompliancePolicyRules",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRuleCollection/ListCompliancePolicyRules")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyRuleCollection/ListCompliancePolicyRules")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCompliancePolicyRulesRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("compliancePolicyRules")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -643,19 +732,21 @@ public class FleetAppsManagementAdminAsyncClient
             final com.oracle.bmc.responses.AsyncHandler<
                             ListOnboardingPoliciesRequest, ListOnboardingPoliciesResponse>
                     handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListOnboardingPoliciesResponse::builder)
                 .logger(LOG, "listOnboardingPolicies")
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "ListOnboardingPolicies",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/OnboardingPolicyCollection/ListOnboardingPolicies")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/OnboardingPolicyCollection/ListOnboardingPolicies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOnboardingPoliciesRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("OnboardingPolicies")
+                .basePath("/20250228")
+                .appendPathParam("onboardingPolicies")
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
@@ -682,11 +773,11 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "ListOnboardings",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/OnboardingCollection/ListOnboardings")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/OnboardingCollection/ListOnboardings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOnboardingsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("Onboardings")
+                .basePath("/20250228")
+                .appendPathParam("onboardings")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("id", request.getId())
@@ -720,16 +811,18 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "ListPlatformConfigurations",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfigurationCollection/ListPlatformConfigurations")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfigurationCollection/ListPlatformConfigurations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPlatformConfigurationsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("platformConfigurations")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("id", request.getId())
                 .appendEnumQueryParam("configCategory", request.getConfigCategory())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("type", request.getType())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -759,15 +852,16 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "ListProperties",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PropertyCollection/ListProperties")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PropertyCollection/ListProperties")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPropertiesRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("properties")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("type", request.getType())
                 .appendEnumQueryParam("scope", request.getScope())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -801,11 +895,11 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "ManageSettings",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/ManageSettings")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/ManageSettings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ManageSettingsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("Onboardings")
+                .basePath("/20250228")
+                .appendPathParam("onboardings")
                 .appendPathParam(request.getOnboardingId())
                 .appendPathParam("actions")
                 .appendPathParam("manageSettings")
@@ -839,10 +933,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "UpdateCompliancePolicyRule",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/UpdateCompliancePolicyRule")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyRule/UpdateCompliancePolicyRule")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateCompliancePolicyRuleRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("compliancePolicyRules")
                 .appendPathParam(request.getCompliancePolicyRuleId())
                 .accept("application/json")
@@ -873,11 +967,11 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "UpdateOnboarding",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/UpdateOnboarding")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/UpdateOnboarding")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOnboardingRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("Onboardings")
+                .basePath("/20250228")
+                .appendPathParam("onboardings")
                 .appendPathParam(request.getOnboardingId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
@@ -910,10 +1004,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "UpdatePlatformConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/UpdatePlatformConfiguration")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfiguration/UpdatePlatformConfiguration")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdatePlatformConfigurationRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("platformConfigurations")
                 .appendPathParam(request.getPlatformConfigurationId())
                 .accept("application/json")
@@ -944,10 +1038,10 @@ public class FleetAppsManagementAdminAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementAdmin",
                         "UpdateProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/UpdateProperty")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Property/UpdateProperty")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdatePropertyRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("properties")
                 .appendPathParam(request.getPropertyId())
                 .accept("application/json")

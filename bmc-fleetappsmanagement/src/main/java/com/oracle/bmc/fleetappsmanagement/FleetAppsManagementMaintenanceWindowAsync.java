@@ -12,7 +12,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * management tasks, validate patch compliance, and enhance operational efficiency across an
  * enterprise.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public interface FleetAppsManagementMaintenanceWindowAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -112,7 +112,8 @@ public interface FleetAppsManagementMaintenanceWindowAsync extends AutoCloseable
                     handler);
 
     /**
-     * List maintenance windows for a specified tenancy in\u00A0Fleet Application Management.
+     * Returns a list of all the Maintenance Windows in the specified compartment. The query
+     * parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

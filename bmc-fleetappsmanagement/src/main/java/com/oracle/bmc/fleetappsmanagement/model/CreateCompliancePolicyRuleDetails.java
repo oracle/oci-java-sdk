@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateCompliancePolicyRuleDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -27,11 +27,10 @@ public final class CreateCompliancePolicyRuleDetails
         "displayName",
         "compliancePolicyId",
         "productVersion",
-        "patchType",
+        "patchTypeId",
         "severity",
         "patchSelection",
         "gracePeriod",
-        "compartmentId",
         "freeformTags",
         "definedTags"
     })
@@ -39,22 +38,20 @@ public final class CreateCompliancePolicyRuleDetails
             String displayName,
             String compliancePolicyId,
             ProductVersionDetails productVersion,
-            java.util.List<String> patchType,
+            java.util.List<String> patchTypeId,
             java.util.List<ComplianceRuleSeverity> severity,
             PatchSelectionDetails patchSelection,
             String gracePeriod,
-            String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.compliancePolicyId = compliancePolicyId;
         this.productVersion = productVersion;
-        this.patchType = patchType;
+        this.patchTypeId = patchTypeId;
         this.severity = severity;
         this.patchSelection = patchSelection;
         this.gracePeriod = gracePeriod;
-        this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -111,18 +108,18 @@ public final class CreateCompliancePolicyRuleDetails
         /**
          * PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("patchType")
-        private java.util.List<String> patchType;
+        @com.fasterxml.jackson.annotation.JsonProperty("patchTypeId")
+        private java.util.List<String> patchTypeId;
 
         /**
          * PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
          *
-         * @param patchType the value to set
+         * @param patchTypeId the value to set
          * @return this builder
          */
-        public Builder patchType(java.util.List<String> patchType) {
-            this.patchType = patchType;
-            this.__explicitlySet__.add("patchType");
+        public Builder patchTypeId(java.util.List<String> patchTypeId) {
+            this.patchTypeId = patchTypeId;
+            this.__explicitlySet__.add("patchTypeId");
             return this;
         }
         /** Severity to which this CompliancePolicyRule applies. */
@@ -168,21 +165,6 @@ public final class CreateCompliancePolicyRuleDetails
         public Builder gracePeriod(String gracePeriod) {
             this.gracePeriod = gracePeriod;
             this.__explicitlySet__.add("gracePeriod");
-            return this;
-        }
-        /** The OCID of the compartment the CompliancePolicyRule belongs to. */
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
-
-        /**
-         * The OCID of the compartment the CompliancePolicyRule belongs to.
-         *
-         * @param compartmentId the value to set
-         * @return this builder
-         */
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
@@ -234,11 +216,10 @@ public final class CreateCompliancePolicyRuleDetails
                             this.displayName,
                             this.compliancePolicyId,
                             this.productVersion,
-                            this.patchType,
+                            this.patchTypeId,
                             this.severity,
                             this.patchSelection,
                             this.gracePeriod,
-                            this.compartmentId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -258,8 +239,8 @@ public final class CreateCompliancePolicyRuleDetails
             if (model.wasPropertyExplicitlySet("productVersion")) {
                 this.productVersion(model.getProductVersion());
             }
-            if (model.wasPropertyExplicitlySet("patchType")) {
-                this.patchType(model.getPatchType());
+            if (model.wasPropertyExplicitlySet("patchTypeId")) {
+                this.patchTypeId(model.getPatchTypeId());
             }
             if (model.wasPropertyExplicitlySet("severity")) {
                 this.severity(model.getSeverity());
@@ -269,9 +250,6 @@ public final class CreateCompliancePolicyRuleDetails
             }
             if (model.wasPropertyExplicitlySet("gracePeriod")) {
                 this.gracePeriod(model.getGracePeriod());
-            }
-            if (model.wasPropertyExplicitlySet("compartmentId")) {
-                this.compartmentId(model.getCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -334,16 +312,16 @@ public final class CreateCompliancePolicyRuleDetails
     }
 
     /** PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies. */
-    @com.fasterxml.jackson.annotation.JsonProperty("patchType")
-    private final java.util.List<String> patchType;
+    @com.fasterxml.jackson.annotation.JsonProperty("patchTypeId")
+    private final java.util.List<String> patchTypeId;
 
     /**
      * PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
      *
      * @return the value
      */
-    public java.util.List<String> getPatchType() {
-        return patchType;
+    public java.util.List<String> getPatchTypeId() {
+        return patchTypeId;
     }
 
     /** Severity to which this CompliancePolicyRule applies. */
@@ -383,19 +361,6 @@ public final class CreateCompliancePolicyRuleDetails
      */
     public String getGracePeriod() {
         return gracePeriod;
-    }
-
-    /** The OCID of the compartment the CompliancePolicyRule belongs to. */
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    private final String compartmentId;
-
-    /**
-     * The OCID of the compartment the CompliancePolicyRule belongs to.
-     *
-     * @return the value
-     */
-    public String getCompartmentId() {
-        return compartmentId;
     }
 
     /**
@@ -450,11 +415,10 @@ public final class CreateCompliancePolicyRuleDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compliancePolicyId=").append(String.valueOf(this.compliancePolicyId));
         sb.append(", productVersion=").append(String.valueOf(this.productVersion));
-        sb.append(", patchType=").append(String.valueOf(this.patchType));
+        sb.append(", patchTypeId=").append(String.valueOf(this.patchTypeId));
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", patchSelection=").append(String.valueOf(this.patchSelection));
         sb.append(", gracePeriod=").append(String.valueOf(this.gracePeriod));
-        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -474,11 +438,10 @@ public final class CreateCompliancePolicyRuleDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compliancePolicyId, other.compliancePolicyId)
                 && java.util.Objects.equals(this.productVersion, other.productVersion)
-                && java.util.Objects.equals(this.patchType, other.patchType)
+                && java.util.Objects.equals(this.patchTypeId, other.patchTypeId)
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.patchSelection, other.patchSelection)
                 && java.util.Objects.equals(this.gracePeriod, other.gracePeriod)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -497,15 +460,12 @@ public final class CreateCompliancePolicyRuleDetails
         result =
                 (result * PRIME)
                         + (this.productVersion == null ? 43 : this.productVersion.hashCode());
-        result = (result * PRIME) + (this.patchType == null ? 43 : this.patchType.hashCode());
+        result = (result * PRIME) + (this.patchTypeId == null ? 43 : this.patchTypeId.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
         result =
                 (result * PRIME)
                         + (this.patchSelection == null ? 43 : this.patchSelection.hashCode());
         result = (result * PRIME) + (this.gracePeriod == null ? 43 : this.gracePeriod.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -35,7 +35,8 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         "createdBy",
         "collectionId",
         "timeRecalledDataStarted",
-        "timeRecalledDataEnded"
+        "timeRecalledDataEnded",
+        "percentageComplete"
     })
     public RecalledData(
             java.util.Date timeDataEnded,
@@ -51,7 +52,8 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
             String createdBy,
             Long collectionId,
             java.util.Date timeRecalledDataStarted,
-            java.util.Date timeRecalledDataEnded) {
+            java.util.Date timeRecalledDataEnded,
+            Integer percentageComplete) {
         super();
         this.timeDataEnded = timeDataEnded;
         this.timeDataStarted = timeDataStarted;
@@ -67,6 +69,7 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         this.collectionId = collectionId;
         this.timeRecalledDataStarted = timeRecalledDataStarted;
         this.timeRecalledDataEnded = timeRecalledDataEnded;
+        this.percentageComplete = percentageComplete;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -289,6 +292,21 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeRecalledDataEnded");
             return this;
         }
+        /** This is the current progress percentage for the recalled data */
+        @com.fasterxml.jackson.annotation.JsonProperty("percentageComplete")
+        private Integer percentageComplete;
+
+        /**
+         * This is the current progress percentage for the recalled data
+         *
+         * @param percentageComplete the value to set
+         * @return this builder
+         */
+        public Builder percentageComplete(Integer percentageComplete) {
+            this.percentageComplete = percentageComplete;
+            this.__explicitlySet__.add("percentageComplete");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -309,7 +327,8 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
                             this.createdBy,
                             this.collectionId,
                             this.timeRecalledDataStarted,
-                            this.timeRecalledDataEnded);
+                            this.timeRecalledDataEnded,
+                            this.percentageComplete);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -359,6 +378,9 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("timeRecalledDataEnded")) {
                 this.timeRecalledDataEnded(model.getTimeRecalledDataEnded());
+            }
+            if (model.wasPropertyExplicitlySet("percentageComplete")) {
+                this.percentageComplete(model.getPercentageComplete());
             }
             return this;
         }
@@ -417,6 +439,7 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         Recalled("RECALLED"),
         Pending("PENDING"),
         Failed("FAILED"),
+        PartialRecalled("PARTIAL_RECALLED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -607,6 +630,19 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         return timeRecalledDataEnded;
     }
 
+    /** This is the current progress percentage for the recalled data */
+    @com.fasterxml.jackson.annotation.JsonProperty("percentageComplete")
+    private final Integer percentageComplete;
+
+    /**
+     * This is the current progress percentage for the recalled data
+     *
+     * @return the value
+     */
+    public Integer getPercentageComplete() {
+        return percentageComplete;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -637,6 +673,7 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", timeRecalledDataStarted=")
                 .append(String.valueOf(this.timeRecalledDataStarted));
         sb.append(", timeRecalledDataEnded=").append(String.valueOf(this.timeRecalledDataEnded));
+        sb.append(", percentageComplete=").append(String.valueOf(this.percentageComplete));
         sb.append(")");
         return sb.toString();
     }
@@ -667,6 +704,7 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(
                         this.timeRecalledDataStarted, other.timeRecalledDataStarted)
                 && java.util.Objects.equals(this.timeRecalledDataEnded, other.timeRecalledDataEnded)
+                && java.util.Objects.equals(this.percentageComplete, other.percentageComplete)
                 && super.equals(other);
     }
 
@@ -708,6 +746,11 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
                         + (this.timeRecalledDataEnded == null
                                 ? 43
                                 : this.timeRecalledDataEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentageComplete == null
+                                ? 43
+                                : this.percentageComplete.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

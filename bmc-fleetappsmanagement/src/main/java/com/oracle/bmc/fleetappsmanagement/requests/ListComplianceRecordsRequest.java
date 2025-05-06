@@ -11,7 +11,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListComplianceRecordsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListComplianceRecordsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -64,6 +64,21 @@ public class ListComplianceRecordsRequest
     public String getComplianceState() {
         return complianceState;
     }
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all
+     * compartments which descend from it. Which resources are returned and their field contents
+     * depends on the value of accessLevel.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all
+     * compartments which descend from it. Which resources are returned and their field contents
+     * depends on the value of accessLevel.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
     /** The maximum number of items to return. */
     private Integer limit;
 
@@ -95,50 +110,13 @@ public class ListComplianceRecordsRequest
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    private SortBy sortBy;
+    private com.oracle.bmc.fleetappsmanagement.model.ComplianceRecordSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.ComplianceRecordSortBy getSortBy() {
         return sortBy;
     }
     /** The client request ID for tracing. */
@@ -253,6 +231,26 @@ public class ListComplianceRecordsRequest
             return this;
         }
 
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all
+         * compartments which descend from it. Which resources are returned and their field contents
+         * depends on the value of accessLevel.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all
+         * compartments which descend from it. Which resources are returned and their field contents
+         * depends on the value of accessLevel.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
         /** The maximum number of items to return. */
         private Integer limit = null;
 
@@ -303,7 +301,7 @@ public class ListComplianceRecordsRequest
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for displayName is ascending.
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.ComplianceRecordSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
@@ -312,7 +310,8 @@ public class ListComplianceRecordsRequest
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(
+                com.oracle.bmc.fleetappsmanagement.model.ComplianceRecordSortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }
@@ -368,6 +367,7 @@ public class ListComplianceRecordsRequest
             productStack(o.getProductStack());
             targetName(o.getTargetName());
             complianceState(o.getComplianceState());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -414,6 +414,7 @@ public class ListComplianceRecordsRequest
             request.productStack = productStack;
             request.targetName = targetName;
             request.complianceState = complianceState;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -421,8 +422,8 @@ public class ListComplianceRecordsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListComplianceRecordsRequest(compartmentId, resourceId, entityId, productName,
-            // productStack, targetName, complianceState, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // productStack, targetName, complianceState, compartmentIdInSubtree, limit, page,
+            // sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -440,6 +441,7 @@ public class ListComplianceRecordsRequest
                 .productStack(productStack)
                 .targetName(targetName)
                 .complianceState(complianceState)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -468,6 +470,7 @@ public class ListComplianceRecordsRequest
         sb.append(",productStack=").append(String.valueOf(this.productStack));
         sb.append(",targetName=").append(String.valueOf(this.targetName));
         sb.append(",complianceState=").append(String.valueOf(this.complianceState));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -495,6 +498,8 @@ public class ListComplianceRecordsRequest
                 && java.util.Objects.equals(this.productStack, other.productStack)
                 && java.util.Objects.equals(this.targetName, other.targetName)
                 && java.util.Objects.equals(this.complianceState, other.complianceState)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -517,6 +522,11 @@ public class ListComplianceRecordsRequest
         result =
                 (result * PRIME)
                         + (this.complianceState == null ? 43 : this.complianceState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

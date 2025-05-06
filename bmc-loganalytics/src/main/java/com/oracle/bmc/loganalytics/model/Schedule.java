@@ -23,6 +23,7 @@ package com.oracle.bmc.loganalytics.model;
         defaultImpl = Schedule.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CronSchedule.class, name = "CRON"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AutoSchedule.class, name = "AUTO"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = FixedFrequencySchedule.class,
             name = "FIXED_FREQUENCY")
@@ -171,6 +172,7 @@ public class Schedule extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         FixedFrequency("FIXED_FREQUENCY"),
         Cron("CRON"),
+        Auto("AUTO"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

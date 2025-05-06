@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /** Possible Compliance Rule severities. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public enum ComplianceRuleSeverity implements com.oracle.bmc.http.internal.BmcEnum {
     Critical("CRITICAL"),
     High("HIGH"),

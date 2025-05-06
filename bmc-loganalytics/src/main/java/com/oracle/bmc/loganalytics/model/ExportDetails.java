@@ -509,6 +509,7 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
     public enum OutputFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Csv("CSV"),
         Json("JSON"),
+        Parquet("PARQUET"),
         ;
 
         private final String value;

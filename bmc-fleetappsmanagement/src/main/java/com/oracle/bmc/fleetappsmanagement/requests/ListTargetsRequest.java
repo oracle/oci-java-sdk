@@ -10,7 +10,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTargetsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTargetsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Unique Fleet identifier. */
@@ -58,50 +58,13 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    private SortBy sortBy;
+    private com.oracle.bmc.fleetappsmanagement.model.SortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.SortBy getSortBy() {
         return sortBy;
     }
     /** The client request ID for tracing. */
@@ -196,7 +159,7 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for displayName is ascending.
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
@@ -205,7 +168,7 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.fleetappsmanagement.model.SortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }

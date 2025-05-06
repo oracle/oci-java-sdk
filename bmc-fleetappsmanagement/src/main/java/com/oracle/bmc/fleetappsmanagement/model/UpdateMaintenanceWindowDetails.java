@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = UpdateMaintenanceWindowDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -26,38 +26,32 @@ public final class UpdateMaintenanceWindowDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
-        "maintenanceWindowType",
         "isOutage",
         "timeScheduleStart",
         "duration",
         "isRecurring",
         "recurrences",
-        "taskInitiationCutoff",
         "freeformTags",
         "definedTags"
     })
     public UpdateMaintenanceWindowDetails(
             String displayName,
             String description,
-            MaintenanceWindowType maintenanceWindowType,
             Boolean isOutage,
             java.util.Date timeScheduleStart,
             String duration,
             Boolean isRecurring,
             String recurrences,
-            Integer taskInitiationCutoff,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
-        this.maintenanceWindowType = maintenanceWindowType;
         this.isOutage = isOutage;
         this.timeScheduleStart = timeScheduleStart;
         this.duration = duration;
         this.isRecurring = isRecurring;
         this.recurrences = recurrences;
-        this.taskInitiationCutoff = taskInitiationCutoff;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -104,21 +98,6 @@ public final class UpdateMaintenanceWindowDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
-            return this;
-        }
-        /** MaintenanceWindow Identifier */
-        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowType")
-        private MaintenanceWindowType maintenanceWindowType;
-
-        /**
-         * MaintenanceWindow Identifier
-         *
-         * @param maintenanceWindowType the value to set
-         * @return this builder
-         */
-        public Builder maintenanceWindowType(MaintenanceWindowType maintenanceWindowType) {
-            this.maintenanceWindowType = maintenanceWindowType;
-            this.__explicitlySet__.add("maintenanceWindowType");
             return this;
         }
         /**
@@ -208,21 +187,6 @@ public final class UpdateMaintenanceWindowDetails
             this.__explicitlySet__.add("recurrences");
             return this;
         }
-        /** Task initiation cutoff time for the maintenance window. */
-        @com.fasterxml.jackson.annotation.JsonProperty("taskInitiationCutoff")
-        private Integer taskInitiationCutoff;
-
-        /**
-         * Task initiation cutoff time for the maintenance window.
-         *
-         * @param taskInitiationCutoff the value to set
-         * @return this builder
-         */
-        public Builder taskInitiationCutoff(Integer taskInitiationCutoff) {
-            this.taskInitiationCutoff = taskInitiationCutoff;
-            this.__explicitlySet__.add("taskInitiationCutoff");
-            return this;
-        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -271,13 +235,11 @@ public final class UpdateMaintenanceWindowDetails
                     new UpdateMaintenanceWindowDetails(
                             this.displayName,
                             this.description,
-                            this.maintenanceWindowType,
                             this.isOutage,
                             this.timeScheduleStart,
                             this.duration,
                             this.isRecurring,
                             this.recurrences,
-                            this.taskInitiationCutoff,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -294,9 +256,6 @@ public final class UpdateMaintenanceWindowDetails
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
-            if (model.wasPropertyExplicitlySet("maintenanceWindowType")) {
-                this.maintenanceWindowType(model.getMaintenanceWindowType());
-            }
             if (model.wasPropertyExplicitlySet("isOutage")) {
                 this.isOutage(model.getIsOutage());
             }
@@ -311,9 +270,6 @@ public final class UpdateMaintenanceWindowDetails
             }
             if (model.wasPropertyExplicitlySet("recurrences")) {
                 this.recurrences(model.getRecurrences());
-            }
-            if (model.wasPropertyExplicitlySet("taskInitiationCutoff")) {
-                this.taskInitiationCutoff(model.getTaskInitiationCutoff());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -370,19 +326,6 @@ public final class UpdateMaintenanceWindowDetails
      */
     public String getDescription() {
         return description;
-    }
-
-    /** MaintenanceWindow Identifier */
-    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowType")
-    private final MaintenanceWindowType maintenanceWindowType;
-
-    /**
-     * MaintenanceWindow Identifier
-     *
-     * @return the value
-     */
-    public MaintenanceWindowType getMaintenanceWindowType() {
-        return maintenanceWindowType;
     }
 
     /**
@@ -460,19 +403,6 @@ public final class UpdateMaintenanceWindowDetails
         return recurrences;
     }
 
-    /** Task initiation cutoff time for the maintenance window. */
-    @com.fasterxml.jackson.annotation.JsonProperty("taskInitiationCutoff")
-    private final Integer taskInitiationCutoff;
-
-    /**
-     * Task initiation cutoff time for the maintenance window.
-     *
-     * @return the value
-     */
-    public Integer getTaskInitiationCutoff() {
-        return taskInitiationCutoff;
-    }
-
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -524,13 +454,11 @@ public final class UpdateMaintenanceWindowDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
-        sb.append(", maintenanceWindowType=").append(String.valueOf(this.maintenanceWindowType));
         sb.append(", isOutage=").append(String.valueOf(this.isOutage));
         sb.append(", timeScheduleStart=").append(String.valueOf(this.timeScheduleStart));
         sb.append(", duration=").append(String.valueOf(this.duration));
         sb.append(", isRecurring=").append(String.valueOf(this.isRecurring));
         sb.append(", recurrences=").append(String.valueOf(this.recurrences));
-        sb.append(", taskInitiationCutoff=").append(String.valueOf(this.taskInitiationCutoff));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -549,13 +477,11 @@ public final class UpdateMaintenanceWindowDetails
         UpdateMaintenanceWindowDetails other = (UpdateMaintenanceWindowDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.maintenanceWindowType, other.maintenanceWindowType)
                 && java.util.Objects.equals(this.isOutage, other.isOutage)
                 && java.util.Objects.equals(this.timeScheduleStart, other.timeScheduleStart)
                 && java.util.Objects.equals(this.duration, other.duration)
                 && java.util.Objects.equals(this.isRecurring, other.isRecurring)
                 && java.util.Objects.equals(this.recurrences, other.recurrences)
-                && java.util.Objects.equals(this.taskInitiationCutoff, other.taskInitiationCutoff)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -567,11 +493,6 @@ public final class UpdateMaintenanceWindowDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.maintenanceWindowType == null
-                                ? 43
-                                : this.maintenanceWindowType.hashCode());
         result = (result * PRIME) + (this.isOutage == null ? 43 : this.isOutage.hashCode());
         result =
                 (result * PRIME)
@@ -579,11 +500,6 @@ public final class UpdateMaintenanceWindowDetails
         result = (result * PRIME) + (this.duration == null ? 43 : this.duration.hashCode());
         result = (result * PRIME) + (this.isRecurring == null ? 43 : this.isRecurring.hashCode());
         result = (result * PRIME) + (this.recurrences == null ? 43 : this.recurrences.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.taskInitiationCutoff == null
-                                ? 43
-                                : this.taskInitiationCutoff.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

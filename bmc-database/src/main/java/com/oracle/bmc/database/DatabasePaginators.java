@@ -8647,6 +8647,134 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listSystemVersionMinorVersions operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSystemVersionMinorVersionsResponse>
+            listSystemVersionMinorVersionsResponseIterator(
+                    final ListSystemVersionMinorVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSystemVersionMinorVersionsRequest.Builder,
+                ListSystemVersionMinorVersionsRequest,
+                ListSystemVersionMinorVersionsResponse>(
+                new java.util.function.Supplier<ListSystemVersionMinorVersionsRequest.Builder>() {
+                    @Override
+                    public ListSystemVersionMinorVersionsRequest.Builder get() {
+                        return ListSystemVersionMinorVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSystemVersionMinorVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListSystemVersionMinorVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSystemVersionMinorVersionsRequest.Builder>,
+                        ListSystemVersionMinorVersionsRequest>() {
+                    @Override
+                    public ListSystemVersionMinorVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSystemVersionMinorVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSystemVersionMinorVersionsRequest,
+                        ListSystemVersionMinorVersionsResponse>() {
+                    @Override
+                    public ListSystemVersionMinorVersionsResponse apply(
+                            ListSystemVersionMinorVersionsRequest request) {
+                        return client.listSystemVersionMinorVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.SystemVersionMinorVersionSummary} objects contained in
+     * responses from the listSystemVersionMinorVersions operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.SystemVersionMinorVersionSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.SystemVersionMinorVersionSummary>
+            listSystemVersionMinorVersionsRecordIterator(
+                    final ListSystemVersionMinorVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSystemVersionMinorVersionsRequest.Builder,
+                ListSystemVersionMinorVersionsRequest,
+                ListSystemVersionMinorVersionsResponse,
+                com.oracle.bmc.database.model.SystemVersionMinorVersionSummary>(
+                new java.util.function.Supplier<ListSystemVersionMinorVersionsRequest.Builder>() {
+                    @Override
+                    public ListSystemVersionMinorVersionsRequest.Builder get() {
+                        return ListSystemVersionMinorVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSystemVersionMinorVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListSystemVersionMinorVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSystemVersionMinorVersionsRequest.Builder>,
+                        ListSystemVersionMinorVersionsRequest>() {
+                    @Override
+                    public ListSystemVersionMinorVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSystemVersionMinorVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSystemVersionMinorVersionsRequest,
+                        ListSystemVersionMinorVersionsResponse>() {
+                    @Override
+                    public ListSystemVersionMinorVersionsResponse apply(
+                            ListSystemVersionMinorVersionsRequest request) {
+                        return client.listSystemVersionMinorVersions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSystemVersionMinorVersionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.SystemVersionMinorVersionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.SystemVersionMinorVersionSummary>
+                            apply(ListSystemVersionMinorVersionsResponse response) {
+                        return response.getSystemVersionMinorVersionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listSystemVersions operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

@@ -20,21 +20,6 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getNamespaceName() {
         return namespaceName;
     }
-    /**
-     * The name of the upload. This can be considered as a container name where different kind of
-     * logs will be collected and searched together. This upload name/id can further be used for
-     * retrieving the details of the upload, including its status or deleting the upload.
-     */
-    private String uploadName;
-
-    /**
-     * The name of the upload. This can be considered as a container name where different kind of
-     * logs will be collected and searched together. This upload name/id can further be used for
-     * retrieving the details of the upload, including its status or deleting the upload.
-     */
-    public String getUploadName() {
-        return uploadName;
-    }
     /** Name of the log source that will be used to process the files being uploaded. */
     private String logSourceName;
 
@@ -68,6 +53,21 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /** Log data */
     public java.io.InputStream getUploadLogFileBody() {
         return uploadLogFileBody;
+    }
+    /**
+     * The name of the upload. This can be considered as a container name where different kind of
+     * logs will be collected and searched together. This upload name/id can further be used for
+     * retrieving the details of the upload, including its status or deleting the upload.
+     */
+    private String uploadName;
+
+    /**
+     * The name of the upload. This can be considered as a container name where different kind of
+     * logs will be collected and searched together. This upload name/id can further be used for
+     * retrieving the details of the upload, including its status or deleting the upload.
+     */
+    public String getUploadName() {
+        return uploadName;
     }
     /** The entity OCID. */
     private String entityId;
@@ -264,26 +264,6 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The name of the upload. This can be considered as a container name where different kind
-         * of logs will be collected and searched together. This upload name/id can further be used
-         * for retrieving the details of the upload, including its status or deleting the upload.
-         */
-        private String uploadName = null;
-
-        /**
-         * The name of the upload. This can be considered as a container name where different kind
-         * of logs will be collected and searched together. This upload name/id can further be used
-         * for retrieving the details of the upload, including its status or deleting the upload.
-         *
-         * @param uploadName the value to set
-         * @return this builder instance
-         */
-        public Builder uploadName(String uploadName) {
-            this.uploadName = uploadName;
-            return this;
-        }
-
         /** Name of the log source that will be used to process the files being uploaded. */
         private String logSourceName = null;
 
@@ -341,6 +321,26 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public Builder uploadLogFileBody(java.io.InputStream uploadLogFileBody) {
             this.uploadLogFileBody = uploadLogFileBody;
+            return this;
+        }
+
+        /**
+         * The name of the upload. This can be considered as a container name where different kind
+         * of logs will be collected and searched together. This upload name/id can further be used
+         * for retrieving the details of the upload, including its status or deleting the upload.
+         */
+        private String uploadName = null;
+
+        /**
+         * The name of the upload. This can be considered as a container name where different kind
+         * of logs will be collected and searched together. This upload name/id can further be used
+         * for retrieving the details of the upload, including its status or deleting the upload.
+         *
+         * @param uploadName the value to set
+         * @return this builder instance
+         */
+        public Builder uploadName(String uploadName) {
+            this.uploadName = uploadName;
             return this;
         }
 
@@ -605,11 +605,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public Builder copy(UploadLogFileRequest o) {
             namespaceName(o.getNamespaceName());
-            uploadName(o.getUploadName());
             logSourceName(o.getLogSourceName());
             filename(o.getFilename());
             opcMetaLoggrpid(o.getOpcMetaLoggrpid());
             uploadLogFileBody(o.getUploadLogFileBody());
+            uploadName(o.getUploadName());
             entityId(o.getEntityId());
             timezone(o.getTimezone());
             charEncoding(o.getCharEncoding());
@@ -669,11 +669,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public UploadLogFileRequest buildWithoutInvocationCallback() {
             UploadLogFileRequest request = new UploadLogFileRequest();
             request.namespaceName = namespaceName;
-            request.uploadName = uploadName;
             request.logSourceName = logSourceName;
             request.filename = filename;
             request.opcMetaLoggrpid = opcMetaLoggrpid;
             request.uploadLogFileBody = uploadLogFileBody;
+            request.uploadName = uploadName;
             request.entityId = entityId;
             request.timezone = timezone;
             request.charEncoding = charEncoding;
@@ -687,8 +687,8 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.logSet = logSet;
             request.expect = expect;
             return request;
-            // new UploadLogFileRequest(namespaceName, uploadName, logSourceName, filename,
-            // opcMetaLoggrpid, uploadLogFileBody, entityId, timezone, charEncoding, dateFormat,
+            // new UploadLogFileRequest(namespaceName, logSourceName, filename, opcMetaLoggrpid,
+            // uploadLogFileBody, uploadName, entityId, timezone, charEncoding, dateFormat,
             // dateYear, invalidateCache, opcRequestId, contentMd5, contentType, opcRetryToken,
             // logSet, expect);
         }
@@ -702,11 +702,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public Builder toBuilder() {
         return new Builder()
                 .namespaceName(namespaceName)
-                .uploadName(uploadName)
                 .logSourceName(logSourceName)
                 .filename(filename)
                 .opcMetaLoggrpid(opcMetaLoggrpid)
                 .uploadLogFileBody(uploadLogFileBody)
+                .uploadName(uploadName)
                 .entityId(entityId)
                 .timezone(timezone)
                 .charEncoding(charEncoding)
@@ -736,11 +736,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
-        sb.append(",uploadName=").append(String.valueOf(this.uploadName));
         sb.append(",logSourceName=").append(String.valueOf(this.logSourceName));
         sb.append(",filename=").append(String.valueOf(this.filename));
         sb.append(",opcMetaLoggrpid=").append(String.valueOf(this.opcMetaLoggrpid));
         sb.append(",uploadLogFileBody=").append(String.valueOf(this.uploadLogFileBody));
+        sb.append(",uploadName=").append(String.valueOf(this.uploadName));
         sb.append(",entityId=").append(String.valueOf(this.entityId));
         sb.append(",timezone=").append(String.valueOf(this.timezone));
         sb.append(",charEncoding=").append(String.valueOf(this.charEncoding));
@@ -769,11 +769,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         UploadLogFileRequest other = (UploadLogFileRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.namespaceName, other.namespaceName)
-                && java.util.Objects.equals(this.uploadName, other.uploadName)
                 && java.util.Objects.equals(this.logSourceName, other.logSourceName)
                 && java.util.Objects.equals(this.filename, other.filename)
                 && java.util.Objects.equals(this.opcMetaLoggrpid, other.opcMetaLoggrpid)
                 && java.util.Objects.equals(this.uploadLogFileBody, other.uploadLogFileBody)
+                && java.util.Objects.equals(this.uploadName, other.uploadName)
                 && java.util.Objects.equals(this.entityId, other.entityId)
                 && java.util.Objects.equals(this.timezone, other.timezone)
                 && java.util.Objects.equals(this.charEncoding, other.charEncoding)
@@ -795,7 +795,6 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result =
                 (result * PRIME)
                         + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
-        result = (result * PRIME) + (this.uploadName == null ? 43 : this.uploadName.hashCode());
         result =
                 (result * PRIME)
                         + (this.logSourceName == null ? 43 : this.logSourceName.hashCode());
@@ -806,6 +805,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result =
                 (result * PRIME)
                         + (this.uploadLogFileBody == null ? 43 : this.uploadLogFileBody.hashCode());
+        result = (result * PRIME) + (this.uploadName == null ? 43 : this.uploadName.hashCode());
         result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
         result = (result * PRIME) + (this.timezone == null ? 43 : this.timezone.hashCode());
         result = (result * PRIME) + (this.charEncoding == null ? 43 : this.charEncoding.hashCode());

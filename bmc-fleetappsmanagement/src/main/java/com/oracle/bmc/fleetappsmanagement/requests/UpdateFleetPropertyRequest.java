@@ -10,15 +10,15 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetPropertyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFleetPropertyRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class UpdateFleetPropertyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.UpdateFleetPropertyDetails> {
 
-    /** unique FleetProperty identifier. */
+    /** Unique fleetProperty identifier. */
     private String fleetPropertyId;
 
-    /** unique FleetProperty identifier. */
+    /** Unique fleetProperty identifier. */
     public String getFleetPropertyId() {
         return fleetPropertyId;
     }
@@ -29,11 +29,11 @@ public class UpdateFleetPropertyRequest
     public String getFleetId() {
         return fleetId;
     }
-    /** The information to be updated. */
+    /** Attributes to update a fleet property. */
     private com.oracle.bmc.fleetappsmanagement.model.UpdateFleetPropertyDetails
             updateFleetPropertyDetails;
 
-    /** The information to be updated. */
+    /** Attributes to update a fleet property. */
     public com.oracle.bmc.fleetappsmanagement.model.UpdateFleetPropertyDetails
             getUpdateFleetPropertyDetails() {
         return updateFleetPropertyDetails;
@@ -81,11 +81,11 @@ public class UpdateFleetPropertyRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique FleetProperty identifier. */
+        /** Unique fleetProperty identifier. */
         private String fleetPropertyId = null;
 
         /**
-         * unique FleetProperty identifier.
+         * Unique fleetProperty identifier.
          *
          * @param fleetPropertyId the value to set
          * @return this builder instance
@@ -109,12 +109,12 @@ public class UpdateFleetPropertyRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /** Attributes to update a fleet property. */
         private com.oracle.bmc.fleetappsmanagement.model.UpdateFleetPropertyDetails
                 updateFleetPropertyDetails = null;
 
         /**
-         * The information to be updated.
+         * Attributes to update a fleet property.
          *
          * @param updateFleetPropertyDetails the value to set
          * @return this builder instance

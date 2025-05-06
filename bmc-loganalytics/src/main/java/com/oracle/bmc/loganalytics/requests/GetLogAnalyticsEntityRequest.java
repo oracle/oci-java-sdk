@@ -36,6 +36,13 @@ public class GetLogAnalyticsEntityRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Option to return count of associated log sources for log analytics entity(s). */
+    private Boolean isShowAssociatedSourcesCount;
+
+    /** Option to return count of associated log sources for log analytics entity(s). */
+    public Boolean getIsShowAssociatedSourcesCount() {
+        return isShowAssociatedSourcesCount;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -85,6 +92,20 @@ public class GetLogAnalyticsEntityRequest
             return this;
         }
 
+        /** Option to return count of associated log sources for log analytics entity(s). */
+        private Boolean isShowAssociatedSourcesCount = null;
+
+        /**
+         * Option to return count of associated log sources for log analytics entity(s).
+         *
+         * @param isShowAssociatedSourcesCount the value to set
+         * @return this builder instance
+         */
+        public Builder isShowAssociatedSourcesCount(Boolean isShowAssociatedSourcesCount) {
+            this.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -118,6 +139,7 @@ public class GetLogAnalyticsEntityRequest
             namespaceName(o.getNamespaceName());
             logAnalyticsEntityId(o.getLogAnalyticsEntityId());
             opcRequestId(o.getOpcRequestId());
+            isShowAssociatedSourcesCount(o.getIsShowAssociatedSourcesCount());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -155,8 +177,10 @@ public class GetLogAnalyticsEntityRequest
             request.namespaceName = namespaceName;
             request.logAnalyticsEntityId = logAnalyticsEntityId;
             request.opcRequestId = opcRequestId;
+            request.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             return request;
-            // new GetLogAnalyticsEntityRequest(namespaceName, logAnalyticsEntityId, opcRequestId);
+            // new GetLogAnalyticsEntityRequest(namespaceName, logAnalyticsEntityId, opcRequestId,
+            // isShowAssociatedSourcesCount);
         }
     }
 
@@ -169,7 +193,8 @@ public class GetLogAnalyticsEntityRequest
         return new Builder()
                 .namespaceName(namespaceName)
                 .logAnalyticsEntityId(logAnalyticsEntityId)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isShowAssociatedSourcesCount(isShowAssociatedSourcesCount);
     }
 
     /**
@@ -189,6 +214,8 @@ public class GetLogAnalyticsEntityRequest
         sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
         sb.append(",logAnalyticsEntityId=").append(String.valueOf(this.logAnalyticsEntityId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isShowAssociatedSourcesCount=")
+                .append(String.valueOf(this.isShowAssociatedSourcesCount));
         sb.append(")");
         return sb.toString();
     }
@@ -206,7 +233,9 @@ public class GetLogAnalyticsEntityRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.namespaceName, other.namespaceName)
                 && java.util.Objects.equals(this.logAnalyticsEntityId, other.logAnalyticsEntityId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.isShowAssociatedSourcesCount, other.isShowAssociatedSourcesCount);
     }
 
     @Override
@@ -222,6 +251,11 @@ public class GetLogAnalyticsEntityRequest
                                 ? 43
                                 : this.logAnalyticsEntityId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isShowAssociatedSourcesCount == null
+                                ? 43
+                                : this.isShowAssociatedSourcesCount.hashCode());
         return result;
     }
 }

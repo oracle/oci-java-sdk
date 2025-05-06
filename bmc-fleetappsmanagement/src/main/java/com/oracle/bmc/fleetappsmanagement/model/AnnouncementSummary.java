@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = AnnouncementSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -229,12 +229,12 @@ public final class AnnouncementSummary
             this.__explicitlySet__.add("summary");
             return this;
         }
-        /** Announcement Details. */
+        /** Announcement details. */
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private String details;
 
         /**
-         * Announcement Details.
+         * Announcement details.
          *
          * @param details the value to set
          * @return this builder
@@ -274,12 +274,12 @@ public final class AnnouncementSummary
             this.__explicitlySet__.add("announcementStart");
             return this;
         }
-        /** Announcement end date */
+        /** Announcement end date. */
         @com.fasterxml.jackson.annotation.JsonProperty("announcementEnd")
         private java.util.Date announcementEnd;
 
         /**
-         * Announcement end date
+         * Announcement end date.
          *
          * @param announcementEnd the value to set
          * @return this builder
@@ -587,12 +587,12 @@ public final class AnnouncementSummary
         return summary;
     }
 
-    /** Announcement Details. */
+    /** Announcement details. */
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final String details;
 
     /**
-     * Announcement Details.
+     * Announcement details.
      *
      * @return the value
      */
@@ -626,12 +626,12 @@ public final class AnnouncementSummary
         return announcementStart;
     }
 
-    /** Announcement end date */
+    /** Announcement end date. */
     @com.fasterxml.jackson.annotation.JsonProperty("announcementEnd")
     private final java.util.Date announcementEnd;
 
     /**
-     * Announcement end date
+     * Announcement end date.
      *
      * @return the value
      */

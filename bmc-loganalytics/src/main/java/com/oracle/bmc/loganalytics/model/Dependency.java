@@ -22,12 +22,25 @@ package com.oracle.bmc.loganalytics.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class Dependency extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"type", "referenceType", "referenceId"})
-    public Dependency(String type, String referenceType, Long referenceId) {
+    @java.beans.ConstructorProperties({
+        "type",
+        "referenceType",
+        "referenceId",
+        "referenceName",
+        "referenceDisplayName"
+    })
+    public Dependency(
+            String type,
+            String referenceType,
+            Long referenceId,
+            String referenceName,
+            String referenceDisplayName) {
         super();
         this.type = type;
         this.referenceType = referenceType;
         this.referenceId = referenceId;
+        this.referenceName = referenceName;
+        this.referenceDisplayName = referenceDisplayName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -77,12 +90,48 @@ public final class Dependency extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("referenceId");
             return this;
         }
+        /** The name of the dependency object */
+        @com.fasterxml.jackson.annotation.JsonProperty("referenceName")
+        private String referenceName;
+
+        /**
+         * The name of the dependency object
+         *
+         * @param referenceName the value to set
+         * @return this builder
+         */
+        public Builder referenceName(String referenceName) {
+            this.referenceName = referenceName;
+            this.__explicitlySet__.add("referenceName");
+            return this;
+        }
+        /** The display name of the dependency object */
+        @com.fasterxml.jackson.annotation.JsonProperty("referenceDisplayName")
+        private String referenceDisplayName;
+
+        /**
+         * The display name of the dependency object
+         *
+         * @param referenceDisplayName the value to set
+         * @return this builder
+         */
+        public Builder referenceDisplayName(String referenceDisplayName) {
+            this.referenceDisplayName = referenceDisplayName;
+            this.__explicitlySet__.add("referenceDisplayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Dependency build() {
-            Dependency model = new Dependency(this.type, this.referenceType, this.referenceId);
+            Dependency model =
+                    new Dependency(
+                            this.type,
+                            this.referenceType,
+                            this.referenceId,
+                            this.referenceName,
+                            this.referenceDisplayName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -99,6 +148,12 @@ public final class Dependency extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("referenceId")) {
                 this.referenceId(model.getReferenceId());
+            }
+            if (model.wasPropertyExplicitlySet("referenceName")) {
+                this.referenceName(model.getReferenceName());
+            }
+            if (model.wasPropertyExplicitlySet("referenceDisplayName")) {
+                this.referenceDisplayName(model.getReferenceDisplayName());
             }
             return this;
         }
@@ -152,6 +207,32 @@ public final class Dependency extends com.oracle.bmc.http.client.internal.Explic
         return referenceId;
     }
 
+    /** The name of the dependency object */
+    @com.fasterxml.jackson.annotation.JsonProperty("referenceName")
+    private final String referenceName;
+
+    /**
+     * The name of the dependency object
+     *
+     * @return the value
+     */
+    public String getReferenceName() {
+        return referenceName;
+    }
+
+    /** The display name of the dependency object */
+    @com.fasterxml.jackson.annotation.JsonProperty("referenceDisplayName")
+    private final String referenceDisplayName;
+
+    /**
+     * The display name of the dependency object
+     *
+     * @return the value
+     */
+    public String getReferenceDisplayName() {
+        return referenceDisplayName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -170,6 +251,8 @@ public final class Dependency extends com.oracle.bmc.http.client.internal.Explic
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", referenceType=").append(String.valueOf(this.referenceType));
         sb.append(", referenceId=").append(String.valueOf(this.referenceId));
+        sb.append(", referenceName=").append(String.valueOf(this.referenceName));
+        sb.append(", referenceDisplayName=").append(String.valueOf(this.referenceDisplayName));
         sb.append(")");
         return sb.toString();
     }
@@ -187,6 +270,8 @@ public final class Dependency extends com.oracle.bmc.http.client.internal.Explic
         return java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.referenceType, other.referenceType)
                 && java.util.Objects.equals(this.referenceId, other.referenceId)
+                && java.util.Objects.equals(this.referenceName, other.referenceName)
+                && java.util.Objects.equals(this.referenceDisplayName, other.referenceDisplayName)
                 && super.equals(other);
     }
 
@@ -199,6 +284,14 @@ public final class Dependency extends com.oracle.bmc.http.client.internal.Explic
                 (result * PRIME)
                         + (this.referenceType == null ? 43 : this.referenceType.hashCode());
         result = (result * PRIME) + (this.referenceId == null ? 43 : this.referenceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referenceName == null ? 43 : this.referenceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referenceDisplayName == null
+                                ? 43
+                                : this.referenceDisplayName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -28,7 +28,9 @@ public final class ParseQueryOutput
         "columns",
         "responseTimeInMs",
         "timeFilter",
-        "commands"
+        "commands",
+        "variables",
+        "properties"
     })
     public ParseQueryOutput(
             String displayQueryString,
@@ -36,7 +38,9 @@ public final class ParseQueryOutput
             java.util.List<AbstractColumn> columns,
             Long responseTimeInMs,
             TimeRange timeFilter,
-            java.util.List<AbstractCommandDescriptor> commands) {
+            java.util.List<AbstractCommandDescriptor> commands,
+            java.util.List<VariableDefinition> variables,
+            java.util.List<PropertyDefinition> properties) {
         super();
         this.displayQueryString = displayQueryString;
         this.internalQueryString = internalQueryString;
@@ -44,6 +48,8 @@ public final class ParseQueryOutput
         this.responseTimeInMs = responseTimeInMs;
         this.timeFilter = timeFilter;
         this.commands = commands;
+        this.variables = variables;
+        this.properties = properties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -132,6 +138,36 @@ public final class ParseQueryOutput
             this.__explicitlySet__.add("commands");
             return this;
         }
+        /** Optional list of variables for the query. */
+        @com.fasterxml.jackson.annotation.JsonProperty("variables")
+        private java.util.List<VariableDefinition> variables;
+
+        /**
+         * Optional list of variables for the query.
+         *
+         * @param variables the value to set
+         * @return this builder
+         */
+        public Builder variables(java.util.List<VariableDefinition> variables) {
+            this.variables = variables;
+            this.__explicitlySet__.add("variables");
+            return this;
+        }
+        /** Optional list of properties for the query. */
+        @com.fasterxml.jackson.annotation.JsonProperty("properties")
+        private java.util.List<PropertyDefinition> properties;
+
+        /**
+         * Optional list of properties for the query.
+         *
+         * @param properties the value to set
+         * @return this builder
+         */
+        public Builder properties(java.util.List<PropertyDefinition> properties) {
+            this.properties = properties;
+            this.__explicitlySet__.add("properties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -144,7 +180,9 @@ public final class ParseQueryOutput
                             this.columns,
                             this.responseTimeInMs,
                             this.timeFilter,
-                            this.commands);
+                            this.commands,
+                            this.variables,
+                            this.properties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -170,6 +208,12 @@ public final class ParseQueryOutput
             }
             if (model.wasPropertyExplicitlySet("commands")) {
                 this.commands(model.getCommands());
+            }
+            if (model.wasPropertyExplicitlySet("variables")) {
+                this.variables(model.getVariables());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
             }
             return this;
         }
@@ -256,6 +300,32 @@ public final class ParseQueryOutput
         return commands;
     }
 
+    /** Optional list of variables for the query. */
+    @com.fasterxml.jackson.annotation.JsonProperty("variables")
+    private final java.util.List<VariableDefinition> variables;
+
+    /**
+     * Optional list of variables for the query.
+     *
+     * @return the value
+     */
+    public java.util.List<VariableDefinition> getVariables() {
+        return variables;
+    }
+
+    /** Optional list of properties for the query. */
+    @com.fasterxml.jackson.annotation.JsonProperty("properties")
+    private final java.util.List<PropertyDefinition> properties;
+
+    /**
+     * Optional list of properties for the query.
+     *
+     * @return the value
+     */
+    public java.util.List<PropertyDefinition> getProperties() {
+        return properties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -277,6 +347,8 @@ public final class ParseQueryOutput
         sb.append(", responseTimeInMs=").append(String.valueOf(this.responseTimeInMs));
         sb.append(", timeFilter=").append(String.valueOf(this.timeFilter));
         sb.append(", commands=").append(String.valueOf(this.commands));
+        sb.append(", variables=").append(String.valueOf(this.variables));
+        sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(")");
         return sb.toString();
     }
@@ -297,6 +369,8 @@ public final class ParseQueryOutput
                 && java.util.Objects.equals(this.responseTimeInMs, other.responseTimeInMs)
                 && java.util.Objects.equals(this.timeFilter, other.timeFilter)
                 && java.util.Objects.equals(this.commands, other.commands)
+                && java.util.Objects.equals(this.variables, other.variables)
+                && java.util.Objects.equals(this.properties, other.properties)
                 && super.equals(other);
     }
 
@@ -320,6 +394,8 @@ public final class ParseQueryOutput
                         + (this.responseTimeInMs == null ? 43 : this.responseTimeInMs.hashCode());
         result = (result * PRIME) + (this.timeFilter == null ? 43 : this.timeFilter.hashCode());
         result = (result * PRIME) + (this.commands == null ? 43 : this.commands.hashCode());
+        result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Notification information to get notified when the fleet status changes. <br>
+ * The configuration details for the move operation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,49 +15,32 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NotificationPreferences.Builder.class)
+        builder = ChangePropertyCompartmentDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NotificationPreferences
+public final class ChangePropertyCompartmentDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"topicId", "compartmentId", "preferences"})
-    public NotificationPreferences(String topicId, String compartmentId, Preferences preferences) {
+    @java.beans.ConstructorProperties({"compartmentId"})
+    public ChangePropertyCompartmentDetails(String compartmentId) {
         super();
-        this.topicId = topicId;
         this.compartmentId = compartmentId;
-        this.preferences = preferences;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Topic Id where the notifications will be directed. A topic is a communication channel for
-         * sending messages on chosen events to subscriptions.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to move the Property to.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("topicId")
-        private String topicId;
-
-        /**
-         * Topic Id where the notifications will be directed. A topic is a communication channel for
-         * sending messages on chosen events to subscriptions.
-         *
-         * @param topicId the value to set
-         * @return this builder
-         */
-        public Builder topicId(String topicId) {
-            this.topicId = topicId;
-            this.__explicitlySet__.add("topicId");
-            return this;
-        }
-        /** Compartment ID the topic belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment ID the topic belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to move the Property to.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -68,21 +51,12 @@ public final class NotificationPreferences
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("preferences")
-        private Preferences preferences;
-
-        public Builder preferences(Preferences preferences) {
-            this.preferences = preferences;
-            this.__explicitlySet__.add("preferences");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public NotificationPreferences build() {
-            NotificationPreferences model =
-                    new NotificationPreferences(this.topicId, this.compartmentId, this.preferences);
+        public ChangePropertyCompartmentDetails build() {
+            ChangePropertyCompartmentDetails model =
+                    new ChangePropertyCompartmentDetails(this.compartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -90,15 +64,9 @@ public final class NotificationPreferences
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NotificationPreferences model) {
-            if (model.wasPropertyExplicitlySet("topicId")) {
-                this.topicId(model.getTopicId());
-            }
+        public Builder copy(ChangePropertyCompartmentDetails model) {
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
-            }
-            if (model.wasPropertyExplicitlySet("preferences")) {
-                this.preferences(model.getPreferences());
             }
             return this;
         }
@@ -114,40 +82,20 @@ public final class NotificationPreferences
     }
 
     /**
-     * Topic Id where the notifications will be directed. A topic is a communication channel for
-     * sending messages on chosen events to subscriptions.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to move the Property to.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("topicId")
-    private final String topicId;
-
-    /**
-     * Topic Id where the notifications will be directed. A topic is a communication channel for
-     * sending messages on chosen events to subscriptions.
-     *
-     * @return the value
-     */
-    public String getTopicId() {
-        return topicId;
-    }
-
-    /** Compartment ID the topic belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment ID the topic belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to move the Property to.
      *
      * @return the value
      */
     public String getCompartmentId() {
         return compartmentId;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("preferences")
-    private final Preferences preferences;
-
-    public Preferences getPreferences() {
-        return preferences;
     }
 
     @Override
@@ -163,11 +111,9 @@ public final class NotificationPreferences
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("NotificationPreferences(");
+        sb.append("ChangePropertyCompartmentDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("topicId=").append(String.valueOf(this.topicId));
-        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", preferences=").append(String.valueOf(this.preferences));
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -177,14 +123,12 @@ public final class NotificationPreferences
         if (this == o) {
             return true;
         }
-        if (!(o instanceof NotificationPreferences)) {
+        if (!(o instanceof ChangePropertyCompartmentDetails)) {
             return false;
         }
 
-        NotificationPreferences other = (NotificationPreferences) o;
-        return java.util.Objects.equals(this.topicId, other.topicId)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.preferences, other.preferences)
+        ChangePropertyCompartmentDetails other = (ChangePropertyCompartmentDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && super.equals(other);
     }
 
@@ -192,11 +136,9 @@ public final class NotificationPreferences
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.topicId == null ? 43 : this.topicId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.preferences == null ? 43 : this.preferences.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -11,14 +11,20 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListCompliancePoliciesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListCompliancePoliciesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -43,10 +49,23 @@ public class ListCompliancePoliciesRequest
     public String getDisplayName() {
         return displayName;
     }
-    /** unique CompliancePolicy identifier. */
+    /** A filter to return Platform Configurations whose type matches the given type. */
+    private com.oracle.bmc.fleetappsmanagement.model.CompliancePolicy.Type type;
+
+    /** A filter to return Platform Configurations whose type matches the given type. */
+    public com.oracle.bmc.fleetappsmanagement.model.CompliancePolicy.Type getType() {
+        return type;
+    }
+    /**
+     * Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId
+     * or id must be provided.
+     */
     private String id;
 
-    /** unique CompliancePolicy identifier. */
+    /**
+     * Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId
+     * or id must be provided.
+     */
     public String getId() {
         return id;
     }
@@ -81,50 +100,13 @@ public class ListCompliancePoliciesRequest
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    private SortBy sortBy;
+    private com.oracle.bmc.fleetappsmanagement.model.CompliancePolicySortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.CompliancePolicySortBy getSortBy() {
         return sortBy;
     }
     /** The client request ID for tracing. */
@@ -141,11 +123,15 @@ public class ListCompliancePoliciesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -190,11 +176,29 @@ public class ListCompliancePoliciesRequest
             return this;
         }
 
-        /** unique CompliancePolicy identifier. */
+        /** A filter to return Platform Configurations whose type matches the given type. */
+        private com.oracle.bmc.fleetappsmanagement.model.CompliancePolicy.Type type = null;
+
+        /**
+         * A filter to return Platform Configurations whose type matches the given type.
+         *
+         * @param type the value to set
+         * @return this builder instance
+         */
+        public Builder type(com.oracle.bmc.fleetappsmanagement.model.CompliancePolicy.Type type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Unique identifier or OCID for listing a single Compliance Policy by id. Either
+         * compartmentId or id must be provided.
+         */
         private String id = null;
 
         /**
-         * unique CompliancePolicy identifier.
+         * Unique identifier or OCID for listing a single Compliance Policy by id. Either
+         * compartmentId or id must be provided.
          *
          * @param id the value to set
          * @return this builder instance
@@ -254,7 +258,7 @@ public class ListCompliancePoliciesRequest
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for displayName is ascending.
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.CompliancePolicySortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
@@ -263,7 +267,8 @@ public class ListCompliancePoliciesRequest
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(
+                com.oracle.bmc.fleetappsmanagement.model.CompliancePolicySortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }
@@ -315,6 +320,7 @@ public class ListCompliancePoliciesRequest
             compartmentId(o.getCompartmentId());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
+            type(o.getType());
             id(o.getId());
             limit(o.getLimit());
             page(o.getPage());
@@ -358,6 +364,7 @@ public class ListCompliancePoliciesRequest
             request.compartmentId = compartmentId;
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
+            request.type = type;
             request.id = id;
             request.limit = limit;
             request.page = page;
@@ -365,8 +372,8 @@ public class ListCompliancePoliciesRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListCompliancePoliciesRequest(compartmentId, lifecycleState, displayName, id,
-            // limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListCompliancePoliciesRequest(compartmentId, lifecycleState, displayName, type,
+            // id, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -380,6 +387,7 @@ public class ListCompliancePoliciesRequest
                 .compartmentId(compartmentId)
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
+                .type(type)
                 .id(id)
                 .limit(limit)
                 .page(page)
@@ -405,6 +413,7 @@ public class ListCompliancePoliciesRequest
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",type=").append(String.valueOf(this.type));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -429,6 +438,7 @@ public class ListCompliancePoliciesRequest
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -448,6 +458,7 @@ public class ListCompliancePoliciesRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

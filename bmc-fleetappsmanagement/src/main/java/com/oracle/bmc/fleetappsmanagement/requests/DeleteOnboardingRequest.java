@@ -10,7 +10,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteOnboardingExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteOnboardingRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class DeleteOnboardingRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** A filter to return resources whose Onboarding identifier matches the given identifier. */

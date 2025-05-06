@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementOperationsAsyncClient
         extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements FleetAppsManagementOperationsAsync {
@@ -124,6 +124,44 @@ public class FleetAppsManagementOperationsAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ChangePatchCompartmentResponse> changePatchCompartment(
+            ChangePatchCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangePatchCompartmentRequest, ChangePatchCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPatchId(), "patchId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePatchCompartmentDetails(),
+                "changePatchCompartmentDetails is required");
+
+        return clientCall(request, ChangePatchCompartmentResponse::builder)
+                .logger(LOG, "changePatchCompartment")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ChangePatchCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Patch/ChangePatchCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePatchCompartmentRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("patches")
+                .appendPathParam(request.getPatchId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangePatchCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangePatchCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePatchResponse> createPatch(
             CreatePatchRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreatePatchRequest, CreatePatchResponse>
@@ -135,10 +173,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "CreatePatch",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/CreatePatch")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Patch/CreatePatch")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePatchRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("patches")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -168,10 +206,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "CreateSchedulerDefinition",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/CreateSchedulerDefinition")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerDefinition/CreateSchedulerDefinition")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSchedulerDefinitionRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerDefinitions")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -207,10 +245,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "DeletePatch",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/DeletePatch")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Patch/DeletePatch")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePatchRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("patches")
                 .appendPathParam(request.getPatchId())
                 .accept("application/json")
@@ -238,10 +276,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "DeleteSchedulerDefinition",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/DeleteSchedulerDefinition")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerDefinition/DeleteSchedulerDefinition")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSchedulerDefinitionRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerDefinitions")
                 .appendPathParam(request.getSchedulerDefinitionId())
                 .accept("application/json")
@@ -266,10 +304,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "DeleteSchedulerJob",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/DeleteSchedulerJob")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJob/DeleteSchedulerJob")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSchedulerJobRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobs")
                 .appendPathParam(request.getSchedulerJobId())
                 .accept("application/json")
@@ -295,10 +333,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "ExportComplianceReport",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceRecord/ExportComplianceReport")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ComplianceRecord/ExportComplianceReport")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ExportComplianceReportRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("complianceRecords")
                 .appendPathParam("actions")
                 .appendPathParam("exportComplianceReport")
@@ -339,10 +377,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "GetExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Execution/GetExecution")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Execution/GetExecution")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetExecutionRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobs")
                 .appendPathParam(request.getSchedulerJobId())
                 .appendPathParam("jobActivities")
@@ -378,10 +416,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "GetJobActivity",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/JobActivity/GetJobActivity")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/JobActivity/GetJobActivity")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJobActivityRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobs")
                 .appendPathParam(request.getSchedulerJobId())
                 .appendPathParam("jobActivities")
@@ -410,10 +448,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "GetPatch",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/GetPatch")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Patch/GetPatch")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPatchRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("patches")
                 .appendPathParam(request.getPatchId())
                 .accept("application/json")
@@ -442,10 +480,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "GetSchedulerDefinition",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/GetSchedulerDefinition")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerDefinition/GetSchedulerDefinition")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSchedulerDefinitionRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerDefinitions")
                 .appendPathParam(request.getSchedulerDefinitionId())
                 .accept("application/json")
@@ -473,10 +511,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "GetSchedulerJob",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/GetSchedulerJob")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJob/GetSchedulerJob")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSchedulerJobRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobs")
                 .appendPathParam(request.getSchedulerJobId())
                 .accept("application/json")
@@ -496,16 +534,17 @@ public class FleetAppsManagementOperationsAsyncClient
             final com.oracle.bmc.responses.AsyncHandler<
                             ListComplianceRecordsRequest, ListComplianceRecordsResponse>
                     handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListComplianceRecordsResponse::builder)
                 .logger(LOG, "listComplianceRecords")
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "ListComplianceRecords",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceRecordCollection/ListComplianceRecords")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ComplianceRecordCollection/ListComplianceRecords")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComplianceRecordsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("complianceRecords")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("resourceId", request.getResourceId())
@@ -514,6 +553,7 @@ public class FleetAppsManagementOperationsAsyncClient
                 .appendQueryParam("productStack", request.getProductStack())
                 .appendQueryParam("targetName", request.getTargetName())
                 .appendQueryParam("complianceState", request.getComplianceState())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -548,10 +588,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "ListExecutions",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ExecutionCollection/ListExecutions")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ExecutionCollection/ListExecutions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListExecutionsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobs")
                 .appendPathParam(request.getSchedulerJobId())
                 .appendPathParam("jobActivities")
@@ -580,6 +620,44 @@ public class FleetAppsManagementOperationsAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ListInventoryRecordsResponse> listInventoryRecords(
+            ListInventoryRecordsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListInventoryRecordsRequest, ListInventoryRecordsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListInventoryRecordsResponse::builder)
+                .logger(LOG, "listInventoryRecords")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListInventoryRecords",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/InventoryRecordCollection/ListInventoryRecords")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInventoryRecordsRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("inventoryRecords")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("fleetId", request.getFleetId())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.InventoryRecordCollection.class,
+                        ListInventoryRecordsResponse.Builder::inventoryRecordCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInventoryRecordsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInventoryRecordsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPatchesResponse> listPatches(
             ListPatchesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse>
@@ -590,10 +668,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "ListPatches",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PatchCollection/ListPatches")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PatchCollection/ListPatches")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPatchesRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("patches")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("productId", request.getProductId())
@@ -641,10 +719,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "ListResources",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ResourceCollection/ListResources")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ResourceCollection/ListResources")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListResourcesRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobs")
                 .appendPathParam(request.getSchedulerJobId())
                 .appendPathParam("jobActivities")
@@ -685,14 +763,13 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "ListScheduledFleets",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ScheduledFleetCollection/ListScheduledFleets")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ScheduledFleetCollection/ListScheduledFleets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListScheduledFleetsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerDefinitions")
                 .appendPathParam(request.getSchedulerDefinitionId())
                 .appendPathParam("scheduledFleets")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -722,10 +799,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "ListSchedulerDefinitions",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinitionCollection/ListSchedulerDefinitions")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerDefinitionCollection/ListSchedulerDefinitions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSchedulerDefinitionsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerDefinitions")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -734,6 +811,11 @@ public class FleetAppsManagementOperationsAsyncClient
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("maintenanceWindowId", request.getMaintenanceWindowId())
                 .appendQueryParam("runbookId", request.getRunbookId())
+                .appendQueryParam("runbookVersionName", request.getRunbookVersionName())
+                .appendQueryParam(
+                        "timeScheduledGreaterThanOrEqualTo",
+                        request.getTimeScheduledGreaterThanOrEqualTo())
+                .appendQueryParam("timeScheduledLessThan", request.getTimeScheduledLessThan())
                 .appendQueryParam("fleetId", request.getFleetId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -755,6 +837,51 @@ public class FleetAppsManagementOperationsAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ListSchedulerExecutionsResponse> listSchedulerExecutions(
+            ListSchedulerExecutionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulerExecutionsRequest, ListSchedulerExecutionsResponse>
+                    handler) {
+
+        return clientCall(request, ListSchedulerExecutionsResponse::builder)
+                .logger(LOG, "listSchedulerExecutions")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListSchedulerExecutions",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerExecutionCollection/ListSchedulerExecutions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulerExecutionsRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("schedulerExecutions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam(
+                        "timeScheduledGreaterThanOrEqualTo",
+                        request.getTimeScheduledGreaterThanOrEqualTo())
+                .appendQueryParam("timeScheduledLessThan", request.getTimeScheduledLessThan())
+                .appendQueryParam("schedulerDefintionId", request.getSchedulerDefintionId())
+                .appendQueryParam("schedulerJobId", request.getSchedulerJobId())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("runbookId", request.getRunbookId())
+                .appendQueryParam("runbookVersionName", request.getRunbookVersionName())
+                .appendQueryParam("substate", request.getSubstate())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.SchedulerExecutionCollection.class,
+                        ListSchedulerExecutionsResponse.Builder::schedulerExecutionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulerExecutionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulerExecutionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSchedulerJobsResponse> listSchedulerJobs(
             ListSchedulerJobsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -766,12 +893,13 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "ListSchedulerJobs",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJobCollection/ListSchedulerJobs")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJobCollection/ListSchedulerJobs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSchedulerJobsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobs")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("fleetId", request.getFleetId())
                 .appendQueryParam(
@@ -779,10 +907,10 @@ public class FleetAppsManagementOperationsAsyncClient
                         request.getTimeScheduledGreaterThanOrEqualTo())
                 .appendQueryParam("timeScheduledLessThan", request.getTimeScheduledLessThan())
                 .appendQueryParam("isRemediationJobNeeded", request.getIsRemediationJobNeeded())
-                .appendQueryParam("subState", request.getSubState())
+                .appendQueryParam("substate", request.getSubstate())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("id", request.getId())
-                .appendQueryParam("defintionId", request.getDefintionId())
+                .appendQueryParam("schedulerDefintionId", request.getSchedulerDefintionId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -814,10 +942,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "ListSteps",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/StepCollection/ListSteps")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/StepCollection/ListSteps")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListStepsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobs")
                 .appendPathParam(request.getSchedulerJobId())
                 .appendPathParam("jobActivities")
@@ -858,10 +986,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "ManageJobExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/ManageJobExecution")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJob/ManageJobExecution")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ManageJobExecutionRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobs")
                 .appendPathParam(request.getSchedulerJobId())
                 .appendPathParam("actions")
@@ -892,12 +1020,13 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "SummarizeComplianceRecordCounts",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceRecordAggregationCollection/SummarizeComplianceRecordCounts")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ComplianceRecordAggregationCollection/SummarizeComplianceRecordCounts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeComplianceRecordCountsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("complianceRecordCounts")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -931,12 +1060,13 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "SummarizeManagedEntityCounts",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ManagedEntityAggregationCollection/SummarizeManagedEntityCounts")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ManagedEntityAggregationCollection/SummarizeManagedEntityCounts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeManagedEntityCountsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("managedEntityCounts")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -969,12 +1099,13 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "SummarizeSchedulerJobCounts",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJobAggregationCollection/SummarizeSchedulerJobCounts")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJobAggregationCollection/SummarizeSchedulerJobCounts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeSchedulerJobCountsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobCounts")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -1006,10 +1137,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "UpdatePatch",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/UpdatePatch")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Patch/UpdatePatch")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdatePatchRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("patches")
                 .appendPathParam(request.getPatchId())
                 .accept("application/json")
@@ -1041,10 +1172,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "UpdateSchedulerDefinition",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/UpdateSchedulerDefinition")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerDefinition/UpdateSchedulerDefinition")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSchedulerDefinitionRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerDefinitions")
                 .appendPathParam(request.getSchedulerDefinitionId())
                 .accept("application/json")
@@ -1075,10 +1206,10 @@ public class FleetAppsManagementOperationsAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementOperations",
                         "UpdateSchedulerJob",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/UpdateSchedulerJob")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJob/UpdateSchedulerJob")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSchedulerJobRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("schedulerJobs")
                 .appendPathParam(request.getSchedulerJobId())
                 .accept("application/json")

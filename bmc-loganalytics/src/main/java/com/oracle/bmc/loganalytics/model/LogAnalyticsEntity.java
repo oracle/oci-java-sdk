@@ -46,7 +46,8 @@ public final class LogAnalyticsEntity
         "hostname",
         "sourceId",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "associatedSourcesCount"
     })
     public LogAnalyticsEntity(
             String id,
@@ -71,7 +72,8 @@ public final class LogAnalyticsEntity
             String hostname,
             String sourceId,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Integer associatedSourcesCount) {
         super();
         this.id = id;
         this.name = name;
@@ -96,6 +98,7 @@ public final class LogAnalyticsEntity
         this.sourceId = sourceId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.associatedSourcesCount = associatedSourcesCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -478,6 +481,21 @@ public final class LogAnalyticsEntity
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** The count of associated log sources for a given log analytics entity. */
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedSourcesCount")
+        private Integer associatedSourcesCount;
+
+        /**
+         * The count of associated log sources for a given log analytics entity.
+         *
+         * @param associatedSourcesCount the value to set
+         * @return this builder
+         */
+        public Builder associatedSourcesCount(Integer associatedSourcesCount) {
+            this.associatedSourcesCount = associatedSourcesCount;
+            this.__explicitlySet__.add("associatedSourcesCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -507,7 +525,8 @@ public final class LogAnalyticsEntity
                             this.hostname,
                             this.sourceId,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.associatedSourcesCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -584,6 +603,9 @@ public final class LogAnalyticsEntity
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("associatedSourcesCount")) {
+                this.associatedSourcesCount(model.getAssociatedSourcesCount());
             }
             return this;
         }
@@ -921,6 +943,19 @@ public final class LogAnalyticsEntity
         return definedTags;
     }
 
+    /** The count of associated log sources for a given log analytics entity. */
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedSourcesCount")
+    private final Integer associatedSourcesCount;
+
+    /**
+     * The count of associated log sources for a given log analytics entity.
+     *
+     * @return the value
+     */
+    public Integer getAssociatedSourcesCount() {
+        return associatedSourcesCount;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -961,6 +996,7 @@ public final class LogAnalyticsEntity
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", associatedSourcesCount=").append(String.valueOf(this.associatedSourcesCount));
         sb.append(")");
         return sb.toString();
     }
@@ -1001,6 +1037,8 @@ public final class LogAnalyticsEntity
                 && java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.associatedSourcesCount, other.associatedSourcesCount)
                 && super.equals(other);
     }
 
@@ -1065,6 +1103,11 @@ public final class LogAnalyticsEntity
         result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedSourcesCount == null
+                                ? 43
+                                : this.associatedSourcesCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

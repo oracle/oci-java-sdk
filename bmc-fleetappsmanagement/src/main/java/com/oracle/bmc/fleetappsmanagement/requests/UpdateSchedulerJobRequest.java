@@ -10,7 +10,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateSchedulerJobExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSchedulerJobRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class UpdateSchedulerJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.UpdateSchedulerJobDetails> {
@@ -22,11 +22,11 @@ public class UpdateSchedulerJobRequest
     public String getSchedulerJobId() {
         return schedulerJobId;
     }
-    /** The information to be updated. */
+    /** Attributes to update a schedule job. */
     private com.oracle.bmc.fleetappsmanagement.model.UpdateSchedulerJobDetails
             updateSchedulerJobDetails;
 
-    /** The information to be updated. */
+    /** Attributes to update a schedule job. */
     public com.oracle.bmc.fleetappsmanagement.model.UpdateSchedulerJobDetails
             getUpdateSchedulerJobDetails() {
         return updateSchedulerJobDetails;
@@ -88,12 +88,12 @@ public class UpdateSchedulerJobRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /** Attributes to update a schedule job. */
         private com.oracle.bmc.fleetappsmanagement.model.UpdateSchedulerJobDetails
                 updateSchedulerJobDetails = null;
 
         /**
-         * The information to be updated.
+         * Attributes to update a schedule job.
          *
          * @param updateSchedulerJobDetails the value to set
          * @return this builder instance

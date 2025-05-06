@@ -16,7 +16,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CompliancePolicyCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -32,12 +32,12 @@ public final class CompliancePolicyCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of compliancePolicys. */
+        /** List of compliance policies. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<CompliancePolicySummary> items;
 
         /**
-         * List of compliancePolicys.
+         * List of compliance policies.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class CompliancePolicyCollection
         return new Builder().copy(this);
     }
 
-    /** List of compliancePolicys. */
+    /** List of compliance policies. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<CompliancePolicySummary> items;
 
     /**
-     * List of compliancePolicys.
+     * List of compliance policies.
      *
      * @return the value
      */

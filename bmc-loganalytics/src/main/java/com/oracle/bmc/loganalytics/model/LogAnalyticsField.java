@@ -44,7 +44,9 @@ public final class LogAnalyticsField
         "isMetricValueEligible",
         "rangeFacetEligible",
         "isTableEligible",
-        "unitType"
+        "unitType",
+        "timeUpdated",
+        "isKeepDuplicates"
     })
     public LogAnalyticsField(
             String ceeAlias,
@@ -67,7 +69,9 @@ public final class LogAnalyticsField
             Boolean isMetricValueEligible,
             Long rangeFacetEligible,
             Boolean isTableEligible,
-            String unitType) {
+            String unitType,
+            java.util.Date timeUpdated,
+            Boolean isKeepDuplicates) {
         super();
         this.ceeAlias = ceeAlias;
         this.dataType = dataType;
@@ -90,6 +94,8 @@ public final class LogAnalyticsField
         this.rangeFacetEligible = rangeFacetEligible;
         this.isTableEligible = isTableEligible;
         this.unitType = unitType;
+        this.timeUpdated = timeUpdated;
+        this.isKeepDuplicates = isKeepDuplicates;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -417,6 +423,36 @@ public final class LogAnalyticsField
             this.__explicitlySet__.add("unitType");
             return this;
         }
+        /** The last updated date and time. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The last updated date and time.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /** A flag indicating whether or not duplicates would be retained. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isKeepDuplicates")
+        private Boolean isKeepDuplicates;
+
+        /**
+         * A flag indicating whether or not duplicates would be retained.
+         *
+         * @param isKeepDuplicates the value to set
+         * @return this builder
+         */
+        public Builder isKeepDuplicates(Boolean isKeepDuplicates) {
+            this.isKeepDuplicates = isKeepDuplicates;
+            this.__explicitlySet__.add("isKeepDuplicates");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -444,7 +480,9 @@ public final class LogAnalyticsField
                             this.isMetricValueEligible,
                             this.rangeFacetEligible,
                             this.isTableEligible,
-                            this.unitType);
+                            this.unitType,
+                            this.timeUpdated,
+                            this.isKeepDuplicates);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -515,6 +553,12 @@ public final class LogAnalyticsField
             }
             if (model.wasPropertyExplicitlySet("unitType")) {
                 this.unitType(model.getUnitType());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("isKeepDuplicates")) {
+                this.isKeepDuplicates(model.getIsKeepDuplicates());
             }
             return this;
         }
@@ -810,6 +854,32 @@ public final class LogAnalyticsField
         return unitType;
     }
 
+    /** The last updated date and time. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The last updated date and time.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    /** A flag indicating whether or not duplicates would be retained. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isKeepDuplicates")
+    private final Boolean isKeepDuplicates;
+
+    /**
+     * A flag indicating whether or not duplicates would be retained.
+     *
+     * @return the value
+     */
+    public Boolean getIsKeepDuplicates() {
+        return isKeepDuplicates;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -846,6 +916,8 @@ public final class LogAnalyticsField
         sb.append(", rangeFacetEligible=").append(String.valueOf(this.rangeFacetEligible));
         sb.append(", isTableEligible=").append(String.valueOf(this.isTableEligible));
         sb.append(", unitType=").append(String.valueOf(this.unitType));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", isKeepDuplicates=").append(String.valueOf(this.isKeepDuplicates));
         sb.append(")");
         return sb.toString();
     }
@@ -881,6 +953,8 @@ public final class LogAnalyticsField
                 && java.util.Objects.equals(this.rangeFacetEligible, other.rangeFacetEligible)
                 && java.util.Objects.equals(this.isTableEligible, other.isTableEligible)
                 && java.util.Objects.equals(this.unitType, other.unitType)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.isKeepDuplicates, other.isKeepDuplicates)
                 && super.equals(other);
     }
 
@@ -935,6 +1009,10 @@ public final class LogAnalyticsField
                 (result * PRIME)
                         + (this.isTableEligible == null ? 43 : this.isTableEligible.hashCode());
         result = (result * PRIME) + (this.unitType == null ? 43 : this.unitType.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isKeepDuplicates == null ? 43 : this.isKeepDuplicates.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

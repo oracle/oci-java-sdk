@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateFleetDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -27,16 +27,15 @@ public final class CreateFleetDetails
         "displayName",
         "description",
         "compartmentId",
-        "fleetType",
+        "details",
         "products",
-        "applicationType",
         "environmentType",
-        "groupType",
-        "resourceSelectionType",
-        "ruleSelectionCriteria",
+        "resourceSelection",
         "notificationPreferences",
         "resources",
         "credentials",
+        "properties",
+        "parentFleetId",
         "isTargetAutoConfirm",
         "freeformTags",
         "definedTags"
@@ -45,16 +44,15 @@ public final class CreateFleetDetails
             String displayName,
             String description,
             String compartmentId,
-            Fleet.FleetType fleetType,
+            FleetDetails details,
             java.util.List<String> products,
-            String applicationType,
             String environmentType,
-            Fleet.GroupType groupType,
-            Fleet.ResourceSelectionType resourceSelectionType,
-            SelectionCriteria ruleSelectionCriteria,
-            NotificationPreferences notificationPreferences,
+            ResourceSelection resourceSelection,
+            java.util.List<NotificationPreference> notificationPreferences,
             java.util.List<AssociatedFleetResourceDetails> resources,
             java.util.List<AssociatedFleetCredentialDetails> credentials,
+            java.util.List<AssociatedFleetPropertyDetails> properties,
+            String parentFleetId,
             Boolean isTargetAutoConfirm,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -62,16 +60,15 @@ public final class CreateFleetDetails
         this.displayName = displayName;
         this.description = description;
         this.compartmentId = compartmentId;
-        this.fleetType = fleetType;
+        this.details = details;
         this.products = products;
-        this.applicationType = applicationType;
         this.environmentType = environmentType;
-        this.groupType = groupType;
-        this.resourceSelectionType = resourceSelectionType;
-        this.ruleSelectionCriteria = ruleSelectionCriteria;
+        this.resourceSelection = resourceSelection;
         this.notificationPreferences = notificationPreferences;
         this.resources = resources;
         this.credentials = credentials;
+        this.properties = properties;
+        this.parentFleetId = parentFleetId;
         this.isTargetAutoConfirm = isTargetAutoConfirm;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -121,12 +118,12 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Tenancy OCID */
+        /** compartment OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Tenancy OCID
+         * compartment OCID
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -136,27 +133,13 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
-         * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A
-         * fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources
-         * selected dynamically or manually for reporting purposes
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
-        private Fleet.FleetType fleetType;
 
-        /**
-         * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
-         * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A
-         * fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources
-         * selected dynamically or manually for reporting purposes
-         *
-         * @param fleetType the value to set
-         * @return this builder
-         */
-        public Builder fleetType(Fleet.FleetType fleetType) {
-            this.fleetType = fleetType;
-            this.__explicitlySet__.add("fleetType");
+        @com.fasterxml.jackson.annotation.JsonProperty("details")
+        private FleetDetails details;
+
+        public Builder details(FleetDetails details) {
+            this.details = details;
+            this.__explicitlySet__.add("details");
             return this;
         }
         /** Products associated with the Fleet. */
@@ -174,21 +157,6 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("products");
             return this;
         }
-        /** Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
-        @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
-        private String applicationType;
-
-        /**
-         * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
-         *
-         * @param applicationType the value to set
-         * @return this builder
-         */
-        public Builder applicationType(String applicationType) {
-            this.applicationType = applicationType;
-            this.__explicitlySet__.add("applicationType");
-            return this;
-        }
         /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private String environmentType;
@@ -204,54 +172,27 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("environmentType");
             return this;
         }
-        /** Group Type associated with Group Fleet. */
-        @com.fasterxml.jackson.annotation.JsonProperty("groupType")
-        private Fleet.GroupType groupType;
 
-        /**
-         * Group Type associated with Group Fleet.
-         *
-         * @param groupType the value to set
-         * @return this builder
-         */
-        public Builder groupType(Fleet.GroupType groupType) {
-            this.groupType = groupType;
-            this.__explicitlySet__.add("groupType");
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceSelection")
+        private ResourceSelection resourceSelection;
+
+        public Builder resourceSelection(ResourceSelection resourceSelection) {
+            this.resourceSelection = resourceSelection;
+            this.__explicitlySet__.add("resourceSelection");
             return this;
         }
-        /**
-         * Type of resource selection in a Fleet. Select resources manually or select resources
-         * based on rules.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("resourceSelectionType")
-        private Fleet.ResourceSelectionType resourceSelectionType;
-
-        /**
-         * Type of resource selection in a Fleet. Select resources manually or select resources
-         * based on rules.
-         *
-         * @param resourceSelectionType the value to set
-         * @return this builder
-         */
-        public Builder resourceSelectionType(Fleet.ResourceSelectionType resourceSelectionType) {
-            this.resourceSelectionType = resourceSelectionType;
-            this.__explicitlySet__.add("resourceSelectionType");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("ruleSelectionCriteria")
-        private SelectionCriteria ruleSelectionCriteria;
-
-        public Builder ruleSelectionCriteria(SelectionCriteria ruleSelectionCriteria) {
-            this.ruleSelectionCriteria = ruleSelectionCriteria;
-            this.__explicitlySet__.add("ruleSelectionCriteria");
-            return this;
-        }
-
+        /** Notification Preferences associated with the Fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("notificationPreferences")
-        private NotificationPreferences notificationPreferences;
+        private java.util.List<NotificationPreference> notificationPreferences;
 
-        public Builder notificationPreferences(NotificationPreferences notificationPreferences) {
+        /**
+         * Notification Preferences associated with the Fleet.
+         *
+         * @param notificationPreferences the value to set
+         * @return this builder
+         */
+        public Builder notificationPreferences(
+                java.util.List<NotificationPreference> notificationPreferences) {
             this.notificationPreferences = notificationPreferences;
             this.__explicitlySet__.add("notificationPreferences");
             return this;
@@ -284,6 +225,40 @@ public final class CreateFleetDetails
         public Builder credentials(java.util.List<AssociatedFleetCredentialDetails> credentials) {
             this.credentials = credentials;
             this.__explicitlySet__.add("credentials");
+            return this;
+        }
+        /** Properties associated with the Fleet. */
+        @com.fasterxml.jackson.annotation.JsonProperty("properties")
+        private java.util.List<AssociatedFleetPropertyDetails> properties;
+
+        /**
+         * Properties associated with the Fleet.
+         *
+         * @param properties the value to set
+         * @return this builder
+         */
+        public Builder properties(java.util.List<AssociatedFleetPropertyDetails> properties) {
+            this.properties = properties;
+            this.__explicitlySet__.add("properties");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * fleet that would be the parent for this fleet.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("parentFleetId")
+        private String parentFleetId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * fleet that would be the parent for this fleet.
+         *
+         * @param parentFleetId the value to set
+         * @return this builder
+         */
+        public Builder parentFleetId(String parentFleetId) {
+            this.parentFleetId = parentFleetId;
+            this.__explicitlySet__.add("parentFleetId");
             return this;
         }
         /**
@@ -354,16 +329,15 @@ public final class CreateFleetDetails
                             this.displayName,
                             this.description,
                             this.compartmentId,
-                            this.fleetType,
+                            this.details,
                             this.products,
-                            this.applicationType,
                             this.environmentType,
-                            this.groupType,
-                            this.resourceSelectionType,
-                            this.ruleSelectionCriteria,
+                            this.resourceSelection,
                             this.notificationPreferences,
                             this.resources,
                             this.credentials,
+                            this.properties,
+                            this.parentFleetId,
                             this.isTargetAutoConfirm,
                             this.freeformTags,
                             this.definedTags);
@@ -384,26 +358,17 @@ public final class CreateFleetDetails
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
-            if (model.wasPropertyExplicitlySet("fleetType")) {
-                this.fleetType(model.getFleetType());
+            if (model.wasPropertyExplicitlySet("details")) {
+                this.details(model.getDetails());
             }
             if (model.wasPropertyExplicitlySet("products")) {
                 this.products(model.getProducts());
             }
-            if (model.wasPropertyExplicitlySet("applicationType")) {
-                this.applicationType(model.getApplicationType());
-            }
             if (model.wasPropertyExplicitlySet("environmentType")) {
                 this.environmentType(model.getEnvironmentType());
             }
-            if (model.wasPropertyExplicitlySet("groupType")) {
-                this.groupType(model.getGroupType());
-            }
-            if (model.wasPropertyExplicitlySet("resourceSelectionType")) {
-                this.resourceSelectionType(model.getResourceSelectionType());
-            }
-            if (model.wasPropertyExplicitlySet("ruleSelectionCriteria")) {
-                this.ruleSelectionCriteria(model.getRuleSelectionCriteria());
+            if (model.wasPropertyExplicitlySet("resourceSelection")) {
+                this.resourceSelection(model.getResourceSelection());
             }
             if (model.wasPropertyExplicitlySet("notificationPreferences")) {
                 this.notificationPreferences(model.getNotificationPreferences());
@@ -413,6 +378,12 @@ public final class CreateFleetDetails
             }
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("parentFleetId")) {
+                this.parentFleetId(model.getParentFleetId());
             }
             if (model.wasPropertyExplicitlySet("isTargetAutoConfirm")) {
                 this.isTargetAutoConfirm(model.getIsTargetAutoConfirm());
@@ -474,12 +445,12 @@ public final class CreateFleetDetails
         return description;
     }
 
-    /** Tenancy OCID */
+    /** compartment OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Tenancy OCID
+     * compartment OCID
      *
      * @return the value
      */
@@ -487,25 +458,11 @@ public final class CreateFleetDetails
         return compartmentId;
     }
 
-    /**
-     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
-     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
-     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
-     * dynamically or manually for reporting purposes
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
-    private final Fleet.FleetType fleetType;
+    @com.fasterxml.jackson.annotation.JsonProperty("details")
+    private final FleetDetails details;
 
-    /**
-     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
-     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
-     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
-     * dynamically or manually for reporting purposes
-     *
-     * @return the value
-     */
-    public Fleet.FleetType getFleetType() {
-        return fleetType;
+    public FleetDetails getDetails() {
+        return details;
     }
 
     /** Products associated with the Fleet. */
@@ -521,19 +478,6 @@ public final class CreateFleetDetails
         return products;
     }
 
-    /** Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
-    @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
-    private final String applicationType;
-
-    /**
-     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
-     *
-     * @return the value
-     */
-    public String getApplicationType() {
-        return applicationType;
-    }
-
     /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     private final String environmentType;
@@ -547,47 +491,23 @@ public final class CreateFleetDetails
         return environmentType;
     }
 
-    /** Group Type associated with Group Fleet. */
-    @com.fasterxml.jackson.annotation.JsonProperty("groupType")
-    private final Fleet.GroupType groupType;
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceSelection")
+    private final ResourceSelection resourceSelection;
 
-    /**
-     * Group Type associated with Group Fleet.
-     *
-     * @return the value
-     */
-    public Fleet.GroupType getGroupType() {
-        return groupType;
+    public ResourceSelection getResourceSelection() {
+        return resourceSelection;
     }
 
-    /**
-     * Type of resource selection in a Fleet. Select resources manually or select resources based on
-     * rules.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceSelectionType")
-    private final Fleet.ResourceSelectionType resourceSelectionType;
-
-    /**
-     * Type of resource selection in a Fleet. Select resources manually or select resources based on
-     * rules.
-     *
-     * @return the value
-     */
-    public Fleet.ResourceSelectionType getResourceSelectionType() {
-        return resourceSelectionType;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ruleSelectionCriteria")
-    private final SelectionCriteria ruleSelectionCriteria;
-
-    public SelectionCriteria getRuleSelectionCriteria() {
-        return ruleSelectionCriteria;
-    }
-
+    /** Notification Preferences associated with the Fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("notificationPreferences")
-    private final NotificationPreferences notificationPreferences;
+    private final java.util.List<NotificationPreference> notificationPreferences;
 
-    public NotificationPreferences getNotificationPreferences() {
+    /**
+     * Notification Preferences associated with the Fleet.
+     *
+     * @return the value
+     */
+    public java.util.List<NotificationPreference> getNotificationPreferences() {
         return notificationPreferences;
     }
 
@@ -615,6 +535,36 @@ public final class CreateFleetDetails
      */
     public java.util.List<AssociatedFleetCredentialDetails> getCredentials() {
         return credentials;
+    }
+
+    /** Properties associated with the Fleet. */
+    @com.fasterxml.jackson.annotation.JsonProperty("properties")
+    private final java.util.List<AssociatedFleetPropertyDetails> properties;
+
+    /**
+     * Properties associated with the Fleet.
+     *
+     * @return the value
+     */
+    public java.util.List<AssociatedFleetPropertyDetails> getProperties() {
+        return properties;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * fleet that would be the parent for this fleet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("parentFleetId")
+    private final String parentFleetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * fleet that would be the parent for this fleet.
+     *
+     * @return the value
+     */
+    public String getParentFleetId() {
+        return parentFleetId;
     }
 
     /**
@@ -686,17 +636,16 @@ public final class CreateFleetDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", fleetType=").append(String.valueOf(this.fleetType));
+        sb.append(", details=").append(String.valueOf(this.details));
         sb.append(", products=").append(String.valueOf(this.products));
-        sb.append(", applicationType=").append(String.valueOf(this.applicationType));
         sb.append(", environmentType=").append(String.valueOf(this.environmentType));
-        sb.append(", groupType=").append(String.valueOf(this.groupType));
-        sb.append(", resourceSelectionType=").append(String.valueOf(this.resourceSelectionType));
-        sb.append(", ruleSelectionCriteria=").append(String.valueOf(this.ruleSelectionCriteria));
+        sb.append(", resourceSelection=").append(String.valueOf(this.resourceSelection));
         sb.append(", notificationPreferences=")
                 .append(String.valueOf(this.notificationPreferences));
         sb.append(", resources=").append(String.valueOf(this.resources));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append(", parentFleetId=").append(String.valueOf(this.parentFleetId));
         sb.append(", isTargetAutoConfirm=").append(String.valueOf(this.isTargetAutoConfirm));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -717,17 +666,16 @@ public final class CreateFleetDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.fleetType, other.fleetType)
+                && java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.products, other.products)
-                && java.util.Objects.equals(this.applicationType, other.applicationType)
                 && java.util.Objects.equals(this.environmentType, other.environmentType)
-                && java.util.Objects.equals(this.groupType, other.groupType)
-                && java.util.Objects.equals(this.resourceSelectionType, other.resourceSelectionType)
-                && java.util.Objects.equals(this.ruleSelectionCriteria, other.ruleSelectionCriteria)
+                && java.util.Objects.equals(this.resourceSelection, other.resourceSelection)
                 && java.util.Objects.equals(
                         this.notificationPreferences, other.notificationPreferences)
                 && java.util.Objects.equals(this.resources, other.resources)
                 && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.parentFleetId, other.parentFleetId)
                 && java.util.Objects.equals(this.isTargetAutoConfirm, other.isTargetAutoConfirm)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -743,25 +691,14 @@ public final class CreateFleetDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.fleetType == null ? 43 : this.fleetType.hashCode());
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
         result = (result * PRIME) + (this.products == null ? 43 : this.products.hashCode());
         result =
                 (result * PRIME)
-                        + (this.applicationType == null ? 43 : this.applicationType.hashCode());
-        result =
-                (result * PRIME)
                         + (this.environmentType == null ? 43 : this.environmentType.hashCode());
-        result = (result * PRIME) + (this.groupType == null ? 43 : this.groupType.hashCode());
         result =
                 (result * PRIME)
-                        + (this.resourceSelectionType == null
-                                ? 43
-                                : this.resourceSelectionType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.ruleSelectionCriteria == null
-                                ? 43
-                                : this.ruleSelectionCriteria.hashCode());
+                        + (this.resourceSelection == null ? 43 : this.resourceSelection.hashCode());
         result =
                 (result * PRIME)
                         + (this.notificationPreferences == null
@@ -769,6 +706,10 @@ public final class CreateFleetDetails
                                 : this.notificationPreferences.hashCode());
         result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentFleetId == null ? 43 : this.parentFleetId.hashCode());
         result =
                 (result * PRIME)
                         + (this.isTargetAutoConfirm == null

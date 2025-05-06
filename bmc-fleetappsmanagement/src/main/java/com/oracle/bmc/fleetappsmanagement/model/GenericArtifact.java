@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GenericArtifact.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -23,7 +23,7 @@ public final class GenericArtifact
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"content"})
-    public GenericArtifact(ContentDetails content) {
+    public GenericArtifact(PatchFileContentDetails content) {
         super();
         this.content = content;
     }
@@ -32,9 +32,9 @@ public final class GenericArtifact
     public static class Builder {
 
         @com.fasterxml.jackson.annotation.JsonProperty("content")
-        private ContentDetails content;
+        private PatchFileContentDetails content;
 
-        public Builder content(ContentDetails content) {
+        public Builder content(PatchFileContentDetails content) {
             this.content = content;
             this.__explicitlySet__.add("content");
             return this;
@@ -70,9 +70,9 @@ public final class GenericArtifact
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("content")
-    private final ContentDetails content;
+    private final PatchFileContentDetails content;
 
-    public ContentDetails getContent() {
+    public PatchFileContentDetails getContent() {
         return content;
     }
 

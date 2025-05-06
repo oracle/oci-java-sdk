@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /** Possible value types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public enum ValueType implements com.oracle.bmc.http.internal.BmcEnum {
     String("STRING"),
     Numeric("NUMERIC"),

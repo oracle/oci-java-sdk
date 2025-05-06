@@ -55,6 +55,13 @@ public class ListResourceCategoriesRequest
     public String getResourceIds() {
         return resourceIds;
     }
+    /** The compartment id */
+    private String compartmentId;
+
+    /** The compartment id */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private SortOrder sortOrder;
 
@@ -236,6 +243,20 @@ public class ListResourceCategoriesRequest
             return this;
         }
 
+        /** The compartment id */
+        private String compartmentId = null;
+
+        /**
+         * The compartment id
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
         /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private SortOrder sortOrder = null;
 
@@ -344,6 +365,7 @@ public class ListResourceCategoriesRequest
             categories(o.getCategories());
             resourceTypes(o.getResourceTypes());
             resourceIds(o.getResourceIds());
+            compartmentId(o.getCompartmentId());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             limit(o.getLimit());
@@ -387,6 +409,7 @@ public class ListResourceCategoriesRequest
             request.categories = categories;
             request.resourceTypes = resourceTypes;
             request.resourceIds = resourceIds;
+            request.compartmentId = compartmentId;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.limit = limit;
@@ -394,7 +417,7 @@ public class ListResourceCategoriesRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListResourceCategoriesRequest(namespaceName, categories, resourceTypes,
-            // resourceIds, sortOrder, sortBy, limit, page, opcRequestId);
+            // resourceIds, compartmentId, sortOrder, sortBy, limit, page, opcRequestId);
         }
     }
 
@@ -409,6 +432,7 @@ public class ListResourceCategoriesRequest
                 .categories(categories)
                 .resourceTypes(resourceTypes)
                 .resourceIds(resourceIds)
+                .compartmentId(compartmentId)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .limit(limit)
@@ -434,6 +458,7 @@ public class ListResourceCategoriesRequest
         sb.append(",categories=").append(String.valueOf(this.categories));
         sb.append(",resourceTypes=").append(String.valueOf(this.resourceTypes));
         sb.append(",resourceIds=").append(String.valueOf(this.resourceIds));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -458,6 +483,7 @@ public class ListResourceCategoriesRequest
                 && java.util.Objects.equals(this.categories, other.categories)
                 && java.util.Objects.equals(this.resourceTypes, other.resourceTypes)
                 && java.util.Objects.equals(this.resourceIds, other.resourceIds)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -477,6 +503,9 @@ public class ListResourceCategoriesRequest
                 (result * PRIME)
                         + (this.resourceTypes == null ? 43 : this.resourceTypes.hashCode());
         result = (result * PRIME) + (this.resourceIds == null ? 43 : this.resourceIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

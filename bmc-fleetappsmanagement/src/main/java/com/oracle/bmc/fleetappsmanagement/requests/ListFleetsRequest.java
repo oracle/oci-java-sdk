@@ -10,7 +10,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFleetsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** A filter to return fleets whose lifecycleState matches the given lifecycleState. */
@@ -20,18 +20,24 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public com.oracle.bmc.fleetappsmanagement.model.Fleet.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /** A filter to return fleets whose fleetType matches the given fleetType. */
-    private com.oracle.bmc.fleetappsmanagement.model.Fleet.FleetType fleetType;
+    private com.oracle.bmc.fleetappsmanagement.model.FleetDetails.FleetType fleetType;
 
     /** A filter to return fleets whose fleetType matches the given fleetType. */
-    public com.oracle.bmc.fleetappsmanagement.model.Fleet.FleetType getFleetType() {
+    public com.oracle.bmc.fleetappsmanagement.model.FleetDetails.FleetType getFleetType() {
         return fleetType;
     }
     /** A filter to return resources that match the Application Type/Product Stack given.. */
@@ -41,10 +47,10 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getApplicationType() {
         return applicationType;
     }
-    /** A filter to return resources that match the Product given. */
+    /** A filter to return resources that match the Product/Product Stack given. */
     private String product;
 
-    /** A filter to return resources that match the Product given. */
+    /** A filter to return resources that match the Product/Product Stack given. */
     public String getProduct() {
         return product;
     }
@@ -62,10 +68,16 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return fleets whose id matches the given Fleet identifier */
+    /**
+     * Unique identifier or OCID for listing a single fleet by id. Either compartmentId or id must
+     * be provided.
+     */
     private String id;
 
-    /** A filter to return fleets whose id matches the given Fleet identifier */
+    /**
+     * Unique identifier or OCID for listing a single fleet by id. Either compartmentId or id must
+     * be provided.
+     */
     public String getId() {
         return id;
     }
@@ -100,50 +112,13 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    private SortBy sortBy;
+    private com.oracle.bmc.fleetappsmanagement.model.FleetSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.FleetSortBy getSortBy() {
         return sortBy;
     }
     /** The client request ID for tracing. */
@@ -175,11 +150,15 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -190,7 +169,7 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /** A filter to return fleets whose fleetType matches the given fleetType. */
-        private com.oracle.bmc.fleetappsmanagement.model.Fleet.FleetType fleetType = null;
+        private com.oracle.bmc.fleetappsmanagement.model.FleetDetails.FleetType fleetType = null;
 
         /**
          * A filter to return fleets whose fleetType matches the given fleetType.
@@ -199,7 +178,7 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * @return this builder instance
          */
         public Builder fleetType(
-                com.oracle.bmc.fleetappsmanagement.model.Fleet.FleetType fleetType) {
+                com.oracle.bmc.fleetappsmanagement.model.FleetDetails.FleetType fleetType) {
             this.fleetType = fleetType;
             return this;
         }
@@ -218,11 +197,11 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** A filter to return resources that match the Product given. */
+        /** A filter to return resources that match the Product/Product Stack given. */
         private String product = null;
 
         /**
-         * A filter to return resources that match the Product given.
+         * A filter to return resources that match the Product/Product Stack given.
          *
          * @param product the value to set
          * @return this builder instance
@@ -260,11 +239,15 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** A filter to return fleets whose id matches the given Fleet identifier */
+        /**
+         * Unique identifier or OCID for listing a single fleet by id. Either compartmentId or id
+         * must be provided.
+         */
         private String id = null;
 
         /**
-         * A filter to return fleets whose id matches the given Fleet identifier
+         * Unique identifier or OCID for listing a single fleet by id. Either compartmentId or id
+         * must be provided.
          *
          * @param id the value to set
          * @return this builder instance
@@ -324,7 +307,7 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for displayName is ascending.
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.FleetSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
@@ -333,7 +316,7 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.fleetappsmanagement.model.FleetSortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }

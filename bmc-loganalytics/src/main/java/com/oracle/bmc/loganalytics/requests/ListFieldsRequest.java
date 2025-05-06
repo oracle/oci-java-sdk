@@ -227,6 +227,7 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Name("name"),
         DataType("dataType"),
+        TimeUpdated("timeUpdated"),
         ;
 
         private final String value;

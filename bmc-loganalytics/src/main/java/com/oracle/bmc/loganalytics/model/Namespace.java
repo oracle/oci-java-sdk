@@ -26,20 +26,23 @@ public final class Namespace extends com.oracle.bmc.http.client.internal.Explici
         "compartmentId",
         "isOnboarded",
         "isLogSetEnabled",
-        "isDataEverIngested"
+        "isDataEverIngested",
+        "isArchivingEnabled"
     })
     public Namespace(
             String namespaceName,
             String compartmentId,
             Boolean isOnboarded,
             Boolean isLogSetEnabled,
-            Boolean isDataEverIngested) {
+            Boolean isDataEverIngested,
+            Boolean isArchivingEnabled) {
         super();
         this.namespaceName = namespaceName;
         this.compartmentId = compartmentId;
         this.isOnboarded = isOnboarded;
         this.isLogSetEnabled = isLogSetEnabled;
         this.isDataEverIngested = isDataEverIngested;
+        this.isArchivingEnabled = isArchivingEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -119,6 +122,21 @@ public final class Namespace extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("isDataEverIngested");
             return this;
         }
+        /** This indicates if old data can be archived for a tenancy */
+        @com.fasterxml.jackson.annotation.JsonProperty("isArchivingEnabled")
+        private Boolean isArchivingEnabled;
+
+        /**
+         * This indicates if old data can be archived for a tenancy
+         *
+         * @param isArchivingEnabled the value to set
+         * @return this builder
+         */
+        public Builder isArchivingEnabled(Boolean isArchivingEnabled) {
+            this.isArchivingEnabled = isArchivingEnabled;
+            this.__explicitlySet__.add("isArchivingEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -130,7 +148,8 @@ public final class Namespace extends com.oracle.bmc.http.client.internal.Explici
                             this.compartmentId,
                             this.isOnboarded,
                             this.isLogSetEnabled,
-                            this.isDataEverIngested);
+                            this.isDataEverIngested,
+                            this.isArchivingEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -153,6 +172,9 @@ public final class Namespace extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("isDataEverIngested")) {
                 this.isDataEverIngested(model.getIsDataEverIngested());
+            }
+            if (model.wasPropertyExplicitlySet("isArchivingEnabled")) {
+                this.isArchivingEnabled(model.getIsArchivingEnabled());
             }
             return this;
         }
@@ -232,6 +254,19 @@ public final class Namespace extends com.oracle.bmc.http.client.internal.Explici
         return isDataEverIngested;
     }
 
+    /** This indicates if old data can be archived for a tenancy */
+    @com.fasterxml.jackson.annotation.JsonProperty("isArchivingEnabled")
+    private final Boolean isArchivingEnabled;
+
+    /**
+     * This indicates if old data can be archived for a tenancy
+     *
+     * @return the value
+     */
+    public Boolean getIsArchivingEnabled() {
+        return isArchivingEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -252,6 +287,7 @@ public final class Namespace extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", isOnboarded=").append(String.valueOf(this.isOnboarded));
         sb.append(", isLogSetEnabled=").append(String.valueOf(this.isLogSetEnabled));
         sb.append(", isDataEverIngested=").append(String.valueOf(this.isDataEverIngested));
+        sb.append(", isArchivingEnabled=").append(String.valueOf(this.isArchivingEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -271,6 +307,7 @@ public final class Namespace extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.isOnboarded, other.isOnboarded)
                 && java.util.Objects.equals(this.isLogSetEnabled, other.isLogSetEnabled)
                 && java.util.Objects.equals(this.isDataEverIngested, other.isDataEverIngested)
+                && java.util.Objects.equals(this.isArchivingEnabled, other.isArchivingEnabled)
                 && super.equals(other);
     }
 
@@ -293,6 +330,11 @@ public final class Namespace extends com.oracle.bmc.http.client.internal.Explici
                         + (this.isDataEverIngested == null
                                 ? 43
                                 : this.isDataEverIngested.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isArchivingEnabled == null
+                                ? 43
+                                : this.isArchivingEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

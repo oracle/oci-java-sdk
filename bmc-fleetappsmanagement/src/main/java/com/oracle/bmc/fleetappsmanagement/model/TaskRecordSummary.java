@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Summary of the TaskRecord. <br>
+ * Summary of the task record. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = TaskRecordSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -148,12 +148,12 @@ public final class TaskRecordSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The current state of the TaskRecord. */
+        /** The current state of the task record. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private TaskRecord.LifecycleState lifecycleState;
 
         /**
-         * The current state of the TaskRecord.
+         * The current state of the task record.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -221,12 +221,12 @@ public final class TaskRecordSummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The version of the task */
+        /** The version of the task record. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * The version of the task
+         * The version of the task record.
          *
          * @param version the value to set
          * @return this builder
@@ -476,12 +476,12 @@ public final class TaskRecordSummary
         return type;
     }
 
-    /** The current state of the TaskRecord. */
+    /** The current state of the task record. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final TaskRecord.LifecycleState lifecycleState;
 
     /**
-     * The current state of the TaskRecord.
+     * The current state of the task record.
      *
      * @return the value
      */
@@ -539,12 +539,12 @@ public final class TaskRecordSummary
         return lifecycleDetails;
     }
 
-    /** The version of the task */
+    /** The version of the task record. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * The version of the task
+     * The version of the task record.
      *
      * @return the value
      */

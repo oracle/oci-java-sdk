@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = ScheduledFleetSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -25,31 +25,28 @@ public final class ScheduledFleetSummary
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
-        "tenancyId",
+        "compartmentId",
         "displayName",
         "countOfAffectedResources",
         "countOfAffectedTargets",
-        "actionGroupTypes",
-        "applicationTypes",
+        "products",
         "systemTags"
     })
     public ScheduledFleetSummary(
             String id,
-            String tenancyId,
+            String compartmentId,
             String displayName,
             Integer countOfAffectedResources,
             Integer countOfAffectedTargets,
-            java.util.List<LifeCycleActionGroupType> actionGroupTypes,
-            java.util.List<String> applicationTypes,
+            java.util.List<String> products,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
-        this.tenancyId = tenancyId;
+        this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.countOfAffectedResources = countOfAffectedResources;
         this.countOfAffectedTargets = countOfAffectedTargets;
-        this.actionGroupTypes = actionGroupTypes;
-        this.applicationTypes = applicationTypes;
+        this.products = products;
         this.systemTags = systemTags;
     }
 
@@ -70,19 +67,19 @@ public final class ScheduledFleetSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** OCID of the tenancy to which the resource belongs to. */
-        @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-        private String tenancyId;
+        /** The OCID of the resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
 
         /**
-         * OCID of the tenancy to which the resource belongs to.
+         * The OCID of the resource.
          *
-         * @param tenancyId the value to set
+         * @param compartmentId the value to set
          * @return this builder
          */
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = tenancyId;
-            this.__explicitlySet__.add("tenancyId");
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
@@ -138,34 +135,19 @@ public final class ScheduledFleetSummary
             this.__explicitlySet__.add("countOfAffectedTargets");
             return this;
         }
-        /** All ActionGroup Types part of the schedule. */
-        @com.fasterxml.jackson.annotation.JsonProperty("actionGroupTypes")
-        private java.util.List<LifeCycleActionGroupType> actionGroupTypes;
+        /** All products part of the schedule. */
+        @com.fasterxml.jackson.annotation.JsonProperty("products")
+        private java.util.List<String> products;
 
         /**
-         * All ActionGroup Types part of the schedule.
+         * All products part of the schedule.
          *
-         * @param actionGroupTypes the value to set
+         * @param products the value to set
          * @return this builder
          */
-        public Builder actionGroupTypes(java.util.List<LifeCycleActionGroupType> actionGroupTypes) {
-            this.actionGroupTypes = actionGroupTypes;
-            this.__explicitlySet__.add("actionGroupTypes");
-            return this;
-        }
-        /** All application types part of the schedule. */
-        @com.fasterxml.jackson.annotation.JsonProperty("applicationTypes")
-        private java.util.List<String> applicationTypes;
-
-        /**
-         * All application types part of the schedule.
-         *
-         * @param applicationTypes the value to set
-         * @return this builder
-         */
-        public Builder applicationTypes(java.util.List<String> applicationTypes) {
-            this.applicationTypes = applicationTypes;
-            this.__explicitlySet__.add("applicationTypes");
+        public Builder products(java.util.List<String> products) {
+            this.products = products;
+            this.__explicitlySet__.add("products");
             return this;
         }
         /**
@@ -195,12 +177,11 @@ public final class ScheduledFleetSummary
             ScheduledFleetSummary model =
                     new ScheduledFleetSummary(
                             this.id,
-                            this.tenancyId,
+                            this.compartmentId,
                             this.displayName,
                             this.countOfAffectedResources,
                             this.countOfAffectedTargets,
-                            this.actionGroupTypes,
-                            this.applicationTypes,
+                            this.products,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -213,8 +194,8 @@ public final class ScheduledFleetSummary
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
-            if (model.wasPropertyExplicitlySet("tenancyId")) {
-                this.tenancyId(model.getTenancyId());
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -225,11 +206,8 @@ public final class ScheduledFleetSummary
             if (model.wasPropertyExplicitlySet("countOfAffectedTargets")) {
                 this.countOfAffectedTargets(model.getCountOfAffectedTargets());
             }
-            if (model.wasPropertyExplicitlySet("actionGroupTypes")) {
-                this.actionGroupTypes(model.getActionGroupTypes());
-            }
-            if (model.wasPropertyExplicitlySet("applicationTypes")) {
-                this.applicationTypes(model.getApplicationTypes());
+            if (model.wasPropertyExplicitlySet("products")) {
+                this.products(model.getProducts());
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
@@ -260,17 +238,17 @@ public final class ScheduledFleetSummary
         return id;
     }
 
-    /** OCID of the tenancy to which the resource belongs to. */
-    @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-    private final String tenancyId;
+    /** The OCID of the resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
 
     /**
-     * OCID of the tenancy to which the resource belongs to.
+     * The OCID of the resource.
      *
      * @return the value
      */
-    public String getTenancyId() {
-        return tenancyId;
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     /**
@@ -320,30 +298,17 @@ public final class ScheduledFleetSummary
         return countOfAffectedTargets;
     }
 
-    /** All ActionGroup Types part of the schedule. */
-    @com.fasterxml.jackson.annotation.JsonProperty("actionGroupTypes")
-    private final java.util.List<LifeCycleActionGroupType> actionGroupTypes;
+    /** All products part of the schedule. */
+    @com.fasterxml.jackson.annotation.JsonProperty("products")
+    private final java.util.List<String> products;
 
     /**
-     * All ActionGroup Types part of the schedule.
+     * All products part of the schedule.
      *
      * @return the value
      */
-    public java.util.List<LifeCycleActionGroupType> getActionGroupTypes() {
-        return actionGroupTypes;
-    }
-
-    /** All application types part of the schedule. */
-    @com.fasterxml.jackson.annotation.JsonProperty("applicationTypes")
-    private final java.util.List<String> applicationTypes;
-
-    /**
-     * All application types part of the schedule.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getApplicationTypes() {
-        return applicationTypes;
+    public java.util.List<String> getProducts() {
+        return products;
     }
 
     /**
@@ -379,13 +344,12 @@ public final class ScheduledFleetSummary
         sb.append("ScheduledFleetSummary(");
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
-        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", countOfAffectedResources=")
                 .append(String.valueOf(this.countOfAffectedResources));
         sb.append(", countOfAffectedTargets=").append(String.valueOf(this.countOfAffectedTargets));
-        sb.append(", actionGroupTypes=").append(String.valueOf(this.actionGroupTypes));
-        sb.append(", applicationTypes=").append(String.valueOf(this.applicationTypes));
+        sb.append(", products=").append(String.valueOf(this.products));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
@@ -402,14 +366,13 @@ public final class ScheduledFleetSummary
 
         ScheduledFleetSummary other = (ScheduledFleetSummary) o;
         return java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.countOfAffectedResources, other.countOfAffectedResources)
                 && java.util.Objects.equals(
                         this.countOfAffectedTargets, other.countOfAffectedTargets)
-                && java.util.Objects.equals(this.actionGroupTypes, other.actionGroupTypes)
-                && java.util.Objects.equals(this.applicationTypes, other.applicationTypes)
+                && java.util.Objects.equals(this.products, other.products)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
@@ -419,7 +382,9 @@ public final class ScheduledFleetSummary
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
-        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
@@ -431,12 +396,7 @@ public final class ScheduledFleetSummary
                         + (this.countOfAffectedTargets == null
                                 ? 43
                                 : this.countOfAffectedTargets.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.actionGroupTypes == null ? 43 : this.actionGroupTypes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.applicationTypes == null ? 43 : this.applicationTypes.hashCode());
+        result = (result * PRIME) + (this.products == null ? 43 : this.products.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

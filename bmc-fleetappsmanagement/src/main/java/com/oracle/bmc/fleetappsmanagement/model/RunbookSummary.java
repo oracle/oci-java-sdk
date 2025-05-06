@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RunbookSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -27,12 +27,13 @@ public final class RunbookSummary
         "displayName",
         "description",
         "type",
-        "runbookRelevance",
         "operation",
         "osType",
         "platform",
         "isDefault",
         "estimatedTime",
+        "latestVersion",
+        "hasDraftVersion",
         "lifecycleState",
         "lifecycleDetails",
         "timeCreated",
@@ -48,12 +49,13 @@ public final class RunbookSummary
             String displayName,
             String description,
             Runbook.Type type,
-            Runbook.RunbookRelevance runbookRelevance,
             String operation,
             OsType osType,
             String platform,
             Boolean isDefault,
             String estimatedTime,
+            String latestVersion,
+            Boolean hasDraftVersion,
             Runbook.LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeCreated,
@@ -68,12 +70,13 @@ public final class RunbookSummary
         this.displayName = displayName;
         this.description = description;
         this.type = type;
-        this.runbookRelevance = runbookRelevance;
         this.operation = operation;
         this.osType = osType;
         this.platform = platform;
         this.isDefault = isDefault;
         this.estimatedTime = estimatedTime;
+        this.latestVersion = latestVersion;
+        this.hasDraftVersion = hasDraftVersion;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
@@ -159,21 +162,6 @@ public final class RunbookSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Type of runbook structure. */
-        @com.fasterxml.jackson.annotation.JsonProperty("runbookRelevance")
-        private Runbook.RunbookRelevance runbookRelevance;
-
-        /**
-         * Type of runbook structure.
-         *
-         * @param runbookRelevance the value to set
-         * @return this builder
-         */
-        public Builder runbookRelevance(Runbook.RunbookRelevance runbookRelevance) {
-            this.runbookRelevance = runbookRelevance;
-            this.__explicitlySet__.add("runbookRelevance");
-            return this;
-        }
         /** The lifecycle operation performed by the runbook. */
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
@@ -251,6 +239,36 @@ public final class RunbookSummary
         public Builder estimatedTime(String estimatedTime) {
             this.estimatedTime = estimatedTime;
             this.__explicitlySet__.add("estimatedTime");
+            return this;
+        }
+        /** Latest runbook version */
+        @com.fasterxml.jackson.annotation.JsonProperty("latestVersion")
+        private String latestVersion;
+
+        /**
+         * Latest runbook version
+         *
+         * @param latestVersion the value to set
+         * @return this builder
+         */
+        public Builder latestVersion(String latestVersion) {
+            this.latestVersion = latestVersion;
+            this.__explicitlySet__.add("latestVersion");
+            return this;
+        }
+        /** Does this runbook has draft versions? */
+        @com.fasterxml.jackson.annotation.JsonProperty("hasDraftVersion")
+        private Boolean hasDraftVersion;
+
+        /**
+         * Does this runbook has draft versions?
+         *
+         * @param hasDraftVersion the value to set
+         * @return this builder
+         */
+        public Builder hasDraftVersion(Boolean hasDraftVersion) {
+            this.hasDraftVersion = hasDraftVersion;
+            this.__explicitlySet__.add("hasDraftVersion");
             return this;
         }
         /** The current state of the Runbook. */
@@ -416,12 +434,13 @@ public final class RunbookSummary
                             this.displayName,
                             this.description,
                             this.type,
-                            this.runbookRelevance,
                             this.operation,
                             this.osType,
                             this.platform,
                             this.isDefault,
                             this.estimatedTime,
+                            this.latestVersion,
+                            this.hasDraftVersion,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeCreated,
@@ -451,9 +470,6 @@ public final class RunbookSummary
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
             }
-            if (model.wasPropertyExplicitlySet("runbookRelevance")) {
-                this.runbookRelevance(model.getRunbookRelevance());
-            }
             if (model.wasPropertyExplicitlySet("operation")) {
                 this.operation(model.getOperation());
             }
@@ -468,6 +484,12 @@ public final class RunbookSummary
             }
             if (model.wasPropertyExplicitlySet("estimatedTime")) {
                 this.estimatedTime(model.getEstimatedTime());
+            }
+            if (model.wasPropertyExplicitlySet("latestVersion")) {
+                this.latestVersion(model.getLatestVersion());
+            }
+            if (model.wasPropertyExplicitlySet("hasDraftVersion")) {
+                this.hasDraftVersion(model.getHasDraftVersion());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -573,19 +595,6 @@ public final class RunbookSummary
         return type;
     }
 
-    /** Type of runbook structure. */
-    @com.fasterxml.jackson.annotation.JsonProperty("runbookRelevance")
-    private final Runbook.RunbookRelevance runbookRelevance;
-
-    /**
-     * Type of runbook structure.
-     *
-     * @return the value
-     */
-    public Runbook.RunbookRelevance getRunbookRelevance() {
-        return runbookRelevance;
-    }
-
     /** The lifecycle operation performed by the runbook. */
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
@@ -653,6 +662,32 @@ public final class RunbookSummary
      */
     public String getEstimatedTime() {
         return estimatedTime;
+    }
+
+    /** Latest runbook version */
+    @com.fasterxml.jackson.annotation.JsonProperty("latestVersion")
+    private final String latestVersion;
+
+    /**
+     * Latest runbook version
+     *
+     * @return the value
+     */
+    public String getLatestVersion() {
+        return latestVersion;
+    }
+
+    /** Does this runbook has draft versions? */
+    @com.fasterxml.jackson.annotation.JsonProperty("hasDraftVersion")
+    private final Boolean hasDraftVersion;
+
+    /**
+     * Does this runbook has draft versions?
+     *
+     * @return the value
+     */
+    public Boolean getHasDraftVersion() {
+        return hasDraftVersion;
     }
 
     /** The current state of the Runbook. */
@@ -807,12 +842,13 @@ public final class RunbookSummary
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", type=").append(String.valueOf(this.type));
-        sb.append(", runbookRelevance=").append(String.valueOf(this.runbookRelevance));
         sb.append(", operation=").append(String.valueOf(this.operation));
         sb.append(", osType=").append(String.valueOf(this.osType));
         sb.append(", platform=").append(String.valueOf(this.platform));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
         sb.append(", estimatedTime=").append(String.valueOf(this.estimatedTime));
+        sb.append(", latestVersion=").append(String.valueOf(this.latestVersion));
+        sb.append(", hasDraftVersion=").append(String.valueOf(this.hasDraftVersion));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -840,12 +876,13 @@ public final class RunbookSummary
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.type, other.type)
-                && java.util.Objects.equals(this.runbookRelevance, other.runbookRelevance)
                 && java.util.Objects.equals(this.operation, other.operation)
                 && java.util.Objects.equals(this.osType, other.osType)
                 && java.util.Objects.equals(this.platform, other.platform)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
                 && java.util.Objects.equals(this.estimatedTime, other.estimatedTime)
+                && java.util.Objects.equals(this.latestVersion, other.latestVersion)
+                && java.util.Objects.equals(this.hasDraftVersion, other.hasDraftVersion)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -866,9 +903,6 @@ public final class RunbookSummary
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.runbookRelevance == null ? 43 : this.runbookRelevance.hashCode());
         result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
         result = (result * PRIME) + (this.osType == null ? 43 : this.osType.hashCode());
         result = (result * PRIME) + (this.platform == null ? 43 : this.platform.hashCode());
@@ -876,6 +910,12 @@ public final class RunbookSummary
         result =
                 (result * PRIME)
                         + (this.estimatedTime == null ? 43 : this.estimatedTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.latestVersion == null ? 43 : this.latestVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hasDraftVersion == null ? 43 : this.hasDraftVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

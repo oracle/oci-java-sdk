@@ -27,6 +27,13 @@ public class GetLookupSummaryRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The compartment id */
+    private String compartmentId;
+
+    /** The compartment id */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -62,6 +69,20 @@ public class GetLookupSummaryRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** The compartment id */
+        private String compartmentId = null;
+
+        /**
+         * The compartment id
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -94,6 +115,7 @@ public class GetLookupSummaryRequest extends com.oracle.bmc.requests.BmcRequest<
         public Builder copy(GetLookupSummaryRequest o) {
             namespaceName(o.getNamespaceName());
             opcRequestId(o.getOpcRequestId());
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -130,8 +152,9 @@ public class GetLookupSummaryRequest extends com.oracle.bmc.requests.BmcRequest<
             GetLookupSummaryRequest request = new GetLookupSummaryRequest();
             request.namespaceName = namespaceName;
             request.opcRequestId = opcRequestId;
+            request.compartmentId = compartmentId;
             return request;
-            // new GetLookupSummaryRequest(namespaceName, opcRequestId);
+            // new GetLookupSummaryRequest(namespaceName, opcRequestId, compartmentId);
         }
     }
 
@@ -141,7 +164,10 @@ public class GetLookupSummaryRequest extends com.oracle.bmc.requests.BmcRequest<
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().namespaceName(namespaceName).opcRequestId(opcRequestId);
+        return new Builder()
+                .namespaceName(namespaceName)
+                .opcRequestId(opcRequestId)
+                .compartmentId(compartmentId);
     }
 
     /**
@@ -160,6 +186,7 @@ public class GetLookupSummaryRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append("super=").append(super.toString());
         sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -176,7 +203,8 @@ public class GetLookupSummaryRequest extends com.oracle.bmc.requests.BmcRequest<
         GetLookupSummaryRequest other = (GetLookupSummaryRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.namespaceName, other.namespaceName)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId);
     }
 
     @Override
@@ -187,6 +215,9 @@ public class GetLookupSummaryRequest extends com.oracle.bmc.requests.BmcRequest<
                 (result * PRIME)
                         + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         return result;
     }
 }

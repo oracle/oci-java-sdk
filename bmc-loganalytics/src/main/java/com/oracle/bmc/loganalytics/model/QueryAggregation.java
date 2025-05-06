@@ -25,6 +25,9 @@ public final class QueryAggregation
     @java.beans.ConstructorProperties({
         "totalCount",
         "totalMatchedCount",
+        "totalGroupCount",
+        "timeFilter",
+        "recalls",
         "arePartialResults",
         "partialResultReason",
         "isContentHidden",
@@ -37,6 +40,9 @@ public final class QueryAggregation
     public QueryAggregation(
             Integer totalCount,
             Long totalMatchedCount,
+            Integer totalGroupCount,
+            TimeRange timeFilter,
+            java.util.List<RecallDefinition> recalls,
             Boolean arePartialResults,
             String partialResultReason,
             Boolean isContentHidden,
@@ -48,6 +54,9 @@ public final class QueryAggregation
         super();
         this.totalCount = totalCount;
         this.totalMatchedCount = totalMatchedCount;
+        this.totalGroupCount = totalGroupCount;
+        this.timeFilter = timeFilter;
+        this.recalls = recalls;
         this.arePartialResults = arePartialResults;
         this.partialResultReason = partialResultReason;
         this.isContentHidden = isContentHidden;
@@ -88,6 +97,45 @@ public final class QueryAggregation
         public Builder totalMatchedCount(Long totalMatchedCount) {
             this.totalMatchedCount = totalMatchedCount;
             this.__explicitlySet__.add("totalMatchedCount");
+            return this;
+        }
+        /** Number of groups created by query. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalGroupCount")
+        private Integer totalGroupCount;
+
+        /**
+         * Number of groups created by query.
+         *
+         * @param totalGroupCount the value to set
+         * @return this builder
+         */
+        public Builder totalGroupCount(Integer totalGroupCount) {
+            this.totalGroupCount = totalGroupCount;
+            this.__explicitlySet__.add("totalGroupCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFilter")
+        private TimeRange timeFilter;
+
+        public Builder timeFilter(TimeRange timeFilter) {
+            this.timeFilter = timeFilter;
+            this.__explicitlySet__.add("timeFilter");
+            return this;
+        }
+        /** List of recalls in the query. */
+        @com.fasterxml.jackson.annotation.JsonProperty("recalls")
+        private java.util.List<RecallDefinition> recalls;
+
+        /**
+         * List of recalls in the query.
+         *
+         * @param recalls the value to set
+         * @return this builder
+         */
+        public Builder recalls(java.util.List<RecallDefinition> recalls) {
+            this.recalls = recalls;
+            this.__explicitlySet__.add("recalls");
             return this;
         }
         /** True if query did not complete processing all data. */
@@ -219,6 +267,9 @@ public final class QueryAggregation
                     new QueryAggregation(
                             this.totalCount,
                             this.totalMatchedCount,
+                            this.totalGroupCount,
+                            this.timeFilter,
+                            this.recalls,
                             this.arePartialResults,
                             this.partialResultReason,
                             this.isContentHidden,
@@ -240,6 +291,15 @@ public final class QueryAggregation
             }
             if (model.wasPropertyExplicitlySet("totalMatchedCount")) {
                 this.totalMatchedCount(model.getTotalMatchedCount());
+            }
+            if (model.wasPropertyExplicitlySet("totalGroupCount")) {
+                this.totalGroupCount(model.getTotalGroupCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeFilter")) {
+                this.timeFilter(model.getTimeFilter());
+            }
+            if (model.wasPropertyExplicitlySet("recalls")) {
+                this.recalls(model.getRecalls());
             }
             if (model.wasPropertyExplicitlySet("arePartialResults")) {
                 this.arePartialResults(model.getArePartialResults());
@@ -302,6 +362,39 @@ public final class QueryAggregation
      */
     public Long getTotalMatchedCount() {
         return totalMatchedCount;
+    }
+
+    /** Number of groups created by query. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalGroupCount")
+    private final Integer totalGroupCount;
+
+    /**
+     * Number of groups created by query.
+     *
+     * @return the value
+     */
+    public Integer getTotalGroupCount() {
+        return totalGroupCount;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFilter")
+    private final TimeRange timeFilter;
+
+    public TimeRange getTimeFilter() {
+        return timeFilter;
+    }
+
+    /** List of recalls in the query. */
+    @com.fasterxml.jackson.annotation.JsonProperty("recalls")
+    private final java.util.List<RecallDefinition> recalls;
+
+    /**
+     * List of recalls in the query.
+     *
+     * @return the value
+     */
+    public java.util.List<RecallDefinition> getRecalls() {
+        return recalls;
     }
 
     /** True if query did not complete processing all data. */
@@ -425,6 +518,9 @@ public final class QueryAggregation
         sb.append("super=").append(super.toString());
         sb.append("totalCount=").append(String.valueOf(this.totalCount));
         sb.append(", totalMatchedCount=").append(String.valueOf(this.totalMatchedCount));
+        sb.append(", totalGroupCount=").append(String.valueOf(this.totalGroupCount));
+        sb.append(", timeFilter=").append(String.valueOf(this.timeFilter));
+        sb.append(", recalls=").append(String.valueOf(this.recalls));
         sb.append(", arePartialResults=").append(String.valueOf(this.arePartialResults));
         sb.append(", partialResultReason=").append(String.valueOf(this.partialResultReason));
         sb.append(", isContentHidden=").append(String.valueOf(this.isContentHidden));
@@ -449,6 +545,9 @@ public final class QueryAggregation
         QueryAggregation other = (QueryAggregation) o;
         return java.util.Objects.equals(this.totalCount, other.totalCount)
                 && java.util.Objects.equals(this.totalMatchedCount, other.totalMatchedCount)
+                && java.util.Objects.equals(this.totalGroupCount, other.totalGroupCount)
+                && java.util.Objects.equals(this.timeFilter, other.timeFilter)
+                && java.util.Objects.equals(this.recalls, other.recalls)
                 && java.util.Objects.equals(this.arePartialResults, other.arePartialResults)
                 && java.util.Objects.equals(this.partialResultReason, other.partialResultReason)
                 && java.util.Objects.equals(this.isContentHidden, other.isContentHidden)
@@ -469,6 +568,11 @@ public final class QueryAggregation
         result =
                 (result * PRIME)
                         + (this.totalMatchedCount == null ? 43 : this.totalMatchedCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalGroupCount == null ? 43 : this.totalGroupCount.hashCode());
+        result = (result * PRIME) + (this.timeFilter == null ? 43 : this.timeFilter.hashCode());
+        result = (result * PRIME) + (this.recalls == null ? 43 : this.recalls.hashCode());
         result =
                 (result * PRIME)
                         + (this.arePartialResults == null ? 43 : this.arePartialResults.hashCode());

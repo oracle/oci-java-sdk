@@ -16,7 +16,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CompliancePolicyRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -29,7 +29,7 @@ public final class CompliancePolicyRule
         "displayName",
         "compliancePolicyId",
         "productVersion",
-        "patchType",
+        "patchTypeId",
         "severity",
         "patchSelection",
         "gracePeriod",
@@ -47,7 +47,7 @@ public final class CompliancePolicyRule
             String displayName,
             String compliancePolicyId,
             ProductVersionDetails productVersion,
-            java.util.List<String> patchType,
+            java.util.List<String> patchTypeId,
             java.util.List<ComplianceRuleSeverity> severity,
             PatchSelectionDetails patchSelection,
             String gracePeriod,
@@ -64,7 +64,7 @@ public final class CompliancePolicyRule
         this.displayName = displayName;
         this.compliancePolicyId = compliancePolicyId;
         this.productVersion = productVersion;
-        this.patchType = patchType;
+        this.patchTypeId = patchTypeId;
         this.severity = severity;
         this.patchSelection = patchSelection;
         this.gracePeriod = gracePeriod;
@@ -145,18 +145,18 @@ public final class CompliancePolicyRule
         /**
          * PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("patchType")
-        private java.util.List<String> patchType;
+        @com.fasterxml.jackson.annotation.JsonProperty("patchTypeId")
+        private java.util.List<String> patchTypeId;
 
         /**
          * PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
          *
-         * @param patchType the value to set
+         * @param patchTypeId the value to set
          * @return this builder
          */
-        public Builder patchType(java.util.List<String> patchType) {
-            this.patchType = patchType;
-            this.__explicitlySet__.add("patchType");
+        public Builder patchTypeId(java.util.List<String> patchTypeId) {
+            this.patchTypeId = patchTypeId;
+            this.__explicitlySet__.add("patchTypeId");
             return this;
         }
         /** Severity to which this CompliancePolicyRule applies. */
@@ -370,7 +370,7 @@ public final class CompliancePolicyRule
                             this.displayName,
                             this.compliancePolicyId,
                             this.productVersion,
-                            this.patchType,
+                            this.patchTypeId,
                             this.severity,
                             this.patchSelection,
                             this.gracePeriod,
@@ -402,8 +402,8 @@ public final class CompliancePolicyRule
             if (model.wasPropertyExplicitlySet("productVersion")) {
                 this.productVersion(model.getProductVersion());
             }
-            if (model.wasPropertyExplicitlySet("patchType")) {
-                this.patchType(model.getPatchType());
+            if (model.wasPropertyExplicitlySet("patchTypeId")) {
+                this.patchTypeId(model.getPatchTypeId());
             }
             if (model.wasPropertyExplicitlySet("severity")) {
                 this.severity(model.getSeverity());
@@ -506,16 +506,16 @@ public final class CompliancePolicyRule
     }
 
     /** PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies. */
-    @com.fasterxml.jackson.annotation.JsonProperty("patchType")
-    private final java.util.List<String> patchType;
+    @com.fasterxml.jackson.annotation.JsonProperty("patchTypeId")
+    private final java.util.List<String> patchTypeId;
 
     /**
      * PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
      *
      * @return the value
      */
-    public java.util.List<String> getPatchType() {
-        return patchType;
+    public java.util.List<String> getPatchTypeId() {
+        return patchTypeId;
     }
 
     /** Severity to which this CompliancePolicyRule applies. */
@@ -762,7 +762,7 @@ public final class CompliancePolicyRule
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compliancePolicyId=").append(String.valueOf(this.compliancePolicyId));
         sb.append(", productVersion=").append(String.valueOf(this.productVersion));
-        sb.append(", patchType=").append(String.valueOf(this.patchType));
+        sb.append(", patchTypeId=").append(String.valueOf(this.patchTypeId));
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", patchSelection=").append(String.valueOf(this.patchSelection));
         sb.append(", gracePeriod=").append(String.valueOf(this.gracePeriod));
@@ -792,7 +792,7 @@ public final class CompliancePolicyRule
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compliancePolicyId, other.compliancePolicyId)
                 && java.util.Objects.equals(this.productVersion, other.productVersion)
-                && java.util.Objects.equals(this.patchType, other.patchType)
+                && java.util.Objects.equals(this.patchTypeId, other.patchTypeId)
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.patchSelection, other.patchSelection)
                 && java.util.Objects.equals(this.gracePeriod, other.gracePeriod)
@@ -821,7 +821,7 @@ public final class CompliancePolicyRule
         result =
                 (result * PRIME)
                         + (this.productVersion == null ? 43 : this.productVersion.hashCode());
-        result = (result * PRIME) + (this.patchType == null ? 43 : this.patchType.hashCode());
+        result = (result * PRIME) + (this.patchTypeId == null ? 43 : this.patchTypeId.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
         result =
                 (result * PRIME)

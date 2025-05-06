@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements FleetAppsManagementAsync {
     /** Service instance for FleetAppsManagement. */
@@ -96,6 +96,44 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeFleetCompartmentResponse> changeFleetCompartment(
+            ChangeFleetCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeFleetCompartmentRequest, ChangeFleetCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeFleetCompartmentDetails(),
+                "changeFleetCompartmentDetails is required");
+
+        return clientCall(request, ChangeFleetCompartmentResponse::builder)
+                .logger(LOG, "changeFleetCompartment")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ChangeFleetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/ChangeFleetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeFleetCompartmentRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeFleetCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeFleetCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CheckResourceTaggingResponse> checkResourceTagging(
             CheckResourceTaggingRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -110,10 +148,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "CheckResourceTagging",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CheckResourceTagging")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/CheckResourceTagging")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CheckResourceTaggingRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam("actions")
                 .appendPathParam("checkResourceTagging")
@@ -146,10 +184,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "ConfirmTargets",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/ConfirmTargets")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/ConfirmTargets")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConfirmTargetsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("actions")
@@ -177,10 +215,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "CreateFleet",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CreateFleet")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/CreateFleet")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFleetRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -217,10 +255,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "CreateFleetCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/CreateFleetCredential")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCredential/CreateFleetCredential")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFleetCredentialRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetCredentials")
@@ -260,10 +298,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "CreateFleetProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/CreateFleetProperty")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetProperty/CreateFleetProperty")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFleetPropertyRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetProperties")
@@ -296,10 +334,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "CreateFleetResource",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/CreateFleetResource")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetResource/CreateFleetResource")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFleetResourceRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetResources")
@@ -336,10 +374,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "DeleteFleet",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/DeleteFleet")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/DeleteFleet")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFleetRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .accept("application/json")
@@ -368,10 +406,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "DeleteFleetCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/DeleteFleetCredential")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCredential/DeleteFleetCredential")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFleetCredentialRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetCredentials")
@@ -403,10 +441,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "DeleteFleetProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/DeleteFleetProperty")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetProperty/DeleteFleetProperty")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFleetPropertyRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetProperties")
@@ -435,10 +473,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "DeleteFleetResource",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/DeleteFleetResource")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetResource/DeleteFleetResource")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFleetResourceRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetResources")
@@ -471,10 +509,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "GenerateComplianceReport",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GenerateComplianceReport")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/GenerateComplianceReport")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateComplianceReportRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("actions")
@@ -507,10 +545,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "GetComplianceReport",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceReport/GetComplianceReport")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ComplianceReport/GetComplianceReport")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComplianceReportRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("complianceReports")
@@ -539,10 +577,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "GetFleet",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GetFleet")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/GetFleet")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .accept("application/json")
@@ -572,10 +610,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "GetFleetCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/GetFleetCredential")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCredential/GetFleetCredential")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetCredentialRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetCredentials")
@@ -607,10 +645,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "GetFleetProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/GetFleetProperty")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetProperty/GetFleetProperty")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetPropertyRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetProperties")
@@ -642,10 +680,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "GetFleetResource",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/GetFleetResource")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetResource/GetFleetResource")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetResourceRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetResources")
@@ -662,56 +700,25 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
-    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
-            GetWorkRequestRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetWorkRequestRequest, GetWorkRequestResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "FleetAppsManagement",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<ListAnnouncementsResponse> listAnnouncements(
             ListAnnouncementsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
                             ListAnnouncementsRequest, ListAnnouncementsResponse>
                     handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListAnnouncementsResponse::builder)
                 .logger(LOG, "listAnnouncements")
                 .serviceDetails(
                         "FleetAppsManagement",
                         "ListAnnouncements",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/AnnouncementCollection/ListAnnouncements")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/AnnouncementCollection/ListAnnouncements")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAnnouncementsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("announcements")
                 .appendQueryParam("summaryContains", request.getSummaryContains())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -743,14 +750,13 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "ListFleetCredentials",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredentialCollection/ListFleetCredentials")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCredentialCollection/ListFleetCredentials")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetCredentialsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetCredentials")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("resourceId", request.getResourceId())
@@ -787,10 +793,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "ListFleetProducts",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProductCollection/ListFleetProducts")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetProductCollection/ListFleetProducts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetProductsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetProducts")
@@ -828,14 +834,13 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "ListFleetProperties",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetPropertyCollection/ListFleetProperties")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetPropertyCollection/ListFleetProperties")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetPropertiesRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetProperties")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("id", request.getId())
@@ -869,14 +874,13 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "ListFleetResources",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResourceCollection/ListFleetResources")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetResourceCollection/ListFleetResources")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetResourcesRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetResources")
-                .appendQueryParam("tenancyId", request.getTenancyId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("id", request.getId())
@@ -911,10 +915,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "ListFleetTargets",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListFleetTargets")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetTargetCollection/ListFleetTargets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetTargetsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetTargets")
@@ -949,10 +953,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "ListFleets",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCollection/ListFleets")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCollection/ListFleets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
@@ -996,10 +1000,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "ListInventoryResources",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/InventoryResourceCollection/ListInventoryResources")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/InventoryResourceCollection/ListInventoryResources")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInventoryResourcesRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("inventoryResources")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("lifecycleState", request.getLifecycleState())
@@ -1048,10 +1052,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "ListTargets",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListTargets")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetTargetCollection/ListTargets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListTargetsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("targets")
@@ -1073,118 +1077,6 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
-    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
-            ListWorkRequestErrorsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "FleetAppsManagement",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
-            ListWorkRequestLogsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "FleetAppsManagement",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.WorkRequestLogEntryCollection
-                                .class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
-            ListWorkRequestsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestsRequest, ListWorkRequestsResponse>
-                    handler) {
-
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "FleetAppsManagement",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("workRequestId", request.getWorkRequestId())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.WorkRequestSummaryCollection.class,
-                        ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<RequestResourceValidationResponse> requestResourceValidation(
             RequestResourceValidationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1201,10 +1093,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "RequestResourceValidation",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestResourceValidation")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/RequestResourceValidation")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestResourceValidationRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("actions")
@@ -1238,10 +1130,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "RequestTargetDiscovery",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestTargetDiscovery")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/RequestTargetDiscovery")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestTargetDiscoveryRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("actions")
@@ -1272,10 +1164,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "UpdateFleet",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/UpdateFleet")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/UpdateFleet")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .accept("application/json")
@@ -1310,10 +1202,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "UpdateFleetCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/UpdateFleetCredential")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCredential/UpdateFleetCredential")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetCredentialRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetCredentials")
@@ -1348,10 +1240,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "UpdateFleetProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/UpdateFleetProperty")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetProperty/UpdateFleetProperty")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetPropertyRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetProperties")
@@ -1387,10 +1279,10 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "FleetAppsManagement",
                         "UpdateFleetResource",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/UpdateFleetResource")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetResource/UpdateFleetResource")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetResourceRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("fleets")
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("fleetResources")

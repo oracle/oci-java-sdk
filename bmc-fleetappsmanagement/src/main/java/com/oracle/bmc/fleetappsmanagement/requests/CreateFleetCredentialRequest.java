@@ -11,16 +11,16 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateFleetCredentialRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class CreateFleetCredentialRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.CreateFleetCredentialDetails> {
 
-    /** Details for the new FleetCredential. */
+    /** Details for the new fleet credential. */
     private com.oracle.bmc.fleetappsmanagement.model.CreateFleetCredentialDetails
             createFleetCredentialDetails;
 
-    /** Details for the new FleetCredential. */
+    /** Details for the new fleet credential. */
     public com.oracle.bmc.fleetappsmanagement.model.CreateFleetCredentialDetails
             getCreateFleetCredentialDetails() {
         return createFleetCredentialDetails;
@@ -77,12 +77,12 @@ public class CreateFleetCredentialRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new FleetCredential. */
+        /** Details for the new fleet credential. */
         private com.oracle.bmc.fleetappsmanagement.model.CreateFleetCredentialDetails
                 createFleetCredentialDetails = null;
 
         /**
-         * Details for the new FleetCredential.
+         * Details for the new fleet credential.
          *
          * @param createFleetCredentialDetails the value to set
          * @return this builder instance

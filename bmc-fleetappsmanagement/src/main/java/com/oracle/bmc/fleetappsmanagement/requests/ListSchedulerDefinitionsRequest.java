@@ -11,14 +11,20 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListSchedulerDefinitionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListSchedulerDefinitionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -58,12 +64,14 @@ public class ListSchedulerDefinitionsRequest
         return product;
     }
     /**
-     * A filter to return only schedule definitions whose identifier matches the given identifier.
+     * Unique identifier or OCID for listing a single Schedule Definition by id. Either
+     * compartmentId or id must be provided.
      */
     private String id;
 
     /**
-     * A filter to return only schedule definitions whose identifier matches the given identifier.
+     * Unique identifier or OCID for listing a single Schedule Definition by id. Either
+     * compartmentId or id must be provided.
      */
     public String getId() {
         return id;
@@ -93,6 +101,27 @@ public class ListSchedulerDefinitionsRequest
      */
     public String getRunbookId() {
         return runbookId;
+    }
+    /** RunbookVersion Name filter */
+    private String runbookVersionName;
+
+    /** RunbookVersion Name filter */
+    public String getRunbookVersionName() {
+        return runbookVersionName;
+    }
+    /** Scheduled Time */
+    private java.util.Date timeScheduledGreaterThanOrEqualTo;
+
+    /** Scheduled Time */
+    public java.util.Date getTimeScheduledGreaterThanOrEqualTo() {
+        return timeScheduledGreaterThanOrEqualTo;
+    }
+    /** Scheduled Time */
+    private java.util.Date timeScheduledLessThan;
+
+    /** Scheduled Time */
+    public java.util.Date getTimeScheduledLessThan() {
+        return timeScheduledLessThan;
     }
     /** unique Fleet identifier */
     private String fleetId;
@@ -193,11 +222,15 @@ public class ListSchedulerDefinitionsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -261,14 +294,14 @@ public class ListSchedulerDefinitionsRequest
         }
 
         /**
-         * A filter to return only schedule definitions whose identifier matches the given
-         * identifier.
+         * Unique identifier or OCID for listing a single Schedule Definition by id. Either
+         * compartmentId or id must be provided.
          */
         private String id = null;
 
         /**
-         * A filter to return only schedule definitions whose identifier matches the given
-         * identifier.
+         * Unique identifier or OCID for listing a single Schedule Definition by id. Either
+         * compartmentId or id must be provided.
          *
          * @param id the value to set
          * @return this builder instance
@@ -311,6 +344,49 @@ public class ListSchedulerDefinitionsRequest
          */
         public Builder runbookId(String runbookId) {
             this.runbookId = runbookId;
+            return this;
+        }
+
+        /** RunbookVersion Name filter */
+        private String runbookVersionName = null;
+
+        /**
+         * RunbookVersion Name filter
+         *
+         * @param runbookVersionName the value to set
+         * @return this builder instance
+         */
+        public Builder runbookVersionName(String runbookVersionName) {
+            this.runbookVersionName = runbookVersionName;
+            return this;
+        }
+
+        /** Scheduled Time */
+        private java.util.Date timeScheduledGreaterThanOrEqualTo = null;
+
+        /**
+         * Scheduled Time
+         *
+         * @param timeScheduledGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timeScheduledGreaterThanOrEqualTo(
+                java.util.Date timeScheduledGreaterThanOrEqualTo) {
+            this.timeScheduledGreaterThanOrEqualTo = timeScheduledGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /** Scheduled Time */
+        private java.util.Date timeScheduledLessThan = null;
+
+        /**
+         * Scheduled Time
+         *
+         * @param timeScheduledLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeScheduledLessThan(java.util.Date timeScheduledLessThan) {
+            this.timeScheduledLessThan = timeScheduledLessThan;
             return this;
         }
 
@@ -443,6 +519,9 @@ public class ListSchedulerDefinitionsRequest
             id(o.getId());
             maintenanceWindowId(o.getMaintenanceWindowId());
             runbookId(o.getRunbookId());
+            runbookVersionName(o.getRunbookVersionName());
+            timeScheduledGreaterThanOrEqualTo(o.getTimeScheduledGreaterThanOrEqualTo());
+            timeScheduledLessThan(o.getTimeScheduledLessThan());
             fleetId(o.getFleetId());
             limit(o.getLimit());
             page(o.getPage());
@@ -490,6 +569,9 @@ public class ListSchedulerDefinitionsRequest
             request.id = id;
             request.maintenanceWindowId = maintenanceWindowId;
             request.runbookId = runbookId;
+            request.runbookVersionName = runbookVersionName;
+            request.timeScheduledGreaterThanOrEqualTo = timeScheduledGreaterThanOrEqualTo;
+            request.timeScheduledLessThan = timeScheduledLessThan;
             request.fleetId = fleetId;
             request.limit = limit;
             request.page = page;
@@ -498,8 +580,9 @@ public class ListSchedulerDefinitionsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListSchedulerDefinitionsRequest(compartmentId, lifecycleState, displayName,
-            // product, id, maintenanceWindowId, runbookId, fleetId, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // product, id, maintenanceWindowId, runbookId, runbookVersionName,
+            // timeScheduledGreaterThanOrEqualTo, timeScheduledLessThan, fleetId, limit, page,
+            // sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -517,6 +600,9 @@ public class ListSchedulerDefinitionsRequest
                 .id(id)
                 .maintenanceWindowId(maintenanceWindowId)
                 .runbookId(runbookId)
+                .runbookVersionName(runbookVersionName)
+                .timeScheduledGreaterThanOrEqualTo(timeScheduledGreaterThanOrEqualTo)
+                .timeScheduledLessThan(timeScheduledLessThan)
                 .fleetId(fleetId)
                 .limit(limit)
                 .page(page)
@@ -546,6 +632,10 @@ public class ListSchedulerDefinitionsRequest
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",maintenanceWindowId=").append(String.valueOf(this.maintenanceWindowId));
         sb.append(",runbookId=").append(String.valueOf(this.runbookId));
+        sb.append(",runbookVersionName=").append(String.valueOf(this.runbookVersionName));
+        sb.append(",timeScheduledGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeScheduledGreaterThanOrEqualTo));
+        sb.append(",timeScheduledLessThan=").append(String.valueOf(this.timeScheduledLessThan));
         sb.append(",fleetId=").append(String.valueOf(this.fleetId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -574,6 +664,11 @@ public class ListSchedulerDefinitionsRequest
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.maintenanceWindowId, other.maintenanceWindowId)
                 && java.util.Objects.equals(this.runbookId, other.runbookId)
+                && java.util.Objects.equals(this.runbookVersionName, other.runbookVersionName)
+                && java.util.Objects.equals(
+                        this.timeScheduledGreaterThanOrEqualTo,
+                        other.timeScheduledGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.timeScheduledLessThan, other.timeScheduledLessThan)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -601,6 +696,21 @@ public class ListSchedulerDefinitionsRequest
                                 ? 43
                                 : this.maintenanceWindowId.hashCode());
         result = (result * PRIME) + (this.runbookId == null ? 43 : this.runbookId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runbookVersionName == null
+                                ? 43
+                                : this.runbookVersionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduledGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeScheduledGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduledLessThan == null
+                                ? 43
+                                : this.timeScheduledLessThan.hashCode());
         result = (result * PRIME) + (this.fleetId == null ? 43 : this.fleetId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

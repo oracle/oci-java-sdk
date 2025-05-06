@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Details.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -28,7 +28,8 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         "scope",
         "properties",
         "isDiscoveryOutputTask",
-        "isApplySubjectTask"
+        "isApplySubjectTask",
+        "operation"
     })
     public Details(
             ExecutionDetails executionDetails,
@@ -37,7 +38,8 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
             TaskScope scope,
             Properties properties,
             Boolean isDiscoveryOutputTask,
-            Boolean isApplySubjectTask) {
+            Boolean isApplySubjectTask,
+            String operation) {
         super();
         this.executionDetails = executionDetails;
         this.platform = platform;
@@ -46,6 +48,7 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         this.properties = properties;
         this.isDiscoveryOutputTask = isDiscoveryOutputTask;
         this.isApplySubjectTask = isApplySubjectTask;
+        this.operation = operation;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -147,6 +150,21 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("isApplySubjectTask");
             return this;
         }
+        /** The lifecycle operation performed by the runbook. */
+        @com.fasterxml.jackson.annotation.JsonProperty("operation")
+        private String operation;
+
+        /**
+         * The lifecycle operation performed by the runbook.
+         *
+         * @param operation the value to set
+         * @return this builder
+         */
+        public Builder operation(String operation) {
+            this.operation = operation;
+            this.__explicitlySet__.add("operation");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -160,7 +178,8 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
                             this.scope,
                             this.properties,
                             this.isDiscoveryOutputTask,
-                            this.isApplySubjectTask);
+                            this.isApplySubjectTask,
+                            this.operation);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -189,6 +208,9 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("isApplySubjectTask")) {
                 this.isApplySubjectTask(model.getIsApplySubjectTask());
+            }
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
             }
             return this;
         }
@@ -286,6 +308,19 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         return isApplySubjectTask;
     }
 
+    /** The lifecycle operation performed by the runbook. */
+    @com.fasterxml.jackson.annotation.JsonProperty("operation")
+    private final String operation;
+
+    /**
+     * The lifecycle operation performed by the runbook.
+     *
+     * @return the value
+     */
+    public String getOperation() {
+        return operation;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -308,6 +343,7 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", isDiscoveryOutputTask=").append(String.valueOf(this.isDiscoveryOutputTask));
         sb.append(", isApplySubjectTask=").append(String.valueOf(this.isApplySubjectTask));
+        sb.append(", operation=").append(String.valueOf(this.operation));
         sb.append(")");
         return sb.toString();
     }
@@ -329,6 +365,7 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.properties, other.properties)
                 && java.util.Objects.equals(this.isDiscoveryOutputTask, other.isDiscoveryOutputTask)
                 && java.util.Objects.equals(this.isApplySubjectTask, other.isApplySubjectTask)
+                && java.util.Objects.equals(this.operation, other.operation)
                 && super.equals(other);
     }
 
@@ -353,6 +390,7 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
                         + (this.isApplySubjectTask == null
                                 ? 43
                                 : this.isApplySubjectTask.hashCode());
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
