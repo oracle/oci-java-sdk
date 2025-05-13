@@ -51,6 +51,44 @@ public final class ExternalDatabaseDiagnosticsAndManagementFeatureDetails
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
+        /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current
+         * pluggable databases in the container database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("canEnableAllCurrentPdbs")
+        private Boolean canEnableAllCurrentPdbs;
+
+        /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current
+         * pluggable databases in the container database.
+         *
+         * @param canEnableAllCurrentPdbs the value to set
+         * @return this builder
+         */
+        public Builder canEnableAllCurrentPdbs(Boolean canEnableAllCurrentPdbs) {
+            this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+            this.__explicitlySet__.add("canEnableAllCurrentPdbs");
+            return this;
+        }
+        /**
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the
+         * pluggable databases in the container database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoEnablePluggableDatabase")
+        private Boolean isAutoEnablePluggableDatabase;
+
+        /**
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the
+         * pluggable databases in the container database.
+         *
+         * @param isAutoEnablePluggableDatabase the value to set
+         * @return this builder
+         */
+        public Builder isAutoEnablePluggableDatabase(Boolean isAutoEnablePluggableDatabase) {
+            this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
+            this.__explicitlySet__.add("isAutoEnablePluggableDatabase");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -58,7 +96,10 @@ public final class ExternalDatabaseDiagnosticsAndManagementFeatureDetails
         public ExternalDatabaseDiagnosticsAndManagementFeatureDetails build() {
             ExternalDatabaseDiagnosticsAndManagementFeatureDetails model =
                     new ExternalDatabaseDiagnosticsAndManagementFeatureDetails(
-                            this.connectorDetails, this.licenseModel);
+                            this.connectorDetails,
+                            this.licenseModel,
+                            this.canEnableAllCurrentPdbs,
+                            this.isAutoEnablePluggableDatabase);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -72,6 +113,12 @@ public final class ExternalDatabaseDiagnosticsAndManagementFeatureDetails
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("canEnableAllCurrentPdbs")) {
+                this.canEnableAllCurrentPdbs(model.getCanEnableAllCurrentPdbs());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoEnablePluggableDatabase")) {
+                this.isAutoEnablePluggableDatabase(model.getIsAutoEnablePluggableDatabase());
             }
             return this;
         }
@@ -88,9 +135,14 @@ public final class ExternalDatabaseDiagnosticsAndManagementFeatureDetails
 
     @Deprecated
     public ExternalDatabaseDiagnosticsAndManagementFeatureDetails(
-            ConnectorDetails connectorDetails, LicenseModel licenseModel) {
+            ConnectorDetails connectorDetails,
+            LicenseModel licenseModel,
+            Boolean canEnableAllCurrentPdbs,
+            Boolean isAutoEnablePluggableDatabase) {
         super(connectorDetails);
         this.licenseModel = licenseModel;
+        this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+        this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
     }
 
     /** The Oracle license model that applies to the external database. */
@@ -139,6 +191,40 @@ public final class ExternalDatabaseDiagnosticsAndManagementFeatureDetails
         return licenseModel;
     }
 
+    /**
+     * Indicates whether Diagnostics & Management should be enabled for all the current pluggable
+     * databases in the container database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canEnableAllCurrentPdbs")
+    private final Boolean canEnableAllCurrentPdbs;
+
+    /**
+     * Indicates whether Diagnostics & Management should be enabled for all the current pluggable
+     * databases in the container database.
+     *
+     * @return the value
+     */
+    public Boolean getCanEnableAllCurrentPdbs() {
+        return canEnableAllCurrentPdbs;
+    }
+
+    /**
+     * Indicates whether Diagnostics & Management should be enabled automatically for all the
+     * pluggable databases in the container database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoEnablePluggableDatabase")
+    private final Boolean isAutoEnablePluggableDatabase;
+
+    /**
+     * Indicates whether Diagnostics & Management should be enabled automatically for all the
+     * pluggable databases in the container database.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoEnablePluggableDatabase() {
+        return isAutoEnablePluggableDatabase;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -155,6 +241,10 @@ public final class ExternalDatabaseDiagnosticsAndManagementFeatureDetails
         sb.append("ExternalDatabaseDiagnosticsAndManagementFeatureDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", canEnableAllCurrentPdbs=")
+                .append(String.valueOf(this.canEnableAllCurrentPdbs));
+        sb.append(", isAutoEnablePluggableDatabase=")
+                .append(String.valueOf(this.isAutoEnablePluggableDatabase));
         sb.append(")");
         return sb.toString();
     }
@@ -171,6 +261,10 @@ public final class ExternalDatabaseDiagnosticsAndManagementFeatureDetails
         ExternalDatabaseDiagnosticsAndManagementFeatureDetails other =
                 (ExternalDatabaseDiagnosticsAndManagementFeatureDetails) o;
         return java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(
+                        this.canEnableAllCurrentPdbs, other.canEnableAllCurrentPdbs)
+                && java.util.Objects.equals(
+                        this.isAutoEnablePluggableDatabase, other.isAutoEnablePluggableDatabase)
                 && super.equals(other);
     }
 
@@ -179,6 +273,16 @@ public final class ExternalDatabaseDiagnosticsAndManagementFeatureDetails
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canEnableAllCurrentPdbs == null
+                                ? 43
+                                : this.canEnableAllCurrentPdbs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoEnablePluggableDatabase == null
+                                ? 43
+                                : this.isAutoEnablePluggableDatabase.hashCode());
         return result;
     }
 }

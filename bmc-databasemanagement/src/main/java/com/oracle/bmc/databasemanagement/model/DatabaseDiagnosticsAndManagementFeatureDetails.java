@@ -60,12 +60,16 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
             this.__explicitlySet__.add("managementType");
             return this;
         }
-        /** Indicates whether the pluggable database can be enabled automatically. */
+        /**
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the
+         * pluggable databases in the container database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoEnablePluggableDatabase")
         private Boolean isAutoEnablePluggableDatabase;
 
         /**
-         * Indicates whether the pluggable database can be enabled automatically.
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the
+         * pluggable databases in the container database.
          *
          * @param isAutoEnablePluggableDatabase the value to set
          * @return this builder
@@ -73,6 +77,25 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
         public Builder isAutoEnablePluggableDatabase(Boolean isAutoEnablePluggableDatabase) {
             this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
             this.__explicitlySet__.add("isAutoEnablePluggableDatabase");
+            return this;
+        }
+        /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current
+         * pluggable databases in the container database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("canEnableAllCurrentPdbs")
+        private Boolean canEnableAllCurrentPdbs;
+
+        /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current
+         * pluggable databases in the container database.
+         *
+         * @param canEnableAllCurrentPdbs the value to set
+         * @return this builder
+         */
+        public Builder canEnableAllCurrentPdbs(Boolean canEnableAllCurrentPdbs) {
+            this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+            this.__explicitlySet__.add("canEnableAllCurrentPdbs");
             return this;
         }
 
@@ -85,7 +108,8 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
                             this.databaseConnectionDetails,
                             this.connectorDetails,
                             this.managementType,
-                            this.isAutoEnablePluggableDatabase);
+                            this.isAutoEnablePluggableDatabase,
+                            this.canEnableAllCurrentPdbs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -106,6 +130,9 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
             if (model.wasPropertyExplicitlySet("isAutoEnablePluggableDatabase")) {
                 this.isAutoEnablePluggableDatabase(model.getIsAutoEnablePluggableDatabase());
             }
+            if (model.wasPropertyExplicitlySet("canEnableAllCurrentPdbs")) {
+                this.canEnableAllCurrentPdbs(model.getCanEnableAllCurrentPdbs());
+            }
             return this;
         }
     }
@@ -124,10 +151,12 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
             DatabaseConnectionDetails databaseConnectionDetails,
             ConnectorDetails connectorDetails,
             ManagementType managementType,
-            Boolean isAutoEnablePluggableDatabase) {
+            Boolean isAutoEnablePluggableDatabase,
+            Boolean canEnableAllCurrentPdbs) {
         super(databaseConnectionDetails, connectorDetails);
         this.managementType = managementType;
         this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
+        this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
     }
 
     /** The management type for the database. */
@@ -176,17 +205,38 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
         return managementType;
     }
 
-    /** Indicates whether the pluggable database can be enabled automatically. */
+    /**
+     * Indicates whether Diagnostics & Management should be enabled automatically for all the
+     * pluggable databases in the container database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoEnablePluggableDatabase")
     private final Boolean isAutoEnablePluggableDatabase;
 
     /**
-     * Indicates whether the pluggable database can be enabled automatically.
+     * Indicates whether Diagnostics & Management should be enabled automatically for all the
+     * pluggable databases in the container database.
      *
      * @return the value
      */
     public Boolean getIsAutoEnablePluggableDatabase() {
         return isAutoEnablePluggableDatabase;
+    }
+
+    /**
+     * Indicates whether Diagnostics & Management should be enabled for all the current pluggable
+     * databases in the container database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canEnableAllCurrentPdbs")
+    private final Boolean canEnableAllCurrentPdbs;
+
+    /**
+     * Indicates whether Diagnostics & Management should be enabled for all the current pluggable
+     * databases in the container database.
+     *
+     * @return the value
+     */
+    public Boolean getCanEnableAllCurrentPdbs() {
+        return canEnableAllCurrentPdbs;
     }
 
     @Override
@@ -207,6 +257,8 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
         sb.append(", managementType=").append(String.valueOf(this.managementType));
         sb.append(", isAutoEnablePluggableDatabase=")
                 .append(String.valueOf(this.isAutoEnablePluggableDatabase));
+        sb.append(", canEnableAllCurrentPdbs=")
+                .append(String.valueOf(this.canEnableAllCurrentPdbs));
         sb.append(")");
         return sb.toString();
     }
@@ -225,6 +277,8 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
         return java.util.Objects.equals(this.managementType, other.managementType)
                 && java.util.Objects.equals(
                         this.isAutoEnablePluggableDatabase, other.isAutoEnablePluggableDatabase)
+                && java.util.Objects.equals(
+                        this.canEnableAllCurrentPdbs, other.canEnableAllCurrentPdbs)
                 && super.equals(other);
     }
 
@@ -240,6 +294,11 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
                         + (this.isAutoEnablePluggableDatabase == null
                                 ? 43
                                 : this.isAutoEnablePluggableDatabase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canEnableAllCurrentPdbs == null
+                                ? 43
+                                : this.canEnableAllCurrentPdbs.hashCode());
         return result;
     }
 }

@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.responses;
 import com.oracle.bmc.databasemanagement.model.*;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public class EnableExternalMysqlAssociatedServiceResponse
+public class ModifyExternalContainerDatabaseManagementFeatureResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -25,18 +25,41 @@ public class EnableExternalMysqlAssociatedServiceResponse
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
-    private EnableExternalMysqlAssociatedServiceResponse(
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
+    private ModifyExternalContainerDatabaseManagementFeatureResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
-            String opcRequestId) {
+            String opcRequestId,
+            String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
     }
 
     public static class Builder
             implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    EnableExternalMysqlAssociatedServiceResponse> {
+                    ModifyExternalContainerDatabaseManagementFeatureResponse> {
         private int __httpStatusCode__;
 
         @Override
@@ -72,15 +95,34 @@ public class EnableExternalMysqlAssociatedServiceResponse
         }
 
         /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          *
          * @return this builder instance
          */
         @Override
-        public Builder copy(EnableExternalMysqlAssociatedServiceResponse o) {
+        public Builder copy(ModifyExternalContainerDatabaseManagementFeatureResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }
@@ -91,9 +133,9 @@ public class EnableExternalMysqlAssociatedServiceResponse
          * @return the response object
          */
         @Override
-        public EnableExternalMysqlAssociatedServiceResponse build() {
-            return new EnableExternalMysqlAssociatedServiceResponse(
-                    __httpStatusCode__, headers, opcRequestId);
+        public ModifyExternalContainerDatabaseManagementFeatureResponse build() {
+            return new ModifyExternalContainerDatabaseManagementFeatureResponse(
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 
@@ -112,6 +154,7 @@ public class EnableExternalMysqlAssociatedServiceResponse
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -121,13 +164,15 @@ public class EnableExternalMysqlAssociatedServiceResponse
         if (this == o) {
             return true;
         }
-        if (!(o instanceof EnableExternalMysqlAssociatedServiceResponse)) {
+        if (!(o instanceof ModifyExternalContainerDatabaseManagementFeatureResponse)) {
             return false;
         }
 
-        EnableExternalMysqlAssociatedServiceResponse other =
-                (EnableExternalMysqlAssociatedServiceResponse) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        ModifyExternalContainerDatabaseManagementFeatureResponse other =
+                (ModifyExternalContainerDatabaseManagementFeatureResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId);
     }
 
     @Override
@@ -135,6 +180,9 @@ public class EnableExternalMysqlAssociatedServiceResponse
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         return result;
     }
 }

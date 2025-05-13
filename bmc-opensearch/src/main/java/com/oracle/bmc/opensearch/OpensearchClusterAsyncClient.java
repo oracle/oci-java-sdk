@@ -303,6 +303,36 @@ public class OpensearchClusterAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<ListOpensearchClusterShapesResponse>
+            listOpensearchClusterShapes(
+                    ListOpensearchClusterShapesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOpensearchClusterShapesRequest,
+                                    ListOpensearchClusterShapesResponse>
+                            handler) {
+
+        return clientCall(request, ListOpensearchClusterShapesResponse::builder)
+                .logger(LOG, "listOpensearchClusterShapes")
+                .serviceDetails(
+                        "OpensearchCluster",
+                        "ListOpensearchClusterShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/ShapesDetails/ListOpensearchClusterShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOpensearchClusterShapesRequest::builder)
+                .basePath("/20180828")
+                .appendPathParam("shapes")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.opensearch.model.ShapesDetails.class,
+                        ListOpensearchClusterShapesResponse.Builder::shapesDetails)
+                .handleResponseHeaderString(
+                        "etag", ListOpensearchClusterShapesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOpensearchClusterShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOpensearchClustersResponse> listOpensearchClusters(
             ListOpensearchClustersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

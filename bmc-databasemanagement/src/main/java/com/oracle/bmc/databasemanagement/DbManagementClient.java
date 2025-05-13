@@ -3883,6 +3883,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getNamedCredentialId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.NamedCredential.class,
                         GetNamedCredentialResponse.Builder::namedCredential)
@@ -5612,6 +5613,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.NamedCredentialCollection.class,
                         ListNamedCredentialsResponse.Builder::namedCredentialCollection)
@@ -6397,6 +6399,49 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ModifyDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ModifyExternalContainerDatabaseManagementFeatureResponse
+            modifyExternalContainerDatabaseManagementFeature(
+                    ModifyExternalContainerDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getExternalContainerDatabaseId(),
+                "externalContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalContainerDatabaseManagementFeatureDetails(),
+                "enableExternalContainerDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request, ModifyExternalContainerDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "modifyExternalContainerDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "ModifyExternalContainerDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyExternalContainerDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyExternalContainerDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalcontainerdatabases")
+                .appendPathParam(request.getExternalContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ModifyExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
                 .callSync();
     }
 

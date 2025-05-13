@@ -29,6 +29,7 @@ public final class ResizeOpensearchClusterHorizontalDetails
         "masterNodeCount",
         "dataNodeCount",
         "opendashboardNodeCount",
+        "searchNodeCount",
         "freeformTags",
         "definedTags"
     })
@@ -36,12 +37,14 @@ public final class ResizeOpensearchClusterHorizontalDetails
             Integer masterNodeCount,
             Integer dataNodeCount,
             Integer opendashboardNodeCount,
+            Integer searchNodeCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.masterNodeCount = masterNodeCount;
         this.dataNodeCount = dataNodeCount;
         this.opendashboardNodeCount = opendashboardNodeCount;
+        this.searchNodeCount = searchNodeCount;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -93,6 +96,21 @@ public final class ResizeOpensearchClusterHorizontalDetails
             this.__explicitlySet__.add("opendashboardNodeCount");
             return this;
         }
+        /** The number of search nodes configured for the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("searchNodeCount")
+        private Integer searchNodeCount;
+
+        /**
+         * The number of search nodes configured for the cluster.
+         *
+         * @param searchNodeCount the value to set
+         * @return this builder
+         */
+        public Builder searchNodeCount(Integer searchNodeCount) {
+            this.searchNodeCount = searchNodeCount;
+            this.__explicitlySet__.add("searchNodeCount");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -142,6 +160,7 @@ public final class ResizeOpensearchClusterHorizontalDetails
                             this.masterNodeCount,
                             this.dataNodeCount,
                             this.opendashboardNodeCount,
+                            this.searchNodeCount,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -160,6 +179,9 @@ public final class ResizeOpensearchClusterHorizontalDetails
             }
             if (model.wasPropertyExplicitlySet("opendashboardNodeCount")) {
                 this.opendashboardNodeCount(model.getOpendashboardNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("searchNodeCount")) {
+                this.searchNodeCount(model.getSearchNodeCount());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -219,6 +241,19 @@ public final class ResizeOpensearchClusterHorizontalDetails
         return opendashboardNodeCount;
     }
 
+    /** The number of search nodes configured for the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("searchNodeCount")
+    private final Integer searchNodeCount;
+
+    /**
+     * The number of search nodes configured for the cluster.
+     *
+     * @return the value
+     */
+    public Integer getSearchNodeCount() {
+        return searchNodeCount;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -271,6 +306,7 @@ public final class ResizeOpensearchClusterHorizontalDetails
         sb.append("masterNodeCount=").append(String.valueOf(this.masterNodeCount));
         sb.append(", dataNodeCount=").append(String.valueOf(this.dataNodeCount));
         sb.append(", opendashboardNodeCount=").append(String.valueOf(this.opendashboardNodeCount));
+        sb.append(", searchNodeCount=").append(String.valueOf(this.searchNodeCount));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -292,6 +328,7 @@ public final class ResizeOpensearchClusterHorizontalDetails
                 && java.util.Objects.equals(this.dataNodeCount, other.dataNodeCount)
                 && java.util.Objects.equals(
                         this.opendashboardNodeCount, other.opendashboardNodeCount)
+                && java.util.Objects.equals(this.searchNodeCount, other.searchNodeCount)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -312,6 +349,9 @@ public final class ResizeOpensearchClusterHorizontalDetails
                         + (this.opendashboardNodeCount == null
                                 ? 43
                                 : this.opendashboardNodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.searchNodeCount == null ? 43 : this.searchNodeCount.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
