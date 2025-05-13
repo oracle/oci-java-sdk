@@ -311,6 +311,31 @@ public class OpensearchClusterClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public ListOpensearchClusterShapesResponse listOpensearchClusterShapes(
+            ListOpensearchClusterShapesRequest request) {
+
+        return clientCall(request, ListOpensearchClusterShapesResponse::builder)
+                .logger(LOG, "listOpensearchClusterShapes")
+                .serviceDetails(
+                        "OpensearchCluster",
+                        "ListOpensearchClusterShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/ShapesDetails/ListOpensearchClusterShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOpensearchClusterShapesRequest::builder)
+                .basePath("/20180828")
+                .appendPathParam("shapes")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.opensearch.model.ShapesDetails.class,
+                        ListOpensearchClusterShapesResponse.Builder::shapesDetails)
+                .handleResponseHeaderString(
+                        "etag", ListOpensearchClusterShapesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOpensearchClusterShapesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListOpensearchClustersResponse listOpensearchClusters(
             ListOpensearchClustersRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");

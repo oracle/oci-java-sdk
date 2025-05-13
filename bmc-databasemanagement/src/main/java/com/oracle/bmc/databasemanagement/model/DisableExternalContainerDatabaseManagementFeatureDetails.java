@@ -24,10 +24,12 @@ package com.oracle.bmc.databasemanagement.model;
 public final class DisableExternalContainerDatabaseManagementFeatureDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"feature"})
-    public DisableExternalContainerDatabaseManagementFeatureDetails(DbManagementFeature feature) {
+    @java.beans.ConstructorProperties({"feature", "canDisableAllPdbs"})
+    public DisableExternalContainerDatabaseManagementFeatureDetails(
+            DbManagementFeature feature, Boolean canDisableAllPdbs) {
         super();
         this.feature = feature;
+        this.canDisableAllPdbs = canDisableAllPdbs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -47,13 +49,33 @@ public final class DisableExternalContainerDatabaseManagementFeatureDetails
             this.__explicitlySet__.add("feature");
             return this;
         }
+        /**
+         * Indicates whether Diagnostics & Management should be disabled for the pluggable databases
+         * before disabling it for the container database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("canDisableAllPdbs")
+        private Boolean canDisableAllPdbs;
+
+        /**
+         * Indicates whether Diagnostics & Management should be disabled for the pluggable databases
+         * before disabling it for the container database.
+         *
+         * @param canDisableAllPdbs the value to set
+         * @return this builder
+         */
+        public Builder canDisableAllPdbs(Boolean canDisableAllPdbs) {
+            this.canDisableAllPdbs = canDisableAllPdbs;
+            this.__explicitlySet__.add("canDisableAllPdbs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DisableExternalContainerDatabaseManagementFeatureDetails build() {
             DisableExternalContainerDatabaseManagementFeatureDetails model =
-                    new DisableExternalContainerDatabaseManagementFeatureDetails(this.feature);
+                    new DisableExternalContainerDatabaseManagementFeatureDetails(
+                            this.feature, this.canDisableAllPdbs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -64,6 +86,9 @@ public final class DisableExternalContainerDatabaseManagementFeatureDetails
         public Builder copy(DisableExternalContainerDatabaseManagementFeatureDetails model) {
             if (model.wasPropertyExplicitlySet("feature")) {
                 this.feature(model.getFeature());
+            }
+            if (model.wasPropertyExplicitlySet("canDisableAllPdbs")) {
+                this.canDisableAllPdbs(model.getCanDisableAllPdbs());
             }
             return this;
         }
@@ -91,6 +116,23 @@ public final class DisableExternalContainerDatabaseManagementFeatureDetails
         return feature;
     }
 
+    /**
+     * Indicates whether Diagnostics & Management should be disabled for the pluggable databases
+     * before disabling it for the container database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canDisableAllPdbs")
+    private final Boolean canDisableAllPdbs;
+
+    /**
+     * Indicates whether Diagnostics & Management should be disabled for the pluggable databases
+     * before disabling it for the container database.
+     *
+     * @return the value
+     */
+    public Boolean getCanDisableAllPdbs() {
+        return canDisableAllPdbs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -107,6 +149,7 @@ public final class DisableExternalContainerDatabaseManagementFeatureDetails
         sb.append("DisableExternalContainerDatabaseManagementFeatureDetails(");
         sb.append("super=").append(super.toString());
         sb.append("feature=").append(String.valueOf(this.feature));
+        sb.append(", canDisableAllPdbs=").append(String.valueOf(this.canDisableAllPdbs));
         sb.append(")");
         return sb.toString();
     }
@@ -122,7 +165,9 @@ public final class DisableExternalContainerDatabaseManagementFeatureDetails
 
         DisableExternalContainerDatabaseManagementFeatureDetails other =
                 (DisableExternalContainerDatabaseManagementFeatureDetails) o;
-        return java.util.Objects.equals(this.feature, other.feature) && super.equals(other);
+        return java.util.Objects.equals(this.feature, other.feature)
+                && java.util.Objects.equals(this.canDisableAllPdbs, other.canDisableAllPdbs)
+                && super.equals(other);
     }
 
     @Override
@@ -130,6 +175,9 @@ public final class DisableExternalContainerDatabaseManagementFeatureDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.feature == null ? 43 : this.feature.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canDisableAllPdbs == null ? 43 : this.canDisableAllPdbs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

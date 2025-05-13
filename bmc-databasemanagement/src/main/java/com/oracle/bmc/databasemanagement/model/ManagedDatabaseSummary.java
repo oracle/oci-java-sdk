@@ -258,14 +258,14 @@ public final class ManagedDatabaseSummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB system that this Managed Database is part of.
+         * DB system that this Managed Database is part of.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB system that this Managed Database is part of.
+         * DB system that this Managed Database is part of.
          *
          * @param dbSystemId the value to set
          * @return this builder
@@ -682,15 +682,15 @@ public final class ManagedDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB system that this Managed Database is part of.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
+     * system that this Managed Database is part of.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB system that this Managed Database is part of.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
+     * system that this Managed Database is part of.
      *
      * @return the value
      */

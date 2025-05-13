@@ -28,6 +28,7 @@ public final class CreateOpensearchClusterPipelineDetails
         "ocpuCount",
         "memoryGB",
         "nodeCount",
+        "nodeShape",
         "pipelineConfigurationBody",
         "dataPrepperConfigurationBody",
         "compartmentId",
@@ -45,6 +46,7 @@ public final class CreateOpensearchClusterPipelineDetails
             Integer ocpuCount,
             Integer memoryGB,
             Integer nodeCount,
+            String nodeShape,
             String pipelineConfigurationBody,
             String dataPrepperConfigurationBody,
             String compartmentId,
@@ -61,6 +63,7 @@ public final class CreateOpensearchClusterPipelineDetails
         this.ocpuCount = ocpuCount;
         this.memoryGB = memoryGB;
         this.nodeCount = nodeCount;
+        this.nodeShape = nodeShape;
         this.pipelineConfigurationBody = pipelineConfigurationBody;
         this.dataPrepperConfigurationBody = dataPrepperConfigurationBody;
         this.compartmentId = compartmentId;
@@ -134,6 +137,21 @@ public final class CreateOpensearchClusterPipelineDetails
         public Builder nodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
             this.__explicitlySet__.add("nodeCount");
+            return this;
+        }
+        /** The pipeline node shape. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
+        private String nodeShape;
+
+        /**
+         * The pipeline node shape.
+         *
+         * @param nodeShape the value to set
+         * @return this builder
+         */
+        public Builder nodeShape(String nodeShape) {
+            this.nodeShape = nodeShape;
+            this.__explicitlySet__.add("nodeShape");
             return this;
         }
         /**
@@ -340,6 +358,7 @@ public final class CreateOpensearchClusterPipelineDetails
                             this.ocpuCount,
                             this.memoryGB,
                             this.nodeCount,
+                            this.nodeShape,
                             this.pipelineConfigurationBody,
                             this.dataPrepperConfigurationBody,
                             this.compartmentId,
@@ -370,6 +389,9 @@ public final class CreateOpensearchClusterPipelineDetails
             }
             if (model.wasPropertyExplicitlySet("nodeCount")) {
                 this.nodeCount(model.getNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("nodeShape")) {
+                this.nodeShape(model.getNodeShape());
             }
             if (model.wasPropertyExplicitlySet("pipelineConfigurationBody")) {
                 this.pipelineConfigurationBody(model.getPipelineConfigurationBody());
@@ -467,6 +489,19 @@ public final class CreateOpensearchClusterPipelineDetails
      */
     public Integer getNodeCount() {
         return nodeCount;
+    }
+
+    /** The pipeline node shape. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
+    private final String nodeShape;
+
+    /**
+     * The pipeline node shape.
+     *
+     * @return the value
+     */
+    public String getNodeShape() {
+        return nodeShape;
     }
 
     /**
@@ -657,6 +692,7 @@ public final class CreateOpensearchClusterPipelineDetails
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", memoryGB=").append(String.valueOf(this.memoryGB));
         sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
+        sb.append(", nodeShape=").append(String.valueOf(this.nodeShape));
         sb.append(", pipelineConfigurationBody=")
                 .append(String.valueOf(this.pipelineConfigurationBody));
         sb.append(", dataPrepperConfigurationBody=")
@@ -689,6 +725,7 @@ public final class CreateOpensearchClusterPipelineDetails
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
                 && java.util.Objects.equals(this.memoryGB, other.memoryGB)
                 && java.util.Objects.equals(this.nodeCount, other.nodeCount)
+                && java.util.Objects.equals(this.nodeShape, other.nodeShape)
                 && java.util.Objects.equals(
                         this.pipelineConfigurationBody, other.pipelineConfigurationBody)
                 && java.util.Objects.equals(
@@ -714,6 +751,7 @@ public final class CreateOpensearchClusterPipelineDetails
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
         result = (result * PRIME) + (this.memoryGB == null ? 43 : this.memoryGB.hashCode());
         result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
+        result = (result * PRIME) + (this.nodeShape == null ? 43 : this.nodeShape.hashCode());
         result =
                 (result * PRIME)
                         + (this.pipelineConfigurationBody == null

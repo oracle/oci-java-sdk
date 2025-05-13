@@ -3,6 +3,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.65.0 - 2025-05-13
+### Added 
+- Support for the Model Deployment service 
+- Support for enabling and monitoring Pluggable Databases(PDB) in the Database Management service 
+- Support for additional unit shapes in AI clusters in the Generative AI service 
+- Support for node search details and node shape details on create and update cluster operations in the OpenSearch service    
+
+### Breaking Changes 
+- Method `public com.oracle.bmc.databasemanagement.responses.DisableExternalMysqlAssociatedServiceResponse disableExternalMysqlAssociatedService(com.oracle.bmc.databasemanagement.requests.DisableExternalMysqlAssociatedServiceRequest)` has been removed from the model `com.oracle.bmc.databasemanagement.ManagedMySqlDatabases` in the Database Management service 
+- Method `public com.oracle.bmc.databasemanagement.responses.EnableExternalMysqlAssociatedServiceResponse enableExternalMysqlAssociatedService(com.oracle.bmc.databasemanagement.requests.EnableExternalMysqlAssociatedServiceRequest)` has been removed from the model `com.oracle.bmc.databasemanagement.ManagedMySqlDatabases` in the Database Management service 
+- Class `com.oracle.bmc.databasemanagement.model.DisableExternalMysqlAssociatedServiceDetails` has been removed from the Database Management service 
+- Class `com.oracle.bmc.databasemanagement.model.EnableExternalMysqlAssociatedServiceDetails` has been removed from the Database Management service 
+- Method `public com.oracle.bmc.databasemanagement.model.ExadataInfrastructureLifecycleStateValues$LifecycleState getLifecycleState()` has been removed from the model `com.oracle.bmc.databasemanagement.model.ExadataInfrastructureLifecycleStateValues` in the Database Management service 
+- Class `com.oracle.bmc.databasemanagement.model.ExadataInfrastructureLifecycleStateValues$LifecycleState` has been removed from the Database Management service 
+- Class `com.oracle.bmc.databasemanagement.model.ExternalMysqlAssociatedServiceName` has been removed from the Database Management service 
+- Class `com.oracle.bmc.databasemanagement.requests.DisableExternalMysqlAssociatedServiceRequest` has been removed from the Database Management service 
+- Class `com.oracle.bmc.databasemanagement.requests.EnableExternalMysqlAssociatedServiceRequest` has been removed from the Database Management service 
+- Class `com.oracle.bmc.databasemanagement.responses.DisableExternalMysqlAssociatedServiceResponse` has been removed from the Database Management service 
+- Class `com.oracle.bmc.databasemanagement.responses.EnableExternalMysqlAssociatedServiceResponse` has been removed from the Database Management service
+
 ## 3.64.0 - 2025-05-06
 ### Added
 - Support for dry run while creating cloud exadata Infrastructure and VM clusters in the Database service

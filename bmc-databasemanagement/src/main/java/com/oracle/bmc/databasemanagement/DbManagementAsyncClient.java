@@ -7029,6 +7029,52 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyExternalContainerDatabaseManagementFeatureResponse>
+            modifyExternalContainerDatabaseManagementFeature(
+                    ModifyExternalContainerDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ModifyExternalContainerDatabaseManagementFeatureRequest,
+                                    ModifyExternalContainerDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalContainerDatabaseId(),
+                "externalContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalContainerDatabaseManagementFeatureDetails(),
+                "enableExternalContainerDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request, ModifyExternalContainerDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "modifyExternalContainerDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "ModifyExternalContainerDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyExternalContainerDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyExternalContainerDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalcontainerdatabases")
+                .appendPathParam(request.getExternalContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ModifyExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyPluggableDatabaseManagementFeatureResponse>
             modifyPluggableDatabaseManagementFeature(
                     ModifyPluggableDatabaseManagementFeatureRequest request,

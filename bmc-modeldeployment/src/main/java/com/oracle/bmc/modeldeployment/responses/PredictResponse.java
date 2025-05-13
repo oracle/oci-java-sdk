@@ -2,13 +2,12 @@
  * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.databasemanagement.responses;
+package com.oracle.bmc.modeldeployment.responses;
 
-import com.oracle.bmc.databasemanagement.model.*;
+import com.oracle.bmc.modeldeployment.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public class DisableExternalMysqlAssociatedServiceResponse
-        extends com.oracle.bmc.responses.BmcResponse {
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240424")
+public class PredictResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -25,18 +24,31 @@ public class DisableExternalMysqlAssociatedServiceResponse
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
-    private DisableExternalMysqlAssociatedServiceResponse(
+    /** The returned {@code String} instance. */
+    private String value;
+
+    /**
+     * The returned {@code String} instance.
+     *
+     * @return the value
+     */
+    public String getValue() {
+        return value;
+    }
+
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "value"})
+    private PredictResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
-            String opcRequestId) {
+            String opcRequestId,
+            String value) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.value = value;
     }
 
     public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    DisableExternalMysqlAssociatedServiceResponse> {
+            implements com.oracle.bmc.responses.BmcResponse.Builder<PredictResponse> {
         private int __httpStatusCode__;
 
         @Override
@@ -71,16 +83,31 @@ public class DisableExternalMysqlAssociatedServiceResponse
             return this;
         }
 
+        /** The returned {@code String} instance. */
+        private String value;
+
+        /**
+         * The returned {@code String} instance.
+         *
+         * @param value the value to set
+         * @return this builder
+         */
+        public Builder value(String value) {
+            this.value = value;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          *
          * @return this builder instance
          */
         @Override
-        public Builder copy(DisableExternalMysqlAssociatedServiceResponse o) {
+        public Builder copy(PredictResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            value(o.getValue());
 
             return this;
         }
@@ -91,9 +118,8 @@ public class DisableExternalMysqlAssociatedServiceResponse
          * @return the response object
          */
         @Override
-        public DisableExternalMysqlAssociatedServiceResponse build() {
-            return new DisableExternalMysqlAssociatedServiceResponse(
-                    __httpStatusCode__, headers, opcRequestId);
+        public PredictResponse build() {
+            return new PredictResponse(__httpStatusCode__, headers, opcRequestId, value);
         }
     }
 
@@ -112,6 +138,7 @@ public class DisableExternalMysqlAssociatedServiceResponse
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",value=").append(String.valueOf(value));
         sb.append(")");
         return sb.toString();
     }
@@ -121,13 +148,14 @@ public class DisableExternalMysqlAssociatedServiceResponse
         if (this == o) {
             return true;
         }
-        if (!(o instanceof DisableExternalMysqlAssociatedServiceResponse)) {
+        if (!(o instanceof PredictResponse)) {
             return false;
         }
 
-        DisableExternalMysqlAssociatedServiceResponse other =
-                (DisableExternalMysqlAssociatedServiceResponse) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        PredictResponse other = (PredictResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.value, other.value);
     }
 
     @Override
@@ -135,6 +163,7 @@ public class DisableExternalMysqlAssociatedServiceResponse
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         return result;
     }
 }

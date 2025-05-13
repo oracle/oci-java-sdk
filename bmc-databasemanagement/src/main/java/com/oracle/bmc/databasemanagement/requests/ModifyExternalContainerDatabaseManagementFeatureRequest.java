@@ -7,35 +7,52 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalMysqlAssociatedServiceExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifyExternalContainerDatabaseManagementFeatureExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * EnableExternalMysqlAssociatedServiceRequest.
+ * ModifyExternalContainerDatabaseManagementFeatureRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public class EnableExternalMysqlAssociatedServiceRequest
+public class ModifyExternalContainerDatabaseManagementFeatureRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemanagement.model
-                        .EnableExternalMysqlAssociatedServiceDetails> {
+                        .EnableExternalContainerDatabaseManagementFeatureDetails> {
 
-    /** The OCID of the External MySQL Database. */
-    private String externalMySqlDatabaseId;
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * external container database.
+     */
+    private String externalContainerDatabaseId;
 
-    /** The OCID of the External MySQL Database. */
-    public String getExternalMySqlDatabaseId() {
-        return externalMySqlDatabaseId;
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * external container database.
+     */
+    public String getExternalContainerDatabaseId() {
+        return externalContainerDatabaseId;
     }
     /**
-     * The details required to enable an Associated Service for an external MySQL database resource.
+     * The details required to enable a Database Management feature for an external container
+     * database.
      */
-    private com.oracle.bmc.databasemanagement.model.EnableExternalMysqlAssociatedServiceDetails
-            enableExternalMysqlAssociatedServiceDetails;
+    private com.oracle.bmc.databasemanagement.model
+                    .EnableExternalContainerDatabaseManagementFeatureDetails
+            enableExternalContainerDatabaseManagementFeatureDetails;
 
     /**
-     * The details required to enable an Associated Service for an external MySQL database resource.
+     * The details required to enable a Database Management feature for an external container
+     * database.
      */
-    public com.oracle.bmc.databasemanagement.model.EnableExternalMysqlAssociatedServiceDetails
-            getEnableExternalMysqlAssociatedServiceDetails() {
-        return enableExternalMysqlAssociatedServiceDetails;
+    public com.oracle.bmc.databasemanagement.model
+                    .EnableExternalContainerDatabaseManagementFeatureDetails
+            getEnableExternalContainerDatabaseManagementFeatureDetails() {
+        return enableExternalContainerDatabaseManagementFeatureDetails;
+    }
+    /** The client request ID for tracing. */
+    private String opcRequestId;
+
+    /** The client request ID for tracing. */
+    public String getOpcRequestId() {
+        return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -73,13 +90,6 @@ public class EnableExternalMysqlAssociatedServiceRequest
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
-    private String opcRequestId;
-
-    /** The client request ID for tracing. */
-    public String getOpcRequestId() {
-        return opcRequestId;
-    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -88,52 +98,73 @@ public class EnableExternalMysqlAssociatedServiceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public com.oracle.bmc.databasemanagement.model.EnableExternalMysqlAssociatedServiceDetails
+    public com.oracle.bmc.databasemanagement.model
+                    .EnableExternalContainerDatabaseManagementFeatureDetails
             getBody$() {
-        return enableExternalMysqlAssociatedServiceDetails;
+        return enableExternalContainerDatabaseManagementFeatureDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    EnableExternalMysqlAssociatedServiceRequest,
+                    ModifyExternalContainerDatabaseManagementFeatureRequest,
                     com.oracle.bmc.databasemanagement.model
-                            .EnableExternalMysqlAssociatedServiceDetails> {
+                            .EnableExternalContainerDatabaseManagementFeatureDetails> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the External MySQL Database. */
-        private String externalMySqlDatabaseId = null;
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * external container database.
+         */
+        private String externalContainerDatabaseId = null;
 
         /**
-         * The OCID of the External MySQL Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * external container database.
          *
-         * @param externalMySqlDatabaseId the value to set
+         * @param externalContainerDatabaseId the value to set
          * @return this builder instance
          */
-        public Builder externalMySqlDatabaseId(String externalMySqlDatabaseId) {
-            this.externalMySqlDatabaseId = externalMySqlDatabaseId;
+        public Builder externalContainerDatabaseId(String externalContainerDatabaseId) {
+            this.externalContainerDatabaseId = externalContainerDatabaseId;
             return this;
         }
 
         /**
-         * The details required to enable an Associated Service for an external MySQL database
-         * resource.
+         * The details required to enable a Database Management feature for an external container
+         * database.
          */
-        private com.oracle.bmc.databasemanagement.model.EnableExternalMysqlAssociatedServiceDetails
-                enableExternalMysqlAssociatedServiceDetails = null;
+        private com.oracle.bmc.databasemanagement.model
+                        .EnableExternalContainerDatabaseManagementFeatureDetails
+                enableExternalContainerDatabaseManagementFeatureDetails = null;
 
         /**
-         * The details required to enable an Associated Service for an external MySQL database
-         * resource.
+         * The details required to enable a Database Management feature for an external container
+         * database.
          *
-         * @param enableExternalMysqlAssociatedServiceDetails the value to set
+         * @param enableExternalContainerDatabaseManagementFeatureDetails the value to set
          * @return this builder instance
          */
-        public Builder enableExternalMysqlAssociatedServiceDetails(
-                com.oracle.bmc.databasemanagement.model.EnableExternalMysqlAssociatedServiceDetails
-                        enableExternalMysqlAssociatedServiceDetails) {
-            this.enableExternalMysqlAssociatedServiceDetails =
-                    enableExternalMysqlAssociatedServiceDetails;
+        public Builder enableExternalContainerDatabaseManagementFeatureDetails(
+                com.oracle.bmc.databasemanagement.model
+                                .EnableExternalContainerDatabaseManagementFeatureDetails
+                        enableExternalContainerDatabaseManagementFeatureDetails) {
+            this.enableExternalContainerDatabaseManagementFeatureDetails =
+                    enableExternalContainerDatabaseManagementFeatureDetails;
+            return this;
+        }
+
+        /** The client request ID for tracing. */
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
             return this;
         }
 
@@ -183,20 +214,6 @@ public class EnableExternalMysqlAssociatedServiceRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
-        private String opcRequestId = null;
-
-        /**
-         * The client request ID for tracing.
-         *
-         * @param opcRequestId the value to set
-         * @return this builder instance
-         */
-        public Builder opcRequestId(String opcRequestId) {
-            this.opcRequestId = opcRequestId;
-            return this;
-        }
-
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -226,21 +243,21 @@ public class EnableExternalMysqlAssociatedServiceRequest
          *
          * @return this builder instance
          */
-        public Builder copy(EnableExternalMysqlAssociatedServiceRequest o) {
-            externalMySqlDatabaseId(o.getExternalMySqlDatabaseId());
-            enableExternalMysqlAssociatedServiceDetails(
-                    o.getEnableExternalMysqlAssociatedServiceDetails());
+        public Builder copy(ModifyExternalContainerDatabaseManagementFeatureRequest o) {
+            externalContainerDatabaseId(o.getExternalContainerDatabaseId());
+            enableExternalContainerDatabaseManagementFeatureDetails(
+                    o.getEnableExternalContainerDatabaseManagementFeatureDetails());
+            opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
-            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
         }
 
         /**
-         * Build the instance of EnableExternalMysqlAssociatedServiceRequest as configured by this
-         * builder
+         * Build the instance of ModifyExternalContainerDatabaseManagementFeatureRequest as
+         * configured by this builder
          *
          * <p>Note that this method takes calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
@@ -248,10 +265,11 @@ public class EnableExternalMysqlAssociatedServiceRequest
          *
          * <p>This is the preferred method to build an instance.
          *
-         * @return instance of EnableExternalMysqlAssociatedServiceRequest
+         * @return instance of ModifyExternalContainerDatabaseManagementFeatureRequest
          */
-        public EnableExternalMysqlAssociatedServiceRequest build() {
-            EnableExternalMysqlAssociatedServiceRequest request = buildWithoutInvocationCallback();
+        public ModifyExternalContainerDatabaseManagementFeatureRequest build() {
+            ModifyExternalContainerDatabaseManagementFeatureRequest request =
+                    buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
@@ -265,34 +283,38 @@ public class EnableExternalMysqlAssociatedServiceRequest
          */
         @com.oracle.bmc.InternalSdk
         public Builder body$(
-                com.oracle.bmc.databasemanagement.model.EnableExternalMysqlAssociatedServiceDetails
+                com.oracle.bmc.databasemanagement.model
+                                .EnableExternalContainerDatabaseManagementFeatureDetails
                         body) {
-            enableExternalMysqlAssociatedServiceDetails(body);
+            enableExternalContainerDatabaseManagementFeatureDetails(body);
             return this;
         }
 
         /**
-         * Build the instance of EnableExternalMysqlAssociatedServiceRequest as configured by this
-         * builder
+         * Build the instance of ModifyExternalContainerDatabaseManagementFeatureRequest as
+         * configured by this builder
          *
          * <p>Note that this method does not take calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
-         * @return instance of EnableExternalMysqlAssociatedServiceRequest
+         * @return instance of ModifyExternalContainerDatabaseManagementFeatureRequest
          */
-        public EnableExternalMysqlAssociatedServiceRequest buildWithoutInvocationCallback() {
-            EnableExternalMysqlAssociatedServiceRequest request =
-                    new EnableExternalMysqlAssociatedServiceRequest();
-            request.externalMySqlDatabaseId = externalMySqlDatabaseId;
-            request.enableExternalMysqlAssociatedServiceDetails =
-                    enableExternalMysqlAssociatedServiceDetails;
+        public ModifyExternalContainerDatabaseManagementFeatureRequest
+                buildWithoutInvocationCallback() {
+            ModifyExternalContainerDatabaseManagementFeatureRequest request =
+                    new ModifyExternalContainerDatabaseManagementFeatureRequest();
+            request.externalContainerDatabaseId = externalContainerDatabaseId;
+            request.enableExternalContainerDatabaseManagementFeatureDetails =
+                    enableExternalContainerDatabaseManagementFeatureDetails;
+            request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
-            request.opcRequestId = opcRequestId;
             return request;
-            // new EnableExternalMysqlAssociatedServiceRequest(externalMySqlDatabaseId,
-            // enableExternalMysqlAssociatedServiceDetails, opcRetryToken, ifMatch, opcRequestId);
+            // new
+            // ModifyExternalContainerDatabaseManagementFeatureRequest(externalContainerDatabaseId,
+            // enableExternalContainerDatabaseManagementFeatureDetails, opcRequestId, opcRetryToken,
+            // ifMatch);
         }
     }
 
@@ -303,12 +325,12 @@ public class EnableExternalMysqlAssociatedServiceRequest
      */
     public Builder toBuilder() {
         return new Builder()
-                .externalMySqlDatabaseId(externalMySqlDatabaseId)
-                .enableExternalMysqlAssociatedServiceDetails(
-                        enableExternalMysqlAssociatedServiceDetails)
+                .externalContainerDatabaseId(externalContainerDatabaseId)
+                .enableExternalContainerDatabaseManagementFeatureDetails(
+                        enableExternalContainerDatabaseManagementFeatureDetails)
+                .opcRequestId(opcRequestId)
                 .opcRetryToken(opcRetryToken)
-                .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .ifMatch(ifMatch);
     }
 
     /**
@@ -325,12 +347,15 @@ public class EnableExternalMysqlAssociatedServiceRequest
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",externalMySqlDatabaseId=").append(String.valueOf(this.externalMySqlDatabaseId));
-        sb.append(",enableExternalMysqlAssociatedServiceDetails=")
-                .append(String.valueOf(this.enableExternalMysqlAssociatedServiceDetails));
+        sb.append(",externalContainerDatabaseId=")
+                .append(String.valueOf(this.externalContainerDatabaseId));
+        sb.append(",enableExternalContainerDatabaseManagementFeatureDetails=")
+                .append(
+                        String.valueOf(
+                                this.enableExternalContainerDatabaseManagementFeatureDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
-        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -340,21 +365,21 @@ public class EnableExternalMysqlAssociatedServiceRequest
         if (this == o) {
             return true;
         }
-        if (!(o instanceof EnableExternalMysqlAssociatedServiceRequest)) {
+        if (!(o instanceof ModifyExternalContainerDatabaseManagementFeatureRequest)) {
             return false;
         }
 
-        EnableExternalMysqlAssociatedServiceRequest other =
-                (EnableExternalMysqlAssociatedServiceRequest) o;
+        ModifyExternalContainerDatabaseManagementFeatureRequest other =
+                (ModifyExternalContainerDatabaseManagementFeatureRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(
-                        this.externalMySqlDatabaseId, other.externalMySqlDatabaseId)
+                        this.externalContainerDatabaseId, other.externalContainerDatabaseId)
                 && java.util.Objects.equals(
-                        this.enableExternalMysqlAssociatedServiceDetails,
-                        other.enableExternalMysqlAssociatedServiceDetails)
+                        this.enableExternalContainerDatabaseManagementFeatureDetails,
+                        other.enableExternalContainerDatabaseManagementFeatureDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
 
     @Override
@@ -363,19 +388,20 @@ public class EnableExternalMysqlAssociatedServiceRequest
         int result = super.hashCode();
         result =
                 (result * PRIME)
-                        + (this.externalMySqlDatabaseId == null
+                        + (this.externalContainerDatabaseId == null
                                 ? 43
-                                : this.externalMySqlDatabaseId.hashCode());
+                                : this.externalContainerDatabaseId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.enableExternalMysqlAssociatedServiceDetails == null
+                        + (this.enableExternalContainerDatabaseManagementFeatureDetails == null
                                 ? 43
-                                : this.enableExternalMysqlAssociatedServiceDetails.hashCode());
+                                : this.enableExternalContainerDatabaseManagementFeatureDetails
+                                        .hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
-        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }
 }

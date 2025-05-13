@@ -2523,20 +2523,6 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.databasemanagement.model.DisableExternalMysqlAssociatedServiceDetails",
-    "allDeclaredFields": true,
-    "allDeclaredMethods": true,
-    "queryAllDeclaredConstructors": true
-  },
-  {
-    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.databasemanagement.model.DisableExternalMysqlAssociatedServiceDetails$Builder",
-    "allDeclaredFields": true,
-    "allDeclaredMethods": true,
-    "allDeclaredConstructors": true
-  },
-  {
-    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.databasemanagement.model.DisableExternalNonContainerDatabaseManagementFeatureDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -2992,20 +2978,6 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.databasemanagement.model.EnableExternalMysqlAssociatedServiceDetails",
-    "allDeclaredFields": true,
-    "allDeclaredMethods": true,
-    "queryAllDeclaredConstructors": true
-  },
-  {
-    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.databasemanagement.model.EnableExternalMysqlAssociatedServiceDetails$Builder",
-    "allDeclaredFields": true,
-    "allDeclaredMethods": true,
-    "allDeclaredConstructors": true
-  },
-  {
-    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.databasemanagement.model.EnableExternalNonContainerDatabaseManagementFeatureDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -3109,7 +3081,7 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.databasemanagement.model.ExadataInfrastructureLifecycleStateValues$LifecycleState",
+    "name": "com.oracle.bmc.databasemanagement.model.ExadataInfrastructureLifecycleStateValues$State",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
   },
@@ -4491,12 +4463,6 @@
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
-  },
-  {
-    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.databasemanagement.model.ExternalMysqlAssociatedServiceName",
-    "allDeclaredFields": true,
-    "allDeclaredMethods": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
