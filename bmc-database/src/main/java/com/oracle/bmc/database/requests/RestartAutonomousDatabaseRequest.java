@@ -43,6 +43,21 @@ public class RestartAutonomousDatabaseRequest
     public String getIfMatch() {
         return ifMatch;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -91,6 +106,26 @@ public class RestartAutonomousDatabaseRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -122,6 +157,7 @@ public class RestartAutonomousDatabaseRequest
         public Builder copy(RestartAutonomousDatabaseRequest o) {
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             ifMatch(o.getIfMatch());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -158,8 +194,9 @@ public class RestartAutonomousDatabaseRequest
             RestartAutonomousDatabaseRequest request = new RestartAutonomousDatabaseRequest();
             request.autonomousDatabaseId = autonomousDatabaseId;
             request.ifMatch = ifMatch;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new RestartAutonomousDatabaseRequest(autonomousDatabaseId, ifMatch);
+            // new RestartAutonomousDatabaseRequest(autonomousDatabaseId, ifMatch, opcDryRun);
         }
     }
 
@@ -169,7 +206,10 @@ public class RestartAutonomousDatabaseRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().autonomousDatabaseId(autonomousDatabaseId).ifMatch(ifMatch);
+        return new Builder()
+                .autonomousDatabaseId(autonomousDatabaseId)
+                .ifMatch(ifMatch)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -188,6 +228,7 @@ public class RestartAutonomousDatabaseRequest
         sb.append("super=").append(super.toString());
         sb.append(",autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -204,7 +245,8 @@ public class RestartAutonomousDatabaseRequest
         RestartAutonomousDatabaseRequest other = (RestartAutonomousDatabaseRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -217,6 +259,7 @@ public class RestartAutonomousDatabaseRequest
                                 ? 43
                                 : this.autonomousDatabaseId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

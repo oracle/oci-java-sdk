@@ -62,6 +62,21 @@ public class UpdateAutonomousDatabaseBackupRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -153,6 +168,26 @@ public class UpdateAutonomousDatabaseBackupRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -186,6 +221,7 @@ public class UpdateAutonomousDatabaseBackupRequest
             updateAutonomousDatabaseBackupDetails(o.getUpdateAutonomousDatabaseBackupDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -238,9 +274,10 @@ public class UpdateAutonomousDatabaseBackupRequest
             request.updateAutonomousDatabaseBackupDetails = updateAutonomousDatabaseBackupDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             return request;
             // new UpdateAutonomousDatabaseBackupRequest(autonomousDatabaseBackupId,
-            // updateAutonomousDatabaseBackupDetails, ifMatch, opcRequestId);
+            // updateAutonomousDatabaseBackupDetails, ifMatch, opcRequestId, opcDryRun);
         }
     }
 
@@ -254,7 +291,8 @@ public class UpdateAutonomousDatabaseBackupRequest
                 .autonomousDatabaseBackupId(autonomousDatabaseBackupId)
                 .updateAutonomousDatabaseBackupDetails(updateAutonomousDatabaseBackupDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -277,6 +315,7 @@ public class UpdateAutonomousDatabaseBackupRequest
                 .append(String.valueOf(this.updateAutonomousDatabaseBackupDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -298,7 +337,8 @@ public class UpdateAutonomousDatabaseBackupRequest
                         this.updateAutonomousDatabaseBackupDetails,
                         other.updateAutonomousDatabaseBackupDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -317,6 +357,7 @@ public class UpdateAutonomousDatabaseBackupRequest
                                 : this.updateAutonomousDatabaseBackupDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

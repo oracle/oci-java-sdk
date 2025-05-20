@@ -62,6 +62,21 @@ public class GenerateAutonomousDatabaseWalletRequest
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -155,6 +170,26 @@ public class GenerateAutonomousDatabaseWalletRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -188,6 +223,7 @@ public class GenerateAutonomousDatabaseWalletRequest
             generateAutonomousDatabaseWalletDetails(o.getGenerateAutonomousDatabaseWalletDetails());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -243,9 +279,10 @@ public class GenerateAutonomousDatabaseWalletRequest
                     generateAutonomousDatabaseWalletDetails;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.opcDryRun = opcDryRun;
             return request;
             // new GenerateAutonomousDatabaseWalletRequest(autonomousDatabaseId,
-            // generateAutonomousDatabaseWalletDetails, opcRequestId, opcRetryToken);
+            // generateAutonomousDatabaseWalletDetails, opcRequestId, opcRetryToken, opcDryRun);
         }
     }
 
@@ -259,7 +296,8 @@ public class GenerateAutonomousDatabaseWalletRequest
                 .autonomousDatabaseId(autonomousDatabaseId)
                 .generateAutonomousDatabaseWalletDetails(generateAutonomousDatabaseWalletDetails)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -281,6 +319,7 @@ public class GenerateAutonomousDatabaseWalletRequest
                 .append(String.valueOf(this.generateAutonomousDatabaseWalletDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -301,7 +340,8 @@ public class GenerateAutonomousDatabaseWalletRequest
                         this.generateAutonomousDatabaseWalletDetails,
                         other.generateAutonomousDatabaseWalletDetails)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -322,6 +362,7 @@ public class GenerateAutonomousDatabaseWalletRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

@@ -28,6 +28,7 @@ public final class DbSystemSnapshot
         "description",
         "compartmentId",
         "subnetId",
+        "nsgIds",
         "availabilityDomain",
         "faultDomain",
         "shapeName",
@@ -59,6 +60,7 @@ public final class DbSystemSnapshot
             String description,
             String compartmentId,
             String subnetId,
+            java.util.List<String> nsgIds,
             String availabilityDomain,
             String faultDomain,
             String shapeName,
@@ -89,6 +91,7 @@ public final class DbSystemSnapshot
         this.description = description;
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
         this.shapeName = shapeName;
@@ -190,6 +193,21 @@ public final class DbSystemSnapshot
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /** Network Security Group OCIDs used for the VNIC attachment. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         */
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /** The Availability Domain where the primary DB System should be located. */
@@ -577,6 +595,7 @@ public final class DbSystemSnapshot
                             this.description,
                             this.compartmentId,
                             this.subnetId,
+                            this.nsgIds,
                             this.availabilityDomain,
                             this.faultDomain,
                             this.shapeName,
@@ -623,6 +642,9 @@ public final class DbSystemSnapshot
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
@@ -772,6 +794,19 @@ public final class DbSystemSnapshot
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /** Network Security Group OCIDs used for the VNIC attachment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
     }
 
     /** The Availability Domain where the primary DB System should be located. */
@@ -1118,6 +1153,7 @@ public final class DbSystemSnapshot
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
@@ -1161,6 +1197,7 @@ public final class DbSystemSnapshot
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
@@ -1199,6 +1236,7 @@ public final class DbSystemSnapshot
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result =
                 (result * PRIME)
                         + (this.availabilityDomain == null

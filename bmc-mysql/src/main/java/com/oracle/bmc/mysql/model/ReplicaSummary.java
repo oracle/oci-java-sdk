@@ -35,6 +35,7 @@ public final class ReplicaSummary
         "mysqlVersion",
         "availabilityDomain",
         "faultDomain",
+        "nsgIds",
         "ipAddress",
         "port",
         "portX",
@@ -58,6 +59,7 @@ public final class ReplicaSummary
             String mysqlVersion,
             String availabilityDomain,
             String faultDomain,
+            java.util.List<String> nsgIds,
             String ipAddress,
             Integer port,
             Integer portX,
@@ -80,6 +82,7 @@ public final class ReplicaSummary
         this.mysqlVersion = mysqlVersion;
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
+        this.nsgIds = nsgIds;
         this.ipAddress = ipAddress;
         this.port = port;
         this.portX = portX;
@@ -281,6 +284,21 @@ public final class ReplicaSummary
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
+        /** Network Security Group OCIDs used for the VNIC attachment. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         */
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
         /** The IP address the read replica is configured to listen on. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
@@ -458,6 +476,7 @@ public final class ReplicaSummary
                             this.mysqlVersion,
                             this.availabilityDomain,
                             this.faultDomain,
+                            this.nsgIds,
                             this.ipAddress,
                             this.port,
                             this.portX,
@@ -510,6 +529,9 @@ public final class ReplicaSummary
             }
             if (model.wasPropertyExplicitlySet("faultDomain")) {
                 this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
@@ -767,6 +789,19 @@ public final class ReplicaSummary
         return faultDomain;
     }
 
+    /** Network Security Group OCIDs used for the VNIC attachment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
     /** The IP address the read replica is configured to listen on. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
@@ -933,6 +968,7 @@ public final class ReplicaSummary
         sb.append(", mysqlVersion=").append(String.valueOf(this.mysqlVersion));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", portX=").append(String.valueOf(this.portX));
@@ -968,6 +1004,7 @@ public final class ReplicaSummary
                 && java.util.Objects.equals(this.mysqlVersion, other.mysqlVersion)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.portX, other.portX)
@@ -1006,6 +1043,7 @@ public final class ReplicaSummary
                                 ? 43
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.portX == null ? 43 : this.portX.hashCode());

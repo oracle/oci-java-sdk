@@ -85,6 +85,21 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -205,6 +220,26 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -240,6 +275,7 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -296,9 +332,11 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.opcDryRun = opcDryRun;
             return request;
             // new ConfigureAutonomousDatabaseVaultKeyRequest(autonomousDatabaseId,
-            // configureAutonomousDatabaseVaultKeyDetails, ifMatch, opcRequestId, opcRetryToken);
+            // configureAutonomousDatabaseVaultKeyDetails, ifMatch, opcRequestId, opcRetryToken,
+            // opcDryRun);
         }
     }
 
@@ -314,7 +352,8 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
                         configureAutonomousDatabaseVaultKeyDetails)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -337,6 +376,7 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -359,7 +399,8 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
                         other.configureAutonomousDatabaseVaultKeyDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -381,6 +422,7 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

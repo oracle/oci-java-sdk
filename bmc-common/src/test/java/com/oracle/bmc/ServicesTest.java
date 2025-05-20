@@ -4,8 +4,13 @@
  */
 package com.oracle.bmc;
 
+import com.oracle.bmc.http.client.Options;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.Optional;
+
+import static org.junit.Assert.assertEquals;
 
 public class ServicesTest {
 
@@ -46,5 +51,44 @@ public class ServicesTest {
     @Test(expected = IllegalArgumentException.class)
     public void addService_blankServiceName() {
         Services.serviceBuilder().serviceName("").build();
+    }
+
+    @Test
+    public void multipleServicesWithRealmSpecificEndpoints() {
+        Boolean useOfRealmSpecificEndpointTemplateEnabledProgrammatically =
+                Options.getUseOfRealmSpecificEndpointTemplateEnabledProgrammatically();
+        try {
+            Options.setUseOfRealmSpecificEndpointTemplateEnabledProgrammatically(true);
+
+            Service s1 =
+                    Services.serviceBuilder()
+                            .serviceName("REALM_SPECIFIC1")
+                            .serviceEndpointPrefix("realm-specific1")
+                            .serviceEndpointTemplate("{region}.realm-specific1.oci.oraclecloud.com")
+                            .addServiceEndpointTemplateForRealm(
+                                    "oc1", "realm-specific1.{region}.oci.customer-oci.com")
+                            .build();
+
+            Optional<String> endpoint1 = Region.US_PHOENIX_1.getEndpoint(s1);
+            assertEquals("realm-specific1.us-phoenix-1.oci.customer-oci.com", endpoint1.get());
+
+            Service s2 =
+                    Services.serviceBuilder()
+                            .serviceName("REALM_SPECIFIC2")
+                            .serviceEndpointPrefix("realm-specific2")
+                            .serviceEndpointTemplate("{region}.realm-specific2.oci.oraclecloud.com")
+                            .addServiceEndpointTemplateForRealm(
+                                    "oc1", "realm-specific2.{region}.oci.customer-oci.com")
+                            .build();
+
+            Optional<String> endpoint2 = Region.US_PHOENIX_1.getEndpoint(s2);
+            assertEquals("realm-specific2.us-phoenix-1.oci.customer-oci.com", endpoint2.get());
+
+            Optional<String> endpoint3 = Region.US_ASHBURN_1.getEndpoint(s1);
+            assertEquals("realm-specific1.us-ashburn-1.oci.customer-oci.com", endpoint3.get());
+        } finally {
+            Options.setUseOfRealmSpecificEndpointTemplateEnabledProgrammatically(
+                    useOfRealmSpecificEndpointTemplateEnabledProgrammatically);
+        }
     }
 }

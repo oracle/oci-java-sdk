@@ -39,15 +39,48 @@ public enum Options {
     }
 
     /**
+     * Whether the use of realm-specific endpoints was enabled programmatically, using Java code.
+     */
+    private static volatile Boolean
+            USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY = null;
+
+    /**
      * Returns the boolean indicating if the SDK should use realm-specific endpoint templates or
      * not.
+     *
+     * <p>Enabling or disabling programmatically takes precedence over the environment variable.
      *
      * @return true if the client should use realm-specific endpoint template
      */
     public static boolean getUseOfRealmSpecificEndpointTemplateByDefault() {
+        if (USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY != null) {
+            return USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY;
+        }
         final String useOfRealmSpecificEndpointTemplateEnabledEnvVar =
                 System.getenv(OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED_ENV_VAR);
         return useOfRealmSpecificEndpointTemplateEnabledEnvVar != null
                 && useOfRealmSpecificEndpointTemplateEnabledEnvVar.equalsIgnoreCase("true");
+    }
+
+    /**
+     * Get the programmatic flag for whether realm-specific endpoints are enabled. <code>null</code>
+     * means use the environment variable instead.
+     *
+     * @return status of the programmatic flag for whether realm-specific endpoints are enabled
+     */
+    public static Boolean getUseOfRealmSpecificEndpointTemplateEnabledProgrammatically() {
+        return USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY;
+    }
+
+    /**
+     * Set the programmatic flag for whether realm-specific endpoints are enabled. <code>null</code>
+     * means use environment variable instead.
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabledProgrammatically programmatic flag
+     */
+    public static void setUseOfRealmSpecificEndpointTemplateEnabledProgrammatically(
+            Boolean useOfRealmSpecificEndpointTemplateEnabledProgrammatically) {
+        USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY =
+                useOfRealmSpecificEndpointTemplateEnabledProgrammatically;
     }
 }

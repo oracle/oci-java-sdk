@@ -29,6 +29,7 @@ public final class AutonomousDbVersionSummary
         "isDedicated",
         "details",
         "isFreeTierEnabled",
+        "isDevTierEnabled",
         "isPaidEnabled",
         "isDefaultForFree",
         "isDefaultForPaid"
@@ -39,6 +40,7 @@ public final class AutonomousDbVersionSummary
             Boolean isDedicated,
             String details,
             Boolean isFreeTierEnabled,
+            Boolean isDevTierEnabled,
             Boolean isPaidEnabled,
             Boolean isDefaultForFree,
             Boolean isDefaultForPaid) {
@@ -48,6 +50,7 @@ public final class AutonomousDbVersionSummary
         this.isDedicated = isDedicated;
         this.details = details;
         this.isFreeTierEnabled = isFreeTierEnabled;
+        this.isDevTierEnabled = isDevTierEnabled;
         this.isPaidEnabled = isPaidEnabled;
         this.isDefaultForFree = isDefaultForFree;
         this.isDefaultForPaid = isDefaultForPaid;
@@ -160,6 +163,25 @@ public final class AutonomousDbVersionSummary
             this.__explicitlySet__.add("isFreeTierEnabled");
             return this;
         }
+        /**
+         * True if this Oracle Database software version can be used for Autonomous Databases for
+         * Developers.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTierEnabled")
+        private Boolean isDevTierEnabled;
+
+        /**
+         * True if this Oracle Database software version can be used for Autonomous Databases for
+         * Developers.
+         *
+         * @param isDevTierEnabled the value to set
+         * @return this builder
+         */
+        public Builder isDevTierEnabled(Boolean isDevTierEnabled) {
+            this.isDevTierEnabled = isDevTierEnabled;
+            this.__explicitlySet__.add("isDevTierEnabled");
+            return this;
+        }
         /** True if this version of the Oracle Database software has payments enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
         private Boolean isPaidEnabled;
@@ -217,6 +239,7 @@ public final class AutonomousDbVersionSummary
                             this.isDedicated,
                             this.details,
                             this.isFreeTierEnabled,
+                            this.isDevTierEnabled,
                             this.isPaidEnabled,
                             this.isDefaultForFree,
                             this.isDefaultForPaid);
@@ -242,6 +265,9 @@ public final class AutonomousDbVersionSummary
             }
             if (model.wasPropertyExplicitlySet("isFreeTierEnabled")) {
                 this.isFreeTierEnabled(model.getIsFreeTierEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDevTierEnabled")) {
+                this.isDevTierEnabled(model.getIsDevTierEnabled());
             }
             if (model.wasPropertyExplicitlySet("isPaidEnabled")) {
                 this.isPaidEnabled(model.getIsPaidEnabled());
@@ -417,6 +443,23 @@ public final class AutonomousDbVersionSummary
         return isFreeTierEnabled;
     }
 
+    /**
+     * True if this Oracle Database software version can be used for Autonomous Databases for
+     * Developers.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDevTierEnabled")
+    private final Boolean isDevTierEnabled;
+
+    /**
+     * True if this Oracle Database software version can be used for Autonomous Databases for
+     * Developers.
+     *
+     * @return the value
+     */
+    public Boolean getIsDevTierEnabled() {
+        return isDevTierEnabled;
+    }
+
     /** True if this version of the Oracle Database software has payments enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
     private final Boolean isPaidEnabled;
@@ -476,6 +519,7 @@ public final class AutonomousDbVersionSummary
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", details=").append(String.valueOf(this.details));
         sb.append(", isFreeTierEnabled=").append(String.valueOf(this.isFreeTierEnabled));
+        sb.append(", isDevTierEnabled=").append(String.valueOf(this.isDevTierEnabled));
         sb.append(", isPaidEnabled=").append(String.valueOf(this.isPaidEnabled));
         sb.append(", isDefaultForFree=").append(String.valueOf(this.isDefaultForFree));
         sb.append(", isDefaultForPaid=").append(String.valueOf(this.isDefaultForPaid));
@@ -498,6 +542,7 @@ public final class AutonomousDbVersionSummary
                 && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.isFreeTierEnabled, other.isFreeTierEnabled)
+                && java.util.Objects.equals(this.isDevTierEnabled, other.isDevTierEnabled)
                 && java.util.Objects.equals(this.isPaidEnabled, other.isPaidEnabled)
                 && java.util.Objects.equals(this.isDefaultForFree, other.isDefaultForFree)
                 && java.util.Objects.equals(this.isDefaultForPaid, other.isDefaultForPaid)
@@ -515,6 +560,9 @@ public final class AutonomousDbVersionSummary
         result =
                 (result * PRIME)
                         + (this.isFreeTierEnabled == null ? 43 : this.isFreeTierEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDevTierEnabled == null ? 43 : this.isDevTierEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.isPaidEnabled == null ? 43 : this.isPaidEnabled.hashCode());
