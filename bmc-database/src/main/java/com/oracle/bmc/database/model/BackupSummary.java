@@ -276,13 +276,15 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The Oracle Database edition of the DB system from which the database backup was taken.
+         * The Oracle Database Edition that applies to all the databases on the DB system. Exadata
+         * DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private DatabaseEdition databaseEdition;
 
         /**
-         * The Oracle Database edition of the DB system from which the database backup was taken.
+         * The Oracle Database Edition that applies to all the databases on the DB system. Exadata
+         * DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          *
          * @param databaseEdition the value to set
          * @return this builder
@@ -914,7 +916,10 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         return lifecycleState;
     }
 
-    /** The Oracle Database edition of the DB system from which the database backup was taken. */
+    /**
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB
+     * systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+     */
     public enum DatabaseEdition implements com.oracle.bmc.http.internal.BmcEnum {
         StandardEdition("STANDARD_EDITION"),
         EnterpriseEdition("ENTERPRISE_EDITION"),
@@ -962,12 +967,16 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The Oracle Database edition of the DB system from which the database backup was taken. */
+    /**
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB
+     * systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final DatabaseEdition databaseEdition;
 
     /**
-     * The Oracle Database edition of the DB system from which the database backup was taken.
+     * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB
+     * systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      * @return the value
      */

@@ -34,6 +34,7 @@ public final class CreateDbSystemDetails
         "shapeName",
         "mysqlVersion",
         "subnetId",
+        "nsgIds",
         "adminUsername",
         "adminPassword",
         "dataStorageSizeInGBs",
@@ -67,6 +68,7 @@ public final class CreateDbSystemDetails
             String shapeName,
             String mysqlVersion,
             String subnetId,
+            java.util.List<String> nsgIds,
             String adminUsername,
             String adminPassword,
             Integer dataStorageSizeInGBs,
@@ -99,6 +101,7 @@ public final class CreateDbSystemDetails
         this.shapeName = shapeName;
         this.mysqlVersion = mysqlVersion;
         this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
         this.adminUsername = adminUsername;
         this.adminPassword = adminPassword;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
@@ -328,6 +331,21 @@ public final class CreateDbSystemDetails
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /** Network Security Group OCIDs used for the VNIC attachment. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         */
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /** The username for the administrative user. */
@@ -705,6 +723,7 @@ public final class CreateDbSystemDetails
                             this.shapeName,
                             this.mysqlVersion,
                             this.subnetId,
+                            this.nsgIds,
                             this.adminUsername,
                             this.adminPassword,
                             this.dataStorageSizeInGBs,
@@ -763,6 +782,9 @@ public final class CreateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             if (model.wasPropertyExplicitlySet("adminUsername")) {
                 this.adminUsername(model.getAdminUsername());
@@ -1022,6 +1044,19 @@ public final class CreateDbSystemDetails
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /** Network Security Group OCIDs used for the VNIC attachment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
     }
 
     /** The username for the administrative user. */
@@ -1360,6 +1395,7 @@ public final class CreateDbSystemDetails
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", mysqlVersion=").append(String.valueOf(this.mysqlVersion));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
         sb.append(", adminPassword=").append("<redacted>");
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
@@ -1405,6 +1441,7 @@ public final class CreateDbSystemDetails
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.mysqlVersion, other.mysqlVersion)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.adminUsername, other.adminUsername)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
@@ -1453,6 +1490,7 @@ public final class CreateDbSystemDetails
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.mysqlVersion == null ? 43 : this.mysqlVersion.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result =
                 (result * PRIME)
                         + (this.adminUsername == null ? 43 : this.adminUsername.hashCode());

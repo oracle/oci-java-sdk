@@ -5097,6 +5097,22 @@ public interface Database extends AutoCloseable {
             ListDbSystemUpgradeHistoryEntriesRequest request);
 
     /**
+     * Lists the applicable upgrade components for a DB systems.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemUpgradesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDbSystemUpgrades API.
+     */
+    ListDbSystemUpgradesResponse listDbSystemUpgrades(ListDbSystemUpgradesRequest request);
+
+    /**
      * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only
      * the DB systems that support creating a database using this backup in this compartment.
      *

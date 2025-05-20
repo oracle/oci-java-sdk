@@ -27,6 +27,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "description",
         "compartmentId",
         "subnetId",
+        "nsgIds",
         "isHighlyAvailable",
         "currentPlacement",
         "isHeatWaveClusterAttached",
@@ -70,6 +71,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             String description,
             String compartmentId,
             String subnetId,
+            java.util.List<String> nsgIds,
             Boolean isHighlyAvailable,
             DbSystemPlacement currentPlacement,
             Boolean isHeatWaveClusterAttached,
@@ -112,6 +114,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.description = description;
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
         this.isHighlyAvailable = isHighlyAvailable;
         this.currentPlacement = currentPlacement;
         this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
@@ -225,6 +228,21 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /** Network Security Group OCIDs used for the VNIC attachment. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         */
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /** Specifies if the DB System is highly available. */
@@ -837,6 +855,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.description,
                             this.compartmentId,
                             this.subnetId,
+                            this.nsgIds,
                             this.isHighlyAvailable,
                             this.currentPlacement,
                             this.isHeatWaveClusterAttached,
@@ -895,6 +914,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -1080,6 +1102,19 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /** Network Security Group OCIDs used for the VNIC attachment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
     }
 
     /** Specifies if the DB System is highly available. */
@@ -1780,6 +1815,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", currentPlacement=").append(String.valueOf(this.currentPlacement));
         sb.append(", isHeatWaveClusterAttached=")
@@ -1837,6 +1873,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.currentPlacement, other.currentPlacement)
                 && java.util.Objects.equals(
@@ -1889,6 +1926,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());

@@ -322,7 +322,7 @@ public class RequestSignerImpl implements RequestSigner {
         }
 
         if (isRequiredHeaderMissing(Constants.HOST, requiredHeaders, existingHeaders)) {
-            String host = uri.getHost();
+            String host = getHostNameForUri(uri);
             int port = uri.getPort();
             if (port != -1) {
                 host = host + ":" + port;
@@ -388,6 +388,20 @@ public class RequestSignerImpl implements RequestSigner {
         }
 
         return missingHeaders;
+    }
+
+    // Function for handling special characters passed in hostname
+    static String getHostNameForUri(URI uri) {
+        String hostName = uri.getHost();
+        if (StringUtils.isEmpty(hostName)) {
+            // If the host is null, it means the input string has special characters.
+            String hostPart = uri.getSchemeSpecificPart();
+            // getSchemeSpecificPart returns "//hostName", so skipping first 2 characters
+            if (hostPart.length() >= 2) {
+                hostName = hostPart.substring(2);
+            }
+        }
+        return hostName;
     }
 
     private static boolean isRequiredHeaderMissing(

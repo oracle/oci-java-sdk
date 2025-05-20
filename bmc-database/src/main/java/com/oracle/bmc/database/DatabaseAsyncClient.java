@@ -431,6 +431,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
@@ -633,6 +634,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleResponseHeaderString(
                         "etag", ChangeAutonomousDatabaseCompartmentResponse.Builder::etag)
@@ -726,6 +728,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1237,6 +1240,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
@@ -1990,6 +1994,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -2077,6 +2082,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
@@ -2455,6 +2461,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
@@ -2493,6 +2500,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabaseBackup.class,
@@ -3818,6 +3826,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAutonomousDatabaseResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
@@ -3853,6 +3862,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteAutonomousDatabaseBackupResponse.Builder::opcRequestId)
@@ -4863,6 +4873,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("deregisterDataSafe")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -4900,6 +4911,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("disableDatabaseManagement")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableAutonomousDatabaseManagementResponse.Builder::opcWorkRequestId)
@@ -4936,6 +4948,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("disableOperationsInsights")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableAutonomousDatabaseOperationsInsightsResponse.Builder
@@ -5634,6 +5647,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("enableDatabaseManagement")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableAutonomousDatabaseManagementResponse.Builder::opcWorkRequestId)
@@ -5670,6 +5684,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("enableOperationsInsights")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableAutonomousDatabaseOperationsInsightsResponse.Builder
@@ -6184,6 +6199,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         FailOverAutonomousDatabaseResponse.Builder::autonomousDatabase)
@@ -6421,6 +6437,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -10884,6 +10901,40 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListDbSystemUpgradesResponse> listDbSystemUpgrades(
+            ListDbSystemUpgradesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDbSystemUpgradesRequest, ListDbSystemUpgradesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+
+        return clientCall(request, ListDbSystemUpgradesResponse::builder)
+                .logger(LOG, "listDbSystemUpgrades")
+                .serviceDetails(
+                        "Database",
+                        "ListDbSystemUpgrades",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeSummary/ListDbSystemUpgrades")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDbSystemUpgradesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("dbSystemUpgrades")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.database.model.DbSystemUpgradeSummary.class,
+                        ListDbSystemUpgradesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDbSystemUpgradesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDbSystemUpgradesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDbSystemsResponse> listDbSystems(
             ListDbSystemsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListDbSystemsRequest, ListDbSystemsResponse>
@@ -12743,6 +12794,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("registerDataSafe")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -13369,6 +13421,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("restart")
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         RestartAutonomousDatabaseResponse.Builder::autonomousDatabase)
@@ -13409,6 +13462,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("restore")
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
@@ -14047,6 +14101,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("shrink")
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         ShrinkAutonomousDatabaseResponse.Builder::autonomousDatabase)
@@ -14084,6 +14139,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("start")
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         StartAutonomousDatabaseResponse.Builder::autonomousDatabase)
@@ -14161,6 +14217,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         StopAutonomousDatabaseResponse.Builder::autonomousDatabase)
@@ -14389,6 +14446,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         SwitchoverAutonomousDatabaseResponse.Builder::autonomousDatabase)
@@ -14683,6 +14741,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
@@ -14726,6 +14785,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabaseBackup.class,
@@ -14766,6 +14826,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("wallet")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -14848,6 +14909,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("wallet")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",

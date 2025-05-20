@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.security.interfaces.RSAPrivateKey;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,6 +45,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.assertNotEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
@@ -454,5 +456,43 @@ public class RequestSignerImplTest {
             assertTrue(missingHeaders.containsKey("x-content-sha256"));
         }
         assertEquals("identity.us-phoenix-1.oraclecloud.com", missingHeaders.get("host"));
+    }
+
+    @Test
+    public void testGetHostWithSpecialCharacterUnderscoreInHostName() throws URISyntaxException {
+        URI uri = new URI("https://example_com");
+        assertEquals("example_com", RequestSignerImpl.getHostNameForUri(uri));
+        assertNotEquals("example_com", uri.getHost());
+    }
+
+    @Test
+    public void testGetHostWithSpecialCharacterInHostName() throws URISyntaxException {
+        URI uri = new URI("https://example-com");
+        assertEquals("example-com", RequestSignerImpl.getHostNameForUri(uri));
+        assertEquals("example-com", uri.getHost());
+    }
+
+    @Test
+    public void testGetHostWithNormalValues() throws URISyntaxException {
+        URI uri = new URI("https://example.com");
+        assertEquals("example.com", RequestSignerImpl.getHostNameForUri(uri));
+        assertEquals("example.com", uri.getHost());
+    }
+
+    @Test
+    public void testGetHostDefaultAndCustomFunction() throws URISyntaxException {
+        URI uri = new URI("https://example-com");
+        String resultFromCustomHost = RequestSignerImpl.getHostNameForUri(uri);
+        String hostNameFromDefaultFunction = uri.getHost();
+        assertEquals(hostNameFromDefaultFunction, resultFromCustomHost);
+    }
+
+    @Test
+    public void testGetHostNameWithRealDataAndCompareWithDefaultAndCustomFunction()
+            throws URISyntaxException {
+        URI uri = new URI("https://abc_def.objectstorage.us-phoenix-1.oci.customer-oci.com");
+        String resultFromCustomHost = RequestSignerImpl.getHostNameForUri(uri);
+        String hostNameFromDefaultFunction = uri.getHost();
+        assertNotEquals(hostNameFromDefaultFunction, resultFromCustomHost);
     }
 }

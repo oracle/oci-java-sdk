@@ -32,6 +32,21 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -83,6 +98,26 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -114,6 +149,7 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
         public Builder copy(UpdateAutonomousDatabaseRegionalWalletRequest o) {
             updateAutonomousDatabaseWalletDetails(o.getUpdateAutonomousDatabaseWalletDetails());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -167,10 +203,11 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
                     new UpdateAutonomousDatabaseRegionalWalletRequest();
             request.updateAutonomousDatabaseWalletDetails = updateAutonomousDatabaseWalletDetails;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             return request;
             // new
             // UpdateAutonomousDatabaseRegionalWalletRequest(updateAutonomousDatabaseWalletDetails,
-            // opcRequestId);
+            // opcRequestId, opcDryRun);
         }
     }
 
@@ -182,7 +219,8 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
     public Builder toBuilder() {
         return new Builder()
                 .updateAutonomousDatabaseWalletDetails(updateAutonomousDatabaseWalletDetails)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -202,6 +240,7 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
         sb.append(",updateAutonomousDatabaseWalletDetails=")
                 .append(String.valueOf(this.updateAutonomousDatabaseWalletDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -221,7 +260,8 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
                 && java.util.Objects.equals(
                         this.updateAutonomousDatabaseWalletDetails,
                         other.updateAutonomousDatabaseWalletDetails)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -234,6 +274,7 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
                                 ? 43
                                 : this.updateAutonomousDatabaseWalletDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

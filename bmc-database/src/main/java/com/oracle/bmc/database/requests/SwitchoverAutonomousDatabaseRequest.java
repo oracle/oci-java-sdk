@@ -84,6 +84,21 @@ public class SwitchoverAutonomousDatabaseRequest
     public String getPeerDbId() {
         return peerDbId;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -190,6 +205,26 @@ public class SwitchoverAutonomousDatabaseRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -224,6 +259,7 @@ public class SwitchoverAutonomousDatabaseRequest
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
             peerDbId(o.getPeerDbId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -263,9 +299,10 @@ public class SwitchoverAutonomousDatabaseRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             request.peerDbId = peerDbId;
+            request.opcDryRun = opcDryRun;
             return request;
             // new SwitchoverAutonomousDatabaseRequest(autonomousDatabaseId, ifMatch, opcRetryToken,
-            // opcRequestId, peerDbId);
+            // opcRequestId, peerDbId, opcDryRun);
         }
     }
 
@@ -280,7 +317,8 @@ public class SwitchoverAutonomousDatabaseRequest
                 .ifMatch(ifMatch)
                 .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId)
-                .peerDbId(peerDbId);
+                .peerDbId(peerDbId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -302,6 +340,7 @@ public class SwitchoverAutonomousDatabaseRequest
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",peerDbId=").append(String.valueOf(this.peerDbId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -321,7 +360,8 @@ public class SwitchoverAutonomousDatabaseRequest
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.peerDbId, other.peerDbId);
+                && java.util.Objects.equals(this.peerDbId, other.peerDbId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -339,6 +379,7 @@ public class SwitchoverAutonomousDatabaseRequest
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.peerDbId == null ? 43 : this.peerDbId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

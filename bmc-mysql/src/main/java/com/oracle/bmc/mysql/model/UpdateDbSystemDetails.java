@@ -27,6 +27,7 @@ public final class UpdateDbSystemDetails
         "displayName",
         "description",
         "subnetId",
+        "nsgIds",
         "databaseMode",
         "accessMode",
         "isHighlyAvailable",
@@ -58,6 +59,7 @@ public final class UpdateDbSystemDetails
             String displayName,
             String description,
             String subnetId,
+            java.util.List<String> nsgIds,
             DbSystem.DatabaseMode databaseMode,
             DbSystem.AccessMode accessMode,
             Boolean isHighlyAvailable,
@@ -88,6 +90,7 @@ public final class UpdateDbSystemDetails
         this.displayName = displayName;
         this.description = description;
         this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
         this.databaseMode = databaseMode;
         this.accessMode = accessMode;
         this.isHighlyAvailable = isHighlyAvailable;
@@ -161,6 +164,21 @@ public final class UpdateDbSystemDetails
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /** Network Security Group OCIDs used for the VNIC attachment. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         */
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
@@ -678,6 +696,7 @@ public final class UpdateDbSystemDetails
                             this.displayName,
                             this.description,
                             this.subnetId,
+                            this.nsgIds,
                             this.databaseMode,
                             this.accessMode,
                             this.isHighlyAvailable,
@@ -720,6 +739,9 @@ public final class UpdateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             if (model.wasPropertyExplicitlySet("databaseMode")) {
                 this.databaseMode(model.getDatabaseMode());
@@ -849,6 +871,19 @@ public final class UpdateDbSystemDetails
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /** Network Security Group OCIDs used for the VNIC attachment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
     }
 
     /**
@@ -1321,6 +1356,7 @@ public final class UpdateDbSystemDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
         sb.append(", accessMode=").append(String.valueOf(this.accessMode));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
@@ -1364,6 +1400,7 @@ public final class UpdateDbSystemDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.databaseMode, other.databaseMode)
                 && java.util.Objects.equals(this.accessMode, other.accessMode)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
@@ -1400,6 +1437,7 @@ public final class UpdateDbSystemDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
         result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
         result =

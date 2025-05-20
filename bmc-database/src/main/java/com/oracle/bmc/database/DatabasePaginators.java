@@ -5224,6 +5224,124 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDbSystemUpgrades operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDbSystemUpgradesResponse> listDbSystemUpgradesResponseIterator(
+            final ListDbSystemUpgradesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDbSystemUpgradesRequest.Builder,
+                ListDbSystemUpgradesRequest,
+                ListDbSystemUpgradesResponse>(
+                new java.util.function.Supplier<ListDbSystemUpgradesRequest.Builder>() {
+                    @Override
+                    public ListDbSystemUpgradesRequest.Builder get() {
+                        return ListDbSystemUpgradesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDbSystemUpgradesResponse, String>() {
+                    @Override
+                    public String apply(ListDbSystemUpgradesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbSystemUpgradesRequest.Builder>,
+                        ListDbSystemUpgradesRequest>() {
+                    @Override
+                    public ListDbSystemUpgradesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbSystemUpgradesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDbSystemUpgradesRequest, ListDbSystemUpgradesResponse>() {
+                    @Override
+                    public ListDbSystemUpgradesResponse apply(ListDbSystemUpgradesRequest request) {
+                        return client.listDbSystemUpgrades(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.DbSystemUpgradeSummary} objects contained in responses from the
+     * listDbSystemUpgrades operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.DbSystemUpgradeSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.DbSystemUpgradeSummary>
+            listDbSystemUpgradesRecordIterator(final ListDbSystemUpgradesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDbSystemUpgradesRequest.Builder,
+                ListDbSystemUpgradesRequest,
+                ListDbSystemUpgradesResponse,
+                com.oracle.bmc.database.model.DbSystemUpgradeSummary>(
+                new java.util.function.Supplier<ListDbSystemUpgradesRequest.Builder>() {
+                    @Override
+                    public ListDbSystemUpgradesRequest.Builder get() {
+                        return ListDbSystemUpgradesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDbSystemUpgradesResponse, String>() {
+                    @Override
+                    public String apply(ListDbSystemUpgradesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbSystemUpgradesRequest.Builder>,
+                        ListDbSystemUpgradesRequest>() {
+                    @Override
+                    public ListDbSystemUpgradesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbSystemUpgradesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDbSystemUpgradesRequest, ListDbSystemUpgradesResponse>() {
+                    @Override
+                    public ListDbSystemUpgradesResponse apply(ListDbSystemUpgradesRequest request) {
+                        return client.listDbSystemUpgrades(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDbSystemUpgradesResponse,
+                        java.util.List<com.oracle.bmc.database.model.DbSystemUpgradeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.DbSystemUpgradeSummary>
+                            apply(ListDbSystemUpgradesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDbSystems
      * operation. This iterable will fetch more data from the server as needed.
      *

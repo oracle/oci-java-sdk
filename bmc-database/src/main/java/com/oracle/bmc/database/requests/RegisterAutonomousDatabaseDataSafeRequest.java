@@ -34,6 +34,21 @@ public class RegisterAutonomousDatabaseDataSafeRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
     /** Request to register an Autonomous Database with Data Safe. */
     private com.oracle.bmc.database.model.RegisterAutonomousDatabaseDataSafeDetails
             registerAutonomousDatabaseDataSafeDetails;
@@ -94,6 +109,26 @@ public class RegisterAutonomousDatabaseDataSafeRequest
             return this;
         }
 
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
         /** Request to register an Autonomous Database with Data Safe. */
         private com.oracle.bmc.database.model.RegisterAutonomousDatabaseDataSafeDetails
                 registerAutonomousDatabaseDataSafeDetails = null;
@@ -144,6 +179,7 @@ public class RegisterAutonomousDatabaseDataSafeRequest
         public Builder copy(RegisterAutonomousDatabaseDataSafeRequest o) {
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             registerAutonomousDatabaseDataSafeDetails(
                     o.getRegisterAutonomousDatabaseDataSafeDetails());
             invocationCallback(o.getInvocationCallback());
@@ -198,11 +234,12 @@ public class RegisterAutonomousDatabaseDataSafeRequest
                     new RegisterAutonomousDatabaseDataSafeRequest();
             request.autonomousDatabaseId = autonomousDatabaseId;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             request.registerAutonomousDatabaseDataSafeDetails =
                     registerAutonomousDatabaseDataSafeDetails;
             return request;
             // new RegisterAutonomousDatabaseDataSafeRequest(autonomousDatabaseId, opcRequestId,
-            // registerAutonomousDatabaseDataSafeDetails);
+            // opcDryRun, registerAutonomousDatabaseDataSafeDetails);
         }
     }
 
@@ -215,6 +252,7 @@ public class RegisterAutonomousDatabaseDataSafeRequest
         return new Builder()
                 .autonomousDatabaseId(autonomousDatabaseId)
                 .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun)
                 .registerAutonomousDatabaseDataSafeDetails(
                         registerAutonomousDatabaseDataSafeDetails);
     }
@@ -235,6 +273,7 @@ public class RegisterAutonomousDatabaseDataSafeRequest
         sb.append("super=").append(super.toString());
         sb.append(",autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(",registerAutonomousDatabaseDataSafeDetails=")
                 .append(String.valueOf(this.registerAutonomousDatabaseDataSafeDetails));
         sb.append(")");
@@ -255,6 +294,7 @@ public class RegisterAutonomousDatabaseDataSafeRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun)
                 && java.util.Objects.equals(
                         this.registerAutonomousDatabaseDataSafeDetails,
                         other.registerAutonomousDatabaseDataSafeDetails);
@@ -270,6 +310,7 @@ public class RegisterAutonomousDatabaseDataSafeRequest
                                 ? 43
                                 : this.autonomousDatabaseId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         result =
                 (result * PRIME)
                         + (this.registerAutonomousDatabaseDataSafeDetails == null
