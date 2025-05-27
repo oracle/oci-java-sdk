@@ -663,6 +663,38 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBdsCapacityReportResponse> createBdsCapacityReport(
+            CreateBdsCapacityReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateBdsCapacityReportRequest, CreateBdsCapacityReportResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateBdsCapacityReportDetails(),
+                "createBdsCapacityReportDetails is required");
+
+        return clientCall(request, CreateBdsCapacityReportResponse::builder)
+                .logger(LOG, "createBdsCapacityReport")
+                .serviceDetails(
+                        "Bds",
+                        "CreateBdsCapacityReport",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReport/CreateBdsCapacityReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBdsCapacityReportRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsCapacityReports")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReport.class,
+                        CreateBdsCapacityReportResponse.Builder::bdsCapacityReport)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateBdsCapacityReportResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBdsInstanceResponse> createBdsInstance(
             CreateBdsInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1726,6 +1758,43 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<GetSoftwareUpdateResponse> getSoftwareUpdate(
+            GetSoftwareUpdateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSoftwareUpdateRequest, GetSoftwareUpdateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getSoftwareUpdateKey(), "softwareUpdateKey must not be blank");
+
+        return clientCall(request, GetSoftwareUpdateResponse::builder)
+                .logger(LOG, "getSoftwareUpdate")
+                .serviceDetails(
+                        "Bds",
+                        "GetSoftwareUpdate",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetSoftwareUpdate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSoftwareUpdateRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("softwareUpdates")
+                .appendPathParam(request.getSoftwareUpdateKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.bds.model.SoftwareUpdate.class,
+                        GetSoftwareUpdateResponse.Builder::softwareUpdate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSoftwareUpdateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetSoftwareUpdateResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1824,6 +1893,44 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         "opc-request-id", InstallPatchResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", InstallPatchResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallSoftwareUpdatesResponse> installSoftwareUpdates(
+            InstallSoftwareUpdatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            InstallSoftwareUpdatesRequest, InstallSoftwareUpdatesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getInstallSoftwareUpdatesDetails(),
+                "installSoftwareUpdatesDetails is required");
+
+        return clientCall(request, InstallSoftwareUpdatesResponse::builder)
+                .logger(LOG, "installSoftwareUpdates")
+                .serviceDetails(
+                        "Bds",
+                        "InstallSoftwareUpdates",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/InstallSoftwareUpdates")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InstallSoftwareUpdatesRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("installSoftwareUpdates")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", InstallSoftwareUpdatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        InstallSoftwareUpdatesResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -2348,6 +2455,45 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListResourcePrincipalConfigurationsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSoftwareUpdatesResponse> listSoftwareUpdates(
+            ListSoftwareUpdatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSoftwareUpdatesRequest, ListSoftwareUpdatesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListSoftwareUpdatesResponse::builder)
+                .logger(LOG, "listSoftwareUpdates")
+                .serviceDetails(
+                        "Bds",
+                        "ListSoftwareUpdates",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListSoftwareUpdates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSoftwareUpdatesRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("softwareUpdates")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.bds.model.SoftwareUpdateCollection.class,
+                        ListSoftwareUpdatesResponse.Builder::softwareUpdateCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSoftwareUpdatesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSoftwareUpdatesResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

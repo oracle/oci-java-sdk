@@ -210,6 +210,49 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public AttachComputeHostGroupHostResponse attachComputeHostGroupHost(
+            AttachComputeHostGroupHostRequest request) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachComputeHostGroupHostDetails(),
+                "attachComputeHostGroupHostDetails is required");
+
+        return clientCall(request, AttachComputeHostGroupHostResponse::builder)
+                .logger(LOG, "attachComputeHostGroupHost")
+                .serviceDetails(
+                        "Compute",
+                        "AttachComputeHostGroupHost",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/AttachComputeHostGroupHost")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachComputeHostGroupHostRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .appendPathParam("actions")
+                .appendPathParam("attachToHostGroup")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHost.class,
+                        AttachComputeHostGroupHostResponse.Builder::computeHost)
+                .handleResponseHeaderString(
+                        "etag", AttachComputeHostGroupHostResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", AttachComputeHostGroupHostResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", AttachComputeHostGroupHostResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AttachComputeHostGroupHostResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public AttachVnicResponse attachVnic(AttachVnicRequest request) {
         Objects.requireNonNull(request.getAttachVnicDetails(), "attachVnicDetails is required");
 
@@ -509,6 +552,43 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeComputeHostCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeComputeHostGroupCompartmentResponse changeComputeHostGroupCompartment(
+            ChangeComputeHostGroupCompartmentRequest request) {
+
+        Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeHostGroupCompartmentDetails(),
+                "changeComputeHostGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeHostGroupCompartmentResponse::builder)
+                .logger(LOG, "changeComputeHostGroupCompartment")
+                .serviceDetails(
+                        "Compute",
+                        "ChangeComputeHostGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/ChangeComputeHostGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeHostGroupCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .appendPathParam(request.getComputeHostGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeHostGroupCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeComputeHostGroupCompartmentResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -855,6 +935,42 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public CreateComputeHostGroupResponse createComputeHostGroup(
+            CreateComputeHostGroupRequest request) {
+        Objects.requireNonNull(
+                request.getCreateComputeHostGroupDetails(),
+                "createComputeHostGroupDetails is required");
+
+        return clientCall(request, CreateComputeHostGroupResponse::builder)
+                .logger(LOG, "createComputeHostGroup")
+                .serviceDetails(
+                        "Compute",
+                        "CreateComputeHostGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/CreateComputeHostGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeHostGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHostGroup.class,
+                        CreateComputeHostGroupResponse.Builder::computeHostGroup)
+                .handleResponseHeaderString("etag", CreateComputeHostGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateComputeHostGroupResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateComputeHostGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateComputeHostGroupResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateComputeImageCapabilitySchemaResponse createComputeImageCapabilitySchema(
             CreateComputeImageCapabilitySchemaRequest request) {
         Objects.requireNonNull(
@@ -1124,6 +1240,31 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public DeleteComputeHostGroupResponse deleteComputeHostGroup(
+            DeleteComputeHostGroupRequest request) {
+
+        Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
+
+        return clientCall(request, DeleteComputeHostGroupResponse::builder)
+                .logger(LOG, "deleteComputeHostGroup")
+                .serviceDetails(
+                        "Compute",
+                        "DeleteComputeHostGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/DeleteComputeHostGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteComputeHostGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .appendPathParam(request.getComputeHostGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteComputeHostGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteComputeImageCapabilitySchemaResponse deleteComputeImageCapabilitySchema(
             DeleteComputeImageCapabilitySchemaRequest request) {
 
@@ -1267,6 +1408,42 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DetachBootVolumeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DetachComputeHostGroupHostResponse detachComputeHostGroupHost(
+            DetachComputeHostGroupHostRequest request) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+        Objects.requireNonNull(
+                request.getDetachComputeHostGroupHostDetails(),
+                "detachComputeHostGroupHostDetails is required");
+
+        return clientCall(request, DetachComputeHostGroupHostResponse::builder)
+                .logger(LOG, "detachComputeHostGroupHost")
+                .serviceDetails(
+                        "Compute",
+                        "DetachComputeHostGroupHost",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/DetachComputeHostGroupHost")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachComputeHostGroupHostRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .appendPathParam("actions")
+                .appendPathParam("detachFromHostGroup")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachComputeHostGroupHostResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DetachComputeHostGroupHostResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1726,6 +1903,34 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString("etag", GetComputeHostResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetComputeHostResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetComputeHostGroupResponse getComputeHostGroup(GetComputeHostGroupRequest request) {
+
+        Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
+
+        return clientCall(request, GetComputeHostGroupResponse::builder)
+                .logger(LOG, "getComputeHostGroup")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeHostGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/GetComputeHostGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeHostGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .appendPathParam(request.getComputeHostGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHostGroup.class,
+                        GetComputeHostGroupResponse.Builder::computeHostGroup)
+                .handleResponseHeaderString("etag", GetComputeHostGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeHostGroupResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2854,6 +3059,37 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public ListComputeHostGroupsResponse listComputeHostGroups(
+            ListComputeHostGroupsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeHostGroupsResponse::builder)
+                .logger(LOG, "listComputeHostGroups")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeHostGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/ListComputeHostGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeHostGroupsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHostGroupCollection.class,
+                        ListComputeHostGroupsResponse.Builder::computeHostGroupCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeHostGroupsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListComputeHostGroupsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListComputeHostsResponse listComputeHosts(ListComputeHostsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -2878,6 +3114,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendQueryParam(
                         "computeHostLifecycleState", request.getComputeHostLifecycleState())
                 .appendQueryParam("computeHostHealth", request.getComputeHostHealth())
+                .appendQueryParam("computeHostGroupId", request.getComputeHostGroupId())
                 .accept("application/json, application/x-json-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -3668,6 +3905,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString("etag", UpdateComputeHostResponse.Builder::etag)
@@ -3675,6 +3913,46 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-request-id", UpdateComputeHostResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateComputeHostResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateComputeHostGroupResponse updateComputeHostGroup(
+            UpdateComputeHostGroupRequest request) {
+
+        Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeHostGroupDetails(),
+                "updateComputeHostGroupDetails is required");
+
+        return clientCall(request, UpdateComputeHostGroupResponse::builder)
+                .logger(LOG, "updateComputeHostGroup")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeHostGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/UpdateComputeHostGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeHostGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .appendPathParam(request.getComputeHostGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHostGroup.class,
+                        UpdateComputeHostGroupResponse.Builder::computeHostGroup)
+                .handleResponseHeaderString("etag", UpdateComputeHostGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", UpdateComputeHostGroupResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateComputeHostGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateComputeHostGroupResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

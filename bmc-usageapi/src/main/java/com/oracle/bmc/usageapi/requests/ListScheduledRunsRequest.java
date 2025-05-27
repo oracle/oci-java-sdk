@@ -13,10 +13,10 @@ import com.oracle.bmc.usageapi.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class ListScheduledRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The unique ID of a schedule. */
+    /** The schedule unique ID. */
     private String scheduleId;
 
-    /** The unique ID of a schedule. */
+    /** The schedule unique ID. */
     public String getScheduleId() {
         return scheduleId;
     }
@@ -46,10 +46,10 @@ public class ListScheduledRunsRequest extends com.oracle.bmc.requests.BmcRequest
     public String getPage() {
         return page;
     }
-    /** The maximumimum number of items to return. */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /** The maximumimum number of items to return. */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
@@ -141,11 +141,11 @@ public class ListScheduledRunsRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique ID of a schedule. */
+        /** The schedule unique ID. */
         private String scheduleId = null;
 
         /**
-         * The unique ID of a schedule.
+         * The schedule unique ID.
          *
          * @param scheduleId the value to set
          * @return this builder instance
@@ -191,11 +191,11 @@ public class ListScheduledRunsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The maximumimum number of items to return. */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
-         * The maximumimum number of items to return.
+         * The maximum number of items to return.
          *
          * @param limit the value to set
          * @return this builder instance

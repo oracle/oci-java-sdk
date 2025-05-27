@@ -25,17 +25,17 @@ public class UpdateEmailRecipientsGroupRequest
             getUpdateEmailRecipientsGroupDetails() {
         return updateEmailRecipientsGroupDetails;
     }
-    /** The email recipient group OCID. */
+    /** The email recipients group OCID. */
     private String emailRecipientsGroupId;
 
-    /** The email recipient group OCID. */
+    /** The email recipients group OCID. */
     public String getEmailRecipientsGroupId() {
         return emailRecipientsGroupId;
     }
-    /** The UsageStatement Subscription unique OCID. */
+    /** The usage statement subscription unique OCID. */
     private String subscriptionId;
 
-    /** The UsageStatement Subscription unique OCID. */
+    /** The usage statement subscription unique OCID. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -112,11 +112,11 @@ public class UpdateEmailRecipientsGroupRequest
             return this;
         }
 
-        /** The email recipient group OCID. */
+        /** The email recipients group OCID. */
         private String emailRecipientsGroupId = null;
 
         /**
-         * The email recipient group OCID.
+         * The email recipients group OCID.
          *
          * @param emailRecipientsGroupId the value to set
          * @return this builder instance
@@ -126,11 +126,11 @@ public class UpdateEmailRecipientsGroupRequest
             return this;
         }
 
-        /** The UsageStatement Subscription unique OCID. */
+        /** The usage statement subscription unique OCID. */
         private String subscriptionId = null;
 
         /**
-         * The UsageStatement Subscription unique OCID.
+         * The usage statement subscription unique OCID.
          *
          * @param subscriptionId the value to set
          * @return this builder instance

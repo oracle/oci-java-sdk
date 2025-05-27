@@ -23,13 +23,22 @@ package com.oracle.bmc.bds.model;
 public final class InstallOsPatchDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"osPatchVersion", "clusterAdminPassword", "patchingConfigs"})
+    @java.beans.ConstructorProperties({
+        "osPatchVersion",
+        "clusterAdminPassword",
+        "patchingConfigs",
+        "isDryRun"
+    })
     public InstallOsPatchDetails(
-            String osPatchVersion, String clusterAdminPassword, PatchingConfigs patchingConfigs) {
+            String osPatchVersion,
+            String clusterAdminPassword,
+            PatchingConfigs patchingConfigs,
+            Boolean isDryRun) {
         super();
         this.osPatchVersion = osPatchVersion;
         this.clusterAdminPassword = clusterAdminPassword;
         this.patchingConfigs = patchingConfigs;
+        this.isDryRun = isDryRun;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -73,6 +82,21 @@ public final class InstallOsPatchDetails
             this.__explicitlySet__.add("patchingConfigs");
             return this;
         }
+        /** Perform dry run for the patch and stop. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDryRun")
+        private Boolean isDryRun;
+
+        /**
+         * Perform dry run for the patch and stop.
+         *
+         * @param isDryRun the value to set
+         * @return this builder
+         */
+        public Builder isDryRun(Boolean isDryRun) {
+            this.isDryRun = isDryRun;
+            this.__explicitlySet__.add("isDryRun");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -80,7 +104,10 @@ public final class InstallOsPatchDetails
         public InstallOsPatchDetails build() {
             InstallOsPatchDetails model =
                     new InstallOsPatchDetails(
-                            this.osPatchVersion, this.clusterAdminPassword, this.patchingConfigs);
+                            this.osPatchVersion,
+                            this.clusterAdminPassword,
+                            this.patchingConfigs,
+                            this.isDryRun);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -97,6 +124,9 @@ public final class InstallOsPatchDetails
             }
             if (model.wasPropertyExplicitlySet("patchingConfigs")) {
                 this.patchingConfigs(model.getPatchingConfigs());
+            }
+            if (model.wasPropertyExplicitlySet("isDryRun")) {
+                this.isDryRun(model.getIsDryRun());
             }
             return this;
         }
@@ -144,6 +174,19 @@ public final class InstallOsPatchDetails
         return patchingConfigs;
     }
 
+    /** Perform dry run for the patch and stop. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDryRun")
+    private final Boolean isDryRun;
+
+    /**
+     * Perform dry run for the patch and stop.
+     *
+     * @return the value
+     */
+    public Boolean getIsDryRun() {
+        return isDryRun;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -162,6 +205,7 @@ public final class InstallOsPatchDetails
         sb.append("osPatchVersion=").append(String.valueOf(this.osPatchVersion));
         sb.append(", clusterAdminPassword=").append("<redacted>");
         sb.append(", patchingConfigs=").append(String.valueOf(this.patchingConfigs));
+        sb.append(", isDryRun=").append(String.valueOf(this.isDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -179,6 +223,7 @@ public final class InstallOsPatchDetails
         return java.util.Objects.equals(this.osPatchVersion, other.osPatchVersion)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
                 && java.util.Objects.equals(this.patchingConfigs, other.patchingConfigs)
+                && java.util.Objects.equals(this.isDryRun, other.isDryRun)
                 && super.equals(other);
     }
 
@@ -197,6 +242,7 @@ public final class InstallOsPatchDetails
         result =
                 (result * PRIME)
                         + (this.patchingConfigs == null ? 43 : this.patchingConfigs.hashCode());
+        result = (result * PRIME) + (this.isDryRun == null ? 43 : this.isDryRun.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

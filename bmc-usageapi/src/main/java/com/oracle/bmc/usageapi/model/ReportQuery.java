@@ -130,15 +130,15 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query
-         * time period will be added up.
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost
+         * over the query time period will be added up.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
         private Boolean isAggregateByTime;
 
         /**
-         * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query
-         * time period will be added up.
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost
+         * over the query time period will be added up.
          *
          * @param isAggregateByTime the value to set
          * @return this builder
@@ -158,19 +158,19 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The query usage type. COST by default if it is missing. Usage - Query the usage data.
-         * Cost - Query the cost/billing data. Credit - Query the credit adjustments data.
-         * ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments
-         * and expired credit
+         * The query usage type. COST by default if it is missing. * Usage: Query the usage data. *
+         * Cost: Query the cost/billing data. * Credit: Query the credit adjustments data. *
+         * ExpiredCredit: Query the expired credits data. * AllCredit: Query the credit adjustments
+         * and expired credit.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("queryType")
         private QueryType queryType;
 
         /**
-         * The query usage type. COST by default if it is missing. Usage - Query the usage data.
-         * Cost - Query the cost/billing data. Credit - Query the credit adjustments data.
-         * ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments
-         * and expired credit
+         * The query usage type. COST by default if it is missing. * Usage: Query the usage data. *
+         * Cost: Query the cost/billing data. * Credit: Query the credit adjustments data. *
+         * ExpiredCredit: Query the expired credits data. * AllCredit: Query the credit adjustments
+         * and expired credit.
          *
          * @param queryType the value to set
          * @return this builder
@@ -181,19 +181,19 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue",
-         * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
-         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
-         * "tenantName"]}
+         * Specifies what to aggregate the result by. For example: {@code ["tagNamespace", "tagKey",
+         * "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName",
+         * "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId",
+         * "tenantId", "tenantName"]}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private java.util.List<String> groupBy;
 
         /**
-         * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue",
-         * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
-         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
-         * "tenantName"]}
+         * Specifies what to aggregate the result by. For example: {@code ["tagNamespace", "tagKey",
+         * "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName",
+         * "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId",
+         * "tenantId", "tenantName"]}
          *
          * @param groupBy the value to set
          * @return this builder
@@ -452,15 +452,15 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time
-     * period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over
+     * the query time period will be added up.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     private final Boolean isAggregateByTime;
 
     /**
-     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time
-     * period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over
+     * the query time period will be added up.
      *
      * @return the value
      */
@@ -476,9 +476,10 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
-     * Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit -
-     * Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+     * The query usage type. COST by default if it is missing. * Usage: Query the usage data. *
+     * Cost: Query the cost/billing data. * Credit: Query the credit adjustments data. *
+     * ExpiredCredit: Query the expired credits data. * AllCredit: Query the credit adjustments and
+     * expired credit.
      */
     public enum QueryType implements com.oracle.bmc.http.internal.BmcEnum {
         Usage("USAGE"),
@@ -529,17 +530,19 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
         }
     };
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
-     * Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit -
-     * Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+     * The query usage type. COST by default if it is missing. * Usage: Query the usage data. *
+     * Cost: Query the cost/billing data. * Credit: Query the credit adjustments data. *
+     * ExpiredCredit: Query the expired credits data. * AllCredit: Query the credit adjustments and
+     * expired credit.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("queryType")
     private final QueryType queryType;
 
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
-     * Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit -
-     * Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+     * The query usage type. COST by default if it is missing. * Usage: Query the usage data. *
+     * Cost: Query the cost/billing data. * Credit: Query the credit adjustments data. *
+     * ExpiredCredit: Query the expired credits data. * AllCredit: Query the credit adjustments and
+     * expired credit.
      *
      * @return the value
      */
@@ -548,17 +551,19 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue", "service",
-     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
-     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
+     * Specifies what to aggregate the result by. For example: {@code ["tagNamespace", "tagKey",
+     * "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName",
+     * "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId",
+     * "tenantId", "tenantName"]}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final java.util.List<String> groupBy;
 
     /**
-     * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue", "service",
-     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
-     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
+     * Specifies what to aggregate the result by. For example: {@code ["tagNamespace", "tagKey",
+     * "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName",
+     * "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId",
+     * "tenantId", "tenantName"]}
      *
      * @return the value
      */

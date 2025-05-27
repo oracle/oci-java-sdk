@@ -15,10 +15,10 @@ public class UpdateScheduleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.usageapi.model.UpdateScheduleDetails> {
 
-    /** The information to be updated. Currently supports only tags */
+    /** The information to be updated. Currently supports only tags. */
     private com.oracle.bmc.usageapi.model.UpdateScheduleDetails updateScheduleDetails;
 
-    /** The information to be updated. Currently supports only tags */
+    /** The information to be updated. Currently supports only tags. */
     public com.oracle.bmc.usageapi.model.UpdateScheduleDetails getUpdateScheduleDetails() {
         return updateScheduleDetails;
     }
@@ -77,11 +77,11 @@ public class UpdateScheduleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The information to be updated. Currently supports only tags */
+        /** The information to be updated. Currently supports only tags. */
         private com.oracle.bmc.usageapi.model.UpdateScheduleDetails updateScheduleDetails = null;
 
         /**
-         * The information to be updated. Currently supports only tags
+         * The information to be updated. Currently supports only tags.
          *
          * @param updateScheduleDetails the value to set
          * @return this builder instance

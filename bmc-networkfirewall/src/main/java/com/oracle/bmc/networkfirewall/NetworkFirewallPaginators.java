@@ -763,6 +763,120 @@ public class NetworkFirewallPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listNatRules
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListNatRulesResponse> listNatRulesResponseIterator(
+            final ListNatRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNatRulesRequest.Builder, ListNatRulesRequest, ListNatRulesResponse>(
+                new java.util.function.Supplier<ListNatRulesRequest.Builder>() {
+                    @Override
+                    public ListNatRulesRequest.Builder get() {
+                        return ListNatRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNatRulesResponse, String>() {
+                    @Override
+                    public String apply(ListNatRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNatRulesRequest.Builder>,
+                        ListNatRulesRequest>() {
+                    @Override
+                    public ListNatRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNatRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListNatRulesRequest, ListNatRulesResponse>() {
+                    @Override
+                    public ListNatRulesResponse apply(ListNatRulesRequest request) {
+                        return client.listNatRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.networkfirewall.model.NatRuleSummary} objects contained in responses from the
+     * listNatRules operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.networkfirewall.model.NatRuleSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.networkfirewall.model.NatRuleSummary> listNatRulesRecordIterator(
+            final ListNatRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNatRulesRequest.Builder,
+                ListNatRulesRequest,
+                ListNatRulesResponse,
+                com.oracle.bmc.networkfirewall.model.NatRuleSummary>(
+                new java.util.function.Supplier<ListNatRulesRequest.Builder>() {
+                    @Override
+                    public ListNatRulesRequest.Builder get() {
+                        return ListNatRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNatRulesResponse, String>() {
+                    @Override
+                    public String apply(ListNatRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNatRulesRequest.Builder>,
+                        ListNatRulesRequest>() {
+                    @Override
+                    public ListNatRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNatRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListNatRulesRequest, ListNatRulesResponse>() {
+                    @Override
+                    public ListNatRulesResponse apply(ListNatRulesRequest request) {
+                        return client.listNatRules(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListNatRulesResponse,
+                        java.util.List<com.oracle.bmc.networkfirewall.model.NatRuleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.networkfirewall.model.NatRuleSummary>
+                            apply(ListNatRulesResponse response) {
+                        return response.getNatRuleCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the
      * listNetworkFirewallPolicies operation. This iterable will fetch more data from the server as
      * needed.

@@ -310,6 +310,22 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a detailed capacity report for BDS service
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateBdsCapacityReportResponse> createBdsCapacityReport(
+            CreateBdsCapacityReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateBdsCapacityReportRequest, CreateBdsCapacityReportResponse>
+                    handler);
+
+    /**
      * Creates a Big Data Service cluster.
      *
      * @param request The request object containing the details to send
@@ -774,6 +790,22 @@ public interface BdsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Get the details of the software update of the given SoftwareUpdateId
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSoftwareUpdateResponse> getSoftwareUpdate(
+            GetSoftwareUpdateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSoftwareUpdateRequest, GetSoftwareUpdateResponse>
+                    handler);
+
+    /**
      * Returns the status of the work request identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -816,6 +848,22 @@ public interface BdsAsync extends AutoCloseable {
     java.util.concurrent.Future<InstallPatchResponse> installPatch(
             InstallPatchRequest request,
             com.oracle.bmc.responses.AsyncHandler<InstallPatchRequest, InstallPatchResponse>
+                    handler);
+
+    /**
+     * Install the specified software update to this cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<InstallSoftwareUpdatesResponse> installSoftwareUpdates(
+            InstallSoftwareUpdatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            InstallSoftwareUpdatesRequest, InstallSoftwareUpdatesResponse>
                     handler);
 
     /**
@@ -1028,6 +1076,22 @@ public interface BdsAsync extends AutoCloseable {
                                     ListResourcePrincipalConfigurationsRequest,
                                     ListResourcePrincipalConfigurationsResponse>
                             handler);
+
+    /**
+     * List all the available software updates for current cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSoftwareUpdatesResponse> listSoftwareUpdates(
+            ListSoftwareUpdatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSoftwareUpdatesRequest, ListSoftwareUpdatesResponse>
+                    handler);
 
     /**
      * Returns a paginated list of errors for a work request identified by the given ID.

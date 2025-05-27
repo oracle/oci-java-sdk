@@ -85,14 +85,16 @@ public final class PatchHistorySummary
         }
         /**
          * The type of current patch history. DP - Data Plane patch(This history type is internal
-         * available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+         * available only) ODH - Oracle Distribution of Hadoop update OS - Operating System update
+         * BDS - Big Data Service update
          */
         @com.fasterxml.jackson.annotation.JsonProperty("patchType")
         private PatchType patchType;
 
         /**
          * The type of current patch history. DP - Data Plane patch(This history type is internal
-         * available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+         * available only) ODH - Oracle Distribution of Hadoop update OS - Operating System update
+         * BDS - Big Data Service update
          *
          * @param patchType the value to set
          * @return this builder
@@ -231,11 +233,13 @@ public final class PatchHistorySummary
 
     /**
      * The type of current patch history. DP - Data Plane patch(This history type is internal
-     * available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+     * available only) ODH - Oracle Distribution of Hadoop update OS - Operating System update BDS -
+     * Big Data Service update
      */
     public enum PatchType implements com.oracle.bmc.http.internal.BmcEnum {
         Odh("ODH"),
         Os("OS"),
+        Bds("BDS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -280,14 +284,16 @@ public final class PatchHistorySummary
     };
     /**
      * The type of current patch history. DP - Data Plane patch(This history type is internal
-     * available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+     * available only) ODH - Oracle Distribution of Hadoop update OS - Operating System update BDS -
+     * Big Data Service update
      */
     @com.fasterxml.jackson.annotation.JsonProperty("patchType")
     private final PatchType patchType;
 
     /**
      * The type of current patch history. DP - Data Plane patch(This history type is internal
-     * available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+     * available only) ODH - Oracle Distribution of Hadoop update OS - Operating System update BDS -
+     * Big Data Service update
      *
      * @return the value
      */

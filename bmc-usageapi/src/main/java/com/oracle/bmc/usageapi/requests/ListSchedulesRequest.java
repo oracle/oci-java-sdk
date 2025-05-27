@@ -46,10 +46,10 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getPage() {
         return page;
     }
-    /** The maximumimum number of items to return. */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /** The maximumimum number of items to return. */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
@@ -135,10 +135,10 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Query parameter for filtering by name */
+    /** The query parameter for filtering by name. */
     private String name;
 
-    /** Query parameter for filtering by name */
+    /** The query parameter for filtering by name. */
     public String getName() {
         return name;
     }
@@ -199,11 +199,11 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** The maximumimum number of items to return. */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
-         * The maximumimum number of items to return.
+         * The maximum number of items to return.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -241,11 +241,11 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** Query parameter for filtering by name */
+        /** The query parameter for filtering by name. */
         private String name = null;
 
         /**
-         * Query parameter for filtering by name
+         * The query parameter for filtering by name.
          *
          * @param name the value to set
          * @return this builder instance

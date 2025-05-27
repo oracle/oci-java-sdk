@@ -41,7 +41,8 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         "imagePolicyConfig",
         "clusterPodNetworkOptions",
         "type",
-        "openIdConnectDiscoveryEndpoint"
+        "openIdConnectDiscoveryEndpoint",
+        "openIdConnectDiscoveryKey"
     })
     public Cluster(
             String id,
@@ -63,7 +64,8 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
             ImagePolicyConfig imagePolicyConfig,
             java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions,
             ClusterType type,
-            String openIdConnectDiscoveryEndpoint) {
+            String openIdConnectDiscoveryEndpoint,
+            String openIdConnectDiscoveryKey) {
         super();
         this.id = id;
         this.name = name;
@@ -85,6 +87,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         this.clusterPodNetworkOptions = clusterPodNetworkOptions;
         this.type = type;
         this.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
+        this.openIdConnectDiscoveryKey = openIdConnectDiscoveryKey;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -420,6 +423,21 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("openIdConnectDiscoveryEndpoint");
             return this;
         }
+        /** The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint */
+        @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectDiscoveryKey")
+        private String openIdConnectDiscoveryKey;
+
+        /**
+         * The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+         *
+         * @param openIdConnectDiscoveryKey the value to set
+         * @return this builder
+         */
+        public Builder openIdConnectDiscoveryKey(String openIdConnectDiscoveryKey) {
+            this.openIdConnectDiscoveryKey = openIdConnectDiscoveryKey;
+            this.__explicitlySet__.add("openIdConnectDiscoveryKey");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -446,7 +464,8 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
                             this.imagePolicyConfig,
                             this.clusterPodNetworkOptions,
                             this.type,
-                            this.openIdConnectDiscoveryEndpoint);
+                            this.openIdConnectDiscoveryEndpoint,
+                            this.openIdConnectDiscoveryKey);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -514,6 +533,9 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("openIdConnectDiscoveryEndpoint")) {
                 this.openIdConnectDiscoveryEndpoint(model.getOpenIdConnectDiscoveryEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("openIdConnectDiscoveryKey")) {
+                this.openIdConnectDiscoveryKey(model.getOpenIdConnectDiscoveryKey());
             }
             return this;
         }
@@ -816,6 +838,19 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         return openIdConnectDiscoveryEndpoint;
     }
 
+    /** The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint */
+    @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectDiscoveryKey")
+    private final String openIdConnectDiscoveryKey;
+
+    /**
+     * The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     *
+     * @return the value
+     */
+    public String getOpenIdConnectDiscoveryKey() {
+        return openIdConnectDiscoveryKey;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -854,6 +889,8 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", openIdConnectDiscoveryEndpoint=")
                 .append(String.valueOf(this.openIdConnectDiscoveryEndpoint));
+        sb.append(", openIdConnectDiscoveryKey=")
+                .append(String.valueOf(this.openIdConnectDiscoveryKey));
         sb.append(")");
         return sb.toString();
     }
@@ -891,6 +928,8 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(
                         this.openIdConnectDiscoveryEndpoint, other.openIdConnectDiscoveryEndpoint)
+                && java.util.Objects.equals(
+                        this.openIdConnectDiscoveryKey, other.openIdConnectDiscoveryKey)
                 && super.equals(other);
     }
 
@@ -942,6 +981,11 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
                         + (this.openIdConnectDiscoveryEndpoint == null
                                 ? 43
                                 : this.openIdConnectDiscoveryEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.openIdConnectDiscoveryKey == null
+                                ? 43
+                                : this.openIdConnectDiscoveryKey.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

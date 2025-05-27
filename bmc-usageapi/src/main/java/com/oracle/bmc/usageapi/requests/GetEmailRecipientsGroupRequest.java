@@ -15,17 +15,17 @@ import com.oracle.bmc.usageapi.model.*;
 public class GetEmailRecipientsGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The email recipient group OCID. */
+    /** The email recipients group OCID. */
     private String emailRecipientsGroupId;
 
-    /** The email recipient group OCID. */
+    /** The email recipients group OCID. */
     public String getEmailRecipientsGroupId() {
         return emailRecipientsGroupId;
     }
-    /** The UsageStatement Subscription unique OCID. */
+    /** The usage statement subscription unique OCID. */
     private String subscriptionId;
 
-    /** The UsageStatement Subscription unique OCID. */
+    /** The usage statement subscription unique OCID. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -56,11 +56,11 @@ public class GetEmailRecipientsGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The email recipient group OCID. */
+        /** The email recipients group OCID. */
         private String emailRecipientsGroupId = null;
 
         /**
-         * The email recipient group OCID.
+         * The email recipients group OCID.
          *
          * @param emailRecipientsGroupId the value to set
          * @return this builder instance
@@ -70,11 +70,11 @@ public class GetEmailRecipientsGroupRequest
             return this;
         }
 
-        /** The UsageStatement Subscription unique OCID. */
+        /** The usage statement subscription unique OCID. */
         private String subscriptionId = null;
 
         /**
-         * The UsageStatement Subscription unique OCID.
+         * The usage statement subscription unique OCID.
          *
          * @param subscriptionId the value to set
          * @return this builder instance

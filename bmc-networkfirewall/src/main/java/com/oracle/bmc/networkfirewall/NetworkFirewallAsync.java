@@ -177,6 +177,22 @@ public interface NetworkFirewallAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new NAT Rule at bulk for the Network Firewall Policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkUploadNatRulesResponse> bulkUploadNatRules(
+            BulkUploadNatRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            BulkUploadNatRulesRequest, BulkUploadNatRulesResponse>
+                    handler);
+
+    /**
      * Creates a new Security Rule at bulk for the Network Firewall Policy.
      *
      * @param request The request object containing the details to send
@@ -313,7 +329,7 @@ public interface NetworkFirewallAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a NetworkFirewallPolicy resource from one compartment identifier to another. When
+     * Clones a NetworkFirewallPolicy resource from an existing Network Firewall Policy. When
      * provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
@@ -423,6 +439,21 @@ public interface NetworkFirewallAsync extends AutoCloseable {
             CreateMappedSecretRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateMappedSecretRequest, CreateMappedSecretResponse>
+                    handler);
+
+    /**
+     * Creates a new NAT Rule for the Network Firewall Policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateNatRuleResponse> createNatRule(
+            CreateNatRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateNatRuleRequest, CreateNatRuleResponse>
                     handler);
 
     /**
@@ -632,6 +663,21 @@ public interface NetworkFirewallAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a NAT Rule resource with the given identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteNatRuleResponse> deleteNatRule(
+            DeleteNatRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteNatRuleRequest, DeleteNatRuleResponse>
+                    handler);
+
+    /**
      * Deletes a NetworkFirewall resource by identifier
      *
      * @param request The request object containing the details to send
@@ -833,6 +879,20 @@ public interface NetworkFirewallAsync extends AutoCloseable {
             GetMappedSecretRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetMappedSecretRequest, GetMappedSecretResponse>
                     handler);
+
+    /**
+     * Get NAT Rule by the given name in the context of network firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNatRuleResponse> getNatRule(
+            GetNatRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetNatRuleRequest, GetNatRuleResponse> handler);
 
     /**
      * Gets a NetworkFirewall by identifier
@@ -1047,6 +1107,21 @@ public interface NetworkFirewallAsync extends AutoCloseable {
             ListMappedSecretsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListMappedSecretsRequest, ListMappedSecretsResponse>
+                    handler);
+
+    /**
+     * Returns a list of NAT Rules for the Network Firewall Policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNatRulesResponse> listNatRules(
+            ListNatRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListNatRulesRequest, ListNatRulesResponse>
                     handler);
 
     /**
@@ -1317,6 +1392,21 @@ public interface NetworkFirewallAsync extends AutoCloseable {
             UpdateMappedSecretRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateMappedSecretRequest, UpdateMappedSecretResponse>
+                    handler);
+
+    /**
+     * Updates the NAT Rule with the given name in the network firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNatRuleResponse> updateNatRule(
+            UpdateNatRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateNatRuleRequest, UpdateNatRuleResponse>
                     handler);
 
     /**

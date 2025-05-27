@@ -70,16 +70,12 @@ public final class ApplicationDependencyRecommendationSummary
             this.__explicitlySet__.add("gav");
             return this;
         }
-        /**
-         * Package URL defined in https://github.com/package-url/purl-spec, e.g.
-         * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
-         */
+        /** Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0 */
         @com.fasterxml.jackson.annotation.JsonProperty("purl")
         private String purl;
 
         /**
-         * Package URL defined in https://github.com/package-url/purl-spec, e.g.
-         * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
          *
          * @param purl the value to set
          * @return this builder
@@ -144,14 +140,14 @@ public final class ApplicationDependencyRecommendationSummary
             return this;
         }
         /**
-         * Recommended application dependency in PURL format, e.g.
+         * Recommended application dependency in purl format, e.g.
          * pkg:maven/org.graalvm.nativeimage/svm@21.2.0
          */
         @com.fasterxml.jackson.annotation.JsonProperty("recommendedPurl")
         private String recommendedPurl;
 
         /**
-         * Recommended application dependency in PURL format, e.g.
+         * Recommended application dependency in purl format, e.g.
          * pkg:maven/org.graalvm.nativeimage/svm@21.2.0
          *
          * @param recommendedPurl the value to set
@@ -231,16 +227,12 @@ public final class ApplicationDependencyRecommendationSummary
         return gav;
     }
 
-    /**
-     * Package URL defined in https://github.com/package-url/purl-spec, e.g.
-     * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
-     */
+    /** Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0 */
     @com.fasterxml.jackson.annotation.JsonProperty("purl")
     private final String purl;
 
     /**
-     * Package URL defined in https://github.com/package-url/purl-spec, e.g.
-     * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
      *
      * @return the value
      */
@@ -296,14 +288,14 @@ public final class ApplicationDependencyRecommendationSummary
     }
 
     /**
-     * Recommended application dependency in PURL format, e.g.
+     * Recommended application dependency in purl format, e.g.
      * pkg:maven/org.graalvm.nativeimage/svm@21.2.0
      */
     @com.fasterxml.jackson.annotation.JsonProperty("recommendedPurl")
     private final String recommendedPurl;
 
     /**
-     * Recommended application dependency in PURL format, e.g.
+     * Recommended application dependency in purl format, e.g.
      * pkg:maven/org.graalvm.nativeimage/svm@21.2.0
      *
      * @return the value

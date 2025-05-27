@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The account (tenant) usage carbon emissions. <br>
+ * The account (tenant) carbon emissions usage. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +33,12 @@ public final class UsageCarbonEmissionAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Aggregate the result by. */
+        /** Specifies what to aggregate the result by. */
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private java.util.List<String> groupBy;
 
         /**
-         * Aggregate the result by.
+         * Specifies what to aggregate the result by.
          *
          * @param groupBy the value to set
          * @return this builder
@@ -48,12 +48,12 @@ public final class UsageCarbonEmissionAggregation
             this.__explicitlySet__.add("groupBy");
             return this;
         }
-        /** A list of usage carbon emission items. */
+        /** A list of carbon emission usage items. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<UsageCarbonEmissionSummary> items;
 
         /**
-         * A list of usage carbon emission items.
+         * A list of carbon emission usage items.
          *
          * @param items the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class UsageCarbonEmissionAggregation
         return new Builder().copy(this);
     }
 
-    /** Aggregate the result by. */
+    /** Specifies what to aggregate the result by. */
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final java.util.List<String> groupBy;
 
     /**
-     * Aggregate the result by.
+     * Specifies what to aggregate the result by.
      *
      * @return the value
      */
@@ -110,12 +110,12 @@ public final class UsageCarbonEmissionAggregation
         return groupBy;
     }
 
-    /** A list of usage carbon emission items. */
+    /** A list of carbon emission usage items. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<UsageCarbonEmissionSummary> items;
 
     /**
-     * A list of usage carbon emission items.
+     * A list of carbon emission usage items.
      *
      * @return the value
      */

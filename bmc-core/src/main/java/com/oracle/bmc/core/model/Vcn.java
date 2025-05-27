@@ -45,7 +45,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "ipv6CidrBlocks",
         "lifecycleState",
         "timeCreated",
-        "vcnDomainName"
+        "vcnDomainName",
+        "isZprOnly"
     })
     public Vcn(
             java.util.List<String> byoipv6CidrBlocks,
@@ -65,7 +66,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             java.util.List<String> ipv6CidrBlocks,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
-            String vcnDomainName) {
+            String vcnDomainName,
+            Boolean isZprOnly) {
         super();
         this.byoipv6CidrBlocks = byoipv6CidrBlocks;
         this.ipv6PrivateCidrBlocks = ipv6PrivateCidrBlocks;
@@ -85,6 +87,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.vcnDomainName = vcnDomainName;
+        this.isZprOnly = isZprOnly;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -481,6 +484,21 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("vcnDomainName");
             return this;
         }
+        /** Indicates whether Zpr Only Mode is enforced. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
+        private Boolean isZprOnly;
+
+        /**
+         * Indicates whether Zpr Only Mode is enforced.
+         *
+         * @param isZprOnly the value to set
+         * @return this builder
+         */
+        public Builder isZprOnly(Boolean isZprOnly) {
+            this.isZprOnly = isZprOnly;
+            this.__explicitlySet__.add("isZprOnly");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -505,7 +523,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.ipv6CidrBlocks,
                             this.lifecycleState,
                             this.timeCreated,
-                            this.vcnDomainName);
+                            this.vcnDomainName,
+                            this.isZprOnly);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -567,6 +586,9 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("vcnDomainName")) {
                 this.vcnDomainName(model.getVcnDomainName());
+            }
+            if (model.wasPropertyExplicitlySet("isZprOnly")) {
+                this.isZprOnly(model.getIsZprOnly());
             }
             return this;
         }
@@ -984,6 +1006,19 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return vcnDomainName;
     }
 
+    /** Indicates whether Zpr Only Mode is enforced. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
+    private final Boolean isZprOnly;
+
+    /**
+     * Indicates whether Zpr Only Mode is enforced.
+     *
+     * @return the value
+     */
+    public Boolean getIsZprOnly() {
+        return isZprOnly;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1017,6 +1052,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnDomainName=").append(String.valueOf(this.vcnDomainName));
+        sb.append(", isZprOnly=").append(String.valueOf(this.isZprOnly));
         sb.append(")");
         return sb.toString();
     }
@@ -1049,6 +1085,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnDomainName, other.vcnDomainName)
+                && java.util.Objects.equals(this.isZprOnly, other.isZprOnly)
                 && super.equals(other);
     }
 
@@ -1104,6 +1141,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.vcnDomainName == null ? 43 : this.vcnDomainName.hashCode());
+        result = (result * PRIME) + (this.isZprOnly == null ? 43 : this.isZprOnly.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

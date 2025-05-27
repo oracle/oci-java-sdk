@@ -131,7 +131,8 @@ public final class Script extends com.oracle.bmc.http.client.internal.Explicitly
          * parameter name and value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>}
          * Note that the content is valid if it matches the given content type. For example, if the
          * content type is SIDE, then the content should be in Side script format. If the content
-         * type is JS, then the content should be in JavaScript format.
+         * type is JS, then the content should be in JavaScript format. If the content type is
+         * PLAYWRIGHT_TS, then the content should be in TypeScript format.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
@@ -146,7 +147,8 @@ public final class Script extends com.oracle.bmc.http.client.internal.Explicitly
          * parameter name and value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>}
          * Note that the content is valid if it matches the given content type. For example, if the
          * content type is SIDE, then the content should be in Side script format. If the content
-         * type is JS, then the content should be in JavaScript format.
+         * type is JS, then the content should be in JavaScript format. If the content type is
+         * PLAYWRIGHT_TS, then the content should be in TypeScript format.
          *
          * @param content the value to set
          * @return this builder
@@ -444,7 +446,8 @@ public final class Script extends com.oracle.bmc.http.client.internal.Explicitly
      * value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>} Note that the content is
      * valid if it matches the given content type. For example, if the content type is SIDE, then
      * the content should be in Side script format. If the content type is JS, then the content
-     * should be in JavaScript format.
+     * should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should
+     * be in TypeScript format.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
@@ -458,7 +461,8 @@ public final class Script extends com.oracle.bmc.http.client.internal.Explicitly
      * value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>} Note that the content is
      * valid if it matches the given content type. For example, if the content type is SIDE, then
      * the content should be in Side script format. If the content type is JS, then the content
-     * should be in JavaScript format.
+     * should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should
+     * be in TypeScript format.
      *
      * @return the value
      */

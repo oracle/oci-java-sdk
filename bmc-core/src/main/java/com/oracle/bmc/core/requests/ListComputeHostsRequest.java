@@ -254,6 +254,19 @@ public class ListComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getComputeHostHealth() {
         return computeHostHealth;
     }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute host group.
+     */
+    private String computeHostGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute host group.
+     */
+    public String getComputeHostGroupId() {
+        return computeHostGroupId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -482,6 +495,24 @@ public class ListComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute host group.
+         */
+        private String computeHostGroupId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute host group.
+         *
+         * @param computeHostGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder computeHostGroupId(String computeHostGroupId) {
+            this.computeHostGroupId = computeHostGroupId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -522,6 +553,7 @@ public class ListComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<
             sortOrder(o.getSortOrder());
             computeHostLifecycleState(o.getComputeHostLifecycleState());
             computeHostHealth(o.getComputeHostHealth());
+            computeHostGroupId(o.getComputeHostGroupId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -567,10 +599,11 @@ public class ListComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortOrder = sortOrder;
             request.computeHostLifecycleState = computeHostLifecycleState;
             request.computeHostHealth = computeHostHealth;
+            request.computeHostGroupId = computeHostGroupId;
             return request;
             // new ListComputeHostsRequest(compartmentId, opcRequestId, availabilityDomain,
             // displayName, networkResourceId, limit, page, sortBy, sortOrder,
-            // computeHostLifecycleState, computeHostHealth);
+            // computeHostLifecycleState, computeHostHealth, computeHostGroupId);
         }
     }
 
@@ -591,7 +624,8 @@ public class ListComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .computeHostLifecycleState(computeHostLifecycleState)
-                .computeHostHealth(computeHostHealth);
+                .computeHostHealth(computeHostHealth)
+                .computeHostGroupId(computeHostGroupId);
     }
 
     /**
@@ -620,6 +654,7 @@ public class ListComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",computeHostLifecycleState=")
                 .append(String.valueOf(this.computeHostLifecycleState));
         sb.append(",computeHostHealth=").append(String.valueOf(this.computeHostHealth));
+        sb.append(",computeHostGroupId=").append(String.valueOf(this.computeHostGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -646,7 +681,8 @@ public class ListComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(
                         this.computeHostLifecycleState, other.computeHostLifecycleState)
-                && java.util.Objects.equals(this.computeHostHealth, other.computeHostHealth);
+                && java.util.Objects.equals(this.computeHostHealth, other.computeHostHealth)
+                && java.util.Objects.equals(this.computeHostGroupId, other.computeHostGroupId);
     }
 
     @Override
@@ -678,6 +714,11 @@ public class ListComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<
         result =
                 (result * PRIME)
                         + (this.computeHostHealth == null ? 43 : this.computeHostHealth.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeHostGroupId == null
+                                ? 43
+                                : this.computeHostGroupId.hashCode());
         return result;
     }
 }

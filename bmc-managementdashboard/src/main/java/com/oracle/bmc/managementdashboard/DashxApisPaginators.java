@@ -294,4 +294,262 @@ public class DashxApisPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listOobManagementDashboards operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListOobManagementDashboardsResponse>
+            listOobManagementDashboardsResponseIterator(
+                    final ListOobManagementDashboardsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOobManagementDashboardsRequest.Builder,
+                ListOobManagementDashboardsRequest,
+                ListOobManagementDashboardsResponse>(
+                new java.util.function.Supplier<ListOobManagementDashboardsRequest.Builder>() {
+                    @Override
+                    public ListOobManagementDashboardsRequest.Builder get() {
+                        return ListOobManagementDashboardsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOobManagementDashboardsResponse, String>() {
+                    @Override
+                    public String apply(ListOobManagementDashboardsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOobManagementDashboardsRequest.Builder>,
+                        ListOobManagementDashboardsRequest>() {
+                    @Override
+                    public ListOobManagementDashboardsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOobManagementDashboardsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOobManagementDashboardsRequest, ListOobManagementDashboardsResponse>() {
+                    @Override
+                    public ListOobManagementDashboardsResponse apply(
+                            ListOobManagementDashboardsRequest request) {
+                        return client.listOobManagementDashboards(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.managementdashboard.model.ManagementDashboardSummary} objects contained in
+     * responses from the listOobManagementDashboards operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.managementdashboard.model.ManagementDashboardSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.managementdashboard.model.ManagementDashboardSummary>
+            listOobManagementDashboardsRecordIterator(
+                    final ListOobManagementDashboardsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOobManagementDashboardsRequest.Builder,
+                ListOobManagementDashboardsRequest,
+                ListOobManagementDashboardsResponse,
+                com.oracle.bmc.managementdashboard.model.ManagementDashboardSummary>(
+                new java.util.function.Supplier<ListOobManagementDashboardsRequest.Builder>() {
+                    @Override
+                    public ListOobManagementDashboardsRequest.Builder get() {
+                        return ListOobManagementDashboardsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOobManagementDashboardsResponse, String>() {
+                    @Override
+                    public String apply(ListOobManagementDashboardsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOobManagementDashboardsRequest.Builder>,
+                        ListOobManagementDashboardsRequest>() {
+                    @Override
+                    public ListOobManagementDashboardsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOobManagementDashboardsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOobManagementDashboardsRequest, ListOobManagementDashboardsResponse>() {
+                    @Override
+                    public ListOobManagementDashboardsResponse apply(
+                            ListOobManagementDashboardsRequest request) {
+                        return client.listOobManagementDashboards(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOobManagementDashboardsResponse,
+                        java.util.List<
+                                com.oracle.bmc.managementdashboard.model
+                                        .ManagementDashboardSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.managementdashboard.model
+                                            .ManagementDashboardSummary>
+                            apply(ListOobManagementDashboardsResponse response) {
+                        return response.getManagementDashboardCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listOobManagementSavedSearches operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListOobManagementSavedSearchesResponse>
+            listOobManagementSavedSearchesResponseIterator(
+                    final ListOobManagementSavedSearchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOobManagementSavedSearchesRequest.Builder,
+                ListOobManagementSavedSearchesRequest,
+                ListOobManagementSavedSearchesResponse>(
+                new java.util.function.Supplier<ListOobManagementSavedSearchesRequest.Builder>() {
+                    @Override
+                    public ListOobManagementSavedSearchesRequest.Builder get() {
+                        return ListOobManagementSavedSearchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOobManagementSavedSearchesResponse, String>() {
+                    @Override
+                    public String apply(ListOobManagementSavedSearchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOobManagementSavedSearchesRequest.Builder>,
+                        ListOobManagementSavedSearchesRequest>() {
+                    @Override
+                    public ListOobManagementSavedSearchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOobManagementSavedSearchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOobManagementSavedSearchesRequest,
+                        ListOobManagementSavedSearchesResponse>() {
+                    @Override
+                    public ListOobManagementSavedSearchesResponse apply(
+                            ListOobManagementSavedSearchesRequest request) {
+                        return client.listOobManagementSavedSearches(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.managementdashboard.model.ManagementSavedSearchSummary} objects contained in
+     * responses from the listOobManagementSavedSearches operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.managementdashboard.model.ManagementSavedSearchSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.managementdashboard.model.ManagementSavedSearchSummary>
+            listOobManagementSavedSearchesRecordIterator(
+                    final ListOobManagementSavedSearchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOobManagementSavedSearchesRequest.Builder,
+                ListOobManagementSavedSearchesRequest,
+                ListOobManagementSavedSearchesResponse,
+                com.oracle.bmc.managementdashboard.model.ManagementSavedSearchSummary>(
+                new java.util.function.Supplier<ListOobManagementSavedSearchesRequest.Builder>() {
+                    @Override
+                    public ListOobManagementSavedSearchesRequest.Builder get() {
+                        return ListOobManagementSavedSearchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOobManagementSavedSearchesResponse, String>() {
+                    @Override
+                    public String apply(ListOobManagementSavedSearchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOobManagementSavedSearchesRequest.Builder>,
+                        ListOobManagementSavedSearchesRequest>() {
+                    @Override
+                    public ListOobManagementSavedSearchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOobManagementSavedSearchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOobManagementSavedSearchesRequest,
+                        ListOobManagementSavedSearchesResponse>() {
+                    @Override
+                    public ListOobManagementSavedSearchesResponse apply(
+                            ListOobManagementSavedSearchesRequest request) {
+                        return client.listOobManagementSavedSearches(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOobManagementSavedSearchesResponse,
+                        java.util.List<
+                                com.oracle.bmc.managementdashboard.model
+                                        .ManagementSavedSearchSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.managementdashboard.model
+                                            .ManagementSavedSearchSummary>
+                            apply(ListOobManagementSavedSearchesResponse response) {
+                        return response.getManagementSavedSearchCollection().getItems();
+                    }
+                });
+    }
 }

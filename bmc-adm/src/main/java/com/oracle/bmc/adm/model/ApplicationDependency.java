@@ -5,7 +5,10 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * An application dependency resource creates a vulnerability audit. <br>
+ * An ApplicationDependency resource is used within the applicationDependencies of a
+ * CreateVulnerabilityAuditDetails resource to create a vulnerability audit. Each
+ * ApplicationDependency resource must provide either Package URL (purl) identifier or a Group
+ * Artifact Version (GAV) to identify the application dependency. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -57,16 +60,12 @@ public final class ApplicationDependency
             this.__explicitlySet__.add("gav");
             return this;
         }
-        /**
-         * Package URL defined in https://github.com/package-url/purl-spec, e.g.
-         * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
-         */
+        /** Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0 */
         @com.fasterxml.jackson.annotation.JsonProperty("purl")
         private String purl;
 
         /**
-         * Package URL defined in https://github.com/package-url/purl-spec, e.g.
-         * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
          *
          * @param purl the value to set
          * @return this builder
@@ -183,16 +182,12 @@ public final class ApplicationDependency
         return gav;
     }
 
-    /**
-     * Package URL defined in https://github.com/package-url/purl-spec, e.g.
-     * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
-     */
+    /** Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0 */
     @com.fasterxml.jackson.annotation.JsonProperty("purl")
     private final String purl;
 
     /**
-     * Package URL defined in https://github.com/package-url/purl-spec, e.g.
-     * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
      *
      * @return the value
      */

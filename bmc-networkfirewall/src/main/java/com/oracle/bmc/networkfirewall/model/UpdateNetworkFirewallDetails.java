@@ -27,6 +27,7 @@ public final class UpdateNetworkFirewallDetails
         "displayName",
         "networkFirewallPolicyId",
         "networkSecurityGroupIds",
+        "natConfiguration",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +35,14 @@ public final class UpdateNetworkFirewallDetails
             String displayName,
             String networkFirewallPolicyId,
             java.util.List<String> networkSecurityGroupIds,
+            NatConfigurationRequest natConfiguration,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.networkFirewallPolicyId = networkFirewallPolicyId;
         this.networkSecurityGroupIds = networkSecurityGroupIds;
+        this.natConfiguration = natConfiguration;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -105,6 +108,15 @@ public final class UpdateNetworkFirewallDetails
             this.__explicitlySet__.add("networkSecurityGroupIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("natConfiguration")
+        private NatConfigurationRequest natConfiguration;
+
+        public Builder natConfiguration(NatConfigurationRequest natConfiguration) {
+            this.natConfiguration = natConfiguration;
+            this.__explicitlySet__.add("natConfiguration");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -162,6 +174,7 @@ public final class UpdateNetworkFirewallDetails
                             this.displayName,
                             this.networkFirewallPolicyId,
                             this.networkSecurityGroupIds,
+                            this.natConfiguration,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -180,6 +193,9 @@ public final class UpdateNetworkFirewallDetails
             }
             if (model.wasPropertyExplicitlySet("networkSecurityGroupIds")) {
                 this.networkSecurityGroupIds(model.getNetworkSecurityGroupIds());
+            }
+            if (model.wasPropertyExplicitlySet("natConfiguration")) {
+                this.natConfiguration(model.getNatConfiguration());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -253,6 +269,13 @@ public final class UpdateNetworkFirewallDetails
         return networkSecurityGroupIds;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("natConfiguration")
+    private final NatConfigurationRequest natConfiguration;
+
+    public NatConfigurationRequest getNatConfiguration() {
+        return natConfiguration;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -315,6 +338,7 @@ public final class UpdateNetworkFirewallDetails
                 .append(String.valueOf(this.networkFirewallPolicyId));
         sb.append(", networkSecurityGroupIds=")
                 .append(String.valueOf(this.networkSecurityGroupIds));
+        sb.append(", natConfiguration=").append(String.valueOf(this.natConfiguration));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -336,6 +360,7 @@ public final class UpdateNetworkFirewallDetails
                         this.networkFirewallPolicyId, other.networkFirewallPolicyId)
                 && java.util.Objects.equals(
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
+                && java.util.Objects.equals(this.natConfiguration, other.natConfiguration)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -356,6 +381,9 @@ public final class UpdateNetworkFirewallDetails
                         + (this.networkSecurityGroupIds == null
                                 ? 43
                                 : this.networkSecurityGroupIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.natConfiguration == null ? 43 : this.natConfiguration.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

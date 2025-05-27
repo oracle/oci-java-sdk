@@ -29,6 +29,8 @@ public final class ComputeHostSummary
         "id",
         "faultDomain",
         "hpcIslandId",
+        "computeHostGroupId",
+        "recycleDetails",
         "networkBlockId",
         "localBlockId",
         "gpuMemoryFabricId",
@@ -50,6 +52,8 @@ public final class ComputeHostSummary
             String id,
             String faultDomain,
             String hpcIslandId,
+            String computeHostGroupId,
+            RecycleDetails recycleDetails,
             String networkBlockId,
             String localBlockId,
             String gpuMemoryFabricId,
@@ -70,6 +74,8 @@ public final class ComputeHostSummary
         this.id = id;
         this.faultDomain = faultDomain;
         this.hpcIslandId = hpcIslandId;
+        this.computeHostGroupId = computeHostGroupId;
+        this.recycleDetails = recycleDetails;
         this.networkBlockId = networkBlockId;
         this.localBlockId = localBlockId;
         this.gpuMemoryFabricId = gpuMemoryFabricId;
@@ -193,6 +199,34 @@ public final class ComputeHostSummary
         public Builder hpcIslandId(String hpcIslandId) {
             this.hpcIslandId = hpcIslandId;
             this.__explicitlySet__.add("hpcIslandId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Customer-unique host group
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
+        private String computeHostGroupId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Customer-unique host group
+         *
+         * @param computeHostGroupId the value to set
+         * @return this builder
+         */
+        public Builder computeHostGroupId(String computeHostGroupId) {
+            this.computeHostGroupId = computeHostGroupId;
+            this.__explicitlySet__.add("computeHostGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("recycleDetails")
+        private RecycleDetails recycleDetails;
+
+        public Builder recycleDetails(RecycleDetails recycleDetails) {
+            this.recycleDetails = recycleDetails;
+            this.__explicitlySet__.add("recycleDetails");
             return this;
         }
         /**
@@ -482,6 +516,8 @@ public final class ComputeHostSummary
                             this.id,
                             this.faultDomain,
                             this.hpcIslandId,
+                            this.computeHostGroupId,
+                            this.recycleDetails,
                             this.networkBlockId,
                             this.localBlockId,
                             this.gpuMemoryFabricId,
@@ -518,6 +554,12 @@ public final class ComputeHostSummary
             }
             if (model.wasPropertyExplicitlySet("hpcIslandId")) {
                 this.hpcIslandId(model.getHpcIslandId());
+            }
+            if (model.wasPropertyExplicitlySet("computeHostGroupId")) {
+                this.computeHostGroupId(model.getComputeHostGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("recycleDetails")) {
+                this.recycleDetails(model.getRecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("networkBlockId")) {
                 this.networkBlockId(model.getNetworkBlockId());
@@ -669,6 +711,30 @@ public final class ComputeHostSummary
      */
     public String getHpcIslandId() {
         return hpcIslandId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Customer-unique host group
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
+    private final String computeHostGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Customer-unique host group
+     *
+     * @return the value
+     */
+    public String getComputeHostGroupId() {
+        return computeHostGroupId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("recycleDetails")
+    private final RecycleDetails recycleDetails;
+
+    public RecycleDetails getRecycleDetails() {
+        return recycleDetails;
     }
 
     /**
@@ -937,6 +1003,8 @@ public final class ComputeHostSummary
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", hpcIslandId=").append(String.valueOf(this.hpcIslandId));
+        sb.append(", computeHostGroupId=").append(String.valueOf(this.computeHostGroupId));
+        sb.append(", recycleDetails=").append(String.valueOf(this.recycleDetails));
         sb.append(", networkBlockId=").append(String.valueOf(this.networkBlockId));
         sb.append(", localBlockId=").append(String.valueOf(this.localBlockId));
         sb.append(", gpuMemoryFabricId=").append(String.valueOf(this.gpuMemoryFabricId));
@@ -970,6 +1038,8 @@ public final class ComputeHostSummary
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.hpcIslandId, other.hpcIslandId)
+                && java.util.Objects.equals(this.computeHostGroupId, other.computeHostGroupId)
+                && java.util.Objects.equals(this.recycleDetails, other.recycleDetails)
                 && java.util.Objects.equals(this.networkBlockId, other.networkBlockId)
                 && java.util.Objects.equals(this.localBlockId, other.localBlockId)
                 && java.util.Objects.equals(this.gpuMemoryFabricId, other.gpuMemoryFabricId)
@@ -1002,6 +1072,14 @@ public final class ComputeHostSummary
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.hpcIslandId == null ? 43 : this.hpcIslandId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeHostGroupId == null
+                                ? 43
+                                : this.computeHostGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recycleDetails == null ? 43 : this.recycleDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkBlockId == null ? 43 : this.networkBlockId.hashCode());

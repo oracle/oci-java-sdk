@@ -30,7 +30,8 @@ public final class CreateDedicatedVmHostDetails
         "definedTags",
         "displayName",
         "faultDomain",
-        "freeformTags"
+        "freeformTags",
+        "placementConstraintDetails"
     })
     public CreateDedicatedVmHostDetails(
             String availabilityDomain,
@@ -39,7 +40,8 @@ public final class CreateDedicatedVmHostDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             String faultDomain,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            PlacementConstraintDetails placementConstraintDetails) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -48,6 +50,7 @@ public final class CreateDedicatedVmHostDetails
         this.displayName = displayName;
         this.faultDomain = faultDomain;
         this.freeformTags = freeformTags;
+        this.placementConstraintDetails = placementConstraintDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -219,6 +222,16 @@ public final class CreateDedicatedVmHostDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private PlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                PlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -231,7 +244,8 @@ public final class CreateDedicatedVmHostDetails
                             this.definedTags,
                             this.displayName,
                             this.faultDomain,
-                            this.freeformTags);
+                            this.freeformTags,
+                            this.placementConstraintDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -260,6 +274,9 @@ public final class CreateDedicatedVmHostDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
             }
             return this;
         }
@@ -423,6 +440,13 @@ public final class CreateDedicatedVmHostDetails
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final PlacementConstraintDetails placementConstraintDetails;
+
+    public PlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -445,6 +469,8 @@ public final class CreateDedicatedVmHostDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -466,6 +492,8 @@ public final class CreateDedicatedVmHostDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
                 && super.equals(other);
     }
 
@@ -490,6 +518,11 @@ public final class CreateDedicatedVmHostDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

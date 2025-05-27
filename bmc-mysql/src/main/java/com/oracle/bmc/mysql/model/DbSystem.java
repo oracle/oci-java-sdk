@@ -28,6 +28,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "compartmentId",
         "subnetId",
         "nsgIds",
+        "rest",
         "isHighlyAvailable",
         "currentPlacement",
         "isHeatWaveClusterAttached",
@@ -72,6 +73,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             String compartmentId,
             String subnetId,
             java.util.List<String> nsgIds,
+            RestDetails rest,
             Boolean isHighlyAvailable,
             DbSystemPlacement currentPlacement,
             Boolean isHeatWaveClusterAttached,
@@ -115,6 +117,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
+        this.rest = rest;
         this.isHighlyAvailable = isHighlyAvailable;
         this.currentPlacement = currentPlacement;
         this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
@@ -243,6 +246,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rest")
+        private RestDetails rest;
+
+        public Builder rest(RestDetails rest) {
+            this.rest = rest;
+            this.__explicitlySet__.add("rest");
             return this;
         }
         /** Specifies if the DB System is highly available. */
@@ -856,6 +868,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.compartmentId,
                             this.subnetId,
                             this.nsgIds,
+                            this.rest,
                             this.isHighlyAvailable,
                             this.currentPlacement,
                             this.isHeatWaveClusterAttached,
@@ -917,6 +930,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("rest")) {
+                this.rest(model.getRest());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -1115,6 +1131,13 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
      */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("rest")
+    private final RestDetails rest;
+
+    public RestDetails getRest() {
+        return rest;
     }
 
     /** Specifies if the DB System is highly available. */
@@ -1816,6 +1839,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", rest=").append(String.valueOf(this.rest));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", currentPlacement=").append(String.valueOf(this.currentPlacement));
         sb.append(", isHeatWaveClusterAttached=")
@@ -1874,6 +1898,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.rest, other.rest)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.currentPlacement, other.currentPlacement)
                 && java.util.Objects.equals(
@@ -1927,6 +1952,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());

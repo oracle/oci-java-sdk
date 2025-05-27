@@ -433,6 +433,68 @@ public class DashxApisClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetOobManagementDashboardResponse getOobManagementDashboard(
+            GetOobManagementDashboardRequest request) {
+
+        Validate.notBlank(
+                request.getManagementDashboardId(), "managementDashboardId must not be blank");
+
+        return clientCall(request, GetOobManagementDashboardResponse::builder)
+                .logger(LOG, "getOobManagementDashboard")
+                .serviceDetails(
+                        "DashxApis",
+                        "GetOobManagementDashboard",
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/GetOobManagementDashboard")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOobManagementDashboardRequest::builder)
+                .basePath("/20200901")
+                .appendPathParam("oobManagementDashboards")
+                .appendPathParam(request.getManagementDashboardId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.managementdashboard.model.ManagementDashboard.class,
+                        GetOobManagementDashboardResponse.Builder::managementDashboard)
+                .handleResponseHeaderString("etag", GetOobManagementDashboardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        GetOobManagementDashboardResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOobManagementDashboardResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetOobManagementSavedSearchResponse getOobManagementSavedSearch(
+            GetOobManagementSavedSearchRequest request) {
+
+        Validate.notBlank(
+                request.getManagementSavedSearchId(), "managementSavedSearchId must not be blank");
+
+        return clientCall(request, GetOobManagementSavedSearchResponse::builder)
+                .logger(LOG, "getOobManagementSavedSearch")
+                .serviceDetails(
+                        "DashxApis",
+                        "GetOobManagementSavedSearch",
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/GetOobManagementSavedSearch")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOobManagementSavedSearchRequest::builder)
+                .basePath("/20200901")
+                .appendPathParam("oobManagementSavedSearches")
+                .appendPathParam(request.getManagementSavedSearchId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.managementdashboard.model.ManagementSavedSearch.class,
+                        GetOobManagementSavedSearchResponse.Builder::managementSavedSearch)
+                .handleResponseHeaderString(
+                        "etag", GetOobManagementSavedSearchResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOobManagementSavedSearchResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ImportDashboardResponse importDashboard(ImportDashboardRequest request) {
         Objects.requireNonNull(
                 request.getManagementDashboardImportDetails(),
@@ -528,6 +590,77 @@ public class DashxApisClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListManagementSavedSearchesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagementSavedSearchesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListOobManagementDashboardsResponse listOobManagementDashboards(
+            ListOobManagementDashboardsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListOobManagementDashboardsResponse::builder)
+                .logger(LOG, "listOobManagementDashboards")
+                .serviceDetails(
+                        "DashxApis",
+                        "ListOobManagementDashboards",
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ListOobManagementDashboards")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOobManagementDashboardsRequest::builder)
+                .basePath("/20200901")
+                .appendPathParam("oobManagementDashboards")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.managementdashboard.model.ManagementDashboardCollection
+                                .class,
+                        ListOobManagementDashboardsResponse.Builder::managementDashboardCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOobManagementDashboardsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOobManagementDashboardsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListOobManagementSavedSearchesResponse listOobManagementSavedSearches(
+            ListOobManagementSavedSearchesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListOobManagementSavedSearchesResponse::builder)
+                .logger(LOG, "listOobManagementSavedSearches")
+                .serviceDetails(
+                        "DashxApis",
+                        "ListOobManagementSavedSearches",
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ListOobManagementSavedSearches")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOobManagementSavedSearchesRequest::builder)
+                .basePath("/20200901")
+                .appendPathParam("oobManagementSavedSearches")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.managementdashboard.model.ManagementSavedSearchCollection
+                                .class,
+                        ListOobManagementSavedSearchesResponse.Builder
+                                ::managementSavedSearchCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOobManagementSavedSearchesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListOobManagementSavedSearchesResponse.Builder::opcNextPage)
                 .callSync();
     }
 

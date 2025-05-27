@@ -273,7 +273,7 @@ public interface ApmSynthetic extends AutoCloseable {
 
     /**
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in
-     * a HAR file, Screenshot, Console Log or Network details.
+     * a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

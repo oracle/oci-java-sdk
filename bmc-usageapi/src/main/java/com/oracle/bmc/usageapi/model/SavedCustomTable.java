@@ -64,7 +64,7 @@ public final class SavedCustomTable
             return this;
         }
         /**
-         * The row groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+         * The row groupBy key list. For example: {@code ["tagNamespace", "tagKey", "tagValue",
          * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
          * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
          * "tenantName"]}
@@ -73,7 +73,7 @@ public final class SavedCustomTable
         private java.util.List<String> rowGroupBy;
 
         /**
-         * The row groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+         * The row groupBy key list. For example: {@code ["tagNamespace", "tagKey", "tagValue",
          * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
          * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
          * "tenantName"]}
@@ -87,7 +87,7 @@ public final class SavedCustomTable
             return this;
         }
         /**
-         * The column groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+         * The column groupBy key list. For example: {@code ["tagNamespace", "tagKey", "tagValue",
          * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
          * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
          * "tenantName"]}
@@ -96,7 +96,7 @@ public final class SavedCustomTable
         private java.util.List<String> columnGroupBy;
 
         /**
-         * The column groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+         * The column groupBy key list. For example: {@code ["tagNamespace", "tagKey", "tagValue",
          * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
          * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
          * "tenantName"]}
@@ -227,17 +227,17 @@ public final class SavedCustomTable
     }
 
     /**
-     * The row groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue", "service",
-     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
-     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
+     * The row groupBy key list. For example: {@code ["tagNamespace", "tagKey", "tagValue",
+     * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+     * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("rowGroupBy")
     private final java.util.List<String> rowGroupBy;
 
     /**
-     * The row groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue", "service",
-     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
-     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
+     * The row groupBy key list. For example: {@code ["tagNamespace", "tagKey", "tagValue",
+     * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+     * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
      *
      * @return the value
      */
@@ -246,7 +246,7 @@ public final class SavedCustomTable
     }
 
     /**
-     * The column groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+     * The column groupBy key list. For example: {@code ["tagNamespace", "tagKey", "tagValue",
      * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
      * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
      */
@@ -254,7 +254,7 @@ public final class SavedCustomTable
     private final java.util.List<String> columnGroupBy;
 
     /**
-     * The column groupBy key list. example: {@code ["tagNamespace", "tagKey", "tagValue",
+     * The column groupBy key list. For example: {@code ["tagNamespace", "tagKey", "tagValue",
      * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
      * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
      *

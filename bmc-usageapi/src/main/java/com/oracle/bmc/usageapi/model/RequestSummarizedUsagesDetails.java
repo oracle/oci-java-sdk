@@ -129,15 +129,15 @@ public final class RequestSummarizedUsagesDetails
             return this;
         }
         /**
-         * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query
-         * time period will be added up.
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost
+         * over the query time period will be added up.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
         private Boolean isAggregateByTime;
 
         /**
-         * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query
-         * time period will be added up.
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost
+         * over the query time period will be added up.
          *
          * @param isAggregateByTime the value to set
          * @return this builder
@@ -180,7 +180,7 @@ public final class RequestSummarizedUsagesDetails
             return this;
         }
         /**
-         * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue",
+         * Aggregate the result by. For example: {@code ["tagNamespace", "tagKey", "tagValue",
          * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
          * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
          * "tenantName"]}
@@ -189,7 +189,7 @@ public final class RequestSummarizedUsagesDetails
         private java.util.List<String> groupBy;
 
         /**
-         * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue",
+         * Aggregate the result by. For example: {@code ["tagNamespace", "tagKey", "tagValue",
          * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
          * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
          * "tenantName"]}
@@ -415,15 +415,15 @@ public final class RequestSummarizedUsagesDetails
     }
 
     /**
-     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time
-     * period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over
+     * the query time period will be added up.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     private final Boolean isAggregateByTime;
 
     /**
-     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time
-     * period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over
+     * the query time period will be added up.
      *
      * @return the value
      */
@@ -498,17 +498,17 @@ public final class RequestSummarizedUsagesDetails
     }
 
     /**
-     * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue", "service",
-     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
-     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
+     * Aggregate the result by. For example: {@code ["tagNamespace", "tagKey", "tagValue",
+     * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+     * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final java.util.List<String> groupBy;
 
     /**
-     * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue", "service",
-     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
-     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
+     * Aggregate the result by. For example: {@code ["tagNamespace", "tagKey", "tagValue",
+     * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+     * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
      *
      * @return the value
      */

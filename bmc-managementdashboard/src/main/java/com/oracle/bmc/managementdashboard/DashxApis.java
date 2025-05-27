@@ -235,6 +235,41 @@ public interface DashxApis extends AutoCloseable {
             GetManagementSavedSearchRequest request);
 
     /**
+     * Gets an OOB dashboard and its saved searches by ID. Deleted or unauthorized saved searches
+     * are marked by tile's state property.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/GetOobManagementDashboardExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetOobManagementDashboard API.
+     */
+    GetOobManagementDashboardResponse getOobManagementDashboard(
+            GetOobManagementDashboardRequest request);
+
+    /**
+     * Gets a saved search by ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/GetOobManagementSavedSearchExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetOobManagementSavedSearch API.
+     */
+    GetOobManagementSavedSearchResponse getOobManagementSavedSearch(
+            GetOobManagementSavedSearchRequest request);
+
+    /**
      * Imports an array of dashboards and their saved searches. Here's an example of how you can use
      * CLI to import a dashboard. For information on the details that must be passed to IMPORT, you
      * can use the EXPORT API to obtain the Import.json file: `oci management-dashboard dashboard
@@ -293,6 +328,41 @@ public interface DashxApis extends AutoCloseable {
      */
     ListManagementSavedSearchesResponse listManagementSavedSearches(
             ListManagementSavedSearchesRequest request);
+
+    /**
+     * Gets the list of OOB dashboards with pagination. Returned properties are the summary.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/ListOobManagementDashboardsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListOobManagementDashboards API.
+     */
+    ListOobManagementDashboardsResponse listOobManagementDashboards(
+            ListOobManagementDashboardsRequest request);
+
+    /**
+     * Gets the list of out-of-box saved searches in a compartment with pagination. Returned
+     * properties are the summary.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/ListOobManagementSavedSearchesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListOobManagementSavedSearches API.
+     */
+    ListOobManagementSavedSearchesResponse listOobManagementSavedSearches(
+            ListOobManagementSavedSearchesRequest request);
 
     /**
      * Updates an existing dashboard identified by ID path parameter. CompartmentId can be modified

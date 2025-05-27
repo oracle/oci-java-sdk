@@ -31,6 +31,7 @@ public final class NetworkFirewallSummary
         "availabilityDomain",
         "ipv4Address",
         "ipv6Address",
+        "natConfiguration",
         "networkFirewallPolicyId",
         "timeCreated",
         "timeUpdated",
@@ -48,6 +49,7 @@ public final class NetworkFirewallSummary
             String availabilityDomain,
             String ipv4Address,
             String ipv6Address,
+            NatConfigurationResponse natConfiguration,
             String networkFirewallPolicyId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -64,6 +66,7 @@ public final class NetworkFirewallSummary
         this.availabilityDomain = availabilityDomain;
         this.ipv4Address = ipv4Address;
         this.ipv6Address = ipv6Address;
+        this.natConfiguration = natConfiguration;
         this.networkFirewallPolicyId = networkFirewallPolicyId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -203,6 +206,15 @@ public final class NetworkFirewallSummary
         public Builder ipv6Address(String ipv6Address) {
             this.ipv6Address = ipv6Address;
             this.__explicitlySet__.add("ipv6Address");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("natConfiguration")
+        private NatConfigurationResponse natConfiguration;
+
+        public Builder natConfiguration(NatConfigurationResponse natConfiguration) {
+            this.natConfiguration = natConfiguration;
+            this.__explicitlySet__.add("natConfiguration");
             return this;
         }
         /**
@@ -376,6 +388,7 @@ public final class NetworkFirewallSummary
                             this.availabilityDomain,
                             this.ipv4Address,
                             this.ipv6Address,
+                            this.natConfiguration,
                             this.networkFirewallPolicyId,
                             this.timeCreated,
                             this.timeUpdated,
@@ -412,6 +425,9 @@ public final class NetworkFirewallSummary
             }
             if (model.wasPropertyExplicitlySet("ipv6Address")) {
                 this.ipv6Address(model.getIpv6Address());
+            }
+            if (model.wasPropertyExplicitlySet("natConfiguration")) {
+                this.natConfiguration(model.getNatConfiguration());
             }
             if (model.wasPropertyExplicitlySet("networkFirewallPolicyId")) {
                 this.networkFirewallPolicyId(model.getNetworkFirewallPolicyId());
@@ -561,6 +577,13 @@ public final class NetworkFirewallSummary
      */
     public String getIpv6Address() {
         return ipv6Address;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("natConfiguration")
+    private final NatConfigurationResponse natConfiguration;
+
+    public NatConfigurationResponse getNatConfiguration() {
+        return natConfiguration;
     }
 
     /**
@@ -725,6 +748,7 @@ public final class NetworkFirewallSummary
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", ipv4Address=").append(String.valueOf(this.ipv4Address));
         sb.append(", ipv6Address=").append(String.valueOf(this.ipv6Address));
+        sb.append(", natConfiguration=").append(String.valueOf(this.natConfiguration));
         sb.append(", networkFirewallPolicyId=")
                 .append(String.valueOf(this.networkFirewallPolicyId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -755,6 +779,7 @@ public final class NetworkFirewallSummary
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.ipv4Address, other.ipv4Address)
                 && java.util.Objects.equals(this.ipv6Address, other.ipv6Address)
+                && java.util.Objects.equals(this.natConfiguration, other.natConfiguration)
                 && java.util.Objects.equals(
                         this.networkFirewallPolicyId, other.networkFirewallPolicyId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -784,6 +809,9 @@ public final class NetworkFirewallSummary
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.ipv4Address == null ? 43 : this.ipv4Address.hashCode());
         result = (result * PRIME) + (this.ipv6Address == null ? 43 : this.ipv6Address.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.natConfiguration == null ? 43 : this.natConfiguration.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkFirewallPolicyId == null

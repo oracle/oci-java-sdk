@@ -47,12 +47,12 @@ public final class MonitorResult extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of result. Example: HAR, Screenshot, Log or Network. */
+        /** Type of result. Example: har, screenshot, log, network, diagnostics or script. */
         @com.fasterxml.jackson.annotation.JsonProperty("resultType")
         private String resultType;
 
         /**
-         * Type of result. Example: HAR, Screenshot, Log or Network.
+         * Type of result. Example: har, screenshot, log, network, diagnostics or script.
          *
          * @param resultType the value to set
          * @return this builder
@@ -193,12 +193,12 @@ public final class MonitorResult extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Type of result. Example: HAR, Screenshot, Log or Network. */
+    /** Type of result. Example: har, screenshot, log, network, diagnostics or script. */
     @com.fasterxml.jackson.annotation.JsonProperty("resultType")
     private final String resultType;
 
     /**
-     * Type of result. Example: HAR, Screenshot, Log or Network.
+     * Type of result. Example: har, screenshot, log, network, diagnostics or script.
      *
      * @return the value
      */

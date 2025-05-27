@@ -27,6 +27,7 @@ public final class CreateDbSystemDetails
         "displayName",
         "description",
         "compartmentId",
+        "rest",
         "isHighlyAvailable",
         "availabilityDomain",
         "faultDomain",
@@ -61,6 +62,7 @@ public final class CreateDbSystemDetails
             String displayName,
             String description,
             String compartmentId,
+            CreateRestDetails rest,
             Boolean isHighlyAvailable,
             String availabilityDomain,
             String faultDomain,
@@ -94,6 +96,7 @@ public final class CreateDbSystemDetails
         this.displayName = displayName;
         this.description = description;
         this.compartmentId = compartmentId;
+        this.rest = rest;
         this.isHighlyAvailable = isHighlyAvailable;
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
@@ -170,6 +173,15 @@ public final class CreateDbSystemDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rest")
+        private CreateRestDetails rest;
+
+        public Builder rest(CreateRestDetails rest) {
+            this.rest = rest;
+            this.__explicitlySet__.add("rest");
             return this;
         }
         /**
@@ -716,6 +728,7 @@ public final class CreateDbSystemDetails
                             this.displayName,
                             this.description,
                             this.compartmentId,
+                            this.rest,
                             this.isHighlyAvailable,
                             this.availabilityDomain,
                             this.faultDomain,
@@ -761,6 +774,9 @@ public final class CreateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("rest")) {
+                this.rest(model.getRest());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -899,6 +915,13 @@ public final class CreateDbSystemDetails
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("rest")
+    private final CreateRestDetails rest;
+
+    public CreateRestDetails getRest() {
+        return rest;
     }
 
     /**
@@ -1388,6 +1411,7 @@ public final class CreateDbSystemDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", rest=").append(String.valueOf(this.rest));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
@@ -1434,6 +1458,7 @@ public final class CreateDbSystemDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.rest, other.rest)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
@@ -1475,6 +1500,7 @@ public final class CreateDbSystemDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());

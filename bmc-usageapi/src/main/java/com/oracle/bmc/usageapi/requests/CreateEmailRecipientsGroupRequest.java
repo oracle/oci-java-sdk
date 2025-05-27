@@ -25,10 +25,10 @@ public class CreateEmailRecipientsGroupRequest
             getCreateEmailRecipientsGroupDetails() {
         return createEmailRecipientsGroupDetails;
     }
-    /** The UsageStatement Subscription unique OCID. */
+    /** The usage statement subscription unique OCID. */
     private String subscriptionId;
 
-    /** The UsageStatement Subscription unique OCID. */
+    /** The usage statement subscription unique OCID. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -100,11 +100,11 @@ public class CreateEmailRecipientsGroupRequest
             return this;
         }
 
-        /** The UsageStatement Subscription unique OCID. */
+        /** The usage statement subscription unique OCID. */
         private String subscriptionId = null;
 
         /**
-         * The UsageStatement Subscription unique OCID.
+         * The usage statement subscription unique OCID.
          *
          * @param subscriptionId the value to set
          * @return this builder instance

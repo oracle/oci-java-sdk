@@ -34,10 +34,10 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getVantagePoint() {
         return vantagePoint;
     }
-    /** The result type: har, screenshot, log, or network. */
+    /** The result type: har, screenshot, log, network, diagnostics or script. */
     private String resultType;
 
-    /** The result type: har, screenshot, log, or network. */
+    /** The result type: har, screenshot, log, network, diagnostics or script. */
     public String getResultType() {
         return resultType;
     }
@@ -117,11 +117,11 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The result type: har, screenshot, log, or network. */
+        /** The result type: har, screenshot, log, network, diagnostics or script. */
         private String resultType = null;
 
         /**
-         * The result type: har, screenshot, log, or network.
+         * The result type: har, screenshot, log, network, diagnostics or script.
          *
          * @param resultType the value to set
          * @return this builder instance
