@@ -13,10 +13,10 @@ import com.oracle.bmc.usageapi.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class GetScheduledRunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The scheduledRun unique OCID */
+    /** The scheduled run unique OCID. */
     private String scheduledRunId;
 
-    /** The scheduledRun unique OCID */
+    /** The scheduled run unique OCID. */
     public String getScheduledRunId() {
         return scheduledRunId;
     }
@@ -40,11 +40,11 @@ public class GetScheduledRunRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The scheduledRun unique OCID */
+        /** The scheduled run unique OCID. */
         private String scheduledRunId = null;
 
         /**
-         * The scheduledRun unique OCID
+         * The scheduled run unique OCID.
          *
          * @param scheduledRunId the value to set
          * @return this builder instance

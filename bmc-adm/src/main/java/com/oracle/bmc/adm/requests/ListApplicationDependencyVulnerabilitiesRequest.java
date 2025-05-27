@@ -223,16 +223,10 @@ public class ListApplicationDependencyVulnerabilitiesRequest
     public String getGav() {
         return gav;
     }
-    /**
-     * A filter to return only resources that match the entire PURL given
-     * (https://github.com/package-url/purl-spec/).
-     */
+    /** A filter to return only resources that match the entire purl given. */
     private String purl;
 
-    /**
-     * A filter to return only resources that match the entire PURL given
-     * (https://github.com/package-url/purl-spec/).
-     */
+    /** A filter to return only resources that match the entire purl given. */
     public String getPurl() {
         return purl;
     }
@@ -479,15 +473,11 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the entire PURL given
-         * (https://github.com/package-url/purl-spec/).
-         */
+        /** A filter to return only resources that match the entire purl given. */
         private String purl = null;
 
         /**
-         * A filter to return only resources that match the entire PURL given
-         * (https://github.com/package-url/purl-spec/).
+         * A filter to return only resources that match the entire purl given.
          *
          * @param purl the value to set
          * @return this builder instance

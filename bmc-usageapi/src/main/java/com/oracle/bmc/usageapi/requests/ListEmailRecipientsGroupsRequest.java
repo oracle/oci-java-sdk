@@ -15,10 +15,10 @@ import com.oracle.bmc.usageapi.model.*;
 public class ListEmailRecipientsGroupsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The UsageStatement Subscription unique OCID. */
+    /** The usage statement subscription unique OCID. */
     private String subscriptionId;
 
-    /** The UsageStatement Subscription unique OCID. */
+    /** The usage statement subscription unique OCID. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -42,10 +42,10 @@ public class ListEmailRecipientsGroupsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The maximumimum number of items to return. */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /** The maximumimum number of items to return. */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
@@ -169,11 +169,11 @@ public class ListEmailRecipientsGroupsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The UsageStatement Subscription unique OCID. */
+        /** The usage statement subscription unique OCID. */
         private String subscriptionId = null;
 
         /**
-         * The UsageStatement Subscription unique OCID.
+         * The usage statement subscription unique OCID.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -215,11 +215,11 @@ public class ListEmailRecipientsGroupsRequest
             return this;
         }
 
-        /** The maximumimum number of items to return. */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
-         * The maximumimum number of items to return.
+         * The maximum number of items to return.
          *
          * @param limit the value to set
          * @return this builder instance

@@ -198,6 +198,53 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<AttachComputeHostGroupHostResponse>
+            attachComputeHostGroupHost(
+                    AttachComputeHostGroupHostRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AttachComputeHostGroupHostRequest,
+                                    AttachComputeHostGroupHostResponse>
+                            handler) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachComputeHostGroupHostDetails(),
+                "attachComputeHostGroupHostDetails is required");
+
+        return clientCall(request, AttachComputeHostGroupHostResponse::builder)
+                .logger(LOG, "attachComputeHostGroupHost")
+                .serviceDetails(
+                        "Compute",
+                        "AttachComputeHostGroupHost",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/AttachComputeHostGroupHost")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachComputeHostGroupHostRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .appendPathParam("actions")
+                .appendPathParam("attachToHostGroup")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHost.class,
+                        AttachComputeHostGroupHostResponse.Builder::computeHost)
+                .handleResponseHeaderString(
+                        "etag", AttachComputeHostGroupHostResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", AttachComputeHostGroupHostResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", AttachComputeHostGroupHostResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AttachComputeHostGroupHostResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachVnicResponse> attachVnic(
             AttachVnicRequest request,
             final com.oracle.bmc.responses.AsyncHandler<AttachVnicRequest, AttachVnicResponse>
@@ -529,6 +576,47 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeComputeHostCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeComputeHostGroupCompartmentResponse>
+            changeComputeHostGroupCompartment(
+                    ChangeComputeHostGroupCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeHostGroupCompartmentRequest,
+                                    ChangeComputeHostGroupCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeHostGroupCompartmentDetails(),
+                "changeComputeHostGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeHostGroupCompartmentResponse::builder)
+                .logger(LOG, "changeComputeHostGroupCompartment")
+                .serviceDetails(
+                        "Compute",
+                        "ChangeComputeHostGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/ChangeComputeHostGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeHostGroupCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .appendPathParam(request.getComputeHostGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeHostGroupCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeComputeHostGroupCompartmentResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -913,6 +1001,44 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateComputeHostGroupResponse> createComputeHostGroup(
+            CreateComputeHostGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateComputeHostGroupRequest, CreateComputeHostGroupResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateComputeHostGroupDetails(),
+                "createComputeHostGroupDetails is required");
+
+        return clientCall(request, CreateComputeHostGroupResponse::builder)
+                .logger(LOG, "createComputeHostGroup")
+                .serviceDetails(
+                        "Compute",
+                        "CreateComputeHostGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/CreateComputeHostGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeHostGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHostGroup.class,
+                        CreateComputeHostGroupResponse.Builder::computeHostGroup)
+                .handleResponseHeaderString("etag", CreateComputeHostGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateComputeHostGroupResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateComputeHostGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateComputeHostGroupResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateComputeImageCapabilitySchemaResponse>
             createComputeImageCapabilitySchema(
                     CreateComputeImageCapabilitySchemaRequest request,
@@ -1218,6 +1344,34 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteComputeHostGroupResponse> deleteComputeHostGroup(
+            DeleteComputeHostGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteComputeHostGroupRequest, DeleteComputeHostGroupResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
+
+        return clientCall(request, DeleteComputeHostGroupResponse::builder)
+                .logger(LOG, "deleteComputeHostGroup")
+                .serviceDetails(
+                        "Compute",
+                        "DeleteComputeHostGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/DeleteComputeHostGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteComputeHostGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .appendPathParam(request.getComputeHostGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteComputeHostGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteComputeImageCapabilitySchemaResponse>
             deleteComputeImageCapabilitySchema(
                     DeleteComputeImageCapabilitySchemaRequest request,
@@ -1385,6 +1539,46 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DetachBootVolumeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachComputeHostGroupHostResponse>
+            detachComputeHostGroupHost(
+                    DetachComputeHostGroupHostRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DetachComputeHostGroupHostRequest,
+                                    DetachComputeHostGroupHostResponse>
+                            handler) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+        Objects.requireNonNull(
+                request.getDetachComputeHostGroupHostDetails(),
+                "detachComputeHostGroupHostDetails is required");
+
+        return clientCall(request, DetachComputeHostGroupHostResponse::builder)
+                .logger(LOG, "detachComputeHostGroupHost")
+                .serviceDetails(
+                        "Compute",
+                        "DetachComputeHostGroupHost",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/DetachComputeHostGroupHost")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachComputeHostGroupHostRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .appendPathParam("actions")
+                .appendPathParam("detachFromHostGroup")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachComputeHostGroupHostResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DetachComputeHostGroupHostResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1896,6 +2090,37 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString("etag", GetComputeHostResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetComputeHostResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeHostGroupResponse> getComputeHostGroup(
+            GetComputeHostGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeHostGroupRequest, GetComputeHostGroupResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
+
+        return clientCall(request, GetComputeHostGroupResponse::builder)
+                .logger(LOG, "getComputeHostGroup")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeHostGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/GetComputeHostGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeHostGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .appendPathParam(request.getComputeHostGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHostGroup.class,
+                        GetComputeHostGroupResponse.Builder::computeHostGroup)
+                .handleResponseHeaderString("etag", GetComputeHostGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeHostGroupResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -3150,6 +3375,39 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<ListComputeHostGroupsResponse> listComputeHostGroups(
+            ListComputeHostGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeHostGroupsRequest, ListComputeHostGroupsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeHostGroupsResponse::builder)
+                .logger(LOG, "listComputeHostGroups")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeHostGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/ListComputeHostGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeHostGroupsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHostGroupCollection.class,
+                        ListComputeHostGroupsResponse.Builder::computeHostGroupCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeHostGroupsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListComputeHostGroupsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComputeHostsResponse> listComputeHosts(
             ListComputeHostsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3178,6 +3436,7 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendQueryParam(
                         "computeHostLifecycleState", request.getComputeHostLifecycleState())
                 .appendQueryParam("computeHostHealth", request.getComputeHostHealth())
+                .appendQueryParam("computeHostGroupId", request.getComputeHostGroupId())
                 .accept("application/json, application/x-json-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4059,12 +4318,55 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .hasBody()
                 .handleResponseHeaderString("etag", UpdateComputeHostResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateComputeHostResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateComputeHostResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeHostGroupResponse> updateComputeHostGroup(
+            UpdateComputeHostGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeHostGroupRequest, UpdateComputeHostGroupResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeHostGroupDetails(),
+                "updateComputeHostGroupDetails is required");
+
+        return clientCall(request, UpdateComputeHostGroupResponse::builder)
+                .logger(LOG, "updateComputeHostGroup")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeHostGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/UpdateComputeHostGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeHostGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHostGroups")
+                .appendPathParam(request.getComputeHostGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHostGroup.class,
+                        UpdateComputeHostGroupResponse.Builder::computeHostGroup)
+                .handleResponseHeaderString("etag", UpdateComputeHostGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", UpdateComputeHostGroupResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateComputeHostGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateComputeHostGroupResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

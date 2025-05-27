@@ -31,6 +31,7 @@ public final class DedicatedVmHost
         "displayName",
         "faultDomain",
         "freeformTags",
+        "placementConstraintDetails",
         "id",
         "lifecycleState",
         "timeCreated",
@@ -47,6 +48,7 @@ public final class DedicatedVmHost
             String displayName,
             String faultDomain,
             java.util.Map<String, String> freeformTags,
+            PlacementConstraintDetails placementConstraintDetails,
             String id,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
@@ -62,6 +64,7 @@ public final class DedicatedVmHost
         this.displayName = displayName;
         this.faultDomain = faultDomain;
         this.freeformTags = freeformTags;
+        this.placementConstraintDetails = placementConstraintDetails;
         this.id = id;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
@@ -239,6 +242,16 @@ public final class DedicatedVmHost
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private PlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                PlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * dedicated VM host.
@@ -370,6 +383,7 @@ public final class DedicatedVmHost
                             this.displayName,
                             this.faultDomain,
                             this.freeformTags,
+                            this.placementConstraintDetails,
                             this.id,
                             this.lifecycleState,
                             this.timeCreated,
@@ -405,6 +419,9 @@ public final class DedicatedVmHost
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
@@ -591,6 +608,13 @@ public final class DedicatedVmHost
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final PlacementConstraintDetails placementConstraintDetails;
+
+    public PlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * dedicated VM host.
@@ -766,6 +790,8 @@ public final class DedicatedVmHost
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -794,6 +820,8 @@ public final class DedicatedVmHost
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -825,6 +853,11 @@ public final class DedicatedVmHost
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)

@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.65.1</version>
+    <version>3.66.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -13,7 +13,7 @@
   <description>This project contains the common runtime components of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
   <properties>
-    <jetty.version>9.4.56.v20240826</jetty.version>
+    <jetty.version>9.4.57.v20241219</jetty.version>
     <maven-surefire-plugin.argLine>--illegal-access=warn
       --add-opens=java.base/java.io=ALL-UNNAMED
       --add-opens=java.base/java.lang=ALL-UNNAMED
@@ -87,12 +87,12 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>3.65.1</version>
+      <version>3.66.0</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.65.1</version>
+      <version>3.66.0</version>
     </dependency>
     <!-- Test dependencies -->
     <dependency>
@@ -137,7 +137,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-      <version>3.65.1</version>
+      <version>3.66.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>

@@ -560,7 +560,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * route table the IP address or VNIC will use. For more information, see [Source Based
+         * route table the IP address or VNIC will use. For more information, see [Per-resource
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
@@ -568,7 +568,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * route table the IP address or VNIC will use. For more information, see [Source Based
+         * route table the IP address or VNIC will use. For more information, see [Per-resource
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
@@ -1146,7 +1146,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route table the IP address or VNIC will use. For more information, see [Source Based
+     * route table the IP address or VNIC will use. For more information, see [Per-resource
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
@@ -1154,7 +1154,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route table the IP address or VNIC will use. For more information, see [Source Based
+     * route table the IP address or VNIC will use. For more information, see [Per-resource
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value

@@ -42,6 +42,7 @@ public final class DbSystemSnapshot
         "ipAddress",
         "port",
         "portX",
+        "rest",
         "isHighlyAvailable",
         "endpoints",
         "maintenance",
@@ -74,6 +75,7 @@ public final class DbSystemSnapshot
             String ipAddress,
             Integer port,
             Integer portX,
+            RestDetails rest,
             Boolean isHighlyAvailable,
             java.util.List<DbSystemEndpoint> endpoints,
             MaintenanceDetails maintenance,
@@ -105,6 +107,7 @@ public final class DbSystemSnapshot
         this.ipAddress = ipAddress;
         this.port = port;
         this.portX = portX;
+        this.rest = rest;
         this.isHighlyAvailable = isHighlyAvailable;
         this.endpoints = endpoints;
         this.maintenance = maintenance;
@@ -423,6 +426,15 @@ public final class DbSystemSnapshot
             this.__explicitlySet__.add("portX");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rest")
+        private RestDetails rest;
+
+        public Builder rest(RestDetails rest) {
+            this.rest = rest;
+            this.__explicitlySet__.add("rest");
+            return this;
+        }
         /** Specifies if the DB System is highly available. */
         @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
         private Boolean isHighlyAvailable;
@@ -609,6 +621,7 @@ public final class DbSystemSnapshot
                             this.ipAddress,
                             this.port,
                             this.portX,
+                            this.rest,
                             this.isHighlyAvailable,
                             this.endpoints,
                             this.maintenance,
@@ -684,6 +697,9 @@ public final class DbSystemSnapshot
             }
             if (model.wasPropertyExplicitlySet("portX")) {
                 this.portX(model.getPortX());
+            }
+            if (model.wasPropertyExplicitlySet("rest")) {
+                this.rest(model.getRest());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -996,6 +1012,13 @@ public final class DbSystemSnapshot
         return portX;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("rest")
+    private final RestDetails rest;
+
+    public RestDetails getRest() {
+        return rest;
+    }
+
     /** Specifies if the DB System is highly available. */
     @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
     private final Boolean isHighlyAvailable;
@@ -1167,6 +1190,7 @@ public final class DbSystemSnapshot
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", portX=").append(String.valueOf(this.portX));
+        sb.append(", rest=").append(String.valueOf(this.rest));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", endpoints=").append(String.valueOf(this.endpoints));
         sb.append(", maintenance=").append(String.valueOf(this.maintenance));
@@ -1211,6 +1235,7 @@ public final class DbSystemSnapshot
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.portX, other.portX)
+                && java.util.Objects.equals(this.rest, other.rest)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.endpoints, other.endpoints)
                 && java.util.Objects.equals(this.maintenance, other.maintenance)
@@ -1264,6 +1289,7 @@ public final class DbSystemSnapshot
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.portX == null ? 43 : this.portX.hashCode());
+        result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());

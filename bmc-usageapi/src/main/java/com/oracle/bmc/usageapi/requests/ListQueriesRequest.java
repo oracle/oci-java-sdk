@@ -33,10 +33,10 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The maximumimum number of items to return. */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /** The maximumimum number of items to return. */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
@@ -173,11 +173,11 @@ public class ListQueriesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The maximumimum number of items to return. */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
-         * The maximumimum number of items to return.
+         * The maximum number of items to return.
          *
          * @param limit the value to set
          * @return this builder instance

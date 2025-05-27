@@ -256,12 +256,12 @@ public final class CreatePrivateIpDetails
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+        /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
         @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
         private Lifetime lifetime;
 
         /**
-         * Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved
+         * Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved
          *
          * @param lifetime the value to set
          * @return this builder
@@ -273,7 +273,7 @@ public final class CreatePrivateIpDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * route table the IP address or VNIC will use. For more information, see [Source Based
+         * route table the IP address or VNIC will use. For more information, see [Per-resource
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
@@ -281,7 +281,7 @@ public final class CreatePrivateIpDetails
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * route table the IP address or VNIC will use. For more information, see [Source Based
+         * route table the IP address or VNIC will use. For more information, see [Per-resource
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
@@ -538,7 +538,7 @@ public final class CreatePrivateIpDetails
         return subnetId;
     }
 
-    /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+    /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
     public enum Lifetime implements com.oracle.bmc.http.internal.BmcEnum {
         Ephemeral("EPHEMERAL"),
         Reserved("RESERVED"),
@@ -571,12 +571,12 @@ public final class CreatePrivateIpDetails
             throw new IllegalArgumentException("Invalid Lifetime: " + key);
         }
     };
-    /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+    /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
     private final Lifetime lifetime;
 
     /**
-     * Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved
+     * Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved
      *
      * @return the value
      */
@@ -586,7 +586,7 @@ public final class CreatePrivateIpDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route table the IP address or VNIC will use. For more information, see [Source Based
+     * route table the IP address or VNIC will use. For more information, see [Per-resource
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
@@ -594,7 +594,7 @@ public final class CreatePrivateIpDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route table the IP address or VNIC will use. For more information, see [Source Based
+     * route table the IP address or VNIC will use. For more information, see [Per-resource
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value

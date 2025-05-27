@@ -9,6 +9,7 @@ package com.oracle.bmc.apmsynthetics.model;
 public enum ContentTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Side("SIDE"),
     Js("JS"),
+    PlaywrightTs("PLAYWRIGHT_TS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

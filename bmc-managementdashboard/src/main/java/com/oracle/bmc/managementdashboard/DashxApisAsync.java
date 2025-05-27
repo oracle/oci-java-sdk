@@ -228,6 +228,39 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets an OOB dashboard and its saved searches by ID. Deleted or unauthorized saved searches
+     * are marked by tile's state property.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOobManagementDashboardResponse> getOobManagementDashboard(
+            GetOobManagementDashboardRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOobManagementDashboardRequest, GetOobManagementDashboardResponse>
+                    handler);
+
+    /**
+     * Gets a saved search by ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOobManagementSavedSearchResponse> getOobManagementSavedSearch(
+            GetOobManagementSavedSearchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOobManagementSavedSearchRequest, GetOobManagementSavedSearchResponse>
+                    handler);
+
+    /**
      * Imports an array of dashboards and their saved searches. Here's an example of how you can use
      * CLI to import a dashboard. For information on the details that must be passed to IMPORT, you
      * can use the EXPORT API to obtain the Import.json file: `oci management-dashboard dashboard
@@ -283,6 +316,41 @@ public interface DashxApisAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListManagementSavedSearchesRequest, ListManagementSavedSearchesResponse>
                     handler);
+
+    /**
+     * Gets the list of OOB dashboards with pagination. Returned properties are the summary.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOobManagementDashboardsResponse> listOobManagementDashboards(
+            ListOobManagementDashboardsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOobManagementDashboardsRequest, ListOobManagementDashboardsResponse>
+                    handler);
+
+    /**
+     * Gets the list of out-of-box saved searches in a compartment with pagination. Returned
+     * properties are the summary.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOobManagementSavedSearchesResponse>
+            listOobManagementSavedSearches(
+                    ListOobManagementSavedSearchesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListOobManagementSavedSearchesRequest,
+                                    ListOobManagementSavedSearchesResponse>
+                            handler);
 
     /**
      * Updates an existing dashboard identified by ID path parameter. CompartmentId can be modified

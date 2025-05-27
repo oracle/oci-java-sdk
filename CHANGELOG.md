@@ -3,6 +3,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.66.0 - 2025-05-27
+### Added 
+- Support for List and Get APIs for out-of-box management dashboard resources in Management Dashboard service 
+- Support for REST option in HeatWave MySQL service 
+- Support for warnings in list-application-dependency-vulnerability response for vulnerability audits in Adm service 
+- Support for HostGroups in Compute service 
+- Support for ENTERPRISE_EDITION_DEVELOPER enum in Db System Launch and Create DB external backup commands in Database service 
+- Support for databaseEditionQueryParam in dbSystemInitialStorageSizes, dbSystemStoragePerformance, quotaDefinitions, and internalQuotaDefinitions in Database service 
+- Support for EmissionType parameter in UsageCarbonEmissionSummary and EmissionCalculationMethod, EmissionType, Granularity parameters in UsageCarbonEmissionsReportQuery in Usage Api service 
+- Support for querying capacity report under BDSs tenancy in Big Data service 
+- Support for installing Dataplane Software and python packages updates in Big Data service 
+- Support for triggering a dry run with OS patch in Big Data service 
+- Support for NAT on firewall feature in Network Firewall service 
+- Support for Predictable OIDC Discovery in OKE service 
+- Support for SQL monitor creation and updation in Application Performance Monitoring Synthetic service 
+- Support for FTP monitor creation and updation in Application Performance Monitoring Synthetic service 
+- Support for Demand signal feature in OCI Capacity Management service 
+- Support for Targeted Launch in Launch Instance API service    
+
+### Breaking Changes 
+- The values for `ATTACHING` and `DETACHING` were removed from the enum model `LifecycleStateEnum` in the Network Firewall service
+
 ## 3.65.1 - 2025-05-20
 ### Added 
 - Support for the Globally Distributed Database service 

@@ -4,22 +4,16 @@
  */
 package com.oracle.bmc.http.client.pki;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.Buffer;
-import java.nio.channels.Channels;
+import java.nio.CharBuffer;
 import java.nio.channels.ReadableByteChannel;
-import java.nio.channels.WritableByteChannel;
-import java.util.concurrent.CompletableFuture;
 
 /**
  * Mutable byte buffer for UTF-8 encoded text. When the text has been consumed it MUST be erased via
  * {@link #close()} to avoid leaking sensitive data on the heap.
  */
 interface Utf8 extends CharSequence, Sensitive {
-
     /**
      * Wrap a mutable byte array. Does not claim ownership of the array. Caller is responsible for
      * erasing the byte array
@@ -40,54 +34,7 @@ interface Utf8 extends CharSequence, Sensitive {
      * @throws IOException
      */
     static Utf8 of(ReadableByteChannel content) throws IOException {
-        try (final ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-                final WritableByteChannel sink = Channels.newChannel(bytes)) {
-            final ByteBuffer buffer = ByteBuffer.allocate(4096);
-            CompletableFuture<Void> readTask =
-                    CompletableFuture.runAsync(
-                            () -> {
-                                try {
-                                    while (true) {
-                                        int bytesRead = content.read(buffer);
-                                        if (bytesRead == -1) {
-                                            break; // End of stream
-                                        }
-                                        // cast is necessary to avoid NoSuchMethodError in Java 8
-                                        // see
-                                        // https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
-                                        ((Buffer) buffer).flip();
-                                        while (buffer.hasRemaining()) {
-                                            sink.write(buffer); // Write to the sink channel
-                                        }
-                                        // cast is necessary to avoid NoSuchMethodError in Java 8
-                                        // see
-                                        // https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
-                                        ((Buffer) buffer).clear();
-                                    }
-                                } catch (IOException e) {
-                                    throw new RuntimeException(
-                                            "Error reading ReadableByteChannel content", e);
-                                }
-                            });
-
-            // Wait for the task to complete
-            readTask.join();
-
-            // cast is necessary to avoid NoSuchMethodError in Java 8
-            // see
-            // https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
-            ((Buffer) buffer).flip();
-            while (buffer.hasRemaining()) {
-                sink.write(buffer);
-            }
-            final byte[] buffered = bytes.toByteArray();
-            try {
-                return Utf8.of(buffered);
-            } finally {
-                Eraser.erase(buffer);
-                Eraser.erase(buffered);
-            }
-        }
+        return Utf8Utils.of(content);
     }
 
     /**

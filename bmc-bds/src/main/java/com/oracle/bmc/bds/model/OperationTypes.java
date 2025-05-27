@@ -65,6 +65,7 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     RefreshTokenExchangeKeytab("REFRESH_TOKEN_EXCHANGE_KEYTAB"),
     ActivateIamUserSyncConfig("ACTIVATE_IAM_USER_SYNC_CONFIG"),
     DeactivateIamUserSyncConfig("DEACTIVATE_IAM_USER_SYNC_CONFIG"),
+    InstallSoftwareUpdates("INSTALL_SOFTWARE_UPDATES"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

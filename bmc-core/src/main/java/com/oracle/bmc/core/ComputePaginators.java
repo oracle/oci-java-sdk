@@ -2266,6 +2266,128 @@ public class ComputePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listComputeHostGroups operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListComputeHostGroupsResponse> listComputeHostGroupsResponseIterator(
+            final ListComputeHostGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeHostGroupsRequest.Builder,
+                ListComputeHostGroupsRequest,
+                ListComputeHostGroupsResponse>(
+                new java.util.function.Supplier<ListComputeHostGroupsRequest.Builder>() {
+                    @Override
+                    public ListComputeHostGroupsRequest.Builder get() {
+                        return ListComputeHostGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeHostGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeHostGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeHostGroupsRequest.Builder>,
+                        ListComputeHostGroupsRequest>() {
+                    @Override
+                    public ListComputeHostGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeHostGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostGroupsRequest, ListComputeHostGroupsResponse>() {
+                    @Override
+                    public ListComputeHostGroupsResponse apply(
+                            ListComputeHostGroupsRequest request) {
+                        return client.listComputeHostGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.core.model.ComputeHostGroupSummary} objects contained in responses from the
+     * listComputeHostGroups operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.core.model.ComputeHostGroupSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeHostGroupSummary>
+            listComputeHostGroupsRecordIterator(final ListComputeHostGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeHostGroupsRequest.Builder,
+                ListComputeHostGroupsRequest,
+                ListComputeHostGroupsResponse,
+                com.oracle.bmc.core.model.ComputeHostGroupSummary>(
+                new java.util.function.Supplier<ListComputeHostGroupsRequest.Builder>() {
+                    @Override
+                    public ListComputeHostGroupsRequest.Builder get() {
+                        return ListComputeHostGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeHostGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeHostGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeHostGroupsRequest.Builder>,
+                        ListComputeHostGroupsRequest>() {
+                    @Override
+                    public ListComputeHostGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeHostGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostGroupsRequest, ListComputeHostGroupsResponse>() {
+                    @Override
+                    public ListComputeHostGroupsResponse apply(
+                            ListComputeHostGroupsRequest request) {
+                        return client.listComputeHostGroups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostGroupsResponse,
+                        java.util.List<com.oracle.bmc.core.model.ComputeHostGroupSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ComputeHostGroupSummary> apply(
+                            ListComputeHostGroupsResponse response) {
+                        return response.getComputeHostGroupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listComputeHosts operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

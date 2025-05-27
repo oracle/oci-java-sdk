@@ -10,10 +10,13 @@ import com.oracle.bmc.usageapi.responses.*;
 /**
  * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data
  * that meets the specified filter criteria, and to group that data by the chosen dimension. The
- * Usage API is used by the Cost Analysis and Carbon Emissions Analysis tools in the Console. See
- * [Cost Analysis
- * Overview](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm) and
- * [Using the Usage
+ * Usage API is used by [Cost
+ * Analysis](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm),
+ * [Scheduled
+ * Reports](https://docs.oracle.com/iaas/Content/Billing/Concepts/scheduledreportoverview.htm), and
+ * [Carbon Emissions
+ * Analysis](https://docs.oracle.com/iaas/Content/General/Concepts/emissions-management.htm) in the
+ * Console. Also see [Using the Usage
  * API](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api)
  * for more information. This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for
  * all the operations by default if no circuit breaker configuration is defined by the user.
@@ -86,7 +89,7 @@ public interface Usageapi extends AutoCloseable {
     CreateCustomTableResponse createCustomTable(CreateCustomTableRequest request);
 
     /**
-     * Add a list of email recipients that can receive usage statements for the subscription.
+     * Creates a list of email recipients that can receive usage statements for the subscription.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -133,7 +136,7 @@ public interface Usageapi extends AutoCloseable {
     CreateScheduleResponse createSchedule(CreateScheduleRequest request);
 
     /**
-     * Returns the created usage carbon emissions query.
+     * Returns the created carbon emissions usage query.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -166,7 +169,7 @@ public interface Usageapi extends AutoCloseable {
     DeleteCustomTableResponse deleteCustomTable(DeleteCustomTableRequest request);
 
     /**
-     * Delete the email recipients group for the usage statement subscription.
+     * Deletes the email recipients group for the usage statement subscription.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -213,7 +216,7 @@ public interface Usageapi extends AutoCloseable {
     DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request);
 
     /**
-     * Delete a usage carbon emissions saved query by the OCID.
+     * Delete a carbon emissions usage saved query by the OCID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -245,7 +248,7 @@ public interface Usageapi extends AutoCloseable {
     GetCustomTableResponse getCustomTable(GetCustomTableRequest request);
 
     /**
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -307,7 +310,7 @@ public interface Usageapi extends AutoCloseable {
     GetScheduledRunResponse getScheduledRun(GetScheduledRunRequest request);
 
     /**
-     * Returns the usage carbon emissions saved query.
+     * Returns the carbon emissions usage saved query.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -340,7 +343,7 @@ public interface Usageapi extends AutoCloseable {
     ListCustomTablesResponse listCustomTables(ListCustomTablesRequest request);
 
     /**
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -372,7 +375,7 @@ public interface Usageapi extends AutoCloseable {
     ListQueriesResponse listQueries(ListQueriesRequest request);
 
     /**
-     * Returns schedule history list.
+     * Returns the schedule history list.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -403,7 +406,7 @@ public interface Usageapi extends AutoCloseable {
     ListSchedulesResponse listSchedules(ListSchedulesRequest request);
 
     /**
-     * Returns the usage carbon emissions saved query list.
+     * Returns the carbon emissions usage saved query list.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -486,7 +489,8 @@ public interface Usageapi extends AutoCloseable {
     RequestSummarizedUsagesResponse requestSummarizedUsages(RequestSummarizedUsagesRequest request);
 
     /**
-     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * Returns the configuration list for the Console's carbon emission user interface drop-down
+     * list.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -503,7 +507,7 @@ public interface Usageapi extends AutoCloseable {
             RequestUsageCarbonEmissionConfigRequest request);
 
     /**
-     * Returns usage carbon emission for the given account.
+     * Returns carbon emission usage for the given account.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -520,7 +524,7 @@ public interface Usageapi extends AutoCloseable {
             RequestUsageCarbonEmissionsRequest request);
 
     /**
-     * Update a saved custom table by table id.
+     * Update a saved custom table by table ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -536,7 +540,7 @@ public interface Usageapi extends AutoCloseable {
     UpdateCustomTableResponse updateCustomTable(UpdateCustomTableRequest request);
 
     /**
-     * Update a saved email recipients group.
+     * Updates a saved email recipients group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -568,7 +572,7 @@ public interface Usageapi extends AutoCloseable {
     UpdateQueryResponse updateQuery(UpdateQueryRequest request);
 
     /**
-     * Update a saved schedule
+     * Update a saved schedule.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -583,7 +587,7 @@ public interface Usageapi extends AutoCloseable {
     UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request);
 
     /**
-     * Update a usage carbon emissions saved query by the OCID.
+     * Update a carbon emissions usage saved query by the OCID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

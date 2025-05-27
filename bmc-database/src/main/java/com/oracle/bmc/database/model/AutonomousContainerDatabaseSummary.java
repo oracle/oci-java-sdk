@@ -1180,12 +1180,12 @@ public final class AutonomousContainerDatabaseSummary
             this.__explicitlySet__.add("netServicesArchitecture");
             return this;
         }
-        /** Whether it is multiple standby Autonomous Dataguard */
+        /** Indicates if it is multiple standby Autonomous Dataguard */
         @com.fasterxml.jackson.annotation.JsonProperty("isMultipleStandby")
         private Boolean isMultipleStandby;
 
         /**
-         * Whether it is multiple standby Autonomous Dataguard
+         * Indicates if it is multiple standby Autonomous Dataguard
          *
          * @param isMultipleStandby the value to set
          * @return this builder
@@ -2798,12 +2798,12 @@ public final class AutonomousContainerDatabaseSummary
         return netServicesArchitecture;
     }
 
-    /** Whether it is multiple standby Autonomous Dataguard */
+    /** Indicates if it is multiple standby Autonomous Dataguard */
     @com.fasterxml.jackson.annotation.JsonProperty("isMultipleStandby")
     private final Boolean isMultipleStandby;
 
     /**
-     * Whether it is multiple standby Autonomous Dataguard
+     * Indicates if it is multiple standby Autonomous Dataguard
      *
      * @return the value
      */

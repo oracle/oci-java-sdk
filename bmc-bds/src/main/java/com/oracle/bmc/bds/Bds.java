@@ -320,6 +320,22 @@ public interface Bds extends AutoCloseable {
     CreateBdsApiKeyResponse createBdsApiKey(CreateBdsApiKeyRequest request);
 
     /**
+     * Create a detailed capacity report for BDS service
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsCapacityReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateBdsCapacityReport API.
+     */
+    CreateBdsCapacityReportResponse createBdsCapacityReport(CreateBdsCapacityReportRequest request);
+
+    /**
      * Creates a Big Data Service cluster.
      *
      * @param request The request object containing the details to send
@@ -784,6 +800,22 @@ public interface Bds extends AutoCloseable {
             GetResourcePrincipalConfigurationRequest request);
 
     /**
+     * Get the details of the software update of the given SoftwareUpdateId
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetSoftwareUpdateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSoftwareUpdate
+     *     API.
+     */
+    GetSoftwareUpdateResponse getSoftwareUpdate(GetSoftwareUpdateRequest request);
+
+    /**
      * Returns the status of the work request identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -827,6 +859,22 @@ public interface Bds extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallPatch API.
      */
     InstallPatchResponse installPatch(InstallPatchRequest request);
+
+    /**
+     * Install the specified software update to this cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/InstallSoftwareUpdatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     InstallSoftwareUpdates API.
+     */
+    InstallSoftwareUpdatesResponse installSoftwareUpdates(InstallSoftwareUpdatesRequest request);
 
     /**
      * Returns information about the autoscaling configurations for a cluster.
@@ -1038,6 +1086,22 @@ public interface Bds extends AutoCloseable {
      */
     ListResourcePrincipalConfigurationsResponse listResourcePrincipalConfigurations(
             ListResourcePrincipalConfigurationsRequest request);
+
+    /**
+     * List all the available software updates for current cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListSoftwareUpdatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSoftwareUpdates
+     *     API.
+     */
+    ListSoftwareUpdatesResponse listSoftwareUpdates(ListSoftwareUpdatesRequest request);
 
     /**
      * Returns a paginated list of errors for a work request identified by the given ID.

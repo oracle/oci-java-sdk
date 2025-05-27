@@ -36,7 +36,8 @@ public final class ManagementDashboardTileDetails
         "dataConfig",
         "state",
         "drilldownConfig",
-        "parametersMap"
+        "parametersMap",
+        "description"
     })
     public ManagementDashboardTileDetails(
             String displayName,
@@ -50,7 +51,8 @@ public final class ManagementDashboardTileDetails
             java.util.List<Object> dataConfig,
             State state,
             Object drilldownConfig,
-            Object parametersMap) {
+            Object parametersMap,
+            String description) {
         super();
         this.displayName = displayName;
         this.savedSearchId = savedSearchId;
@@ -64,6 +66,7 @@ public final class ManagementDashboardTileDetails
         this.state = state;
         this.drilldownConfig = drilldownConfig;
         this.parametersMap = parametersMap;
+        this.description = description;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -256,6 +259,21 @@ public final class ManagementDashboardTileDetails
             this.__explicitlySet__.add("parametersMap");
             return this;
         }
+        /** Description of the tile. */
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * Description of the tile.
+         *
+         * @param description the value to set
+         * @return this builder
+         */
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -274,7 +292,8 @@ public final class ManagementDashboardTileDetails
                             this.dataConfig,
                             this.state,
                             this.drilldownConfig,
-                            this.parametersMap);
+                            this.parametersMap,
+                            this.description);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -318,6 +337,9 @@ public final class ManagementDashboardTileDetails
             }
             if (model.wasPropertyExplicitlySet("parametersMap")) {
                 this.parametersMap(model.getParametersMap());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             return this;
         }
@@ -542,6 +564,19 @@ public final class ManagementDashboardTileDetails
         return parametersMap;
     }
 
+    /** Description of the tile. */
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * Description of the tile.
+     *
+     * @return the value
+     */
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -569,6 +604,7 @@ public final class ManagementDashboardTileDetails
         sb.append(", state=").append(String.valueOf(this.state));
         sb.append(", drilldownConfig=").append(String.valueOf(this.drilldownConfig));
         sb.append(", parametersMap=").append(String.valueOf(this.parametersMap));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
     }
@@ -595,6 +631,7 @@ public final class ManagementDashboardTileDetails
                 && java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.drilldownConfig, other.drilldownConfig)
                 && java.util.Objects.equals(this.parametersMap, other.parametersMap)
+                && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
     }
 
@@ -620,6 +657,7 @@ public final class ManagementDashboardTileDetails
         result =
                 (result * PRIME)
                         + (this.parametersMap == null ? 43 : this.parametersMap.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

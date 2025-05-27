@@ -5,7 +5,8 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * A configuration to define the constraints when detecting vulnerable dependencies. <br>
+ * A configuration to define the constraints when detecting vulnerable dependencies and recommending
+ * remediations. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -91,15 +92,15 @@ public final class DetectConfiguration
             return this;
         }
         /**
-         * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact
-         * with a CVSS V2 score below this value is not considered for patching.
+         * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A
+         * vulnerability with a CVSS V2 score below this value is not considered for remediation.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleCvssV2Score")
         private Float maxPermissibleCvssV2Score;
 
         /**
-         * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact
-         * with a CVSS V2 score below this value is not considered for patching.
+         * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A
+         * vulnerability with a CVSS V2 score below this value is not considered for remediation.
          *
          * @param maxPermissibleCvssV2Score the value to set
          * @return this builder
@@ -110,15 +111,15 @@ public final class DetectConfiguration
             return this;
         }
         /**
-         * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact
-         * with a CVSS V3 score below this value is not considered for patching.
+         * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A
+         * vulnerability with a CVSS V3 score below this value is not considered for patching.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleCvssV3Score")
         private Float maxPermissibleCvssV3Score;
 
         /**
-         * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact
-         * with a CVSS V3 score below this value is not considered for patching.
+         * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A
+         * vulnerability with a CVSS V3 score below this value is not considered for patching.
          *
          * @param maxPermissibleCvssV3Score the value to set
          * @return this builder
@@ -129,15 +130,15 @@ public final class DetectConfiguration
             return this;
         }
         /**
-         * The maximum ADM Severity. An artifact with an ADM Severity below this value is not
-         * considered for patching.
+         * The maximum ADM Severity. A vulnerability with an severity below this value is not
+         * considered for remediation.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleSeverity")
         private ConfigSeverity maxPermissibleSeverity;
 
         /**
-         * The maximum ADM Severity. An artifact with an ADM Severity below this value is not
-         * considered for patching.
+         * The maximum ADM Severity. A vulnerability with an severity below this value is not
+         * considered for remediation.
          *
          * @param maxPermissibleSeverity the value to set
          * @return this builder
@@ -285,15 +286,15 @@ public final class DetectConfiguration
     }
 
     /**
-     * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a
-     * CVSS V2 score below this value is not considered for patching.
+     * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability
+     * with a CVSS V2 score below this value is not considered for remediation.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleCvssV2Score")
     private final Float maxPermissibleCvssV2Score;
 
     /**
-     * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a
-     * CVSS V2 score below this value is not considered for patching.
+     * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability
+     * with a CVSS V2 score below this value is not considered for remediation.
      *
      * @return the value
      */
@@ -302,15 +303,15 @@ public final class DetectConfiguration
     }
 
     /**
-     * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a
-     * CVSS V3 score below this value is not considered for patching.
+     * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability
+     * with a CVSS V3 score below this value is not considered for patching.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleCvssV3Score")
     private final Float maxPermissibleCvssV3Score;
 
     /**
-     * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a
-     * CVSS V3 score below this value is not considered for patching.
+     * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability
+     * with a CVSS V3 score below this value is not considered for patching.
      *
      * @return the value
      */
@@ -319,15 +320,15 @@ public final class DetectConfiguration
     }
 
     /**
-     * The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered
-     * for patching.
+     * The maximum ADM Severity. A vulnerability with an severity below this value is not considered
+     * for remediation.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleSeverity")
     private final ConfigSeverity maxPermissibleSeverity;
 
     /**
-     * The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered
-     * for patching.
+     * The maximum ADM Severity. A vulnerability with an severity below this value is not considered
+     * for remediation.
      *
      * @return the value
      */

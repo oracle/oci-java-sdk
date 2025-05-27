@@ -35,6 +35,7 @@ public final class NetworkFirewall
         "ipv6Address",
         "networkFirewallPolicyId",
         "availabilityDomain",
+        "natConfiguration",
         "networkSecurityGroupIds",
         "timeCreated",
         "timeUpdated",
@@ -53,6 +54,7 @@ public final class NetworkFirewall
             String ipv6Address,
             String networkFirewallPolicyId,
             String availabilityDomain,
+            NatConfigurationResponse natConfiguration,
             java.util.List<String> networkSecurityGroupIds,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -70,6 +72,7 @@ public final class NetworkFirewall
         this.ipv6Address = ipv6Address;
         this.networkFirewallPolicyId = networkFirewallPolicyId;
         this.availabilityDomain = availabilityDomain;
+        this.natConfiguration = natConfiguration;
         this.networkSecurityGroupIds = networkSecurityGroupIds;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -228,6 +231,15 @@ public final class NetworkFirewall
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("natConfiguration")
+        private NatConfigurationResponse natConfiguration;
+
+        public Builder natConfiguration(NatConfigurationResponse natConfiguration) {
+            this.natConfiguration = natConfiguration;
+            this.__explicitlySet__.add("natConfiguration");
             return this;
         }
         /**
@@ -404,6 +416,7 @@ public final class NetworkFirewall
                             this.ipv6Address,
                             this.networkFirewallPolicyId,
                             this.availabilityDomain,
+                            this.natConfiguration,
                             this.networkSecurityGroupIds,
                             this.timeCreated,
                             this.timeUpdated,
@@ -443,6 +456,9 @@ public final class NetworkFirewall
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("natConfiguration")) {
+                this.natConfiguration(model.getNatConfiguration());
             }
             if (model.wasPropertyExplicitlySet("networkSecurityGroupIds")) {
                 this.networkSecurityGroupIds(model.getNetworkSecurityGroupIds());
@@ -613,6 +629,13 @@ public final class NetworkFirewall
         return availabilityDomain;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("natConfiguration")
+    private final NatConfigurationResponse natConfiguration;
+
+    public NatConfigurationResponse getNatConfiguration() {
+        return natConfiguration;
+    }
+
     /**
      * An array of network security groups
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with
@@ -779,6 +802,7 @@ public final class NetworkFirewall
         sb.append(", networkFirewallPolicyId=")
                 .append(String.valueOf(this.networkFirewallPolicyId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", natConfiguration=").append(String.valueOf(this.natConfiguration));
         sb.append(", networkSecurityGroupIds=")
                 .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -811,6 +835,7 @@ public final class NetworkFirewall
                 && java.util.Objects.equals(
                         this.networkFirewallPolicyId, other.networkFirewallPolicyId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.natConfiguration, other.natConfiguration)
                 && java.util.Objects.equals(
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -845,6 +870,9 @@ public final class NetworkFirewall
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.natConfiguration == null ? 43 : this.natConfiguration.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkSecurityGroupIds == null

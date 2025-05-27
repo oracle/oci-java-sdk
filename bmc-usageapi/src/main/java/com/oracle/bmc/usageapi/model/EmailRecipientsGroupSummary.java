@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * Email recipients group summary for the list recipients groups. <br>
+ * The email recipients group summary for the recipients group list. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -82,12 +82,12 @@ public final class EmailRecipientsGroupSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The list of recipient will receive the usage statement email. */
+        /** The list of recipients that will receive usage statement emails. */
         @com.fasterxml.jackson.annotation.JsonProperty("recipientsList")
         private java.util.List<EmailRecipient> recipientsList;
 
         /**
-         * The list of recipient will receive the usage statement email.
+         * The list of recipients that will receive usage statement emails.
          *
          * @param recipientsList the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class EmailRecipientsGroupSummary
             this.__explicitlySet__.add("recipientsList");
             return this;
         }
-        /** The email recipient group lifecycle state. */
+        /** The email recipients group lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private EmailRecipientsGroup.LifecycleState lifecycleState;
 
         /**
-         * The email recipient group lifecycle state.
+         * The email recipients group lifecycle state.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -260,12 +260,12 @@ public final class EmailRecipientsGroupSummary
         return compartmentId;
     }
 
-    /** The list of recipient will receive the usage statement email. */
+    /** The list of recipients that will receive usage statement emails. */
     @com.fasterxml.jackson.annotation.JsonProperty("recipientsList")
     private final java.util.List<EmailRecipient> recipientsList;
 
     /**
-     * The list of recipient will receive the usage statement email.
+     * The list of recipients that will receive usage statement emails.
      *
      * @return the value
      */
@@ -273,12 +273,12 @@ public final class EmailRecipientsGroupSummary
         return recipientsList;
     }
 
-    /** The email recipient group lifecycle state. */
+    /** The email recipients group lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final EmailRecipientsGroup.LifecycleState lifecycleState;
 
     /**
-     * The email recipient group lifecycle state.
+     * The email recipients group lifecycle state.
      *
      * @return the value
      */

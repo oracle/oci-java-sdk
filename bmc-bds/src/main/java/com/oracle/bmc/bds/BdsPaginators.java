@@ -1617,6 +1617,124 @@ public class BdsPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listSoftwareUpdates operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSoftwareUpdatesResponse> listSoftwareUpdatesResponseIterator(
+            final ListSoftwareUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSoftwareUpdatesRequest.Builder,
+                ListSoftwareUpdatesRequest,
+                ListSoftwareUpdatesResponse>(
+                new java.util.function.Supplier<ListSoftwareUpdatesRequest.Builder>() {
+                    @Override
+                    public ListSoftwareUpdatesRequest.Builder get() {
+                        return ListSoftwareUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSoftwareUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListSoftwareUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSoftwareUpdatesRequest.Builder>,
+                        ListSoftwareUpdatesRequest>() {
+                    @Override
+                    public ListSoftwareUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSoftwareUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwareUpdatesRequest, ListSoftwareUpdatesResponse>() {
+                    @Override
+                    public ListSoftwareUpdatesResponse apply(ListSoftwareUpdatesRequest request) {
+                        return client.listSoftwareUpdates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.bds.model.SoftwareUpdateSummary} objects contained in responses from the
+     * listSoftwareUpdates operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.bds.model.SoftwareUpdateSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.SoftwareUpdateSummary>
+            listSoftwareUpdatesRecordIterator(final ListSoftwareUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSoftwareUpdatesRequest.Builder,
+                ListSoftwareUpdatesRequest,
+                ListSoftwareUpdatesResponse,
+                com.oracle.bmc.bds.model.SoftwareUpdateSummary>(
+                new java.util.function.Supplier<ListSoftwareUpdatesRequest.Builder>() {
+                    @Override
+                    public ListSoftwareUpdatesRequest.Builder get() {
+                        return ListSoftwareUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSoftwareUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListSoftwareUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSoftwareUpdatesRequest.Builder>,
+                        ListSoftwareUpdatesRequest>() {
+                    @Override
+                    public ListSoftwareUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSoftwareUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwareUpdatesRequest, ListSoftwareUpdatesResponse>() {
+                    @Override
+                    public ListSoftwareUpdatesResponse apply(ListSoftwareUpdatesRequest request) {
+                        return client.listSoftwareUpdates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwareUpdatesResponse,
+                        java.util.List<com.oracle.bmc.bds.model.SoftwareUpdateSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.SoftwareUpdateSummary> apply(
+                            ListSoftwareUpdatesResponse response) {
+                        return response.getSoftwareUpdateCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *

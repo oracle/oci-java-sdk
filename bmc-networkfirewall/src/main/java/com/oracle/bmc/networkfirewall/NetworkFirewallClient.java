@@ -401,6 +401,42 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public BulkUploadNatRulesResponse bulkUploadNatRules(BulkUploadNatRulesRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getBulkUploadNatRulesDetails(), "bulkUploadNatRulesDetails is required");
+
+        return clientCall(request, BulkUploadNatRulesResponse::builder)
+                .logger(LOG, "bulkUploadNatRules")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadNatRules",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/natRule/BulkUploadNatRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkUploadNatRulesRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("natRules")
+                .appendPathParam("actions")
+                .appendPathParam("bulkUpload")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", BulkUploadNatRulesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", BulkUploadNatRulesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public BulkUploadSecurityRulesResponse bulkUploadSecurityRules(
             BulkUploadSecurityRulesRequest request) {
 
@@ -939,6 +975,40 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateNatRuleResponse createNatRule(CreateNatRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateNatRuleDetails(), "createNatRuleDetails is required");
+
+        return clientCall(request, CreateNatRuleResponse::builder)
+                .logger(LOG, "createNatRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "CreateNatRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/CreateNatRule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNatRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("natRules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.NatRule.class,
+                        CreateNatRuleResponse.Builder::natRule)
+                .handleResponseHeaderString("etag", CreateNatRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNatRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateNetworkFirewallResponse createNetworkFirewall(
             CreateNetworkFirewallRequest request) {
         Objects.requireNonNull(
@@ -1365,6 +1435,36 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public DeleteNatRuleResponse deleteNatRule(DeleteNatRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        Validate.notBlank(request.getNatRuleName(), "natRuleName must not be blank");
+
+        return clientCall(request, DeleteNatRuleResponse::builder)
+                .logger(LOG, "deleteNatRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "DeleteNatRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/DeleteNatRule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNatRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("natRules")
+                .appendPathParam(request.getNatRuleName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNatRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteNetworkFirewallResponse deleteNetworkFirewall(
             DeleteNetworkFirewallRequest request) {
 
@@ -1779,6 +1879,39 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", GetMappedSecretResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMappedSecretResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetNatRuleResponse getNatRule(GetNatRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        Validate.notBlank(request.getNatRuleName(), "natRuleName must not be blank");
+
+        return clientCall(request, GetNatRuleResponse::builder)
+                .logger(LOG, "getNatRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "GetNatRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/GetNatRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNatRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("natRules")
+                .appendPathParam(request.getNatRuleName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.NatRule.class,
+                        GetNatRuleResponse.Builder::natRule)
+                .handleResponseHeaderString("etag", GetNatRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNatRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2295,6 +2428,49 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListMappedSecretsResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListMappedSecretsResponse.Builder::opcTotalItems)
+                .callSync();
+    }
+
+    @Override
+    public ListNatRulesResponse listNatRules(ListNatRulesRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        return clientCall(request, ListNatRulesResponse::builder)
+                .logger(LOG, "listNatRules")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "ListNatRules",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/ListNatRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNatRulesRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("natRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("natRulePriorityOrder", request.getNatRulePriorityOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.NatRuleCollection.class,
+                        ListNatRulesResponse.Builder::natRuleCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNatRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNatRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListNatRulesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-page-count", ListNatRulesResponse.Builder::opcPageCount)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListNatRulesResponse.Builder::opcTotalItems)
                 .callSync();
     }
 
@@ -2990,6 +3166,43 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateMappedSecretResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMappedSecretResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateNatRuleResponse updateNatRule(UpdateNatRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        Validate.notBlank(request.getNatRuleName(), "natRuleName must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNatRuleDetails(), "updateNatRuleDetails is required");
+
+        return clientCall(request, UpdateNatRuleResponse::builder)
+                .logger(LOG, "updateNatRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "UpdateNatRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/UpdateNatRule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNatRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("natRules")
+                .appendPathParam(request.getNatRuleName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.NatRule.class,
+                        UpdateNatRuleResponse.Builder::natRule)
+                .handleResponseHeaderString("etag", UpdateNatRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNatRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 

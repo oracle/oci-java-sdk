@@ -120,6 +120,22 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Attaches the Compute BM Host to a Host group
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AttachComputeHostGroupHostResponse> attachComputeHostGroupHost(
+            AttachComputeHostGroupHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AttachComputeHostGroupHostRequest, AttachComputeHostGroupHostResponse>
+                    handler);
+
+    /**
      * Creates a secondary VNIC and attaches it to the specified instance. For more information
      * about secondary VNICs, see [Virtual Network Interface Cards
      * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
@@ -300,6 +316,26 @@ public interface ComputeAsync extends AutoCloseable {
                             ChangeComputeHostCompartmentRequest,
                             ChangeComputeHostCompartmentResponse>
                     handler);
+
+    /**
+     * Moves a compute host group into a different compartment. For information about moving
+     * resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeHostGroupCompartmentResponse>
+            changeComputeHostGroupCompartment(
+                    ChangeComputeHostGroupCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeHostGroupCompartmentRequest,
+                                    ChangeComputeHostGroupCompartmentResponse>
+                            handler);
 
     /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
@@ -513,6 +549,22 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a new compute host group in the specified compartment and availability domain.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateComputeHostGroupResponse> createComputeHostGroup(
+            CreateComputeHostGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateComputeHostGroupRequest, CreateComputeHostGroupResponse>
+                    handler);
+
+    /**
      * Creates compute image capability schema.
      *
      * @param request The request object containing the details to send
@@ -711,6 +763,22 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes the specified compute host group
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteComputeHostGroupResponse> deleteComputeHostGroup(
+            DeleteComputeHostGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteComputeHostGroupRequest, DeleteComputeHostGroupResponse>
+                    handler);
+
+    /**
      * Deletes the specified Compute Image Capability Schema
      *
      * @param request The request object containing the details to send
@@ -812,6 +880,22 @@ public interface ComputeAsync extends AutoCloseable {
     java.util.concurrent.Future<DetachBootVolumeResponse> detachBootVolume(
             DetachBootVolumeRequest request,
             com.oracle.bmc.responses.AsyncHandler<DetachBootVolumeRequest, DetachBootVolumeResponse>
+                    handler);
+
+    /**
+     * Detaches the specified bare metal host from the compute host group
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DetachComputeHostGroupHostResponse> detachComputeHostGroupHost(
+            DetachComputeHostGroupHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DetachComputeHostGroupHostRequest, DetachComputeHostGroupHostResponse>
                     handler);
 
     /**
@@ -1083,6 +1167,22 @@ public interface ComputeAsync extends AutoCloseable {
     java.util.concurrent.Future<GetComputeHostResponse> getComputeHost(
             GetComputeHostRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetComputeHostRequest, GetComputeHostResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified compute host group
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeHostGroupResponse> getComputeHostGroup(
+            GetComputeHostGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeHostGroupRequest, GetComputeHostGroupResponse>
                     handler);
 
     /**
@@ -1753,6 +1853,22 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the compute host groups that match the specified criteria and compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeHostGroupsResponse> listComputeHostGroups(
+            ListComputeHostGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeHostGroupsRequest, ListComputeHostGroupsResponse>
+                    handler);
+
+    /**
      * Generates a list of summary host details
      *
      * @param request The request object containing the details to send
@@ -1961,7 +2077,7 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of all the maintenance events for the given instance.
+     * Gets a list of all the maintenance events for the given compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2214,6 +2330,22 @@ public interface ComputeAsync extends AutoCloseable {
             UpdateComputeHostRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateComputeHostRequest, UpdateComputeHostResponse>
+                    handler);
+
+    /**
+     * Updates the specified compute host group details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeHostGroupResponse> updateComputeHostGroup(
+            UpdateComputeHostGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeHostGroupRequest, UpdateComputeHostGroupResponse>
                     handler);
 
     /**

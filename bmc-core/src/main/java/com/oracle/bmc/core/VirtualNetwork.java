@@ -1220,8 +1220,7 @@ public interface VirtualNetwork extends AutoCloseable {
             CreateNetworkSecurityGroupRequest request);
 
     /**
-     * Creates a secondary private IP for the specified VNIC. For more information about secondary
-     * private IPs, see [IP
+     * Creates a private IP. For more information about private IPs, see [IP
      * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
      *
      * @param request The request object containing the details to send

@@ -46,6 +46,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         "availabilityDomain",
         "capacityReservationId",
         "compartmentId",
+        "placementConstraintDetails",
         "clusterPlacementGroupId",
         "dedicatedVmHostId",
         "definedTags",
@@ -76,12 +77,14 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         "timeMaintenanceRebootDue",
         "platformConfig",
         "instanceConfigurationId",
-        "licensingConfigs"
+        "licensingConfigs",
+        "computeHostGroupId"
     })
     public Instance(
             String availabilityDomain,
             String capacityReservationId,
             String compartmentId,
+            PlacementConstraintDetails placementConstraintDetails,
             String clusterPlacementGroupId,
             String dedicatedVmHostId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -112,11 +115,13 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Date timeMaintenanceRebootDue,
             PlatformConfig platformConfig,
             String instanceConfigurationId,
-            java.util.List<LicensingConfig> licensingConfigs) {
+            java.util.List<LicensingConfig> licensingConfigs,
+            String computeHostGroupId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
         this.compartmentId = compartmentId;
+        this.placementConstraintDetails = placementConstraintDetails;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.dedicatedVmHostId = dedicatedVmHostId;
         this.definedTags = definedTags;
@@ -148,6 +153,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         this.platformConfig = platformConfig;
         this.instanceConfigurationId = instanceConfigurationId;
         this.licensingConfigs = licensingConfigs;
+        this.computeHostGroupId = computeHostGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -209,6 +215,16 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private PlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                PlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
             return this;
         }
         /** The OCID of the cluster placement group of the instance. */
@@ -813,6 +829,25 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("licensingConfigs");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Customer-unique host group
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
+        private String computeHostGroupId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Customer-unique host group
+         *
+         * @param computeHostGroupId the value to set
+         * @return this builder
+         */
+        public Builder computeHostGroupId(String computeHostGroupId) {
+            this.computeHostGroupId = computeHostGroupId;
+            this.__explicitlySet__.add("computeHostGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -823,6 +858,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                             this.availabilityDomain,
                             this.capacityReservationId,
                             this.compartmentId,
+                            this.placementConstraintDetails,
                             this.clusterPlacementGroupId,
                             this.dedicatedVmHostId,
                             this.definedTags,
@@ -853,7 +889,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                             this.timeMaintenanceRebootDue,
                             this.platformConfig,
                             this.instanceConfigurationId,
-                            this.licensingConfigs);
+                            this.licensingConfigs,
+                            this.computeHostGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -870,6 +907,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
             }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
@@ -964,6 +1004,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("licensingConfigs")) {
                 this.licensingConfigs(model.getLicensingConfigs());
             }
+            if (model.wasPropertyExplicitlySet("computeHostGroupId")) {
+                this.computeHostGroupId(model.getComputeHostGroupId());
+            }
             return this;
         }
     }
@@ -1028,6 +1071,13 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final PlacementConstraintDetails placementConstraintDetails;
+
+    public PlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
     }
 
     /** The OCID of the cluster placement group of the instance. */
@@ -1718,6 +1768,23 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         return licensingConfigs;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Customer-unique host group
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
+    private final String computeHostGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Customer-unique host group
+     *
+     * @return the value
+     */
+    public String getComputeHostGroupId() {
+        return computeHostGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1736,6 +1803,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
@@ -1772,6 +1841,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", instanceConfigurationId=")
                 .append(String.valueOf(this.instanceConfigurationId));
         sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
+        sb.append(", computeHostGroupId=").append(String.valueOf(this.computeHostGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -1789,6 +1859,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
@@ -1825,6 +1897,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
                 && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
+                && java.util.Objects.equals(this.computeHostGroupId, other.computeHostGroupId)
                 && super.equals(other);
     }
 
@@ -1845,6 +1918,11 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterPlacementGroupId == null
@@ -1922,6 +2000,11 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.licensingConfigs == null ? 43 : this.licensingConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeHostGroupId == null
+                                ? 43
+                                : this.computeHostGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

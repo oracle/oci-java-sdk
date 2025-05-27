@@ -520,6 +520,7 @@ public final class CreateExternalBackupJobDetails
         EnterpriseEdition("ENTERPRISE_EDITION"),
         EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
         EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
+        EnterpriseEditionDeveloper("ENTERPRISE_EDITION_DEVELOPER"),
         ;
 
         private final String value;

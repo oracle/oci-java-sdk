@@ -34,12 +34,12 @@ public final class EmailRecipient
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** the first name of the recipient. */
+        /** The recipient first name. */
         @com.fasterxml.jackson.annotation.JsonProperty("firstName")
         private String firstName;
 
         /**
-         * the first name of the recipient.
+         * The recipient first name.
          *
          * @param firstName the value to set
          * @return this builder
@@ -49,12 +49,12 @@ public final class EmailRecipient
             this.__explicitlySet__.add("firstName");
             return this;
         }
-        /** the last name of the recipient. */
+        /** The recipient last name. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastName")
         private String lastName;
 
         /**
-         * the last name of the recipient.
+         * The recipient last name.
          *
          * @param lastName the value to set
          * @return this builder
@@ -64,12 +64,12 @@ public final class EmailRecipient
             this.__explicitlySet__.add("lastName");
             return this;
         }
-        /** the email of the recipient. */
+        /** The recipient email address. */
         @com.fasterxml.jackson.annotation.JsonProperty("emailId")
         private String emailId;
 
         /**
-         * the email of the recipient.
+         * The recipient email address.
          *
          * @param emailId the value to set
          * @return this builder
@@ -135,12 +135,12 @@ public final class EmailRecipient
         return new Builder().copy(this);
     }
 
-    /** the first name of the recipient. */
+    /** The recipient first name. */
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
     private final String firstName;
 
     /**
-     * the first name of the recipient.
+     * The recipient first name.
      *
      * @return the value
      */
@@ -148,12 +148,12 @@ public final class EmailRecipient
         return firstName;
     }
 
-    /** the last name of the recipient. */
+    /** The recipient last name. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
     private final String lastName;
 
     /**
-     * the last name of the recipient.
+     * The recipient last name.
      *
      * @return the value
      */
@@ -161,12 +161,12 @@ public final class EmailRecipient
         return lastName;
     }
 
-    /** the email of the recipient. */
+    /** The recipient email address. */
     @com.fasterxml.jackson.annotation.JsonProperty("emailId")
     private final String emailId;
 
     /**
-     * the email of the recipient.
+     * The recipient email address.
      *
      * @return the value
      */

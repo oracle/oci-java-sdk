@@ -5,8 +5,9 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of the request body used to update a script. Only Side or JavaScript content types are
- * supported and content should be in Side or JavaScript formats only. <br>
+ * Details of the request body used to update a script. Only Side, JavaScript and Playwright
+ * TypeScript content types are supported and content should be in Side, JavaScript and TypeScript
+ * formats only. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -95,7 +96,8 @@ public final class UpdateScriptDetails
          * parameter name and value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>}
          * Note that the content is valid if it matches the given content type. For example, if the
          * content type is SIDE, then the content should be in Side script format. If the content
-         * type is JS, then the content should be in JavaScript format.
+         * type is JS, then the content should be in JavaScript format. If the content type is
+         * PLAYWRIGHT_TS, then the content should be in TypeScript format.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
@@ -110,7 +112,8 @@ public final class UpdateScriptDetails
          * parameter name and value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>}
          * Note that the content is valid if it matches the given content type. For example, if the
          * content type is SIDE, then the content should be in Side script format. If the content
-         * type is JS, then the content should be in JavaScript format.
+         * type is JS, then the content should be in JavaScript format. If the content type is
+         * PLAYWRIGHT_TS, then the content should be in TypeScript format.
          *
          * @param content the value to set
          * @return this builder
@@ -284,7 +287,8 @@ public final class UpdateScriptDetails
      * value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>} Note that the content is
      * valid if it matches the given content type. For example, if the content type is SIDE, then
      * the content should be in Side script format. If the content type is JS, then the content
-     * should be in JavaScript format.
+     * should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should
+     * be in TypeScript format.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
@@ -298,7 +302,8 @@ public final class UpdateScriptDetails
      * value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>} Note that the content is
      * valid if it matches the given content type. For example, if the content type is SIDE, then
      * the content should be in Side script format. If the content type is JS, then the content
-     * should be in JavaScript format.
+     * should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should
+     * be in TypeScript format.
      *
      * @return the value
      */

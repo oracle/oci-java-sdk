@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The request of the generated usage carbon emissions report. <br>
+ * The request of the generated carbon emissions usage report. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,6 +27,9 @@ public final class UsageCarbonEmissionsReportQuery
         "tenantId",
         "timeUsageStarted",
         "timeUsageEnded",
+        "emissionCalculationMethod",
+        "emissionType",
+        "granularity",
         "isAggregateByTime",
         "groupBy",
         "groupByTag",
@@ -38,6 +41,9 @@ public final class UsageCarbonEmissionsReportQuery
             String tenantId,
             java.util.Date timeUsageStarted,
             java.util.Date timeUsageEnded,
+            RequestUsageCarbonEmissionsDetails.EmissionCalculationMethod emissionCalculationMethod,
+            RequestUsageCarbonEmissionsDetails.EmissionType emissionType,
+            RequestUsageCarbonEmissionsDetails.Granularity granularity,
             Boolean isAggregateByTime,
             java.util.List<String> groupBy,
             java.util.List<Tag> groupByTag,
@@ -48,6 +54,9 @@ public final class UsageCarbonEmissionsReportQuery
         this.tenantId = tenantId;
         this.timeUsageStarted = timeUsageStarted;
         this.timeUsageEnded = timeUsageEnded;
+        this.emissionCalculationMethod = emissionCalculationMethod;
+        this.emissionType = emissionType;
+        this.granularity = granularity;
         this.isAggregateByTime = isAggregateByTime;
         this.groupBy = groupBy;
         this.groupByTag = groupByTag;
@@ -104,15 +113,69 @@ public final class UsageCarbonEmissionsReportQuery
             return this;
         }
         /**
-         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost
-         * over the query time period will be added up.
+         * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("emissionCalculationMethod")
+        private RequestUsageCarbonEmissionsDetails.EmissionCalculationMethod
+                emissionCalculationMethod;
+
+        /**
+         * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+         *
+         * @param emissionCalculationMethod the value to set
+         * @return this builder
+         */
+        public Builder emissionCalculationMethod(
+                RequestUsageCarbonEmissionsDetails.EmissionCalculationMethod
+                        emissionCalculationMethod) {
+            this.emissionCalculationMethod = emissionCalculationMethod;
+            this.__explicitlySet__.add("emissionCalculationMethod");
+            return this;
+        }
+        /** Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED. */
+        @com.fasterxml.jackson.annotation.JsonProperty("emissionType")
+        private RequestUsageCarbonEmissionsDetails.EmissionType emissionType;
+
+        /**
+         * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         *
+         * @param emissionType the value to set
+         * @return this builder
+         */
+        public Builder emissionType(RequestUsageCarbonEmissionsDetails.EmissionType emissionType) {
+            this.emissionType = emissionType;
+            this.__explicitlySet__.add("emissionType");
+            return this;
+        }
+        /**
+         * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data
+         * aggregation.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("granularity")
+        private RequestUsageCarbonEmissionsDetails.Granularity granularity;
+
+        /**
+         * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data
+         * aggregation.
+         *
+         * @param granularity the value to set
+         * @return this builder
+         */
+        public Builder granularity(RequestUsageCarbonEmissionsDetails.Granularity granularity) {
+            this.granularity = granularity;
+            this.__explicitlySet__.add("granularity");
+            return this;
+        }
+        /**
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs
+         * over the query time period are summed.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
         private Boolean isAggregateByTime;
 
         /**
-         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost
-         * over the query time period will be added up.
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs
+         * over the query time period are summed.
          *
          * @param isAggregateByTime the value to set
          * @return this builder
@@ -192,15 +255,15 @@ public final class UsageCarbonEmissionsReportQuery
             return this;
         }
         /**
-         * The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and
-         * timeUsageEnded properties.
+         * The user interface date range, for example, LAST_THREE_MONTHS. Overrides the
+         * timeUsageStarted and timeUsageEnded properties.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dateRangeName")
         private DateRangeName dateRangeName;
 
         /**
-         * The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and
-         * timeUsageEnded properties.
+         * The user interface date range, for example, LAST_THREE_MONTHS. Overrides the
+         * timeUsageStarted and timeUsageEnded properties.
          *
          * @param dateRangeName the value to set
          * @return this builder
@@ -220,6 +283,9 @@ public final class UsageCarbonEmissionsReportQuery
                             this.tenantId,
                             this.timeUsageStarted,
                             this.timeUsageEnded,
+                            this.emissionCalculationMethod,
+                            this.emissionType,
+                            this.granularity,
                             this.isAggregateByTime,
                             this.groupBy,
                             this.groupByTag,
@@ -242,6 +308,15 @@ public final class UsageCarbonEmissionsReportQuery
             }
             if (model.wasPropertyExplicitlySet("timeUsageEnded")) {
                 this.timeUsageEnded(model.getTimeUsageEnded());
+            }
+            if (model.wasPropertyExplicitlySet("emissionCalculationMethod")) {
+                this.emissionCalculationMethod(model.getEmissionCalculationMethod());
+            }
+            if (model.wasPropertyExplicitlySet("emissionType")) {
+                this.emissionType(model.getEmissionType());
+            }
+            if (model.wasPropertyExplicitlySet("granularity")) {
+                this.granularity(model.getGranularity());
             }
             if (model.wasPropertyExplicitlySet("isAggregateByTime")) {
                 this.isAggregateByTime(model.getIsAggregateByTime());
@@ -313,16 +388,61 @@ public final class UsageCarbonEmissionsReportQuery
         return timeUsageEnded;
     }
 
+    /** Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED */
+    @com.fasterxml.jackson.annotation.JsonProperty("emissionCalculationMethod")
+    private final RequestUsageCarbonEmissionsDetails.EmissionCalculationMethod
+            emissionCalculationMethod;
+
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over
-     * the query time period will be added up.
+     * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     *
+     * @return the value
+     */
+    public RequestUsageCarbonEmissionsDetails.EmissionCalculationMethod
+            getEmissionCalculationMethod() {
+        return emissionCalculationMethod;
+    }
+
+    /** Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED. */
+    @com.fasterxml.jackson.annotation.JsonProperty("emissionType")
+    private final RequestUsageCarbonEmissionsDetails.EmissionType emissionType;
+
+    /**
+     * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     *
+     * @return the value
+     */
+    public RequestUsageCarbonEmissionsDetails.EmissionType getEmissionType() {
+        return emissionType;
+    }
+
+    /**
+     * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data
+     * aggregation.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("granularity")
+    private final RequestUsageCarbonEmissionsDetails.Granularity granularity;
+
+    /**
+     * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data
+     * aggregation.
+     *
+     * @return the value
+     */
+    public RequestUsageCarbonEmissionsDetails.Granularity getGranularity() {
+        return granularity;
+    }
+
+    /**
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over
+     * the query time period are summed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     private final Boolean isAggregateByTime;
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over
-     * the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over
+     * the query time period are summed.
      *
      * @return the value
      */
@@ -392,8 +512,8 @@ public final class UsageCarbonEmissionsReportQuery
     }
 
     /**
-     * The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and
-     * timeUsageEnded properties.
+     * The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted
+     * and timeUsageEnded properties.
      */
     public enum DateRangeName implements com.oracle.bmc.http.internal.BmcEnum {
         LastTwoMonths("LAST_TWO_MONTHS"),
@@ -444,15 +564,15 @@ public final class UsageCarbonEmissionsReportQuery
         }
     };
     /**
-     * The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and
-     * timeUsageEnded properties.
+     * The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted
+     * and timeUsageEnded properties.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dateRangeName")
     private final DateRangeName dateRangeName;
 
     /**
-     * The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and
-     * timeUsageEnded properties.
+     * The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted
+     * and timeUsageEnded properties.
      *
      * @return the value
      */
@@ -478,6 +598,10 @@ public final class UsageCarbonEmissionsReportQuery
         sb.append("tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", timeUsageStarted=").append(String.valueOf(this.timeUsageStarted));
         sb.append(", timeUsageEnded=").append(String.valueOf(this.timeUsageEnded));
+        sb.append(", emissionCalculationMethod=")
+                .append(String.valueOf(this.emissionCalculationMethod));
+        sb.append(", emissionType=").append(String.valueOf(this.emissionType));
+        sb.append(", granularity=").append(String.valueOf(this.granularity));
         sb.append(", isAggregateByTime=").append(String.valueOf(this.isAggregateByTime));
         sb.append(", groupBy=").append(String.valueOf(this.groupBy));
         sb.append(", groupByTag=").append(String.valueOf(this.groupByTag));
@@ -501,6 +625,10 @@ public final class UsageCarbonEmissionsReportQuery
         return java.util.Objects.equals(this.tenantId, other.tenantId)
                 && java.util.Objects.equals(this.timeUsageStarted, other.timeUsageStarted)
                 && java.util.Objects.equals(this.timeUsageEnded, other.timeUsageEnded)
+                && java.util.Objects.equals(
+                        this.emissionCalculationMethod, other.emissionCalculationMethod)
+                && java.util.Objects.equals(this.emissionType, other.emissionType)
+                && java.util.Objects.equals(this.granularity, other.granularity)
                 && java.util.Objects.equals(this.isAggregateByTime, other.isAggregateByTime)
                 && java.util.Objects.equals(this.groupBy, other.groupBy)
                 && java.util.Objects.equals(this.groupByTag, other.groupByTag)
@@ -521,6 +649,13 @@ public final class UsageCarbonEmissionsReportQuery
         result =
                 (result * PRIME)
                         + (this.timeUsageEnded == null ? 43 : this.timeUsageEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.emissionCalculationMethod == null
+                                ? 43
+                                : this.emissionCalculationMethod.hashCode());
+        result = (result * PRIME) + (this.emissionType == null ? 43 : this.emissionType.hashCode());
+        result = (result * PRIME) + (this.granularity == null ? 43 : this.granularity.hashCode());
         result =
                 (result * PRIME)
                         + (this.isAggregateByTime == null ? 43 : this.isAggregateByTime.hashCode());

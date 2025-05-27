@@ -7236,7 +7236,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .serviceDetails(
                         "Database",
                         "GetCloudExadataInfrastructureUnallocatedResources",
-                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructureUnallocatedResources/GetCloudExadataInfrastructureUnallocatedResources")
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/GetCloudExadataInfrastructureUnallocatedResources")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCloudExadataInfrastructureUnallocatedResourcesRequest::builder)
                 .basePath("/20160918")
@@ -10843,6 +10843,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("dbSystemStoragePerformance")
                 .appendEnumQueryParam("storageManagement", request.getStorageManagement())
                 .appendQueryParam("shapeType", request.getShapeType())
+                .appendEnumQueryParam("databaseEdition", request.getDatabaseEdition())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

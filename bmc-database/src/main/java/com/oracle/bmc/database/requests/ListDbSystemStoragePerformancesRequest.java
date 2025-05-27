@@ -39,6 +39,59 @@ public class ListDbSystemStoragePerformancesRequest
     public String getShapeType() {
         return shapeType;
     }
+    /**
+     * The database edition of quota
+     * (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME/ENTERPRISE_EDITION_DEVELOPER)
+     */
+    private DatabaseEdition databaseEdition;
+
+    /**
+     * The database edition of quota
+     * (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME/ENTERPRISE_EDITION_DEVELOPER)
+     */
+    public enum DatabaseEdition implements com.oracle.bmc.http.internal.BmcEnum {
+        StandardEdition("STANDARD_EDITION"),
+        EnterpriseEdition("ENTERPRISE_EDITION"),
+        EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
+        EnterpriseEditionExtreme("ENTERPRISE_EDITION_EXTREME"),
+        EnterpriseEditionDeveloper("ENTERPRISE_EDITION_DEVELOPER"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DatabaseEdition> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DatabaseEdition v : DatabaseEdition.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DatabaseEdition(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DatabaseEdition create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DatabaseEdition: " + key);
+        }
+    };
+
+    /**
+     * The database edition of quota
+     * (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME/ENTERPRISE_EDITION_DEVELOPER)
+     */
+    public DatabaseEdition getDatabaseEdition() {
+        return databaseEdition;
+    }
     /** Unique identifier for the request. */
     private String opcRequestId;
 
@@ -91,6 +144,24 @@ public class ListDbSystemStoragePerformancesRequest
             return this;
         }
 
+        /**
+         * The database edition of quota
+         * (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME/ENTERPRISE_EDITION_DEVELOPER)
+         */
+        private DatabaseEdition databaseEdition = null;
+
+        /**
+         * The database edition of quota
+         * (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME/ENTERPRISE_EDITION_DEVELOPER)
+         *
+         * @param databaseEdition the value to set
+         * @return this builder instance
+         */
+        public Builder databaseEdition(DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            return this;
+        }
+
         /** Unique identifier for the request. */
         private String opcRequestId = null;
 
@@ -137,6 +208,7 @@ public class ListDbSystemStoragePerformancesRequest
         public Builder copy(ListDbSystemStoragePerformancesRequest o) {
             storageManagement(o.getStorageManagement());
             shapeType(o.getShapeType());
+            databaseEdition(o.getDatabaseEdition());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -177,10 +249,11 @@ public class ListDbSystemStoragePerformancesRequest
                     new ListDbSystemStoragePerformancesRequest();
             request.storageManagement = storageManagement;
             request.shapeType = shapeType;
+            request.databaseEdition = databaseEdition;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListDbSystemStoragePerformancesRequest(storageManagement, shapeType,
-            // opcRequestId);
+            // databaseEdition, opcRequestId);
         }
     }
 
@@ -193,6 +266,7 @@ public class ListDbSystemStoragePerformancesRequest
         return new Builder()
                 .storageManagement(storageManagement)
                 .shapeType(shapeType)
+                .databaseEdition(databaseEdition)
                 .opcRequestId(opcRequestId);
     }
 
@@ -212,6 +286,7 @@ public class ListDbSystemStoragePerformancesRequest
         sb.append("super=").append(super.toString());
         sb.append(",storageManagement=").append(String.valueOf(this.storageManagement));
         sb.append(",shapeType=").append(String.valueOf(this.shapeType));
+        sb.append(",databaseEdition=").append(String.valueOf(this.databaseEdition));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -230,6 +305,7 @@ public class ListDbSystemStoragePerformancesRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.storageManagement, other.storageManagement)
                 && java.util.Objects.equals(this.shapeType, other.shapeType)
+                && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -241,6 +317,9 @@ public class ListDbSystemStoragePerformancesRequest
                 (result * PRIME)
                         + (this.storageManagement == null ? 43 : this.storageManagement.hashCode());
         result = (result * PRIME) + (this.shapeType == null ? 43 : this.shapeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }
