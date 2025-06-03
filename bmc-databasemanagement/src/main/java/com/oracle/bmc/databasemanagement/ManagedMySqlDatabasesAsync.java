@@ -64,6 +64,59 @@ public interface ManagedMySqlDatabasesAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Changes the management type for a HeatWave MySQL instance, from BASIC to FULL and vice versa.
+     * It can also be used to enable or disable database management.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeMysqlDatabaseManagementTypeResponse>
+            changeMysqlDatabaseManagementType(
+                    ChangeMysqlDatabaseManagementTypeRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMysqlDatabaseManagementTypeRequest,
+                                    ChangeMysqlDatabaseManagementTypeResponse>
+                            handler);
+
+    /**
+     * Retrieves information pertaining to binary log of a specific MySQL server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBinaryLogInformationResponse> getBinaryLogInformation(
+            GetBinaryLogInformationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBinaryLogInformationRequest, GetBinaryLogInformationResponse>
+                    handler);
+
+    /**
+     * Retrieves general information regarding replication of a specific MySQL server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetGeneralReplicationInformationResponse>
+            getGeneralReplicationInformation(
+                    GetGeneralReplicationInformationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetGeneralReplicationInformationRequest,
+                                    GetGeneralReplicationInformationResponse>
+                            handler);
+
+    /**
      * Gets the health metrics for a fleet of HeatWave clusters in a compartment.
      *
      * @param request The request object containing the details to send
@@ -109,6 +162,54 @@ public interface ManagedMySqlDatabasesAsync extends AutoCloseable {
             GetMySqlFleetMetricRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetMySqlFleetMetricRequest, GetMySqlFleetMetricResponse>
+                    handler);
+
+    /**
+     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMySqlQueryDetailsResponse> getMySqlQueryDetails(
+            GetMySqlQueryDetailsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMySqlQueryDetailsRequest, GetMySqlQueryDetailsResponse>
+                    handler);
+
+    /**
+     * Information about high availability members of a specific MySQL server's replication group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListHighAvailabilityMembersResponse> listHighAvailabilityMembers(
+            ListHighAvailabilityMembersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListHighAvailabilityMembersRequest, ListHighAvailabilityMembersResponse>
+                    handler);
+
+    /**
+     * Retrieves information about the inbound replications of a specific MySQL server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListInboundReplicationsResponse> listInboundReplications(
+            ListInboundReplicationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListInboundReplicationsRequest, ListInboundReplicationsResponse>
                     handler);
 
     /**
@@ -161,6 +262,38 @@ public interface ManagedMySqlDatabasesAsync extends AutoCloseable {
             ListManagedMySqlDatabasesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListManagedMySqlDatabasesRequest, ListManagedMySqlDatabasesResponse>
+                    handler);
+
+    /**
+     * Retrieves any potential errors for a given digest.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMySqlDigestErrorsResponse> listMySqlDigestErrors(
+            ListMySqlDigestErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMySqlDigestErrorsRequest, ListMySqlDigestErrorsResponse>
+                    handler);
+
+    /**
+     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOutboundReplicationsResponse> listOutboundReplications(
+            ListOutboundReplicationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOutboundReplicationsRequest, ListOutboundReplicationsResponse>
                     handler);
 
     /**

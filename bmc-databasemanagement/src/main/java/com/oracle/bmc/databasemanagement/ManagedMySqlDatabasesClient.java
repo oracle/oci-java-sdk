@@ -125,6 +125,114 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public ChangeMysqlDatabaseManagementTypeResponse changeMysqlDatabaseManagementType(
+            ChangeMysqlDatabaseManagementTypeRequest request) {
+
+        Validate.notBlank(
+                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMysqlDatabaseManagementTypeDetails(),
+                "changeMysqlDatabaseManagementTypeDetails is required");
+
+        return clientCall(request, ChangeMysqlDatabaseManagementTypeResponse::builder)
+                .logger(LOG, "changeMysqlDatabaseManagementType")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "ChangeMysqlDatabaseManagementType",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ChangeMysqlDatabaseManagementType")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMysqlDatabaseManagementTypeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedMySqlDatabases")
+                .appendPathParam(request.getManagedMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeManagementType")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMysqlDatabaseManagementTypeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMysqlDatabaseManagementTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetBinaryLogInformationResponse getBinaryLogInformation(
+            GetBinaryLogInformationRequest request) {
+
+        Validate.notBlank(
+                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
+
+        return clientCall(request, GetBinaryLogInformationResponse::builder)
+                .logger(LOG, "getBinaryLogInformation")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetBinaryLogInformation",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/GetBinaryLogInformation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBinaryLogInformationRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedMySqlDatabases")
+                .appendPathParam(request.getManagedMySqlDatabaseId())
+                .appendPathParam("binaryLogInformation")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .ManagedMySqlDatabaseBinaryLogInformation.class,
+                        GetBinaryLogInformationResponse.Builder
+                                ::managedMySqlDatabaseBinaryLogInformation)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBinaryLogInformationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetBinaryLogInformationResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public GetGeneralReplicationInformationResponse getGeneralReplicationInformation(
+            GetGeneralReplicationInformationRequest request) {
+
+        Validate.notBlank(
+                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
+
+        return clientCall(request, GetGeneralReplicationInformationResponse::builder)
+                .logger(LOG, "getGeneralReplicationInformation")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetGeneralReplicationInformation",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/GetGeneralReplicationInformation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetGeneralReplicationInformationRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedMySqlDatabases")
+                .appendPathParam(request.getManagedMySqlDatabaseId())
+                .appendPathParam("generalReplicationInformation")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .ManagedMySqlDatabaseGeneralReplicationInformation.class,
+                        GetGeneralReplicationInformationResponse.Builder
+                                ::managedMySqlDatabaseGeneralReplicationInformation)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetGeneralReplicationInformationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        GetGeneralReplicationInformationResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public GetHeatWaveFleetMetricResponse getHeatWaveFleetMetric(
             GetHeatWaveFleetMetricRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -230,6 +338,113 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                         GetMySqlFleetMetricResponse.Builder::mySqlFleetMetrics)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMySqlFleetMetricResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMySqlQueryDetailsResponse getMySqlQueryDetails(GetMySqlQueryDetailsRequest request) {
+
+        Validate.notBlank(
+                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(request.getDigest(), "digest is required");
+
+        return clientCall(request, GetMySqlQueryDetailsResponse::builder)
+                .logger(LOG, "getMySqlQueryDetails")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetMySqlQueryDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/GetMySqlQueryDetails")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMySqlQueryDetailsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedMySqlDatabases")
+                .appendPathParam(request.getManagedMySqlDatabaseId())
+                .appendPathParam("queryDetails")
+                .appendQueryParam("digest", request.getDigest())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MySqlQueryDetails.class,
+                        GetMySqlQueryDetailsResponse.Builder::mySqlQueryDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMySqlQueryDetailsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListHighAvailabilityMembersResponse listHighAvailabilityMembers(
+            ListHighAvailabilityMembersRequest request) {
+
+        Validate.notBlank(
+                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
+
+        return clientCall(request, ListHighAvailabilityMembersResponse::builder)
+                .logger(LOG, "listHighAvailabilityMembers")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListHighAvailabilityMembers",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListHighAvailabilityMembers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListHighAvailabilityMembersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedMySqlDatabases")
+                .appendPathParam(request.getManagedMySqlDatabaseId())
+                .appendPathParam("highAvailabilityMembers")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .ManagedMySqlDatabaseHighAvailabilityMemberCollection.class,
+                        ListHighAvailabilityMembersResponse.Builder
+                                ::managedMySqlDatabaseHighAvailabilityMemberCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListHighAvailabilityMembersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListHighAvailabilityMembersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListInboundReplicationsResponse listInboundReplications(
+            ListInboundReplicationsRequest request) {
+
+        Validate.notBlank(
+                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
+
+        return clientCall(request, ListInboundReplicationsResponse::builder)
+                .logger(LOG, "listInboundReplications")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListInboundReplications",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListInboundReplications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInboundReplicationsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedMySqlDatabases")
+                .appendPathParam(request.getManagedMySqlDatabaseId())
+                .appendPathParam("inboundReplications")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .ManagedMySqlDatabaseInboundReplicationCollection.class,
+                        ListInboundReplicationsResponse.Builder
+                                ::managedMySqlDatabaseInboundReplicationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInboundReplicationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInboundReplicationsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -351,6 +566,82 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListManagedMySqlDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagedMySqlDatabasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMySqlDigestErrorsResponse listMySqlDigestErrors(
+            ListMySqlDigestErrorsRequest request) {
+
+        Validate.notBlank(
+                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(request.getDigest(), "digest is required");
+
+        return clientCall(request, ListMySqlDigestErrorsResponse::builder)
+                .logger(LOG, "listMySqlDigestErrors")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListMySqlDigestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListMySqlDigestErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMySqlDigestErrorsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedMySqlDatabases")
+                .appendPathParam(request.getManagedMySqlDatabaseId())
+                .appendPathParam("digestErrors")
+                .appendQueryParam("digest", request.getDigest())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MySqlDigestErrorsCollection.class,
+                        ListMySqlDigestErrorsResponse.Builder::mySqlDigestErrorsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMySqlDigestErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMySqlDigestErrorsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListOutboundReplicationsResponse listOutboundReplications(
+            ListOutboundReplicationsRequest request) {
+
+        Validate.notBlank(
+                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
+
+        return clientCall(request, ListOutboundReplicationsResponse::builder)
+                .logger(LOG, "listOutboundReplications")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListOutboundReplications",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListOutboundReplications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOutboundReplicationsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedMySqlDatabases")
+                .appendPathParam(request.getManagedMySqlDatabaseId())
+                .appendPathParam("outboundReplications")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .ManagedMySqlDatabaseOutboundReplicationCollection.class,
+                        ListOutboundReplicationsResponse.Builder
+                                ::managedMySqlDatabaseOutboundReplicationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOutboundReplicationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOutboundReplicationsResponse.Builder::opcNextPage)
                 .callSync();
     }
 

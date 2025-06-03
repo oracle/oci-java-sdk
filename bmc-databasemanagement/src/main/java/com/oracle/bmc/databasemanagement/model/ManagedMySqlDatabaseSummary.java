@@ -32,7 +32,8 @@ public final class ManagedMySqlDatabaseSummary
         "name",
         "databaseType",
         "managementState",
-        "lifecycleState"
+        "lifecycleState",
+        "heatWaveManagementType"
     })
     public ManagedMySqlDatabaseSummary(
             String id,
@@ -43,7 +44,8 @@ public final class ManagedMySqlDatabaseSummary
             String name,
             MySqlType databaseType,
             ManagementState managementState,
-            LifecycleStates lifecycleState) {
+            LifecycleStates lifecycleState,
+            ManagedMySqlDatabase.HeatWaveManagementType heatWaveManagementType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -54,6 +56,7 @@ public final class ManagedMySqlDatabaseSummary
         this.databaseType = databaseType;
         this.managementState = managementState;
         this.lifecycleState = lifecycleState;
+        this.heatWaveManagementType = heatWaveManagementType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -193,6 +196,22 @@ public final class ManagedMySqlDatabaseSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** The customer's selected type for HeatWave management. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveManagementType")
+        private ManagedMySqlDatabase.HeatWaveManagementType heatWaveManagementType;
+
+        /**
+         * The customer's selected type for HeatWave management.
+         *
+         * @param heatWaveManagementType the value to set
+         * @return this builder
+         */
+        public Builder heatWaveManagementType(
+                ManagedMySqlDatabase.HeatWaveManagementType heatWaveManagementType) {
+            this.heatWaveManagementType = heatWaveManagementType;
+            this.__explicitlySet__.add("heatWaveManagementType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -208,7 +227,8 @@ public final class ManagedMySqlDatabaseSummary
                             this.name,
                             this.databaseType,
                             this.managementState,
-                            this.lifecycleState);
+                            this.lifecycleState,
+                            this.heatWaveManagementType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -243,6 +263,9 @@ public final class ManagedMySqlDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveManagementType")) {
+                this.heatWaveManagementType(model.getHeatWaveManagementType());
             }
             return this;
         }
@@ -374,6 +397,19 @@ public final class ManagedMySqlDatabaseSummary
         return lifecycleState;
     }
 
+    /** The customer's selected type for HeatWave management. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveManagementType")
+    private final ManagedMySqlDatabase.HeatWaveManagementType heatWaveManagementType;
+
+    /**
+     * The customer's selected type for HeatWave management.
+     *
+     * @return the value
+     */
+    public ManagedMySqlDatabase.HeatWaveManagementType getHeatWaveManagementType() {
+        return heatWaveManagementType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -398,6 +434,7 @@ public final class ManagedMySqlDatabaseSummary
         sb.append(", databaseType=").append(String.valueOf(this.databaseType));
         sb.append(", managementState=").append(String.valueOf(this.managementState));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", heatWaveManagementType=").append(String.valueOf(this.heatWaveManagementType));
         sb.append(")");
         return sb.toString();
     }
@@ -421,6 +458,8 @@ public final class ManagedMySqlDatabaseSummary
                 && java.util.Objects.equals(this.databaseType, other.databaseType)
                 && java.util.Objects.equals(this.managementState, other.managementState)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.heatWaveManagementType, other.heatWaveManagementType)
                 && super.equals(other);
     }
 
@@ -443,6 +482,11 @@ public final class ManagedMySqlDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveManagementType == null
+                                ? 43
+                                : this.heatWaveManagementType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

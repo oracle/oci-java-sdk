@@ -173,7 +173,7 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the service account key file is stored, which containing the
+         * Secret where the content of the service account key file is stored, which contains the
          * credentials required to use Google Cloud Storage. Note: When provided,
          * 'serviceAccountKeyFile' field must not be provided.
          */
@@ -182,7 +182,7 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the service account key file is stored, which containing the
+         * Secret where the content of the service account key file is stored, which contains the
          * credentials required to use Google Cloud Storage. Note: When provided,
          * 'serviceAccountKeyFile' field must not be provided.
          *
@@ -351,7 +351,7 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the service account key file is stored, which containing the
+     * Secret where the content of the service account key file is stored, which contains the
      * credentials required to use Google Cloud Storage. Note: When provided,
      * 'serviceAccountKeyFile' field must not be provided.
      */
@@ -360,7 +360,7 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the service account key file is stored, which containing the
+     * Secret where the content of the service account key file is stored, which contains the
      * credentials required to use Google Cloud Storage. Note: When provided,
      * 'serviceAccountKeyFile' field must not be provided.
      *

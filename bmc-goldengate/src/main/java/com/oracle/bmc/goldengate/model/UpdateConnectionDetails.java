@@ -98,6 +98,9 @@ package com.oracle.bmc.goldengate.model;
             value = UpdateDb2ConnectionDetails.class,
             name = "DB2"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateIcebergConnectionDetails.class,
+            name = "ICEBERG"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateGenericConnectionDetails.class,
             name = "GENERIC"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

@@ -89,6 +89,9 @@ package com.oracle.bmc.goldengate.model;
             value = CreateAzureSynapseConnectionDetails.class,
             name = "AZURE_SYNAPSE_ANALYTICS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateIcebergConnectionDetails.class,
+            name = "ICEBERG"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateMysqlConnectionDetails.class,
             name = "MYSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

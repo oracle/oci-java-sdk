@@ -161,6 +161,142 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAutonomousContainerDatabaseBackups operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAutonomousContainerDatabaseBackupsResponse>
+            listAutonomousContainerDatabaseBackupsResponseIterator(
+                    final ListAutonomousContainerDatabaseBackupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousContainerDatabaseBackupsRequest.Builder,
+                ListAutonomousContainerDatabaseBackupsRequest,
+                ListAutonomousContainerDatabaseBackupsResponse>(
+                new java.util.function.Supplier<
+                        ListAutonomousContainerDatabaseBackupsRequest.Builder>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseBackupsRequest.Builder get() {
+                        return ListAutonomousContainerDatabaseBackupsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousContainerDatabaseBackupsResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousContainerDatabaseBackupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousContainerDatabaseBackupsRequest.Builder>,
+                        ListAutonomousContainerDatabaseBackupsRequest>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseBackupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousContainerDatabaseBackupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousContainerDatabaseBackupsRequest,
+                        ListAutonomousContainerDatabaseBackupsResponse>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseBackupsResponse apply(
+                            ListAutonomousContainerDatabaseBackupsRequest request) {
+                        return client.listAutonomousContainerDatabaseBackups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.AutonomousContainerDatabaseBackupSummary} objects contained in
+     * responses from the listAutonomousContainerDatabaseBackups operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.AutonomousContainerDatabaseBackupSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousContainerDatabaseBackupSummary>
+            listAutonomousContainerDatabaseBackupsRecordIterator(
+                    final ListAutonomousContainerDatabaseBackupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousContainerDatabaseBackupsRequest.Builder,
+                ListAutonomousContainerDatabaseBackupsRequest,
+                ListAutonomousContainerDatabaseBackupsResponse,
+                com.oracle.bmc.database.model.AutonomousContainerDatabaseBackupSummary>(
+                new java.util.function.Supplier<
+                        ListAutonomousContainerDatabaseBackupsRequest.Builder>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseBackupsRequest.Builder get() {
+                        return ListAutonomousContainerDatabaseBackupsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousContainerDatabaseBackupsResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousContainerDatabaseBackupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousContainerDatabaseBackupsRequest.Builder>,
+                        ListAutonomousContainerDatabaseBackupsRequest>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseBackupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousContainerDatabaseBackupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousContainerDatabaseBackupsRequest,
+                        ListAutonomousContainerDatabaseBackupsResponse>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseBackupsResponse apply(
+                            ListAutonomousContainerDatabaseBackupsRequest request) {
+                        return client.listAutonomousContainerDatabaseBackups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousContainerDatabaseBackupsResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .AutonomousContainerDatabaseBackupSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model
+                                            .AutonomousContainerDatabaseBackupSummary>
+                            apply(ListAutonomousContainerDatabaseBackupsResponse response) {
+                        return response.getAutonomousContainerDatabaseBackupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listAutonomousContainerDatabaseDataguardAssociations operation. This iterable will fetch more
      * data from the server as needed.
      *

@@ -43,6 +43,268 @@ public class ManagedMySqlDatabasesPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listHighAvailabilityMembers operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListHighAvailabilityMembersResponse>
+            listHighAvailabilityMembersResponseIterator(
+                    final ListHighAvailabilityMembersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListHighAvailabilityMembersRequest.Builder,
+                ListHighAvailabilityMembersRequest,
+                ListHighAvailabilityMembersResponse>(
+                new java.util.function.Supplier<ListHighAvailabilityMembersRequest.Builder>() {
+                    @Override
+                    public ListHighAvailabilityMembersRequest.Builder get() {
+                        return ListHighAvailabilityMembersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListHighAvailabilityMembersResponse, String>() {
+                    @Override
+                    public String apply(ListHighAvailabilityMembersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHighAvailabilityMembersRequest.Builder>,
+                        ListHighAvailabilityMembersRequest>() {
+                    @Override
+                    public ListHighAvailabilityMembersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHighAvailabilityMembersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListHighAvailabilityMembersRequest, ListHighAvailabilityMembersResponse>() {
+                    @Override
+                    public ListHighAvailabilityMembersResponse apply(
+                            ListHighAvailabilityMembersRequest request) {
+                        return client.listHighAvailabilityMembers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseHighAvailabilityMemberSummary}
+     * objects contained in responses from the listHighAvailabilityMembers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseHighAvailabilityMemberSummary}
+     *     objects contained in responses received from the service.
+     */
+    public Iterable<
+                    com.oracle.bmc.databasemanagement.model
+                            .ManagedMySqlDatabaseHighAvailabilityMemberSummary>
+            listHighAvailabilityMembersRecordIterator(
+                    final ListHighAvailabilityMembersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListHighAvailabilityMembersRequest.Builder,
+                ListHighAvailabilityMembersRequest,
+                ListHighAvailabilityMembersResponse,
+                com.oracle.bmc.databasemanagement.model
+                        .ManagedMySqlDatabaseHighAvailabilityMemberSummary>(
+                new java.util.function.Supplier<ListHighAvailabilityMembersRequest.Builder>() {
+                    @Override
+                    public ListHighAvailabilityMembersRequest.Builder get() {
+                        return ListHighAvailabilityMembersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListHighAvailabilityMembersResponse, String>() {
+                    @Override
+                    public String apply(ListHighAvailabilityMembersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHighAvailabilityMembersRequest.Builder>,
+                        ListHighAvailabilityMembersRequest>() {
+                    @Override
+                    public ListHighAvailabilityMembersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHighAvailabilityMembersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListHighAvailabilityMembersRequest, ListHighAvailabilityMembersResponse>() {
+                    @Override
+                    public ListHighAvailabilityMembersResponse apply(
+                            ListHighAvailabilityMembersRequest request) {
+                        return client.listHighAvailabilityMembers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListHighAvailabilityMembersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ManagedMySqlDatabaseHighAvailabilityMemberSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ManagedMySqlDatabaseHighAvailabilityMemberSummary>
+                            apply(ListHighAvailabilityMembersResponse response) {
+                        return response.getManagedMySqlDatabaseHighAvailabilityMemberCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listInboundReplications operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListInboundReplicationsResponse> listInboundReplicationsResponseIterator(
+            final ListInboundReplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListInboundReplicationsRequest.Builder,
+                ListInboundReplicationsRequest,
+                ListInboundReplicationsResponse>(
+                new java.util.function.Supplier<ListInboundReplicationsRequest.Builder>() {
+                    @Override
+                    public ListInboundReplicationsRequest.Builder get() {
+                        return ListInboundReplicationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListInboundReplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListInboundReplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInboundReplicationsRequest.Builder>,
+                        ListInboundReplicationsRequest>() {
+                    @Override
+                    public ListInboundReplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInboundReplicationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListInboundReplicationsRequest, ListInboundReplicationsResponse>() {
+                    @Override
+                    public ListInboundReplicationsResponse apply(
+                            ListInboundReplicationsRequest request) {
+                        return client.listInboundReplications(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseInboundReplicationSummary}
+     * objects contained in responses from the listInboundReplications operation. This iterable will
+     * fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseInboundReplicationSummary}
+     *     objects contained in responses received from the service.
+     */
+    public Iterable<
+                    com.oracle.bmc.databasemanagement.model
+                            .ManagedMySqlDatabaseInboundReplicationSummary>
+            listInboundReplicationsRecordIterator(final ListInboundReplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListInboundReplicationsRequest.Builder,
+                ListInboundReplicationsRequest,
+                ListInboundReplicationsResponse,
+                com.oracle.bmc.databasemanagement.model
+                        .ManagedMySqlDatabaseInboundReplicationSummary>(
+                new java.util.function.Supplier<ListInboundReplicationsRequest.Builder>() {
+                    @Override
+                    public ListInboundReplicationsRequest.Builder get() {
+                        return ListInboundReplicationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListInboundReplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListInboundReplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInboundReplicationsRequest.Builder>,
+                        ListInboundReplicationsRequest>() {
+                    @Override
+                    public ListInboundReplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInboundReplicationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListInboundReplicationsRequest, ListInboundReplicationsResponse>() {
+                    @Override
+                    public ListInboundReplicationsResponse apply(
+                            ListInboundReplicationsRequest request) {
+                        return client.listInboundReplications(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListInboundReplicationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ManagedMySqlDatabaseInboundReplicationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ManagedMySqlDatabaseInboundReplicationSummary>
+                            apply(ListInboundReplicationsResponse response) {
+                        return response.getManagedMySqlDatabaseInboundReplicationCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listManagedMySqlDatabaseConfigurationData operation. This iterable will fetch more data from
      * the server as needed.
      *
@@ -431,6 +693,261 @@ public class ManagedMySqlDatabasesPaginators {
                                             .ManagedMySqlDatabaseSummary>
                             apply(ListManagedMySqlDatabasesResponse response) {
                         return response.getManagedMySqlDatabaseCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listMySqlDigestErrors operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListMySqlDigestErrorsResponse> listMySqlDigestErrorsResponseIterator(
+            final ListMySqlDigestErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMySqlDigestErrorsRequest.Builder,
+                ListMySqlDigestErrorsRequest,
+                ListMySqlDigestErrorsResponse>(
+                new java.util.function.Supplier<ListMySqlDigestErrorsRequest.Builder>() {
+                    @Override
+                    public ListMySqlDigestErrorsRequest.Builder get() {
+                        return ListMySqlDigestErrorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMySqlDigestErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListMySqlDigestErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMySqlDigestErrorsRequest.Builder>,
+                        ListMySqlDigestErrorsRequest>() {
+                    @Override
+                    public ListMySqlDigestErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMySqlDigestErrorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMySqlDigestErrorsRequest, ListMySqlDigestErrorsResponse>() {
+                    @Override
+                    public ListMySqlDigestErrorsResponse apply(
+                            ListMySqlDigestErrorsRequest request) {
+                        return client.listMySqlDigestErrors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.MySqlDigestErrorSummary} objects contained in
+     * responses from the listMySqlDigestErrors operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.MySqlDigestErrorSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.MySqlDigestErrorSummary>
+            listMySqlDigestErrorsRecordIterator(final ListMySqlDigestErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMySqlDigestErrorsRequest.Builder,
+                ListMySqlDigestErrorsRequest,
+                ListMySqlDigestErrorsResponse,
+                com.oracle.bmc.databasemanagement.model.MySqlDigestErrorSummary>(
+                new java.util.function.Supplier<ListMySqlDigestErrorsRequest.Builder>() {
+                    @Override
+                    public ListMySqlDigestErrorsRequest.Builder get() {
+                        return ListMySqlDigestErrorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMySqlDigestErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListMySqlDigestErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMySqlDigestErrorsRequest.Builder>,
+                        ListMySqlDigestErrorsRequest>() {
+                    @Override
+                    public ListMySqlDigestErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMySqlDigestErrorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMySqlDigestErrorsRequest, ListMySqlDigestErrorsResponse>() {
+                    @Override
+                    public ListMySqlDigestErrorsResponse apply(
+                            ListMySqlDigestErrorsRequest request) {
+                        return client.listMySqlDigestErrors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMySqlDigestErrorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .MySqlDigestErrorSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.MySqlDigestErrorSummary>
+                            apply(ListMySqlDigestErrorsResponse response) {
+                        return response.getMySqlDigestErrorsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listOutboundReplications operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListOutboundReplicationsResponse> listOutboundReplicationsResponseIterator(
+            final ListOutboundReplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOutboundReplicationsRequest.Builder,
+                ListOutboundReplicationsRequest,
+                ListOutboundReplicationsResponse>(
+                new java.util.function.Supplier<ListOutboundReplicationsRequest.Builder>() {
+                    @Override
+                    public ListOutboundReplicationsRequest.Builder get() {
+                        return ListOutboundReplicationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOutboundReplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListOutboundReplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOutboundReplicationsRequest.Builder>,
+                        ListOutboundReplicationsRequest>() {
+                    @Override
+                    public ListOutboundReplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOutboundReplicationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOutboundReplicationsRequest, ListOutboundReplicationsResponse>() {
+                    @Override
+                    public ListOutboundReplicationsResponse apply(
+                            ListOutboundReplicationsRequest request) {
+                        return client.listOutboundReplications(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseOutboundReplicationSummary}
+     * objects contained in responses from the listOutboundReplications operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseOutboundReplicationSummary}
+     *     objects contained in responses received from the service.
+     */
+    public Iterable<
+                    com.oracle.bmc.databasemanagement.model
+                            .ManagedMySqlDatabaseOutboundReplicationSummary>
+            listOutboundReplicationsRecordIterator(final ListOutboundReplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOutboundReplicationsRequest.Builder,
+                ListOutboundReplicationsRequest,
+                ListOutboundReplicationsResponse,
+                com.oracle.bmc.databasemanagement.model
+                        .ManagedMySqlDatabaseOutboundReplicationSummary>(
+                new java.util.function.Supplier<ListOutboundReplicationsRequest.Builder>() {
+                    @Override
+                    public ListOutboundReplicationsRequest.Builder get() {
+                        return ListOutboundReplicationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOutboundReplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListOutboundReplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOutboundReplicationsRequest.Builder>,
+                        ListOutboundReplicationsRequest>() {
+                    @Override
+                    public ListOutboundReplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOutboundReplicationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOutboundReplicationsRequest, ListOutboundReplicationsResponse>() {
+                    @Override
+                    public ListOutboundReplicationsResponse apply(
+                            ListOutboundReplicationsRequest request) {
+                        return client.listOutboundReplications(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOutboundReplicationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ManagedMySqlDatabaseOutboundReplicationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ManagedMySqlDatabaseOutboundReplicationSummary>
+                            apply(ListOutboundReplicationsResponse response) {
+                        return response.getManagedMySqlDatabaseOutboundReplicationCollection()
+                                .getItems();
                     }
                 });
     }

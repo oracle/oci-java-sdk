@@ -33,6 +33,47 @@ public class GetConnectionRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Selects the connection fields returned in connection details. */
+    private View view;
+
+    /** Selects the connection fields returned in connection details. */
+    public enum View implements com.oracle.bmc.http.internal.BmcEnum {
+        Full("FULL"),
+        Compact("COMPACT"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, View> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (View v : View.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        View(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static View create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid View: " + key);
+        }
+    };
+
+    /** Selects the connection fields returned in connection details. */
+    public View getView() {
+        return view;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -72,6 +113,20 @@ public class GetConnectionRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /** Selects the connection fields returned in connection details. */
+        private View view = null;
+
+        /**
+         * Selects the connection fields returned in connection details.
+         *
+         * @param view the value to set
+         * @return this builder instance
+         */
+        public Builder view(View view) {
+            this.view = view;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -104,6 +159,7 @@ public class GetConnectionRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public Builder copy(GetConnectionRequest o) {
             connectionId(o.getConnectionId());
             opcRequestId(o.getOpcRequestId());
+            view(o.getView());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -140,8 +196,9 @@ public class GetConnectionRequest extends com.oracle.bmc.requests.BmcRequest<jav
             GetConnectionRequest request = new GetConnectionRequest();
             request.connectionId = connectionId;
             request.opcRequestId = opcRequestId;
+            request.view = view;
             return request;
-            // new GetConnectionRequest(connectionId, opcRequestId);
+            // new GetConnectionRequest(connectionId, opcRequestId, view);
         }
     }
 
@@ -151,7 +208,7 @@ public class GetConnectionRequest extends com.oracle.bmc.requests.BmcRequest<jav
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().connectionId(connectionId).opcRequestId(opcRequestId);
+        return new Builder().connectionId(connectionId).opcRequestId(opcRequestId).view(view);
     }
 
     /**
@@ -170,6 +227,7 @@ public class GetConnectionRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append("super=").append(super.toString());
         sb.append(",connectionId=").append(String.valueOf(this.connectionId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",view=").append(String.valueOf(this.view));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +244,8 @@ public class GetConnectionRequest extends com.oracle.bmc.requests.BmcRequest<jav
         GetConnectionRequest other = (GetConnectionRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.connectionId, other.connectionId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.view, other.view);
     }
 
     @Override
@@ -195,6 +254,7 @@ public class GetConnectionRequest extends com.oracle.bmc.requests.BmcRequest<jav
         int result = super.hashCode();
         result = (result * PRIME) + (this.connectionId == null ? 43 : this.connectionId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.view == null ? 43 : this.view.hashCode());
         return result;
     }
 }

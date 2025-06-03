@@ -67,6 +67,57 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Changes the management type for a HeatWave MySQL instance, from BASIC to FULL and vice versa.
+     * It can also be used to enable or disable database management.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeMysqlDatabaseManagementTypeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeMysqlDatabaseManagementType API.
+     */
+    ChangeMysqlDatabaseManagementTypeResponse changeMysqlDatabaseManagementType(
+            ChangeMysqlDatabaseManagementTypeRequest request);
+
+    /**
+     * Retrieves information pertaining to binary log of a specific MySQL server.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetBinaryLogInformationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetBinaryLogInformation API.
+     */
+    GetBinaryLogInformationResponse getBinaryLogInformation(GetBinaryLogInformationRequest request);
+
+    /**
+     * Retrieves general information regarding replication of a specific MySQL server.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetGeneralReplicationInformationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetGeneralReplicationInformation API.
+     */
+    GetGeneralReplicationInformationResponse getGeneralReplicationInformation(
+            GetGeneralReplicationInformationRequest request);
+
+    /**
      * Gets the health metrics for a fleet of HeatWave clusters in a compartment.
      *
      * @param request The request object containing the details to send
@@ -113,6 +164,55 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
      *     API.
      */
     GetMySqlFleetMetricResponse getMySqlFleetMetric(GetMySqlFleetMetricRequest request);
+
+    /**
+     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetMySqlQueryDetailsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMySqlQueryDetails API.
+     */
+    GetMySqlQueryDetailsResponse getMySqlQueryDetails(GetMySqlQueryDetailsRequest request);
+
+    /**
+     * Information about high availability members of a specific MySQL server's replication group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListHighAvailabilityMembersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListHighAvailabilityMembers API.
+     */
+    ListHighAvailabilityMembersResponse listHighAvailabilityMembers(
+            ListHighAvailabilityMembersRequest request);
+
+    /**
+     * Retrieves information about the inbound replications of a specific MySQL server.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListInboundReplicationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListInboundReplications API.
+     */
+    ListInboundReplicationsResponse listInboundReplications(ListInboundReplicationsRequest request);
 
     /**
      * Retrieves configuration data for a specific MySQL database.
@@ -164,6 +264,39 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
      */
     ListManagedMySqlDatabasesResponse listManagedMySqlDatabases(
             ListManagedMySqlDatabasesRequest request);
+
+    /**
+     * Retrieves any potential errors for a given digest.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListMySqlDigestErrorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMySqlDigestErrors API.
+     */
+    ListMySqlDigestErrorsResponse listMySqlDigestErrors(ListMySqlDigestErrorsRequest request);
+
+    /**
+     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListOutboundReplicationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListOutboundReplications API.
+     */
+    ListOutboundReplicationsResponse listOutboundReplications(
+            ListOutboundReplicationsRequest request);
 
     /**
      * Gets the availability metrics for the MySQL Database specified by managedMySqlDatabaseId.

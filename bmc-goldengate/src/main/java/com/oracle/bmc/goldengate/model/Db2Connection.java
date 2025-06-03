@@ -375,6 +375,27 @@ public final class Db2Connection extends Connection {
             this.__explicitlySet__.add("sslClientKeystashSecretId");
             return this;
         }
+        /**
+         * The base64 encoded file which contains the self-signed server certificate / Certificate
+         * Authority (CA) certificate. It is not included in GET responses if the {@code
+         * view=COMPACT} query parameter is specified.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sslServerCertificate")
+        private String sslServerCertificate;
+
+        /**
+         * The base64 encoded file which contains the self-signed server certificate / Certificate
+         * Authority (CA) certificate. It is not included in GET responses if the {@code
+         * view=COMPACT} query parameter is specified.
+         *
+         * @param sslServerCertificate the value to set
+         * @return this builder
+         */
+        public Builder sslServerCertificate(String sslServerCertificate) {
+            this.sslServerCertificate = sslServerCertificate;
+            this.__explicitlySet__.add("sslServerCertificate");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -410,7 +431,8 @@ public final class Db2Connection extends Connection {
                             this.securityProtocol,
                             this.passwordSecretId,
                             this.sslClientKeystoredbSecretId,
-                            this.sslClientKeystashSecretId);
+                            this.sslClientKeystashSecretId,
+                            this.sslServerCertificate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -506,6 +528,9 @@ public final class Db2Connection extends Connection {
             if (model.wasPropertyExplicitlySet("sslClientKeystashSecretId")) {
                 this.sslClientKeystashSecretId(model.getSslClientKeystashSecretId());
             }
+            if (model.wasPropertyExplicitlySet("sslServerCertificate")) {
+                this.sslServerCertificate(model.getSslServerCertificate());
+            }
             return this;
         }
     }
@@ -549,7 +574,8 @@ public final class Db2Connection extends Connection {
             SecurityProtocol securityProtocol,
             String passwordSecretId,
             String sslClientKeystoredbSecretId,
-            String sslClientKeystashSecretId) {
+            String sslClientKeystashSecretId,
+            String sslServerCertificate) {
         super(
                 id,
                 displayName,
@@ -580,10 +606,12 @@ public final class Db2Connection extends Connection {
         this.passwordSecretId = passwordSecretId;
         this.sslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
         this.sslClientKeystashSecretId = sslClientKeystashSecretId;
+        this.sslServerCertificate = sslServerCertificate;
     }
 
     /** The DB2 technology type. */
     public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+        Db2I("DB2_I"),
         Db2Zos("DB2_ZOS"),
 
         /**
@@ -831,6 +859,25 @@ public final class Db2Connection extends Connection {
         return sslClientKeystashSecretId;
     }
 
+    /**
+     * The base64 encoded file which contains the self-signed server certificate / Certificate
+     * Authority (CA) certificate. It is not included in GET responses if the {@code view=COMPACT}
+     * query parameter is specified.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sslServerCertificate")
+    private final String sslServerCertificate;
+
+    /**
+     * The base64 encoded file which contains the self-signed server certificate / Certificate
+     * Authority (CA) certificate. It is not included in GET responses if the {@code view=COMPACT}
+     * query parameter is specified.
+     *
+     * @return the value
+     */
+    public String getSslServerCertificate() {
+        return sslServerCertificate;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -858,6 +905,7 @@ public final class Db2Connection extends Connection {
                 .append(String.valueOf(this.sslClientKeystoredbSecretId));
         sb.append(", sslClientKeystashSecretId=")
                 .append(String.valueOf(this.sslClientKeystashSecretId));
+        sb.append(", sslServerCertificate=").append(String.valueOf(this.sslServerCertificate));
         sb.append(")");
         return sb.toString();
     }
@@ -884,6 +932,7 @@ public final class Db2Connection extends Connection {
                         this.sslClientKeystoredbSecretId, other.sslClientKeystoredbSecretId)
                 && java.util.Objects.equals(
                         this.sslClientKeystashSecretId, other.sslClientKeystashSecretId)
+                && java.util.Objects.equals(this.sslServerCertificate, other.sslServerCertificate)
                 && super.equals(other);
     }
 
@@ -919,6 +968,11 @@ public final class Db2Connection extends Connection {
                         + (this.sslClientKeystashSecretId == null
                                 ? 43
                                 : this.sslClientKeystashSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslServerCertificate == null
+                                ? 43
+                                : this.sslServerCertificate.hashCode());
         return result;
     }
 }

@@ -23,6 +23,9 @@ package com.oracle.bmc.generativeaiagentruntime.model;
         defaultImpl = RequiredAction.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HumanApprovalRequiredAction.class,
+            name = "HUMAN_APPROVAL_REQUIRED_ACTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = FunctionCallingRequiredAction.class,
             name = "FUNCTION_CALLING_REQUIRED_ACTION")
 })

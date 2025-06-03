@@ -1277,6 +1277,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.mysql.model.SoftDelete",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.mysql.model.StopDbSystemDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

@@ -31,6 +31,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         "id",
         "displayName",
         "description",
+        "softDelete",
         "compartmentId",
         "timeCreated",
         "timeUpdated",
@@ -56,6 +57,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             String id,
             String displayName,
             String description,
+            SoftDelete softDelete,
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -80,6 +82,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         this.id = id;
         this.displayName = displayName;
         this.description = description;
+        this.softDelete = softDelete;
         this.compartmentId = compartmentId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -147,6 +150,25 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state
+         * for 7 days before permanently deleting it.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+        private SoftDelete softDelete;
+
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state
+         * for 7 days before permanently deleting it.
+         *
+         * @param softDelete the value to set
+         * @return this builder
+         */
+        public Builder softDelete(SoftDelete softDelete) {
+            this.softDelete = softDelete;
+            this.__explicitlySet__.add("softDelete");
             return this;
         }
         /** The OCID of the compartment. */
@@ -478,6 +500,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                             this.id,
                             this.displayName,
                             this.description,
+                            this.softDelete,
                             this.compartmentId,
                             this.timeCreated,
                             this.timeUpdated,
@@ -514,6 +537,9 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("softDelete")) {
+                this.softDelete(model.getSoftDelete());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -627,6 +653,23 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return description;
     }
 
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7
+     * days before permanently deleting it.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+    private final SoftDelete softDelete;
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7
+     * days before permanently deleting it.
+     *
+     * @return the value
+     */
+    public SoftDelete getSoftDelete() {
+        return softDelete;
+    }
+
     /** The OCID of the compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
@@ -675,6 +718,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        DeleteScheduled("DELETE_SCHEDULED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1065,6 +1109,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", softDelete=").append(String.valueOf(this.softDelete));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -1103,6 +1148,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.softDelete, other.softDelete)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -1135,6 +1181,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

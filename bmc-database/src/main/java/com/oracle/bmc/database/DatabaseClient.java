@@ -8200,6 +8200,47 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListAutonomousContainerDatabaseBackupsResponse listAutonomousContainerDatabaseBackups(
+            ListAutonomousContainerDatabaseBackupsRequest request) {
+
+        return clientCall(request, ListAutonomousContainerDatabaseBackupsResponse::builder)
+                .logger(LOG, "listAutonomousContainerDatabaseBackups")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousContainerDatabaseBackups",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseBackup/ListAutonomousContainerDatabaseBackups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousContainerDatabaseBackupsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabaseBackups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam(
+                        "autonomousContainerDatabaseId", request.getAutonomousContainerDatabaseId())
+                .appendQueryParam("isRemote", request.getIsRemote())
+                .appendEnumQueryParam("infrastructureType", request.getInfrastructureType())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabaseBackupCollection
+                                .class,
+                        ListAutonomousContainerDatabaseBackupsResponse.Builder
+                                ::autonomousContainerDatabaseBackupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutonomousContainerDatabaseBackupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAutonomousContainerDatabaseBackupsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListAutonomousContainerDatabaseDataguardAssociationsResponse
             listAutonomousContainerDatabaseDataguardAssociations(
                     ListAutonomousContainerDatabaseDataguardAssociationsRequest request) {

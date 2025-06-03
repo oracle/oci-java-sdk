@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.annotation.Nullable;
 
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.enforcer.rule.api.AbstractEnforcerRule;
@@ -56,12 +57,31 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
 
     @Inject private MavenSession session;
 
+    /**
+     * Whether to distinguish between different timed snapshots (e.g is
+     * "2.84.1-preview1-20250522.215840-13" different than "2.84.1-preview1-20250522.215043-12"?) or
+     * to treat all snapshots the same (i.e. both "2.84.1-preview1-20250522.215840-13" and
+     * "2.84.1-preview1-20250522.215043-12" are treated as "2.84.1-preview1-SNAPSHOT".
+     */
+    @Inject @Nullable private Boolean distinguishTimedSnapshots;
+
+    /** If distinguishTimedSnapshots is null, use this instead. */
+    private static final boolean DISTINGUISH_TIMED_SNAPSHOTS_DEFAULT = false;
+
     private ProjectBuildingRequest buildingRequest;
 
     public NoMixedOciJavaSdkVersionsRule() {}
 
     NoMixedOciJavaSdkVersionsRule(
             EnforcerLogger logger, MavenProject project, List<String> allowedDependencies) {
+        this(logger, project, allowedDependencies, DISTINGUISH_TIMED_SNAPSHOTS_DEFAULT);
+    }
+
+    NoMixedOciJavaSdkVersionsRule(
+            EnforcerLogger logger,
+            MavenProject project,
+            List<String> allowedDependencies,
+            Boolean distinguishTimedSnapshots) {
         setLog(Objects.requireNonNull(logger));
         this.project =
                 Objects.requireNonNull(
@@ -75,6 +95,7 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
                         "'allowedDependencies' was expected to be injected. Are you using maven v >= "
                                 + MIN_ENFORCER_VERSION
                                 + "?");
+        setDistinguishTimedSnapshots(distinguishTimedSnapshots);
     }
 
     @Override
@@ -144,13 +165,24 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
                 continue;
             }
 
-            if (dependency.getVersion() != null) {
-                Set<Artifact> artifactSet = versions.get(dependency.getVersion());
+            String version;
+            if (isDistinguishTimedSnapshots()) {
+                version = dependency.getVersion();
+            } else {
+                version = dependency.getBaseVersion();
+                getLog().debug(
+                                "Recording version "
+                                        + dependency.getVersion()
+                                        + " as base version "
+                                        + version);
+            }
+            if (version != null) {
+                Set<Artifact> artifactSet = versions.get(version);
                 if (artifactSet == null) {
                     artifactSet = new HashSet<>();
-                    versions.put(dependency.getVersion(), artifactSet);
+                    versions.put(version, artifactSet);
                 }
-                getLog().debug("Recording version " + dependency.getVersion());
+                getLog().debug("Recording version " + version);
                 artifactSet.add(dependency);
             }
         }
@@ -228,5 +260,18 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
     static Set<Artifact> ignoredDependencies(
             Collection<Artifact> dependencies, List<String> allowedDependencies) {
         return ArtifactUtils.filterDependencyArtifacts(dependencies, allowedDependencies);
+    }
+
+    public Boolean isDistinguishTimedSnapshots() {
+        return distinguishTimedSnapshots != null
+                ? distinguishTimedSnapshots
+                : DISTINGUISH_TIMED_SNAPSHOTS_DEFAULT;
+    }
+
+    public void setDistinguishTimedSnapshots(@Nullable Boolean distinguishTimedSnapshots) {
+        this.distinguishTimedSnapshots =
+                distinguishTimedSnapshots != null
+                        ? distinguishTimedSnapshots
+                        : DISTINGUISH_TIMED_SNAPSHOTS_DEFAULT;
     }
 }

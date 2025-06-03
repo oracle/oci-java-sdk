@@ -25,6 +25,7 @@ public final class UpdateBackupPolicyDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
+        "softDelete",
         "copyPolicies",
         "windowStartTime",
         "retentionInDays",
@@ -34,6 +35,7 @@ public final class UpdateBackupPolicyDetails
     })
     public UpdateBackupPolicyDetails(
             Boolean isEnabled,
+            SoftDelete softDelete,
             java.util.List<CopyPolicy> copyPolicies,
             String windowStartTime,
             Integer retentionInDays,
@@ -42,6 +44,7 @@ public final class UpdateBackupPolicyDetails
             PitrPolicy pitrPolicy) {
         super();
         this.isEnabled = isEnabled;
+        this.softDelete = softDelete;
         this.copyPolicies = copyPolicies;
         this.windowStartTime = windowStartTime;
         this.retentionInDays = retentionInDays;
@@ -65,6 +68,25 @@ public final class UpdateBackupPolicyDetails
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state
+         * for 7 days before permanently deleting it.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+        private SoftDelete softDelete;
+
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state
+         * for 7 days before permanently deleting it.
+         *
+         * @param softDelete the value to set
+         * @return this builder
+         */
+        public Builder softDelete(SoftDelete softDelete) {
+            this.softDelete = softDelete;
+            this.__explicitlySet__.add("softDelete");
             return this;
         }
         /**
@@ -214,6 +236,7 @@ public final class UpdateBackupPolicyDetails
             UpdateBackupPolicyDetails model =
                     new UpdateBackupPolicyDetails(
                             this.isEnabled,
+                            this.softDelete,
                             this.copyPolicies,
                             this.windowStartTime,
                             this.retentionInDays,
@@ -230,6 +253,9 @@ public final class UpdateBackupPolicyDetails
         public Builder copy(UpdateBackupPolicyDetails model) {
             if (model.wasPropertyExplicitlySet("isEnabled")) {
                 this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("softDelete")) {
+                this.softDelete(model.getSoftDelete());
             }
             if (model.wasPropertyExplicitlySet("copyPolicies")) {
                 this.copyPolicies(model.getCopyPolicies());
@@ -273,6 +299,23 @@ public final class UpdateBackupPolicyDetails
      */
     public Boolean getIsEnabled() {
         return isEnabled;
+    }
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7
+     * days before permanently deleting it.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+    private final SoftDelete softDelete;
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7
+     * days before permanently deleting it.
+     *
+     * @return the value
+     */
+    public SoftDelete getSoftDelete() {
+        return softDelete;
     }
 
     /**
@@ -417,6 +460,7 @@ public final class UpdateBackupPolicyDetails
         sb.append("UpdateBackupPolicyDetails(");
         sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", softDelete=").append(String.valueOf(this.softDelete));
         sb.append(", copyPolicies=").append(String.valueOf(this.copyPolicies));
         sb.append(", windowStartTime=").append(String.valueOf(this.windowStartTime));
         sb.append(", retentionInDays=").append(String.valueOf(this.retentionInDays));
@@ -438,6 +482,7 @@ public final class UpdateBackupPolicyDetails
 
         UpdateBackupPolicyDetails other = (UpdateBackupPolicyDetails) o;
         return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.softDelete, other.softDelete)
                 && java.util.Objects.equals(this.copyPolicies, other.copyPolicies)
                 && java.util.Objects.equals(this.windowStartTime, other.windowStartTime)
                 && java.util.Objects.equals(this.retentionInDays, other.retentionInDays)
@@ -452,6 +497,7 @@ public final class UpdateBackupPolicyDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
         result = (result * PRIME) + (this.copyPolicies == null ? 43 : this.copyPolicies.hashCode());
         result =
                 (result * PRIME)

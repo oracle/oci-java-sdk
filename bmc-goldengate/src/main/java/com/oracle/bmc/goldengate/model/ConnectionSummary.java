@@ -83,6 +83,9 @@ package com.oracle.bmc.goldengate.model;
             value = GoogleBigQueryConnectionSummary.class,
             name = "GOOGLE_BIGQUERY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = IcebergConnectionSummary.class,
+            name = "ICEBERG"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PostgresqlConnectionSummary.class,
             name = "POSTGRESQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

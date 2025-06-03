@@ -1339,6 +1339,7 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .basePath("/20200407")
                 .appendPathParam("connections")
                 .appendPathParam(request.getConnectionId())
+                .appendEnumQueryParam("view", request.getView())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
