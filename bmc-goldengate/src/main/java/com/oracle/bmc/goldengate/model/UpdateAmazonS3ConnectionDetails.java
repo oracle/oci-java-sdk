@@ -174,6 +174,36 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
             this.__explicitlySet__.add("secretAccessKeySecretId");
             return this;
         }
+        /** The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com' */
+        @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+        private String endpoint;
+
+        /**
+         * The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com'
+         *
+         * @param endpoint the value to set
+         * @return this builder
+         */
+        public Builder endpoint(String endpoint) {
+            this.endpoint = endpoint;
+            this.__explicitlySet__.add("endpoint");
+            return this;
+        }
+        /** The name of the region where the bucket is created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("region")
+        private String region;
+
+        /**
+         * The name of the region where the bucket is created.
+         *
+         * @param region the value to set
+         * @return this builder
+         */
+        public Builder region(String region) {
+            this.region = region;
+            this.__explicitlySet__.add("region");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -193,7 +223,9 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
                             this.doesUseSecretIds,
                             this.accessKeyId,
                             this.secretAccessKey,
-                            this.secretAccessKeySecretId);
+                            this.secretAccessKeySecretId,
+                            this.endpoint,
+                            this.region);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -241,6 +273,12 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
             if (model.wasPropertyExplicitlySet("secretAccessKeySecretId")) {
                 this.secretAccessKeySecretId(model.getSecretAccessKeySecretId());
             }
+            if (model.wasPropertyExplicitlySet("endpoint")) {
+                this.endpoint(model.getEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
             return this;
         }
     }
@@ -268,7 +306,9 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
             Boolean doesUseSecretIds,
             String accessKeyId,
             String secretAccessKey,
-            String secretAccessKeySecretId) {
+            String secretAccessKeySecretId,
+            String endpoint,
+            String region) {
         super(
                 displayName,
                 description,
@@ -283,6 +323,8 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
         this.accessKeyId = accessKeyId;
         this.secretAccessKey = secretAccessKey;
         this.secretAccessKeySecretId = secretAccessKeySecretId;
+        this.endpoint = endpoint;
+        this.region = region;
     }
 
     /** Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" */
@@ -336,6 +378,32 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
         return secretAccessKeySecretId;
     }
 
+    /** The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com' */
+    @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+    private final String endpoint;
+
+    /**
+     * The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com'
+     *
+     * @return the value
+     */
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    /** The name of the region where the bucket is created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
+    private final String region;
+
+    /**
+     * The name of the region where the bucket is created.
+     *
+     * @return the value
+     */
+    public String getRegion() {
+        return region;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -355,6 +423,8 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
         sb.append(", secretAccessKey=").append("<redacted>");
         sb.append(", secretAccessKeySecretId=")
                 .append(String.valueOf(this.secretAccessKeySecretId));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", region=").append(String.valueOf(this.region));
         sb.append(")");
         return sb.toString();
     }
@@ -373,6 +443,8 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
                 && java.util.Objects.equals(this.secretAccessKey, other.secretAccessKey)
                 && java.util.Objects.equals(
                         this.secretAccessKeySecretId, other.secretAccessKeySecretId)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.region, other.region)
                 && super.equals(other);
     }
 
@@ -389,6 +461,8 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
                         + (this.secretAccessKeySecretId == null
                                 ? 43
                                 : this.secretAccessKeySecretId.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         return result;
     }
 }

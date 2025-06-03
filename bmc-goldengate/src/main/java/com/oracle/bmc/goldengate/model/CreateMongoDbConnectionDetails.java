@@ -264,14 +264,16 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
         }
         /**
          * Database Certificate - The base64 encoded content of a .pem file, containing the server
-         * public key (for 1 and 2-way SSL).
+         * public key (for 1 and 2-way SSL). It is not included in GET responses if the {@code
+         * view=COMPACT} query parameter is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile")
         private String tlsCaFile;
 
         /**
          * Database Certificate - The base64 encoded content of a .pem file, containing the server
-         * public key (for 1 and 2-way SSL).
+         * public key (for 1 and 2-way SSL). It is not included in GET responses if the {@code
+         * view=COMPACT} query parameter is specified.
          *
          * @param tlsCaFile the value to set
          * @return this builder
@@ -659,14 +661,16 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * Database Certificate - The base64 encoded content of a .pem file, containing the server
-     * public key (for 1 and 2-way SSL).
+     * public key (for 1 and 2-way SSL). It is not included in GET responses if the {@code
+     * view=COMPACT} query parameter is specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile")
     private final String tlsCaFile;
 
     /**
      * Database Certificate - The base64 encoded content of a .pem file, containing the server
-     * public key (for 1 and 2-way SSL).
+     * public key (for 1 and 2-way SSL). It is not included in GET responses if the {@code
+     * view=COMPACT} query parameter is specified.
      *
      * @return the value
      */

@@ -7,12 +7,12 @@ package com.oracle.bmc.goldengate.model;
 /** Specifies supported Capabilities or features supported by deployment type. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public enum SupportedCapabilities implements com.oracle.bmc.http.internal.BmcEnum {
-    Placement("PLACEMENT"),
-    DisasterRecovery("DISASTER_RECOVERY"),
     GroupToRole("GROUP_TO_ROLE"),
     BackupRestore("BACKUP_RESTORE"),
     CopyBackup("COPY_BACKUP"),
     ManualBackup("MANUAL_BACKUP"),
+    Placement("PLACEMENT"),
+    DisasterRecovery("DISASTER_RECOVERY"),
     ScheduleManualBackup("SCHEDULE_MANUAL_BACKUP"),
 
     /**

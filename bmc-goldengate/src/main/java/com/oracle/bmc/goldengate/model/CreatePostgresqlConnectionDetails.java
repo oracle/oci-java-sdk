@@ -315,14 +315,16 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         }
         /**
          * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for
-         * PostgreSQL. The supported file formats are .pem and .crt.
+         * PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET
+         * responses if the {@code view=COMPACT} query parameter is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
         private String sslCa;
 
         /**
          * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for
-         * PostgreSQL. The supported file formats are .pem and .crt.
+         * PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET
+         * responses if the {@code view=COMPACT} query parameter is specified.
          *
          * @param sslCa the value to set
          * @return this builder
@@ -334,14 +336,16 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         }
         /**
          * The base64 encoded list of certificates revoked by the trusted certificate authorities
-         * (Trusted CA).
+         * (Trusted CA). It is not included in GET responses if the {@code view=COMPACT} query
+         * parameter is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
         private String sslCrl;
 
         /**
          * The base64 encoded list of certificates revoked by the trusted certificate authorities
-         * (Trusted CA).
+         * (Trusted CA). It is not included in GET responses if the {@code view=COMPACT} query
+         * parameter is specified.
          *
          * @param sslCrl the value to set
          * @return this builder
@@ -353,14 +357,16 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         }
         /**
          * The base64 encoded certificate of the PostgreSQL server. The supported file formats are
-         * .pem and .crt.
+         * .pem and .crt. It is not included in GET responses if the {@code view=COMPACT} query
+         * parameter is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
         private String sslCert;
 
         /**
          * The base64 encoded certificate of the PostgreSQL server. The supported file formats are
-         * .pem and .crt.
+         * .pem and .crt. It is not included in GET responses if the {@code view=COMPACT} query
+         * parameter is specified.
          *
          * @param sslCert the value to set
          * @return this builder
@@ -833,14 +839,16 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for
-     * PostgreSQL. The supported file formats are .pem and .crt.
+     * PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses
+     * if the {@code view=COMPACT} query parameter is specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
     private final String sslCa;
 
     /**
      * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for
-     * PostgreSQL. The supported file formats are .pem and .crt.
+     * PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses
+     * if the {@code view=COMPACT} query parameter is specified.
      *
      * @return the value
      */
@@ -850,14 +858,16 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded list of certificates revoked by the trusted certificate authorities
-     * (Trusted CA).
+     * (Trusted CA). It is not included in GET responses if the {@code view=COMPACT} query parameter
+     * is specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
     private final String sslCrl;
 
     /**
      * The base64 encoded list of certificates revoked by the trusted certificate authorities
-     * (Trusted CA).
+     * (Trusted CA). It is not included in GET responses if the {@code view=COMPACT} query parameter
+     * is specified.
      *
      * @return the value
      */
@@ -867,14 +877,16 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem
-     * and .crt.
+     * and .crt. It is not included in GET responses if the {@code view=COMPACT} query parameter is
+     * specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
     private final String sslCert;
 
     /**
      * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem
-     * and .crt.
+     * and .crt. It is not included in GET responses if the {@code view=COMPACT} query parameter is
+     * specified.
      *
      * @return the value
      */

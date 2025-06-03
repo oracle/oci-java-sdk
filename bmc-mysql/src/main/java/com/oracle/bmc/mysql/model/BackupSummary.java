@@ -30,8 +30,10 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         "id",
         "displayName",
         "description",
+        "softDelete",
         "timeCreated",
         "lifecycleState",
+        "lifecycleDetails",
         "backupType",
         "creationType",
         "dbSystemId",
@@ -53,8 +55,10 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             String id,
             String displayName,
             String description,
+            SoftDelete softDelete,
             java.util.Date timeCreated,
             Backup.LifecycleState lifecycleState,
+            String lifecycleDetails,
             Backup.BackupType backupType,
             Backup.CreationType creationType,
             String dbSystemId,
@@ -75,8 +79,10 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         this.id = id;
         this.displayName = displayName;
         this.description = description;
+        this.softDelete = softDelete;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.backupType = backupType;
         this.creationType = creationType;
         this.dbSystemId = dbSystemId;
@@ -142,6 +148,25 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("description");
             return this;
         }
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state
+         * for 7 days before permanently deleting it.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+        private SoftDelete softDelete;
+
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state
+         * for 7 days before permanently deleting it.
+         *
+         * @param softDelete the value to set
+         * @return this builder
+         */
+        public Builder softDelete(SoftDelete softDelete) {
+            this.softDelete = softDelete;
+            this.__explicitlySet__.add("softDelete");
+            return this;
+        }
         /** The time the backup was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
@@ -170,6 +195,21 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         public Builder lifecycleState(Backup.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /** Additional information about the current lifecycleState. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Additional information about the current lifecycleState.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /** The type of backup. */
@@ -441,8 +481,10 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.id,
                             this.displayName,
                             this.description,
+                            this.softDelete,
                             this.timeCreated,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.backupType,
                             this.creationType,
                             this.dbSystemId,
@@ -476,11 +518,17 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
+            if (model.wasPropertyExplicitlySet("softDelete")) {
+                this.softDelete(model.getSoftDelete());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("backupType")) {
                 this.backupType(model.getBackupType());
@@ -582,6 +630,23 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         return description;
     }
 
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7
+     * days before permanently deleting it.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+    private final SoftDelete softDelete;
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7
+     * days before permanently deleting it.
+     *
+     * @return the value
+     */
+    public SoftDelete getSoftDelete() {
+        return softDelete;
+    }
+
     /** The time the backup was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
@@ -606,6 +671,19 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
      */
     public Backup.LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /** Additional information about the current lifecycleState. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Additional information about the current lifecycleState.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /** The type of backup. */
@@ -850,8 +928,10 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", softDelete=").append(String.valueOf(this.softDelete));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", backupType=").append(String.valueOf(this.backupType));
         sb.append(", creationType=").append(String.valueOf(this.creationType));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
@@ -887,8 +967,10 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.softDelete, other.softDelete)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.backupType, other.backupType)
                 && java.util.Objects.equals(this.creationType, other.creationType)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
@@ -918,10 +1000,14 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.backupType == null ? 43 : this.backupType.hashCode());
         result = (result * PRIME) + (this.creationType == null ? 43 : this.creationType.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());

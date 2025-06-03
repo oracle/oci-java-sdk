@@ -119,14 +119,16 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
         }
         /**
          * The base64 encoded content of the Hadoop Distributed File System configuration file
-         * (core-site.xml).
+         * (core-site.xml). It is not included in GET responses if the {@code view=COMPACT} query
+         * parameter is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("coreSiteXml")
         private String coreSiteXml;
 
         /**
          * The base64 encoded content of the Hadoop Distributed File System configuration file
-         * (core-site.xml).
+         * (core-site.xml). It is not included in GET responses if the {@code view=COMPACT} query
+         * parameter is specified.
          *
          * @param coreSiteXml the value to set
          * @return this builder
@@ -237,14 +239,16 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
 
     /**
      * The base64 encoded content of the Hadoop Distributed File System configuration file
-     * (core-site.xml).
+     * (core-site.xml). It is not included in GET responses if the {@code view=COMPACT} query
+     * parameter is specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("coreSiteXml")
     private final String coreSiteXml;
 
     /**
      * The base64 encoded content of the Hadoop Distributed File System configuration file
-     * (core-site.xml).
+     * (core-site.xml). It is not included in GET responses if the {@code view=COMPACT} query
+     * parameter is specified.
      *
      * @return the value
      */

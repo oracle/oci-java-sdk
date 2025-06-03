@@ -26,6 +26,7 @@ public final class CreateBackupDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
+        "softDelete",
         "backupType",
         "dbSystemId",
         "retentionInDays",
@@ -35,6 +36,7 @@ public final class CreateBackupDetails
     public CreateBackupDetails(
             String displayName,
             String description,
+            SoftDelete softDelete,
             BackupType backupType,
             String dbSystemId,
             Integer retentionInDays,
@@ -43,6 +45,7 @@ public final class CreateBackupDetails
         super();
         this.displayName = displayName;
         this.description = description;
+        this.softDelete = softDelete;
         this.backupType = backupType;
         this.dbSystemId = dbSystemId;
         this.retentionInDays = retentionInDays;
@@ -80,6 +83,25 @@ public final class CreateBackupDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state
+         * for 7 days before permanently deleting it.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+        private SoftDelete softDelete;
+
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state
+         * for 7 days before permanently deleting it.
+         *
+         * @param softDelete the value to set
+         * @return this builder
+         */
+        public Builder softDelete(SoftDelete softDelete) {
+            this.softDelete = softDelete;
+            this.__explicitlySet__.add("softDelete");
             return this;
         }
         /** The type of backup. */
@@ -175,6 +197,7 @@ public final class CreateBackupDetails
                     new CreateBackupDetails(
                             this.displayName,
                             this.description,
+                            this.softDelete,
                             this.backupType,
                             this.dbSystemId,
                             this.retentionInDays,
@@ -193,6 +216,9 @@ public final class CreateBackupDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("softDelete")) {
+                this.softDelete(model.getSoftDelete());
             }
             if (model.wasPropertyExplicitlySet("backupType")) {
                 this.backupType(model.getBackupType());
@@ -246,6 +272,23 @@ public final class CreateBackupDetails
      */
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7
+     * days before permanently deleting it.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+    private final SoftDelete softDelete;
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7
+     * days before permanently deleting it.
+     *
+     * @return the value
+     */
+    public SoftDelete getSoftDelete() {
+        return softDelete;
     }
 
     /** The type of backup. */
@@ -371,6 +414,7 @@ public final class CreateBackupDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", softDelete=").append(String.valueOf(this.softDelete));
         sb.append(", backupType=").append(String.valueOf(this.backupType));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", retentionInDays=").append(String.valueOf(this.retentionInDays));
@@ -392,6 +436,7 @@ public final class CreateBackupDetails
         CreateBackupDetails other = (CreateBackupDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.softDelete, other.softDelete)
                 && java.util.Objects.equals(this.backupType, other.backupType)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.retentionInDays, other.retentionInDays)
@@ -406,6 +451,7 @@ public final class CreateBackupDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
         result = (result * PRIME) + (this.backupType == null ? 43 : this.backupType.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result =

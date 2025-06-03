@@ -4339,6 +4339,24 @@ public interface Database extends AutoCloseable {
     ListApplicationVipsResponse listApplicationVips(ListApplicationVipsRequest request);
 
     /**
+     * Gets a list of Autonomous Container Database backups by using either the
+     * 'autonomousDatabaseId' or 'compartmentId' as your query parameter.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousContainerDatabaseBackupsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListAutonomousContainerDatabaseBackups API.
+     */
+    ListAutonomousContainerDatabaseBackupsResponse listAutonomousContainerDatabaseBackups(
+            ListAutonomousContainerDatabaseBackupsRequest request);
+
+    /**
      * **Deprecated.** Use the {@link
      * #listAutonomousContainerDatabases(ListAutonomousContainerDatabasesRequest)
      * listAutonomousContainerDatabases} operation to get a list of the Autonomous Container

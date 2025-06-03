@@ -345,14 +345,16 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
         }
         /**
          * The base64 encoded file which contains the self-signed server certificate / Certificate
-         * Authority (CA) certificate.
+         * Authority (CA) certificate. It is not included in GET responses if the {@code
+         * view=COMPACT} query parameter is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslServerCertificate")
         private String sslServerCertificate;
 
         /**
          * The base64 encoded file which contains the self-signed server certificate / Certificate
-         * Authority (CA) certificate.
+         * Authority (CA) certificate. It is not included in GET responses if the {@code
+         * view=COMPACT} query parameter is specified.
          *
          * @param sslServerCertificate the value to set
          * @return this builder
@@ -737,14 +739,16 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
 
     /**
      * The base64 encoded file which contains the self-signed server certificate / Certificate
-     * Authority (CA) certificate.
+     * Authority (CA) certificate. It is not included in GET responses if the {@code view=COMPACT}
+     * query parameter is specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslServerCertificate")
     private final String sslServerCertificate;
 
     /**
      * The base64 encoded file which contains the self-signed server certificate / Certificate
-     * Authority (CA) certificate.
+     * Authority (CA) certificate. It is not included in GET responses if the {@code view=COMPACT}
+     * query parameter is specified.
      *
      * @return the value
      */

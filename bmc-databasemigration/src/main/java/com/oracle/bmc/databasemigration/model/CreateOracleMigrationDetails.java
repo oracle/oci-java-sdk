@@ -177,6 +177,21 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
             this.__explicitlySet__.add("sourceContainerDatabaseConnectionId");
             return this;
         }
+        /** The OCID of the resource being referenced. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceStandbyDatabaseConnectionId")
+        private String sourceStandbyDatabaseConnectionId;
+
+        /**
+         * The OCID of the resource being referenced.
+         *
+         * @param sourceStandbyDatabaseConnectionId the value to set
+         * @return this builder
+         */
+        public Builder sourceStandbyDatabaseConnectionId(String sourceStandbyDatabaseConnectionId) {
+            this.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
+            this.__explicitlySet__.add("sourceStandbyDatabaseConnectionId");
+            return this;
+        }
         /**
          * Database objects to exclude from migration, cannot be specified alongside
          * 'includeObjects'
@@ -258,6 +273,7 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
                             this.ggsDetails,
                             this.advancedParameters,
                             this.sourceContainerDatabaseConnectionId,
+                            this.sourceStandbyDatabaseConnectionId,
                             this.excludeObjects,
                             this.includeObjects,
                             this.bulkIncludeExcludeData);
@@ -315,6 +331,10 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
                 this.sourceContainerDatabaseConnectionId(
                         model.getSourceContainerDatabaseConnectionId());
             }
+            if (model.wasPropertyExplicitlySet("sourceStandbyDatabaseConnectionId")) {
+                this.sourceStandbyDatabaseConnectionId(
+                        model.getSourceStandbyDatabaseConnectionId());
+            }
             if (model.wasPropertyExplicitlySet("excludeObjects")) {
                 this.excludeObjects(model.getExcludeObjects());
             }
@@ -354,6 +374,7 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
             CreateOracleGgsDeploymentDetails ggsDetails,
             java.util.List<MigrationParameterDetails> advancedParameters,
             String sourceContainerDatabaseConnectionId,
+            String sourceStandbyDatabaseConnectionId,
             java.util.List<OracleDatabaseObject> excludeObjects,
             java.util.List<OracleDatabaseObject> includeObjects,
             String bulkIncludeExcludeData) {
@@ -373,6 +394,7 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
         this.ggsDetails = ggsDetails;
         this.advancedParameters = advancedParameters;
         this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
+        this.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
         this.excludeObjects = excludeObjects;
         this.includeObjects = includeObjects;
         this.bulkIncludeExcludeData = bulkIncludeExcludeData;
@@ -437,6 +459,19 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
      */
     public String getSourceContainerDatabaseConnectionId() {
         return sourceContainerDatabaseConnectionId;
+    }
+
+    /** The OCID of the resource being referenced. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceStandbyDatabaseConnectionId")
+    private final String sourceStandbyDatabaseConnectionId;
+
+    /**
+     * The OCID of the resource being referenced.
+     *
+     * @return the value
+     */
+    public String getSourceStandbyDatabaseConnectionId() {
+        return sourceStandbyDatabaseConnectionId;
     }
 
     /**
@@ -512,6 +547,8 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
         sb.append(", advancedParameters=").append(String.valueOf(this.advancedParameters));
         sb.append(", sourceContainerDatabaseConnectionId=")
                 .append(String.valueOf(this.sourceContainerDatabaseConnectionId));
+        sb.append(", sourceStandbyDatabaseConnectionId=")
+                .append(String.valueOf(this.sourceStandbyDatabaseConnectionId));
         sb.append(", excludeObjects=").append(String.valueOf(this.excludeObjects));
         sb.append(", includeObjects=").append(String.valueOf(this.includeObjects));
         sb.append(", bulkIncludeExcludeData=").append(String.valueOf(this.bulkIncludeExcludeData));
@@ -539,6 +576,9 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
                 && java.util.Objects.equals(
                         this.sourceContainerDatabaseConnectionId,
                         other.sourceContainerDatabaseConnectionId)
+                && java.util.Objects.equals(
+                        this.sourceStandbyDatabaseConnectionId,
+                        other.sourceStandbyDatabaseConnectionId)
                 && java.util.Objects.equals(this.excludeObjects, other.excludeObjects)
                 && java.util.Objects.equals(this.includeObjects, other.includeObjects)
                 && java.util.Objects.equals(
@@ -575,6 +615,11 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
                         + (this.sourceContainerDatabaseConnectionId == null
                                 ? 43
                                 : this.sourceContainerDatabaseConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceStandbyDatabaseConnectionId == null
+                                ? 43
+                                : this.sourceStandbyDatabaseConnectionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.excludeObjects == null ? 43 : this.excludeObjects.hashCode());

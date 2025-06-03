@@ -26,12 +26,48 @@ package com.oracle.bmc.generativeaiagentruntime.model;
 public final class RetrievalTrace extends Trace {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("key")
+        private String key;
+
+        public Builder key(String key) {
+            this.key = key;
+            this.__explicitlySet__.add("key");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
+        private String parentKey;
+
+        public Builder parentKey(String parentKey) {
+            this.parentKey = parentKey;
+            this.__explicitlySet__.add("parentKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("source")
+        private SourceDetails source;
+
+        public Builder source(SourceDetails source) {
+            this.source = source;
+            this.__explicitlySet__.add("source");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
+        private java.util.Date timeFinished;
+
+        public Builder timeFinished(java.util.Date timeFinished) {
+            this.timeFinished = timeFinished;
+            this.__explicitlySet__.add("timeFinished");
             return this;
         }
         /** The agent's search string for getting the displayed information. */
@@ -64,13 +100,36 @@ public final class RetrievalTrace extends Trace {
             this.__explicitlySet__.add("citations");
             return this;
         }
+        /** Details of model and its usage. */
+        @com.fasterxml.jackson.annotation.JsonProperty("usage")
+        private java.util.List<Usage> usage;
+
+        /**
+         * Details of model and its usage.
+         *
+         * @param usage the value to set
+         * @return this builder
+         */
+        public Builder usage(java.util.List<Usage> usage) {
+            this.usage = usage;
+            this.__explicitlySet__.add("usage");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RetrievalTrace build() {
             RetrievalTrace model =
-                    new RetrievalTrace(this.timeCreated, this.retrievalInput, this.citations);
+                    new RetrievalTrace(
+                            this.key,
+                            this.parentKey,
+                            this.source,
+                            this.timeCreated,
+                            this.timeFinished,
+                            this.retrievalInput,
+                            this.citations,
+                            this.usage);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,14 +138,29 @@ public final class RetrievalTrace extends Trace {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RetrievalTrace model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("parentKey")) {
+                this.parentKey(model.getParentKey());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
             }
             if (model.wasPropertyExplicitlySet("retrievalInput")) {
                 this.retrievalInput(model.getRetrievalInput());
             }
             if (model.wasPropertyExplicitlySet("citations")) {
                 this.citations(model.getCitations());
+            }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
             }
             return this;
         }
@@ -103,10 +177,18 @@ public final class RetrievalTrace extends Trace {
 
     @Deprecated
     public RetrievalTrace(
-            java.util.Date timeCreated, String retrievalInput, java.util.List<Citation> citations) {
-        super(timeCreated);
+            String key,
+            String parentKey,
+            SourceDetails source,
+            java.util.Date timeCreated,
+            java.util.Date timeFinished,
+            String retrievalInput,
+            java.util.List<Citation> citations,
+            java.util.List<Usage> usage) {
+        super(key, parentKey, source, timeCreated, timeFinished);
         this.retrievalInput = retrievalInput;
         this.citations = citations;
+        this.usage = usage;
     }
 
     /** The agent's search string for getting the displayed information. */
@@ -135,6 +217,19 @@ public final class RetrievalTrace extends Trace {
         return citations;
     }
 
+    /** Details of model and its usage. */
+    @com.fasterxml.jackson.annotation.JsonProperty("usage")
+    private final java.util.List<Usage> usage;
+
+    /**
+     * Details of model and its usage.
+     *
+     * @return the value
+     */
+    public java.util.List<Usage> getUsage() {
+        return usage;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -152,6 +247,7 @@ public final class RetrievalTrace extends Trace {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", retrievalInput=").append(String.valueOf(this.retrievalInput));
         sb.append(", citations=").append(String.valueOf(this.citations));
+        sb.append(", usage=").append(String.valueOf(this.usage));
         sb.append(")");
         return sb.toString();
     }
@@ -168,6 +264,7 @@ public final class RetrievalTrace extends Trace {
         RetrievalTrace other = (RetrievalTrace) o;
         return java.util.Objects.equals(this.retrievalInput, other.retrievalInput)
                 && java.util.Objects.equals(this.citations, other.citations)
+                && java.util.Objects.equals(this.usage, other.usage)
                 && super.equals(other);
     }
 
@@ -179,6 +276,7 @@ public final class RetrievalTrace extends Trace {
                 (result * PRIME)
                         + (this.retrievalInput == null ? 43 : this.retrievalInput.hashCode());
         result = (result * PRIME) + (this.citations == null ? 43 : this.citations.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
         return result;
     }
 }

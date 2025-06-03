@@ -295,15 +295,17 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
-         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
-         * server public key (for 1 and 2-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem or .crt file containing the
+         * server public key (for 1 and 2-way SSL). It is not included in GET responses if the
+         * {@code view=COMPACT} query parameter is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
         private String sslCa;
 
         /**
-         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
-         * server public key (for 1 and 2-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem or .crt file containing the
+         * server public key (for 1 and 2-way SSL). It is not included in GET responses if the
+         * {@code view=COMPACT} query parameter is specified.
          *
          * @param sslCa the value to set
          * @return this builder
@@ -316,7 +318,8 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
         /**
          * The base64 encoded list of certificates revoked by the trusted certificate authorities
          * (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option
-         * is selected.
+         * is selected. It is not included in GET responses if the {@code view=COMPACT} query
+         * parameter is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
         private String sslCrl;
@@ -324,7 +327,8 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
         /**
          * The base64 encoded list of certificates revoked by the trusted certificate authorities
          * (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option
-         * is selected.
+         * is selected. It is not included in GET responses if the {@code view=COMPACT} query
+         * parameter is specified.
          *
          * @param sslCrl the value to set
          * @return this builder
@@ -335,15 +339,17 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
-         * Client Certificate - The base64 encoded content of a .pem or .crt file. containing the
-         * client public key (for 2-way SSL).
+         * Client Certificate - The base64 encoded content of a .pem or .crt file containing the
+         * client public key (for 2-way SSL). It is not included in GET responses if the {@code
+         * view=COMPACT} query parameter is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
         private String sslCert;
 
         /**
-         * Client Certificate - The base64 encoded content of a .pem or .crt file. containing the
-         * client public key (for 2-way SSL).
+         * Client Certificate - The base64 encoded content of a .pem or .crt file containing the
+         * client public key (for 2-way SSL). It is not included in GET responses if the {@code
+         * view=COMPACT} query parameter is specified.
          *
          * @param sslCert the value to set
          * @return this builder
@@ -819,15 +825,17 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
-     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
-     * server public key (for 1 and 2-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file containing the
+     * server public key (for 1 and 2-way SSL). It is not included in GET responses if the {@code
+     * view=COMPACT} query parameter is specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
     private final String sslCa;
 
     /**
-     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
-     * server public key (for 1 and 2-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file containing the
+     * server public key (for 1 and 2-way SSL). It is not included in GET responses if the {@code
+     * view=COMPACT} query parameter is specified.
      *
      * @return the value
      */
@@ -838,7 +846,8 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
     /**
      * The base64 encoded list of certificates revoked by the trusted certificate authorities
      * (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is
-     * selected.
+     * selected. It is not included in GET responses if the {@code view=COMPACT} query parameter is
+     * specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
     private final String sslCrl;
@@ -846,7 +855,8 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
     /**
      * The base64 encoded list of certificates revoked by the trusted certificate authorities
      * (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is
-     * selected.
+     * selected. It is not included in GET responses if the {@code view=COMPACT} query parameter is
+     * specified.
      *
      * @return the value
      */
@@ -855,15 +865,17 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
-     * Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client
-     * public key (for 2-way SSL).
+     * Client Certificate - The base64 encoded content of a .pem or .crt file containing the client
+     * public key (for 2-way SSL). It is not included in GET responses if the {@code view=COMPACT}
+     * query parameter is specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
     private final String sslCert;
 
     /**
-     * Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client
-     * public key (for 2-way SSL).
+     * Client Certificate - The base64 encoded content of a .pem or .crt file containing the client
+     * public key (for 2-way SSL). It is not included in GET responses if the {@code view=COMPACT}
+     * query parameter is specified.
      *
      * @return the value
      */

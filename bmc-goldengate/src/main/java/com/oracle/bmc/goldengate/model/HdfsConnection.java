@@ -212,6 +212,27 @@ public final class HdfsConnection extends Connection {
             this.__explicitlySet__.add("technologyType");
             return this;
         }
+        /**
+         * The base64 encoded content of the Hadoop Distributed File System configuration file
+         * (core-site.xml). It is not included in GET responses if the {@code view=COMPACT} query
+         * parameter is specified.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("coreSiteXml")
+        private String coreSiteXml;
+
+        /**
+         * The base64 encoded content of the Hadoop Distributed File System configuration file
+         * (core-site.xml). It is not included in GET responses if the {@code view=COMPACT} query
+         * parameter is specified.
+         *
+         * @param coreSiteXml the value to set
+         * @return this builder
+         */
+        public Builder coreSiteXml(String coreSiteXml) {
+            this.coreSiteXml = coreSiteXml;
+            this.__explicitlySet__.add("coreSiteXml");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -238,7 +259,8 @@ public final class HdfsConnection extends Connection {
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
-                            this.technologyType);
+                            this.technologyType,
+                            this.coreSiteXml);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -307,6 +329,9 @@ public final class HdfsConnection extends Connection {
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
+            if (model.wasPropertyExplicitlySet("coreSiteXml")) {
+                this.coreSiteXml(model.getCoreSiteXml());
+            }
             return this;
         }
     }
@@ -341,7 +366,8 @@ public final class HdfsConnection extends Connection {
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
-            TechnologyType technologyType) {
+            TechnologyType technologyType,
+            String coreSiteXml) {
         super(
                 id,
                 displayName,
@@ -363,6 +389,7 @@ public final class HdfsConnection extends Connection {
                 routingMethod,
                 doesUseSecretIds);
         this.technologyType = technologyType;
+        this.coreSiteXml = coreSiteXml;
     }
 
     /** The Hadoop Distributed File System technology type. */
@@ -423,6 +450,25 @@ public final class HdfsConnection extends Connection {
         return technologyType;
     }
 
+    /**
+     * The base64 encoded content of the Hadoop Distributed File System configuration file
+     * (core-site.xml). It is not included in GET responses if the {@code view=COMPACT} query
+     * parameter is specified.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("coreSiteXml")
+    private final String coreSiteXml;
+
+    /**
+     * The base64 encoded content of the Hadoop Distributed File System configuration file
+     * (core-site.xml). It is not included in GET responses if the {@code view=COMPACT} query
+     * parameter is specified.
+     *
+     * @return the value
+     */
+    public String getCoreSiteXml() {
+        return coreSiteXml;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -439,6 +485,7 @@ public final class HdfsConnection extends Connection {
         sb.append("HdfsConnection(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
+        sb.append(", coreSiteXml=").append(String.valueOf(this.coreSiteXml));
         sb.append(")");
         return sb.toString();
     }
@@ -454,6 +501,7 @@ public final class HdfsConnection extends Connection {
 
         HdfsConnection other = (HdfsConnection) o;
         return java.util.Objects.equals(this.technologyType, other.technologyType)
+                && java.util.Objects.equals(this.coreSiteXml, other.coreSiteXml)
                 && super.equals(other);
     }
 
@@ -464,6 +512,7 @@ public final class HdfsConnection extends Connection {
         result =
                 (result * PRIME)
                         + (this.technologyType == null ? 43 : this.technologyType.hashCode());
+        result = (result * PRIME) + (this.coreSiteXml == null ? 43 : this.coreSiteXml.hashCode());
         return result;
     }
 }

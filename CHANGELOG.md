@@ -3,6 +3,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.67.0 - 2025-06-03
+### Added 
+- Support for creating auto Autonomous Container Database backups in a remote region in the Database service 
+- Support for creating new Autonomous Container Databases from a backup in the remote region in the Database service 
+- Support for input/output token usage information in the Generative AI Agent service 
+- Support for standby connection in the Database Management service 
+- Support for additional metrics, including replication metrics, in the Database Management service 
+- Support for replication dashboard in the Database Management service 
+- Support for soft-deleting backups in the HeatWave service 
+- Support for additional connections types for Oracle Rest Data Services (ORDS), Apache Iceberg, and IBM Db2 for i in the Golden Gate service   
+
+### Breaking Changes 
+- Method `public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$DistributionAffinity getDistributionAffinity()` has been moved from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Method `public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$NetServicesArchitecture getNetServicesArchitecture()` has been moved from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Method `public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$PatchModel getPatchModel()` has been moved from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Method `public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$ProtectionMode getProtectionMode()` has been moved from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Method `public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$ServiceLevelAgreementType getServiceLevelAgreementType()` has been moved from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Method `public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$VersionPreference getVersionPreference()` has been moved from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Moved field `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$DistributionAffinity` from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Moved field `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$NetServicesArchitecture` from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Moved field `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$PatchModel` from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Moved field `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$ProtectionMode` from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Moved field `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$ServiceLevelAgreementType` from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Moved field `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails$VersionPreference` from the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails` into the model `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the Database service 
+- Return type of method `public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails getBody$(` has been changed to `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the request `com.oracle.bmc.database.requests.CreateAutonomousContainerDatabaseRequest` in the Database service 
+- Return type of method `public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails getCreateAutonomousContainerDatabaseDetails()` has been changed to `com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase` in the request `com.oracle.bmc.database.requests.CreateAutonomousContainerDatabaseRequest` in the Database service
+
 ## 3.66.0 - 2025-05-27
 ### Added 
 - Support for List and Get APIs for out-of-box management dashboard resources in Management Dashboard service 
@@ -24,6 +51,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Breaking Changes 
 - The values for `ATTACHING` and `DETACHING` were removed from the enum model `LifecycleStateEnum` in the Network Firewall service
+
+### Fixed
+- Fixed potential deadlock if OCI Java SDK was used from within the common fork-join pool (`ForkJoinPool.commonPool()`) by moving UTF-8 conversion to separate thread-pool, which can be configured using `com.oracle.bmc.http.client.pki.Utf8Utils`
 
 ## 3.65.1 - 2025-05-20
 ### Added 

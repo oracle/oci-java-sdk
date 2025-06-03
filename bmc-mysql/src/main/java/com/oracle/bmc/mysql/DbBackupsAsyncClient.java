@@ -95,6 +95,40 @@ public class DbBackupsAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     }
 
     @Override
+    public java.util.concurrent.Future<CancelBackupDeletionResponse> cancelBackupDeletion(
+            CancelBackupDeletionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelBackupDeletionRequest, CancelBackupDeletionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBackupId(), "backupId must not be blank");
+
+        return clientCall(request, CancelBackupDeletionResponse::builder)
+                .logger(LOG, "cancelBackupDeletion")
+                .serviceDetails(
+                        "DbBackups",
+                        "CancelBackupDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CancelBackupDeletion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelBackupDeletionRequest::builder)
+                .basePath("/20190415")
+                .appendPathParam("backups")
+                .appendPathParam(request.getBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelBackupDeletionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CancelBackupDeletionResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeBackupCompartmentResponse> changeBackupCompartment(
             ChangeBackupCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -279,6 +313,7 @@ public class DbBackupsAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("dbSystemId", request.getDbSystemId())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("softDelete", request.getSoftDelete())
                 .appendEnumQueryParam("creationType", request.getCreationType())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())

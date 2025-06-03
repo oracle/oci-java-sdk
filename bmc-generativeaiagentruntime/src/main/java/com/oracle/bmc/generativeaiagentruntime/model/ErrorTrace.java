@@ -26,12 +26,48 @@ package com.oracle.bmc.generativeaiagentruntime.model;
 public final class ErrorTrace extends Trace {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("key")
+        private String key;
+
+        public Builder key(String key) {
+            this.key = key;
+            this.__explicitlySet__.add("key");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
+        private String parentKey;
+
+        public Builder parentKey(String parentKey) {
+            this.parentKey = parentKey;
+            this.__explicitlySet__.add("parentKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("source")
+        private SourceDetails source;
+
+        public Builder source(SourceDetails source) {
+            this.source = source;
+            this.__explicitlySet__.add("source");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
+        private java.util.Date timeFinished;
+
+        public Builder timeFinished(java.util.Date timeFinished) {
+            this.timeFinished = timeFinished;
+            this.__explicitlySet__.add("timeFinished");
             return this;
         }
         /** The error message in this trace. */
@@ -49,12 +85,35 @@ public final class ErrorTrace extends Trace {
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
+        /** Error code. */
+        @com.fasterxml.jackson.annotation.JsonProperty("code")
+        private String code;
+
+        /**
+         * Error code.
+         *
+         * @param code the value to set
+         * @return this builder
+         */
+        public Builder code(String code) {
+            this.code = code;
+            this.__explicitlySet__.add("code");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ErrorTrace build() {
-            ErrorTrace model = new ErrorTrace(this.timeCreated, this.errorMessage);
+            ErrorTrace model =
+                    new ErrorTrace(
+                            this.key,
+                            this.parentKey,
+                            this.source,
+                            this.timeCreated,
+                            this.timeFinished,
+                            this.errorMessage,
+                            this.code);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -63,11 +122,26 @@ public final class ErrorTrace extends Trace {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ErrorTrace model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("parentKey")) {
+                this.parentKey(model.getParentKey());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
             if (model.wasPropertyExplicitlySet("errorMessage")) {
                 this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("code")) {
+                this.code(model.getCode());
             }
             return this;
         }
@@ -83,9 +157,17 @@ public final class ErrorTrace extends Trace {
     }
 
     @Deprecated
-    public ErrorTrace(java.util.Date timeCreated, String errorMessage) {
-        super(timeCreated);
+    public ErrorTrace(
+            String key,
+            String parentKey,
+            SourceDetails source,
+            java.util.Date timeCreated,
+            java.util.Date timeFinished,
+            String errorMessage,
+            String code) {
+        super(key, parentKey, source, timeCreated, timeFinished);
         this.errorMessage = errorMessage;
+        this.code = code;
     }
 
     /** The error message in this trace. */
@@ -99,6 +181,19 @@ public final class ErrorTrace extends Trace {
      */
     public String getErrorMessage() {
         return errorMessage;
+    }
+
+    /** Error code. */
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
+    private final String code;
+
+    /**
+     * Error code.
+     *
+     * @return the value
+     */
+    public String getCode() {
+        return code;
     }
 
     @Override
@@ -117,6 +212,7 @@ public final class ErrorTrace extends Trace {
         sb.append("ErrorTrace(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", code=").append(String.valueOf(this.code));
         sb.append(")");
         return sb.toString();
     }
@@ -132,6 +228,7 @@ public final class ErrorTrace extends Trace {
 
         ErrorTrace other = (ErrorTrace) o;
         return java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.code, other.code)
                 && super.equals(other);
     }
 
@@ -140,6 +237,7 @@ public final class ErrorTrace extends Trace {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
         return result;
     }
 }

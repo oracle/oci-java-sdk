@@ -52,6 +52,9 @@ package com.oracle.bmc.goldengate.model;
             value = MicrosoftSqlserverConnection.class,
             name = "MICROSOFT_SQLSERVER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = IcebergConnection.class,
+            name = "ICEBERG"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GenericConnection.class,
             name = "GENERIC"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

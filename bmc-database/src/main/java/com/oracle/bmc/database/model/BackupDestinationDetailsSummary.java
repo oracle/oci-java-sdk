@@ -32,7 +32,9 @@ public final class BackupDestinationDetailsSummary
         "vpcUser",
         "vpcPassword",
         "internetProxy",
-        "dbrsPolicyId"
+        "dbrsPolicyId",
+        "isRemote",
+        "remoteRegion"
     })
     public BackupDestinationDetailsSummary(
             java.util.List<java.util.Date> backupDestinationAttachHistory,
@@ -43,7 +45,9 @@ public final class BackupDestinationDetailsSummary
             String vpcUser,
             String vpcPassword,
             String internetProxy,
-            String dbrsPolicyId) {
+            String dbrsPolicyId,
+            Boolean isRemote,
+            String remoteRegion) {
         super();
         this.backupDestinationAttachHistory = backupDestinationAttachHistory;
         this.spaceUtilizedInGBs = spaceUtilizedInGBs;
@@ -54,6 +58,8 @@ public final class BackupDestinationDetailsSummary
         this.vpcPassword = vpcPassword;
         this.internetProxy = internetProxy;
         this.dbrsPolicyId = dbrsPolicyId;
+        this.isRemote = isRemote;
+        this.remoteRegion = remoteRegion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -223,6 +229,46 @@ public final class BackupDestinationDetailsSummary
             this.__explicitlySet__.add("dbrsPolicyId");
             return this;
         }
+        /** Indicates whether the backup destination is cross-region or local region. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isRemote")
+        private Boolean isRemote;
+
+        /**
+         * Indicates whether the backup destination is cross-region or local region.
+         *
+         * @param isRemote the value to set
+         * @return this builder
+         */
+        public Builder isRemote(Boolean isRemote) {
+            this.isRemote = isRemote;
+            this.__explicitlySet__.add("isRemote");
+            return this;
+        }
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be
+         * stored.
+         *
+         * <p>For information about valid region names, see [Regions and Availability
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteRegion")
+        private String remoteRegion;
+
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be
+         * stored.
+         *
+         * <p>For information about valid region names, see [Regions and Availability
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         *
+         * @param remoteRegion the value to set
+         * @return this builder
+         */
+        public Builder remoteRegion(String remoteRegion) {
+            this.remoteRegion = remoteRegion;
+            this.__explicitlySet__.add("remoteRegion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -238,7 +284,9 @@ public final class BackupDestinationDetailsSummary
                             this.vpcUser,
                             this.vpcPassword,
                             this.internetProxy,
-                            this.dbrsPolicyId);
+                            this.dbrsPolicyId,
+                            this.isRemote,
+                            this.remoteRegion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -274,6 +322,12 @@ public final class BackupDestinationDetailsSummary
             }
             if (model.wasPropertyExplicitlySet("dbrsPolicyId")) {
                 this.dbrsPolicyId(model.getDbrsPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("isRemote")) {
+                this.isRemote(model.getIsRemote());
+            }
+            if (model.wasPropertyExplicitlySet("remoteRegion")) {
+                this.remoteRegion(model.getRemoteRegion());
             }
             return this;
         }
@@ -480,6 +534,40 @@ public final class BackupDestinationDetailsSummary
         return dbrsPolicyId;
     }
 
+    /** Indicates whether the backup destination is cross-region or local region. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isRemote")
+    private final Boolean isRemote;
+
+    /**
+     * Indicates whether the backup destination is cross-region or local region.
+     *
+     * @return the value
+     */
+    public Boolean getIsRemote() {
+        return isRemote;
+    }
+
+    /**
+     * The name of the remote region where the remote automatic incremental backups will be stored.
+     *
+     * <p>For information about valid region names, see [Regions and Availability
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteRegion")
+    private final String remoteRegion;
+
+    /**
+     * The name of the remote region where the remote automatic incremental backups will be stored.
+     *
+     * <p>For information about valid region names, see [Regions and Availability
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     *
+     * @return the value
+     */
+    public String getRemoteRegion() {
+        return remoteRegion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -506,6 +594,8 @@ public final class BackupDestinationDetailsSummary
         sb.append(", vpcPassword=").append(String.valueOf(this.vpcPassword));
         sb.append(", internetProxy=").append(String.valueOf(this.internetProxy));
         sb.append(", dbrsPolicyId=").append(String.valueOf(this.dbrsPolicyId));
+        sb.append(", isRemote=").append(String.valueOf(this.isRemote));
+        sb.append(", remoteRegion=").append(String.valueOf(this.remoteRegion));
         sb.append(")");
         return sb.toString();
     }
@@ -532,6 +622,8 @@ public final class BackupDestinationDetailsSummary
                 && java.util.Objects.equals(this.vpcPassword, other.vpcPassword)
                 && java.util.Objects.equals(this.internetProxy, other.internetProxy)
                 && java.util.Objects.equals(this.dbrsPolicyId, other.dbrsPolicyId)
+                && java.util.Objects.equals(this.isRemote, other.isRemote)
+                && java.util.Objects.equals(this.remoteRegion, other.remoteRegion)
                 && super.equals(other);
     }
 
@@ -562,6 +654,8 @@ public final class BackupDestinationDetailsSummary
                 (result * PRIME)
                         + (this.internetProxy == null ? 43 : this.internetProxy.hashCode());
         result = (result * PRIME) + (this.dbrsPolicyId == null ? 43 : this.dbrsPolicyId.hashCode());
+        result = (result * PRIME) + (this.isRemote == null ? 43 : this.isRemote.hashCode());
+        result = (result * PRIME) + (this.remoteRegion == null ? 43 : this.remoteRegion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

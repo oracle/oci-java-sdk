@@ -73,6 +73,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getDisplayName() {
         return displayName;
     }
+    /** Backup Soft Delete */
+    private com.oracle.bmc.mysql.model.SoftDelete softDelete;
+
+    /** Backup Soft Delete */
+    public com.oracle.bmc.mysql.model.SoftDelete getSoftDelete() {
+        return softDelete;
+    }
     /** Backup creationType */
     private com.oracle.bmc.mysql.model.Backup.CreationType creationType;
 
@@ -308,6 +315,20 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** Backup Soft Delete */
+        private com.oracle.bmc.mysql.model.SoftDelete softDelete = null;
+
+        /**
+         * Backup Soft Delete
+         *
+         * @param softDelete the value to set
+         * @return this builder instance
+         */
+        public Builder softDelete(com.oracle.bmc.mysql.model.SoftDelete softDelete) {
+            this.softDelete = softDelete;
+            return this;
+        }
+
         /** Backup creationType */
         private com.oracle.bmc.mysql.model.Backup.CreationType creationType = null;
 
@@ -430,6 +451,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             lifecycleState(o.getLifecycleState());
             dbSystemId(o.getDbSystemId());
             displayName(o.getDisplayName());
+            softDelete(o.getSoftDelete());
             creationType(o.getCreationType());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
@@ -475,6 +497,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.lifecycleState = lifecycleState;
             request.dbSystemId = dbSystemId;
             request.displayName = displayName;
+            request.softDelete = softDelete;
             request.creationType = creationType;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
@@ -482,7 +505,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.page = page;
             return request;
             // new ListBackupsRequest(compartmentId, opcRequestId, backupId, lifecycleState,
-            // dbSystemId, displayName, creationType, sortBy, sortOrder, limit, page);
+            // dbSystemId, displayName, softDelete, creationType, sortBy, sortOrder, limit, page);
         }
     }
 
@@ -499,6 +522,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .lifecycleState(lifecycleState)
                 .dbSystemId(dbSystemId)
                 .displayName(displayName)
+                .softDelete(softDelete)
                 .creationType(creationType)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
@@ -526,6 +550,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",softDelete=").append(String.valueOf(this.softDelete));
         sb.append(",creationType=").append(String.valueOf(this.creationType));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -552,6 +577,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.softDelete, other.softDelete)
                 && java.util.Objects.equals(this.creationType, other.creationType)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -573,6 +599,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
         result = (result * PRIME) + (this.creationType == null ? 43 : this.creationType.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
