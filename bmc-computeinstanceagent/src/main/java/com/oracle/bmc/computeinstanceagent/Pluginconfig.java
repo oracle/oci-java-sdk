@@ -66,7 +66,7 @@ public interface Pluginconfig extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * The API to get the list of plugins that are available.
+     * Lists the Oracle Cloud Agent plugins that are available for compute instances.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

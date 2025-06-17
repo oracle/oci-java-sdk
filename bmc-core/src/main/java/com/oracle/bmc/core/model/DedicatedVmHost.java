@@ -38,7 +38,9 @@ public final class DedicatedVmHost
         "totalOcpus",
         "remainingOcpus",
         "totalMemoryInGBs",
-        "remainingMemoryInGBs"
+        "remainingMemoryInGBs",
+        "capacityBins",
+        "computeBareMetalHostId"
     })
     public DedicatedVmHost(
             String availabilityDomain,
@@ -55,7 +57,9 @@ public final class DedicatedVmHost
             Float totalOcpus,
             Float remainingOcpus,
             Float totalMemoryInGBs,
-            Float remainingMemoryInGBs) {
+            Float remainingMemoryInGBs,
+            java.util.List<CapacityBin> capacityBins,
+            String computeBareMetalHostId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -72,6 +76,8 @@ public final class DedicatedVmHost
         this.remainingOcpus = remainingOcpus;
         this.totalMemoryInGBs = totalMemoryInGBs;
         this.remainingMemoryInGBs = remainingMemoryInGBs;
+        this.capacityBins = capacityBins;
+        this.computeBareMetalHostId = computeBareMetalHostId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -369,6 +375,36 @@ public final class DedicatedVmHost
             this.__explicitlySet__.add("remainingMemoryInGBs");
             return this;
         }
+        /** A list of total and remaining CPU & memory per capacity bucket. */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityBins")
+        private java.util.List<CapacityBin> capacityBins;
+
+        /**
+         * A list of total and remaining CPU & memory per capacity bucket.
+         *
+         * @param capacityBins the value to set
+         * @return this builder
+         */
+        public Builder capacityBins(java.util.List<CapacityBin> capacityBins) {
+            this.capacityBins = capacityBins;
+            this.__explicitlySet__.add("capacityBins");
+            return this;
+        }
+        /** The compute bare metal host OCID of the dedicated virtual machine host. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeBareMetalHostId")
+        private String computeBareMetalHostId;
+
+        /**
+         * The compute bare metal host OCID of the dedicated virtual machine host.
+         *
+         * @param computeBareMetalHostId the value to set
+         * @return this builder
+         */
+        public Builder computeBareMetalHostId(String computeBareMetalHostId) {
+            this.computeBareMetalHostId = computeBareMetalHostId;
+            this.__explicitlySet__.add("computeBareMetalHostId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -390,7 +426,9 @@ public final class DedicatedVmHost
                             this.totalOcpus,
                             this.remainingOcpus,
                             this.totalMemoryInGBs,
-                            this.remainingMemoryInGBs);
+                            this.remainingMemoryInGBs,
+                            this.capacityBins,
+                            this.computeBareMetalHostId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -443,6 +481,12 @@ public final class DedicatedVmHost
             }
             if (model.wasPropertyExplicitlySet("remainingMemoryInGBs")) {
                 this.remainingMemoryInGBs(model.getRemainingMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("capacityBins")) {
+                this.capacityBins(model.getCapacityBins());
+            }
+            if (model.wasPropertyExplicitlySet("computeBareMetalHostId")) {
+                this.computeBareMetalHostId(model.getComputeBareMetalHostId());
             }
             return this;
         }
@@ -768,6 +812,32 @@ public final class DedicatedVmHost
         return remainingMemoryInGBs;
     }
 
+    /** A list of total and remaining CPU & memory per capacity bucket. */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityBins")
+    private final java.util.List<CapacityBin> capacityBins;
+
+    /**
+     * A list of total and remaining CPU & memory per capacity bucket.
+     *
+     * @return the value
+     */
+    public java.util.List<CapacityBin> getCapacityBins() {
+        return capacityBins;
+    }
+
+    /** The compute bare metal host OCID of the dedicated virtual machine host. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeBareMetalHostId")
+    private final String computeBareMetalHostId;
+
+    /**
+     * The compute bare metal host OCID of the dedicated virtual machine host.
+     *
+     * @return the value
+     */
+    public String getComputeBareMetalHostId() {
+        return computeBareMetalHostId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -799,6 +869,8 @@ public final class DedicatedVmHost
         sb.append(", remainingOcpus=").append(String.valueOf(this.remainingOcpus));
         sb.append(", totalMemoryInGBs=").append(String.valueOf(this.totalMemoryInGBs));
         sb.append(", remainingMemoryInGBs=").append(String.valueOf(this.remainingMemoryInGBs));
+        sb.append(", capacityBins=").append(String.valueOf(this.capacityBins));
+        sb.append(", computeBareMetalHostId=").append(String.valueOf(this.computeBareMetalHostId));
         sb.append(")");
         return sb.toString();
     }
@@ -829,6 +901,9 @@ public final class DedicatedVmHost
                 && java.util.Objects.equals(this.remainingOcpus, other.remainingOcpus)
                 && java.util.Objects.equals(this.totalMemoryInGBs, other.totalMemoryInGBs)
                 && java.util.Objects.equals(this.remainingMemoryInGBs, other.remainingMemoryInGBs)
+                && java.util.Objects.equals(this.capacityBins, other.capacityBins)
+                && java.util.Objects.equals(
+                        this.computeBareMetalHostId, other.computeBareMetalHostId)
                 && super.equals(other);
     }
 
@@ -875,6 +950,12 @@ public final class DedicatedVmHost
                         + (this.remainingMemoryInGBs == null
                                 ? 43
                                 : this.remainingMemoryInGBs.hashCode());
+        result = (result * PRIME) + (this.capacityBins == null ? 43 : this.capacityBins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeBareMetalHostId == null
+                                ? 43
+                                : this.computeBareMetalHostId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

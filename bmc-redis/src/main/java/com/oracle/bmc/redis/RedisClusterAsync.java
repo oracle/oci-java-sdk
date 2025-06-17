@@ -64,6 +64,22 @@ public interface RedisClusterAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Attach existing OCI cache users to a redis cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AttachOciCacheUsersResponse> attachOciCacheUsers(
+            AttachOciCacheUsersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AttachOciCacheUsersRequest, AttachOciCacheUsersResponse>
+                    handler);
+
+    /**
      * Cancels the specified work request.
      *
      * @param request The request object containing the details to send
@@ -134,6 +150,22 @@ public interface RedisClusterAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Detach existing OCI cache users to a redis cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DetachOciCacheUsersResponse> detachOciCacheUsers(
+            DetachOciCacheUsersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DetachOciCacheUsersRequest, DetachOciCacheUsersResponse>
+                    handler);
+
+    /**
      * Retrieves the specified OCI Cache cluster. A cluster is a memory-based storage solution. For
      * more information, see [OCI Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
      *
@@ -162,6 +194,22 @@ public interface RedisClusterAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Gets a list of associated OCI cache users for a redis cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAttachedOciCacheUsersResponse> listAttachedOciCacheUsers(
+            ListAttachedOciCacheUsersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAttachedOciCacheUsersRequest, ListAttachedOciCacheUsersResponse>
                     handler);
 
     /**
