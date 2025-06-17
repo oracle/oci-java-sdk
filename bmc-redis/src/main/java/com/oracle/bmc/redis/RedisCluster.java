@@ -66,6 +66,22 @@ public interface RedisCluster extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Attach existing OCI cache users to a redis cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/redis/AttachOciCacheUsersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachOciCacheUsers
+     *     API.
+     */
+    AttachOciCacheUsersResponse attachOciCacheUsers(AttachOciCacheUsersRequest request);
+
+    /**
      * Cancels the specified work request.
      *
      * @param request The request object containing the details to send
@@ -135,6 +151,22 @@ public interface RedisCluster extends AutoCloseable {
     DeleteRedisClusterResponse deleteRedisCluster(DeleteRedisClusterRequest request);
 
     /**
+     * Detach existing OCI cache users to a redis cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/redis/DetachOciCacheUsersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachOciCacheUsers
+     *     API.
+     */
+    DetachOciCacheUsersResponse detachOciCacheUsers(DetachOciCacheUsersRequest request);
+
+    /**
      * Retrieves the specified OCI Cache cluster. A cluster is a memory-based storage solution. For
      * more information, see [OCI Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
      *
@@ -165,6 +197,23 @@ public interface RedisCluster extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Gets a list of associated OCI cache users for a redis cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/redis/ListAttachedOciCacheUsersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListAttachedOciCacheUsers API.
+     */
+    ListAttachedOciCacheUsersResponse listAttachedOciCacheUsers(
+            ListAttachedOciCacheUsersRequest request);
 
     /**
      * Gets the list of all nodes in a cluster.

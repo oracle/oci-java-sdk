@@ -28,10 +28,16 @@ public class ListInstanceAgentPluginsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The OCID of the instance. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * instance.
+     */
     private String instanceagentId;
 
-    /** The OCID of the instance. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * instance.
+     */
     public String getInstanceagentId() {
         return instanceagentId;
     }
@@ -48,10 +54,10 @@ public class ListInstanceAgentPluginsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The plugin status */
+    /** The plugin status. */
     private Status status;
 
-    /** The plugin status */
+    /** The plugin status. */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Running("RUNNING"),
         Stopped("STOPPED"),
@@ -87,7 +93,7 @@ public class ListInstanceAgentPluginsRequest
         }
     };
 
-    /** The plugin status */
+    /** The plugin status. */
     public Status getStatus() {
         return status;
     }
@@ -236,10 +242,10 @@ public class ListInstanceAgentPluginsRequest
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The plugin name */
+    /** The plugin name. */
     private String name;
 
-    /** The plugin name */
+    /** The plugin name. */
     public String getName() {
         return name;
     }
@@ -268,11 +274,15 @@ public class ListInstanceAgentPluginsRequest
             return this;
         }
 
-        /** The OCID of the instance. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * instance.
+         */
         private String instanceagentId = null;
 
         /**
-         * The OCID of the instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * instance.
          *
          * @param instanceagentId the value to set
          * @return this builder instance
@@ -300,11 +310,11 @@ public class ListInstanceAgentPluginsRequest
             return this;
         }
 
-        /** The plugin status */
+        /** The plugin status. */
         private Status status = null;
 
         /**
-         * The plugin status
+         * The plugin status.
          *
          * @param status the value to set
          * @return this builder instance
@@ -402,11 +412,11 @@ public class ListInstanceAgentPluginsRequest
             return this;
         }
 
-        /** The plugin name */
+        /** The plugin name. */
         private String name = null;
 
         /**
-         * The plugin name
+         * The plugin name.
          *
          * @param name the value to set
          * @return this builder instance

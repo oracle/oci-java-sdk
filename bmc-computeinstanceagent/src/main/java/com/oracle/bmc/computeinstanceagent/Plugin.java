@@ -66,7 +66,7 @@ public interface Plugin extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * The API to get information for a plugin.
+     * Gets information about a specific Oracle Cloud Agent plugin on a compute instance.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -82,7 +82,8 @@ public interface Plugin extends AutoCloseable {
     GetInstanceAgentPluginResponse getInstanceAgentPlugin(GetInstanceAgentPluginRequest request);
 
     /**
-     * The API to get one or more plugin information.
+     * Gets information about the Oracle Cloud Agent plugins that are available on a specific
+     * compute instance.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

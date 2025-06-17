@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Customer baremetal host id that needs to be launched <br>
+ * The details for providing placement constraints using the compute bare metal host OCID. This
+ * placement constraint is only applicable during the launch operation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -28,12 +29,16 @@ public final class ComputeBareMetalHostPlacementConstraintDetails
         extends PlacementConstraintDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compute bare metal host. */
+        /**
+         * The OCID of the compute bare metal host. This is only available for dedicated capacity
+         * customers.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeBareMetalHostId")
         private String computeBareMetalHostId;
 
         /**
-         * The OCID of the compute bare metal host.
+         * The OCID of the compute bare metal host. This is only available for dedicated capacity
+         * customers.
          *
          * @param computeBareMetalHostId the value to set
          * @return this builder
@@ -80,12 +85,16 @@ public final class ComputeBareMetalHostPlacementConstraintDetails
         this.computeBareMetalHostId = computeBareMetalHostId;
     }
 
-    /** The OCID of the compute bare metal host. */
+    /**
+     * The OCID of the compute bare metal host. This is only available for dedicated capacity
+     * customers.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeBareMetalHostId")
     private final String computeBareMetalHostId;
 
     /**
-     * The OCID of the compute bare metal host.
+     * The OCID of the compute bare metal host. This is only available for dedicated capacity
+     * customers.
      *
      * @return the value
      */

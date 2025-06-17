@@ -43,6 +43,129 @@ public class RedisClusterPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAttachedOciCacheUsers operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAttachedOciCacheUsersResponse> listAttachedOciCacheUsersResponseIterator(
+            final ListAttachedOciCacheUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAttachedOciCacheUsersRequest.Builder,
+                ListAttachedOciCacheUsersRequest,
+                ListAttachedOciCacheUsersResponse>(
+                new java.util.function.Supplier<ListAttachedOciCacheUsersRequest.Builder>() {
+                    @Override
+                    public ListAttachedOciCacheUsersRequest.Builder get() {
+                        return ListAttachedOciCacheUsersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAttachedOciCacheUsersResponse, String>() {
+                    @Override
+                    public String apply(ListAttachedOciCacheUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAttachedOciCacheUsersRequest.Builder>,
+                        ListAttachedOciCacheUsersRequest>() {
+                    @Override
+                    public ListAttachedOciCacheUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAttachedOciCacheUsersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAttachedOciCacheUsersRequest, ListAttachedOciCacheUsersResponse>() {
+                    @Override
+                    public ListAttachedOciCacheUsersResponse apply(
+                            ListAttachedOciCacheUsersRequest request) {
+                        return client.listAttachedOciCacheUsers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.redis.model.AttachedOciCacheUser} objects contained in responses from the
+     * listAttachedOciCacheUsers operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.redis.model.AttachedOciCacheUser} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.redis.model.AttachedOciCacheUser>
+            listAttachedOciCacheUsersRecordIterator(
+                    final ListAttachedOciCacheUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAttachedOciCacheUsersRequest.Builder,
+                ListAttachedOciCacheUsersRequest,
+                ListAttachedOciCacheUsersResponse,
+                com.oracle.bmc.redis.model.AttachedOciCacheUser>(
+                new java.util.function.Supplier<ListAttachedOciCacheUsersRequest.Builder>() {
+                    @Override
+                    public ListAttachedOciCacheUsersRequest.Builder get() {
+                        return ListAttachedOciCacheUsersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAttachedOciCacheUsersResponse, String>() {
+                    @Override
+                    public String apply(ListAttachedOciCacheUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAttachedOciCacheUsersRequest.Builder>,
+                        ListAttachedOciCacheUsersRequest>() {
+                    @Override
+                    public ListAttachedOciCacheUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAttachedOciCacheUsersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAttachedOciCacheUsersRequest, ListAttachedOciCacheUsersResponse>() {
+                    @Override
+                    public ListAttachedOciCacheUsersResponse apply(
+                            ListAttachedOciCacheUsersRequest request) {
+                        return client.listAttachedOciCacheUsers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAttachedOciCacheUsersResponse,
+                        java.util.List<com.oracle.bmc.redis.model.AttachedOciCacheUser>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.redis.model.AttachedOciCacheUser> apply(
+                            ListAttachedOciCacheUsersResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listRedisClusterNodes operation. This iterable will fetch more data from the server as
      * needed.
      *

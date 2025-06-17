@@ -95,6 +95,43 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<AttachOciCacheUsersResponse> attachOciCacheUsers(
+            AttachOciCacheUsersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AttachOciCacheUsersRequest, AttachOciCacheUsersResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachOciCacheUsersDetails(), "attachOciCacheUsersDetails is required");
+
+        return clientCall(request, AttachOciCacheUsersResponse::builder)
+                .logger(LOG, "attachOciCacheUsers")
+                .serviceDetails(
+                        "RedisCluster",
+                        "AttachOciCacheUsers",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/AttachOciCacheUsers")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachOciCacheUsersRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("attachOciCacheUsers")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AttachOciCacheUsersResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", AttachOciCacheUsersResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
             CancelWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -228,6 +265,43 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<DetachOciCacheUsersResponse> detachOciCacheUsers(
+            DetachOciCacheUsersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DetachOciCacheUsersRequest, DetachOciCacheUsersResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getDetachOciCacheUsersDetails(), "detachOciCacheUsersDetails is required");
+
+        return clientCall(request, DetachOciCacheUsersResponse::builder)
+                .logger(LOG, "detachOciCacheUsers")
+                .serviceDetails(
+                        "RedisCluster",
+                        "DetachOciCacheUsers",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/DetachOciCacheUsers")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachOciCacheUsersRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("detachOciCacheUsers")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DetachOciCacheUsersResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachOciCacheUsersResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRedisClusterResponse> getRedisCluster(
             GetRedisClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -288,6 +362,46 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttachedOciCacheUsersResponse> listAttachedOciCacheUsers(
+            ListAttachedOciCacheUsersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAttachedOciCacheUsersRequest, ListAttachedOciCacheUsersResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+
+        return clientCall(request, ListAttachedOciCacheUsersResponse::builder)
+                .logger(LOG, "listAttachedOciCacheUsers")
+                .serviceDetails(
+                        "RedisCluster",
+                        "ListAttachedOciCacheUsers",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/AttachedOciCacheUser/ListAttachedOciCacheUsers")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ListAttachedOciCacheUsersRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("getOciCacheUsers")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.redis.model.AttachedOciCacheUser.class,
+                        ListAttachedOciCacheUsersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAttachedOciCacheUsersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAttachedOciCacheUsersResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

@@ -15,10 +15,16 @@ import com.oracle.bmc.computeinstanceagent.model.*;
 public class GetInstanceAgentPluginRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the instance. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * instance.
+     */
     private String instanceagentId;
 
-    /** The OCID of the instance. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * instance.
+     */
     public String getInstanceagentId() {
         return instanceagentId;
     }
@@ -62,11 +68,15 @@ public class GetInstanceAgentPluginRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the instance. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * instance.
+         */
         private String instanceagentId = null;
 
         /**
-         * The OCID of the instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * instance.
          *
          * @param instanceagentId the value to set
          * @return this builder instance

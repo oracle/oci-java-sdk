@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.67.2 - 2025-06-17
+### Added 
+- Support for node cycling (reboot/replaceBootVolume) for worker nodes in the Kubernetes Engine service 
+- Support for the WebLogic Management service 
+- Support for the Privileged API Access Control service 
+- Support for Role Based Access Control List in the OCI Cache service 
+- Support for integrating native Redis authentication with OCI Identity/IAM in the OCI Cache service 
+- Support for Command String in Runcommand API in the Instance Agent service 
+- Support for new fields capacitySummary and computeBareMetalHostId in the API response when fetching Dedicated Virtual Machine Hosts in the Compute service
+
 ## 3.67.1 - 2025-06-10
 ### Added 
 - Support for performing an explicit Data Guard pre-check by setting new optional dry-run parameter when creating a database in the Database service

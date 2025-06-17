@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Host group id that needs to be launched <br>
+ * The details for providing placement constraints using the compute host group OCID. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,12 +27,16 @@ package com.oracle.bmc.core.model;
 public final class HostGroupPlacementConstraintDetails extends PlacementConstraintDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compute host group. */
+        /**
+         * The OCID of the compute host group. This is only available for dedicated capacity
+         * customers.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
         private String computeHostGroupId;
 
         /**
-         * The OCID of the compute host group.
+         * The OCID of the compute host group. This is only available for dedicated capacity
+         * customers.
          *
          * @param computeHostGroupId the value to set
          * @return this builder
@@ -79,12 +83,14 @@ public final class HostGroupPlacementConstraintDetails extends PlacementConstrai
         this.computeHostGroupId = computeHostGroupId;
     }
 
-    /** The OCID of the compute host group. */
+    /**
+     * The OCID of the compute host group. This is only available for dedicated capacity customers.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
     private final String computeHostGroupId;
 
     /**
-     * The OCID of the compute host group.
+     * The OCID of the compute host group. This is only available for dedicated capacity customers.
      *
      * @return the value
      */

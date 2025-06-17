@@ -23,12 +23,15 @@ package com.oracle.bmc.computeinstanceagent.model;
 public final class InstanceAgentCommandContent
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"source", "output"})
+    @java.beans.ConstructorProperties({"source", "output", "commandString"})
     public InstanceAgentCommandContent(
-            InstanceAgentCommandSourceDetails source, InstanceAgentCommandOutputDetails output) {
+            InstanceAgentCommandSourceDetails source,
+            InstanceAgentCommandOutputDetails output,
+            String commandString) {
         super();
         this.source = source;
         this.output = output;
+        this.commandString = commandString;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,13 +66,34 @@ public final class InstanceAgentCommandContent
             this.__explicitlySet__.add("output");
             return this;
         }
+        /**
+         * Command String is a fully formed command that runcommand executes. Example: main.sh is
+         * stored in object storage and user provides the following command with parameters to
+         * execute /bin/sh main.sh abc 10 foo.sh
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("commandString")
+        private String commandString;
+
+        /**
+         * Command String is a fully formed command that runcommand executes. Example: main.sh is
+         * stored in object storage and user provides the following command with parameters to
+         * execute /bin/sh main.sh abc 10 foo.sh
+         *
+         * @param commandString the value to set
+         * @return this builder
+         */
+        public Builder commandString(String commandString) {
+            this.commandString = commandString;
+            this.__explicitlySet__.add("commandString");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceAgentCommandContent build() {
             InstanceAgentCommandContent model =
-                    new InstanceAgentCommandContent(this.source, this.output);
+                    new InstanceAgentCommandContent(this.source, this.output, this.commandString);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -83,6 +107,9 @@ public final class InstanceAgentCommandContent
             }
             if (model.wasPropertyExplicitlySet("output")) {
                 this.output(model.getOutput());
+            }
+            if (model.wasPropertyExplicitlySet("commandString")) {
+                this.commandString(model.getCommandString());
             }
             return this;
         }
@@ -123,6 +150,25 @@ public final class InstanceAgentCommandContent
         return output;
     }
 
+    /**
+     * Command String is a fully formed command that runcommand executes. Example: main.sh is stored
+     * in object storage and user provides the following command with parameters to execute /bin/sh
+     * main.sh abc 10 foo.sh
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("commandString")
+    private final String commandString;
+
+    /**
+     * Command String is a fully formed command that runcommand executes. Example: main.sh is stored
+     * in object storage and user provides the following command with parameters to execute /bin/sh
+     * main.sh abc 10 foo.sh
+     *
+     * @return the value
+     */
+    public String getCommandString() {
+        return commandString;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -140,6 +186,7 @@ public final class InstanceAgentCommandContent
         sb.append("super=").append(super.toString());
         sb.append("source=").append(String.valueOf(this.source));
         sb.append(", output=").append(String.valueOf(this.output));
+        sb.append(", commandString=").append(String.valueOf(this.commandString));
         sb.append(")");
         return sb.toString();
     }
@@ -156,6 +203,7 @@ public final class InstanceAgentCommandContent
         InstanceAgentCommandContent other = (InstanceAgentCommandContent) o;
         return java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.output, other.output)
+                && java.util.Objects.equals(this.commandString, other.commandString)
                 && super.equals(other);
     }
 
@@ -165,6 +213,9 @@ public final class InstanceAgentCommandContent
         int result = 1;
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
         result = (result * PRIME) + (this.output == null ? 43 : this.output.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.commandString == null ? 43 : this.commandString.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
