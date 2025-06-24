@@ -28,6 +28,7 @@ public final class UpdateLoadBalancerDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
+        "ipMode",
         "isDeleteProtectionEnabled",
         "isRequestIdEnabled",
         "requestIdHeader",
@@ -37,6 +38,7 @@ public final class UpdateLoadBalancerDetails
     })
     public UpdateLoadBalancerDetails(
             String displayName,
+            IpMode ipMode,
             Boolean isDeleteProtectionEnabled,
             Boolean isRequestIdEnabled,
             String requestIdHeader,
@@ -45,6 +47,7 @@ public final class UpdateLoadBalancerDetails
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.displayName = displayName;
+        this.ipMode = ipMode;
         this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
         this.isRequestIdEnabled = isRequestIdEnabled;
         this.requestIdHeader = requestIdHeader;
@@ -76,6 +79,39 @@ public final class UpdateLoadBalancerDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * Whether the load balancer has an IPv4 or IPv6 IP address.
+         *
+         * <p>If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4
+         * traffic.
+         *
+         * <p>If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6
+         * traffic.
+         *
+         * <p>Example: "ipMode":"IPV6"
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+        private IpMode ipMode;
+
+        /**
+         * Whether the load balancer has an IPv4 or IPv6 IP address.
+         *
+         * <p>If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4
+         * traffic.
+         *
+         * <p>If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6
+         * traffic.
+         *
+         * <p>Example: "ipMode":"IPV6"
+         *
+         * @param ipMode the value to set
+         * @return this builder
+         */
+        public Builder ipMode(IpMode ipMode) {
+            this.ipMode = ipMode;
+            this.__explicitlySet__.add("ipMode");
             return this;
         }
         /**
@@ -284,6 +320,7 @@ public final class UpdateLoadBalancerDetails
             UpdateLoadBalancerDetails model =
                     new UpdateLoadBalancerDetails(
                             this.displayName,
+                            this.ipMode,
                             this.isDeleteProtectionEnabled,
                             this.isRequestIdEnabled,
                             this.requestIdHeader,
@@ -300,6 +337,9 @@ public final class UpdateLoadBalancerDetails
         public Builder copy(UpdateLoadBalancerDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("ipMode")) {
+                this.ipMode(model.getIpMode());
             }
             if (model.wasPropertyExplicitlySet("isDeleteProtectionEnabled")) {
                 this.isDeleteProtectionEnabled(model.getIsDeleteProtectionEnabled());
@@ -351,6 +391,80 @@ public final class UpdateLoadBalancerDetails
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     *
+     * <p>If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4
+     * traffic.
+     *
+     * <p>If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6
+     * traffic.
+     *
+     * <p>Example: "ipMode":"IPV6"
+     */
+    public enum IpMode implements com.oracle.bmc.http.internal.BmcEnum {
+        Ipv4("IPV4"),
+        Ipv6("IPV6"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, IpMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpMode v : IpMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        IpMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid IpMode: " + key);
+        }
+    };
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     *
+     * <p>If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4
+     * traffic.
+     *
+     * <p>If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6
+     * traffic.
+     *
+     * <p>Example: "ipMode":"IPV6"
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+    private final IpMode ipMode;
+
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     *
+     * <p>If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4
+     * traffic.
+     *
+     * <p>If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6
+     * traffic.
+     *
+     * <p>Example: "ipMode":"IPV6"
+     *
+     * @return the value
+     */
+    public IpMode getIpMode() {
+        return ipMode;
     }
 
     /**
@@ -549,6 +663,7 @@ public final class UpdateLoadBalancerDetails
         sb.append("UpdateLoadBalancerDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", ipMode=").append(String.valueOf(this.ipMode));
         sb.append(", isDeleteProtectionEnabled=")
                 .append(String.valueOf(this.isDeleteProtectionEnabled));
         sb.append(", isRequestIdEnabled=").append(String.valueOf(this.isRequestIdEnabled));
@@ -571,6 +686,7 @@ public final class UpdateLoadBalancerDetails
 
         UpdateLoadBalancerDetails other = (UpdateLoadBalancerDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.ipMode, other.ipMode)
                 && java.util.Objects.equals(
                         this.isDeleteProtectionEnabled, other.isDeleteProtectionEnabled)
                 && java.util.Objects.equals(this.isRequestIdEnabled, other.isRequestIdEnabled)
@@ -586,6 +702,7 @@ public final class UpdateLoadBalancerDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.ipMode == null ? 43 : this.ipMode.hashCode());
         result =
                 (result * PRIME)
                         + (this.isDeleteProtectionEnabled == null

@@ -162,12 +162,16 @@ public final class CreateVmClusterDetails
             this.__explicitlySet__.add("exadataInfrastructureId");
             return this;
         }
-        /** The number of CPU cores to enable for the VM cluster. */
+        /**
+         * The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for
+         * the VM cluster.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
-         * The number of CPU cores to enable for the VM cluster.
+         * The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for
+         * the VM cluster.
          *
          * @param cpuCoreCount the value to set
          * @return this builder
@@ -704,12 +708,16 @@ public final class CreateVmClusterDetails
         return exadataInfrastructureId;
     }
 
-    /** The number of CPU cores to enable for the VM cluster. */
+    /**
+     * The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the
+     * VM cluster.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
-     * The number of CPU cores to enable for the VM cluster.
+     * The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the
+     * VM cluster.
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.67.2</version>
+    <version>3.67.3</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -26,6 +26,7 @@
     <module>bmc-sse-support</module>
     <module>bmc-sse-support-jersey3</module>
     <module>bmc-aispeech-realtime</module>
+    <module>bmc-adk</module>
   </modules>
 
 </project>

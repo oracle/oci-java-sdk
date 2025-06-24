@@ -42,6 +42,8 @@ public final class ReservedIP extends com.oracle.bmc.http.client.internal.Explic
          * unattached from the Load balancer.
          *
          * <p>Example: "ocid1.publicip.oc1.phx.unique_ID"
+         *
+         * <p>IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -59,6 +61,8 @@ public final class ReservedIP extends com.oracle.bmc.http.client.internal.Explic
          * unattached from the Load balancer.
          *
          * <p>Example: "ocid1.publicip.oc1.phx.unique_ID"
+         *
+         * <p>IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
          *
          * @param id the value to set
          * @return this builder
@@ -111,6 +115,8 @@ public final class ReservedIP extends com.oracle.bmc.http.client.internal.Explic
      * unattached from the Load balancer.
      *
      * <p>Example: "ocid1.publicip.oc1.phx.unique_ID"
+     *
+     * <p>IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
@@ -128,6 +134,8 @@ public final class ReservedIP extends com.oracle.bmc.http.client.internal.Explic
      * unattached from the Load balancer.
      *
      * <p>Example: "ocid1.publicip.oc1.phx.unique_ID"
+     *
+     * <p>IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
      *
      * @return the value
      */

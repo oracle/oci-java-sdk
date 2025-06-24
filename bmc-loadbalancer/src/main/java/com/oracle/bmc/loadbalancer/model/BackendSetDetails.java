@@ -95,8 +95,12 @@ public final class BackendSetDetails
         /**
          * The maximum number of simultaneous connections the load balancer can make to any backend
          * in the backend set unless the backend has its own maxConnections setting. If this is not
-         * set then the number of simultaneous connections the load balancer can make to any backend
-         * in the backend set unless the backend has its own maxConnections setting is unlimited.
+         * set or set to 0 then the number of simultaneous connections the load balancer can make to
+         * any backend in the backend set unless the backend has its own maxConnections setting is
+         * unlimited.
+         *
+         * <p>If setting backendMaxConnections to some value other than 0 then that value must be
+         * greater or equal to 256.
          *
          * <p>Example: {@code 300}
          */
@@ -106,8 +110,12 @@ public final class BackendSetDetails
         /**
          * The maximum number of simultaneous connections the load balancer can make to any backend
          * in the backend set unless the backend has its own maxConnections setting. If this is not
-         * set then the number of simultaneous connections the load balancer can make to any backend
-         * in the backend set unless the backend has its own maxConnections setting is unlimited.
+         * set or set to 0 then the number of simultaneous connections the load balancer can make to
+         * any backend in the backend set unless the backend has its own maxConnections setting is
+         * unlimited.
+         *
+         * <p>If setting backendMaxConnections to some value other than 0 then that value must be
+         * greater or equal to 256.
          *
          * <p>Example: {@code 300}
          *
@@ -246,9 +254,13 @@ public final class BackendSetDetails
 
     /**
      * The maximum number of simultaneous connections the load balancer can make to any backend in
-     * the backend set unless the backend has its own maxConnections setting. If this is not set
-     * then the number of simultaneous connections the load balancer can make to any backend in the
-     * backend set unless the backend has its own maxConnections setting is unlimited.
+     * the backend set unless the backend has its own maxConnections setting. If this is not set or
+     * set to 0 then the number of simultaneous connections the load balancer can make to any
+     * backend in the backend set unless the backend has its own maxConnections setting is
+     * unlimited.
+     *
+     * <p>If setting backendMaxConnections to some value other than 0 then that value must be
+     * greater or equal to 256.
      *
      * <p>Example: {@code 300}
      */
@@ -257,9 +269,13 @@ public final class BackendSetDetails
 
     /**
      * The maximum number of simultaneous connections the load balancer can make to any backend in
-     * the backend set unless the backend has its own maxConnections setting. If this is not set
-     * then the number of simultaneous connections the load balancer can make to any backend in the
-     * backend set unless the backend has its own maxConnections setting is unlimited.
+     * the backend set unless the backend has its own maxConnections setting. If this is not set or
+     * set to 0 then the number of simultaneous connections the load balancer can make to any
+     * backend in the backend set unless the backend has its own maxConnections setting is
+     * unlimited.
+     *
+     * <p>If setting backendMaxConnections to some value other than 0 then that value must be
+     * greater or equal to 256.
      *
      * <p>Example: {@code 300}
      *
