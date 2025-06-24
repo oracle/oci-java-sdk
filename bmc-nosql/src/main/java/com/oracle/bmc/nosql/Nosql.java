@@ -98,7 +98,7 @@ public interface Nosql extends AutoCloseable {
     CreateIndexResponse createIndex(CreateIndexRequest request);
 
     /**
-     * Add a replica for this table
+     * Add a replica for this table. The table's schema must be frozen prior to this operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -202,6 +202,24 @@ public interface Nosql extends AutoCloseable {
      *     API.
      */
     DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request);
+
+    /**
+     * Retrieves the current service-level configuration. The service may of the standard
+     * MULTI_TENANCY type, or of the HOSTED environment type. In the latter case, information about
+     * the current state of the environment's global encryption key is included in the response.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/nosql/GetConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfiguration
+     *     API.
+     */
+    GetConfigurationResponse getConfiguration(GetConfigurationRequest request);
 
     /**
      * Get information about a single index.
@@ -402,6 +420,39 @@ public interface Nosql extends AutoCloseable {
      *     API.
      */
     SummarizeStatementResponse summarizeStatement(SummarizeStatementRequest request);
+
+    /**
+     * Removes the global encryption key, if such exists, from a Hosted Environment, reverting to
+     * Oracle-managed encryption.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/nosql/UnassignKmsKeyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnassignKmsKey API.
+     */
+    UnassignKmsKeyResponse unassignKmsKey(UnassignKmsKeyRequest request);
+
+    /**
+     * Updates the service-level configuration. The discriminator value
+     * `UpdateConfigurationDetails.environment` must match the service's environment type.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/nosql/UpdateConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfiguration
+     *     API.
+     */
+    UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request);
 
     /**
      * Write a single row into the table.

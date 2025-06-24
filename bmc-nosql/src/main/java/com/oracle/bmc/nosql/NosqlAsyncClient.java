@@ -396,6 +396,36 @@ public class NosqlAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     }
 
     @Override
+    public java.util.concurrent.Future<GetConfigurationResponse> getConfiguration(
+            GetConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetConfigurationRequest, GetConfigurationResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetConfigurationResponse::builder)
+                .logger(LOG, "getConfiguration")
+                .serviceDetails(
+                        "Nosql",
+                        "GetConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Configuration/GetConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConfigurationRequest::builder)
+                .basePath("/20190828")
+                .appendPathParam("configuration")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.nosql.model.Configuration.class,
+                        GetConfigurationResponse.Builder::configuration)
+                .handleResponseHeaderString("etag", GetConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConfigurationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIndexResponse> getIndex(
             GetIndexRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetIndexRequest, GetIndexResponse>
@@ -834,6 +864,73 @@ public class NosqlAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                         SummarizeStatementResponse.Builder::statementSummary)
                 .handleResponseHeaderString(
                         "opc-request-id", SummarizeStatementResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnassignKmsKeyResponse> unassignKmsKey(
+            UnassignKmsKeyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UnassignKmsKeyRequest, UnassignKmsKeyResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, UnassignKmsKeyResponse::builder)
+                .logger(LOG, "unassignKmsKey")
+                .serviceDetails(
+                        "Nosql",
+                        "UnassignKmsKey",
+                        "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Configuration/UnassignKmsKey")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UnassignKmsKeyRequest::builder)
+                .basePath("/20190828")
+                .appendPathParam("configuration")
+                .appendPathParam("actions")
+                .appendPathParam("unassignkmskey")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("is-opc-dry-run", request.getIsOpcDryRun())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UnassignKmsKeyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UnassignKmsKeyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigurationResponse> updateConfiguration(
+            UpdateConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConfigurationRequest, UpdateConfigurationResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getUpdateConfigurationDetails(), "updateConfigurationDetails is required");
+
+        return clientCall(request, UpdateConfigurationResponse::builder)
+                .logger(LOG, "updateConfiguration")
+                .serviceDetails(
+                        "Nosql",
+                        "UpdateConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Configuration/UpdateConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateConfigurationRequest::builder)
+                .basePath("/20190828")
+                .appendPathParam("configuration")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("is-opc-dry-run", request.getIsOpcDryRun())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateConfigurationResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

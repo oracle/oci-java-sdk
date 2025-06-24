@@ -24,7 +24,10 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdatePatchFsuCycle.class,
-            name = "PATCH")
+            name = "PATCH"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateUpgradeFsuCycle.class,
+            name = "UPGRADE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

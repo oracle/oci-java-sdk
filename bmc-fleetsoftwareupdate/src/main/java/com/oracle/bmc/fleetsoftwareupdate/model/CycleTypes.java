@@ -8,6 +8,7 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 public enum CycleTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Patch("PATCH"),
+    Upgrade("UPGRADE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

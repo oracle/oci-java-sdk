@@ -272,6 +272,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         CreateTable("CREATE_TABLE"),
         UpdateTable("UPDATE_TABLE"),
         DeleteTable("DELETE_TABLE"),
+        UpdateConfiguration("UPDATE_CONFIGURATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
