@@ -34,6 +34,7 @@ public final class AutonomousDatabaseSoftwareImage
         "releaseUpdate",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "autonomousDsiOneOffPatches",
         "imageShapeFamily",
         "dstFileVersion"
@@ -49,6 +50,7 @@ public final class AutonomousDatabaseSoftwareImage
             String releaseUpdate,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<String> autonomousDsiOneOffPatches,
             ImageShapeFamily imageShapeFamily,
             String dstFileVersion) {
@@ -63,6 +65,7 @@ public final class AutonomousDatabaseSoftwareImage
         this.releaseUpdate = releaseUpdate;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.autonomousDsiOneOffPatches = autonomousDsiOneOffPatches;
         this.imageShapeFamily = imageShapeFamily;
         this.dstFileVersion = dstFileVersion;
@@ -251,6 +254,27 @@ public final class AutonomousDatabaseSoftwareImage
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** One-off patches included in the Autonomous Database Software Image */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDsiOneOffPatches")
         private java.util.List<String> autonomousDsiOneOffPatches;
@@ -314,6 +338,7 @@ public final class AutonomousDatabaseSoftwareImage
                             this.releaseUpdate,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.autonomousDsiOneOffPatches,
                             this.imageShapeFamily,
                             this.dstFileVersion);
@@ -354,6 +379,9 @@ public final class AutonomousDatabaseSoftwareImage
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("autonomousDsiOneOffPatches")) {
                 this.autonomousDsiOneOffPatches(model.getAutonomousDsiOneOffPatches());
@@ -586,6 +614,25 @@ public final class AutonomousDatabaseSoftwareImage
         return definedTags;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /** One-off patches included in the Autonomous Database Software Image */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDsiOneOffPatches")
     private final java.util.List<String> autonomousDsiOneOffPatches;
@@ -696,6 +743,7 @@ public final class AutonomousDatabaseSoftwareImage
         sb.append(", releaseUpdate=").append(String.valueOf(this.releaseUpdate));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", autonomousDsiOneOffPatches=")
                 .append(String.valueOf(this.autonomousDsiOneOffPatches));
         sb.append(", imageShapeFamily=").append(String.valueOf(this.imageShapeFamily));
@@ -724,6 +772,7 @@ public final class AutonomousDatabaseSoftwareImage
                 && java.util.Objects.equals(this.releaseUpdate, other.releaseUpdate)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.autonomousDsiOneOffPatches, other.autonomousDsiOneOffPatches)
                 && java.util.Objects.equals(this.imageShapeFamily, other.imageShapeFamily)
@@ -755,6 +804,7 @@ public final class AutonomousDatabaseSoftwareImage
                         + (this.releaseUpdate == null ? 43 : this.releaseUpdate.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.autonomousDsiOneOffPatches == null

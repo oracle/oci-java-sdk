@@ -28,6 +28,7 @@ public final class ExternalContainerDatabaseSummary
         "compartmentId",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "displayName",
         "id",
         "lifecycleDetails",
@@ -49,6 +50,7 @@ public final class ExternalContainerDatabaseSummary
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String displayName,
             String id,
             String lifecycleDetails,
@@ -69,6 +71,7 @@ public final class ExternalContainerDatabaseSummary
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.displayName = displayName;
         this.id = id;
         this.lifecycleDetails = lifecycleDetails;
@@ -153,6 +156,27 @@ public final class ExternalContainerDatabaseSummary
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
         /**
@@ -413,6 +437,7 @@ public final class ExternalContainerDatabaseSummary
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.displayName,
                             this.id,
                             this.lifecycleDetails,
@@ -445,6 +470,9 @@ public final class ExternalContainerDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -564,6 +592,25 @@ public final class ExternalContainerDatabaseSummary
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     /** The user-friendly name for the external database. The name does not have to be unique. */
@@ -945,6 +992,7 @@ public final class ExternalContainerDatabaseSummary
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -979,6 +1027,7 @@ public final class ExternalContainerDatabaseSummary
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -1008,6 +1057,7 @@ public final class ExternalContainerDatabaseSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =

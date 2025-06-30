@@ -61,6 +61,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "pointInTimeRecoveryDetails",
         "databaseManagement",
         "secureConnections",
+        "encryptData",
         "databaseMode",
         "accessMode",
         "customerContacts",
@@ -106,6 +107,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             PointInTimeRecoveryDetails pointInTimeRecoveryDetails,
             DatabaseManagementStatus databaseManagement,
             SecureConnectionDetails secureConnections,
+            EncryptDataDetails encryptData,
             DatabaseMode databaseMode,
             AccessMode accessMode,
             java.util.List<CustomerContact> customerContacts,
@@ -150,6 +152,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.encryptData = encryptData;
         this.databaseMode = databaseMode;
         this.accessMode = accessMode;
         this.customerContacts = customerContacts;
@@ -767,6 +770,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("secureConnections");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
+            return this;
+        }
         /**
          * The database mode indicating the types of statements that are allowed to run in the the
          * DB system. This mode applies only to statements run by user connections. Replicated write
@@ -901,6 +913,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.pointInTimeRecoveryDetails,
                             this.databaseManagement,
                             this.secureConnections,
+                            this.encryptData,
                             this.databaseMode,
                             this.accessMode,
                             this.customerContacts,
@@ -1029,6 +1042,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
+            }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
             }
             if (model.wasPropertyExplicitlySet("databaseMode")) {
                 this.databaseMode(model.getDatabaseMode());
@@ -1635,6 +1651,13 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return secureConnections;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
+    }
+
     /**
      * The database mode indicating the types of statements that are allowed to run in the the DB
      * system. This mode applies only to statements run by user connections. Replicated write
@@ -1874,6 +1897,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 .append(String.valueOf(this.pointInTimeRecoveryDetails));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
         sb.append(", accessMode=").append(String.valueOf(this.accessMode));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
@@ -1933,6 +1957,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                         this.pointInTimeRecoveryDetails, other.pointInTimeRecoveryDetails)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && java.util.Objects.equals(this.databaseMode, other.databaseMode)
                 && java.util.Objects.equals(this.accessMode, other.accessMode)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
@@ -2025,6 +2050,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
         result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
         result =

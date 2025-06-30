@@ -49,6 +49,7 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
         "availabilityDomain",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "dataCollectionOptions",
         "giSoftwareImageId",
         "fileSystemConfigurationDetails",
@@ -86,6 +87,7 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
             String availabilityDomain,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             DataCollectionOptions dataCollectionOptions,
             String giSoftwareImageId,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
@@ -122,6 +124,7 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
         this.availabilityDomain = availabilityDomain;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.dataCollectionOptions = dataCollectionOptions;
         this.giSoftwareImageId = giSoftwareImageId;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
@@ -600,6 +603,27 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
         private DataCollectionOptions dataCollectionOptions;
@@ -764,6 +788,7 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
                             this.availabilityDomain,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.dataCollectionOptions,
                             this.giSoftwareImageId,
                             this.fileSystemConfigurationDetails,
@@ -860,6 +885,9 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
@@ -1402,6 +1430,25 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
         return definedTags;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
     private final DataCollectionOptions dataCollectionOptions;
 
@@ -1700,6 +1747,7 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
         sb.append(", fileSystemConfigurationDetails=")
@@ -1756,6 +1804,7 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
                 && java.util.Objects.equals(
@@ -1849,6 +1898,7 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataCollectionOptions == null

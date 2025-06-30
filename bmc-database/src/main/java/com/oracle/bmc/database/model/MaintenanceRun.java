@@ -53,6 +53,7 @@ public final class MaintenanceRun
         "estimatedPatchingTime",
         "currentPatchingComponent",
         "estimatedComponentPatchingStartTime",
+        "systemTags",
         "isMaintenanceRunGranular",
         "totalTimeTakenInMins",
         "databaseSoftwareImageId"
@@ -88,6 +89,7 @@ public final class MaintenanceRun
             EstimatedPatchingTime estimatedPatchingTime,
             String currentPatchingComponent,
             java.util.Date estimatedComponentPatchingStartTime,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isMaintenanceRunGranular,
             Integer totalTimeTakenInMins,
             String databaseSoftwareImageId) {
@@ -122,6 +124,7 @@ public final class MaintenanceRun
         this.estimatedPatchingTime = estimatedPatchingTime;
         this.currentPatchingComponent = currentPatchingComponent;
         this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
+        this.systemTags = systemTags;
         this.isMaintenanceRunGranular = isMaintenanceRunGranular;
         this.totalTimeTakenInMins = totalTimeTakenInMins;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
@@ -626,6 +629,27 @@ public final class MaintenanceRun
             this.__explicitlySet__.add("estimatedComponentPatchingStartTime");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** If {@code FALSE}, the maintenance run doesn't support granular maintenance. */
         @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
         private Boolean isMaintenanceRunGranular;
@@ -712,6 +736,7 @@ public final class MaintenanceRun
                             this.estimatedPatchingTime,
                             this.currentPatchingComponent,
                             this.estimatedComponentPatchingStartTime,
+                            this.systemTags,
                             this.isMaintenanceRunGranular,
                             this.totalTimeTakenInMins,
                             this.databaseSoftwareImageId);
@@ -813,6 +838,9 @@ public final class MaintenanceRun
             if (model.wasPropertyExplicitlySet("estimatedComponentPatchingStartTime")) {
                 this.estimatedComponentPatchingStartTime(
                         model.getEstimatedComponentPatchingStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("isMaintenanceRunGranular")) {
                 this.isMaintenanceRunGranular(model.getIsMaintenanceRunGranular());
@@ -1580,6 +1608,25 @@ public final class MaintenanceRun
         return estimatedComponentPatchingStartTime;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /** If {@code FALSE}, the maintenance run doesn't support granular maintenance. */
     @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
     private final Boolean isMaintenanceRunGranular;
@@ -1674,6 +1721,7 @@ public final class MaintenanceRun
                 .append(String.valueOf(this.currentPatchingComponent));
         sb.append(", estimatedComponentPatchingStartTime=")
                 .append(String.valueOf(this.estimatedComponentPatchingStartTime));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isMaintenanceRunGranular=")
                 .append(String.valueOf(this.isMaintenanceRunGranular));
         sb.append(", totalTimeTakenInMins=").append(String.valueOf(this.totalTimeTakenInMins));
@@ -1732,6 +1780,7 @@ public final class MaintenanceRun
                 && java.util.Objects.equals(
                         this.estimatedComponentPatchingStartTime,
                         other.estimatedComponentPatchingStartTime)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.isMaintenanceRunGranular, other.isMaintenanceRunGranular)
                 && java.util.Objects.equals(this.totalTimeTakenInMins, other.totalTimeTakenInMins)
@@ -1846,6 +1895,7 @@ public final class MaintenanceRun
                         + (this.estimatedComponentPatchingStartTime == null
                                 ? 43
                                 : this.estimatedComponentPatchingStartTime.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.isMaintenanceRunGranular == null

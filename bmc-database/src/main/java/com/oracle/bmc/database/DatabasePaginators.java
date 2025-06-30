@@ -8421,6 +8421,128 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listResourcePoolMembers operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListResourcePoolMembersResponse> listResourcePoolMembersResponseIterator(
+            final ListResourcePoolMembersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListResourcePoolMembersRequest.Builder,
+                ListResourcePoolMembersRequest,
+                ListResourcePoolMembersResponse>(
+                new java.util.function.Supplier<ListResourcePoolMembersRequest.Builder>() {
+                    @Override
+                    public ListResourcePoolMembersRequest.Builder get() {
+                        return ListResourcePoolMembersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListResourcePoolMembersResponse, String>() {
+                    @Override
+                    public String apply(ListResourcePoolMembersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourcePoolMembersRequest.Builder>,
+                        ListResourcePoolMembersRequest>() {
+                    @Override
+                    public ListResourcePoolMembersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourcePoolMembersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourcePoolMembersRequest, ListResourcePoolMembersResponse>() {
+                    @Override
+                    public ListResourcePoolMembersResponse apply(
+                            ListResourcePoolMembersRequest request) {
+                        return client.listResourcePoolMembers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.ResourcePoolMemberSummary} objects contained in responses from
+     * the listResourcePoolMembers operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.ResourcePoolMemberSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ResourcePoolMemberSummary>
+            listResourcePoolMembersRecordIterator(final ListResourcePoolMembersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListResourcePoolMembersRequest.Builder,
+                ListResourcePoolMembersRequest,
+                ListResourcePoolMembersResponse,
+                com.oracle.bmc.database.model.ResourcePoolMemberSummary>(
+                new java.util.function.Supplier<ListResourcePoolMembersRequest.Builder>() {
+                    @Override
+                    public ListResourcePoolMembersRequest.Builder get() {
+                        return ListResourcePoolMembersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListResourcePoolMembersResponse, String>() {
+                    @Override
+                    public String apply(ListResourcePoolMembersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourcePoolMembersRequest.Builder>,
+                        ListResourcePoolMembersRequest>() {
+                    @Override
+                    public ListResourcePoolMembersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourcePoolMembersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourcePoolMembersRequest, ListResourcePoolMembersResponse>() {
+                    @Override
+                    public ListResourcePoolMembersResponse apply(
+                            ListResourcePoolMembersRequest request) {
+                        return client.listResourcePoolMembers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourcePoolMembersResponse,
+                        java.util.List<com.oracle.bmc.database.model.ResourcePoolMemberSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.ResourcePoolMemberSummary>
+                            apply(ListResourcePoolMembersResponse response) {
+                        return response.getResourcePoolMemberCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listScheduledActions operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

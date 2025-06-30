@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.67.3</version>
+  <version>3.68.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -40,6 +40,7 @@
     <apache-httpcomponents.version>4.5.13</apache-httpcomponents.version>
     <apache-httpcomponents.httpclient.version>4.5.13</apache-httpcomponents.httpclient.version>
     <apache-httpcomponents.httpcore.version>4.4.13</apache-httpcomponents.httpcore.version>
+    <common-codec>1.18.0</common-codec>
     <junit.version>4.13.2</junit.version>
     <slf4j.version>1.7.33</slf4j.version>
     <javax.annotation.version>1.3.2</javax.annotation.version>
@@ -597,6 +598,11 @@
         <version>${apache-httpcomponents.httpclient.version}</version>
       </dependency>
       <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>${common-codec}</version>
+      </dependency>
+      <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>${junit.version}</version>
@@ -812,5 +818,6 @@
     <module>bmc-distributeddatabase</module>
     <module>bmc-apiaccesscontrol</module>
     <module>bmc-wlms</module>
+    <module>bmc-dbmulticloud</module>
   </modules>
 </project>

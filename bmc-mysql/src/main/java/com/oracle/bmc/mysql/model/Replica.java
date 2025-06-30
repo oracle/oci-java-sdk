@@ -23,6 +23,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
     @Deprecated
     @java.beans.ConstructorProperties({
         "secureConnections",
+        "encryptData",
         "id",
         "dbSystemId",
         "compartmentId",
@@ -48,6 +49,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
     })
     public Replica(
             SecureConnectionDetails secureConnections,
+            EncryptDataDetails encryptData,
             String id,
             String dbSystemId,
             String compartmentId,
@@ -72,6 +74,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
             ReplicaOverrides replicaOverrides) {
         super();
         this.secureConnections = secureConnections;
+        this.encryptData = encryptData;
         this.id = id;
         this.dbSystemId = dbSystemId;
         this.compartmentId = compartmentId;
@@ -105,6 +108,15 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         public Builder secureConnections(SecureConnectionDetails secureConnections) {
             this.secureConnections = secureConnections;
             this.__explicitlySet__.add("secureConnections");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
             return this;
         }
         /** The OCID of the read replica. */
@@ -476,6 +488,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
             Replica model =
                     new Replica(
                             this.secureConnections,
+                            this.encryptData,
                             this.id,
                             this.dbSystemId,
                             this.compartmentId,
@@ -508,6 +521,9 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         public Builder copy(Replica model) {
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
+            }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
@@ -593,6 +609,13 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
 
     public SecureConnectionDetails getSecureConnections() {
         return secureConnections;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
     }
 
     /** The OCID of the read replica. */
@@ -979,6 +1002,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append("Replica(");
         sb.append("super=").append(super.toString());
         sb.append("secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -1016,6 +1040,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
 
         Replica other = (Replica) o;
         return java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -1048,6 +1073,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result =

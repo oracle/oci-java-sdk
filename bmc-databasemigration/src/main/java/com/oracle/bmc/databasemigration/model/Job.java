@@ -33,6 +33,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "lifecycleState",
         "lifecycleDetails",
         "parameterFileVersions",
+        "collectTracesData",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -49,6 +50,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             JobLifecycleStates lifecycleState,
             String lifecycleDetails,
             java.util.List<ParameterFileVersionSummary> parameterFileVersions,
+            CollectTracesData collectTracesData,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -64,6 +66,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.parameterFileVersions = parameterFileVersions;
+        this.collectTracesData = collectTracesData;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -236,6 +239,15 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("parameterFileVersions");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("collectTracesData")
+        private CollectTracesData collectTracesData;
+
+        public Builder collectTracesData(CollectTracesData collectTracesData) {
+            this.collectTracesData = collectTracesData;
+            this.__explicitlySet__.add("collectTracesData");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see Resource Tags. Example:
@@ -314,6 +326,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.parameterFileVersions,
+                            this.collectTracesData,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -357,6 +370,9 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("parameterFileVersions")) {
                 this.parameterFileVersions(model.getParameterFileVersions());
+            }
+            if (model.wasPropertyExplicitlySet("collectTracesData")) {
+                this.collectTracesData(model.getCollectTracesData());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -521,6 +537,13 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return parameterFileVersions;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("collectTracesData")
+    private final CollectTracesData collectTracesData;
+
+    public CollectTracesData getCollectTracesData() {
+        return collectTracesData;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see Resource Tags. Example: {"Department":
@@ -600,6 +623,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", parameterFileVersions=").append(String.valueOf(this.parameterFileVersions));
+        sb.append(", collectTracesData=").append(String.valueOf(this.collectTracesData));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -628,6 +652,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.parameterFileVersions, other.parameterFileVersions)
+                && java.util.Objects.equals(this.collectTracesData, other.collectTracesData)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -661,6 +686,9 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                         + (this.parameterFileVersions == null
                                 ? 43
                                 : this.parameterFileVersions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.collectTracesData == null ? 43 : this.collectTracesData.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

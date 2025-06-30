@@ -24,7 +24,7 @@ public final class AutoActivateStatus
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"state", "dataKey"})
-    public AutoActivateStatus(String state, DataKey dataKey) {
+    public AutoActivateStatus(State state, DataKey dataKey) {
         super();
         this.state = state;
         this.dataKey = dataKey;
@@ -37,7 +37,7 @@ public final class AutoActivateStatus
          * "OFF" auto-activate is set to false.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
-        private String state;
+        private State state;
 
         /**
          * State of autoactivation in this APM Domain. If "ON" auto-activate is set to true, if
@@ -46,7 +46,7 @@ public final class AutoActivateStatus
          * @param state the value to set
          * @return this builder
          */
-        public Builder state(String state) {
+        public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
@@ -103,8 +103,56 @@ public final class AutoActivateStatus
      * State of autoactivation in this APM Domain. If "ON" auto-activate is set to true, if "OFF"
      * auto-activate is set to false.
      */
+    public enum State implements com.oracle.bmc.http.internal.BmcEnum {
+        On("ON"),
+        Off("OFF"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(State.class);
+
+        private final String value;
+        private static java.util.Map<String, State> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (State v : State.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        State(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static State create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'State', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * State of autoactivation in this APM Domain. If "ON" auto-activate is set to true, if "OFF"
+     * auto-activate is set to false.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
-    private final String state;
+    private final State state;
 
     /**
      * State of autoactivation in this APM Domain. If "ON" auto-activate is set to true, if "OFF"
@@ -112,7 +160,7 @@ public final class AutoActivateStatus
      *
      * @return the value
      */
-    public String getState() {
+    public State getState() {
         return state;
     }
 

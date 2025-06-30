@@ -40,17 +40,17 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Include traces that have a {@code minTraceStartTime} equal to or greater than this value. */
+    /** Include traces that have a minTraceStartTime equal to or greater than this value. */
     private java.util.Date timeTraceStartedGreaterThanOrEqualTo;
 
-    /** Include traces that have a {@code minTraceStartTime} equal to or greater than this value. */
+    /** Include traces that have a minTraceStartTime equal to or greater than this value. */
     public java.util.Date getTimeTraceStartedGreaterThanOrEqualTo() {
         return timeTraceStartedGreaterThanOrEqualTo;
     }
-    /** Include traces that have a {@code minTraceStartTime} less than this value. */
+    /** Include traces that have a minTraceStartTime less than this value. */
     private java.util.Date timeTraceStartedLessThan;
 
-    /** Include traces that have a {@code minTraceStartTime} less than this value. */
+    /** Include traces that have a minTraceStartTime less than this value. */
     public java.util.Date getTimeTraceStartedLessThan() {
         return timeTraceStartedLessThan;
     }
@@ -147,13 +147,11 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /**
-         * Include traces that have a {@code minTraceStartTime} equal to or greater than this value.
-         */
+        /** Include traces that have a minTraceStartTime equal to or greater than this value. */
         private java.util.Date timeTraceStartedGreaterThanOrEqualTo = null;
 
         /**
-         * Include traces that have a {@code minTraceStartTime} equal to or greater than this value.
+         * Include traces that have a minTraceStartTime equal to or greater than this value.
          *
          * @param timeTraceStartedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -164,11 +162,11 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** Include traces that have a {@code minTraceStartTime} less than this value. */
+        /** Include traces that have a minTraceStartTime less than this value. */
         private java.util.Date timeTraceStartedLessThan = null;
 
         /**
-         * Include traces that have a {@code minTraceStartTime} less than this value.
+         * Include traces that have a minTraceStartTime less than this value.
          *
          * @param timeTraceStartedLessThan the value to set
          * @return this builder instance

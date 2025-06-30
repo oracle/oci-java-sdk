@@ -44,7 +44,8 @@ public final class CreateCloudAutonomousVmClusterDetails
         "nsgIds",
         "freeformTags",
         "definedTags",
-        "securityAttributes"
+        "securityAttributes",
+        "subscriptionId"
     })
     public CreateCloudAutonomousVmClusterDetails(
             String compartmentId,
@@ -67,7 +68,8 @@ public final class CreateCloudAutonomousVmClusterDetails
             java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            String subscriptionId) {
         super();
         this.compartmentId = compartmentId;
         this.description = description;
@@ -90,6 +92,7 @@ public final class CreateCloudAutonomousVmClusterDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.securityAttributes = securityAttributes;
+        this.subscriptionId = subscriptionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -505,6 +508,25 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("securityAttributes");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -532,7 +554,8 @@ public final class CreateCloudAutonomousVmClusterDetails
                             this.nsgIds,
                             this.freeformTags,
                             this.definedTags,
-                            this.securityAttributes);
+                            this.securityAttributes,
+                            this.subscriptionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -603,6 +626,9 @@ public final class CreateCloudAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             return this;
         }
@@ -1066,6 +1092,23 @@ public final class CreateCloudAutonomousVmClusterDetails
         return securityAttributes;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1107,6 +1150,7 @@ public final class CreateCloudAutonomousVmClusterDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -1149,6 +1193,7 @@ public final class CreateCloudAutonomousVmClusterDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && super.equals(other);
     }
 
@@ -1221,6 +1266,9 @@ public final class CreateCloudAutonomousVmClusterDetails
                         + (this.securityAttributes == null
                                 ? 43
                                 : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -414,6 +414,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Associate a Cloud Autonomous VM cluster with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCloudAutonomousVmClusterSubscriptionResponse>
+            changeCloudAutonomousVmClusterSubscription(
+                    ChangeCloudAutonomousVmClusterSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudAutonomousVmClusterSubscriptionRequest,
+                                    ChangeCloudAutonomousVmClusterSubscriptionResponse>
+                            handler);
+
+    /**
      * Moves a cloud Exadata infrastructure resource and its dependent resources to another
      * compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated
      * Exadata infrastructure only.For more information about moving resources to a different
@@ -5618,6 +5636,23 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous
+     * Database leader.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourcePoolMembersResponse> listResourcePoolMembers(
+            ListResourcePoolMembersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListResourcePoolMembersRequest, ListResourcePoolMembersResponse>
+                    handler);
+
+    /**
      * Lists the Scheduled Action resources in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -6001,6 +6036,22 @@ public interface DatabaseAsync extends AutoCloseable {
                                     RegisterAutonomousDatabaseDataSafeRequest,
                                     RegisterAutonomousDatabaseDataSafeResponse>
                             handler);
+
+    /**
+     * Install the PKCS11 driver for given keystore type
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RegisterCloudVmClusterPkcsResponse> registerCloudVmClusterPkcs(
+            RegisterCloudVmClusterPkcsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RegisterCloudVmClusterPkcsRequest, RegisterCloudVmClusterPkcsResponse>
+                    handler);
 
     /**
      * Reinstates a disabled standby Autonomous Container Database (ACD), identified by the
@@ -6810,6 +6861,23 @@ public interface DatabaseAsync extends AutoCloseable {
             TerminateDbSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             TerminateDbSystemRequest, TerminateDbSystemResponse>
+                    handler);
+
+    /**
+     * Uninstall the PKCS11 driver for given keystore type
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UnregisterCloudVmClusterPkcsResponse> unregisterCloudVmClusterPkcs(
+            UnregisterCloudVmClusterPkcsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UnregisterCloudVmClusterPkcsRequest,
+                            UnregisterCloudVmClusterPkcsResponse>
                     handler);
 
     /**

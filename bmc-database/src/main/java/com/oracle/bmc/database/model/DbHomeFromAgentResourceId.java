@@ -39,6 +39,7 @@ public final class DbHomeFromAgentResourceId
         "oneOffPatches",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "databaseSoftwareImageId",
         "isUnifiedAuditingEnabled"
     })
@@ -58,6 +59,7 @@ public final class DbHomeFromAgentResourceId
             java.util.List<String> oneOffPatches,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String databaseSoftwareImageId,
             Boolean isUnifiedAuditingEnabled) {
         super();
@@ -76,6 +78,7 @@ public final class DbHomeFromAgentResourceId
         this.oneOffPatches = oneOffPatches;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
         this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
     }
@@ -349,6 +352,27 @@ public final class DbHomeFromAgentResourceId
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The database software image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
@@ -404,6 +428,7 @@ public final class DbHomeFromAgentResourceId
                             this.oneOffPatches,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.databaseSoftwareImageId,
                             this.isUnifiedAuditingEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -458,6 +483,9 @@ public final class DbHomeFromAgentResourceId
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
@@ -751,6 +779,25 @@ public final class DbHomeFromAgentResourceId
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The database software image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
@@ -811,6 +858,7 @@ public final class DbHomeFromAgentResourceId
         sb.append(", oneOffPatches=").append(String.valueOf(this.oneOffPatches));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", isUnifiedAuditingEnabled=")
@@ -845,6 +893,7 @@ public final class DbHomeFromAgentResourceId
                 && java.util.Objects.equals(this.oneOffPatches, other.oneOffPatches)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(
@@ -885,6 +934,7 @@ public final class DbHomeFromAgentResourceId
                         + (this.oneOffPatches == null ? 43 : this.oneOffPatches.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseSoftwareImageId == null

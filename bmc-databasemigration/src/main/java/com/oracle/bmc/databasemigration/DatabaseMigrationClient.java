@@ -314,6 +314,41 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public CollectTracesResponse collectTraces(CollectTracesRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(
+                request.getCollectTracesDetails(), "collectTracesDetails is required");
+
+        return clientCall(request, CollectTracesResponse::builder)
+                .logger(LOG, "collectTraces")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "CollectTraces",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/CollectTraces")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CollectTracesRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("actions")
+                .appendPathParam("collectTraces")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.Job.class,
+                        CollectTracesResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id", CollectTracesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CollectTracesResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public ConnectionDiagnosticsResponse connectionDiagnostics(
             ConnectionDiagnosticsRequest request) {
 

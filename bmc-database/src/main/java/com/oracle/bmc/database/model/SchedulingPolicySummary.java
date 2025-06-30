@@ -35,7 +35,8 @@ public final class SchedulingPolicySummary
         "cadenceStartMonth",
         "timeNextWindowStarts",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public SchedulingPolicySummary(
             String id,
@@ -49,7 +50,8 @@ public final class SchedulingPolicySummary
             Month cadenceStartMonth,
             java.util.Date timeNextWindowStarts,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -63,6 +65,7 @@ public final class SchedulingPolicySummary
         this.timeNextWindowStarts = timeNextWindowStarts;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -282,6 +285,27 @@ public final class SchedulingPolicySummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -300,7 +324,8 @@ public final class SchedulingPolicySummary
                             this.cadenceStartMonth,
                             this.timeNextWindowStarts,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -344,6 +369,9 @@ public final class SchedulingPolicySummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -647,6 +675,25 @@ public final class SchedulingPolicySummary
         return definedTags;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -674,6 +721,7 @@ public final class SchedulingPolicySummary
         sb.append(", timeNextWindowStarts=").append(String.valueOf(this.timeNextWindowStarts));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -700,6 +748,7 @@ public final class SchedulingPolicySummary
                 && java.util.Objects.equals(this.timeNextWindowStarts, other.timeNextWindowStarts)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -731,6 +780,7 @@ public final class SchedulingPolicySummary
                                 : this.timeNextWindowStarts.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -118,6 +118,43 @@ public class TraceClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     }
 
     @Override
+    public GetLogResponse getLog(GetLogRequest request) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Validate.notBlank(request.getLogKey(), "logKey must not be blank");
+        Objects.requireNonNull(
+                request.getTimeLogStartedGreaterThanOrEqualTo(),
+                "timeLogStartedGreaterThanOrEqualTo is required");
+
+        Objects.requireNonNull(
+                request.getTimeLogEndedLessThan(), "timeLogEndedLessThan is required");
+
+        return clientCall(request, GetLogResponse::builder)
+                .logger(LOG, "getLog")
+                .serviceDetails(
+                        "Trace",
+                        "GetLog",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Log/GetLog")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLogRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("logs")
+                .appendPathParam(request.getLogKey())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam(
+                        "timeLogStartedGreaterThanOrEqualTo",
+                        request.getTimeLogStartedGreaterThanOrEqualTo())
+                .appendQueryParam("timeLogEndedLessThan", request.getTimeLogEndedLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(com.oracle.bmc.apmtraces.model.Log.class, GetLogResponse.Builder::log)
+                .handleResponseHeaderString("opc-request-id", GetLogResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetLogResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public GetSpanResponse getSpan(GetSpanRequest request) {
         Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 

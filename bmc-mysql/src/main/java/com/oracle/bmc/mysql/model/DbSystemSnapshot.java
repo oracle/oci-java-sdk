@@ -52,6 +52,7 @@ public final class DbSystemSnapshot
         "crashRecovery",
         "databaseManagement",
         "secureConnections",
+        "encryptData",
         "region",
         "readEndpoint"
     })
@@ -85,6 +86,7 @@ public final class DbSystemSnapshot
             CrashRecoveryStatus crashRecovery,
             DatabaseManagementStatus databaseManagement,
             SecureConnectionDetails secureConnections,
+            EncryptDataDetails encryptData,
             String region,
             ReadEndpointDetails readEndpoint) {
         super();
@@ -117,6 +119,7 @@ public final class DbSystemSnapshot
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.encryptData = encryptData;
         this.region = region;
         this.readEndpoint = readEndpoint;
     }
@@ -565,6 +568,15 @@ public final class DbSystemSnapshot
             this.__explicitlySet__.add("secureConnections");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
+            return this;
+        }
         /**
          * The region identifier of the region where the DB system exists. For more information,
          * please see [Regions and Availability
@@ -631,6 +643,7 @@ public final class DbSystemSnapshot
                             this.crashRecovery,
                             this.databaseManagement,
                             this.secureConnections,
+                            this.encryptData,
                             this.region,
                             this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -727,6 +740,9 @@ public final class DbSystemSnapshot
             }
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
+            }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
             }
             if (model.wasPropertyExplicitlySet("region")) {
                 this.region(model.getRegion());
@@ -1130,6 +1146,13 @@ public final class DbSystemSnapshot
         return secureConnections;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
+    }
+
     /**
      * The region identifier of the region where the DB system exists. For more information, please
      * see [Regions and Availability
@@ -1200,6 +1223,7 @@ public final class DbSystemSnapshot
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
@@ -1245,6 +1269,7 @@ public final class DbSystemSnapshot
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
@@ -1311,6 +1336,7 @@ public final class DbSystemSnapshot
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
