@@ -50,12 +50,12 @@ public final class BulkUpdateAttributeDetail
             this.__explicitlySet__.add("attributeName");
             return this;
         }
-        /** Unit of the attribute to be updated. */
+        /** Unit of the attribute to be updated. If unit is not specified, it defaults to NONE. */
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
         /**
-         * Unit of the attribute to be updated.
+         * Unit of the attribute to be updated. If unit is not specified, it defaults to NONE.
          *
          * @param unit the value to set
          * @return this builder
@@ -131,7 +131,7 @@ public final class BulkUpdateAttributeDetail
         return attributeName;
     }
 
-    /** Unit of the attribute to be updated. */
+    /** Unit of the attribute to be updated. If unit is not specified, it defaults to NONE. */
     public enum Unit implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         EpochTimeMs("EPOCH_TIME_MS"),
@@ -169,12 +169,12 @@ public final class BulkUpdateAttributeDetail
             throw new IllegalArgumentException("Invalid Unit: " + key);
         }
     };
-    /** Unit of the attribute to be updated. */
+    /** Unit of the attribute to be updated. If unit is not specified, it defaults to NONE. */
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
     /**
-     * Unit of the attribute to be updated.
+     * Unit of the attribute to be updated. If unit is not specified, it defaults to NONE.
      *
      * @return the value
      */
@@ -186,6 +186,7 @@ public final class BulkUpdateAttributeDetail
     public enum AttributeNameSpace implements com.oracle.bmc.http.internal.BmcEnum {
         Traces("TRACES"),
         Synthetic("SYNTHETIC"),
+        Logs("LOGS"),
         ;
 
         private final String value;

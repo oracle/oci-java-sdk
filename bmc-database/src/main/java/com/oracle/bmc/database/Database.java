@@ -406,6 +406,23 @@ public interface Database extends AutoCloseable {
             ChangeCloudAutonomousVmClusterCompartmentRequest request);
 
     /**
+     * Associate a Cloud Autonomous VM cluster with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudAutonomousVmClusterSubscriptionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeCloudAutonomousVmClusterSubscription API.
+     */
+    ChangeCloudAutonomousVmClusterSubscriptionResponse changeCloudAutonomousVmClusterSubscription(
+            ChangeCloudAutonomousVmClusterSubscriptionRequest request);
+
+    /**
      * Moves a cloud Exadata infrastructure resource and its dependent resources to another
      * compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated
      * Exadata infrastructure only.For more information about moving resources to a different
@@ -5557,6 +5574,23 @@ public interface Database extends AutoCloseable {
             ListRecommendedScheduledActionsRequest request);
 
     /**
+     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous
+     * Database leader.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListResourcePoolMembersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListResourcePoolMembers API.
+     */
+    ListResourcePoolMembersResponse listResourcePoolMembers(ListResourcePoolMembersRequest request);
+
+    /**
      * Lists the Scheduled Action resources in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -5938,6 +5972,23 @@ public interface Database extends AutoCloseable {
      */
     RegisterAutonomousDatabaseDataSafeResponse registerAutonomousDatabaseDataSafe(
             RegisterAutonomousDatabaseDataSafeRequest request);
+
+    /**
+     * Install the PKCS11 driver for given keystore type
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RegisterCloudVmClusterPkcsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RegisterCloudVmClusterPkcs API.
+     */
+    RegisterCloudVmClusterPkcsResponse registerCloudVmClusterPkcs(
+            RegisterCloudVmClusterPkcsRequest request);
 
     /**
      * Reinstates a disabled standby Autonomous Container Database (ACD), identified by the
@@ -6741,6 +6792,23 @@ public interface Database extends AutoCloseable {
      *     API.
      */
     TerminateDbSystemResponse terminateDbSystem(TerminateDbSystemRequest request);
+
+    /**
+     * Uninstall the PKCS11 driver for given keystore type
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UnregisterCloudVmClusterPkcsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UnregisterCloudVmClusterPkcs API.
+     */
+    UnregisterCloudVmClusterPkcsResponse unregisterCloudVmClusterPkcs(
+            UnregisterCloudVmClusterPkcsRequest request);
 
     /**
      * Updates the properties of an Autonomous Container Database, such as display name, maintenance

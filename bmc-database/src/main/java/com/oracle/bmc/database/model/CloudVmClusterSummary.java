@@ -78,7 +78,9 @@ public final class CloudVmClusterSummary
         "fileSystemConfigurationDetails",
         "cloudAutomationUpdateDetails",
         "vmClusterType",
-        "computeModel"
+        "computeModel",
+        "multiCloudIdentityConnectorConfigs",
+        "tdeKeyStoreType"
     })
     public CloudVmClusterSummary(
             String id,
@@ -135,7 +137,9 @@ public final class CloudVmClusterSummary
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
             CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
             VmClusterType vmClusterType,
-            ComputeModel computeModel) {
+            ComputeModel computeModel,
+            java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs,
+            TdeKeyStoreType tdeKeyStoreType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -192,6 +196,8 @@ public final class CloudVmClusterSummary
         this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
         this.vmClusterType = vmClusterType;
         this.computeModel = computeModel;
+        this.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
+        this.tdeKeyStoreType = tdeKeyStoreType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1251,6 +1257,37 @@ public final class CloudVmClusterSummary
             this.__explicitlySet__.add("computeModel");
             return this;
         }
+        /** Details of the multi cloud identity connectors of the VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("multiCloudIdentityConnectorConfigs")
+        private java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs;
+
+        /**
+         * Details of the multi cloud identity connectors of the VM cluster.
+         *
+         * @param multiCloudIdentityConnectorConfigs the value to set
+         * @return this builder
+         */
+        public Builder multiCloudIdentityConnectorConfigs(
+                java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs) {
+            this.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
+            this.__explicitlySet__.add("multiCloudIdentityConnectorConfigs");
+            return this;
+        }
+        /** TDE keystore type */
+        @com.fasterxml.jackson.annotation.JsonProperty("tdeKeyStoreType")
+        private TdeKeyStoreType tdeKeyStoreType;
+
+        /**
+         * TDE keystore type
+         *
+         * @param tdeKeyStoreType the value to set
+         * @return this builder
+         */
+        public Builder tdeKeyStoreType(TdeKeyStoreType tdeKeyStoreType) {
+            this.tdeKeyStoreType = tdeKeyStoreType;
+            this.__explicitlySet__.add("tdeKeyStoreType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1312,7 +1349,9 @@ public final class CloudVmClusterSummary
                             this.fileSystemConfigurationDetails,
                             this.cloudAutomationUpdateDetails,
                             this.vmClusterType,
-                            this.computeModel);
+                            this.computeModel,
+                            this.multiCloudIdentityConnectorConfigs,
+                            this.tdeKeyStoreType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1485,6 +1524,13 @@ public final class CloudVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("multiCloudIdentityConnectorConfigs")) {
+                this.multiCloudIdentityConnectorConfigs(
+                        model.getMultiCloudIdentityConnectorConfigs());
+            }
+            if (model.wasPropertyExplicitlySet("tdeKeyStoreType")) {
+                this.tdeKeyStoreType(model.getTdeKeyStoreType());
             }
             return this;
         }
@@ -2672,6 +2718,78 @@ public final class CloudVmClusterSummary
         return computeModel;
     }
 
+    /** Details of the multi cloud identity connectors of the VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("multiCloudIdentityConnectorConfigs")
+    private final java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs;
+
+    /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<IdentityConnectorDetails> getMultiCloudIdentityConnectorConfigs() {
+        return multiCloudIdentityConnectorConfigs;
+    }
+
+    /** TDE keystore type */
+    public enum TdeKeyStoreType implements com.oracle.bmc.http.internal.BmcEnum {
+        Azure("AZURE"),
+        Oci("OCI"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TdeKeyStoreType.class);
+
+        private final String value;
+        private static java.util.Map<String, TdeKeyStoreType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TdeKeyStoreType v : TdeKeyStoreType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        TdeKeyStoreType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TdeKeyStoreType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TdeKeyStoreType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** TDE keystore type */
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeKeyStoreType")
+    private final TdeKeyStoreType tdeKeyStoreType;
+
+    /**
+     * TDE keystore type
+     *
+     * @return the value
+     */
+    public TdeKeyStoreType getTdeKeyStoreType() {
+        return tdeKeyStoreType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2747,6 +2865,9 @@ public final class CloudVmClusterSummary
                 .append(String.valueOf(this.cloudAutomationUpdateDetails));
         sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", multiCloudIdentityConnectorConfigs=")
+                .append(String.valueOf(this.multiCloudIdentityConnectorConfigs));
+        sb.append(", tdeKeyStoreType=").append(String.valueOf(this.tdeKeyStoreType));
         sb.append(")");
         return sb.toString();
     }
@@ -2823,6 +2944,10 @@ public final class CloudVmClusterSummary
                         this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
                 && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(
+                        this.multiCloudIdentityConnectorConfigs,
+                        other.multiCloudIdentityConnectorConfigs)
+                && java.util.Objects.equals(this.tdeKeyStoreType, other.tdeKeyStoreType)
                 && super.equals(other);
     }
 
@@ -2971,6 +3096,14 @@ public final class CloudVmClusterSummary
                 (result * PRIME)
                         + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multiCloudIdentityConnectorConfigs == null
+                                ? 43
+                                : this.multiCloudIdentityConnectorConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tdeKeyStoreType == null ? 43 : this.tdeKeyStoreType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

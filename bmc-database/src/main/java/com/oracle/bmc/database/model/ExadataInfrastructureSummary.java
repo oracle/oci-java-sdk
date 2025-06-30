@@ -76,6 +76,7 @@ public final class ExadataInfrastructureSummary
         "definedFileSystemConfigurations",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "isSchedulingPolicyAssociated",
         "exascaleConfig",
         "databaseServerType",
@@ -132,6 +133,7 @@ public final class ExadataInfrastructureSummary
             java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isSchedulingPolicyAssociated,
             ExascaleConfigDetails exascaleConfig,
             String databaseServerType,
@@ -187,6 +189,7 @@ public final class ExadataInfrastructureSummary
         this.definedFileSystemConfigurations = definedFileSystemConfigurations;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
         this.exascaleConfig = exascaleConfig;
         this.databaseServerType = databaseServerType;
@@ -1001,6 +1004,27 @@ public final class ExadataInfrastructureSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** If true, the infrastructure is using granular maintenance scheduling preference. */
         @com.fasterxml.jackson.annotation.JsonProperty("isSchedulingPolicyAssociated")
         private Boolean isSchedulingPolicyAssociated;
@@ -1134,6 +1158,7 @@ public final class ExadataInfrastructureSummary
                             this.definedFileSystemConfigurations,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.isSchedulingPolicyAssociated,
                             this.exascaleConfig,
                             this.databaseServerType,
@@ -1293,6 +1318,9 @@ public final class ExadataInfrastructureSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("isSchedulingPolicyAssociated")) {
                 this.isSchedulingPolicyAssociated(model.getIsSchedulingPolicyAssociated());
@@ -2182,6 +2210,25 @@ public final class ExadataInfrastructureSummary
         return definedTags;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /** If true, the infrastructure is using granular maintenance scheduling preference. */
     @com.fasterxml.jackson.annotation.JsonProperty("isSchedulingPolicyAssociated")
     private final Boolean isSchedulingPolicyAssociated;
@@ -2379,6 +2426,7 @@ public final class ExadataInfrastructureSummary
                 .append(String.valueOf(this.definedFileSystemConfigurations));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isSchedulingPolicyAssociated=")
                 .append(String.valueOf(this.isSchedulingPolicyAssociated));
         sb.append(", exascaleConfig=").append(String.valueOf(this.exascaleConfig));
@@ -2459,6 +2507,7 @@ public final class ExadataInfrastructureSummary
                         this.definedFileSystemConfigurations, other.definedFileSystemConfigurations)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.isSchedulingPolicyAssociated, other.isSchedulingPolicyAssociated)
                 && java.util.Objects.equals(this.exascaleConfig, other.exascaleConfig)
@@ -2625,6 +2674,7 @@ public final class ExadataInfrastructureSummary
                                 : this.definedFileSystemConfigurations.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.isSchedulingPolicyAssociated == null

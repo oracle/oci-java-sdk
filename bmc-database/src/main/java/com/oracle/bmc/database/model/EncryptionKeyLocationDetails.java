@@ -24,7 +24,10 @@ package com.oracle.bmc.database.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ExternalHsmEncryptionDetails.class,
-            name = "EXTERNAL")
+            name = "EXTERNAL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AzureEncryptionKeyDetails.class,
+            name = "AZURE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -76,9 +79,13 @@ public class EncryptionKeyLocationDetails
         return result;
     }
 
-    /** Use 'EXTERNAL' for creating a new database or migrate database key with External HSM. */
+    /**
+     * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM.
+     * Use 'AZURE' for creating a new database or migrating a database key to Azure.
+     */
     public enum ProviderType implements com.oracle.bmc.http.internal.BmcEnum {
         External("EXTERNAL"),
+        Azure("AZURE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

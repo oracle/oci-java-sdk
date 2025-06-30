@@ -53,6 +53,7 @@ public final class DatabaseSummary
         "dbBackupConfig",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "connectionStrings",
         "kmsKeyId",
         "kmsKeyVersionId",
@@ -88,6 +89,7 @@ public final class DatabaseSummary
             DbBackupConfig dbBackupConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             DatabaseConnectionStrings connectionStrings,
             String kmsKeyId,
             String kmsKeyVersionId,
@@ -122,6 +124,7 @@ public final class DatabaseSummary
         this.dbBackupConfig = dbBackupConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.connectionStrings = connectionStrings;
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
@@ -495,6 +498,27 @@ public final class DatabaseSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** The Connection strings used to connect to the Oracle Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
         private DatabaseConnectionStrings connectionStrings;
@@ -739,6 +763,7 @@ public final class DatabaseSummary
                             this.dbBackupConfig,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.connectionStrings,
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
@@ -819,6 +844,9 @@ public final class DatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("connectionStrings")) {
                 this.connectionStrings(model.getConnectionStrings());
@@ -1241,6 +1269,25 @@ public final class DatabaseSummary
         return definedTags;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /** The Connection strings used to connect to the Oracle Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
     private final DatabaseConnectionStrings connectionStrings;
@@ -1465,6 +1512,7 @@ public final class DatabaseSummary
         sb.append(", dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", connectionStrings=").append(String.valueOf(this.connectionStrings));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
@@ -1518,6 +1566,7 @@ public final class DatabaseSummary
                 && java.util.Objects.equals(this.dbBackupConfig, other.dbBackupConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.connectionStrings, other.connectionStrings)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
@@ -1585,6 +1634,7 @@ public final class DatabaseSummary
                         + (this.dbBackupConfig == null ? 43 : this.dbBackupConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.connectionStrings == null ? 43 : this.connectionStrings.hashCode());

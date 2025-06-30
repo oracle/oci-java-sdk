@@ -155,6 +155,7 @@ public final class BulkUpdateAttributeNotesDetail
     public enum AttributeNameSpace implements com.oracle.bmc.http.internal.BmcEnum {
         Traces("TRACES"),
         Synthetic("SYNTHETIC"),
+        Logs("LOGS"),
         ;
 
         private final String value;

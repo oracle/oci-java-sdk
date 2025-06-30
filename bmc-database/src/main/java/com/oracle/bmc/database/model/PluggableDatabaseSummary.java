@@ -44,6 +44,7 @@ public final class PluggableDatabaseSummary
         "compartmentId",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "pluggableDatabaseManagementConfig",
         "kmsKeyId",
         "kmsKeyVersionId",
@@ -63,6 +64,7 @@ public final class PluggableDatabaseSummary
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig,
             String kmsKeyId,
             String kmsKeyVersionId,
@@ -81,6 +83,7 @@ public final class PluggableDatabaseSummary
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.pluggableDatabaseManagementConfig = pluggableDatabaseManagementConfig;
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
@@ -317,6 +320,27 @@ public final class PluggableDatabaseSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabaseManagementConfig")
         private PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig;
@@ -420,6 +444,7 @@ public final class PluggableDatabaseSummary
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.pluggableDatabaseManagementConfig,
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
@@ -468,6 +493,9 @@ public final class PluggableDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("pluggableDatabaseManagementConfig")) {
                 this.pluggableDatabaseManagementConfig(
@@ -809,6 +837,25 @@ public final class PluggableDatabaseSummary
         return definedTags;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabaseManagementConfig")
     private final PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig;
 
@@ -907,6 +954,7 @@ public final class PluggableDatabaseSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", pluggableDatabaseManagementConfig=")
                 .append(String.valueOf(this.pluggableDatabaseManagementConfig));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
@@ -939,6 +987,7 @@ public final class PluggableDatabaseSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.pluggableDatabaseManagementConfig,
                         other.pluggableDatabaseManagementConfig)
@@ -978,6 +1027,7 @@ public final class PluggableDatabaseSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.pluggableDatabaseManagementConfig == null

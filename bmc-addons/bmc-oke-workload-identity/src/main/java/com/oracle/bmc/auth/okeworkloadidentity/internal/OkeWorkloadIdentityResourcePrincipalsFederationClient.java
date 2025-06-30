@@ -39,6 +39,10 @@ import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.util.internal.StringUtils;
 import org.slf4j.Logger;
+import com.oracle.bmc.util.internal.StringUtils;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class gets a security token from the auth service by signing the request with the provided
@@ -107,10 +111,39 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
                     time = securityTokenAdapter.getTokenValidDuration().dividedBy(2);
                 }
             }
-            return refreshAndGetSecurityTokenIfExpiringWithin(time);
+            String token = refreshAndGetSecurityTokenIfExpiringWithin(time);
+            logTokenInfo(token);
+            return token;
         } catch (Exception e) {
             LOG.info("Refresh RPST token failed, use cached RPST token.", e);
             return securityTokenAdapter.getSecurityToken();
+        }
+    }
+
+    private void logTokenInfo(String token) {
+        try {
+            if (StringUtils.isBlank(token) || token.split("\\.").length < 3) {
+                LOG.warn("Invalid token: null, empty, or incorrect format");
+                return;
+            }
+            String[] parts = token.split("\\.");
+            String payloadJson =
+                    new String(
+                            java.util.Base64.getUrlDecoder().decode(parts[1]),
+                            StandardCharsets.UTF_8);
+            Map<String, Object> payload = new ObjectMapper().readValue(payloadJson, Map.class);
+            Map<String, Object> logData = new HashMap<>();
+            logData.put("sub", payload.getOrDefault("sub", ""));
+            logData.put("res_id", payload.getOrDefault("res_id", ""));
+            logData.put("res_type", payload.getOrDefault("res_type", ""));
+            logData.put("ttype", payload.getOrDefault("ttype", ""));
+            logData.put("var_service_account", payload.getOrDefault("var_service_account", ""));
+            logData.put("var_namespace", payload.getOrDefault("var_namespace", ""));
+            logData.put("iat", payload.getOrDefault("iat", ""));
+            logData.put("exp", payload.getOrDefault("exp", ""));
+            LOG.info("RPST token details: {}", logData);
+        } catch (Exception e) {
+            LOG.warn("Failed to parse and log token", e);
         }
     }
 

@@ -62,6 +62,7 @@ public final class AutonomousVmClusterSummary
         "licenseModel",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "dbServers",
         "reclaimableCpus",
         "availableContainerDatabases",
@@ -114,6 +115,7 @@ public final class AutonomousVmClusterSummary
             LicenseModel licenseModel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<String> dbServers,
             Integer reclaimableCpus,
             Integer availableContainerDatabases,
@@ -166,6 +168,7 @@ public final class AutonomousVmClusterSummary
         this.licenseModel = licenseModel;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.dbServers = dbServers;
         this.reclaimableCpus = reclaimableCpus;
         this.availableContainerDatabases = availableContainerDatabases;
@@ -834,6 +837,27 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The list of
          * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
          * servers.
@@ -1083,6 +1107,7 @@ public final class AutonomousVmClusterSummary
                             this.licenseModel,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.dbServers,
                             this.reclaimableCpus,
                             this.availableContainerDatabases,
@@ -1219,6 +1244,9 @@ public final class AutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("dbServers")) {
                 this.dbServers(model.getDbServers());
@@ -1989,6 +2017,25 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * the Db servers.
      */
@@ -2227,6 +2274,7 @@ public final class AutonomousVmClusterSummary
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(", reclaimableCpus=").append(String.valueOf(this.reclaimableCpus));
         sb.append(", availableContainerDatabases=")
@@ -2311,6 +2359,7 @@ public final class AutonomousVmClusterSummary
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && java.util.Objects.equals(this.reclaimableCpus, other.reclaimableCpus)
                 && java.util.Objects.equals(
@@ -2466,6 +2515,7 @@ public final class AutonomousVmClusterSummary
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result =
                 (result * PRIME)

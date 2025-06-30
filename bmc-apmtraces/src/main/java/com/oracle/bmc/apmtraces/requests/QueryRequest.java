@@ -21,29 +21,41 @@ public class QueryRequest
     public String getApmDomainId() {
         return apmDomainId;
     }
-    /** Include spans that have a {@code spanStartTime} equal to or greater than this value. */
+    /**
+     * Include spans that have a {@code spanStartTime} equal to or greater than this value. Also,
+     * include logs and traces that have startTime greater than this value.
+     */
     private java.util.Date timeSpanStartedGreaterThanOrEqualTo;
 
-    /** Include spans that have a {@code spanStartTime} equal to or greater than this value. */
+    /**
+     * Include spans that have a {@code spanStartTime} equal to or greater than this value. Also,
+     * include logs and traces that have startTime greater than this value.
+     */
     public java.util.Date getTimeSpanStartedGreaterThanOrEqualTo() {
         return timeSpanStartedGreaterThanOrEqualTo;
     }
-    /** Include spans that have a {@code spanStartTime}less than this value. */
+    /**
+     * Include spans that have a {@code spanStartTime} less than this value. Also, include traces
+     * that have startTime less than this value and logs that have endTime less than this value.
+     */
     private java.util.Date timeSpanStartedLessThan;
 
-    /** Include spans that have a {@code spanStartTime}less than this value. */
+    /**
+     * Include spans that have a {@code spanStartTime} less than this value. Also, include traces
+     * that have startTime less than this value and logs that have endTime less than this value.
+     */
     public java.util.Date getTimeSpanStartedLessThan() {
         return timeSpanStartedLessThan;
     }
     /**
-     * Request body containing the query to be run against the trace data and to filter and retrieve
-     * trace data results.
+     * Request body containing the query to be run against the trace, span, services, background
+     * queries and other metric data and to filter and retrieve the results.
      */
     private com.oracle.bmc.apmtraces.model.QueryDetails queryDetails;
 
     /**
-     * Request body containing the query to be run against the trace data and to filter and retrieve
-     * trace data results.
+     * Request body containing the query to be run against the trace, span, services, background
+     * queries and other metric data and to filter and retrieve the results.
      */
     public com.oracle.bmc.apmtraces.model.QueryDetails getQueryDetails() {
         return queryDetails;
@@ -113,11 +125,15 @@ public class QueryRequest
             return this;
         }
 
-        /** Include spans that have a {@code spanStartTime} equal to or greater than this value. */
+        /**
+         * Include spans that have a {@code spanStartTime} equal to or greater than this value.
+         * Also, include logs and traces that have startTime greater than this value.
+         */
         private java.util.Date timeSpanStartedGreaterThanOrEqualTo = null;
 
         /**
          * Include spans that have a {@code spanStartTime} equal to or greater than this value.
+         * Also, include logs and traces that have startTime greater than this value.
          *
          * @param timeSpanStartedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -128,11 +144,17 @@ public class QueryRequest
             return this;
         }
 
-        /** Include spans that have a {@code spanStartTime}less than this value. */
+        /**
+         * Include spans that have a {@code spanStartTime} less than this value. Also, include
+         * traces that have startTime less than this value and logs that have endTime less than this
+         * value.
+         */
         private java.util.Date timeSpanStartedLessThan = null;
 
         /**
-         * Include spans that have a {@code spanStartTime}less than this value.
+         * Include spans that have a {@code spanStartTime} less than this value. Also, include
+         * traces that have startTime less than this value and logs that have endTime less than this
+         * value.
          *
          * @param timeSpanStartedLessThan the value to set
          * @return this builder instance
@@ -143,14 +165,14 @@ public class QueryRequest
         }
 
         /**
-         * Request body containing the query to be run against the trace data and to filter and
-         * retrieve trace data results.
+         * Request body containing the query to be run against the trace, span, services, background
+         * queries and other metric data and to filter and retrieve the results.
          */
         private com.oracle.bmc.apmtraces.model.QueryDetails queryDetails = null;
 
         /**
-         * Request body containing the query to be run against the trace data and to filter and
-         * retrieve trace data results.
+         * Request body containing the query to be run against the trace, span, services, background
+         * queries and other metric data and to filter and retrieve the results.
          *
          * @param queryDetails the value to set
          * @return this builder instance

@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.68.0 - 2025-06-30
+### Added 
+- Support for the Database MultiCloud service 
+- Support for System Tags in the Database service 
+- Support for PKCS11 Library Integration for Azure Key Store in the Database service 
+- Support for changing subscription ID and the opc-dry-run parameter in the Database service 
+- Support for listing all members of an Elastic Resource Pool for a provided Elastic Resource Pool leader in the Database service 
+- Support for managing scheduled queries in the Application Performance Monitoring service 
+- Support for Bring Your Own Key (BYOK) in the MySQL Heatwave service 
+- Support for customer-initiated collection of diagnostic information in the Database Migration service    
+
+### Breaking Changes 
+- The type of field `state` has been changed from String to `State` enum in the models `AutoActivateToggleStatus` and `AutoActivateStatus` in the Application Performance Monitoring service
+
 ## 3.67.3 - 2025-06-24
 ### Added 
 - Support for database backups to Amazon S3 as default option for all databases running on Exa@AWS in the Database service 

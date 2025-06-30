@@ -4,7 +4,7 @@
     <parent>
         <artifactId>oci-java-sdk-addons</artifactId>
         <groupId>com.oracle.oci.sdk</groupId>
-        <version>3.67.3</version>
+        <version>3.68.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -38,25 +38,25 @@
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-common</artifactId>
-            <version>3.67.3</version>
+            <version>3.68.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-core</artifactId>
-            <version>3.67.3</version>
+            <version>3.68.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-identity</artifactId>
-            <version>3.67.3</version>
+            <version>3.68.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-keymanagement</artifactId>
-            <version>3.67.3</version>
+            <version>3.68.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -64,6 +64,11 @@
             <artifactId>hoverfly-java</artifactId>
             <version>0.11.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.databind.version}</version>
         </dependency>
     </dependencies>
 

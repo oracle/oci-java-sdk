@@ -81,7 +81,9 @@ public final class CloudAutonomousVmCluster
         "nonProvisionableAutonomousContainerDatabases",
         "exadataStorageInTBsLowestScaledValue",
         "ocpusLowestScaledValue",
-        "maxAcdsLowestScaledValue"
+        "maxAcdsLowestScaledValue",
+        "systemTags",
+        "subscriptionId"
     })
     public CloudAutonomousVmCluster(
             String id,
@@ -141,7 +143,9 @@ public final class CloudAutonomousVmCluster
             Integer nonProvisionableAutonomousContainerDatabases,
             Double exadataStorageInTBsLowestScaledValue,
             Integer ocpusLowestScaledValue,
-            Integer maxAcdsLowestScaledValue) {
+            Integer maxAcdsLowestScaledValue,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String subscriptionId) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -202,6 +206,8 @@ public final class CloudAutonomousVmCluster
         this.exadataStorageInTBsLowestScaledValue = exadataStorageInTBsLowestScaledValue;
         this.ocpusLowestScaledValue = ocpusLowestScaledValue;
         this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+        this.systemTags = systemTags;
+        this.subscriptionId = subscriptionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1251,6 +1257,46 @@ public final class CloudAutonomousVmCluster
             this.__explicitlySet__.add("maxAcdsLowestScaledValue");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1315,7 +1361,9 @@ public final class CloudAutonomousVmCluster
                             this.nonProvisionableAutonomousContainerDatabases,
                             this.exadataStorageInTBsLowestScaledValue,
                             this.ocpusLowestScaledValue,
-                            this.maxAcdsLowestScaledValue);
+                            this.maxAcdsLowestScaledValue,
+                            this.systemTags,
+                            this.subscriptionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1503,6 +1551,12 @@ public final class CloudAutonomousVmCluster
             }
             if (model.wasPropertyExplicitlySet("maxAcdsLowestScaledValue")) {
                 this.maxAcdsLowestScaledValue(model.getMaxAcdsLowestScaledValue());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             return this;
         }
@@ -2589,6 +2643,42 @@ public final class CloudAutonomousVmCluster
         return maxAcdsLowestScaledValue;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2678,6 +2768,8 @@ public final class CloudAutonomousVmCluster
         sb.append(", ocpusLowestScaledValue=").append(String.valueOf(this.ocpusLowestScaledValue));
         sb.append(", maxAcdsLowestScaledValue=")
                 .append(String.valueOf(this.maxAcdsLowestScaledValue));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -2776,6 +2868,8 @@ public final class CloudAutonomousVmCluster
                         this.ocpusLowestScaledValue, other.ocpusLowestScaledValue)
                 && java.util.Objects.equals(
                         this.maxAcdsLowestScaledValue, other.maxAcdsLowestScaledValue)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && super.equals(other);
     }
 
@@ -2973,6 +3067,10 @@ public final class CloudAutonomousVmCluster
                         + (this.maxAcdsLowestScaledValue == null
                                 ? 43
                                 : this.maxAcdsLowestScaledValue.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

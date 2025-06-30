@@ -85,12 +85,12 @@ public final class AttributeUpdateResponse
             this.__explicitlySet__.add("attributeType");
             return this;
         }
-        /** Unit updated for this attribute. */
+        /** Unit updated for this attribute. If unit is not specified, it defaults to NONE. */
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
         /**
-         * Unit updated for this attribute.
+         * Unit updated for this attribute. If unit is not specified, it defaults to NONE.
          *
          * @param unit the value to set
          * @return this builder
@@ -347,7 +347,7 @@ public final class AttributeUpdateResponse
         return attributeType;
     }
 
-    /** Unit updated for this attribute. */
+    /** Unit updated for this attribute. If unit is not specified, it defaults to NONE. */
     public enum Unit implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         EpochTimeMs("EPOCH_TIME_MS"),
@@ -396,12 +396,12 @@ public final class AttributeUpdateResponse
             return UnknownEnumValue;
         }
     };
-    /** Unit updated for this attribute. */
+    /** Unit updated for this attribute. If unit is not specified, it defaults to NONE. */
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
     /**
-     * Unit updated for this attribute.
+     * Unit updated for this attribute. If unit is not specified, it defaults to NONE.
      *
      * @return the value
      */

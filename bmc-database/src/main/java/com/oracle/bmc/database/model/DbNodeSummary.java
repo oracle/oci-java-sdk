@@ -51,6 +51,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         "additionalDetails",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "lifecycleDetails",
         "cpuCoreCount",
         "memorySizeInGBs",
@@ -80,6 +81,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
             String additionalDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String lifecycleDetails,
             Integer cpuCoreCount,
             Integer memorySizeInGBs,
@@ -108,6 +110,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         this.additionalDetails = additionalDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.lifecycleDetails = lifecycleDetails;
         this.cpuCoreCount = cpuCoreCount;
         this.memorySizeInGBs = memorySizeInGBs;
@@ -538,6 +541,27 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** Information about the current lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
@@ -660,6 +684,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.additionalDetails,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.lifecycleDetails,
                             this.cpuCoreCount,
                             this.memorySizeInGBs,
@@ -736,6 +761,9 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -1244,6 +1272,25 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         return definedTags;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /** Information about the current lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
@@ -1365,6 +1412,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
@@ -1409,6 +1457,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
@@ -1464,6 +1513,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
                         + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());

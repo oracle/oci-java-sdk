@@ -132,6 +132,45 @@ public class TraceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     }
 
     @Override
+    public java.util.concurrent.Future<GetLogResponse> getLog(
+            GetLogRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetLogRequest, GetLogResponse> handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Validate.notBlank(request.getLogKey(), "logKey must not be blank");
+        Objects.requireNonNull(
+                request.getTimeLogStartedGreaterThanOrEqualTo(),
+                "timeLogStartedGreaterThanOrEqualTo is required");
+
+        Objects.requireNonNull(
+                request.getTimeLogEndedLessThan(), "timeLogEndedLessThan is required");
+
+        return clientCall(request, GetLogResponse::builder)
+                .logger(LOG, "getLog")
+                .serviceDetails(
+                        "Trace",
+                        "GetLog",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Log/GetLog")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLogRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("logs")
+                .appendPathParam(request.getLogKey())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam(
+                        "timeLogStartedGreaterThanOrEqualTo",
+                        request.getTimeLogStartedGreaterThanOrEqualTo())
+                .appendQueryParam("timeLogEndedLessThan", request.getTimeLogEndedLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(com.oracle.bmc.apmtraces.model.Log.class, GetLogResponse.Builder::log)
+                .handleResponseHeaderString("opc-request-id", GetLogResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetLogResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSpanResponse> getSpan(
             GetSpanRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetSpanRequest, GetSpanResponse> handler) {

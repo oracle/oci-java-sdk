@@ -102,6 +102,7 @@ public final class DbSystemSummary
         "nextMaintenanceRunId",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "securityAttributes",
         "sourceDbSystemId",
         "pointInTimeDataDiskCloneTimestamp",
@@ -156,6 +157,7 @@ public final class DbSystemSummary
             String nextMaintenanceRunId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String sourceDbSystemId,
             java.util.Date pointInTimeDataDiskCloneTimestamp,
@@ -209,6 +211,7 @@ public final class DbSystemSummary
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.securityAttributes = securityAttributes;
         this.sourceDbSystemId = sourceDbSystemId;
         this.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
@@ -1152,6 +1155,27 @@ public final class DbSystemSummary
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
@@ -1278,6 +1302,7 @@ public final class DbSystemSummary
                             this.nextMaintenanceRunId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.securityAttributes,
                             this.sourceDbSystemId,
                             this.pointInTimeDataDiskCloneTimestamp,
@@ -1433,6 +1458,9 @@ public final class DbSystemSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
@@ -2538,6 +2566,25 @@ public final class DbSystemSummary
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
      * more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
@@ -2664,6 +2711,7 @@ public final class DbSystemSummary
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", sourceDbSystemId=").append(String.valueOf(this.sourceDbSystemId));
         sb.append(", pointInTimeDataDiskCloneTimestamp=")
@@ -2733,6 +2781,7 @@ public final class DbSystemSummary
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.sourceDbSystemId, other.sourceDbSystemId)
                 && java.util.Objects.equals(
@@ -2856,6 +2905,7 @@ public final class DbSystemSummary
                                 : this.nextMaintenanceRunId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.securityAttributes == null

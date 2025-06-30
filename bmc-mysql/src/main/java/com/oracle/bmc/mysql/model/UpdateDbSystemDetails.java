@@ -53,6 +53,7 @@ public final class UpdateDbSystemDetails
         "crashRecovery",
         "databaseManagement",
         "secureConnections",
+        "encryptData",
         "customerContacts",
         "readEndpoint"
     })
@@ -86,6 +87,7 @@ public final class UpdateDbSystemDetails
             CrashRecoveryStatus crashRecovery,
             DatabaseManagementStatus databaseManagement,
             SecureConnectionDetails secureConnections,
+            EncryptDataDetails encryptData,
             java.util.List<CustomerContact> customerContacts,
             UpdateReadEndpointDetails readEndpoint) {
         super();
@@ -118,6 +120,7 @@ public final class UpdateDbSystemDetails
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.encryptData = encryptData;
         this.customerContacts = customerContacts;
         this.readEndpoint = readEndpoint;
     }
@@ -664,6 +667,15 @@ public final class UpdateDbSystemDetails
             this.__explicitlySet__.add("secureConnections");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
+            return this;
+        }
         /**
          * The list of customer email addresses that receive information from Oracle about the
          * specified OCI DB System resource. Oracle uses these email addresses to send notifications
@@ -734,6 +746,7 @@ public final class UpdateDbSystemDetails
                             this.crashRecovery,
                             this.databaseManagement,
                             this.secureConnections,
+                            this.encryptData,
                             this.customerContacts,
                             this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -830,6 +843,9 @@ public final class UpdateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
+            }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
             }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
@@ -1331,6 +1347,13 @@ public final class UpdateDbSystemDetails
         return secureConnections;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
+    }
+
     /**
      * The list of customer email addresses that receive information from Oracle about the specified
      * OCI DB System resource. Oracle uses these email addresses to send notifications about planned
@@ -1405,6 +1428,7 @@ public final class UpdateDbSystemDetails
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
@@ -1450,6 +1474,7 @@ public final class UpdateDbSystemDetails
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
@@ -1516,6 +1541,7 @@ public final class UpdateDbSystemDetails
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());

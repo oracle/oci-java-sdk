@@ -28,20 +28,23 @@ public final class MaintenanceRunHistorySummary
         "maintenanceRunDetails",
         "dbServersHistoryDetails",
         "currentExecutionWindow",
-        "granularMaintenanceHistory"
+        "granularMaintenanceHistory",
+        "systemTags"
     })
     public MaintenanceRunHistorySummary(
             String id,
             MaintenanceRunSummary maintenanceRunDetails,
             java.util.List<DbServerHistorySummary> dbServersHistoryDetails,
             String currentExecutionWindow,
-            java.util.List<GranularMaintenanceHistoryDetails> granularMaintenanceHistory) {
+            java.util.List<GranularMaintenanceHistoryDetails> granularMaintenanceHistory,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.maintenanceRunDetails = maintenanceRunDetails;
         this.dbServersHistoryDetails = dbServersHistoryDetails;
         this.currentExecutionWindow = currentExecutionWindow;
         this.granularMaintenanceHistory = granularMaintenanceHistory;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -117,6 +120,27 @@ public final class MaintenanceRunHistorySummary
             this.__explicitlySet__.add("granularMaintenanceHistory");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -128,7 +152,8 @@ public final class MaintenanceRunHistorySummary
                             this.maintenanceRunDetails,
                             this.dbServersHistoryDetails,
                             this.currentExecutionWindow,
-                            this.granularMaintenanceHistory);
+                            this.granularMaintenanceHistory,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -151,6 +176,9 @@ public final class MaintenanceRunHistorySummary
             }
             if (model.wasPropertyExplicitlySet("granularMaintenanceHistory")) {
                 this.granularMaintenanceHistory(model.getGranularMaintenanceHistory());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -224,6 +252,25 @@ public final class MaintenanceRunHistorySummary
         return granularMaintenanceHistory;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -246,6 +293,7 @@ public final class MaintenanceRunHistorySummary
         sb.append(", currentExecutionWindow=").append(String.valueOf(this.currentExecutionWindow));
         sb.append(", granularMaintenanceHistory=")
                 .append(String.valueOf(this.granularMaintenanceHistory));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -268,6 +316,7 @@ public final class MaintenanceRunHistorySummary
                         this.currentExecutionWindow, other.currentExecutionWindow)
                 && java.util.Objects.equals(
                         this.granularMaintenanceHistory, other.granularMaintenanceHistory)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -296,6 +345,7 @@ public final class MaintenanceRunHistorySummary
                         + (this.granularMaintenanceHistory == null
                                 ? 43
                                 : this.granularMaintenanceHistory.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

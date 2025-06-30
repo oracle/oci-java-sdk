@@ -45,12 +45,12 @@ public final class TagMetadata extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("tagType");
             return this;
         }
-        /** Unit associated with the tag key. */
+        /** Unit associated with the tag key. If unit is not specified, it defaults to NONE. */
         @com.fasterxml.jackson.annotation.JsonProperty("tagUnit")
         private TagUnit tagUnit;
 
         /**
-         * Unit associated with the tag key.
+         * Unit associated with the tag key. If unit is not specified, it defaults to NONE.
          *
          * @param tagUnit the value to set
          * @return this builder
@@ -152,7 +152,7 @@ public final class TagMetadata extends com.oracle.bmc.http.client.internal.Expli
         return tagType;
     }
 
-    /** Unit associated with the tag key. */
+    /** Unit associated with the tag key. If unit is not specified, it defaults to NONE. */
     public enum TagUnit implements com.oracle.bmc.http.internal.BmcEnum {
         EpochTimeMs("EPOCH_TIME_MS"),
         Bytes("BYTES"),
@@ -203,12 +203,12 @@ public final class TagMetadata extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** Unit associated with the tag key. */
+    /** Unit associated with the tag key. If unit is not specified, it defaults to NONE. */
     @com.fasterxml.jackson.annotation.JsonProperty("tagUnit")
     private final TagUnit tagUnit;
 
     /**
-     * Unit associated with the tag key.
+     * Unit associated with the tag key. If unit is not specified, it defaults to NONE.
      *
      * @return the value
      */

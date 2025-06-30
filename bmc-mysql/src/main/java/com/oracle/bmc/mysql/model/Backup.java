@@ -51,7 +51,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         "systemTags",
         "immediateSourceBackupId",
         "originalSourceBackupId",
-        "timeCopyCreated"
+        "timeCopyCreated",
+        "encryptData"
     })
     public Backup(
             String id,
@@ -77,7 +78,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String immediateSourceBackupId,
             String originalSourceBackupId,
-            java.util.Date timeCopyCreated) {
+            java.util.Date timeCopyCreated,
+            EncryptDataDetails encryptData) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -103,6 +105,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         this.immediateSourceBackupId = immediateSourceBackupId;
         this.originalSourceBackupId = originalSourceBackupId;
         this.timeCopyCreated = timeCopyCreated;
+        this.encryptData = encryptData;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -491,6 +494,15 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -520,7 +532,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                             this.systemTags,
                             this.immediateSourceBackupId,
                             this.originalSourceBackupId,
-                            this.timeCopyCreated);
+                            this.timeCopyCreated,
+                            this.encryptData);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -600,6 +613,9 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("timeCopyCreated")) {
                 this.timeCopyCreated(model.getTimeCopyCreated());
+            }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
             }
             return this;
         }
@@ -1091,6 +1107,13 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return timeCopyCreated;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1131,6 +1154,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                 .append(String.valueOf(this.immediateSourceBackupId));
         sb.append(", originalSourceBackupId=").append(String.valueOf(this.originalSourceBackupId));
         sb.append(", timeCopyCreated=").append(String.valueOf(this.timeCopyCreated));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(")");
         return sb.toString();
     }
@@ -1171,6 +1195,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(
                         this.originalSourceBackupId, other.originalSourceBackupId)
                 && java.util.Objects.equals(this.timeCopyCreated, other.timeCopyCreated)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && super.equals(other);
     }
 
@@ -1228,6 +1253,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.timeCopyCreated == null ? 43 : this.timeCopyCreated.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

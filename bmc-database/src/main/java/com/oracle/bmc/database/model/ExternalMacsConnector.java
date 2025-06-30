@@ -57,6 +57,15 @@ public final class ExternalMacsConnector extends ExternalDatabaseConnector {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -178,6 +187,7 @@ public final class ExternalMacsConnector extends ExternalDatabaseConnector {
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.displayName,
                             this.id,
                             this.lifecycleState,
@@ -205,6 +215,9 @@ public final class ExternalMacsConnector extends ExternalDatabaseConnector {
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -257,6 +270,7 @@ public final class ExternalMacsConnector extends ExternalDatabaseConnector {
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String displayName,
             String id,
             LifecycleState lifecycleState,
@@ -272,6 +286,7 @@ public final class ExternalMacsConnector extends ExternalDatabaseConnector {
                 compartmentId,
                 freeformTags,
                 definedTags,
+                systemTags,
                 displayName,
                 id,
                 lifecycleState,

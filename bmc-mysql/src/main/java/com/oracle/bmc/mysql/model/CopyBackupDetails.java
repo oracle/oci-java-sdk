@@ -29,7 +29,8 @@ public final class CopyBackupDetails
         "displayName",
         "backupCopyRetentionInDays",
         "sourceBackupId",
-        "sourceRegion"
+        "sourceRegion",
+        "encryptData"
     })
     public CopyBackupDetails(
             String compartmentId,
@@ -37,7 +38,8 @@ public final class CopyBackupDetails
             String displayName,
             Integer backupCopyRetentionInDays,
             String sourceBackupId,
-            String sourceRegion) {
+            String sourceRegion,
+            EncryptDataDetails encryptData) {
         super();
         this.compartmentId = compartmentId;
         this.description = description;
@@ -45,6 +47,7 @@ public final class CopyBackupDetails
         this.backupCopyRetentionInDays = backupCopyRetentionInDays;
         this.sourceBackupId = sourceBackupId;
         this.sourceRegion = sourceRegion;
+        this.encryptData = encryptData;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -170,6 +173,15 @@ public final class CopyBackupDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -181,7 +193,8 @@ public final class CopyBackupDetails
                             this.displayName,
                             this.backupCopyRetentionInDays,
                             this.sourceBackupId,
-                            this.sourceRegion);
+                            this.sourceRegion,
+                            this.encryptData);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -207,6 +220,9 @@ public final class CopyBackupDetails
             }
             if (model.wasPropertyExplicitlySet("sourceRegion")) {
                 this.sourceRegion(model.getSourceRegion());
+            }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
             }
             return this;
         }
@@ -329,6 +345,13 @@ public final class CopyBackupDetails
         return sourceRegion;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -351,6 +374,7 @@ public final class CopyBackupDetails
                 .append(String.valueOf(this.backupCopyRetentionInDays));
         sb.append(", sourceBackupId=").append(String.valueOf(this.sourceBackupId));
         sb.append(", sourceRegion=").append(String.valueOf(this.sourceRegion));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(")");
         return sb.toString();
     }
@@ -372,6 +396,7 @@ public final class CopyBackupDetails
                         this.backupCopyRetentionInDays, other.backupCopyRetentionInDays)
                 && java.util.Objects.equals(this.sourceBackupId, other.sourceBackupId)
                 && java.util.Objects.equals(this.sourceRegion, other.sourceRegion)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && super.equals(other);
     }
 
@@ -393,6 +418,7 @@ public final class CopyBackupDetails
                 (result * PRIME)
                         + (this.sourceBackupId == null ? 43 : this.sourceBackupId.hashCode());
         result = (result * PRIME) + (this.sourceRegion == null ? 43 : this.sourceRegion.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
