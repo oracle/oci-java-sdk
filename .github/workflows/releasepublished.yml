@@ -177,9 +177,12 @@ jobs:
           rm start.xml
           curl --fail -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}"  'https://ossrh-staging-api.central.sonatype.com/manual/search/repositories?state=open' -o results.json
           cat results.json
+          cat results.json | jq --raw-output --arg SELECTOR "sdk-${{github.run_id}}-${{github.run_attempt}}" '.[][]
+          cat results.json | jq --raw-output --arg SELECTOR "sdk-${{github.run_id}}-${{github.run_attempt}}" '.[][] | select(.description == "${SELECTOR}").key'
           cat results.json | jq --raw-output --arg SELECTOR "sdk-${{github.run_id}}-${{github.run_attempt}}" '.[][] | select(.description == "${SELECTOR}").key' | jq -sRr '@uri'
           repository_namespace=$(cat results.json | jq --raw-output --arg SELECTOR "sdk-${{github.run_id}}-${{github.run_attempt}}" '.[][] | select(.description == "${SELECTOR}").key' | jq -sRr '@uri')
           echo $repository_namespace
+          rm results.json
           ls -lahn $WD
           cat $WD/finish.xml
           staging_dir=$(echo $(awk -F '[<>]' '/stagedRepositoryId/{print $3}' $WD/finish.xml))
