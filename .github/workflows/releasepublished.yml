@@ -139,12 +139,12 @@ jobs:
           mkdir unpacked
           cd unpacked
           unzip -q ../asset.zip
-          head CHANGELOG.md 
+          head CHANGELOG.md
       - name: GPG sign all Maven files
         run: |
           cd unpacked/maven
           # remove all files expect one artifact, and remove all empty folders temporary to avoid wasting time waiting for process to go over all artifacts
-          find . ! -name 'oci-java-sdk-3.68.0.pom' -type f -exec rm -f {} +
+          find . ! -name 'oci-java-sdk-3.67.3.pom' -type f -exec rm -f {} +
           find . -type d -empty -delete
           find . -type f -not -name \*.asc | xargs -n 1 -I % gpg --output %.asc --detach-sig %
       - name: Checksum all Maven files
