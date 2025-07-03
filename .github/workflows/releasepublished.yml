@@ -193,5 +193,5 @@ jobs:
           cp $WD/finish.xml finish.xml
           curl -X POST -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" https://ossrh-staging-api.central.sonatype.com/manual/upload/repository/${repository_namespace}?publishing_type=user_managed -o status.json
           cat status.json
-          portal_id=`cat status.json | jq --raw-output --arg SELECTOR $SELECTOR ".[][] | select(.description == \"$SELECTOR\").portal_deployment_id"`
+          portal_id=`cat status.json | jq --raw-output -j --arg SELECTOR $SELECTOR ".[][] | select(.description == \"$SELECTOR\").portal_deployment_id"`
           echo https://central.sonatype.com/api/v1/publisher/deployment/${portal_id}/download/
