@@ -59,8 +59,8 @@ jobs:
       - name: Check credentials
         run: |
           set -e
-          echo "Checking SonaType SONATYPE_BASIC_AUTH_CREDENTIALS"
-          curl --fail -X GET -H "Content-Type:application/xml" -u "${{ secrets.SONATYPE_BASIC_AUTH_CREDENTIALS }}" https://oss.sonatype.org/service/local/staging/profiles/b39883a429024e > /dev/null
+          echo "Checking SonaType PORTAL_ACCESS_TOKEN"
+          curl --fail -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" 'https://ossrh-staging-api.central.sonatype.com/manual/search/repositories?state=open'
           echo "Checking GitHub ACCESS_TOKEN"
           curl -f -H "Authorization: Bearer ${{ secrets.ACCESS_TOKEN }}" -H 'Accept: application/vnd.github.v3.raw' -s https://api.github.com/repos/$REPO > /dev/null
       - name: Configure GPG key
@@ -143,6 +143,9 @@ jobs:
       - name: GPG sign all Maven files
         run: |
           cd unpacked/maven
+          # remove all files expect one artifact, and remove all empty folders temporary to avoid wasting time waiting for process to go over all artifacts
+          find . ! -name 'oci-java-sdk-3.68.0.pom' -type f -exec rm -f {} +
+          find . -type d -empty -delete
           find . -type f -not -name \*.asc | xargs -n 1 -I % gpg --output %.asc --detach-sig %
       - name: Checksum all Maven files
         run: |
@@ -155,10 +158,11 @@ jobs:
           # Code mostly by mezzargh
           set -e
           WD=`pwd`
+          # we use the description field for cross identification between APIs (I could not find an alternative yet), so we can fetch correct repo for promotion.
           START_XML=$(cat << EOF
           <promoteRequest>
               <data>
-                  <description>Publish ${GITHUB_REPOSITORY} ${RELEASE} Artifacts</description>
+                  <description>sdk-${{github.run_id}}-${{github.run_attempt}}</description>
               </data>
           </promoteRequest>
           EOF
@@ -169,8 +173,13 @@ jobs:
           cd unpacked/maven/repository
           cp $WD/start.xml start.xml
           cat start.xml
-          curl --fail -v -X POST -d @start.xml -H "Content-Type:application/xml" -u "${{ secrets.SONATYPE_BASIC_AUTH_CREDENTIALS }}" https://oss.sonatype.org/service/local/staging/profiles/b39883a429024e/start -o $WD/finish.xml
+          curl --fail -v -X POST -d @start.xml -H "Content-Type:application/xml" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}"  https://oss.sonatype.org/service/local/staging/profiles/b39883a429024e/start -o $WD/finish.xml
           rm start.xml
+          curl --fail -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}"  'https://ossrh-staging-api.central.sonatype.com/manual/search/repositories?state=open' -o results.json
+          cat results.json
+          cat results.json | jq --raw-output --arg SELECTOR "sdk-${{github.run_id}}-${{github.run_attempt}}" '.[][] | select(.description == "${SELECTOR}").key' | jq -sRr '@uri'
+          repository_namespace=$(cat results.json | jq --raw-output --arg SELECTOR "sdk-${{github.run_id}}-${{github.run_attempt}}" '.[][] | select(.description == "${SELECTOR}").key' | jq -sRr '@uri')
+          echo $repository_namespace
           ls -lahn $WD
           cat $WD/finish.xml
           staging_dir=$(echo $(awk -F '[<>]' '/stagedRepositoryId/{print $3}' $WD/finish.xml))
@@ -179,8 +188,9 @@ jobs:
           ls -lahn $WD
           echo "Uploading $(wc -l $WD/artifacts.list | sed "s/^ *\([0-9]*\) .*$/\1/") artifacts"
           awk '{printf "%5d\t%s\n", NR, $0}' < $WD/artifacts.list
-          cat $WD/artifacts.list | xargs -n 1 -I {} curl --fail -u "${{ secrets.SONATYPE_BASIC_AUTH_CREDENTIALS }}" --upload-file {} https://oss.sonatype.org/service/local/staging/deployByRepositoryId/${staging_dir}/{}
+          cat $WD/artifacts.list | xargs -n 1 -I {} curl --fail -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" --upload-file {} https://oss.sonatype.org/service/local/staging/deployByRepositoryId/${staging_dir}/{}
           cp $WD/finish.xml finish.xml
-          cat finish.xml
-          curl --fail -X POST -d @finish.xml -H "Content-Type:application/xml" -u "${{ secrets.SONATYPE_BASIC_AUTH_CREDENTIALS }}" -H "Content-Type:application/xml" https://oss.sonatype.org/service/local/staging/profiles/b39883a429024e/finish
-          echo https://oss.sonatype.org/content/repositories/${staging_dir}
+          curl -X POST -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" https://ossrh-staging-api.central.sonatype.com/manual/upload/repository/${repository_namespace}?publishing_type=user_managed -o status.json
+          cat status.json
+          portal_id=$(cat status.json | jq --raw-output --arg SELECTOR "sdk-${{github.run_id}}-${{github.run_attempt}}" '.[][] | select(.description == "${SELECTOR}").portal_deployment_id')
+          echo https://central.sonatype.com/api/v1/publisher/deployment/${portal_id}/download/
