@@ -27,6 +27,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         "description",
         "compartmentId",
         "modelType",
+        "inferenceUnits",
         "modelVersion",
         "projectId",
         "timeCreated",
@@ -52,6 +53,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             String description,
             String compartmentId,
             Model.ModelType modelType,
+            Integer inferenceUnits,
             String modelVersion,
             String projectId,
             java.util.Date timeCreated,
@@ -76,6 +78,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         this.description = description;
         this.compartmentId = compartmentId;
         this.modelType = modelType;
+        this.inferenceUnits = inferenceUnits;
         this.modelVersion = modelVersion;
         this.projectId = projectId;
         this.timeCreated = timeCreated;
@@ -171,6 +174,21 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         public Builder modelType(Model.ModelType modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
+            return this;
+        }
+        /** Number of replicas required for this model. */
+        @com.fasterxml.jackson.annotation.JsonProperty("inferenceUnits")
+        private Integer inferenceUnits;
+
+        /**
+         * Number of replicas required for this model.
+         *
+         * @param inferenceUnits the value to set
+         * @return this builder
+         */
+        public Builder inferenceUnits(Integer inferenceUnits) {
+            this.inferenceUnits = inferenceUnits;
+            this.__explicitlySet__.add("inferenceUnits");
             return this;
         }
         /** The version of the model. */
@@ -462,6 +480,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.description,
                             this.compartmentId,
                             this.modelType,
+                            this.inferenceUnits,
                             this.modelVersion,
                             this.projectId,
                             this.timeCreated,
@@ -502,6 +521,9 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("modelType")) {
                 this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("inferenceUnits")) {
+                this.inferenceUnits(model.getInferenceUnits());
             }
             if (model.wasPropertyExplicitlySet("modelVersion")) {
                 this.modelVersion(model.getModelVersion());
@@ -633,6 +655,19 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
      */
     public Model.ModelType getModelType() {
         return modelType;
+    }
+
+    /** Number of replicas required for this model. */
+    @com.fasterxml.jackson.annotation.JsonProperty("inferenceUnits")
+    private final Integer inferenceUnits;
+
+    /**
+     * Number of replicas required for this model.
+     *
+     * @return the value
+     */
+    public Integer getInferenceUnits() {
+        return inferenceUnits;
     }
 
     /** The version of the model. */
@@ -895,6 +930,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", inferenceUnits=").append(String.valueOf(this.inferenceUnits));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", projectId=").append(String.valueOf(this.projectId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -932,6 +968,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.inferenceUnits, other.inferenceUnits)
                 && java.util.Objects.equals(this.modelVersion, other.modelVersion)
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -964,6 +1001,9 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inferenceUnits == null ? 43 : this.inferenceUnits.hashCode());
         result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());

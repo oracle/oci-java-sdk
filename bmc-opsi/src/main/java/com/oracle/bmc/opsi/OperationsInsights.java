@@ -213,6 +213,25 @@ public interface OperationsInsights extends AutoCloseable {
             ChangeHostInsightCompartmentRequest request);
 
     /**
+     * Change the connection details of a MACS-managed autonomous database insight. When provided,
+     * If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeMacsManagedAutonomousDatabaseInsightConnectionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeMacsManagedAutonomousDatabaseInsightConnection API.
+     */
+    ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse
+            changeMacsManagedAutonomousDatabaseInsightConnection(
+                    ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest request);
+
+    /**
      * Change the connection details of a Cloud MACS-managed database insight. When provided,
      * If-Match is checked against ETag values of the resource.
      *
@@ -3149,6 +3168,45 @@ public interface OperationsInsights extends AutoCloseable {
      */
     SummarizeSqlStatisticsTimeSeriesByPlanResponse summarizeSqlStatisticsTimeSeriesByPlan(
             SummarizeSqlStatisticsTimeSeriesByPlanRequest request);
+
+    /**
+     * Synchronize infrastructure details that has been missing when autonomous database onboarded
+     * in Operations Insights. Onboarded Opsi ExadataInsight resource need to be provided with
+     * compartmentId for searching infrastruture details. The query parameters, DatabaseId and
+     * DatabaseInsightId, are mutually exclusive and provided for searching Opsi resources that have
+     * been onboarded.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SynchronizeAutonomousDatabaseToExadataExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SynchronizeAutonomousDatabaseToExadata API.
+     */
+    SynchronizeAutonomousDatabaseToExadataResponse synchronizeAutonomousDatabaseToExadata(
+            SynchronizeAutonomousDatabaseToExadataRequest request);
+
+    /**
+     * Test the connection details of a MACS-managed autonomous database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/TestMacsManagedAutonomousDatabaseInsightConnectionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     TestMacsManagedAutonomousDatabaseInsightConnection API.
+     */
+    TestMacsManagedAutonomousDatabaseInsightConnectionResponse
+            testMacsManagedAutonomousDatabaseInsightConnection(
+                    TestMacsManagedAutonomousDatabaseInsightConnectionRequest request);
 
     /**
      * Test the connection details of a Cloud MACS-managed database.

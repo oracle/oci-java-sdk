@@ -38,17 +38,28 @@ package com.oracle.bmc.aidocument.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"text", "confidence", "boundingPolygon", "wordIndexes"})
+    @java.beans.ConstructorProperties({
+        "text",
+        "confidence",
+        "boundingPolygon",
+        "wordIndexes",
+        "normalizedValue",
+        "normalizedConfidence"
+    })
     protected FieldValue(
             String text,
             Float confidence,
             BoundingPolygon boundingPolygon,
-            java.util.List<Integer> wordIndexes) {
+            java.util.List<Integer> wordIndexes,
+            String normalizedValue,
+            Float normalizedConfidence) {
         super();
         this.text = text;
         this.confidence = confidence;
         this.boundingPolygon = boundingPolygon;
         this.wordIndexes = wordIndexes;
+        this.normalizedValue = normalizedValue;
+        this.normalizedConfidence = normalizedConfidence;
     }
 
     /** The detected text of a field. */
@@ -97,6 +108,32 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return wordIndexes;
     }
 
+    /** The normalized value. */
+    @com.fasterxml.jackson.annotation.JsonProperty("normalizedValue")
+    private final String normalizedValue;
+
+    /**
+     * The normalized value.
+     *
+     * @return the value
+     */
+    public String getNormalizedValue() {
+        return normalizedValue;
+    }
+
+    /** The normalized value confidence score between 0 and 1. */
+    @com.fasterxml.jackson.annotation.JsonProperty("normalizedConfidence")
+    private final Float normalizedConfidence;
+
+    /**
+     * The normalized value confidence score between 0 and 1.
+     *
+     * @return the value
+     */
+    public Float getNormalizedConfidence() {
+        return normalizedConfidence;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -116,6 +153,8 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(", boundingPolygon=").append(String.valueOf(this.boundingPolygon));
         sb.append(", wordIndexes=").append(String.valueOf(this.wordIndexes));
+        sb.append(", normalizedValue=").append(String.valueOf(this.normalizedValue));
+        sb.append(", normalizedConfidence=").append(String.valueOf(this.normalizedConfidence));
         sb.append(")");
         return sb.toString();
     }
@@ -134,6 +173,8 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && java.util.Objects.equals(this.boundingPolygon, other.boundingPolygon)
                 && java.util.Objects.equals(this.wordIndexes, other.wordIndexes)
+                && java.util.Objects.equals(this.normalizedValue, other.normalizedValue)
+                && java.util.Objects.equals(this.normalizedConfidence, other.normalizedConfidence)
                 && super.equals(other);
     }
 
@@ -147,6 +188,14 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 (result * PRIME)
                         + (this.boundingPolygon == null ? 43 : this.boundingPolygon.hashCode());
         result = (result * PRIME) + (this.wordIndexes == null ? 43 : this.wordIndexes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.normalizedValue == null ? 43 : this.normalizedValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.normalizedConfidence == null
+                                ? 43
+                                : this.normalizedConfidence.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

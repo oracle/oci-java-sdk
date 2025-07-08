@@ -453,6 +453,49 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse
+            changeMacsManagedAutonomousDatabaseInsightConnection(
+                    ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest request) {
+
+        Validate.notBlank(request.getDatabaseInsightId(), "databaseInsightId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMacsManagedAutonomousDatabaseInsightConnectionDetails(),
+                "changeMacsManagedAutonomousDatabaseInsightConnectionDetails is required");
+
+        return clientCall(
+                        request,
+                        ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse::builder)
+                .logger(LOG, "changeMacsManagedAutonomousDatabaseInsightConnection")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeMacsManagedAutonomousDatabaseInsightConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeMacsManagedAutonomousDatabaseInsightConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(
+                        ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam(request.getDatabaseInsightId())
+                .appendPathParam("actions")
+                .appendPathParam("changeMacsManagedAutonomousDatabaseInsightConnectionDetails")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse.Builder
+                                ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeMacsManagedCloudDatabaseInsightConnectionResponse
             changeMacsManagedCloudDatabaseInsightConnection(
                     ChangeMacsManagedCloudDatabaseInsightConnectionRequest request) {
@@ -4131,7 +4174,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .serviceDetails(
                         "OperationsInsights",
                         "ListNewsReports",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReport/ListNewsReports")
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/ListNewsReports")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNewsReportsRequest::builder)
                 .basePath("/20200630")
@@ -8397,6 +8440,86 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeSqlStatisticsTimeSeriesByPlanResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SynchronizeAutonomousDatabaseToExadataResponse synchronizeAutonomousDatabaseToExadata(
+            SynchronizeAutonomousDatabaseToExadataRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getSynchronizeAutonomousDatabaseToExadataDetails(),
+                "synchronizeAutonomousDatabaseToExadataDetails is required");
+
+        return clientCall(request, SynchronizeAutonomousDatabaseToExadataResponse::builder)
+                .logger(LOG, "synchronizeAutonomousDatabaseToExadata")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SynchronizeAutonomousDatabaseToExadata",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SynchronizeAutonomousDatabaseToExadata")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SynchronizeAutonomousDatabaseToExadataRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("synchronizeAutonomousDatabaseToExadata")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("exadataInsightId", request.getExadataInsightId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SynchronizeAutonomousDatabaseToExadataResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SynchronizeAutonomousDatabaseToExadataResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public TestMacsManagedAutonomousDatabaseInsightConnectionResponse
+            testMacsManagedAutonomousDatabaseInsightConnection(
+                    TestMacsManagedAutonomousDatabaseInsightConnectionRequest request) {
+        Objects.requireNonNull(
+                request.getTestMacsManagedAutonomousDatabaseInsightConnectionDetails(),
+                "testMacsManagedAutonomousDatabaseInsightConnectionDetails is required");
+
+        return clientCall(
+                        request,
+                        TestMacsManagedAutonomousDatabaseInsightConnectionResponse::builder)
+                .logger(LOG, "testMacsManagedAutonomousDatabaseInsightConnection")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "TestMacsManagedAutonomousDatabaseInsightConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/TestMacsManagedAutonomousDatabaseInsightConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestMacsManagedAutonomousDatabaseInsightConnectionRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("testMacsManagedAutonomousDatabaseInsightConnectionDetails")
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TestMacsManagedAutonomousDatabaseInsightConnectionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        TestMacsManagedAutonomousDatabaseInsightConnectionResponse.Builder
+                                ::opcRequestId)
                 .callSync();
     }
 

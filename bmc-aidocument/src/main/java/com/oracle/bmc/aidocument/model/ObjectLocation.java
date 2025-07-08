@@ -23,12 +23,17 @@ package com.oracle.bmc.aidocument.model;
 public final class ObjectLocation
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"namespaceName", "bucketName", "objectName"})
-    public ObjectLocation(String namespaceName, String bucketName, String objectName) {
+    @java.beans.ConstructorProperties({"namespaceName", "bucketName", "objectName", "pageRange"})
+    public ObjectLocation(
+            String namespaceName,
+            String bucketName,
+            String objectName,
+            java.util.List<String> pageRange) {
         super();
         this.namespaceName = namespaceName;
         this.bucketName = bucketName;
         this.objectName = objectName;
+        this.pageRange = pageRange;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -78,13 +83,29 @@ public final class ObjectLocation
             this.__explicitlySet__.add("objectName");
             return this;
         }
+        /** The page ranges to be analysed. */
+        @com.fasterxml.jackson.annotation.JsonProperty("pageRange")
+        private java.util.List<String> pageRange;
+
+        /**
+         * The page ranges to be analysed.
+         *
+         * @param pageRange the value to set
+         * @return this builder
+         */
+        public Builder pageRange(java.util.List<String> pageRange) {
+            this.pageRange = pageRange;
+            this.__explicitlySet__.add("pageRange");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectLocation build() {
             ObjectLocation model =
-                    new ObjectLocation(this.namespaceName, this.bucketName, this.objectName);
+                    new ObjectLocation(
+                            this.namespaceName, this.bucketName, this.objectName, this.pageRange);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -101,6 +122,9 @@ public final class ObjectLocation
             }
             if (model.wasPropertyExplicitlySet("objectName")) {
                 this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("pageRange")) {
+                this.pageRange(model.getPageRange());
             }
             return this;
         }
@@ -154,6 +178,19 @@ public final class ObjectLocation
         return objectName;
     }
 
+    /** The page ranges to be analysed. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pageRange")
+    private final java.util.List<String> pageRange;
+
+    /**
+     * The page ranges to be analysed.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getPageRange() {
+        return pageRange;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -172,6 +209,7 @@ public final class ObjectLocation
         sb.append("namespaceName=").append(String.valueOf(this.namespaceName));
         sb.append(", bucketName=").append(String.valueOf(this.bucketName));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", pageRange=").append(String.valueOf(this.pageRange));
         sb.append(")");
         return sb.toString();
     }
@@ -189,6 +227,7 @@ public final class ObjectLocation
         return java.util.Objects.equals(this.namespaceName, other.namespaceName)
                 && java.util.Objects.equals(this.bucketName, other.bucketName)
                 && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.pageRange, other.pageRange)
                 && super.equals(other);
     }
 
@@ -201,6 +240,7 @@ public final class ObjectLocation
                         + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
         result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.pageRange == null ? 43 : this.pageRange.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

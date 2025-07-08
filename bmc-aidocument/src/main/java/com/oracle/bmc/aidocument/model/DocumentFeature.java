@@ -23,6 +23,9 @@ package com.oracle.bmc.aidocument.model;
         defaultImpl = DocumentFeature.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DocumentElementsExtractionFeature.class,
+            name = "DOCUMENT_ELEMENTS_EXTRACTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DocumentClassificationFeature.class,
             name = "DOCUMENT_CLASSIFICATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -91,7 +94,8 @@ public class DocumentFeature extends com.oracle.bmc.http.client.internal.Explici
      * The type of document analysis requested. The allowed values are: - {@code
      * LANGUAGE_CLASSIFICATION}: Detect the language. - {@code TEXT_EXTRACTION}: Recognize text. -
      * {@code TABLE_EXTRACTION}: Detect and extract data in tables. - {@code KEY_VALUE_EXTRACTION}:
-     * Extract form fields. - {@code DOCUMENT_CLASSIFICATION}: Identify the type of document.
+     * Extract form fields. - {@code DOCUMENT_CLASSIFICATION}: Identify the type of document. -
+     * {@code DOCUMENT_ELEMENTS_EXTRACTION}: Extract information from bar code
      */
     public enum FeatureType implements com.oracle.bmc.http.internal.BmcEnum {
         LanguageClassification("LANGUAGE_CLASSIFICATION"),
@@ -99,6 +103,7 @@ public class DocumentFeature extends com.oracle.bmc.http.client.internal.Explici
         TableExtraction("TABLE_EXTRACTION"),
         KeyValueExtraction("KEY_VALUE_EXTRACTION"),
         DocumentClassification("DOCUMENT_CLASSIFICATION"),
+        DocumentElementsExtraction("DOCUMENT_ELEMENTS_EXTRACTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

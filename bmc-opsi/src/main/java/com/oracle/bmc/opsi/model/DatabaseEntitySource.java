@@ -15,6 +15,7 @@ public enum DatabaseEntitySource implements com.oracle.bmc.http.internal.BmcEnum
     MdsMysqlDatabaseSystem("MDS_MYSQL_DATABASE_SYSTEM"),
     ExternalMysqlDatabaseSystem("EXTERNAL_MYSQL_DATABASE_SYSTEM"),
     MacsManagedCloudDatabase("MACS_MANAGED_CLOUD_DATABASE"),
+    MacsManagedAutonomousDatabase("MACS_MANAGED_AUTONOMOUS_DATABASE"),
     ;
 
     private final String value;

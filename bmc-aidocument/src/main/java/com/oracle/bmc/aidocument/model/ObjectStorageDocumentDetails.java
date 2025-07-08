@@ -72,6 +72,21 @@ public final class ObjectStorageDocumentDetails extends DocumentDetails {
             this.__explicitlySet__.add("objectName");
             return this;
         }
+        /** The page ranges to be analysed. */
+        @com.fasterxml.jackson.annotation.JsonProperty("pageRange")
+        private java.util.List<String> pageRange;
+
+        /**
+         * The page ranges to be analysed.
+         *
+         * @param pageRange the value to set
+         * @return this builder
+         */
+        public Builder pageRange(java.util.List<String> pageRange) {
+            this.pageRange = pageRange;
+            this.__explicitlySet__.add("pageRange");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -79,7 +94,7 @@ public final class ObjectStorageDocumentDetails extends DocumentDetails {
         public ObjectStorageDocumentDetails build() {
             ObjectStorageDocumentDetails model =
                     new ObjectStorageDocumentDetails(
-                            this.namespaceName, this.bucketName, this.objectName);
+                            this.namespaceName, this.bucketName, this.objectName, this.pageRange);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -97,6 +112,9 @@ public final class ObjectStorageDocumentDetails extends DocumentDetails {
             if (model.wasPropertyExplicitlySet("objectName")) {
                 this.objectName(model.getObjectName());
             }
+            if (model.wasPropertyExplicitlySet("pageRange")) {
+                this.pageRange(model.getPageRange());
+            }
             return this;
         }
     }
@@ -112,11 +130,15 @@ public final class ObjectStorageDocumentDetails extends DocumentDetails {
 
     @Deprecated
     public ObjectStorageDocumentDetails(
-            String namespaceName, String bucketName, String objectName) {
+            String namespaceName,
+            String bucketName,
+            String objectName,
+            java.util.List<String> pageRange) {
         super();
         this.namespaceName = namespaceName;
         this.bucketName = bucketName;
         this.objectName = objectName;
+        this.pageRange = pageRange;
     }
 
     /** The Object Storage namespace. */
@@ -158,6 +180,19 @@ public final class ObjectStorageDocumentDetails extends DocumentDetails {
         return objectName;
     }
 
+    /** The page ranges to be analysed. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pageRange")
+    private final java.util.List<String> pageRange;
+
+    /**
+     * The page ranges to be analysed.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getPageRange() {
+        return pageRange;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -176,6 +211,7 @@ public final class ObjectStorageDocumentDetails extends DocumentDetails {
         sb.append(", namespaceName=").append(String.valueOf(this.namespaceName));
         sb.append(", bucketName=").append(String.valueOf(this.bucketName));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", pageRange=").append(String.valueOf(this.pageRange));
         sb.append(")");
         return sb.toString();
     }
@@ -193,6 +229,7 @@ public final class ObjectStorageDocumentDetails extends DocumentDetails {
         return java.util.Objects.equals(this.namespaceName, other.namespaceName)
                 && java.util.Objects.equals(this.bucketName, other.bucketName)
                 && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.pageRange, other.pageRange)
                 && super.equals(other);
     }
 
@@ -205,6 +242,7 @@ public final class ObjectStorageDocumentDetails extends DocumentDetails {
                         + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
         result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.pageRange == null ? 43 : this.pageRange.hashCode());
         return result;
     }
 }

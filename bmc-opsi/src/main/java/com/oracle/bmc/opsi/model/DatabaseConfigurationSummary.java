@@ -26,6 +26,9 @@ package com.oracle.bmc.opsi.model;
             value = EmManagedExternalDatabaseConfigurationSummary.class,
             name = "EM_MANAGED_EXTERNAL_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsManagedAutonomousDatabaseConfigurationSummary.class,
+            name = "MACS_MANAGED_AUTONOMOUS_DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ExternalMysqlDatabaseConfigurationSummary.class,
             name = "EXTERNAL_MYSQL_DATABASE_SYSTEM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

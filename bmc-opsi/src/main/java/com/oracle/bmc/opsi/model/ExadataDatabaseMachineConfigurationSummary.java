@@ -198,6 +198,40 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
             this.__explicitlySet__.add("enterpriseManagerEntityType");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("parentId")
+        private String parentId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
+         *
+         * @param parentId the value to set
+         * @return this builder
+         */
+        public Builder parentId(String parentId) {
+            this.parentId = parentId;
+            this.__explicitlySet__.add("parentId");
+            return this;
+        }
+        /** The region the resource resides in. */
+        @com.fasterxml.jackson.annotation.JsonProperty("region")
+        private String region;
+
+        /**
+         * The region the resource resides in.
+         *
+         * @param region the value to set
+         * @return this builder
+         */
+        public Builder region(String region) {
+            this.region = region;
+            this.__explicitlySet__.add("region");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -219,7 +253,9 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
                             this.enterpriseManagerEntityIdentifier,
                             this.enterpriseManagerConsoleUrl,
                             this.enterpriseManagerOmsVer,
-                            this.enterpriseManagerEntityType);
+                            this.enterpriseManagerEntityType,
+                            this.parentId,
+                            this.region);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -274,6 +310,12 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
             if (model.wasPropertyExplicitlySet("enterpriseManagerEntityType")) {
                 this.enterpriseManagerEntityType(model.getEnterpriseManagerEntityType());
             }
+            if (model.wasPropertyExplicitlySet("parentId")) {
+                this.parentId(model.getParentId());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
             return this;
         }
     }
@@ -303,7 +345,9 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
             String enterpriseManagerEntityIdentifier,
             String enterpriseManagerConsoleUrl,
             String enterpriseManagerOmsVer,
-            String enterpriseManagerEntityType) {
+            String enterpriseManagerEntityType,
+            String parentId,
+            String region) {
         super(
                 exadataInsightId,
                 compartmentId,
@@ -320,6 +364,8 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
         this.enterpriseManagerConsoleUrl = enterpriseManagerConsoleUrl;
         this.enterpriseManagerOmsVer = enterpriseManagerOmsVer;
         this.enterpriseManagerEntityType = enterpriseManagerEntityType;
+        this.parentId = parentId;
+        this.region = region;
     }
 
     /** Enterprise Manager Unique Identifier */
@@ -400,6 +446,36 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
         return enterpriseManagerEntityType;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("parentId")
+    private final String parentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
+     *
+     * @return the value
+     */
+    public String getParentId() {
+        return parentId;
+    }
+
+    /** The region the resource resides in. */
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
+    private final String region;
+
+    /**
+     * The region the resource resides in.
+     *
+     * @return the value
+     */
+    public String getRegion() {
+        return region;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -427,6 +503,8 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
                 .append(String.valueOf(this.enterpriseManagerOmsVer));
         sb.append(", enterpriseManagerEntityType=")
                 .append(String.valueOf(this.enterpriseManagerEntityType));
+        sb.append(", parentId=").append(String.valueOf(this.parentId));
+        sb.append(", region=").append(String.valueOf(this.region));
         sb.append(")");
         return sb.toString();
     }
@@ -455,6 +533,8 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
                         this.enterpriseManagerOmsVer, other.enterpriseManagerOmsVer)
                 && java.util.Objects.equals(
                         this.enterpriseManagerEntityType, other.enterpriseManagerEntityType)
+                && java.util.Objects.equals(this.parentId, other.parentId)
+                && java.util.Objects.equals(this.region, other.region)
                 && super.equals(other);
     }
 
@@ -492,6 +572,8 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
                         + (this.enterpriseManagerEntityType == null
                                 ? 43
                                 : this.enterpriseManagerEntityType.hashCode());
+        result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         return result;
     }
 }

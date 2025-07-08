@@ -23,6 +23,9 @@ package com.oracle.bmc.aidocument.model;
         defaultImpl = ProcessorConfig.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = InvoiceProcessorConfig.class,
+            name = "INVOICE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GeneralProcessorConfig.class,
             name = "GENERAL")
 })

@@ -23,11 +23,26 @@ package com.oracle.bmc.aidocument.model;
         defaultImpl = ModelMetrics.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedDocumentElementsExtractionModelDetails.class,
+            name = "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DocumentClassificationModelMetrics.class,
             name = "DOCUMENT_CLASSIFICATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PretrainedDocumentClassificationModelDetails.class,
+            name = "PRE_TRAINED_DOCUMENT_CLASSIFICATION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PretrainedTableExtractionModelDetails.class,
+            name = "PRE_TRAINED_TABLE_EXTRACTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = KeyValueDetectionModelMetrics.class,
-            name = "KEY_VALUE_EXTRACTION")
+            name = "KEY_VALUE_EXTRACTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PretrainedKeyValueExtractionModelDetails.class,
+            name = "PRE_TRAINED_KEY_VALUE_EXTRACTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PretrainedTextExtractionModelDetails.class,
+            name = "PRE_TRAINED_TEXT_EXTRACTION")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -95,6 +110,11 @@ public class ModelMetrics extends com.oracle.bmc.http.client.internal.Explicitly
     public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         KeyValueExtraction("KEY_VALUE_EXTRACTION"),
         DocumentClassification("DOCUMENT_CLASSIFICATION"),
+        PreTrainedTextExtraction("PRE_TRAINED_TEXT_EXTRACTION"),
+        PreTrainedTableExtraction("PRE_TRAINED_TABLE_EXTRACTION"),
+        PreTrainedKeyValueExtraction("PRE_TRAINED_KEY_VALUE_EXTRACTION"),
+        PreTrainedDocumentClassification("PRE_TRAINED_DOCUMENT_CLASSIFICATION"),
+        PreTrainedDocumentElementsExtraction("PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

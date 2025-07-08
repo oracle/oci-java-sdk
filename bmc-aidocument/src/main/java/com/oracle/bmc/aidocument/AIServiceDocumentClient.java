@@ -515,6 +515,35 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public GetModelTypeResponse getModelType(GetModelTypeRequest request) {
+
+        Validate.notBlank(request.getModelType(), "modelType must not be blank");
+
+        return clientCall(request, GetModelTypeResponse::builder)
+                .logger(LOG, "getModelType")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "GetModelType",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ModelTypeInfo/GetModelType")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelTypeRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("modelTypes")
+                .appendPathParam(request.getModelType())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("modelSubType", request.getModelSubType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.ModelTypeInfo.class,
+                        GetModelTypeResponse.Builder::modelTypeInfo)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetProcessorJobResponse getProcessorJob(GetProcessorJobRequest request) {
 
         Validate.notBlank(request.getProcessorJobId(), "processorJobId must not be blank");

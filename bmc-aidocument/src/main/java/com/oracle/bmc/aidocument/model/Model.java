@@ -27,11 +27,14 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "description",
         "compartmentId",
         "modelType",
+        "modelSubType",
+        "inferenceUnits",
         "tenancyId",
         "aliasName",
         "labels",
         "isQuickMode",
         "maxTrainingTimeInHours",
+        "language",
         "trainedTimeInHours",
         "trainingDataset",
         "testingDataset",
@@ -56,11 +59,14 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             String description,
             String compartmentId,
             ModelType modelType,
+            ModelSubType modelSubType,
+            Integer inferenceUnits,
             String tenancyId,
             String aliasName,
             java.util.List<String> labels,
             Boolean isQuickMode,
             Double maxTrainingTimeInHours,
+            String language,
             Double trainedTimeInHours,
             Dataset trainingDataset,
             Dataset testingDataset,
@@ -84,11 +90,14 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.description = description;
         this.compartmentId = compartmentId;
         this.modelType = modelType;
+        this.modelSubType = modelSubType;
+        this.inferenceUnits = inferenceUnits;
         this.tenancyId = tenancyId;
         this.aliasName = aliasName;
         this.labels = labels;
         this.isQuickMode = isQuickMode;
         this.maxTrainingTimeInHours = maxTrainingTimeInHours;
+        this.language = language;
         this.trainedTimeInHours = trainedTimeInHours;
         this.trainingDataset = trainingDataset;
         this.testingDataset = testingDataset;
@@ -185,6 +194,40 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("modelType");
             return this;
         }
+        /**
+         * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION,
+         * PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("modelSubType")
+        private ModelSubType modelSubType;
+
+        /**
+         * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION,
+         * PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+         *
+         * @param modelSubType the value to set
+         * @return this builder
+         */
+        public Builder modelSubType(ModelSubType modelSubType) {
+            this.modelSubType = modelSubType;
+            this.__explicitlySet__.add("modelSubType");
+            return this;
+        }
+        /** Number of replicas required for this model. */
+        @com.fasterxml.jackson.annotation.JsonProperty("inferenceUnits")
+        private Integer inferenceUnits;
+
+        /**
+         * Number of replicas required for this model.
+         *
+         * @param inferenceUnits the value to set
+         * @return this builder
+         */
+        public Builder inferenceUnits(Integer inferenceUnits) {
+            this.inferenceUnits = inferenceUnits;
+            this.__explicitlySet__.add("inferenceUnits");
+            return this;
+        }
         /** The tenancy id of the model. */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
@@ -262,6 +305,21 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         public Builder maxTrainingTimeInHours(Double maxTrainingTimeInHours) {
             this.maxTrainingTimeInHours = maxTrainingTimeInHours;
             this.__explicitlySet__.add("maxTrainingTimeInHours");
+            return this;
+        }
+        /** The document language for model training, abbreviated according to the BCP 47 syntax. */
+        @com.fasterxml.jackson.annotation.JsonProperty("language")
+        private String language;
+
+        /**
+         * The document language for model training, abbreviated according to the BCP 47 syntax.
+         *
+         * @param language the value to set
+         * @return this builder
+         */
+        public Builder language(String language) {
+            this.language = language;
+            this.__explicitlySet__.add("language");
             return this;
         }
         /** The total hours actually used for model training. */
@@ -532,11 +590,14 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.description,
                             this.compartmentId,
                             this.modelType,
+                            this.modelSubType,
+                            this.inferenceUnits,
                             this.tenancyId,
                             this.aliasName,
                             this.labels,
                             this.isQuickMode,
                             this.maxTrainingTimeInHours,
+                            this.language,
                             this.trainedTimeInHours,
                             this.trainingDataset,
                             this.testingDataset,
@@ -577,6 +638,12 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             if (model.wasPropertyExplicitlySet("modelType")) {
                 this.modelType(model.getModelType());
             }
+            if (model.wasPropertyExplicitlySet("modelSubType")) {
+                this.modelSubType(model.getModelSubType());
+            }
+            if (model.wasPropertyExplicitlySet("inferenceUnits")) {
+                this.inferenceUnits(model.getInferenceUnits());
+            }
             if (model.wasPropertyExplicitlySet("tenancyId")) {
                 this.tenancyId(model.getTenancyId());
             }
@@ -591,6 +658,9 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("maxTrainingTimeInHours")) {
                 this.maxTrainingTimeInHours(model.getMaxTrainingTimeInHours());
+            }
+            if (model.wasPropertyExplicitlySet("language")) {
+                this.language(model.getLanguage());
             }
             if (model.wasPropertyExplicitlySet("trainedTimeInHours")) {
                 this.trainedTimeInHours(model.getTrainedTimeInHours());
@@ -712,6 +782,11 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
     public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         KeyValueExtraction("KEY_VALUE_EXTRACTION"),
         DocumentClassification("DOCUMENT_CLASSIFICATION"),
+        PreTrainedTextExtraction("PRE_TRAINED_TEXT_EXTRACTION"),
+        PreTrainedTableExtraction("PRE_TRAINED_TABLE_EXTRACTION"),
+        PreTrainedKeyValueExtraction("PRE_TRAINED_KEY_VALUE_EXTRACTION"),
+        PreTrainedDocumentClassification("PRE_TRAINED_DOCUMENT_CLASSIFICATION"),
+        PreTrainedDocumentElementsExtraction("PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -765,6 +840,36 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
      */
     public ModelType getModelType() {
         return modelType;
+    }
+
+    /**
+     * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION,
+     * PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("modelSubType")
+    private final ModelSubType modelSubType;
+
+    /**
+     * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION,
+     * PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     *
+     * @return the value
+     */
+    public ModelSubType getModelSubType() {
+        return modelSubType;
+    }
+
+    /** Number of replicas required for this model. */
+    @com.fasterxml.jackson.annotation.JsonProperty("inferenceUnits")
+    private final Integer inferenceUnits;
+
+    /**
+     * Number of replicas required for this model.
+     *
+     * @return the value
+     */
+    public Integer getInferenceUnits() {
+        return inferenceUnits;
     }
 
     /** The tenancy id of the model. */
@@ -834,6 +939,19 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
      */
     public Double getMaxTrainingTimeInHours() {
         return maxTrainingTimeInHours;
+    }
+
+    /** The document language for model training, abbreviated according to the BCP 47 syntax. */
+    @com.fasterxml.jackson.annotation.JsonProperty("language")
+    private final String language;
+
+    /**
+     * The document language for model training, abbreviated according to the BCP 47 syntax.
+     *
+     * @return the value
+     */
+    public String getLanguage() {
+        return language;
     }
 
     /** The total hours actually used for model training. */
@@ -1127,11 +1245,14 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", modelSubType=").append(String.valueOf(this.modelSubType));
+        sb.append(", inferenceUnits=").append(String.valueOf(this.inferenceUnits));
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", aliasName=").append(String.valueOf(this.aliasName));
         sb.append(", labels=").append(String.valueOf(this.labels));
         sb.append(", isQuickMode=").append(String.valueOf(this.isQuickMode));
         sb.append(", maxTrainingTimeInHours=").append(String.valueOf(this.maxTrainingTimeInHours));
+        sb.append(", language=").append(String.valueOf(this.language));
         sb.append(", trainedTimeInHours=").append(String.valueOf(this.trainedTimeInHours));
         sb.append(", trainingDataset=").append(String.valueOf(this.trainingDataset));
         sb.append(", testingDataset=").append(String.valueOf(this.testingDataset));
@@ -1168,12 +1289,15 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.modelSubType, other.modelSubType)
+                && java.util.Objects.equals(this.inferenceUnits, other.inferenceUnits)
                 && java.util.Objects.equals(this.tenancyId, other.tenancyId)
                 && java.util.Objects.equals(this.aliasName, other.aliasName)
                 && java.util.Objects.equals(this.labels, other.labels)
                 && java.util.Objects.equals(this.isQuickMode, other.isQuickMode)
                 && java.util.Objects.equals(
                         this.maxTrainingTimeInHours, other.maxTrainingTimeInHours)
+                && java.util.Objects.equals(this.language, other.language)
                 && java.util.Objects.equals(this.trainedTimeInHours, other.trainedTimeInHours)
                 && java.util.Objects.equals(this.trainingDataset, other.trainingDataset)
                 && java.util.Objects.equals(this.testingDataset, other.testingDataset)
@@ -1205,6 +1329,10 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.modelSubType == null ? 43 : this.modelSubType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inferenceUnits == null ? 43 : this.inferenceUnits.hashCode());
         result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
         result = (result * PRIME) + (this.aliasName == null ? 43 : this.aliasName.hashCode());
         result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
@@ -1214,6 +1342,7 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                         + (this.maxTrainingTimeInHours == null
                                 ? 43
                                 : this.maxTrainingTimeInHours.hashCode());
+        result = (result * PRIME) + (this.language == null ? 43 : this.language.hashCode());
         result =
                 (result * PRIME)
                         + (this.trainedTimeInHours == null
