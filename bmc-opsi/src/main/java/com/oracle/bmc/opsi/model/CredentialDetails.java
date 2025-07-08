@@ -23,6 +23,9 @@ package com.oracle.bmc.opsi.model;
         defaultImpl = CredentialDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CredentialByNamedCredentials.class,
+            name = "CREDENTIALS_BY_NAMED_CREDS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CredentialsBySource.class,
             name = "CREDENTIALS_BY_SOURCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -43,15 +46,17 @@ public class CredentialDetails extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * Credential source name that had been added in Management Agent wallet. This is supplied in
-     * the External Database Service.
+     * Credential source name that had been added in Management Agent wallet. This value is only
+     * required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther
+     * others.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("credentialSourceName")
     private final String credentialSourceName;
 
     /**
-     * Credential source name that had been added in Management Agent wallet. This is supplied in
-     * the External Database Service.
+     * Credential source name that had been added in Management Agent wallet. This value is only
+     * required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther
+     * others.
      *
      * @return the value
      */
@@ -115,6 +120,7 @@ public class CredentialDetails extends com.oracle.bmc.http.client.internal.Expli
         CredentialsBySource("CREDENTIALS_BY_SOURCE"),
         CredentialsByVault("CREDENTIALS_BY_VAULT"),
         CredentialsByIam("CREDENTIALS_BY_IAM"),
+        CredentialsByNamedCreds("CREDENTIALS_BY_NAMED_CREDS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -32,6 +32,7 @@ public final class SubscriptionSummary
         "shipToCustAcctRoleId",
         "billToCustAccountId",
         "isIntentToPay",
+        "isCorporateConversionAllowed",
         "currencyCode",
         "gsiOrgCode",
         "languageCode",
@@ -55,6 +56,7 @@ public final class SubscriptionSummary
             String shipToCustAcctRoleId,
             String billToCustAccountId,
             Boolean isIntentToPay,
+            Boolean isCorporateConversionAllowed,
             String currencyCode,
             String gsiOrgCode,
             String languageCode,
@@ -77,6 +79,7 @@ public final class SubscriptionSummary
         this.shipToCustAcctRoleId = shipToCustAcctRoleId;
         this.billToCustAccountId = billToCustAccountId;
         this.isIntentToPay = isIntentToPay;
+        this.isCorporateConversionAllowed = isCorporateConversionAllowed;
         this.currencyCode = currencyCode;
         this.gsiOrgCode = gsiOrgCode;
         this.languageCode = languageCode;
@@ -212,6 +215,21 @@ public final class SubscriptionSummary
         public Builder isIntentToPay(Boolean isIntentToPay) {
             this.isIntentToPay = isIntentToPay;
             this.__explicitlySet__.add("isIntentToPay");
+            return this;
+        }
+        /** Corporate conversion allowed status */
+        @com.fasterxml.jackson.annotation.JsonProperty("isCorporateConversionAllowed")
+        private Boolean isCorporateConversionAllowed;
+
+        /**
+         * Corporate conversion allowed status
+         *
+         * @param isCorporateConversionAllowed the value to set
+         * @return this builder
+         */
+        public Builder isCorporateConversionAllowed(Boolean isCorporateConversionAllowed) {
+            this.isCorporateConversionAllowed = isCorporateConversionAllowed;
+            this.__explicitlySet__.add("isCorporateConversionAllowed");
             return this;
         }
         /** Currency code */
@@ -410,6 +428,7 @@ public final class SubscriptionSummary
                             this.shipToCustAcctRoleId,
                             this.billToCustAccountId,
                             this.isIntentToPay,
+                            this.isCorporateConversionAllowed,
                             this.currencyCode,
                             this.gsiOrgCode,
                             this.languageCode,
@@ -454,6 +473,9 @@ public final class SubscriptionSummary
             }
             if (model.wasPropertyExplicitlySet("isIntentToPay")) {
                 this.isIntentToPay(model.getIsIntentToPay());
+            }
+            if (model.wasPropertyExplicitlySet("isCorporateConversionAllowed")) {
+                this.isCorporateConversionAllowed(model.getIsCorporateConversionAllowed());
             }
             if (model.wasPropertyExplicitlySet("currencyCode")) {
                 this.currencyCode(model.getCurrencyCode());
@@ -657,6 +679,19 @@ public final class SubscriptionSummary
         return isIntentToPay;
     }
 
+    /** Corporate conversion allowed status */
+    @com.fasterxml.jackson.annotation.JsonProperty("isCorporateConversionAllowed")
+    private final Boolean isCorporateConversionAllowed;
+
+    /**
+     * Corporate conversion allowed status
+     *
+     * @return the value
+     */
+    public Boolean getIsCorporateConversionAllowed() {
+        return isCorporateConversionAllowed;
+    }
+
     /** Currency code */
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
@@ -777,6 +812,7 @@ public final class SubscriptionSummary
     public enum UpgradeStateDetails implements com.oracle.bmc.http.internal.BmcEnum {
         TaxError("TAX_ERROR"),
         UpgradeError("UPGRADE_ERROR"),
+        P2CError("P2C_ERROR"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -979,6 +1015,8 @@ public final class SubscriptionSummary
         sb.append(", shipToCustAcctRoleId=").append(String.valueOf(this.shipToCustAcctRoleId));
         sb.append(", billToCustAccountId=").append(String.valueOf(this.billToCustAccountId));
         sb.append(", isIntentToPay=").append(String.valueOf(this.isIntentToPay));
+        sb.append(", isCorporateConversionAllowed=")
+                .append(String.valueOf(this.isCorporateConversionAllowed));
         sb.append(", currencyCode=").append(String.valueOf(this.currencyCode));
         sb.append(", gsiOrgCode=").append(String.valueOf(this.gsiOrgCode));
         sb.append(", languageCode=").append(String.valueOf(this.languageCode));
@@ -1016,6 +1054,8 @@ public final class SubscriptionSummary
                 && java.util.Objects.equals(this.shipToCustAcctRoleId, other.shipToCustAcctRoleId)
                 && java.util.Objects.equals(this.billToCustAccountId, other.billToCustAccountId)
                 && java.util.Objects.equals(this.isIntentToPay, other.isIntentToPay)
+                && java.util.Objects.equals(
+                        this.isCorporateConversionAllowed, other.isCorporateConversionAllowed)
                 && java.util.Objects.equals(this.currencyCode, other.currencyCode)
                 && java.util.Objects.equals(this.gsiOrgCode, other.gsiOrgCode)
                 && java.util.Objects.equals(this.languageCode, other.languageCode)
@@ -1063,6 +1103,11 @@ public final class SubscriptionSummary
         result =
                 (result * PRIME)
                         + (this.isIntentToPay == null ? 43 : this.isIntentToPay.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCorporateConversionAllowed == null
+                                ? 43
+                                : this.isCorporateConversionAllowed.hashCode());
         result = (result * PRIME) + (this.currencyCode == null ? 43 : this.currencyCode.hashCode());
         result = (result * PRIME) + (this.gsiOrgCode == null ? 43 : this.gsiOrgCode.hashCode());
         result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());

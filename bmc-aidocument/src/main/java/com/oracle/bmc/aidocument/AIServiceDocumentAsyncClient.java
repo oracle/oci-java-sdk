@@ -524,6 +524,37 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<GetModelTypeResponse> getModelType(
+            GetModelTypeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetModelTypeRequest, GetModelTypeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelType(), "modelType must not be blank");
+
+        return clientCall(request, GetModelTypeResponse::builder)
+                .logger(LOG, "getModelType")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "GetModelType",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ModelTypeInfo/GetModelType")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelTypeRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("modelTypes")
+                .appendPathParam(request.getModelType())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("modelSubType", request.getModelSubType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.ModelTypeInfo.class,
+                        GetModelTypeResponse.Builder::modelTypeInfo)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProcessorJobResponse> getProcessorJob(
             GetProcessorJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

@@ -42,7 +42,10 @@ package com.oracle.bmc.opsi.model;
             name = "EM_MANAGED_EXTERNAL_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ExternalMysqlDatabaseInsightSummary.class,
-            name = "EXTERNAL_MYSQL_DATABASE_SYSTEM")
+            name = "EXTERNAL_MYSQL_DATABASE_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsManagedAutonomousDatabaseInsightSummary.class,
+            name = "MACS_MANAGED_AUTONOMOUS_DATABASE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

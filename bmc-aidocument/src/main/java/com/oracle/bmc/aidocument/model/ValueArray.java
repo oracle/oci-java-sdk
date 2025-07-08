@@ -61,6 +61,24 @@ public final class ValueArray extends FieldValue {
             this.__explicitlySet__.add("wordIndexes");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("normalizedValue")
+        private String normalizedValue;
+
+        public Builder normalizedValue(String normalizedValue) {
+            this.normalizedValue = normalizedValue;
+            this.__explicitlySet__.add("normalizedValue");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("normalizedConfidence")
+        private Float normalizedConfidence;
+
+        public Builder normalizedConfidence(Float normalizedConfidence) {
+            this.normalizedConfidence = normalizedConfidence;
+            this.__explicitlySet__.add("normalizedConfidence");
+            return this;
+        }
         /** The array of values. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DocumentField> items;
@@ -87,6 +105,8 @@ public final class ValueArray extends FieldValue {
                             this.confidence,
                             this.boundingPolygon,
                             this.wordIndexes,
+                            this.normalizedValue,
+                            this.normalizedConfidence,
                             this.items);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -107,6 +127,12 @@ public final class ValueArray extends FieldValue {
             }
             if (model.wasPropertyExplicitlySet("wordIndexes")) {
                 this.wordIndexes(model.getWordIndexes());
+            }
+            if (model.wasPropertyExplicitlySet("normalizedValue")) {
+                this.normalizedValue(model.getNormalizedValue());
+            }
+            if (model.wasPropertyExplicitlySet("normalizedConfidence")) {
+                this.normalizedConfidence(model.getNormalizedConfidence());
             }
             if (model.wasPropertyExplicitlySet("items")) {
                 this.items(model.getItems());
@@ -130,8 +156,16 @@ public final class ValueArray extends FieldValue {
             Float confidence,
             BoundingPolygon boundingPolygon,
             java.util.List<Integer> wordIndexes,
+            String normalizedValue,
+            Float normalizedConfidence,
             java.util.List<DocumentField> items) {
-        super(text, confidence, boundingPolygon, wordIndexes);
+        super(
+                text,
+                confidence,
+                boundingPolygon,
+                wordIndexes,
+                normalizedValue,
+                normalizedConfidence);
         this.items = items;
     }
 

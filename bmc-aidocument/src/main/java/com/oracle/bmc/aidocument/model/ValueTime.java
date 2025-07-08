@@ -61,6 +61,24 @@ public final class ValueTime extends FieldValue {
             this.__explicitlySet__.add("wordIndexes");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("normalizedValue")
+        private String normalizedValue;
+
+        public Builder normalizedValue(String normalizedValue) {
+            this.normalizedValue = normalizedValue;
+            this.__explicitlySet__.add("normalizedValue");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("normalizedConfidence")
+        private Float normalizedConfidence;
+
+        public Builder normalizedConfidence(Float normalizedConfidence) {
+            this.normalizedConfidence = normalizedConfidence;
+            this.__explicitlySet__.add("normalizedConfidence");
+            return this;
+        }
         /** The time field value as yyyy-mm-dd hh-mm-ss. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private java.util.Date value;
@@ -87,6 +105,8 @@ public final class ValueTime extends FieldValue {
                             this.confidence,
                             this.boundingPolygon,
                             this.wordIndexes,
+                            this.normalizedValue,
+                            this.normalizedConfidence,
                             this.value);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -107,6 +127,12 @@ public final class ValueTime extends FieldValue {
             }
             if (model.wasPropertyExplicitlySet("wordIndexes")) {
                 this.wordIndexes(model.getWordIndexes());
+            }
+            if (model.wasPropertyExplicitlySet("normalizedValue")) {
+                this.normalizedValue(model.getNormalizedValue());
+            }
+            if (model.wasPropertyExplicitlySet("normalizedConfidence")) {
+                this.normalizedConfidence(model.getNormalizedConfidence());
             }
             if (model.wasPropertyExplicitlySet("value")) {
                 this.value(model.getValue());
@@ -130,8 +156,16 @@ public final class ValueTime extends FieldValue {
             Float confidence,
             BoundingPolygon boundingPolygon,
             java.util.List<Integer> wordIndexes,
+            String normalizedValue,
+            Float normalizedConfidence,
             java.util.Date value) {
-        super(text, confidence, boundingPolygon, wordIndexes);
+        super(
+                text,
+                confidence,
+                boundingPolygon,
+                wordIndexes,
+                normalizedValue,
+                normalizedConfidence);
         this.value = value;
     }
 

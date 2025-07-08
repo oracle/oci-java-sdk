@@ -6,10 +6,13 @@
     <parent>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons</artifactId>
-        <version>3.68.0</version>
+        <version>3.68.1</version>
     </parent>
 
     <artifactId>oci-java-sdk-addons-adk</artifactId>
+    <name>Oracle Cloud Infrastructure SDK - ADK Client</name>
+    <description>This project contains the SDK used for Oracle Cloud Infrastructure ADK</description>
+    <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

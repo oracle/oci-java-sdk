@@ -8,6 +8,7 @@ package com.oracle.bmc.aidocument.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 public enum ProcessorType implements com.oracle.bmc.http.internal.BmcEnum {
     General("GENERAL"),
+    Invoice("INVOICE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -59,6 +59,10 @@ public class SummarizeSqlStatisticsRequest
         ComanagedExaccNoncdb("COMANAGED-EXACC-NONCDB"),
         MdsMysql("MDS-MYSQL"),
         ExternalMysql("EXTERNAL-MYSQL"),
+        AtpExacc("ATP-EXACC"),
+        AdwExacc("ADW-EXACC"),
+        ExternalAdw("EXTERNAL-ADW"),
+        ExternalAtp("EXTERNAL-ATP"),
         ;
 
         private final String value;

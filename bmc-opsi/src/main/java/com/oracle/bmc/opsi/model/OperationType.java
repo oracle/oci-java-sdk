@@ -74,6 +74,9 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
             "TEST_MACS_MANAGED_CLOUD_DATABASE_INSIGHT_CONNECTION_DETAILS"),
     ChangeExternalMysqlDatabaseInsightConnectionDetails(
             "CHANGE_EXTERNAL_MYSQL_DATABASE_INSIGHT_CONNECTION_DETAILS"),
+    ChangeMacsManagedAdbConnectionDetails("CHANGE_MACS_MANAGED_ADB_CONNECTION_DETAILS"),
+    TestMacsManagedAdbConnectionDetails("TEST_MACS_MANAGED_ADB_CONNECTION_DETAILS"),
+    SynchronizeAutonomousDatabaseToExadata("SYNCHRONIZE_AUTONOMOUS_DATABASE_TO_EXADATA"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

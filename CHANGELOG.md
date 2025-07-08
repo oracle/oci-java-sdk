@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.68.1 - 2025-07-08
+### Added 
+- Support for insight of Autonomous Database on Exadata Cloud@Customer (ADB on ExaC@C) in the Operations Insights service 
+- Support for Spanish and Portuguese language recognition with Azure-backed Optical Character Recognition (OCR) in the AI Document service 
+- Support for UK, Australian, and Canadian address and tax form recognition in the AI Document service 
+- Support for Personal-to-Corporate conversation check in the OSP Gateway service
+
 ## 3.68.0 - 2025-06-30
 ### Added 
 - Support for the Database MultiCloud service 

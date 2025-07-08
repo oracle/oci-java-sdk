@@ -23,15 +23,23 @@ package com.oracle.bmc.aidocument.model;
 public final class UpdateModelDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "description", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "inferenceUnits",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateModelDetails(
             String displayName,
             String description,
+            Integer inferenceUnits,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
+        this.inferenceUnits = inferenceUnits;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -66,6 +74,21 @@ public final class UpdateModelDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /** Number of replicas required for this model. */
+        @com.fasterxml.jackson.annotation.JsonProperty("inferenceUnits")
+        private Integer inferenceUnits;
+
+        /**
+         * Number of replicas required for this model.
+         *
+         * @param inferenceUnits the value to set
+         * @return this builder
+         */
+        public Builder inferenceUnits(Integer inferenceUnits) {
+            this.inferenceUnits = inferenceUnits;
+            this.__explicitlySet__.add("inferenceUnits");
             return this;
         }
         /**
@@ -116,6 +139,7 @@ public final class UpdateModelDetails
                     new UpdateModelDetails(
                             this.displayName,
                             this.description,
+                            this.inferenceUnits,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -131,6 +155,9 @@ public final class UpdateModelDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("inferenceUnits")) {
+                this.inferenceUnits(model.getInferenceUnits());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -175,6 +202,19 @@ public final class UpdateModelDetails
      */
     public String getDescription() {
         return description;
+    }
+
+    /** Number of replicas required for this model. */
+    @com.fasterxml.jackson.annotation.JsonProperty("inferenceUnits")
+    private final Integer inferenceUnits;
+
+    /**
+     * Number of replicas required for this model.
+     *
+     * @return the value
+     */
+    public Integer getInferenceUnits() {
+        return inferenceUnits;
     }
 
     /**
@@ -228,6 +268,7 @@ public final class UpdateModelDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", inferenceUnits=").append(String.valueOf(this.inferenceUnits));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -246,6 +287,7 @@ public final class UpdateModelDetails
         UpdateModelDetails other = (UpdateModelDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.inferenceUnits, other.inferenceUnits)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -257,6 +299,9 @@ public final class UpdateModelDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inferenceUnits == null ? 43 : this.inferenceUnits.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
