@@ -41,6 +41,17 @@ public class Toolkit {
         }
     }
 
+    /**
+     * Initializes a new Toolkit with the given name and a predefined map of functions.
+     *
+     * @param name the descriptive name for the toolkit
+     * @param functions a map of functions to be included in the toolkit, keyed by their names
+     */
+    public Toolkit(String name, Map<String, FunctionTool> functions) {
+        this.name = name;
+        this.functions = functions;
+    }
+
     /** Initializes a new Toolkit with a default name. */
     public Toolkit() {
         this("toolkit");
