@@ -4,9 +4,10 @@
  */
 package com.oracle.bmc.adk.run;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.adk.error.AgentException;
 import com.oracle.bmc.adk.utils.Console;
+import com.oracle.bmc.adk.utils.JsonUtils;
+
 import java.util.Map;
 import java.util.Optional;
 
@@ -20,7 +21,6 @@ public class RunResponse {
     private final Map<String, Object> data;
 
     private final String sessionId;
-    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     /**
      * Constructs a new instance of {@link RunResponse} with the given data and session ID.
@@ -64,7 +64,7 @@ public class RunResponse {
                     "text response:\n"
                             + content.get("text")
                             + "\n\ndata:\n"
-                            + objectMapper
+                            + JsonUtils.OBJECT_MAPPER
                                     .writerWithDefaultPrettyPrinter()
                                     .writeValueAsString(this.data);
             Console.log(Console.Color.WHITE, "Agent run response: " + messageText);

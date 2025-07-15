@@ -5,7 +5,6 @@
 package com.oracle.bmc.adk.agent;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.google.gson.Gson;
@@ -18,6 +17,7 @@ import com.oracle.bmc.adk.tools.Toolkit;
 import com.oracle.bmc.adk.tools.prebuilt.AgenticRagTool;
 import com.oracle.bmc.adk.utils.Console;
 import com.oracle.bmc.adk.utils.Constants;
+import com.oracle.bmc.adk.utils.JsonUtils;
 import com.oracle.bmc.generativeaiagent.model.AgentEndpoint;
 import com.oracle.bmc.generativeaiagent.model.Function;
 import com.oracle.bmc.generativeaiagent.model.FunctionCallingToolConfig;
@@ -61,8 +61,6 @@ public class Agent {
     private final List<Object> tools;
     private final List<FunctionTool> localFunctionTools;
     private final AgenticRagTool localRagTool;
-
-    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     /**
      * Constructor to initialize Agent with basic parameters only. Internal fields (like handler
@@ -946,7 +944,7 @@ public class Agent {
             String functionArgsObj = functionCall.getArguments();
 
             Map<String, Object> functionArgs =
-                    objectMapper.readValue((String) functionArgsObj, Map.class);
+                    JsonUtils.OBJECT_MAPPER.readValue((String) functionArgsObj, Map.class);
 
             // Find the appropriate function handler
             FunctionTool handler = null;
@@ -975,7 +973,7 @@ public class Agent {
             // Return the performed action details
             return FunctionCallingPerformedAction.builder()
                     .actionId(action.getActionId())
-                    .functionCallOutput(objectMapper.writeValueAsString(result))
+                    .functionCallOutput(JsonUtils.OBJECT_MAPPER.writeValueAsString(result))
                     .build();
 
         } catch (JsonProcessingException e) {
@@ -1056,7 +1054,7 @@ public class Agent {
         SimpleFilterProvider filterProvider = new SimpleFilterProvider();
         filterProvider.addFilter("explicitlySetFilter", SimpleBeanPropertyFilter.serializeAll());
 
-        objectMapper.setFilterProvider(filterProvider);
-        return objectMapper.convertValue(response, Map.class);
+        JsonUtils.OBJECT_MAPPER.setFilterProvider(filterProvider);
+        return JsonUtils.OBJECT_MAPPER.convertValue(response, Map.class);
     }
 }

@@ -6,10 +6,12 @@ package com.oracle.bmc.adk.tools;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.oracle.bmc.adk.client.mcp.McpClientBase;
 import com.oracle.bmc.adk.error.AgentException;
 import com.oracle.bmc.adk.error.UserException;
 import com.oracle.bmc.adk.utils.Console;
+import com.oracle.bmc.adk.utils.JsonUtils;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
@@ -32,7 +34,6 @@ public class FunctionTool {
     private final Object instance;
     private final Method method;
     private Map<String, String> parameters = new HashMap<>();
-    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     private static final org.slf4j.Logger log =
             org.slf4j.LoggerFactory.getLogger(FunctionTool.class);
@@ -283,8 +284,10 @@ public class FunctionTool {
             result.put("type", "object");
             result.put(
                     "properties",
-                    objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(properties));
-            result.put("required", objectMapper.writeValueAsString(required));
+                    JsonUtils.OBJECT_MAPPER
+                            .writerWithDefaultPrettyPrinter()
+                            .writeValueAsString(properties));
+            result.put("required", JsonUtils.OBJECT_MAPPER.writeValueAsString(required));
         } catch (JsonProcessingException e) {
             throw new AgentException("Failed to serialize parameters", e);
         }
@@ -333,10 +336,10 @@ public class FunctionTool {
             try {
                 result.put(
                         "properties",
-                        objectMapper
+                        JsonUtils.OBJECT_MAPPER
                                 .writerWithDefaultPrettyPrinter()
                                 .writeValueAsString(properties));
-                result.put("required", objectMapper.writeValueAsString(required));
+                result.put("required", JsonUtils.OBJECT_MAPPER.writeValueAsString(required));
             } catch (JsonProcessingException e) {
                 throw new AgentException("Failed to serialize parameters", e);
             }
@@ -404,6 +407,10 @@ public class FunctionTool {
         }
         // Clean and filter arguments
         Map<String, Object> filteredArgs = prepareArguments(arguments);
+        if (this.instance instanceof McpClientBase) {
+            Console.debug(Console.Color.WHITE, String.format("Executing MCP tool '%s'", this.name));
+            return invoke(name, filteredArgs);
+        }
         List<Object> argsList = new ArrayList<>();
 
         for (Object value : filteredArgs.values()) {
@@ -440,7 +447,7 @@ public class FunctionTool {
 
         JsonNode jsonNode = null;
         try {
-            jsonNode = objectMapper.readTree(properties);
+            jsonNode = JsonUtils.OBJECT_MAPPER.readTree(properties);
         } catch (JsonProcessingException e) {
             throw new IllegalArgumentException("Error processing JSON from properties.", e);
         }
