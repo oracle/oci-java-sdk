@@ -116,6 +116,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "etag", ChangeAutoScalingConfigurationCompartmentResponse.Builder::etag)
@@ -145,6 +146,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.autoscaling.model.AutoScalingConfiguration.class,
@@ -183,6 +185,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.autoscaling.model.AutoScalingPolicy.class,
@@ -215,6 +218,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteAutoScalingConfigurationResponse.Builder::opcRequestId)
@@ -248,6 +252,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAutoScalingPolicyResponse.Builder::opcRequestId)
                 .callSync();
@@ -274,6 +279,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getAutoScalingConfigurationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.autoscaling.model.AutoScalingConfiguration.class,
                         GetAutoScalingConfigurationResponse.Builder::autoScalingConfiguration)
@@ -309,6 +315,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getAutoScalingPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.autoscaling.model.AutoScalingPolicy.class,
                         GetAutoScalingPolicyResponse.Builder::autoScalingPolicy)
@@ -341,6 +348,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary.class,
                         ListAutoScalingConfigurationsResponse.Builder::items)
@@ -379,6 +387,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.autoscaling.model.AutoScalingPolicySummary.class,
                         ListAutoScalingPoliciesResponse.Builder::items)
@@ -415,6 +424,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.autoscaling.model.AutoScalingConfiguration.class,
@@ -458,6 +468,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.autoscaling.model.AutoScalingPolicy.class,

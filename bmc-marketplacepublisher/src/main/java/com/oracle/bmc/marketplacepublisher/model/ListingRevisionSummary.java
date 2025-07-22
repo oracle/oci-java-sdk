@@ -16,7 +16,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = ListingRevisionSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -28,16 +28,14 @@ public final class ListingRevisionSummary
         "id",
         "listingId",
         "compartmentId",
+        "listingType",
         "displayName",
         "status",
         "lifecycleState",
         "packageType",
-        "pricingType",
         "shortDescription",
         "tagline",
         "icon",
-        "markets",
-        "categories",
         "timeCreated",
         "timeUpdated",
         "freeformTags",
@@ -48,16 +46,14 @@ public final class ListingRevisionSummary
             String id,
             String listingId,
             String compartmentId,
+            ListingType listingType,
             String displayName,
             ListingRevision.Status status,
             ListingRevision.LifecycleState lifecycleState,
             PackageType packageType,
-            ListingRevision.PricingType pricingType,
             String shortDescription,
             String tagline,
             ListingRevisionIconAttachment icon,
-            java.util.List<String> markets,
-            java.util.List<String> categories,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
@@ -67,16 +63,14 @@ public final class ListingRevisionSummary
         this.id = id;
         this.listingId = listingId;
         this.compartmentId = compartmentId;
+        this.listingType = listingType;
         this.displayName = displayName;
         this.status = status;
         this.lifecycleState = lifecycleState;
         this.packageType = packageType;
-        this.pricingType = pricingType;
         this.shortDescription = shortDescription;
         this.tagline = tagline;
         this.icon = icon;
-        this.markets = markets;
-        this.categories = categories;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.freeformTags = freeformTags;
@@ -129,6 +123,21 @@ public final class ListingRevisionSummary
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /** The listing's type. Populated from the listing. */
+        @com.fasterxml.jackson.annotation.JsonProperty("listingType")
+        private ListingType listingType;
+
+        /**
+         * The listing's type. Populated from the listing.
+         *
+         * @param listingType the value to set
+         * @return this builder
+         */
+        public Builder listingType(ListingType listingType) {
+            this.listingType = listingType;
+            this.__explicitlySet__.add("listingType");
             return this;
         }
         /** The name of the listing revision. */
@@ -191,21 +200,6 @@ public final class ListingRevisionSummary
             this.__explicitlySet__.add("packageType");
             return this;
         }
-        /** Pricing type of the listing. */
-        @com.fasterxml.jackson.annotation.JsonProperty("pricingType")
-        private ListingRevision.PricingType pricingType;
-
-        /**
-         * Pricing type of the listing.
-         *
-         * @param pricingType the value to set
-         * @return this builder
-         */
-        public Builder pricingType(ListingRevision.PricingType pricingType) {
-            this.pricingType = pricingType;
-            this.__explicitlySet__.add("pricingType");
-            return this;
-        }
         /** A short description of the listing revision. */
         @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
         private String shortDescription;
@@ -243,36 +237,6 @@ public final class ListingRevisionSummary
         public Builder icon(ListingRevisionIconAttachment icon) {
             this.icon = icon;
             this.__explicitlySet__.add("icon");
-            return this;
-        }
-        /** The markets where you can deploy the listing. */
-        @com.fasterxml.jackson.annotation.JsonProperty("markets")
-        private java.util.List<String> markets;
-
-        /**
-         * The markets where you can deploy the listing.
-         *
-         * @param markets the value to set
-         * @return this builder
-         */
-        public Builder markets(java.util.List<String> markets) {
-            this.markets = markets;
-            this.__explicitlySet__.add("markets");
-            return this;
-        }
-        /** Categories that the listing revision belongs to. */
-        @com.fasterxml.jackson.annotation.JsonProperty("categories")
-        private java.util.List<String> categories;
-
-        /**
-         * Categories that the listing revision belongs to.
-         *
-         * @param categories the value to set
-         * @return this builder
-         */
-        public Builder categories(java.util.List<String> categories) {
-            this.categories = categories;
-            this.__explicitlySet__.add("categories");
             return this;
         }
         /**
@@ -389,16 +353,14 @@ public final class ListingRevisionSummary
                             this.id,
                             this.listingId,
                             this.compartmentId,
+                            this.listingType,
                             this.displayName,
                             this.status,
                             this.lifecycleState,
                             this.packageType,
-                            this.pricingType,
                             this.shortDescription,
                             this.tagline,
                             this.icon,
-                            this.markets,
-                            this.categories,
                             this.timeCreated,
                             this.timeUpdated,
                             this.freeformTags,
@@ -421,6 +383,9 @@ public final class ListingRevisionSummary
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
+            if (model.wasPropertyExplicitlySet("listingType")) {
+                this.listingType(model.getListingType());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -433,9 +398,6 @@ public final class ListingRevisionSummary
             if (model.wasPropertyExplicitlySet("packageType")) {
                 this.packageType(model.getPackageType());
             }
-            if (model.wasPropertyExplicitlySet("pricingType")) {
-                this.pricingType(model.getPricingType());
-            }
             if (model.wasPropertyExplicitlySet("shortDescription")) {
                 this.shortDescription(model.getShortDescription());
             }
@@ -444,12 +406,6 @@ public final class ListingRevisionSummary
             }
             if (model.wasPropertyExplicitlySet("icon")) {
                 this.icon(model.getIcon());
-            }
-            if (model.wasPropertyExplicitlySet("markets")) {
-                this.markets(model.getMarkets());
-            }
-            if (model.wasPropertyExplicitlySet("categories")) {
-                this.categories(model.getCategories());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -518,6 +474,19 @@ public final class ListingRevisionSummary
         return compartmentId;
     }
 
+    /** The listing's type. Populated from the listing. */
+    @com.fasterxml.jackson.annotation.JsonProperty("listingType")
+    private final ListingType listingType;
+
+    /**
+     * The listing's type. Populated from the listing.
+     *
+     * @return the value
+     */
+    public ListingType getListingType() {
+        return listingType;
+    }
+
     /** The name of the listing revision. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
@@ -570,19 +539,6 @@ public final class ListingRevisionSummary
         return packageType;
     }
 
-    /** Pricing type of the listing. */
-    @com.fasterxml.jackson.annotation.JsonProperty("pricingType")
-    private final ListingRevision.PricingType pricingType;
-
-    /**
-     * Pricing type of the listing.
-     *
-     * @return the value
-     */
-    public ListingRevision.PricingType getPricingType() {
-        return pricingType;
-    }
-
     /** A short description of the listing revision. */
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     private final String shortDescription;
@@ -614,32 +570,6 @@ public final class ListingRevisionSummary
 
     public ListingRevisionIconAttachment getIcon() {
         return icon;
-    }
-
-    /** The markets where you can deploy the listing. */
-    @com.fasterxml.jackson.annotation.JsonProperty("markets")
-    private final java.util.List<String> markets;
-
-    /**
-     * The markets where you can deploy the listing.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getMarkets() {
-        return markets;
-    }
-
-    /** Categories that the listing revision belongs to. */
-    @com.fasterxml.jackson.annotation.JsonProperty("categories")
-    private final java.util.List<String> categories;
-
-    /**
-     * Categories that the listing revision belongs to.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getCategories() {
-        return categories;
     }
 
     /**
@@ -753,16 +683,14 @@ public final class ListingRevisionSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", listingId=").append(String.valueOf(this.listingId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", listingType=").append(String.valueOf(this.listingType));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", packageType=").append(String.valueOf(this.packageType));
-        sb.append(", pricingType=").append(String.valueOf(this.pricingType));
         sb.append(", shortDescription=").append(String.valueOf(this.shortDescription));
         sb.append(", tagline=").append(String.valueOf(this.tagline));
         sb.append(", icon=").append(String.valueOf(this.icon));
-        sb.append(", markets=").append(String.valueOf(this.markets));
-        sb.append(", categories=").append(String.valueOf(this.categories));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -785,16 +713,14 @@ public final class ListingRevisionSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.listingId, other.listingId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.listingType, other.listingType)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.packageType, other.packageType)
-                && java.util.Objects.equals(this.pricingType, other.pricingType)
                 && java.util.Objects.equals(this.shortDescription, other.shortDescription)
                 && java.util.Objects.equals(this.tagline, other.tagline)
                 && java.util.Objects.equals(this.icon, other.icon)
-                && java.util.Objects.equals(this.markets, other.markets)
-                && java.util.Objects.equals(this.categories, other.categories)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -812,20 +738,18 @@ public final class ListingRevisionSummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.listingType == null ? 43 : this.listingType.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
-        result = (result * PRIME) + (this.pricingType == null ? 43 : this.pricingType.hashCode());
         result =
                 (result * PRIME)
                         + (this.shortDescription == null ? 43 : this.shortDescription.hashCode());
         result = (result * PRIME) + (this.tagline == null ? 43 : this.tagline.hashCode());
         result = (result * PRIME) + (this.icon == null ? 43 : this.icon.hashCode());
-        result = (result * PRIME) + (this.markets == null ? 43 : this.markets.hashCode());
-        result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

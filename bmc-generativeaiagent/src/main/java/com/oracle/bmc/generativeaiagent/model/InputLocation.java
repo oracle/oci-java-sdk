@@ -78,10 +78,7 @@ public class InputLocation extends com.oracle.bmc.http.client.internal.Explicitl
         return result;
     }
 
-    /**
-     * Type of InputLocation. The allowed values are: - {@code INLINE}: The input location is
-     * inline. - {@code OBJECT_STORAGE_PREFIX}: The input location is object storage.
-     */
+    /** Type of InputLocation. */
     public enum InputLocationType implements com.oracle.bmc.http.internal.BmcEnum {
         Inline("INLINE"),
         ObjectStoragePrefix("OBJECT_STORAGE_PREFIX"),

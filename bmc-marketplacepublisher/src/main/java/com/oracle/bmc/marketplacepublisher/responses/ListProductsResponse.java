@@ -6,7 +6,7 @@ package com.oracle.bmc.marketplacepublisher.responses;
 
 import com.oracle.bmc.marketplacepublisher.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class ListProductsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the

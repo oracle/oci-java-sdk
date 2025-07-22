@@ -788,6 +788,127 @@ public class ManagementAgentPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listNamedCredentials operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListNamedCredentialsResponse> listNamedCredentialsResponseIterator(
+            final ListNamedCredentialsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNamedCredentialsRequest.Builder,
+                ListNamedCredentialsRequest,
+                ListNamedCredentialsResponse>(
+                new java.util.function.Supplier<ListNamedCredentialsRequest.Builder>() {
+                    @Override
+                    public ListNamedCredentialsRequest.Builder get() {
+                        return ListNamedCredentialsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNamedCredentialsResponse, String>() {
+                    @Override
+                    public String apply(ListNamedCredentialsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNamedCredentialsRequest.Builder>,
+                        ListNamedCredentialsRequest>() {
+                    @Override
+                    public ListNamedCredentialsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNamedCredentialsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListNamedCredentialsRequest, ListNamedCredentialsResponse>() {
+                    @Override
+                    public ListNamedCredentialsResponse apply(ListNamedCredentialsRequest request) {
+                        return client.listNamedCredentials(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.managementagent.model.NamedCredentialSummary} objects contained in responses
+     * from the listNamedCredentials operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.managementagent.model.NamedCredentialSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.managementagent.model.NamedCredentialSummary>
+            listNamedCredentialsRecordIterator(final ListNamedCredentialsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNamedCredentialsRequest.Builder,
+                ListNamedCredentialsRequest,
+                ListNamedCredentialsResponse,
+                com.oracle.bmc.managementagent.model.NamedCredentialSummary>(
+                new java.util.function.Supplier<ListNamedCredentialsRequest.Builder>() {
+                    @Override
+                    public ListNamedCredentialsRequest.Builder get() {
+                        return ListNamedCredentialsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNamedCredentialsResponse, String>() {
+                    @Override
+                    public String apply(ListNamedCredentialsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNamedCredentialsRequest.Builder>,
+                        ListNamedCredentialsRequest>() {
+                    @Override
+                    public ListNamedCredentialsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNamedCredentialsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListNamedCredentialsRequest, ListNamedCredentialsResponse>() {
+                    @Override
+                    public ListNamedCredentialsResponse apply(ListNamedCredentialsRequest request) {
+                        return client.listNamedCredentials(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListNamedCredentialsResponse,
+                        java.util.List<
+                                com.oracle.bmc.managementagent.model.NamedCredentialSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.managementagent.model.NamedCredentialSummary>
+                            apply(ListNamedCredentialsResponse response) {
+                        return response.getNamedCredentialCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *

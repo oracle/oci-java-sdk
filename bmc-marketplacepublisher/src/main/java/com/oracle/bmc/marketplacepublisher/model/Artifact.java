@@ -15,13 +15,19 @@ package com.oracle.bmc.marketplacepublisher.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
         property = "artifactType",
         defaultImpl = Artifact.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MachineImageArtifact.class,
+            name = "MACHINE_IMAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = StackArtifact.class,
+            name = "STACK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ContainerImageArtifact.class,
             name = "CONTAINER_IMAGE"),

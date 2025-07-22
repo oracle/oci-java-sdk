@@ -75,10 +75,7 @@ public class DatabaseConnection extends com.oracle.bmc.http.client.internal.Expl
         return result;
     }
 
-    /**
-     * The type of Database connection. The allowed values are: - {@code DATABASE_TOOL_CONNECTION}:
-     * This allows the service to connect to a vector store via a Database Tools Connection.
-     */
+    /** The type of Database connection. */
     public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
         DatabaseToolConnection("DATABASE_TOOL_CONNECTION"),
 

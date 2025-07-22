@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateOffer("CREATE_OFFER"),
     UpdateOffer("UPDATE_OFFER"),
@@ -27,6 +27,7 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     ChangeArtifactCompartment("CHANGE_ARTIFACT_COMPARTMENT"),
     ChangeTermCompartment("CHANGE_TERM_COMPARTMENT"),
     DeleteArtifact("DELETE_ARTIFACT"),
+    UpdateArtifact("UPDATE_ARTIFACT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

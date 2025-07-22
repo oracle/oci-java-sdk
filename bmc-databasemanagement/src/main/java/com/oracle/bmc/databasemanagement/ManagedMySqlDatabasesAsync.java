@@ -83,7 +83,7 @@ public interface ManagedMySqlDatabasesAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * Retrieves information pertaining to the binary log of a specific MySQL server.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -99,7 +99,7 @@ public interface ManagedMySqlDatabasesAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves general information regarding replication of a specific MySQL server.
+     * Retrieves general information regarding the replication of a specific MySQL server.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -181,7 +181,8 @@ public interface ManagedMySqlDatabasesAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Information about high availability members of a specific MySQL server's replication group.
+     * Retrieves information about the high availability members of a specific MySQL server's
+     * replication group.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -281,7 +282,7 @@ public interface ManagedMySqlDatabasesAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * Retrieves information pertaining to the outbound replications of a specific MySQL server.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

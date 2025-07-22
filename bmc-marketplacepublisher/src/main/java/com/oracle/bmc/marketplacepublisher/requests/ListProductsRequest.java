@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplacepublisher.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListProductsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProductsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the compartment in which to list resources. */
@@ -96,6 +96,13 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     public SortBy getSortBy() {
         return sortBy;
+    }
+    /** Product Group */
+    private String productGroup;
+
+    /** Product Group */
+    public String getProductGroup() {
+        return productGroup;
     }
     /** The client request ID for tracing. */
     private String opcRequestId;
@@ -196,6 +203,20 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /** Product Group */
+        private String productGroup = null;
+
+        /**
+         * Product Group
+         *
+         * @param productGroup the value to set
+         * @return this builder instance
+         */
+        public Builder productGroup(String productGroup) {
+            this.productGroup = productGroup;
+            return this;
+        }
+
         /** The client request ID for tracing. */
         private String opcRequestId = null;
 
@@ -259,6 +280,7 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            productGroup(o.getProductGroup());
             opcRequestId(o.getOpcRequestId());
             name(o.getName());
             invocationCallback(o.getInvocationCallback());
@@ -300,11 +322,12 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.productGroup = productGroup;
             request.opcRequestId = opcRequestId;
             request.name = name;
             return request;
-            // new ListProductsRequest(compartmentId, limit, page, sortOrder, sortBy, opcRequestId,
-            // name);
+            // new ListProductsRequest(compartmentId, limit, page, sortOrder, sortBy, productGroup,
+            // opcRequestId, name);
         }
     }
 
@@ -320,6 +343,7 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
+                .productGroup(productGroup)
                 .opcRequestId(opcRequestId)
                 .name(name);
     }
@@ -343,6 +367,7 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",productGroup=").append(String.valueOf(this.productGroup));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(")");
@@ -365,6 +390,7 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.productGroup, other.productGroup)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.name, other.name);
     }
@@ -380,6 +406,7 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.productGroup == null ? 43 : this.productGroup.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         return result;

@@ -31,6 +31,7 @@ public final class AutonomousContainerDatabaseSummary
         "compartmentId",
         "displayName",
         "customerContacts",
+        "okvEndPointGroupName",
         "dbUniqueName",
         "dbName",
         "serviceLevelAgreementType",
@@ -92,6 +93,7 @@ public final class AutonomousContainerDatabaseSummary
             String compartmentId,
             String displayName,
             java.util.List<CustomerContact> customerContacts,
+            String okvEndPointGroupName,
             String dbUniqueName,
             String dbName,
             ServiceLevelAgreementType serviceLevelAgreementType,
@@ -153,6 +155,7 @@ public final class AutonomousContainerDatabaseSummary
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.customerContacts = customerContacts;
+        this.okvEndPointGroupName = okvEndPointGroupName;
         this.dbUniqueName = dbUniqueName;
         this.dbName = dbName;
         this.serviceLevelAgreementType = serviceLevelAgreementType;
@@ -271,6 +274,21 @@ public final class AutonomousContainerDatabaseSummary
         public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
             this.customerContacts = customerContacts;
             this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+        /** The OKV End Point Group name for the Autonomous Container Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+        private String okvEndPointGroupName;
+
+        /**
+         * The OKV End Point Group name for the Autonomous Container Database.
+         *
+         * @param okvEndPointGroupName the value to set
+         * @return this builder
+         */
+        public Builder okvEndPointGroupName(String okvEndPointGroupName) {
+            this.okvEndPointGroupName = okvEndPointGroupName;
+            this.__explicitlySet__.add("okvEndPointGroupName");
             return this;
         }
         /**
@@ -1278,6 +1296,7 @@ public final class AutonomousContainerDatabaseSummary
                             this.compartmentId,
                             this.displayName,
                             this.customerContacts,
+                            this.okvEndPointGroupName,
                             this.dbUniqueName,
                             this.dbName,
                             this.serviceLevelAgreementType,
@@ -1352,6 +1371,9 @@ public final class AutonomousContainerDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("okvEndPointGroupName")) {
+                this.okvEndPointGroupName(model.getOkvEndPointGroupName());
             }
             if (model.wasPropertyExplicitlySet("dbUniqueName")) {
                 this.dbUniqueName(model.getDbUniqueName());
@@ -1584,6 +1606,19 @@ public final class AutonomousContainerDatabaseSummary
      */
     public java.util.List<CustomerContact> getCustomerContacts() {
         return customerContacts;
+    }
+
+    /** The OKV End Point Group name for the Autonomous Container Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+    private final String okvEndPointGroupName;
+
+    /**
+     * The OKV End Point Group name for the Autonomous Container Database.
+     *
+     * @return the value
+     */
+    public String getOkvEndPointGroupName() {
+        return okvEndPointGroupName;
     }
 
     /**
@@ -2916,6 +2951,7 @@ public final class AutonomousContainerDatabaseSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", okvEndPointGroupName=").append(String.valueOf(this.okvEndPointGroupName));
         sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", serviceLevelAgreementType=")
@@ -3000,6 +3036,7 @@ public final class AutonomousContainerDatabaseSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.okvEndPointGroupName, other.okvEndPointGroupName)
                 && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(
@@ -3085,6 +3122,11 @@ public final class AutonomousContainerDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.okvEndPointGroupName == null
+                                ? 43
+                                : this.okvEndPointGroupName.hashCode());
         result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
         result =

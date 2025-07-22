@@ -79,11 +79,7 @@ public class ApiSchemaInputLocation
         return result;
     }
 
-    /**
-     * Type of Api Schema InputLocation. The allowed values are: - {@code INLINE}: The Api schema
-     * input location is inline. - {@code OBJECT_STORAGE_LOCATION}: The Api schema input location is
-     * object storage.
-     */
+    /** Type of Api Schema InputLocation. */
     public enum ApiSchemaInputLocationType implements com.oracle.bmc.http.internal.BmcEnum {
         Inline("INLINE"),
         ObjectStorageLocation("OBJECT_STORAGE_LOCATION"),

@@ -23,11 +23,12 @@ package com.oracle.bmc.database.model;
 public final class KeyStoreAssociatedDatabaseDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "dbName"})
-    public KeyStoreAssociatedDatabaseDetails(String id, String dbName) {
+    @java.beans.ConstructorProperties({"id", "dbName", "dbUniqueName"})
+    public KeyStoreAssociatedDatabaseDetails(String id, String dbName, String dbUniqueName) {
         super();
         this.id = id;
         this.dbName = dbName;
+        this.dbUniqueName = dbUniqueName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -66,13 +67,28 @@ public final class KeyStoreAssociatedDatabaseDetails
             this.__explicitlySet__.add("dbName");
             return this;
         }
+        /** The unique name of the database that is associated with the key store. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+        private String dbUniqueName;
+
+        /**
+         * The unique name of the database that is associated with the key store.
+         *
+         * @param dbUniqueName the value to set
+         * @return this builder
+         */
+        public Builder dbUniqueName(String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
+            this.__explicitlySet__.add("dbUniqueName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KeyStoreAssociatedDatabaseDetails build() {
             KeyStoreAssociatedDatabaseDetails model =
-                    new KeyStoreAssociatedDatabaseDetails(this.id, this.dbName);
+                    new KeyStoreAssociatedDatabaseDetails(this.id, this.dbName, this.dbUniqueName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -86,6 +102,9 @@ public final class KeyStoreAssociatedDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("dbName")) {
                 this.dbName(model.getDbName());
+            }
+            if (model.wasPropertyExplicitlySet("dbUniqueName")) {
+                this.dbUniqueName(model.getDbUniqueName());
             }
             return this;
         }
@@ -128,6 +147,19 @@ public final class KeyStoreAssociatedDatabaseDetails
         return dbName;
     }
 
+    /** The unique name of the database that is associated with the key store. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+    private final String dbUniqueName;
+
+    /**
+     * The unique name of the database that is associated with the key store.
+     *
+     * @return the value
+     */
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -145,6 +177,7 @@ public final class KeyStoreAssociatedDatabaseDetails
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
         sb.append(")");
         return sb.toString();
     }
@@ -161,6 +194,7 @@ public final class KeyStoreAssociatedDatabaseDetails
         KeyStoreAssociatedDatabaseDetails other = (KeyStoreAssociatedDatabaseDetails) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
                 && super.equals(other);
     }
 
@@ -170,6 +204,7 @@ public final class KeyStoreAssociatedDatabaseDetails
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

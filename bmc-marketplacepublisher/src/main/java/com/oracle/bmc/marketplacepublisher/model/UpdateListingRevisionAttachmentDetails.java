@@ -15,7 +15,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -26,8 +26,17 @@ package com.oracle.bmc.marketplacepublisher.model;
             value = UpdateScreenShotAttachmentDetails.class,
             name = "SCREENSHOT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateCustomerSuccessAttachment.class,
+            name = "CUSTOMER_SUCCESS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateReviewSupportDocumentAttachment.class,
+            name = "REVIEW_SUPPORT_DOCUMENT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateRelatedDocumentAttachmentDetails.class,
             name = "RELATED_DOCUMENT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateSupportedServiceAttachment.class,
+            name = "SUPPORTED_SERVICES"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateVideoAttachmentDetails.class,
             name = "VIDEO")

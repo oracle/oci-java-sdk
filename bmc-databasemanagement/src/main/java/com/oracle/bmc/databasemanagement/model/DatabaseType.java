@@ -9,7 +9,7 @@ package com.oracle.bmc.databasemanagement.model;
  * EXTERNAL_RAC: Oracle Real Application Clusters (Oracle RAC) external database. - CLOUD_SIDB:
  * Single instance database in Oracle Cloud. - CLOUD_RAC: Oracle RAC database in Oracle Cloud. -
  * SHARED: Autonomous shared database in Oracle Cloud. - DEDICATED: Autonomous dedicated database in
- * Oracle Cloud.
+ * Oracle Cloud. - CLOUD_AT_CUSTOMER: Autonomous dedicated database in Cloud at the Customer.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum DatabaseType implements com.oracle.bmc.http.internal.BmcEnum {
@@ -19,6 +19,7 @@ public enum DatabaseType implements com.oracle.bmc.http.internal.BmcEnum {
     CloudRac("CLOUD_RAC"),
     Shared("SHARED"),
     Dedicated("DEDICATED"),
+    CloudAtCustomer("CLOUD_AT_CUSTOMER"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

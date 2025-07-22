@@ -28,6 +28,8 @@ public final class DataIngestionJobSummary
         "displayName",
         "description",
         "dataSourceId",
+        "dataIngestionJobType",
+        "dataIngestionJobStatistics",
         "compartmentId",
         "timeCreated",
         "timeUpdated",
@@ -42,6 +44,8 @@ public final class DataIngestionJobSummary
             String displayName,
             String description,
             String dataSourceId,
+            DataIngestionJobType dataIngestionJobType,
+            DataIngestionJobStatistics dataIngestionJobStatistics,
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -55,6 +59,8 @@ public final class DataIngestionJobSummary
         this.displayName = displayName;
         this.description = description;
         this.dataSourceId = dataSourceId;
+        this.dataIngestionJobType = dataIngestionJobType;
+        this.dataIngestionJobStatistics = dataIngestionJobStatistics;
         this.compartmentId = compartmentId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -133,6 +139,25 @@ public final class DataIngestionJobSummary
         public Builder dataSourceId(String dataSourceId) {
             this.dataSourceId = dataSourceId;
             this.__explicitlySet__.add("dataSourceId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataIngestionJobType")
+        private DataIngestionJobType dataIngestionJobType;
+
+        public Builder dataIngestionJobType(DataIngestionJobType dataIngestionJobType) {
+            this.dataIngestionJobType = dataIngestionJobType;
+            this.__explicitlySet__.add("dataIngestionJobType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataIngestionJobStatistics")
+        private DataIngestionJobStatistics dataIngestionJobStatistics;
+
+        public Builder dataIngestionJobStatistics(
+                DataIngestionJobStatistics dataIngestionJobStatistics) {
+            this.dataIngestionJobStatistics = dataIngestionJobStatistics;
+            this.__explicitlySet__.add("dataIngestionJobStatistics");
             return this;
         }
         /**
@@ -319,6 +344,8 @@ public final class DataIngestionJobSummary
                             this.displayName,
                             this.description,
                             this.dataSourceId,
+                            this.dataIngestionJobType,
+                            this.dataIngestionJobStatistics,
                             this.compartmentId,
                             this.timeCreated,
                             this.timeUpdated,
@@ -346,6 +373,12 @@ public final class DataIngestionJobSummary
             }
             if (model.wasPropertyExplicitlySet("dataSourceId")) {
                 this.dataSourceId(model.getDataSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("dataIngestionJobType")) {
+                this.dataIngestionJobType(model.getDataIngestionJobType());
+            }
+            if (model.wasPropertyExplicitlySet("dataIngestionJobStatistics")) {
+                this.dataIngestionJobStatistics(model.getDataIngestionJobStatistics());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -442,6 +475,20 @@ public final class DataIngestionJobSummary
      */
     public String getDataSourceId() {
         return dataSourceId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataIngestionJobType")
+    private final DataIngestionJobType dataIngestionJobType;
+
+    public DataIngestionJobType getDataIngestionJobType() {
+        return dataIngestionJobType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataIngestionJobStatistics")
+    private final DataIngestionJobStatistics dataIngestionJobStatistics;
+
+    public DataIngestionJobStatistics getDataIngestionJobStatistics() {
+        return dataIngestionJobStatistics;
     }
 
     /**
@@ -617,6 +664,9 @@ public final class DataIngestionJobSummary
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", dataSourceId=").append(String.valueOf(this.dataSourceId));
+        sb.append(", dataIngestionJobType=").append(String.valueOf(this.dataIngestionJobType));
+        sb.append(", dataIngestionJobStatistics=")
+                .append(String.valueOf(this.dataIngestionJobStatistics));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -643,6 +693,9 @@ public final class DataIngestionJobSummary
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.dataSourceId, other.dataSourceId)
+                && java.util.Objects.equals(this.dataIngestionJobType, other.dataIngestionJobType)
+                && java.util.Objects.equals(
+                        this.dataIngestionJobStatistics, other.dataIngestionJobStatistics)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -662,6 +715,16 @@ public final class DataIngestionJobSummary
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.dataSourceId == null ? 43 : this.dataSourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataIngestionJobType == null
+                                ? 43
+                                : this.dataIngestionJobType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataIngestionJobStatistics == null
+                                ? 43
+                                : this.dataIngestionJobStatistics.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

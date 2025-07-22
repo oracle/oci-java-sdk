@@ -29,6 +29,1113 @@ public class DbManagementWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudAsmRequest, GetCloudAsmResponse> forCloudAsm(
+            GetCloudAsmRequest request,
+            com.oracle.bmc.databasemanagement.model.CloudAsm.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCloudAsm(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudAsmRequest, GetCloudAsmResponse> forCloudAsm(
+            GetCloudAsmRequest request,
+            com.oracle.bmc.databasemanagement.model.CloudAsm.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCloudAsm(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudAsmRequest, GetCloudAsmResponse> forCloudAsm(
+            GetCloudAsmRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.databasemanagement.model.CloudAsm.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forCloudAsm(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for CloudAsm.
+    private com.oracle.bmc.waiter.Waiter<GetCloudAsmRequest, GetCloudAsmResponse> forCloudAsm(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetCloudAsmRequest request,
+            final com.oracle.bmc.databasemanagement.model.CloudAsm.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.databasemanagement.model.CloudAsm.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<GetCloudAsmRequest, GetCloudAsmResponse>() {
+                            @Override
+                            public GetCloudAsmResponse apply(GetCloudAsmRequest request) {
+                                return client.getCloudAsm(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCloudAsmResponse>() {
+                            @Override
+                            public boolean test(GetCloudAsmResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCloudAsm().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasemanagement.model.CloudAsm.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudAsmInstanceRequest, GetCloudAsmInstanceResponse>
+            forCloudAsmInstance(
+                    GetCloudAsmInstanceRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudAsmInstance.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCloudAsmInstance(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudAsmInstanceRequest, GetCloudAsmInstanceResponse>
+            forCloudAsmInstance(
+                    GetCloudAsmInstanceRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudAsmInstance.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCloudAsmInstance(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudAsmInstanceRequest, GetCloudAsmInstanceResponse>
+            forCloudAsmInstance(
+                    GetCloudAsmInstanceRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasemanagement.model.CloudAsmInstance.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forCloudAsmInstance(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for CloudAsmInstance.
+    private com.oracle.bmc.waiter.Waiter<GetCloudAsmInstanceRequest, GetCloudAsmInstanceResponse>
+            forCloudAsmInstance(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCloudAsmInstanceRequest request,
+                    final com.oracle.bmc.databasemanagement.model.CloudAsmInstance.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.databasemanagement.model.CloudAsmInstance.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetCloudAsmInstanceRequest, GetCloudAsmInstanceResponse>() {
+                            @Override
+                            public GetCloudAsmInstanceResponse apply(
+                                    GetCloudAsmInstanceRequest request) {
+                                return client.getCloudAsmInstance(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCloudAsmInstanceResponse>() {
+                            @Override
+                            public boolean test(GetCloudAsmInstanceResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCloudAsmInstance().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasemanagement.model.CloudAsmInstance
+                                        .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudClusterRequest, GetCloudClusterResponse>
+            forCloudCluster(
+                    GetCloudClusterRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudCluster.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCloudCluster(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudClusterRequest, GetCloudClusterResponse>
+            forCloudCluster(
+                    GetCloudClusterRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudCluster.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCloudCluster(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudClusterRequest, GetCloudClusterResponse>
+            forCloudCluster(
+                    GetCloudClusterRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasemanagement.model.CloudCluster.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forCloudCluster(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for CloudCluster.
+    private com.oracle.bmc.waiter.Waiter<GetCloudClusterRequest, GetCloudClusterResponse>
+            forCloudCluster(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCloudClusterRequest request,
+                    final com.oracle.bmc.databasemanagement.model.CloudCluster.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.databasemanagement.model.CloudCluster.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetCloudClusterRequest, GetCloudClusterResponse>() {
+                            @Override
+                            public GetCloudClusterResponse apply(GetCloudClusterRequest request) {
+                                return client.getCloudCluster(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCloudClusterResponse>() {
+                            @Override
+                            public boolean test(GetCloudClusterResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCloudCluster().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasemanagement.model.CloudCluster.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetCloudClusterInstanceRequest, GetCloudClusterInstanceResponse>
+            forCloudClusterInstance(
+                    GetCloudClusterInstanceRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudClusterInstance.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCloudClusterInstance(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetCloudClusterInstanceRequest, GetCloudClusterInstanceResponse>
+            forCloudClusterInstance(
+                    GetCloudClusterInstanceRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudClusterInstance.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCloudClusterInstance(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetCloudClusterInstanceRequest, GetCloudClusterInstanceResponse>
+            forCloudClusterInstance(
+                    GetCloudClusterInstanceRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasemanagement.model.CloudClusterInstance.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forCloudClusterInstance(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for CloudClusterInstance.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetCloudClusterInstanceRequest, GetCloudClusterInstanceResponse>
+            forCloudClusterInstance(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCloudClusterInstanceRequest request,
+                    final com.oracle.bmc.databasemanagement.model.CloudClusterInstance
+                                            .LifecycleState
+                                    ...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.databasemanagement.model.CloudClusterInstance.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetCloudClusterInstanceRequest, GetCloudClusterInstanceResponse>() {
+                            @Override
+                            public GetCloudClusterInstanceResponse apply(
+                                    GetCloudClusterInstanceRequest request) {
+                                return client.getCloudClusterInstance(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCloudClusterInstanceResponse>() {
+                            @Override
+                            public boolean test(GetCloudClusterInstanceResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCloudClusterInstance().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasemanagement.model.CloudClusterInstance
+                                        .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudDbHomeRequest, GetCloudDbHomeResponse>
+            forCloudDbHome(
+                    GetCloudDbHomeRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudDbHome.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCloudDbHome(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudDbHomeRequest, GetCloudDbHomeResponse>
+            forCloudDbHome(
+                    GetCloudDbHomeRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudDbHome.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCloudDbHome(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudDbHomeRequest, GetCloudDbHomeResponse>
+            forCloudDbHome(
+                    GetCloudDbHomeRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasemanagement.model.CloudDbHome.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forCloudDbHome(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for CloudDbHome.
+    private com.oracle.bmc.waiter.Waiter<GetCloudDbHomeRequest, GetCloudDbHomeResponse>
+            forCloudDbHome(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCloudDbHomeRequest request,
+                    final com.oracle.bmc.databasemanagement.model.CloudDbHome.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.databasemanagement.model.CloudDbHome.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetCloudDbHomeRequest, GetCloudDbHomeResponse>() {
+                            @Override
+                            public GetCloudDbHomeResponse apply(GetCloudDbHomeRequest request) {
+                                return client.getCloudDbHome(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCloudDbHomeResponse>() {
+                            @Override
+                            public boolean test(GetCloudDbHomeResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCloudDbHome().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasemanagement.model.CloudDbHome.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudDbNodeRequest, GetCloudDbNodeResponse>
+            forCloudDbNode(
+                    GetCloudDbNodeRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudDbNode.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCloudDbNode(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudDbNodeRequest, GetCloudDbNodeResponse>
+            forCloudDbNode(
+                    GetCloudDbNodeRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudDbNode.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCloudDbNode(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudDbNodeRequest, GetCloudDbNodeResponse>
+            forCloudDbNode(
+                    GetCloudDbNodeRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasemanagement.model.CloudDbNode.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forCloudDbNode(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for CloudDbNode.
+    private com.oracle.bmc.waiter.Waiter<GetCloudDbNodeRequest, GetCloudDbNodeResponse>
+            forCloudDbNode(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCloudDbNodeRequest request,
+                    final com.oracle.bmc.databasemanagement.model.CloudDbNode.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.databasemanagement.model.CloudDbNode.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetCloudDbNodeRequest, GetCloudDbNodeResponse>() {
+                            @Override
+                            public GetCloudDbNodeResponse apply(GetCloudDbNodeRequest request) {
+                                return client.getCloudDbNode(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCloudDbNodeResponse>() {
+                            @Override
+                            public boolean test(GetCloudDbNodeResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCloudDbNode().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasemanagement.model.CloudDbNode.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudDbSystemRequest, GetCloudDbSystemResponse>
+            forCloudDbSystem(
+                    GetCloudDbSystemRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudDbSystem.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCloudDbSystem(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudDbSystemRequest, GetCloudDbSystemResponse>
+            forCloudDbSystem(
+                    GetCloudDbSystemRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudDbSystem.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCloudDbSystem(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudDbSystemRequest, GetCloudDbSystemResponse>
+            forCloudDbSystem(
+                    GetCloudDbSystemRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasemanagement.model.CloudDbSystem.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forCloudDbSystem(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for CloudDbSystem.
+    private com.oracle.bmc.waiter.Waiter<GetCloudDbSystemRequest, GetCloudDbSystemResponse>
+            forCloudDbSystem(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCloudDbSystemRequest request,
+                    final com.oracle.bmc.databasemanagement.model.CloudDbSystem.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.databasemanagement.model.CloudDbSystem.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetCloudDbSystemRequest, GetCloudDbSystemResponse>() {
+                            @Override
+                            public GetCloudDbSystemResponse apply(GetCloudDbSystemRequest request) {
+                                return client.getCloudDbSystem(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCloudDbSystemResponse>() {
+                            @Override
+                            public boolean test(GetCloudDbSystemResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCloudDbSystem().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasemanagement.model.CloudDbSystem.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetCloudDbSystemConnectorRequest, GetCloudDbSystemConnectorResponse>
+            forCloudDbSystemConnector(
+                    GetCloudDbSystemConnectorRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudDbSystemConnector.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCloudDbSystemConnector(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetCloudDbSystemConnectorRequest, GetCloudDbSystemConnectorResponse>
+            forCloudDbSystemConnector(
+                    GetCloudDbSystemConnectorRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudDbSystemConnector.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCloudDbSystemConnector(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetCloudDbSystemConnectorRequest, GetCloudDbSystemConnectorResponse>
+            forCloudDbSystemConnector(
+                    GetCloudDbSystemConnectorRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasemanagement.model.CloudDbSystemConnector.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forCloudDbSystemConnector(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for CloudDbSystemConnector.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetCloudDbSystemConnectorRequest, GetCloudDbSystemConnectorResponse>
+            forCloudDbSystemConnector(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCloudDbSystemConnectorRequest request,
+                    final com.oracle.bmc.databasemanagement.model.CloudDbSystemConnector
+                                            .LifecycleState
+                                    ...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemConnector
+                                .LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetCloudDbSystemConnectorRequest,
+                                GetCloudDbSystemConnectorResponse>() {
+                            @Override
+                            public GetCloudDbSystemConnectorResponse apply(
+                                    GetCloudDbSystemConnectorRequest request) {
+                                return client.getCloudDbSystemConnector(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCloudDbSystemConnectorResponse>() {
+                            @Override
+                            public boolean test(GetCloudDbSystemConnectorResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCloudDbSystemConnector().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasemanagement.model.CloudDbSystemConnector
+                                        .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetCloudDbSystemDiscoveryRequest, GetCloudDbSystemDiscoveryResponse>
+            forCloudDbSystemDiscovery(
+                    GetCloudDbSystemDiscoveryRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscovery.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCloudDbSystemDiscovery(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetCloudDbSystemDiscoveryRequest, GetCloudDbSystemDiscoveryResponse>
+            forCloudDbSystemDiscovery(
+                    GetCloudDbSystemDiscoveryRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscovery.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCloudDbSystemDiscovery(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetCloudDbSystemDiscoveryRequest, GetCloudDbSystemDiscoveryResponse>
+            forCloudDbSystemDiscovery(
+                    GetCloudDbSystemDiscoveryRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscovery.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forCloudDbSystemDiscovery(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for CloudDbSystemDiscovery.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetCloudDbSystemDiscoveryRequest, GetCloudDbSystemDiscoveryResponse>
+            forCloudDbSystemDiscovery(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCloudDbSystemDiscoveryRequest request,
+                    final com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscovery
+                                            .LifecycleState
+                                    ...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscovery
+                                .LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetCloudDbSystemDiscoveryRequest,
+                                GetCloudDbSystemDiscoveryResponse>() {
+                            @Override
+                            public GetCloudDbSystemDiscoveryResponse apply(
+                                    GetCloudDbSystemDiscoveryRequest request) {
+                                return client.getCloudDbSystemDiscovery(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCloudDbSystemDiscoveryResponse>() {
+                            @Override
+                            public boolean test(GetCloudDbSystemDiscoveryResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCloudDbSystemDiscovery().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscovery
+                                        .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudListenerRequest, GetCloudListenerResponse>
+            forCloudListener(
+                    GetCloudListenerRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudListener.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCloudListener(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudListenerRequest, GetCloudListenerResponse>
+            forCloudListener(
+                    GetCloudListenerRequest request,
+                    com.oracle.bmc.databasemanagement.model.CloudListener.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCloudListener(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCloudListenerRequest, GetCloudListenerResponse>
+            forCloudListener(
+                    GetCloudListenerRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasemanagement.model.CloudListener.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forCloudListener(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for CloudListener.
+    private com.oracle.bmc.waiter.Waiter<GetCloudListenerRequest, GetCloudListenerResponse>
+            forCloudListener(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCloudListenerRequest request,
+                    final com.oracle.bmc.databasemanagement.model.CloudListener.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.databasemanagement.model.CloudListener.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetCloudListenerRequest, GetCloudListenerResponse>() {
+                            @Override
+                            public GetCloudListenerResponse apply(GetCloudListenerRequest request) {
+                                return client.getCloudListener(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCloudListenerResponse>() {
+                            @Override
+                            public boolean test(GetCloudListenerResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCloudListener().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasemanagement.model.CloudListener.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
      * @param targetState the desired states to wait for. If multiple states are provided then the
      *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance

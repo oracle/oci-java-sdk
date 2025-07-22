@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplacepublisher.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CancelWorkRequestExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CancelWorkRequestRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the asynchronous request. */

@@ -25,6 +25,7 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
         "message",
         "traces",
         "toolResults",
+        "toolOutputs",
         "requiredActions",
         "guardrailResult"
     })
@@ -32,12 +33,14 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
             Message message,
             java.util.List<Trace> traces,
             java.util.Map<String, String> toolResults,
+            java.util.List<ToolOutput> toolOutputs,
             java.util.List<RequiredAction> requiredActions,
             String guardrailResult) {
         super();
         this.message = message;
         this.traces = traces;
         this.toolResults = toolResults;
+        this.toolOutputs = toolOutputs;
         this.requiredActions = requiredActions;
         this.guardrailResult = guardrailResult;
     }
@@ -74,14 +77,14 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * A map where each key is a toolId and the value contains tool type and additional dynamic
-         * results.
+         * results. This field is deprecated and will be removed after July 02 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("toolResults")
         private java.util.Map<String, String> toolResults;
 
         /**
          * A map where each key is a toolId and the value contains tool type and additional dynamic
-         * results.
+         * results. This field is deprecated and will be removed after July 02 2026.
          *
          * @param toolResults the value to set
          * @return this builder
@@ -89,6 +92,27 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
         public Builder toolResults(java.util.Map<String, String> toolResults) {
             this.toolResults = toolResults;
             this.__explicitlySet__.add("toolResults");
+            return this;
+        }
+        /**
+         * Array of tool outputs in execution order. Each item includes the tool OCID, output type,
+         * and corresponding content. The result structure is defined by the {@code toolOutputType}
+         * discriminator.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("toolOutputs")
+        private java.util.List<ToolOutput> toolOutputs;
+
+        /**
+         * Array of tool outputs in execution order. Each item includes the tool OCID, output type,
+         * and corresponding content. The result structure is defined by the {@code toolOutputType}
+         * discriminator.
+         *
+         * @param toolOutputs the value to set
+         * @return this builder
+         */
+        public Builder toolOutputs(java.util.List<ToolOutput> toolOutputs) {
+            this.toolOutputs = toolOutputs;
+            this.__explicitlySet__.add("toolOutputs");
             return this;
         }
         /** A list of actions the agent requires the user or agent client to perform. */
@@ -135,6 +159,7 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
                             this.message,
                             this.traces,
                             this.toolResults,
+                            this.toolOutputs,
                             this.requiredActions,
                             this.guardrailResult);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -153,6 +178,9 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("toolResults")) {
                 this.toolResults(model.getToolResults());
+            }
+            if (model.wasPropertyExplicitlySet("toolOutputs")) {
+                this.toolOutputs(model.getToolOutputs());
             }
             if (model.wasPropertyExplicitlySet("requiredActions")) {
                 this.requiredActions(model.getRequiredActions());
@@ -199,19 +227,38 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * A map where each key is a toolId and the value contains tool type and additional dynamic
-     * results.
+     * results. This field is deprecated and will be removed after July 02 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("toolResults")
     private final java.util.Map<String, String> toolResults;
 
     /**
      * A map where each key is a toolId and the value contains tool type and additional dynamic
-     * results.
+     * results. This field is deprecated and will be removed after July 02 2026.
      *
      * @return the value
      */
     public java.util.Map<String, String> getToolResults() {
         return toolResults;
+    }
+
+    /**
+     * Array of tool outputs in execution order. Each item includes the tool OCID, output type, and
+     * corresponding content. The result structure is defined by the {@code toolOutputType}
+     * discriminator.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("toolOutputs")
+    private final java.util.List<ToolOutput> toolOutputs;
+
+    /**
+     * Array of tool outputs in execution order. Each item includes the tool OCID, output type, and
+     * corresponding content. The result structure is defined by the {@code toolOutputType}
+     * discriminator.
+     *
+     * @return the value
+     */
+    public java.util.List<ToolOutput> getToolOutputs() {
+        return toolOutputs;
     }
 
     /** A list of actions the agent requires the user or agent client to perform. */
@@ -262,6 +309,7 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
         sb.append("message=").append(String.valueOf(this.message));
         sb.append(", traces=").append(String.valueOf(this.traces));
         sb.append(", toolResults=").append(String.valueOf(this.toolResults));
+        sb.append(", toolOutputs=").append(String.valueOf(this.toolOutputs));
         sb.append(", requiredActions=").append(String.valueOf(this.requiredActions));
         sb.append(", guardrailResult=").append(String.valueOf(this.guardrailResult));
         sb.append(")");
@@ -281,6 +329,7 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
         return java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.traces, other.traces)
                 && java.util.Objects.equals(this.toolResults, other.toolResults)
+                && java.util.Objects.equals(this.toolOutputs, other.toolOutputs)
                 && java.util.Objects.equals(this.requiredActions, other.requiredActions)
                 && java.util.Objects.equals(this.guardrailResult, other.guardrailResult)
                 && super.equals(other);
@@ -293,6 +342,7 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
         result = (result * PRIME) + (this.traces == null ? 43 : this.traces.hashCode());
         result = (result * PRIME) + (this.toolResults == null ? 43 : this.toolResults.hashCode());
+        result = (result * PRIME) + (this.toolOutputs == null ? 43 : this.toolOutputs.hashCode());
         result =
                 (result * PRIME)
                         + (this.requiredActions == null ? 43 : this.requiredActions.hashCode());

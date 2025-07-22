@@ -68,6 +68,9 @@ public final class AutonomousDatabaseSummary
         "autonomousContainerDatabaseId",
         "isBackupRetentionLocked",
         "timeUndeleted",
+        "timeEarliestAvailableDbVersionUpgrade",
+        "timeLatestAvailableDbVersionUpgrade",
+        "timeScheduledDbVersionUpgrade",
         "timeCreated",
         "displayName",
         "serviceConsoleUrl",
@@ -196,6 +199,9 @@ public final class AutonomousDatabaseSummary
             String autonomousContainerDatabaseId,
             Boolean isBackupRetentionLocked,
             java.util.Date timeUndeleted,
+            java.util.Date timeEarliestAvailableDbVersionUpgrade,
+            java.util.Date timeLatestAvailableDbVersionUpgrade,
+            java.util.Date timeScheduledDbVersionUpgrade,
             java.util.Date timeCreated,
             String displayName,
             String serviceConsoleUrl,
@@ -323,6 +329,9 @@ public final class AutonomousDatabaseSummary
         this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
         this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.timeUndeleted = timeUndeleted;
+        this.timeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+        this.timeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
+        this.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
         this.timeCreated = timeCreated;
         this.displayName = displayName;
         this.serviceConsoleUrl = serviceConsoleUrl;
@@ -1249,6 +1258,57 @@ public final class AutonomousDatabaseSummary
         public Builder timeUndeleted(java.util.Date timeUndeleted) {
             this.timeUndeleted = timeUndeleted;
             this.__explicitlySet__.add("timeUndeleted");
+            return this;
+        }
+        /**
+         * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to
+         * 23ai.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestAvailableDbVersionUpgrade")
+        private java.util.Date timeEarliestAvailableDbVersionUpgrade;
+
+        /**
+         * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to
+         * 23ai.
+         *
+         * @param timeEarliestAvailableDbVersionUpgrade the value to set
+         * @return this builder
+         */
+        public Builder timeEarliestAvailableDbVersionUpgrade(
+                java.util.Date timeEarliestAvailableDbVersionUpgrade) {
+            this.timeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            this.__explicitlySet__.add("timeEarliestAvailableDbVersionUpgrade");
+            return this;
+        }
+        /** The max date and time the Autonomous Database can be scheduled to upgrade to 23ai. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLatestAvailableDbVersionUpgrade")
+        private java.util.Date timeLatestAvailableDbVersionUpgrade;
+
+        /**
+         * The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+         *
+         * @param timeLatestAvailableDbVersionUpgrade the value to set
+         * @return this builder
+         */
+        public Builder timeLatestAvailableDbVersionUpgrade(
+                java.util.Date timeLatestAvailableDbVersionUpgrade) {
+            this.timeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
+            this.__explicitlySet__.add("timeLatestAvailableDbVersionUpgrade");
+            return this;
+        }
+        /** The date and time the Autonomous Database scheduled to upgrade to 23ai. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledDbVersionUpgrade")
+        private java.util.Date timeScheduledDbVersionUpgrade;
+
+        /**
+         * The date and time the Autonomous Database scheduled to upgrade to 23ai.
+         *
+         * @param timeScheduledDbVersionUpgrade the value to set
+         * @return this builder
+         */
+        public Builder timeScheduledDbVersionUpgrade(java.util.Date timeScheduledDbVersionUpgrade) {
+            this.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
+            this.__explicitlySet__.add("timeScheduledDbVersionUpgrade");
             return this;
         }
         /** The date and time the Autonomous Database was created. */
@@ -3163,6 +3223,9 @@ public final class AutonomousDatabaseSummary
                             this.autonomousContainerDatabaseId,
                             this.isBackupRetentionLocked,
                             this.timeUndeleted,
+                            this.timeEarliestAvailableDbVersionUpgrade,
+                            this.timeLatestAvailableDbVersionUpgrade,
+                            this.timeScheduledDbVersionUpgrade,
                             this.timeCreated,
                             this.displayName,
                             this.serviceConsoleUrl,
@@ -3381,6 +3444,17 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("timeUndeleted")) {
                 this.timeUndeleted(model.getTimeUndeleted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEarliestAvailableDbVersionUpgrade")) {
+                this.timeEarliestAvailableDbVersionUpgrade(
+                        model.getTimeEarliestAvailableDbVersionUpgrade());
+            }
+            if (model.wasPropertyExplicitlySet("timeLatestAvailableDbVersionUpgrade")) {
+                this.timeLatestAvailableDbVersionUpgrade(
+                        model.getTimeLatestAvailableDbVersionUpgrade());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduledDbVersionUpgrade")) {
+                this.timeScheduledDbVersionUpgrade(model.getTimeScheduledDbVersionUpgrade());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -4553,6 +4627,47 @@ public final class AutonomousDatabaseSummary
      */
     public java.util.Date getTimeUndeleted() {
         return timeUndeleted;
+    }
+
+    /**
+     * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestAvailableDbVersionUpgrade")
+    private final java.util.Date timeEarliestAvailableDbVersionUpgrade;
+
+    /**
+     * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeEarliestAvailableDbVersionUpgrade() {
+        return timeEarliestAvailableDbVersionUpgrade;
+    }
+
+    /** The max date and time the Autonomous Database can be scheduled to upgrade to 23ai. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLatestAvailableDbVersionUpgrade")
+    private final java.util.Date timeLatestAvailableDbVersionUpgrade;
+
+    /**
+     * The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLatestAvailableDbVersionUpgrade() {
+        return timeLatestAvailableDbVersionUpgrade;
+    }
+
+    /** The date and time the Autonomous Database scheduled to upgrade to 23ai. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledDbVersionUpgrade")
+    private final java.util.Date timeScheduledDbVersionUpgrade;
+
+    /**
+     * The date and time the Autonomous Database scheduled to upgrade to 23ai.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeScheduledDbVersionUpgrade() {
+        return timeScheduledDbVersionUpgrade;
     }
 
     /** The date and time the Autonomous Database was created. */
@@ -7053,6 +7168,12 @@ public final class AutonomousDatabaseSummary
         sb.append(", isBackupRetentionLocked=")
                 .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", timeUndeleted=").append(String.valueOf(this.timeUndeleted));
+        sb.append(", timeEarliestAvailableDbVersionUpgrade=")
+                .append(String.valueOf(this.timeEarliestAvailableDbVersionUpgrade));
+        sb.append(", timeLatestAvailableDbVersionUpgrade=")
+                .append(String.valueOf(this.timeLatestAvailableDbVersionUpgrade));
+        sb.append(", timeScheduledDbVersionUpgrade=")
+                .append(String.valueOf(this.timeScheduledDbVersionUpgrade));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", serviceConsoleUrl=").append(String.valueOf(this.serviceConsoleUrl));
@@ -7237,6 +7358,14 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(
                         this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(this.timeUndeleted, other.timeUndeleted)
+                && java.util.Objects.equals(
+                        this.timeEarliestAvailableDbVersionUpgrade,
+                        other.timeEarliestAvailableDbVersionUpgrade)
+                && java.util.Objects.equals(
+                        this.timeLatestAvailableDbVersionUpgrade,
+                        other.timeLatestAvailableDbVersionUpgrade)
+                && java.util.Objects.equals(
+                        this.timeScheduledDbVersionUpgrade, other.timeScheduledDbVersionUpgrade)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.serviceConsoleUrl, other.serviceConsoleUrl)
@@ -7493,6 +7622,21 @@ public final class AutonomousDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.timeUndeleted == null ? 43 : this.timeUndeleted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeEarliestAvailableDbVersionUpgrade == null
+                                ? 43
+                                : this.timeEarliestAvailableDbVersionUpgrade.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLatestAvailableDbVersionUpgrade == null
+                                ? 43
+                                : this.timeLatestAvailableDbVersionUpgrade.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduledDbVersionUpgrade == null
+                                ? 43
+                                : this.timeScheduledDbVersionUpgrade.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =

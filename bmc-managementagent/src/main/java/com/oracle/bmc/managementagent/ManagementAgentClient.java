@@ -213,6 +213,40 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateNamedCredentialResponse createNamedCredential(
+            CreateNamedCredentialRequest request) {
+        Objects.requireNonNull(
+                request.getCreateNamedCredentialDetails(),
+                "createNamedCredentialDetails is required");
+
+        return clientCall(request, CreateNamedCredentialResponse::builder)
+                .logger(LOG, "createNamedCredential")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "CreateNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/NamedCredential/CreateNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNamedCredentialRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("namedCredentials")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.managementagent.model.NamedCredential.class,
+                        CreateNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateNamedCredentialResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateNamedCredentialResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public DeleteDataSourceResponse deleteDataSource(DeleteDataSourceRequest request) {
 
         Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
@@ -292,6 +326,34 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteManagementAgentInstallKeyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteNamedCredentialResponse deleteNamedCredential(
+            DeleteNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+
+        return clientCall(request, DeleteNamedCredentialResponse::builder)
+                .logger(LOG, "deleteNamedCredential")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "DeleteNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNamedCredentialRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteNamedCredentialResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -504,6 +566,65 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "content-type",
                         GetManagementAgentInstallKeyContentResponse.Builder::contentType)
+                .callSync();
+    }
+
+    @Override
+    public GetNamedCredentialResponse getNamedCredential(GetNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+
+        return clientCall(request, GetNamedCredentialResponse::builder)
+                .logger(LOG, "getNamedCredential")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "GetNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNamedCredentialRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.managementagent.model.NamedCredential.class,
+                        GetNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetNamedCredentialResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetNamedCredentialsMetadatumResponse getNamedCredentialsMetadatum(
+            GetNamedCredentialsMetadatumRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetNamedCredentialsMetadatumResponse::builder)
+                .logger(LOG, "getNamedCredentialsMetadatum")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "GetNamedCredentialsMetadatum",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/NamedCredential/GetNamedCredentialsMetadatum")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNamedCredentialsMetadatumRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("managementAgents")
+                .appendPathParam("namedCredentialsMetadata")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("managementAgentId", request.getManagementAgentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.managementagent.model.NamedCredentialsMetadatum.class,
+                        GetNamedCredentialsMetadatumResponse.Builder::namedCredentialsMetadatum)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetNamedCredentialsMetadatumResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetNamedCredentialsMetadatumResponse.Builder::etag)
                 .callSync();
     }
 
@@ -782,6 +903,53 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListManagementAgentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagementAgentsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListNamedCredentialsResponse listNamedCredentials(ListNamedCredentialsRequest request) {
+        Objects.requireNonNull(request.getManagementAgentId(), "managementAgentId is required");
+
+        return clientCall(request, ListNamedCredentialsResponse::builder)
+                .logger(LOG, "listNamedCredentials")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "ListNamedCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/NamedCredential/ListNamedCredentials")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNamedCredentialsRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("namedCredentials")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "name",
+                        request.getName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("managementAgentId", request.getManagementAgentId())
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.managementagent.model.NamedCredentialCollection.class,
+                        ListNamedCredentialsResponse.Builder::namedCredentialCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNamedCredentialsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNamedCredentialsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1105,6 +1273,43 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateManagementAgentInstallKeyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateNamedCredentialResponse updateNamedCredential(
+            UpdateNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNamedCredentialDetails(),
+                "updateNamedCredentialDetails is required");
+
+        return clientCall(request, UpdateNamedCredentialResponse::builder)
+                .logger(LOG, "updateNamedCredential")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "UpdateNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNamedCredentialRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.managementagent.model.NamedCredential.class,
+                        UpdateNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateNamedCredentialResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateNamedCredentialResponse.Builder::etag)
                 .callSync();
     }
 

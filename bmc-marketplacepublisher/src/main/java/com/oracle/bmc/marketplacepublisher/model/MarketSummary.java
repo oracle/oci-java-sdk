@@ -15,7 +15,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MarketSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -95,12 +95,12 @@ public final class MarketSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("categoryCode");
             return this;
         }
-        /** Bill to countries for the market. */
+        /** bill to countries for the market. */
         @com.fasterxml.jackson.annotation.JsonProperty("billToCountries")
         private java.util.List<String> billToCountries;
 
         /**
-         * Bill to countries for the market.
+         * bill to countries for the market.
          *
          * @param billToCountries the value to set
          * @return this builder
@@ -266,12 +266,12 @@ public final class MarketSummary extends com.oracle.bmc.http.client.internal.Exp
         return categoryCode;
     }
 
-    /** Bill to countries for the market. */
+    /** bill to countries for the market. */
     @com.fasterxml.jackson.annotation.JsonProperty("billToCountries")
     private final java.util.List<String> billToCountries;
 
     /**
-     * Bill to countries for the market.
+     * bill to countries for the market.
      *
      * @return the value
      */

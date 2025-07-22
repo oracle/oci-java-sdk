@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * General information about replication of a MySQL server. <br>
+ * General information about the replication of a MySQL server. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -83,19 +83,19 @@ public final class ManagedMySqlDatabaseGeneralReplicationInformation
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member,
-         * and so on. If the instance is replicating from one or more sources and has one or more
-         * replicas, i.e., it belongs to a replication chain, the instance type can be
-         * Replica/Source.
+         * The type of the instance for example, Source, Replica, Primary Group Member, and
+         * Secondary Group Member. If the instance is replicating from one or more sources and has
+         * one or more replicas, which means, it belongs to a replication chain, the instance type
+         * can be Replica/Source.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
         private String instanceType;
 
         /**
-         * The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member,
-         * and so on. If the instance is replicating from one or more sources and has one or more
-         * replicas, i.e., it belongs to a replication chain, the instance type can be
-         * Replica/Source.
+         * The type of the instance for example, Source, Replica, Primary Group Member, and
+         * Secondary Group Member. If the instance is replicating from one or more sources and has
+         * one or more replicas, which means, it belongs to a replication chain, the instance type
+         * can be Replica/Source.
          *
          * @param instanceType the value to set
          * @return this builder
@@ -280,12 +280,12 @@ public final class ManagedMySqlDatabaseGeneralReplicationInformation
             this.__explicitlySet__.add("readOnly");
             return this;
         }
-        /** Global Transaction Identifier (GTID) mode of this server. */
+        /** The Global Transaction Identifier (GTID) mode of this server. */
         @com.fasterxml.jackson.annotation.JsonProperty("gtidMode")
         private String gtidMode;
 
         /**
-         * Global Transaction Identifier (GTID) mode of this server.
+         * The Global Transaction Identifier (GTID) mode of this server.
          *
          * @param gtidMode the value to set
          * @return this builder
@@ -314,12 +314,12 @@ public final class ManagedMySqlDatabaseGeneralReplicationInformation
             this.__explicitlySet__.add("executedGtidSet");
             return this;
         }
-        /** Status of binary logging on this server. */
+        /** The status of binary logging on this server. */
         @com.fasterxml.jackson.annotation.JsonProperty("binaryLogging")
         private String binaryLogging;
 
         /**
-         * Status of binary logging on this server.
+         * The status of binary logging on this server.
          *
          * @param binaryLogging the value to set
          * @return this builder
@@ -456,17 +456,19 @@ public final class ManagedMySqlDatabaseGeneralReplicationInformation
     }
 
     /**
-     * The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and
-     * so on. If the instance is replicating from one or more sources and has one or more replicas,
-     * i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+     * The type of the instance for example, Source, Replica, Primary Group Member, and Secondary
+     * Group Member. If the instance is replicating from one or more sources and has one or more
+     * replicas, which means, it belongs to a replication chain, the instance type can be
+     * Replica/Source.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     private final String instanceType;
 
     /**
-     * The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and
-     * so on. If the instance is replicating from one or more sources and has one or more replicas,
-     * i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+     * The type of the instance for example, Source, Replica, Primary Group Member, and Secondary
+     * Group Member. If the instance is replicating from one or more sources and has one or more
+     * replicas, which means, it belongs to a replication chain, the instance type can be
+     * Replica/Source.
      *
      * @return the value
      */
@@ -627,12 +629,12 @@ public final class ManagedMySqlDatabaseGeneralReplicationInformation
         return readOnly;
     }
 
-    /** Global Transaction Identifier (GTID) mode of this server. */
+    /** The Global Transaction Identifier (GTID) mode of this server. */
     @com.fasterxml.jackson.annotation.JsonProperty("gtidMode")
     private final String gtidMode;
 
     /**
-     * Global Transaction Identifier (GTID) mode of this server.
+     * The Global Transaction Identifier (GTID) mode of this server.
      *
      * @return the value
      */
@@ -657,12 +659,12 @@ public final class ManagedMySqlDatabaseGeneralReplicationInformation
         return executedGtidSet;
     }
 
-    /** Status of binary logging on this server. */
+    /** The status of binary logging on this server. */
     @com.fasterxml.jackson.annotation.JsonProperty("binaryLogging")
     private final String binaryLogging;
 
     /**
-     * Status of binary logging on this server.
+     * The status of binary logging on this server.
      *
      * @return the value
      */

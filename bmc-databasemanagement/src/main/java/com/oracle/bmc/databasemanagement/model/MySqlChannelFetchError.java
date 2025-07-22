@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * MySQL server replication Channel name and error from its fetch operation. <br>
+ * MySQL server replication channel name and error from its fetch operation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class MySqlChannelFetchError
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the replication channel */
+        /** The name of the replication channel. */
         @com.fasterxml.jackson.annotation.JsonProperty("channelName")
         private String channelName;
 
         /**
-         * The name of the replication channel
+         * The name of the replication channel.
          *
          * @param channelName the value to set
          * @return this builder
@@ -90,12 +90,12 @@ public final class MySqlChannelFetchError
         return new Builder().copy(this);
     }
 
-    /** The name of the replication channel */
+    /** The name of the replication channel. */
     @com.fasterxml.jackson.annotation.JsonProperty("channelName")
     private final String channelName;
 
     /**
-     * The name of the replication channel
+     * The name of the replication channel.
      *
      * @return the value
      */

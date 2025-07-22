@@ -24,7 +24,7 @@ public final class UpdateConditionDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"action", "displayName", "metric"})
-    public UpdateConditionDetails(Action action, String displayName, Metric metric) {
+    public UpdateConditionDetails(Action action, String displayName, MetricBase metric) {
         super();
         this.action = action;
         this.displayName = displayName;
@@ -63,9 +63,9 @@ public final class UpdateConditionDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("metric")
-        private Metric metric;
+        private MetricBase metric;
 
-        public Builder metric(Metric metric) {
+        public Builder metric(MetricBase metric) {
             this.metric = metric;
             this.__explicitlySet__.add("metric");
             return this;
@@ -132,9 +132,9 @@ public final class UpdateConditionDetails
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metric")
-    private final Metric metric;
+    private final MetricBase metric;
 
-    public Metric getMetric() {
+    public MetricBase getMetric() {
         return metric;
     }
 

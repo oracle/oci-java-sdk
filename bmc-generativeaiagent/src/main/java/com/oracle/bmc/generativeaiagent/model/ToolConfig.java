@@ -32,6 +32,9 @@ package com.oracle.bmc.generativeaiagent.model;
             value = HttpEndpointToolConfig.class,
             name = "HTTP_ENDPOINT_TOOL_CONFIG"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AgentToolConfig.class,
+            name = "AGENT_TOOL_CONFIG"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = RagToolConfig.class,
             name = "RAG_TOOL_CONFIG")
 })
@@ -84,17 +87,13 @@ public class ToolConfig extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return result;
     }
 
-    /**
-     * The type of the Tool config. The allowed values are: - {@code SQL_TOOL_CONFIG}: The config
-     * for sql Tool. - {@code RAG_TOOL_CONFIG}: The config for rag Tool. -
-     * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool. -
-     * HTTP_ENDPOINT_TOOL_CONFIG: The config for HTTP endpoint Tool.
-     */
+    /** The type of the Tool config. */
     public enum ToolConfigType implements com.oracle.bmc.http.internal.BmcEnum {
         SqlToolConfig("SQL_TOOL_CONFIG"),
         RagToolConfig("RAG_TOOL_CONFIG"),
         FunctionCallingToolConfig("FUNCTION_CALLING_TOOL_CONFIG"),
         HttpEndpointToolConfig("HTTP_ENDPOINT_TOOL_CONFIG"),
+        AgentToolConfig("AGENT_TOOL_CONFIG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

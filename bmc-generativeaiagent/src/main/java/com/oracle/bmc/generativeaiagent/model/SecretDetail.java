@@ -78,11 +78,7 @@ public class SecretDetail extends com.oracle.bmc.http.client.internal.Explicitly
         return result;
     }
 
-    /**
-     * The type of OpenID. The allowed values are: - {@code IDCS_SECRET}: The OpenID configuration
-     * used is OpenSearch is IDCS. - {@code BASIC_AUTH_SECRET}: Basic authentication use for
-     * OpenSearch
-     */
+    /** The type of OpenID. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         IdcsSecret("IDCS_SECRET"),
         BasicAuthSecret("BASIC_AUTH_SECRET"),

@@ -12,7 +12,7 @@ import com.oracle.bmc.marketplacepublisher.responses.*;
  * Infrastructure Marketplace. This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER
  * for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public interface MarketplacePublisher extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -553,6 +553,21 @@ public interface MarketplacePublisher extends AutoCloseable {
     GetCategoryResponse getCategory(GetCategoryRequest request);
 
     /**
+     * Gets the details for a lead.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetLeadExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLead API.
+     */
+    GetLeadResponse getLead(GetLeadRequest request);
+
+    /**
      * Gets the details for a listing.
      *
      * @param request The request object containing the details to send
@@ -599,6 +614,40 @@ public interface MarketplacePublisher extends AutoCloseable {
      */
     GetListingRevisionAttachmentResponse getListingRevisionAttachment(
             GetListingRevisionAttachmentRequest request);
+
+    /**
+     * Get the attachment content by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionAttachmentContentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetListingRevisionAttachmentContent API.
+     */
+    GetListingRevisionAttachmentContentResponse getListingRevisionAttachmentContent(
+            GetListingRevisionAttachmentContentRequest request);
+
+    /**
+     * Gets the content for a listing revision icon.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionIconContentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetListingRevisionIconContent API.
+     */
+    GetListingRevisionIconContentResponse getListingRevisionIconContent(
+            GetListingRevisionIconContentRequest request);
 
     /**
      * Get note details by the identifier
@@ -679,6 +728,37 @@ public interface MarketplacePublisher extends AutoCloseable {
     GetPublisherResponse getPublisher(GetPublisherRequest request);
 
     /**
+     * Gets a SupportDoc by code identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetSupportDocExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSupportDoc API.
+     */
+    GetSupportDocResponse getSupportDoc(GetSupportDocRequest request);
+
+    /**
+     * Gets a Support Doc content by supportDocCode
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetSupportDocContentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetSupportDocContent API.
+     */
+    GetSupportDocContentResponse getSupportDocContent(GetSupportDocContentRequest request);
+
+    /**
      * Gets a Term by identifier
      *
      * @param request The request object containing the details to send
@@ -707,6 +787,22 @@ public interface MarketplacePublisher extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTermVersion API.
      */
     GetTermVersionResponse getTermVersion(GetTermVersionRequest request);
+
+    /**
+     * Gets a Term Version content by the identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetTermVersionContentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetTermVersionContent API.
+     */
+    GetTermVersionContentResponse getTermVersionContent(GetTermVersionContentRequest request);
 
     /**
      * Gets details of the work request with the given ID.
@@ -741,6 +837,22 @@ public interface MarketplacePublisher extends AutoCloseable {
     ListArtifactsResponse listArtifacts(ListArtifactsRequest request);
 
     /**
+     * List all published service listing revisions
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListAvailableServicesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListAvailableServices API.
+     */
+    ListAvailableServicesResponse listAvailableServices(ListAvailableServicesRequest request);
+
+    /**
      * Lists the categories in your compartment. You must specify your compartment's OCID as the
      * value for the compartment ID. For information about OCIDs, see Resource Identifiers
      * (Content/General/Concepts/identifiers.htm).
@@ -756,6 +868,57 @@ public interface MarketplacePublisher extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCategories API.
      */
     ListCategoriesResponse listCategories(ListCategoriesRequest request);
+
+    /**
+     * List customer instance report records
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListCustomerInstanceReportRecordsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCustomerInstanceReportRecords API.
+     */
+    ListCustomerInstanceReportRecordsResponse listCustomerInstanceReportRecords(
+            ListCustomerInstanceReportRecordsRequest request);
+
+    /**
+     * List disbursement report records
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListDisbursementReportRecordsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDisbursementReportRecords API.
+     */
+    ListDisbursementReportRecordsResponse listDisbursementReportRecords(
+            ListDisbursementReportRecordsRequest request);
+
+    /**
+     * Lists the leads in your compartment that belong to a listing. You must specify your listing's
+     * OCID as the value for the listing ID. For information about OCIDs, see Resource Identifiers
+     * (Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListLeadsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLeads API.
+     */
+    ListLeadsResponse listLeads(ListLeadsRequest request);
 
     /**
      * Gets the list of attachments for a listing revision in a compartment
@@ -893,6 +1056,58 @@ public interface MarketplacePublisher extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublishers API.
      */
     ListPublishersResponse listPublishers(ListPublishersRequest request);
+
+    /**
+     * Lists the supportDocs in your compartment. You must specify your compartment's OCID as the
+     * value for the compartment ID. For information about OCIDs, see Resource Identifiers
+     * (Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListSupportDocsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportDocs
+     *     API.
+     */
+    ListSupportDocsResponse listSupportDocs(ListSupportDocsRequest request);
+
+    /**
+     * Lists the currencies supported by the Marketplace Publisher Service. You must specify your
+     * compartment's OCID as the value for the compartment ID. For information about OCIDs, see
+     * Resource Identifiers (Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListSupportedCurrenciesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSupportedCurrencies API.
+     */
+    ListSupportedCurrenciesResponse listSupportedCurrencies(ListSupportedCurrenciesRequest request);
+
+    /**
+     * Lists the shapes available to select from.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListSupportedShapesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedShapes
+     *     API.
+     */
+    ListSupportedShapesResponse listSupportedShapes(ListSupportedShapesRequest request);
 
     /**
      * Returns a list of the publisher term versions.
@@ -1230,6 +1445,23 @@ public interface MarketplacePublisher extends AutoCloseable {
      */
     UpdateListingRevisionIconContentResponse updateListingRevisionIconContent(
             UpdateListingRevisionIconContentRequest request);
+
+    /**
+     * Updates the Listing Revision Note tag data
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionNoteExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateListingRevisionNote API.
+     */
+    UpdateListingRevisionNoteResponse updateListingRevisionNote(
+            UpdateListingRevisionNoteRequest request);
 
     /**
      * Updates the Listing Revision Package.

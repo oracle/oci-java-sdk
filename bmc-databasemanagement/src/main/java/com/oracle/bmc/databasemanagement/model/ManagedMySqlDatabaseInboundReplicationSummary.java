@@ -228,19 +228,19 @@ public final class ManagedMySqlDatabaseInboundReplicationSummary
             return this;
         }
         /**
-         * Whether the channel assigns global transaction identifiers (GTIDs) to anonymous
+         * Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous
          * replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned
          * that includes this replica's own universally unique identifier (UUID). A UUID as value
-         * indicates that a GTID is assigned which includes that manually set UUID value.
+         * indicates that a GTID is assigned, which includes that manually set UUID value.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("gtidAssignment")
         private String gtidAssignment;
 
         /**
-         * Whether the channel assigns global transaction identifiers (GTIDs) to anonymous
+         * Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous
          * replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned
          * that includes this replica's own universally unique identifier (UUID). A UUID as value
-         * indicates that a GTID is assigned which includes that manually set UUID value.
+         * indicates that a GTID is assigned, which includes that manually set UUID value.
          *
          * @param gtidAssignment the value to set
          * @return this builder
@@ -333,15 +333,15 @@ public final class ManagedMySqlDatabaseInboundReplicationSummary
             return this;
         }
         /**
-         * Time in seconds it took for the transaction that is currently being applied between being
-         * committed on the source and applied on the replica.
+         * The time in seconds that the current transaction took between being committed on the
+         * source and being applied on the replica.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("applyDelay")
         private Double applyDelay;
 
         /**
-         * Time in seconds it took for the transaction that is currently being applied between being
-         * committed on the source and applied on the replica.
+         * The time in seconds that the current transaction took between being committed on the
+         * source and being applied on the replica.
          *
          * @param applyDelay the value to set
          * @return this builder
@@ -610,19 +610,19 @@ public final class ManagedMySqlDatabaseInboundReplicationSummary
     }
 
     /**
-     * Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated
-     * transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes
-     * this replica's own universally unique identifier (UUID). A UUID as value indicates that a
-     * GTID is assigned which includes that manually set UUID value.
+     * Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous
+     * replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that
+     * includes this replica's own universally unique identifier (UUID). A UUID as value indicates
+     * that a GTID is assigned, which includes that manually set UUID value.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("gtidAssignment")
     private final String gtidAssignment;
 
     /**
-     * Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated
-     * transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes
-     * this replica's own universally unique identifier (UUID). A UUID as value indicates that a
-     * GTID is assigned which includes that manually set UUID value.
+     * Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous
+     * replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that
+     * includes this replica's own universally unique identifier (UUID). A UUID as value indicates
+     * that a GTID is assigned, which includes that manually set UUID value.
      *
      * @return the value
      */
@@ -700,15 +700,15 @@ public final class ManagedMySqlDatabaseInboundReplicationSummary
     }
 
     /**
-     * Time in seconds it took for the transaction that is currently being applied between being
-     * committed on the source and applied on the replica.
+     * The time in seconds that the current transaction took between being committed on the source
+     * and being applied on the replica.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("applyDelay")
     private final Double applyDelay;
 
     /**
-     * Time in seconds it took for the transaction that is currently being applied between being
-     * committed on the source and applied on the replica.
+     * The time in seconds that the current transaction took between being committed on the source
+     * and being applied on the replica.
      *
      * @return the value
      */

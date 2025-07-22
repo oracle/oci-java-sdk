@@ -38,6 +38,15 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+        private String okvEndPointGroupName;
+
+        public Builder okvEndPointGroupName(String okvEndPointGroupName) {
+            this.okvEndPointGroupName = okvEndPointGroupName;
+            this.__explicitlySet__.add("okvEndPointGroupName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -405,6 +414,7 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
             CreateAutonomousContainerDatabaseFromBackupDetails model =
                     new CreateAutonomousContainerDatabaseFromBackupDetails(
                             this.customerContacts,
+                            this.okvEndPointGroupName,
                             this.displayName,
                             this.dbUniqueName,
                             this.dbName,
@@ -452,6 +462,9 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
         public Builder copy(CreateAutonomousContainerDatabaseFromBackupDetails model) {
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("okvEndPointGroupName")) {
+                this.okvEndPointGroupName(model.getOkvEndPointGroupName());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -587,6 +600,7 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
     @Deprecated
     public CreateAutonomousContainerDatabaseFromBackupDetails(
             java.util.List<CustomerContact> customerContacts,
+            String okvEndPointGroupName,
             String displayName,
             String dbUniqueName,
             String dbName,
@@ -626,6 +640,7 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
             String autonomousContainerDatabaseBackupId) {
         super(
                 customerContacts,
+                okvEndPointGroupName,
                 displayName,
                 dbUniqueName,
                 dbName,

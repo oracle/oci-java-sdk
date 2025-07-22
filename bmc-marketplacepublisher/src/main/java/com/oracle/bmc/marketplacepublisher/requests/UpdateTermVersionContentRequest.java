@@ -11,7 +11,7 @@ import com.oracle.bmc.marketplacepublisher.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateTermVersionContentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class UpdateTermVersionContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 

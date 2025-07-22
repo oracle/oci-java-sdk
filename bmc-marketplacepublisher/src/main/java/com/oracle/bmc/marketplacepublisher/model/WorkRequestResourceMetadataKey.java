@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /** Possible Metadata keys for workRequest resource metadata */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.internal.BmcEnum {
     IsDryRun("IS_DRY_RUN"),
 

@@ -290,6 +290,1726 @@ public class DbManagementPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listCloudAsmDiskGroups operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudAsmDiskGroupsResponse> listCloudAsmDiskGroupsResponseIterator(
+            final ListCloudAsmDiskGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudAsmDiskGroupsRequest.Builder,
+                ListCloudAsmDiskGroupsRequest,
+                ListCloudAsmDiskGroupsResponse>(
+                new java.util.function.Supplier<ListCloudAsmDiskGroupsRequest.Builder>() {
+                    @Override
+                    public ListCloudAsmDiskGroupsRequest.Builder get() {
+                        return ListCloudAsmDiskGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudAsmDiskGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListCloudAsmDiskGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudAsmDiskGroupsRequest.Builder>,
+                        ListCloudAsmDiskGroupsRequest>() {
+                    @Override
+                    public ListCloudAsmDiskGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudAsmDiskGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudAsmDiskGroupsRequest, ListCloudAsmDiskGroupsResponse>() {
+                    @Override
+                    public ListCloudAsmDiskGroupsResponse apply(
+                            ListCloudAsmDiskGroupsRequest request) {
+                        return client.listCloudAsmDiskGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudAsmDiskGroupSummary} objects contained in
+     * responses from the listCloudAsmDiskGroups operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudAsmDiskGroupSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudAsmDiskGroupSummary>
+            listCloudAsmDiskGroupsRecordIterator(final ListCloudAsmDiskGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudAsmDiskGroupsRequest.Builder,
+                ListCloudAsmDiskGroupsRequest,
+                ListCloudAsmDiskGroupsResponse,
+                com.oracle.bmc.databasemanagement.model.CloudAsmDiskGroupSummary>(
+                new java.util.function.Supplier<ListCloudAsmDiskGroupsRequest.Builder>() {
+                    @Override
+                    public ListCloudAsmDiskGroupsRequest.Builder get() {
+                        return ListCloudAsmDiskGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudAsmDiskGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListCloudAsmDiskGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudAsmDiskGroupsRequest.Builder>,
+                        ListCloudAsmDiskGroupsRequest>() {
+                    @Override
+                    public ListCloudAsmDiskGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudAsmDiskGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudAsmDiskGroupsRequest, ListCloudAsmDiskGroupsResponse>() {
+                    @Override
+                    public ListCloudAsmDiskGroupsResponse apply(
+                            ListCloudAsmDiskGroupsRequest request) {
+                        return client.listCloudAsmDiskGroups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudAsmDiskGroupsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .CloudAsmDiskGroupSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .CloudAsmDiskGroupSummary>
+                            apply(ListCloudAsmDiskGroupsResponse response) {
+                        return response.getCloudAsmDiskGroupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudAsmInstances operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudAsmInstancesResponse> listCloudAsmInstancesResponseIterator(
+            final ListCloudAsmInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudAsmInstancesRequest.Builder,
+                ListCloudAsmInstancesRequest,
+                ListCloudAsmInstancesResponse>(
+                new java.util.function.Supplier<ListCloudAsmInstancesRequest.Builder>() {
+                    @Override
+                    public ListCloudAsmInstancesRequest.Builder get() {
+                        return ListCloudAsmInstancesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudAsmInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudAsmInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudAsmInstancesRequest.Builder>,
+                        ListCloudAsmInstancesRequest>() {
+                    @Override
+                    public ListCloudAsmInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudAsmInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudAsmInstancesRequest, ListCloudAsmInstancesResponse>() {
+                    @Override
+                    public ListCloudAsmInstancesResponse apply(
+                            ListCloudAsmInstancesRequest request) {
+                        return client.listCloudAsmInstances(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudAsmInstanceSummary} objects contained in
+     * responses from the listCloudAsmInstances operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudAsmInstanceSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudAsmInstanceSummary>
+            listCloudAsmInstancesRecordIterator(final ListCloudAsmInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudAsmInstancesRequest.Builder,
+                ListCloudAsmInstancesRequest,
+                ListCloudAsmInstancesResponse,
+                com.oracle.bmc.databasemanagement.model.CloudAsmInstanceSummary>(
+                new java.util.function.Supplier<ListCloudAsmInstancesRequest.Builder>() {
+                    @Override
+                    public ListCloudAsmInstancesRequest.Builder get() {
+                        return ListCloudAsmInstancesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudAsmInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudAsmInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudAsmInstancesRequest.Builder>,
+                        ListCloudAsmInstancesRequest>() {
+                    @Override
+                    public ListCloudAsmInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudAsmInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudAsmInstancesRequest, ListCloudAsmInstancesResponse>() {
+                    @Override
+                    public ListCloudAsmInstancesResponse apply(
+                            ListCloudAsmInstancesRequest request) {
+                        return client.listCloudAsmInstances(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudAsmInstancesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .CloudAsmInstanceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.CloudAsmInstanceSummary>
+                            apply(ListCloudAsmInstancesResponse response) {
+                        return response.getCloudAsmInstanceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudAsmUsers operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudAsmUsersResponse> listCloudAsmUsersResponseIterator(
+            final ListCloudAsmUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudAsmUsersRequest.Builder,
+                ListCloudAsmUsersRequest,
+                ListCloudAsmUsersResponse>(
+                new java.util.function.Supplier<ListCloudAsmUsersRequest.Builder>() {
+                    @Override
+                    public ListCloudAsmUsersRequest.Builder get() {
+                        return ListCloudAsmUsersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudAsmUsersResponse, String>() {
+                    @Override
+                    public String apply(ListCloudAsmUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudAsmUsersRequest.Builder>,
+                        ListCloudAsmUsersRequest>() {
+                    @Override
+                    public ListCloudAsmUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudAsmUsersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudAsmUsersRequest, ListCloudAsmUsersResponse>() {
+                    @Override
+                    public ListCloudAsmUsersResponse apply(ListCloudAsmUsersRequest request) {
+                        return client.listCloudAsmUsers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudAsmUserSummary} objects contained in responses
+     * from the listCloudAsmUsers operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudAsmUserSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudAsmUserSummary>
+            listCloudAsmUsersRecordIterator(final ListCloudAsmUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudAsmUsersRequest.Builder,
+                ListCloudAsmUsersRequest,
+                ListCloudAsmUsersResponse,
+                com.oracle.bmc.databasemanagement.model.CloudAsmUserSummary>(
+                new java.util.function.Supplier<ListCloudAsmUsersRequest.Builder>() {
+                    @Override
+                    public ListCloudAsmUsersRequest.Builder get() {
+                        return ListCloudAsmUsersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudAsmUsersResponse, String>() {
+                    @Override
+                    public String apply(ListCloudAsmUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudAsmUsersRequest.Builder>,
+                        ListCloudAsmUsersRequest>() {
+                    @Override
+                    public ListCloudAsmUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudAsmUsersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudAsmUsersRequest, ListCloudAsmUsersResponse>() {
+                    @Override
+                    public ListCloudAsmUsersResponse apply(ListCloudAsmUsersRequest request) {
+                        return client.listCloudAsmUsers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudAsmUsersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.CloudAsmUserSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.CloudAsmUserSummary>
+                            apply(ListCloudAsmUsersResponse response) {
+                        return response.getCloudAsmUserCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listCloudAsms
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudAsmsResponse> listCloudAsmsResponseIterator(
+            final ListCloudAsmsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudAsmsRequest.Builder, ListCloudAsmsRequest, ListCloudAsmsResponse>(
+                new java.util.function.Supplier<ListCloudAsmsRequest.Builder>() {
+                    @Override
+                    public ListCloudAsmsRequest.Builder get() {
+                        return ListCloudAsmsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudAsmsResponse, String>() {
+                    @Override
+                    public String apply(ListCloudAsmsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudAsmsRequest.Builder>,
+                        ListCloudAsmsRequest>() {
+                    @Override
+                    public ListCloudAsmsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudAsmsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListCloudAsmsRequest, ListCloudAsmsResponse>() {
+                    @Override
+                    public ListCloudAsmsResponse apply(ListCloudAsmsRequest request) {
+                        return client.listCloudAsms(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudAsmSummary} objects contained in responses from
+     * the listCloudAsms operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudAsmSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudAsmSummary>
+            listCloudAsmsRecordIterator(final ListCloudAsmsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudAsmsRequest.Builder,
+                ListCloudAsmsRequest,
+                ListCloudAsmsResponse,
+                com.oracle.bmc.databasemanagement.model.CloudAsmSummary>(
+                new java.util.function.Supplier<ListCloudAsmsRequest.Builder>() {
+                    @Override
+                    public ListCloudAsmsRequest.Builder get() {
+                        return ListCloudAsmsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudAsmsResponse, String>() {
+                    @Override
+                    public String apply(ListCloudAsmsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudAsmsRequest.Builder>,
+                        ListCloudAsmsRequest>() {
+                    @Override
+                    public ListCloudAsmsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudAsmsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListCloudAsmsRequest, ListCloudAsmsResponse>() {
+                    @Override
+                    public ListCloudAsmsResponse apply(ListCloudAsmsRequest request) {
+                        return client.listCloudAsms(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudAsmsResponse,
+                        java.util.List<com.oracle.bmc.databasemanagement.model.CloudAsmSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.databasemanagement.model.CloudAsmSummary>
+                            apply(ListCloudAsmsResponse response) {
+                        return response.getCloudAsmCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudClusterInstances operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudClusterInstancesResponse> listCloudClusterInstancesResponseIterator(
+            final ListCloudClusterInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudClusterInstancesRequest.Builder,
+                ListCloudClusterInstancesRequest,
+                ListCloudClusterInstancesResponse>(
+                new java.util.function.Supplier<ListCloudClusterInstancesRequest.Builder>() {
+                    @Override
+                    public ListCloudClusterInstancesRequest.Builder get() {
+                        return ListCloudClusterInstancesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudClusterInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudClusterInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudClusterInstancesRequest.Builder>,
+                        ListCloudClusterInstancesRequest>() {
+                    @Override
+                    public ListCloudClusterInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudClusterInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudClusterInstancesRequest, ListCloudClusterInstancesResponse>() {
+                    @Override
+                    public ListCloudClusterInstancesResponse apply(
+                            ListCloudClusterInstancesRequest request) {
+                        return client.listCloudClusterInstances(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudClusterInstanceSummary} objects contained in
+     * responses from the listCloudClusterInstances operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudClusterInstanceSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudClusterInstanceSummary>
+            listCloudClusterInstancesRecordIterator(
+                    final ListCloudClusterInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudClusterInstancesRequest.Builder,
+                ListCloudClusterInstancesRequest,
+                ListCloudClusterInstancesResponse,
+                com.oracle.bmc.databasemanagement.model.CloudClusterInstanceSummary>(
+                new java.util.function.Supplier<ListCloudClusterInstancesRequest.Builder>() {
+                    @Override
+                    public ListCloudClusterInstancesRequest.Builder get() {
+                        return ListCloudClusterInstancesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudClusterInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudClusterInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudClusterInstancesRequest.Builder>,
+                        ListCloudClusterInstancesRequest>() {
+                    @Override
+                    public ListCloudClusterInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudClusterInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudClusterInstancesRequest, ListCloudClusterInstancesResponse>() {
+                    @Override
+                    public ListCloudClusterInstancesResponse apply(
+                            ListCloudClusterInstancesRequest request) {
+                        return client.listCloudClusterInstances(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudClusterInstancesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .CloudClusterInstanceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .CloudClusterInstanceSummary>
+                            apply(ListCloudClusterInstancesResponse response) {
+                        return response.getCloudClusterInstanceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudClusters operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudClustersResponse> listCloudClustersResponseIterator(
+            final ListCloudClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudClustersRequest.Builder,
+                ListCloudClustersRequest,
+                ListCloudClustersResponse>(
+                new java.util.function.Supplier<ListCloudClustersRequest.Builder>() {
+                    @Override
+                    public ListCloudClustersRequest.Builder get() {
+                        return ListCloudClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudClustersResponse, String>() {
+                    @Override
+                    public String apply(ListCloudClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudClustersRequest.Builder>,
+                        ListCloudClustersRequest>() {
+                    @Override
+                    public ListCloudClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudClustersRequest, ListCloudClustersResponse>() {
+                    @Override
+                    public ListCloudClustersResponse apply(ListCloudClustersRequest request) {
+                        return client.listCloudClusters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudClusterSummary} objects contained in responses
+     * from the listCloudClusters operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudClusterSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudClusterSummary>
+            listCloudClustersRecordIterator(final ListCloudClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudClustersRequest.Builder,
+                ListCloudClustersRequest,
+                ListCloudClustersResponse,
+                com.oracle.bmc.databasemanagement.model.CloudClusterSummary>(
+                new java.util.function.Supplier<ListCloudClustersRequest.Builder>() {
+                    @Override
+                    public ListCloudClustersRequest.Builder get() {
+                        return ListCloudClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudClustersResponse, String>() {
+                    @Override
+                    public String apply(ListCloudClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudClustersRequest.Builder>,
+                        ListCloudClustersRequest>() {
+                    @Override
+                    public ListCloudClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudClustersRequest, ListCloudClustersResponse>() {
+                    @Override
+                    public ListCloudClustersResponse apply(ListCloudClustersRequest request) {
+                        return client.listCloudClusters(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudClustersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.CloudClusterSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.CloudClusterSummary>
+                            apply(ListCloudClustersResponse response) {
+                        return response.getCloudClusterCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudDatabases operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudDatabasesResponse> listCloudDatabasesResponseIterator(
+            final ListCloudDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudDatabasesRequest.Builder,
+                ListCloudDatabasesRequest,
+                ListCloudDatabasesResponse>(
+                new java.util.function.Supplier<ListCloudDatabasesRequest.Builder>() {
+                    @Override
+                    public ListCloudDatabasesRequest.Builder get() {
+                        return ListCloudDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDatabasesRequest.Builder>,
+                        ListCloudDatabasesRequest>() {
+                    @Override
+                    public ListCloudDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDatabasesRequest, ListCloudDatabasesResponse>() {
+                    @Override
+                    public ListCloudDatabasesResponse apply(ListCloudDatabasesRequest request) {
+                        return client.listCloudDatabases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudDatabaseSummary} objects contained in responses
+     * from the listCloudDatabases operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudDatabaseSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudDatabaseSummary>
+            listCloudDatabasesRecordIterator(final ListCloudDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudDatabasesRequest.Builder,
+                ListCloudDatabasesRequest,
+                ListCloudDatabasesResponse,
+                com.oracle.bmc.databasemanagement.model.CloudDatabaseSummary>(
+                new java.util.function.Supplier<ListCloudDatabasesRequest.Builder>() {
+                    @Override
+                    public ListCloudDatabasesRequest.Builder get() {
+                        return ListCloudDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDatabasesRequest.Builder>,
+                        ListCloudDatabasesRequest>() {
+                    @Override
+                    public ListCloudDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDatabasesRequest, ListCloudDatabasesResponse>() {
+                    @Override
+                    public ListCloudDatabasesResponse apply(ListCloudDatabasesRequest request) {
+                        return client.listCloudDatabases(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDatabasesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.CloudDatabaseSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.CloudDatabaseSummary>
+                            apply(ListCloudDatabasesResponse response) {
+                        return response.getCloudDatabaseCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudDbHomes operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudDbHomesResponse> listCloudDbHomesResponseIterator(
+            final ListCloudDbHomesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudDbHomesRequest.Builder, ListCloudDbHomesRequest, ListCloudDbHomesResponse>(
+                new java.util.function.Supplier<ListCloudDbHomesRequest.Builder>() {
+                    @Override
+                    public ListCloudDbHomesRequest.Builder get() {
+                        return ListCloudDbHomesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDbHomesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDbHomesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDbHomesRequest.Builder>,
+                        ListCloudDbHomesRequest>() {
+                    @Override
+                    public ListCloudDbHomesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDbHomesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbHomesRequest, ListCloudDbHomesResponse>() {
+                    @Override
+                    public ListCloudDbHomesResponse apply(ListCloudDbHomesRequest request) {
+                        return client.listCloudDbHomes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudDbHomeSummary} objects contained in responses
+     * from the listCloudDbHomes operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudDbHomeSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudDbHomeSummary>
+            listCloudDbHomesRecordIterator(final ListCloudDbHomesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudDbHomesRequest.Builder,
+                ListCloudDbHomesRequest,
+                ListCloudDbHomesResponse,
+                com.oracle.bmc.databasemanagement.model.CloudDbHomeSummary>(
+                new java.util.function.Supplier<ListCloudDbHomesRequest.Builder>() {
+                    @Override
+                    public ListCloudDbHomesRequest.Builder get() {
+                        return ListCloudDbHomesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDbHomesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDbHomesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDbHomesRequest.Builder>,
+                        ListCloudDbHomesRequest>() {
+                    @Override
+                    public ListCloudDbHomesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDbHomesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbHomesRequest, ListCloudDbHomesResponse>() {
+                    @Override
+                    public ListCloudDbHomesResponse apply(ListCloudDbHomesRequest request) {
+                        return client.listCloudDbHomes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbHomesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.CloudDbHomeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.CloudDbHomeSummary>
+                            apply(ListCloudDbHomesResponse response) {
+                        return response.getCloudDbHomeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudDbNodes operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudDbNodesResponse> listCloudDbNodesResponseIterator(
+            final ListCloudDbNodesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudDbNodesRequest.Builder, ListCloudDbNodesRequest, ListCloudDbNodesResponse>(
+                new java.util.function.Supplier<ListCloudDbNodesRequest.Builder>() {
+                    @Override
+                    public ListCloudDbNodesRequest.Builder get() {
+                        return ListCloudDbNodesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDbNodesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDbNodesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDbNodesRequest.Builder>,
+                        ListCloudDbNodesRequest>() {
+                    @Override
+                    public ListCloudDbNodesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDbNodesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbNodesRequest, ListCloudDbNodesResponse>() {
+                    @Override
+                    public ListCloudDbNodesResponse apply(ListCloudDbNodesRequest request) {
+                        return client.listCloudDbNodes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudDbNodeSummary} objects contained in responses
+     * from the listCloudDbNodes operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudDbNodeSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudDbNodeSummary>
+            listCloudDbNodesRecordIterator(final ListCloudDbNodesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudDbNodesRequest.Builder,
+                ListCloudDbNodesRequest,
+                ListCloudDbNodesResponse,
+                com.oracle.bmc.databasemanagement.model.CloudDbNodeSummary>(
+                new java.util.function.Supplier<ListCloudDbNodesRequest.Builder>() {
+                    @Override
+                    public ListCloudDbNodesRequest.Builder get() {
+                        return ListCloudDbNodesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDbNodesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDbNodesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDbNodesRequest.Builder>,
+                        ListCloudDbNodesRequest>() {
+                    @Override
+                    public ListCloudDbNodesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDbNodesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbNodesRequest, ListCloudDbNodesResponse>() {
+                    @Override
+                    public ListCloudDbNodesResponse apply(ListCloudDbNodesRequest request) {
+                        return client.listCloudDbNodes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbNodesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.CloudDbNodeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.CloudDbNodeSummary>
+                            apply(ListCloudDbNodesResponse response) {
+                        return response.getCloudDbNodeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudDbSystemConnectors operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudDbSystemConnectorsResponse>
+            listCloudDbSystemConnectorsResponseIterator(
+                    final ListCloudDbSystemConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudDbSystemConnectorsRequest.Builder,
+                ListCloudDbSystemConnectorsRequest,
+                ListCloudDbSystemConnectorsResponse>(
+                new java.util.function.Supplier<ListCloudDbSystemConnectorsRequest.Builder>() {
+                    @Override
+                    public ListCloudDbSystemConnectorsRequest.Builder get() {
+                        return ListCloudDbSystemConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDbSystemConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDbSystemConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDbSystemConnectorsRequest.Builder>,
+                        ListCloudDbSystemConnectorsRequest>() {
+                    @Override
+                    public ListCloudDbSystemConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDbSystemConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbSystemConnectorsRequest, ListCloudDbSystemConnectorsResponse>() {
+                    @Override
+                    public ListCloudDbSystemConnectorsResponse apply(
+                            ListCloudDbSystemConnectorsRequest request) {
+                        return client.listCloudDbSystemConnectors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudDbSystemConnectorSummary} objects contained in
+     * responses from the listCloudDbSystemConnectors operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudDbSystemConnectorSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudDbSystemConnectorSummary>
+            listCloudDbSystemConnectorsRecordIterator(
+                    final ListCloudDbSystemConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudDbSystemConnectorsRequest.Builder,
+                ListCloudDbSystemConnectorsRequest,
+                ListCloudDbSystemConnectorsResponse,
+                com.oracle.bmc.databasemanagement.model.CloudDbSystemConnectorSummary>(
+                new java.util.function.Supplier<ListCloudDbSystemConnectorsRequest.Builder>() {
+                    @Override
+                    public ListCloudDbSystemConnectorsRequest.Builder get() {
+                        return ListCloudDbSystemConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDbSystemConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDbSystemConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDbSystemConnectorsRequest.Builder>,
+                        ListCloudDbSystemConnectorsRequest>() {
+                    @Override
+                    public ListCloudDbSystemConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDbSystemConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbSystemConnectorsRequest, ListCloudDbSystemConnectorsResponse>() {
+                    @Override
+                    public ListCloudDbSystemConnectorsResponse apply(
+                            ListCloudDbSystemConnectorsRequest request) {
+                        return client.listCloudDbSystemConnectors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbSystemConnectorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .CloudDbSystemConnectorSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .CloudDbSystemConnectorSummary>
+                            apply(ListCloudDbSystemConnectorsResponse response) {
+                        return response.getCloudDbSystemConnectorCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudDbSystemDiscoveries operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudDbSystemDiscoveriesResponse>
+            listCloudDbSystemDiscoveriesResponseIterator(
+                    final ListCloudDbSystemDiscoveriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudDbSystemDiscoveriesRequest.Builder,
+                ListCloudDbSystemDiscoveriesRequest,
+                ListCloudDbSystemDiscoveriesResponse>(
+                new java.util.function.Supplier<ListCloudDbSystemDiscoveriesRequest.Builder>() {
+                    @Override
+                    public ListCloudDbSystemDiscoveriesRequest.Builder get() {
+                        return ListCloudDbSystemDiscoveriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDbSystemDiscoveriesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDbSystemDiscoveriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDbSystemDiscoveriesRequest.Builder>,
+                        ListCloudDbSystemDiscoveriesRequest>() {
+                    @Override
+                    public ListCloudDbSystemDiscoveriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDbSystemDiscoveriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbSystemDiscoveriesRequest,
+                        ListCloudDbSystemDiscoveriesResponse>() {
+                    @Override
+                    public ListCloudDbSystemDiscoveriesResponse apply(
+                            ListCloudDbSystemDiscoveriesRequest request) {
+                        return client.listCloudDbSystemDiscoveries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscoverySummary} objects contained in
+     * responses from the listCloudDbSystemDiscoveries operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscoverySummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscoverySummary>
+            listCloudDbSystemDiscoveriesRecordIterator(
+                    final ListCloudDbSystemDiscoveriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudDbSystemDiscoveriesRequest.Builder,
+                ListCloudDbSystemDiscoveriesRequest,
+                ListCloudDbSystemDiscoveriesResponse,
+                com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscoverySummary>(
+                new java.util.function.Supplier<ListCloudDbSystemDiscoveriesRequest.Builder>() {
+                    @Override
+                    public ListCloudDbSystemDiscoveriesRequest.Builder get() {
+                        return ListCloudDbSystemDiscoveriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDbSystemDiscoveriesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDbSystemDiscoveriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDbSystemDiscoveriesRequest.Builder>,
+                        ListCloudDbSystemDiscoveriesRequest>() {
+                    @Override
+                    public ListCloudDbSystemDiscoveriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDbSystemDiscoveriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbSystemDiscoveriesRequest,
+                        ListCloudDbSystemDiscoveriesResponse>() {
+                    @Override
+                    public ListCloudDbSystemDiscoveriesResponse apply(
+                            ListCloudDbSystemDiscoveriesRequest request) {
+                        return client.listCloudDbSystemDiscoveries(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbSystemDiscoveriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .CloudDbSystemDiscoverySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .CloudDbSystemDiscoverySummary>
+                            apply(ListCloudDbSystemDiscoveriesResponse response) {
+                        return response.getCloudDbSystemDiscoveryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudDbSystems operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudDbSystemsResponse> listCloudDbSystemsResponseIterator(
+            final ListCloudDbSystemsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudDbSystemsRequest.Builder,
+                ListCloudDbSystemsRequest,
+                ListCloudDbSystemsResponse>(
+                new java.util.function.Supplier<ListCloudDbSystemsRequest.Builder>() {
+                    @Override
+                    public ListCloudDbSystemsRequest.Builder get() {
+                        return ListCloudDbSystemsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDbSystemsResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDbSystemsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDbSystemsRequest.Builder>,
+                        ListCloudDbSystemsRequest>() {
+                    @Override
+                    public ListCloudDbSystemsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDbSystemsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbSystemsRequest, ListCloudDbSystemsResponse>() {
+                    @Override
+                    public ListCloudDbSystemsResponse apply(ListCloudDbSystemsRequest request) {
+                        return client.listCloudDbSystems(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudDbSystemSummary} objects contained in responses
+     * from the listCloudDbSystems operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudDbSystemSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudDbSystemSummary>
+            listCloudDbSystemsRecordIterator(final ListCloudDbSystemsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudDbSystemsRequest.Builder,
+                ListCloudDbSystemsRequest,
+                ListCloudDbSystemsResponse,
+                com.oracle.bmc.databasemanagement.model.CloudDbSystemSummary>(
+                new java.util.function.Supplier<ListCloudDbSystemsRequest.Builder>() {
+                    @Override
+                    public ListCloudDbSystemsRequest.Builder get() {
+                        return ListCloudDbSystemsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudDbSystemsResponse, String>() {
+                    @Override
+                    public String apply(ListCloudDbSystemsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudDbSystemsRequest.Builder>,
+                        ListCloudDbSystemsRequest>() {
+                    @Override
+                    public ListCloudDbSystemsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudDbSystemsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbSystemsRequest, ListCloudDbSystemsResponse>() {
+                    @Override
+                    public ListCloudDbSystemsResponse apply(ListCloudDbSystemsRequest request) {
+                        return client.listCloudDbSystems(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudDbSystemsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.CloudDbSystemSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.CloudDbSystemSummary>
+                            apply(ListCloudDbSystemsResponse response) {
+                        return response.getCloudDbSystemCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudListenerServices operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudListenerServicesResponse> listCloudListenerServicesResponseIterator(
+            final ListCloudListenerServicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudListenerServicesRequest.Builder,
+                ListCloudListenerServicesRequest,
+                ListCloudListenerServicesResponse>(
+                new java.util.function.Supplier<ListCloudListenerServicesRequest.Builder>() {
+                    @Override
+                    public ListCloudListenerServicesRequest.Builder get() {
+                        return ListCloudListenerServicesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudListenerServicesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudListenerServicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudListenerServicesRequest.Builder>,
+                        ListCloudListenerServicesRequest>() {
+                    @Override
+                    public ListCloudListenerServicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudListenerServicesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudListenerServicesRequest, ListCloudListenerServicesResponse>() {
+                    @Override
+                    public ListCloudListenerServicesResponse apply(
+                            ListCloudListenerServicesRequest request) {
+                        return client.listCloudListenerServices(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudListenerServiceSummary} objects contained in
+     * responses from the listCloudListenerServices operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudListenerServiceSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudListenerServiceSummary>
+            listCloudListenerServicesRecordIterator(
+                    final ListCloudListenerServicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudListenerServicesRequest.Builder,
+                ListCloudListenerServicesRequest,
+                ListCloudListenerServicesResponse,
+                com.oracle.bmc.databasemanagement.model.CloudListenerServiceSummary>(
+                new java.util.function.Supplier<ListCloudListenerServicesRequest.Builder>() {
+                    @Override
+                    public ListCloudListenerServicesRequest.Builder get() {
+                        return ListCloudListenerServicesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudListenerServicesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudListenerServicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudListenerServicesRequest.Builder>,
+                        ListCloudListenerServicesRequest>() {
+                    @Override
+                    public ListCloudListenerServicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudListenerServicesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudListenerServicesRequest, ListCloudListenerServicesResponse>() {
+                    @Override
+                    public ListCloudListenerServicesResponse apply(
+                            ListCloudListenerServicesRequest request) {
+                        return client.listCloudListenerServices(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudListenerServicesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .CloudListenerServiceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .CloudListenerServiceSummary>
+                            apply(ListCloudListenerServicesResponse response) {
+                        return response.getCloudListenerServiceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCloudListeners operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCloudListenersResponse> listCloudListenersResponseIterator(
+            final ListCloudListenersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudListenersRequest.Builder,
+                ListCloudListenersRequest,
+                ListCloudListenersResponse>(
+                new java.util.function.Supplier<ListCloudListenersRequest.Builder>() {
+                    @Override
+                    public ListCloudListenersRequest.Builder get() {
+                        return ListCloudListenersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudListenersResponse, String>() {
+                    @Override
+                    public String apply(ListCloudListenersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudListenersRequest.Builder>,
+                        ListCloudListenersRequest>() {
+                    @Override
+                    public ListCloudListenersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudListenersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudListenersRequest, ListCloudListenersResponse>() {
+                    @Override
+                    public ListCloudListenersResponse apply(ListCloudListenersRequest request) {
+                        return client.listCloudListeners(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CloudListenerSummary} objects contained in responses
+     * from the listCloudListeners operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CloudListenerSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CloudListenerSummary>
+            listCloudListenersRecordIterator(final ListCloudListenersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudListenersRequest.Builder,
+                ListCloudListenersRequest,
+                ListCloudListenersResponse,
+                com.oracle.bmc.databasemanagement.model.CloudListenerSummary>(
+                new java.util.function.Supplier<ListCloudListenersRequest.Builder>() {
+                    @Override
+                    public ListCloudListenersRequest.Builder get() {
+                        return ListCloudListenersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCloudListenersResponse, String>() {
+                    @Override
+                    public String apply(ListCloudListenersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudListenersRequest.Builder>,
+                        ListCloudListenersRequest>() {
+                    @Override
+                    public ListCloudListenersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudListenersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudListenersRequest, ListCloudListenersResponse>() {
+                    @Override
+                    public ListCloudListenersResponse apply(ListCloudListenersRequest request) {
+                        return client.listCloudListeners(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCloudListenersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.CloudListenerSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.CloudListenerSummary>
+                            apply(ListCloudListenersResponse response) {
+                        return response.getCloudListenerCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listConsumerGroupPrivileges operation. This iterable will fetch more data from the server as
      * needed.
      *

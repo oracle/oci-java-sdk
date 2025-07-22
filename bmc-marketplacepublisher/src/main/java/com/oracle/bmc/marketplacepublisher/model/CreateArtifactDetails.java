@@ -15,7 +15,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -26,8 +26,14 @@ package com.oracle.bmc.marketplacepublisher.model;
             value = CreateKubernetesImageArtifactDetails.class,
             name = "HELM_CHART"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateStackArtifactDetails.class,
+            name = "STACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateContainerImageArtifactDetails.class,
-            name = "CONTAINER_IMAGE")
+            name = "CONTAINER_IMAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateMachineImageArtifactDetails.class,
+            name = "MACHINE_IMAGE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

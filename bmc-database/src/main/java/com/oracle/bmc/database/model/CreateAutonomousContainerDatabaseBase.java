@@ -36,6 +36,7 @@ public class CreateAutonomousContainerDatabaseBase
     @Deprecated
     @java.beans.ConstructorProperties({
         "customerContacts",
+        "okvEndPointGroupName",
         "displayName",
         "dbUniqueName",
         "dbName",
@@ -75,6 +76,7 @@ public class CreateAutonomousContainerDatabaseBase
     })
     protected CreateAutonomousContainerDatabaseBase(
             java.util.List<CustomerContact> customerContacts,
+            String okvEndPointGroupName,
             String displayName,
             String dbUniqueName,
             String dbName,
@@ -113,6 +115,7 @@ public class CreateAutonomousContainerDatabaseBase
             NetServicesArchitecture netServicesArchitecture) {
         super();
         this.customerContacts = customerContacts;
+        this.okvEndPointGroupName = okvEndPointGroupName;
         this.displayName = displayName;
         this.dbUniqueName = dbUniqueName;
         this.dbName = dbName;
@@ -165,6 +168,19 @@ public class CreateAutonomousContainerDatabaseBase
      */
     public java.util.List<CustomerContact> getCustomerContacts() {
         return customerContacts;
+    }
+
+    /** The OKV End Point Group name for the Autonomous Container Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+    private final String okvEndPointGroupName;
+
+    /**
+     * The OKV End Point Group name for the Autonomous Container Database.
+     *
+     * @return the value
+     */
+    public String getOkvEndPointGroupName() {
+        return okvEndPointGroupName;
     }
 
     /** The display name for the Autonomous Container Database. */
@@ -990,6 +1006,7 @@ public class CreateAutonomousContainerDatabaseBase
         sb.append("CreateAutonomousContainerDatabaseBase(");
         sb.append("super=").append(super.toString());
         sb.append("customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", okvEndPointGroupName=").append(String.valueOf(this.okvEndPointGroupName));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
@@ -1056,6 +1073,7 @@ public class CreateAutonomousContainerDatabaseBase
 
         CreateAutonomousContainerDatabaseBase other = (CreateAutonomousContainerDatabaseBase) o;
         return java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.okvEndPointGroupName, other.okvEndPointGroupName)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
                 && java.util.Objects.equals(this.dbName, other.dbName)
@@ -1124,6 +1142,11 @@ public class CreateAutonomousContainerDatabaseBase
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.okvEndPointGroupName == null
+                                ? 43
+                                : this.okvEndPointGroupName.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
