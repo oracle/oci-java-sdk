@@ -59,8 +59,8 @@ jobs:
       - name: Check credentials
         run: |
           set -e
-          echo "Checking SonaType SONATYPE_BASIC_AUTH_CREDENTIALS"
-          curl --fail -X GET -H "Content-Type:application/xml" -u "${{ secrets.SONATYPE_BASIC_AUTH_CREDENTIALS }}" https://oss.sonatype.org/service/local/staging/profiles/b39883a429024e > /dev/null
+          echo "Checking SonaType PORTAL_ACCESS_TOKEN"
+          curl --fail -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" 'https://ossrh-staging-api.central.sonatype.com/manual/search/repositories?state=open'
           echo "Checking GitHub ACCESS_TOKEN"
           curl -f -H "Authorization: Bearer ${{ secrets.ACCESS_TOKEN }}" -H 'Accept: application/vnd.github.v3.raw' -s https://api.github.com/repos/$REPO > /dev/null
       - name: Configure GPG key
@@ -139,7 +139,7 @@ jobs:
           mkdir unpacked
           cd unpacked
           unzip -q ../asset.zip
-          head CHANGELOG.md 
+          head CHANGELOG.md
       - name: GPG sign all Maven files
         run: |
           cd unpacked/maven
@@ -155,10 +155,11 @@ jobs:
           # Code mostly by mezzargh
           set -e
           WD=`pwd`
+          # we use the description field for cross identification between APIs (I could not find an alternative yet), so we can fetch correct repo for promotion.
           START_XML=$(cat << EOF
           <promoteRequest>
               <data>
-                  <description>Publish ${GITHUB_REPOSITORY} ${RELEASE} Artifacts</description>
+                  <description>${{github.repository}}-${{github.run_id}}-${{github.run_attempt}}</description>
               </data>
           </promoteRequest>
           EOF
@@ -169,18 +170,43 @@ jobs:
           cd unpacked/maven/repository
           cp $WD/start.xml start.xml
           cat start.xml
-          curl --fail -v -X POST -d @start.xml -H "Content-Type:application/xml" -u "${{ secrets.SONATYPE_BASIC_AUTH_CREDENTIALS }}" https://oss.sonatype.org/service/local/staging/profiles/b39883a429024e/start -o $WD/finish.xml
+          curl -sS --fail -v -X POST -d @start.xml -H "Content-Type:application/xml" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}"  https://ossrh-staging-api.central.sonatype.com/service/local/staging/profiles/b39883a429024e/start -o $WD/finish.xml
           rm start.xml
+          curl --fail -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}"  'https://ossrh-staging-api.central.sonatype.com/manual/search/repositories?state=open' -o results.json
+          SELECTOR="${{github.repository}}-${{github.run_id}}-${{github.run_attempt}}"
+          repository_namespace=`cat results.json | jq -jr --arg SELECTOR $SELECTOR ".repositories[] | select(.description == \"$SELECTOR\").key" | jq -jRrs "@uri"`
+          echo $repository_namespace
+          rm results.json
           ls -lahn $WD
           cat $WD/finish.xml
           staging_dir=$(echo $(awk -F '[<>]' '/stagedRepositoryId/{print $3}' $WD/finish.xml))
+          rm $WD/finish.xml
           echo "Staging dir is '${staging_dir}'"
           find . -type f | sed -E s'@./@@' | grep -v start.xml > $WD/artifacts.list
           ls -lahn $WD
           echo "Uploading $(wc -l $WD/artifacts.list | sed "s/^ *\([0-9]*\) .*$/\1/") artifacts"
           awk '{printf "%5d\t%s\n", NR, $0}' < $WD/artifacts.list
-          cat $WD/artifacts.list | xargs -n 1 -I {} curl --fail -u "${{ secrets.SONATYPE_BASIC_AUTH_CREDENTIALS }}" --upload-file {} https://oss.sonatype.org/service/local/staging/deployByRepositoryId/${staging_dir}/{}
-          cp $WD/finish.xml finish.xml
-          cat finish.xml
-          curl --fail -X POST -d @finish.xml -H "Content-Type:application/xml" -u "${{ secrets.SONATYPE_BASIC_AUTH_CREDENTIALS }}" -H "Content-Type:application/xml" https://oss.sonatype.org/service/local/staging/profiles/b39883a429024e/finish
-          echo https://oss.sonatype.org/content/repositories/${staging_dir}
+          cat $WD/artifacts.list | xargs -n 1 -I {} curl -sS --fail -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" --upload-file {} https://ossrh-staging-api.central.sonatype.com/service/local/staging/deployByRepositoryId/${staging_dir}/{}
+          curl -s -X POST -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" https://ossrh-staging-api.central.sonatype.com/manual/upload/repository/${repository_namespace}?publishing_type=user_managed
+          while [[ $(curl -sS --fail -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" 'https://ossrh-staging-api.central.sonatype.com/manual/search/repositories' | jq -r ".repositories[] | select(.description == \"$SELECTOR\").portal_deployment_id") == "null" ]]; do
+           echo "Waiting for deployment ID...";
+           curl -s -X POST -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" https://ossrh-staging-api.central.sonatype.com/manual/upload/repository/$repository_namespace?publishing_type=user_managed;
+           sleep 5;
+          done
+          curl -sS --fail -H "Accept:application/json" -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" 'https://ossrh-staging-api.central.sonatype.com/manual/search/repositories' -o final_result.json
+          portal_id=`cat final_result.json | jq -jr ".repositories[] | select(.description == \"$SELECTOR\").portal_deployment_id"`
+          echo "Closing OSSRH staging repo $repository_namespace, and continueing with Portal APIs"
+          echo "Promotion to Portal deployment staging '$portal_id' is pending ...";
+          while [[ $(curl -sS -X 'POST' -H 'Accept:application/json' -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" "https://central.sonatype.com/api/v1/publisher/status?id=$portal_id" | jq -r '.deploymentState') == "PENDING" ]]; do 
+            echo "..."
+            sleep 5;
+          done
+          echo "Validing Portal deployement ...";
+          while [[ $(curl -sS -X 'POST' -H 'Accept:application/json' -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" "https://central.sonatype.com/api/v1/publisher/status?id=$portal_id" | jq -r '.deploymentState') == "VALIDATING" ]]; do 
+            echo "..."
+            sleep 5; 
+          done
+          echo "Dropping OSSRH staging repo: $repository_namespace"
+          curl -sS -X 'DELETE' -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" https://ossrh-staging-api.central.sonatype.com/manual/drop/repository/$repository_namespace
+          curl -sS -X 'POST'  -H 'Accept:application/json' -H "Authorization: Bearer ${{ secrets.PORTAL_ACCESS_TOKEN }}" "https://central.sonatype.com/api/v1/publisher/status?id=$portal_id" | jq -e 'if .deploymentState == "FAILED" then error(.errors | tostring) else .deploymentState end'
+          echo "Portal Staging repository: https://central.sonatype.com/api/v1/publisher/deployment/$portal_id/download/"
