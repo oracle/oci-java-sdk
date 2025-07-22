@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplacepublisher.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteArtifactExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteArtifactRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class DeleteArtifactRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** artifact OCID */

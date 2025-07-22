@@ -3,6 +3,56 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.69.0 - 2025-07-22
+### Added 
+- Support for calling Oracle Cloud Infrastructure services in the `ap-batam-1` region 
+- Support for updating autonomous databases with schedule DB version upgrade in the Database service 
+- Support for new OKV Endpoint group parameter for Autonomous Container Database operations in the Database service 
+- Support for specifying tags in backup databases and standby databases in the Database service 
+- Support for cloud database systems and improved system monitoring in the Database Management service 
+- Support for stack, image, lead generation, and service listing types in the Marketplace service 
+- Support for adding custom metric-based policies in the Autoscaling service 
+- Support for Named Credentials in the Management Agent service 
+- Support for multilingual capability, user configured Agent-As-A-Tool, data ingestion of documents, and sequentially executed steps in the Generative AI Agent service 
+- Support for IAM authentication in the Cache service    
+
+### Breaking Changes 
+- The AI Anomaly Detection service has reached End-of-life 
+- Return type of method `public com.oracle.bmc.autoscaling.model.Metric getMetric()` has been changed to `com.oracle.bmc.autoscaling.model.MetricBase` in the model `com.oracle.bmc.autoscaling.model.Condition` in the Autoscaling service 
+- Return type of method `public com.oracle.bmc.autoscaling.model.Metric getMetric()` has been changed to `com.oracle.bmc.autoscaling.model.MetricBase` in the model `com.oracle.bmc.autoscaling.model.CreateConditionDetails` in the Autoscaling service 
+- Return type of method `public com.oracle.bmc.autoscaling.model.Metric getMetric()` has been changed to `com.oracle.bmc.autoscaling.model.MetricBase` in the model `com.oracle.bmc.autoscaling.model.UpdateConditionDetails` in the Autoscaling service 
+- Classes `HttpEndpointDelegatedBearerAuthConfig`, `HttpEndpointIdcsAuthConfig`, `HttpEndpointNoAuthConfig`, `HttpEndpointOciResourcePrincipalAuthConfig` have been removed from the Generative AI Agent service 
+- Request classes `UpdateOfferRequest`, `ListOffersRequest`, `ListOffersRequest`, `ListAttachmentsRequest`, `ListAttachmentsRequest`, `GetOfferRequest`, `GetOfferInternalDetailRequest`, `GetAttachmentRequest`, `GetAttachmentContentRequest`, `DeleteOfferRequest`, `DeleteAttachmentRequest`, `CreateOfferRequest`, `CreateAttachmentRequest` have been removed from the Marketplace service 
+- Model classes `UpdateOfferDetails`, `SellerInformation`, `ResourceBundle`, `Pricing`, `OfferSummary`, `OfferInternalDetail`, `OfferCollection`, `Offer`, `ListingRevision`, `CustomField$PricingType`, `CreateOfferDetails`, `CreateAttachmentDetails`, `Contact`, `BuyerInformation`, `AttachmentSummary`, `AttachmentCollection`, `Attachment` have been removed from the Marketplace service 
+- Client and Waiter classes  `AttachmentWaiters`, `AttachmentPaginators`, `AttachmentClient`, `Attachment`, `OfferWaiters`, `OfferPaginators`, `OfferClient`, `Offer` have been removed from the Marketplace service 
+- Response classes `UpdateOfferResponse`, `ListOffersResponse`, `ListAttachmentsResponse`, `GetOfferResponse`, `GetOfferInternalDetailResponse`, `GetAttachmentResponse`, `GetAttachmentContentResponse`, `DeleteOfferResponse`, `DeleteAttachmentResponse`, `CreateOfferResponse`, `CreateAttachmentResponse` have been removed from the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.CreateListingRevisionDetails$Builder builder()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.CreateListingRevisionDetails` in the Marketplace service 
+- Method `public java.util.List getCategories()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.CreateListingRevisionDetails` in the Marketplace service 
+- Method `public java.util.List getMarkets()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.CreateListingRevisionDetails` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.ListingRevision$PricingType getPricingType()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.CreateListingRevisionDetails` in the Marketplace service 
+- Method `public java.lang.String getSystemRequirements()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.CreateListingRevisionDetails` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.VersionDetails getVersionDetails()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.CreateListingRevisionDetails` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.CreateListingRevisionDetails$Builder toBuilder()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.CreateListingRevisionDetails` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.ListingRevision$Builder builder()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevision` in the Marketplace service 
+- Method `public java.util.List getAllowedTenancies()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevision` in the Marketplace service 
+- Method `public java.lang.Boolean getAreInternalTenancyLaunchAllowed()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevision` in the Marketplace service 
+- Method `public java.util.List getCategories()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevision` in the Marketplace service 
+- Method `public java.util.List getMarkets()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevision` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.ListingRevision$PricingType getPricingType()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevision` in the Marketplace service 
+- Method `public java.lang.String getSystemRequirements()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevision` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.VersionDetails getVersionDetails()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevision` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.ListingRevision$Builder toBuilder()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevision` in the Marketplace service 
+- Method `public java.util.List getCategories()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevisionSummary` in the Marketplace service 
+- Method `public java.util.List getMarkets()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevisionSummary` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.ListingRevision$PricingType getPricingType()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.ListingRevisionSummary` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.UpdateListingRevisionDetails$Builder builder()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.UpdateListingRevisionDetails` in the Marketplace service 
+- Method `public java.util.List getCategories()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.UpdateListingRevisionDetails` in the Marketplace service 
+- Method `public java.util.List getMarkets()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.UpdateListingRevisionDetails` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.ListingRevision$PricingType getPricingType()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.UpdateListingRevisionDetails` in the Marketplace service 
+- Method `public java.lang.String getSystemRequirements()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.UpdateListingRevisionDetails` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.VersionDetails getVersionDetails()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.UpdateListingRevisionDetails` in the Marketplace service 
+- Method `public com.oracle.bmc.marketplacepublisher.model.UpdateListingRevisionDetails$Builder toBuilder()` has been removed from the model `com.oracle.bmc.marketplacepublisher.model.UpdateListingRevisionDetails` in the Marketplace service
+
 ## 3.68.2 - 2025-07-15
 ### Added 
 - Support for calling Oracle Cloud Infrastructure services in the ap-delhi-1 region 
@@ -10,6 +60,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## 3.68.1 - 2025-07-08
 ### Added 
+- Support for calling Oracle Cloud Infrastructure services in the us-ashburn-2 region
 - Support for insight of Autonomous Database on Exadata Cloud@Customer (ADB on ExaC@C) in the Operations Insights service 
 - Support for Spanish and Portuguese language recognition with Azure-backed Optical Character Recognition (OCR) in the AI Document service 
 - Support for UK, Australian, and Canadian address and tax form recognition in the AI Document service 
@@ -2086,7 +2137,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - In `com.oracle.bmc.responses.BmcResponse`, the collection used for headers was changed from `javax.ws.rs.core.MultivaluedMap` to `Map<String, List<String>>`, to decouple the implementation from the choice of the HTTP client.
 - Circuit breakers
   - The circuit breaker interface has been renamed from `com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker` to `com.oracle.bmc.circuitbreaker.OciCircuitBreaker`
-    - Examples of affectede code:
+    - Examples of affected code:
       - `com.oracle.bmc.circuitbreaker.CircuitBreakerFactory`: Return type of method `public com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker build(com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration)` has been changed to `com.oracle.bmc.circuitbreaker.OciCircuitBreaker`
   - Instead of using the constructor of `com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration`, use the builder. The constructor is not public anymore.
   - Some constants in `com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration` have been removed, if you need them, replace them with the actual values:
@@ -3179,7 +3230,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for vSphere 7.0 in the VMware Solution service
 - Support for forecasting in the Usage service
 - Support for viewing, searching, and modifying parameters for on-premise Oracle databases in the Database Management service
-- Support for listing tablespaces of managed databases in the Database Management service
+- Support for listing tablespace of managed databases in the Database Management service
 - Support for cross-regional replication of keys in the Key Management service
 - Support for highly-available database systems in the MySQL Database service
 - Support for Oracle Enterprise Manager bridges, source auto-association, source event type mappings, and plugins to upload data in the Logging Analytics service
@@ -3388,7 +3439,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for specifying a key store when creating autonomous container databases in the Database service
 
 ### Fixed
-- Fixed a potential data curruption problem for binary data upload with `RefreshableOnNotAuthenticatedProvider`. We recommend that you update to this version `1.25.2` or later. For details, see https://github.com/oracle/oci-java-sdk/issues/255
+- Fixed a potential data corruption problem for binary data upload with `RefreshableOnNotAuthenticatedProvider`. We recommend that you update to this version `1.25.2` or later. For details, see https://github.com/oracle/oci-java-sdk/issues/255
 
 ## 1.25.1 - 2020-10-20
 ### Added
@@ -3587,7 +3638,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
 ### Breaking Changes
-- Data type for paramater `dataStorageSizeInTBs` changed from `Integer` to `Double` in the Database service
+- Data type for parameter `dataStorageSizeInTBs` changed from `Integer` to `Double` in the Database service
 - Enum `LifecycleState` has removed the state `Offline` and added `Disconnected` in the Database service
 
 ## 1.17.5 - 2020-06-02

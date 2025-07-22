@@ -102,10 +102,7 @@ public class DataSourceConfig extends com.oracle.bmc.http.client.internal.Explic
         return result;
     }
 
-    /**
-     * The type of the tool. The allowed values are: - {@code OCI_OBJECT_STORAGE}: The data source
-     * is OCI Object Storage.
-     */
+    /** The type of the tool. */
     public enum DataSourceConfigType implements com.oracle.bmc.http.internal.BmcEnum {
         OciObjectStorage("OCI_OBJECT_STORAGE"),
 

@@ -250,6 +250,21 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
             this.__explicitlySet__.add("pluggableDatabases");
             return this;
         }
+        /** The list of database instances. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbInstances")
+        private java.util.List<DiscoveredExternalDbInstance> dbInstances;
+
+        /**
+         * The list of database instances.
+         *
+         * @param dbInstances the value to set
+         * @return this builder
+         */
+        public Builder dbInstances(java.util.List<DiscoveredExternalDbInstance> dbInstances) {
+            this.dbInstances = dbInstances;
+            this.__explicitlySet__.add("dbInstances");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("connector")
         private ExternalDbSystemDiscoveryConnector connector;
@@ -321,6 +336,7 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
                             this.dbRole,
                             this.dbVersion,
                             this.pluggableDatabases,
+                            this.dbInstances,
                             this.connector,
                             this.canEnableAllCurrentPdbs,
                             this.isAutoEnablePluggableDatabase);
@@ -383,6 +399,9 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
             if (model.wasPropertyExplicitlySet("pluggableDatabases")) {
                 this.pluggableDatabases(model.getPluggableDatabases());
             }
+            if (model.wasPropertyExplicitlySet("dbInstances")) {
+                this.dbInstances(model.getDbInstances());
+            }
             if (model.wasPropertyExplicitlySet("connector")) {
                 this.connector(model.getConnector());
             }
@@ -424,6 +443,7 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
             DbRole dbRole,
             String dbVersion,
             java.util.List<DiscoveredExternalPluggableDatabase> pluggableDatabases,
+            java.util.List<DiscoveredExternalDbInstance> dbInstances,
             ExternalDbSystemDiscoveryConnector connector,
             Boolean canEnableAllCurrentPdbs,
             Boolean isAutoEnablePluggableDatabase) {
@@ -445,6 +465,7 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
         this.dbRole = dbRole;
         this.dbVersion = dbVersion;
         this.pluggableDatabases = pluggableDatabases;
+        this.dbInstances = dbInstances;
         this.connector = connector;
         this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
         this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
@@ -636,6 +657,19 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
         return pluggableDatabases;
     }
 
+    /** The list of database instances. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbInstances")
+    private final java.util.List<DiscoveredExternalDbInstance> dbInstances;
+
+    /**
+     * The list of database instances.
+     *
+     * @return the value
+     */
+    public java.util.List<DiscoveredExternalDbInstance> getDbInstances() {
+        return dbInstances;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("connector")
     private final ExternalDbSystemDiscoveryConnector connector;
 
@@ -702,6 +736,7 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
         sb.append(", dbRole=").append(String.valueOf(this.dbRole));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", pluggableDatabases=").append(String.valueOf(this.pluggableDatabases));
+        sb.append(", dbInstances=").append(String.valueOf(this.dbInstances));
         sb.append(", connector=").append(String.valueOf(this.connector));
         sb.append(", canEnableAllCurrentPdbs=")
                 .append(String.valueOf(this.canEnableAllCurrentPdbs));
@@ -731,6 +766,7 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
                 && java.util.Objects.equals(this.dbRole, other.dbRole)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.pluggableDatabases, other.pluggableDatabases)
+                && java.util.Objects.equals(this.dbInstances, other.dbInstances)
                 && java.util.Objects.equals(this.connector, other.connector)
                 && java.util.Objects.equals(
                         this.canEnableAllCurrentPdbs, other.canEnableAllCurrentPdbs)
@@ -759,6 +795,7 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
                         + (this.pluggableDatabases == null
                                 ? 43
                                 : this.pluggableDatabases.hashCode());
+        result = (result * PRIME) + (this.dbInstances == null ? 43 : this.dbInstances.hashCode());
         result = (result * PRIME) + (this.connector == null ? 43 : this.connector.hashCode());
         result =
                 (result * PRIME)

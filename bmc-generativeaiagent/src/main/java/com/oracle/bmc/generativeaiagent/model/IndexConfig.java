@@ -81,13 +81,7 @@ public class IndexConfig extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return result;
     }
 
-    /**
-     * The type of index. The allowed values are: - {@code DEFAULT_INDEX_CONFIG}: DefaultIndexConfig
-     * allows the service to create and manage vector store on behalf of the customer. - {@code
-     * OCI_OPEN_SEARCH_INDEX_CONFIG}: OciOpenSearchIndexConfig allows customer to configure their
-     * OpenSearch cluster. - {@code OCI_DATABASE_CONFIG}: OciDatabaseConfig allows customer to
-     * configure their Database.
-     */
+    /** The type of index. */
     public enum IndexConfigType implements com.oracle.bmc.http.internal.BmcEnum {
         DefaultIndexConfig("DEFAULT_INDEX_CONFIG"),
         OciOpenSearchIndexConfig("OCI_OPEN_SEARCH_INDEX_CONFIG"),

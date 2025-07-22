@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Filter configured for a replication channel <br>
+ * Filter configured for a replication channel. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class MySqlReplicationApplierFilter
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of replication filter that has been configured for the replication channel. */
+        /** The type of replication filter that has been configured for the replication channel. */
         @com.fasterxml.jackson.annotation.JsonProperty("filterName")
         private String filterName;
 
         /**
-         * Type of replication filter that has been configured for the replication channel.
+         * The type of replication filter that has been configured for the replication channel.
          *
          * @param filterName the value to set
          * @return this builder
@@ -96,12 +96,12 @@ public final class MySqlReplicationApplierFilter
         return new Builder().copy(this);
     }
 
-    /** Type of replication filter that has been configured for the replication channel. */
+    /** The type of replication filter that has been configured for the replication channel. */
     @com.fasterxml.jackson.annotation.JsonProperty("filterName")
     private final String filterName;
 
     /**
-     * Type of replication filter that has been configured for the replication channel.
+     * The type of replication filter that has been configured for the replication channel.
      *
      * @return the value
      */

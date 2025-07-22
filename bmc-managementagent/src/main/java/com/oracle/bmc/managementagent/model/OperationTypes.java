@@ -9,11 +9,16 @@ package com.oracle.bmc.managementagent.model;
 public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     DeployPlugin("DEPLOY_PLUGIN"),
     UpgradePlugin("UPGRADE_PLUGIN"),
+    CreatePlugin("CREATE_PLUGIN"),
     CreateUpgradePlugins("CREATE_UPGRADE_PLUGINS"),
     AgentimageUpgrade("AGENTIMAGE_UPGRADE"),
     CreateDataSource("CREATE_DATA_SOURCE"),
     UpdateDataSource("UPDATE_DATA_SOURCE"),
     DeleteDataSource("DELETE_DATA_SOURCE"),
+    CreateNamedcredentials("CREATE_NAMEDCREDENTIALS"),
+    UpdateNamedcredentials("UPDATE_NAMEDCREDENTIALS"),
+    DeleteNamedcredentials("DELETE_NAMEDCREDENTIALS"),
+    AgentUpgrade("AGENT_UPGRADE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

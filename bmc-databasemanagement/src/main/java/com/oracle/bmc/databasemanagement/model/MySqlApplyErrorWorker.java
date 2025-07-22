@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * If the replica is multi-threaded, error from worker threads. Otherwise error from the applier
+ * If the replica is multi-threaded, error from worker threads. Otherwise, error from the applier
  * thread. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

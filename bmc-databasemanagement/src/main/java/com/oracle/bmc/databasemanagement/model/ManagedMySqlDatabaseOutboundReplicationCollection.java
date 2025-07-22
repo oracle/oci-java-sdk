@@ -34,12 +34,12 @@ public final class ManagedMySqlDatabaseOutboundReplicationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The number of outbound replications from this server. */
+        /** The number of outbound replications from the MySQL server. */
         @com.fasterxml.jackson.annotation.JsonProperty("outboundReplicationsCount")
         private Integer outboundReplicationsCount;
 
         /**
-         * The number of outbound replications from this server.
+         * The number of outbound replications from the MySQL server.
          *
          * @param outboundReplicationsCount the value to set
          * @return this builder
@@ -99,12 +99,12 @@ public final class ManagedMySqlDatabaseOutboundReplicationCollection
         return new Builder().copy(this);
     }
 
-    /** The number of outbound replications from this server. */
+    /** The number of outbound replications from the MySQL server. */
     @com.fasterxml.jackson.annotation.JsonProperty("outboundReplicationsCount")
     private final Integer outboundReplicationsCount;
 
     /**
-     * The number of outbound replications from this server.
+     * The number of outbound replications from the MySQL server.
      *
      * @return the value
      */

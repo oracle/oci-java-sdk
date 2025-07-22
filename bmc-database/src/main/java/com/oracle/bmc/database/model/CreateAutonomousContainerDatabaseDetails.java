@@ -37,6 +37,15 @@ public final class CreateAutonomousContainerDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+        private String okvEndPointGroupName;
+
+        public Builder okvEndPointGroupName(String okvEndPointGroupName) {
+            this.okvEndPointGroupName = okvEndPointGroupName;
+            this.__explicitlySet__.add("okvEndPointGroupName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -382,6 +391,7 @@ public final class CreateAutonomousContainerDatabaseDetails
             CreateAutonomousContainerDatabaseDetails model =
                     new CreateAutonomousContainerDatabaseDetails(
                             this.customerContacts,
+                            this.okvEndPointGroupName,
                             this.displayName,
                             this.dbUniqueName,
                             this.dbName,
@@ -428,6 +438,9 @@ public final class CreateAutonomousContainerDatabaseDetails
         public Builder copy(CreateAutonomousContainerDatabaseDetails model) {
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("okvEndPointGroupName")) {
+                this.okvEndPointGroupName(model.getOkvEndPointGroupName());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -559,6 +572,7 @@ public final class CreateAutonomousContainerDatabaseDetails
     @Deprecated
     public CreateAutonomousContainerDatabaseDetails(
             java.util.List<CustomerContact> customerContacts,
+            String okvEndPointGroupName,
             String displayName,
             String dbUniqueName,
             String dbName,
@@ -597,6 +611,7 @@ public final class CreateAutonomousContainerDatabaseDetails
             NetServicesArchitecture netServicesArchitecture) {
         super(
                 customerContacts,
+                okvEndPointGroupName,
                 displayName,
                 dbUniqueName,
                 dbName,

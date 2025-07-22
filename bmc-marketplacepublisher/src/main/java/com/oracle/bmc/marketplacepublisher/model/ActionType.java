@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /** Possible types of actions. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Updated("UPDATED"),

@@ -79,6 +79,9 @@ public final class UpdateAutonomousDatabaseDetails
         "resourcePoolSummary",
         "autonomousMaintenanceScheduleType",
         "isBackupRetentionLocked",
+        "timeScheduledDbVersionUpgrade",
+        "isDisableDbVersionUpgradeSchedule",
+        "isScheduleDbVersionUpgradeToEarliest",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
         "databaseEdition",
@@ -136,6 +139,9 @@ public final class UpdateAutonomousDatabaseDetails
             ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             Boolean isBackupRetentionLocked,
+            java.util.Date timeScheduledDbVersionUpgrade,
+            Boolean isDisableDbVersionUpgradeSchedule,
+            Boolean isScheduleDbVersionUpgradeToEarliest,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
@@ -192,6 +198,9 @@ public final class UpdateAutonomousDatabaseDetails
         this.resourcePoolSummary = resourcePoolSummary;
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
         this.isBackupRetentionLocked = isBackupRetentionLocked;
+        this.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
+        this.isDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
+        this.isScheduleDbVersionUpgradeToEarliest = isScheduleDbVersionUpgradeToEarliest;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.databaseEdition = databaseEdition;
@@ -1624,6 +1633,57 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("isBackupRetentionLocked");
             return this;
         }
+        /** The date and time the Autonomous Database scheduled to upgrade to 23ai. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledDbVersionUpgrade")
+        private java.util.Date timeScheduledDbVersionUpgrade;
+
+        /**
+         * The date and time the Autonomous Database scheduled to upgrade to 23ai.
+         *
+         * @param timeScheduledDbVersionUpgrade the value to set
+         * @return this builder
+         */
+        public Builder timeScheduledDbVersionUpgrade(java.util.Date timeScheduledDbVersionUpgrade) {
+            this.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
+            this.__explicitlySet__.add("timeScheduledDbVersionUpgrade");
+            return this;
+        }
+        /** True if user wants to disable Autonomous Database scheduled upgrade to 23ai. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDisableDbVersionUpgradeSchedule")
+        private Boolean isDisableDbVersionUpgradeSchedule;
+
+        /**
+         * True if user wants to disable Autonomous Database scheduled upgrade to 23ai.
+         *
+         * @param isDisableDbVersionUpgradeSchedule the value to set
+         * @return this builder
+         */
+        public Builder isDisableDbVersionUpgradeSchedule(
+                Boolean isDisableDbVersionUpgradeSchedule) {
+            this.isDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
+            this.__explicitlySet__.add("isDisableDbVersionUpgradeSchedule");
+            return this;
+        }
+        /**
+         * True if user wants to schedule Autonomous Database upgrade to the earliest available
+         * time.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isScheduleDbVersionUpgradeToEarliest")
+        private Boolean isScheduleDbVersionUpgradeToEarliest;
+
+        /**
+         * True if user wants to schedule Autonomous Database upgrade to the earliest available
+         * time.
+         *
+         * @param isScheduleDbVersionUpgradeToEarliest the value to set
+         * @return this builder
+         */
+        public Builder isScheduleDbVersionUpgradeToEarliest(
+                Boolean isScheduleDbVersionUpgradeToEarliest) {
+            this.isScheduleDbVersionUpgradeToEarliest = isScheduleDbVersionUpgradeToEarliest;
+            this.__explicitlySet__.add("isScheduleDbVersionUpgradeToEarliest");
+            return this;
+        }
         /**
          * The list of scheduled operations. Consists of values such as dayOfWeek,
          * scheduledStartTime, scheduledStopTime.
@@ -1855,6 +1915,9 @@ public final class UpdateAutonomousDatabaseDetails
                             this.resourcePoolSummary,
                             this.autonomousMaintenanceScheduleType,
                             this.isBackupRetentionLocked,
+                            this.timeScheduledDbVersionUpgrade,
+                            this.isDisableDbVersionUpgradeSchedule,
+                            this.isScheduleDbVersionUpgradeToEarliest,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
@@ -2013,6 +2076,17 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
                 this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduledDbVersionUpgrade")) {
+                this.timeScheduledDbVersionUpgrade(model.getTimeScheduledDbVersionUpgrade());
+            }
+            if (model.wasPropertyExplicitlySet("isDisableDbVersionUpgradeSchedule")) {
+                this.isDisableDbVersionUpgradeSchedule(
+                        model.getIsDisableDbVersionUpgradeSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("isScheduleDbVersionUpgradeToEarliest")) {
+                this.isScheduleDbVersionUpgradeToEarliest(
+                        model.getIsScheduleDbVersionUpgradeToEarliest());
             }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
@@ -3620,6 +3694,47 @@ public final class UpdateAutonomousDatabaseDetails
         return isBackupRetentionLocked;
     }
 
+    /** The date and time the Autonomous Database scheduled to upgrade to 23ai. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledDbVersionUpgrade")
+    private final java.util.Date timeScheduledDbVersionUpgrade;
+
+    /**
+     * The date and time the Autonomous Database scheduled to upgrade to 23ai.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeScheduledDbVersionUpgrade() {
+        return timeScheduledDbVersionUpgrade;
+    }
+
+    /** True if user wants to disable Autonomous Database scheduled upgrade to 23ai. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDisableDbVersionUpgradeSchedule")
+    private final Boolean isDisableDbVersionUpgradeSchedule;
+
+    /**
+     * True if user wants to disable Autonomous Database scheduled upgrade to 23ai.
+     *
+     * @return the value
+     */
+    public Boolean getIsDisableDbVersionUpgradeSchedule() {
+        return isDisableDbVersionUpgradeSchedule;
+    }
+
+    /**
+     * True if user wants to schedule Autonomous Database upgrade to the earliest available time.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isScheduleDbVersionUpgradeToEarliest")
+    private final Boolean isScheduleDbVersionUpgradeToEarliest;
+
+    /**
+     * True if user wants to schedule Autonomous Database upgrade to the earliest available time.
+     *
+     * @return the value
+     */
+    public Boolean getIsScheduleDbVersionUpgradeToEarliest() {
+        return isScheduleDbVersionUpgradeToEarliest;
+    }
+
     /**
      * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime,
      * scheduledStopTime.
@@ -3849,6 +3964,12 @@ public final class UpdateAutonomousDatabaseDetails
                 .append(String.valueOf(this.autonomousMaintenanceScheduleType));
         sb.append(", isBackupRetentionLocked=")
                 .append(String.valueOf(this.isBackupRetentionLocked));
+        sb.append(", timeScheduledDbVersionUpgrade=")
+                .append(String.valueOf(this.timeScheduledDbVersionUpgrade));
+        sb.append(", isDisableDbVersionUpgradeSchedule=")
+                .append(String.valueOf(this.isDisableDbVersionUpgradeSchedule));
+        sb.append(", isScheduleDbVersionUpgradeToEarliest=")
+                .append(String.valueOf(this.isScheduleDbVersionUpgradeToEarliest));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
         sb.append(", isAutoScalingForStorageEnabled=")
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
@@ -3933,6 +4054,14 @@ public final class UpdateAutonomousDatabaseDetails
                         other.autonomousMaintenanceScheduleType)
                 && java.util.Objects.equals(
                         this.isBackupRetentionLocked, other.isBackupRetentionLocked)
+                && java.util.Objects.equals(
+                        this.timeScheduledDbVersionUpgrade, other.timeScheduledDbVersionUpgrade)
+                && java.util.Objects.equals(
+                        this.isDisableDbVersionUpgradeSchedule,
+                        other.isDisableDbVersionUpgradeSchedule)
+                && java.util.Objects.equals(
+                        this.isScheduleDbVersionUpgradeToEarliest,
+                        other.isScheduleDbVersionUpgradeToEarliest)
                 && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
                 && java.util.Objects.equals(
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
@@ -4104,6 +4233,21 @@ public final class UpdateAutonomousDatabaseDetails
                         + (this.isBackupRetentionLocked == null
                                 ? 43
                                 : this.isBackupRetentionLocked.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduledDbVersionUpgrade == null
+                                ? 43
+                                : this.timeScheduledDbVersionUpgrade.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDisableDbVersionUpgradeSchedule == null
+                                ? 43
+                                : this.isDisableDbVersionUpgradeSchedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isScheduleDbVersionUpgradeToEarliest == null
+                                ? 43
+                                : this.isScheduleDbVersionUpgradeToEarliest.hashCode());
         result =
                 (result * PRIME)
                         + (this.scheduledOperations == null

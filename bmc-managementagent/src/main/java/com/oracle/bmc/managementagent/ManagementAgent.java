@@ -100,6 +100,22 @@ public interface ManagementAgent extends AutoCloseable {
             CreateManagementAgentInstallKeyRequest request);
 
     /**
+     * Named credential creation request to given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/CreateNamedCredentialExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateNamedCredential API.
+     */
+    CreateNamedCredentialResponse createNamedCredential(CreateNamedCredentialRequest request);
+
+    /**
      * Datasource delete request to given Management Agent.
      *
      * @param request The request object containing the details to send
@@ -147,6 +163,22 @@ public interface ManagementAgent extends AutoCloseable {
      */
     DeleteManagementAgentInstallKeyResponse deleteManagementAgentInstallKey(
             DeleteManagementAgentInstallKeyRequest request);
+
+    /**
+     * Named credential delete request to sent to associated Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/DeleteNamedCredentialExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteNamedCredential API.
+     */
+    DeleteNamedCredentialResponse deleteNamedCredential(DeleteNamedCredentialRequest request);
 
     /**
      * Cancel the work request with the given ID.
@@ -260,6 +292,39 @@ public interface ManagementAgent extends AutoCloseable {
      */
     GetManagementAgentInstallKeyContentResponse getManagementAgentInstallKeyContent(
             GetManagementAgentInstallKeyContentRequest request);
+
+    /**
+     * Get Named credential details for given Id and given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/GetNamedCredentialExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNamedCredential
+     *     API.
+     */
+    GetNamedCredentialResponse getNamedCredential(GetNamedCredentialRequest request);
+
+    /**
+     * Return the Metadata definition for Named Credentials supported by Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/GetNamedCredentialsMetadatumExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetNamedCredentialsMetadatum API.
+     */
+    GetNamedCredentialsMetadatumResponse getNamedCredentialsMetadatum(
+            GetNamedCredentialsMetadatumRequest request);
 
     /**
      * Gets the status of the work request with the given ID.
@@ -377,6 +442,22 @@ public interface ManagementAgent extends AutoCloseable {
      *     ListManagementAgents API.
      */
     ListManagementAgentsResponse listManagementAgents(ListManagementAgentsRequest request);
+
+    /**
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListNamedCredentialsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListNamedCredentials API.
+     */
+    ListNamedCredentialsResponse listNamedCredentials(ListNamedCredentialsRequest request);
 
     /**
      * Return a (paginated) list of errors for a given work request.
@@ -528,6 +609,22 @@ public interface ManagementAgent extends AutoCloseable {
      */
     UpdateManagementAgentInstallKeyResponse updateManagementAgentInstallKey(
             UpdateManagementAgentInstallKeyRequest request);
+
+    /**
+     * Named credential update request to given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/UpdateNamedCredentialExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateNamedCredential API.
+     */
+    UpdateNamedCredentialResponse updateNamedCredential(UpdateNamedCredentialRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

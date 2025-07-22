@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /** Publication status for the artifact. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public enum PublicationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     PublicationInProgress("PUBLICATION_IN_PROGRESS"),
     PublicationCompleted("PUBLICATION_COMPLETED"),

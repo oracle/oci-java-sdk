@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements MarketplacePublisher {
     /** Service instance for MarketplacePublisher. */
@@ -35,6 +35,14 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    MarketplacePublisherClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -60,6 +68,12 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
         this.waiters = new MarketplacePublisherWaiters(executorService, this);
 
         this.paginators = new MarketplacePublisherPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "MarketplacePublisherClient",
+                            "getListingRevisionAttachmentContent,getListingRevisionIconContent,getSupportDocContent,getTermVersionContent"));
+        }
     }
 
     /**
@@ -78,6 +92,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
                     Builder, MarketplacePublisherClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -101,6 +116,17 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -111,7 +137,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new MarketplacePublisherClient(
-                    this, authenticationDetailsProvider, executorService);
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 
@@ -135,10 +161,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ActivateTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/ActivateTermVersion")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/ActivateTermVersion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ActivateTermVersionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("termVersions")
                 .appendPathParam(request.getTermVersionId())
                 .appendPathParam("actions")
@@ -166,10 +192,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/CancelWorkRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
@@ -192,10 +218,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CascadingDeleteListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CascadingDeleteListing")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/CascadingDeleteListing")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CascadingDeleteListingRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listings")
                 .appendPathParam(request.getListingId())
                 .appendPathParam("actions")
@@ -224,10 +250,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CascadingDeleteListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CascadingDeleteListingRevision")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/CascadingDeleteListingRevision")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CascadingDeleteListingRevisionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .appendPathParam("actions")
@@ -260,10 +286,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ChangeArtifactCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ChangeArtifactCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/ChangeArtifactCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeArtifactCompartmentRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("artifacts")
                 .appendPathParam(request.getArtifactId())
                 .appendPathParam("actions")
@@ -276,6 +302,9 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeArtifactCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeArtifactCompartmentResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -293,10 +322,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ChangeListingCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/ChangeListingCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/ChangeListingCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeListingCompartmentRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listings")
                 .appendPathParam(request.getListingId())
                 .appendPathParam("actions")
@@ -307,6 +336,9 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
                 .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeListingCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeListingCompartmentResponse.Builder::opcRequestId)
                 .callSync();
@@ -323,10 +355,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ChangeListingRevisionToNewStatus",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/ChangeListingRevisionToNewStatus")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/ChangeListingRevisionToNewStatus")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeListingRevisionToNewStatusRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .appendPathParam("actions")
@@ -360,10 +392,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ChangeTermCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/ChangeTermCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Term/ChangeTermCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeTermCompartmentRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("terms")
                 .appendPathParam(request.getTermId())
                 .appendPathParam("actions")
@@ -376,6 +408,9 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeTermCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeTermCompartmentResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -389,10 +424,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CloneListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CloneListingRevision")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/CloneListingRevision")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CloneListingRevisionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .appendPathParam("actions")
@@ -420,10 +455,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CreateArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/CreateArtifact")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/CreateArtifact")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateArtifactRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("artifacts")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -447,10 +482,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CreateListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CreateListing")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/CreateListing")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateListingRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listings")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -478,10 +513,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CreateListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CreateListingRevision")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/CreateListingRevision")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateListingRevisionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -509,10 +544,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CreateListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/CreateListingRevisionAttachment")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/CreateListingRevisionAttachment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionAttachments")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -542,10 +577,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CreateListingRevisionNote",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/CreateListingRevisionNote")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionNote/CreateListingRevisionNote")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateListingRevisionNoteRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionNotes")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -573,10 +608,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CreateListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/CreateListingRevisionPackage")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/CreateListingRevisionPackage")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionPackages")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -603,10 +638,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CreateTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/CreateTerm")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Term/CreateTerm")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateTermRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("terms")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -634,10 +669,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "CreateTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/CreateTermVersion")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/CreateTermVersion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateTermVersionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("termVersions")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -666,10 +701,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "DeleteArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/DeleteArtifact")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/DeleteArtifact")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteArtifactRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("artifacts")
                 .appendPathParam(request.getArtifactId())
                 .accept("application/json")
@@ -694,10 +729,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "DeleteListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/DeleteListing")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/DeleteListing")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteListingRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listings")
                 .appendPathParam(request.getListingId())
                 .accept("application/json")
@@ -720,10 +755,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "DeleteListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/DeleteListingRevision")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/DeleteListingRevision")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteListingRevisionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .accept("application/json")
@@ -748,10 +783,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "DeleteListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/DeleteListingRevisionAttachment")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/DeleteListingRevisionAttachment")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionAttachments")
                 .appendPathParam(request.getListingRevisionAttachmentId())
                 .accept("application/json")
@@ -776,10 +811,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "DeleteListingRevisionNote",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/DeleteListingRevisionNote")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionNote/DeleteListingRevisionNote")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteListingRevisionNoteRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionNotes")
                 .appendPathParam(request.getListingRevisionNoteId())
                 .accept("application/json")
@@ -804,10 +839,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "DeleteListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/DeleteListingRevisionPackage")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/DeleteListingRevisionPackage")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionPackages")
                 .appendPathParam(request.getListingRevisionPackageId())
                 .accept("application/json")
@@ -830,10 +865,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "DeleteTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/DeleteTerm")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Term/DeleteTerm")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteTermRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("terms")
                 .appendPathParam(request.getTermId())
                 .accept("application/json")
@@ -855,10 +890,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "DeleteTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/DeleteTermVersion")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/DeleteTermVersion")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteTermVersionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("termVersions")
                 .appendPathParam(request.getTermVersionId())
                 .accept("application/json")
@@ -880,10 +915,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/GetArtifact")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/GetArtifact")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetArtifactRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("artifacts")
                 .appendPathParam(request.getArtifactId())
                 .accept("application/json")
@@ -909,10 +944,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetCategory",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Category/GetCategory")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Category/GetCategory")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCategoryRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("categories")
                 .appendPathParam(request.getCategoryCode())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
@@ -929,6 +964,33 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public GetLeadResponse getLead(GetLeadRequest request) {
+
+        Validate.notBlank(request.getLeadId(), "leadId must not be blank");
+
+        return clientCall(request, GetLeadResponse::builder)
+                .logger(LOG, "getLead")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "GetLead",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Lead/GetLead")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLeadRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("leads")
+                .appendPathParam(request.getLeadId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.Lead.class,
+                        GetLeadResponse.Builder::lead)
+                .handleResponseHeaderString("etag", GetLeadResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetLeadResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetListingResponse getListing(GetListingRequest request) {
 
         Validate.notBlank(request.getListingId(), "listingId must not be blank");
@@ -938,10 +1000,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/GetListing")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/GetListing")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetListingRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listings")
                 .appendPathParam(request.getListingId())
                 .accept("application/json")
@@ -966,10 +1028,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/GetListingRevision")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/GetListingRevision")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetListingRevisionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .accept("application/json")
@@ -997,10 +1059,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/GetListingRevisionAttachment")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/GetListingRevisionAttachment")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionAttachments")
                 .appendPathParam(request.getListingRevisionAttachmentId())
                 .accept("application/json")
@@ -1018,6 +1080,73 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public GetListingRevisionAttachmentContentResponse getListingRevisionAttachmentContent(
+            GetListingRevisionAttachmentContentRequest request) {
+
+        Validate.notBlank(
+                request.getListingRevisionAttachmentId(),
+                "listingRevisionAttachmentId must not be blank");
+
+        return clientCall(request, GetListingRevisionAttachmentContentResponse::builder)
+                .logger(LOG, "getListingRevisionAttachmentContent")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "GetListingRevisionAttachmentContent",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/GetListingRevisionAttachmentContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetListingRevisionAttachmentContentRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("listingRevisionAttachments")
+                .appendPathParam(request.getListingRevisionAttachmentId())
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetListingRevisionAttachmentContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetListingRevisionAttachmentContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetListingRevisionAttachmentContentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetListingRevisionIconContentResponse getListingRevisionIconContent(
+            GetListingRevisionIconContentRequest request) {
+
+        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
+
+        return clientCall(request, GetListingRevisionIconContentResponse::builder)
+                .logger(LOG, "getListingRevisionIconContent")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "GetListingRevisionIconContent",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/GetListingRevisionIconContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetListingRevisionIconContentRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("listingRevisions")
+                .appendPathParam(request.getListingRevisionId())
+                .appendPathParam("icon")
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetListingRevisionIconContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetListingRevisionIconContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetListingRevisionIconContentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public GetListingRevisionNoteResponse getListingRevisionNote(
             GetListingRevisionNoteRequest request) {
 
@@ -1029,10 +1158,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetListingRevisionNote",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/GetListingRevisionNote")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionNote/GetListingRevisionNote")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetListingRevisionNoteRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionNotes")
                 .appendPathParam(request.getListingRevisionNoteId())
                 .accept("application/json")
@@ -1060,10 +1189,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/GetListingRevisionPackage")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/GetListingRevisionPackage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionPackages")
                 .appendPathParam(request.getListingRevisionPackageId())
                 .accept("application/json")
@@ -1088,10 +1217,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetMarket",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Market/GetMarket")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Market/GetMarket")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMarketRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("markets")
                 .appendPathParam(request.getMarketCode())
                 .accept("application/json")
@@ -1116,10 +1245,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetProduct",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Product/GetProduct")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Product/GetProduct")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetProductRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("products")
                 .appendPathParam(request.getProductCode())
                 .accept("application/json")
@@ -1144,10 +1273,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetPublisher",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Publisher/GetPublisher")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Publisher/GetPublisher")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPublisherRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("publishers")
                 .appendPathParam(request.getPublisherId())
                 .accept("application/json")
@@ -1163,6 +1292,62 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public GetSupportDocResponse getSupportDoc(GetSupportDocRequest request) {
+
+        Validate.notBlank(request.getSupportDocCode(), "supportDocCode must not be blank");
+
+        return clientCall(request, GetSupportDocResponse::builder)
+                .logger(LOG, "getSupportDoc")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "GetSupportDoc",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/SupportDoc/GetSupportDoc")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSupportDocRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("supportDocs")
+                .appendPathParam(request.getSupportDocCode())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.SupportDoc.class,
+                        GetSupportDocResponse.Builder::supportDoc)
+                .handleResponseHeaderString("etag", GetSupportDocResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSupportDocResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSupportDocContentResponse getSupportDocContent(GetSupportDocContentRequest request) {
+
+        Validate.notBlank(request.getSupportDocCode(), "supportDocCode must not be blank");
+
+        return clientCall(request, GetSupportDocContentResponse::builder)
+                .logger(LOG, "getSupportDocContent")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "GetSupportDocContent",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/SupportDoc/GetSupportDocContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSupportDocContentRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("supportDocs")
+                .appendPathParam(request.getSupportDocCode())
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetSupportDocContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSupportDocContentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetTermResponse getTerm(GetTermRequest request) {
 
         Validate.notBlank(request.getTermId(), "termId must not be blank");
@@ -1172,10 +1357,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/GetTerm")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Term/GetTerm")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetTermRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("terms")
                 .appendPathParam(request.getTermId())
                 .accept("application/json")
@@ -1199,10 +1384,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/GetTermVersion")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/GetTermVersion")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetTermVersionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("termVersions")
                 .appendPathParam(request.getTermVersionId())
                 .accept("application/json")
@@ -1218,6 +1403,36 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public GetTermVersionContentResponse getTermVersionContent(
+            GetTermVersionContentRequest request) {
+
+        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
+
+        return clientCall(request, GetTermVersionContentResponse::builder)
+                .logger(LOG, "getTermVersionContent")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "GetTermVersionContent",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/GetTermVersionContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTermVersionContentRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("termVersions")
+                .appendPathParam(request.getTermVersionId())
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetTermVersionContentResponse.Builder::inputStream)
+                .handleResponseHeaderString("etag", GetTermVersionContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTermVersionContentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
@@ -1227,10 +1442,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/GetWorkRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
@@ -1256,10 +1471,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListArtifacts",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ArtifactCollection/ListArtifacts")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ArtifactCollection/ListArtifacts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListArtifactsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("artifacts")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -1283,6 +1498,40 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public ListAvailableServicesResponse listAvailableServices(
+            ListAvailableServicesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAvailableServicesResponse::builder)
+                .logger(LOG, "listAvailableServices")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "ListAvailableServices",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/AvailableServiceCollection/ListAvailableServices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAvailableServicesRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("availableServices")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.AvailableServiceCollection.class,
+                        ListAvailableServicesResponse.Builder::availableServiceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAvailableServicesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAvailableServicesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListCategoriesResponse listCategories(ListCategoriesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -1291,10 +1540,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListCategories",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/CategoryCollection/ListCategories")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CategoryCollection/ListCategories")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCategoriesRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("categories")
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -1317,6 +1566,119 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public ListCustomerInstanceReportRecordsResponse listCustomerInstanceReportRecords(
+            ListCustomerInstanceReportRecordsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getDateRange(), "dateRange is required");
+
+        return clientCall(request, ListCustomerInstanceReportRecordsResponse::builder)
+                .logger(LOG, "listCustomerInstanceReportRecords")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "ListCustomerInstanceReportRecords",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportRecordCollection/ListCustomerInstanceReportRecords")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCustomerInstanceReportRecordsRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("customerInstanceReportRecords")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("dateRange", request.getDateRange())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model
+                                .CustomerInstanceReportRecordCollection.class,
+                        ListCustomerInstanceReportRecordsResponse.Builder
+                                ::customerInstanceReportRecordCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCustomerInstanceReportRecordsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListCustomerInstanceReportRecordsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListDisbursementReportRecordsResponse listDisbursementReportRecords(
+            ListDisbursementReportRecordsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getDateRange(), "dateRange is required");
+
+        return clientCall(request, ListDisbursementReportRecordsResponse::builder)
+                .logger(LOG, "listDisbursementReportRecords")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "ListDisbursementReportRecords",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/DisbursementReportRecordCollection/ListDisbursementReportRecords")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDisbursementReportRecordsRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("disbursementReportRecords")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("dateRange", request.getDateRange())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.DisbursementReportRecordCollection
+                                .class,
+                        ListDisbursementReportRecordsResponse.Builder
+                                ::disbursementReportRecordCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDisbursementReportRecordsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDisbursementReportRecordsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListLeadsResponse listLeads(ListLeadsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListLeadsResponse::builder)
+                .logger(LOG, "listLeads")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "ListLeads",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/LeadCollection/ListLeads")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLeadsRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("leads")
+                .appendQueryParam("listingId", request.getListingId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.LeadCollection.class,
+                        ListLeadsResponse.Builder::leadCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLeadsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("opc-next-page", ListLeadsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListListingRevisionAttachmentsResponse listListingRevisionAttachments(
             ListListingRevisionAttachmentsRequest request) {
         Objects.requireNonNull(request.getListingRevisionId(), "listingRevisionId is required");
@@ -1326,10 +1688,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListListingRevisionAttachments",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachmentCollection/ListListingRevisionAttachments")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachmentCollection/ListListingRevisionAttachments")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListListingRevisionAttachmentsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionAttachments")
                 .appendQueryParam("listingRevisionId", request.getListingRevisionId())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -1366,10 +1728,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListListingRevisionNotes",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNoteCollection/ListListingRevisionNotes")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionNoteCollection/ListListingRevisionNotes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListListingRevisionNotesRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionNotes")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("listingRevisionId", request.getListingRevisionId())
@@ -1401,10 +1763,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListListingRevisionPackages",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackageCollection/ListListingRevisionPackages")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackageCollection/ListListingRevisionPackages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListListingRevisionPackagesRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionPackages")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("listingRevisionId", request.getListingRevisionId())
@@ -1438,10 +1800,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListListingRevisions",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionCollection/ListListingRevisions")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionCollection/ListListingRevisions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListListingRevisionsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendQueryParam("listingId", request.getListingId())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -1474,13 +1836,14 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListListings",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingCollection/ListListings")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingCollection/ListListings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListListingsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listings")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("listingType", request.getListingType())
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -1508,10 +1871,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListMarkets",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/MarketCollection/ListMarkets")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/MarketCollection/ListMarkets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMarketsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("markets")
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -1519,6 +1882,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("name", request.getName())
+                .appendQueryParam("listingId", request.getListingId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -1541,16 +1905,17 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListProducts",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ProductCollection/ListProducts")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ProductCollection/ListProducts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListProductsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("products")
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("productGroup", request.getProductGroup())
                 .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1574,10 +1939,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListPublishers",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/PublisherCollection/ListPublishers")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/PublisherCollection/ListPublishers")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPublishersRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("publishers")
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -1599,6 +1964,106 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public ListSupportDocsResponse listSupportDocs(ListSupportDocsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSupportDocsResponse::builder)
+                .logger(LOG, "listSupportDocs")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "ListSupportDocs",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/SupportDocCollection/ListSupportDocs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSupportDocsRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("supportDocs")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("supportDocGroup", request.getSupportDocGroup())
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.SupportDocCollection.class,
+                        ListSupportDocsResponse.Builder::supportDocCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSupportDocsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSupportDocsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListSupportedCurrenciesResponse listSupportedCurrencies(
+            ListSupportedCurrenciesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSupportedCurrenciesResponse::builder)
+                .logger(LOG, "listSupportedCurrencies")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "ListSupportedCurrencies",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/SupportedCurrencyCollection/ListSupportedCurrencies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSupportedCurrenciesRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("supportedCurrencies")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.SupportedCurrencyCollection.class,
+                        ListSupportedCurrenciesResponse.Builder::supportedCurrencyCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSupportedCurrenciesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSupportedCurrenciesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListSupportedShapesResponse listSupportedShapes(ListSupportedShapesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSupportedShapesResponse::builder)
+                .logger(LOG, "listSupportedShapes")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "ListSupportedShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/SupportedShapeCollection/ListSupportedShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSupportedShapesRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("supportedShapes")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.SupportedShapeCollection.class,
+                        ListSupportedShapesResponse.Builder::supportedShapeCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSupportedShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSupportedShapesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListTermVersionsResponse listTermVersions(ListTermVersionsRequest request) {
         Objects.requireNonNull(request.getTermId(), "termId is required");
 
@@ -1607,10 +2072,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListTermVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersionCollection/ListTermVersions")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersionCollection/ListTermVersions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListTermVersionsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("termVersions")
                 .appendQueryParam("termId", request.getTermId())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
@@ -1641,10 +2106,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListTerms",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermCollection/ListTerms")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermCollection/ListTerms")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListTermsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("terms")
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -1675,10 +2140,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestError/ListWorkRequestErrors")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .appendPathParam("errors")
@@ -1709,10 +2174,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestLogEntry/ListWorkRequestLogs")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .appendPathParam("logs")
@@ -1743,10 +2208,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/ListWorkRequests")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("workRequests")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("workRequestId", request.getWorkRequestId())
@@ -1783,10 +2248,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "MarkListingRevisionPackageAsDefault",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/MarkListingRevisionPackageAsDefault")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/MarkListingRevisionPackageAsDefault")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(MarkListingRevisionPackageAsDefaultRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionPackages")
                 .appendPathParam(request.getListingRevisionPackageId())
                 .appendPathParam("actions")
@@ -1816,10 +2281,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "PublishListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevision")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/PublishListingRevision")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PublishListingRevisionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .appendPathParam("actions")
@@ -1851,10 +2316,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "PublishListingRevisionAsPrivate",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevisionAsPrivate")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/PublishListingRevisionAsPrivate")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PublishListingRevisionAsPrivateRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .appendPathParam("actions")
@@ -1887,10 +2352,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "PublishListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/PublishListingRevisionPackage")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/PublishListingRevisionPackage")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PublishListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionPackages")
                 .appendPathParam(request.getListingRevisionPackageId())
                 .appendPathParam("actions")
@@ -1923,10 +2388,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "SubmitListingRevisionForReview",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/SubmitListingRevisionForReview")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/SubmitListingRevisionForReview")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SubmitListingRevisionForReviewRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .appendPathParam("actions")
@@ -1961,10 +2426,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UnPublishListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UnPublishListingRevisionPackage")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/UnPublishListingRevisionPackage")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UnPublishListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionPackages")
                 .appendPathParam(request.getListingRevisionPackageId())
                 .appendPathParam("actions")
@@ -1995,10 +2460,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UpdateArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/UpdateArtifact")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/UpdateArtifact")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateArtifactRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("artifacts")
                 .appendPathParam(request.getArtifactId())
                 .accept("application/json")
@@ -2025,10 +2490,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UpdateListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/UpdateListing")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/UpdateListing")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateListingRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listings")
                 .appendPathParam(request.getListingId())
                 .accept("application/json")
@@ -2059,10 +2524,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UpdateListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevision")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/UpdateListingRevision")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateListingRevisionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .accept("application/json")
@@ -2095,10 +2560,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UpdateListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachment")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/UpdateListingRevisionAttachment")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionAttachments")
                 .appendPathParam(request.getListingRevisionAttachmentId())
                 .accept("application/json")
@@ -2133,10 +2598,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UpdateListingRevisionAttachmentContent",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachmentContent")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/UpdateListingRevisionAttachmentContent")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateListingRevisionAttachmentContentRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionAttachments")
                 .appendPathParam(request.getListingRevisionAttachmentId())
                 .appendPathParam("content")
@@ -2172,10 +2637,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UpdateListingRevisionIconContent",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevisionIconContent")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/UpdateListingRevisionIconContent")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateListingRevisionIconContentRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .appendPathParam("icon")
@@ -2198,6 +2663,41 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public UpdateListingRevisionNoteResponse updateListingRevisionNote(
+            UpdateListingRevisionNoteRequest request) {
+
+        Validate.notBlank(
+                request.getListingRevisionNoteId(), "listingRevisionNoteId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateListingRevisionNoteDetails(),
+                "updateListingRevisionNoteDetails is required");
+
+        return clientCall(request, UpdateListingRevisionNoteResponse::builder)
+                .logger(LOG, "updateListingRevisionNote")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "UpdateListingRevisionNote",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionNote/UpdateListingRevisionNote")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateListingRevisionNoteRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("listingRevisionNotes")
+                .appendPathParam(request.getListingRevisionNoteId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionNote.class,
+                        UpdateListingRevisionNoteResponse.Builder::listingRevisionNote)
+                .handleResponseHeaderString("etag", UpdateListingRevisionNoteResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateListingRevisionNoteResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateListingRevisionPackageResponse updateListingRevisionPackage(
             UpdateListingRevisionPackageRequest request) {
 
@@ -2213,10 +2713,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UpdateListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UpdateListingRevisionPackage")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/UpdateListingRevisionPackage")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisionPackages")
                 .appendPathParam(request.getListingRevisionPackageId())
                 .accept("application/json")
@@ -2246,10 +2746,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UpdateTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/UpdateTerm")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Term/UpdateTerm")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateTermRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("terms")
                 .appendPathParam(request.getTermId())
                 .accept("application/json")
@@ -2278,10 +2778,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UpdateTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersion")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/UpdateTermVersion")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateTermVersionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("termVersions")
                 .appendPathParam(request.getTermVersionId())
                 .accept("application/json")
@@ -2311,10 +2811,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "UpdateTermVersionContent",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersionContent")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/UpdateTermVersionContent")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateTermVersionContentRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("termVersions")
                 .appendPathParam(request.getTermVersionId())
                 .appendPathParam("content")
@@ -2345,10 +2845,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "ValidateAndPublishArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ValidateAndPublishArtifact")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/ValidateAndPublishArtifact")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateAndPublishArtifactRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("artifacts")
                 .appendPathParam(request.getArtifactId())
                 .appendPathParam("actions")
@@ -2377,10 +2877,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "MarketplacePublisher",
                         "WithdrawListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/WithdrawListingRevision")
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/WithdrawListingRevision")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(WithdrawListingRevisionRequest::builder)
-                .basePath("/20220901")
+                .basePath("/20241201")
                 .appendPathParam("listingRevisions")
                 .appendPathParam(request.getListingRevisionId())
                 .appendPathParam("actions")

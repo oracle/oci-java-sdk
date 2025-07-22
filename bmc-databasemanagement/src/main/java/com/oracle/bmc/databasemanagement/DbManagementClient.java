@@ -568,6 +568,47 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public CheckCloudDbSystemConnectorConnectionStatusResponse
+            checkCloudDbSystemConnectorConnectionStatus(
+                    CheckCloudDbSystemConnectorConnectionStatusRequest request) {
+
+        Validate.notBlank(
+                request.getCloudDbSystemConnectorId(),
+                "cloudDbSystemConnectorId must not be blank");
+
+        return clientCall(request, CheckCloudDbSystemConnectorConnectionStatusResponse::builder)
+                .logger(LOG, "checkCloudDbSystemConnectorConnectionStatus")
+                .serviceDetails(
+                        "DbManagement",
+                        "CheckCloudDbSystemConnectorConnectionStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/CheckCloudDbSystemConnectorConnectionStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CheckCloudDbSystemConnectorConnectionStatusRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemConnectors")
+                .appendPathParam(request.getCloudDbSystemConnectorId())
+                .appendPathParam("actions")
+                .appendPathParam("checkConnectionStatus")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemConnector.class,
+                        CheckCloudDbSystemConnectorConnectionStatusResponse.Builder
+                                ::cloudDbSystemConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CheckCloudDbSystemConnectorConnectionStatusResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CheckCloudDbSystemConnectorConnectionStatusResponse.Builder
+                                ::contentLocation)
+                .callSync();
+    }
+
+    @Override
     public CheckExternalDbSystemConnectorConnectionStatusResponse
             checkExternalDbSystemConnectorConnectionStatus(
                     CheckExternalDbSystemConnectorConnectionStatusRequest request) {
@@ -749,6 +790,116 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ConfigureAutomaticSpmEvolveAdvisorTaskResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateCloudDbSystemResponse createCloudDbSystem(CreateCloudDbSystemRequest request) {
+        Objects.requireNonNull(
+                request.getCreateCloudDbSystemDetails(), "createCloudDbSystemDetails is required");
+
+        return clientCall(request, CreateCloudDbSystemResponse::builder)
+                .logger(LOG, "createCloudDbSystem")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateCloudDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/CreateCloudDbSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCloudDbSystemRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystems")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystem.class,
+                        CreateCloudDbSystemResponse.Builder::cloudDbSystem)
+                .handleResponseHeaderString("etag", CreateCloudDbSystemResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCloudDbSystemResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateCloudDbSystemResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateCloudDbSystemResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateCloudDbSystemResponse.Builder::contentLocation)
+                .callSync();
+    }
+
+    @Override
+    public CreateCloudDbSystemConnectorResponse createCloudDbSystemConnector(
+            CreateCloudDbSystemConnectorRequest request) {
+        Objects.requireNonNull(
+                request.getCreateCloudDbSystemConnectorDetails(),
+                "createCloudDbSystemConnectorDetails is required");
+
+        return clientCall(request, CreateCloudDbSystemConnectorResponse::builder)
+                .logger(LOG, "createCloudDbSystemConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateCloudDbSystemConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/CreateCloudDbSystemConnector")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCloudDbSystemConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemConnectors")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemConnector.class,
+                        CreateCloudDbSystemConnectorResponse.Builder::cloudDbSystemConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateCloudDbSystemConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateCloudDbSystemConnectorResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateCloudDbSystemDiscoveryResponse createCloudDbSystemDiscovery(
+            CreateCloudDbSystemDiscoveryRequest request) {
+        Objects.requireNonNull(
+                request.getCreateCloudDbSystemDiscoveryDetails(),
+                "createCloudDbSystemDiscoveryDetails is required");
+
+        return clientCall(request, CreateCloudDbSystemDiscoveryResponse::builder)
+                .logger(LOG, "createCloudDbSystemDiscovery")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateCloudDbSystemDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/CreateCloudDbSystemDiscovery")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCloudDbSystemDiscoveryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemDiscoveries")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscovery.class,
+                        CreateCloudDbSystemDiscoveryResponse.Builder::cloudDbSystemDiscovery)
+                .handleResponseHeaderString(
+                        "etag", CreateCloudDbSystemDiscoveryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateCloudDbSystemDiscoveryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateCloudDbSystemDiscoveryResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateCloudDbSystemDiscoveryResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateCloudDbSystemDiscoveryResponse.Builder::contentLocation)
                 .callSync();
     }
 
@@ -1173,6 +1324,89 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateTablespaceResponse.Builder::tablespace)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTablespaceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteCloudDbSystemResponse deleteCloudDbSystem(DeleteCloudDbSystemRequest request) {
+
+        Validate.notBlank(request.getCloudDbSystemId(), "cloudDbSystemId must not be blank");
+
+        return clientCall(request, DeleteCloudDbSystemResponse::builder)
+                .logger(LOG, "deleteCloudDbSystem")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteCloudDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/DeleteCloudDbSystem")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCloudDbSystemRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystems")
+                .appendPathParam(request.getCloudDbSystemId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCloudDbSystemResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteCloudDbSystemResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteCloudDbSystemConnectorResponse deleteCloudDbSystemConnector(
+            DeleteCloudDbSystemConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getCloudDbSystemConnectorId(),
+                "cloudDbSystemConnectorId must not be blank");
+
+        return clientCall(request, DeleteCloudDbSystemConnectorResponse::builder)
+                .logger(LOG, "deleteCloudDbSystemConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteCloudDbSystemConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/DeleteCloudDbSystemConnector")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCloudDbSystemConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemConnectors")
+                .appendPathParam(request.getCloudDbSystemConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteCloudDbSystemConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteCloudDbSystemDiscoveryResponse deleteCloudDbSystemDiscovery(
+            DeleteCloudDbSystemDiscoveryRequest request) {
+
+        Validate.notBlank(
+                request.getCloudDbSystemDiscoveryId(),
+                "cloudDbSystemDiscoveryId must not be blank");
+
+        return clientCall(request, DeleteCloudDbSystemDiscoveryResponse::builder)
+                .logger(LOG, "deleteCloudDbSystemDiscovery")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteCloudDbSystemDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/DeleteCloudDbSystemDiscovery")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCloudDbSystemDiscoveryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemDiscoveries")
+                .appendPathParam(request.getCloudDbSystemDiscoveryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteCloudDbSystemDiscoveryResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1614,6 +1848,72 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id",
                         DisableAutonomousDatabaseManagementFeatureResponse.Builder
                                 ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableCloudDbSystemDatabaseManagementResponse disableCloudDbSystemDatabaseManagement(
+            DisableCloudDbSystemDatabaseManagementRequest request) {
+
+        Validate.notBlank(request.getCloudDbSystemId(), "cloudDbSystemId must not be blank");
+
+        return clientCall(request, DisableCloudDbSystemDatabaseManagementResponse::builder)
+                .logger(LOG, "disableCloudDbSystemDatabaseManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableCloudDbSystemDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/DisableCloudDbSystemDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableCloudDbSystemDatabaseManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystems")
+                .appendPathParam(request.getCloudDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableCloudDbSystemDatabaseManagementResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableCloudDbSystemDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableCloudDbSystemStackMonitoringResponse disableCloudDbSystemStackMonitoring(
+            DisableCloudDbSystemStackMonitoringRequest request) {
+
+        Validate.notBlank(request.getCloudDbSystemId(), "cloudDbSystemId must not be blank");
+
+        return clientCall(request, DisableCloudDbSystemStackMonitoringResponse::builder)
+                .logger(LOG, "disableCloudDbSystemStackMonitoring")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableCloudDbSystemStackMonitoring",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/DisableCloudDbSystemStackMonitoring")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableCloudDbSystemStackMonitoringRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystems")
+                .appendPathParam(request.getCloudDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("disableStackMonitoring")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableCloudDbSystemStackMonitoringResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableCloudDbSystemStackMonitoringResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -2238,6 +2538,80 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public EnableCloudDbSystemDatabaseManagementResponse enableCloudDbSystemDatabaseManagement(
+            EnableCloudDbSystemDatabaseManagementRequest request) {
+
+        Validate.notBlank(request.getCloudDbSystemId(), "cloudDbSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableCloudDbSystemDatabaseManagementDetails(),
+                "enableCloudDbSystemDatabaseManagementDetails is required");
+
+        return clientCall(request, EnableCloudDbSystemDatabaseManagementResponse::builder)
+                .logger(LOG, "enableCloudDbSystemDatabaseManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableCloudDbSystemDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/EnableCloudDbSystemDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableCloudDbSystemDatabaseManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystems")
+                .appendPathParam(request.getCloudDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableCloudDbSystemDatabaseManagementResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableCloudDbSystemDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableCloudDbSystemStackMonitoringResponse enableCloudDbSystemStackMonitoring(
+            EnableCloudDbSystemStackMonitoringRequest request) {
+
+        Validate.notBlank(request.getCloudDbSystemId(), "cloudDbSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableCloudDbSystemStackMonitoringDetails(),
+                "enableCloudDbSystemStackMonitoringDetails is required");
+
+        return clientCall(request, EnableCloudDbSystemStackMonitoringResponse::builder)
+                .logger(LOG, "enableCloudDbSystemStackMonitoring")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableCloudDbSystemStackMonitoring",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/EnableCloudDbSystemStackMonitoring")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableCloudDbSystemStackMonitoringRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystems")
+                .appendPathParam(request.getCloudDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("enableStackMonitoring")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableCloudDbSystemStackMonitoringResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableCloudDbSystemStackMonitoringResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public EnableDatabaseManagementFeatureResponse enableDatabaseManagementFeature(
             EnableDatabaseManagementFeatureRequest request) {
 
@@ -2778,6 +3152,324 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         GetAwrDbSqlReportResponse.Builder::awrDbSqlReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAwrDbSqlReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudAsmResponse getCloudAsm(GetCloudAsmRequest request) {
+
+        Validate.notBlank(request.getCloudAsmId(), "cloudAsmId must not be blank");
+
+        return clientCall(request, GetCloudAsmResponse::builder)
+                .logger(LOG, "getCloudAsm")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudAsm",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/GetCloudAsm")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudAsmRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudAsms")
+                .appendPathParam(request.getCloudAsmId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudAsm.class,
+                        GetCloudAsmResponse.Builder::cloudAsm)
+                .handleResponseHeaderString("etag", GetCloudAsmResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudAsmResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudAsmConfigurationResponse getCloudAsmConfiguration(
+            GetCloudAsmConfigurationRequest request) {
+
+        Validate.notBlank(request.getCloudAsmId(), "cloudAsmId must not be blank");
+
+        return clientCall(request, GetCloudAsmConfigurationResponse::builder)
+                .logger(LOG, "getCloudAsmConfiguration")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudAsmConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/GetCloudAsmConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudAsmConfigurationRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudAsms")
+                .appendPathParam(request.getCloudAsmId())
+                .appendPathParam("configuration")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudAsmConfiguration.class,
+                        GetCloudAsmConfigurationResponse.Builder::cloudAsmConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudAsmConfigurationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudAsmInstanceResponse getCloudAsmInstance(GetCloudAsmInstanceRequest request) {
+
+        Validate.notBlank(request.getCloudAsmInstanceId(), "cloudAsmInstanceId must not be blank");
+
+        return clientCall(request, GetCloudAsmInstanceResponse::builder)
+                .logger(LOG, "getCloudAsmInstance")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudAsmInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsmInstance/GetCloudAsmInstance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudAsmInstanceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudAsmInstances")
+                .appendPathParam(request.getCloudAsmInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudAsmInstance.class,
+                        GetCloudAsmInstanceResponse.Builder::cloudAsmInstance)
+                .handleResponseHeaderString("etag", GetCloudAsmInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudAsmInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudClusterResponse getCloudCluster(GetCloudClusterRequest request) {
+
+        Validate.notBlank(request.getCloudClusterId(), "cloudClusterId must not be blank");
+
+        return clientCall(request, GetCloudClusterResponse::builder)
+                .logger(LOG, "getCloudCluster")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudCluster/GetCloudCluster")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudClusterRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudClusters")
+                .appendPathParam(request.getCloudClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudCluster.class,
+                        GetCloudClusterResponse.Builder::cloudCluster)
+                .handleResponseHeaderString("etag", GetCloudClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudClusterInstanceResponse getCloudClusterInstance(
+            GetCloudClusterInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getCloudClusterInstanceId(), "cloudClusterInstanceId must not be blank");
+
+        return clientCall(request, GetCloudClusterInstanceResponse::builder)
+                .logger(LOG, "getCloudClusterInstance")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudClusterInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudClusterInstance/GetCloudClusterInstance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudClusterInstanceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudClusterInstances")
+                .appendPathParam(request.getCloudClusterInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudClusterInstance.class,
+                        GetCloudClusterInstanceResponse.Builder::cloudClusterInstance)
+                .handleResponseHeaderString("etag", GetCloudClusterInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudClusterInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudDbHomeResponse getCloudDbHome(GetCloudDbHomeRequest request) {
+
+        Validate.notBlank(request.getCloudDbHomeId(), "cloudDbHomeId must not be blank");
+
+        return clientCall(request, GetCloudDbHomeResponse::builder)
+                .logger(LOG, "getCloudDbHome")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudDbHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbHome/GetCloudDbHome")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudDbHomeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbHomes")
+                .appendPathParam(request.getCloudDbHomeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbHome.class,
+                        GetCloudDbHomeResponse.Builder::cloudDbHome)
+                .handleResponseHeaderString("etag", GetCloudDbHomeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudDbHomeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudDbNodeResponse getCloudDbNode(GetCloudDbNodeRequest request) {
+
+        Validate.notBlank(request.getCloudDbNodeId(), "cloudDbNodeId must not be blank");
+
+        return clientCall(request, GetCloudDbNodeResponse::builder)
+                .logger(LOG, "getCloudDbNode")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudDbNode",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbNode/GetCloudDbNode")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudDbNodeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbNodes")
+                .appendPathParam(request.getCloudDbNodeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbNode.class,
+                        GetCloudDbNodeResponse.Builder::cloudDbNode)
+                .handleResponseHeaderString("etag", GetCloudDbNodeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudDbNodeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudDbSystemResponse getCloudDbSystem(GetCloudDbSystemRequest request) {
+
+        Validate.notBlank(request.getCloudDbSystemId(), "cloudDbSystemId must not be blank");
+
+        return clientCall(request, GetCloudDbSystemResponse::builder)
+                .logger(LOG, "getCloudDbSystem")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/GetCloudDbSystem")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudDbSystemRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystems")
+                .appendPathParam(request.getCloudDbSystemId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystem.class,
+                        GetCloudDbSystemResponse.Builder::cloudDbSystem)
+                .handleResponseHeaderString("etag", GetCloudDbSystemResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudDbSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudDbSystemConnectorResponse getCloudDbSystemConnector(
+            GetCloudDbSystemConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getCloudDbSystemConnectorId(),
+                "cloudDbSystemConnectorId must not be blank");
+
+        return clientCall(request, GetCloudDbSystemConnectorResponse::builder)
+                .logger(LOG, "getCloudDbSystemConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudDbSystemConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/GetCloudDbSystemConnector")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudDbSystemConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemConnectors")
+                .appendPathParam(request.getCloudDbSystemConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemConnector.class,
+                        GetCloudDbSystemConnectorResponse.Builder::cloudDbSystemConnector)
+                .handleResponseHeaderString("etag", GetCloudDbSystemConnectorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudDbSystemConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudDbSystemDiscoveryResponse getCloudDbSystemDiscovery(
+            GetCloudDbSystemDiscoveryRequest request) {
+
+        Validate.notBlank(
+                request.getCloudDbSystemDiscoveryId(),
+                "cloudDbSystemDiscoveryId must not be blank");
+
+        return clientCall(request, GetCloudDbSystemDiscoveryResponse::builder)
+                .logger(LOG, "getCloudDbSystemDiscovery")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudDbSystemDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/GetCloudDbSystemDiscovery")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudDbSystemDiscoveryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemDiscoveries")
+                .appendPathParam(request.getCloudDbSystemDiscoveryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscovery.class,
+                        GetCloudDbSystemDiscoveryResponse.Builder::cloudDbSystemDiscovery)
+                .handleResponseHeaderString("etag", GetCloudDbSystemDiscoveryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudDbSystemDiscoveryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudListenerResponse getCloudListener(GetCloudListenerRequest request) {
+
+        Validate.notBlank(request.getCloudListenerId(), "cloudListenerId must not be blank");
+
+        return clientCall(request, GetCloudListenerResponse::builder)
+                .logger(LOG, "getCloudListener")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetCloudListener",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudListener/GetCloudListener")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudListenerRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudListeners")
+                .appendPathParam(request.getCloudListenerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudListener.class,
+                        GetCloudListenerResponse.Builder::cloudListener)
+                .handleResponseHeaderString("etag", GetCloudListenerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudListenerResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -4515,6 +5207,494 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListAwrDbsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAwrDbsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudAsmDiskGroupsResponse listCloudAsmDiskGroups(
+            ListCloudAsmDiskGroupsRequest request) {
+
+        Validate.notBlank(request.getCloudAsmId(), "cloudAsmId must not be blank");
+
+        return clientCall(request, ListCloudAsmDiskGroupsResponse::builder)
+                .logger(LOG, "listCloudAsmDiskGroups")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudAsmDiskGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/ListCloudAsmDiskGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudAsmDiskGroupsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudAsms")
+                .appendPathParam(request.getCloudAsmId())
+                .appendPathParam("diskGroups")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudAsmDiskGroupCollection.class,
+                        ListCloudAsmDiskGroupsResponse.Builder::cloudAsmDiskGroupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudAsmDiskGroupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudAsmDiskGroupsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudAsmInstancesResponse listCloudAsmInstances(
+            ListCloudAsmInstancesRequest request) {
+
+        return clientCall(request, ListCloudAsmInstancesResponse::builder)
+                .logger(LOG, "listCloudAsmInstances")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudAsmInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsmInstance/ListCloudAsmInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudAsmInstancesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudAsmInstances")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("cloudAsmId", request.getCloudAsmId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudAsmInstanceCollection.class,
+                        ListCloudAsmInstancesResponse.Builder::cloudAsmInstanceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudAsmInstancesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudAsmInstancesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudAsmUsersResponse listCloudAsmUsers(ListCloudAsmUsersRequest request) {
+
+        Validate.notBlank(request.getCloudAsmId(), "cloudAsmId must not be blank");
+
+        return clientCall(request, ListCloudAsmUsersResponse::builder)
+                .logger(LOG, "listCloudAsmUsers")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudAsmUsers",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/ListCloudAsmUsers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudAsmUsersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudAsms")
+                .appendPathParam(request.getCloudAsmId())
+                .appendPathParam("users")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudAsmUserCollection.class,
+                        ListCloudAsmUsersResponse.Builder::cloudAsmUserCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudAsmUsersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudAsmUsersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudAsmsResponse listCloudAsms(ListCloudAsmsRequest request) {
+
+        return clientCall(request, ListCloudAsmsResponse::builder)
+                .logger(LOG, "listCloudAsms")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudAsms",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/ListCloudAsms")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudAsmsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudAsms")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("cloudDbSystemId", request.getCloudDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudAsmCollection.class,
+                        ListCloudAsmsResponse.Builder::cloudAsmCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudAsmsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudAsmsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudClusterInstancesResponse listCloudClusterInstances(
+            ListCloudClusterInstancesRequest request) {
+
+        return clientCall(request, ListCloudClusterInstancesResponse::builder)
+                .logger(LOG, "listCloudClusterInstances")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudClusterInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudClusterInstance/ListCloudClusterInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudClusterInstancesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudClusterInstances")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("cloudClusterId", request.getCloudClusterId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudClusterInstanceCollection
+                                .class,
+                        ListCloudClusterInstancesResponse.Builder::cloudClusterInstanceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudClusterInstancesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudClusterInstancesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudClustersResponse listCloudClusters(ListCloudClustersRequest request) {
+
+        return clientCall(request, ListCloudClustersResponse::builder)
+                .logger(LOG, "listCloudClusters")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudCluster/ListCloudClusters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudClustersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudClusters")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("cloudDbSystemId", request.getCloudDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudClusterCollection.class,
+                        ListCloudClustersResponse.Builder::cloudClusterCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudClustersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudClustersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudDatabasesResponse listCloudDatabases(ListCloudDatabasesRequest request) {
+        Objects.requireNonNull(request.getCloudDbSystemId(), "cloudDbSystemId is required");
+
+        return clientCall(request, ListCloudDatabasesResponse::builder)
+                .logger(LOG, "listCloudDatabases")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudDatabases",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDatabaseCollection/ListCloudDatabases")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudDatabasesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDatabases")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("cloudDbSystemId", request.getCloudDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDatabaseCollection.class,
+                        ListCloudDatabasesResponse.Builder::cloudDatabaseCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudDatabasesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudDatabasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudDbHomesResponse listCloudDbHomes(ListCloudDbHomesRequest request) {
+
+        return clientCall(request, ListCloudDbHomesResponse::builder)
+                .logger(LOG, "listCloudDbHomes")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudDbHomes",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbHome/ListCloudDbHomes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudDbHomesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbHomes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("cloudDbSystemId", request.getCloudDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbHomeCollection.class,
+                        ListCloudDbHomesResponse.Builder::cloudDbHomeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudDbHomesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudDbHomesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudDbNodesResponse listCloudDbNodes(ListCloudDbNodesRequest request) {
+
+        return clientCall(request, ListCloudDbNodesResponse::builder)
+                .logger(LOG, "listCloudDbNodes")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudDbNodes",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbNode/ListCloudDbNodes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudDbNodesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbNodes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("cloudDbSystemId", request.getCloudDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbNodeCollection.class,
+                        ListCloudDbNodesResponse.Builder::cloudDbNodeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudDbNodesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudDbNodesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudDbSystemConnectorsResponse listCloudDbSystemConnectors(
+            ListCloudDbSystemConnectorsRequest request) {
+
+        return clientCall(request, ListCloudDbSystemConnectorsResponse::builder)
+                .logger(LOG, "listCloudDbSystemConnectors")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudDbSystemConnectors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/ListCloudDbSystemConnectors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudDbSystemConnectorsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemConnectors")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("cloudDbSystemId", request.getCloudDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemConnectorCollection
+                                .class,
+                        ListCloudDbSystemConnectorsResponse.Builder
+                                ::cloudDbSystemConnectorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudDbSystemConnectorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudDbSystemConnectorsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudDbSystemDiscoveriesResponse listCloudDbSystemDiscoveries(
+            ListCloudDbSystemDiscoveriesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCloudDbSystemDiscoveriesResponse::builder)
+                .logger(LOG, "listCloudDbSystemDiscoveries")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudDbSystemDiscoveries",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/ListCloudDbSystemDiscoveries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudDbSystemDiscoveriesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemDiscoveries")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscoveryCollection
+                                .class,
+                        ListCloudDbSystemDiscoveriesResponse.Builder
+                                ::cloudDbSystemDiscoveryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCloudDbSystemDiscoveriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudDbSystemDiscoveriesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudDbSystemsResponse listCloudDbSystems(ListCloudDbSystemsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCloudDbSystemsResponse::builder)
+                .logger(LOG, "listCloudDbSystems")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudDbSystems",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/ListCloudDbSystems")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudDbSystemsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystems")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam(
+                        "dbaasParentInfrastructureId", request.getDbaasParentInfrastructureId())
+                .appendEnumQueryParam("deploymentType", request.getDeploymentType())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemCollection.class,
+                        ListCloudDbSystemsResponse.Builder::cloudDbSystemCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudDbSystemsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudDbSystemsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudListenerServicesResponse listCloudListenerServices(
+            ListCloudListenerServicesRequest request) {
+
+        Validate.notBlank(request.getCloudListenerId(), "cloudListenerId must not be blank");
+        Objects.requireNonNull(request.getManagedDatabaseId(), "managedDatabaseId is required");
+
+        return clientCall(request, ListCloudListenerServicesResponse::builder)
+                .logger(LOG, "listCloudListenerServices")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudListenerServices",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudListener/ListCloudListenerServices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudListenerServicesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudListeners")
+                .appendPathParam(request.getCloudListenerId())
+                .appendPathParam("services")
+                .appendQueryParam("managedDatabaseId", request.getManagedDatabaseId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudListenerServiceCollection
+                                .class,
+                        ListCloudListenerServicesResponse.Builder::cloudListenerServiceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudListenerServicesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudListenerServicesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudListenersResponse listCloudListeners(ListCloudListenersRequest request) {
+
+        return clientCall(request, ListCloudListenersResponse::builder)
+                .logger(LOG, "listCloudListeners")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCloudListeners",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudListener/ListCloudListeners")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudListenersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudListeners")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("cloudDbSystemId", request.getCloudDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudListenerCollection.class,
+                        ListCloudListenersResponse.Builder::cloudListenerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudListenersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudListenersResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -6485,6 +7665,42 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public PatchCloudDbSystemDiscoveryResponse patchCloudDbSystemDiscovery(
+            PatchCloudDbSystemDiscoveryRequest request) {
+
+        Validate.notBlank(
+                request.getCloudDbSystemDiscoveryId(),
+                "cloudDbSystemDiscoveryId must not be blank");
+        Objects.requireNonNull(
+                request.getPatchCloudDbSystemDiscoveryDetails(),
+                "patchCloudDbSystemDiscoveryDetails is required");
+
+        return clientCall(request, PatchCloudDbSystemDiscoveryResponse::builder)
+                .logger(LOG, "patchCloudDbSystemDiscovery")
+                .serviceDetails(
+                        "DbManagement",
+                        "PatchCloudDbSystemDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/PatchCloudDbSystemDiscovery")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchCloudDbSystemDiscoveryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemDiscoveries")
+                .appendPathParam(request.getCloudDbSystemDiscoveryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscovery.class,
+                        PatchCloudDbSystemDiscoveryResponse.Builder::cloudDbSystemDiscovery)
+                .handleResponseHeaderString(
+                        "etag", PatchCloudDbSystemDiscoveryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchCloudDbSystemDiscoveryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public PatchExternalDbSystemDiscoveryResponse patchExternalDbSystemDiscovery(
             PatchExternalDbSystemDiscoveryRequest request) {
 
@@ -7151,6 +8367,215 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public SummarizeCloudAsmMetricsResponse summarizeCloudAsmMetrics(
+            SummarizeCloudAsmMetricsRequest request) {
+
+        Validate.notBlank(request.getCloudAsmId(), "cloudAsmId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeCloudAsmMetricsResponse::builder)
+                .logger(LOG, "summarizeCloudAsmMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeCloudAsmMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/SummarizeCloudAsmMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeCloudAsmMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudAsms")
+                .appendPathParam(request.getCloudAsmId())
+                .appendPathParam("metrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeCloudAsmMetricsResponse.Builder::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeCloudAsmMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeCloudAsmMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SummarizeCloudClusterMetricsResponse summarizeCloudClusterMetrics(
+            SummarizeCloudClusterMetricsRequest request) {
+
+        Validate.notBlank(request.getCloudClusterId(), "cloudClusterId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeCloudClusterMetricsResponse::builder)
+                .logger(LOG, "summarizeCloudClusterMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeCloudClusterMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudCluster/SummarizeCloudClusterMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeCloudClusterMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudClusters")
+                .appendPathParam(request.getCloudClusterId())
+                .appendPathParam("metrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeCloudClusterMetricsResponse.Builder
+                                ::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeCloudClusterMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeCloudClusterMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SummarizeCloudDbNodeMetricsResponse summarizeCloudDbNodeMetrics(
+            SummarizeCloudDbNodeMetricsRequest request) {
+
+        Validate.notBlank(request.getCloudDbNodeId(), "cloudDbNodeId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeCloudDbNodeMetricsResponse::builder)
+                .logger(LOG, "summarizeCloudDbNodeMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeCloudDbNodeMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbNode/SummarizeCloudDbNodeMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeCloudDbNodeMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbNodes")
+                .appendPathParam(request.getCloudDbNodeId())
+                .appendPathParam("metrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeCloudDbNodeMetricsResponse.Builder
+                                ::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeCloudDbNodeMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeCloudDbNodeMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SummarizeCloudDbSystemAvailabilityMetricsResponse
+            summarizeCloudDbSystemAvailabilityMetrics(
+                    SummarizeCloudDbSystemAvailabilityMetricsRequest request) {
+
+        Validate.notBlank(request.getCloudDbSystemId(), "cloudDbSystemId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeCloudDbSystemAvailabilityMetricsResponse::builder)
+                .logger(LOG, "summarizeCloudDbSystemAvailabilityMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeCloudDbSystemAvailabilityMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/SummarizeCloudDbSystemAvailabilityMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeCloudDbSystemAvailabilityMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystems")
+                .appendPathParam(request.getCloudDbSystemId())
+                .appendPathParam("availabilityMetrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("filterByComponentTypes", request.getFilterByComponentTypes())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeCloudDbSystemAvailabilityMetricsResponse.Builder
+                                ::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeCloudDbSystemAvailabilityMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeCloudDbSystemAvailabilityMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SummarizeCloudListenerMetricsResponse summarizeCloudListenerMetrics(
+            SummarizeCloudListenerMetricsRequest request) {
+
+        Validate.notBlank(request.getCloudListenerId(), "cloudListenerId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeCloudListenerMetricsResponse::builder)
+                .logger(LOG, "summarizeCloudListenerMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeCloudListenerMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudListener/SummarizeCloudListenerMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeCloudListenerMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudListeners")
+                .appendPathParam(request.getCloudListenerId())
+                .appendPathParam("metrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeCloudListenerMetricsResponse.Builder
+                                ::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeCloudListenerMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeCloudListenerMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public SummarizeExternalAsmMetricsResponse summarizeExternalAsmMetrics(
             SummarizeExternalAsmMetricsRequest request) {
 
@@ -7583,6 +9008,323 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         TestPreferredCredentialResponse.Builder::testPreferredCredentialStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", TestPreferredCredentialResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCloudAsmResponse updateCloudAsm(UpdateCloudAsmRequest request) {
+
+        Validate.notBlank(request.getCloudAsmId(), "cloudAsmId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCloudAsmDetails(), "updateCloudAsmDetails is required");
+
+        return clientCall(request, UpdateCloudAsmResponse::builder)
+                .logger(LOG, "updateCloudAsm")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateCloudAsm",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/UpdateCloudAsm")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCloudAsmRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudAsms")
+                .appendPathParam(request.getCloudAsmId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCloudAsmResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateCloudAsmResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCloudAsmInstanceResponse updateCloudAsmInstance(
+            UpdateCloudAsmInstanceRequest request) {
+
+        Validate.notBlank(request.getCloudAsmInstanceId(), "cloudAsmInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCloudAsmInstanceDetails(),
+                "updateCloudAsmInstanceDetails is required");
+
+        return clientCall(request, UpdateCloudAsmInstanceResponse::builder)
+                .logger(LOG, "updateCloudAsmInstance")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateCloudAsmInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsmInstance/UpdateCloudAsmInstance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCloudAsmInstanceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudAsmInstances")
+                .appendPathParam(request.getCloudAsmInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudAsmInstance.class,
+                        UpdateCloudAsmInstanceResponse.Builder::cloudAsmInstance)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCloudAsmInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateCloudAsmInstanceResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCloudClusterResponse updateCloudCluster(UpdateCloudClusterRequest request) {
+
+        Validate.notBlank(request.getCloudClusterId(), "cloudClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCloudClusterDetails(), "updateCloudClusterDetails is required");
+
+        return clientCall(request, UpdateCloudClusterResponse::builder)
+                .logger(LOG, "updateCloudCluster")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateCloudCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudCluster/UpdateCloudCluster")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCloudClusterRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudClusters")
+                .appendPathParam(request.getCloudClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCloudClusterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateCloudClusterResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCloudClusterInstanceResponse updateCloudClusterInstance(
+            UpdateCloudClusterInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getCloudClusterInstanceId(), "cloudClusterInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCloudClusterInstanceDetails(),
+                "updateCloudClusterInstanceDetails is required");
+
+        return clientCall(request, UpdateCloudClusterInstanceResponse::builder)
+                .logger(LOG, "updateCloudClusterInstance")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateCloudClusterInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudClusterInstance/UpdateCloudClusterInstance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCloudClusterInstanceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudClusterInstances")
+                .appendPathParam(request.getCloudClusterInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCloudClusterInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateCloudClusterInstanceResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCloudDbHomeResponse updateCloudDbHome(UpdateCloudDbHomeRequest request) {
+
+        Validate.notBlank(request.getCloudDbHomeId(), "cloudDbHomeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCloudDbHomeDetails(), "updateCloudDbHomeDetails is required");
+
+        return clientCall(request, UpdateCloudDbHomeResponse::builder)
+                .logger(LOG, "updateCloudDbHome")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateCloudDbHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbHome/UpdateCloudDbHome")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCloudDbHomeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbHomes")
+                .appendPathParam(request.getCloudDbHomeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbHome.class,
+                        UpdateCloudDbHomeResponse.Builder::cloudDbHome)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCloudDbHomeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateCloudDbHomeResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCloudDbNodeResponse updateCloudDbNode(UpdateCloudDbNodeRequest request) {
+
+        Validate.notBlank(request.getCloudDbNodeId(), "cloudDbNodeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCloudDbNodeDetails(), "updateCloudDbNodeDetails is required");
+
+        return clientCall(request, UpdateCloudDbNodeResponse::builder)
+                .logger(LOG, "updateCloudDbNode")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateCloudDbNode",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbNode/UpdateCloudDbNode")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCloudDbNodeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbNodes")
+                .appendPathParam(request.getCloudDbNodeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCloudDbNodeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateCloudDbNodeResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCloudDbSystemResponse updateCloudDbSystem(UpdateCloudDbSystemRequest request) {
+
+        Validate.notBlank(request.getCloudDbSystemId(), "cloudDbSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCloudDbSystemDetails(), "updateCloudDbSystemDetails is required");
+
+        return clientCall(request, UpdateCloudDbSystemResponse::builder)
+                .logger(LOG, "updateCloudDbSystem")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateCloudDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/UpdateCloudDbSystem")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCloudDbSystemRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystems")
+                .appendPathParam(request.getCloudDbSystemId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystem.class,
+                        UpdateCloudDbSystemResponse.Builder::cloudDbSystem)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCloudDbSystemResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateCloudDbSystemResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCloudDbSystemConnectorResponse updateCloudDbSystemConnector(
+            UpdateCloudDbSystemConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getCloudDbSystemConnectorId(),
+                "cloudDbSystemConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCloudDbSystemConnectorDetails(),
+                "updateCloudDbSystemConnectorDetails is required");
+
+        return clientCall(request, UpdateCloudDbSystemConnectorResponse::builder)
+                .logger(LOG, "updateCloudDbSystemConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateCloudDbSystemConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/UpdateCloudDbSystemConnector")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCloudDbSystemConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemConnectors")
+                .appendPathParam(request.getCloudDbSystemConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateCloudDbSystemConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateCloudDbSystemConnectorResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCloudDbSystemDiscoveryResponse updateCloudDbSystemDiscovery(
+            UpdateCloudDbSystemDiscoveryRequest request) {
+
+        Validate.notBlank(
+                request.getCloudDbSystemDiscoveryId(),
+                "cloudDbSystemDiscoveryId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCloudDbSystemDiscoveryDetails(),
+                "updateCloudDbSystemDiscoveryDetails is required");
+
+        return clientCall(request, UpdateCloudDbSystemDiscoveryResponse::builder)
+                .logger(LOG, "updateCloudDbSystemDiscovery")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateCloudDbSystemDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/UpdateCloudDbSystemDiscovery")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCloudDbSystemDiscoveryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudDbSystemDiscoveries")
+                .appendPathParam(request.getCloudDbSystemDiscoveryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CloudDbSystemDiscovery.class,
+                        UpdateCloudDbSystemDiscoveryResponse.Builder::cloudDbSystemDiscovery)
+                .handleResponseHeaderString(
+                        "etag", UpdateCloudDbSystemDiscoveryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateCloudDbSystemDiscoveryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCloudListenerResponse updateCloudListener(UpdateCloudListenerRequest request) {
+
+        Validate.notBlank(request.getCloudListenerId(), "cloudListenerId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCloudListenerDetails(), "updateCloudListenerDetails is required");
+
+        return clientCall(request, UpdateCloudListenerResponse::builder)
+                .logger(LOG, "updateCloudListener")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateCloudListener",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudListener/UpdateCloudListener")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCloudListenerRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("cloudListeners")
+                .appendPathParam(request.getCloudListenerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCloudListenerResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateCloudListenerResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

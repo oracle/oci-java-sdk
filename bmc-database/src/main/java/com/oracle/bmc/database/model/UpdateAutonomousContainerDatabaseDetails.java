@@ -26,6 +26,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "customerContacts",
+        "okvEndPointGroupName",
         "patchModel",
         "maintenanceWindowDetails",
         "standbyMaintenanceBufferInDays",
@@ -38,6 +39,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
     public UpdateAutonomousContainerDatabaseDetails(
             String displayName,
             java.util.List<CustomerContact> customerContacts,
+            String okvEndPointGroupName,
             PatchModel patchModel,
             MaintenanceWindow maintenanceWindowDetails,
             Integer standbyMaintenanceBufferInDays,
@@ -49,6 +51,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
         super();
         this.displayName = displayName;
         this.customerContacts = customerContacts;
+        this.okvEndPointGroupName = okvEndPointGroupName;
         this.patchModel = patchModel;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
         this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
@@ -89,6 +92,21 @@ public final class UpdateAutonomousContainerDatabaseDetails
         public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
             this.customerContacts = customerContacts;
             this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+        /** The OKV End Point Group name for the Autonomous Container Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+        private String okvEndPointGroupName;
+
+        /**
+         * The OKV End Point Group name for the Autonomous Container Database.
+         *
+         * @param okvEndPointGroupName the value to set
+         * @return this builder
+         */
+        public Builder okvEndPointGroupName(String okvEndPointGroupName) {
+            this.okvEndPointGroupName = okvEndPointGroupName;
+            this.__explicitlySet__.add("okvEndPointGroupName");
             return this;
         }
         /** Database Patch model preference. */
@@ -237,6 +255,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
                     new UpdateAutonomousContainerDatabaseDetails(
                             this.displayName,
                             this.customerContacts,
+                            this.okvEndPointGroupName,
                             this.patchModel,
                             this.maintenanceWindowDetails,
                             this.standbyMaintenanceBufferInDays,
@@ -258,6 +277,9 @@ public final class UpdateAutonomousContainerDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("okvEndPointGroupName")) {
+                this.okvEndPointGroupName(model.getOkvEndPointGroupName());
             }
             if (model.wasPropertyExplicitlySet("patchModel")) {
                 this.patchModel(model.getPatchModel());
@@ -320,6 +342,19 @@ public final class UpdateAutonomousContainerDatabaseDetails
      */
     public java.util.List<CustomerContact> getCustomerContacts() {
         return customerContacts;
+    }
+
+    /** The OKV End Point Group name for the Autonomous Container Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+    private final String okvEndPointGroupName;
+
+    /**
+     * The OKV End Point Group name for the Autonomous Container Database.
+     *
+     * @return the value
+     */
+    public String getOkvEndPointGroupName() {
+        return okvEndPointGroupName;
     }
 
     /** Database Patch model preference. */
@@ -525,6 +560,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", okvEndPointGroupName=").append(String.valueOf(this.okvEndPointGroupName));
         sb.append(", patchModel=").append(String.valueOf(this.patchModel));
         sb.append(", maintenanceWindowDetails=")
                 .append(String.valueOf(this.maintenanceWindowDetails));
@@ -552,6 +588,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
                 (UpdateAutonomousContainerDatabaseDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.okvEndPointGroupName, other.okvEndPointGroupName)
                 && java.util.Objects.equals(this.patchModel, other.patchModel)
                 && java.util.Objects.equals(
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
@@ -574,6 +611,11 @@ public final class UpdateAutonomousContainerDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.okvEndPointGroupName == null
+                                ? 43
+                                : this.okvEndPointGroupName.hashCode());
         result = (result * PRIME) + (this.patchModel == null ? 43 : this.patchModel.hashCode());
         result =
                 (result * PRIME)

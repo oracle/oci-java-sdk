@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplacepublisher.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListMarketsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMarketsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class ListMarketsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the compartment in which to list resources. */
@@ -110,6 +110,13 @@ public class ListMarketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /** A filter to return only resources that match the entire name given. */
     public String getName() {
         return name;
+    }
+    /** Listing OCID to query resource against. */
+    private String listingId;
+
+    /** Listing OCID to query resource against. */
+    public String getListingId() {
+        return listingId;
     }
 
     public static class Builder
@@ -224,6 +231,20 @@ public class ListMarketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** Listing OCID to query resource against. */
+        private String listingId = null;
+
+        /**
+         * Listing OCID to query resource against.
+         *
+         * @param listingId the value to set
+         * @return this builder instance
+         */
+        public Builder listingId(String listingId) {
+            this.listingId = listingId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -261,6 +282,7 @@ public class ListMarketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             name(o.getName());
+            listingId(o.getListingId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -302,9 +324,10 @@ public class ListMarketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.name = name;
+            request.listingId = listingId;
             return request;
             // new ListMarketsRequest(compartmentId, limit, page, sortOrder, sortBy, opcRequestId,
-            // name);
+            // name, listingId);
         }
     }
 
@@ -321,7 +344,8 @@ public class ListMarketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
-                .name(name);
+                .name(name)
+                .listingId(listingId);
     }
 
     /**
@@ -345,6 +369,7 @@ public class ListMarketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",listingId=").append(String.valueOf(this.listingId));
         sb.append(")");
         return sb.toString();
     }
@@ -366,7 +391,8 @@ public class ListMarketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.name, other.name);
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.listingId, other.listingId);
     }
 
     @Override
@@ -382,6 +408,7 @@ public class ListMarketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
         return result;
     }
 }

@@ -45,12 +45,16 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
             this.__explicitlySet__.add("connectorDetails");
             return this;
         }
-        /** The management type for the database. */
+        /**
+         * The management type for the database. Use "BASIC" for basic management. Use "ADVANCED"
+         * for full management.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managementType")
         private ManagementType managementType;
 
         /**
-         * The management type for the database.
+         * The management type for the database. Use "BASIC" for basic management. Use "ADVANCED"
+         * for full management.
          *
          * @param managementType the value to set
          * @return this builder
@@ -159,7 +163,10 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
         this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
     }
 
-    /** The management type for the database. */
+    /**
+     * The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for
+     * full management.
+     */
     public enum ManagementType implements com.oracle.bmc.http.internal.BmcEnum {
         Basic("BASIC"),
         Advanced("ADVANCED"),
@@ -192,12 +199,16 @@ public final class DatabaseDiagnosticsAndManagementFeatureDetails extends Databa
             throw new IllegalArgumentException("Invalid ManagementType: " + key);
         }
     };
-    /** The management type for the database. */
+    /**
+     * The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for
+     * full management.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managementType")
     private final ManagementType managementType;
 
     /**
-     * The management type for the database.
+     * The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for
+     * full management.
      *
      * @return the value
      */

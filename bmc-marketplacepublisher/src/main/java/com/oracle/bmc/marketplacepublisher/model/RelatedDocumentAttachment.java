@@ -15,7 +15,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = RelatedDocumentAttachment.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
@@ -296,7 +296,8 @@ public final class RelatedDocumentAttachment extends ListingRevisionAttachment {
         PressRelease("PRESS_RELEASE"),
         ProductDocumentation("PRODUCT_DOCUMENTATION"),
         UserGuides("USER_GUIDES"),
-        Webinar("WEBINAR"),
+        Webinars("WEBINARS"),
+        Whitepapers("WHITEPAPERS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

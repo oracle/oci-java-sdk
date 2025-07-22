@@ -32,7 +32,9 @@ public final class CreateStandbyDetails
         "dbUniqueName",
         "sidPrefix",
         "protectionMode",
-        "transportType"
+        "transportType",
+        "freeformTags",
+        "definedTags"
     })
     public CreateStandbyDetails(
             String sourceDatabaseId,
@@ -43,7 +45,9 @@ public final class CreateStandbyDetails
             String dbUniqueName,
             String sidPrefix,
             ProtectionMode protectionMode,
-            TransportType transportType) {
+            TransportType transportType,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.sourceDatabaseId = sourceDatabaseId;
         this.databaseAdminPassword = databaseAdminPassword;
@@ -54,6 +58,8 @@ public final class CreateStandbyDetails
         this.sidPrefix = sidPrefix;
         this.protectionMode = protectionMode;
         this.transportType = transportType;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -230,6 +236,53 @@ public final class CreateStandbyDetails
             this.__explicitlySet__.add("transportType");
             return this;
         }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -245,7 +298,9 @@ public final class CreateStandbyDetails
                             this.dbUniqueName,
                             this.sidPrefix,
                             this.protectionMode,
-                            this.transportType);
+                            this.transportType,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -281,6 +336,12 @@ public final class CreateStandbyDetails
             }
             if (model.wasPropertyExplicitlySet("transportType")) {
                 this.transportType(model.getTransportType());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
             }
             return this;
         }
@@ -534,6 +595,48 @@ public final class CreateStandbyDetails
         return transportType;
     }
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -560,6 +663,8 @@ public final class CreateStandbyDetails
         sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
         sb.append(", transportType=").append(String.valueOf(this.transportType));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -587,6 +692,8 @@ public final class CreateStandbyDetails
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
                 && java.util.Objects.equals(this.protectionMode, other.protectionMode)
                 && java.util.Objects.equals(this.transportType, other.transportType)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -625,6 +732,8 @@ public final class CreateStandbyDetails
         result =
                 (result * PRIME)
                         + (this.transportType == null ? 43 : this.transportType.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

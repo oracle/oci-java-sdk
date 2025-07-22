@@ -8,15 +8,11 @@ import com.oracle.bmc.autoscaling.requests.*;
 import com.oracle.bmc.autoscaling.responses.*;
 
 /**
- * APIs for dynamically scaling Compute resources to meet application requirements. For more
- * information about autoscaling, see
+ * Use the Autoscaling API to dynamically scale compute resources to meet application requirements.
+ * For more information about autoscaling, see
  * [Autoscaling](https://docs.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm).
- * For information about the Compute service, see [Overview of the Compute
- * Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
- *
- * <p>*Note:** Autoscaling is not available in US Government Cloud tenancies. For more information,
- * see [Oracle Cloud Infrastructure US Government
- * Cloud](https://docs.oracle.com/iaas/Content/General/Concepts/govoverview.htm).
+ * For information about the Compute service, see
+ * [Compute](https://docs.oracle.com/iaas/Content/Compute/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public interface AutoScalingAsync extends AutoCloseable {

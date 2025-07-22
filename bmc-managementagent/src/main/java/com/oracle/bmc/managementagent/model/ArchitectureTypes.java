@@ -14,6 +14,7 @@ public enum ArchitectureTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Sparc("SPARC"),
     X86("X86"),
     M1("M1"),
+    Ppc64("PPC64"),
     Aarch64("AARCH64"),
 
     /**

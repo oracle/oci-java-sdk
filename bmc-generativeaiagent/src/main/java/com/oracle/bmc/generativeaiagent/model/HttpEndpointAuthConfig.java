@@ -5,7 +5,8 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * Auth related information to be used when invoking external endpoint <br>
+ * Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and
+ * the source of credentials. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -16,33 +17,86 @@ package com.oracle.bmc.generativeaiagent.model;
  * null}).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "httpEndpointAuthConfigType",
-        defaultImpl = HttpEndpointAuthConfig.class)
-@com.fasterxml.jackson.annotation.JsonSubTypes({
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = HttpEndpointIdcsAuthConfig.class,
-            name = "HTTP_ENDPOINT_IDCS_AUTH_CONFIG"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = HttpEndpointDelegatedBearerAuthConfig.class,
-            name = "HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = HttpEndpointNoAuthConfig.class,
-            name = "HTTP_ENDPOINT_NO_AUTH_CONFIG"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = HttpEndpointOciResourcePrincipalAuthConfig.class,
-            name = "HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG")
-})
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+        builder = HttpEndpointAuthConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class HttpEndpointAuthConfig
+public final class HttpEndpointAuthConfig
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected HttpEndpointAuthConfig() {
+    @java.beans.ConstructorProperties({"httpEndpointAuthSources"})
+    public HttpEndpointAuthConfig(java.util.List<HttpEndpointAuthSource> httpEndpointAuthSources) {
         super();
+        this.httpEndpointAuthSources = httpEndpointAuthSources;
+    }
+
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /**
+         * A list of credential sources from which authentication credentials can be resolved. Only
+         * AGENT is supported for HTTP Endpoint Tool.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("httpEndpointAuthSources")
+        private java.util.List<HttpEndpointAuthSource> httpEndpointAuthSources;
+
+        /**
+         * A list of credential sources from which authentication credentials can be resolved. Only
+         * AGENT is supported for HTTP Endpoint Tool.
+         *
+         * @param httpEndpointAuthSources the value to set
+         * @return this builder
+         */
+        public Builder httpEndpointAuthSources(
+                java.util.List<HttpEndpointAuthSource> httpEndpointAuthSources) {
+            this.httpEndpointAuthSources = httpEndpointAuthSources;
+            this.__explicitlySet__.add("httpEndpointAuthSources");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public HttpEndpointAuthConfig build() {
+            HttpEndpointAuthConfig model = new HttpEndpointAuthConfig(this.httpEndpointAuthSources);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(HttpEndpointAuthConfig model) {
+            if (model.wasPropertyExplicitlySet("httpEndpointAuthSources")) {
+                this.httpEndpointAuthSources(model.getHttpEndpointAuthSources());
+            }
+            return this;
+        }
+    }
+
+    /** Create a new builder. */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    /**
+     * A list of credential sources from which authentication credentials can be resolved. Only
+     * AGENT is supported for HTTP Endpoint Tool.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("httpEndpointAuthSources")
+    private final java.util.List<HttpEndpointAuthSource> httpEndpointAuthSources;
+
+    /**
+     * A list of credential sources from which authentication credentials can be resolved. Only
+     * AGENT is supported for HTTP Endpoint Tool.
+     *
+     * @return the value
+     */
+    public java.util.List<HttpEndpointAuthSource> getHttpEndpointAuthSources() {
+        return httpEndpointAuthSources;
     }
 
     @Override
@@ -60,6 +114,7 @@ public class HttpEndpointAuthConfig
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HttpEndpointAuthConfig(");
         sb.append("super=").append(super.toString());
+        sb.append("httpEndpointAuthSources=").append(String.valueOf(this.httpEndpointAuthSources));
         sb.append(")");
         return sb.toString();
     }
@@ -74,74 +129,20 @@ public class HttpEndpointAuthConfig
         }
 
         HttpEndpointAuthConfig other = (HttpEndpointAuthConfig) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.httpEndpointAuthSources, other.httpEndpointAuthSources)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.httpEndpointAuthSources == null
+                                ? 43
+                                : this.httpEndpointAuthSources.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
-
-    /**
-     * The type of Auth config to be used when invoking an external endpoint. The allowed values
-     * are: - {@code HTTP_ENDPOINT_NO_AUTH_CONFIG}: Indicates that no authentication is required for
-     * invoking the endpoint. - {@code HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG}: Specifies Bearer
-     * Token Authentication, where the same Bearer token received as part of the Agent Chat API
-     * request is used to invoke the external endpoint. - {@code
-     * HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG}: Specifies authentication using Oracle
-     * Cloud Infrastructure (OCI) Resource Principal, leveraging OCI's identity-based authentication
-     * mechanism. - {@code HTTP_ENDPOINT_IDCS_AUTH_CONFIG}: Specifies authentication using Oracle
-     * Identity Cloud Service (IDCS), leveraging OAuth 2.0 for token-based authentication.
-     */
-    public enum HttpEndpointAuthConfigType implements com.oracle.bmc.http.internal.BmcEnum {
-        HttpEndpointNoAuthConfig("HTTP_ENDPOINT_NO_AUTH_CONFIG"),
-        HttpEndpointDelegatedBearerAuthConfig("HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG"),
-        HttpEndpointOciResourcePrincipalAuthConfig(
-                "HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG"),
-        HttpEndpointIdcsAuthConfig("HTTP_ENDPOINT_IDCS_AUTH_CONFIG"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(HttpEndpointAuthConfigType.class);
-
-        private final String value;
-        private static java.util.Map<String, HttpEndpointAuthConfigType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (HttpEndpointAuthConfigType v : HttpEndpointAuthConfigType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        HttpEndpointAuthConfigType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static HttpEndpointAuthConfigType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'HttpEndpointAuthConfigType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
 }

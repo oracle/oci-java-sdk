@@ -23,10 +23,11 @@ package com.oracle.bmc.generativeaiagent.model;
 public final class KnowledgeBaseStatistics
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"sizeInBytes"})
-    public KnowledgeBaseStatistics(Long sizeInBytes) {
+    @java.beans.ConstructorProperties({"sizeInBytes", "totalIngestedFiles"})
+    public KnowledgeBaseStatistics(Long sizeInBytes, Long totalIngestedFiles) {
         super();
         this.sizeInBytes = sizeInBytes;
+        this.totalIngestedFiles = totalIngestedFiles;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,12 +47,28 @@ public final class KnowledgeBaseStatistics
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
+        /** Total number of ingested files in Knowledge Base. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalIngestedFiles")
+        private Long totalIngestedFiles;
+
+        /**
+         * Total number of ingested files in Knowledge Base.
+         *
+         * @param totalIngestedFiles the value to set
+         * @return this builder
+         */
+        public Builder totalIngestedFiles(Long totalIngestedFiles) {
+            this.totalIngestedFiles = totalIngestedFiles;
+            this.__explicitlySet__.add("totalIngestedFiles");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KnowledgeBaseStatistics build() {
-            KnowledgeBaseStatistics model = new KnowledgeBaseStatistics(this.sizeInBytes);
+            KnowledgeBaseStatistics model =
+                    new KnowledgeBaseStatistics(this.sizeInBytes, this.totalIngestedFiles);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +79,9 @@ public final class KnowledgeBaseStatistics
         public Builder copy(KnowledgeBaseStatistics model) {
             if (model.wasPropertyExplicitlySet("sizeInBytes")) {
                 this.sizeInBytes(model.getSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("totalIngestedFiles")) {
+                this.totalIngestedFiles(model.getTotalIngestedFiles());
             }
             return this;
         }
@@ -89,6 +109,19 @@ public final class KnowledgeBaseStatistics
         return sizeInBytes;
     }
 
+    /** Total number of ingested files in Knowledge Base. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalIngestedFiles")
+    private final Long totalIngestedFiles;
+
+    /**
+     * Total number of ingested files in Knowledge Base.
+     *
+     * @return the value
+     */
+    public Long getTotalIngestedFiles() {
+        return totalIngestedFiles;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -105,6 +138,7 @@ public final class KnowledgeBaseStatistics
         sb.append("KnowledgeBaseStatistics(");
         sb.append("super=").append(super.toString());
         sb.append("sizeInBytes=").append(String.valueOf(this.sizeInBytes));
+        sb.append(", totalIngestedFiles=").append(String.valueOf(this.totalIngestedFiles));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +153,9 @@ public final class KnowledgeBaseStatistics
         }
 
         KnowledgeBaseStatistics other = (KnowledgeBaseStatistics) o;
-        return java.util.Objects.equals(this.sizeInBytes, other.sizeInBytes) && super.equals(other);
+        return java.util.Objects.equals(this.sizeInBytes, other.sizeInBytes)
+                && java.util.Objects.equals(this.totalIngestedFiles, other.totalIngestedFiles)
+                && super.equals(other);
     }
 
     @Override
@@ -127,6 +163,11 @@ public final class KnowledgeBaseStatistics
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.sizeInBytes == null ? 43 : this.sizeInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalIngestedFiles == null
+                                ? 43
+                                : this.totalIngestedFiles.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

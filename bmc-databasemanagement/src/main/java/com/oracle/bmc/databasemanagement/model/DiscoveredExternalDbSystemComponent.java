@@ -44,6 +44,9 @@ package com.oracle.bmc.databasemanagement.model;
             value = DiscoveredExternalDbNode.class,
             name = "DATABASE_NODE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DiscoveredExternalDbInstance.class,
+            name = "DATABASE_INSTANCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DiscoveredExternalAsm.class,
             name = "ASM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

@@ -304,6 +304,24 @@ public interface DbManagement extends AutoCloseable {
             ChangeSqlPlanBaselinesAttributesRequest request);
 
     /**
+     * Checks the status of the cloud DB system component connection specified in this connector.
+     * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CheckCloudDbSystemConnectorConnectionStatusExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CheckCloudDbSystemConnectorConnectionStatus API.
+     */
+    CheckCloudDbSystemConnectorConnectionStatusResponse checkCloudDbSystemConnectorConnectionStatus(
+            CheckCloudDbSystemConnectorConnectionStatusRequest request);
+
+    /**
      * Checks the status of the external DB system component connection specified in this connector.
      * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
      *
@@ -394,6 +412,56 @@ public interface DbManagement extends AutoCloseable {
      */
     ConfigureAutomaticSpmEvolveAdvisorTaskResponse configureAutomaticSpmEvolveAdvisorTask(
             ConfigureAutomaticSpmEvolveAdvisorTaskRequest request);
+
+    /**
+     * Creates a cloud DB system and its related resources.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateCloudDbSystemExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCloudDbSystem
+     *     API.
+     */
+    CreateCloudDbSystemResponse createCloudDbSystem(CreateCloudDbSystemRequest request);
+
+    /**
+     * Creates a new cloud connector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateCloudDbSystemConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateCloudDbSystemConnector API.
+     */
+    CreateCloudDbSystemConnectorResponse createCloudDbSystemConnector(
+            CreateCloudDbSystemConnectorRequest request);
+
+    /**
+     * Creates a cloud DB system discovery resource and initiates the discovery process.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateCloudDbSystemDiscoveryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateCloudDbSystemDiscovery API.
+     */
+    CreateCloudDbSystemDiscoveryResponse createCloudDbSystemDiscovery(
+            CreateCloudDbSystemDiscoveryRequest request);
 
     /**
      * Creates a new Database Management private endpoint.
@@ -598,6 +666,56 @@ public interface DbManagement extends AutoCloseable {
      *     API.
      */
     CreateTablespaceResponse createTablespace(CreateTablespaceRequest request);
+
+    /**
+     * Deletes the cloud DB system specified by `cloudDbSystemId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteCloudDbSystemExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCloudDbSystem
+     *     API.
+     */
+    DeleteCloudDbSystemResponse deleteCloudDbSystem(DeleteCloudDbSystemRequest request);
+
+    /**
+     * Deletes the cloud connector specified by `cloudDbSystemConnectorId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteCloudDbSystemConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteCloudDbSystemConnector API.
+     */
+    DeleteCloudDbSystemConnectorResponse deleteCloudDbSystemConnector(
+            DeleteCloudDbSystemConnectorRequest request);
+
+    /**
+     * Deletes the cloud DB system discovery resource specified by `cloudDbSystemDiscoveryId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteCloudDbSystemDiscoveryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteCloudDbSystemDiscovery API.
+     */
+    DeleteCloudDbSystemDiscoveryResponse deleteCloudDbSystemDiscovery(
+            DeleteCloudDbSystemDiscoveryRequest request);
 
     /**
      * Deletes a specific Database Management private endpoint.
@@ -854,6 +972,42 @@ public interface DbManagement extends AutoCloseable {
      */
     DisableAutonomousDatabaseManagementFeatureResponse disableAutonomousDatabaseManagementFeature(
             DisableAutonomousDatabaseManagementFeatureRequest request);
+
+    /**
+     * Disables Database Management service for all the components of the specified cloud DB system
+     * (except databases).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableCloudDbSystemDatabaseManagementExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableCloudDbSystemDatabaseManagement API.
+     */
+    DisableCloudDbSystemDatabaseManagementResponse disableCloudDbSystemDatabaseManagement(
+            DisableCloudDbSystemDatabaseManagementRequest request);
+
+    /**
+     * Disables Stack Monitoring for all the components of the specified cloud DB system (except
+     * databases).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableCloudDbSystemStackMonitoringExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableCloudDbSystemStackMonitoring API.
+     */
+    DisableCloudDbSystemStackMonitoringResponse disableCloudDbSystemStackMonitoring(
+            DisableCloudDbSystemStackMonitoringRequest request);
 
     /**
      * Disables a Database Management feature for the specified Oracle cloud database.
@@ -1198,6 +1352,42 @@ public interface DbManagement extends AutoCloseable {
             EnableAutonomousDatabaseManagementFeatureRequest request);
 
     /**
+     * Enables Database Management service for all the components of the specified cloud DB system
+     * (except databases).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableCloudDbSystemDatabaseManagementExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableCloudDbSystemDatabaseManagement API.
+     */
+    EnableCloudDbSystemDatabaseManagementResponse enableCloudDbSystemDatabaseManagement(
+            EnableCloudDbSystemDatabaseManagementRequest request);
+
+    /**
+     * Enables Stack Monitoring for all the components of the specified cloud DB system (except
+     * databases).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableCloudDbSystemStackMonitoringExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableCloudDbSystemStackMonitoring API.
+     */
+    EnableCloudDbSystemStackMonitoringResponse enableCloudDbSystemStackMonitoring(
+            EnableCloudDbSystemStackMonitoringRequest request);
+
+    /**
      * Enables a Database Management feature for the specified cloud database.
      *
      * @param request The request object containing the details to send
@@ -1421,7 +1611,7 @@ public interface DbManagement extends AutoCloseable {
     GenerateAwrSnapshotResponse generateAwrSnapshot(GenerateAwrSnapshotRequest request);
 
     /**
-     * Gets the AWR report for the specific database.
+     * Gets the AWR report for the specified database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1436,7 +1626,7 @@ public interface DbManagement extends AutoCloseable {
     GetAwrDbReportResponse getAwrDbReport(GetAwrDbReportRequest request);
 
     /**
-     * Gets the SQL health check report for one SQL of the specific database.
+     * Gets the SQL health check report for one SQL of the specified database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1450,6 +1640,183 @@ public interface DbManagement extends AutoCloseable {
      *     API.
      */
     GetAwrDbSqlReportResponse getAwrDbSqlReport(GetAwrDbSqlReportRequest request);
+
+    /**
+     * Gets the details for the cloud ASM specified by `cloudAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudAsmExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudAsm API.
+     */
+    GetCloudAsmResponse getCloudAsm(GetCloudAsmRequest request);
+
+    /**
+     * Gets configuration details including disk groups for the cloud ASM specified by `cloudAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudAsmConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetCloudAsmConfiguration API.
+     */
+    GetCloudAsmConfigurationResponse getCloudAsmConfiguration(
+            GetCloudAsmConfigurationRequest request);
+
+    /**
+     * Gets the details for the cloud ASM instance specified by `cloudAsmInstanceId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudAsmInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudAsmInstance
+     *     API.
+     */
+    GetCloudAsmInstanceResponse getCloudAsmInstance(GetCloudAsmInstanceRequest request);
+
+    /**
+     * Gets the details for the cloud cluster specified by `cloudClusterId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudClusterExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudCluster
+     *     API.
+     */
+    GetCloudClusterResponse getCloudCluster(GetCloudClusterRequest request);
+
+    /**
+     * Gets the details for the cloud cluster instance specified by `cloudClusterInstanceId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudClusterInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetCloudClusterInstance API.
+     */
+    GetCloudClusterInstanceResponse getCloudClusterInstance(GetCloudClusterInstanceRequest request);
+
+    /**
+     * Gets the details for the cloud DB home specified by `cloudDbHomeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudDbHomeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudDbHome API.
+     */
+    GetCloudDbHomeResponse getCloudDbHome(GetCloudDbHomeRequest request);
+
+    /**
+     * Gets the details for the cloud DB node specified by `cloudDbNodeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudDbNodeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudDbNode API.
+     */
+    GetCloudDbNodeResponse getCloudDbNode(GetCloudDbNodeRequest request);
+
+    /**
+     * Gets the details for the cloud DB system specified by `cloudDbSystemId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudDbSystemExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudDbSystem
+     *     API.
+     */
+    GetCloudDbSystemResponse getCloudDbSystem(GetCloudDbSystemRequest request);
+
+    /**
+     * Gets the details for the cloud connector specified by `cloudDbSystemConnectorId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudDbSystemConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetCloudDbSystemConnector API.
+     */
+    GetCloudDbSystemConnectorResponse getCloudDbSystemConnector(
+            GetCloudDbSystemConnectorRequest request);
+
+    /**
+     * Gets the details for the cloud DB system discovery resource specified by
+     * `cloudDbSystemDiscoveryId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudDbSystemDiscoveryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetCloudDbSystemDiscovery API.
+     */
+    GetCloudDbSystemDiscoveryResponse getCloudDbSystemDiscovery(
+            GetCloudDbSystemDiscoveryRequest request);
+
+    /**
+     * Gets the details for the cloud listener specified by `cloudListenerId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetCloudListenerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudListener
+     *     API.
+     */
+    GetCloudListenerResponse getCloudListener(GetCloudListenerRequest request);
 
     /**
      * Gets the metrics related to cluster cache for the Oracle Real Application Clusters (Oracle
@@ -1919,7 +2286,7 @@ public interface DbManagement extends AutoCloseable {
     GetIormPlanResponse getIormPlan(GetIormPlanRequest request);
 
     /**
-     * Gets the details for the job specified by jobId.
+     * Gets the details of the job specified by jobId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1934,7 +2301,7 @@ public interface DbManagement extends AutoCloseable {
     GetJobResponse getJob(GetJobRequest request);
 
     /**
-     * Gets the details for the job execution specified by jobExecutionId.
+     * Gets the details of the job execution specified by jobExecutionId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1950,7 +2317,7 @@ public interface DbManagement extends AutoCloseable {
     GetJobExecutionResponse getJobExecution(GetJobExecutionRequest request);
 
     /**
-     * Gets the details for the job run specified by jobRunId.
+     * Gets the details of the job run specified by jobRunId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1965,7 +2332,7 @@ public interface DbManagement extends AutoCloseable {
     GetJobRunResponse getJobRun(GetJobRunRequest request);
 
     /**
-     * Gets the details for the Managed Database specified by managedDatabaseId.
+     * Gets the details of the Managed Database specified by managedDatabaseId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1981,7 +2348,7 @@ public interface DbManagement extends AutoCloseable {
     GetManagedDatabaseResponse getManagedDatabase(GetManagedDatabaseRequest request);
 
     /**
-     * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
+     * Gets the details of the Managed Database Group specified by managedDatabaseGroupId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2220,7 +2587,7 @@ public interface DbManagement extends AutoCloseable {
     GetUserResponse getUser(GetUserRequest request);
 
     /**
-     * Gets the status of the work request with the given Work Request ID
+     * Gets the status of the work request with the given Work Request ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2316,6 +2683,234 @@ public interface DbManagement extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAwrDbs API.
      */
     ListAwrDbsResponse listAwrDbs(ListAwrDbsRequest request);
+
+    /**
+     * Lists ASM disk groups for the cloud ASM specified by `cloudAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudAsmDiskGroupsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCloudAsmDiskGroups API.
+     */
+    ListCloudAsmDiskGroupsResponse listCloudAsmDiskGroups(ListCloudAsmDiskGroupsRequest request);
+
+    /**
+     * Lists the ASM instances in the specified cloud ASM.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudAsmInstancesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCloudAsmInstances API.
+     */
+    ListCloudAsmInstancesResponse listCloudAsmInstances(ListCloudAsmInstancesRequest request);
+
+    /**
+     * Lists ASM users for the cloud ASM specified by `cloudAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudAsmUsersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudAsmUsers
+     *     API.
+     */
+    ListCloudAsmUsersResponse listCloudAsmUsers(ListCloudAsmUsersRequest request);
+
+    /**
+     * Lists the ASMs in the specified cloud DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudAsmsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudAsms API.
+     */
+    ListCloudAsmsResponse listCloudAsms(ListCloudAsmsRequest request);
+
+    /**
+     * Lists the cluster instances in the specified cloud cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudClusterInstancesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCloudClusterInstances API.
+     */
+    ListCloudClusterInstancesResponse listCloudClusterInstances(
+            ListCloudClusterInstancesRequest request);
+
+    /**
+     * Lists the clusters in the specified cloud DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudClustersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudClusters
+     *     API.
+     */
+    ListCloudClustersResponse listCloudClusters(ListCloudClustersRequest request);
+
+    /**
+     * Lists the cloud databases in the specified compartment or in the specified DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudDatabasesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudDatabases
+     *     API.
+     */
+    ListCloudDatabasesResponse listCloudDatabases(ListCloudDatabasesRequest request);
+
+    /**
+     * Lists the DB homes in the specified cloud DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudDbHomesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudDbHomes
+     *     API.
+     */
+    ListCloudDbHomesResponse listCloudDbHomes(ListCloudDbHomesRequest request);
+
+    /**
+     * Lists the cloud DB nodes in the specified cloud DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudDbNodesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudDbNodes
+     *     API.
+     */
+    ListCloudDbNodesResponse listCloudDbNodes(ListCloudDbNodesRequest request);
+
+    /**
+     * Lists the cloud connectors in the specified cloud DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudDbSystemConnectorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCloudDbSystemConnectors API.
+     */
+    ListCloudDbSystemConnectorsResponse listCloudDbSystemConnectors(
+            ListCloudDbSystemConnectorsRequest request);
+
+    /**
+     * Lists the cloud DB system discovery resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudDbSystemDiscoveriesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCloudDbSystemDiscoveries API.
+     */
+    ListCloudDbSystemDiscoveriesResponse listCloudDbSystemDiscoveries(
+            ListCloudDbSystemDiscoveriesRequest request);
+
+    /**
+     * Lists the cloud DB systems in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudDbSystemsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudDbSystems
+     *     API.
+     */
+    ListCloudDbSystemsResponse listCloudDbSystems(ListCloudDbSystemsRequest request);
+
+    /**
+     * Lists the database services registered with the specified cloud listener for the specified
+     * Managed Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudListenerServicesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCloudListenerServices API.
+     */
+    ListCloudListenerServicesResponse listCloudListenerServices(
+            ListCloudListenerServicesRequest request);
+
+    /**
+     * Lists the listeners in the specified cloud DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCloudListenersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudListeners
+     *     API.
+     */
+    ListCloudListenersResponse listCloudListeners(ListCloudListenersRequest request);
 
     /**
      * Gets the list of consumer group privileges granted to a specific user.
@@ -3116,7 +3711,7 @@ public interface DbManagement extends AutoCloseable {
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
     /**
-     * The list of work requests in a specific compartment was retrieved successfully.
+     * Lists the work requests in a specific compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3238,6 +3833,23 @@ public interface DbManagement extends AutoCloseable {
      */
     ModifyPluggableDatabaseManagementFeatureResponse modifyPluggableDatabaseManagementFeature(
             ModifyPluggableDatabaseManagementFeatureRequest request);
+
+    /**
+     * Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/PatchCloudDbSystemDiscoveryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchCloudDbSystemDiscovery API.
+     */
+    PatchCloudDbSystemDiscoveryResponse patchCloudDbSystemDiscovery(
+            PatchCloudDbSystemDiscoveryRequest request);
 
     /**
      * Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
@@ -3518,6 +4130,92 @@ public interface DbManagement extends AutoCloseable {
             SummarizeAwrDbWaitEventsRequest request);
 
     /**
+     * Gets metrics for the cloud ASM specified by `cloudAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeCloudAsmMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeCloudAsmMetrics API.
+     */
+    SummarizeCloudAsmMetricsResponse summarizeCloudAsmMetrics(
+            SummarizeCloudAsmMetricsRequest request);
+
+    /**
+     * Gets metrics for the cloud cluster specified by `cloudClusterId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeCloudClusterMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeCloudClusterMetrics API.
+     */
+    SummarizeCloudClusterMetricsResponse summarizeCloudClusterMetrics(
+            SummarizeCloudClusterMetricsRequest request);
+
+    /**
+     * Gets metrics for the cloud DB node specified by `cloudDbNodeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeCloudDbNodeMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeCloudDbNodeMetrics API.
+     */
+    SummarizeCloudDbNodeMetricsResponse summarizeCloudDbNodeMetrics(
+            SummarizeCloudDbNodeMetricsRequest request);
+
+    /**
+     * Gets availability metrics for the components present in the cloud DB system specified by
+     * `cloudDbSystemId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeCloudDbSystemAvailabilityMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeCloudDbSystemAvailabilityMetrics API.
+     */
+    SummarizeCloudDbSystemAvailabilityMetricsResponse summarizeCloudDbSystemAvailabilityMetrics(
+            SummarizeCloudDbSystemAvailabilityMetricsRequest request);
+
+    /**
+     * Gets metrics for the cloud listener specified by `cloudListenerId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeCloudListenerMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeCloudListenerMetrics API.
+     */
+    SummarizeCloudListenerMetricsResponse summarizeCloudListenerMetrics(
+            SummarizeCloudListenerMetricsRequest request);
+
+    /**
      * Gets metrics for the external ASM specified by `externalAsmId`.
      *
      * @param request The request object containing the details to send
@@ -3706,6 +4404,168 @@ public interface DbManagement extends AutoCloseable {
      *     TestPreferredCredential API.
      */
     TestPreferredCredentialResponse testPreferredCredential(TestPreferredCredentialRequest request);
+
+    /**
+     * Updates the cloud ASM specified by `cloudAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateCloudAsmExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudAsm API.
+     */
+    UpdateCloudAsmResponse updateCloudAsm(UpdateCloudAsmRequest request);
+
+    /**
+     * Updates the cloud ASM instance specified by `cloudAsmInstanceId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateCloudAsmInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateCloudAsmInstance API.
+     */
+    UpdateCloudAsmInstanceResponse updateCloudAsmInstance(UpdateCloudAsmInstanceRequest request);
+
+    /**
+     * Updates the cloud cluster specified by `cloudClusterId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateCloudClusterExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudCluster
+     *     API.
+     */
+    UpdateCloudClusterResponse updateCloudCluster(UpdateCloudClusterRequest request);
+
+    /**
+     * Updates the cloud cluster instance specified by `cloudClusterInstanceId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateCloudClusterInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateCloudClusterInstance API.
+     */
+    UpdateCloudClusterInstanceResponse updateCloudClusterInstance(
+            UpdateCloudClusterInstanceRequest request);
+
+    /**
+     * Updates the cloud DB home specified by `cloudDbHomeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateCloudDbHomeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudDbHome
+     *     API.
+     */
+    UpdateCloudDbHomeResponse updateCloudDbHome(UpdateCloudDbHomeRequest request);
+
+    /**
+     * Updates the cloud DB node specified by `cloudDbNodeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateCloudDbNodeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudDbNode
+     *     API.
+     */
+    UpdateCloudDbNodeResponse updateCloudDbNode(UpdateCloudDbNodeRequest request);
+
+    /**
+     * Updates the cloud DB system specified by `cloudDbSystemId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateCloudDbSystemExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudDbSystem
+     *     API.
+     */
+    UpdateCloudDbSystemResponse updateCloudDbSystem(UpdateCloudDbSystemRequest request);
+
+    /**
+     * Updates the cloud connector specified by `cloudDbSystemConnectorId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateCloudDbSystemConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateCloudDbSystemConnector API.
+     */
+    UpdateCloudDbSystemConnectorResponse updateCloudDbSystemConnector(
+            UpdateCloudDbSystemConnectorRequest request);
+
+    /**
+     * Updates the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateCloudDbSystemDiscoveryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateCloudDbSystemDiscovery API.
+     */
+    UpdateCloudDbSystemDiscoveryResponse updateCloudDbSystemDiscovery(
+            UpdateCloudDbSystemDiscoveryRequest request);
+
+    /**
+     * Updates the cloud listener specified by `cloudListenerId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateCloudListenerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudListener
+     *     API.
+     */
+    UpdateCloudListenerResponse updateCloudListener(UpdateCloudListenerRequest request);
 
     /**
      * Updates one or more attributes of a specific Database Management private endpoint.
@@ -3992,7 +4852,7 @@ public interface DbManagement extends AutoCloseable {
             UpdateExternalMysqlDatabaseConnectorRequest request);
 
     /**
-     * Updates the details for the recurring scheduled job specified by jobId. Note that
+     * Updates the details of the recurring scheduled job specified by jobId. Note that
      * non-recurring (one time) jobs cannot be updated.
      *
      * @param request The request object containing the details to send

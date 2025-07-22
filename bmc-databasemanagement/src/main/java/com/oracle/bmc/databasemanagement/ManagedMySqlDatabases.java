@@ -85,7 +85,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
             ChangeMysqlDatabaseManagementTypeRequest request);
 
     /**
-     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * Retrieves information pertaining to the binary log of a specific MySQL server.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -101,7 +101,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
     GetBinaryLogInformationResponse getBinaryLogInformation(GetBinaryLogInformationRequest request);
 
     /**
-     * Retrieves general information regarding replication of a specific MySQL server.
+     * Retrieves general information regarding the replication of a specific MySQL server.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -182,7 +182,8 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
     GetMySqlQueryDetailsResponse getMySqlQueryDetails(GetMySqlQueryDetailsRequest request);
 
     /**
-     * Information about high availability members of a specific MySQL server's replication group.
+     * Retrieves information about the high availability members of a specific MySQL server's
+     * replication group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -282,7 +283,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
     ListMySqlDigestErrorsResponse listMySqlDigestErrors(ListMySqlDigestErrorsRequest request);
 
     /**
-     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * Retrieves information pertaining to the outbound replications of a specific MySQL server.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

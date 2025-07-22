@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplacepublisher.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetListingRevisionRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class GetListingRevisionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** listing revision */

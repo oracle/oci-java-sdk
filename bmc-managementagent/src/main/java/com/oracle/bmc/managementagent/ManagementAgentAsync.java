@@ -97,6 +97,22 @@ public interface ManagementAgentAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Named credential creation request to given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateNamedCredentialResponse> createNamedCredential(
+            CreateNamedCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateNamedCredentialRequest, CreateNamedCredentialResponse>
+                    handler);
+
+    /**
      * Datasource delete request to given Management Agent.
      *
      * @param request The request object containing the details to send
@@ -144,6 +160,22 @@ public interface ManagementAgentAsync extends AutoCloseable {
                                     DeleteManagementAgentInstallKeyRequest,
                                     DeleteManagementAgentInstallKeyResponse>
                             handler);
+
+    /**
+     * Named credential delete request to sent to associated Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteNamedCredentialResponse> deleteNamedCredential(
+            DeleteNamedCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteNamedCredentialRequest, DeleteNamedCredentialResponse>
+                    handler);
 
     /**
      * Cancel the work request with the given ID.
@@ -260,6 +292,39 @@ public interface ManagementAgentAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Get Named credential details for given Id and given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNamedCredentialResponse> getNamedCredential(
+            GetNamedCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNamedCredentialRequest, GetNamedCredentialResponse>
+                    handler);
+
+    /**
+     * Return the Metadata definition for Named Credentials supported by Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNamedCredentialsMetadatumResponse> getNamedCredentialsMetadatum(
+            GetNamedCredentialsMetadatumRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNamedCredentialsMetadatumRequest,
+                            GetNamedCredentialsMetadatumResponse>
+                    handler);
+
+    /**
      * Gets the status of the work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -371,6 +436,22 @@ public interface ManagementAgentAsync extends AutoCloseable {
             ListManagementAgentsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListManagementAgentsRequest, ListManagementAgentsResponse>
+                    handler);
+
+    /**
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNamedCredentialsResponse> listNamedCredentials(
+            ListNamedCredentialsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListNamedCredentialsRequest, ListNamedCredentialsResponse>
                     handler);
 
     /**
@@ -524,4 +605,20 @@ public interface ManagementAgentAsync extends AutoCloseable {
                                     UpdateManagementAgentInstallKeyRequest,
                                     UpdateManagementAgentInstallKeyResponse>
                             handler);
+
+    /**
+     * Named credential update request to given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNamedCredentialResponse> updateNamedCredential(
+            UpdateNamedCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateNamedCredentialRequest, UpdateNamedCredentialResponse>
+                    handler);
 }

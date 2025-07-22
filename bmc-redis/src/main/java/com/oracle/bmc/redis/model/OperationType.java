@@ -22,6 +22,12 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     DetachOciCacheUsers("DETACH_OCI_CACHE_USERS"),
     CreateOciCacheUser("CREATE_OCI_CACHE_USER"),
     UpdateOciCacheUser("UPDATE_OCI_CACHE_USER"),
+    DeleteOciCacheUser("DELETE_OCI_CACHE_USER"),
+    CreateOciCacheConfigSet("CREATE_OCI_CACHE_CONFIG_SET"),
+    UpdateOciCacheConfigSet("UPDATE_OCI_CACHE_CONFIG_SET"),
+    DeleteOciCacheConfigSet("DELETE_OCI_CACHE_CONFIG_SET"),
+    ChangeOciCacheConfigSetCompartment("CHANGE_OCI_CACHE_CONFIG_SET_COMPARTMENT"),
+    ChangeOciCacheUserCompartment("CHANGE_OCI_CACHE_USER_COMPARTMENT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

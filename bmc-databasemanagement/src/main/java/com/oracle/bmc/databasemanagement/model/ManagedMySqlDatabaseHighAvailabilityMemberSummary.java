@@ -46,12 +46,12 @@ public final class ManagedMySqlDatabaseHighAvailabilityMemberSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The host name of the group member which clients use to connect to it. */
+        /** The host name of the group member that clients use to connect to it. */
         @com.fasterxml.jackson.annotation.JsonProperty("memberHost")
         private String memberHost;
 
         /**
-         * The host name of the group member which clients use to connect to it.
+         * The host name of the group member that clients use to connect to it.
          *
          * @param memberHost the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class ManagedMySqlDatabaseHighAvailabilityMemberSummary
             this.__explicitlySet__.add("memberHost");
             return this;
         }
-        /** The port number of the group member which clients to connect to it. */
+        /** The port number of the group member that clients use to connect to it. */
         @com.fasterxml.jackson.annotation.JsonProperty("memberPort")
         private Integer memberPort;
 
         /**
-         * The port number of the group member which clients to connect to it.
+         * The port number of the group member that clients use to connect to it.
          *
          * @param memberPort the value to set
          * @return this builder
@@ -169,12 +169,12 @@ public final class ManagedMySqlDatabaseHighAvailabilityMemberSummary
         return new Builder().copy(this);
     }
 
-    /** The host name of the group member which clients use to connect to it. */
+    /** The host name of the group member that clients use to connect to it. */
     @com.fasterxml.jackson.annotation.JsonProperty("memberHost")
     private final String memberHost;
 
     /**
-     * The host name of the group member which clients use to connect to it.
+     * The host name of the group member that clients use to connect to it.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public final class ManagedMySqlDatabaseHighAvailabilityMemberSummary
         return memberHost;
     }
 
-    /** The port number of the group member which clients to connect to it. */
+    /** The port number of the group member that clients use to connect to it. */
     @com.fasterxml.jackson.annotation.JsonProperty("memberPort")
     private final Integer memberPort;
 
     /**
-     * The port number of the group member which clients to connect to it.
+     * The port number of the group member that clients use to connect to it.
      *
      * @return the value
      */

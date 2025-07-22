@@ -9,7 +9,7 @@ The project is open source and maintained by Oracle Corp. The home page for the 
 
 The OCI Java SDK versions `1.x.y` and `2.x.y` are now referred as OCI Legacy Java SDK. Any updates or bug fixes related to OCI Legacy Java SDK can be found in [legacy/v2/master branch](https://github.com/oracle/oci-java-sdk/tree/legacy/v2/master). Please refer [README.md](https://github.com/oracle/oci-java-sdk/blob/legacy/v2/master/README.md) to learn more about these legacy versions.
 
-This Github repository will refer to OCI Java SDK version `3.x.y` by default where support for new features and services will be added.
+This GitHub repository will refer to OCI Java SDK version `3.x.y` by default where support for new features and services will be added.
 
 
 ## Documentation

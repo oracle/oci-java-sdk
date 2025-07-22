@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Information pertaining to binary logs of a MySQL server. <br>
+ * Information pertaining to the binary logs of a MySQL server. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,12 +49,12 @@ public final class ManagedMySqlDatabaseBinaryLogInformation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Status of binary logging on this server. */
+        /** The status of binary logging on the MySQL server. */
         @com.fasterxml.jackson.annotation.JsonProperty("binaryLogging")
         private String binaryLogging;
 
         /**
-         * Status of binary logging on this server.
+         * The status of binary logging on the MySQL server.
          *
          * @param binaryLogging the value to set
          * @return this builder
@@ -64,12 +64,12 @@ public final class ManagedMySqlDatabaseBinaryLogInformation
             this.__explicitlySet__.add("binaryLogging");
             return this;
         }
-        /** The binary logging format used by this server. */
+        /** The binary logging format used by the MySQL server. */
         @com.fasterxml.jackson.annotation.JsonProperty("binaryLogFormat")
         private String binaryLogFormat;
 
         /**
-         * The binary logging format used by this server.
+         * The binary logging format used by the MySQL server.
          *
          * @param binaryLogFormat the value to set
          * @return this builder
@@ -81,14 +81,14 @@ public final class ManagedMySqlDatabaseBinaryLogInformation
         }
         /**
          * Indicates whether compression is enabled for transactions written to binary log files on
-         * this server.
+         * the MySQL server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("binaryLogCompression")
         private String binaryLogCompression;
 
         /**
          * Indicates whether compression is enabled for transactions written to binary log files on
-         * this server.
+         * the MySQL server.
          *
          * @param binaryLogCompression the value to set
          * @return this builder
@@ -98,12 +98,12 @@ public final class ManagedMySqlDatabaseBinaryLogInformation
             this.__explicitlySet__.add("binaryLogCompression");
             return this;
         }
-        /** The compression ratio for binary log expressed as a percentage. */
+        /** The compression ratio for the binary log, expressed as a percentage. */
         @com.fasterxml.jackson.annotation.JsonProperty("binaryLogCompressionPercent")
         private Integer binaryLogCompressionPercent;
 
         /**
-         * The compression ratio for binary log expressed as a percentage.
+         * The compression ratio for the binary log, expressed as a percentage.
          *
          * @param binaryLogCompressionPercent the value to set
          * @return this builder
@@ -195,12 +195,12 @@ public final class ManagedMySqlDatabaseBinaryLogInformation
         return new Builder().copy(this);
     }
 
-    /** Status of binary logging on this server. */
+    /** The status of binary logging on the MySQL server. */
     @com.fasterxml.jackson.annotation.JsonProperty("binaryLogging")
     private final String binaryLogging;
 
     /**
-     * Status of binary logging on this server.
+     * The status of binary logging on the MySQL server.
      *
      * @return the value
      */
@@ -208,12 +208,12 @@ public final class ManagedMySqlDatabaseBinaryLogInformation
         return binaryLogging;
     }
 
-    /** The binary logging format used by this server. */
+    /** The binary logging format used by the MySQL server. */
     @com.fasterxml.jackson.annotation.JsonProperty("binaryLogFormat")
     private final String binaryLogFormat;
 
     /**
-     * The binary logging format used by this server.
+     * The binary logging format used by the MySQL server.
      *
      * @return the value
      */
@@ -222,15 +222,15 @@ public final class ManagedMySqlDatabaseBinaryLogInformation
     }
 
     /**
-     * Indicates whether compression is enabled for transactions written to binary log files on this
-     * server.
+     * Indicates whether compression is enabled for transactions written to binary log files on the
+     * MySQL server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("binaryLogCompression")
     private final String binaryLogCompression;
 
     /**
-     * Indicates whether compression is enabled for transactions written to binary log files on this
-     * server.
+     * Indicates whether compression is enabled for transactions written to binary log files on the
+     * MySQL server.
      *
      * @return the value
      */
@@ -238,12 +238,12 @@ public final class ManagedMySqlDatabaseBinaryLogInformation
         return binaryLogCompression;
     }
 
-    /** The compression ratio for binary log expressed as a percentage. */
+    /** The compression ratio for the binary log, expressed as a percentage. */
     @com.fasterxml.jackson.annotation.JsonProperty("binaryLogCompressionPercent")
     private final Integer binaryLogCompressionPercent;
 
     /**
-     * The compression ratio for binary log expressed as a percentage.
+     * The compression ratio for the binary log, expressed as a percentage.
      *
      * @return the value
      */

@@ -6,7 +6,7 @@ package com.oracle.bmc.marketplacepublisher.responses;
 
 import com.oracle.bmc.marketplacepublisher.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class ChangeArtifactCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -24,13 +24,36 @@ public class ChangeArtifactCompartmentResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
+     * status.
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
+     * status.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private ChangeArtifactCompartmentResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
-            String opcRequestId) {
+            String opcRequestId,
+            String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
     }
 
     public static class Builder
@@ -71,6 +94,24 @@ public class ChangeArtifactCompartmentResponse extends com.oracle.bmc.responses.
         }
 
         /**
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
+         * its status.
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
+         * its status.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          *
          * @return this builder instance
@@ -80,6 +121,7 @@ public class ChangeArtifactCompartmentResponse extends com.oracle.bmc.responses.
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }
@@ -91,7 +133,8 @@ public class ChangeArtifactCompartmentResponse extends com.oracle.bmc.responses.
          */
         @Override
         public ChangeArtifactCompartmentResponse build() {
-            return new ChangeArtifactCompartmentResponse(__httpStatusCode__, headers, opcRequestId);
+            return new ChangeArtifactCompartmentResponse(
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 
@@ -110,6 +153,7 @@ public class ChangeArtifactCompartmentResponse extends com.oracle.bmc.responses.
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -124,7 +168,9 @@ public class ChangeArtifactCompartmentResponse extends com.oracle.bmc.responses.
         }
 
         ChangeArtifactCompartmentResponse other = (ChangeArtifactCompartmentResponse) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId);
     }
 
     @Override
@@ -132,6 +178,9 @@ public class ChangeArtifactCompartmentResponse extends com.oracle.bmc.responses.
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         return result;
     }
 }

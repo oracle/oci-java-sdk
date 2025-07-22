@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplacepublisher.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListListingsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the compartment in which to list resources. */
@@ -26,6 +26,13 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     /** A filter to return only listings their lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.marketplacepublisher.model.Listing.LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+    /** A filter to return listings based on their type */
+    private com.oracle.bmc.marketplacepublisher.model.ListingType listingType;
+
+    /** A filter to return listings based on their type */
+    public com.oracle.bmc.marketplacepublisher.model.ListingType getListingType() {
+        return listingType;
     }
     /** A filter to return only resources that match the entire name given. */
     private String name;
@@ -157,6 +164,21 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /** A filter to return listings based on their type */
+        private com.oracle.bmc.marketplacepublisher.model.ListingType listingType = null;
+
+        /**
+         * A filter to return listings based on their type
+         *
+         * @param listingType the value to set
+         * @return this builder instance
+         */
+        public Builder listingType(
+                com.oracle.bmc.marketplacepublisher.model.ListingType listingType) {
+            this.listingType = listingType;
+            return this;
+        }
+
         /** A filter to return only resources that match the entire name given. */
         private String name = null;
 
@@ -281,6 +303,7 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         public Builder copy(ListListingsRequest o) {
             compartmentId(o.getCompartmentId());
             lifecycleState(o.getLifecycleState());
+            listingType(o.getListingType());
             name(o.getName());
             limit(o.getLimit());
             page(o.getPage());
@@ -323,6 +346,7 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             ListListingsRequest request = new ListListingsRequest();
             request.compartmentId = compartmentId;
             request.lifecycleState = lifecycleState;
+            request.listingType = listingType;
             request.name = name;
             request.limit = limit;
             request.page = page;
@@ -330,8 +354,8 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListListingsRequest(compartmentId, lifecycleState, name, limit, page, sortOrder,
-            // sortBy, opcRequestId);
+            // new ListListingsRequest(compartmentId, lifecycleState, listingType, name, limit,
+            // page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -344,6 +368,7 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return new Builder()
                 .compartmentId(compartmentId)
                 .lifecycleState(lifecycleState)
+                .listingType(listingType)
                 .name(name)
                 .limit(limit)
                 .page(page)
@@ -368,6 +393,7 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",listingType=").append(String.valueOf(this.listingType));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -391,6 +417,7 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.listingType, other.listingType)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -409,6 +436,7 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.listingType == null ? 43 : this.listingType.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

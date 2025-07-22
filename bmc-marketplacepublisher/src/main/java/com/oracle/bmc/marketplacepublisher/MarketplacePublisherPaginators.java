@@ -33,7 +33,7 @@ import com.oracle.bmc.marketplacepublisher.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class MarketplacePublisherPaginators {
     private final MarketplacePublisher client;
 
@@ -158,6 +158,132 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAvailableServices operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAvailableServicesResponse> listAvailableServicesResponseIterator(
+            final ListAvailableServicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAvailableServicesRequest.Builder,
+                ListAvailableServicesRequest,
+                ListAvailableServicesResponse>(
+                new java.util.function.Supplier<ListAvailableServicesRequest.Builder>() {
+                    @Override
+                    public ListAvailableServicesRequest.Builder get() {
+                        return ListAvailableServicesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAvailableServicesResponse, String>() {
+                    @Override
+                    public String apply(ListAvailableServicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailableServicesRequest.Builder>,
+                        ListAvailableServicesRequest>() {
+                    @Override
+                    public ListAvailableServicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailableServicesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableServicesRequest, ListAvailableServicesResponse>() {
+                    @Override
+                    public ListAvailableServicesResponse apply(
+                            ListAvailableServicesRequest request) {
+                        return client.listAvailableServices(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.marketplacepublisher.model.AvailableServiceSummary} objects contained in
+     * responses from the listAvailableServices operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.marketplacepublisher.model.AvailableServiceSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplacepublisher.model.AvailableServiceSummary>
+            listAvailableServicesRecordIterator(final ListAvailableServicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAvailableServicesRequest.Builder,
+                ListAvailableServicesRequest,
+                ListAvailableServicesResponse,
+                com.oracle.bmc.marketplacepublisher.model.AvailableServiceSummary>(
+                new java.util.function.Supplier<ListAvailableServicesRequest.Builder>() {
+                    @Override
+                    public ListAvailableServicesRequest.Builder get() {
+                        return ListAvailableServicesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAvailableServicesResponse, String>() {
+                    @Override
+                    public String apply(ListAvailableServicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailableServicesRequest.Builder>,
+                        ListAvailableServicesRequest>() {
+                    @Override
+                    public ListAvailableServicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailableServicesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableServicesRequest, ListAvailableServicesResponse>() {
+                    @Override
+                    public ListAvailableServicesResponse apply(
+                            ListAvailableServicesRequest request) {
+                        return client.listAvailableServices(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableServicesResponse,
+                        java.util.List<
+                                com.oracle.bmc.marketplacepublisher.model
+                                        .AvailableServiceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.marketplacepublisher.model
+                                            .AvailableServiceSummary>
+                            apply(ListAvailableServicesResponse response) {
+                        return response.getAvailableServiceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCategories
      * operation. This iterable will fetch more data from the server as needed.
      *
@@ -269,6 +395,383 @@ public class MarketplacePublisherPaginators {
                     public java.util.List<com.oracle.bmc.marketplacepublisher.model.CategorySummary>
                             apply(ListCategoriesResponse response) {
                         return response.getCategoryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCustomerInstanceReportRecords operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCustomerInstanceReportRecordsResponse>
+            listCustomerInstanceReportRecordsResponseIterator(
+                    final ListCustomerInstanceReportRecordsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCustomerInstanceReportRecordsRequest.Builder,
+                ListCustomerInstanceReportRecordsRequest,
+                ListCustomerInstanceReportRecordsResponse>(
+                new java.util.function.Supplier<
+                        ListCustomerInstanceReportRecordsRequest.Builder>() {
+                    @Override
+                    public ListCustomerInstanceReportRecordsRequest.Builder get() {
+                        return ListCustomerInstanceReportRecordsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomerInstanceReportRecordsResponse, String>() {
+                    @Override
+                    public String apply(ListCustomerInstanceReportRecordsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomerInstanceReportRecordsRequest.Builder>,
+                        ListCustomerInstanceReportRecordsRequest>() {
+                    @Override
+                    public ListCustomerInstanceReportRecordsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomerInstanceReportRecordsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomerInstanceReportRecordsRequest,
+                        ListCustomerInstanceReportRecordsResponse>() {
+                    @Override
+                    public ListCustomerInstanceReportRecordsResponse apply(
+                            ListCustomerInstanceReportRecordsRequest request) {
+                        return client.listCustomerInstanceReportRecords(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.marketplacepublisher.model.CustomerInstanceReportRecord} objects contained in
+     * responses from the listCustomerInstanceReportRecords operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.marketplacepublisher.model.CustomerInstanceReportRecord} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplacepublisher.model.CustomerInstanceReportRecord>
+            listCustomerInstanceReportRecordsRecordIterator(
+                    final ListCustomerInstanceReportRecordsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCustomerInstanceReportRecordsRequest.Builder,
+                ListCustomerInstanceReportRecordsRequest,
+                ListCustomerInstanceReportRecordsResponse,
+                com.oracle.bmc.marketplacepublisher.model.CustomerInstanceReportRecord>(
+                new java.util.function.Supplier<
+                        ListCustomerInstanceReportRecordsRequest.Builder>() {
+                    @Override
+                    public ListCustomerInstanceReportRecordsRequest.Builder get() {
+                        return ListCustomerInstanceReportRecordsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomerInstanceReportRecordsResponse, String>() {
+                    @Override
+                    public String apply(ListCustomerInstanceReportRecordsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomerInstanceReportRecordsRequest.Builder>,
+                        ListCustomerInstanceReportRecordsRequest>() {
+                    @Override
+                    public ListCustomerInstanceReportRecordsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomerInstanceReportRecordsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomerInstanceReportRecordsRequest,
+                        ListCustomerInstanceReportRecordsResponse>() {
+                    @Override
+                    public ListCustomerInstanceReportRecordsResponse apply(
+                            ListCustomerInstanceReportRecordsRequest request) {
+                        return client.listCustomerInstanceReportRecords(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomerInstanceReportRecordsResponse,
+                        java.util.List<
+                                com.oracle.bmc.marketplacepublisher.model
+                                        .CustomerInstanceReportRecord>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.marketplacepublisher.model
+                                            .CustomerInstanceReportRecord>
+                            apply(ListCustomerInstanceReportRecordsResponse response) {
+                        return response.getCustomerInstanceReportRecordCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDisbursementReportRecords operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDisbursementReportRecordsResponse>
+            listDisbursementReportRecordsResponseIterator(
+                    final ListDisbursementReportRecordsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDisbursementReportRecordsRequest.Builder,
+                ListDisbursementReportRecordsRequest,
+                ListDisbursementReportRecordsResponse>(
+                new java.util.function.Supplier<ListDisbursementReportRecordsRequest.Builder>() {
+                    @Override
+                    public ListDisbursementReportRecordsRequest.Builder get() {
+                        return ListDisbursementReportRecordsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDisbursementReportRecordsResponse, String>() {
+                    @Override
+                    public String apply(ListDisbursementReportRecordsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDisbursementReportRecordsRequest.Builder>,
+                        ListDisbursementReportRecordsRequest>() {
+                    @Override
+                    public ListDisbursementReportRecordsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDisbursementReportRecordsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDisbursementReportRecordsRequest,
+                        ListDisbursementReportRecordsResponse>() {
+                    @Override
+                    public ListDisbursementReportRecordsResponse apply(
+                            ListDisbursementReportRecordsRequest request) {
+                        return client.listDisbursementReportRecords(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.marketplacepublisher.model.DisbursementReportRecord} objects contained in
+     * responses from the listDisbursementReportRecords operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.marketplacepublisher.model.DisbursementReportRecord} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplacepublisher.model.DisbursementReportRecord>
+            listDisbursementReportRecordsRecordIterator(
+                    final ListDisbursementReportRecordsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDisbursementReportRecordsRequest.Builder,
+                ListDisbursementReportRecordsRequest,
+                ListDisbursementReportRecordsResponse,
+                com.oracle.bmc.marketplacepublisher.model.DisbursementReportRecord>(
+                new java.util.function.Supplier<ListDisbursementReportRecordsRequest.Builder>() {
+                    @Override
+                    public ListDisbursementReportRecordsRequest.Builder get() {
+                        return ListDisbursementReportRecordsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDisbursementReportRecordsResponse, String>() {
+                    @Override
+                    public String apply(ListDisbursementReportRecordsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDisbursementReportRecordsRequest.Builder>,
+                        ListDisbursementReportRecordsRequest>() {
+                    @Override
+                    public ListDisbursementReportRecordsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDisbursementReportRecordsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDisbursementReportRecordsRequest,
+                        ListDisbursementReportRecordsResponse>() {
+                    @Override
+                    public ListDisbursementReportRecordsResponse apply(
+                            ListDisbursementReportRecordsRequest request) {
+                        return client.listDisbursementReportRecords(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDisbursementReportRecordsResponse,
+                        java.util.List<
+                                com.oracle.bmc.marketplacepublisher.model
+                                        .DisbursementReportRecord>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.marketplacepublisher.model
+                                            .DisbursementReportRecord>
+                            apply(ListDisbursementReportRecordsResponse response) {
+                        return response.getDisbursementReportRecordCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listLeads
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListLeadsResponse> listLeadsResponseIterator(final ListLeadsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListLeadsRequest.Builder, ListLeadsRequest, ListLeadsResponse>(
+                new java.util.function.Supplier<ListLeadsRequest.Builder>() {
+                    @Override
+                    public ListLeadsRequest.Builder get() {
+                        return ListLeadsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListLeadsResponse, String>() {
+                    @Override
+                    public String apply(ListLeadsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListLeadsRequest.Builder>,
+                        ListLeadsRequest>() {
+                    @Override
+                    public ListLeadsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListLeadsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListLeadsRequest, ListLeadsResponse>() {
+                    @Override
+                    public ListLeadsResponse apply(ListLeadsRequest request) {
+                        return client.listLeads(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.marketplacepublisher.model.LeadSummary} objects contained in responses from
+     * the listLeads operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.marketplacepublisher.model.LeadSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplacepublisher.model.LeadSummary> listLeadsRecordIterator(
+            final ListLeadsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListLeadsRequest.Builder,
+                ListLeadsRequest,
+                ListLeadsResponse,
+                com.oracle.bmc.marketplacepublisher.model.LeadSummary>(
+                new java.util.function.Supplier<ListLeadsRequest.Builder>() {
+                    @Override
+                    public ListLeadsRequest.Builder get() {
+                        return ListLeadsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListLeadsResponse, String>() {
+                    @Override
+                    public String apply(ListLeadsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListLeadsRequest.Builder>,
+                        ListLeadsRequest>() {
+                    @Override
+                    public ListLeadsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListLeadsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListLeadsRequest, ListLeadsResponse>() {
+                    @Override
+                    public ListLeadsResponse apply(ListLeadsRequest request) {
+                        return client.listLeads(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListLeadsResponse,
+                        java.util.List<com.oracle.bmc.marketplacepublisher.model.LeadSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.marketplacepublisher.model.LeadSummary>
+                            apply(ListLeadsResponse response) {
+                        return response.getLeadCollection().getItems();
                     }
                 });
     }
@@ -1237,6 +1740,371 @@ public class MarketplacePublisherPaginators {
                                     com.oracle.bmc.marketplacepublisher.model.PublisherSummary>
                             apply(ListPublishersResponse response) {
                         return response.getPublisherCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSupportDocs operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSupportDocsResponse> listSupportDocsResponseIterator(
+            final ListSupportDocsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSupportDocsRequest.Builder, ListSupportDocsRequest, ListSupportDocsResponse>(
+                new java.util.function.Supplier<ListSupportDocsRequest.Builder>() {
+                    @Override
+                    public ListSupportDocsRequest.Builder get() {
+                        return ListSupportDocsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSupportDocsResponse, String>() {
+                    @Override
+                    public String apply(ListSupportDocsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportDocsRequest.Builder>,
+                        ListSupportDocsRequest>() {
+                    @Override
+                    public ListSupportDocsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportDocsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListSupportDocsRequest, ListSupportDocsResponse>() {
+                    @Override
+                    public ListSupportDocsResponse apply(ListSupportDocsRequest request) {
+                        return client.listSupportDocs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.marketplacepublisher.model.SupportDocSummary} objects contained in responses
+     * from the listSupportDocs operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.marketplacepublisher.model.SupportDocSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplacepublisher.model.SupportDocSummary>
+            listSupportDocsRecordIterator(final ListSupportDocsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSupportDocsRequest.Builder,
+                ListSupportDocsRequest,
+                ListSupportDocsResponse,
+                com.oracle.bmc.marketplacepublisher.model.SupportDocSummary>(
+                new java.util.function.Supplier<ListSupportDocsRequest.Builder>() {
+                    @Override
+                    public ListSupportDocsRequest.Builder get() {
+                        return ListSupportDocsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSupportDocsResponse, String>() {
+                    @Override
+                    public String apply(ListSupportDocsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportDocsRequest.Builder>,
+                        ListSupportDocsRequest>() {
+                    @Override
+                    public ListSupportDocsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportDocsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListSupportDocsRequest, ListSupportDocsResponse>() {
+                    @Override
+                    public ListSupportDocsResponse apply(ListSupportDocsRequest request) {
+                        return client.listSupportDocs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportDocsResponse,
+                        java.util.List<
+                                com.oracle.bmc.marketplacepublisher.model.SupportDocSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.marketplacepublisher.model.SupportDocSummary>
+                            apply(ListSupportDocsResponse response) {
+                        return response.getSupportDocCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSupportedCurrencies operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSupportedCurrenciesResponse> listSupportedCurrenciesResponseIterator(
+            final ListSupportedCurrenciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSupportedCurrenciesRequest.Builder,
+                ListSupportedCurrenciesRequest,
+                ListSupportedCurrenciesResponse>(
+                new java.util.function.Supplier<ListSupportedCurrenciesRequest.Builder>() {
+                    @Override
+                    public ListSupportedCurrenciesRequest.Builder get() {
+                        return ListSupportedCurrenciesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSupportedCurrenciesResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedCurrenciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedCurrenciesRequest.Builder>,
+                        ListSupportedCurrenciesRequest>() {
+                    @Override
+                    public ListSupportedCurrenciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedCurrenciesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedCurrenciesRequest, ListSupportedCurrenciesResponse>() {
+                    @Override
+                    public ListSupportedCurrenciesResponse apply(
+                            ListSupportedCurrenciesRequest request) {
+                        return client.listSupportedCurrencies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.marketplacepublisher.model.SupportedCurrencySummary} objects contained in
+     * responses from the listSupportedCurrencies operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.marketplacepublisher.model.SupportedCurrencySummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplacepublisher.model.SupportedCurrencySummary>
+            listSupportedCurrenciesRecordIterator(final ListSupportedCurrenciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSupportedCurrenciesRequest.Builder,
+                ListSupportedCurrenciesRequest,
+                ListSupportedCurrenciesResponse,
+                com.oracle.bmc.marketplacepublisher.model.SupportedCurrencySummary>(
+                new java.util.function.Supplier<ListSupportedCurrenciesRequest.Builder>() {
+                    @Override
+                    public ListSupportedCurrenciesRequest.Builder get() {
+                        return ListSupportedCurrenciesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSupportedCurrenciesResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedCurrenciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedCurrenciesRequest.Builder>,
+                        ListSupportedCurrenciesRequest>() {
+                    @Override
+                    public ListSupportedCurrenciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedCurrenciesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedCurrenciesRequest, ListSupportedCurrenciesResponse>() {
+                    @Override
+                    public ListSupportedCurrenciesResponse apply(
+                            ListSupportedCurrenciesRequest request) {
+                        return client.listSupportedCurrencies(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedCurrenciesResponse,
+                        java.util.List<
+                                com.oracle.bmc.marketplacepublisher.model
+                                        .SupportedCurrencySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.marketplacepublisher.model
+                                            .SupportedCurrencySummary>
+                            apply(ListSupportedCurrenciesResponse response) {
+                        return response.getSupportedCurrencyCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSupportedShapes operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSupportedShapesResponse> listSupportedShapesResponseIterator(
+            final ListSupportedShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSupportedShapesRequest.Builder,
+                ListSupportedShapesRequest,
+                ListSupportedShapesResponse>(
+                new java.util.function.Supplier<ListSupportedShapesRequest.Builder>() {
+                    @Override
+                    public ListSupportedShapesRequest.Builder get() {
+                        return ListSupportedShapesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSupportedShapesResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedShapesRequest.Builder>,
+                        ListSupportedShapesRequest>() {
+                    @Override
+                    public ListSupportedShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedShapesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedShapesRequest, ListSupportedShapesResponse>() {
+                    @Override
+                    public ListSupportedShapesResponse apply(ListSupportedShapesRequest request) {
+                        return client.listSupportedShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.marketplacepublisher.model.SupportedShapeSummary} objects contained in
+     * responses from the listSupportedShapes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.marketplacepublisher.model.SupportedShapeSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplacepublisher.model.SupportedShapeSummary>
+            listSupportedShapesRecordIterator(final ListSupportedShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSupportedShapesRequest.Builder,
+                ListSupportedShapesRequest,
+                ListSupportedShapesResponse,
+                com.oracle.bmc.marketplacepublisher.model.SupportedShapeSummary>(
+                new java.util.function.Supplier<ListSupportedShapesRequest.Builder>() {
+                    @Override
+                    public ListSupportedShapesRequest.Builder get() {
+                        return ListSupportedShapesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSupportedShapesResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedShapesRequest.Builder>,
+                        ListSupportedShapesRequest>() {
+                    @Override
+                    public ListSupportedShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedShapesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedShapesRequest, ListSupportedShapesResponse>() {
+                    @Override
+                    public ListSupportedShapesResponse apply(ListSupportedShapesRequest request) {
+                        return client.listSupportedShapes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedShapesResponse,
+                        java.util.List<
+                                com.oracle.bmc.marketplacepublisher.model
+                                        .SupportedShapeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.marketplacepublisher.model.SupportedShapeSummary>
+                            apply(ListSupportedShapesResponse response) {
+                        return response.getSupportedShapeCollection().getItems();
                     }
                 });
     }

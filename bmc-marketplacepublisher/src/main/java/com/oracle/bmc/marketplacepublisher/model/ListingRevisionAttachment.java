@@ -15,7 +15,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -29,8 +29,17 @@ package com.oracle.bmc.marketplacepublisher.model;
             value = ScreenShotAttachment.class,
             name = "SCREENSHOT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ReviewSupportDocumentAttachment.class,
+            name = "REVIEW_SUPPORT_DOCUMENT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = SupportedServiceAttachment.class,
+            name = "SUPPORTED_SERVICES"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VideoAttachment.class,
-            name = "VIDEO")
+            name = "VIDEO"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CustomerSuccessAttachment.class,
+            name = "CUSTOMER_SUCCESS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -365,6 +374,9 @@ public class ListingRevisionAttachment
         RelatedDocument("RELATED_DOCUMENT"),
         Screenshot("SCREENSHOT"),
         Video("VIDEO"),
+        ReviewSupportDocument("REVIEW_SUPPORT_DOCUMENT"),
+        CustomerSuccess("CUSTOMER_SUCCESS"),
+        SupportedServices("SUPPORTED_SERVICES"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

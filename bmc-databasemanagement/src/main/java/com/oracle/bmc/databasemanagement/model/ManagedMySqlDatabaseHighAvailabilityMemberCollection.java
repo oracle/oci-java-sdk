@@ -170,12 +170,12 @@ public final class ManagedMySqlDatabaseHighAvailabilityMemberCollection
             this.__explicitlySet__.add("viewId");
             return this;
         }
-        /** Number of transactions that were replicated within the cluster. */
+        /** The number of transactions that were replicated within the cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("transactionsInGtidExecuted")
         private Long transactionsInGtidExecuted;
 
         /**
-         * Number of transactions that were replicated within the cluster.
+         * The number of transactions that were replicated within the cluster.
          *
          * @param transactionsInGtidExecuted the value to set
          * @return this builder
@@ -373,12 +373,12 @@ public final class ManagedMySqlDatabaseHighAvailabilityMemberCollection
         return viewId;
     }
 
-    /** Number of transactions that were replicated within the cluster. */
+    /** The number of transactions that were replicated within the cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("transactionsInGtidExecuted")
     private final Long transactionsInGtidExecuted;
 
     /**
-     * Number of transactions that were replicated within the cluster.
+     * The number of transactions that were replicated within the cluster.
      *
      * @return the value
      */

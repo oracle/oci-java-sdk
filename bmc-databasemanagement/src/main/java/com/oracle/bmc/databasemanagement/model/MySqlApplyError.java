@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Error from apply operation of a MySQL server replication channel. <br>
+ * Error from the apply operation of a MySQL server replication channel. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -43,13 +43,15 @@ public final class MySqlApplyError
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The error number of the most recent error that caused the SQL/coordinator thread to stop.
+         * The error number of the most recent error that caused the SQL or coordinator thread to
+         * stop.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastErrorNumber")
         private Integer lastErrorNumber;
 
         /**
-         * The error number of the most recent error that caused the SQL/coordinator thread to stop.
+         * The error number of the most recent error that caused the SQL or coordinator thread to
+         * stop.
          *
          * @param lastErrorNumber the value to set
          * @return this builder
@@ -60,14 +62,14 @@ public final class MySqlApplyError
             return this;
         }
         /**
-         * The error message of the most recent error that caused the SQL/coordinator thread to
+         * The error message of the most recent error that caused the SQL or coordinator thread to
          * stop.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastErrorMessage")
         private String lastErrorMessage;
 
         /**
-         * The error message of the most recent error that caused the SQL/coordinator thread to
+         * The error message of the most recent error that caused the SQL or coordinator thread to
          * stop.
          *
          * @param lastErrorMessage the value to set
@@ -78,12 +80,12 @@ public final class MySqlApplyError
             this.__explicitlySet__.add("lastErrorMessage");
             return this;
         }
-        /** The timestamp when the most recent SQL/coordinator error occurred. */
+        /** The timestamp when the most recent SQL or coordinator error occurred. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastError")
         private java.util.Date timeLastError;
 
         /**
-         * The timestamp when the most recent SQL/coordinator error occurred.
+         * The timestamp when the most recent SQL or coordinator error occurred.
          *
          * @param timeLastError the value to set
          * @return this builder
@@ -152,12 +154,14 @@ public final class MySqlApplyError
         return new Builder().copy(this);
     }
 
-    /** The error number of the most recent error that caused the SQL/coordinator thread to stop. */
+    /**
+     * The error number of the most recent error that caused the SQL or coordinator thread to stop.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lastErrorNumber")
     private final Integer lastErrorNumber;
 
     /**
-     * The error number of the most recent error that caused the SQL/coordinator thread to stop.
+     * The error number of the most recent error that caused the SQL or coordinator thread to stop.
      *
      * @return the value
      */
@@ -166,13 +170,13 @@ public final class MySqlApplyError
     }
 
     /**
-     * The error message of the most recent error that caused the SQL/coordinator thread to stop.
+     * The error message of the most recent error that caused the SQL or coordinator thread to stop.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastErrorMessage")
     private final String lastErrorMessage;
 
     /**
-     * The error message of the most recent error that caused the SQL/coordinator thread to stop.
+     * The error message of the most recent error that caused the SQL or coordinator thread to stop.
      *
      * @return the value
      */
@@ -180,12 +184,12 @@ public final class MySqlApplyError
         return lastErrorMessage;
     }
 
-    /** The timestamp when the most recent SQL/coordinator error occurred. */
+    /** The timestamp when the most recent SQL or coordinator error occurred. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastError")
     private final java.util.Date timeLastError;
 
     /**
-     * The timestamp when the most recent SQL/coordinator error occurred.
+     * The timestamp when the most recent SQL or coordinator error occurred.
      *
      * @return the value
      */
