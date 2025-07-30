@@ -100,7 +100,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, AggregateNetworkDataResponse::builder)
                 .logger(LOG, "aggregateNetworkData")
-                .serviceDetails("ApmSynthetic", "AggregateNetworkData", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "AggregateNetworkData",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/AggregatedNetworkDataResult/AggregateNetworkData")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AggregateNetworkDataRequest::builder)
                 .basePath("/20200630")
@@ -134,7 +137,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateDedicatedVantagePointResponse::builder)
                 .logger(LOG, "createDedicatedVantagePoint")
-                .serviceDetails("ApmSynthetic", "CreateDedicatedVantagePoint", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "CreateDedicatedVantagePoint",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/CreateDedicatedVantagePoint")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDedicatedVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -164,7 +170,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateMonitorResponse::builder)
                 .logger(LOG, "createMonitor")
-                .serviceDetails("ApmSynthetic", "CreateMonitor", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "CreateMonitor",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/CreateMonitor")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMonitorRequest::builder)
                 .basePath("/20200630")
@@ -195,7 +204,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateOnPremiseVantagePointResponse::builder)
                 .logger(LOG, "createOnPremiseVantagePoint")
-                .serviceDetails("ApmSynthetic", "CreateOnPremiseVantagePoint", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "CreateOnPremiseVantagePoint",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/CreateOnPremiseVantagePoint")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOnPremiseVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -224,7 +236,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateScriptResponse::builder)
                 .logger(LOG, "createScript")
-                .serviceDetails("ApmSynthetic", "CreateScript", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "CreateScript",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/CreateScript")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateScriptRequest::builder)
                 .basePath("/20200630")
@@ -254,7 +269,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateWorkerResponse::builder)
                 .logger(LOG, "createWorker")
-                .serviceDetails("ApmSynthetic", "CreateWorker", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "CreateWorker",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/CreateWorker")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateWorkerRequest::builder)
                 .basePath("/20200630")
@@ -286,7 +304,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteDedicatedVantagePointResponse::builder)
                 .logger(LOG, "deleteDedicatedVantagePoint")
-                .serviceDetails("ApmSynthetic", "DeleteDedicatedVantagePoint", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "DeleteDedicatedVantagePoint",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/DeleteDedicatedVantagePoint")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDedicatedVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -310,7 +331,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteMonitorResponse::builder)
                 .logger(LOG, "deleteMonitor")
-                .serviceDetails("ApmSynthetic", "DeleteMonitor", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "DeleteMonitor",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/DeleteMonitor")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMonitorRequest::builder)
                 .basePath("/20200630")
@@ -336,7 +360,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteOnPremiseVantagePointResponse::builder)
                 .logger(LOG, "deleteOnPremiseVantagePoint")
-                .serviceDetails("ApmSynthetic", "DeleteOnPremiseVantagePoint", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "DeleteOnPremiseVantagePoint",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/DeleteOnPremiseVantagePoint")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOnPremiseVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -360,7 +387,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteScriptResponse::builder)
                 .logger(LOG, "deleteScript")
-                .serviceDetails("ApmSynthetic", "DeleteScript", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "DeleteScript",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/DeleteScript")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteScriptRequest::builder)
                 .basePath("/20200630")
@@ -387,7 +417,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteWorkerResponse::builder)
                 .logger(LOG, "deleteWorker")
-                .serviceDetails("ApmSynthetic", "DeleteWorker", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "DeleteWorker",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/DeleteWorker")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteWorkerRequest::builder)
                 .basePath("/20200630")
@@ -415,7 +448,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetDedicatedVantagePointResponse::builder)
                 .logger(LOG, "getDedicatedVantagePoint")
-                .serviceDetails("ApmSynthetic", "GetDedicatedVantagePoint", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "GetDedicatedVantagePoint",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/GetDedicatedVantagePoint")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDedicatedVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -442,7 +478,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetMonitorResponse::builder)
                 .logger(LOG, "getMonitor")
-                .serviceDetails("ApmSynthetic", "GetMonitor", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "GetMonitor",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/GetMonitor")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMonitorRequest::builder)
                 .basePath("/20200630")
@@ -476,7 +515,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetMonitorResultResponse::builder)
                 .logger(LOG, "getMonitorResult")
-                .serviceDetails("ApmSynthetic", "GetMonitorResult", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "GetMonitorResult",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorResult/GetMonitorResult")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMonitorResultRequest::builder)
                 .basePath("/20200630")
@@ -509,7 +551,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetOnPremiseVantagePointResponse::builder)
                 .logger(LOG, "getOnPremiseVantagePoint")
-                .serviceDetails("ApmSynthetic", "GetOnPremiseVantagePoint", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "GetOnPremiseVantagePoint",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/GetOnPremiseVantagePoint")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOnPremiseVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -536,7 +581,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetScriptResponse::builder)
                 .logger(LOG, "getScript")
-                .serviceDetails("ApmSynthetic", "GetScript", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "GetScript",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/GetScript")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetScriptRequest::builder)
                 .basePath("/20200630")
@@ -566,7 +614,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetWorkerResponse::builder)
                 .logger(LOG, "getWorker")
-                .serviceDetails("ApmSynthetic", "GetWorker", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "GetWorker",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/GetWorker")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkerRequest::builder)
                 .basePath("/20200630")
@@ -594,7 +645,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListDedicatedVantagePointsResponse::builder)
                 .logger(LOG, "listDedicatedVantagePoints")
-                .serviceDetails("ApmSynthetic", "ListDedicatedVantagePoints", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "ListDedicatedVantagePoints",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePointCollection/ListDedicatedVantagePoints")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDedicatedVantagePointsRequest::builder)
                 .basePath("/20200630")
@@ -626,7 +680,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListMonitorsResponse::builder)
                 .logger(LOG, "listMonitors")
-                .serviceDetails("ApmSynthetic", "ListMonitors", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "ListMonitors",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorCollection/ListMonitors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMonitorsRequest::builder)
                 .basePath("/20200630")
@@ -664,7 +721,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListOnPremiseVantagePointsResponse::builder)
                 .logger(LOG, "listOnPremiseVantagePoints")
-                .serviceDetails("ApmSynthetic", "ListOnPremiseVantagePoints", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "ListOnPremiseVantagePoints",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePointCollection/ListOnPremiseVantagePoints")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOnPremiseVantagePointsRequest::builder)
                 .basePath("/20200630")
@@ -696,7 +756,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListPublicVantagePointsResponse::builder)
                 .logger(LOG, "listPublicVantagePoints")
-                .serviceDetails("ApmSynthetic", "ListPublicVantagePoints", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "ListPublicVantagePoints",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/PublicVantagePointCollection/ListPublicVantagePoints")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPublicVantagePointsRequest::builder)
                 .basePath("/20200630")
@@ -727,7 +790,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListScriptsResponse::builder)
                 .logger(LOG, "listScripts")
-                .serviceDetails("ApmSynthetic", "ListScripts", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "ListScripts",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/ScriptCollection/ListScripts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListScriptsRequest::builder)
                 .basePath("/20200630")
@@ -761,7 +827,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkersResponse::builder)
                 .logger(LOG, "listWorkers")
-                .serviceDetails("ApmSynthetic", "ListWorkers", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "ListWorkers",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/WorkerCollection/ListWorkers")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkersRequest::builder)
                 .basePath("/20200630")
@@ -803,7 +872,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateDedicatedVantagePointResponse::builder)
                 .logger(LOG, "updateDedicatedVantagePoint")
-                .serviceDetails("ApmSynthetic", "UpdateDedicatedVantagePoint", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "UpdateDedicatedVantagePoint",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/UpdateDedicatedVantagePoint")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDedicatedVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -835,7 +907,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateMonitorResponse::builder)
                 .logger(LOG, "updateMonitor")
-                .serviceDetails("ApmSynthetic", "UpdateMonitor", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "UpdateMonitor",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/UpdateMonitor")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMonitorRequest::builder)
                 .basePath("/20200630")
@@ -869,7 +944,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateOnPremiseVantagePointResponse::builder)
                 .logger(LOG, "updateOnPremiseVantagePoint")
-                .serviceDetails("ApmSynthetic", "UpdateOnPremiseVantagePoint", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "UpdateOnPremiseVantagePoint",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/UpdateOnPremiseVantagePoint")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOnPremiseVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -900,7 +978,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateScriptResponse::builder)
                 .logger(LOG, "updateScript")
-                .serviceDetails("ApmSynthetic", "UpdateScript", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "UpdateScript",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/UpdateScript")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateScriptRequest::builder)
                 .basePath("/20200630")
@@ -933,7 +1014,10 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateWorkerResponse::builder)
                 .logger(LOG, "updateWorker")
-                .serviceDetails("ApmSynthetic", "UpdateWorker", "")
+                .serviceDetails(
+                        "ApmSynthetic",
+                        "UpdateWorker",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/UpdateWorker")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateWorkerRequest::builder)
                 .basePath("/20200630")

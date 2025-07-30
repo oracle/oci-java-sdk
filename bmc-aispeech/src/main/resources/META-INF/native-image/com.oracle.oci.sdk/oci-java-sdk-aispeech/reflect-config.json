@@ -1040,11 +1040,5 @@
     "name": "com.oracle.bmc.aispeech.model.VoiceSummary$Gender",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
-  },
-  {
-    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.aispeech.model.VoiceSummary$LanguageCode",
-    "allDeclaredFields": true,
-    "allDeclaredMethods": true
   }
 ]

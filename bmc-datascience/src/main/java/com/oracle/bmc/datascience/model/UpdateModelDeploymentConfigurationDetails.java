@@ -23,6 +23,9 @@ package com.oracle.bmc.datascience.model;
         defaultImpl = UpdateModelDeploymentConfigurationDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateModelGroupDeploymentConfigurationDetails.class,
+            name = "MODEL_GROUP"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateSingleModelDeploymentConfigurationDetails.class,
             name = "SINGLE_MODEL")
 })

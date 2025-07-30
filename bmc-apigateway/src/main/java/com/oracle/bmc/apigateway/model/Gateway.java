@@ -35,12 +35,14 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
+        "locks",
         "hostname",
         "certificateId",
         "ipAddresses",
         "responseCacheDetails",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "caBundles"
     })
     public Gateway(
@@ -54,12 +56,14 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            java.util.List<ResourceLock> locks,
             String hostname,
             String certificateId,
             java.util.List<IpAddress> ipAddresses,
             ResponseCacheDetails responseCacheDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<CaBundle> caBundles) {
         super();
         this.id = id;
@@ -72,12 +76,14 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.locks = locks;
         this.hostname = hostname;
         this.certificateId = certificateId;
         this.ipAddresses = ipAddresses;
         this.responseCacheDetails = responseCacheDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.caBundles = caBundles;
     }
 
@@ -265,6 +271,21 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /** The hostname for APIs deployed on the gateway. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
@@ -374,6 +395,25 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** An array of CA bundles that should be used on the Gateway for TLS validation. */
         @com.fasterxml.jackson.annotation.JsonProperty("caBundles")
         private java.util.List<CaBundle> caBundles;
@@ -406,12 +446,14 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.locks,
                             this.hostname,
                             this.certificateId,
                             this.ipAddresses,
                             this.responseCacheDetails,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.caBundles);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -451,6 +493,9 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("hostname")) {
                 this.hostname(model.getHostname());
             }
@@ -468,6 +513,9 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("caBundles")) {
                 this.caBundles(model.getCaBundles());
@@ -748,6 +796,19 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         return lifecycleDetails;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /** The hostname for APIs deployed on the gateway. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
@@ -844,6 +905,23 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         return definedTags;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /** An array of CA bundles that should be used on the Gateway for TLS validation. */
     @com.fasterxml.jackson.annotation.JsonProperty("caBundles")
     private final java.util.List<CaBundle> caBundles;
@@ -883,12 +961,14 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", certificateId=").append(String.valueOf(this.certificateId));
         sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
         sb.append(", responseCacheDetails=").append(String.valueOf(this.responseCacheDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", caBundles=").append(String.valueOf(this.caBundles));
         sb.append(")");
         return sb.toString();
@@ -915,12 +995,14 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.certificateId, other.certificateId)
                 && java.util.Objects.equals(this.ipAddresses, other.ipAddresses)
                 && java.util.Objects.equals(this.responseCacheDetails, other.responseCacheDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.caBundles, other.caBundles)
                 && super.equals(other);
     }
@@ -949,6 +1031,7 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
         result =
                 (result * PRIME)
@@ -961,6 +1044,7 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
                                 : this.responseCacheDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.caBundles == null ? 43 : this.caBundles.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

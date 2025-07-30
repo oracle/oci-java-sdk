@@ -27,6 +27,7 @@ public final class CreateApiDetails
         "compartmentId",
         "freeformTags",
         "definedTags",
+        "locks",
         "content"
     })
     public CreateApiDetails(
@@ -34,12 +35,14 @@ public final class CreateApiDetails
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
             String content) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
         this.content = content;
     }
 
@@ -138,6 +141,21 @@ public final class CreateApiDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /** API Specification content in json or yaml format */
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
@@ -164,6 +182,7 @@ public final class CreateApiDetails
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.content);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -184,6 +203,9 @@ public final class CreateApiDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("content")) {
                 this.content(model.getContent());
@@ -285,6 +307,19 @@ public final class CreateApiDetails
         return definedTags;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<AddResourceLockDetails> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<AddResourceLockDetails> getLocks() {
+        return locks;
+    }
+
     /** API Specification content in json or yaml format */
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
@@ -317,6 +352,7 @@ public final class CreateApiDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", content=").append(String.valueOf(this.content));
         sb.append(")");
         return sb.toString();
@@ -336,6 +372,7 @@ public final class CreateApiDetails
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.content, other.content)
                 && super.equals(other);
     }
@@ -350,6 +387,7 @@ public final class CreateApiDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

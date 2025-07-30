@@ -122,10 +122,7 @@ public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, DeleteEventContentResponse::builder)
                 .logger(LOG, "deleteEventContent")
-                .serviceDetails(
-                        "Event",
-                        "DeleteEventContent",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/DeleteEventContent")
+                .serviceDetails("Event", "DeleteEventContent", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteEventContentRequest::builder)
                 .basePath("/20190801")
@@ -154,10 +151,7 @@ public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, GetEventResponse::builder)
                 .logger(LOG, "getEvent")
-                .serviceDetails(
-                        "Event",
-                        "GetEvent",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/GetEvent")
+                .serviceDetails("Event", "GetEvent", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetEventRequest::builder)
                 .basePath("/20190801")
@@ -214,10 +208,7 @@ public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, GetEventReportResponse::builder)
                 .logger(LOG, "getEventReport")
-                .serviceDetails(
-                        "Event",
-                        "GetEventReport",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventReport/GetEventReport")
+                .serviceDetails("Event", "GetEventReport", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetEventReportRequest::builder)
                 .basePath("/20190801")
@@ -248,10 +239,7 @@ public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, ListEventsResponse::builder)
                 .logger(LOG, "listEvents")
-                .serviceDetails(
-                        "Event",
-                        "ListEvents",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventCollection/ListEvents")
+                .serviceDetails("Event", "ListEvents", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListEventsRequest::builder)
                 .basePath("/20190801")
@@ -289,10 +277,7 @@ public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, ListRelatedEventsResponse::builder)
                 .logger(LOG, "listRelatedEvents")
-                .serviceDetails(
-                        "Event",
-                        "ListRelatedEvents",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/RelatedEventCollection/ListRelatedEvents")
+                .serviceDetails("Event", "ListRelatedEvents", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRelatedEventsRequest::builder)
                 .basePath("/20190801")
@@ -331,10 +316,7 @@ public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, UpdateEventResponse::builder)
                 .logger(LOG, "updateEvent")
-                .serviceDetails(
-                        "Event",
-                        "UpdateEvent",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/UpdateEvent")
+                .serviceDetails("Event", "UpdateEvent", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateEventRequest::builder)
                 .basePath("/20190801")
@@ -366,10 +348,7 @@ public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, UploadEventContentResponse::builder)
                 .logger(LOG, "uploadEventContent")
-                .serviceDetails(
-                        "Event",
-                        "UploadEventContent",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/UploadEventContent")
+                .serviceDetails("Event", "UploadEventContent", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UploadEventContentRequest::builder)
                 .basePath("/20190801")

@@ -24,11 +24,12 @@ package com.oracle.bmc.datascience.model;
 public final class PipelineShapeConfigDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs"})
-    public PipelineShapeConfigDetails(Float ocpus, Float memoryInGBs) {
+    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "cpuBaseline"})
+    public PipelineShapeConfigDetails(Float ocpus, Float memoryInGBs, CpuBaseline cpuBaseline) {
         super();
         this.ocpus = ocpus;
         this.memoryInGBs = memoryInGBs;
+        this.cpuBaseline = cpuBaseline;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -71,13 +72,38 @@ public final class PipelineShapeConfigDetails
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is
+         * left blank, it will default to {@code BASELINE_1_1}. The following values are supported:
+         * BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of
+         * an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable
+         * instance.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuBaseline")
+        private CpuBaseline cpuBaseline;
+
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is
+         * left blank, it will default to {@code BASELINE_1_1}. The following values are supported:
+         * BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of
+         * an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable
+         * instance.
+         *
+         * @param cpuBaseline the value to set
+         * @return this builder
+         */
+        public Builder cpuBaseline(CpuBaseline cpuBaseline) {
+            this.cpuBaseline = cpuBaseline;
+            this.__explicitlySet__.add("cpuBaseline");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PipelineShapeConfigDetails build() {
             PipelineShapeConfigDetails model =
-                    new PipelineShapeConfigDetails(this.ocpus, this.memoryInGBs);
+                    new PipelineShapeConfigDetails(this.ocpus, this.memoryInGBs, this.cpuBaseline);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -91,6 +117,9 @@ public final class PipelineShapeConfigDetails
             }
             if (model.wasPropertyExplicitlySet("memoryInGBs")) {
                 this.memoryInGBs(model.getMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("cpuBaseline")) {
+                this.cpuBaseline(model.getCpuBaseline());
             }
             return this;
         }
@@ -139,6 +168,82 @@ public final class PipelineShapeConfigDetails
         return memoryInGBs;
     }
 
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left
+     * blank, it will default to {@code BASELINE_1_1}. The following values are supported:
+     * BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an
+     * OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable
+     * instance.
+     */
+    public enum CpuBaseline implements com.oracle.bmc.http.internal.BmcEnum {
+        Baseline18("BASELINE_1_8"),
+        Baseline12("BASELINE_1_2"),
+        Baseline11("BASELINE_1_1"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CpuBaseline.class);
+
+        private final String value;
+        private static java.util.Map<String, CpuBaseline> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CpuBaseline v : CpuBaseline.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CpuBaseline(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CpuBaseline create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CpuBaseline', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left
+     * blank, it will default to {@code BASELINE_1_1}. The following values are supported:
+     * BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an
+     * OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable
+     * instance.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuBaseline")
+    private final CpuBaseline cpuBaseline;
+
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left
+     * blank, it will default to {@code BASELINE_1_1}. The following values are supported:
+     * BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an
+     * OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable
+     * instance.
+     *
+     * @return the value
+     */
+    public CpuBaseline getCpuBaseline() {
+        return cpuBaseline;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -156,6 +261,7 @@ public final class PipelineShapeConfigDetails
         sb.append("super=").append(super.toString());
         sb.append("ocpus=").append(String.valueOf(this.ocpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", cpuBaseline=").append(String.valueOf(this.cpuBaseline));
         sb.append(")");
         return sb.toString();
     }
@@ -172,6 +278,7 @@ public final class PipelineShapeConfigDetails
         PipelineShapeConfigDetails other = (PipelineShapeConfigDetails) o;
         return java.util.Objects.equals(this.ocpus, other.ocpus)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(this.cpuBaseline, other.cpuBaseline)
                 && super.equals(other);
     }
 
@@ -181,6 +288,7 @@ public final class PipelineShapeConfigDetails
         int result = 1;
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result = (result * PRIME) + (this.cpuBaseline == null ? 43 : this.cpuBaseline.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

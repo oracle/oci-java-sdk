@@ -8,6 +8,7 @@ package com.oracle.bmc.datascience.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public enum ModelDeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
     SingleModel("SINGLE_MODEL"),
+    ModelGroup("MODEL_GROUP"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

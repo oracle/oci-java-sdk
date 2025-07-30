@@ -105,10 +105,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/WorkRequest/CancelWorkRequest")
+                .serviceDetails("ServiceMesh", "CancelWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20220615")
@@ -138,10 +135,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ChangeAccessPolicyCompartmentResponse::builder)
                 .logger(LOG, "changeAccessPolicyCompartment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ChangeAccessPolicyCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/ChangeAccessPolicyCompartment")
+                .serviceDetails("ServiceMesh", "ChangeAccessPolicyCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeAccessPolicyCompartmentRequest::builder)
                 .basePath("/20220615")
@@ -179,10 +173,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ChangeIngressGatewayCompartmentResponse::builder)
                 .logger(LOG, "changeIngressGatewayCompartment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ChangeIngressGatewayCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/ChangeIngressGatewayCompartment")
+                .serviceDetails("ServiceMesh", "ChangeIngressGatewayCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeIngressGatewayCompartmentRequest::builder)
                 .basePath("/20220615")
@@ -222,10 +213,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ChangeIngressGatewayRouteTableCompartmentResponse::builder)
                 .logger(LOG, "changeIngressGatewayRouteTableCompartment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ChangeIngressGatewayRouteTableCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/ChangeIngressGatewayRouteTableCompartment")
+                .serviceDetails("ServiceMesh", "ChangeIngressGatewayRouteTableCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeIngressGatewayRouteTableCompartmentRequest::builder)
                 .basePath("/20220615")
@@ -261,10 +249,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ChangeMeshCompartmentResponse::builder)
                 .logger(LOG, "changeMeshCompartment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ChangeMeshCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/ChangeMeshCompartment")
+                .serviceDetails("ServiceMesh", "ChangeMeshCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeMeshCompartmentRequest::builder)
                 .basePath("/20220615")
@@ -302,10 +287,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ChangeVirtualDeploymentCompartmentResponse::builder)
                 .logger(LOG, "changeVirtualDeploymentCompartment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ChangeVirtualDeploymentCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/ChangeVirtualDeploymentCompartment")
+                .serviceDetails("ServiceMesh", "ChangeVirtualDeploymentCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVirtualDeploymentCompartmentRequest::builder)
                 .basePath("/20220615")
@@ -343,10 +325,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ChangeVirtualServiceCompartmentResponse::builder)
                 .logger(LOG, "changeVirtualServiceCompartment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ChangeVirtualServiceCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/ChangeVirtualServiceCompartment")
+                .serviceDetails("ServiceMesh", "ChangeVirtualServiceCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVirtualServiceCompartmentRequest::builder)
                 .basePath("/20220615")
@@ -386,10 +365,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ChangeVirtualServiceRouteTableCompartmentResponse::builder)
                 .logger(LOG, "changeVirtualServiceRouteTableCompartment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ChangeVirtualServiceRouteTableCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/ChangeVirtualServiceRouteTableCompartment")
+                .serviceDetails("ServiceMesh", "ChangeVirtualServiceRouteTableCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVirtualServiceRouteTableCompartmentRequest::builder)
                 .basePath("/20220615")
@@ -422,10 +398,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CreateAccessPolicyResponse::builder)
                 .logger(LOG, "createAccessPolicy")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "CreateAccessPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/CreateAccessPolicy")
+                .serviceDetails("ServiceMesh", "CreateAccessPolicy", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateAccessPolicyRequest::builder)
                 .basePath("/20220615")
@@ -459,10 +432,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CreateIngressGatewayResponse::builder)
                 .logger(LOG, "createIngressGateway")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "CreateIngressGateway",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/CreateIngressGateway")
+                .serviceDetails("ServiceMesh", "CreateIngressGateway", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateIngressGatewayRequest::builder)
                 .basePath("/20220615")
@@ -499,10 +469,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CreateIngressGatewayRouteTableResponse::builder)
                 .logger(LOG, "createIngressGatewayRouteTable")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "CreateIngressGatewayRouteTable",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/CreateIngressGatewayRouteTable")
+                .serviceDetails("ServiceMesh", "CreateIngressGatewayRouteTable", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateIngressGatewayRouteTableRequest::builder)
                 .basePath("/20220615")
@@ -536,10 +503,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CreateMeshResponse::builder)
                 .logger(LOG, "createMesh")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "CreateMesh",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/CreateMesh")
+                .serviceDetails("ServiceMesh", "CreateMesh", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMeshRequest::builder)
                 .basePath("/20220615")
@@ -572,10 +536,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CreateVirtualDeploymentResponse::builder)
                 .logger(LOG, "createVirtualDeployment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "CreateVirtualDeployment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/CreateVirtualDeployment")
+                .serviceDetails("ServiceMesh", "CreateVirtualDeployment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVirtualDeploymentRequest::builder)
                 .basePath("/20220615")
@@ -610,10 +571,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CreateVirtualServiceResponse::builder)
                 .logger(LOG, "createVirtualService")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "CreateVirtualService",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/CreateVirtualService")
+                .serviceDetails("ServiceMesh", "CreateVirtualService", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVirtualServiceRequest::builder)
                 .basePath("/20220615")
@@ -650,10 +608,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CreateVirtualServiceRouteTableResponse::builder)
                 .logger(LOG, "createVirtualServiceRouteTable")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "CreateVirtualServiceRouteTable",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/CreateVirtualServiceRouteTable")
+                .serviceDetails("ServiceMesh", "CreateVirtualServiceRouteTable", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVirtualServiceRouteTableRequest::builder)
                 .basePath("/20220615")
@@ -689,10 +644,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, DeleteAccessPolicyResponse::builder)
                 .logger(LOG, "deleteAccessPolicy")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "DeleteAccessPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/DeleteAccessPolicy")
+                .serviceDetails("ServiceMesh", "DeleteAccessPolicy", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteAccessPolicyRequest::builder)
                 .basePath("/20220615")
@@ -719,10 +671,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, DeleteIngressGatewayResponse::builder)
                 .logger(LOG, "deleteIngressGateway")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "DeleteIngressGateway",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/DeleteIngressGateway")
+                .serviceDetails("ServiceMesh", "DeleteIngressGateway", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteIngressGatewayRequest::builder)
                 .basePath("/20220615")
@@ -754,10 +703,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, DeleteIngressGatewayRouteTableResponse::builder)
                 .logger(LOG, "deleteIngressGatewayRouteTable")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "DeleteIngressGatewayRouteTable",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/DeleteIngressGatewayRouteTable")
+                .serviceDetails("ServiceMesh", "DeleteIngressGatewayRouteTable", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteIngressGatewayRouteTableRequest::builder)
                 .basePath("/20220615")
@@ -785,10 +731,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, DeleteMeshResponse::builder)
                 .logger(LOG, "deleteMesh")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "DeleteMesh",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/DeleteMesh")
+                .serviceDetails("ServiceMesh", "DeleteMesh", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMeshRequest::builder)
                 .basePath("/20220615")
@@ -816,10 +759,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, DeleteVirtualDeploymentResponse::builder)
                 .logger(LOG, "deleteVirtualDeployment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "DeleteVirtualDeployment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/DeleteVirtualDeployment")
+                .serviceDetails("ServiceMesh", "DeleteVirtualDeployment", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVirtualDeploymentRequest::builder)
                 .basePath("/20220615")
@@ -847,10 +787,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, DeleteVirtualServiceResponse::builder)
                 .logger(LOG, "deleteVirtualService")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "DeleteVirtualService",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/DeleteVirtualService")
+                .serviceDetails("ServiceMesh", "DeleteVirtualService", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVirtualServiceRequest::builder)
                 .basePath("/20220615")
@@ -882,10 +819,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, DeleteVirtualServiceRouteTableResponse::builder)
                 .logger(LOG, "deleteVirtualServiceRouteTable")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "DeleteVirtualServiceRouteTable",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/DeleteVirtualServiceRouteTable")
+                .serviceDetails("ServiceMesh", "DeleteVirtualServiceRouteTable", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVirtualServiceRouteTableRequest::builder)
                 .basePath("/20220615")
@@ -914,10 +848,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetAccessPolicyResponse::builder)
                 .logger(LOG, "getAccessPolicy")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "GetAccessPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/GetAccessPolicy")
+                .serviceDetails("ServiceMesh", "GetAccessPolicy", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAccessPolicyRequest::builder)
                 .basePath("/20220615")
@@ -945,10 +876,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetIngressGatewayResponse::builder)
                 .logger(LOG, "getIngressGateway")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "GetIngressGateway",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/GetIngressGateway")
+                .serviceDetails("ServiceMesh", "GetIngressGateway", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIngressGatewayRequest::builder)
                 .basePath("/20220615")
@@ -980,10 +908,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetIngressGatewayRouteTableResponse::builder)
                 .logger(LOG, "getIngressGatewayRouteTable")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "GetIngressGatewayRouteTable",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/GetIngressGatewayRouteTable")
+                .serviceDetails("ServiceMesh", "GetIngressGatewayRouteTable", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIngressGatewayRouteTableRequest::builder)
                 .basePath("/20220615")
@@ -1010,10 +935,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetMeshResponse::builder)
                 .logger(LOG, "getMesh")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "GetMesh",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/GetMesh")
+                .serviceDetails("ServiceMesh", "GetMesh", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMeshRequest::builder)
                 .basePath("/20220615")
@@ -1037,10 +959,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetProxyDetailsResponse::builder)
                 .logger(LOG, "getProxyDetails")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "GetProxyDetails",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/ProxyDetails/GetProxyDetails")
+                .serviceDetails("ServiceMesh", "GetProxyDetails", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetProxyDetailsRequest::builder)
                 .basePath("/20220615")
@@ -1067,10 +986,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetVirtualDeploymentResponse::builder)
                 .logger(LOG, "getVirtualDeployment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "GetVirtualDeployment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/GetVirtualDeployment")
+                .serviceDetails("ServiceMesh", "GetVirtualDeployment", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVirtualDeploymentRequest::builder)
                 .basePath("/20220615")
@@ -1098,10 +1014,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetVirtualServiceResponse::builder)
                 .logger(LOG, "getVirtualService")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "GetVirtualService",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/GetVirtualService")
+                .serviceDetails("ServiceMesh", "GetVirtualService", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVirtualServiceRequest::builder)
                 .basePath("/20220615")
@@ -1133,10 +1046,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetVirtualServiceRouteTableResponse::builder)
                 .logger(LOG, "getVirtualServiceRouteTable")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "GetVirtualServiceRouteTable",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/GetVirtualServiceRouteTable")
+                .serviceDetails("ServiceMesh", "GetVirtualServiceRouteTable", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVirtualServiceRouteTableRequest::builder)
                 .basePath("/20220615")
@@ -1165,10 +1075,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/WorkRequest/GetWorkRequest")
+                .serviceDetails("ServiceMesh", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20220615")
@@ -1197,10 +1104,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListAccessPoliciesResponse::builder)
                 .logger(LOG, "listAccessPolicies")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ListAccessPolicies",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/ListAccessPolicies")
+                .serviceDetails("ServiceMesh", "ListAccessPolicies", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAccessPoliciesRequest::builder)
                 .basePath("/20220615")
@@ -1238,10 +1142,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListIngressGatewayRouteTablesResponse::builder)
                 .logger(LOG, "listIngressGatewayRouteTables")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ListIngressGatewayRouteTables",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/ListIngressGatewayRouteTables")
+                .serviceDetails("ServiceMesh", "ListIngressGatewayRouteTables", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIngressGatewayRouteTablesRequest::builder)
                 .basePath("/20220615")
@@ -1279,10 +1180,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListIngressGatewaysResponse::builder)
                 .logger(LOG, "listIngressGateways")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ListIngressGateways",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/ListIngressGateways")
+                .serviceDetails("ServiceMesh", "ListIngressGateways", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIngressGatewaysRequest::builder)
                 .basePath("/20220615")
@@ -1317,10 +1215,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListMeshesResponse::builder)
                 .logger(LOG, "listMeshes")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ListMeshes",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/ListMeshes")
+                .serviceDetails("ServiceMesh", "ListMeshes", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMeshesRequest::builder)
                 .basePath("/20220615")
@@ -1355,10 +1250,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListVirtualDeploymentsResponse::builder)
                 .logger(LOG, "listVirtualDeployments")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ListVirtualDeployments",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/ListVirtualDeployments")
+                .serviceDetails("ServiceMesh", "ListVirtualDeployments", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVirtualDeploymentsRequest::builder)
                 .basePath("/20220615")
@@ -1396,10 +1288,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListVirtualServiceRouteTablesResponse::builder)
                 .logger(LOG, "listVirtualServiceRouteTables")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ListVirtualServiceRouteTables",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/ListVirtualServiceRouteTables")
+                .serviceDetails("ServiceMesh", "ListVirtualServiceRouteTables", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVirtualServiceRouteTablesRequest::builder)
                 .basePath("/20220615")
@@ -1437,10 +1326,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListVirtualServicesResponse::builder)
                 .logger(LOG, "listVirtualServices")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ListVirtualServices",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/ListVirtualServices")
+                .serviceDetails("ServiceMesh", "ListVirtualServices", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVirtualServicesRequest::builder)
                 .basePath("/20220615")
@@ -1477,10 +1363,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/WorkRequest/ListWorkRequestErrors")
+                .serviceDetails("ServiceMesh", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20220615")
@@ -1514,10 +1397,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/WorkRequest/ListWorkRequestLogs")
+                .serviceDetails("ServiceMesh", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20220615")
@@ -1550,10 +1430,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/WorkRequest/ListWorkRequests")
+                .serviceDetails("ServiceMesh", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20220615")
@@ -1591,10 +1468,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, UpdateAccessPolicyResponse::builder)
                 .logger(LOG, "updateAccessPolicy")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "UpdateAccessPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/UpdateAccessPolicy")
+                .serviceDetails("ServiceMesh", "UpdateAccessPolicy", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateAccessPolicyRequest::builder)
                 .basePath("/20220615")
@@ -1626,10 +1500,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, UpdateIngressGatewayResponse::builder)
                 .logger(LOG, "updateIngressGateway")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "UpdateIngressGateway",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/UpdateIngressGateway")
+                .serviceDetails("ServiceMesh", "UpdateIngressGateway", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateIngressGatewayRequest::builder)
                 .basePath("/20220615")
@@ -1666,10 +1537,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, UpdateIngressGatewayRouteTableResponse::builder)
                 .logger(LOG, "updateIngressGatewayRouteTable")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "UpdateIngressGatewayRouteTable",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/UpdateIngressGatewayRouteTable")
+                .serviceDetails("ServiceMesh", "UpdateIngressGatewayRouteTable", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateIngressGatewayRouteTableRequest::builder)
                 .basePath("/20220615")
@@ -1700,10 +1568,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, UpdateMeshResponse::builder)
                 .logger(LOG, "updateMesh")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "UpdateMesh",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/UpdateMesh")
+                .serviceDetails("ServiceMesh", "UpdateMesh", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMeshRequest::builder)
                 .basePath("/20220615")
@@ -1736,10 +1601,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, UpdateVirtualDeploymentResponse::builder)
                 .logger(LOG, "updateVirtualDeployment")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "UpdateVirtualDeployment",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/UpdateVirtualDeployment")
+                .serviceDetails("ServiceMesh", "UpdateVirtualDeployment", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVirtualDeploymentRequest::builder)
                 .basePath("/20220615")
@@ -1772,10 +1634,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, UpdateVirtualServiceResponse::builder)
                 .logger(LOG, "updateVirtualService")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "UpdateVirtualService",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/UpdateVirtualService")
+                .serviceDetails("ServiceMesh", "UpdateVirtualService", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVirtualServiceRequest::builder)
                 .basePath("/20220615")
@@ -1812,10 +1671,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, UpdateVirtualServiceRouteTableResponse::builder)
                 .logger(LOG, "updateVirtualServiceRouteTable")
-                .serviceDetails(
-                        "ServiceMesh",
-                        "UpdateVirtualServiceRouteTable",
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/UpdateVirtualServiceRouteTable")
+                .serviceDetails("ServiceMesh", "UpdateVirtualServiceRouteTable", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVirtualServiceRouteTableRequest::builder)
                 .basePath("/20220615")

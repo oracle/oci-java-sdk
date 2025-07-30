@@ -44,6 +44,13 @@ public class DeleteSubscriberRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -101,6 +108,20 @@ public class DeleteSubscriberRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -134,6 +155,7 @@ public class DeleteSubscriberRequest extends com.oracle.bmc.requests.BmcRequest<
             subscriberId(o.getSubscriberId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -171,8 +193,9 @@ public class DeleteSubscriberRequest extends com.oracle.bmc.requests.BmcRequest<
             request.subscriberId = subscriberId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new DeleteSubscriberRequest(subscriberId, ifMatch, opcRequestId);
+            // new DeleteSubscriberRequest(subscriberId, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
@@ -182,7 +205,11 @@ public class DeleteSubscriberRequest extends com.oracle.bmc.requests.BmcRequest<
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().subscriberId(subscriberId).ifMatch(ifMatch).opcRequestId(opcRequestId);
+        return new Builder()
+                .subscriberId(subscriberId)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -202,6 +229,7 @@ public class DeleteSubscriberRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",subscriberId=").append(String.valueOf(this.subscriberId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -219,7 +247,8 @@ public class DeleteSubscriberRequest extends com.oracle.bmc.requests.BmcRequest<
         return super.equals(o)
                 && java.util.Objects.equals(this.subscriberId, other.subscriberId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -229,6 +258,9 @@ public class DeleteSubscriberRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.subscriberId == null ? 43 : this.subscriberId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

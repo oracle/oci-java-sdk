@@ -34,10 +34,16 @@ public final class QueryParameterValidationRequestPolicy
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /** The List of Query Parameters */
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<QueryParameterValidationItem> parameters;
 
+        /**
+         * The List of Query Parameters
+         *
+         * @param parameters the value to set
+         * @return this builder
+         */
         public Builder parameters(java.util.List<QueryParameterValidationItem> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -110,9 +116,15 @@ public final class QueryParameterValidationRequestPolicy
         return new Builder().copy(this);
     }
 
+    /** The List of Query Parameters */
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<QueryParameterValidationItem> parameters;
 
+    /**
+     * The List of Query Parameters
+     *
+     * @return the value
+     */
     public java.util.List<QueryParameterValidationItem> getParameters() {
         return parameters;
     }

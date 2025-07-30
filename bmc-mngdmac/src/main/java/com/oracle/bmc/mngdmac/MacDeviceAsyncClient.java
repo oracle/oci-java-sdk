@@ -106,7 +106,10 @@ public class MacDeviceAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
 
         return clientCall(request, GetMacDeviceResponse::builder)
                 .logger(LOG, "getMacDevice")
-                .serviceDetails("MacDevice", "GetMacDevice", "")
+                .serviceDetails(
+                        "MacDevice",
+                        "GetMacDevice",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacDevice/GetMacDevice")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMacDeviceRequest::builder)
                 .basePath("/20250320")
@@ -136,7 +139,10 @@ public class MacDeviceAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
 
         return clientCall(request, ListMacDevicesResponse::builder)
                 .logger(LOG, "listMacDevices")
-                .serviceDetails("MacDevice", "ListMacDevices", "")
+                .serviceDetails(
+                        "MacDevice",
+                        "ListMacDevices",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacDeviceCollection/ListMacDevices")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMacDevicesRequest::builder)
                 .basePath("/20250320")
@@ -176,7 +182,10 @@ public class MacDeviceAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
 
         return clientCall(request, TerminateMacDeviceResponse::builder)
                 .logger(LOG, "terminateMacDevice")
-                .serviceDetails("MacDevice", "TerminateMacDevice", "")
+                .serviceDetails(
+                        "MacDevice",
+                        "TerminateMacDevice",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacDevice/TerminateMacDevice")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(TerminateMacDeviceRequest::builder)
                 .basePath("/20250320")

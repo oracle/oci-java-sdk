@@ -30,6 +30,7 @@ public final class UpdateSecretDetails
         "freeformTags",
         "metadata",
         "secretContent",
+        "replicationConfig",
         "rotationConfig",
         "secretRules",
         "secretGenerationContext",
@@ -42,6 +43,7 @@ public final class UpdateSecretDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, Object> metadata,
             SecretContentDetails secretContent,
+            ReplicationConfig replicationConfig,
             RotationConfig rotationConfig,
             java.util.List<SecretRule> secretRules,
             SecretGenerationContext secretGenerationContext,
@@ -53,6 +55,7 @@ public final class UpdateSecretDetails
         this.freeformTags = freeformTags;
         this.metadata = metadata;
         this.secretContent = secretContent;
+        this.replicationConfig = replicationConfig;
         this.rotationConfig = rotationConfig;
         this.secretRules = secretRules;
         this.secretGenerationContext = secretGenerationContext;
@@ -177,6 +180,15 @@ public final class UpdateSecretDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+        private ReplicationConfig replicationConfig;
+
+        public Builder replicationConfig(ReplicationConfig replicationConfig) {
+            this.replicationConfig = replicationConfig;
+            this.__explicitlySet__.add("replicationConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
         private RotationConfig rotationConfig;
 
@@ -241,6 +253,7 @@ public final class UpdateSecretDetails
                             this.freeformTags,
                             this.metadata,
                             this.secretContent,
+                            this.replicationConfig,
                             this.rotationConfig,
                             this.secretRules,
                             this.secretGenerationContext,
@@ -270,6 +283,9 @@ public final class UpdateSecretDetails
             }
             if (model.wasPropertyExplicitlySet("secretContent")) {
                 this.secretContent(model.getSecretContent());
+            }
+            if (model.wasPropertyExplicitlySet("replicationConfig")) {
+                this.replicationConfig(model.getReplicationConfig());
             }
             if (model.wasPropertyExplicitlySet("rotationConfig")) {
                 this.rotationConfig(model.getRotationConfig());
@@ -398,6 +414,13 @@ public final class UpdateSecretDetails
         return secretContent;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+    private final ReplicationConfig replicationConfig;
+
+    public ReplicationConfig getReplicationConfig() {
+        return replicationConfig;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
     private final RotationConfig rotationConfig;
 
@@ -463,6 +486,7 @@ public final class UpdateSecretDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", secretContent=").append(String.valueOf(this.secretContent));
+        sb.append(", replicationConfig=").append(String.valueOf(this.replicationConfig));
         sb.append(", rotationConfig=").append(String.valueOf(this.rotationConfig));
         sb.append(", secretRules=").append(String.valueOf(this.secretRules));
         sb.append(", secretGenerationContext=")
@@ -488,6 +512,7 @@ public final class UpdateSecretDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.secretContent, other.secretContent)
+                && java.util.Objects.equals(this.replicationConfig, other.replicationConfig)
                 && java.util.Objects.equals(this.rotationConfig, other.rotationConfig)
                 && java.util.Objects.equals(this.secretRules, other.secretRules)
                 && java.util.Objects.equals(
@@ -512,6 +537,9 @@ public final class UpdateSecretDetails
         result =
                 (result * PRIME)
                         + (this.secretContent == null ? 43 : this.secretContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationConfig == null ? 43 : this.replicationConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.rotationConfig == null ? 43 : this.rotationConfig.hashCode());

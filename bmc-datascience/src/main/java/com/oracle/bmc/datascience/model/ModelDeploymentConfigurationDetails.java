@@ -24,7 +24,10 @@ package com.oracle.bmc.datascience.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = SingleModelDeploymentConfigurationDetails.class,
-            name = "SINGLE_MODEL")
+            name = "SINGLE_MODEL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ModelGroupDeploymentConfigurationDetails.class,
+            name = "MODEL_GROUP")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

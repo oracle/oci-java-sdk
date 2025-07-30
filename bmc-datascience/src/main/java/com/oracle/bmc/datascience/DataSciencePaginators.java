@@ -1395,6 +1395,136 @@ public class DataSciencePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listModelDeploymentModelStates operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListModelDeploymentModelStatesResponse>
+            listModelDeploymentModelStatesResponseIterator(
+                    final ListModelDeploymentModelStatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModelDeploymentModelStatesRequest.Builder,
+                ListModelDeploymentModelStatesRequest,
+                ListModelDeploymentModelStatesResponse>(
+                new java.util.function.Supplier<ListModelDeploymentModelStatesRequest.Builder>() {
+                    @Override
+                    public ListModelDeploymentModelStatesRequest.Builder get() {
+                        return ListModelDeploymentModelStatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelDeploymentModelStatesResponse, String>() {
+                    @Override
+                    public String apply(ListModelDeploymentModelStatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelDeploymentModelStatesRequest.Builder>,
+                        ListModelDeploymentModelStatesRequest>() {
+                    @Override
+                    public ListModelDeploymentModelStatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelDeploymentModelStatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelDeploymentModelStatesRequest,
+                        ListModelDeploymentModelStatesResponse>() {
+                    @Override
+                    public ListModelDeploymentModelStatesResponse apply(
+                            ListModelDeploymentModelStatesRequest request) {
+                        return client.listModelDeploymentModelStates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datascience.model.ModelDeploymentModelStateSummary} objects contained in
+     * responses from the listModelDeploymentModelStates operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datascience.model.ModelDeploymentModelStateSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ModelDeploymentModelStateSummary>
+            listModelDeploymentModelStatesRecordIterator(
+                    final ListModelDeploymentModelStatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModelDeploymentModelStatesRequest.Builder,
+                ListModelDeploymentModelStatesRequest,
+                ListModelDeploymentModelStatesResponse,
+                com.oracle.bmc.datascience.model.ModelDeploymentModelStateSummary>(
+                new java.util.function.Supplier<ListModelDeploymentModelStatesRequest.Builder>() {
+                    @Override
+                    public ListModelDeploymentModelStatesRequest.Builder get() {
+                        return ListModelDeploymentModelStatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelDeploymentModelStatesResponse, String>() {
+                    @Override
+                    public String apply(ListModelDeploymentModelStatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelDeploymentModelStatesRequest.Builder>,
+                        ListModelDeploymentModelStatesRequest>() {
+                    @Override
+                    public ListModelDeploymentModelStatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelDeploymentModelStatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelDeploymentModelStatesRequest,
+                        ListModelDeploymentModelStatesResponse>() {
+                    @Override
+                    public ListModelDeploymentModelStatesResponse apply(
+                            ListModelDeploymentModelStatesRequest request) {
+                        return client.listModelDeploymentModelStates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelDeploymentModelStatesResponse,
+                        java.util.List<
+                                com.oracle.bmc.datascience.model
+                                        .ModelDeploymentModelStateSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datascience.model
+                                            .ModelDeploymentModelStateSummary>
+                            apply(ListModelDeploymentModelStatesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listModelDeploymentShapes operation. This iterable will fetch more data from the server as
      * needed.
      *
@@ -1632,6 +1762,369 @@ public class DataSciencePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentSummary>
                             apply(ListModelDeploymentsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listModelGroupModels operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListModelGroupModelsResponse> listModelGroupModelsResponseIterator(
+            final ListModelGroupModelsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModelGroupModelsRequest.Builder,
+                ListModelGroupModelsRequest,
+                ListModelGroupModelsResponse>(
+                new java.util.function.Supplier<ListModelGroupModelsRequest.Builder>() {
+                    @Override
+                    public ListModelGroupModelsRequest.Builder get() {
+                        return ListModelGroupModelsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelGroupModelsResponse, String>() {
+                    @Override
+                    public String apply(ListModelGroupModelsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelGroupModelsRequest.Builder>,
+                        ListModelGroupModelsRequest>() {
+                    @Override
+                    public ListModelGroupModelsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelGroupModelsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelGroupModelsRequest, ListModelGroupModelsResponse>() {
+                    @Override
+                    public ListModelGroupModelsResponse apply(ListModelGroupModelsRequest request) {
+                        return client.listModelGroupModels(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datascience.model.ModelGroupModelSummary} objects contained in responses from
+     * the listModelGroupModels operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datascience.model.ModelGroupModelSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ModelGroupModelSummary>
+            listModelGroupModelsRecordIterator(final ListModelGroupModelsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModelGroupModelsRequest.Builder,
+                ListModelGroupModelsRequest,
+                ListModelGroupModelsResponse,
+                com.oracle.bmc.datascience.model.ModelGroupModelSummary>(
+                new java.util.function.Supplier<ListModelGroupModelsRequest.Builder>() {
+                    @Override
+                    public ListModelGroupModelsRequest.Builder get() {
+                        return ListModelGroupModelsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelGroupModelsResponse, String>() {
+                    @Override
+                    public String apply(ListModelGroupModelsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelGroupModelsRequest.Builder>,
+                        ListModelGroupModelsRequest>() {
+                    @Override
+                    public ListModelGroupModelsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelGroupModelsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelGroupModelsRequest, ListModelGroupModelsResponse>() {
+                    @Override
+                    public ListModelGroupModelsResponse apply(ListModelGroupModelsRequest request) {
+                        return client.listModelGroupModels(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelGroupModelsResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.ModelGroupModelSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.ModelGroupModelSummary>
+                            apply(ListModelGroupModelsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listModelGroupVersionHistories operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListModelGroupVersionHistoriesResponse>
+            listModelGroupVersionHistoriesResponseIterator(
+                    final ListModelGroupVersionHistoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModelGroupVersionHistoriesRequest.Builder,
+                ListModelGroupVersionHistoriesRequest,
+                ListModelGroupVersionHistoriesResponse>(
+                new java.util.function.Supplier<ListModelGroupVersionHistoriesRequest.Builder>() {
+                    @Override
+                    public ListModelGroupVersionHistoriesRequest.Builder get() {
+                        return ListModelGroupVersionHistoriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelGroupVersionHistoriesResponse, String>() {
+                    @Override
+                    public String apply(ListModelGroupVersionHistoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelGroupVersionHistoriesRequest.Builder>,
+                        ListModelGroupVersionHistoriesRequest>() {
+                    @Override
+                    public ListModelGroupVersionHistoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelGroupVersionHistoriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelGroupVersionHistoriesRequest,
+                        ListModelGroupVersionHistoriesResponse>() {
+                    @Override
+                    public ListModelGroupVersionHistoriesResponse apply(
+                            ListModelGroupVersionHistoriesRequest request) {
+                        return client.listModelGroupVersionHistories(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datascience.model.ModelGroupVersionHistorySummary} objects contained in
+     * responses from the listModelGroupVersionHistories operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datascience.model.ModelGroupVersionHistorySummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ModelGroupVersionHistorySummary>
+            listModelGroupVersionHistoriesRecordIterator(
+                    final ListModelGroupVersionHistoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModelGroupVersionHistoriesRequest.Builder,
+                ListModelGroupVersionHistoriesRequest,
+                ListModelGroupVersionHistoriesResponse,
+                com.oracle.bmc.datascience.model.ModelGroupVersionHistorySummary>(
+                new java.util.function.Supplier<ListModelGroupVersionHistoriesRequest.Builder>() {
+                    @Override
+                    public ListModelGroupVersionHistoriesRequest.Builder get() {
+                        return ListModelGroupVersionHistoriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelGroupVersionHistoriesResponse, String>() {
+                    @Override
+                    public String apply(ListModelGroupVersionHistoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelGroupVersionHistoriesRequest.Builder>,
+                        ListModelGroupVersionHistoriesRequest>() {
+                    @Override
+                    public ListModelGroupVersionHistoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelGroupVersionHistoriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelGroupVersionHistoriesRequest,
+                        ListModelGroupVersionHistoriesResponse>() {
+                    @Override
+                    public ListModelGroupVersionHistoriesResponse apply(
+                            ListModelGroupVersionHistoriesRequest request) {
+                        return client.listModelGroupVersionHistories(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelGroupVersionHistoriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.datascience.model
+                                        .ModelGroupVersionHistorySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datascience.model
+                                            .ModelGroupVersionHistorySummary>
+                            apply(ListModelGroupVersionHistoriesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listModelGroups operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListModelGroupsResponse> listModelGroupsResponseIterator(
+            final ListModelGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModelGroupsRequest.Builder, ListModelGroupsRequest, ListModelGroupsResponse>(
+                new java.util.function.Supplier<ListModelGroupsRequest.Builder>() {
+                    @Override
+                    public ListModelGroupsRequest.Builder get() {
+                        return ListModelGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListModelGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelGroupsRequest.Builder>,
+                        ListModelGroupsRequest>() {
+                    @Override
+                    public ListModelGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListModelGroupsRequest, ListModelGroupsResponse>() {
+                    @Override
+                    public ListModelGroupsResponse apply(ListModelGroupsRequest request) {
+                        return client.listModelGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datascience.model.ModelGroupSummary} objects contained in responses from the
+     * listModelGroups operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datascience.model.ModelGroupSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ModelGroupSummary>
+            listModelGroupsRecordIterator(final ListModelGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModelGroupsRequest.Builder,
+                ListModelGroupsRequest,
+                ListModelGroupsResponse,
+                com.oracle.bmc.datascience.model.ModelGroupSummary>(
+                new java.util.function.Supplier<ListModelGroupsRequest.Builder>() {
+                    @Override
+                    public ListModelGroupsRequest.Builder get() {
+                        return ListModelGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListModelGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelGroupsRequest.Builder>,
+                        ListModelGroupsRequest>() {
+                    @Override
+                    public ListModelGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListModelGroupsRequest, ListModelGroupsResponse>() {
+                    @Override
+                    public ListModelGroupsResponse apply(ListModelGroupsRequest request) {
+                        return client.listModelGroups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelGroupsResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.ModelGroupSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.ModelGroupSummary> apply(
+                            ListModelGroupsResponse response) {
                         return response.getItems();
                     }
                 });

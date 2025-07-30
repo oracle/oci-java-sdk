@@ -112,7 +112,10 @@ public class PrivilegedApiRequestsAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ApprovePrivilegedApiRequestResponse::builder)
                 .logger(LOG, "approvePrivilegedApiRequest")
-                .serviceDetails("PrivilegedApiRequests", "ApprovePrivilegedApiRequest", "")
+                .serviceDetails(
+                        "PrivilegedApiRequests",
+                        "ApprovePrivilegedApiRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/ApprovePrivilegedApiRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ApprovePrivilegedApiRequestRequest::builder)
                 .basePath("/20241130")
@@ -148,7 +151,10 @@ public class PrivilegedApiRequestsAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ClosePrivilegedApiRequestResponse::builder)
                 .logger(LOG, "closePrivilegedApiRequest")
-                .serviceDetails("PrivilegedApiRequests", "ClosePrivilegedApiRequest", "")
+                .serviceDetails(
+                        "PrivilegedApiRequests",
+                        "ClosePrivilegedApiRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/ClosePrivilegedApiRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ClosePrivilegedApiRequestRequest::builder)
                 .basePath("/20241130")
@@ -183,7 +189,10 @@ public class PrivilegedApiRequestsAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, CreatePrivilegedApiRequestResponse::builder)
                 .logger(LOG, "createPrivilegedApiRequest")
-                .serviceDetails("PrivilegedApiRequests", "CreatePrivilegedApiRequest", "")
+                .serviceDetails(
+                        "PrivilegedApiRequests",
+                        "CreatePrivilegedApiRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/CreatePrivilegedApiRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePrivilegedApiRequestRequest::builder)
                 .basePath("/20241130")
@@ -222,7 +231,10 @@ public class PrivilegedApiRequestsAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetPrivilegedApiRequestResponse::builder)
                 .logger(LOG, "getPrivilegedApiRequest")
-                .serviceDetails("PrivilegedApiRequests", "GetPrivilegedApiRequest", "")
+                .serviceDetails(
+                        "PrivilegedApiRequests",
+                        "GetPrivilegedApiRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/GetPrivilegedApiRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPrivilegedApiRequestRequest::builder)
                 .basePath("/20241130")
@@ -248,7 +260,10 @@ public class PrivilegedApiRequestsAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListPrivilegedApiRequestsResponse::builder)
                 .logger(LOG, "listPrivilegedApiRequests")
-                .serviceDetails("PrivilegedApiRequests", "ListPrivilegedApiRequests", "")
+                .serviceDetails(
+                        "PrivilegedApiRequests",
+                        "ListPrivilegedApiRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequestCollection/ListPrivilegedApiRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPrivilegedApiRequestsRequest::builder)
                 .basePath("/20241130")
@@ -293,7 +308,10 @@ public class PrivilegedApiRequestsAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, RejectPrivilegedApiRequestResponse::builder)
                 .logger(LOG, "rejectPrivilegedApiRequest")
-                .serviceDetails("PrivilegedApiRequests", "RejectPrivilegedApiRequest", "")
+                .serviceDetails(
+                        "PrivilegedApiRequests",
+                        "RejectPrivilegedApiRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/RejectPrivilegedApiRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RejectPrivilegedApiRequestRequest::builder)
                 .basePath("/20241130")
@@ -331,7 +349,10 @@ public class PrivilegedApiRequestsAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, RevokePrivilegedApiRequestResponse::builder)
                 .logger(LOG, "revokePrivilegedApiRequest")
-                .serviceDetails("PrivilegedApiRequests", "RevokePrivilegedApiRequest", "")
+                .serviceDetails(
+                        "PrivilegedApiRequests",
+                        "RevokePrivilegedApiRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/RevokePrivilegedApiRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RevokePrivilegedApiRequestRequest::builder)
                 .basePath("/20241130")

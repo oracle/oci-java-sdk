@@ -139,7 +139,7 @@ public class OracleDbAzureVaultAssociationClient extends com.oracle.bmc.http.int
                 .serviceDetails(
                         "OracleDbAzureVaultAssociation",
                         "CascadingDeleteOracleDbAzureVaultAssociation",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/CascadingDeleteOracleDbAzureVaultAssociation")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CascadingDeleteOracleDbAzureVaultAssociationRequest::builder)
                 .basePath("/20240501")
@@ -179,7 +179,7 @@ public class OracleDbAzureVaultAssociationClient extends com.oracle.bmc.http.int
                 .serviceDetails(
                         "OracleDbAzureVaultAssociation",
                         "ChangeOracleDbAzureVaultAssociationCompartment",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/ChangeOracleDbAzureVaultAssociationCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOracleDbAzureVaultAssociationCompartmentRequest::builder)
                 .basePath("/20240501")
@@ -214,7 +214,9 @@ public class OracleDbAzureVaultAssociationClient extends com.oracle.bmc.http.int
         return clientCall(request, CreateOracleDbAzureVaultAssociationResponse::builder)
                 .logger(LOG, "createOracleDbAzureVaultAssociation")
                 .serviceDetails(
-                        "OracleDbAzureVaultAssociation", "CreateOracleDbAzureVaultAssociation", "")
+                        "OracleDbAzureVaultAssociation",
+                        "CreateOracleDbAzureVaultAssociation",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/CreateOracleDbAzureVaultAssociation")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOracleDbAzureVaultAssociationRequest::builder)
                 .basePath("/20240501")
@@ -256,7 +258,9 @@ public class OracleDbAzureVaultAssociationClient extends com.oracle.bmc.http.int
         return clientCall(request, DeleteOracleDbAzureVaultAssociationResponse::builder)
                 .logger(LOG, "deleteOracleDbAzureVaultAssociation")
                 .serviceDetails(
-                        "OracleDbAzureVaultAssociation", "DeleteOracleDbAzureVaultAssociation", "")
+                        "OracleDbAzureVaultAssociation",
+                        "DeleteOracleDbAzureVaultAssociation",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/DeleteOracleDbAzureVaultAssociation")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOracleDbAzureVaultAssociationRequest::builder)
                 .basePath("/20240501")
@@ -286,7 +290,9 @@ public class OracleDbAzureVaultAssociationClient extends com.oracle.bmc.http.int
         return clientCall(request, GetOracleDbAzureVaultAssociationResponse::builder)
                 .logger(LOG, "getOracleDbAzureVaultAssociation")
                 .serviceDetails(
-                        "OracleDbAzureVaultAssociation", "GetOracleDbAzureVaultAssociation", "")
+                        "OracleDbAzureVaultAssociation",
+                        "GetOracleDbAzureVaultAssociation",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/GetOracleDbAzureVaultAssociation")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOracleDbAzureVaultAssociationRequest::builder)
                 .basePath("/20240501")
@@ -318,7 +324,9 @@ public class OracleDbAzureVaultAssociationClient extends com.oracle.bmc.http.int
         return clientCall(request, ListOracleDbAzureVaultAssociationsResponse::builder)
                 .logger(LOG, "listOracleDbAzureVaultAssociations")
                 .serviceDetails(
-                        "OracleDbAzureVaultAssociation", "ListOracleDbAzureVaultAssociations", "")
+                        "OracleDbAzureVaultAssociation",
+                        "ListOracleDbAzureVaultAssociations",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/ListOracleDbAzureVaultAssociations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOracleDbAzureVaultAssociationsRequest::builder)
                 .basePath("/20240501")
@@ -366,7 +374,9 @@ public class OracleDbAzureVaultAssociationClient extends com.oracle.bmc.http.int
         return clientCall(request, UpdateOracleDbAzureVaultAssociationResponse::builder)
                 .logger(LOG, "updateOracleDbAzureVaultAssociation")
                 .serviceDetails(
-                        "OracleDbAzureVaultAssociation", "UpdateOracleDbAzureVaultAssociation", "")
+                        "OracleDbAzureVaultAssociation",
+                        "UpdateOracleDbAzureVaultAssociation",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/UpdateOracleDbAzureVaultAssociation")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOracleDbAzureVaultAssociationRequest::builder)
                 .basePath("/20240501")

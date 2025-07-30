@@ -67,6 +67,52 @@ public interface ApiGateway extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a Api resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/AddApiLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddApiLock API.
+     */
+    AddApiLockResponse addApiLock(AddApiLockRequest request);
+
+    /**
+     * Adds a lock to a Certificate resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/AddCertificateLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddCertificateLock
+     *     API.
+     */
+    AddCertificateLockResponse addCertificateLock(AddCertificateLockRequest request);
+
+    /**
+     * Adds a lock to a Sdk resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/AddSdkLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddSdkLock API.
+     */
+    AddSdkLockResponse addSdkLock(AddSdkLockRequest request);
+
+    /**
      * Changes the API compartment.
      *
      * @param request The request object containing the details to send
@@ -345,6 +391,52 @@ public interface ApiGateway extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSdks API.
      */
     ListSdksResponse listSdks(ListSdksRequest request);
+
+    /**
+     * Removes a lock from a Api resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/RemoveApiLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveApiLock API.
+     */
+    RemoveApiLockResponse removeApiLock(RemoveApiLockRequest request);
+
+    /**
+     * Removes a lock from a Certificate resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/RemoveCertificateLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveCertificateLock API.
+     */
+    RemoveCertificateLockResponse removeCertificateLock(RemoveCertificateLockRequest request);
+
+    /**
+     * Removes a lock from a Sdk resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/RemoveSdkLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveSdkLock API.
+     */
+    RemoveSdkLockResponse removeSdkLock(RemoveSdkLockRequest request);
 
     /**
      * Updates the API with the given identifier.

@@ -39,7 +39,7 @@ public final class VoiceSummary extends com.oracle.bmc.http.client.internal.Expl
             String description,
             Gender gender,
             java.util.List<String> supportedModels,
-            LanguageCode languageCode,
+            String languageCode,
             String languageDescription,
             Integer sampleRateInHertz,
             Integer wordsPerMinute,
@@ -139,7 +139,7 @@ public final class VoiceSummary extends com.oracle.bmc.http.client.internal.Expl
          * to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
-        private LanguageCode languageCode;
+        private String languageCode;
 
         /**
          * An abbreviated notation of region to which the language and accent of the speaker belongs
@@ -148,7 +148,7 @@ public final class VoiceSummary extends com.oracle.bmc.http.client.internal.Expl
          * @param languageCode the value to set
          * @return this builder
          */
-        public Builder languageCode(LanguageCode languageCode) {
+        public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
@@ -398,62 +398,15 @@ public final class VoiceSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * An abbreviated notation of region to which the language and accent of the speaker belongs to.
      */
-    public enum LanguageCode implements com.oracle.bmc.http.internal.BmcEnum {
-        EnUs("en-US"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(LanguageCode.class);
-
-        private final String value;
-        private static java.util.Map<String, LanguageCode> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (LanguageCode v : LanguageCode.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        LanguageCode(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static LanguageCode create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LanguageCode', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * An abbreviated notation of region to which the language and accent of the speaker belongs to.
-     */
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
-    private final LanguageCode languageCode;
+    private final String languageCode;
 
     /**
      * An abbreviated notation of region to which the language and accent of the speaker belongs to.
      *
      * @return the value
      */
-    public LanguageCode getLanguageCode() {
+    public String getLanguageCode() {
         return languageCode;
     }
 

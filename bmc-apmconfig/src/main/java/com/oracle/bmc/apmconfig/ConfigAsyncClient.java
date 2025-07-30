@@ -266,6 +266,41 @@ public class ConfigAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetMatchAgentsWithAttributeKeyResponse>
+            getMatchAgentsWithAttributeKey(
+                    GetMatchAgentsWithAttributeKeyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetMatchAgentsWithAttributeKeyRequest,
+                                    GetMatchAgentsWithAttributeKeyResponse>
+                            handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        return clientCall(request, GetMatchAgentsWithAttributeKeyResponse::builder)
+                .logger(LOG, "getMatchAgentsWithAttributeKey")
+                .serviceDetails(
+                        "Config",
+                        "GetMatchAgentsWithAttributeKey",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MatchAgentsWithAttributeKey/GetMatchAgentsWithAttributeKey")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMatchAgentsWithAttributeKeyRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("matchAgentsWithAttributeKey")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.MatchAgentsWithAttributeKey.class,
+                        GetMatchAgentsWithAttributeKeyResponse.Builder::matchAgentsWithAttributeKey)
+                .handleResponseHeaderString(
+                        "etag", GetMatchAgentsWithAttributeKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMatchAgentsWithAttributeKeyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportConfigurationResponse> importConfiguration(
             ImportConfigurationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -487,6 +522,47 @@ public class ConfigAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .handleResponseHeaderString("etag", UpdateConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConfigResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMatchAgentsWithAttributeKeyResponse>
+            updateMatchAgentsWithAttributeKey(
+                    UpdateMatchAgentsWithAttributeKeyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMatchAgentsWithAttributeKeyRequest,
+                                    UpdateMatchAgentsWithAttributeKeyResponse>
+                            handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(
+                request.getUpdateMatchAgentsWithAttributeKeyDetails(),
+                "updateMatchAgentsWithAttributeKeyDetails is required");
+
+        return clientCall(request, UpdateMatchAgentsWithAttributeKeyResponse::builder)
+                .logger(LOG, "updateMatchAgentsWithAttributeKey")
+                .serviceDetails(
+                        "Config",
+                        "UpdateMatchAgentsWithAttributeKey",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MatchAgentsWithAttributeKey/UpdateMatchAgentsWithAttributeKey")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMatchAgentsWithAttributeKeyRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("matchAgentsWithAttributeKey")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.MatchAgentsWithAttributeKey.class,
+                        UpdateMatchAgentsWithAttributeKeyResponse.Builder
+                                ::matchAgentsWithAttributeKey)
+                .handleResponseHeaderString(
+                        "etag", UpdateMatchAgentsWithAttributeKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateMatchAgentsWithAttributeKeyResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

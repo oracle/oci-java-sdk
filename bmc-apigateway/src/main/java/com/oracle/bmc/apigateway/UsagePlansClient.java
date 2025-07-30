@@ -123,6 +123,39 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public AddUsagePlanLockResponse addUsagePlanLock(AddUsagePlanLockRequest request) {
+
+        Validate.notBlank(request.getUsagePlanId(), "usagePlanId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddUsagePlanLockResponse::builder)
+                .logger(LOG, "addUsagePlanLock")
+                .serviceDetails(
+                        "UsagePlans",
+                        "AddUsagePlanLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/AddUsagePlanLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddUsagePlanLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("usagePlans")
+                .appendPathParam(request.getUsagePlanId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.UsagePlan.class,
+                        AddUsagePlanLockResponse.Builder::usagePlan)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddUsagePlanLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddUsagePlanLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public ChangeUsagePlanCompartmentResponse changeUsagePlanCompartment(
             ChangeUsagePlanCompartmentRequest request) {
 
@@ -144,6 +177,7 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getUsagePlanId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
@@ -202,6 +236,7 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20190501")
                 .appendPathParam("usagePlans")
                 .appendPathParam(request.getUsagePlanId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -277,6 +312,39 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public RemoveUsagePlanLockResponse removeUsagePlanLock(RemoveUsagePlanLockRequest request) {
+
+        Validate.notBlank(request.getUsagePlanId(), "usagePlanId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveUsagePlanLockResponse::builder)
+                .logger(LOG, "removeUsagePlanLock")
+                .serviceDetails(
+                        "UsagePlans",
+                        "RemoveUsagePlanLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/RemoveUsagePlanLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveUsagePlanLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("usagePlans")
+                .appendPathParam(request.getUsagePlanId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.UsagePlan.class,
+                        RemoveUsagePlanLockResponse.Builder::usagePlan)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveUsagePlanLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveUsagePlanLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public UpdateUsagePlanResponse updateUsagePlan(UpdateUsagePlanRequest request) {
 
         Validate.notBlank(request.getUsagePlanId(), "usagePlanId must not be blank");
@@ -294,6 +362,7 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20190501")
                 .appendPathParam("usagePlans")
                 .appendPathParam(request.getUsagePlanId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

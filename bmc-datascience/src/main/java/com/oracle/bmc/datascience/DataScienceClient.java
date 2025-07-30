@@ -71,7 +71,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DataScienceClient",
-                            "getJobArtifactContent,getMlApplicationHistoricalPackageContent,getMlApplicationPackageContent,getModelArtifactContent,getModelCustomMetadatumArtifactContent,getModelDefinedMetadatumArtifactContent,getStepArtifactContent"));
+                            "getJobArtifactContent,getMlApplicationHistoricalPackageContent,getMlApplicationPackageContent,getModelArtifactContent,getModelCustomMetadatumArtifactContent,getModelDefinedMetadatumArtifactContent,getModelGroupArtifactContent,getStepArtifactContent"));
         }
     }
 
@@ -207,6 +207,37 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         ActivateModelDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ActivateModelDeploymentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ActivateModelGroupResponse activateModelGroup(ActivateModelGroupRequest request) {
+
+        Validate.notBlank(request.getModelGroupId(), "modelGroupId must not be blank");
+
+        return clientCall(request, ActivateModelGroupResponse::builder)
+                .logger(LOG, "activateModelGroup")
+                .serviceDetails(
+                        "DataScience",
+                        "ActivateModelGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/ActivateModelGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateModelGroupRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendPathParam(request.getModelGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelGroup.class,
+                        ActivateModelGroupResponse.Builder::modelGroup)
+                .handleResponseHeaderString("etag", ActivateModelGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateModelGroupResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -668,6 +699,76 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeModelDeploymentCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeModelGroupCompartmentResponse changeModelGroupCompartment(
+            ChangeModelGroupCompartmentRequest request) {
+
+        Validate.notBlank(request.getModelGroupId(), "modelGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeModelGroupCompartmentDetails(),
+                "changeModelGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeModelGroupCompartmentResponse::builder)
+                .logger(LOG, "changeModelGroupCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeModelGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/ChangeModelGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeModelGroupCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendPathParam(request.getModelGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeModelGroupCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeModelGroupVersionHistoryCompartmentResponse
+            changeModelGroupVersionHistoryCompartment(
+                    ChangeModelGroupVersionHistoryCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getModelGroupVersionHistoryId(),
+                "modelGroupVersionHistoryId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeModelGroupVersionHistoryCompartmentDetails(),
+                "changeModelGroupVersionHistoryCompartmentDetails is required");
+
+        return clientCall(request, ChangeModelGroupVersionHistoryCompartmentResponse::builder)
+                .logger(LOG, "changeModelGroupVersionHistoryCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeModelGroupVersionHistoryCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistory/ChangeModelGroupVersionHistoryCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeModelGroupVersionHistoryCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroupVersionHistory")
+                .appendPathParam(request.getModelGroupVersionHistoryId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeModelGroupVersionHistoryCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1280,6 +1381,106 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public CreateModelGroupResponse createModelGroup(CreateModelGroupRequest request) {
+        Objects.requireNonNull(
+                request.getCreateBaseModelGroupDetails(),
+                "createBaseModelGroupDetails is required");
+
+        return clientCall(request, CreateModelGroupResponse::builder)
+                .logger(LOG, "createModelGroup")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateModelGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/CreateModelGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelGroupRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelGroup.class,
+                        CreateModelGroupResponse.Builder::modelGroup)
+                .handleResponseHeaderString("etag", CreateModelGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateModelGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateModelGroupResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateModelGroupArtifactResponse createModelGroupArtifact(
+            CreateModelGroupArtifactRequest request) {
+
+        Validate.notBlank(request.getModelGroupId(), "modelGroupId must not be blank");
+        Objects.requireNonNull(request.getModelGroupArtifact(), "modelGroupArtifact is required");
+
+        return clientCall(request, CreateModelGroupArtifactResponse::builder)
+                .logger(LOG, "createModelGroupArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateModelGroupArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/CreateModelGroupArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelGroupArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendPathParam(request.getModelGroupId())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString("etag", CreateModelGroupArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateModelGroupArtifactResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateModelGroupVersionHistoryResponse createModelGroupVersionHistory(
+            CreateModelGroupVersionHistoryRequest request) {
+        Objects.requireNonNull(
+                request.getCreateModelGroupVersionHistoryDetails(),
+                "createModelGroupVersionHistoryDetails is required");
+
+        return clientCall(request, CreateModelGroupVersionHistoryResponse::builder)
+                .logger(LOG, "createModelGroupVersionHistory")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateModelGroupVersionHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistory/CreateModelGroupVersionHistory")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelGroupVersionHistoryRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroupVersionHistory")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelGroupVersionHistory.class,
+                        CreateModelGroupVersionHistoryResponse.Builder::modelGroupVersionHistory)
+                .handleResponseHeaderString(
+                        "etag", CreateModelGroupVersionHistoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateModelGroupVersionHistoryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateModelProvenanceResponse createModelProvenance(
             CreateModelProvenanceRequest request) {
 
@@ -1597,6 +1798,37 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         DeactivateModelDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeactivateModelDeploymentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeactivateModelGroupResponse deactivateModelGroup(DeactivateModelGroupRequest request) {
+
+        Validate.notBlank(request.getModelGroupId(), "modelGroupId must not be blank");
+
+        return clientCall(request, DeactivateModelGroupResponse::builder)
+                .logger(LOG, "deactivateModelGroup")
+                .serviceDetails(
+                        "DataScience",
+                        "DeactivateModelGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/DeactivateModelGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateModelGroupRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendPathParam(request.getModelGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelGroup.class,
+                        DeactivateModelGroupResponse.Builder::modelGroup)
+                .handleResponseHeaderString("etag", DeactivateModelGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateModelGroupResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1946,6 +2178,63 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         DeleteModelDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelDeploymentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteModelGroupResponse deleteModelGroup(DeleteModelGroupRequest request) {
+
+        Validate.notBlank(request.getModelGroupId(), "modelGroupId must not be blank");
+
+        return clientCall(request, DeleteModelGroupResponse::builder)
+                .logger(LOG, "deleteModelGroup")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteModelGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/DeleteModelGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelGroupRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendPathParam(request.getModelGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteModelGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteModelGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteModelGroupVersionHistoryResponse deleteModelGroupVersionHistory(
+            DeleteModelGroupVersionHistoryRequest request) {
+
+        Validate.notBlank(
+                request.getModelGroupVersionHistoryId(),
+                "modelGroupVersionHistoryId must not be blank");
+
+        return clientCall(request, DeleteModelGroupVersionHistoryResponse::builder)
+                .logger(LOG, "deleteModelGroupVersionHistory")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteModelGroupVersionHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistory/DeleteModelGroupVersionHistory")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelGroupVersionHistoryRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroupVersionHistory")
+                .appendPathParam(request.getModelGroupVersionHistoryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteModelGroupVersionHistoryResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteModelGroupVersionHistoryResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2788,6 +3077,110 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public GetModelGroupResponse getModelGroup(GetModelGroupRequest request) {
+
+        Validate.notBlank(request.getModelGroupId(), "modelGroupId must not be blank");
+
+        return clientCall(request, GetModelGroupResponse::builder)
+                .logger(LOG, "getModelGroup")
+                .serviceDetails(
+                        "DataScience",
+                        "GetModelGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/GetModelGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelGroupRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendPathParam(request.getModelGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelGroup.class,
+                        GetModelGroupResponse.Builder::modelGroup)
+                .handleResponseHeaderString("etag", GetModelGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetModelGroupArtifactContentResponse getModelGroupArtifactContent(
+            GetModelGroupArtifactContentRequest request) {
+
+        Validate.notBlank(request.getModelGroupId(), "modelGroupId must not be blank");
+
+        return clientCall(request, GetModelGroupArtifactContentResponse::builder)
+                .logger(LOG, "getModelGroupArtifactContent")
+                .serviceDetails(
+                        "DataScience",
+                        "GetModelGroupArtifactContent",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/GetModelGroupArtifactContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelGroupArtifactContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendPathParam(request.getModelGroupId())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("range", request.getRange())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetModelGroupArtifactContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "etag", GetModelGroupArtifactContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetModelGroupArtifactContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        GetModelGroupArtifactContentResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        GetModelGroupArtifactContentResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5", GetModelGroupArtifactContentResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified", GetModelGroupArtifactContentResponse.Builder::lastModified)
+                .callSync();
+    }
+
+    @Override
+    public GetModelGroupVersionHistoryResponse getModelGroupVersionHistory(
+            GetModelGroupVersionHistoryRequest request) {
+
+        Validate.notBlank(
+                request.getModelGroupVersionHistoryId(),
+                "modelGroupVersionHistoryId must not be blank");
+
+        return clientCall(request, GetModelGroupVersionHistoryResponse::builder)
+                .logger(LOG, "getModelGroupVersionHistory")
+                .serviceDetails(
+                        "DataScience",
+                        "GetModelGroupVersionHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistory/GetModelGroupVersionHistory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelGroupVersionHistoryRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroupVersionHistory")
+                .appendPathParam(request.getModelGroupVersionHistoryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelGroupVersionHistory.class,
+                        GetModelGroupVersionHistoryResponse.Builder::modelGroupVersionHistory)
+                .handleResponseHeaderString(
+                        "etag", GetModelGroupVersionHistoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelGroupVersionHistoryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetModelProvenanceResponse getModelProvenance(GetModelProvenanceRequest request) {
 
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
@@ -3219,6 +3612,43 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderDate(
                         "last-modified",
                         HeadModelDefinedMetadatumArtifactResponse.Builder::lastModified)
+                .callSync();
+    }
+
+    @Override
+    public HeadModelGroupArtifactResponse headModelGroupArtifact(
+            HeadModelGroupArtifactRequest request) {
+
+        Validate.notBlank(request.getModelGroupId(), "modelGroupId must not be blank");
+
+        return clientCall(request, HeadModelGroupArtifactResponse::builder)
+                .logger(LOG, "headModelGroupArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "HeadModelGroupArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/HeadModelGroupArtifact")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadModelGroupArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendPathParam(request.getModelGroupId())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString("etag", HeadModelGroupArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", HeadModelGroupArtifactResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", HeadModelGroupArtifactResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        HeadModelGroupArtifactResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5", HeadModelGroupArtifactResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified", HeadModelGroupArtifactResponse.Builder::lastModified)
                 .callSync();
     }
 
@@ -3712,6 +4142,54 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ListModelDeploymentModelStatesResponse listModelDeploymentModelStates(
+            ListModelDeploymentModelStatesRequest request) {
+
+        Validate.notBlank(request.getModelDeploymentId(), "modelDeploymentId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListModelDeploymentModelStatesResponse::builder)
+                .logger(LOG, "listModelDeploymentModelStates")
+                .serviceDetails(
+                        "DataScience",
+                        "ListModelDeploymentModelStates",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentModelStateSummary/ListModelDeploymentModelStates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelDeploymentModelStatesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelDeployments")
+                .appendPathParam(request.getModelDeploymentId())
+                .appendPathParam("models")
+                .appendPathParam("modelState")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("inferenceKey", request.getInferenceKey())
+                .appendQueryParam("modelId", request.getModelId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ModelDeploymentModelStateSummary.class,
+                        ListModelDeploymentModelStatesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListModelDeploymentModelStatesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListModelDeploymentModelStatesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListModelDeploymentModelStatesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListModelDeploymentShapesResponse listModelDeploymentShapes(
             ListModelDeploymentShapesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -3780,6 +4258,132 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListModelDeploymentsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListModelDeploymentsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListModelGroupModelsResponse listModelGroupModels(ListModelGroupModelsRequest request) {
+
+        Validate.notBlank(request.getModelGroupId(), "modelGroupId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListModelGroupModelsResponse::builder)
+                .logger(LOG, "listModelGroupModels")
+                .serviceDetails(
+                        "DataScience",
+                        "ListModelGroupModels",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/ListModelGroupModels")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelGroupModelsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendPathParam(request.getModelGroupId())
+                .appendPathParam("models")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ModelGroupModelSummary.class,
+                        ListModelGroupModelsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListModelGroupModelsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListModelGroupModelsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListModelGroupModelsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListModelGroupVersionHistoriesResponse listModelGroupVersionHistories(
+            ListModelGroupVersionHistoriesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListModelGroupVersionHistoriesResponse::builder)
+                .logger(LOG, "listModelGroupVersionHistories")
+                .serviceDetails(
+                        "DataScience",
+                        "ListModelGroupVersionHistories",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistorySummary/ListModelGroupVersionHistories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelGroupVersionHistoriesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroupVersionHistory")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ModelGroupVersionHistorySummary.class,
+                        ListModelGroupVersionHistoriesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListModelGroupVersionHistoriesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListModelGroupVersionHistoriesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListModelGroupVersionHistoriesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListModelGroupsResponse listModelGroups(ListModelGroupsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListModelGroupsResponse::builder)
+                .logger(LOG, "listModelGroups")
+                .serviceDetails(
+                        "DataScience",
+                        "ListModelGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupSummary/ListModelGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelGroupsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam(
+                        "modelGroupVersionHistoryId", request.getModelGroupVersionHistoryId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ModelGroupSummary.class,
+                        ListModelGroupsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListModelGroupsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListModelGroupsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListModelGroupsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -4839,6 +5443,74 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateModelDeploymentResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateModelGroupResponse updateModelGroup(UpdateModelGroupRequest request) {
+
+        Validate.notBlank(request.getModelGroupId(), "modelGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateModelGroupDetails(), "updateModelGroupDetails is required");
+
+        return clientCall(request, UpdateModelGroupResponse::builder)
+                .logger(LOG, "updateModelGroup")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateModelGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/UpdateModelGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelGroupRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroups")
+                .appendPathParam(request.getModelGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelGroup.class,
+                        UpdateModelGroupResponse.Builder::modelGroup)
+                .handleResponseHeaderString("etag", UpdateModelGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateModelGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateModelGroupVersionHistoryResponse updateModelGroupVersionHistory(
+            UpdateModelGroupVersionHistoryRequest request) {
+
+        Validate.notBlank(
+                request.getModelGroupVersionHistoryId(),
+                "modelGroupVersionHistoryId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateModelGroupVersionHistoryDetails(),
+                "updateModelGroupVersionHistoryDetails is required");
+
+        return clientCall(request, UpdateModelGroupVersionHistoryResponse::builder)
+                .logger(LOG, "updateModelGroupVersionHistory")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateModelGroupVersionHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistory/UpdateModelGroupVersionHistory")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelGroupVersionHistoryRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelGroupVersionHistory")
+                .appendPathParam(request.getModelGroupVersionHistoryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelGroupVersionHistory.class,
+                        UpdateModelGroupVersionHistoryResponse.Builder::modelGroupVersionHistory)
+                .handleResponseHeaderString(
+                        "etag", UpdateModelGroupVersionHistoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateModelGroupVersionHistoryResponse.Builder::opcRequestId)
                 .callSync();
     }
 

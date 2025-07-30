@@ -12,6 +12,7 @@ import com.oracle.bmc.auth.DefaultServiceAccountTokenProvider;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.auth.RegionProvider;
+import com.oracle.bmc.auth.ResourcePrincipalAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ServiceAccountTokenSupplier;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.SuppliedServiceAccountTokenProvider;
@@ -185,6 +186,19 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         }
 
         /**
+         * Sets the value for Region This Region is used to initialize
+         * ResourcePrincipalAuthenticationDetailsProvider, and it is not used by
+         * OkeWorkloadIdentityAuthenticationDetailsProvider.
+         *
+         * @param region Region
+         * @return OkeWorkloadIdentityAuthenticationDetailsProviderBuilder
+         */
+        public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder region(Region region) {
+            this.region = region;
+            return this;
+        }
+
+        /**
          * Build a new OkeWorkloadIdentityAuthenticationDetailsProvider.
          *
          * @return A new provider instance.
@@ -300,6 +314,24 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
                 SessionKeySupplier sessionKeySupplierToUse) {
             return new OkeWorkloadIdentityAuthenticationDetailsProvider(
                     federationClient, sessionKeySupplierToUse, region);
+        }
+
+        /**
+         * Build a new ResourcePrincipalAuthenticationDetailsProvider using an instance of
+         * OkeWorkloadIdentityAuthenticationDetailsProvider
+         *
+         * @return a ResourcePrincipalAuthenticationDetailsProvider instance
+         * @throws IllegalArgumentException if the region is not provided
+         */
+        public ResourcePrincipalAuthenticationDetailsProvider
+                buildResourcePrincipalAuthenticationDetailsProvider() {
+            if (this.region == null) {
+                throw new IllegalArgumentException(
+                        "Region is not provided. Please provide a valid region.");
+            }
+            OkeWorkloadIdentityAuthenticationDetailsProvider prov = this.build();
+            return new ResourcePrincipalAuthenticationDetailsProvider(
+                    prov.federationClient, prov.sessionKeySupplier, this.region);
         }
     }
 }

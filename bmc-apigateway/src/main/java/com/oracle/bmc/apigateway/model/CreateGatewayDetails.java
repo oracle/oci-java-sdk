@@ -31,6 +31,7 @@ public final class CreateGatewayDetails
         "networkSecurityGroupIds",
         "certificateId",
         "responseCacheDetails",
+        "locks",
         "freeformTags",
         "definedTags",
         "caBundles"
@@ -43,6 +44,7 @@ public final class CreateGatewayDetails
             java.util.List<String> networkSecurityGroupIds,
             String certificateId,
             ResponseCacheDetails responseCacheDetails,
+            java.util.List<AddResourceLockDetails> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<CaBundle> caBundles) {
@@ -54,6 +56,7 @@ public final class CreateGatewayDetails
         this.networkSecurityGroupIds = networkSecurityGroupIds;
         this.certificateId = certificateId;
         this.responseCacheDetails = responseCacheDetails;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.caBundles = caBundles;
@@ -162,14 +165,14 @@ public final class CreateGatewayDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * resource.
+         * resource which can be empty string.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * resource.
+         * resource which can be empty string.
          *
          * @param certificateId the value to set
          * @return this builder
@@ -186,6 +189,21 @@ public final class CreateGatewayDetails
         public Builder responseCacheDetails(ResponseCacheDetails responseCacheDetails) {
             this.responseCacheDetails = responseCacheDetails;
             this.__explicitlySet__.add("responseCacheDetails");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
         /**
@@ -268,6 +286,7 @@ public final class CreateGatewayDetails
                             this.networkSecurityGroupIds,
                             this.certificateId,
                             this.responseCacheDetails,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags,
                             this.caBundles);
@@ -299,6 +318,9 @@ public final class CreateGatewayDetails
             }
             if (model.wasPropertyExplicitlySet("responseCacheDetails")) {
                 this.responseCacheDetails(model.getResponseCacheDetails());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -413,14 +435,14 @@ public final class CreateGatewayDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resource.
+     * resource which can be empty string.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resource.
+     * resource which can be empty string.
      *
      * @return the value
      */
@@ -433,6 +455,19 @@ public final class CreateGatewayDetails
 
     public ResponseCacheDetails getResponseCacheDetails() {
         return responseCacheDetails;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<AddResourceLockDetails> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<AddResourceLockDetails> getLocks() {
+        return locks;
     }
 
     /**
@@ -517,6 +552,7 @@ public final class CreateGatewayDetails
                 .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(", certificateId=").append(String.valueOf(this.certificateId));
         sb.append(", responseCacheDetails=").append(String.valueOf(this.responseCacheDetails));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", caBundles=").append(String.valueOf(this.caBundles));
@@ -542,6 +578,7 @@ public final class CreateGatewayDetails
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && java.util.Objects.equals(this.certificateId, other.certificateId)
                 && java.util.Objects.equals(this.responseCacheDetails, other.responseCacheDetails)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.caBundles, other.caBundles)
@@ -571,6 +608,7 @@ public final class CreateGatewayDetails
                         + (this.responseCacheDetails == null
                                 ? 43
                                 : this.responseCacheDetails.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.caBundles == null ? 43 : this.caBundles.hashCode());

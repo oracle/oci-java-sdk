@@ -35,13 +35,13 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
     /**
      * A filter to match configuration items of a given type. Supported values are SPAN_FILTER,
-     * METRIC_GROUP, and APDEX.
+     * METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
      */
     private String configType;
 
     /**
      * A filter to match configuration items of a given type. Supported values are SPAN_FILTER,
-     * METRIC_GROUP, and APDEX.
+     * METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
      */
     public String getConfigType() {
         return configType;
@@ -267,13 +267,13 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * A filter to match configuration items of a given type. Supported values are SPAN_FILTER,
-         * METRIC_GROUP, and APDEX.
+         * METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
          */
         private String configType = null;
 
         /**
          * A filter to match configuration items of a given type. Supported values are SPAN_FILTER,
-         * METRIC_GROUP, and APDEX.
+         * METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
          *
          * @param configType the value to set
          * @return this builder instance

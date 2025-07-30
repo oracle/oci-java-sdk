@@ -129,7 +129,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, CancelMacOrderResponse::builder)
                 .logger(LOG, "cancelMacOrder")
-                .serviceDetails("MacOrder", "CancelMacOrder", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "CancelMacOrder",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrder/CancelMacOrder")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelMacOrderRequest::builder)
                 .basePath("/20250320")
@@ -157,7 +160,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("MacOrder", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20250320")
@@ -183,7 +189,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ChangeMacOrderCompartmentResponse::builder)
                 .logger(LOG, "changeMacOrderCompartment")
-                .serviceDetails("MacOrder", "ChangeMacOrderCompartment", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "ChangeMacOrderCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrder/ChangeMacOrderCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeMacOrderCompartmentRequest::builder)
                 .basePath("/20250320")
@@ -211,7 +220,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, CreateMacOrderResponse::builder)
                 .logger(LOG, "createMacOrder")
-                .serviceDetails("MacOrder", "CreateMacOrder", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "CreateMacOrder",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrder/CreateMacOrder")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMacOrderRequest::builder)
                 .basePath("/20250320")
@@ -242,7 +254,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetMacOrderResponse::builder)
                 .logger(LOG, "getMacOrder")
-                .serviceDetails("MacOrder", "GetMacOrder", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "GetMacOrder",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrder/GetMacOrder")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMacOrderRequest::builder)
                 .basePath("/20250320")
@@ -267,7 +282,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("MacOrder", "GetWorkRequest", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20250320")
@@ -292,7 +310,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListMacOrdersResponse::builder)
                 .logger(LOG, "listMacOrders")
-                .serviceDetails("MacOrder", "ListMacOrders", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "ListMacOrders",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrderCollection/ListMacOrders")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMacOrdersRequest::builder)
                 .basePath("/20250320")
@@ -326,7 +347,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("MacOrder", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20250320")
@@ -357,7 +381,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("MacOrder", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20250320")
@@ -386,7 +413,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("MacOrder", "ListWorkRequests", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20250320")
@@ -421,7 +451,10 @@ public class MacOrderClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, UpdateMacOrderResponse::builder)
                 .logger(LOG, "updateMacOrder")
-                .serviceDetails("MacOrder", "UpdateMacOrder", "")
+                .serviceDetails(
+                        "MacOrder",
+                        "UpdateMacOrder",
+                        "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrder/UpdateMacOrder")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMacOrderRequest::builder)
                 .basePath("/20250320")

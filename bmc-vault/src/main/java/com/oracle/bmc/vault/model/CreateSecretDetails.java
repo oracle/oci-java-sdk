@@ -31,6 +31,7 @@ public final class CreateSecretDetails
         "keyId",
         "metadata",
         "secretContent",
+        "replicationConfig",
         "rotationConfig",
         "secretName",
         "secretRules",
@@ -46,6 +47,7 @@ public final class CreateSecretDetails
             String keyId,
             java.util.Map<String, Object> metadata,
             SecretContentDetails secretContent,
+            ReplicationConfig replicationConfig,
             RotationConfig rotationConfig,
             String secretName,
             java.util.List<SecretRule> secretRules,
@@ -60,6 +62,7 @@ public final class CreateSecretDetails
         this.keyId = keyId;
         this.metadata = metadata;
         this.secretContent = secretContent;
+        this.replicationConfig = replicationConfig;
         this.rotationConfig = rotationConfig;
         this.secretName = secretName;
         this.secretRules = secretRules;
@@ -203,6 +206,15 @@ public final class CreateSecretDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+        private ReplicationConfig replicationConfig;
+
+        public Builder replicationConfig(ReplicationConfig replicationConfig) {
+            this.replicationConfig = replicationConfig;
+            this.__explicitlySet__.add("replicationConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
         private RotationConfig rotationConfig;
 
@@ -304,6 +316,7 @@ public final class CreateSecretDetails
                             this.keyId,
                             this.metadata,
                             this.secretContent,
+                            this.replicationConfig,
                             this.rotationConfig,
                             this.secretName,
                             this.secretRules,
@@ -338,6 +351,9 @@ public final class CreateSecretDetails
             }
             if (model.wasPropertyExplicitlySet("secretContent")) {
                 this.secretContent(model.getSecretContent());
+            }
+            if (model.wasPropertyExplicitlySet("replicationConfig")) {
+                this.replicationConfig(model.getReplicationConfig());
             }
             if (model.wasPropertyExplicitlySet("rotationConfig")) {
                 this.rotationConfig(model.getRotationConfig());
@@ -485,6 +501,13 @@ public final class CreateSecretDetails
         return secretContent;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+    private final ReplicationConfig replicationConfig;
+
+    public ReplicationConfig getReplicationConfig() {
+        return replicationConfig;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
     private final RotationConfig rotationConfig;
 
@@ -583,6 +606,7 @@ public final class CreateSecretDetails
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", secretContent=").append(String.valueOf(this.secretContent));
+        sb.append(", replicationConfig=").append(String.valueOf(this.replicationConfig));
         sb.append(", rotationConfig=").append(String.valueOf(this.rotationConfig));
         sb.append(", secretName=").append(String.valueOf(this.secretName));
         sb.append(", secretRules=").append(String.valueOf(this.secretRules));
@@ -611,6 +635,7 @@ public final class CreateSecretDetails
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.secretContent, other.secretContent)
+                && java.util.Objects.equals(this.replicationConfig, other.replicationConfig)
                 && java.util.Objects.equals(this.rotationConfig, other.rotationConfig)
                 && java.util.Objects.equals(this.secretName, other.secretName)
                 && java.util.Objects.equals(this.secretRules, other.secretRules)
@@ -636,6 +661,9 @@ public final class CreateSecretDetails
         result =
                 (result * PRIME)
                         + (this.secretContent == null ? 43 : this.secretContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationConfig == null ? 43 : this.replicationConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.rotationConfig == null ? 43 : this.rotationConfig.hashCode());

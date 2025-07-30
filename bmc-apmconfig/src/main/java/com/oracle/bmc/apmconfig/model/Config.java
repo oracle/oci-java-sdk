@@ -23,7 +23,11 @@ package com.oracle.bmc.apmconfig.model;
         property = "configType",
         defaultImpl = Config.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AgentConfig.class, name = "AGENT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = Options.class, name = "OPTIONS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsApmExtension.class,
+            name = "MACS_APM_EXTENSION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = MetricGroup.class,
             name = "METRIC_GROUP"),
