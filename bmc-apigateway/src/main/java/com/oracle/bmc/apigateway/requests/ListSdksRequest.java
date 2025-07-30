@@ -13,10 +13,10 @@ import com.oracle.bmc.apigateway.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ocid of the SDK. */
+    /** The ocid of the SDK. This value must be present unless apiId is present. */
     private String sdkId;
 
-    /** The ocid of the SDK. */
+    /** The ocid of the SDK. This value must be present unless apiId is present. */
     public String getSdkId() {
         return sdkId;
     }
@@ -170,10 +170,10 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The ocid of the API. */
+    /** The ocid of the API. This value must be present unless sdkId is present. */
     private String apiId;
 
-    /** The ocid of the API. */
+    /** The ocid of the API. This value must be present unless sdkId is present. */
     public String getApiId() {
         return apiId;
     }
@@ -190,11 +190,11 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ocid of the SDK. */
+        /** The ocid of the SDK. This value must be present unless apiId is present. */
         private String sdkId = null;
 
         /**
-         * The ocid of the SDK.
+         * The ocid of the SDK. This value must be present unless apiId is present.
          *
          * @param sdkId the value to set
          * @return this builder instance
@@ -315,11 +315,11 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The ocid of the API. */
+        /** The ocid of the API. This value must be present unless sdkId is present. */
         private String apiId = null;
 
         /**
-         * The ocid of the API.
+         * The ocid of the API. This value must be present unless sdkId is present.
          *
          * @param apiId the value to set
          * @return this builder instance

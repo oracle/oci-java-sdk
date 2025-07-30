@@ -3,6 +3,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.70.0 - 2025-07-29
+### Added 
+- Support for the APIP Platform service 
+- Support for resource locking for all resources in the API Gateway service 
+- Support for optional parameters in the import and export dashboard APIs in the Management Dashboard service 
+- Support for agent configurations and MACS extension configurations in the Application Performance Monitoring service 
+- Support for specifying replication configuration when creating or updating a secret in the Vault service 
+- Support for CPU architecture agnostic configurations in the PostgreSQL service 
+- Support for creating, deploying, cloning, getting, listing, activating and deactivating model groups in the Data Science service 
+- Support for creating, updating, getting, listing and deleting model group version history in the Data Science service 
+- Support for uploading and downloading model group artifacts in the Data Science service 
+- Support for listing the state of the deployed models associated with a model group in the Data Science service 
+- Support for updating model group deployments in the Data Science service 
+- Support for burstable shapes in data science notebooks, machine learning jobs and machine learning pipelines in the Data Science service 
+- Support for multilingual text to speech for 8 more languages in the AI Speech service    
+
+### Breaking Changes 
+- Return type of method `public com.oracle.bmc.aispeech.model.VoiceSummary$LanguageCode getLanguageCode()` has been changed to `java.lang.String` in the model `com.oracle.bmc.aispeech.model.VoiceSummary` in the AI Speech service 
+- Class `com.oracle.bmc.aispeech.model.VoiceSummary$LanguageCode` has been removed from the AI Speech service
+
 ## 3.69.0 - 2025-07-22
 ### Added 
 - Support for calling Oracle Cloud Infrastructure services in the `ap-batam-1` region 

@@ -30,7 +30,8 @@ public final class CreateCertificateDetails
         "certificate",
         "intermediateCertificates",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "locks"
     })
     public CreateCertificateDetails(
             String displayName,
@@ -39,7 +40,8 @@ public final class CreateCertificateDetails
             String certificate,
             String intermediateCertificates,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -48,6 +50,7 @@ public final class CreateCertificateDetails
         this.intermediateCertificates = intermediateCertificates;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -190,6 +193,21 @@ public final class CreateCertificateDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -203,7 +221,8 @@ public final class CreateCertificateDetails
                             this.certificate,
                             this.intermediateCertificates,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -232,6 +251,9 @@ public final class CreateCertificateDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -369,6 +391,19 @@ public final class CreateCertificateDetails
         return definedTags;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<AddResourceLockDetails> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<AddResourceLockDetails> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -392,6 +427,7 @@ public final class CreateCertificateDetails
                 .append(String.valueOf(this.intermediateCertificates));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -414,6 +450,7 @@ public final class CreateCertificateDetails
                         this.intermediateCertificates, other.intermediateCertificates)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -434,6 +471,7 @@ public final class CreateCertificateDetails
                                 : this.intermediateCertificates.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -11,6 +11,8 @@ public enum ConfigTypes implements com.oracle.bmc.http.internal.BmcEnum {
     MetricGroup("METRIC_GROUP"),
     Apdex("APDEX"),
     Options("OPTIONS"),
+    Agent("AGENT"),
+    MacsApmExtension("MACS_APM_EXTENSION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -30,8 +30,14 @@ package com.oracle.bmc.apmconfig.model;
             value = CreateMetricGroupDetails.class,
             name = "METRIC_GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAgentConfigDetails.class,
+            name = "AGENT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateOptionsDetails.class,
             name = "OPTIONS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateMacsApmExtensionDetails.class,
+            name = "MACS_APM_EXTENSION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateApdexRulesDetails.class,
             name = "APDEX")

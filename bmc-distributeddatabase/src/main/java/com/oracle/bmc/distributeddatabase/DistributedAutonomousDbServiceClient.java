@@ -168,7 +168,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "AddDistributedAutonomousDatabaseGdsControlNode",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/AddDistributedAutonomousDatabaseGdsControlNode")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/AddDistributedAutonomousDatabaseGdsControlNode")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDistributedAutonomousDatabaseGdsControlNodeRequest::builder)
                 .basePath("/20250101")
@@ -210,7 +210,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "ChangeDistributedAutonomousDatabaseCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDatabaseCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDatabaseCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDistributedAutonomousDatabaseCompartmentRequest::builder)
                 .basePath("/20250101")
@@ -252,7 +252,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "ConfigureDistributedAutonomousDatabaseGsms",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsms")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsms")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConfigureDistributedAutonomousDatabaseGsmsRequest::builder)
                 .basePath("/20250101")
@@ -290,7 +290,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "ConfigureDistributedAutonomousDatabaseSharding",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseSharding")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseSharding")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConfigureDistributedAutonomousDatabaseShardingRequest::builder)
                 .basePath("/20250101")
@@ -364,7 +364,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "DeleteDistributedAutonomousDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/DeleteDistributedAutonomousDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/DeleteDistributedAutonomousDatabase")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDistributedAutonomousDatabaseRequest::builder)
                 .basePath("/20250101")
@@ -402,7 +402,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(
                         DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
@@ -464,7 +464,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(
                         GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
@@ -510,7 +510,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "GenerateDistributedAutonomousDatabaseWallet",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/GenerateDistributedAutonomousDatabaseWallet")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/GenerateDistributedAutonomousDatabaseWallet")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateDistributedAutonomousDatabaseWalletRequest::builder)
                 .basePath("/20250101")
@@ -554,7 +554,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "GetDistributedAutonomousDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/GetDistributedAutonomousDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/GetDistributedAutonomousDatabase")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDistributedAutonomousDatabaseRequest::builder)
                 .basePath("/20250101")
@@ -588,7 +588,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "ListDistributedAutonomousDatabases",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabaseCollection/ListDistributedAutonomousDatabases")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabaseCollection/ListDistributedAutonomousDatabases")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDistributedAutonomousDatabasesRequest::builder)
                 .basePath("/20250101")
@@ -635,7 +635,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "PatchDistributedAutonomousDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/PatchDistributedAutonomousDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/PatchDistributedAutonomousDatabase")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchDistributedAutonomousDatabaseRequest::builder)
                 .basePath("/20250101")
@@ -670,7 +670,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "RotateDistributedAutonomousDatabasePasswords",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/RotateDistributedAutonomousDatabasePasswords")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/RotateDistributedAutonomousDatabasePasswords")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RotateDistributedAutonomousDatabasePasswordsRequest::builder)
                 .basePath("/20250101")
@@ -706,7 +706,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "StartDistributedAutonomousDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/StartDistributedAutonomousDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/StartDistributedAutonomousDatabase")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StartDistributedAutonomousDatabaseRequest::builder)
                 .basePath("/20250101")
@@ -741,7 +741,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "StopDistributedAutonomousDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/StopDistributedAutonomousDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/StopDistributedAutonomousDatabase")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StopDistributedAutonomousDatabaseRequest::builder)
                 .basePath("/20250101")
@@ -779,7 +779,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "UpdateDistributedAutonomousDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/UpdateDistributedAutonomousDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/UpdateDistributedAutonomousDatabase")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDistributedAutonomousDatabaseRequest::builder)
                 .basePath("/20250101")
@@ -827,7 +827,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(
                         UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest
@@ -870,7 +870,7 @@ public class DistributedAutonomousDbServiceClient
                 .serviceDetails(
                         "DistributedAutonomousDbService",
                         "ValidateDistributedAutonomousDatabaseNetwork",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseNetwork")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseNetwork")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateDistributedAutonomousDatabaseNetworkRequest::builder)
                 .basePath("/20250101")

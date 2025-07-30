@@ -131,7 +131,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("LustreFileStorage", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20250228")
@@ -157,7 +160,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ChangeLustreFileSystemCompartmentResponse::builder)
                 .logger(LOG, "changeLustreFileSystemCompartment")
-                .serviceDetails("LustreFileStorage", "ChangeLustreFileSystemCompartment", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "ChangeLustreFileSystemCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystem/ChangeLustreFileSystemCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeLustreFileSystemCompartmentRequest::builder)
                 .basePath("/20250228")
@@ -188,7 +194,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, CreateLustreFileSystemResponse::builder)
                 .logger(LOG, "createLustreFileSystem")
-                .serviceDetails("LustreFileStorage", "CreateLustreFileSystem", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "CreateLustreFileSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystem/CreateLustreFileSystem")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateLustreFileSystemRequest::builder)
                 .basePath("/20250228")
@@ -222,7 +231,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, DeleteLustreFileSystemResponse::builder)
                 .logger(LOG, "deleteLustreFileSystem")
-                .serviceDetails("LustreFileStorage", "DeleteLustreFileSystem", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "DeleteLustreFileSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystem/DeleteLustreFileSystem")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteLustreFileSystemRequest::builder)
                 .basePath("/20250228")
@@ -247,7 +259,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, GetLustreFileSystemResponse::builder)
                 .logger(LOG, "getLustreFileSystem")
-                .serviceDetails("LustreFileStorage", "GetLustreFileSystem", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "GetLustreFileSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystem/GetLustreFileSystem")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetLustreFileSystemRequest::builder)
                 .basePath("/20250228")
@@ -272,7 +287,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("LustreFileStorage", "GetWorkRequest", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20250228")
@@ -298,7 +316,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListLustreFileSystemsResponse::builder)
                 .logger(LOG, "listLustreFileSystems")
-                .serviceDetails("LustreFileStorage", "ListLustreFileSystems", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "ListLustreFileSystems",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystemCollection/ListLustreFileSystems")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLustreFileSystemsRequest::builder)
                 .basePath("/20250228")
@@ -333,7 +354,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("LustreFileStorage", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20250228")
@@ -364,7 +388,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("LustreFileStorage", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20250228")
@@ -393,7 +420,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("LustreFileStorage", "ListWorkRequests", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20250228")
@@ -430,7 +460,10 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, UpdateLustreFileSystemResponse::builder)
                 .logger(LOG, "updateLustreFileSystem")
-                .serviceDetails("LustreFileStorage", "UpdateLustreFileSystem", "")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "UpdateLustreFileSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystem/UpdateLustreFileSystem")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateLustreFileSystemRequest::builder)
                 .basePath("/20250228")

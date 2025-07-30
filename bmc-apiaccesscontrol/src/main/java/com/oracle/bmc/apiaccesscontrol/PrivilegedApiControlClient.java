@@ -136,7 +136,10 @@ public class PrivilegedApiControlClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ChangePrivilegedApiControlCompartmentResponse::builder)
                 .logger(LOG, "changePrivilegedApiControlCompartment")
-                .serviceDetails("PrivilegedApiControl", "ChangePrivilegedApiControlCompartment", "")
+                .serviceDetails(
+                        "PrivilegedApiControl",
+                        "ChangePrivilegedApiControlCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControl/ChangePrivilegedApiControlCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangePrivilegedApiControlCompartmentRequest::builder)
                 .basePath("/20241130")
@@ -168,7 +171,10 @@ public class PrivilegedApiControlClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, CreatePrivilegedApiControlResponse::builder)
                 .logger(LOG, "createPrivilegedApiControl")
-                .serviceDetails("PrivilegedApiControl", "CreatePrivilegedApiControl", "")
+                .serviceDetails(
+                        "PrivilegedApiControl",
+                        "CreatePrivilegedApiControl",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControl/CreatePrivilegedApiControl")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePrivilegedApiControlRequest::builder)
                 .basePath("/20241130")
@@ -205,7 +211,10 @@ public class PrivilegedApiControlClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeletePrivilegedApiControlResponse::builder)
                 .logger(LOG, "deletePrivilegedApiControl")
-                .serviceDetails("PrivilegedApiControl", "DeletePrivilegedApiControl", "")
+                .serviceDetails(
+                        "PrivilegedApiControl",
+                        "DeletePrivilegedApiControl",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControl/DeletePrivilegedApiControl")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePrivilegedApiControlRequest::builder)
                 .basePath("/20241130")
@@ -233,7 +242,10 @@ public class PrivilegedApiControlClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetPrivilegedApiControlResponse::builder)
                 .logger(LOG, "getPrivilegedApiControl")
-                .serviceDetails("PrivilegedApiControl", "GetPrivilegedApiControl", "")
+                .serviceDetails(
+                        "PrivilegedApiControl",
+                        "GetPrivilegedApiControl",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControl/GetPrivilegedApiControl")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPrivilegedApiControlRequest::builder)
                 .basePath("/20241130")
@@ -257,7 +269,10 @@ public class PrivilegedApiControlClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListPrivilegedApiControlsResponse::builder)
                 .logger(LOG, "listPrivilegedApiControls")
-                .serviceDetails("PrivilegedApiControl", "ListPrivilegedApiControls", "")
+                .serviceDetails(
+                        "PrivilegedApiControl",
+                        "ListPrivilegedApiControls",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControlCollection/ListPrivilegedApiControls")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPrivilegedApiControlsRequest::builder)
                 .basePath("/20241130")
@@ -296,7 +311,10 @@ public class PrivilegedApiControlClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdatePrivilegedApiControlResponse::builder)
                 .logger(LOG, "updatePrivilegedApiControl")
-                .serviceDetails("PrivilegedApiControl", "UpdatePrivilegedApiControl", "")
+                .serviceDetails(
+                        "PrivilegedApiControl",
+                        "UpdatePrivilegedApiControl",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControl/UpdatePrivilegedApiControl")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdatePrivilegedApiControlRequest::builder)
                 .basePath("/20241130")

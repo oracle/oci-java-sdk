@@ -5,9 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Restoring to a new database system from the backup. The database system details that are part of
- * the CreateDbSystem request are not required, but if present will override the details from the
- * backup's database system snapshot. <br>
+ * Details of the database system backup. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

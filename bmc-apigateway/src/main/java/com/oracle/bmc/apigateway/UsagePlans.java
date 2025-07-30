@@ -67,6 +67,22 @@ public interface UsagePlans extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a UsagePlan resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/AddUsagePlanLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddUsagePlanLock
+     *     API.
+     */
+    AddUsagePlanLockResponse addUsagePlanLock(AddUsagePlanLockRequest request);
+
+    /**
      * Changes the usage plan compartment.
      *
      * @param request The request object containing the details to send
@@ -144,6 +160,22 @@ public interface UsagePlans extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUsagePlans API.
      */
     ListUsagePlansResponse listUsagePlans(ListUsagePlansRequest request);
+
+    /**
+     * Removes a lock from a UsagePlan resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/RemoveUsagePlanLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveUsagePlanLock
+     *     API.
+     */
+    RemoveUsagePlanLockResponse removeUsagePlanLock(RemoveUsagePlanLockRequest request);
 
     /**
      * Updates the usage plan with the given identifier.

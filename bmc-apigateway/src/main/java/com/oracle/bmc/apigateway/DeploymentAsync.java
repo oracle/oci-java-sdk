@@ -64,6 +64,22 @@ public interface DeploymentAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a Deployment resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDeploymentLockResponse> addDeploymentLock(
+            AddDeploymentLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddDeploymentLockRequest, AddDeploymentLockResponse>
+                    handler);
+
+    /**
      * Changes the deployment compartment.
      *
      * @param request The request object containing the details to send
@@ -137,6 +153,22 @@ public interface DeploymentAsync extends AutoCloseable {
     java.util.concurrent.Future<ListDeploymentsResponse> listDeployments(
             ListDeploymentsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResponse>
+                    handler);
+
+    /**
+     * Removes a lock from a Deployment resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDeploymentLockResponse> removeDeploymentLock(
+            RemoveDeploymentLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDeploymentLockRequest, RemoveDeploymentLockResponse>
                     handler);
 
     /**

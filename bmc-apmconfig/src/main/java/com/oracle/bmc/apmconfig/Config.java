@@ -144,6 +144,23 @@ public interface Config extends AutoCloseable {
     GetConfigResponse getConfig(GetConfigRequest request);
 
     /**
+     * The domain-wide agents matching attribute key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/GetMatchAgentsWithAttributeKeyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMatchAgentsWithAttributeKey API.
+     */
+    GetMatchAgentsWithAttributeKeyResponse getMatchAgentsWithAttributeKey(
+            GetMatchAgentsWithAttributeKeyRequest request);
+
+    /**
      * Import configurations Item(s) with its dependencies into a destination domain.
      *
      * @param request The request object containing the details to send
@@ -237,6 +254,23 @@ public interface Config extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfig API.
      */
     UpdateConfigResponse updateConfig(UpdateConfigRequest request);
+
+    /**
+     * Updates the agent matching attribute key for the APM Domain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/UpdateMatchAgentsWithAttributeKeyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateMatchAgentsWithAttributeKey API.
+     */
+    UpdateMatchAgentsWithAttributeKeyResponse updateMatchAgentsWithAttributeKey(
+            UpdateMatchAgentsWithAttributeKeyRequest request);
 
     /**
      * Validates the Span Filter pattern (filterText) for syntactic correctness. Returns 204 on

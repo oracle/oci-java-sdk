@@ -95,6 +95,43 @@ public class UsagePlansAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<AddUsagePlanLockResponse> addUsagePlanLock(
+            AddUsagePlanLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddUsagePlanLockRequest, AddUsagePlanLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getUsagePlanId(), "usagePlanId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddUsagePlanLockResponse::builder)
+                .logger(LOG, "addUsagePlanLock")
+                .serviceDetails(
+                        "UsagePlans",
+                        "AddUsagePlanLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/AddUsagePlanLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddUsagePlanLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("usagePlans")
+                .appendPathParam(request.getUsagePlanId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.UsagePlan.class,
+                        AddUsagePlanLockResponse.Builder::usagePlan)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddUsagePlanLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddUsagePlanLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeUsagePlanCompartmentResponse>
             changeUsagePlanCompartment(
                     ChangeUsagePlanCompartmentRequest request,
@@ -121,6 +158,7 @@ public class UsagePlansAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .appendPathParam(request.getUsagePlanId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
@@ -186,6 +224,7 @@ public class UsagePlansAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .basePath("/20190501")
                 .appendPathParam("usagePlans")
                 .appendPathParam(request.getUsagePlanId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -266,6 +305,43 @@ public class UsagePlansAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveUsagePlanLockResponse> removeUsagePlanLock(
+            RemoveUsagePlanLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveUsagePlanLockRequest, RemoveUsagePlanLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getUsagePlanId(), "usagePlanId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveUsagePlanLockResponse::builder)
+                .logger(LOG, "removeUsagePlanLock")
+                .serviceDetails(
+                        "UsagePlans",
+                        "RemoveUsagePlanLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/RemoveUsagePlanLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveUsagePlanLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("usagePlans")
+                .appendPathParam(request.getUsagePlanId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.UsagePlan.class,
+                        RemoveUsagePlanLockResponse.Builder::usagePlan)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveUsagePlanLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveUsagePlanLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateUsagePlanResponse> updateUsagePlan(
             UpdateUsagePlanRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -287,6 +363,7 @@ public class UsagePlansAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .basePath("/20190501")
                 .appendPathParam("usagePlans")
                 .appendPathParam(request.getUsagePlanId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

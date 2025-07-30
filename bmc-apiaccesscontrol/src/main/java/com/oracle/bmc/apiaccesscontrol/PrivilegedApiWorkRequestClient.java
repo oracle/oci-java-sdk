@@ -131,7 +131,10 @@ public class PrivilegedApiWorkRequestClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("PrivilegedApiWorkRequest", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "PrivilegedApiWorkRequest",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20241130")
@@ -153,7 +156,10 @@ public class PrivilegedApiWorkRequestClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("PrivilegedApiWorkRequest", "GetWorkRequest", "")
+                .serviceDetails(
+                        "PrivilegedApiWorkRequest",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20241130")
@@ -181,7 +187,10 @@ public class PrivilegedApiWorkRequestClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("PrivilegedApiWorkRequest", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "PrivilegedApiWorkRequest",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20241130")
@@ -212,7 +221,10 @@ public class PrivilegedApiWorkRequestClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("PrivilegedApiWorkRequest", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "PrivilegedApiWorkRequest",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20241130")
@@ -241,7 +253,10 @@ public class PrivilegedApiWorkRequestClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("PrivilegedApiWorkRequest", "ListWorkRequests", "")
+                .serviceDetails(
+                        "PrivilegedApiWorkRequest",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20241130")

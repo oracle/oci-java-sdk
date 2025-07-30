@@ -136,7 +136,10 @@ public class OracleDbAzureVaultClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ChangeOracleDbAzureVaultCompartmentResponse::builder)
                 .logger(LOG, "changeOracleDbAzureVaultCompartment")
-                .serviceDetails("OracleDbAzureVault", "ChangeOracleDbAzureVaultCompartment", "")
+                .serviceDetails(
+                        "OracleDbAzureVault",
+                        "ChangeOracleDbAzureVaultCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/ChangeOracleDbAzureVaultCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOracleDbAzureVaultCompartmentRequest::builder)
                 .basePath("/20240501")
@@ -168,7 +171,10 @@ public class OracleDbAzureVaultClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateOracleDbAzureVaultResponse::builder)
                 .logger(LOG, "createOracleDbAzureVault")
-                .serviceDetails("OracleDbAzureVault", "CreateOracleDbAzureVault", "")
+                .serviceDetails(
+                        "OracleDbAzureVault",
+                        "CreateOracleDbAzureVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDBAzureVault/CreateOracleDbAzureVault")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOracleDbAzureVaultRequest::builder)
                 .basePath("/20240501")
@@ -205,7 +211,10 @@ public class OracleDbAzureVaultClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteOracleDbAzureVaultResponse::builder)
                 .logger(LOG, "deleteOracleDbAzureVault")
-                .serviceDetails("OracleDbAzureVault", "DeleteOracleDbAzureVault", "")
+                .serviceDetails(
+                        "OracleDbAzureVault",
+                        "DeleteOracleDbAzureVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/DeleteOracleDbAzureVault")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOracleDbAzureVaultRequest::builder)
                 .basePath("/20240501")
@@ -232,7 +241,10 @@ public class OracleDbAzureVaultClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetOracleDbAzureVaultResponse::builder)
                 .logger(LOG, "getOracleDbAzureVault")
-                .serviceDetails("OracleDbAzureVault", "GetOracleDbAzureVault", "")
+                .serviceDetails(
+                        "OracleDbAzureVault",
+                        "GetOracleDbAzureVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/GetOracleDbAzureVault")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOracleDbAzureVaultRequest::builder)
                 .basePath("/20240501")
@@ -260,7 +272,10 @@ public class OracleDbAzureVaultClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListOracleDbAzureVaultsResponse::builder)
                 .logger(LOG, "listOracleDbAzureVaults")
-                .serviceDetails("OracleDbAzureVault", "ListOracleDbAzureVaults", "")
+                .serviceDetails(
+                        "OracleDbAzureVault",
+                        "ListOracleDbAzureVaults",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/ListOracleDbAzureVaults")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOracleDbAzureVaultsRequest::builder)
                 .basePath("/20240501")
@@ -299,7 +314,10 @@ public class OracleDbAzureVaultClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, RefreshOracleDbAzureVaultResponse::builder)
                 .logger(LOG, "refreshOracleDbAzureVault")
-                .serviceDetails("OracleDbAzureVault", "RefreshOracleDbAzureVault", "")
+                .serviceDetails(
+                        "OracleDbAzureVault",
+                        "RefreshOracleDbAzureVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/RefreshOracleDbAzureVault")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RefreshOracleDbAzureVaultRequest::builder)
                 .basePath("/20240501")
@@ -332,7 +350,10 @@ public class OracleDbAzureVaultClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateOracleDbAzureVaultResponse::builder)
                 .logger(LOG, "updateOracleDbAzureVault")
-                .serviceDetails("OracleDbAzureVault", "UpdateOracleDbAzureVault", "")
+                .serviceDetails(
+                        "OracleDbAzureVault",
+                        "UpdateOracleDbAzureVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/UpdateOracleDbAzureVault")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOracleDbAzureVaultRequest::builder)
                 .basePath("/20240501")

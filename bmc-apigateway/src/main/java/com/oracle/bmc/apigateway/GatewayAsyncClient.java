@@ -95,6 +95,43 @@ public class GatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<AddGatewayLockResponse> addGatewayLock(
+            AddGatewayLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddGatewayLockRequest, AddGatewayLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getGatewayId(), "gatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddGatewayLockResponse::builder)
+                .logger(LOG, "addGatewayLock")
+                .serviceDetails(
+                        "Gateway",
+                        "AddGatewayLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/AddGatewayLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddGatewayLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("gateways")
+                .appendPathParam(request.getGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Gateway.class,
+                        AddGatewayLockResponse.Builder::gateway)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddGatewayLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddGatewayLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeGatewayCompartmentResponse> changeGatewayCompartment(
             ChangeGatewayCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -119,6 +156,7 @@ public class GatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendPathParam(request.getGatewayId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
@@ -182,6 +220,7 @@ public class GatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .basePath("/20190501")
                 .appendPathParam("gateways")
                 .appendPathParam(request.getGatewayId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -262,6 +301,43 @@ public class GatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveGatewayLockResponse> removeGatewayLock(
+            RemoveGatewayLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveGatewayLockRequest, RemoveGatewayLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getGatewayId(), "gatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveGatewayLockResponse::builder)
+                .logger(LOG, "removeGatewayLock")
+                .serviceDetails(
+                        "Gateway",
+                        "RemoveGatewayLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/RemoveGatewayLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveGatewayLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("gateways")
+                .appendPathParam(request.getGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Gateway.class,
+                        RemoveGatewayLockResponse.Builder::gateway)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveGatewayLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveGatewayLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateGatewayResponse> updateGateway(
             UpdateGatewayRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateGatewayRequest, UpdateGatewayResponse>
@@ -282,6 +358,7 @@ public class GatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .basePath("/20190501")
                 .appendPathParam("gateways")
                 .appendPathParam(request.getGatewayId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

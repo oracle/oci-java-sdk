@@ -24,11 +24,17 @@ package com.oracle.bmc.apmconfig.model;
         defaultImpl = ConfigSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsApmExtensionSummary.class,
+            name = "MACS_APM_EXTENSION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = MetricGroupSummary.class,
             name = "METRIC_GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ApdexRulesSummary.class,
             name = "APDEX"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AgentConfigSummary.class,
+            name = "AGENT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = SpanFilterSummary.class,
             name = "SPAN_FILTER"),

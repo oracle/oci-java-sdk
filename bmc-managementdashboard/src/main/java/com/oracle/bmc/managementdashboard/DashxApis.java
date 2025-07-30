@@ -235,8 +235,8 @@ public interface DashxApis extends AutoCloseable {
             GetManagementSavedSearchRequest request);
 
     /**
-     * Gets an OOB dashboard and its saved searches by ID. Deleted or unauthorized saved searches
-     * are marked by tile's state property.
+     * Gets an out-of-the-box dashboard and its saved searches by ID. Deleted or unauthorized saved
+     * searches are marked by tile's state property.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -253,7 +253,7 @@ public interface DashxApis extends AutoCloseable {
             GetOobManagementDashboardRequest request);
 
     /**
-     * Gets a saved search by ID.
+     * Gets an out-of-the-box saved search by ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -330,7 +330,8 @@ public interface DashxApis extends AutoCloseable {
             ListManagementSavedSearchesRequest request);
 
     /**
-     * Gets the list of OOB dashboards with pagination. Returned properties are the summary.
+     * Gets the list of out-of-the-box dashboards with pagination. Returned properties are the
+     * summary.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -347,7 +348,7 @@ public interface DashxApis extends AutoCloseable {
             ListOobManagementDashboardsRequest request);
 
     /**
-     * Gets the list of out-of-box saved searches in a compartment with pagination. Returned
+     * Gets the list of out-of-the-box saved searches in a compartment with pagination. Returned
      * properties are the summary.
      *
      * @param request The request object containing the details to send

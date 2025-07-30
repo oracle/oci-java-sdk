@@ -53,6 +53,13 @@ public class UpdateSdkRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -136,6 +143,20 @@ public class UpdateSdkRequest
             return this;
         }
 
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -170,6 +191,7 @@ public class UpdateSdkRequest
             updateSdkDetails(o.getUpdateSdkDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -220,8 +242,9 @@ public class UpdateSdkRequest
             request.updateSdkDetails = updateSdkDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new UpdateSdkRequest(sdkId, updateSdkDetails, ifMatch, opcRequestId);
+            // new UpdateSdkRequest(sdkId, updateSdkDetails, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
@@ -235,7 +258,8 @@ public class UpdateSdkRequest
                 .sdkId(sdkId)
                 .updateSdkDetails(updateSdkDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -256,6 +280,7 @@ public class UpdateSdkRequest
         sb.append(",updateSdkDetails=").append(String.valueOf(this.updateSdkDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -274,7 +299,8 @@ public class UpdateSdkRequest
                 && java.util.Objects.equals(this.sdkId, other.sdkId)
                 && java.util.Objects.equals(this.updateSdkDetails, other.updateSdkDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -287,6 +313,9 @@ public class UpdateSdkRequest
                         + (this.updateSdkDetails == null ? 43 : this.updateSdkDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

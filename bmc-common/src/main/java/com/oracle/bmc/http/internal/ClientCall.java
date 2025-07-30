@@ -299,6 +299,14 @@ public final class ClientCall<
         return appendPathParam(pathParamValue.toString());
     }
 
+    public ClientCall<REQ, RESP, RESP_BUILDER> appendPathParam(Boolean pathParamValue) {
+        return appendPathParam(pathParamValue.toString());
+    }
+
+    public ClientCall<REQ, RESP, RESP_BUILDER> appendPathParam(Character pathParamValue) {
+        return appendPathParam(pathParamValue.toString());
+    }
+
     public ClientCall<REQ, RESP, RESP_BUILDER> appendQueryParam(String name, Object value) {
         if (value != null) {
             httpRequest.query(name, encodeObjectQueryParam(value));

@@ -1139,6 +1139,221 @@ public class DataScienceWaiters {
      *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetModelGroupRequest, GetModelGroupResponse> forModelGroup(
+            GetModelGroupRequest request,
+            com.oracle.bmc.datascience.model.ModelGroupLifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forModelGroup(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetModelGroupRequest, GetModelGroupResponse> forModelGroup(
+            GetModelGroupRequest request,
+            com.oracle.bmc.datascience.model.ModelGroupLifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forModelGroup(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetModelGroupRequest, GetModelGroupResponse> forModelGroup(
+            GetModelGroupRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.datascience.model.ModelGroupLifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forModelGroup(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for ModelGroup.
+    private com.oracle.bmc.waiter.Waiter<GetModelGroupRequest, GetModelGroupResponse> forModelGroup(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetModelGroupRequest request,
+            final com.oracle.bmc.datascience.model.ModelGroupLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datascience.model.ModelGroupLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetModelGroupRequest, GetModelGroupResponse>() {
+                            @Override
+                            public GetModelGroupResponse apply(GetModelGroupRequest request) {
+                                return client.getModelGroup(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetModelGroupResponse>() {
+                            @Override
+                            public boolean test(GetModelGroupResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getModelGroup().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datascience.model.ModelGroupLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetModelGroupVersionHistoryRequest, GetModelGroupVersionHistoryResponse>
+            forModelGroupVersionHistory(
+                    GetModelGroupVersionHistoryRequest request,
+                    com.oracle.bmc.datascience.model.ModelGroupVersionHistoryLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forModelGroupVersionHistory(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetModelGroupVersionHistoryRequest, GetModelGroupVersionHistoryResponse>
+            forModelGroupVersionHistory(
+                    GetModelGroupVersionHistoryRequest request,
+                    com.oracle.bmc.datascience.model.ModelGroupVersionHistoryLifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forModelGroupVersionHistory(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetModelGroupVersionHistoryRequest, GetModelGroupVersionHistoryResponse>
+            forModelGroupVersionHistory(
+                    GetModelGroupVersionHistoryRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datascience.model.ModelGroupVersionHistoryLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forModelGroupVersionHistory(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for ModelGroupVersionHistory.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetModelGroupVersionHistoryRequest, GetModelGroupVersionHistoryResponse>
+            forModelGroupVersionHistory(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetModelGroupVersionHistoryRequest request,
+                    final com.oracle.bmc.datascience.model.ModelGroupVersionHistoryLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datascience.model.ModelGroupVersionHistoryLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetModelGroupVersionHistoryRequest,
+                                GetModelGroupVersionHistoryResponse>() {
+                            @Override
+                            public GetModelGroupVersionHistoryResponse apply(
+                                    GetModelGroupVersionHistoryRequest request) {
+                                return client.getModelGroupVersionHistory(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetModelGroupVersionHistoryResponse>() {
+                            @Override
+                            public boolean test(GetModelGroupVersionHistoryResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getModelGroupVersionHistory().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datascience.model
+                                        .ModelGroupVersionHistoryLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetModelVersionSetRequest, GetModelVersionSetResponse>
             forModelVersionSet(
                     GetModelVersionSetRequest request,

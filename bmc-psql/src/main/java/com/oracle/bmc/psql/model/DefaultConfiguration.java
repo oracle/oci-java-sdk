@@ -35,6 +35,7 @@ public final class DefaultConfiguration
         "isFlexible",
         "instanceOcpuCount",
         "instanceMemorySizeInGBs",
+        "compatibleShapes",
         "configurationDetails"
     })
     public DefaultConfiguration(
@@ -49,6 +50,7 @@ public final class DefaultConfiguration
             Boolean isFlexible,
             Integer instanceOcpuCount,
             Integer instanceMemorySizeInGBs,
+            java.util.List<String> compatibleShapes,
             DefaultConfigurationDetails configurationDetails) {
         super();
         this.id = id;
@@ -62,6 +64,7 @@ public final class DefaultConfiguration
         this.isFlexible = isFlexible;
         this.instanceOcpuCount = instanceOcpuCount;
         this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
+        this.compatibleShapes = compatibleShapes;
         this.configurationDetails = configurationDetails;
     }
 
@@ -184,12 +187,20 @@ public final class DefaultConfiguration
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
+        /**
+         * The name of the shape for the configuration.
+         *
+         * <p>For multi-shape enabled configurations, it is set to PostgreSQL. Please use
+         * compatibleShapes property to get list of supported shapes for such configurations.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
+         * The name of the shape for the configuration.
+         *
+         * <p>For multi-shape enabled configurations, it is set to PostgreSQL. Please use
+         * compatibleShapes property to get list of supported shapes for such configurations.
          *
          * @param shape the value to set
          * @return this builder
@@ -256,6 +267,21 @@ public final class DefaultConfiguration
             this.__explicitlySet__.add("instanceMemorySizeInGBs");
             return this;
         }
+        /** Indicates the collection of compatible shapes for this configuration. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
+        private java.util.List<String> compatibleShapes;
+
+        /**
+         * Indicates the collection of compatible shapes for this configuration.
+         *
+         * @param compatibleShapes the value to set
+         * @return this builder
+         */
+        public Builder compatibleShapes(java.util.List<String> compatibleShapes) {
+            this.compatibleShapes = compatibleShapes;
+            this.__explicitlySet__.add("compatibleShapes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
         private DefaultConfigurationDetails configurationDetails;
@@ -283,6 +309,7 @@ public final class DefaultConfiguration
                             this.isFlexible,
                             this.instanceOcpuCount,
                             this.instanceMemorySizeInGBs,
+                            this.compatibleShapes,
                             this.configurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -324,6 +351,9 @@ public final class DefaultConfiguration
             }
             if (model.wasPropertyExplicitlySet("instanceMemorySizeInGBs")) {
                 this.instanceMemorySizeInGBs(model.getInstanceMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("compatibleShapes")) {
+                this.compatibleShapes(model.getCompatibleShapes());
             }
             if (model.wasPropertyExplicitlySet("configurationDetails")) {
                 this.configurationDetails(model.getConfigurationDetails());
@@ -493,12 +523,20 @@ public final class DefaultConfiguration
         return dbVersion;
     }
 
-    /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
+    /**
+     * The name of the shape for the configuration.
+     *
+     * <p>For multi-shape enabled configurations, it is set to PostgreSQL. Please use
+     * compatibleShapes property to get list of supported shapes for such configurations.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
+     * The name of the shape for the configuration.
+     *
+     * <p>For multi-shape enabled configurations, it is set to PostgreSQL. Please use
+     * compatibleShapes property to get list of supported shapes for such configurations.
      *
      * @return the value
      */
@@ -557,6 +595,19 @@ public final class DefaultConfiguration
         return instanceMemorySizeInGBs;
     }
 
+    /** Indicates the collection of compatible shapes for this configuration. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
+    private final java.util.List<String> compatibleShapes;
+
+    /**
+     * Indicates the collection of compatible shapes for this configuration.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getCompatibleShapes() {
+        return compatibleShapes;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
     private final DefaultConfigurationDetails configurationDetails;
 
@@ -591,6 +642,7 @@ public final class DefaultConfiguration
         sb.append(", instanceOcpuCount=").append(String.valueOf(this.instanceOcpuCount));
         sb.append(", instanceMemorySizeInGBs=")
                 .append(String.valueOf(this.instanceMemorySizeInGBs));
+        sb.append(", compatibleShapes=").append(String.valueOf(this.compatibleShapes));
         sb.append(", configurationDetails=").append(String.valueOf(this.configurationDetails));
         sb.append(")");
         return sb.toString();
@@ -618,6 +670,7 @@ public final class DefaultConfiguration
                 && java.util.Objects.equals(this.instanceOcpuCount, other.instanceOcpuCount)
                 && java.util.Objects.equals(
                         this.instanceMemorySizeInGBs, other.instanceMemorySizeInGBs)
+                && java.util.Objects.equals(this.compatibleShapes, other.compatibleShapes)
                 && java.util.Objects.equals(this.configurationDetails, other.configurationDetails)
                 && super.equals(other);
     }
@@ -647,6 +700,9 @@ public final class DefaultConfiguration
                         + (this.instanceMemorySizeInGBs == null
                                 ? 43
                                 : this.instanceMemorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compatibleShapes == null ? 43 : this.compatibleShapes.hashCode());
         result =
                 (result * PRIME)
                         + (this.configurationDetails == null

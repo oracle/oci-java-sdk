@@ -20,12 +20,19 @@ public class ListVoicesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The model the user wants to run the inference on. */
+    /** The model name to filter voices for given model name. */
     private com.oracle.bmc.aispeech.model.TtsOracleModelDetails.ModelName modelName;
 
-    /** The model the user wants to run the inference on. */
+    /** The model name to filter voices for given model name. */
     public com.oracle.bmc.aispeech.model.TtsOracleModelDetails.ModelName getModelName() {
         return modelName;
+    }
+    /** The Code or Id of the language to filter voices for given language code. */
+    private String languageCode;
+
+    /** The Code or Id of the language to filter voices for given language code. */
+    public String getLanguageCode() {
+        return languageCode;
     }
     /** The name of the speaker voice in which the user wants tts inference to be. */
     private String displayName;
@@ -62,11 +69,11 @@ public class ListVoicesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** The model the user wants to run the inference on. */
+        /** The model name to filter voices for given model name. */
         private com.oracle.bmc.aispeech.model.TtsOracleModelDetails.ModelName modelName = null;
 
         /**
-         * The model the user wants to run the inference on.
+         * The model name to filter voices for given model name.
          *
          * @param modelName the value to set
          * @return this builder instance
@@ -74,6 +81,20 @@ public class ListVoicesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         public Builder modelName(
                 com.oracle.bmc.aispeech.model.TtsOracleModelDetails.ModelName modelName) {
             this.modelName = modelName;
+            return this;
+        }
+
+        /** The Code or Id of the language to filter voices for given language code. */
+        private String languageCode = null;
+
+        /**
+         * The Code or Id of the language to filter voices for given language code.
+         *
+         * @param languageCode the value to set
+         * @return this builder instance
+         */
+        public Builder languageCode(String languageCode) {
+            this.languageCode = languageCode;
             return this;
         }
 
@@ -137,6 +158,7 @@ public class ListVoicesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         public Builder copy(ListVoicesRequest o) {
             compartmentId(o.getCompartmentId());
             modelName(o.getModelName());
+            languageCode(o.getLanguageCode());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -175,10 +197,12 @@ public class ListVoicesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             ListVoicesRequest request = new ListVoicesRequest();
             request.compartmentId = compartmentId;
             request.modelName = modelName;
+            request.languageCode = languageCode;
             request.displayName = displayName;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListVoicesRequest(compartmentId, modelName, displayName, opcRequestId);
+            // new ListVoicesRequest(compartmentId, modelName, languageCode, displayName,
+            // opcRequestId);
         }
     }
 
@@ -191,6 +215,7 @@ public class ListVoicesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         return new Builder()
                 .compartmentId(compartmentId)
                 .modelName(modelName)
+                .languageCode(languageCode)
                 .displayName(displayName)
                 .opcRequestId(opcRequestId);
     }
@@ -211,6 +236,7 @@ public class ListVoicesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",modelName=").append(String.valueOf(this.modelName));
+        sb.append(",languageCode=").append(String.valueOf(this.languageCode));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -230,6 +256,7 @@ public class ListVoicesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.modelName, other.modelName)
+                && java.util.Objects.equals(this.languageCode, other.languageCode)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -242,6 +269,7 @@ public class ListVoicesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.modelName == null ? 43 : this.modelName.hashCode());
+        result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

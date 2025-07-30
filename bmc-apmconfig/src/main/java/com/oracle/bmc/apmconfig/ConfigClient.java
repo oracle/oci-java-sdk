@@ -247,6 +247,37 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public GetMatchAgentsWithAttributeKeyResponse getMatchAgentsWithAttributeKey(
+            GetMatchAgentsWithAttributeKeyRequest request) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        return clientCall(request, GetMatchAgentsWithAttributeKeyResponse::builder)
+                .logger(LOG, "getMatchAgentsWithAttributeKey")
+                .serviceDetails(
+                        "Config",
+                        "GetMatchAgentsWithAttributeKey",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MatchAgentsWithAttributeKey/GetMatchAgentsWithAttributeKey")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMatchAgentsWithAttributeKeyRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("matchAgentsWithAttributeKey")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.MatchAgentsWithAttributeKey.class,
+                        GetMatchAgentsWithAttributeKeyResponse.Builder::matchAgentsWithAttributeKey)
+                .handleResponseHeaderString(
+                        "etag", GetMatchAgentsWithAttributeKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMatchAgentsWithAttributeKeyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ImportConfigurationResponse importConfiguration(ImportConfigurationRequest request) {
         Objects.requireNonNull(
                 request.getImportConfigurationDetails(), "importConfigurationDetails is required");
@@ -455,6 +486,43 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", UpdateConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMatchAgentsWithAttributeKeyResponse updateMatchAgentsWithAttributeKey(
+            UpdateMatchAgentsWithAttributeKeyRequest request) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(
+                request.getUpdateMatchAgentsWithAttributeKeyDetails(),
+                "updateMatchAgentsWithAttributeKeyDetails is required");
+
+        return clientCall(request, UpdateMatchAgentsWithAttributeKeyResponse::builder)
+                .logger(LOG, "updateMatchAgentsWithAttributeKey")
+                .serviceDetails(
+                        "Config",
+                        "UpdateMatchAgentsWithAttributeKey",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MatchAgentsWithAttributeKey/UpdateMatchAgentsWithAttributeKey")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMatchAgentsWithAttributeKeyRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("matchAgentsWithAttributeKey")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.MatchAgentsWithAttributeKey.class,
+                        UpdateMatchAgentsWithAttributeKeyResponse.Builder
+                                ::matchAgentsWithAttributeKey)
+                .handleResponseHeaderString(
+                        "etag", UpdateMatchAgentsWithAttributeKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateMatchAgentsWithAttributeKeyResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -110,10 +110,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, AddPackagesToSoftwareSourceResponse::builder)
                 .logger(LOG, "addPackagesToSoftwareSource")
-                .serviceDetails(
-                        "OsManagement",
-                        "AddPackagesToSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/AddPackagesToSoftwareSource")
+                .serviceDetails("OsManagement", "AddPackagesToSoftwareSource", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddPackagesToSoftwareSourceRequest::builder)
                 .basePath("/20190801")
@@ -145,10 +142,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, AttachChildSoftwareSourceToManagedInstanceResponse::builder)
                 .logger(LOG, "attachChildSoftwareSourceToManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "AttachChildSoftwareSourceToManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachChildSoftwareSourceToManagedInstance")
+                .serviceDetails("OsManagement", "AttachChildSoftwareSourceToManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachChildSoftwareSourceToManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -181,10 +175,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, AttachManagedInstanceToManagedInstanceGroupResponse::builder)
                 .logger(LOG, "attachManagedInstanceToManagedInstanceGroup")
-                .serviceDetails(
-                        "OsManagement",
-                        "AttachManagedInstanceToManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/AttachManagedInstanceToManagedInstanceGroup")
+                .serviceDetails("OsManagement", "AttachManagedInstanceToManagedInstanceGroup", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachManagedInstanceToManagedInstanceGroupRequest::builder)
                 .basePath("/20190801")
@@ -218,10 +209,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, AttachParentSoftwareSourceToManagedInstanceResponse::builder)
                 .logger(LOG, "attachParentSoftwareSourceToManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "AttachParentSoftwareSourceToManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachParentSoftwareSourceToManagedInstance")
+                .serviceDetails("OsManagement", "AttachParentSoftwareSourceToManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachParentSoftwareSourceToManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -256,10 +244,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ChangeManagedInstanceGroupCompartmentResponse::builder)
                 .logger(LOG, "changeManagedInstanceGroupCompartment")
-                .serviceDetails(
-                        "OsManagement",
-                        "ChangeManagedInstanceGroupCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment")
+                .serviceDetails("OsManagement", "ChangeManagedInstanceGroupCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeManagedInstanceGroupCompartmentRequest::builder)
                 .basePath("/20190801")
@@ -294,10 +279,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ChangeScheduledJobCompartmentResponse::builder)
                 .logger(LOG, "changeScheduledJobCompartment")
-                .serviceDetails(
-                        "OsManagement",
-                        "ChangeScheduledJobCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ChangeScheduledJobCompartment")
+                .serviceDetails("OsManagement", "ChangeScheduledJobCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeScheduledJobCompartmentRequest::builder)
                 .basePath("/20190801")
@@ -332,10 +314,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ChangeSoftwareSourceCompartmentResponse::builder)
                 .logger(LOG, "changeSoftwareSourceCompartment")
-                .serviceDetails(
-                        "OsManagement",
-                        "ChangeSoftwareSourceCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ChangeSoftwareSourceCompartment")
+                .serviceDetails("OsManagement", "ChangeSoftwareSourceCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeSoftwareSourceCompartmentRequest::builder)
                 .basePath("/20190801")
@@ -368,10 +347,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, CreateManagedInstanceGroupResponse::builder)
                 .logger(LOG, "createManagedInstanceGroup")
-                .serviceDetails(
-                        "OsManagement",
-                        "CreateManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/CreateManagedInstanceGroup")
+                .serviceDetails("OsManagement", "CreateManagedInstanceGroup", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateManagedInstanceGroupRequest::builder)
                 .basePath("/20190801")
@@ -403,10 +379,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, CreateScheduledJobResponse::builder)
                 .logger(LOG, "createScheduledJob")
-                .serviceDetails(
-                        "OsManagement",
-                        "CreateScheduledJob",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/CreateScheduledJob")
+                .serviceDetails("OsManagement", "CreateScheduledJob", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateScheduledJobRequest::builder)
                 .basePath("/20190801")
@@ -438,10 +411,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, CreateSoftwareSourceResponse::builder)
                 .logger(LOG, "createSoftwareSource")
-                .serviceDetails(
-                        "OsManagement",
-                        "CreateSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/CreateSoftwareSource")
+                .serviceDetails("OsManagement", "CreateSoftwareSource", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSoftwareSourceRequest::builder)
                 .basePath("/20190801")
@@ -475,10 +445,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DeleteManagedInstanceGroupResponse::builder)
                 .logger(LOG, "deleteManagedInstanceGroup")
-                .serviceDetails(
-                        "OsManagement",
-                        "DeleteManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DeleteManagedInstanceGroup")
+                .serviceDetails("OsManagement", "DeleteManagedInstanceGroup", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteManagedInstanceGroupRequest::builder)
                 .basePath("/20190801")
@@ -503,10 +470,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DeleteScheduledJobResponse::builder)
                 .logger(LOG, "deleteScheduledJob")
-                .serviceDetails(
-                        "OsManagement",
-                        "DeleteScheduledJob",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/DeleteScheduledJob")
+                .serviceDetails("OsManagement", "DeleteScheduledJob", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteScheduledJobRequest::builder)
                 .basePath("/20190801")
@@ -531,10 +495,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DeleteSoftwareSourceResponse::builder)
                 .logger(LOG, "deleteSoftwareSource")
-                .serviceDetails(
-                        "OsManagement",
-                        "DeleteSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/DeleteSoftwareSource")
+                .serviceDetails("OsManagement", "DeleteSoftwareSource", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSoftwareSourceRequest::builder)
                 .basePath("/20190801")
@@ -564,10 +525,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DetachChildSoftwareSourceFromManagedInstanceResponse::builder)
                 .logger(LOG, "detachChildSoftwareSourceFromManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "DetachChildSoftwareSourceFromManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachChildSoftwareSourceFromManagedInstance")
+                .serviceDetails("OsManagement", "DetachChildSoftwareSourceFromManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachChildSoftwareSourceFromManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -600,10 +558,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DetachManagedInstanceFromManagedInstanceGroupResponse::builder)
                 .logger(LOG, "detachManagedInstanceFromManagedInstanceGroup")
-                .serviceDetails(
-                        "OsManagement",
-                        "DetachManagedInstanceFromManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DetachManagedInstanceFromManagedInstanceGroup")
+                .serviceDetails("OsManagement", "DetachManagedInstanceFromManagedInstanceGroup", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachManagedInstanceFromManagedInstanceGroupRequest::builder)
                 .basePath("/20190801")
@@ -637,10 +592,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DetachParentSoftwareSourceFromManagedInstanceResponse::builder)
                 .logger(LOG, "detachParentSoftwareSourceFromManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "DetachParentSoftwareSourceFromManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachParentSoftwareSourceFromManagedInstance")
+                .serviceDetails("OsManagement", "DetachParentSoftwareSourceFromManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachParentSoftwareSourceFromManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -672,10 +624,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DisableModuleStreamOnManagedInstanceResponse::builder)
                 .logger(LOG, "disableModuleStreamOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "DisableModuleStreamOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/DisableModuleStreamOnManagedInstance")
+                .serviceDetails("OsManagement", "DisableModuleStreamOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableModuleStreamOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -713,10 +662,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, EnableModuleStreamOnManagedInstanceResponse::builder)
                 .logger(LOG, "enableModuleStreamOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "EnableModuleStreamOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/EnableModuleStreamOnManagedInstance")
+                .serviceDetails("OsManagement", "EnableModuleStreamOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableModuleStreamOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -750,10 +696,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetErratumResponse::builder)
                 .logger(LOG, "getErratum")
-                .serviceDetails(
-                        "OsManagement",
-                        "GetErratum",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Erratum/GetErratum")
+                .serviceDetails("OsManagement", "GetErratum", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetErratumRequest::builder)
                 .basePath("/20190801")
@@ -780,10 +723,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetManagedInstanceResponse::builder)
                 .logger(LOG, "getManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "GetManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/GetManagedInstance")
+                .serviceDetails("OsManagement", "GetManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -812,10 +752,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetManagedInstanceGroupResponse::builder)
                 .logger(LOG, "getManagedInstanceGroup")
-                .serviceDetails(
-                        "OsManagement",
-                        "GetManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/GetManagedInstanceGroup")
+                .serviceDetails("OsManagement", "GetManagedInstanceGroup", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagedInstanceGroupRequest::builder)
                 .basePath("/20190801")
@@ -849,10 +786,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetModuleStreamResponse::builder)
                 .logger(LOG, "getModuleStream")
-                .serviceDetails(
-                        "OsManagement",
-                        "GetModuleStream",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStream/GetModuleStream")
+                .serviceDetails("OsManagement", "GetModuleStream", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetModuleStreamRequest::builder)
                 .basePath("/20190801")
@@ -891,10 +825,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetModuleStreamProfileResponse::builder)
                 .logger(LOG, "getModuleStreamProfile")
-                .serviceDetails(
-                        "OsManagement",
-                        "GetModuleStreamProfile",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfile/GetModuleStreamProfile")
+                .serviceDetails("OsManagement", "GetModuleStreamProfile", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetModuleStreamProfileRequest::builder)
                 .basePath("/20190801")
@@ -930,10 +861,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetScheduledJobResponse::builder)
                 .logger(LOG, "getScheduledJob")
-                .serviceDetails(
-                        "OsManagement",
-                        "GetScheduledJob",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/GetScheduledJob")
+                .serviceDetails("OsManagement", "GetScheduledJob", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetScheduledJobRequest::builder)
                 .basePath("/20190801")
@@ -966,10 +894,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetSoftwarePackageResponse::builder)
                 .logger(LOG, "getSoftwarePackage")
-                .serviceDetails(
-                        "OsManagement",
-                        "GetSoftwarePackage",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwarePackage")
+                .serviceDetails("OsManagement", "GetSoftwarePackage", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSoftwarePackageRequest::builder)
                 .basePath("/20190801")
@@ -998,10 +923,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetSoftwareSourceResponse::builder)
                 .logger(LOG, "getSoftwareSource")
-                .serviceDetails(
-                        "OsManagement",
-                        "GetSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwareSource")
+                .serviceDetails("OsManagement", "GetSoftwareSource", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSoftwareSourceRequest::builder)
                 .basePath("/20190801")
@@ -1031,10 +953,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetWindowsUpdateResponse::builder)
                 .logger(LOG, "getWindowsUpdate")
-                .serviceDetails(
-                        "OsManagement",
-                        "GetWindowsUpdate",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdate/GetWindowsUpdate")
+                .serviceDetails("OsManagement", "GetWindowsUpdate", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWindowsUpdateRequest::builder)
                 .basePath("/20190801")
@@ -1061,10 +980,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "OsManagement",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/GetWorkRequest")
+                .serviceDetails("OsManagement", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20190801")
@@ -1096,10 +1012,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, InstallAllPackageUpdatesOnManagedInstanceResponse::builder)
                 .logger(LOG, "installAllPackageUpdatesOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "InstallAllPackageUpdatesOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllPackageUpdatesOnManagedInstance")
+                .serviceDetails("OsManagement", "InstallAllPackageUpdatesOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallAllPackageUpdatesOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1135,10 +1048,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, InstallAllUpdatesOnManagedInstanceGroupResponse::builder)
                 .logger(LOG, "installAllUpdatesOnManagedInstanceGroup")
-                .serviceDetails(
-                        "OsManagement",
-                        "InstallAllUpdatesOnManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/InstallAllUpdatesOnManagedInstanceGroup")
+                .serviceDetails("OsManagement", "InstallAllUpdatesOnManagedInstanceGroup", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallAllUpdatesOnManagedInstanceGroupRequest::builder)
                 .basePath("/20190801")
@@ -1173,10 +1083,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, InstallAllWindowsUpdatesOnManagedInstanceResponse::builder)
                 .logger(LOG, "installAllWindowsUpdatesOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "InstallAllWindowsUpdatesOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstance")
+                .serviceDetails("OsManagement", "InstallAllWindowsUpdatesOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallAllWindowsUpdatesOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1212,10 +1119,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, InstallModuleStreamProfileOnManagedInstanceResponse::builder)
                 .logger(LOG, "installModuleStreamProfileOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "InstallModuleStreamProfileOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/InstallModuleStreamProfileOnManagedInstance")
+                .serviceDetails("OsManagement", "InstallModuleStreamProfileOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallModuleStreamProfileOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1255,10 +1159,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, InstallPackageOnManagedInstanceResponse::builder)
                 .logger(LOG, "installPackageOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "InstallPackageOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageOnManagedInstance")
+                .serviceDetails("OsManagement", "InstallPackageOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallPackageOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1294,10 +1195,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, InstallPackageUpdateOnManagedInstanceResponse::builder)
                 .logger(LOG, "installPackageUpdateOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "InstallPackageUpdateOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageUpdateOnManagedInstance")
+                .serviceDetails("OsManagement", "InstallPackageUpdateOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallPackageUpdateOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1333,10 +1231,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, InstallWindowsUpdateOnManagedInstanceResponse::builder)
                 .logger(LOG, "installWindowsUpdateOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "InstallWindowsUpdateOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallWindowsUpdateOnManagedInstance")
+                .serviceDetails("OsManagement", "InstallWindowsUpdateOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallWindowsUpdateOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1371,10 +1266,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListAvailablePackagesForManagedInstanceResponse::builder)
                 .logger(LOG, "listAvailablePackagesForManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListAvailablePackagesForManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailablePackagesForManagedInstance")
+                .serviceDetails("OsManagement", "ListAvailablePackagesForManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAvailablePackagesForManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1416,9 +1308,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         return clientCall(request, ListAvailableSoftwareSourcesForManagedInstanceResponse::builder)
                 .logger(LOG, "listAvailableSoftwareSourcesForManagedInstance")
                 .serviceDetails(
-                        "OsManagement",
-                        "ListAvailableSoftwareSourcesForManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableSoftwareSourcesForManagedInstance")
+                        "OsManagement", "ListAvailableSoftwareSourcesForManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAvailableSoftwareSourcesForManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1459,10 +1349,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListAvailableUpdatesForManagedInstanceResponse::builder)
                 .logger(LOG, "listAvailableUpdatesForManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListAvailableUpdatesForManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableUpdatesForManagedInstance")
+                .serviceDetails("OsManagement", "ListAvailableUpdatesForManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAvailableUpdatesForManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1503,10 +1390,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListAvailableWindowsUpdatesForManagedInstanceResponse::builder)
                 .logger(LOG, "listAvailableWindowsUpdatesForManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListAvailableWindowsUpdatesForManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableWindowsUpdatesForManagedInstance")
+                .serviceDetails("OsManagement", "ListAvailableWindowsUpdatesForManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAvailableWindowsUpdatesForManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1544,10 +1428,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListErrataResponse::builder)
                 .logger(LOG, "listErrata")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListErrata",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ErratumSummary/ListErrata")
+                .serviceDetails("OsManagement", "ListErrata", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListErrataRequest::builder)
                 .basePath("/20190801")
@@ -1584,10 +1465,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListManagedInstanceErrataResponse::builder)
                 .logger(LOG, "listManagedInstanceErrata")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListManagedInstanceErrata",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListManagedInstanceErrata")
+                .serviceDetails("OsManagement", "ListManagedInstanceErrata", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceErrataRequest::builder)
                 .basePath("/20190801")
@@ -1622,10 +1500,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListManagedInstanceGroupsResponse::builder)
                 .logger(LOG, "listManagedInstanceGroups")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListManagedInstanceGroups",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroupSummary/ListManagedInstanceGroups")
+                .serviceDetails("OsManagement", "ListManagedInstanceGroups", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceGroupsRequest::builder)
                 .basePath("/20190801")
@@ -1660,10 +1535,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListManagedInstancesResponse::builder)
                 .logger(LOG, "listManagedInstances")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListManagedInstances",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceSummary/ListManagedInstances")
+                .serviceDetails("OsManagement", "ListManagedInstances", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstancesRequest::builder)
                 .basePath("/20190801")
@@ -1698,10 +1570,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListModuleStreamProfilesResponse::builder)
                 .logger(LOG, "listModuleStreamProfiles")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListModuleStreamProfiles",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileSummary/ListModuleStreamProfiles")
+                .serviceDetails("OsManagement", "ListModuleStreamProfiles", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListModuleStreamProfilesRequest::builder)
                 .basePath("/20190801")
@@ -1744,10 +1613,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListModuleStreamProfilesOnManagedInstanceResponse::builder)
                 .logger(LOG, "listModuleStreamProfilesOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListModuleStreamProfilesOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamProfilesOnManagedInstance")
+                .serviceDetails("OsManagement", "ListModuleStreamProfilesOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListModuleStreamProfilesOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1792,10 +1658,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListModuleStreamsResponse::builder)
                 .logger(LOG, "listModuleStreams")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListModuleStreams",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamSummary/ListModuleStreams")
+                .serviceDetails("OsManagement", "ListModuleStreams", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListModuleStreamsRequest::builder)
                 .basePath("/20190801")
@@ -1836,10 +1699,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListModuleStreamsOnManagedInstanceResponse::builder)
                 .logger(LOG, "listModuleStreamsOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListModuleStreamsOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamsOnManagedInstance")
+                .serviceDetails("OsManagement", "ListModuleStreamsOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListModuleStreamsOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1885,10 +1745,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListPackagesInstalledOnManagedInstanceResponse::builder)
                 .logger(LOG, "listPackagesInstalledOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListPackagesInstalledOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListPackagesInstalledOnManagedInstance")
+                .serviceDetails("OsManagement", "ListPackagesInstalledOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPackagesInstalledOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -1925,10 +1782,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListScheduledJobsResponse::builder)
                 .logger(LOG, "listScheduledJobs")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListScheduledJobs",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListScheduledJobs")
+                .serviceDetails("OsManagement", "ListScheduledJobs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListScheduledJobsRequest::builder)
                 .basePath("/20190801")
@@ -1970,10 +1824,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListSoftwareSourcePackagesResponse::builder)
                 .logger(LOG, "listSoftwareSourcePackages")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListSoftwareSourcePackages",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ListSoftwareSourcePackages")
+                .serviceDetails("OsManagement", "ListSoftwareSourcePackages", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSoftwareSourcePackagesRequest::builder)
                 .basePath("/20190801")
@@ -2008,10 +1859,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListSoftwareSourcesResponse::builder)
                 .logger(LOG, "listSoftwareSources")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListSoftwareSources",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSourceSummary/ListSoftwareSources")
+                .serviceDetails("OsManagement", "ListSoftwareSources", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSoftwareSourcesRequest::builder)
                 .basePath("/20190801")
@@ -2047,10 +1895,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListUpcomingScheduledJobsResponse::builder)
                 .logger(LOG, "listUpcomingScheduledJobs")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListUpcomingScheduledJobs",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListUpcomingScheduledJobs")
+                .serviceDetails("OsManagement", "ListUpcomingScheduledJobs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListUpcomingScheduledJobsRequest::builder)
                 .basePath("/20190801")
@@ -2088,10 +1933,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListWindowsUpdatesResponse::builder)
                 .logger(LOG, "listWindowsUpdates")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListWindowsUpdates",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdateSummary/ListWindowsUpdates")
+                .serviceDetails("OsManagement", "ListWindowsUpdates", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWindowsUpdatesRequest::builder)
                 .basePath("/20190801")
@@ -2127,10 +1969,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListWindowsUpdatesInstalledOnManagedInstanceResponse::builder)
                 .logger(LOG, "listWindowsUpdatesInstalledOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListWindowsUpdatesInstalledOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListWindowsUpdatesInstalledOnManagedInstance")
+                .serviceDetails("OsManagement", "ListWindowsUpdatesInstalledOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWindowsUpdatesInstalledOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -2169,10 +2008,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestErrors")
+                .serviceDetails("OsManagement", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20190801")
@@ -2208,10 +2044,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestLogs")
+                .serviceDetails("OsManagement", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20190801")
@@ -2246,10 +2079,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "OsManagement",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequestSummary/ListWorkRequests")
+                .serviceDetails("OsManagement", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20190801")
@@ -2290,10 +2120,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ManageModuleStreamsOnManagedInstanceResponse::builder)
                 .logger(LOG, "manageModuleStreamsOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "ManageModuleStreamsOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ManageModuleStreamsOnManagedInstance")
+                .serviceDetails("OsManagement", "ManageModuleStreamsOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ManageModuleStreamsOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -2330,10 +2157,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, RemoveModuleStreamProfileFromManagedInstanceResponse::builder)
                 .logger(LOG, "removeModuleStreamProfileFromManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "RemoveModuleStreamProfileFromManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/RemoveModuleStreamProfileFromManagedInstance")
+                .serviceDetails("OsManagement", "RemoveModuleStreamProfileFromManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveModuleStreamProfileFromManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -2373,10 +2197,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, RemovePackageFromManagedInstanceResponse::builder)
                 .logger(LOG, "removePackageFromManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "RemovePackageFromManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/RemovePackageFromManagedInstance")
+                .serviceDetails("OsManagement", "RemovePackageFromManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemovePackageFromManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -2414,10 +2235,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, RemovePackagesFromSoftwareSourceResponse::builder)
                 .logger(LOG, "removePackagesFromSoftwareSource")
-                .serviceDetails(
-                        "OsManagement",
-                        "RemovePackagesFromSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/RemovePackagesFromSoftwareSource")
+                .serviceDetails("OsManagement", "RemovePackagesFromSoftwareSource", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemovePackagesFromSoftwareSourceRequest::builder)
                 .basePath("/20190801")
@@ -2445,10 +2263,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, RunScheduledJobNowResponse::builder)
                 .logger(LOG, "runScheduledJobNow")
-                .serviceDetails(
-                        "OsManagement",
-                        "RunScheduledJobNow",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/RunScheduledJobNow")
+                .serviceDetails("OsManagement", "RunScheduledJobNow", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RunScheduledJobNowRequest::builder)
                 .basePath("/20190801")
@@ -2475,10 +2290,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, SearchSoftwarePackagesResponse::builder)
                 .logger(LOG, "searchSoftwarePackages")
-                .serviceDetails(
-                        "OsManagement",
-                        "SearchSoftwarePackages",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/SearchSoftwarePackages")
+                .serviceDetails("OsManagement", "SearchSoftwarePackages", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SearchSoftwarePackagesRequest::builder)
                 .basePath("/20190801")
@@ -2516,10 +2328,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, SkipNextScheduledJobExecutionResponse::builder)
                 .logger(LOG, "skipNextScheduledJobExecution")
-                .serviceDetails(
-                        "OsManagement",
-                        "SkipNextScheduledJobExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/SkipNextScheduledJobExecution")
+                .serviceDetails("OsManagement", "SkipNextScheduledJobExecution", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SkipNextScheduledJobExecutionRequest::builder)
                 .basePath("/20190801")
@@ -2553,10 +2362,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, SwitchModuleStreamOnManagedInstanceResponse::builder)
                 .logger(LOG, "switchModuleStreamOnManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "SwitchModuleStreamOnManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/SwitchModuleStreamOnManagedInstance")
+                .serviceDetails("OsManagement", "SwitchModuleStreamOnManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SwitchModuleStreamOnManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -2594,10 +2400,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, UpdateManagedInstanceResponse::builder)
                 .logger(LOG, "updateManagedInstance")
-                .serviceDetails(
-                        "OsManagement",
-                        "UpdateManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/UpdateManagedInstanceDetails/UpdateManagedInstance")
+                .serviceDetails("OsManagement", "UpdateManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateManagedInstanceRequest::builder)
                 .basePath("/20190801")
@@ -2633,10 +2436,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, UpdateManagedInstanceGroupResponse::builder)
                 .logger(LOG, "updateManagedInstanceGroup")
-                .serviceDetails(
-                        "OsManagement",
-                        "UpdateManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/UpdateManagedInstanceGroup")
+                .serviceDetails("OsManagement", "UpdateManagedInstanceGroup", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateManagedInstanceGroupRequest::builder)
                 .basePath("/20190801")
@@ -2669,10 +2469,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, UpdateScheduledJobResponse::builder)
                 .logger(LOG, "updateScheduledJob")
-                .serviceDetails(
-                        "OsManagement",
-                        "UpdateScheduledJob",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/UpdateScheduledJob")
+                .serviceDetails("OsManagement", "UpdateScheduledJob", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateScheduledJobRequest::builder)
                 .basePath("/20190801")
@@ -2705,10 +2502,7 @@ public class OsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, UpdateSoftwareSourceResponse::builder)
                 .logger(LOG, "updateSoftwareSource")
-                .serviceDetails(
-                        "OsManagement",
-                        "UpdateSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/UpdateSoftwareSource")
+                .serviceDetails("OsManagement", "UpdateSoftwareSource", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSoftwareSourceRequest::builder)
                 .basePath("/20190801")

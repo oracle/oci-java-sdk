@@ -353,6 +353,7 @@ public class DashxApisAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .appendPathParam("actions")
                 .appendPathParam("exportDashboard")
                 .appendPathParam(request.getExportDashboardId())
+                .appendQueryParam("exportTags", request.getExportTags())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -531,6 +532,13 @@ public class DashxApisAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .appendPathParam("managementDashboards")
                 .appendPathParam("actions")
                 .appendPathParam("importDashboard")
+                .appendQueryParam("overrideSameName", request.getOverrideSameName())
+                .appendQueryParam(
+                        "overrideDashboardCompartmentOcid",
+                        request.getOverrideDashboardCompartmentOcid())
+                .appendQueryParam(
+                        "overrideSavedSearchCompartmentOcid",
+                        request.getOverrideSavedSearchCompartmentOcid())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())

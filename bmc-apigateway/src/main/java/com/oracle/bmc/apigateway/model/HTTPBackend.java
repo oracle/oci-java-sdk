@@ -26,10 +26,16 @@ package com.oracle.bmc.apigateway.model;
 public final class HTTPBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /** The url of the HTTP Backend */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * The url of the HTTP Backend
+         *
+         * @param url the value to set
+         * @return this builder
+         */
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
@@ -158,9 +164,15 @@ public final class HTTPBackend extends ApiSpecificationRouteBackend {
         this.isSslVerifyDisabled = isSslVerifyDisabled;
     }
 
+    /** The url of the HTTP Backend */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * The url of the HTTP Backend
+     *
+     * @return the value
+     */
     public String getUrl() {
         return url;
     }

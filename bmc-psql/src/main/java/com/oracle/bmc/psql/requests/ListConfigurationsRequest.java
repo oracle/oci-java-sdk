@@ -60,10 +60,10 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
     public String getDbVersion() {
         return dbVersion;
     }
-    /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
+    /** The compute name of the shape for the configuration. */
     private String shape;
 
-    /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
+    /** The compute name of the shape for the configuration. */
     public String getShape() {
         return shape;
     }
@@ -73,6 +73,20 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
     /** A unique identifier for the configuration. */
     public String getConfigurationId() {
         return configurationId;
+    }
+    /** The instance ocpu count for the configuration. */
+    private Integer instanceOcpuCount;
+
+    /** The instance ocpu count for the configuration. */
+    public Integer getInstanceOcpuCount() {
+        return instanceOcpuCount;
+    }
+    /** The instance memory size in GBs for the configuration. */
+    private Integer instanceMemorySizeInGBs;
+
+    /** The instance memory size in GBs for the configuration. */
+    public Integer getInstanceMemorySizeInGBs() {
+        return instanceMemorySizeInGBs;
     }
     /** The maximum number of items to return. */
     private Integer limit;
@@ -244,11 +258,11 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
+        /** The compute name of the shape for the configuration. */
         private String shape = null;
 
         /**
-         * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
+         * The compute name of the shape for the configuration.
          *
          * @param shape the value to set
          * @return this builder instance
@@ -269,6 +283,34 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder configurationId(String configurationId) {
             this.configurationId = configurationId;
+            return this;
+        }
+
+        /** The instance ocpu count for the configuration. */
+        private Integer instanceOcpuCount = null;
+
+        /**
+         * The instance ocpu count for the configuration.
+         *
+         * @param instanceOcpuCount the value to set
+         * @return this builder instance
+         */
+        public Builder instanceOcpuCount(Integer instanceOcpuCount) {
+            this.instanceOcpuCount = instanceOcpuCount;
+            return this;
+        }
+
+        /** The instance memory size in GBs for the configuration. */
+        private Integer instanceMemorySizeInGBs = null;
+
+        /**
+         * The instance memory size in GBs for the configuration.
+         *
+         * @param instanceMemorySizeInGBs the value to set
+         * @return this builder instance
+         */
+        public Builder instanceMemorySizeInGBs(Integer instanceMemorySizeInGBs) {
+            this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
             return this;
         }
 
@@ -387,6 +429,8 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             dbVersion(o.getDbVersion());
             shape(o.getShape());
             configurationId(o.getConfigurationId());
+            instanceOcpuCount(o.getInstanceOcpuCount());
+            instanceMemorySizeInGBs(o.getInstanceMemorySizeInGBs());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -433,6 +477,8 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             request.dbVersion = dbVersion;
             request.shape = shape;
             request.configurationId = configurationId;
+            request.instanceOcpuCount = instanceOcpuCount;
+            request.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -440,7 +486,8 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             request.opcRequestId = opcRequestId;
             return request;
             // new ListConfigurationsRequest(compartmentId, lifecycleState, configType, displayName,
-            // dbVersion, shape, configurationId, limit, page, sortOrder, sortBy, opcRequestId);
+            // dbVersion, shape, configurationId, instanceOcpuCount, instanceMemorySizeInGBs, limit,
+            // page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -458,6 +505,8 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
                 .dbVersion(dbVersion)
                 .shape(shape)
                 .configurationId(configurationId)
+                .instanceOcpuCount(instanceOcpuCount)
+                .instanceMemorySizeInGBs(instanceMemorySizeInGBs)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -486,6 +535,8 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(",shape=").append(String.valueOf(this.shape));
         sb.append(",configurationId=").append(String.valueOf(this.configurationId));
+        sb.append(",instanceOcpuCount=").append(String.valueOf(this.instanceOcpuCount));
+        sb.append(",instanceMemorySizeInGBs=").append(String.valueOf(this.instanceMemorySizeInGBs));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -513,6 +564,9 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
+                && java.util.Objects.equals(this.instanceOcpuCount, other.instanceOcpuCount)
+                && java.util.Objects.equals(
+                        this.instanceMemorySizeInGBs, other.instanceMemorySizeInGBs)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -537,6 +591,14 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.configurationId == null ? 43 : this.configurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceOcpuCount == null ? 43 : this.instanceOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceMemorySizeInGBs == null
+                                ? 43
+                                : this.instanceMemorySizeInGBs.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

@@ -123,6 +123,39 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public AddDeploymentLockResponse addDeploymentLock(AddDeploymentLockRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddDeploymentLockResponse::builder)
+                .logger(LOG, "addDeploymentLock")
+                .serviceDetails(
+                        "Deployment",
+                        "AddDeploymentLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/AddDeploymentLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDeploymentLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Deployment.class,
+                        AddDeploymentLockResponse.Builder::deployment)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddDeploymentLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddDeploymentLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public ChangeDeploymentCompartmentResponse changeDeploymentCompartment(
             ChangeDeploymentCompartmentRequest request) {
 
@@ -144,6 +177,7 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
@@ -202,6 +236,7 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20190501")
                 .appendPathParam("deployments")
                 .appendPathParam(request.getDeploymentId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -278,6 +313,39 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public RemoveDeploymentLockResponse removeDeploymentLock(RemoveDeploymentLockRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveDeploymentLockResponse::builder)
+                .logger(LOG, "removeDeploymentLock")
+                .serviceDetails(
+                        "Deployment",
+                        "RemoveDeploymentLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/RemoveDeploymentLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDeploymentLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Deployment.class,
+                        RemoveDeploymentLockResponse.Builder::deployment)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveDeploymentLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveDeploymentLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public UpdateDeploymentResponse updateDeployment(UpdateDeploymentRequest request) {
 
         Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
@@ -295,6 +363,7 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20190501")
                 .appendPathParam("deployments")
                 .appendPathParam(request.getDeploymentId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

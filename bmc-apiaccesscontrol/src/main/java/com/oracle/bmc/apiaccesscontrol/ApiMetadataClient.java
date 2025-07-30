@@ -129,7 +129,10 @@ public class ApiMetadataClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, GetApiMetadataResponse::builder)
                 .logger(LOG, "getApiMetadata")
-                .serviceDetails("ApiMetadata", "GetApiMetadata", "")
+                .serviceDetails(
+                        "ApiMetadata",
+                        "GetApiMetadata",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/ApiMetadata/GetApiMetadata")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetApiMetadataRequest::builder)
                 .basePath("/20241130")
@@ -152,7 +155,10 @@ public class ApiMetadataClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListApiMetadataResponse::builder)
                 .logger(LOG, "listApiMetadata")
-                .serviceDetails("ApiMetadata", "ListApiMetadata", "")
+                .serviceDetails(
+                        "ApiMetadata",
+                        "ListApiMetadata",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/ApiMetadata/ListApiMetadata")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApiMetadataRequest::builder)
                 .basePath("/20241130")
@@ -184,7 +190,10 @@ public class ApiMetadataClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListApiMetadataByEntityTypesResponse::builder)
                 .logger(LOG, "listApiMetadataByEntityTypes")
-                .serviceDetails("ApiMetadata", "ListApiMetadataByEntityTypes", "")
+                .serviceDetails(
+                        "ApiMetadata",
+                        "ListApiMetadataByEntityTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/ApiMetadata/ListApiMetadataByEntityTypes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApiMetadataByEntityTypesRequest::builder)
                 .basePath("/20241130")

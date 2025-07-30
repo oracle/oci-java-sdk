@@ -98,6 +98,22 @@ public interface DataScience extends AutoCloseable {
     ActivateModelDeploymentResponse activateModelDeployment(ActivateModelDeploymentRequest request);
 
     /**
+     * Activates the model group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ActivateModelGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateModelGroup
+     *     API.
+     */
+    ActivateModelGroupResponse activateModelGroup(ActivateModelGroupRequest request);
+
+    /**
      * Activates the notebook session.
      *
      * @param request The request object containing the details to send
@@ -332,6 +348,40 @@ public interface DataScience extends AutoCloseable {
      */
     ChangeModelDeploymentCompartmentResponse changeModelDeploymentCompartment(
             ChangeModelDeploymentCompartmentRequest request);
+
+    /**
+     * Moves a model group resource into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeModelGroupCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeModelGroupCompartment API.
+     */
+    ChangeModelGroupCompartmentResponse changeModelGroupCompartment(
+            ChangeModelGroupCompartmentRequest request);
+
+    /**
+     * Moves a model Group Version History resource into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeModelGroupVersionHistoryCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeModelGroupVersionHistoryCompartment API.
+     */
+    ChangeModelGroupVersionHistoryCompartmentResponse changeModelGroupVersionHistoryCompartment(
+            ChangeModelGroupVersionHistoryCompartmentRequest request);
 
     /**
      * Moves a modelVersionSet resource into a different compartment.
@@ -753,6 +803,86 @@ public interface DataScience extends AutoCloseable {
     CreateModelDeploymentResponse createModelDeployment(CreateModelDeploymentRequest request);
 
     /**
+     * Create a new Model Group resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateModelGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateModelGroup
+     *     API.
+     */
+    CreateModelGroupResponse createModelGroup(CreateModelGroupRequest request);
+
+    /**
+     * Creates artifact for the Model Group.
+     *
+     * <p>Note: This operation consumes a stream.
+     *
+     * <p>If the stream supports {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, when a retry is necessary, the stream is reset so it starts at
+     * the beginning (or whatever the stream's position was at the time this operation is called}.
+     *
+     * <p>Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before,
+     * then the mark will not be the same anymore after this operation, and a subsequent call to
+     * {@link java.io.InputStream#reset()} by the caller will reset the stream not to the caller's
+     * mark, but to the position the stream was in when this operation was called.
+     *
+     * <p>If the stream is a {@link java.io.FileInputStream}, and the stream's {@link
+     * java.nio.channels.FileChannel} position can be changed (like for a regular file), the stream
+     * will be wrapped in such a way that it does provide support for {@link
+     * java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same
+     * procedure as above is followed. If the stream's {@link java.nio.channels.FileChannel}
+     * position cannot be changed (like for a named pipe), then the stream's contents will be
+     * buffered in memory, as described below.
+     *
+     * <p>If the stream does not support {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, then the stream is wrapped in a {@link
+     * java.io.BufferedInputStream}, which means the entire contents may be buffered in memory. Then
+     * the same procedure as above is followed.
+     *
+     * <p>The contents of the stream, except when the stream is a {@link java.io.FileInputStream}
+     * whose {@link java.nio.channels.FileChannel} position can be changed, should be less than 2
+     * GiB in size if retries are used. This is because streams 2 GiB in size or larger do no
+     * guarantee that mark-and-reset can be performed. If the stream is larger, do not use built-in
+     * retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateModelGroupArtifactExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateModelGroupArtifact API.
+     */
+    CreateModelGroupArtifactResponse createModelGroupArtifact(
+            CreateModelGroupArtifactRequest request);
+
+    /**
+     * Creates a new modelGroupVersionHistory.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateModelGroupVersionHistoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateModelGroupVersionHistory API.
+     */
+    CreateModelGroupVersionHistoryResponse createModelGroupVersionHistory(
+            CreateModelGroupVersionHistoryRequest request);
+
+    /**
      * Creates provenance information for the specified model.
      *
      * @param request The request object containing the details to send
@@ -939,6 +1069,22 @@ public interface DataScience extends AutoCloseable {
      */
     DeactivateModelDeploymentResponse deactivateModelDeployment(
             DeactivateModelDeploymentRequest request);
+
+    /**
+     * Deactivates the model group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeactivateModelGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeactivateModelGroup API.
+     */
+    DeactivateModelGroupResponse deactivateModelGroup(DeactivateModelGroupRequest request);
 
     /**
      * Deactivates the notebook session.
@@ -1134,6 +1280,39 @@ public interface DataScience extends AutoCloseable {
      *     DeleteModelDeployment API.
      */
     DeleteModelDeploymentResponse deleteModelDeployment(DeleteModelDeploymentRequest request);
+
+    /**
+     * Deletes the specified Model Group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteModelGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteModelGroup
+     *     API.
+     */
+    DeleteModelGroupResponse deleteModelGroup(DeleteModelGroupRequest request);
+
+    /**
+     * Deletes the specified modelGroupVersionHistory.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteModelGroupVersionHistoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteModelGroupVersionHistory API.
+     */
+    DeleteModelGroupVersionHistoryResponse deleteModelGroupVersionHistory(
+            DeleteModelGroupVersionHistoryRequest request);
 
     /**
      * Deletes the specified modelVersionSet.
@@ -1543,6 +1722,55 @@ public interface DataScience extends AutoCloseable {
     GetModelDeploymentResponse getModelDeployment(GetModelDeploymentRequest request);
 
     /**
+     * Retrieves the Model Group resource based on the specified modelGroup id.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetModelGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModelGroup API.
+     */
+    GetModelGroupResponse getModelGroup(GetModelGroupRequest request);
+
+    /**
+     * Downloads the model artifact for the specified model group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetModelGroupArtifactContentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetModelGroupArtifactContent API.
+     */
+    GetModelGroupArtifactContentResponse getModelGroupArtifactContent(
+            GetModelGroupArtifactContentRequest request);
+
+    /**
+     * Gets the specified modelGroupVersionHistory's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetModelGroupVersionHistoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetModelGroupVersionHistory API.
+     */
+    GetModelGroupVersionHistoryResponse getModelGroupVersionHistory(
+            GetModelGroupVersionHistoryRequest request);
+
+    /**
      * Gets provenance information for specified model.
      *
      * @param request The request object containing the details to send
@@ -1746,6 +1974,22 @@ public interface DataScience extends AutoCloseable {
      */
     HeadModelDefinedMetadatumArtifactResponse headModelDefinedMetadatumArtifact(
             HeadModelDefinedMetadatumArtifactRequest request);
+
+    /**
+     * Gets model group artifact metadata for a specified model group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/HeadModelGroupArtifactExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     HeadModelGroupArtifact API.
+     */
+    HeadModelGroupArtifactResponse headModelGroupArtifact(HeadModelGroupArtifactRequest request);
 
     /**
      * Get the artifact metadata for a step in the pipeline.
@@ -1961,6 +2205,23 @@ public interface DataScience extends AutoCloseable {
     ListMlApplicationsResponse listMlApplications(ListMlApplicationsRequest request);
 
     /**
+     * Lists the status of models in a model group deployment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelDeploymentModelStatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListModelDeploymentModelStates API.
+     */
+    ListModelDeploymentModelStatesResponse listModelDeploymentModelStates(
+            ListModelDeploymentModelStatesRequest request);
+
+    /**
      * Lists the valid model deployment shapes.
      *
      * @param request The request object containing the details to send
@@ -1995,6 +2256,56 @@ public interface DataScience extends AutoCloseable {
      *     ListModelDeployments API.
      */
     ListModelDeploymentsResponse listModelDeployments(ListModelDeploymentsRequest request);
+
+    /**
+     * Lists all models associated with the modelGroup in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelGroupModelsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListModelGroupModels API.
+     */
+    ListModelGroupModelsResponse listModelGroupModels(ListModelGroupModelsRequest request);
+
+    /**
+     * List all modelGroupVersionHistories in the specified compartment. The query must include
+     * compartmentId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelGroupVersionHistoriesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListModelGroupVersionHistories API.
+     */
+    ListModelGroupVersionHistoriesResponse listModelGroupVersionHistories(
+            ListModelGroupVersionHistoriesRequest request);
+
+    /**
+     * Lists all the modelGroups in the specified compartment. The query must include compartmentId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelGroupsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModelGroups
+     *     API.
+     */
+    ListModelGroupsResponse listModelGroups(ListModelGroupsRequest request);
 
     /**
      * Lists model version sets in the specified compartment.
@@ -2567,6 +2878,39 @@ public interface DataScience extends AutoCloseable {
      *     UpdateModelDeployment API.
      */
     UpdateModelDeploymentResponse updateModelDeployment(UpdateModelDeploymentRequest request);
+
+    /**
+     * Updates the properties of the Model Group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateModelGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateModelGroup
+     *     API.
+     */
+    UpdateModelGroupResponse updateModelGroup(UpdateModelGroupRequest request);
+
+    /**
+     * Updates the properties of a modelGroupVersionHistory.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateModelGroupVersionHistoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateModelGroupVersionHistory API.
+     */
+    UpdateModelGroupVersionHistoryResponse updateModelGroupVersionHistory(
+            UpdateModelGroupVersionHistoryRequest request);
 
     /**
      * Updates the provenance information for the specified model.

@@ -35,6 +35,8 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
         "isFlexible",
         "instanceOcpuCount",
         "instanceMemorySizeInGBs",
+        "compatibleShapes",
+        "defaultConfigId",
         "configurationDetails",
         "freeformTags",
         "definedTags",
@@ -54,6 +56,8 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
             Boolean isFlexible,
             Integer instanceOcpuCount,
             Integer instanceMemorySizeInGBs,
+            java.util.List<String> compatibleShapes,
+            String defaultConfigId,
             ConfigurationDetails configurationDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -72,6 +76,8 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
         this.isFlexible = isFlexible;
         this.instanceOcpuCount = instanceOcpuCount;
         this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
+        this.compatibleShapes = compatibleShapes;
+        this.defaultConfigId = defaultConfigId;
         this.configurationDetails = configurationDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -235,12 +241,20 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("configType");
             return this;
         }
-        /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
+        /**
+         * The name of the shape for the configuration.
+         *
+         * <p>For multi-shape enabled configurations, it is set to PostgreSQL. Please use
+         * compatibleShapes property to get list of supported shapes for such configurations.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
+         * The name of the shape for the configuration.
+         *
+         * <p>For multi-shape enabled configurations, it is set to PostgreSQL. Please use
+         * compatibleShapes property to get list of supported shapes for such configurations.
          *
          * @param shape the value to set
          * @return this builder
@@ -305,6 +319,36 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
         public Builder instanceMemorySizeInGBs(Integer instanceMemorySizeInGBs) {
             this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
             this.__explicitlySet__.add("instanceMemorySizeInGBs");
+            return this;
+        }
+        /** Indicates the collection of compatible shapes for this configuration. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
+        private java.util.List<String> compatibleShapes;
+
+        /**
+         * Indicates the collection of compatible shapes for this configuration.
+         *
+         * @param compatibleShapes the value to set
+         * @return this builder
+         */
+        public Builder compatibleShapes(java.util.List<String> compatibleShapes) {
+            this.compatibleShapes = compatibleShapes;
+            this.__explicitlySet__.add("compatibleShapes");
+            return this;
+        }
+        /** The Default configuration used for this configuration. */
+        @com.fasterxml.jackson.annotation.JsonProperty("defaultConfigId")
+        private String defaultConfigId;
+
+        /**
+         * The Default configuration used for this configuration.
+         *
+         * @param defaultConfigId the value to set
+         * @return this builder
+         */
+        public Builder defaultConfigId(String defaultConfigId) {
+            this.defaultConfigId = defaultConfigId;
+            this.__explicitlySet__.add("defaultConfigId");
             return this;
         }
 
@@ -394,6 +438,8 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
                             this.isFlexible,
                             this.instanceOcpuCount,
                             this.instanceMemorySizeInGBs,
+                            this.compatibleShapes,
+                            this.defaultConfigId,
                             this.configurationDetails,
                             this.freeformTags,
                             this.definedTags,
@@ -444,6 +490,12 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("instanceMemorySizeInGBs")) {
                 this.instanceMemorySizeInGBs(model.getInstanceMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("compatibleShapes")) {
+                this.compatibleShapes(model.getCompatibleShapes());
+            }
+            if (model.wasPropertyExplicitlySet("defaultConfigId")) {
+                this.defaultConfigId(model.getDefaultConfigId());
             }
             if (model.wasPropertyExplicitlySet("configurationDetails")) {
                 this.configurationDetails(model.getConfigurationDetails());
@@ -700,12 +752,20 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
         return configType;
     }
 
-    /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
+    /**
+     * The name of the shape for the configuration.
+     *
+     * <p>For multi-shape enabled configurations, it is set to PostgreSQL. Please use
+     * compatibleShapes property to get list of supported shapes for such configurations.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
+     * The name of the shape for the configuration.
+     *
+     * <p>For multi-shape enabled configurations, it is set to PostgreSQL. Please use
+     * compatibleShapes property to get list of supported shapes for such configurations.
      *
      * @return the value
      */
@@ -762,6 +822,32 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
      */
     public Integer getInstanceMemorySizeInGBs() {
         return instanceMemorySizeInGBs;
+    }
+
+    /** Indicates the collection of compatible shapes for this configuration. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
+    private final java.util.List<String> compatibleShapes;
+
+    /**
+     * Indicates the collection of compatible shapes for this configuration.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getCompatibleShapes() {
+        return compatibleShapes;
+    }
+
+    /** The Default configuration used for this configuration. */
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultConfigId")
+    private final String defaultConfigId;
+
+    /**
+     * The Default configuration used for this configuration.
+     *
+     * @return the value
+     */
+    public String getDefaultConfigId() {
+        return defaultConfigId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
@@ -851,6 +937,8 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", instanceOcpuCount=").append(String.valueOf(this.instanceOcpuCount));
         sb.append(", instanceMemorySizeInGBs=")
                 .append(String.valueOf(this.instanceMemorySizeInGBs));
+        sb.append(", compatibleShapes=").append(String.valueOf(this.compatibleShapes));
+        sb.append(", defaultConfigId=").append(String.valueOf(this.defaultConfigId));
         sb.append(", configurationDetails=").append(String.valueOf(this.configurationDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -883,6 +971,8 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.instanceOcpuCount, other.instanceOcpuCount)
                 && java.util.Objects.equals(
                         this.instanceMemorySizeInGBs, other.instanceMemorySizeInGBs)
+                && java.util.Objects.equals(this.compatibleShapes, other.compatibleShapes)
+                && java.util.Objects.equals(this.defaultConfigId, other.defaultConfigId)
                 && java.util.Objects.equals(this.configurationDetails, other.configurationDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -919,6 +1009,12 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
                         + (this.instanceMemorySizeInGBs == null
                                 ? 43
                                 : this.instanceMemorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compatibleShapes == null ? 43 : this.compatibleShapes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultConfigId == null ? 43 : this.defaultConfigId.hashCode());
         result =
                 (result * PRIME)
                         + (this.configurationDetails == null

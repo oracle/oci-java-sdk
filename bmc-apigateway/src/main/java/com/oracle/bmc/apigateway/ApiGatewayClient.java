@@ -149,6 +149,103 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public AddApiLockResponse addApiLock(AddApiLockRequest request) {
+
+        Validate.notBlank(request.getApiId(), "apiId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddApiLockResponse::builder)
+                .logger(LOG, "addApiLock")
+                .serviceDetails(
+                        "ApiGateway",
+                        "AddApiLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/AddApiLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddApiLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("apis")
+                .appendPathParam(request.getApiId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Api.class, AddApiLockResponse.Builder::api)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddApiLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddApiLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public AddCertificateLockResponse addCertificateLock(AddCertificateLockRequest request) {
+
+        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddCertificateLockResponse::builder)
+                .logger(LOG, "addCertificateLock")
+                .serviceDetails(
+                        "ApiGateway",
+                        "AddCertificateLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/AddCertificateLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddCertificateLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Certificate.class,
+                        AddCertificateLockResponse.Builder::certificate)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddCertificateLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddCertificateLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public AddSdkLockResponse addSdkLock(AddSdkLockRequest request) {
+
+        Validate.notBlank(request.getSdkId(), "sdkId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddSdkLockResponse::builder)
+                .logger(LOG, "addSdkLock")
+                .serviceDetails(
+                        "ApiGateway",
+                        "AddSdkLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/AddSdkLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddSdkLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("sdks")
+                .appendPathParam(request.getSdkId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Sdk.class, AddSdkLockResponse.Builder::sdk)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddSdkLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddSdkLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public ChangeApiCompartmentResponse changeApiCompartment(ChangeApiCompartmentRequest request) {
 
         Validate.notBlank(request.getApiId(), "apiId must not be blank");
@@ -169,6 +266,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getApiId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
@@ -204,6 +302,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getCertificateId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
@@ -317,6 +416,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20190501")
                 .appendPathParam("apis")
                 .appendPathParam(request.getApiId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -343,6 +443,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20190501")
                 .appendPathParam("certificates")
                 .appendPathParam(request.getCertificateId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -369,6 +470,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20190501")
                 .appendPathParam("sdks")
                 .appendPathParam(request.getSdkId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
@@ -691,6 +793,106 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public RemoveApiLockResponse removeApiLock(RemoveApiLockRequest request) {
+
+        Validate.notBlank(request.getApiId(), "apiId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveApiLockResponse::builder)
+                .logger(LOG, "removeApiLock")
+                .serviceDetails(
+                        "ApiGateway",
+                        "RemoveApiLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/RemoveApiLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveApiLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("apis")
+                .appendPathParam(request.getApiId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Api.class,
+                        RemoveApiLockResponse.Builder::api)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveApiLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveApiLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public RemoveCertificateLockResponse removeCertificateLock(
+            RemoveCertificateLockRequest request) {
+
+        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveCertificateLockResponse::builder)
+                .logger(LOG, "removeCertificateLock")
+                .serviceDetails(
+                        "ApiGateway",
+                        "RemoveCertificateLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/RemoveCertificateLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveCertificateLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Certificate.class,
+                        RemoveCertificateLockResponse.Builder::certificate)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveCertificateLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveCertificateLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public RemoveSdkLockResponse removeSdkLock(RemoveSdkLockRequest request) {
+
+        Validate.notBlank(request.getSdkId(), "sdkId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveSdkLockResponse::builder)
+                .logger(LOG, "removeSdkLock")
+                .serviceDetails(
+                        "ApiGateway",
+                        "RemoveSdkLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/RemoveSdkLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveSdkLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("sdks")
+                .appendPathParam(request.getSdkId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Sdk.class,
+                        RemoveSdkLockResponse.Builder::sdk)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveSdkLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveSdkLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public UpdateApiResponse updateApi(UpdateApiRequest request) {
 
         Validate.notBlank(request.getApiId(), "apiId must not be blank");
@@ -707,6 +909,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20190501")
                 .appendPathParam("apis")
                 .appendPathParam(request.getApiId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -736,6 +939,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20190501")
                 .appendPathParam("certificates")
                 .appendPathParam(request.getCertificateId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -764,6 +968,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20190501")
                 .appendPathParam("sdks")
                 .appendPathParam(request.getSdkId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

@@ -33,10 +33,16 @@ public final class HeaderValidationRequestPolicy
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /** The List of Headers */
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.List<HeaderValidationItem> headers;
 
+        /**
+         * The List of Headers
+         *
+         * @param headers the value to set
+         * @return this builder
+         */
         public Builder headers(java.util.List<HeaderValidationItem> headers) {
             this.headers = headers;
             this.__explicitlySet__.add("headers");
@@ -109,9 +115,15 @@ public final class HeaderValidationRequestPolicy
         return new Builder().copy(this);
     }
 
+    /** The List of Headers */
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final java.util.List<HeaderValidationItem> headers;
 
+    /**
+     * The List of Headers
+     *
+     * @return the value
+     */
     public java.util.List<HeaderValidationItem> getHeaders() {
         return headers;
     }

@@ -67,6 +67,57 @@ public class ImportDashboardRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * By default, if a resource with the same OCID exists in the target compartment, it is updated
+     * during the import process, otherwise, a new resource is created. However, if this attribute
+     * is set to true, then during the import process if a resource with the same displayName exists
+     * in the compartment, then it is updated even if the OCIDs are different. This is useful when
+     * importing the same resource multiple times. If the compartment and displayName remain the
+     * same, the resource is only updated and multiple copies of a resource are not created.
+     */
+    private String overrideSameName;
+
+    /**
+     * By default, if a resource with the same OCID exists in the target compartment, it is updated
+     * during the import process, otherwise, a new resource is created. However, if this attribute
+     * is set to true, then during the import process if a resource with the same displayName exists
+     * in the compartment, then it is updated even if the OCIDs are different. This is useful when
+     * importing the same resource multiple times. If the compartment and displayName remain the
+     * same, the resource is only updated and multiple copies of a resource are not created.
+     */
+    public String getOverrideSameName() {
+        return overrideSameName;
+    }
+    /**
+     * If this attribute is set, the dashboard resources are created or updated in the compartment
+     * specified by OCID. If this attribute is not set, the compartment specified in the JSON
+     * metadata is used.
+     */
+    private String overrideDashboardCompartmentOcid;
+
+    /**
+     * If this attribute is set, the dashboard resources are created or updated in the compartment
+     * specified by OCID. If this attribute is not set, the compartment specified in the JSON
+     * metadata is used.
+     */
+    public String getOverrideDashboardCompartmentOcid() {
+        return overrideDashboardCompartmentOcid;
+    }
+    /**
+     * If this attribute is set, the saved search resources are created or updated in the
+     * compartment specified by OCID. If this attribute is not set, the compartment specified in the
+     * JSON metadata is used.
+     */
+    private String overrideSavedSearchCompartmentOcid;
+
+    /**
+     * If this attribute is set, the saved search resources are created or updated in the
+     * compartment specified by OCID. If this attribute is not set, the compartment specified in the
+     * JSON metadata is used.
+     */
+    public String getOverrideSavedSearchCompartmentOcid() {
+        return overrideSavedSearchCompartmentOcid;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -164,6 +215,75 @@ public class ImportDashboardRequest
         }
 
         /**
+         * By default, if a resource with the same OCID exists in the target compartment, it is
+         * updated during the import process, otherwise, a new resource is created. However, if this
+         * attribute is set to true, then during the import process if a resource with the same
+         * displayName exists in the compartment, then it is updated even if the OCIDs are
+         * different. This is useful when importing the same resource multiple times. If the
+         * compartment and displayName remain the same, the resource is only updated and multiple
+         * copies of a resource are not created.
+         */
+        private String overrideSameName = null;
+
+        /**
+         * By default, if a resource with the same OCID exists in the target compartment, it is
+         * updated during the import process, otherwise, a new resource is created. However, if this
+         * attribute is set to true, then during the import process if a resource with the same
+         * displayName exists in the compartment, then it is updated even if the OCIDs are
+         * different. This is useful when importing the same resource multiple times. If the
+         * compartment and displayName remain the same, the resource is only updated and multiple
+         * copies of a resource are not created.
+         *
+         * @param overrideSameName the value to set
+         * @return this builder instance
+         */
+        public Builder overrideSameName(String overrideSameName) {
+            this.overrideSameName = overrideSameName;
+            return this;
+        }
+
+        /**
+         * If this attribute is set, the dashboard resources are created or updated in the
+         * compartment specified by OCID. If this attribute is not set, the compartment specified in
+         * the JSON metadata is used.
+         */
+        private String overrideDashboardCompartmentOcid = null;
+
+        /**
+         * If this attribute is set, the dashboard resources are created or updated in the
+         * compartment specified by OCID. If this attribute is not set, the compartment specified in
+         * the JSON metadata is used.
+         *
+         * @param overrideDashboardCompartmentOcid the value to set
+         * @return this builder instance
+         */
+        public Builder overrideDashboardCompartmentOcid(String overrideDashboardCompartmentOcid) {
+            this.overrideDashboardCompartmentOcid = overrideDashboardCompartmentOcid;
+            return this;
+        }
+
+        /**
+         * If this attribute is set, the saved search resources are created or updated in the
+         * compartment specified by OCID. If this attribute is not set, the compartment specified in
+         * the JSON metadata is used.
+         */
+        private String overrideSavedSearchCompartmentOcid = null;
+
+        /**
+         * If this attribute is set, the saved search resources are created or updated in the
+         * compartment specified by OCID. If this attribute is not set, the compartment specified in
+         * the JSON metadata is used.
+         *
+         * @param overrideSavedSearchCompartmentOcid the value to set
+         * @return this builder instance
+         */
+        public Builder overrideSavedSearchCompartmentOcid(
+                String overrideSavedSearchCompartmentOcid) {
+            this.overrideSavedSearchCompartmentOcid = overrideSavedSearchCompartmentOcid;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -197,6 +317,9 @@ public class ImportDashboardRequest
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            overrideSameName(o.getOverrideSameName());
+            overrideDashboardCompartmentOcid(o.getOverrideDashboardCompartmentOcid());
+            overrideSavedSearchCompartmentOcid(o.getOverrideSavedSearchCompartmentOcid());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -248,9 +371,13 @@ public class ImportDashboardRequest
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.overrideSameName = overrideSameName;
+            request.overrideDashboardCompartmentOcid = overrideDashboardCompartmentOcid;
+            request.overrideSavedSearchCompartmentOcid = overrideSavedSearchCompartmentOcid;
             return request;
             // new ImportDashboardRequest(managementDashboardImportDetails, ifMatch, opcRetryToken,
-            // opcRequestId);
+            // opcRequestId, overrideSameName, overrideDashboardCompartmentOcid,
+            // overrideSavedSearchCompartmentOcid);
         }
     }
 
@@ -264,7 +391,10 @@ public class ImportDashboardRequest
                 .managementDashboardImportDetails(managementDashboardImportDetails)
                 .ifMatch(ifMatch)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .overrideSameName(overrideSameName)
+                .overrideDashboardCompartmentOcid(overrideDashboardCompartmentOcid)
+                .overrideSavedSearchCompartmentOcid(overrideSavedSearchCompartmentOcid);
     }
 
     /**
@@ -286,6 +416,11 @@ public class ImportDashboardRequest
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",overrideSameName=").append(String.valueOf(this.overrideSameName));
+        sb.append(",overrideDashboardCompartmentOcid=")
+                .append(String.valueOf(this.overrideDashboardCompartmentOcid));
+        sb.append(",overrideSavedSearchCompartmentOcid=")
+                .append(String.valueOf(this.overrideSavedSearchCompartmentOcid));
         sb.append(")");
         return sb.toString();
     }
@@ -306,7 +441,14 @@ public class ImportDashboardRequest
                         other.managementDashboardImportDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.overrideSameName, other.overrideSameName)
+                && java.util.Objects.equals(
+                        this.overrideDashboardCompartmentOcid,
+                        other.overrideDashboardCompartmentOcid)
+                && java.util.Objects.equals(
+                        this.overrideSavedSearchCompartmentOcid,
+                        other.overrideSavedSearchCompartmentOcid);
     }
 
     @Override
@@ -323,6 +465,19 @@ public class ImportDashboardRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.overrideSameName == null ? 43 : this.overrideSameName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.overrideDashboardCompartmentOcid == null
+                                ? 43
+                                : this.overrideDashboardCompartmentOcid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.overrideSavedSearchCompartmentOcid == null
+                                ? 43
+                                : this.overrideSavedSearchCompartmentOcid.hashCode());
         return result;
     }
 }

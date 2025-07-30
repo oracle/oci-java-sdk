@@ -95,6 +95,43 @@ public class SubscribersAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<AddSubscriberLockResponse> addSubscriberLock(
+            AddSubscriberLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddSubscriberLockRequest, AddSubscriberLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSubscriberId(), "subscriberId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddSubscriberLockResponse::builder)
+                .logger(LOG, "addSubscriberLock")
+                .serviceDetails(
+                        "Subscribers",
+                        "AddSubscriberLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/AddSubscriberLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddSubscriberLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("subscribers")
+                .appendPathParam(request.getSubscriberId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Subscriber.class,
+                        AddSubscriberLockResponse.Builder::subscriber)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddSubscriberLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddSubscriberLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeSubscriberCompartmentResponse>
             changeSubscriberCompartment(
                     ChangeSubscriberCompartmentRequest request,
@@ -121,6 +158,7 @@ public class SubscribersAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendPathParam(request.getSubscriberId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
@@ -186,6 +224,7 @@ public class SubscribersAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20190501")
                 .appendPathParam("subscribers")
                 .appendPathParam(request.getSubscriberId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -266,6 +305,43 @@ public class SubscribersAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveSubscriberLockResponse> removeSubscriberLock(
+            RemoveSubscriberLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveSubscriberLockRequest, RemoveSubscriberLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSubscriberId(), "subscriberId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveSubscriberLockResponse::builder)
+                .logger(LOG, "removeSubscriberLock")
+                .serviceDetails(
+                        "Subscribers",
+                        "RemoveSubscriberLock",
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/RemoveSubscriberLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveSubscriberLockRequest::builder)
+                .basePath("/20190501")
+                .appendPathParam("subscribers")
+                .appendPathParam(request.getSubscriberId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Subscriber.class,
+                        RemoveSubscriberLockResponse.Builder::subscriber)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveSubscriberLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveSubscriberLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSubscriberResponse> updateSubscriber(
             UpdateSubscriberRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -287,6 +363,7 @@ public class SubscribersAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20190501")
                 .appendPathParam("subscribers")
                 .appendPathParam(request.getSubscriberId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

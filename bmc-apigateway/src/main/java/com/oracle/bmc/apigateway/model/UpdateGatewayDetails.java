@@ -92,14 +92,14 @@ public final class UpdateGatewayDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * resource.
+         * resource which can be empty string.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * resource.
+         * resource which can be empty string.
          *
          * @param certificateId the value to set
          * @return this builder
@@ -276,14 +276,14 @@ public final class UpdateGatewayDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resource.
+     * resource which can be empty string.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resource.
+     * resource which can be empty string.
      *
      * @return the value
      */

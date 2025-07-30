@@ -228,8 +228,8 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets an OOB dashboard and its saved searches by ID. Deleted or unauthorized saved searches
-     * are marked by tile's state property.
+     * Gets an out-of-the-box dashboard and its saved searches by ID. Deleted or unauthorized saved
+     * searches are marked by tile's state property.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -245,7 +245,7 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a saved search by ID.
+     * Gets an out-of-the-box saved search by ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -318,7 +318,8 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of OOB dashboards with pagination. Returned properties are the summary.
+     * Gets the list of out-of-the-box dashboards with pagination. Returned properties are the
+     * summary.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -334,7 +335,7 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of out-of-box saved searches in a compartment with pagination. Returned
+     * Gets the list of out-of-the-box saved searches in a compartment with pagination. Returned
      * properties are the summary.
      *
      * @param request The request object containing the details to send

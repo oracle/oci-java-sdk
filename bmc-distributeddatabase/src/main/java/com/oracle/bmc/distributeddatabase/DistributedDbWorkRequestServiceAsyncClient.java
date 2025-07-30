@@ -111,7 +111,7 @@ public class DistributedDbWorkRequestServiceAsyncClient
                 .serviceDetails(
                         "DistributedDbWorkRequestService",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/WorkRequest/GetWorkRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20250101")
@@ -143,7 +143,7 @@ public class DistributedDbWorkRequestServiceAsyncClient
                 .serviceDetails(
                         "DistributedDbWorkRequestService",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/WorkRequestError/ListWorkRequestErrors")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20250101")
@@ -180,7 +180,7 @@ public class DistributedDbWorkRequestServiceAsyncClient
                 .serviceDetails(
                         "DistributedDbWorkRequestService",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/WorkRequestLogEntry/ListWorkRequestLogs")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20250101")
@@ -217,7 +217,7 @@ public class DistributedDbWorkRequestServiceAsyncClient
                 .serviceDetails(
                         "DistributedDbWorkRequestService",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20250101/WorkRequest/ListWorkRequests")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20250101")

@@ -28,6 +28,7 @@ public final class CreateSubscriberDetails
         "compartmentId",
         "clients",
         "usagePlans",
+        "locks",
         "freeformTags",
         "definedTags"
     })
@@ -36,6 +37,7 @@ public final class CreateSubscriberDetails
             String compartmentId,
             java.util.List<Client> clients,
             java.util.List<String> usagePlans,
+            java.util.List<AddResourceLockDetails> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -43,6 +45,7 @@ public final class CreateSubscriberDetails
         this.compartmentId = compartmentId;
         this.clients = clients;
         this.usagePlans = usagePlans;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -127,6 +130,21 @@ public final class CreateSubscriberDetails
             this.__explicitlySet__.add("usagePlans");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -189,6 +207,7 @@ public final class CreateSubscriberDetails
                             this.compartmentId,
                             this.clients,
                             this.usagePlans,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -210,6 +229,9 @@ public final class CreateSubscriberDetails
             }
             if (model.wasPropertyExplicitlySet("usagePlans")) {
                 this.usagePlans(model.getUsagePlans());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -298,6 +320,19 @@ public final class CreateSubscriberDetails
         return usagePlans;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<AddResourceLockDetails> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<AddResourceLockDetails> getLocks() {
+        return locks;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -363,6 +398,7 @@ public final class CreateSubscriberDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", clients=").append(String.valueOf(this.clients));
         sb.append(", usagePlans=").append(String.valueOf(this.usagePlans));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -383,6 +419,7 @@ public final class CreateSubscriberDetails
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.clients, other.clients)
                 && java.util.Objects.equals(this.usagePlans, other.usagePlans)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -398,6 +435,7 @@ public final class CreateSubscriberDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.clients == null ? 43 : this.clients.hashCode());
         result = (result * PRIME) + (this.usagePlans == null ? 43 : this.usagePlans.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

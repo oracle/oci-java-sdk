@@ -27,6 +27,12 @@ package com.oracle.bmc.apmconfig.model;
             value = UpdateMetricGroupDetails.class,
             name = "METRIC_GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateAgentConfigDetails.class,
+            name = "AGENT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateMacsApmExtensionDetails.class,
+            name = "MACS_APM_EXTENSION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateApdexRulesDetails.class,
             name = "APDEX"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

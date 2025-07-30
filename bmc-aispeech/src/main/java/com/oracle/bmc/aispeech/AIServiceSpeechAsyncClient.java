@@ -662,6 +662,7 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam("voices")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("modelName", request.getModelName())
+                .appendQueryParam("languageCode", request.getLanguageCode())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())

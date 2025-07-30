@@ -45,14 +45,14 @@ public final class TtsOracleSpeechSettings
     public static class Builder {
         /**
          * The format in which the input text has been supplied i.e., Text or SSML. The supported
-         * text types are: - TEXT - SSML
+         * text types are: - TEXT - SSML : This is only supported for en-US language.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("textType")
         private TextType textType;
 
         /**
          * The format in which the input text has been supplied i.e., Text or SSML. The supported
-         * text types are: - TEXT - SSML
+         * text types are: - TEXT - SSML : This is only supported for en-US language.
          *
          * @param textType the value to set
          * @return this builder
@@ -169,7 +169,7 @@ public final class TtsOracleSpeechSettings
 
     /**
      * The format in which the input text has been supplied i.e., Text or SSML. The supported text
-     * types are: - TEXT - SSML
+     * types are: - TEXT - SSML : This is only supported for en-US language.
      */
     public enum TextType implements com.oracle.bmc.http.internal.BmcEnum {
         Text("TEXT"),
@@ -205,14 +205,14 @@ public final class TtsOracleSpeechSettings
     };
     /**
      * The format in which the input text has been supplied i.e., Text or SSML. The supported text
-     * types are: - TEXT - SSML
+     * types are: - TEXT - SSML : This is only supported for en-US language.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("textType")
     private final TextType textType;
 
     /**
      * The format in which the input text has been supplied i.e., Text or SSML. The supported text
-     * types are: - TEXT - SSML
+     * types are: - TEXT - SSML : This is only supported for en-US language.
      *
      * @return the value
      */
