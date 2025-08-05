@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.70.1 - 2025-08-05
+### Added 
+- Support for the Oracle Multicloud Hub service 
+- Support for raw request API to support http emails with attachments in the Email Delivery service 
+- Support for language auto-detection for Whisper Model in the AI Speech service 
+- Support for prompting and custom prompts for Whisper Model in the AI Speech service
+
 ## 3.70.0 - 2025-07-29
 ### Added 
 - Support for the APIP Platform service 

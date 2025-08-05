@@ -37,17 +37,15 @@ public final class EmailSubmittedResponse
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique ID for the email's Message-ID header used for service log correlation. The
-         * submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This
-         * will be generated if not provided. Example: sdiofu234qwermls24fd@mail.example.com
+         * The unique ID for the email's Message-ID header used for service log correlation.
+         * Example: sdiofu234qwermls24fd@mail.example.com
          */
         @com.fasterxml.jackson.annotation.JsonProperty("messageId")
         private String messageId;
 
         /**
-         * The unique ID for the email's Message-ID header used for service log correlation. The
-         * submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This
-         * will be generated if not provided. Example: sdiofu234qwermls24fd@mail.example.com
+         * The unique ID for the email's Message-ID header used for service log correlation.
+         * Example: sdiofu234qwermls24fd@mail.example.com
          *
          * @param messageId the value to set
          * @return this builder
@@ -130,17 +128,15 @@ public final class EmailSubmittedResponse
     }
 
     /**
-     * The unique ID for the email's Message-ID header used for service log correlation. The
-     * submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will
-     * be generated if not provided. Example: sdiofu234qwermls24fd@mail.example.com
+     * The unique ID for the email's Message-ID header used for service log correlation. Example:
+     * sdiofu234qwermls24fd@mail.example.com
      */
     @com.fasterxml.jackson.annotation.JsonProperty("messageId")
     private final String messageId;
 
     /**
-     * The unique ID for the email's Message-ID header used for service log correlation. The
-     * submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will
-     * be generated if not provided. Example: sdiofu234qwermls24fd@mail.example.com
+     * The unique ID for the email's Message-ID header used for service log correlation. Example:
+     * sdiofu234qwermls24fd@mail.example.com
      *
      * @return the value
      */
