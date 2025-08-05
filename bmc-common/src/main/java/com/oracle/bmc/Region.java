@@ -145,7 +145,6 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region AP_SINGAPORE_2 = register("ap-singapore-2", Realm.OC1, "xsp");
     public static final Region ME_RIYADH_1 = register("me-riyadh-1", Realm.OC1, "ruh");
     public static final Region AP_DELHI_1 = register("ap-delhi-1", Realm.OC1, "onm");
-    public static final Region AP_KULAI_1 = register("ap-kulai-1", Realm.OC1, "fyv");
     public static final Region AP_BATAM_1 = register("ap-batam-1", Realm.OC1, "hsg");
 
     // OC2

@@ -124,6 +124,53 @@ public class EmailDPAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .callAsync(handler);
     }
 
+    @Override
+    public java.util.concurrent.Future<SubmitRawEmailResponse> submitRawEmail(
+            SubmitRawEmailRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SubmitRawEmailRequest, SubmitRawEmailResponse>
+                    handler) {
+        Objects.requireNonNull(request.getContentType(), "contentType is required");
+
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getSender(), "sender is required");
+
+        Objects.requireNonNull(request.getRecipients(), "recipients is required");
+
+        Objects.requireNonNull(request.getRawMessage(), "rawMessage is required");
+
+        return clientCall(request, SubmitRawEmailResponse::builder)
+                .logger(LOG, "submitRawEmail")
+                .serviceDetails(
+                        "EmailDP",
+                        "SubmitRawEmail",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildeliverysubmission/20220926/EmailRawSubmittedResponse/SubmitRawEmail")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SubmitRawEmailRequest::builder)
+                .basePath("/20220926")
+                .appendPathParam("actions")
+                .appendPathParam("submitRawEmail")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("content-length", request.getContentLength())
+                .appendEnumHeader("content-type", request.getContentType())
+                .appendHeader("compartment-id", request.getCompartmentId())
+                .appendHeader("sender", request.getSender())
+                .appendListHeader(
+                        "recipients",
+                        request.getRecipients(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.CommaSeparated)
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.emaildataplane.model.EmailRawSubmittedResponse.class,
+                        SubmitRawEmailResponse.Builder::emailRawSubmittedResponse)
+                .handleResponseHeaderString(
+                        "opc-request-id", SubmitRawEmailResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
     /**
      * Create a new client instance.
      *

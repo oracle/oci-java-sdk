@@ -83,17 +83,17 @@ public final class TranscriptionModelDetails
          * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
          * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
          *
-         * <p>Whisper supported language codes are (Whisper models are locale agnostic). - af:
-         * Afrikaans - ar: Arabic - az: Azerbaijani - be: Belarusian - bg: Bulgarian - bs: Bosnian -
-         * ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English
-         * (default) - es: Spanish - et: Estonian - fa: Persian - fi: Finnish - fr: French - gl:
-         * Galician - he: Hebrew - hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian - id:
-         * Indonesian - is: Icelandic - it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada - ko:
-         * Korean - lt: Lithuanian - lv: Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms:
-         * Malay - ne: Nepali - nl: Dutch - no: Norwegian - pl: Polish - pt: Portuguese - ro:
-         * Romanian - ru: Russian - sk: Slovak - sl: Slovenian - sr: Serbian - sv: Swedish - sw:
-         * Swahili - ta: Tamil - th: Thai - tl: Tagalog - tr: Turkish - uk: Ukrainian - ur: Urdu -
-         * vi: Vietnamese - zh: Chinese
+         * <p>Whisper supported language codes are (Whisper models are locale agnostic). - auto:
+         * Auto-detect language - af: Afrikaans - ar: Arabic - az: Azerbaijani - be: Belarusian -
+         * bg: Bulgarian - bs: Bosnian - ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de:
+         * German - el: Greek - en: English (default) - es: Spanish - et: Estonian - fa: Persian -
+         * fi: Finnish - fr: French - gl: Galician - he: Hebrew - hi: Hindi - hr: Croatian - hu:
+         * Hungarian - hy: Armenian - id: Indonesian - is: Icelandic - it: Italian - ja: Japanese -
+         * kk: Kazakh - kn: Kannada - ko: Korean - lt: Lithuanian - lv: Latvian - mi: Maori - mk:
+         * Macedonian - mr: Marathi - ms: Malay - ne: Nepali - nl: Dutch - no: Norwegian - pl:
+         * Polish - pt: Portuguese - ro: Romanian - ru: Russian - sk: Slovak - sl: Slovenian - sr:
+         * Serbian - sv: Swedish - sw: Swahili - ta: Tamil - th: Thai - tl: Tagalog - tr: Turkish -
+         * uk: Ukrainian - ur: Urdu - vi: Vietnamese - zh: Chinese
          */
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private LanguageCode languageCode;
@@ -104,17 +104,17 @@ public final class TranscriptionModelDetails
          * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
          * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
          *
-         * <p>Whisper supported language codes are (Whisper models are locale agnostic). - af:
-         * Afrikaans - ar: Arabic - az: Azerbaijani - be: Belarusian - bg: Bulgarian - bs: Bosnian -
-         * ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English
-         * (default) - es: Spanish - et: Estonian - fa: Persian - fi: Finnish - fr: French - gl:
-         * Galician - he: Hebrew - hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian - id:
-         * Indonesian - is: Icelandic - it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada - ko:
-         * Korean - lt: Lithuanian - lv: Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms:
-         * Malay - ne: Nepali - nl: Dutch - no: Norwegian - pl: Polish - pt: Portuguese - ro:
-         * Romanian - ru: Russian - sk: Slovak - sl: Slovenian - sr: Serbian - sv: Swedish - sw:
-         * Swahili - ta: Tamil - th: Thai - tl: Tagalog - tr: Turkish - uk: Ukrainian - ur: Urdu -
-         * vi: Vietnamese - zh: Chinese
+         * <p>Whisper supported language codes are (Whisper models are locale agnostic). - auto:
+         * Auto-detect language - af: Afrikaans - ar: Arabic - az: Azerbaijani - be: Belarusian -
+         * bg: Bulgarian - bs: Bosnian - ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de:
+         * German - el: Greek - en: English (default) - es: Spanish - et: Estonian - fa: Persian -
+         * fi: Finnish - fr: French - gl: Galician - he: Hebrew - hi: Hindi - hr: Croatian - hu:
+         * Hungarian - hy: Armenian - id: Indonesian - is: Icelandic - it: Italian - ja: Japanese -
+         * kk: Kazakh - kn: Kannada - ko: Korean - lt: Lithuanian - lv: Latvian - mi: Maori - mk:
+         * Macedonian - mr: Marathi - ms: Malay - ne: Nepali - nl: Dutch - no: Norwegian - pl:
+         * Polish - pt: Portuguese - ro: Romanian - ru: Russian - sk: Slovak - sl: Slovenian - sr:
+         * Serbian - sv: Swedish - sw: Swahili - ta: Tamil - th: Thai - tl: Tagalog - tr: Turkish -
+         * uk: Ukrainian - ur: Urdu - vi: Vietnamese - zh: Chinese
          *
          * @param languageCode the value to set
          * @return this builder
@@ -257,16 +257,17 @@ public final class TranscriptionModelDetails
      * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
      * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
      *
-     * <p>Whisper supported language codes are (Whisper models are locale agnostic). - af: Afrikaans
-     * - ar: Arabic - az: Azerbaijani - be: Belarusian - bg: Bulgarian - bs: Bosnian - ca: Catalan -
-     * cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English (default) - es:
-     * Spanish - et: Estonian - fa: Persian - fi: Finnish - fr: French - gl: Galician - he: Hebrew -
-     * hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian - id: Indonesian - is: Icelandic -
-     * it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada - ko: Korean - lt: Lithuanian - lv:
-     * Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms: Malay - ne: Nepali - nl: Dutch - no:
-     * Norwegian - pl: Polish - pt: Portuguese - ro: Romanian - ru: Russian - sk: Slovak - sl:
-     * Slovenian - sr: Serbian - sv: Swedish - sw: Swahili - ta: Tamil - th: Thai - tl: Tagalog -
-     * tr: Turkish - uk: Ukrainian - ur: Urdu - vi: Vietnamese - zh: Chinese
+     * <p>Whisper supported language codes are (Whisper models are locale agnostic). - auto:
+     * Auto-detect language - af: Afrikaans - ar: Arabic - az: Azerbaijani - be: Belarusian - bg:
+     * Bulgarian - bs: Bosnian - ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de: German - el:
+     * Greek - en: English (default) - es: Spanish - et: Estonian - fa: Persian - fi: Finnish - fr:
+     * French - gl: Galician - he: Hebrew - hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian
+     * - id: Indonesian - is: Icelandic - it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada -
+     * ko: Korean - lt: Lithuanian - lv: Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms:
+     * Malay - ne: Nepali - nl: Dutch - no: Norwegian - pl: Polish - pt: Portuguese - ro: Romanian -
+     * ru: Russian - sk: Slovak - sl: Slovenian - sr: Serbian - sv: Swedish - sw: Swahili - ta:
+     * Tamil - th: Thai - tl: Tagalog - tr: Turkish - uk: Ukrainian - ur: Urdu - vi: Vietnamese -
+     * zh: Chinese
      */
     public enum LanguageCode implements com.oracle.bmc.http.internal.BmcEnum {
         EnUs("en-US"),
@@ -279,6 +280,7 @@ public final class TranscriptionModelDetails
         FrFr("fr-FR"),
         DeDe("de-DE"),
         ItIt("it-IT"),
+        Auto("auto"),
         Af("af"),
         Ar("ar"),
         Az("az"),
@@ -384,16 +386,17 @@ public final class TranscriptionModelDetails
      * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
      * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
      *
-     * <p>Whisper supported language codes are (Whisper models are locale agnostic). - af: Afrikaans
-     * - ar: Arabic - az: Azerbaijani - be: Belarusian - bg: Bulgarian - bs: Bosnian - ca: Catalan -
-     * cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English (default) - es:
-     * Spanish - et: Estonian - fa: Persian - fi: Finnish - fr: French - gl: Galician - he: Hebrew -
-     * hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian - id: Indonesian - is: Icelandic -
-     * it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada - ko: Korean - lt: Lithuanian - lv:
-     * Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms: Malay - ne: Nepali - nl: Dutch - no:
-     * Norwegian - pl: Polish - pt: Portuguese - ro: Romanian - ru: Russian - sk: Slovak - sl:
-     * Slovenian - sr: Serbian - sv: Swedish - sw: Swahili - ta: Tamil - th: Thai - tl: Tagalog -
-     * tr: Turkish - uk: Ukrainian - ur: Urdu - vi: Vietnamese - zh: Chinese
+     * <p>Whisper supported language codes are (Whisper models are locale agnostic). - auto:
+     * Auto-detect language - af: Afrikaans - ar: Arabic - az: Azerbaijani - be: Belarusian - bg:
+     * Bulgarian - bs: Bosnian - ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de: German - el:
+     * Greek - en: English (default) - es: Spanish - et: Estonian - fa: Persian - fi: Finnish - fr:
+     * French - gl: Galician - he: Hebrew - hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian
+     * - id: Indonesian - is: Icelandic - it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada -
+     * ko: Korean - lt: Lithuanian - lv: Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms:
+     * Malay - ne: Nepali - nl: Dutch - no: Norwegian - pl: Polish - pt: Portuguese - ro: Romanian -
+     * ru: Russian - sk: Slovak - sl: Slovenian - sr: Serbian - sv: Swedish - sw: Swahili - ta:
+     * Tamil - th: Thai - tl: Tagalog - tr: Turkish - uk: Ukrainian - ur: Urdu - vi: Vietnamese -
+     * zh: Chinese
      */
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final LanguageCode languageCode;
@@ -404,16 +407,17 @@ public final class TranscriptionModelDetails
      * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
      * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
      *
-     * <p>Whisper supported language codes are (Whisper models are locale agnostic). - af: Afrikaans
-     * - ar: Arabic - az: Azerbaijani - be: Belarusian - bg: Bulgarian - bs: Bosnian - ca: Catalan -
-     * cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English (default) - es:
-     * Spanish - et: Estonian - fa: Persian - fi: Finnish - fr: French - gl: Galician - he: Hebrew -
-     * hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian - id: Indonesian - is: Icelandic -
-     * it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada - ko: Korean - lt: Lithuanian - lv:
-     * Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms: Malay - ne: Nepali - nl: Dutch - no:
-     * Norwegian - pl: Polish - pt: Portuguese - ro: Romanian - ru: Russian - sk: Slovak - sl:
-     * Slovenian - sr: Serbian - sv: Swedish - sw: Swahili - ta: Tamil - th: Thai - tl: Tagalog -
-     * tr: Turkish - uk: Ukrainian - ur: Urdu - vi: Vietnamese - zh: Chinese
+     * <p>Whisper supported language codes are (Whisper models are locale agnostic). - auto:
+     * Auto-detect language - af: Afrikaans - ar: Arabic - az: Azerbaijani - be: Belarusian - bg:
+     * Bulgarian - bs: Bosnian - ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de: German - el:
+     * Greek - en: English (default) - es: Spanish - et: Estonian - fa: Persian - fi: Finnish - fr:
+     * French - gl: Galician - he: Hebrew - hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian
+     * - id: Indonesian - is: Icelandic - it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada -
+     * ko: Korean - lt: Lithuanian - lv: Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms:
+     * Malay - ne: Nepali - nl: Dutch - no: Norwegian - pl: Polish - pt: Portuguese - ro: Romanian -
+     * ru: Russian - sk: Slovak - sl: Slovenian - sr: Serbian - sv: Swedish - sw: Swahili - ta:
+     * Tamil - th: Thai - tl: Tagalog - tr: Turkish - uk: Ukrainian - ur: Urdu - vi: Vietnamese -
+     * zh: Chinese
      *
      * @return the value
      */
