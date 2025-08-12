@@ -81,14 +81,16 @@ public final class ProcessOptions
         }
         /**
          * If ENABLED, then the pipeline is started as part of pipeline creation. It uses default
-         * mapping. This option applies when creating or updating a pipeline.
+         * mapping. This option only applies when creating a pipeline and is not applicable while
+         * updating a pipeline.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("startUsingDefaultMapping")
         private StartUsingDefaultMapping startUsingDefaultMapping;
 
         /**
          * If ENABLED, then the pipeline is started as part of pipeline creation. It uses default
-         * mapping. This option applies when creating or updating a pipeline.
+         * mapping. This option only applies when creating a pipeline and is not applicable while
+         * updating a pipeline.
          *
          * @param startUsingDefaultMapping the value to set
          * @return this builder
@@ -224,7 +226,8 @@ public final class ProcessOptions
 
     /**
      * If ENABLED, then the pipeline is started as part of pipeline creation. It uses default
-     * mapping. This option applies when creating or updating a pipeline.
+     * mapping. This option only applies when creating a pipeline and is not applicable while
+     * updating a pipeline.
      */
     public enum StartUsingDefaultMapping implements com.oracle.bmc.http.internal.BmcEnum {
         Enabled("ENABLED"),
@@ -273,14 +276,16 @@ public final class ProcessOptions
     };
     /**
      * If ENABLED, then the pipeline is started as part of pipeline creation. It uses default
-     * mapping. This option applies when creating or updating a pipeline.
+     * mapping. This option only applies when creating a pipeline and is not applicable while
+     * updating a pipeline.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("startUsingDefaultMapping")
     private final StartUsingDefaultMapping startUsingDefaultMapping;
 
     /**
      * If ENABLED, then the pipeline is started as part of pipeline creation. It uses default
-     * mapping. This option applies when creating or updating a pipeline.
+     * mapping. This option only applies when creating a pipeline and is not applicable while
+     * updating a pipeline.
      *
      * @return the value
      */

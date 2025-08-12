@@ -26,6 +26,7 @@ public final class CreateRedisClusterDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "ociCacheConfigSetId",
         "clusterMode",
         "shardCount",
         "displayName",
@@ -39,6 +40,7 @@ public final class CreateRedisClusterDetails
         "definedTags"
     })
     public CreateRedisClusterDetails(
+            String ociCacheConfigSetId,
             RedisCluster.ClusterMode clusterMode,
             Integer shardCount,
             String displayName,
@@ -51,6 +53,7 @@ public final class CreateRedisClusterDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.ociCacheConfigSetId = ociCacheConfigSetId;
         this.clusterMode = clusterMode;
         this.shardCount = shardCount;
         this.displayName = displayName;
@@ -66,6 +69,21 @@ public final class CreateRedisClusterDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** The ID of the corresponding OCI Cache Config Set for the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("ociCacheConfigSetId")
+        private String ociCacheConfigSetId;
+
+        /**
+         * The ID of the corresponding OCI Cache Config Set for the cluster.
+         *
+         * @param ociCacheConfigSetId the value to set
+         * @return this builder
+         */
+        public Builder ociCacheConfigSetId(String ociCacheConfigSetId) {
+            this.ociCacheConfigSetId = ociCacheConfigSetId;
+            this.__explicitlySet__.add("ociCacheConfigSetId");
+            return this;
+        }
         /** Specifies whether the cluster is sharded or non-sharded. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
         private RedisCluster.ClusterMode clusterMode;
@@ -271,6 +289,7 @@ public final class CreateRedisClusterDetails
         public CreateRedisClusterDetails build() {
             CreateRedisClusterDetails model =
                     new CreateRedisClusterDetails(
+                            this.ociCacheConfigSetId,
                             this.clusterMode,
                             this.shardCount,
                             this.displayName,
@@ -290,6 +309,9 @@ public final class CreateRedisClusterDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateRedisClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("ociCacheConfigSetId")) {
+                this.ociCacheConfigSetId(model.getOciCacheConfigSetId());
+            }
             if (model.wasPropertyExplicitlySet("clusterMode")) {
                 this.clusterMode(model.getClusterMode());
             }
@@ -334,6 +356,19 @@ public final class CreateRedisClusterDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /** The ID of the corresponding OCI Cache Config Set for the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("ociCacheConfigSetId")
+    private final String ociCacheConfigSetId;
+
+    /**
+     * The ID of the corresponding OCI Cache Config Set for the cluster.
+     *
+     * @return the value
+     */
+    public String getOciCacheConfigSetId() {
+        return ociCacheConfigSetId;
     }
 
     /** Specifies whether the cluster is sharded or non-sharded. */
@@ -526,7 +561,8 @@ public final class CreateRedisClusterDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateRedisClusterDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("clusterMode=").append(String.valueOf(this.clusterMode));
+        sb.append("ociCacheConfigSetId=").append(String.valueOf(this.ociCacheConfigSetId));
+        sb.append(", clusterMode=").append(String.valueOf(this.clusterMode));
         sb.append(", shardCount=").append(String.valueOf(this.shardCount));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -551,7 +587,8 @@ public final class CreateRedisClusterDetails
         }
 
         CreateRedisClusterDetails other = (CreateRedisClusterDetails) o;
-        return java.util.Objects.equals(this.clusterMode, other.clusterMode)
+        return java.util.Objects.equals(this.ociCacheConfigSetId, other.ociCacheConfigSetId)
+                && java.util.Objects.equals(this.clusterMode, other.clusterMode)
                 && java.util.Objects.equals(this.shardCount, other.shardCount)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -569,6 +606,11 @@ public final class CreateRedisClusterDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.ociCacheConfigSetId == null
+                                ? 43
+                                : this.ociCacheConfigSetId.hashCode());
         result = (result * PRIME) + (this.clusterMode == null ? 43 : this.clusterMode.hashCode());
         result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());

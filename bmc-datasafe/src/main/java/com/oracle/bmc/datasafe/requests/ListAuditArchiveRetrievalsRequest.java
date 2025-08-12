@@ -114,6 +114,13 @@ public class ListAuditArchiveRetrievalsRequest
     public String getTargetId() {
         return targetId;
     }
+    /** A filter to return the target database group that matches the specified OCID. */
+    private String targetDatabaseGroupId;
+
+    /** A filter to return the target database group that matches the specified OCID. */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
      * call. For details about how pagination works, see [List
@@ -372,6 +379,20 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /** A filter to return the target database group that matches the specified OCID. */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List"
          * call. For details about how pagination works, see [List
@@ -532,6 +553,7 @@ public class ListAuditArchiveRetrievalsRequest
             accessLevel(o.getAccessLevel());
             auditArchiveRetrievalId(o.getAuditArchiveRetrievalId());
             targetId(o.getTargetId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             limit(o.getLimit());
             page(o.getPage());
             lifecycleState(o.getLifecycleState());
@@ -579,6 +601,7 @@ public class ListAuditArchiveRetrievalsRequest
             request.accessLevel = accessLevel;
             request.auditArchiveRetrievalId = auditArchiveRetrievalId;
             request.targetId = targetId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             request.limit = limit;
             request.page = page;
             request.lifecycleState = lifecycleState;
@@ -588,8 +611,9 @@ public class ListAuditArchiveRetrievalsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListAuditArchiveRetrievalsRequest(compartmentId, displayName,
-            // compartmentIdInSubtree, accessLevel, auditArchiveRetrievalId, targetId, limit, page,
-            // lifecycleState, timeOfExpiry, sortOrder, sortBy, opcRequestId);
+            // compartmentIdInSubtree, accessLevel, auditArchiveRetrievalId, targetId,
+            // targetDatabaseGroupId, limit, page, lifecycleState, timeOfExpiry, sortOrder, sortBy,
+            // opcRequestId);
         }
     }
 
@@ -606,6 +630,7 @@ public class ListAuditArchiveRetrievalsRequest
                 .accessLevel(accessLevel)
                 .auditArchiveRetrievalId(auditArchiveRetrievalId)
                 .targetId(targetId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
                 .limit(limit)
                 .page(page)
                 .lifecycleState(lifecycleState)
@@ -635,6 +660,7 @@ public class ListAuditArchiveRetrievalsRequest
         sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(",auditArchiveRetrievalId=").append(String.valueOf(this.auditArchiveRetrievalId));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -665,6 +691,7 @@ public class ListAuditArchiveRetrievalsRequest
                 && java.util.Objects.equals(
                         this.auditArchiveRetrievalId, other.auditArchiveRetrievalId)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -694,6 +721,11 @@ public class ListAuditArchiveRetrievalsRequest
                                 ? 43
                                 : this.auditArchiveRetrievalId.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result =

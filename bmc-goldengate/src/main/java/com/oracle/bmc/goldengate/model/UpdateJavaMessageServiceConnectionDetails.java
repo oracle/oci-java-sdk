@@ -247,15 +247,15 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
             return this;
         }
         /**
-         * Connectin URL of the Java Message Service, specifying the protocol, host, and port. e.g.:
-         * 'mq://myjms.host.domain:7676'
+         * Connection URL of the Java Message Service, specifying the protocol, host, and port.
+         * e.g.: 'mq://myjms.host.domain:7676'
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl")
         private String connectionUrl;
 
         /**
-         * Connectin URL of the Java Message Service, specifying the protocol, host, and port. e.g.:
-         * 'mq://myjms.host.domain:7676'
+         * Connection URL of the Java Message Service, specifying the protocol, host, and port.
+         * e.g.: 'mq://myjms.host.domain:7676'
          *
          * @param connectionUrl the value to set
          * @return this builder
@@ -981,14 +981,14 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
     }
 
     /**
-     * Connectin URL of the Java Message Service, specifying the protocol, host, and port. e.g.:
+     * Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.:
      * 'mq://myjms.host.domain:7676'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl")
     private final String connectionUrl;
 
     /**
-     * Connectin URL of the Java Message Service, specifying the protocol, host, and port. e.g.:
+     * Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.:
      * 'mq://myjms.host.domain:7676'
      *
      * @return the value

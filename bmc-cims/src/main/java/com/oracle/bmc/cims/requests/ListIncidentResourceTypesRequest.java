@@ -86,10 +86,10 @@ public class ListIncidentResourceTypesRequest
     public com.oracle.bmc.cims.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The user-friendly name of the support ticket type. */
+    /** The user-friendly name of the support request type. */
     private String name;
 
-    /** The user-friendly name of the support ticket type. */
+    /** The user-friendly name of the support request type. */
     public String getName() {
         return name;
     }
@@ -262,11 +262,11 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
-        /** The user-friendly name of the support ticket type. */
+        /** The user-friendly name of the support request type. */
         private String name = null;
 
         /**
-         * The user-friendly name of the support ticket type.
+         * The user-friendly name of the support request type.
          *
          * @param name the value to set
          * @return this builder instance

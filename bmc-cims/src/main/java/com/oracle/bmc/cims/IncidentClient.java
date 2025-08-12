@@ -246,6 +246,55 @@ public class IncidentClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public PutAttachmentResponse putAttachment(PutAttachmentRequest request) {
+        Objects.requireNonNull(
+                request.getPutAttachmentDetails(), "putAttachmentDetails is required");
+
+        Validate.notBlank(request.getIncidentKey(), "incidentKey must not be blank");
+        Objects.requireNonNull(request.getAttachmentName(), "attachmentName is required");
+
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getIsRestrictedFlag(), "isRestrictedFlag is required");
+
+        return clientCall(request, PutAttachmentResponse::builder)
+                .logger(LOG, "putAttachment")
+                .serviceDetails(
+                        "Incident",
+                        "PutAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/PutAttachment")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutAttachmentRequest::builder)
+                .basePath("/20181231")
+                .appendPathParam("v2")
+                .appendPathParam("incidents")
+                .appendPathParam(request.getIncidentKey())
+                .appendPathParam("attachment")
+                .appendQueryParam("attachmentName", request.getAttachmentName())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("isRestrictedFlag", request.getIsRestrictedFlag())
+                .accept("application/json")
+                .appendHeader("csi", request.getCsi())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("ocid", request.getOcid())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("homeregion", request.getHomeregion())
+                .appendHeader("problemtype", request.getProblemtype())
+                .appendHeader("bearertokentype", request.getBearertokentype())
+                .appendHeader("bearertoken", request.getBearertoken())
+                .appendHeader("idtoken", request.getIdtoken())
+                .appendHeader("domainid", request.getDomainid())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cims.model.Incident.class,
+                        PutAttachmentResponse.Builder::incident)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutAttachmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateIncidentResponse updateIncident(UpdateIncidentRequest request) {
 
         Validate.notBlank(request.getIncidentKey(), "incidentKey must not be blank");

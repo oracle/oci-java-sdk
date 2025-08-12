@@ -131,6 +131,10 @@ public class ListAuditProfileAnalyticsRequest
     /** The group by parameter for summarize operation on audit. */
     public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
         IsPaidUsageEnabled("isPaidUsageEnabled"),
+        TargetType("targetType"),
+        PaidUsageSource("paidUsageSource"),
+        OnlineMonthsSource("onlineMonthsSource"),
+        OfflineMonthsSource("offlineMonthsSource"),
         ;
 
         private final String value;
@@ -164,6 +168,17 @@ public class ListAuditProfileAnalyticsRequest
     /** The group by parameter for summarize operation on audit. */
     public java.util.List<GroupBy> getGroupBy() {
         return groupBy;
+    }
+    /**
+     * A optional filter to return only resources that belong to the specified audit profile type.
+     */
+    private com.oracle.bmc.datasafe.model.AuditProfileTargetType targetType;
+
+    /**
+     * A optional filter to return only resources that belong to the specified audit profile type.
+     */
+    public com.oracle.bmc.datasafe.model.AuditProfileTargetType getTargetType() {
+        return targetType;
     }
     /** Unique identifier for the request. */
     private String opcRequestId;
@@ -301,6 +316,24 @@ public class ListAuditProfileAnalyticsRequest
             return this.groupBy(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A optional filter to return only resources that belong to the specified audit profile
+         * type.
+         */
+        private com.oracle.bmc.datasafe.model.AuditProfileTargetType targetType = null;
+
+        /**
+         * A optional filter to return only resources that belong to the specified audit profile
+         * type.
+         *
+         * @param targetType the value to set
+         * @return this builder instance
+         */
+        public Builder targetType(com.oracle.bmc.datasafe.model.AuditProfileTargetType targetType) {
+            this.targetType = targetType;
+            return this;
+        }
+
         /** Unique identifier for the request. */
         private String opcRequestId = null;
 
@@ -351,6 +384,7 @@ public class ListAuditProfileAnalyticsRequest
             limit(o.getLimit());
             page(o.getPage());
             groupBy(o.getGroupBy());
+            targetType(o.getTargetType());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -392,10 +426,11 @@ public class ListAuditProfileAnalyticsRequest
             request.limit = limit;
             request.page = page;
             request.groupBy = groupBy;
+            request.targetType = targetType;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListAuditProfileAnalyticsRequest(compartmentId, compartmentIdInSubtree,
-            // accessLevel, limit, page, groupBy, opcRequestId);
+            // accessLevel, limit, page, groupBy, targetType, opcRequestId);
         }
     }
 
@@ -412,6 +447,7 @@ public class ListAuditProfileAnalyticsRequest
                 .limit(limit)
                 .page(page)
                 .groupBy(groupBy)
+                .targetType(targetType)
                 .opcRequestId(opcRequestId);
     }
 
@@ -435,6 +471,7 @@ public class ListAuditProfileAnalyticsRequest
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",groupBy=").append(String.valueOf(this.groupBy));
+        sb.append(",targetType=").append(String.valueOf(this.targetType));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -458,6 +495,7 @@ public class ListAuditProfileAnalyticsRequest
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.groupBy, other.groupBy)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -477,6 +515,7 @@ public class ListAuditProfileAnalyticsRequest
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.groupBy == null ? 43 : this.groupBy.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

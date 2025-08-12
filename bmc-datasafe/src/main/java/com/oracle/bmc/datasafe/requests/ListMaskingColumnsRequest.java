@@ -107,6 +107,7 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         TimeCreated("timeCreated"),
         SchemaName("schemaName"),
         ObjectName("objectName"),
+        ColumnName("columnName"),
         DataType("dataType"),
         ;
 

@@ -23,12 +23,19 @@ package com.oracle.bmc.datasafe.model;
 public final class StartAuditTrailDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"auditCollectionStartTime", "isAutoPurgeEnabled"})
+    @java.beans.ConstructorProperties({
+        "auditCollectionStartTime",
+        "isAutoPurgeEnabled",
+        "canUpdateLastArchiveTimeOnTarget"
+    })
     public StartAuditTrailDetails(
-            java.util.Date auditCollectionStartTime, Boolean isAutoPurgeEnabled) {
+            java.util.Date auditCollectionStartTime,
+            Boolean isAutoPurgeEnabled,
+            Boolean canUpdateLastArchiveTimeOnTarget) {
         super();
         this.auditCollectionStartTime = auditCollectionStartTime;
         this.isAutoPurgeEnabled = isAutoPurgeEnabled;
+        this.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -73,6 +80,25 @@ public final class StartAuditTrailDetails
             this.__explicitlySet__.add("isAutoPurgeEnabled");
             return this;
         }
+        /**
+         * Indicates if the Datasafe updates last archive time on target database. If
+         * isAutoPurgeEnabled field is enabled, this field must be true.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("canUpdateLastArchiveTimeOnTarget")
+        private Boolean canUpdateLastArchiveTimeOnTarget;
+
+        /**
+         * Indicates if the Datasafe updates last archive time on target database. If
+         * isAutoPurgeEnabled field is enabled, this field must be true.
+         *
+         * @param canUpdateLastArchiveTimeOnTarget the value to set
+         * @return this builder
+         */
+        public Builder canUpdateLastArchiveTimeOnTarget(Boolean canUpdateLastArchiveTimeOnTarget) {
+            this.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
+            this.__explicitlySet__.add("canUpdateLastArchiveTimeOnTarget");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -80,7 +106,9 @@ public final class StartAuditTrailDetails
         public StartAuditTrailDetails build() {
             StartAuditTrailDetails model =
                     new StartAuditTrailDetails(
-                            this.auditCollectionStartTime, this.isAutoPurgeEnabled);
+                            this.auditCollectionStartTime,
+                            this.isAutoPurgeEnabled,
+                            this.canUpdateLastArchiveTimeOnTarget);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -94,6 +122,9 @@ public final class StartAuditTrailDetails
             }
             if (model.wasPropertyExplicitlySet("isAutoPurgeEnabled")) {
                 this.isAutoPurgeEnabled(model.getIsAutoPurgeEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("canUpdateLastArchiveTimeOnTarget")) {
+                this.canUpdateLastArchiveTimeOnTarget(model.getCanUpdateLastArchiveTimeOnTarget());
             }
             return this;
         }
@@ -144,6 +175,23 @@ public final class StartAuditTrailDetails
         return isAutoPurgeEnabled;
     }
 
+    /**
+     * Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled
+     * field is enabled, this field must be true.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canUpdateLastArchiveTimeOnTarget")
+    private final Boolean canUpdateLastArchiveTimeOnTarget;
+
+    /**
+     * Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled
+     * field is enabled, this field must be true.
+     *
+     * @return the value
+     */
+    public Boolean getCanUpdateLastArchiveTimeOnTarget() {
+        return canUpdateLastArchiveTimeOnTarget;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -162,6 +210,8 @@ public final class StartAuditTrailDetails
         sb.append("auditCollectionStartTime=")
                 .append(String.valueOf(this.auditCollectionStartTime));
         sb.append(", isAutoPurgeEnabled=").append(String.valueOf(this.isAutoPurgeEnabled));
+        sb.append(", canUpdateLastArchiveTimeOnTarget=")
+                .append(String.valueOf(this.canUpdateLastArchiveTimeOnTarget));
         sb.append(")");
         return sb.toString();
     }
@@ -179,6 +229,9 @@ public final class StartAuditTrailDetails
         return java.util.Objects.equals(
                         this.auditCollectionStartTime, other.auditCollectionStartTime)
                 && java.util.Objects.equals(this.isAutoPurgeEnabled, other.isAutoPurgeEnabled)
+                && java.util.Objects.equals(
+                        this.canUpdateLastArchiveTimeOnTarget,
+                        other.canUpdateLastArchiveTimeOnTarget)
                 && super.equals(other);
     }
 
@@ -196,6 +249,11 @@ public final class StartAuditTrailDetails
                         + (this.isAutoPurgeEnabled == null
                                 ? 43
                                 : this.isAutoPurgeEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUpdateLastArchiveTimeOnTarget == null
+                                ? 43
+                                : this.canUpdateLastArchiveTimeOnTarget.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

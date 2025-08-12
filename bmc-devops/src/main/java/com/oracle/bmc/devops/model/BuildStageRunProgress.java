@@ -368,6 +368,7 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
     /** Image name for the Build Environment */
     public enum Image implements com.oracle.bmc.http.internal.BmcEnum {
         Ol7X8664Standard10("OL7_X86_64_STANDARD_10"),
+        Ol8X8664Standard10("OL8_X86_64_STANDARD_10"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -42,12 +42,12 @@ public final class ProtectedBranch
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Branch name inside a repository. */
+        /** The branchName can either be exact branch name or branch pattern. */
         @com.fasterxml.jackson.annotation.JsonProperty("branchName")
         private String branchName;
 
         /**
-         * Branch name inside a repository.
+         * The branchName can either be exact branch name or branch pattern.
          *
          * @param branchName the value to set
          * @return this builder
@@ -161,12 +161,12 @@ public final class ProtectedBranch
         return new Builder().copy(this);
     }
 
-    /** Branch name inside a repository. */
+    /** The branchName can either be exact branch name or branch pattern. */
     @com.fasterxml.jackson.annotation.JsonProperty("branchName")
     private final String branchName;
 
     /**
-     * Branch name inside a repository.
+     * The branchName can either be exact branch name or branch pattern.
      *
      * @return the value
      */

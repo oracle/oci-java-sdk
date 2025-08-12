@@ -15,7 +15,15 @@ public enum OnPremConnectorLifecycleState implements com.oracle.bmc.http.interna
     Deleted("DELETED"),
     Failed("FAILED"),
     NeedsAttention("NEEDS_ATTENTION"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OnPremConnectorLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, OnPremConnectorLifecycleState> map;
@@ -23,7 +31,9 @@ public enum OnPremConnectorLifecycleState implements com.oracle.bmc.http.interna
     static {
         map = new java.util.HashMap<>();
         for (OnPremConnectorLifecycleState v : OnPremConnectorLifecycleState.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -41,6 +51,9 @@ public enum OnPremConnectorLifecycleState implements com.oracle.bmc.http.interna
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid OnPremConnectorLifecycleState: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'OnPremConnectorLifecycleState', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

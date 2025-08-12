@@ -27,18 +27,27 @@ public final class SecurityPolicyEntryStateSummary
         "id",
         "securityPolicyEntryId",
         "securityPolicyDeploymentId",
-        "deploymentStatus"
+        "targetId",
+        "entryType",
+        "deploymentStatus",
+        "deploymentStatusDetails"
     })
     public SecurityPolicyEntryStateSummary(
             String id,
             String securityPolicyEntryId,
             String securityPolicyDeploymentId,
-            SecurityPolicyEntryStateDeploymentStatus deploymentStatus) {
+            String targetId,
+            EntryType entryType,
+            SecurityPolicyEntryStateDeploymentStatus deploymentStatus,
+            String deploymentStatusDetails) {
         super();
         this.id = id;
         this.securityPolicyEntryId = securityPolicyEntryId;
         this.securityPolicyDeploymentId = securityPolicyDeploymentId;
+        this.targetId = targetId;
+        this.entryType = entryType;
         this.deploymentStatus = deploymentStatus;
+        this.deploymentStatusDetails = deploymentStatusDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -88,6 +97,42 @@ public final class SecurityPolicyEntryStateSummary
             this.__explicitlySet__.add("securityPolicyDeploymentId");
             return this;
         }
+        /** The OCID of the target on which the security policy is deployed. */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetId")
+        private String targetId;
+
+        /**
+         * The OCID of the target on which the security policy is deployed.
+         *
+         * @param targetId the value to set
+         * @return this builder
+         */
+        public Builder targetId(String targetId) {
+            this.targetId = targetId;
+            this.__explicitlySet__.add("targetId");
+            return this;
+        }
+        /**
+         * The security policy entry type. Allowed values: - FIREWALL_POLICY - The SQL Firewall
+         * policy entry type. - AUDIT_POLICY - The audit policy entry type. - CONFIG - Config
+         * changes deployment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("entryType")
+        private EntryType entryType;
+
+        /**
+         * The security policy entry type. Allowed values: - FIREWALL_POLICY - The SQL Firewall
+         * policy entry type. - AUDIT_POLICY - The audit policy entry type. - CONFIG - Config
+         * changes deployment.
+         *
+         * @param entryType the value to set
+         * @return this builder
+         */
+        public Builder entryType(EntryType entryType) {
+            this.entryType = entryType;
+            this.__explicitlySet__.add("entryType");
+            return this;
+        }
         /**
          * The current deployment status of the security policy deployment and the security policy
          * entry associated.
@@ -107,6 +152,21 @@ public final class SecurityPolicyEntryStateSummary
             this.__explicitlySet__.add("deploymentStatus");
             return this;
         }
+        /** Details about the current deployment status. */
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentStatusDetails")
+        private String deploymentStatusDetails;
+
+        /**
+         * Details about the current deployment status.
+         *
+         * @param deploymentStatusDetails the value to set
+         * @return this builder
+         */
+        public Builder deploymentStatusDetails(String deploymentStatusDetails) {
+            this.deploymentStatusDetails = deploymentStatusDetails;
+            this.__explicitlySet__.add("deploymentStatusDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -117,7 +177,10 @@ public final class SecurityPolicyEntryStateSummary
                             this.id,
                             this.securityPolicyEntryId,
                             this.securityPolicyDeploymentId,
-                            this.deploymentStatus);
+                            this.targetId,
+                            this.entryType,
+                            this.deploymentStatus,
+                            this.deploymentStatusDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -135,8 +198,17 @@ public final class SecurityPolicyEntryStateSummary
             if (model.wasPropertyExplicitlySet("securityPolicyDeploymentId")) {
                 this.securityPolicyDeploymentId(model.getSecurityPolicyDeploymentId());
             }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("entryType")) {
+                this.entryType(model.getEntryType());
+            }
             if (model.wasPropertyExplicitlySet("deploymentStatus")) {
                 this.deploymentStatus(model.getDeploymentStatus());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentStatusDetails")) {
+                this.deploymentStatusDetails(model.getDeploymentStatusDetails());
             }
             return this;
         }
@@ -190,6 +262,89 @@ public final class SecurityPolicyEntryStateSummary
         return securityPolicyDeploymentId;
     }
 
+    /** The OCID of the target on which the security policy is deployed. */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetId")
+    private final String targetId;
+
+    /**
+     * The OCID of the target on which the security policy is deployed.
+     *
+     * @return the value
+     */
+    public String getTargetId() {
+        return targetId;
+    }
+
+    /**
+     * The security policy entry type. Allowed values: - FIREWALL_POLICY - The SQL Firewall policy
+     * entry type. - AUDIT_POLICY - The audit policy entry type. - CONFIG - Config changes
+     * deployment.
+     */
+    public enum EntryType implements com.oracle.bmc.http.internal.BmcEnum {
+        FirewallPolicy("FIREWALL_POLICY"),
+        AuditPolicy("AUDIT_POLICY"),
+        Config("CONFIG"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EntryType.class);
+
+        private final String value;
+        private static java.util.Map<String, EntryType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (EntryType v : EntryType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        EntryType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static EntryType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'EntryType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The security policy entry type. Allowed values: - FIREWALL_POLICY - The SQL Firewall policy
+     * entry type. - AUDIT_POLICY - The audit policy entry type. - CONFIG - Config changes
+     * deployment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("entryType")
+    private final EntryType entryType;
+
+    /**
+     * The security policy entry type. Allowed values: - FIREWALL_POLICY - The SQL Firewall policy
+     * entry type. - AUDIT_POLICY - The audit policy entry type. - CONFIG - Config changes
+     * deployment.
+     *
+     * @return the value
+     */
+    public EntryType getEntryType() {
+        return entryType;
+    }
+
     /**
      * The current deployment status of the security policy deployment and the security policy entry
      * associated.
@@ -205,6 +360,19 @@ public final class SecurityPolicyEntryStateSummary
      */
     public SecurityPolicyEntryStateDeploymentStatus getDeploymentStatus() {
         return deploymentStatus;
+    }
+
+    /** Details about the current deployment status. */
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentStatusDetails")
+    private final String deploymentStatusDetails;
+
+    /**
+     * Details about the current deployment status.
+     *
+     * @return the value
+     */
+    public String getDeploymentStatusDetails() {
+        return deploymentStatusDetails;
     }
 
     @Override
@@ -226,7 +394,11 @@ public final class SecurityPolicyEntryStateSummary
         sb.append(", securityPolicyEntryId=").append(String.valueOf(this.securityPolicyEntryId));
         sb.append(", securityPolicyDeploymentId=")
                 .append(String.valueOf(this.securityPolicyDeploymentId));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", entryType=").append(String.valueOf(this.entryType));
         sb.append(", deploymentStatus=").append(String.valueOf(this.deploymentStatus));
+        sb.append(", deploymentStatusDetails=")
+                .append(String.valueOf(this.deploymentStatusDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -245,7 +417,11 @@ public final class SecurityPolicyEntryStateSummary
                 && java.util.Objects.equals(this.securityPolicyEntryId, other.securityPolicyEntryId)
                 && java.util.Objects.equals(
                         this.securityPolicyDeploymentId, other.securityPolicyDeploymentId)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.entryType, other.entryType)
                 && java.util.Objects.equals(this.deploymentStatus, other.deploymentStatus)
+                && java.util.Objects.equals(
+                        this.deploymentStatusDetails, other.deploymentStatusDetails)
                 && super.equals(other);
     }
 
@@ -264,9 +440,16 @@ public final class SecurityPolicyEntryStateSummary
                         + (this.securityPolicyDeploymentId == null
                                 ? 43
                                 : this.securityPolicyDeploymentId.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.entryType == null ? 43 : this.entryType.hashCode());
         result =
                 (result * PRIME)
                         + (this.deploymentStatus == null ? 43 : this.deploymentStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentStatusDetails == null
+                                ? 43
+                                : this.deploymentStatusDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

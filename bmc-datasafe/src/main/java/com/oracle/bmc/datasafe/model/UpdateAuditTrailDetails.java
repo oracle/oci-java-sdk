@@ -27,6 +27,7 @@ public final class UpdateAuditTrailDetails
         "description",
         "displayName",
         "isAutoPurgeEnabled",
+        "canUpdateLastArchiveTimeOnTarget",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +35,14 @@ public final class UpdateAuditTrailDetails
             String description,
             String displayName,
             Boolean isAutoPurgeEnabled,
+            Boolean canUpdateLastArchiveTimeOnTarget,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.description = description;
         this.displayName = displayName;
         this.isAutoPurgeEnabled = isAutoPurgeEnabled;
+        this.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -102,6 +105,25 @@ public final class UpdateAuditTrailDetails
             return this;
         }
         /**
+         * Indicates if the Datasafe updates last archive time on target database. If
+         * isAutoPurgeEnabled field is enabled, this field must be true.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("canUpdateLastArchiveTimeOnTarget")
+        private Boolean canUpdateLastArchiveTimeOnTarget;
+
+        /**
+         * Indicates if the Datasafe updates last archive time on target database. If
+         * isAutoPurgeEnabled field is enabled, this field must be true.
+         *
+         * @param canUpdateLastArchiveTimeOnTarget the value to set
+         * @return this builder
+         */
+        public Builder canUpdateLastArchiveTimeOnTarget(Boolean canUpdateLastArchiveTimeOnTarget) {
+            this.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
+            this.__explicitlySet__.add("canUpdateLastArchiveTimeOnTarget");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -160,6 +182,7 @@ public final class UpdateAuditTrailDetails
                             this.description,
                             this.displayName,
                             this.isAutoPurgeEnabled,
+                            this.canUpdateLastArchiveTimeOnTarget,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -178,6 +201,9 @@ public final class UpdateAuditTrailDetails
             }
             if (model.wasPropertyExplicitlySet("isAutoPurgeEnabled")) {
                 this.isAutoPurgeEnabled(model.getIsAutoPurgeEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("canUpdateLastArchiveTimeOnTarget")) {
+                this.canUpdateLastArchiveTimeOnTarget(model.getCanUpdateLastArchiveTimeOnTarget());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -246,6 +272,23 @@ public final class UpdateAuditTrailDetails
     }
 
     /**
+     * Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled
+     * field is enabled, this field must be true.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canUpdateLastArchiveTimeOnTarget")
+    private final Boolean canUpdateLastArchiveTimeOnTarget;
+
+    /**
+     * Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled
+     * field is enabled, this field must be true.
+     *
+     * @return the value
+     */
+    public Boolean getCanUpdateLastArchiveTimeOnTarget() {
+        return canUpdateLastArchiveTimeOnTarget;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -307,6 +350,8 @@ public final class UpdateAuditTrailDetails
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isAutoPurgeEnabled=").append(String.valueOf(this.isAutoPurgeEnabled));
+        sb.append(", canUpdateLastArchiveTimeOnTarget=")
+                .append(String.valueOf(this.canUpdateLastArchiveTimeOnTarget));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -326,6 +371,9 @@ public final class UpdateAuditTrailDetails
         return java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.isAutoPurgeEnabled, other.isAutoPurgeEnabled)
+                && java.util.Objects.equals(
+                        this.canUpdateLastArchiveTimeOnTarget,
+                        other.canUpdateLastArchiveTimeOnTarget)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -342,6 +390,11 @@ public final class UpdateAuditTrailDetails
                         + (this.isAutoPurgeEnabled == null
                                 ? 43
                                 : this.isAutoPurgeEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUpdateLastArchiveTimeOnTarget == null
+                                ? 43
+                                : this.canUpdateLastArchiveTimeOnTarget.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

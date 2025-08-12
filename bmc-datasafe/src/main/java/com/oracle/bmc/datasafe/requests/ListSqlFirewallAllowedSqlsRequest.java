@@ -133,7 +133,7 @@ public class ListSqlFirewallAllowedSqlsRequest
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** query=(currentUser eq 'SCOTT') and (topLevel eq 'YES')
+     * <p>*Example:** query=(currentUser eq "SCOTT") and (topLevel eq "YES")
      */
     private String scimQuery;
 
@@ -145,7 +145,7 @@ public class ListSqlFirewallAllowedSqlsRequest
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** query=(currentUser eq 'SCOTT') and (topLevel eq 'YES')
+     * <p>*Example:** query=(currentUser eq "SCOTT") and (topLevel eq "YES")
      */
     public String getScimQuery() {
         return scimQuery;
@@ -352,7 +352,7 @@ public class ListSqlFirewallAllowedSqlsRequest
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** query=(currentUser eq 'SCOTT') and (topLevel eq 'YES')
+         * <p>*Example:** query=(currentUser eq "SCOTT") and (topLevel eq "YES")
          */
         private String scimQuery = null;
 
@@ -364,7 +364,7 @@ public class ListSqlFirewallAllowedSqlsRequest
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** query=(currentUser eq 'SCOTT') and (topLevel eq 'YES')
+         * <p>*Example:** query=(currentUser eq "SCOTT") and (topLevel eq "YES")
          *
          * @param scimQuery the value to set
          * @return this builder instance

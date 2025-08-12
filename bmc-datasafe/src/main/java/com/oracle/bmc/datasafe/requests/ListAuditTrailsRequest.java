@@ -112,6 +112,13 @@ public class ListAuditTrailsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public String getTargetId() {
         return targetId;
     }
+    /** A filter to return the target database group that matches the specified OCID. */
+    private String targetDatabaseGroupId;
+
+    /** A filter to return the target database group that matches the specified OCID. */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
      * call. For details about how pagination works, see [List
@@ -368,6 +375,20 @@ public class ListAuditTrailsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /** A filter to return the target database group that matches the specified OCID. */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List"
          * call. For details about how pagination works, see [List
@@ -527,6 +548,7 @@ public class ListAuditTrailsRequest extends com.oracle.bmc.requests.BmcRequest<j
             auditTrailId(o.getAuditTrailId());
             displayName(o.getDisplayName());
             targetId(o.getTargetId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             limit(o.getLimit());
             page(o.getPage());
             lifecycleState(o.getLifecycleState());
@@ -574,6 +596,7 @@ public class ListAuditTrailsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.auditTrailId = auditTrailId;
             request.displayName = displayName;
             request.targetId = targetId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             request.limit = limit;
             request.page = page;
             request.lifecycleState = lifecycleState;
@@ -583,8 +606,8 @@ public class ListAuditTrailsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.opcRequestId = opcRequestId;
             return request;
             // new ListAuditTrailsRequest(compartmentId, compartmentIdInSubtree, accessLevel,
-            // auditTrailId, displayName, targetId, limit, page, lifecycleState, status, sortOrder,
-            // sortBy, opcRequestId);
+            // auditTrailId, displayName, targetId, targetDatabaseGroupId, limit, page,
+            // lifecycleState, status, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -601,6 +624,7 @@ public class ListAuditTrailsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .auditTrailId(auditTrailId)
                 .displayName(displayName)
                 .targetId(targetId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
                 .limit(limit)
                 .page(page)
                 .lifecycleState(lifecycleState)
@@ -630,6 +654,7 @@ public class ListAuditTrailsRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append(",auditTrailId=").append(String.valueOf(this.auditTrailId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -659,6 +684,7 @@ public class ListAuditTrailsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 && java.util.Objects.equals(this.auditTrailId, other.auditTrailId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -684,6 +710,11 @@ public class ListAuditTrailsRequest extends com.oracle.bmc.requests.BmcRequest<j
         result = (result * PRIME) + (this.auditTrailId == null ? 43 : this.auditTrailId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result =

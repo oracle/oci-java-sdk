@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details for updating the support ticket activity. <br>
+ * Details for updating the support request activity. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -42,12 +42,24 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
             this.__explicitlySet__.add("comments");
             return this;
         }
-        /** The type of activity occurring. */
+        /**
+         * The type of activity occurring. {@code NOTES} is the activity associated to attachments.
+         * {@code PROBLEM_DESCRIPTION} is the activity associated to customer problem description.
+         * {@code UPDATE} is the activity associated to adding comments. {@code CLOSE} is the
+         * activity associated to closing the support request. {@code REOPEN} is the activity
+         * associated to reopening the support request. {@code ADD_CONTACT} is the activity
+         * associated to adding additional contact to the support request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("activityType")
         private ActivityType activityType;
 
         /**
-         * The type of activity occurring.
+         * The type of activity occurring. {@code NOTES} is the activity associated to attachments.
+         * {@code PROBLEM_DESCRIPTION} is the activity associated to customer problem description.
+         * {@code UPDATE} is the activity associated to adding comments. {@code CLOSE} is the
+         * activity associated to closing the support request. {@code REOPEN} is the activity
+         * associated to reopening the support request. {@code ADD_CONTACT} is the activity
+         * associated to adding additional contact to the support request.
          *
          * @param activityType the value to set
          * @return this builder
@@ -111,13 +123,21 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
         return comments;
     }
 
-    /** The type of activity occurring. */
+    /**
+     * The type of activity occurring. {@code NOTES} is the activity associated to attachments.
+     * {@code PROBLEM_DESCRIPTION} is the activity associated to customer problem description.
+     * {@code UPDATE} is the activity associated to adding comments. {@code CLOSE} is the activity
+     * associated to closing the support request. {@code REOPEN} is the activity associated to
+     * reopening the support request. {@code ADD_CONTACT} is the activity associated to adding
+     * additional contact to the support request.
+     */
     public enum ActivityType implements com.oracle.bmc.http.internal.BmcEnum {
         Notes("NOTES"),
         ProblemDescription("PROBLEM_DESCRIPTION"),
         Update("UPDATE"),
         Close("CLOSE"),
         Reopen("REOPEN"),
+        AddContact("ADD_CONTACT"),
         ;
 
         private final String value;
@@ -147,12 +167,24 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
             throw new IllegalArgumentException("Invalid ActivityType: " + key);
         }
     };
-    /** The type of activity occurring. */
+    /**
+     * The type of activity occurring. {@code NOTES} is the activity associated to attachments.
+     * {@code PROBLEM_DESCRIPTION} is the activity associated to customer problem description.
+     * {@code UPDATE} is the activity associated to adding comments. {@code CLOSE} is the activity
+     * associated to closing the support request. {@code REOPEN} is the activity associated to
+     * reopening the support request. {@code ADD_CONTACT} is the activity associated to adding
+     * additional contact to the support request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("activityType")
     private final ActivityType activityType;
 
     /**
-     * The type of activity occurring.
+     * The type of activity occurring. {@code NOTES} is the activity associated to attachments.
+     * {@code PROBLEM_DESCRIPTION} is the activity associated to customer problem description.
+     * {@code UPDATE} is the activity associated to adding comments. {@code CLOSE} is the activity
+     * associated to closing the support request. {@code REOPEN} is the activity associated to
+     * reopening the support request. {@code ADD_CONTACT} is the activity associated to adding
+     * additional contact to the support request.
      *
      * @return the value
      */

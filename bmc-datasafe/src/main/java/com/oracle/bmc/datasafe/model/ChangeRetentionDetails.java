@@ -39,17 +39,15 @@ public final class ChangeRetentionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates the number of months the audit records will be stored online in Oracle Data
-         * Safe audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12
-         * months
+         * Number of months the audit records will be stored online in the audit repository for
+         * immediate reporting and analysis. Minimum: 1; Maximum: 12 months
          */
         @com.fasterxml.jackson.annotation.JsonProperty("onlineMonths")
         private Integer onlineMonths;
 
         /**
-         * Indicates the number of months the audit records will be stored online in Oracle Data
-         * Safe audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12
-         * months
+         * Number of months the audit records will be stored online in the audit repository for
+         * immediate reporting and analysis. Minimum: 1; Maximum: 12 months
          *
          * @param onlineMonths the value to set
          * @return this builder
@@ -60,17 +58,17 @@ public final class ChangeRetentionDetails
             return this;
         }
         /**
-         * Indicates the number of months the audit records will be stored offline in the Data Safe
-         * audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the
-         * audit data even longer in archive, please contact the Oracle Support.
+         * Number of months the audit records will be stored offline in the offline archive.
+         * Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even
+         * longer in the offline archive, please contact the Oracle Support.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("offlineMonths")
         private Integer offlineMonths;
 
         /**
-         * Indicates the number of months the audit records will be stored offline in the Data Safe
-         * audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the
-         * audit data even longer in archive, please contact the Oracle Support.
+         * Number of months the audit records will be stored offline in the offline archive.
+         * Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even
+         * longer in the offline archive, please contact the Oracle Support.
          *
          * @param offlineMonths the value to set
          * @return this builder
@@ -81,15 +79,17 @@ public final class ChangeRetentionDetails
             return this;
         }
         /**
-         * Indicates whether audit retention settings like online and offline months is set at the
-         * target level overriding the global audit retention settings.
+         * Indicates whether audit retention settings like online and offline months set at the
+         * target level override both the global settings and the target group level audit retention
+         * settings.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalRetentionSetting")
         private Boolean isOverrideGlobalRetentionSetting;
 
         /**
-         * Indicates whether audit retention settings like online and offline months is set at the
-         * target level overriding the global audit retention settings.
+         * Indicates whether audit retention settings like online and offline months set at the
+         * target level override both the global settings and the target group level audit retention
+         * settings.
          *
          * @param isOverrideGlobalRetentionSetting the value to set
          * @return this builder
@@ -140,15 +140,15 @@ public final class ChangeRetentionDetails
     }
 
     /**
-     * Indicates the number of months the audit records will be stored online in Oracle Data Safe
-     * audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+     * Number of months the audit records will be stored online in the audit repository for
+     * immediate reporting and analysis. Minimum: 1; Maximum: 12 months
      */
     @com.fasterxml.jackson.annotation.JsonProperty("onlineMonths")
     private final Integer onlineMonths;
 
     /**
-     * Indicates the number of months the audit records will be stored online in Oracle Data Safe
-     * audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+     * Number of months the audit records will be stored online in the audit repository for
+     * immediate reporting and analysis. Minimum: 1; Maximum: 12 months
      *
      * @return the value
      */
@@ -157,17 +157,17 @@ public final class ChangeRetentionDetails
     }
 
     /**
-     * Indicates the number of months the audit records will be stored offline in the Data Safe
-     * audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit
-     * data even longer in archive, please contact the Oracle Support.
+     * Number of months the audit records will be stored offline in the offline archive. Minimum: 0;
+     * Maximum: 72 months. If you have a requirement to store the audit data even longer in the
+     * offline archive, please contact the Oracle Support.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("offlineMonths")
     private final Integer offlineMonths;
 
     /**
-     * Indicates the number of months the audit records will be stored offline in the Data Safe
-     * audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit
-     * data even longer in archive, please contact the Oracle Support.
+     * Number of months the audit records will be stored offline in the offline archive. Minimum: 0;
+     * Maximum: 72 months. If you have a requirement to store the audit data even longer in the
+     * offline archive, please contact the Oracle Support.
      *
      * @return the value
      */
@@ -176,15 +176,15 @@ public final class ChangeRetentionDetails
     }
 
     /**
-     * Indicates whether audit retention settings like online and offline months is set at the
-     * target level overriding the global audit retention settings.
+     * Indicates whether audit retention settings like online and offline months set at the target
+     * level override both the global settings and the target group level audit retention settings.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalRetentionSetting")
     private final Boolean isOverrideGlobalRetentionSetting;
 
     /**
-     * Indicates whether audit retention settings like online and offline months is set at the
-     * target level overriding the global audit retention settings.
+     * Indicates whether audit retention settings like online and offline months set at the target
+     * level override both the global settings and the target group level audit retention settings.
      *
      * @return the value
      */

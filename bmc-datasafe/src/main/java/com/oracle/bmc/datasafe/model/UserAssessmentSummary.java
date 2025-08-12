@@ -33,6 +33,8 @@ public final class UserAssessmentSummary
         "isBaseline",
         "isDeviatedFromBaseline",
         "lastComparedBaselineId",
+        "targetDatabaseGroupId",
+        "targetType",
         "lifecycleState",
         "lifecycleDetails",
         "scheduleAssessmentId",
@@ -58,6 +60,8 @@ public final class UserAssessmentSummary
             Boolean isBaseline,
             Boolean isDeviatedFromBaseline,
             String lastComparedBaselineId,
+            String targetDatabaseGroupId,
+            UserAssessmentTargetType targetType,
             UserAssessmentLifecycleState lifecycleState,
             String lifecycleDetails,
             String scheduleAssessmentId,
@@ -82,6 +86,8 @@ public final class UserAssessmentSummary
         this.isBaseline = isBaseline;
         this.isDeviatedFromBaseline = isDeviatedFromBaseline;
         this.lastComparedBaselineId = lastComparedBaselineId;
+        this.targetDatabaseGroupId = targetDatabaseGroupId;
+        this.targetType = targetType;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.scheduleAssessmentId = scheduleAssessmentId;
@@ -249,6 +255,40 @@ public final class UserAssessmentSummary
         public Builder lastComparedBaselineId(String lastComparedBaselineId) {
             this.lastComparedBaselineId = lastComparedBaselineId;
             this.__explicitlySet__.add("lastComparedBaselineId");
+            return this;
+        }
+        /** The OCID of target database group. */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseGroupId")
+        private String targetDatabaseGroupId;
+
+        /**
+         * The OCID of target database group.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            this.__explicitlySet__.add("targetDatabaseGroupId");
+            return this;
+        }
+        /**
+         * Indicates whether the user assessment is for a target database or a target database
+         * group.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private UserAssessmentTargetType targetType;
+
+        /**
+         * Indicates whether the user assessment is for a target database or a target database
+         * group.
+         *
+         * @param targetType the value to set
+         * @return this builder
+         */
+        public Builder targetType(UserAssessmentTargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
             return this;
         }
         /** The current state of the user assessment. */
@@ -558,6 +598,8 @@ public final class UserAssessmentSummary
                             this.isBaseline,
                             this.isDeviatedFromBaseline,
                             this.lastComparedBaselineId,
+                            this.targetDatabaseGroupId,
+                            this.targetType,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.scheduleAssessmentId,
@@ -606,6 +648,12 @@ public final class UserAssessmentSummary
             }
             if (model.wasPropertyExplicitlySet("lastComparedBaselineId")) {
                 this.lastComparedBaselineId(model.getLastComparedBaselineId());
+            }
+            if (model.wasPropertyExplicitlySet("targetDatabaseGroupId")) {
+                this.targetDatabaseGroupId(model.getTargetDatabaseGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -789,6 +837,34 @@ public final class UserAssessmentSummary
      */
     public String getLastComparedBaselineId() {
         return lastComparedBaselineId;
+    }
+
+    /** The OCID of target database group. */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseGroupId")
+    private final String targetDatabaseGroupId;
+
+    /**
+     * The OCID of target database group.
+     *
+     * @return the value
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
+
+    /**
+     * Indicates whether the user assessment is for a target database or a target database group.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    private final UserAssessmentTargetType targetType;
+
+    /**
+     * Indicates whether the user assessment is for a target database or a target database group.
+     *
+     * @return the value
+     */
+    public UserAssessmentTargetType getTargetType() {
+        return targetType;
     }
 
     /** The current state of the user assessment. */
@@ -1177,6 +1253,8 @@ public final class UserAssessmentSummary
         sb.append(", isBaseline=").append(String.valueOf(this.isBaseline));
         sb.append(", isDeviatedFromBaseline=").append(String.valueOf(this.isDeviatedFromBaseline));
         sb.append(", lastComparedBaselineId=").append(String.valueOf(this.lastComparedBaselineId));
+        sb.append(", targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", scheduleAssessmentId=").append(String.valueOf(this.scheduleAssessmentId));
@@ -1216,6 +1294,8 @@ public final class UserAssessmentSummary
                         this.isDeviatedFromBaseline, other.isDeviatedFromBaseline)
                 && java.util.Objects.equals(
                         this.lastComparedBaselineId, other.lastComparedBaselineId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.scheduleAssessmentId, other.scheduleAssessmentId)
@@ -1262,6 +1342,12 @@ public final class UserAssessmentSummary
                         + (this.lastComparedBaselineId == null
                                 ? 43
                                 : this.lastComparedBaselineId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

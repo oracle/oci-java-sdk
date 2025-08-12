@@ -31,12 +31,12 @@ public final class DownloadSecurityAssessmentReportDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Format of the report. */
+        /** Format of the Security Assessment report. */
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private Format format;
 
         /**
-         * Format of the report.
+         * Format of the Security Assessment report.
          *
          * @param format the value to set
          * @return this builder
@@ -77,10 +77,11 @@ public final class DownloadSecurityAssessmentReportDetails
         return new Builder().copy(this);
     }
 
-    /** Format of the report. */
+    /** Format of the Security Assessment report. */
     public enum Format implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
+        Stigxls("STIGXLS"),
         ;
 
         private final String value;
@@ -110,12 +111,12 @@ public final class DownloadSecurityAssessmentReportDetails
             throw new IllegalArgumentException("Invalid Format: " + key);
         }
     };
-    /** Format of the report. */
+    /** Format of the Security Assessment report. */
     @com.fasterxml.jackson.annotation.JsonProperty("format")
     private final Format format;
 
     /**
-     * Format of the report.
+     * Format of the Security Assessment report.
      *
      * @return the value
      */

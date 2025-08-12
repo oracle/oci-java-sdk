@@ -23,6 +23,9 @@ package com.oracle.bmc.datasafe.model;
         defaultImpl = EntryDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AuditPolicyEntryDetails.class,
+            name = "AUDIT_POLICY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = FirewallPolicyEntryDetails.class,
             name = "FIREWALL_POLICY")
 })
@@ -77,10 +80,11 @@ public class EntryDetails extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * The security policy entry type. Allowed values: - FIREWALL_POLICY - The SQL Firewall policy
-     * entry type.
+     * entry type. - AUDIT_POLICY - The audit policy entry type.
      */
     public enum EntryType implements com.oracle.bmc.http.internal.BmcEnum {
         FirewallPolicy("FIREWALL_POLICY"),
+        AuditPolicy("AUDIT_POLICY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

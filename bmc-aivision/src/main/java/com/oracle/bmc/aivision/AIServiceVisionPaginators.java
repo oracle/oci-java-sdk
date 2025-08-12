@@ -271,6 +271,479 @@ public class AIServiceVisionPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listStreamGroups operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListStreamGroupsResponse> listStreamGroupsResponseIterator(
+            final ListStreamGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListStreamGroupsRequest.Builder, ListStreamGroupsRequest, ListStreamGroupsResponse>(
+                new java.util.function.Supplier<ListStreamGroupsRequest.Builder>() {
+                    @Override
+                    public ListStreamGroupsRequest.Builder get() {
+                        return ListStreamGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStreamGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListStreamGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStreamGroupsRequest.Builder>,
+                        ListStreamGroupsRequest>() {
+                    @Override
+                    public ListStreamGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStreamGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListStreamGroupsRequest, ListStreamGroupsResponse>() {
+                    @Override
+                    public ListStreamGroupsResponse apply(ListStreamGroupsRequest request) {
+                        return client.listStreamGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.aivision.model.StreamGroupSummary} objects contained in responses from the
+     * listStreamGroups operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.aivision.model.StreamGroupSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.aivision.model.StreamGroupSummary>
+            listStreamGroupsRecordIterator(final ListStreamGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListStreamGroupsRequest.Builder,
+                ListStreamGroupsRequest,
+                ListStreamGroupsResponse,
+                com.oracle.bmc.aivision.model.StreamGroupSummary>(
+                new java.util.function.Supplier<ListStreamGroupsRequest.Builder>() {
+                    @Override
+                    public ListStreamGroupsRequest.Builder get() {
+                        return ListStreamGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStreamGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListStreamGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStreamGroupsRequest.Builder>,
+                        ListStreamGroupsRequest>() {
+                    @Override
+                    public ListStreamGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStreamGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListStreamGroupsRequest, ListStreamGroupsResponse>() {
+                    @Override
+                    public ListStreamGroupsResponse apply(ListStreamGroupsRequest request) {
+                        return client.listStreamGroups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListStreamGroupsResponse,
+                        java.util.List<com.oracle.bmc.aivision.model.StreamGroupSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.aivision.model.StreamGroupSummary> apply(
+                            ListStreamGroupsResponse response) {
+                        return response.getStreamGroupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listStreamJobs
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListStreamJobsResponse> listStreamJobsResponseIterator(
+            final ListStreamJobsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListStreamJobsRequest.Builder, ListStreamJobsRequest, ListStreamJobsResponse>(
+                new java.util.function.Supplier<ListStreamJobsRequest.Builder>() {
+                    @Override
+                    public ListStreamJobsRequest.Builder get() {
+                        return ListStreamJobsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStreamJobsResponse, String>() {
+                    @Override
+                    public String apply(ListStreamJobsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStreamJobsRequest.Builder>,
+                        ListStreamJobsRequest>() {
+                    @Override
+                    public ListStreamJobsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStreamJobsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListStreamJobsRequest, ListStreamJobsResponse>() {
+                    @Override
+                    public ListStreamJobsResponse apply(ListStreamJobsRequest request) {
+                        return client.listStreamJobs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.aivision.model.StreamJobSummary} objects contained in responses from the
+     * listStreamJobs operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.aivision.model.StreamJobSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.aivision.model.StreamJobSummary> listStreamJobsRecordIterator(
+            final ListStreamJobsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListStreamJobsRequest.Builder,
+                ListStreamJobsRequest,
+                ListStreamJobsResponse,
+                com.oracle.bmc.aivision.model.StreamJobSummary>(
+                new java.util.function.Supplier<ListStreamJobsRequest.Builder>() {
+                    @Override
+                    public ListStreamJobsRequest.Builder get() {
+                        return ListStreamJobsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStreamJobsResponse, String>() {
+                    @Override
+                    public String apply(ListStreamJobsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStreamJobsRequest.Builder>,
+                        ListStreamJobsRequest>() {
+                    @Override
+                    public ListStreamJobsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStreamJobsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListStreamJobsRequest, ListStreamJobsResponse>() {
+                    @Override
+                    public ListStreamJobsResponse apply(ListStreamJobsRequest request) {
+                        return client.listStreamJobs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListStreamJobsResponse,
+                        java.util.List<com.oracle.bmc.aivision.model.StreamJobSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.aivision.model.StreamJobSummary> apply(
+                            ListStreamJobsResponse response) {
+                        return response.getStreamJobCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listStreamSources operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListStreamSourcesResponse> listStreamSourcesResponseIterator(
+            final ListStreamSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListStreamSourcesRequest.Builder,
+                ListStreamSourcesRequest,
+                ListStreamSourcesResponse>(
+                new java.util.function.Supplier<ListStreamSourcesRequest.Builder>() {
+                    @Override
+                    public ListStreamSourcesRequest.Builder get() {
+                        return ListStreamSourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStreamSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListStreamSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStreamSourcesRequest.Builder>,
+                        ListStreamSourcesRequest>() {
+                    @Override
+                    public ListStreamSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStreamSourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListStreamSourcesRequest, ListStreamSourcesResponse>() {
+                    @Override
+                    public ListStreamSourcesResponse apply(ListStreamSourcesRequest request) {
+                        return client.listStreamSources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.aivision.model.StreamSourceSummary} objects contained in responses from the
+     * listStreamSources operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.aivision.model.StreamSourceSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.aivision.model.StreamSourceSummary>
+            listStreamSourcesRecordIterator(final ListStreamSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListStreamSourcesRequest.Builder,
+                ListStreamSourcesRequest,
+                ListStreamSourcesResponse,
+                com.oracle.bmc.aivision.model.StreamSourceSummary>(
+                new java.util.function.Supplier<ListStreamSourcesRequest.Builder>() {
+                    @Override
+                    public ListStreamSourcesRequest.Builder get() {
+                        return ListStreamSourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStreamSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListStreamSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStreamSourcesRequest.Builder>,
+                        ListStreamSourcesRequest>() {
+                    @Override
+                    public ListStreamSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStreamSourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListStreamSourcesRequest, ListStreamSourcesResponse>() {
+                    @Override
+                    public ListStreamSourcesResponse apply(ListStreamSourcesRequest request) {
+                        return client.listStreamSources(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListStreamSourcesResponse,
+                        java.util.List<com.oracle.bmc.aivision.model.StreamSourceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.aivision.model.StreamSourceSummary> apply(
+                            ListStreamSourcesResponse response) {
+                        return response.getStreamSourceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listVisionPrivateEndpoints operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListVisionPrivateEndpointsResponse> listVisionPrivateEndpointsResponseIterator(
+            final ListVisionPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVisionPrivateEndpointsRequest.Builder,
+                ListVisionPrivateEndpointsRequest,
+                ListVisionPrivateEndpointsResponse>(
+                new java.util.function.Supplier<ListVisionPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListVisionPrivateEndpointsRequest.Builder get() {
+                        return ListVisionPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVisionPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListVisionPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVisionPrivateEndpointsRequest.Builder>,
+                        ListVisionPrivateEndpointsRequest>() {
+                    @Override
+                    public ListVisionPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVisionPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVisionPrivateEndpointsRequest, ListVisionPrivateEndpointsResponse>() {
+                    @Override
+                    public ListVisionPrivateEndpointsResponse apply(
+                            ListVisionPrivateEndpointsRequest request) {
+                        return client.listVisionPrivateEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.aivision.model.VisionPrivateEndpointSummary} objects contained in responses
+     * from the listVisionPrivateEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.aivision.model.VisionPrivateEndpointSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.aivision.model.VisionPrivateEndpointSummary>
+            listVisionPrivateEndpointsRecordIterator(
+                    final ListVisionPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVisionPrivateEndpointsRequest.Builder,
+                ListVisionPrivateEndpointsRequest,
+                ListVisionPrivateEndpointsResponse,
+                com.oracle.bmc.aivision.model.VisionPrivateEndpointSummary>(
+                new java.util.function.Supplier<ListVisionPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListVisionPrivateEndpointsRequest.Builder get() {
+                        return ListVisionPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVisionPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListVisionPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVisionPrivateEndpointsRequest.Builder>,
+                        ListVisionPrivateEndpointsRequest>() {
+                    @Override
+                    public ListVisionPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVisionPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVisionPrivateEndpointsRequest, ListVisionPrivateEndpointsResponse>() {
+                    @Override
+                    public ListVisionPrivateEndpointsResponse apply(
+                            ListVisionPrivateEndpointsRequest request) {
+                        return client.listVisionPrivateEndpoints(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVisionPrivateEndpointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.aivision.model.VisionPrivateEndpointSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.aivision.model.VisionPrivateEndpointSummary>
+                            apply(ListVisionPrivateEndpointsResponse response) {
+                        return response.getVisionPrivateEndpointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *

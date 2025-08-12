@@ -292,16 +292,22 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
         }
         /**
          * The base64 encoded keystore file created at the client containing the server certificate
-         * / CA root certificate. Deprecated: This field is deprecated and replaced by
-         * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+         * / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS
+         * mode is not available.
+         *
+         * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId".
+         * This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredb")
         private String sslClientKeystoredb;
 
         /**
          * The base64 encoded keystore file created at the client containing the server certificate
-         * / CA root certificate. Deprecated: This field is deprecated and replaced by
-         * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+         * / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS
+         * mode is not available.
+         *
+         * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId".
+         * This field will be removed after February 15 2026.
          *
          * @param sslClientKeystoredb the value to set
          * @return this builder
@@ -314,8 +320,10 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the keystore file stored, which created at the client containing the server
-         * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must
-         * not be provided.
+         * certificate / CA root certificate. This property is not supported for IBM Db2 for i, as
+         * client TLS mode is not available.
+         *
+         * <p>Note: When provided, 'sslClientKeystoredb' field must not be provided.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredbSecretId")
         private String sslClientKeystoredbSecretId;
@@ -323,8 +331,10 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the keystore file stored, which created at the client containing the server
-         * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must
-         * not be provided.
+         * certificate / CA root certificate. This property is not supported for IBM Db2 for i, as
+         * client TLS mode is not available.
+         *
+         * <p>Note: When provided, 'sslClientKeystoredb' field must not be provided.
          *
          * @param sslClientKeystoredbSecretId the value to set
          * @return this builder
@@ -336,16 +346,22 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
         }
         /**
          * The base64 encoded keystash file which contains the encrypted password to the key
-         * database file. Deprecated: This field is deprecated and replaced by
-         * "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+         * database file. This property is not supported for IBM Db2 for i, as client TLS mode is
+         * not available.
+         *
+         * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
+         * field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystash")
         private String sslClientKeystash;
 
         /**
          * The base64 encoded keystash file which contains the encrypted password to the key
-         * database file. Deprecated: This field is deprecated and replaced by
-         * "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+         * database file. This property is not supported for IBM Db2 for i, as client TLS mode is
+         * not available.
+         *
+         * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
+         * field will be removed after February 15 2026.
          *
          * @param sslClientKeystash the value to set
          * @return this builder
@@ -358,7 +374,10 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the keystash file is stored, which contains the encrypted password to the
-         * key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+         * key database file. This property is not supported for IBM Db2 for i, as client TLS mode
+         * is not available.
+         *
+         * <p>Note: When provided, 'sslClientKeystash' field must not be provided.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystashSecretId")
         private String sslClientKeystashSecretId;
@@ -366,7 +385,10 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the keystash file is stored, which contains the encrypted password to the
-         * key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+         * key database file. This property is not supported for IBM Db2 for i, as client TLS mode
+         * is not available.
+         *
+         * <p>Note: When provided, 'sslClientKeystash' field must not be provided.
          *
          * @param sslClientKeystashSecretId the value to set
          * @return this builder
@@ -725,16 +747,22 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
 
     /**
      * The base64 encoded keystore file created at the client containing the server certificate / CA
-     * root certificate. Deprecated: This field is deprecated and replaced by
-     * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+     * root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not
+     * available.
+     *
+     * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This
+     * field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredb")
     private final String sslClientKeystoredb;
 
     /**
      * The base64 encoded keystore file created at the client containing the server certificate / CA
-     * root certificate. Deprecated: This field is deprecated and replaced by
-     * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+     * root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not
+     * available.
+     *
+     * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This
+     * field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -745,8 +773,10 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the keystore file stored, which created at the client containing the server
-     * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not
-     * be provided.
+     * certificate / CA root certificate. This property is not supported for IBM Db2 for i, as
+     * client TLS mode is not available.
+     *
+     * <p>Note: When provided, 'sslClientKeystoredb' field must not be provided.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredbSecretId")
     private final String sslClientKeystoredbSecretId;
@@ -754,8 +784,10 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the keystore file stored, which created at the client containing the server
-     * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not
-     * be provided.
+     * certificate / CA root certificate. This property is not supported for IBM Db2 for i, as
+     * client TLS mode is not available.
+     *
+     * <p>Note: When provided, 'sslClientKeystoredb' field must not be provided.
      *
      * @return the value
      */
@@ -765,7 +797,9 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
 
     /**
      * The base64 encoded keystash file which contains the encrypted password to the key database
-     * file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
+     * file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
      * field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystash")
@@ -773,7 +807,9 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
 
     /**
      * The base64 encoded keystash file which contains the encrypted password to the key database
-     * file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
+     * file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
      * field will be removed after February 15 2026.
      *
      * @return the value
@@ -785,7 +821,10 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the keystash file is stored, which contains the encrypted password to the key
-     * database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+     * database file. This property is not supported for IBM Db2 for i, as client TLS mode is not
+     * available.
+     *
+     * <p>Note: When provided, 'sslClientKeystash' field must not be provided.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystashSecretId")
     private final String sslClientKeystashSecretId;
@@ -793,7 +832,10 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the keystash file is stored, which contains the encrypted password to the key
-     * database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+     * database file. This property is not supported for IBM Db2 for i, as client TLS mode is not
+     * available.
+     *
+     * <p>Note: When provided, 'sslClientKeystash' field must not be provided.
      *
      * @return the value
      */

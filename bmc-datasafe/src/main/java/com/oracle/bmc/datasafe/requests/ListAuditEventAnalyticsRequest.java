@@ -153,7 +153,7 @@ public class ListAuditEventAnalyticsRequest
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON") The
+     * <p>*Example:** (auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON") The
      * attrExp or the field (for example, operationTime and eventName in above example) which is
      * used to filter can be any of the fields returned by AuditEventSummary. adminUser, commonUser,
      * sensitiveActivity, dsActivity can only have eq operation and value 1. These define admin user
@@ -170,7 +170,7 @@ public class ListAuditEventAnalyticsRequest
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON") The
+     * <p>*Example:** (auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON") The
      * attrExp or the field (for example, operationTime and eventName in above example) which is
      * used to filter can be any of the fields returned by AuditEventSummary. adminUser, commonUser,
      * sensitiveActivity, dsActivity can only have eq operation and value 1. These define admin user
@@ -217,6 +217,13 @@ public class ListAuditEventAnalyticsRequest
         Drops("drops"),
         Grants("grants"),
         Revokes("revokes"),
+        ObjectOwner("objectOwner"),
+        AuditPolicies("auditPolicies"),
+        ObjectName("objectName"),
+        OsUserName("osUserName"),
+        ErrorCode("errorCode"),
+        ClientIp("clientIp"),
+        ExternalUserId("externalUserId"),
         ;
 
         private final String value;
@@ -316,6 +323,13 @@ public class ListAuditEventAnalyticsRequest
         ClientId("clientId"),
         AuditType("auditType"),
         EventName("eventName"),
+        ObjectOwner("objectOwner"),
+        AuditPolicies("auditPolicies"),
+        ObjectName("objectName"),
+        OsUserName("osUserName"),
+        ErrorCode("errorCode"),
+        ClientIp("clientIp"),
+        ExternalUserId("externalUserId"),
         ;
 
         private final String value;
@@ -435,6 +449,13 @@ public class ListAuditEventAnalyticsRequest
         ClientProgram("clientProgram"),
         ClientId("clientId"),
         AuditType("auditType"),
+        ObjectOwner("objectOwner"),
+        AuditPolicies("auditPolicies"),
+        ObjectName("objectName"),
+        OsUserName("osUserName"),
+        ErrorCode("errorCode"),
+        ClientIp("clientIp"),
+        ExternalUserId("externalUserId"),
         ;
 
         private final String value;
@@ -617,12 +638,12 @@ public class ListAuditEventAnalyticsRequest
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON") The
-         * attrExp or the field (for example, operationTime and eventName in above example) which is
-         * used to filter can be any of the fields returned by AuditEventSummary. adminUser,
-         * commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1. These
-         * define admin user activity, common user activity, sensitive data activity and data safe
-         * activity **Example:** (adminUser eq 1)
+         * <p>*Example:** (auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON")
+         * The attrExp or the field (for example, operationTime and eventName in above example)
+         * which is used to filter can be any of the fields returned by AuditEventSummary.
+         * adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value
+         * 1. These define admin user activity, common user activity, sensitive data activity and
+         * data safe activity **Example:** (adminUser eq 1)
          */
         private String scimQuery = null;
 
@@ -634,12 +655,12 @@ public class ListAuditEventAnalyticsRequest
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON") The
-         * attrExp or the field (for example, operationTime and eventName in above example) which is
-         * used to filter can be any of the fields returned by AuditEventSummary. adminUser,
-         * commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1. These
-         * define admin user activity, common user activity, sensitive data activity and data safe
-         * activity **Example:** (adminUser eq 1)
+         * <p>*Example:** (auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON")
+         * The attrExp or the field (for example, operationTime and eventName in above example)
+         * which is used to filter can be any of the fields returned by AuditEventSummary.
+         * adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value
+         * 1. These define admin user activity, common user activity, sensitive data activity and
+         * data safe activity **Example:** (adminUser eq 1)
          *
          * @param scimQuery the value to set
          * @return this builder instance

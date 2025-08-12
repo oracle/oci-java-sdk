@@ -522,6 +522,12 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
         Locked("LOCKED"),
         Expired("EXPIRED"),
         ExpiredAndLocked("EXPIRED_AND_LOCKED"),
+        OpenAndInRollover("OPEN_AND_IN_ROLLOVER"),
+        ExpiredAndInRollover("EXPIRED_AND_IN_ROLLOVER"),
+        LockedAndInRollover("LOCKED_AND_IN_ROLLOVER"),
+        ExpiredAndLockedAndInRollover("EXPIRED_AND_LOCKED_AND_IN_ROLLOVER"),
+        LockedTimedAndInRollover("LOCKED_TIMED_AND_IN_ROLLOVER"),
+        ExpiredAndLockedTimedAndInRol("EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL"),
         None("NONE"),
 
         /**

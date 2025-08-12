@@ -26,20 +26,26 @@ public final class Column extends com.oracle.bmc.http.client.internal.Explicitly
         "fieldName",
         "dataType",
         "isHidden",
-        "displayOrder"
+        "displayOrder",
+        "isVirtual",
+        "applicableOperators"
     })
     public Column(
             String displayName,
             String fieldName,
             String dataType,
             Boolean isHidden,
-            Integer displayOrder) {
+            Integer displayOrder,
+            Boolean isVirtual,
+            java.util.List<ApplicableOperators> applicableOperators) {
         super();
         this.displayName = displayName;
         this.fieldName = fieldName;
         this.dataType = dataType;
         this.isHidden = isHidden;
         this.displayOrder = displayOrder;
+        this.isVirtual = isVirtual;
+        this.applicableOperators = applicableOperators;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -119,6 +125,37 @@ public final class Column extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("displayOrder");
             return this;
         }
+        /** Specifies if column is virtual and can only be used as column filter. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isVirtual")
+        private Boolean isVirtual;
+
+        /**
+         * Specifies if column is virtual and can only be used as column filter.
+         *
+         * @param isVirtual the value to set
+         * @return this builder
+         */
+        public Builder isVirtual(Boolean isVirtual) {
+            this.isVirtual = isVirtual;
+            this.__explicitlySet__.add("isVirtual");
+            return this;
+        }
+        /** An array of operators that can be supported by column fieldName. */
+        @com.fasterxml.jackson.annotation.JsonProperty("applicableOperators")
+        private java.util.List<ApplicableOperators> applicableOperators;
+
+        /**
+         * An array of operators that can be supported by column fieldName.
+         *
+         * @param applicableOperators the value to set
+         * @return this builder
+         */
+        public Builder applicableOperators(
+                java.util.List<ApplicableOperators> applicableOperators) {
+            this.applicableOperators = applicableOperators;
+            this.__explicitlySet__.add("applicableOperators");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -130,7 +167,9 @@ public final class Column extends com.oracle.bmc.http.client.internal.Explicitly
                             this.fieldName,
                             this.dataType,
                             this.isHidden,
-                            this.displayOrder);
+                            this.displayOrder,
+                            this.isVirtual,
+                            this.applicableOperators);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -153,6 +192,12 @@ public final class Column extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("displayOrder")) {
                 this.displayOrder(model.getDisplayOrder());
+            }
+            if (model.wasPropertyExplicitlySet("isVirtual")) {
+                this.isVirtual(model.getIsVirtual());
+            }
+            if (model.wasPropertyExplicitlySet("applicableOperators")) {
+                this.applicableOperators(model.getApplicableOperators());
             }
             return this;
         }
@@ -232,6 +277,92 @@ public final class Column extends com.oracle.bmc.http.client.internal.Explicitly
         return displayOrder;
     }
 
+    /** Specifies if column is virtual and can only be used as column filter. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isVirtual")
+    private final Boolean isVirtual;
+
+    /**
+     * Specifies if column is virtual and can only be used as column filter.
+     *
+     * @return the value
+     */
+    public Boolean getIsVirtual() {
+        return isVirtual;
+    }
+
+    /** */
+    public enum ApplicableOperators implements com.oracle.bmc.http.internal.BmcEnum {
+        In("IN"),
+        Eq("EQ"),
+        EqCs("EQ_CS"),
+        Gt("GT"),
+        Ge("GE"),
+        Lt("LT"),
+        Le("LE"),
+        And("AND"),
+        Or("OR"),
+        Ne("NE"),
+        Co("CO"),
+        CoCs("CO_CS"),
+        Not("NOT"),
+        NotIn("NOT_IN"),
+        InSet("IN_SET"),
+        NotInSet("NOT_IN_SET"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ApplicableOperators.class);
+
+        private final String value;
+        private static java.util.Map<String, ApplicableOperators> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ApplicableOperators v : ApplicableOperators.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ApplicableOperators(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ApplicableOperators create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ApplicableOperators', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** An array of operators that can be supported by column fieldName. */
+    @com.fasterxml.jackson.annotation.JsonProperty("applicableOperators")
+    private final java.util.List<ApplicableOperators> applicableOperators;
+
+    /**
+     * An array of operators that can be supported by column fieldName.
+     *
+     * @return the value
+     */
+    public java.util.List<ApplicableOperators> getApplicableOperators() {
+        return applicableOperators;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -252,6 +383,8 @@ public final class Column extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", dataType=").append(String.valueOf(this.dataType));
         sb.append(", isHidden=").append(String.valueOf(this.isHidden));
         sb.append(", displayOrder=").append(String.valueOf(this.displayOrder));
+        sb.append(", isVirtual=").append(String.valueOf(this.isVirtual));
+        sb.append(", applicableOperators=").append(String.valueOf(this.applicableOperators));
         sb.append(")");
         return sb.toString();
     }
@@ -271,6 +404,8 @@ public final class Column extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.dataType, other.dataType)
                 && java.util.Objects.equals(this.isHidden, other.isHidden)
                 && java.util.Objects.equals(this.displayOrder, other.displayOrder)
+                && java.util.Objects.equals(this.isVirtual, other.isVirtual)
+                && java.util.Objects.equals(this.applicableOperators, other.applicableOperators)
                 && super.equals(other);
     }
 
@@ -283,6 +418,12 @@ public final class Column extends com.oracle.bmc.http.client.internal.Explicitly
         result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
         result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
         result = (result * PRIME) + (this.displayOrder == null ? 43 : this.displayOrder.hashCode());
+        result = (result * PRIME) + (this.isVirtual == null ? 43 : this.isVirtual.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicableOperators == null
+                                ? 43
+                                : this.applicableOperators.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

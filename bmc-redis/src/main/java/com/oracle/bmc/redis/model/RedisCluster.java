@@ -39,6 +39,7 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
         "timeCreated",
         "timeUpdated",
         "nodeCollection",
+        "ociCacheConfigSetId",
         "clusterMode",
         "shardCount",
         "nsgIds",
@@ -63,6 +64,7 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             NodeCollection nodeCollection,
+            String ociCacheConfigSetId,
             ClusterMode clusterMode,
             Integer shardCount,
             java.util.List<String> nsgIds,
@@ -86,6 +88,7 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.nodeCollection = nodeCollection;
+        this.ociCacheConfigSetId = ociCacheConfigSetId;
         this.clusterMode = clusterMode;
         this.shardCount = shardCount;
         this.nsgIds = nsgIds;
@@ -370,6 +373,21 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("nodeCollection");
             return this;
         }
+        /** The ID of the corresponding OCI Cache Config Set for the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("ociCacheConfigSetId")
+        private String ociCacheConfigSetId;
+
+        /**
+         * The ID of the corresponding OCI Cache Config Set for the cluster.
+         *
+         * @param ociCacheConfigSetId the value to set
+         * @return this builder
+         */
+        public Builder ociCacheConfigSetId(String ociCacheConfigSetId) {
+            this.ociCacheConfigSetId = ociCacheConfigSetId;
+            this.__explicitlySet__.add("ociCacheConfigSetId");
+            return this;
+        }
         /** Specifies whether the cluster is sharded or non-sharded. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
         private ClusterMode clusterMode;
@@ -506,6 +524,7 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
                             this.timeCreated,
                             this.timeUpdated,
                             this.nodeCollection,
+                            this.ociCacheConfigSetId,
                             this.clusterMode,
                             this.shardCount,
                             this.nsgIds,
@@ -567,6 +586,9 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("nodeCollection")) {
                 this.nodeCollection(model.getNodeCollection());
+            }
+            if (model.wasPropertyExplicitlySet("ociCacheConfigSetId")) {
+                this.ociCacheConfigSetId(model.getOciCacheConfigSetId());
             }
             if (model.wasPropertyExplicitlySet("clusterMode")) {
                 this.clusterMode(model.getClusterMode());
@@ -934,6 +956,19 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
         return nodeCollection;
     }
 
+    /** The ID of the corresponding OCI Cache Config Set for the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("ociCacheConfigSetId")
+    private final String ociCacheConfigSetId;
+
+    /**
+     * The ID of the corresponding OCI Cache Config Set for the cluster.
+     *
+     * @return the value
+     */
+    public String getOciCacheConfigSetId() {
+        return ociCacheConfigSetId;
+    }
+
     /** Specifies whether the cluster is sharded or non-sharded. */
     public enum ClusterMode implements com.oracle.bmc.http.internal.BmcEnum {
         Sharded("SHARDED"),
@@ -1111,6 +1146,7 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", nodeCollection=").append(String.valueOf(this.nodeCollection));
+        sb.append(", ociCacheConfigSetId=").append(String.valueOf(this.ociCacheConfigSetId));
         sb.append(", clusterMode=").append(String.valueOf(this.clusterMode));
         sb.append(", shardCount=").append(String.valueOf(this.shardCount));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
@@ -1149,6 +1185,7 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.nodeCollection, other.nodeCollection)
+                && java.util.Objects.equals(this.ociCacheConfigSetId, other.ociCacheConfigSetId)
                 && java.util.Objects.equals(this.clusterMode, other.clusterMode)
                 && java.util.Objects.equals(this.shardCount, other.shardCount)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
@@ -1198,6 +1235,11 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.nodeCollection == null ? 43 : this.nodeCollection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ociCacheConfigSetId == null
+                                ? 43
+                                : this.ociCacheConfigSetId.hashCode());
         result = (result * PRIME) + (this.clusterMode == null ? 43 : this.clusterMode.hashCode());
         result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());

@@ -4,7 +4,10 @@
  */
 package com.oracle.bmc.devops.model;
 
-/** Value for a given merge check setting. Can be ENABLED or DISABLED. */
+/**
+ * Value for a given merge check setting. Can be ENABLED or DISABLED. Can be INHERITED at
+ * repositoryLevel.
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public enum MergeCheckSettingsValue implements com.oracle.bmc.http.internal.BmcEnum {
     Enabled("ENABLED"),

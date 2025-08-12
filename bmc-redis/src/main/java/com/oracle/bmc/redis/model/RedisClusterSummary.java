@@ -40,6 +40,7 @@ public final class RedisClusterSummary
         "subnetId",
         "timeCreated",
         "timeUpdated",
+        "ociCacheConfigSetId",
         "clusterMode",
         "shardCount",
         "nsgIds",
@@ -63,6 +64,7 @@ public final class RedisClusterSummary
             String subnetId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String ociCacheConfigSetId,
             RedisCluster.ClusterMode clusterMode,
             Integer shardCount,
             java.util.List<String> nsgIds,
@@ -85,6 +87,7 @@ public final class RedisClusterSummary
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.ociCacheConfigSetId = ociCacheConfigSetId;
         this.clusterMode = clusterMode;
         this.shardCount = shardCount;
         this.nsgIds = nsgIds;
@@ -360,6 +363,21 @@ public final class RedisClusterSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** The ID of the corresponding OCI Cache Config Set for the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("ociCacheConfigSetId")
+        private String ociCacheConfigSetId;
+
+        /**
+         * The ID of the corresponding OCI Cache Config Set for the cluster.
+         *
+         * @param ociCacheConfigSetId the value to set
+         * @return this builder
+         */
+        public Builder ociCacheConfigSetId(String ociCacheConfigSetId) {
+            this.ociCacheConfigSetId = ociCacheConfigSetId;
+            this.__explicitlySet__.add("ociCacheConfigSetId");
+            return this;
+        }
         /** Specifies whether the cluster is sharded or non-sharded. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
         private RedisCluster.ClusterMode clusterMode;
@@ -495,6 +513,7 @@ public final class RedisClusterSummary
                             this.subnetId,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.ociCacheConfigSetId,
                             this.clusterMode,
                             this.shardCount,
                             this.nsgIds,
@@ -553,6 +572,9 @@ public final class RedisClusterSummary
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("ociCacheConfigSetId")) {
+                this.ociCacheConfigSetId(model.getOciCacheConfigSetId());
             }
             if (model.wasPropertyExplicitlySet("clusterMode")) {
                 this.clusterMode(model.getClusterMode());
@@ -816,6 +838,19 @@ public final class RedisClusterSummary
         return timeUpdated;
     }
 
+    /** The ID of the corresponding OCI Cache Config Set for the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("ociCacheConfigSetId")
+    private final String ociCacheConfigSetId;
+
+    /**
+     * The ID of the corresponding OCI Cache Config Set for the cluster.
+     *
+     * @return the value
+     */
+    public String getOciCacheConfigSetId() {
+        return ociCacheConfigSetId;
+    }
+
     /** Specifies whether the cluster is sharded or non-sharded. */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
     private final RedisCluster.ClusterMode clusterMode;
@@ -946,6 +981,7 @@ public final class RedisClusterSummary
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", ociCacheConfigSetId=").append(String.valueOf(this.ociCacheConfigSetId));
         sb.append(", clusterMode=").append(String.valueOf(this.clusterMode));
         sb.append(", shardCount=").append(String.valueOf(this.shardCount));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
@@ -983,6 +1019,7 @@ public final class RedisClusterSummary
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.ociCacheConfigSetId, other.ociCacheConfigSetId)
                 && java.util.Objects.equals(this.clusterMode, other.clusterMode)
                 && java.util.Objects.equals(this.shardCount, other.shardCount)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
@@ -1029,6 +1066,11 @@ public final class RedisClusterSummary
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ociCacheConfigSetId == null
+                                ? 43
+                                : this.ociCacheConfigSetId.hashCode());
         result = (result * PRIME) + (this.clusterMode == null ? 43 : this.clusterMode.hashCode());
         result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());

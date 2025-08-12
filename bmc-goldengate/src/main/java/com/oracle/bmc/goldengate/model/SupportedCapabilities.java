@@ -14,6 +14,7 @@ public enum SupportedCapabilities implements com.oracle.bmc.http.internal.BmcEnu
     Placement("PLACEMENT"),
     DisasterRecovery("DISASTER_RECOVERY"),
     ScheduleManualBackup("SCHEDULE_MANUAL_BACKUP"),
+    Multicloud("MULTICLOUD"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

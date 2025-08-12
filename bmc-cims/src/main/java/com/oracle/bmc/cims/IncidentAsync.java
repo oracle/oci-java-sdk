@@ -67,7 +67,7 @@ public interface IncidentAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a support ticket in the specified tenancy. For more information, see [Creating
+     * Creates a support request in the specified tenancy. For more information, see [Creating
      * Support Requests](https://docs.oracle.com/iaas/Content/GSG/support/create-incident.htm).
      *
      * @param request The request object containing the details to send
@@ -83,7 +83,7 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the specified support ticket. For more information, see [Getting Details for a Support
+     * Gets the specified support request. For more information, see [Getting Details for a Support
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/get-incident.htm).
      *
      * @param request The request object containing the details to send
@@ -99,7 +99,7 @@ public interface IncidentAsync extends AutoCloseable {
 
     /**
      * Depending on the selected `productType`, either lists available products (service groups,
-     * services, service categories, and subcategories) for technical support tickets or lists
+     * services, service categories, and subcategories) for technical support requests or lists
      * limits and current usage for limit increase tickets. This operation is called during creation
      * of technical support and limit increase tickets. For more information about listing products,
      * see [Listing Products for Support
@@ -121,7 +121,7 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists support tickets for the specified tenancy. For more information, see [Listing Support
+     * Lists support requests for the specified tenancy. For more information, see [Listing Support
      * Requests](https://docs.oracle.com/iaas/Content/GSG/support/list-incidents.htm).
      *
      * @param request The request object containing the details to send
@@ -137,7 +137,22 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified support ticket. For more information, see [Updating Support
+     * Uploads the file and attaches it to the support request.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutAttachmentResponse> putAttachment(
+            PutAttachmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PutAttachmentRequest, PutAttachmentResponse>
+                    handler);
+
+    /**
+     * Updates the specified support request. For more information, see [Updating Support
      * Requests](https://docs.oracle.com/iaas/Content/GSG/support/update-incident.htm).
      *
      * @param request The request object containing the details to send

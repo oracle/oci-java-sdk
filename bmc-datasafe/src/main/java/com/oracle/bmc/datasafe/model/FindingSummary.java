@@ -29,10 +29,12 @@ public final class FindingSummary
         "key",
         "isTopFinding",
         "title",
+        "category",
         "remarks",
         "details",
         "summary",
         "oneline",
+        "doclink",
         "references",
         "oracleDefinedSeverity",
         "isRiskModified",
@@ -50,10 +52,12 @@ public final class FindingSummary
             String key,
             Boolean isTopFinding,
             String title,
+            String category,
             String remarks,
             Object details,
             String summary,
             String oneline,
+            String doclink,
             References references,
             Finding.Severity oracleDefinedSeverity,
             Boolean isRiskModified,
@@ -70,10 +74,12 @@ public final class FindingSummary
         this.key = key;
         this.isTopFinding = isTopFinding;
         this.title = title;
+        this.category = category;
         this.remarks = remarks;
         this.details = details;
         this.summary = summary;
         this.oneline = oneline;
+        this.doclink = doclink;
         this.references = references;
         this.oracleDefinedSeverity = oracleDefinedSeverity;
         this.isRiskModified = isRiskModified;
@@ -185,6 +191,21 @@ public final class FindingSummary
             this.__explicitlySet__.add("title");
             return this;
         }
+        /** The category to which the finding belongs to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("category")
+        private String category;
+
+        /**
+         * The category to which the finding belongs to.
+         *
+         * @param category the value to set
+         * @return this builder
+         */
+        public Builder category(String category) {
+            this.category = category;
+            this.__explicitlySet__.add("category");
+            return this;
+        }
         /**
          * The explanation of the issue in this finding. It explains the reason for the rule and, if
          * a risk is reported, it may also explain the recommended actions for remediation.
@@ -257,6 +278,23 @@ public final class FindingSummary
         public Builder oneline(String oneline) {
             this.oneline = oneline;
             this.__explicitlySet__.add("oneline");
+            return this;
+        }
+        /**
+         * Documentation link provided by Oracle that explains a specific security finding or check.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("doclink")
+        private String doclink;
+
+        /**
+         * Documentation link provided by Oracle that explains a specific security finding or check.
+         *
+         * @param doclink the value to set
+         * @return this builder
+         */
+        public Builder doclink(String doclink) {
+            this.doclink = doclink;
+            this.__explicitlySet__.add("doclink");
             return this;
         }
         /**
@@ -427,10 +465,12 @@ public final class FindingSummary
                             this.key,
                             this.isTopFinding,
                             this.title,
+                            this.category,
                             this.remarks,
                             this.details,
                             this.summary,
                             this.oneline,
+                            this.doclink,
                             this.references,
                             this.oracleDefinedSeverity,
                             this.isRiskModified,
@@ -466,6 +506,9 @@ public final class FindingSummary
             if (model.wasPropertyExplicitlySet("title")) {
                 this.title(model.getTitle());
             }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
             if (model.wasPropertyExplicitlySet("remarks")) {
                 this.remarks(model.getRemarks());
             }
@@ -477,6 +520,9 @@ public final class FindingSummary
             }
             if (model.wasPropertyExplicitlySet("oneline")) {
                 this.oneline(model.getOneline());
+            }
+            if (model.wasPropertyExplicitlySet("doclink")) {
+                this.doclink(model.getDoclink());
             }
             if (model.wasPropertyExplicitlySet("references")) {
                 this.references(model.getReferences());
@@ -658,6 +704,19 @@ public final class FindingSummary
         return title;
     }
 
+    /** The category to which the finding belongs to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
+    private final String category;
+
+    /**
+     * The category to which the finding belongs to.
+     *
+     * @return the value
+     */
+    public String getCategory() {
+        return category;
+    }
+
     /**
      * The explanation of the issue in this finding. It explains the reason for the rule and, if a
      * risk is reported, it may also explain the recommended actions for remediation.
@@ -720,6 +779,19 @@ public final class FindingSummary
      */
     public String getOneline() {
         return oneline;
+    }
+
+    /** Documentation link provided by Oracle that explains a specific security finding or check. */
+    @com.fasterxml.jackson.annotation.JsonProperty("doclink")
+    private final String doclink;
+
+    /**
+     * Documentation link provided by Oracle that explains a specific security finding or check.
+     *
+     * @return the value
+     */
+    public String getDoclink() {
+        return doclink;
     }
 
     /**
@@ -878,10 +950,12 @@ public final class FindingSummary
         sb.append(", key=").append(String.valueOf(this.key));
         sb.append(", isTopFinding=").append(String.valueOf(this.isTopFinding));
         sb.append(", title=").append(String.valueOf(this.title));
+        sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", remarks=").append(String.valueOf(this.remarks));
         sb.append(", details=").append(String.valueOf(this.details));
         sb.append(", summary=").append(String.valueOf(this.summary));
         sb.append(", oneline=").append(String.valueOf(this.oneline));
+        sb.append(", doclink=").append(String.valueOf(this.doclink));
         sb.append(", references=").append(String.valueOf(this.references));
         sb.append(", oracleDefinedSeverity=").append(String.valueOf(this.oracleDefinedSeverity));
         sb.append(", isRiskModified=").append(String.valueOf(this.isRiskModified));
@@ -912,10 +986,12 @@ public final class FindingSummary
                 && java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.isTopFinding, other.isTopFinding)
                 && java.util.Objects.equals(this.title, other.title)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.remarks, other.remarks)
                 && java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.summary, other.summary)
                 && java.util.Objects.equals(this.oneline, other.oneline)
+                && java.util.Objects.equals(this.doclink, other.doclink)
                 && java.util.Objects.equals(this.references, other.references)
                 && java.util.Objects.equals(this.oracleDefinedSeverity, other.oracleDefinedSeverity)
                 && java.util.Objects.equals(this.isRiskModified, other.isRiskModified)
@@ -939,10 +1015,12 @@ public final class FindingSummary
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.isTopFinding == null ? 43 : this.isTopFinding.hashCode());
         result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.remarks == null ? 43 : this.remarks.hashCode());
         result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
         result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
         result = (result * PRIME) + (this.oneline == null ? 43 : this.oneline.hashCode());
+        result = (result * PRIME) + (this.doclink == null ? 43 : this.doclink.hashCode());
         result = (result * PRIME) + (this.references == null ? 43 : this.references.hashCode());
         result =
                 (result * PRIME)

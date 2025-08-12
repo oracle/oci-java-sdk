@@ -106,6 +106,7 @@ public class ListFindingAnalyticsRequest
     public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
         FindingKeyAndTopFindingStatus("findingKeyAndTopFindingStatus"),
         FindingKeyAndSeverity("findingKeyAndSeverity"),
+        Severity("severity"),
         ;
 
         private final String value;
@@ -246,6 +247,134 @@ public class ListFindingAnalyticsRequest
      */
     public String getPage() {
         return page;
+    }
+    /** A filter to return the target database group that matches the specified OCID. */
+    private String targetDatabaseGroupId;
+
+    /** A filter to return the target database group that matches the specified OCID. */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
+    /**
+     * An optional filter to return only findings that match the specified references. Use
+     * containsReferences param if need to filter by multiple references.
+     */
+    private java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentReferences>
+            containsReferences;
+
+    /**
+     * An optional filter to return only findings that match the specified references. Use
+     * containsReferences param if need to filter by multiple references.
+     */
+    public java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentReferences>
+            getContainsReferences() {
+        return containsReferences;
+    }
+    /**
+     * An optional filter to return only findings that match the specified target ids. Use this
+     * parameter to filter by multiple target ids.
+     */
+    private java.util.List<String> targetIds;
+
+    /**
+     * An optional filter to return only findings that match the specified target ids. Use this
+     * parameter to filter by multiple target ids.
+     */
+    public java.util.List<String> getTargetIds() {
+        return targetIds;
+    }
+    /** The category of the finding. */
+    private String category;
+
+    /** The category of the finding. */
+    public String getCategory() {
+        return category;
+    }
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsSeverity
+     * parameter if need to filter by multiple risk levels.
+     */
+    private java.util.List<ContainsSeverity> containsSeverity;
+
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsSeverity
+     * parameter if need to filter by multiple risk levels.
+     */
+    public enum ContainsSeverity implements com.oracle.bmc.http.internal.BmcEnum {
+        High("HIGH"),
+        Medium("MEDIUM"),
+        Low("LOW"),
+        Evaluate("EVALUATE"),
+        Advisory("ADVISORY"),
+        Pass("PASS"),
+        Deferred("DEFERRED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ContainsSeverity> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ContainsSeverity v : ContainsSeverity.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ContainsSeverity(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ContainsSeverity create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ContainsSeverity: " + key);
+        }
+    };
+
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsSeverity
+     * parameter if need to filter by multiple risk levels.
+     */
+    public java.util.List<ContainsSeverity> getContainsSeverity() {
+        return containsSeverity;
+    }
+    /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in
+     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
+     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
+     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
+     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
+     * quoted.)
+     *
+     * <p>*Example:** | scimQuery=(severity eq 'high') scimQuery=(category eq "Users") and
+     * (reference eq 'CIS')
+     *
+     * <p>Supported fields: severity reference title category
+     */
+    private String scimQuery;
+
+    /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in
+     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
+     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
+     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
+     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
+     * quoted.)
+     *
+     * <p>*Example:** | scimQuery=(severity eq 'high') scimQuery=(category eq "Users") and
+     * (reference eq 'CIS')
+     *
+     * <p>Supported fields: severity reference title category
+     */
+    public String getScimQuery() {
+        return scimQuery;
     }
 
     public static class Builder
@@ -443,6 +572,160 @@ public class ListFindingAnalyticsRequest
             return this;
         }
 
+        /** A filter to return the target database group that matches the specified OCID. */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
+         * An optional filter to return only findings that match the specified references. Use
+         * containsReferences param if need to filter by multiple references.
+         */
+        private java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentReferences>
+                containsReferences = null;
+
+        /**
+         * An optional filter to return only findings that match the specified references. Use
+         * containsReferences param if need to filter by multiple references.
+         *
+         * @param containsReferences the value to set
+         * @return this builder instance
+         */
+        public Builder containsReferences(
+                java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentReferences>
+                        containsReferences) {
+            this.containsReferences = containsReferences;
+            return this;
+        }
+
+        /**
+         * Singular setter. An optional filter to return only findings that match the specified
+         * references. Use containsReferences param if need to filter by multiple references.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder containsReferences(SecurityAssessmentReferences singularValue) {
+            return this.containsReferences(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * An optional filter to return only findings that match the specified target ids. Use this
+         * parameter to filter by multiple target ids.
+         */
+        private java.util.List<String> targetIds = null;
+
+        /**
+         * An optional filter to return only findings that match the specified target ids. Use this
+         * parameter to filter by multiple target ids.
+         *
+         * @param targetIds the value to set
+         * @return this builder instance
+         */
+        public Builder targetIds(java.util.List<String> targetIds) {
+            this.targetIds = targetIds;
+            return this;
+        }
+
+        /**
+         * Singular setter. An optional filter to return only findings that match the specified
+         * target ids. Use this parameter to filter by multiple target ids.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder targetIds(String singularValue) {
+            return this.targetIds(java.util.Arrays.asList(singularValue));
+        }
+
+        /** The category of the finding. */
+        private String category = null;
+
+        /**
+         * The category of the finding.
+         *
+         * @param category the value to set
+         * @return this builder instance
+         */
+        public Builder category(String category) {
+            this.category = category;
+            return this;
+        }
+
+        /**
+         * A filter to return only findings that match the specified risk level(s). Use
+         * containsSeverity parameter if need to filter by multiple risk levels.
+         */
+        private java.util.List<ContainsSeverity> containsSeverity = null;
+
+        /**
+         * A filter to return only findings that match the specified risk level(s). Use
+         * containsSeverity parameter if need to filter by multiple risk levels.
+         *
+         * @param containsSeverity the value to set
+         * @return this builder instance
+         */
+        public Builder containsSeverity(java.util.List<ContainsSeverity> containsSeverity) {
+            this.containsSeverity = containsSeverity;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only findings that match the specified risk level(s).
+         * Use containsSeverity parameter if need to filter by multiple risk levels.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder containsSeverity(ContainsSeverity singularValue) {
+            return this.containsSeverity(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in
+         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
+         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
+         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
+         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
+         * should not be quoted.)
+         *
+         * <p>*Example:** | scimQuery=(severity eq 'high') scimQuery=(category eq "Users") and
+         * (reference eq 'CIS')
+         *
+         * <p>Supported fields: severity reference title category
+         */
+        private String scimQuery = null;
+
+        /**
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in
+         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
+         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
+         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
+         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
+         * should not be quoted.)
+         *
+         * <p>*Example:** | scimQuery=(severity eq 'high') scimQuery=(category eq "Users") and
+         * (reference eq 'CIS')
+         *
+         * <p>Supported fields: severity reference title category
+         *
+         * @param scimQuery the value to set
+         * @return this builder instance
+         */
+        public Builder scimQuery(String scimQuery) {
+            this.scimQuery = scimQuery;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -484,6 +767,12 @@ public class ListFindingAnalyticsRequest
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
+            containsReferences(o.getContainsReferences());
+            targetIds(o.getTargetIds());
+            category(o.getCategory());
+            containsSeverity(o.getContainsSeverity());
+            scimQuery(o.getScimQuery());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -529,10 +818,17 @@ public class ListFindingAnalyticsRequest
             request.opcRequestId = opcRequestId;
             request.limit = limit;
             request.page = page;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
+            request.containsReferences = containsReferences;
+            request.targetIds = targetIds;
+            request.category = category;
+            request.containsSeverity = containsSeverity;
+            request.scimQuery = scimQuery;
             return request;
             // new ListFindingAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel,
             // isTopFinding, groupBy, topFindingStatus, severity, findingKey, opcRequestId, limit,
-            // page);
+            // page, targetDatabaseGroupId, containsReferences, targetIds, category,
+            // containsSeverity, scimQuery);
         }
     }
 
@@ -553,7 +849,13 @@ public class ListFindingAnalyticsRequest
                 .findingKey(findingKey)
                 .opcRequestId(opcRequestId)
                 .limit(limit)
-                .page(page);
+                .page(page)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
+                .containsReferences(containsReferences)
+                .targetIds(targetIds)
+                .category(category)
+                .containsSeverity(containsSeverity)
+                .scimQuery(scimQuery);
     }
 
     /**
@@ -581,6 +883,12 @@ public class ListFindingAnalyticsRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
+        sb.append(",containsReferences=").append(String.valueOf(this.containsReferences));
+        sb.append(",targetIds=").append(String.valueOf(this.targetIds));
+        sb.append(",category=").append(String.valueOf(this.category));
+        sb.append(",containsSeverity=").append(String.valueOf(this.containsSeverity));
+        sb.append(",scimQuery=").append(String.valueOf(this.scimQuery));
         sb.append(")");
         return sb.toString();
     }
@@ -607,7 +915,13 @@ public class ListFindingAnalyticsRequest
                 && java.util.Objects.equals(this.findingKey, other.findingKey)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
-                && java.util.Objects.equals(this.page, other.page);
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
+                && java.util.Objects.equals(this.containsReferences, other.containsReferences)
+                && java.util.Objects.equals(this.targetIds, other.targetIds)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.containsSeverity, other.containsSeverity)
+                && java.util.Objects.equals(this.scimQuery, other.scimQuery);
     }
 
     @Override
@@ -633,6 +947,22 @@ public class ListFindingAnalyticsRequest
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containsReferences == null
+                                ? 43
+                                : this.containsReferences.hashCode());
+        result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containsSeverity == null ? 43 : this.containsSeverity.hashCode());
+        result = (result * PRIME) + (this.scimQuery == null ? 43 : this.scimQuery.hashCode());
         return result;
     }
 }

@@ -345,6 +345,151 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ChangeStreamGroupCompartmentResponse changeStreamGroupCompartment(
+            ChangeStreamGroupCompartmentRequest request) {
+
+        Validate.notBlank(request.getStreamGroupId(), "streamGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeStreamGroupCompartmentDetails(),
+                "changeStreamGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeStreamGroupCompartmentResponse::builder)
+                .logger(LOG, "changeStreamGroupCompartment")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "ChangeStreamGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroup/ChangeStreamGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeStreamGroupCompartmentRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamGroups")
+                .appendPathParam(request.getStreamGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeStreamGroupCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeStreamGroupCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeStreamJobCompartmentResponse changeStreamJobCompartment(
+            ChangeStreamJobCompartmentRequest request) {
+
+        Validate.notBlank(request.getStreamJobId(), "streamJobId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeStreamJobCompartmentDetails(),
+                "changeStreamJobCompartmentDetails is required");
+
+        return clientCall(request, ChangeStreamJobCompartmentResponse::builder)
+                .logger(LOG, "changeStreamJobCompartment")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "ChangeStreamJobCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/ChangeStreamJobCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeStreamJobCompartmentRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamJobs")
+                .appendPathParam(request.getStreamJobId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeStreamJobCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeStreamJobCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeStreamSourceCompartmentResponse changeStreamSourceCompartment(
+            ChangeStreamSourceCompartmentRequest request) {
+
+        Validate.notBlank(request.getStreamSourceId(), "streamSourceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeStreamSourceCompartmentDetails(),
+                "changeStreamSourceCompartmentDetails is required");
+
+        return clientCall(request, ChangeStreamSourceCompartmentResponse::builder)
+                .logger(LOG, "changeStreamSourceCompartment")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "ChangeStreamSourceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSource/ChangeStreamSourceCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeStreamSourceCompartmentRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamSources")
+                .appendPathParam(request.getStreamSourceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeStreamSourceCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeStreamSourceCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeVisionPrivateEndpointCompartmentResponse changeVisionPrivateEndpointCompartment(
+            ChangeVisionPrivateEndpointCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getVisionPrivateEndpointId(), "visionPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVisionPrivateEndpointCompartmentDetails(),
+                "changeVisionPrivateEndpointCompartmentDetails is required");
+
+        return clientCall(request, ChangeVisionPrivateEndpointCompartmentResponse::builder)
+                .logger(LOG, "changeVisionPrivateEndpointCompartment")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "ChangeVisionPrivateEndpointCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VisionPrivateEndpoint/ChangeVisionPrivateEndpointCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVisionPrivateEndpointCompartmentRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("visionPrivateEndpoints")
+                .appendPathParam(request.getVisionPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeVisionPrivateEndpointCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateDocumentJobResponse createDocumentJob(CreateDocumentJobRequest request) {
         Objects.requireNonNull(
                 request.getCreateDocumentJobDetails(), "createDocumentJobDetails is required");
@@ -454,6 +599,99 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateStreamGroupResponse createStreamGroup(CreateStreamGroupRequest request) {
+        Objects.requireNonNull(
+                request.getCreateStreamGroupDetails(), "createStreamGroupDetails is required");
+
+        return clientCall(request, CreateStreamGroupResponse::builder)
+                .logger(LOG, "createStreamGroup")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "CreateStreamGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroup/CreateStreamGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateStreamGroupRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamGroups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.StreamGroup.class,
+                        CreateStreamGroupResponse.Builder::streamGroup)
+                .handleResponseHeaderString("etag", CreateStreamGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateStreamGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateStreamGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateStreamJobResponse createStreamJob(CreateStreamJobRequest request) {
+        Objects.requireNonNull(
+                request.getCreateStreamJobDetails(), "createStreamJobDetails is required");
+
+        return clientCall(request, CreateStreamJobResponse::builder)
+                .logger(LOG, "createStreamJob")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "CreateStreamJob",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/CreateStreamJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateStreamJobRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamJobs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.StreamJob.class,
+                        CreateStreamJobResponse.Builder::streamJob)
+                .handleResponseHeaderString("etag", CreateStreamJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateStreamJobResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateStreamJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateStreamSourceResponse createStreamSource(CreateStreamSourceRequest request) {
+        Objects.requireNonNull(
+                request.getCreateStreamSourceDetails(), "createStreamSourceDetails is required");
+
+        return clientCall(request, CreateStreamSourceResponse::builder)
+                .logger(LOG, "createStreamSource")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "CreateStreamSource",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSource/CreateStreamSource")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateStreamSourceRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamSources")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.StreamSource.class,
+                        CreateStreamSourceResponse.Builder::streamSource)
+                .handleResponseHeaderString("etag", CreateStreamSourceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateStreamSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateStreamSourceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateVideoJobResponse createVideoJob(CreateVideoJobRequest request) {
         Objects.requireNonNull(
                 request.getCreateVideoJobDetails(), "createVideoJobDetails is required");
@@ -478,6 +716,38 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateVideoJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateVideoJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateVisionPrivateEndpointResponse createVisionPrivateEndpoint(
+            CreateVisionPrivateEndpointRequest request) {
+        Objects.requireNonNull(
+                request.getCreateVisionPrivateEndpointDetails(),
+                "createVisionPrivateEndpointDetails is required");
+
+        return clientCall(request, CreateVisionPrivateEndpointResponse::builder)
+                .logger(LOG, "createVisionPrivateEndpoint")
+                .serviceDetails("AIServiceVision", "CreateVisionPrivateEndpoint", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVisionPrivateEndpointRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("visionPrivateEndpoints")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.VisionPrivateEndpoint.class,
+                        CreateVisionPrivateEndpointResponse.Builder::visionPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "etag", CreateVisionPrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateVisionPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVisionPrivateEndpointResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -530,6 +800,113 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-work-request-id", DeleteProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteStreamGroupResponse deleteStreamGroup(DeleteStreamGroupRequest request) {
+
+        Validate.notBlank(request.getStreamGroupId(), "streamGroupId must not be blank");
+
+        return clientCall(request, DeleteStreamGroupResponse::builder)
+                .logger(LOG, "deleteStreamGroup")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "DeleteStreamGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroup/DeleteStreamGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteStreamGroupRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamGroups")
+                .appendPathParam(request.getStreamGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteStreamGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteStreamGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteStreamJobResponse deleteStreamJob(DeleteStreamJobRequest request) {
+
+        Validate.notBlank(request.getStreamJobId(), "streamJobId must not be blank");
+
+        return clientCall(request, DeleteStreamJobResponse::builder)
+                .logger(LOG, "deleteStreamJob")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "DeleteStreamJob",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/DeleteStreamJob")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteStreamJobRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamJobs")
+                .appendPathParam(request.getStreamJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteStreamJobResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteStreamJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteStreamSourceResponse deleteStreamSource(DeleteStreamSourceRequest request) {
+
+        Validate.notBlank(request.getStreamSourceId(), "streamSourceId must not be blank");
+
+        return clientCall(request, DeleteStreamSourceResponse::builder)
+                .logger(LOG, "deleteStreamSource")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "DeleteStreamSource",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSource/DeleteStreamSource")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteStreamSourceRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamSources")
+                .appendPathParam(request.getStreamSourceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteStreamSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteStreamSourceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteVisionPrivateEndpointResponse deleteVisionPrivateEndpoint(
+            DeleteVisionPrivateEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getVisionPrivateEndpointId(), "visionPrivateEndpointId must not be blank");
+
+        return clientCall(request, DeleteVisionPrivateEndpointResponse::builder)
+                .logger(LOG, "deleteVisionPrivateEndpoint")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "DeleteVisionPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VisionPrivateEndpoint/DeleteVisionPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVisionPrivateEndpointRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("visionPrivateEndpoints")
+                .appendPathParam(request.getVisionPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteVisionPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVisionPrivateEndpointResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -641,6 +1018,90 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetStreamGroupResponse getStreamGroup(GetStreamGroupRequest request) {
+
+        Validate.notBlank(request.getStreamGroupId(), "streamGroupId must not be blank");
+
+        return clientCall(request, GetStreamGroupResponse::builder)
+                .logger(LOG, "getStreamGroup")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "GetStreamGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroup/GetStreamGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStreamGroupRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamGroups")
+                .appendPathParam(request.getStreamGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.StreamGroup.class,
+                        GetStreamGroupResponse.Builder::streamGroup)
+                .handleResponseHeaderString("etag", GetStreamGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetStreamGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetStreamJobResponse getStreamJob(GetStreamJobRequest request) {
+
+        Validate.notBlank(request.getStreamJobId(), "streamJobId must not be blank");
+
+        return clientCall(request, GetStreamJobResponse::builder)
+                .logger(LOG, "getStreamJob")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "GetStreamJob",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/GetStreamJob")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStreamJobRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamJobs")
+                .appendPathParam(request.getStreamJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.StreamJob.class,
+                        GetStreamJobResponse.Builder::streamJob)
+                .handleResponseHeaderString("etag", GetStreamJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetStreamJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetStreamSourceResponse getStreamSource(GetStreamSourceRequest request) {
+
+        Validate.notBlank(request.getStreamSourceId(), "streamSourceId must not be blank");
+
+        return clientCall(request, GetStreamSourceResponse::builder)
+                .logger(LOG, "getStreamSource")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "GetStreamSource",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSource/GetStreamSource")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStreamSourceRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamSources")
+                .appendPathParam(request.getStreamSourceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.StreamSource.class,
+                        GetStreamSourceResponse.Builder::streamSource)
+                .handleResponseHeaderString("etag", GetStreamSourceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetStreamSourceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetVideoJobResponse getVideoJob(GetVideoJobRequest request) {
 
         Validate.notBlank(request.getVideoJobId(), "videoJobId must not be blank");
@@ -664,6 +1125,36 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", GetVideoJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetVideoJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetVisionPrivateEndpointResponse getVisionPrivateEndpoint(
+            GetVisionPrivateEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getVisionPrivateEndpointId(), "visionPrivateEndpointId must not be blank");
+
+        return clientCall(request, GetVisionPrivateEndpointResponse::builder)
+                .logger(LOG, "getVisionPrivateEndpoint")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "GetVisionPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VisionPrivateEndpoint/GetVisionPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVisionPrivateEndpointRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("visionPrivateEndpoints")
+                .appendPathParam(request.getVisionPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.VisionPrivateEndpoint.class,
+                        GetVisionPrivateEndpointResponse.Builder::visionPrivateEndpoint)
+                .handleResponseHeaderString("etag", GetVisionPrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVisionPrivateEndpointResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -760,6 +1251,142 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProjectsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListStreamGroupsResponse listStreamGroups(ListStreamGroupsRequest request) {
+
+        return clientCall(request, ListStreamGroupsResponse::builder)
+                .logger(LOG, "listStreamGroups")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "ListStreamGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroupCollection/ListStreamGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStreamGroupsRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.StreamGroupCollection.class,
+                        ListStreamGroupsResponse.Builder::streamGroupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListStreamGroupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStreamGroupsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListStreamJobsResponse listStreamJobs(ListStreamJobsRequest request) {
+
+        return clientCall(request, ListStreamJobsResponse::builder)
+                .logger(LOG, "listStreamJobs")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "ListStreamJobs",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJobCollection/ListStreamJobs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStreamJobsRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamJobs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.StreamJobCollection.class,
+                        ListStreamJobsResponse.Builder::streamJobCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListStreamJobsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStreamJobsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListStreamSourcesResponse listStreamSources(ListStreamSourcesRequest request) {
+
+        return clientCall(request, ListStreamSourcesResponse::builder)
+                .logger(LOG, "listStreamSources")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "ListStreamSources",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSourceCollection/ListStreamSources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStreamSourcesRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamSources")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.StreamSourceCollection.class,
+                        ListStreamSourcesResponse.Builder::streamSourceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListStreamSourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStreamSourcesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListVisionPrivateEndpointsResponse listVisionPrivateEndpoints(
+            ListVisionPrivateEndpointsRequest request) {
+
+        return clientCall(request, ListVisionPrivateEndpointsResponse::builder)
+                .logger(LOG, "listVisionPrivateEndpoints")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "ListVisionPrivateEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VisionPrivateEndpointCollection/ListVisionPrivateEndpoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVisionPrivateEndpointsRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("visionPrivateEndpoints")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.VisionPrivateEndpointCollection.class,
+                        ListVisionPrivateEndpointsResponse.Builder::visionPrivateEndpointCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVisionPrivateEndpointsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVisionPrivateEndpointsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -864,6 +1491,66 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public StartStreamJobResponse startStreamJob(StartStreamJobRequest request) {
+
+        Validate.notBlank(request.getStreamJobId(), "streamJobId must not be blank");
+
+        return clientCall(request, StartStreamJobResponse::builder)
+                .logger(LOG, "startStreamJob")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "StartStreamJob",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/StartStreamJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartStreamJobRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamJobs")
+                .appendPathParam(request.getStreamJobId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartStreamJobResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartStreamJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StopStreamJobResponse stopStreamJob(StopStreamJobRequest request) {
+
+        Validate.notBlank(request.getStreamJobId(), "streamJobId must not be blank");
+
+        return clientCall(request, StopStreamJobResponse::builder)
+                .logger(LOG, "stopStreamJob")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "StopStreamJob",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/StopStreamJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopStreamJobRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamJobs")
+                .appendPathParam(request.getStreamJobId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopStreamJobResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StopStreamJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateModelResponse updateModel(UpdateModelRequest request) {
 
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
@@ -917,6 +1604,126 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-work-request-id", UpdateProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateStreamGroupResponse updateStreamGroup(UpdateStreamGroupRequest request) {
+
+        Validate.notBlank(request.getStreamGroupId(), "streamGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateStreamGroupDetails(), "updateStreamGroupDetails is required");
+
+        return clientCall(request, UpdateStreamGroupResponse::builder)
+                .logger(LOG, "updateStreamGroup")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "UpdateStreamGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroup/UpdateStreamGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateStreamGroupRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamGroups")
+                .appendPathParam(request.getStreamGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateStreamGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateStreamGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateStreamJobResponse updateStreamJob(UpdateStreamJobRequest request) {
+        Objects.requireNonNull(
+                request.getUpdateStreamJobDetails(), "updateStreamJobDetails is required");
+
+        Validate.notBlank(request.getStreamJobId(), "streamJobId must not be blank");
+
+        return clientCall(request, UpdateStreamJobResponse::builder)
+                .logger(LOG, "updateStreamJob")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "UpdateStreamJob",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/UpdateStreamJob")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateStreamJobRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamJobs")
+                .appendPathParam(request.getStreamJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateStreamJobResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateStreamJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateStreamSourceResponse updateStreamSource(UpdateStreamSourceRequest request) {
+
+        Validate.notBlank(request.getStreamSourceId(), "streamSourceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateStreamSourceDetails(), "updateStreamSourceDetails is required");
+
+        return clientCall(request, UpdateStreamSourceResponse::builder)
+                .logger(LOG, "updateStreamSource")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "UpdateStreamSource",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSource/UpdateStreamSource")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateStreamSourceRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("streamSources")
+                .appendPathParam(request.getStreamSourceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateStreamSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateStreamSourceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateVisionPrivateEndpointResponse updateVisionPrivateEndpoint(
+            UpdateVisionPrivateEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getVisionPrivateEndpointId(), "visionPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVisionPrivateEndpointDetails(),
+                "updateVisionPrivateEndpointDetails is required");
+
+        return clientCall(request, UpdateVisionPrivateEndpointResponse::builder)
+                .logger(LOG, "updateVisionPrivateEndpoint")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "UpdateVisionPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VisionPrivateEndpoint/UpdateVisionPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVisionPrivateEndpointRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("visionPrivateEndpoints")
+                .appendPathParam(request.getVisionPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateVisionPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVisionPrivateEndpointResponse.Builder::opcRequestId)
                 .callSync();
     }
 

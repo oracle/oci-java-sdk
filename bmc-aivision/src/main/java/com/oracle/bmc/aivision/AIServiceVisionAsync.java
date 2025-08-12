@@ -191,6 +191,79 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Move a streamGroup from one compartment to another. When provided, If-Match is checked
+     * against the ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeStreamGroupCompartmentResponse> changeStreamGroupCompartment(
+            ChangeStreamGroupCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeStreamGroupCompartmentRequest,
+                            ChangeStreamGroupCompartmentResponse>
+                    handler);
+
+    /**
+     * Move a streamJob from one compartment to another. When provided, If-Match is checked against
+     * the ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeStreamJobCompartmentResponse> changeStreamJobCompartment(
+            ChangeStreamJobCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeStreamJobCompartmentRequest, ChangeStreamJobCompartmentResponse>
+                    handler);
+
+    /**
+     * Move a streamSource from one compartment to another. When provided, If-Match is checked
+     * against the ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeStreamSourceCompartmentResponse>
+            changeStreamSourceCompartment(
+                    ChangeStreamSourceCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeStreamSourceCompartmentRequest,
+                                    ChangeStreamSourceCompartmentResponse>
+                            handler);
+
+    /**
+     * Move a visionPrivateEndpoint from one compartment to another. When provided, If-Match is
+     * checked against the ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeVisionPrivateEndpointCompartmentResponse>
+            changeVisionPrivateEndpointCompartment(
+                    ChangeVisionPrivateEndpointCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeVisionPrivateEndpointCompartmentRequest,
+                                    ChangeVisionPrivateEndpointCompartmentResponse>
+                            handler);
+
+    /**
      * Create a document analysis batch job.
      *
      * @param request The request object containing the details to send
@@ -251,6 +324,53 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Registration of new streamGroup
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateStreamGroupResponse> createStreamGroup(
+            CreateStreamGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateStreamGroupRequest, CreateStreamGroupResponse>
+                    handler);
+
+    /**
+     * Create a stream analysis job with given inputs and features.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateStreamJobResponse> createStreamJob(
+            CreateStreamJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateStreamJobRequest, CreateStreamJobResponse>
+                    handler);
+
+    /**
+     * Registration of new streamSource
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateStreamSourceResponse> createStreamSource(
+            CreateStreamSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateStreamSourceRequest, CreateStreamSourceResponse>
+                    handler);
+
+    /**
      * Create a video analysis job with given inputs and features.
      *
      * @param request The request object containing the details to send
@@ -263,6 +383,22 @@ public interface AIServiceVisionAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateVideoJobResponse> createVideoJob(
             CreateVideoJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateVideoJobRequest, CreateVideoJobResponse>
+                    handler);
+
+    /**
+     * Create a new visionPrivateEndpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateVisionPrivateEndpointResponse> createVisionPrivateEndpoint(
+            CreateVisionPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateVisionPrivateEndpointRequest, CreateVisionPrivateEndpointResponse>
                     handler);
 
     /**
@@ -292,6 +428,69 @@ public interface AIServiceVisionAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteProjectResponse> deleteProject(
             DeleteProjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
+                    handler);
+
+    /**
+     * Delete a streamGroup
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteStreamGroupResponse> deleteStreamGroup(
+            DeleteStreamGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteStreamGroupRequest, DeleteStreamGroupResponse>
+                    handler);
+
+    /**
+     * Get details of a stream analysis job.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteStreamJobResponse> deleteStreamJob(
+            DeleteStreamJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteStreamJobRequest, DeleteStreamJobResponse>
+                    handler);
+
+    /**
+     * Delete a streamSource
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteStreamSourceResponse> deleteStreamSource(
+            DeleteStreamSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteStreamSourceRequest, DeleteStreamSourceResponse>
+                    handler);
+
+    /**
+     * Delete a visionPrivateEndpoint by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteVisionPrivateEndpointResponse> deleteVisionPrivateEndpoint(
+            DeleteVisionPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVisionPrivateEndpointRequest, DeleteVisionPrivateEndpointResponse>
                     handler);
 
     /**
@@ -352,6 +551,51 @@ public interface AIServiceVisionAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handler);
 
     /**
+     * Get a streamGroup
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetStreamGroupResponse> getStreamGroup(
+            GetStreamGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetStreamGroupRequest, GetStreamGroupResponse>
+                    handler);
+
+    /**
+     * Get details of a stream analysis job.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetStreamJobResponse> getStreamJob(
+            GetStreamJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetStreamJobRequest, GetStreamJobResponse>
+                    handler);
+
+    /**
+     * Get a streamSource
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetStreamSourceResponse> getStreamSource(
+            GetStreamSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetStreamSourceRequest, GetStreamSourceResponse>
+                    handler);
+
+    /**
      * Get details of a video analysis job.
      *
      * @param request The request object containing the details to send
@@ -364,6 +608,22 @@ public interface AIServiceVisionAsync extends AutoCloseable {
     java.util.concurrent.Future<GetVideoJobResponse> getVideoJob(
             GetVideoJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetVideoJobRequest, GetVideoJobResponse> handler);
+
+    /**
+     * Get a visionPrivateEndpoint by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVisionPrivateEndpointResponse> getVisionPrivateEndpoint(
+            GetVisionPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVisionPrivateEndpointRequest, GetVisionPrivateEndpointResponse>
+                    handler);
 
     /**
      * Gets the status of the work request with the given ID.
@@ -407,6 +667,68 @@ public interface AIServiceVisionAsync extends AutoCloseable {
     java.util.concurrent.Future<ListProjectsResponse> listProjects(
             ListProjectsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
+                    handler);
+
+    /**
+     * Gets a list of the streamGroups in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListStreamGroupsResponse> listStreamGroups(
+            ListStreamGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListStreamGroupsRequest, ListStreamGroupsResponse>
+                    handler);
+
+    /**
+     * Get list of stream jobs
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListStreamJobsResponse> listStreamJobs(
+            ListStreamJobsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListStreamJobsRequest, ListStreamJobsResponse>
+                    handler);
+
+    /**
+     * Gets a list of the streamSources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListStreamSourcesResponse> listStreamSources(
+            ListStreamSourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListStreamSourcesRequest, ListStreamSourcesResponse>
+                    handler);
+
+    /**
+     * Returns a list of visionPrivateEndpoints.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVisionPrivateEndpointsResponse> listVisionPrivateEndpoints(
+            ListVisionPrivateEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVisionPrivateEndpointsRequest, ListVisionPrivateEndpointsResponse>
                     handler);
 
     /**
@@ -457,6 +779,36 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
+     * End a stream analysis Run.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StartStreamJobResponse> startStreamJob(
+            StartStreamJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StartStreamJobRequest, StartStreamJobResponse>
+                    handler);
+
+    /**
+     * End a stream analysis Run.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StopStreamJobResponse> stopStreamJob(
+            StopStreamJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StopStreamJobRequest, StopStreamJobResponse>
+                    handler);
+
+    /**
      * Updates the model metadata.
      *
      * @param request The request object containing the details to send
@@ -483,5 +835,68 @@ public interface AIServiceVisionAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateProjectResponse> updateProject(
             UpdateProjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
+                    handler);
+
+    /**
+     * Update a streamGroup
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateStreamGroupResponse> updateStreamGroup(
+            UpdateStreamGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateStreamGroupRequest, UpdateStreamGroupResponse>
+                    handler);
+
+    /**
+     * Create a stream analysis job with given inputs and features.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateStreamJobResponse> updateStreamJob(
+            UpdateStreamJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateStreamJobRequest, UpdateStreamJobResponse>
+                    handler);
+
+    /**
+     * Update a streamSource
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateStreamSourceResponse> updateStreamSource(
+            UpdateStreamSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateStreamSourceRequest, UpdateStreamSourceResponse>
+                    handler);
+
+    /**
+     * Update the visionPrivateEndpoint metadata.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateVisionPrivateEndpointResponse> updateVisionPrivateEndpoint(
+            UpdateVisionPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVisionPrivateEndpointRequest, UpdateVisionPrivateEndpointResponse>
                     handler);
 }

@@ -433,6 +433,316 @@ public class AIServiceVisionWaiters {
      *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetStreamGroupRequest, GetStreamGroupResponse>
+            forStreamGroup(
+                    GetStreamGroupRequest request,
+                    com.oracle.bmc.aivision.model.StreamGroup.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forStreamGroup(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetStreamGroupRequest, GetStreamGroupResponse>
+            forStreamGroup(
+                    GetStreamGroupRequest request,
+                    com.oracle.bmc.aivision.model.StreamGroup.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forStreamGroup(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetStreamGroupRequest, GetStreamGroupResponse>
+            forStreamGroup(
+                    GetStreamGroupRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.aivision.model.StreamGroup.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forStreamGroup(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for StreamGroup.
+    private com.oracle.bmc.waiter.Waiter<GetStreamGroupRequest, GetStreamGroupResponse>
+            forStreamGroup(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetStreamGroupRequest request,
+                    final com.oracle.bmc.aivision.model.StreamGroup.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.aivision.model.StreamGroup.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetStreamGroupRequest, GetStreamGroupResponse>() {
+                            @Override
+                            public GetStreamGroupResponse apply(GetStreamGroupRequest request) {
+                                return client.getStreamGroup(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetStreamGroupResponse>() {
+                            @Override
+                            public boolean test(GetStreamGroupResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getStreamGroup().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.aivision.model.StreamGroup.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetStreamJobRequest, GetStreamJobResponse> forStreamJob(
+            GetStreamJobRequest request,
+            com.oracle.bmc.aivision.model.StreamJob.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forStreamJob(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetStreamJobRequest, GetStreamJobResponse> forStreamJob(
+            GetStreamJobRequest request,
+            com.oracle.bmc.aivision.model.StreamJob.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forStreamJob(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetStreamJobRequest, GetStreamJobResponse> forStreamJob(
+            GetStreamJobRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.aivision.model.StreamJob.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forStreamJob(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for StreamJob.
+    private com.oracle.bmc.waiter.Waiter<GetStreamJobRequest, GetStreamJobResponse> forStreamJob(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetStreamJobRequest request,
+            final com.oracle.bmc.aivision.model.StreamJob.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.aivision.model.StreamJob.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetStreamJobRequest, GetStreamJobResponse>() {
+                            @Override
+                            public GetStreamJobResponse apply(GetStreamJobRequest request) {
+                                return client.getStreamJob(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetStreamJobResponse>() {
+                            @Override
+                            public boolean test(GetStreamJobResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getStreamJob().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.aivision.model.StreamJob.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetStreamSourceRequest, GetStreamSourceResponse>
+            forStreamSource(
+                    GetStreamSourceRequest request,
+                    com.oracle.bmc.aivision.model.StreamSource.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forStreamSource(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetStreamSourceRequest, GetStreamSourceResponse>
+            forStreamSource(
+                    GetStreamSourceRequest request,
+                    com.oracle.bmc.aivision.model.StreamSource.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forStreamSource(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetStreamSourceRequest, GetStreamSourceResponse>
+            forStreamSource(
+                    GetStreamSourceRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.aivision.model.StreamSource.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forStreamSource(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for StreamSource.
+    private com.oracle.bmc.waiter.Waiter<GetStreamSourceRequest, GetStreamSourceResponse>
+            forStreamSource(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetStreamSourceRequest request,
+                    final com.oracle.bmc.aivision.model.StreamSource.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.aivision.model.StreamSource.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetStreamSourceRequest, GetStreamSourceResponse>() {
+                            @Override
+                            public GetStreamSourceResponse apply(GetStreamSourceRequest request) {
+                                return client.getStreamSource(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetStreamSourceResponse>() {
+                            @Override
+                            public boolean test(GetStreamSourceResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getStreamSource().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.aivision.model.StreamSource.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetVideoJobRequest, GetVideoJobResponse> forVideoJob(
             GetVideoJobRequest request,
             com.oracle.bmc.aivision.model.VideoJob.LifecycleState... targetStates) {
@@ -520,6 +830,120 @@ public class AIServiceVisionWaiters {
                             }
                         },
                         false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVisionPrivateEndpointRequest, GetVisionPrivateEndpointResponse>
+            forVisionPrivateEndpoint(
+                    GetVisionPrivateEndpointRequest request,
+                    com.oracle.bmc.aivision.model.VisionPrivateEndpoint.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVisionPrivateEndpoint(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVisionPrivateEndpointRequest, GetVisionPrivateEndpointResponse>
+            forVisionPrivateEndpoint(
+                    GetVisionPrivateEndpointRequest request,
+                    com.oracle.bmc.aivision.model.VisionPrivateEndpoint.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forVisionPrivateEndpoint(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVisionPrivateEndpointRequest, GetVisionPrivateEndpointResponse>
+            forVisionPrivateEndpoint(
+                    GetVisionPrivateEndpointRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.aivision.model.VisionPrivateEndpoint.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forVisionPrivateEndpoint(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for VisionPrivateEndpoint.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetVisionPrivateEndpointRequest, GetVisionPrivateEndpointResponse>
+            forVisionPrivateEndpoint(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVisionPrivateEndpointRequest request,
+                    final com.oracle.bmc.aivision.model.VisionPrivateEndpoint.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.aivision.model.VisionPrivateEndpoint.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetVisionPrivateEndpointRequest,
+                                GetVisionPrivateEndpointResponse>() {
+                            @Override
+                            public GetVisionPrivateEndpointResponse apply(
+                                    GetVisionPrivateEndpointRequest request) {
+                                return client.getVisionPrivateEndpoint(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetVisionPrivateEndpointResponse>() {
+                            @Override
+                            public boolean test(GetVisionPrivateEndpointResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getVisionPrivateEndpoint().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.aivision.model.VisionPrivateEndpoint.LifecycleState
+                                        .Deleted)),
                 request);
     }
 

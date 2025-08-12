@@ -6,7 +6,7 @@ package com.oracle.bmc.cims.model;
 
 /**
  * Details about the service limit increase request. Avoid entering confidential information. For
- * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
+ * information about {@code LIMIT} support requests, see [Creating a Service Limit Increase
  * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

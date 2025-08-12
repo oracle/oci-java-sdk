@@ -233,8 +233,8 @@ public class ListSqlFirewallViolationsRequest
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq
-     * 'BLOCKED')
+     * <p>*Example:** query=(operationTime ge "2021-06-04T01:00:26.000Z") and (violationAction eq
+     * "BLOCKED")
      */
     private String scimQuery;
 
@@ -246,8 +246,8 @@ public class ListSqlFirewallViolationsRequest
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq
-     * 'BLOCKED')
+     * <p>*Example:** query=(operationTime ge "2021-06-04T01:00:26.000Z") and (violationAction eq
+     * "BLOCKED")
      */
     public String getScimQuery() {
         return scimQuery;
@@ -409,8 +409,8 @@ public class ListSqlFirewallViolationsRequest
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq
-         * 'BLOCKED')
+         * <p>*Example:** query=(operationTime ge "2021-06-04T01:00:26.000Z") and (violationAction
+         * eq "BLOCKED")
          */
         private String scimQuery = null;
 
@@ -422,8 +422,8 @@ public class ListSqlFirewallViolationsRequest
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq
-         * 'BLOCKED')
+         * <p>*Example:** query=(operationTime ge "2021-06-04T01:00:26.000Z") and (violationAction
+         * eq "BLOCKED")
          *
          * @param scimQuery the value to set
          * @return this builder instance

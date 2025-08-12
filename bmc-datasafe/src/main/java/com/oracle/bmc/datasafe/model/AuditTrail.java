@@ -46,6 +46,7 @@ public final class AuditTrail extends com.oracle.bmc.http.client.internal.Explic
         "purgeJobTime",
         "purgeJobStatus",
         "purgeJobDetails",
+        "canUpdateLastArchiveTimeOnTarget",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -72,6 +73,7 @@ public final class AuditTrail extends com.oracle.bmc.http.client.internal.Explic
             java.util.Date purgeJobTime,
             PurgeJobStatus purgeJobStatus,
             String purgeJobDetails,
+            Boolean canUpdateLastArchiveTimeOnTarget,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -97,6 +99,7 @@ public final class AuditTrail extends com.oracle.bmc.http.client.internal.Explic
         this.purgeJobTime = purgeJobTime;
         this.purgeJobStatus = purgeJobStatus;
         this.purgeJobDetails = purgeJobDetails;
+        this.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -450,6 +453,25 @@ public final class AuditTrail extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
+         * Indicates if the Datasafe updates last archive time on target database. If
+         * isAutoPurgeEnabled field is enabled, this field must be true.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("canUpdateLastArchiveTimeOnTarget")
+        private Boolean canUpdateLastArchiveTimeOnTarget;
+
+        /**
+         * Indicates if the Datasafe updates last archive time on target database. If
+         * isAutoPurgeEnabled field is enabled, this field must be true.
+         *
+         * @param canUpdateLastArchiveTimeOnTarget the value to set
+         * @return this builder
+         */
+        public Builder canUpdateLastArchiveTimeOnTarget(Boolean canUpdateLastArchiveTimeOnTarget) {
+            this.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
+            this.__explicitlySet__.add("canUpdateLastArchiveTimeOnTarget");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -547,6 +569,7 @@ public final class AuditTrail extends com.oracle.bmc.http.client.internal.Explic
                             this.purgeJobTime,
                             this.purgeJobStatus,
                             this.purgeJobDetails,
+                            this.canUpdateLastArchiveTimeOnTarget,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -620,6 +643,9 @@ public final class AuditTrail extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("purgeJobDetails")) {
                 this.purgeJobDetails(model.getPurgeJobDetails());
+            }
+            if (model.wasPropertyExplicitlySet("canUpdateLastArchiveTimeOnTarget")) {
+                this.canUpdateLastArchiveTimeOnTarget(model.getCanUpdateLastArchiveTimeOnTarget());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -991,6 +1017,23 @@ public final class AuditTrail extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
+     * Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled
+     * field is enabled, this field must be true.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canUpdateLastArchiveTimeOnTarget")
+    private final Boolean canUpdateLastArchiveTimeOnTarget;
+
+    /**
+     * Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled
+     * field is enabled, this field must be true.
+     *
+     * @return the value
+     */
+    public Boolean getCanUpdateLastArchiveTimeOnTarget() {
+        return canUpdateLastArchiveTimeOnTarget;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -1090,6 +1133,8 @@ public final class AuditTrail extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", purgeJobTime=").append(String.valueOf(this.purgeJobTime));
         sb.append(", purgeJobStatus=").append(String.valueOf(this.purgeJobStatus));
         sb.append(", purgeJobDetails=").append(String.valueOf(this.purgeJobDetails));
+        sb.append(", canUpdateLastArchiveTimeOnTarget=")
+                .append(String.valueOf(this.canUpdateLastArchiveTimeOnTarget));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1129,6 +1174,9 @@ public final class AuditTrail extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.purgeJobTime, other.purgeJobTime)
                 && java.util.Objects.equals(this.purgeJobStatus, other.purgeJobStatus)
                 && java.util.Objects.equals(this.purgeJobDetails, other.purgeJobDetails)
+                && java.util.Objects.equals(
+                        this.canUpdateLastArchiveTimeOnTarget,
+                        other.canUpdateLastArchiveTimeOnTarget)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1190,6 +1238,11 @@ public final class AuditTrail extends com.oracle.bmc.http.client.internal.Explic
         result =
                 (result * PRIME)
                         + (this.purgeJobDetails == null ? 43 : this.purgeJobDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUpdateLastArchiveTimeOnTarget == null
+                                ? 43
+                                : this.canUpdateLastArchiveTimeOnTarget.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

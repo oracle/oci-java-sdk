@@ -145,7 +145,8 @@ public final class MaskingPolicyHealthReportLogSummary
          * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target
          * database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has
          * deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns
-         * are available in the target database.
+         * are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have
+         * Time Travel enabled.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckType")
         private HealthCheckType healthCheckType;
@@ -167,7 +168,8 @@ public final class MaskingPolicyHealthReportLogSummary
          * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target
          * database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has
          * deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns
-         * are available in the target database.
+         * are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have
+         * Time Travel enabled.
          *
          * @param healthCheckType the value to set
          * @return this builder
@@ -362,7 +364,7 @@ public final class MaskingPolicyHealthReportLogSummary
      * is any active masking job running on the target database.
      * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic
      * encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in
-     * the target database.
+     * the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
      */
     public enum HealthCheckType implements com.oracle.bmc.http.internal.BmcEnum {
         InvalidObjectCheck("INVALID_OBJECT_CHECK"),
@@ -380,6 +382,7 @@ public final class MaskingPolicyHealthReportLogSummary
         TargetValidationCheck("TARGET_VALIDATION_CHECK"),
         DeterministicEncryptionFormatCheck("DETERMINISTIC_ENCRYPTION_FORMAT_CHECK"),
         ColumnExistCheck("COLUMN_EXIST_CHECK"),
+        TimeTravelCheck("TIME_TRAVEL_CHECK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -439,7 +442,7 @@ public final class MaskingPolicyHealthReportLogSummary
      * is any active masking job running on the target database.
      * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic
      * encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in
-     * the target database.
+     * the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckType")
     private final HealthCheckType healthCheckType;
@@ -461,7 +464,7 @@ public final class MaskingPolicyHealthReportLogSummary
      * is any active masking job running on the target database.
      * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic
      * encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in
-     * the target database.
+     * the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
      *
      * @return the value
      */

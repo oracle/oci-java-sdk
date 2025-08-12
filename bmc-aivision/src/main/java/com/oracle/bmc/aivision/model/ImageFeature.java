@@ -29,6 +29,9 @@ package com.oracle.bmc.aivision.model;
             value = FaceDetectionFeature.class,
             name = "FACE_DETECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = FaceEmbeddingFeature.class,
+            name = "FACE_EMBEDDING"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ImageObjectDetectionFeature.class,
             name = "OBJECT_DETECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -88,13 +91,16 @@ public class ImageFeature extends com.oracle.bmc.http.client.internal.Explicitly
      * The type of image analysis requested. The allowed values are: - {@code IMAGE_CLASSIFICATION}:
      * Label the image. - {@code OBJECT_DETECTION}: Identify objects in the image with bounding
      * boxes. - {@code TEXT_DETECTION}: Recognize text at the word and line level. - {@code
-     * FACE_DETECTION}: Identify faces in the image with bounding boxes and face landmarks.
+     * FACE_DETECTION}: Identify faces in the image with bounding boxes and face landmarks. - {@code
+     * FACE_EMBEDDING}: Extract facial features in image as vectors with information on bounding
+     * boxes and face landmarks.
      */
     public enum FeatureType implements com.oracle.bmc.http.internal.BmcEnum {
         ImageClassification("IMAGE_CLASSIFICATION"),
         ObjectDetection("OBJECT_DETECTION"),
         TextDetection("TEXT_DETECTION"),
         FaceDetection("FACE_DETECTION"),
+        FaceEmbedding("FACE_EMBEDDING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

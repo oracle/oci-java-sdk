@@ -35,6 +35,7 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
         "configurationDetails",
         "configurationOverrideDetails",
         "logConfigurationOverrideDetails",
+        "infrastructureConfigurationOverrideDetails",
         "stepOverrideDetails",
         "logDetails",
         "stepRuns",
@@ -58,6 +59,7 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
             PipelineConfigurationDetails configurationDetails,
             PipelineConfigurationDetails configurationOverrideDetails,
             PipelineLogConfigurationDetails logConfigurationOverrideDetails,
+            PipelineInfrastructureConfigurationDetails infrastructureConfigurationOverrideDetails,
             java.util.List<PipelineStepOverrideDetails> stepOverrideDetails,
             PipelineRunLogDetails logDetails,
             java.util.List<PipelineStepRun> stepRuns,
@@ -80,6 +82,8 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
         this.configurationDetails = configurationDetails;
         this.configurationOverrideDetails = configurationOverrideDetails;
         this.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
+        this.infrastructureConfigurationOverrideDetails =
+                infrastructureConfigurationOverrideDetails;
         this.stepOverrideDetails = stepOverrideDetails;
         this.logDetails = logDetails;
         this.stepRuns = stepRuns;
@@ -307,6 +311,19 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("logConfigurationOverrideDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("infrastructureConfigurationOverrideDetails")
+        private PipelineInfrastructureConfigurationDetails
+                infrastructureConfigurationOverrideDetails;
+
+        public Builder infrastructureConfigurationOverrideDetails(
+                PipelineInfrastructureConfigurationDetails
+                        infrastructureConfigurationOverrideDetails) {
+            this.infrastructureConfigurationOverrideDetails =
+                    infrastructureConfigurationOverrideDetails;
+            this.__explicitlySet__.add("infrastructureConfigurationOverrideDetails");
+            return this;
+        }
         /** Array of step override details. Only Step Configuration is allowed to be overridden. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepOverrideDetails")
         private java.util.List<PipelineStepOverrideDetails> stepOverrideDetails;
@@ -465,6 +482,7 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
                             this.configurationDetails,
                             this.configurationOverrideDetails,
                             this.logConfigurationOverrideDetails,
+                            this.infrastructureConfigurationOverrideDetails,
                             this.stepOverrideDetails,
                             this.logDetails,
                             this.stepRuns,
@@ -519,6 +537,10 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("logConfigurationOverrideDetails")) {
                 this.logConfigurationOverrideDetails(model.getLogConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("infrastructureConfigurationOverrideDetails")) {
+                this.infrastructureConfigurationOverrideDetails(
+                        model.getInfrastructureConfigurationOverrideDetails());
             }
             if (model.wasPropertyExplicitlySet("stepOverrideDetails")) {
                 this.stepOverrideDetails(model.getStepOverrideDetails());
@@ -744,6 +766,15 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
         return logConfigurationOverrideDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("infrastructureConfigurationOverrideDetails")
+    private final PipelineInfrastructureConfigurationDetails
+            infrastructureConfigurationOverrideDetails;
+
+    public PipelineInfrastructureConfigurationDetails
+            getInfrastructureConfigurationOverrideDetails() {
+        return infrastructureConfigurationOverrideDetails;
+    }
+
     /** Array of step override details. Only Step Configuration is allowed to be overridden. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepOverrideDetails")
     private final java.util.List<PipelineStepOverrideDetails> stepOverrideDetails;
@@ -894,6 +925,8 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
                 .append(String.valueOf(this.configurationOverrideDetails));
         sb.append(", logConfigurationOverrideDetails=")
                 .append(String.valueOf(this.logConfigurationOverrideDetails));
+        sb.append(", infrastructureConfigurationOverrideDetails=")
+                .append(String.valueOf(this.infrastructureConfigurationOverrideDetails));
         sb.append(", stepOverrideDetails=").append(String.valueOf(this.stepOverrideDetails));
         sb.append(", logDetails=").append(String.valueOf(this.logDetails));
         sb.append(", stepRuns=").append(String.valueOf(this.stepRuns));
@@ -931,6 +964,9 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
                         this.configurationOverrideDetails, other.configurationOverrideDetails)
                 && java.util.Objects.equals(
                         this.logConfigurationOverrideDetails, other.logConfigurationOverrideDetails)
+                && java.util.Objects.equals(
+                        this.infrastructureConfigurationOverrideDetails,
+                        other.infrastructureConfigurationOverrideDetails)
                 && java.util.Objects.equals(this.stepOverrideDetails, other.stepOverrideDetails)
                 && java.util.Objects.equals(this.logDetails, other.logDetails)
                 && java.util.Objects.equals(this.stepRuns, other.stepRuns)
@@ -973,6 +1009,11 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
                         + (this.logConfigurationOverrideDetails == null
                                 ? 43
                                 : this.logConfigurationOverrideDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infrastructureConfigurationOverrideDetails == null
+                                ? 43
+                                : this.infrastructureConfigurationOverrideDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.stepOverrideDetails == null

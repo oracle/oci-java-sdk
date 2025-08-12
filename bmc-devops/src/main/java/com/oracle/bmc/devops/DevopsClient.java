@@ -3966,6 +3966,78 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public ReopenPullRequestCommentResponse reopenPullRequestComment(
+            ReopenPullRequestCommentRequest request) {
+
+        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
+
+        Validate.notBlank(request.getCommentId(), "commentId must not be blank");
+
+        return clientCall(request, ReopenPullRequestCommentResponse::builder)
+                .logger(LOG, "reopenPullRequestComment")
+                .serviceDetails(
+                        "Devops",
+                        "ReopenPullRequestComment",
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ReopenPullRequestComment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReopenPullRequestCommentRequest::builder)
+                .basePath("/20210630")
+                .appendPathParam("pullRequests")
+                .appendPathParam(request.getPullRequestId())
+                .appendPathParam("comments")
+                .appendPathParam(request.getCommentId())
+                .appendPathParam("actions")
+                .appendPathParam("reopen")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.devops.model.PullRequestComment.class,
+                        ReopenPullRequestCommentResponse.Builder::pullRequestComment)
+                .handleResponseHeaderString(
+                        "opc-request-id", ReopenPullRequestCommentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", ReopenPullRequestCommentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public ResolvePullRequestCommentResponse resolvePullRequestComment(
+            ResolvePullRequestCommentRequest request) {
+
+        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
+
+        Validate.notBlank(request.getCommentId(), "commentId must not be blank");
+
+        return clientCall(request, ResolvePullRequestCommentResponse::builder)
+                .logger(LOG, "resolvePullRequestComment")
+                .serviceDetails(
+                        "Devops",
+                        "ResolvePullRequestComment",
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ResolvePullRequestComment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ResolvePullRequestCommentRequest::builder)
+                .basePath("/20210630")
+                .appendPathParam("pullRequests")
+                .appendPathParam(request.getPullRequestId())
+                .appendPathParam("comments")
+                .appendPathParam(request.getCommentId())
+                .appendPathParam("actions")
+                .appendPathParam("resolve")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.devops.model.PullRequestComment.class,
+                        ResolvePullRequestCommentResponse.Builder::pullRequestComment)
+                .handleResponseHeaderString(
+                        "opc-request-id", ResolvePullRequestCommentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", ResolvePullRequestCommentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public ReviewPullRequestResponse reviewPullRequest(ReviewPullRequestRequest request) {
 
         Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");

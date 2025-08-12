@@ -80,6 +80,68 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public Severity getSeverity() {
         return severity;
     }
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsSeverity
+     * parameter if need to filter by multiple risk levels.
+     */
+    private java.util.List<ContainsSeverity> containsSeverity;
+
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsSeverity
+     * parameter if need to filter by multiple risk levels.
+     */
+    public enum ContainsSeverity implements com.oracle.bmc.http.internal.BmcEnum {
+        High("HIGH"),
+        Medium("MEDIUM"),
+        Low("LOW"),
+        Evaluate("EVALUATE"),
+        Advisory("ADVISORY"),
+        Pass("PASS"),
+        Deferred("DEFERRED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ContainsSeverity> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ContainsSeverity v : ContainsSeverity.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ContainsSeverity(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ContainsSeverity create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ContainsSeverity: " + key);
+        }
+    };
+
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsSeverity
+     * parameter if need to filter by multiple risk levels.
+     */
+    public java.util.List<ContainsSeverity> getContainsSeverity() {
+        return containsSeverity;
+    }
+    /** The category of the finding. */
+    private String category;
+
+    /** The category of the finding. */
+    public String getCategory() {
+        return category;
+    }
     /** A filter to return only the findings that match the specified lifecycle states. */
     private com.oracle.bmc.datasafe.model.FindingLifecycleState lifecycleState;
 
@@ -93,6 +155,21 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     /** An optional filter to return only findings that match the specified reference. */
     public com.oracle.bmc.datasafe.model.SecurityAssessmentReferences getReferences() {
         return references;
+    }
+    /**
+     * An optional filter to return only findings that match the specified references. Use
+     * containsReferences param if need to filter by multiple references.
+     */
+    private java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentReferences>
+            containsReferences;
+
+    /**
+     * An optional filter to return only findings that match the specified references. Use
+     * containsReferences param if need to filter by multiple references.
+     */
+    public java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentReferences>
+            getContainsReferences() {
+        return containsReferences;
     }
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
@@ -203,6 +280,19 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     /** A filter to return only items related to a specific target OCID. */
     public String getTargetId() {
         return targetId;
+    }
+    /**
+     * An optional filter to return only findings that match the specified target ids. Use this
+     * parameter to filter by multiple target ids.
+     */
+    private java.util.List<String> targetIds;
+
+    /**
+     * An optional filter to return only findings that match the specified target ids. Use this
+     * parameter to filter by multiple target ids.
+     */
+    public java.util.List<String> getTargetIds() {
+        return targetIds;
     }
     /**
      * The scimQuery query parameter accepts filter expressions that use the syntax described in
@@ -340,6 +430,47 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public SortBy getSortBy() {
         return sortBy;
     }
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    private SortOrder sortOrder;
+
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+        Asc("ASC"),
+        Desc("DESC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortOrder> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortOrder v : SortOrder.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortOrder(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortOrder create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
+        }
+    };
+
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Each finding in security assessment has an associated key (think of key as a finding's name).
      * For a given finding, the key will be the same across targets. The user can use these keys to
@@ -418,6 +549,49 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A filter to return only findings that match the specified risk level(s). Use
+         * containsSeverity parameter if need to filter by multiple risk levels.
+         */
+        private java.util.List<ContainsSeverity> containsSeverity = null;
+
+        /**
+         * A filter to return only findings that match the specified risk level(s). Use
+         * containsSeverity parameter if need to filter by multiple risk levels.
+         *
+         * @param containsSeverity the value to set
+         * @return this builder instance
+         */
+        public Builder containsSeverity(java.util.List<ContainsSeverity> containsSeverity) {
+            this.containsSeverity = containsSeverity;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only findings that match the specified risk level(s).
+         * Use containsSeverity parameter if need to filter by multiple risk levels.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder containsSeverity(ContainsSeverity singularValue) {
+            return this.containsSeverity(java.util.Arrays.asList(singularValue));
+        }
+
+        /** The category of the finding. */
+        private String category = null;
+
+        /**
+         * The category of the finding.
+         *
+         * @param category the value to set
+         * @return this builder instance
+         */
+        public Builder category(String category) {
+            this.category = category;
+            return this;
+        }
+
         /** A filter to return only the findings that match the specified lifecycle states. */
         private com.oracle.bmc.datasafe.model.FindingLifecycleState lifecycleState = null;
 
@@ -446,6 +620,38 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 com.oracle.bmc.datasafe.model.SecurityAssessmentReferences references) {
             this.references = references;
             return this;
+        }
+
+        /**
+         * An optional filter to return only findings that match the specified references. Use
+         * containsReferences param if need to filter by multiple references.
+         */
+        private java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentReferences>
+                containsReferences = null;
+
+        /**
+         * An optional filter to return only findings that match the specified references. Use
+         * containsReferences param if need to filter by multiple references.
+         *
+         * @param containsReferences the value to set
+         * @return this builder instance
+         */
+        public Builder containsReferences(
+                java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentReferences>
+                        containsReferences) {
+            this.containsReferences = containsReferences;
+            return this;
+        }
+
+        /**
+         * Singular setter. An optional filter to return only findings that match the specified
+         * references. Use containsReferences param if need to filter by multiple references.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder containsReferences(SecurityAssessmentReferences singularValue) {
+            return this.containsReferences(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -547,6 +753,35 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * An optional filter to return only findings that match the specified target ids. Use this
+         * parameter to filter by multiple target ids.
+         */
+        private java.util.List<String> targetIds = null;
+
+        /**
+         * An optional filter to return only findings that match the specified target ids. Use this
+         * parameter to filter by multiple target ids.
+         *
+         * @param targetIds the value to set
+         * @return this builder instance
+         */
+        public Builder targetIds(java.util.List<String> targetIds) {
+            this.targetIds = targetIds;
+            return this;
+        }
+
+        /**
+         * Singular setter. An optional filter to return only findings that match the specified
+         * target ids. Use this parameter to filter by multiple target ids.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder targetIds(String singularValue) {
+            return this.targetIds(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * The scimQuery query parameter accepts filter expressions that use the syntax described in
          * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
          * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
@@ -628,6 +863,20 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         *
+         * @param sortOrder the value to set
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
         /**
          * Each finding in security assessment has an associated key (think of key as a finding's
          * name). For a given finding, the key will be the same across targets. The user can use
@@ -682,16 +931,21 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             opcRequestId(o.getOpcRequestId());
             isTopFinding(o.getIsTopFinding());
             severity(o.getSeverity());
+            containsSeverity(o.getContainsSeverity());
+            category(o.getCategory());
             lifecycleState(o.getLifecycleState());
             references(o.getReferences());
+            containsReferences(o.getContainsReferences());
             limit(o.getLimit());
             page(o.getPage());
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             accessLevel(o.getAccessLevel());
             targetId(o.getTargetId());
+            targetIds(o.getTargetIds());
             scimQuery(o.getScimQuery());
             field(o.getField());
             sortBy(o.getSortBy());
+            sortOrder(o.getSortOrder());
             findingKey(o.getFindingKey());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -731,21 +985,27 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.opcRequestId = opcRequestId;
             request.isTopFinding = isTopFinding;
             request.severity = severity;
+            request.containsSeverity = containsSeverity;
+            request.category = category;
             request.lifecycleState = lifecycleState;
             request.references = references;
+            request.containsReferences = containsReferences;
             request.limit = limit;
             request.page = page;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
             request.targetId = targetId;
+            request.targetIds = targetIds;
             request.scimQuery = scimQuery;
             request.field = field;
             request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
             request.findingKey = findingKey;
             return request;
             // new ListFindingsRequest(securityAssessmentId, opcRequestId, isTopFinding, severity,
-            // lifecycleState, references, limit, page, compartmentIdInSubtree, accessLevel,
-            // targetId, scimQuery, field, sortBy, findingKey);
+            // containsSeverity, category, lifecycleState, references, containsReferences, limit,
+            // page, compartmentIdInSubtree, accessLevel, targetId, targetIds, scimQuery, field,
+            // sortBy, sortOrder, findingKey);
         }
     }
 
@@ -760,16 +1020,21 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId)
                 .isTopFinding(isTopFinding)
                 .severity(severity)
+                .containsSeverity(containsSeverity)
+                .category(category)
                 .lifecycleState(lifecycleState)
                 .references(references)
+                .containsReferences(containsReferences)
                 .limit(limit)
                 .page(page)
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .accessLevel(accessLevel)
                 .targetId(targetId)
+                .targetIds(targetIds)
                 .scimQuery(scimQuery)
                 .field(field)
                 .sortBy(sortBy)
+                .sortOrder(sortOrder)
                 .findingKey(findingKey);
     }
 
@@ -791,16 +1056,21 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",isTopFinding=").append(String.valueOf(this.isTopFinding));
         sb.append(",severity=").append(String.valueOf(this.severity));
+        sb.append(",containsSeverity=").append(String.valueOf(this.containsSeverity));
+        sb.append(",category=").append(String.valueOf(this.category));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",references=").append(String.valueOf(this.references));
+        sb.append(",containsReferences=").append(String.valueOf(this.containsReferences));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetIds=").append(String.valueOf(this.targetIds));
         sb.append(",scimQuery=").append(String.valueOf(this.scimQuery));
         sb.append(",field=").append(String.valueOf(this.field));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",findingKey=").append(String.valueOf(this.findingKey));
         sb.append(")");
         return sb.toString();
@@ -821,17 +1091,22 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.isTopFinding, other.isTopFinding)
                 && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.containsSeverity, other.containsSeverity)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.references, other.references)
+                && java.util.Objects.equals(this.containsReferences, other.containsReferences)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.accessLevel, other.accessLevel)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetIds, other.targetIds)
                 && java.util.Objects.equals(this.scimQuery, other.scimQuery)
                 && java.util.Objects.equals(this.field, other.field)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.findingKey, other.findingKey);
     }
 
@@ -849,8 +1124,17 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
         result =
                 (result * PRIME)
+                        + (this.containsSeverity == null ? 43 : this.containsSeverity.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result =
+                (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.references == null ? 43 : this.references.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containsReferences == null
+                                ? 43
+                                : this.containsReferences.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result =
@@ -860,9 +1144,11 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                                 : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());
         result = (result * PRIME) + (this.scimQuery == null ? 43 : this.scimQuery.hashCode());
         result = (result * PRIME) + (this.field == null ? 43 : this.field.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.findingKey == null ? 43 : this.findingKey.hashCode());
         return result;
     }

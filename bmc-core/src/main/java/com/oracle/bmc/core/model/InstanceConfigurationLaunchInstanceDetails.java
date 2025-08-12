@@ -30,6 +30,8 @@ public final class InstanceConfigurationLaunchInstanceDetails
     @java.beans.ConstructorProperties({
         "availabilityDomain",
         "capacityReservationId",
+        "placementConstraintDetails",
+        "computeClusterId",
         "compartmentId",
         "clusterPlacementGroupId",
         "createVnicDetails",
@@ -59,6 +61,8 @@ public final class InstanceConfigurationLaunchInstanceDetails
     public InstanceConfigurationLaunchInstanceDetails(
             String availabilityDomain,
             String capacityReservationId,
+            InstanceConfigurationPlacementConstraintDetails placementConstraintDetails,
+            String computeClusterId,
             String compartmentId,
             String clusterPlacementGroupId,
             InstanceConfigurationCreateVnicDetails createVnicDetails,
@@ -87,6 +91,8 @@ public final class InstanceConfigurationLaunchInstanceDetails
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
+        this.placementConstraintDetails = placementConstraintDetails;
+        this.computeClusterId = computeClusterId;
         this.compartmentId = compartmentId;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.createVnicDetails = createVnicDetails;
@@ -150,6 +156,39 @@ public final class InstanceConfigurationLaunchInstanceDetails
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private InstanceConfigurationPlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                InstanceConfigurationPlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
+         * the instance will be created in.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+        private String computeClusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
+         * the instance will be created in.
+         *
+         * @param computeClusterId the value to set
+         * @return this builder
+         */
+        public Builder computeClusterId(String computeClusterId) {
+            this.computeClusterId = computeClusterId;
+            this.__explicitlySet__.add("computeClusterId");
             return this;
         }
         /**
@@ -755,6 +794,8 @@ public final class InstanceConfigurationLaunchInstanceDetails
                     new InstanceConfigurationLaunchInstanceDetails(
                             this.availabilityDomain,
                             this.capacityReservationId,
+                            this.placementConstraintDetails,
+                            this.computeClusterId,
                             this.compartmentId,
                             this.clusterPlacementGroupId,
                             this.createVnicDetails,
@@ -793,6 +834,12 @@ public final class InstanceConfigurationLaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("capacityReservationId")) {
                 this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
+            }
+            if (model.wasPropertyExplicitlySet("computeClusterId")) {
+                this.computeClusterId(model.getComputeClusterId());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -912,6 +959,32 @@ public final class InstanceConfigurationLaunchInstanceDetails
      */
     public String getCapacityReservationId() {
         return capacityReservationId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final InstanceConfigurationPlacementConstraintDetails placementConstraintDetails;
+
+    public InstanceConfigurationPlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * that the instance will be created in.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+    private final String computeClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * that the instance will be created in.
+     *
+     * @return the value
+     */
+    public String getComputeClusterId() {
+        return computeClusterId;
     }
 
     /**
@@ -1564,6 +1637,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
         sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
+        sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
@@ -1610,6 +1686,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
                 (InstanceConfigurationLaunchInstanceDetails) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
+                && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
@@ -1656,6 +1735,14 @@ public final class InstanceConfigurationLaunchInstanceDetails
                         + (this.capacityReservationId == null
                                 ? 43
                                 : this.capacityReservationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeClusterId == null ? 43 : this.computeClusterId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

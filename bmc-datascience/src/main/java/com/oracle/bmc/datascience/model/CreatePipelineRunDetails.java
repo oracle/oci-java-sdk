@@ -30,6 +30,7 @@ public final class CreatePipelineRunDetails
         "displayName",
         "configurationOverrideDetails",
         "logConfigurationOverrideDetails",
+        "infrastructureConfigurationOverrideDetails",
         "stepOverrideDetails",
         "freeformTags",
         "definedTags",
@@ -42,6 +43,7 @@ public final class CreatePipelineRunDetails
             String displayName,
             PipelineConfigurationDetails configurationOverrideDetails,
             PipelineLogConfigurationDetails logConfigurationOverrideDetails,
+            PipelineInfrastructureConfigurationDetails infrastructureConfigurationOverrideDetails,
             java.util.List<PipelineStepOverrideDetails> stepOverrideDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -53,6 +55,8 @@ public final class CreatePipelineRunDetails
         this.displayName = displayName;
         this.configurationOverrideDetails = configurationOverrideDetails;
         this.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
+        this.infrastructureConfigurationOverrideDetails =
+                infrastructureConfigurationOverrideDetails;
         this.stepOverrideDetails = stepOverrideDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -153,6 +157,19 @@ public final class CreatePipelineRunDetails
             this.__explicitlySet__.add("logConfigurationOverrideDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("infrastructureConfigurationOverrideDetails")
+        private PipelineInfrastructureConfigurationDetails
+                infrastructureConfigurationOverrideDetails;
+
+        public Builder infrastructureConfigurationOverrideDetails(
+                PipelineInfrastructureConfigurationDetails
+                        infrastructureConfigurationOverrideDetails) {
+            this.infrastructureConfigurationOverrideDetails =
+                    infrastructureConfigurationOverrideDetails;
+            this.__explicitlySet__.add("infrastructureConfigurationOverrideDetails");
+            return this;
+        }
         /** Array of step override details. Only Step Configuration is allowed to be overridden. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepOverrideDetails")
         private java.util.List<PipelineStepOverrideDetails> stepOverrideDetails;
@@ -246,6 +263,7 @@ public final class CreatePipelineRunDetails
                             this.displayName,
                             this.configurationOverrideDetails,
                             this.logConfigurationOverrideDetails,
+                            this.infrastructureConfigurationOverrideDetails,
                             this.stepOverrideDetails,
                             this.freeformTags,
                             this.definedTags,
@@ -275,6 +293,10 @@ public final class CreatePipelineRunDetails
             }
             if (model.wasPropertyExplicitlySet("logConfigurationOverrideDetails")) {
                 this.logConfigurationOverrideDetails(model.getLogConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("infrastructureConfigurationOverrideDetails")) {
+                this.infrastructureConfigurationOverrideDetails(
+                        model.getInfrastructureConfigurationOverrideDetails());
             }
             if (model.wasPropertyExplicitlySet("stepOverrideDetails")) {
                 this.stepOverrideDetails(model.getStepOverrideDetails());
@@ -379,6 +401,15 @@ public final class CreatePipelineRunDetails
         return logConfigurationOverrideDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("infrastructureConfigurationOverrideDetails")
+    private final PipelineInfrastructureConfigurationDetails
+            infrastructureConfigurationOverrideDetails;
+
+    public PipelineInfrastructureConfigurationDetails
+            getInfrastructureConfigurationOverrideDetails() {
+        return infrastructureConfigurationOverrideDetails;
+    }
+
     /** Array of step override details. Only Step Configuration is allowed to be overridden. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepOverrideDetails")
     private final java.util.List<PipelineStepOverrideDetails> stepOverrideDetails;
@@ -472,6 +503,8 @@ public final class CreatePipelineRunDetails
                 .append(String.valueOf(this.configurationOverrideDetails));
         sb.append(", logConfigurationOverrideDetails=")
                 .append(String.valueOf(this.logConfigurationOverrideDetails));
+        sb.append(", infrastructureConfigurationOverrideDetails=")
+                .append(String.valueOf(this.infrastructureConfigurationOverrideDetails));
         sb.append(", stepOverrideDetails=").append(String.valueOf(this.stepOverrideDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -498,6 +531,9 @@ public final class CreatePipelineRunDetails
                         this.configurationOverrideDetails, other.configurationOverrideDetails)
                 && java.util.Objects.equals(
                         this.logConfigurationOverrideDetails, other.logConfigurationOverrideDetails)
+                && java.util.Objects.equals(
+                        this.infrastructureConfigurationOverrideDetails,
+                        other.infrastructureConfigurationOverrideDetails)
                 && java.util.Objects.equals(this.stepOverrideDetails, other.stepOverrideDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -525,6 +561,11 @@ public final class CreatePipelineRunDetails
                         + (this.logConfigurationOverrideDetails == null
                                 ? 43
                                 : this.logConfigurationOverrideDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infrastructureConfigurationOverrideDetails == null
+                                ? 43
+                                : this.infrastructureConfigurationOverrideDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.stepOverrideDetails == null

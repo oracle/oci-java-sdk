@@ -160,6 +160,13 @@ public class ListSecurityPolicyDeploymentsRequest
     public String getTargetId() {
         return targetId;
     }
+    /** A optional filter to return only resources that belong to the specified target type. */
+    private com.oracle.bmc.datasafe.model.SecurityPolicyDeployment.TargetType targetType;
+
+    /** A optional filter to return only resources that belong to the specified target type. */
+    public com.oracle.bmc.datasafe.model.SecurityPolicyDeployment.TargetType getTargetType() {
+        return targetType;
+    }
     /**
      * An optional filter to return only resources that match the specified OCID of the security
      * policy resource.
@@ -442,6 +449,21 @@ public class ListSecurityPolicyDeploymentsRequest
             return this;
         }
 
+        /** A optional filter to return only resources that belong to the specified target type. */
+        private com.oracle.bmc.datasafe.model.SecurityPolicyDeployment.TargetType targetType = null;
+
+        /**
+         * A optional filter to return only resources that belong to the specified target type.
+         *
+         * @param targetType the value to set
+         * @return this builder instance
+         */
+        public Builder targetType(
+                com.oracle.bmc.datasafe.model.SecurityPolicyDeployment.TargetType targetType) {
+            this.targetType = targetType;
+            return this;
+        }
+
         /**
          * An optional filter to return only resources that match the specified OCID of the security
          * policy resource.
@@ -547,6 +569,7 @@ public class ListSecurityPolicyDeploymentsRequest
             lifecycleState(o.getLifecycleState());
             securityPolicyDeploymentId(o.getSecurityPolicyDeploymentId());
             targetId(o.getTargetId());
+            targetType(o.getTargetType());
             securityPolicyId(o.getSecurityPolicyId());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
@@ -595,6 +618,7 @@ public class ListSecurityPolicyDeploymentsRequest
             request.lifecycleState = lifecycleState;
             request.securityPolicyDeploymentId = securityPolicyDeploymentId;
             request.targetId = targetId;
+            request.targetType = targetType;
             request.securityPolicyId = securityPolicyId;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
@@ -602,7 +626,7 @@ public class ListSecurityPolicyDeploymentsRequest
             return request;
             // new ListSecurityPolicyDeploymentsRequest(compartmentId, compartmentIdInSubtree,
             // accessLevel, displayName, limit, page, lifecycleState, securityPolicyDeploymentId,
-            // targetId, securityPolicyId, sortOrder, sortBy, opcRequestId);
+            // targetId, targetType, securityPolicyId, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -622,6 +646,7 @@ public class ListSecurityPolicyDeploymentsRequest
                 .lifecycleState(lifecycleState)
                 .securityPolicyDeploymentId(securityPolicyDeploymentId)
                 .targetId(targetId)
+                .targetType(targetType)
                 .securityPolicyId(securityPolicyId)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
@@ -652,6 +677,7 @@ public class ListSecurityPolicyDeploymentsRequest
         sb.append(",securityPolicyDeploymentId=")
                 .append(String.valueOf(this.securityPolicyDeploymentId));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetType=").append(String.valueOf(this.targetType));
         sb.append(",securityPolicyId=").append(String.valueOf(this.securityPolicyId));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
@@ -682,6 +708,7 @@ public class ListSecurityPolicyDeploymentsRequest
                 && java.util.Objects.equals(
                         this.securityPolicyDeploymentId, other.securityPolicyDeploymentId)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.securityPolicyId, other.securityPolicyId)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
@@ -713,6 +740,7 @@ public class ListSecurityPolicyDeploymentsRequest
                                 ? 43
                                 : this.securityPolicyDeploymentId.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result =
                 (result * PRIME)
                         + (this.securityPolicyId == null ? 43 : this.securityPolicyId.hashCode());

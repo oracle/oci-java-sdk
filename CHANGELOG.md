@@ -3,6 +3,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.71.0 - 2025-08-12
+### Added 
+- Support for calling Oracle Cloud Infrastructure services in the us-newark-1 region 
+- Support for OCI Cache Config Sets in the Redis service 
+- Support for Oracle Linux 8 in Devops Build Stage in the Build service 
+- Support for Distributed Training V2 (DTv2) in the Data Science service 
+- Support for stream video processing in the AI Vision service 
+- Support for specifying compute cluster and placement constraints when launching instances in the Compute service 
+- Support for SCIM query to allow advanced filtering across various columns in the List Finding Analytics operation in the Data Safe service 
+- Support for Target Database Group in the Data Safe service 
+- Support for adding additional contact to CMOS SR in the Cloud Incident Management service 
+- Support for attachment uploads in the Cloud Incident Management service 
+- Support for Amazon Kinesis endpoints in the Golden Gate service 
+- Support for Azure Data Lake Storage azureAuthorityHost in the Golden Gate service   
+
+### Breaking Changes 
+- The models `GenericArtifactLocationDetails`, `GenericArtifacts`, `ObjectStorageGenericArtifactLocationDetails`, `StageOutput`, `TestReportOutput` were removed from the Build service 
+- The enum model `LifecycleStateEnum` was renamed to `OnPremConnectorLifecycleStateEnum` in the Data Safe service 
+- The enum model `ListOnPremConnectorsOnPremConnectorLifecycleStateEnum` was renamed to `ListOnPremConnectorsLifecycleStateEnum` in the Data Safe service 
+- The enum values `schemaName` and `tableName` removed from model `ListMaskingPolicyReferentialRelationsSortByEnum` in the Data Safe service 
+- The field `OpcRetryToken` was removed from the model `CancelWorkRequestRequest` in the Data Safe service 
+- The field `ComputeHostgroupId` was removed from the models `launchIntanceDetails`, `Instance`, and `LicensingConfig` in the Compute service 
+- The model `SubscriptionInfo` was removed from the the Cloud Incident Management service
+
 ## 3.70.1 - 2025-08-05
 ### Added 
 - Support for the Oracle Multicloud Hub service 

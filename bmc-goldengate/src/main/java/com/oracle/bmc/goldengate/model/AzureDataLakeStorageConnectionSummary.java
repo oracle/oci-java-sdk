@@ -361,6 +361,29 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             this.__explicitlySet__.add("clientSecretSecretId");
             return this;
         }
+        /**
+         * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active
+         * Directory). Default value: https://login.microsoftonline.com When connecting to a
+         * non-public Azure Cloud, the endpoint must be provided, eg: * Azure China:
+         * https://login.chinacloudapi.cn/ * Azure US Government: https://login.microsoftonline.us/
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("azureAuthorityHost")
+        private String azureAuthorityHost;
+
+        /**
+         * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active
+         * Directory). Default value: https://login.microsoftonline.com When connecting to a
+         * non-public Azure Cloud, the endpoint must be provided, eg: * Azure China:
+         * https://login.chinacloudapi.cn/ * Azure US Government: https://login.microsoftonline.us/
+         *
+         * @param azureAuthorityHost the value to set
+         * @return this builder
+         */
+        public Builder azureAuthorityHost(String azureAuthorityHost) {
+            this.azureAuthorityHost = azureAuthorityHost;
+            this.__explicitlySet__.add("azureAuthorityHost");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -395,7 +418,8 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
                             this.endpoint,
                             this.accountKeySecretId,
                             this.sasTokenSecretId,
-                            this.clientSecretSecretId);
+                            this.clientSecretSecretId,
+                            this.azureAuthorityHost);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -488,6 +512,9 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             if (model.wasPropertyExplicitlySet("clientSecretSecretId")) {
                 this.clientSecretSecretId(model.getClientSecretSecretId());
             }
+            if (model.wasPropertyExplicitlySet("azureAuthorityHost")) {
+                this.azureAuthorityHost(model.getAzureAuthorityHost());
+            }
             return this;
         }
     }
@@ -530,7 +557,8 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             String endpoint,
             String accountKeySecretId,
             String sasTokenSecretId,
-            String clientSecretSecretId) {
+            String clientSecretSecretId,
+            String azureAuthorityHost) {
         super(
                 id,
                 displayName,
@@ -560,6 +588,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
         this.accountKeySecretId = accountKeySecretId;
         this.sasTokenSecretId = sasTokenSecretId;
         this.clientSecretSecretId = clientSecretSecretId;
+        this.azureAuthorityHost = azureAuthorityHost;
     }
 
     /** The Azure Data Lake Storage technology type. */
@@ -705,6 +734,27 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
         return clientSecretSecretId;
     }
 
+    /**
+     * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active
+     * Directory). Default value: https://login.microsoftonline.com When connecting to a non-public
+     * Azure Cloud, the endpoint must be provided, eg: * Azure China:
+     * https://login.chinacloudapi.cn/ * Azure US Government: https://login.microsoftonline.us/
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("azureAuthorityHost")
+    private final String azureAuthorityHost;
+
+    /**
+     * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active
+     * Directory). Default value: https://login.microsoftonline.com When connecting to a non-public
+     * Azure Cloud, the endpoint must be provided, eg: * Azure China:
+     * https://login.chinacloudapi.cn/ * Azure US Government: https://login.microsoftonline.us/
+     *
+     * @return the value
+     */
+    public String getAzureAuthorityHost() {
+        return azureAuthorityHost;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -729,6 +779,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
         sb.append(", accountKeySecretId=").append(String.valueOf(this.accountKeySecretId));
         sb.append(", sasTokenSecretId=").append(String.valueOf(this.sasTokenSecretId));
         sb.append(", clientSecretSecretId=").append(String.valueOf(this.clientSecretSecretId));
+        sb.append(", azureAuthorityHost=").append(String.valueOf(this.azureAuthorityHost));
         sb.append(")");
         return sb.toString();
     }
@@ -752,6 +803,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
                 && java.util.Objects.equals(this.accountKeySecretId, other.accountKeySecretId)
                 && java.util.Objects.equals(this.sasTokenSecretId, other.sasTokenSecretId)
                 && java.util.Objects.equals(this.clientSecretSecretId, other.clientSecretSecretId)
+                && java.util.Objects.equals(this.azureAuthorityHost, other.azureAuthorityHost)
                 && super.equals(other);
     }
 
@@ -786,6 +838,11 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
                         + (this.clientSecretSecretId == null
                                 ? 43
                                 : this.clientSecretSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.azureAuthorityHost == null
+                                ? 43
+                                : this.azureAuthorityHost.hashCode());
         return result;
     }
 }
