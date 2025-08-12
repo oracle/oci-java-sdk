@@ -156,6 +156,25 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Apply the checks from the template to the specified security assessment.The security
+     * assessment provided in the path needs to be of type 'LATEST'.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ApplySecurityAssessmentTemplateResponse>
+            applySecurityAssessmentTemplate(
+                    ApplySecurityAssessmentTemplateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ApplySecurityAssessmentTemplateRequest,
+                                    ApplySecurityAssessmentTemplateResponse>
+                            handler);
+
+    /**
      * Uploads a sensitive types xml file (also called template) to create new sensitive types.
      *
      * @param request The request object containing the details to send
@@ -188,6 +207,23 @@ public interface DataSafeAsync extends AutoCloseable {
                                     BulkCreateSqlFirewallAllowedSqlsRequest,
                                     BulkCreateSqlFirewallAllowedSqlsResponse>
                             handler);
+
+    /**
+     * Bulk create unified audit policies.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkCreateUnifiedAuditPolicyResponse> bulkCreateUnifiedAuditPolicy(
+            BulkCreateUnifiedAuditPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            BulkCreateUnifiedAuditPolicyRequest,
+                            BulkCreateUnifiedAuditPolicyResponse>
+                    handler);
 
     /**
      * Delete multiple allowed sqls from the SQL firewall policy.
@@ -292,6 +328,25 @@ public interface DataSafeAsync extends AutoCloseable {
                             ChangeAlertPolicyCompartmentRequest,
                             ChangeAlertPolicyCompartmentResponse>
                     handler);
+
+    /**
+     * Moves the attribute set to the specified compartment. When provided, if-Match is checked
+     * against ETag value of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAttributeSetCompartmentResponse>
+            changeAttributeSetCompartment(
+                    ChangeAttributeSetCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAttributeSetCompartmentRequest,
+                                    ChangeAttributeSetCompartmentResponse>
+                            handler);
 
     /**
      * Moves the archive retreival to the specified compartment. When provided, if-Match is checked
@@ -590,6 +645,25 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the specified security policy configuration and its dependent resources into a
+     * different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSecurityPolicyConfigCompartmentResponse>
+            changeSecurityPolicyConfigCompartment(
+                    ChangeSecurityPolicyConfigCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityPolicyConfigCompartmentRequest,
+                                    ChangeSecurityPolicyConfigCompartmentResponse>
+                            handler);
+
+    /**
      * Moves the specified security policy deployment and its dependent resources into a different
      * compartment.
      *
@@ -755,6 +829,62 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the target database group to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeTargetDatabaseGroupCompartmentResponse>
+            changeTargetDatabaseGroupCompartment(
+                    ChangeTargetDatabaseGroupCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeTargetDatabaseGroupCompartmentRequest,
+                                    ChangeTargetDatabaseGroupCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves the specified Unified Audit policy and its dependent resources into a different
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeUnifiedAuditPolicyCompartmentResponse>
+            changeUnifiedAuditPolicyCompartment(
+                    ChangeUnifiedAuditPolicyCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeUnifiedAuditPolicyCompartmentRequest,
+                                    ChangeUnifiedAuditPolicyCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves the specified unified audit policy definition and its dependent resources into a
+     * different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeUnifiedAuditPolicyDefinitionCompartmentResponse>
+            changeUnifiedAuditPolicyDefinitionCompartment(
+                    ChangeUnifiedAuditPolicyDefinitionCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeUnifiedAuditPolicyDefinitionCompartmentRequest,
+                                    ChangeUnifiedAuditPolicyDefinitionCompartmentResponse>
+                            handler);
+
+    /**
      * Moves the specified saved user assessment or future scheduled assessments into a different
      * compartment. To start storing scheduled user assessments on a different compartment, first
      * call the operation ListUserAssessments with the filters \"type = save_schedule\". That call
@@ -793,6 +923,23 @@ public interface DataSafeAsync extends AutoCloseable {
             CompareSecurityAssessmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CompareSecurityAssessmentRequest, CompareSecurityAssessmentResponse>
+                    handler);
+
+    /**
+     * Compares two security assessments. For this comparison, the security assessment in the path
+     * needs to be a latest assessment of a target group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CompareToTemplateBaselineResponse> compareToTemplateBaseline(
+            CompareToTemplateBaselineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CompareToTemplateBaselineRequest, CompareToTemplateBaselineResponse>
                     handler);
 
     /**
@@ -846,6 +993,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates an attribute set.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAttributeSetResponse> createAttributeSet(
+            CreateAttributeSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateAttributeSetRequest, CreateAttributeSetResponse>
+                    handler);
+
+    /**
      * Creates a work request to retrieve archived audit data. This asynchronous process will
      * usually take over an hour to complete. Save the id from the response of this operation. Call
      * GetAuditArchiveRetrieval operation after an hour, passing the id to know the status of this
@@ -862,6 +1025,22 @@ public interface DataSafeAsync extends AutoCloseable {
             CreateAuditArchiveRetrievalRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateAuditArchiveRetrievalRequest, CreateAuditArchiveRetrievalResponse>
+                    handler);
+
+    /**
+     * Create a new audit profile resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAuditProfileResponse> createAuditProfile(
+            CreateAuditProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateAuditProfileRequest, CreateAuditProfileResponse>
                     handler);
 
     /**
@@ -1101,6 +1280,56 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a Data Safe security policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSecurityPolicyResponse> createSecurityPolicy(
+            CreateSecurityPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityPolicyRequest, CreateSecurityPolicyResponse>
+                    handler);
+
+    /**
+     * Creates a new security policy configuration resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSecurityPolicyConfigResponse> createSecurityPolicyConfig(
+            CreateSecurityPolicyConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityPolicyConfigRequest, CreateSecurityPolicyConfigResponse>
+                    handler);
+
+    /**
+     * Creates a Data Safe security policy deployment in the Data Safe Console.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSecurityPolicyDeploymentResponse>
+            createSecurityPolicyDeployment(
+                    CreateSecurityPolicyDeploymentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateSecurityPolicyDeploymentRequest,
+                                    CreateSecurityPolicyDeploymentResponse>
+                            handler);
+
+    /**
      * Creates a new sensitive column in the specified sensitive data model.
      *
      * @param request The request object containing the details to send
@@ -1239,6 +1468,38 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new target database group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateTargetDatabaseGroupResponse> createTargetDatabaseGroup(
+            CreateTargetDatabaseGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateTargetDatabaseGroupRequest, CreateTargetDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Creates the specified unified audit policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateUnifiedAuditPolicyResponse> createUnifiedAuditPolicy(
+            CreateUnifiedAuditPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateUnifiedAuditPolicyRequest, CreateUnifiedAuditPolicyResponse>
+                    handler);
+
+    /**
      * Creates a new saved user assessment for one or multiple targets in a compartment. It saves
      * the latest assessments in the specified compartment. If a scheduled is passed in, this
      * operation persists the latest assessments that exist at the defined date and time, in the
@@ -1306,6 +1567,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Submits a work request to delete an attribute set.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAttributeSetResponse> deleteAttributeSet(
+            DeleteAttributeSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAttributeSetRequest, DeleteAttributeSetResponse>
+                    handler);
+
+    /**
      * To unload retrieved archive data, call the operation ListAuditArchiveRetrieval first. This
      * will return the auditArchiveRetrievalId. Then call this operation with
      * auditArchiveRetrievalId.
@@ -1321,6 +1598,23 @@ public interface DataSafeAsync extends AutoCloseable {
             DeleteAuditArchiveRetrievalRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteAuditArchiveRetrievalRequest, DeleteAuditArchiveRetrievalResponse>
+                    handler);
+
+    /**
+     * Deletes the specified audit profile. The audit profile delete operation is only supported for
+     * audit profiles with target type as TARGET_DATABASE_GROUP.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAuditProfileResponse> deleteAuditProfile(
+            DeleteAuditProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAuditProfileRequest, DeleteAuditProfileResponse>
                     handler);
 
     /**
@@ -1574,6 +1868,56 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified security policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSecurityPolicyResponse> deleteSecurityPolicy(
+            DeleteSecurityPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Security policy configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSecurityPolicyConfigResponse> deleteSecurityPolicyConfig(
+            DeleteSecurityPolicyConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityPolicyConfigRequest, DeleteSecurityPolicyConfigResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Security policy deployment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSecurityPolicyDeploymentResponse>
+            deleteSecurityPolicyDeployment(
+                    DeleteSecurityPolicyDeploymentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSecurityPolicyDeploymentRequest,
+                                    DeleteSecurityPolicyDeploymentResponse>
+                            handler);
+
+    /**
      * Deletes the specified sensitive column.
      *
      * @param request The request object containing the details to send
@@ -1737,6 +2081,56 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified target database group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteTargetDatabaseGroupResponse> deleteTargetDatabaseGroup(
+            DeleteTargetDatabaseGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTargetDatabaseGroupRequest, DeleteTargetDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Deletes the Unified Audit policy resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteUnifiedAuditPolicyResponse> deleteUnifiedAuditPolicy(
+            DeleteUnifiedAuditPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteUnifiedAuditPolicyRequest, DeleteUnifiedAuditPolicyResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Unified audit policy definition.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteUnifiedAuditPolicyDefinitionResponse>
+            deleteUnifiedAuditPolicyDefinition(
+                    DeleteUnifiedAuditPolicyDefinitionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteUnifiedAuditPolicyDefinitionRequest,
+                                    DeleteUnifiedAuditPolicyDefinitionResponse>
+                            handler);
+
+    /**
      * Deletes the specified saved user assessment or schedule. To delete a user assessment
      * schedule, first call the operation ListUserAssessments with filters \"type = save_schedule\".
      * That call returns the scheduleAssessmentId. Then call DeleteUserAssessment with the
@@ -1755,6 +2149,24 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteUserAssessmentRequest, DeleteUserAssessmentResponse>
                     handler);
+
+    /**
+     * Deploy the security policy to the specified target or target groups.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeploySecurityPolicyDeploymentResponse>
+            deploySecurityPolicyDeployment(
+                    DeploySecurityPolicyDeploymentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeploySecurityPolicyDeploymentRequest,
+                                    DeploySecurityPolicyDeploymentResponse>
+                            handler);
 
     /**
      * Updates the list of audit trails created under audit profile.The operation can be used to
@@ -2198,6 +2610,21 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the details of the specified attribute set.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAttributeSetResponse> getAttributeSet(
+            GetAttributeSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetAttributeSetRequest, GetAttributeSetResponse>
+                    handler);
+
+    /**
      * Gets the details of the specified archive retreival.
      *
      * @param request The request object containing the details to send
@@ -2426,6 +2853,21 @@ public interface DataSafeAsync extends AutoCloseable {
             GetDiscoveryJobResultRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetDiscoveryJobResultRequest, GetDiscoveryJobResultResponse>
+                    handler);
+
+    /**
+     * Retrieves the members of the target database group with the specified OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetGroupMembersResponse> getGroupMembers(
+            GetGroupMembersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetGroupMembersRequest, GetGroupMembersResponse>
                     handler);
 
     /**
@@ -2686,6 +3128,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a security policy configuration by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSecurityPolicyConfigResponse> getSecurityPolicyConfig(
+            GetSecurityPolicyConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityPolicyConfigRequest, GetSecurityPolicyConfigResponse>
+                    handler);
+
+    /**
      * Gets a security policy deployment by identifier.
      *
      * @param request The request object containing the details to send
@@ -2894,6 +3352,76 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the details of the specified target database group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTargetDatabaseGroupResponse> getTargetDatabaseGroup(
+            GetTargetDatabaseGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetTargetDatabaseGroupRequest, GetTargetDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Gets the details of the comparison report for the security assessments submitted for
+     * comparison.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTemplateBaselineComparisonResponse>
+            getTemplateBaselineComparison(
+                    GetTemplateBaselineComparisonRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetTemplateBaselineComparisonRequest,
+                                    GetTemplateBaselineComparisonResponse>
+                            handler);
+
+    /**
+     * Gets a Unified Audit policy by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetUnifiedAuditPolicyResponse> getUnifiedAuditPolicy(
+            GetUnifiedAuditPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetUnifiedAuditPolicyRequest, GetUnifiedAuditPolicyResponse>
+                    handler);
+
+    /**
+     * Gets a unified audit policy definition by the specified OCID of the unified audit policy
+     * definition resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetUnifiedAuditPolicyDefinitionResponse>
+            getUnifiedAuditPolicyDefinition(
+                    GetUnifiedAuditPolicyDefinitionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetUnifiedAuditPolicyDefinitionRequest,
+                                    GetUnifiedAuditPolicyDefinitionResponse>
+                            handler);
+
+    /**
      * Gets a user assessment by identifier.
      *
      * @param request The request object containing the details to send
@@ -3003,6 +3531,53 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<ListAlertsResponse> listAlerts(
             ListAlertsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListAlertsRequest, ListAlertsResponse> handler);
+
+    /**
+     * Returns list of all associated resources.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAssociatedResourcesResponse> listAssociatedResources(
+            ListAssociatedResourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAssociatedResourcesRequest, ListAssociatedResourcesResponse>
+                    handler);
+
+    /**
+     * Retrieves the list of attribute sets.
+     *
+     * <p>The ListAttributeSets operation returns only the attribute sets in the specified
+     * `compartmentId`.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requester has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListAttributeSet on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
+     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
+     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAttributeSetsResponse> listAttributeSets(
+            ListAttributeSetsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAttributeSetsRequest, ListAttributeSetsResponse>
+                    handler);
 
     /**
      * Returns the list of audit archive retrieval.
@@ -3280,6 +3855,21 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists all the security checks in the specified compartment for security assessment of type
+     * TEMPLATE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListChecksResponse> listChecks(
+            ListChecksRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListChecksRequest, ListChecksResponse> handler);
+
+    /**
      * Gets a list of all collected audit volume data points.
      *
      * @param request The request object containing the details to send
@@ -3495,7 +4085,9 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List all the findings from all the targets in the specified compartment.
+     * Lists all the findings for the specified assessment except for type TEMPLATE. If the
+     * assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with
+     * the user-defined severity from the template.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4121,6 +4713,37 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves a list of all security policy configurations in Data Safe.
+     *
+     * <p>The ListSecurityPolicyConfigs operation returns only the security policy configurations in
+     * the specified `compartmentId`.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyConfigs
+     * on the `compartmentId` passed and when it is set to true, the entire hierarchy of
+     * compartments can be returned. To get a full list of all compartments and subcompartments in
+     * the tenancy (root compartment), set the parameter `compartmentIdInSubtree` to true and
+     * `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSecurityPolicyConfigsResponse> listSecurityPolicyConfigs(
+            ListSecurityPolicyConfigsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityPolicyConfigsRequest, ListSecurityPolicyConfigsResponse>
+                    handler);
+
+    /**
      * Retrieves a list of all security policy deployments in Data Safe.
      *
      * <p>The ListSecurityPolicyDeployments operation returns only the security policy deployments
@@ -4640,6 +5263,22 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Retrieves a list of target database groups according to the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTargetDatabaseGroupsResponse> listTargetDatabaseGroups(
+            ListTargetDatabaseGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTargetDatabaseGroupsRequest, ListTargetDatabaseGroupsResponse>
+                    handler);
+
+    /**
      * Returns the list of registered target databases in Data Safe.
      *
      * @param request The request object containing the details to send
@@ -4654,6 +5293,157 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListTargetDatabasesRequest, ListTargetDatabasesResponse>
                     handler);
+
+    /**
+     * Gets a list of all targets whose audit settings override the target group setting.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTargetOverridesResponse> listTargetOverrides(
+            ListTargetOverridesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTargetOverridesRequest, ListTargetOverridesResponse>
+                    handler);
+
+    /**
+     * Gets a list of template aggregated details in the specified compartment. This provides
+     * information about the overall template usage, by returning the count of the target
+     * databases/target groups using the templates. It also provides information about the
+     * statistics for the template baseline and the comparison related. If the comparison is done,
+     * it will show if there is any drift, and how many checks have drifts. The dimension field -
+     * isGroup identifies if the targetId belongs to a target group or a individual target. The
+     * dimension field - isCompared identifies if the comparison between the latest assessment and
+     * the template baseline assessment is done or not. The dimension field - isCompliant identifies
+     * if the latest assessment is compliant with the template baseline assessment or not. The
+     * dimension field - totalChecksFailed identifies how many checks in the template have drifts in
+     * the comparison.
+     *
+     * <p>When you perform the ListTemplateAnalytics operation, if the parameter
+     * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
+     * ACCESSIBLE, then the operation returns statistics from the compartments in which the
+     * requestor has INSPECT permissions on at least one resource, directly or indirectly (in
+     * subcompartments). If the operation is performed at the root compartment and the requestor
+     * does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then \"Not Authorized\" is returned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTemplateAnalyticsResponse> listTemplateAnalytics(
+            ListTemplateAnalyticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTemplateAnalyticsRequest, ListTemplateAnalyticsResponse>
+                    handler);
+
+    /**
+     * Gets a list of template association details in the specified compartment. This provides
+     * information about the overall template usage, by returning the count of the target
+     * databases/target groups using the templates.
+     *
+     * <p>If the template baseline is created for a target group which contains several targets, we
+     * will have each individual target listed there as targetId field together with
+     * targetDatabaseGroupId. And if the template baseline is created for an individual target, it
+     * will have targetId field only.
+     *
+     * <p>By leveraging the targetId filter, you will be able to know all the template or template
+     * baseline that this target has something to do with. No matter if they are directly applied or
+     * created for this target, or they are for the target group the target belongs to.
+     *
+     * <p>When you perform the ListTemplateAssociationAnalytics operation, if the parameter
+     * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
+     * ACCESSIBLE, then the operation returns statistics from the compartments in which the
+     * requestor has INSPECT permissions on at least one resource, directly or indirectly (in
+     * subcompartments). If the operation is performed at the root compartment and the requestor
+     * does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then \"Not Authorized\" is returned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTemplateAssociationAnalyticsResponse>
+            listTemplateAssociationAnalytics(
+                    ListTemplateAssociationAnalyticsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListTemplateAssociationAnalyticsRequest,
+                                    ListTemplateAssociationAnalyticsResponse>
+                            handler);
+
+    /**
+     * Retrieves a list of all Unified Audit policies.
+     *
+     * <p>The ListUnifiedAuditPolicies operation returns only the Unified Audit policies in the
+     * specified `compartmentId`.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requester has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a sub-compartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicies
+     * on the `compartmentId` passed and when it is set to true, the entire hierarchy of
+     * compartments can be returned. To get a full list of all compartments and sub-compartments in
+     * the tenancy (root compartment), set the parameter `compartmentIdInSubtree` to true and
+     * `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUnifiedAuditPoliciesResponse> listUnifiedAuditPolicies(
+            ListUnifiedAuditPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListUnifiedAuditPoliciesRequest, ListUnifiedAuditPoliciesResponse>
+                    handler);
+
+    /**
+     * Retrieves a list of all unified audit policy definitions in Data Safe.
+     *
+     * <p>The ListUnifiedAuditPolicyDefinitions operation returns only the unified audit policy
+     * definitions in the specified `compartmentId`.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requester has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform
+     * ListUnifiedAuditPolicyDefinitions on the `compartmentId` passed and when it is set to true,
+     * the entire hierarchy of compartments can be returned. To get a full list of all compartments
+     * and subcompartments in the tenancy (root compartment), set the parameter
+     * `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUnifiedAuditPolicyDefinitionsResponse>
+            listUnifiedAuditPolicyDefinitions(
+                    ListUnifiedAuditPolicyDefinitionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListUnifiedAuditPolicyDefinitionsRequest,
+                                    ListUnifiedAuditPolicyDefinitionsResponse>
+                            handler);
 
     /**
      * Gets a list of aggregated user access analytics in the specified target in a compartment.
@@ -4846,6 +5636,21 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<PatchAlertsRequest, PatchAlertsResponse> handler);
 
     /**
+     * Patches one or more checks in the specified template type security assessment. Use it to add
+     * or delete checks. To add check, use CreateCheckDetails as the patch value.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchChecksResponse> patchChecks(
+            PatchChecksRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchChecksRequest, PatchChecksResponse> handler);
+
+    /**
      * Patches one or more discovery results. You can use this operation to set the plannedAction
      * attribute before using ApplyDiscoveryJobResults to process the results based on this
      * attribute.
@@ -4861,6 +5666,22 @@ public interface DataSafeAsync extends AutoCloseable {
             PatchDiscoveryJobResultsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             PatchDiscoveryJobResultsRequest, PatchDiscoveryJobResultsResponse>
+                    handler);
+
+    /**
+     * Patches one or more findings in the specified template baseline type security assessment. Use
+     * it to modify max allowed risk level in template baseline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchFindingsResponse> patchFindings(
+            PatchFindingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchFindingsRequest, PatchFindingsResponse>
                     handler);
 
     /**
@@ -5042,6 +5863,25 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieve all the security policies from the associated target or target group and refresh the
+     * same on Data safe.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshSecurityPolicyDeploymentResponse>
+            refreshSecurityPolicyDeployment(
+                    RefreshSecurityPolicyDeploymentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshSecurityPolicyDeploymentRequest,
+                                    RefreshSecurityPolicyDeploymentResponse>
+                            handler);
+
+    /**
      * Refresh the specified SQL collection Log Insights.
      *
      * @param request The request object containing the details to send
@@ -5109,6 +5949,25 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             RemoveScheduleReportRequest, RemoveScheduleReportResponse>
                     handler);
+
+    /**
+     * Remove the checks from the template to the specified security assessment.The security
+     * assessment provided in the path needs to be of type 'LATEST'.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveSecurityAssessmentTemplateResponse>
+            removeSecurityAssessmentTemplate(
+                    RemoveSecurityAssessmentTemplateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveSecurityAssessmentTemplateRequest,
+                                    RemoveSecurityAssessmentTemplateResponse>
+                            handler);
 
     /**
      * Resumes the specified audit trail once it got stopped.
@@ -5374,6 +6233,22 @@ public interface DataSafeAsync extends AutoCloseable {
             UpdateAlertPolicyRuleRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateAlertPolicyRuleRequest, UpdateAlertPolicyRuleResponse>
+                    handler);
+
+    /**
+     * Updates an attribute set.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAttributeSetResponse> updateAttributeSet(
+            UpdateAttributeSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAttributeSetRequest, UpdateAttributeSetResponse>
                     handler);
 
     /**
@@ -5673,6 +6548,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the security policy configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSecurityPolicyConfigResponse> updateSecurityPolicyConfig(
+            UpdateSecurityPolicyConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityPolicyConfigRequest, UpdateSecurityPolicyConfigResponse>
+                    handler);
+
+    /**
      * Updates the security policy deployment.
      *
      * @param request The request object containing the details to send
@@ -5836,6 +6727,56 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateTargetDatabaseRequest, UpdateTargetDatabaseResponse>
                     handler);
+
+    /**
+     * Updates one or more attributes of the specified target database group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTargetDatabaseGroupResponse> updateTargetDatabaseGroup(
+            UpdateTargetDatabaseGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTargetDatabaseGroupRequest, UpdateTargetDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Updates the Unified Audit policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateUnifiedAuditPolicyResponse> updateUnifiedAuditPolicy(
+            UpdateUnifiedAuditPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateUnifiedAuditPolicyRequest, UpdateUnifiedAuditPolicyResponse>
+                    handler);
+
+    /**
+     * Updates the unified audit policy definition.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateUnifiedAuditPolicyDefinitionResponse>
+            updateUnifiedAuditPolicyDefinition(
+                    UpdateUnifiedAuditPolicyDefinitionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateUnifiedAuditPolicyDefinitionRequest,
+                                    UpdateUnifiedAuditPolicyDefinitionResponse>
+                            handler);
 
     /**
      * Updates one or more attributes of the specified user assessment. This operation allows to

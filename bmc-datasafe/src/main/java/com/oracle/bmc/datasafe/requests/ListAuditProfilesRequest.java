@@ -105,6 +105,24 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
     public String getTargetId() {
         return targetId;
     }
+    /** A filter to return the target database group that matches the specified OCID. */
+    private String targetDatabaseGroupId;
+
+    /** A filter to return the target database group that matches the specified OCID. */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
+    /**
+     * A optional filter to return only resources that belong to the specified audit profile type.
+     */
+    private com.oracle.bmc.datasafe.model.AuditProfileTargetType targetType;
+
+    /**
+     * A optional filter to return only resources that belong to the specified audit profile type.
+     */
+    public com.oracle.bmc.datasafe.model.AuditProfileTargetType getTargetType() {
+        return targetType;
+    }
     /** A filter to return only resources that match the specified display name. */
     private String displayName;
 
@@ -386,6 +404,38 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /** A filter to return the target database group that matches the specified OCID. */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
+         * A optional filter to return only resources that belong to the specified audit profile
+         * type.
+         */
+        private com.oracle.bmc.datasafe.model.AuditProfileTargetType targetType = null;
+
+        /**
+         * A optional filter to return only resources that belong to the specified audit profile
+         * type.
+         *
+         * @param targetType the value to set
+         * @return this builder instance
+         */
+        public Builder targetType(com.oracle.bmc.datasafe.model.AuditProfileTargetType targetType) {
+            this.targetType = targetType;
+            return this;
+        }
+
         /** A filter to return only resources that match the specified display name. */
         private String displayName = null;
 
@@ -600,6 +650,8 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             accessLevel(o.getAccessLevel());
             auditProfileId(o.getAuditProfileId());
             targetId(o.getTargetId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
+            targetType(o.getTargetType());
             displayName(o.getDisplayName());
             limit(o.getLimit());
             page(o.getPage());
@@ -650,6 +702,8 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             request.accessLevel = accessLevel;
             request.auditProfileId = auditProfileId;
             request.targetId = targetId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
+            request.targetType = targetType;
             request.displayName = displayName;
             request.limit = limit;
             request.page = page;
@@ -663,8 +717,8 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListAuditProfilesRequest(compartmentId, compartmentIdInSubtree, accessLevel,
-            // auditProfileId, targetId, displayName, limit, page, lifecycleState,
-            // isOverrideGlobalRetentionSetting, isPaidUsageEnabled,
+            // auditProfileId, targetId, targetDatabaseGroupId, targetType, displayName, limit,
+            // page, lifecycleState, isOverrideGlobalRetentionSetting, isPaidUsageEnabled,
             // auditCollectedVolumeGreaterThanOrEqualTo, sortOrder, sortBy, opcRequestId);
         }
     }
@@ -681,6 +735,8 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
                 .accessLevel(accessLevel)
                 .auditProfileId(auditProfileId)
                 .targetId(targetId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
+                .targetType(targetType)
                 .displayName(displayName)
                 .limit(limit)
                 .page(page)
@@ -712,6 +768,8 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(",auditProfileId=").append(String.valueOf(this.auditProfileId));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
+        sb.append(",targetType=").append(String.valueOf(this.targetType));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -745,6 +803,8 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.accessLevel, other.accessLevel)
                 && java.util.Objects.equals(this.auditProfileId, other.auditProfileId)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -778,6 +838,12 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
                 (result * PRIME)
                         + (this.auditProfileId == null ? 43 : this.auditProfileId.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

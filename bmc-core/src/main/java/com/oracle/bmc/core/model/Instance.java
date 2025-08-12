@@ -77,8 +77,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         "timeMaintenanceRebootDue",
         "platformConfig",
         "instanceConfigurationId",
-        "licensingConfigs",
-        "computeHostGroupId"
+        "licensingConfigs"
     })
     public Instance(
             String availabilityDomain,
@@ -115,8 +114,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Date timeMaintenanceRebootDue,
             PlatformConfig platformConfig,
             String instanceConfigurationId,
-            java.util.List<LicensingConfig> licensingConfigs,
-            String computeHostGroupId) {
+            java.util.List<LicensingConfig> licensingConfigs) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
@@ -153,7 +151,6 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         this.platformConfig = platformConfig;
         this.instanceConfigurationId = instanceConfigurationId;
         this.licensingConfigs = licensingConfigs;
-        this.computeHostGroupId = computeHostGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -829,25 +826,6 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("licensingConfigs");
             return this;
         }
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * Customer-unique host group
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
-        private String computeHostGroupId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * Customer-unique host group
-         *
-         * @param computeHostGroupId the value to set
-         * @return this builder
-         */
-        public Builder computeHostGroupId(String computeHostGroupId) {
-            this.computeHostGroupId = computeHostGroupId;
-            this.__explicitlySet__.add("computeHostGroupId");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -889,8 +867,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                             this.timeMaintenanceRebootDue,
                             this.platformConfig,
                             this.instanceConfigurationId,
-                            this.licensingConfigs,
-                            this.computeHostGroupId);
+                            this.licensingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1003,9 +980,6 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("licensingConfigs")) {
                 this.licensingConfigs(model.getLicensingConfigs());
-            }
-            if (model.wasPropertyExplicitlySet("computeHostGroupId")) {
-                this.computeHostGroupId(model.getComputeHostGroupId());
             }
             return this;
         }
@@ -1768,23 +1742,6 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         return licensingConfigs;
     }
 
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * Customer-unique host group
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
-    private final String computeHostGroupId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * Customer-unique host group
-     *
-     * @return the value
-     */
-    public String getComputeHostGroupId() {
-        return computeHostGroupId;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -1841,7 +1798,6 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", instanceConfigurationId=")
                 .append(String.valueOf(this.instanceConfigurationId));
         sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
-        sb.append(", computeHostGroupId=").append(String.valueOf(this.computeHostGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -1897,7 +1853,6 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
                 && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
-                && java.util.Objects.equals(this.computeHostGroupId, other.computeHostGroupId)
                 && super.equals(other);
     }
 
@@ -2000,11 +1955,6 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.licensingConfigs == null ? 43 : this.licensingConfigs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.computeHostGroupId == null
-                                ? 43
-                                : this.computeHostGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

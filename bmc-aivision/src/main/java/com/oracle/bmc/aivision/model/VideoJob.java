@@ -216,12 +216,12 @@ public final class VideoJob extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-        /** The current state of the batch document job. */
+        /** The current state of the video job. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the batch document job.
+         * The current state of the video job.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -512,7 +512,7 @@ public final class VideoJob extends com.oracle.bmc.http.client.internal.Explicit
         return outputLocation;
     }
 
-    /** The current state of the batch document job. */
+    /** The current state of the video job. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
@@ -562,12 +562,12 @@ public final class VideoJob extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The current state of the batch document job. */
+    /** The current state of the video job. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the batch document job.
+     * The current state of the video job.
      *
      * @return the value
      */

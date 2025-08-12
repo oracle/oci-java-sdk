@@ -37,6 +37,8 @@ public final class UserAssessment
         "lifecycleDetails",
         "scheduleAssessmentId",
         "isAssessmentScheduled",
+        "targetDatabaseGroupId",
+        "targetType",
         "schedule",
         "statistics",
         "targetIds",
@@ -63,6 +65,8 @@ public final class UserAssessment
             String lifecycleDetails,
             String scheduleAssessmentId,
             Boolean isAssessmentScheduled,
+            String targetDatabaseGroupId,
+            UserAssessmentTargetType targetType,
             String schedule,
             java.util.Map<String, java.util.Map<String, Object>> statistics,
             java.util.List<String> targetIds,
@@ -88,6 +92,8 @@ public final class UserAssessment
         this.lifecycleDetails = lifecycleDetails;
         this.scheduleAssessmentId = scheduleAssessmentId;
         this.isAssessmentScheduled = isAssessmentScheduled;
+        this.targetDatabaseGroupId = targetDatabaseGroupId;
+        this.targetType = targetType;
         this.schedule = schedule;
         this.statistics = statistics;
         this.targetIds = targetIds;
@@ -316,6 +322,40 @@ public final class UserAssessment
         public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
             this.isAssessmentScheduled = isAssessmentScheduled;
             this.__explicitlySet__.add("isAssessmentScheduled");
+            return this;
+        }
+        /** The OCID of target database group. */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseGroupId")
+        private String targetDatabaseGroupId;
+
+        /**
+         * The OCID of target database group.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            this.__explicitlySet__.add("targetDatabaseGroupId");
+            return this;
+        }
+        /**
+         * Indicates whether the user assessment is for a target database or a target database
+         * group.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private UserAssessmentTargetType targetType;
+
+        /**
+         * Indicates whether the user assessment is for a target database or a target database
+         * group.
+         *
+         * @param targetType the value to set
+         * @return this builder
+         */
+        public Builder targetType(UserAssessmentTargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
             return this;
         }
         /**
@@ -592,6 +632,8 @@ public final class UserAssessment
                             this.lifecycleDetails,
                             this.scheduleAssessmentId,
                             this.isAssessmentScheduled,
+                            this.targetDatabaseGroupId,
+                            this.targetType,
                             this.schedule,
                             this.statistics,
                             this.targetIds,
@@ -649,6 +691,12 @@ public final class UserAssessment
             }
             if (model.wasPropertyExplicitlySet("isAssessmentScheduled")) {
                 this.isAssessmentScheduled(model.getIsAssessmentScheduled());
+            }
+            if (model.wasPropertyExplicitlySet("targetDatabaseGroupId")) {
+                this.targetDatabaseGroupId(model.getTargetDatabaseGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
             }
             if (model.wasPropertyExplicitlySet("schedule")) {
                 this.schedule(model.getSchedule());
@@ -879,6 +927,34 @@ public final class UserAssessment
      */
     public Boolean getIsAssessmentScheduled() {
         return isAssessmentScheduled;
+    }
+
+    /** The OCID of target database group. */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseGroupId")
+    private final String targetDatabaseGroupId;
+
+    /**
+     * The OCID of target database group.
+     *
+     * @return the value
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
+
+    /**
+     * Indicates whether the user assessment is for a target database or a target database group.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    private final UserAssessmentTargetType targetType;
+
+    /**
+     * Indicates whether the user assessment is for a target database or a target database group.
+     *
+     * @return the value
+     */
+    public UserAssessmentTargetType getTargetType() {
+        return targetType;
     }
 
     /**
@@ -1241,6 +1317,8 @@ public final class UserAssessment
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", scheduleAssessmentId=").append(String.valueOf(this.scheduleAssessmentId));
         sb.append(", isAssessmentScheduled=").append(String.valueOf(this.isAssessmentScheduled));
+        sb.append(", targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", statistics=").append(String.valueOf(this.statistics));
         sb.append(", targetIds=").append(String.valueOf(this.targetIds));
@@ -1281,6 +1359,8 @@ public final class UserAssessment
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.scheduleAssessmentId, other.scheduleAssessmentId)
                 && java.util.Objects.equals(this.isAssessmentScheduled, other.isAssessmentScheduled)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.statistics, other.statistics)
                 && java.util.Objects.equals(this.targetIds, other.targetIds)
@@ -1340,6 +1420,12 @@ public final class UserAssessment
                         + (this.isAssessmentScheduled == null
                                 ? 43
                                 : this.isAssessmentScheduled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result = (result * PRIME) + (this.statistics == null ? 43 : this.statistics.hashCode());
         result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());

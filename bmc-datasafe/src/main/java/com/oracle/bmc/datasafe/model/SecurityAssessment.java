@@ -38,6 +38,8 @@ public final class SecurityAssessment
         "ignoredTargets",
         "ignoredAssessmentIds",
         "targetVersion",
+        "templateAssessmentId",
+        "baselineAssessmentId",
         "isBaseline",
         "isDeviatedFromBaseline",
         "lastComparedBaselineId",
@@ -47,6 +49,9 @@ public final class SecurityAssessment
         "triggeredBy",
         "description",
         "isAssessmentScheduled",
+        "targetDatabaseGroupId",
+        "targetType",
+        "checks",
         "schedule",
         "link",
         "type",
@@ -66,6 +71,8 @@ public final class SecurityAssessment
             java.util.List<Object> ignoredTargets,
             java.util.List<Object> ignoredAssessmentIds,
             String targetVersion,
+            String templateAssessmentId,
+            String baselineAssessmentId,
             Boolean isBaseline,
             Boolean isDeviatedFromBaseline,
             String lastComparedBaselineId,
@@ -75,6 +82,9 @@ public final class SecurityAssessment
             TriggeredBy triggeredBy,
             String description,
             Boolean isAssessmentScheduled,
+            String targetDatabaseGroupId,
+            SecurityAssessmentTargetType targetType,
+            java.util.List<Check> checks,
             String schedule,
             String link,
             Type type,
@@ -93,6 +103,8 @@ public final class SecurityAssessment
         this.ignoredTargets = ignoredTargets;
         this.ignoredAssessmentIds = ignoredAssessmentIds;
         this.targetVersion = targetVersion;
+        this.templateAssessmentId = templateAssessmentId;
+        this.baselineAssessmentId = baselineAssessmentId;
         this.isBaseline = isBaseline;
         this.isDeviatedFromBaseline = isDeviatedFromBaseline;
         this.lastComparedBaselineId = lastComparedBaselineId;
@@ -102,6 +114,9 @@ public final class SecurityAssessment
         this.triggeredBy = triggeredBy;
         this.description = description;
         this.isAssessmentScheduled = isAssessmentScheduled;
+        this.targetDatabaseGroupId = targetDatabaseGroupId;
+        this.targetType = targetType;
+        this.checks = checks;
         this.schedule = schedule;
         this.link = link;
         this.type = type;
@@ -284,6 +299,44 @@ public final class SecurityAssessment
             return this;
         }
         /**
+         * The ocid of a security assessment which is of type TEMPLATE, this will be null or empty
+         * when type is TEMPLATE.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("templateAssessmentId")
+        private String templateAssessmentId;
+
+        /**
+         * The ocid of a security assessment which is of type TEMPLATE, this will be null or empty
+         * when type is TEMPLATE.
+         *
+         * @param templateAssessmentId the value to set
+         * @return this builder
+         */
+        public Builder templateAssessmentId(String templateAssessmentId) {
+            this.templateAssessmentId = templateAssessmentId;
+            this.__explicitlySet__.add("templateAssessmentId");
+            return this;
+        }
+        /**
+         * The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null
+         * or empty when type is TEMPLATE_BASELINE.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("baselineAssessmentId")
+        private String baselineAssessmentId;
+
+        /**
+         * The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null
+         * or empty when type is TEMPLATE_BASELINE.
+         *
+         * @param baselineAssessmentId the value to set
+         * @return this builder
+         */
+        public Builder baselineAssessmentId(String baselineAssessmentId) {
+            this.baselineAssessmentId = baselineAssessmentId;
+            this.__explicitlySet__.add("baselineAssessmentId");
+            return this;
+        }
+        /**
          * Indicates whether or not the security assessment is set as a baseline. This is applicable
          * only for saved security assessments.
          */
@@ -424,6 +477,55 @@ public final class SecurityAssessment
         public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
             this.isAssessmentScheduled = isAssessmentScheduled;
             this.__explicitlySet__.add("isAssessmentScheduled");
+            return this;
+        }
+        /** The OCID of the target database group that the group assessment is created for. */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseGroupId")
+        private String targetDatabaseGroupId;
+
+        /**
+         * The OCID of the target database group that the group assessment is created for.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            this.__explicitlySet__.add("targetDatabaseGroupId");
+            return this;
+        }
+        /**
+         * Indicates whether the security assessment is for a target database or a target database
+         * group.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private SecurityAssessmentTargetType targetType;
+
+        /**
+         * Indicates whether the security assessment is for a target database or a target database
+         * group.
+         *
+         * @param targetType the value to set
+         * @return this builder
+         */
+        public Builder targetType(SecurityAssessmentTargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
+            return this;
+        }
+        /** The security checks to be evaluated for type template. */
+        @com.fasterxml.jackson.annotation.JsonProperty("checks")
+        private java.util.List<Check> checks;
+
+        /**
+         * The security checks to be evaluated for type template.
+         *
+         * @param checks the value to set
+         * @return this builder
+         */
+        public Builder checks(java.util.List<Check> checks) {
+            this.checks = checks;
+            this.__explicitlySet__.add("checks");
             return this;
         }
         /**
@@ -615,6 +717,8 @@ public final class SecurityAssessment
                             this.ignoredTargets,
                             this.ignoredAssessmentIds,
                             this.targetVersion,
+                            this.templateAssessmentId,
+                            this.baselineAssessmentId,
                             this.isBaseline,
                             this.isDeviatedFromBaseline,
                             this.lastComparedBaselineId,
@@ -624,6 +728,9 @@ public final class SecurityAssessment
                             this.triggeredBy,
                             this.description,
                             this.isAssessmentScheduled,
+                            this.targetDatabaseGroupId,
+                            this.targetType,
+                            this.checks,
                             this.schedule,
                             this.link,
                             this.type,
@@ -669,6 +776,12 @@ public final class SecurityAssessment
             if (model.wasPropertyExplicitlySet("targetVersion")) {
                 this.targetVersion(model.getTargetVersion());
             }
+            if (model.wasPropertyExplicitlySet("templateAssessmentId")) {
+                this.templateAssessmentId(model.getTemplateAssessmentId());
+            }
+            if (model.wasPropertyExplicitlySet("baselineAssessmentId")) {
+                this.baselineAssessmentId(model.getBaselineAssessmentId());
+            }
             if (model.wasPropertyExplicitlySet("isBaseline")) {
                 this.isBaseline(model.getIsBaseline());
             }
@@ -695,6 +808,15 @@ public final class SecurityAssessment
             }
             if (model.wasPropertyExplicitlySet("isAssessmentScheduled")) {
                 this.isAssessmentScheduled(model.getIsAssessmentScheduled());
+            }
+            if (model.wasPropertyExplicitlySet("targetDatabaseGroupId")) {
+                this.targetDatabaseGroupId(model.getTargetDatabaseGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
+            }
+            if (model.wasPropertyExplicitlySet("checks")) {
+                this.checks(model.getChecks());
             }
             if (model.wasPropertyExplicitlySet("schedule")) {
                 this.schedule(model.getSchedule());
@@ -877,6 +999,40 @@ public final class SecurityAssessment
     }
 
     /**
+     * The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when
+     * type is TEMPLATE.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("templateAssessmentId")
+    private final String templateAssessmentId;
+
+    /**
+     * The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when
+     * type is TEMPLATE.
+     *
+     * @return the value
+     */
+    public String getTemplateAssessmentId() {
+        return templateAssessmentId;
+    }
+
+    /**
+     * The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or
+     * empty when type is TEMPLATE_BASELINE.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("baselineAssessmentId")
+    private final String baselineAssessmentId;
+
+    /**
+     * The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or
+     * empty when type is TEMPLATE_BASELINE.
+     *
+     * @return the value
+     */
+    public String getBaselineAssessmentId() {
+        return baselineAssessmentId;
+    }
+
+    /**
      * Indicates whether or not the security assessment is set as a baseline. This is applicable
      * only for saved security assessments.
      */
@@ -1047,6 +1203,49 @@ public final class SecurityAssessment
         return isAssessmentScheduled;
     }
 
+    /** The OCID of the target database group that the group assessment is created for. */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseGroupId")
+    private final String targetDatabaseGroupId;
+
+    /**
+     * The OCID of the target database group that the group assessment is created for.
+     *
+     * @return the value
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
+
+    /**
+     * Indicates whether the security assessment is for a target database or a target database
+     * group.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    private final SecurityAssessmentTargetType targetType;
+
+    /**
+     * Indicates whether the security assessment is for a target database or a target database
+     * group.
+     *
+     * @return the value
+     */
+    public SecurityAssessmentTargetType getTargetType() {
+        return targetType;
+    }
+
+    /** The security checks to be evaluated for type template. */
+    @com.fasterxml.jackson.annotation.JsonProperty("checks")
+    private final java.util.List<Check> checks;
+
+    /**
+     * The security checks to be evaluated for type template.
+     *
+     * @return the value
+     */
+    public java.util.List<Check> getChecks() {
+        return checks;
+    }
+
     /**
      * Schedule to save the assessment periodically in the specified format:
      * <version-string>;<version-specific-schedule>
@@ -1115,6 +1314,8 @@ public final class SecurityAssessment
         Saved("SAVED"),
         SaveSchedule("SAVE_SCHEDULE"),
         Compartment("COMPARTMENT"),
+        Template("TEMPLATE"),
+        TemplateBaseline("TEMPLATE_BASELINE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1285,6 +1486,8 @@ public final class SecurityAssessment
         sb.append(", ignoredTargets=").append(String.valueOf(this.ignoredTargets));
         sb.append(", ignoredAssessmentIds=").append(String.valueOf(this.ignoredAssessmentIds));
         sb.append(", targetVersion=").append(String.valueOf(this.targetVersion));
+        sb.append(", templateAssessmentId=").append(String.valueOf(this.templateAssessmentId));
+        sb.append(", baselineAssessmentId=").append(String.valueOf(this.baselineAssessmentId));
         sb.append(", isBaseline=").append(String.valueOf(this.isBaseline));
         sb.append(", isDeviatedFromBaseline=").append(String.valueOf(this.isDeviatedFromBaseline));
         sb.append(", lastComparedBaselineId=").append(String.valueOf(this.lastComparedBaselineId));
@@ -1295,6 +1498,9 @@ public final class SecurityAssessment
         sb.append(", triggeredBy=").append(String.valueOf(this.triggeredBy));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", isAssessmentScheduled=").append(String.valueOf(this.isAssessmentScheduled));
+        sb.append(", targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
+        sb.append(", checks=").append(String.valueOf(this.checks));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", link=").append(String.valueOf(this.link));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -1326,6 +1532,8 @@ public final class SecurityAssessment
                 && java.util.Objects.equals(this.ignoredTargets, other.ignoredTargets)
                 && java.util.Objects.equals(this.ignoredAssessmentIds, other.ignoredAssessmentIds)
                 && java.util.Objects.equals(this.targetVersion, other.targetVersion)
+                && java.util.Objects.equals(this.templateAssessmentId, other.templateAssessmentId)
+                && java.util.Objects.equals(this.baselineAssessmentId, other.baselineAssessmentId)
                 && java.util.Objects.equals(this.isBaseline, other.isBaseline)
                 && java.util.Objects.equals(
                         this.isDeviatedFromBaseline, other.isDeviatedFromBaseline)
@@ -1338,6 +1546,9 @@ public final class SecurityAssessment
                 && java.util.Objects.equals(this.triggeredBy, other.triggeredBy)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.isAssessmentScheduled, other.isAssessmentScheduled)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
+                && java.util.Objects.equals(this.targetType, other.targetType)
+                && java.util.Objects.equals(this.checks, other.checks)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.link, other.link)
                 && java.util.Objects.equals(this.type, other.type)
@@ -1374,6 +1585,16 @@ public final class SecurityAssessment
         result =
                 (result * PRIME)
                         + (this.targetVersion == null ? 43 : this.targetVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.templateAssessmentId == null
+                                ? 43
+                                : this.templateAssessmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.baselineAssessmentId == null
+                                ? 43
+                                : this.baselineAssessmentId.hashCode());
         result = (result * PRIME) + (this.isBaseline == null ? 43 : this.isBaseline.hashCode());
         result =
                 (result * PRIME)
@@ -1403,6 +1624,13 @@ public final class SecurityAssessment
                         + (this.isAssessmentScheduled == null
                                 ? 43
                                 : this.isAssessmentScheduled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
+        result = (result * PRIME) + (this.checks == null ? 43 : this.checks.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result = (result * PRIME) + (this.link == null ? 43 : this.link.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());

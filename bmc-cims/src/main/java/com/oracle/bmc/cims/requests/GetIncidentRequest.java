@@ -13,10 +13,10 @@ import com.oracle.bmc.cims.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique identifier for the support ticket. */
+    /** Unique identifier for the support request. */
     private String incidentKey;
 
-    /** Unique identifier for the support ticket. */
+    /** Unique identifier for the support request. */
     public String getIncidentKey() {
         return incidentKey;
     }
@@ -123,11 +123,11 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique identifier for the support ticket. */
+        /** Unique identifier for the support request. */
         private String incidentKey = null;
 
         /**
-         * Unique identifier for the support ticket.
+         * Unique identifier for the support request.
          *
          * @param incidentKey the value to set
          * @return this builder instance

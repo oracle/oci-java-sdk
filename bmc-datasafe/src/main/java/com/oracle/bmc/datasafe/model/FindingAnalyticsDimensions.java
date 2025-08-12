@@ -26,25 +26,34 @@ public final class FindingAnalyticsDimensions
     @java.beans.ConstructorProperties({
         "key",
         "topFindingCategory",
+        "category",
         "title",
         "topFindingStatus",
         "severity",
-        "targetId"
+        "remarks",
+        "targetId",
+        "references"
     })
     public FindingAnalyticsDimensions(
             String key,
             String topFindingCategory,
+            String category,
             String title,
             TopFindingStatus topFindingStatus,
             Severity severity,
-            String targetId) {
+            String remarks,
+            String targetId,
+            References references) {
         super();
         this.key = key;
         this.topFindingCategory = topFindingCategory;
+        this.category = category;
         this.title = title;
         this.topFindingStatus = topFindingStatus;
         this.severity = severity;
+        this.remarks = remarks;
         this.targetId = targetId;
+        this.references = references;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -83,6 +92,21 @@ public final class FindingAnalyticsDimensions
         public Builder topFindingCategory(String topFindingCategory) {
             this.topFindingCategory = topFindingCategory;
             this.__explicitlySet__.add("topFindingCategory");
+            return this;
+        }
+        /** The category of the top finding. */
+        @com.fasterxml.jackson.annotation.JsonProperty("category")
+        private String category;
+
+        /**
+         * The category of the top finding.
+         *
+         * @param category the value to set
+         * @return this builder
+         */
+        public Builder category(String category) {
+            this.category = category;
+            this.__explicitlySet__.add("category");
             return this;
         }
         /** The short title of the finding. */
@@ -138,6 +162,25 @@ public final class FindingAnalyticsDimensions
             this.__explicitlySet__.add("severity");
             return this;
         }
+        /**
+         * The explanation of the issue in this finding. It explains the reason for the rule and, if
+         * a risk is reported, it may also explain the recommended actions for remediation.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("remarks")
+        private String remarks;
+
+        /**
+         * The explanation of the issue in this finding. It explains the reason for the rule and, if
+         * a risk is reported, it may also explain the recommended actions for remediation.
+         *
+         * @param remarks the value to set
+         * @return this builder
+         */
+        public Builder remarks(String remarks) {
+            this.remarks = remarks;
+            this.__explicitlySet__.add("remarks");
+            return this;
+        }
         /** The OCID of the target database. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
@@ -153,6 +196,25 @@ public final class FindingAnalyticsDimensions
             this.__explicitlySet__.add("targetId");
             return this;
         }
+        /**
+         * Provides information on whether the finding is related to a CIS Oracle Database Benchmark
+         * recommendation, STIG rule, or related to a GDPR Article/Recital.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("references")
+        private References references;
+
+        /**
+         * Provides information on whether the finding is related to a CIS Oracle Database Benchmark
+         * recommendation, STIG rule, or related to a GDPR Article/Recital.
+         *
+         * @param references the value to set
+         * @return this builder
+         */
+        public Builder references(References references) {
+            this.references = references;
+            this.__explicitlySet__.add("references");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -162,10 +224,13 @@ public final class FindingAnalyticsDimensions
                     new FindingAnalyticsDimensions(
                             this.key,
                             this.topFindingCategory,
+                            this.category,
                             this.title,
                             this.topFindingStatus,
                             this.severity,
-                            this.targetId);
+                            this.remarks,
+                            this.targetId,
+                            this.references);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -180,6 +245,9 @@ public final class FindingAnalyticsDimensions
             if (model.wasPropertyExplicitlySet("topFindingCategory")) {
                 this.topFindingCategory(model.getTopFindingCategory());
             }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
             if (model.wasPropertyExplicitlySet("title")) {
                 this.title(model.getTitle());
             }
@@ -189,8 +257,14 @@ public final class FindingAnalyticsDimensions
             if (model.wasPropertyExplicitlySet("severity")) {
                 this.severity(model.getSeverity());
             }
+            if (model.wasPropertyExplicitlySet("remarks")) {
+                this.remarks(model.getRemarks());
+            }
             if (model.wasPropertyExplicitlySet("targetId")) {
                 this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("references")) {
+                this.references(model.getReferences());
             }
             return this;
         }
@@ -235,6 +309,19 @@ public final class FindingAnalyticsDimensions
      */
     public String getTopFindingCategory() {
         return topFindingCategory;
+    }
+
+    /** The category of the top finding. */
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
+    private final String category;
+
+    /**
+     * The category of the top finding.
+     *
+     * @return the value
+     */
+    public String getCategory() {
+        return category;
     }
 
     /** The short title of the finding. */
@@ -389,6 +476,23 @@ public final class FindingAnalyticsDimensions
         return severity;
     }
 
+    /**
+     * The explanation of the issue in this finding. It explains the reason for the rule and, if a
+     * risk is reported, it may also explain the recommended actions for remediation.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("remarks")
+    private final String remarks;
+
+    /**
+     * The explanation of the issue in this finding. It explains the reason for the rule and, if a
+     * risk is reported, it may also explain the recommended actions for remediation.
+     *
+     * @return the value
+     */
+    public String getRemarks() {
+        return remarks;
+    }
+
     /** The OCID of the target database. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
@@ -400,6 +504,23 @@ public final class FindingAnalyticsDimensions
      */
     public String getTargetId() {
         return targetId;
+    }
+
+    /**
+     * Provides information on whether the finding is related to a CIS Oracle Database Benchmark
+     * recommendation, STIG rule, or related to a GDPR Article/Recital.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("references")
+    private final References references;
+
+    /**
+     * Provides information on whether the finding is related to a CIS Oracle Database Benchmark
+     * recommendation, STIG rule, or related to a GDPR Article/Recital.
+     *
+     * @return the value
+     */
+    public References getReferences() {
+        return references;
     }
 
     @Override
@@ -419,10 +540,13 @@ public final class FindingAnalyticsDimensions
         sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", topFindingCategory=").append(String.valueOf(this.topFindingCategory));
+        sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", title=").append(String.valueOf(this.title));
         sb.append(", topFindingStatus=").append(String.valueOf(this.topFindingStatus));
         sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append(", remarks=").append(String.valueOf(this.remarks));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", references=").append(String.valueOf(this.references));
         sb.append(")");
         return sb.toString();
     }
@@ -439,10 +563,13 @@ public final class FindingAnalyticsDimensions
         FindingAnalyticsDimensions other = (FindingAnalyticsDimensions) o;
         return java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.topFindingCategory, other.topFindingCategory)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.title, other.title)
                 && java.util.Objects.equals(this.topFindingStatus, other.topFindingStatus)
                 && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.remarks, other.remarks)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.references, other.references)
                 && super.equals(other);
     }
 
@@ -456,12 +583,15 @@ public final class FindingAnalyticsDimensions
                         + (this.topFindingCategory == null
                                 ? 43
                                 : this.topFindingCategory.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
         result =
                 (result * PRIME)
                         + (this.topFindingStatus == null ? 43 : this.topFindingStatus.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.remarks == null ? 43 : this.remarks.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.references == null ? 43 : this.references.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

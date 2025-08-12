@@ -33,6 +33,7 @@ public final class IpInventorySubnetResourceSummary
         "associatedPublicIpPool",
         "dnsHostName",
         "assignedResourceName",
+        "isPrimary",
         "assignedResourceType",
         "addressType",
         "assignedTime"
@@ -47,6 +48,7 @@ public final class IpInventorySubnetResourceSummary
             AssociatedPublicIpPool associatedPublicIpPool,
             String dnsHostName,
             String assignedResourceName,
+            Boolean isPrimary,
             AssignedResourceType assignedResourceType,
             String addressType,
             java.util.Date assignedTime) {
@@ -60,6 +62,7 @@ public final class IpInventorySubnetResourceSummary
         this.associatedPublicIpPool = associatedPublicIpPool;
         this.dnsHostName = dnsHostName;
         this.assignedResourceName = assignedResourceName;
+        this.isPrimary = isPrimary;
         this.assignedResourceType = assignedResourceType;
         this.addressType = addressType;
         this.assignedTime = assignedTime;
@@ -206,6 +209,21 @@ public final class IpInventorySubnetResourceSummary
             this.__explicitlySet__.add("assignedResourceName");
             return this;
         }
+        /** Primary flag for IP Resource */
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
+        private Boolean isPrimary;
+
+        /**
+         * Primary flag for IP Resource
+         *
+         * @param isPrimary the value to set
+         * @return this builder
+         */
+        public Builder isPrimary(Boolean isPrimary) {
+            this.isPrimary = isPrimary;
+            this.__explicitlySet__.add("isPrimary");
+            return this;
+        }
         /** Type of the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("assignedResourceType")
         private AssignedResourceType assignedResourceType;
@@ -267,6 +285,7 @@ public final class IpInventorySubnetResourceSummary
                             this.associatedPublicIpPool,
                             this.dnsHostName,
                             this.assignedResourceName,
+                            this.isPrimary,
                             this.assignedResourceType,
                             this.addressType,
                             this.assignedTime);
@@ -304,6 +323,9 @@ public final class IpInventorySubnetResourceSummary
             }
             if (model.wasPropertyExplicitlySet("assignedResourceName")) {
                 this.assignedResourceName(model.getAssignedResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("isPrimary")) {
+                this.isPrimary(model.getIsPrimary());
             }
             if (model.wasPropertyExplicitlySet("assignedResourceType")) {
                 this.assignedResourceType(model.getAssignedResourceType());
@@ -586,6 +608,19 @@ public final class IpInventorySubnetResourceSummary
         return assignedResourceName;
     }
 
+    /** Primary flag for IP Resource */
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
+    private final Boolean isPrimary;
+
+    /**
+     * Primary flag for IP Resource
+     *
+     * @return the value
+     */
+    public Boolean getIsPrimary() {
+        return isPrimary;
+    }
+
     /** Type of the resource. */
     public enum AssignedResourceType implements com.oracle.bmc.http.internal.BmcEnum {
         Resource("Resource"),
@@ -694,6 +729,7 @@ public final class IpInventorySubnetResourceSummary
         sb.append(", associatedPublicIpPool=").append(String.valueOf(this.associatedPublicIpPool));
         sb.append(", dnsHostName=").append(String.valueOf(this.dnsHostName));
         sb.append(", assignedResourceName=").append(String.valueOf(this.assignedResourceName));
+        sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
         sb.append(", assignedResourceType=").append(String.valueOf(this.assignedResourceType));
         sb.append(", addressType=").append(String.valueOf(this.addressType));
         sb.append(", assignedTime=").append(String.valueOf(this.assignedTime));
@@ -721,6 +757,7 @@ public final class IpInventorySubnetResourceSummary
                         this.associatedPublicIpPool, other.associatedPublicIpPool)
                 && java.util.Objects.equals(this.dnsHostName, other.dnsHostName)
                 && java.util.Objects.equals(this.assignedResourceName, other.assignedResourceName)
+                && java.util.Objects.equals(this.isPrimary, other.isPrimary)
                 && java.util.Objects.equals(this.assignedResourceType, other.assignedResourceType)
                 && java.util.Objects.equals(this.addressType, other.addressType)
                 && java.util.Objects.equals(this.assignedTime, other.assignedTime)
@@ -756,6 +793,7 @@ public final class IpInventorySubnetResourceSummary
                         + (this.assignedResourceName == null
                                 ? 43
                                 : this.assignedResourceName.hashCode());
+        result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
         result =
                 (result * PRIME)
                         + (this.assignedResourceType == null

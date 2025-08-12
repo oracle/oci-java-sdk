@@ -70,7 +70,7 @@ public interface Incident extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a support ticket in the specified tenancy. For more information, see [Creating
+     * Creates a support request in the specified tenancy. For more information, see [Creating
      * Support Requests](https://docs.oracle.com/iaas/Content/GSG/support/create-incident.htm).
      *
      * @param request The request object containing the details to send
@@ -86,7 +86,7 @@ public interface Incident extends AutoCloseable {
     CreateIncidentResponse createIncident(CreateIncidentRequest request);
 
     /**
-     * Gets the specified support ticket. For more information, see [Getting Details for a Support
+     * Gets the specified support request. For more information, see [Getting Details for a Support
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/get-incident.htm).
      *
      * @param request The request object containing the details to send
@@ -103,7 +103,7 @@ public interface Incident extends AutoCloseable {
 
     /**
      * Depending on the selected `productType`, either lists available products (service groups,
-     * services, service categories, and subcategories) for technical support tickets or lists
+     * services, service categories, and subcategories) for technical support requests or lists
      * limits and current usage for limit increase tickets. This operation is called during creation
      * of technical support and limit increase tickets. For more information about listing products,
      * see [Listing Products for Support
@@ -126,7 +126,7 @@ public interface Incident extends AutoCloseable {
             ListIncidentResourceTypesRequest request);
 
     /**
-     * Lists support tickets for the specified tenancy. For more information, see [Listing Support
+     * Lists support requests for the specified tenancy. For more information, see [Listing Support
      * Requests](https://docs.oracle.com/iaas/Content/GSG/support/list-incidents.htm).
      *
      * @param request The request object containing the details to send
@@ -142,7 +142,52 @@ public interface Incident extends AutoCloseable {
     ListIncidentsResponse listIncidents(ListIncidentsRequest request);
 
     /**
-     * Updates the specified support ticket. For more information, see [Updating Support
+     * Uploads the file and attaches it to the support request.
+     *
+     * <p>Note: This operation consumes a stream.
+     *
+     * <p>If the stream supports {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, when a retry is necessary, the stream is reset so it starts at
+     * the beginning (or whatever the stream's position was at the time this operation is called}.
+     *
+     * <p>Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before,
+     * then the mark will not be the same anymore after this operation, and a subsequent call to
+     * {@link java.io.InputStream#reset()} by the caller will reset the stream not to the caller's
+     * mark, but to the position the stream was in when this operation was called.
+     *
+     * <p>If the stream is a {@link java.io.FileInputStream}, and the stream's {@link
+     * java.nio.channels.FileChannel} position can be changed (like for a regular file), the stream
+     * will be wrapped in such a way that it does provide support for {@link
+     * java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same
+     * procedure as above is followed. If the stream's {@link java.nio.channels.FileChannel}
+     * position cannot be changed (like for a named pipe), then the stream's contents will be
+     * buffered in memory, as described below.
+     *
+     * <p>If the stream does not support {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, then the stream is wrapped in a {@link
+     * java.io.BufferedInputStream}, which means the entire contents may be buffered in memory. Then
+     * the same procedure as above is followed.
+     *
+     * <p>The contents of the stream, except when the stream is a {@link java.io.FileInputStream}
+     * whose {@link java.nio.channels.FileChannel} position can be changed, should be less than 2
+     * GiB in size if retries are used. This is because streams 2 GiB in size or larger do no
+     * guarantee that mark-and-reset can be performed. If the stream is larger, do not use built-in
+     * retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/PutAttachmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutAttachment API.
+     */
+    PutAttachmentResponse putAttachment(PutAttachmentRequest request);
+
+    /**
+     * Updates the specified support request. For more information, see [Updating Support
      * Requests](https://docs.oracle.com/iaas/Content/GSG/support/update-incident.htm).
      *
      * @param request The request object containing the details to send

@@ -321,13 +321,34 @@ public final class OciObjectStorageConnection extends Connection {
             return this;
         }
         /**
-         * Indicates that the user intents to connect to the instance through resource principal.
+         * The fingerprint of the API Key of the user specified by the userId. See documentation:
+         * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("publicKeyFingerprint")
+        private String publicKeyFingerprint;
+
+        /**
+         * The fingerprint of the API Key of the user specified by the userId. See documentation:
+         * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         *
+         * @param publicKeyFingerprint the value to set
+         * @return this builder
+         */
+        public Builder publicKeyFingerprint(String publicKeyFingerprint) {
+            this.publicKeyFingerprint = publicKeyFingerprint;
+            this.__explicitlySet__.add("publicKeyFingerprint");
+            return this;
+        }
+        /**
+         * Specifies that the user intends to authenticate to the instance using a resource
+         * principal. Default: false
          */
         @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
         private Boolean shouldUseResourcePrincipal;
 
         /**
-         * Indicates that the user intents to connect to the instance through resource principal.
+         * Specifies that the user intends to authenticate to the instance using a resource
+         * principal. Default: false
          *
          * @param shouldUseResourcePrincipal the value to set
          * @return this builder
@@ -369,6 +390,7 @@ public final class OciObjectStorageConnection extends Connection {
                             this.userId,
                             this.privateKeyFileSecretId,
                             this.privateKeyPassphraseSecretId,
+                            this.publicKeyFingerprint,
                             this.shouldUseResourcePrincipal);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -453,6 +475,9 @@ public final class OciObjectStorageConnection extends Connection {
             if (model.wasPropertyExplicitlySet("privateKeyPassphraseSecretId")) {
                 this.privateKeyPassphraseSecretId(model.getPrivateKeyPassphraseSecretId());
             }
+            if (model.wasPropertyExplicitlySet("publicKeyFingerprint")) {
+                this.publicKeyFingerprint(model.getPublicKeyFingerprint());
+            }
             if (model.wasPropertyExplicitlySet("shouldUseResourcePrincipal")) {
                 this.shouldUseResourcePrincipal(model.getShouldUseResourcePrincipal());
             }
@@ -496,6 +521,7 @@ public final class OciObjectStorageConnection extends Connection {
             String userId,
             String privateKeyFileSecretId,
             String privateKeyPassphraseSecretId,
+            String publicKeyFingerprint,
             Boolean shouldUseResourcePrincipal) {
         super(
                 id,
@@ -523,6 +549,7 @@ public final class OciObjectStorageConnection extends Connection {
         this.userId = userId;
         this.privateKeyFileSecretId = privateKeyFileSecretId;
         this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+        this.publicKeyFingerprint = publicKeyFingerprint;
         this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
     }
 
@@ -681,12 +708,33 @@ public final class OciObjectStorageConnection extends Connection {
         return privateKeyPassphraseSecretId;
     }
 
-    /** Indicates that the user intents to connect to the instance through resource principal. */
+    /**
+     * The fingerprint of the API Key of the user specified by the userId. See documentation:
+     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("publicKeyFingerprint")
+    private final String publicKeyFingerprint;
+
+    /**
+     * The fingerprint of the API Key of the user specified by the userId. See documentation:
+     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     *
+     * @return the value
+     */
+    public String getPublicKeyFingerprint() {
+        return publicKeyFingerprint;
+    }
+
+    /**
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Default: false
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
     private final Boolean shouldUseResourcePrincipal;
 
     /**
-     * Indicates that the user intents to connect to the instance through resource principal.
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Default: false
      *
      * @return the value
      */
@@ -716,6 +764,7 @@ public final class OciObjectStorageConnection extends Connection {
         sb.append(", privateKeyFileSecretId=").append(String.valueOf(this.privateKeyFileSecretId));
         sb.append(", privateKeyPassphraseSecretId=")
                 .append(String.valueOf(this.privateKeyPassphraseSecretId));
+        sb.append(", publicKeyFingerprint=").append(String.valueOf(this.publicKeyFingerprint));
         sb.append(", shouldUseResourcePrincipal=")
                 .append(String.valueOf(this.shouldUseResourcePrincipal));
         sb.append(")");
@@ -740,6 +789,7 @@ public final class OciObjectStorageConnection extends Connection {
                         this.privateKeyFileSecretId, other.privateKeyFileSecretId)
                 && java.util.Objects.equals(
                         this.privateKeyPassphraseSecretId, other.privateKeyPassphraseSecretId)
+                && java.util.Objects.equals(this.publicKeyFingerprint, other.publicKeyFingerprint)
                 && java.util.Objects.equals(
                         this.shouldUseResourcePrincipal, other.shouldUseResourcePrincipal)
                 && super.equals(other);
@@ -765,6 +815,11 @@ public final class OciObjectStorageConnection extends Connection {
                         + (this.privateKeyPassphraseSecretId == null
                                 ? 43
                                 : this.privateKeyPassphraseSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicKeyFingerprint == null
+                                ? 43
+                                : this.publicKeyFingerprint.hashCode());
         result =
                 (result * PRIME)
                         + (this.shouldUseResourcePrincipal == null

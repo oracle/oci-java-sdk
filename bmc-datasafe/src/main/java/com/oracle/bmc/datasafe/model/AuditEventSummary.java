@@ -57,6 +57,8 @@ public final class AuditEventSummary
         "clientId",
         "auditPolicies",
         "auditType",
+        "externalUserId",
+        "targetUser",
         "peerTargetDatabaseKey",
         "trailSource",
         "databaseUniqueName",
@@ -98,6 +100,8 @@ public final class AuditEventSummary
             String clientId,
             String auditPolicies,
             AuditType auditType,
+            String externalUserId,
+            String targetUser,
             Integer peerTargetDatabaseKey,
             AuditTrailSource trailSource,
             String databaseUniqueName,
@@ -138,6 +142,8 @@ public final class AuditEventSummary
         this.clientId = clientId;
         this.auditPolicies = auditPolicies;
         this.auditType = auditType;
+        this.externalUserId = externalUserId;
+        this.targetUser = targetUser;
         this.peerTargetDatabaseKey = peerTargetDatabaseKey;
         this.trailSource = trailSource;
         this.databaseUniqueName = databaseUniqueName;
@@ -667,6 +673,36 @@ public final class AuditEventSummary
             this.__explicitlySet__.add("auditType");
             return this;
         }
+        /** The user ID of the external user of the audit event. */
+        @com.fasterxml.jackson.annotation.JsonProperty("externalUserId")
+        private String externalUserId;
+
+        /**
+         * The user ID of the external user of the audit event.
+         *
+         * @param externalUserId the value to set
+         * @return this builder
+         */
+        public Builder externalUserId(String externalUserId) {
+            this.externalUserId = externalUserId;
+            this.__explicitlySet__.add("externalUserId");
+            return this;
+        }
+        /** The user on whom the GRANT/REVOKE/AUDIT/NOAUDIT statement was executed. */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetUser")
+        private String targetUser;
+
+        /**
+         * The user on whom the GRANT/REVOKE/AUDIT/NOAUDIT statement was executed.
+         *
+         * @param targetUser the value to set
+         * @return this builder
+         */
+        public Builder targetUser(String targetUser) {
+            this.targetUser = targetUser;
+            this.__explicitlySet__.add("targetUser");
+            return this;
+        }
         /** The secondary id assigned for the peer database registered with Data Safe. */
         @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseKey")
         private Integer peerTargetDatabaseKey;
@@ -834,6 +870,8 @@ public final class AuditEventSummary
                             this.clientId,
                             this.auditPolicies,
                             this.auditType,
+                            this.externalUserId,
+                            this.targetUser,
                             this.peerTargetDatabaseKey,
                             this.trailSource,
                             this.databaseUniqueName,
@@ -944,6 +982,12 @@ public final class AuditEventSummary
             }
             if (model.wasPropertyExplicitlySet("auditType")) {
                 this.auditType(model.getAuditType());
+            }
+            if (model.wasPropertyExplicitlySet("externalUserId")) {
+                this.externalUserId(model.getExternalUserId());
+            }
+            if (model.wasPropertyExplicitlySet("targetUser")) {
+                this.targetUser(model.getTargetUser());
             }
             if (model.wasPropertyExplicitlySet("peerTargetDatabaseKey")) {
                 this.peerTargetDatabaseKey(model.getPeerTargetDatabaseKey());
@@ -1671,6 +1715,32 @@ public final class AuditEventSummary
         return auditType;
     }
 
+    /** The user ID of the external user of the audit event. */
+    @com.fasterxml.jackson.annotation.JsonProperty("externalUserId")
+    private final String externalUserId;
+
+    /**
+     * The user ID of the external user of the audit event.
+     *
+     * @return the value
+     */
+    public String getExternalUserId() {
+        return externalUserId;
+    }
+
+    /** The user on whom the GRANT/REVOKE/AUDIT/NOAUDIT statement was executed. */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetUser")
+    private final String targetUser;
+
+    /**
+     * The user on whom the GRANT/REVOKE/AUDIT/NOAUDIT statement was executed.
+     *
+     * @return the value
+     */
+    public String getTargetUser() {
+        return targetUser;
+    }
+
     /** The secondary id assigned for the peer database registered with Data Safe. */
     @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseKey")
     private final Integer peerTargetDatabaseKey;
@@ -1832,6 +1902,8 @@ public final class AuditEventSummary
         sb.append(", clientId=").append(String.valueOf(this.clientId));
         sb.append(", auditPolicies=").append(String.valueOf(this.auditPolicies));
         sb.append(", auditType=").append(String.valueOf(this.auditType));
+        sb.append(", externalUserId=").append(String.valueOf(this.externalUserId));
+        sb.append(", targetUser=").append(String.valueOf(this.targetUser));
         sb.append(", peerTargetDatabaseKey=").append(String.valueOf(this.peerTargetDatabaseKey));
         sb.append(", trailSource=").append(String.valueOf(this.trailSource));
         sb.append(", databaseUniqueName=").append(String.valueOf(this.databaseUniqueName));
@@ -1886,6 +1958,8 @@ public final class AuditEventSummary
                 && java.util.Objects.equals(this.clientId, other.clientId)
                 && java.util.Objects.equals(this.auditPolicies, other.auditPolicies)
                 && java.util.Objects.equals(this.auditType, other.auditType)
+                && java.util.Objects.equals(this.externalUserId, other.externalUserId)
+                && java.util.Objects.equals(this.targetUser, other.targetUser)
                 && java.util.Objects.equals(this.peerTargetDatabaseKey, other.peerTargetDatabaseKey)
                 && java.util.Objects.equals(this.trailSource, other.trailSource)
                 && java.util.Objects.equals(this.databaseUniqueName, other.databaseUniqueName)
@@ -1952,6 +2026,10 @@ public final class AuditEventSummary
                 (result * PRIME)
                         + (this.auditPolicies == null ? 43 : this.auditPolicies.hashCode());
         result = (result * PRIME) + (this.auditType == null ? 43 : this.auditType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalUserId == null ? 43 : this.externalUserId.hashCode());
+        result = (result * PRIME) + (this.targetUser == null ? 43 : this.targetUser.hashCode());
         result =
                 (result * PRIME)
                         + (this.peerTargetDatabaseKey == null

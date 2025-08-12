@@ -62,7 +62,7 @@ public class ListDatabaseViewAccessEntriesRequest
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
+     * <p>*Example:** query=(accessType eq "SELECT") and (grantee eq "ADMIN")
      */
     private String scimQuery;
 
@@ -74,7 +74,7 @@ public class ListDatabaseViewAccessEntriesRequest
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
+     * <p>*Example:** query=(accessType eq "SELECT") and (grantee eq "ADMIN")
      */
     public String getScimQuery() {
         return scimQuery;
@@ -264,7 +264,7 @@ public class ListDatabaseViewAccessEntriesRequest
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
+         * <p>*Example:** query=(accessType eq "SELECT") and (grantee eq "ADMIN")
          */
         private String scimQuery = null;
 
@@ -276,7 +276,7 @@ public class ListDatabaseViewAccessEntriesRequest
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
+         * <p>*Example:** query=(accessType eq "SELECT") and (grantee eq "ADMIN")
          *
          * @param scimQuery the value to set
          * @return this builder instance

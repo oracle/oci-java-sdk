@@ -49,15 +49,21 @@ public final class ValidationResponse
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: Identifier and name of the support request's
-         * user group ({@code userGroupId} and {@code userGroupName}).
+         * Array of user groups that the user has access to for creating technical support type
+         * ({@code TECH}) support requests. Each user group is indicated by its identifier and name
+         * ({@code userGroupId} and {@code userGroupName}). Note: The Customer User Administrator
+         * (CUA) can manage user groups by name using [My Oracle Cloud Support
+         * portal](https://support.oracle.com).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("writePermittedUserGroupInfos")
         private java.util.List<CmosUserGroupInfo> writePermittedUserGroupInfos;
 
         /**
-         * Technical support type ({@code TECH}) only: Identifier and name of the support request's
-         * user group ({@code userGroupId} and {@code userGroupName}).
+         * Array of user groups that the user has access to for creating technical support type
+         * ({@code TECH}) support requests. Each user group is indicated by its identifier and name
+         * ({@code userGroupId} and {@code userGroupName}). Note: The Customer User Administrator
+         * (CUA) can manage user groups by name using [My Oracle Cloud Support
+         * portal](https://support.oracle.com).
          *
          * @param writePermittedUserGroupInfos the value to set
          * @return this builder
@@ -116,15 +122,21 @@ public final class ValidationResponse
     }
 
     /**
-     * Technical support type ({@code TECH}) only: Identifier and name of the support request's user
-     * group ({@code userGroupId} and {@code userGroupName}).
+     * Array of user groups that the user has access to for creating technical support type ({@code
+     * TECH}) support requests. Each user group is indicated by its identifier and name ({@code
+     * userGroupId} and {@code userGroupName}). Note: The Customer User Administrator (CUA) can
+     * manage user groups by name using [My Oracle Cloud Support
+     * portal](https://support.oracle.com).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("writePermittedUserGroupInfos")
     private final java.util.List<CmosUserGroupInfo> writePermittedUserGroupInfos;
 
     /**
-     * Technical support type ({@code TECH}) only: Identifier and name of the support request's user
-     * group ({@code userGroupId} and {@code userGroupName}).
+     * Array of user groups that the user has access to for creating technical support type ({@code
+     * TECH}) support requests. Each user group is indicated by its identifier and name ({@code
+     * userGroupId} and {@code userGroupName}). Note: The Customer User Administrator (CUA) can
+     * manage user groups by name using [My Oracle Cloud Support
+     * portal](https://support.oracle.com).
      *
      * @return the value
      */

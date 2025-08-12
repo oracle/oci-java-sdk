@@ -28,9 +28,12 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         "description",
         "mimeType",
         "timeGenerated",
+        "timeCreated",
+        "timeUpdated",
         "compartmentId",
         "lifecycleState",
         "type",
+        "dataSource",
         "freeformTags",
         "definedTags"
     })
@@ -41,9 +44,12 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
             String description,
             MimeType mimeType,
             java.util.Date timeGenerated,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
             String compartmentId,
             ReportLifecycleState lifecycleState,
             ReportType type,
+            ReportDefinitionDataSource dataSource,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -53,9 +59,12 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         this.description = description;
         this.mimeType = mimeType;
         this.timeGenerated = timeGenerated;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
         this.compartmentId = compartmentId;
         this.lifecycleState = lifecycleState;
         this.type = type;
+        this.dataSource = dataSource;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -152,6 +161,36 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeGenerated");
             return this;
         }
+        /** Specifies the time at which the report was created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        /**
+         * Specifies the time at which the report was created.
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         */
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+        /** The date and time of the report update in Data Safe. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time of the report update in Data Safe.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
         /** The OCID of the compartment containing the report. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -195,6 +234,25 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         public Builder type(ReportType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
+            return this;
+        }
+        /**
+         * Specifies the name of a resource that provides data for the report. For example alerts,
+         * events.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSource")
+        private ReportDefinitionDataSource dataSource;
+
+        /**
+         * Specifies the name of a resource that provides data for the report. For example alerts,
+         * events.
+         *
+         * @param dataSource the value to set
+         * @return this builder
+         */
+        public Builder dataSource(ReportDefinitionDataSource dataSource) {
+            this.dataSource = dataSource;
+            this.__explicitlySet__.add("dataSource");
             return this;
         }
         /**
@@ -259,9 +317,12 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.description,
                             this.mimeType,
                             this.timeGenerated,
+                            this.timeCreated,
+                            this.timeUpdated,
                             this.compartmentId,
                             this.lifecycleState,
                             this.type,
+                            this.dataSource,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -290,6 +351,12 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
             if (model.wasPropertyExplicitlySet("timeGenerated")) {
                 this.timeGenerated(model.getTimeGenerated());
             }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -298,6 +365,9 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("dataSource")) {
+                this.dataSource(model.getDataSource());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -443,6 +513,32 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         return timeGenerated;
     }
 
+    /** Specifies the time at which the report was created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    private final java.util.Date timeCreated;
+
+    /**
+     * Specifies the time at which the report was created.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    /** The date and time of the report update in Data Safe. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time of the report update in Data Safe.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
     /** The OCID of the compartment containing the report. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
@@ -480,6 +576,23 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
      */
     public ReportType getType() {
         return type;
+    }
+
+    /**
+     * Specifies the name of a resource that provides data for the report. For example alerts,
+     * events.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSource")
+    private final ReportDefinitionDataSource dataSource;
+
+    /**
+     * Specifies the name of a resource that provides data for the report. For example alerts,
+     * events.
+     *
+     * @return the value
+     */
+    public ReportDefinitionDataSource getDataSource() {
+        return dataSource;
     }
 
     /**
@@ -547,9 +660,12 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", mimeType=").append(String.valueOf(this.mimeType));
         sb.append(", timeGenerated=").append(String.valueOf(this.timeGenerated));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", dataSource=").append(String.valueOf(this.dataSource));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -572,9 +688,12 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.mimeType, other.mimeType)
                 && java.util.Objects.equals(this.timeGenerated, other.timeGenerated)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.dataSource, other.dataSource)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -596,6 +715,8 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         result =
                 (result * PRIME)
                         + (this.timeGenerated == null ? 43 : this.timeGenerated.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
@@ -603,6 +724,7 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.dataSource == null ? 43 : this.dataSource.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

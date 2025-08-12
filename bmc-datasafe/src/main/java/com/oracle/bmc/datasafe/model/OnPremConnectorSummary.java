@@ -42,7 +42,7 @@ public final class OnPremConnectorSummary
             String compartmentId,
             String description,
             java.util.Date timeCreated,
-            LifecycleState lifecycleState,
+            OnPremConnectorLifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -145,7 +145,7 @@ public final class OnPremConnectorSummary
         }
         /** The current state of the on-premises connector. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        private OnPremConnectorLifecycleState lifecycleState;
 
         /**
          * The current state of the on-premises connector.
@@ -153,7 +153,7 @@ public final class OnPremConnectorSummary
          * @param lifecycleState the value to set
          * @return this builder
          */
-        public Builder lifecycleState(LifecycleState lifecycleState) {
+        public Builder lifecycleState(OnPremConnectorLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -401,14 +401,14 @@ public final class OnPremConnectorSummary
 
     /** The current state of the on-premises connector. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final LifecycleState lifecycleState;
+    private final OnPremConnectorLifecycleState lifecycleState;
 
     /**
      * The current state of the on-premises connector.
      *
      * @return the value
      */
-    public LifecycleState getLifecycleState() {
+    public OnPremConnectorLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 

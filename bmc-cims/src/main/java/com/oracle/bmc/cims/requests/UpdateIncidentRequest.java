@@ -14,17 +14,17 @@ import com.oracle.bmc.cims.model.*;
 public class UpdateIncidentRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.cims.model.UpdateIncident> {
 
-    /** Unique identifier for the support ticket. */
+    /** Unique identifier for the support request. */
     private String incidentKey;
 
-    /** Unique identifier for the support ticket. */
+    /** Unique identifier for the support request. */
     public String getIncidentKey() {
         return incidentKey;
     }
-    /** Details about the support ticket being updated. */
+    /** Details about the support request being updated. */
     private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails;
 
-    /** Details about the support ticket being updated. */
+    /** Details about the support request being updated. */
     public com.oracle.bmc.cims.model.UpdateIncident getUpdateIncidentDetails() {
         return updateIncidentDetails;
     }
@@ -152,11 +152,11 @@ public class UpdateIncidentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique identifier for the support ticket. */
+        /** Unique identifier for the support request. */
         private String incidentKey = null;
 
         /**
-         * Unique identifier for the support ticket.
+         * Unique identifier for the support request.
          *
          * @param incidentKey the value to set
          * @return this builder instance
@@ -166,11 +166,11 @@ public class UpdateIncidentRequest
             return this;
         }
 
-        /** Details about the support ticket being updated. */
+        /** Details about the support request being updated. */
         private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails = null;
 
         /**
-         * Details about the support ticket being updated.
+         * Details about the support request being updated.
          *
          * @param updateIncidentDetails the value to set
          * @return this builder instance

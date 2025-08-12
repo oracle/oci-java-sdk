@@ -2982,7 +2982,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .serviceDetails(
                         "Compute",
                         "ListComputeGpuMemoryClusters",
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryClusterCollection/ListComputeGpuMemoryClusters")
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/ListComputeGpuMemoryClusters")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeGpuMemoryClustersRequest::builder)
                 .basePath("/20160918")
@@ -3693,6 +3693,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendQueryParam(
                         "preserveDataVolumesCreatedAtLaunch",
                         request.getPreserveDataVolumesCreatedAtLaunch())
+                .appendEnumQueryParam("recycleLevel", request.getRecycleLevel())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(

@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the support ticket being updated. <br>
+ * Details about the support request being updated. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -41,26 +41,26 @@ public final class UpdateIncident
             return this;
         }
         /**
-         * The kind of support ticket (type of support request). For information about {@code
-         * ACCOUNT} support tickets, see [Creating a Billing Support
+         * The kind of support request (type of support request). For information about {@code
+         * ACCOUNT} support requests, see [Creating a Billing Support
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
+         * For information about {@code LIMIT} support requests, see [Creating a Service Limit
          * Increase
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-         * information about {@code TECH} support tickets, see [Creating a Technical Support
+         * information about {@code TECH} support requests, see [Creating a Technical Support
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket (type of support request). For information about {@code
-         * ACCOUNT} support tickets, see [Creating a Billing Support
+         * The kind of support request (type of support request). For information about {@code
+         * ACCOUNT} support requests, see [Creating a Billing Support
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
+         * For information about {@code LIMIT} support requests, see [Creating a Service Limit
          * Increase
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-         * information about {@code TECH} support tickets, see [Creating a Technical Support
+         * information about {@code TECH} support requests, see [Creating a Technical Support
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          *
          * @param problemType the value to set
@@ -112,24 +112,24 @@ public final class UpdateIncident
     }
 
     /**
-     * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
-     * support tickets, see [Creating a Billing Support
+     * The kind of support request (type of support request). For information about {@code ACCOUNT}
+     * support requests, see [Creating a Billing Support
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
-     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
+     * information about {@code LIMIT} support requests, see [Creating a Service Limit Increase
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-     * information about {@code TECH} support tickets, see [Creating a Technical Support
+     * information about {@code TECH} support requests, see [Creating a Technical Support
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
-     * support tickets, see [Creating a Billing Support
+     * The kind of support request (type of support request). For information about {@code ACCOUNT}
+     * support requests, see [Creating a Billing Support
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
-     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
+     * information about {@code LIMIT} support requests, see [Creating a Service Limit Increase
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-     * information about {@code TECH} support tickets, see [Creating a Technical Support
+     * information about {@code TECH} support requests, see [Creating a Technical Support
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      *
      * @return the value

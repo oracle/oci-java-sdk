@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the support ticket. <br>
+ * Details about the support request. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -29,6 +29,7 @@ public final class IncidentSummary
         "tenancyInformation",
         "ticket",
         "incidentType",
+        "migratedSrNumber",
         "userGroupId",
         "userGroupName",
         "primaryContactPartyId",
@@ -44,6 +45,7 @@ public final class IncidentSummary
             TenancyInformation tenancyInformation,
             Ticket ticket,
             IncidentResourceType incidentType,
+            String migratedSrNumber,
             String userGroupId,
             String userGroupName,
             String primaryContactPartyId,
@@ -58,6 +60,7 @@ public final class IncidentSummary
         this.tenancyInformation = tenancyInformation;
         this.ticket = ticket;
         this.incidentType = incidentType;
+        this.migratedSrNumber = migratedSrNumber;
         this.userGroupId = userGroupId;
         this.userGroupName = userGroupName;
         this.primaryContactPartyId = primaryContactPartyId;
@@ -133,6 +136,25 @@ public final class IncidentSummary
         public Builder incidentType(IncidentResourceType incidentType) {
             this.incidentType = incidentType;
             this.__explicitlySet__.add("incidentType");
+            return this;
+        }
+        /**
+         * Technical support type ({@code TECH}) only: The pre-migration identifier of the support
+         * request in My Oracle Support (MOS).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("migratedSrNumber")
+        private String migratedSrNumber;
+
+        /**
+         * Technical support type ({@code TECH}) only: The pre-migration identifier of the support
+         * request in My Oracle Support (MOS).
+         *
+         * @param migratedSrNumber the value to set
+         * @return this builder
+         */
+        public Builder migratedSrNumber(String migratedSrNumber) {
+            this.migratedSrNumber = migratedSrNumber;
+            this.__explicitlySet__.add("migratedSrNumber");
             return this;
         }
         /**
@@ -254,26 +276,26 @@ public final class IncidentSummary
             return this;
         }
         /**
-         * The kind of support ticket (type of support request). For information about {@code
-         * ACCOUNT} support tickets, see [Creating a Billing Support
+         * The kind of support request (type of support request). For information about {@code
+         * ACCOUNT} support requests, see [Creating a Billing Support
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
+         * For information about {@code LIMIT} support requests, see [Creating a Service Limit
          * Increase
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-         * information about {@code TECH} support tickets, see [Creating a Technical Support
+         * information about {@code TECH} support requests, see [Creating a Technical Support
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket (type of support request). For information about {@code
-         * ACCOUNT} support tickets, see [Creating a Billing Support
+         * The kind of support request (type of support request). For information about {@code
+         * ACCOUNT} support requests, see [Creating a Billing Support
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
+         * For information about {@code LIMIT} support requests, see [Creating a Service Limit
          * Increase
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-         * information about {@code TECH} support tickets, see [Creating a Technical Support
+         * information about {@code TECH} support requests, see [Creating a Technical Support
          * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          *
          * @param problemType the value to set
@@ -297,6 +319,7 @@ public final class IncidentSummary
                             this.tenancyInformation,
                             this.ticket,
                             this.incidentType,
+                            this.migratedSrNumber,
                             this.userGroupId,
                             this.userGroupName,
                             this.primaryContactPartyId,
@@ -329,6 +352,9 @@ public final class IncidentSummary
             }
             if (model.wasPropertyExplicitlySet("incidentType")) {
                 this.incidentType(model.getIncidentType());
+            }
+            if (model.wasPropertyExplicitlySet("migratedSrNumber")) {
+                this.migratedSrNumber(model.getMigratedSrNumber());
             }
             if (model.wasPropertyExplicitlySet("userGroupId")) {
                 this.userGroupId(model.getUserGroupId());
@@ -416,6 +442,23 @@ public final class IncidentSummary
 
     public IncidentResourceType getIncidentType() {
         return incidentType;
+    }
+
+    /**
+     * Technical support type ({@code TECH}) only: The pre-migration identifier of the support
+     * request in My Oracle Support (MOS).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("migratedSrNumber")
+    private final String migratedSrNumber;
+
+    /**
+     * Technical support type ({@code TECH}) only: The pre-migration identifier of the support
+     * request in My Oracle Support (MOS).
+     *
+     * @return the value
+     */
+    public String getMigratedSrNumber() {
+        return migratedSrNumber;
     }
 
     /**
@@ -523,24 +566,24 @@ public final class IncidentSummary
     }
 
     /**
-     * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
-     * support tickets, see [Creating a Billing Support
+     * The kind of support request (type of support request). For information about {@code ACCOUNT}
+     * support requests, see [Creating a Billing Support
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
-     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
+     * information about {@code LIMIT} support requests, see [Creating a Service Limit Increase
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-     * information about {@code TECH} support tickets, see [Creating a Technical Support
+     * information about {@code TECH} support requests, see [Creating a Technical Support
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
-     * support tickets, see [Creating a Billing Support
+     * The kind of support request (type of support request). For information about {@code ACCOUNT}
+     * support requests, see [Creating a Billing Support
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
-     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
+     * information about {@code LIMIT} support requests, see [Creating a Service Limit Increase
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-     * information about {@code TECH} support tickets, see [Creating a Technical Support
+     * information about {@code TECH} support requests, see [Creating a Technical Support
      * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      *
      * @return the value
@@ -570,6 +613,7 @@ public final class IncidentSummary
         sb.append(", tenancyInformation=").append(String.valueOf(this.tenancyInformation));
         sb.append(", ticket=").append(String.valueOf(this.ticket));
         sb.append(", incidentType=").append(String.valueOf(this.incidentType));
+        sb.append(", migratedSrNumber=").append(String.valueOf(this.migratedSrNumber));
         sb.append(", userGroupId=").append(String.valueOf(this.userGroupId));
         sb.append(", userGroupName=").append(String.valueOf(this.userGroupName));
         sb.append(", primaryContactPartyId=").append(String.valueOf(this.primaryContactPartyId));
@@ -598,6 +642,7 @@ public final class IncidentSummary
                 && java.util.Objects.equals(this.tenancyInformation, other.tenancyInformation)
                 && java.util.Objects.equals(this.ticket, other.ticket)
                 && java.util.Objects.equals(this.incidentType, other.incidentType)
+                && java.util.Objects.equals(this.migratedSrNumber, other.migratedSrNumber)
                 && java.util.Objects.equals(this.userGroupId, other.userGroupId)
                 && java.util.Objects.equals(this.userGroupName, other.userGroupName)
                 && java.util.Objects.equals(this.primaryContactPartyId, other.primaryContactPartyId)
@@ -625,6 +670,9 @@ public final class IncidentSummary
                                 : this.tenancyInformation.hashCode());
         result = (result * PRIME) + (this.ticket == null ? 43 : this.ticket.hashCode());
         result = (result * PRIME) + (this.incidentType == null ? 43 : this.incidentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.migratedSrNumber == null ? 43 : this.migratedSrNumber.hashCode());
         result = (result * PRIME) + (this.userGroupId == null ? 43 : this.userGroupId.hashCode());
         result =
                 (result * PRIME)

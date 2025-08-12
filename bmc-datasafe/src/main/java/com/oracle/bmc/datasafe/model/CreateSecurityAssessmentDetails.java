@@ -28,6 +28,10 @@ public final class CreateSecurityAssessmentDetails
         "displayName",
         "description",
         "targetId",
+        "targetType",
+        "type",
+        "templateAssessmentId",
+        "baseSecurityAssessmentId",
         "isAssessmentScheduled",
         "schedule",
         "freeformTags",
@@ -38,6 +42,10 @@ public final class CreateSecurityAssessmentDetails
             String displayName,
             String description,
             String targetId,
+            SecurityAssessmentTargetType targetType,
+            Type type,
+            String templateAssessmentId,
+            String baseSecurityAssessmentId,
             Boolean isAssessmentScheduled,
             String schedule,
             java.util.Map<String, String> freeformTags,
@@ -47,6 +55,10 @@ public final class CreateSecurityAssessmentDetails
         this.displayName = displayName;
         this.description = description;
         this.targetId = targetId;
+        this.targetType = targetType;
+        this.type = type;
+        this.templateAssessmentId = templateAssessmentId;
+        this.baseSecurityAssessmentId = baseSecurityAssessmentId;
         this.isAssessmentScheduled = isAssessmentScheduled;
         this.schedule = schedule;
         this.freeformTags = freeformTags;
@@ -100,12 +112,16 @@ public final class CreateSecurityAssessmentDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The OCID of the target database on which security assessment is to be run. */
+        /**
+         * The OCID of the target database or target database group on which security assessment is
+         * to be run.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The OCID of the target database on which security assessment is to be run.
+         * The OCID of the target database or target database group on which security assessment is
+         * to be run.
          *
          * @param targetId the value to set
          * @return this builder
@@ -113,6 +129,82 @@ public final class CreateSecurityAssessmentDetails
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
+            return this;
+        }
+        /**
+         * The type of security assessment resource whether it is individual or group resource. For
+         * individual target use type TARGET_DATABASE and for group resource use type
+         * TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private SecurityAssessmentTargetType targetType;
+
+        /**
+         * The type of security assessment resource whether it is individual or group resource. For
+         * individual target use type TARGET_DATABASE and for group resource use type
+         * TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+         *
+         * @param targetType the value to set
+         * @return this builder
+         */
+        public Builder targetType(SecurityAssessmentTargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
+            return this;
+        }
+        /** The type of the security assessment */
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private Type type;
+
+        /**
+         * The type of the security assessment
+         *
+         * @param type the value to set
+         * @return this builder
+         */
+        public Builder type(Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+        /**
+         * The OCID of the template assessment. It will be required while creating the template
+         * baseline assessment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("templateAssessmentId")
+        private String templateAssessmentId;
+
+        /**
+         * The OCID of the template assessment. It will be required while creating the template
+         * baseline assessment.
+         *
+         * @param templateAssessmentId the value to set
+         * @return this builder
+         */
+        public Builder templateAssessmentId(String templateAssessmentId) {
+            this.templateAssessmentId = templateAssessmentId;
+            this.__explicitlySet__.add("templateAssessmentId");
+            return this;
+        }
+        /**
+         * The OCID of the security assessment. The assessment should be of type SAVED. It will be
+         * required while creating the template baseline assessment for individual targets to fetch
+         * the detailed information from an existing security assessment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("baseSecurityAssessmentId")
+        private String baseSecurityAssessmentId;
+
+        /**
+         * The OCID of the security assessment. The assessment should be of type SAVED. It will be
+         * required while creating the template baseline assessment for individual targets to fetch
+         * the detailed information from an existing security assessment.
+         *
+         * @param baseSecurityAssessmentId the value to set
+         * @return this builder
+         */
+        public Builder baseSecurityAssessmentId(String baseSecurityAssessmentId) {
+            this.baseSecurityAssessmentId = baseSecurityAssessmentId;
+            this.__explicitlySet__.add("baseSecurityAssessmentId");
             return this;
         }
         /** Indicates whether the assessment is scheduled to run. */
@@ -233,6 +325,10 @@ public final class CreateSecurityAssessmentDetails
                             this.displayName,
                             this.description,
                             this.targetId,
+                            this.targetType,
+                            this.type,
+                            this.templateAssessmentId,
+                            this.baseSecurityAssessmentId,
                             this.isAssessmentScheduled,
                             this.schedule,
                             this.freeformTags,
@@ -256,6 +352,18 @@ public final class CreateSecurityAssessmentDetails
             }
             if (model.wasPropertyExplicitlySet("targetId")) {
                 this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("templateAssessmentId")) {
+                this.templateAssessmentId(model.getTemplateAssessmentId());
+            }
+            if (model.wasPropertyExplicitlySet("baseSecurityAssessmentId")) {
+                this.baseSecurityAssessmentId(model.getBaseSecurityAssessmentId());
             }
             if (model.wasPropertyExplicitlySet("isAssessmentScheduled")) {
                 this.isAssessmentScheduled(model.getIsAssessmentScheduled());
@@ -321,17 +429,126 @@ public final class CreateSecurityAssessmentDetails
         return description;
     }
 
-    /** The OCID of the target database on which security assessment is to be run. */
+    /**
+     * The OCID of the target database or target database group on which security assessment is to
+     * be run.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The OCID of the target database on which security assessment is to be run.
+     * The OCID of the target database or target database group on which security assessment is to
+     * be run.
      *
      * @return the value
      */
     public String getTargetId() {
         return targetId;
+    }
+
+    /**
+     * The type of security assessment resource whether it is individual or group resource. For
+     * individual target use type TARGET_DATABASE and for group resource use type
+     * TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    private final SecurityAssessmentTargetType targetType;
+
+    /**
+     * The type of security assessment resource whether it is individual or group resource. For
+     * individual target use type TARGET_DATABASE and for group resource use type
+     * TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     *
+     * @return the value
+     */
+    public SecurityAssessmentTargetType getTargetType() {
+        return targetType;
+    }
+
+    /** The type of the security assessment */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+        Latest("LATEST"),
+        Saved("SAVED"),
+        SaveSchedule("SAVE_SCHEDULE"),
+        Compartment("COMPARTMENT"),
+        Template("TEMPLATE"),
+        TemplateBaseline("TEMPLATE_BASELINE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Type> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Type v : Type.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Type(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Type create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Type: " + key);
+        }
+    };
+    /** The type of the security assessment */
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final Type type;
+
+    /**
+     * The type of the security assessment
+     *
+     * @return the value
+     */
+    public Type getType() {
+        return type;
+    }
+
+    /**
+     * The OCID of the template assessment. It will be required while creating the template baseline
+     * assessment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("templateAssessmentId")
+    private final String templateAssessmentId;
+
+    /**
+     * The OCID of the template assessment. It will be required while creating the template baseline
+     * assessment.
+     *
+     * @return the value
+     */
+    public String getTemplateAssessmentId() {
+        return templateAssessmentId;
+    }
+
+    /**
+     * The OCID of the security assessment. The assessment should be of type SAVED. It will be
+     * required while creating the template baseline assessment for individual targets to fetch the
+     * detailed information from an existing security assessment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("baseSecurityAssessmentId")
+    private final String baseSecurityAssessmentId;
+
+    /**
+     * The OCID of the security assessment. The assessment should be of type SAVED. It will be
+     * required while creating the template baseline assessment for individual targets to fetch the
+     * detailed information from an existing security assessment.
+     *
+     * @return the value
+     */
+    public String getBaseSecurityAssessmentId() {
+        return baseSecurityAssessmentId;
     }
 
     /** Indicates whether the assessment is scheduled to run. */
@@ -449,6 +666,11 @@ public final class CreateSecurityAssessmentDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", templateAssessmentId=").append(String.valueOf(this.templateAssessmentId));
+        sb.append(", baseSecurityAssessmentId=")
+                .append(String.valueOf(this.baseSecurityAssessmentId));
         sb.append(", isAssessmentScheduled=").append(String.valueOf(this.isAssessmentScheduled));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -471,6 +693,11 @@ public final class CreateSecurityAssessmentDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetType, other.targetType)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.templateAssessmentId, other.templateAssessmentId)
+                && java.util.Objects.equals(
+                        this.baseSecurityAssessmentId, other.baseSecurityAssessmentId)
                 && java.util.Objects.equals(this.isAssessmentScheduled, other.isAssessmentScheduled)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -488,6 +715,18 @@ public final class CreateSecurityAssessmentDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.templateAssessmentId == null
+                                ? 43
+                                : this.templateAssessmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.baseSecurityAssessmentId == null
+                                ? 43
+                                : this.baseSecurityAssessmentId.hashCode());
         result =
                 (result * PRIME)
                         + (this.isAssessmentScheduled == null

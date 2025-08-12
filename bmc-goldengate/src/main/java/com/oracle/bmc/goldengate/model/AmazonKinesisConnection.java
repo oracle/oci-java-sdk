@@ -249,6 +249,46 @@ public final class AmazonKinesisConnection extends Connection {
             this.__explicitlySet__.add("secretAccessKeySecretId");
             return this;
         }
+        /**
+         * The endpoint URL of the Amazon Kinesis service. e.g.:
+         * 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to
+         * 'https://kinesis.<region>.amazonaws.com'.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+        private String endpoint;
+
+        /**
+         * The endpoint URL of the Amazon Kinesis service. e.g.:
+         * 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to
+         * 'https://kinesis.<region>.amazonaws.com'.
+         *
+         * @param endpoint the value to set
+         * @return this builder
+         */
+        public Builder endpoint(String endpoint) {
+            this.endpoint = endpoint;
+            this.__explicitlySet__.add("endpoint");
+            return this;
+        }
+        /**
+         * The name of the AWS region. If not provided, GoldenGate will default to 'us-west-1'.
+         * Note: this property will become mandatory after July 30, 2026.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("region")
+        private String region;
+
+        /**
+         * The name of the AWS region. If not provided, GoldenGate will default to 'us-west-1'.
+         * Note: this property will become mandatory after July 30, 2026.
+         *
+         * @param region the value to set
+         * @return this builder
+         */
+        public Builder region(String region) {
+            this.region = region;
+            this.__explicitlySet__.add("region");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -277,7 +317,9 @@ public final class AmazonKinesisConnection extends Connection {
                             this.doesUseSecretIds,
                             this.technologyType,
                             this.accessKeyId,
-                            this.secretAccessKeySecretId);
+                            this.secretAccessKeySecretId,
+                            this.endpoint,
+                            this.region);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -352,6 +394,12 @@ public final class AmazonKinesisConnection extends Connection {
             if (model.wasPropertyExplicitlySet("secretAccessKeySecretId")) {
                 this.secretAccessKeySecretId(model.getSecretAccessKeySecretId());
             }
+            if (model.wasPropertyExplicitlySet("endpoint")) {
+                this.endpoint(model.getEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
             return this;
         }
     }
@@ -388,7 +436,9 @@ public final class AmazonKinesisConnection extends Connection {
             Boolean doesUseSecretIds,
             TechnologyType technologyType,
             String accessKeyId,
-            String secretAccessKeySecretId) {
+            String secretAccessKeySecretId,
+            String endpoint,
+            String region) {
         super(
                 id,
                 displayName,
@@ -412,6 +462,8 @@ public final class AmazonKinesisConnection extends Connection {
         this.technologyType = technologyType;
         this.accessKeyId = accessKeyId;
         this.secretAccessKeySecretId = secretAccessKeySecretId;
+        this.endpoint = endpoint;
+        this.region = region;
     }
 
     /** The Amazon Kinesis technology type. */
@@ -504,6 +556,42 @@ public final class AmazonKinesisConnection extends Connection {
         return secretAccessKeySecretId;
     }
 
+    /**
+     * The endpoint URL of the Amazon Kinesis service. e.g.:
+     * 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to
+     * 'https://kinesis.<region>.amazonaws.com'.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+    private final String endpoint;
+
+    /**
+     * The endpoint URL of the Amazon Kinesis service. e.g.:
+     * 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to
+     * 'https://kinesis.<region>.amazonaws.com'.
+     *
+     * @return the value
+     */
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    /**
+     * The name of the AWS region. If not provided, GoldenGate will default to 'us-west-1'. Note:
+     * this property will become mandatory after July 30, 2026.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
+    private final String region;
+
+    /**
+     * The name of the AWS region. If not provided, GoldenGate will default to 'us-west-1'. Note:
+     * this property will become mandatory after July 30, 2026.
+     *
+     * @return the value
+     */
+    public String getRegion() {
+        return region;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -523,6 +611,8 @@ public final class AmazonKinesisConnection extends Connection {
         sb.append(", accessKeyId=").append(String.valueOf(this.accessKeyId));
         sb.append(", secretAccessKeySecretId=")
                 .append(String.valueOf(this.secretAccessKeySecretId));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", region=").append(String.valueOf(this.region));
         sb.append(")");
         return sb.toString();
     }
@@ -541,6 +631,8 @@ public final class AmazonKinesisConnection extends Connection {
                 && java.util.Objects.equals(this.accessKeyId, other.accessKeyId)
                 && java.util.Objects.equals(
                         this.secretAccessKeySecretId, other.secretAccessKeySecretId)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.region, other.region)
                 && super.equals(other);
     }
 
@@ -557,6 +649,8 @@ public final class AmazonKinesisConnection extends Connection {
                         + (this.secretAccessKeySecretId == null
                                 ? 43
                                 : this.secretAccessKeySecretId.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         return result;
     }
 }

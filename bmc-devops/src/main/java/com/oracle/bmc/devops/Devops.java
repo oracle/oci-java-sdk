@@ -1936,6 +1936,40 @@ public interface Devops extends AutoCloseable {
     ReopenPullRequestResponse reopenPullRequest(ReopenPullRequestRequest request);
 
     /**
+     * Reopen a PullRequest Comment
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ReopenPullRequestCommentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ReopenPullRequestComment API.
+     */
+    ReopenPullRequestCommentResponse reopenPullRequestComment(
+            ReopenPullRequestCommentRequest request);
+
+    /**
+     * Resolve a PullRequest Comment
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ResolvePullRequestCommentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ResolvePullRequestComment API.
+     */
+    ResolvePullRequestCommentResponse resolvePullRequestComment(
+            ResolvePullRequestCommentRequest request);
+
+    /**
      * Review a PullRequest
      *
      * @param request The request object containing the details to send

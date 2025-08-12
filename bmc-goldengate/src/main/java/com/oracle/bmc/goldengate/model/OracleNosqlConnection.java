@@ -340,13 +340,15 @@ public final class OracleNosqlConnection extends Connection {
             return this;
         }
         /**
-         * Indicates that the user intents to connect to the instance through resource principal.
+         * Specifies that the user intends to authenticate to the instance using a resource
+         * principal. Default: false
          */
         @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
         private Boolean shouldUseResourcePrincipal;
 
         /**
-         * Indicates that the user intents to connect to the instance through resource principal.
+         * Specifies that the user intends to authenticate to the instance using a resource
+         * principal. Default: false
          *
          * @param shouldUseResourcePrincipal the value to set
          * @return this builder
@@ -723,12 +725,16 @@ public final class OracleNosqlConnection extends Connection {
         return publicKeyFingerprint;
     }
 
-    /** Indicates that the user intents to connect to the instance through resource principal. */
+    /**
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Default: false
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
     private final Boolean shouldUseResourcePrincipal;
 
     /**
-     * Indicates that the user intents to connect to the instance through resource principal.
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Default: false
      *
      * @return the value
      */

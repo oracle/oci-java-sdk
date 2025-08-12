@@ -23,13 +23,17 @@ package com.oracle.bmc.datasafe.model;
 public final class MaskingAnalyticsSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"metricName", "dimensions", "count"})
+    @java.beans.ConstructorProperties({"metricName", "dimensions", "count", "timeLastMasked"})
     public MaskingAnalyticsSummary(
-            MetricName metricName, MaskingAnalyticsDimensions dimensions, Long count) {
+            MetricName metricName,
+            MaskingAnalyticsDimensions dimensions,
+            Long count,
+            java.util.Date timeLastMasked) {
         super();
         this.metricName = metricName;
         this.dimensions = dimensions;
         this.count = count;
+        this.timeLastMasked = timeLastMasked;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -73,13 +77,33 @@ public final class MaskingAnalyticsSummary
             this.__explicitlySet__.add("count");
             return this;
         }
+        /**
+         * The date and time the target database was last masked using a masking policy, in the
+         * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastMasked")
+        private java.util.Date timeLastMasked;
+
+        /**
+         * The date and time the target database was last masked using a masking policy, in the
+         * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeLastMasked the value to set
+         * @return this builder
+         */
+        public Builder timeLastMasked(java.util.Date timeLastMasked) {
+            this.timeLastMasked = timeLastMasked;
+            this.__explicitlySet__.add("timeLastMasked");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MaskingAnalyticsSummary build() {
             MaskingAnalyticsSummary model =
-                    new MaskingAnalyticsSummary(this.metricName, this.dimensions, this.count);
+                    new MaskingAnalyticsSummary(
+                            this.metricName, this.dimensions, this.count, this.timeLastMasked);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -96,6 +120,9 @@ public final class MaskingAnalyticsSummary
             }
             if (model.wasPropertyExplicitlySet("count")) {
                 this.count(model.getCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastMasked")) {
+                this.timeLastMasked(model.getTimeLastMasked());
             }
             return this;
         }
@@ -195,6 +222,23 @@ public final class MaskingAnalyticsSummary
         return count;
     }
 
+    /**
+     * The date and time the target database was last masked using a masking policy, in the format
+     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastMasked")
+    private final java.util.Date timeLastMasked;
+
+    /**
+     * The date and time the target database was last masked using a masking policy, in the format
+     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastMasked() {
+        return timeLastMasked;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -213,6 +257,7 @@ public final class MaskingAnalyticsSummary
         sb.append("metricName=").append(String.valueOf(this.metricName));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
         sb.append(", count=").append(String.valueOf(this.count));
+        sb.append(", timeLastMasked=").append(String.valueOf(this.timeLastMasked));
         sb.append(")");
         return sb.toString();
     }
@@ -230,6 +275,7 @@ public final class MaskingAnalyticsSummary
         return java.util.Objects.equals(this.metricName, other.metricName)
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
                 && java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.timeLastMasked, other.timeLastMasked)
                 && super.equals(other);
     }
 
@@ -240,6 +286,9 @@ public final class MaskingAnalyticsSummary
         result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
         result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastMasked == null ? 43 : this.timeLastMasked.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

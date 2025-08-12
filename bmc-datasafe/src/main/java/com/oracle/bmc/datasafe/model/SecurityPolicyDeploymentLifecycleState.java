@@ -10,6 +10,7 @@ public enum SecurityPolicyDeploymentLifecycleState implements com.oracle.bmc.htt
     Creating("CREATING"),
     Updating("UPDATING"),
     Deployed("DEPLOYED"),
+    PendingDeployment("PENDING_DEPLOYMENT"),
     NeedsAttention("NEEDS_ATTENTION"),
     Failed("FAILED"),
     Deleting("DELETING"),

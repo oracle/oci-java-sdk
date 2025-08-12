@@ -393,6 +393,24 @@ public class ListUserAssessmentsRequest extends com.oracle.bmc.requests.BmcReque
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     */
+    private com.oracle.bmc.datasafe.model.UserAssessmentTargetType targetType;
+
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     */
+    public com.oracle.bmc.datasafe.model.UserAssessmentTargetType getTargetType() {
+        return targetType;
+    }
+    /** A filter to return the target database group that matches the specified OCID. */
+    private String targetDatabaseGroupId;
+
+    /** A filter to return the target database group that matches the specified OCID. */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -715,6 +733,39 @@ public class ListUserAssessmentsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * A filter to return only only target database resources or target database group
+         * resources.
+         */
+        private com.oracle.bmc.datasafe.model.UserAssessmentTargetType targetType = null;
+
+        /**
+         * A filter to return only only target database resources or target database group
+         * resources.
+         *
+         * @param targetType the value to set
+         * @return this builder instance
+         */
+        public Builder targetType(
+                com.oracle.bmc.datasafe.model.UserAssessmentTargetType targetType) {
+            this.targetType = targetType;
+            return this;
+        }
+
+        /** A filter to return the target database group that matches the specified OCID. */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -762,6 +813,8 @@ public class ListUserAssessmentsRequest extends com.oracle.bmc.requests.BmcReque
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            targetType(o.getTargetType());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -814,11 +867,13 @@ public class ListUserAssessmentsRequest extends com.oracle.bmc.requests.BmcReque
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.targetType = targetType;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             return request;
             // new ListUserAssessmentsRequest(compartmentId, compartmentIdInSubtree, accessLevel,
             // displayName, scheduleUserAssessmentId, isScheduleAssessment, isBaseline, targetId,
             // type, triggeredBy, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, limit, page,
-            // lifecycleState, sortOrder, sortBy, opcRequestId);
+            // lifecycleState, sortOrder, sortBy, opcRequestId, targetType, targetDatabaseGroupId);
         }
     }
 
@@ -846,7 +901,9 @@ public class ListUserAssessmentsRequest extends com.oracle.bmc.requests.BmcReque
                 .lifecycleState(lifecycleState)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .targetType(targetType)
+                .targetDatabaseGroupId(targetDatabaseGroupId);
     }
 
     /**
@@ -883,6 +940,8 @@ public class ListUserAssessmentsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",targetType=").append(String.valueOf(this.targetType));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -918,7 +977,10 @@ public class ListUserAssessmentsRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.targetType, other.targetType)
+                && java.util.Objects.equals(
+                        this.targetDatabaseGroupId, other.targetDatabaseGroupId);
     }
 
     @Override
@@ -967,6 +1029,12 @@ public class ListUserAssessmentsRequest extends com.oracle.bmc.requests.BmcReque
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         return result;
     }
 }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * References to the sections of STIG, CIS, GDPR and/or OBP relevant to the current finding. <br>
+ * References to the sections of STIG, CIS, GDPR and/or ORP relevant to the current finding. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -21,13 +21,14 @@ package com.oracle.bmc.datasafe.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class References extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"stig", "cis", "gdpr", "obp"})
-    public References(String stig, String cis, String gdpr, String obp) {
+    @java.beans.ConstructorProperties({"stig", "cis", "gdpr", "obp", "orp"})
+    public References(String stig, String cis, String gdpr, String obp, String orp) {
         super();
         this.stig = stig;
         this.cis = cis;
         this.gdpr = gdpr;
         this.obp = obp;
+        this.orp = orp;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -92,12 +93,27 @@ public final class References extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("obp");
             return this;
         }
+        /** Relevant section from ORP. */
+        @com.fasterxml.jackson.annotation.JsonProperty("orp")
+        private String orp;
+
+        /**
+         * Relevant section from ORP.
+         *
+         * @param orp the value to set
+         * @return this builder
+         */
+        public Builder orp(String orp) {
+            this.orp = orp;
+            this.__explicitlySet__.add("orp");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public References build() {
-            References model = new References(this.stig, this.cis, this.gdpr, this.obp);
+            References model = new References(this.stig, this.cis, this.gdpr, this.obp, this.orp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -117,6 +133,9 @@ public final class References extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("obp")) {
                 this.obp(model.getObp());
+            }
+            if (model.wasPropertyExplicitlySet("orp")) {
+                this.orp(model.getOrp());
             }
             return this;
         }
@@ -183,6 +202,19 @@ public final class References extends com.oracle.bmc.http.client.internal.Explic
         return obp;
     }
 
+    /** Relevant section from ORP. */
+    @com.fasterxml.jackson.annotation.JsonProperty("orp")
+    private final String orp;
+
+    /**
+     * Relevant section from ORP.
+     *
+     * @return the value
+     */
+    public String getOrp() {
+        return orp;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -202,6 +234,7 @@ public final class References extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", cis=").append(String.valueOf(this.cis));
         sb.append(", gdpr=").append(String.valueOf(this.gdpr));
         sb.append(", obp=").append(String.valueOf(this.obp));
+        sb.append(", orp=").append(String.valueOf(this.orp));
         sb.append(")");
         return sb.toString();
     }
@@ -220,6 +253,7 @@ public final class References extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.cis, other.cis)
                 && java.util.Objects.equals(this.gdpr, other.gdpr)
                 && java.util.Objects.equals(this.obp, other.obp)
+                && java.util.Objects.equals(this.orp, other.orp)
                 && super.equals(other);
     }
 
@@ -231,6 +265,7 @@ public final class References extends com.oracle.bmc.http.client.internal.Explic
         result = (result * PRIME) + (this.cis == null ? 43 : this.cis.hashCode());
         result = (result * PRIME) + (this.gdpr == null ? 43 : this.gdpr.hashCode());
         result = (result * PRIME) + (this.obp == null ? 43 : this.obp.hashCode());
+        result = (result * PRIME) + (this.orp == null ? 43 : this.orp.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

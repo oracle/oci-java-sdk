@@ -109,6 +109,8 @@ public class ListSecurityAssessmentsRequest
         Saved("SAVED"),
         SaveSchedule("SAVE_SCHEDULE"),
         Compartment("COMPARTMENT"),
+        Template("TEMPLATE"),
+        TemplateBaseline("TEMPLATE_BASELINE"),
         ;
 
         private final String value;
@@ -157,10 +159,10 @@ public class ListSecurityAssessmentsRequest
     public Boolean getIsScheduleAssessment() {
         return isScheduleAssessment;
     }
-    /** A filter to return only security asessments that were created by either user or system. */
+    /** A filter to return only security assessments that were created by either user or system. */
     private TriggeredBy triggeredBy;
 
-    /** A filter to return only security asessments that were created by either user or system. */
+    /** A filter to return only security assessments that were created by either user or system. */
     public enum TriggeredBy implements com.oracle.bmc.http.internal.BmcEnum {
         User("USER"),
         System("SYSTEM"),
@@ -194,7 +196,7 @@ public class ListSecurityAssessmentsRequest
         }
     };
 
-    /** A filter to return only security asessments that were created by either user or system. */
+    /** A filter to return only security assessments that were created by either user or system. */
     public TriggeredBy getTriggeredBy() {
         return triggeredBy;
     }
@@ -266,6 +268,8 @@ public class ListSecurityAssessmentsRequest
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
+        TimeLastAssessed("timeLastAssessed"),
+        TimeUpdated("timeUpdated"),
         ;
 
         private final String value;
@@ -391,6 +395,31 @@ public class ListSecurityAssessmentsRequest
     public com.oracle.bmc.datasafe.model.SecurityAssessmentLifecycleState getLifecycleState() {
         return lifecycleState;
     }
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     */
+    private com.oracle.bmc.datasafe.model.SecurityAssessmentTargetType targetType;
+
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     */
+    public com.oracle.bmc.datasafe.model.SecurityAssessmentTargetType getTargetType() {
+        return targetType;
+    }
+    /** A filter to return the target database group that matches the specified OCID. */
+    private String targetDatabaseGroupId;
+
+    /** A filter to return the target database group that matches the specified OCID. */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
+    /** The OCID of the security assessment of type TEMPLATE. */
+    private String templateAssessmentId;
+
+    /** The OCID of the security assessment of type TEMPLATE. */
+    public String getTemplateAssessmentId() {
+        return templateAssessmentId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -511,12 +540,12 @@ public class ListSecurityAssessmentsRequest
         }
 
         /**
-         * A filter to return only security asessments that were created by either user or system.
+         * A filter to return only security assessments that were created by either user or system.
          */
         private TriggeredBy triggeredBy = null;
 
         /**
-         * A filter to return only security asessments that were created by either user or system.
+         * A filter to return only security assessments that were created by either user or system.
          *
          * @param triggeredBy the value to set
          * @return this builder instance
@@ -712,6 +741,53 @@ public class ListSecurityAssessmentsRequest
         }
 
         /**
+         * A filter to return only only target database resources or target database group
+         * resources.
+         */
+        private com.oracle.bmc.datasafe.model.SecurityAssessmentTargetType targetType = null;
+
+        /**
+         * A filter to return only only target database resources or target database group
+         * resources.
+         *
+         * @param targetType the value to set
+         * @return this builder instance
+         */
+        public Builder targetType(
+                com.oracle.bmc.datasafe.model.SecurityAssessmentTargetType targetType) {
+            this.targetType = targetType;
+            return this;
+        }
+
+        /** A filter to return the target database group that matches the specified OCID. */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /** The OCID of the security assessment of type TEMPLATE. */
+        private String templateAssessmentId = null;
+
+        /**
+         * The OCID of the security assessment of type TEMPLATE.
+         *
+         * @param templateAssessmentId the value to set
+         * @return this builder instance
+         */
+        public Builder templateAssessmentId(String templateAssessmentId) {
+            this.templateAssessmentId = templateAssessmentId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -759,6 +835,9 @@ public class ListSecurityAssessmentsRequest
             limit(o.getLimit());
             page(o.getPage());
             lifecycleState(o.getLifecycleState());
+            targetType(o.getTargetType());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
+            templateAssessmentId(o.getTemplateAssessmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -811,12 +890,15 @@ public class ListSecurityAssessmentsRequest
             request.limit = limit;
             request.page = page;
             request.lifecycleState = lifecycleState;
+            request.targetType = targetType;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
+            request.templateAssessmentId = templateAssessmentId;
             return request;
             // new ListSecurityAssessmentsRequest(compartmentId, compartmentIdInSubtree,
             // accessLevel, displayName, type, scheduleAssessmentId, isScheduleAssessment,
             // triggeredBy, targetId, sortOrder, isBaseline, sortBy,
             // timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, opcRequestId, limit, page,
-            // lifecycleState);
+            // lifecycleState, targetType, targetDatabaseGroupId, templateAssessmentId);
         }
     }
 
@@ -844,7 +926,10 @@ public class ListSecurityAssessmentsRequest
                 .opcRequestId(opcRequestId)
                 .limit(limit)
                 .page(page)
-                .lifecycleState(lifecycleState);
+                .lifecycleState(lifecycleState)
+                .targetType(targetType)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
+                .templateAssessmentId(templateAssessmentId);
     }
 
     /**
@@ -880,6 +965,9 @@ public class ListSecurityAssessmentsRequest
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",targetType=").append(String.valueOf(this.targetType));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
+        sb.append(",templateAssessmentId=").append(String.valueOf(this.templateAssessmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -914,7 +1002,10 @@ public class ListSecurityAssessmentsRequest
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.targetType, other.targetType)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
+                && java.util.Objects.equals(this.templateAssessmentId, other.templateAssessmentId);
     }
 
     @Override
@@ -963,6 +1054,17 @@ public class ListSecurityAssessmentsRequest
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.templateAssessmentId == null
+                                ? 43
+                                : this.templateAssessmentId.hashCode());
         return result;
     }
 }

@@ -23,6 +23,9 @@ package com.oracle.bmc.datascience.model;
         defaultImpl = JobConfigurationDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = EmptyJobConfigurationDetails.class,
+            name = "EMPTY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DefaultJobConfigurationDetails.class,
             name = "DEFAULT")
 })
@@ -79,6 +82,7 @@ public class JobConfigurationDetails
     /** The type of job. */
     public enum JobType implements com.oracle.bmc.http.internal.BmcEnum {
         Default("DEFAULT"),
+        Empty("EMPTY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

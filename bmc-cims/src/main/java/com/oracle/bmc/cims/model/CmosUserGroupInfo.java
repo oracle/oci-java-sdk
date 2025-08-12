@@ -5,8 +5,9 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Identifier and name of the technical support request's user group ({@code userGroupId} and {@code
- * userGroupName}). <br>
+ * Identifier and name of a user group ({@code userGroupId} and {@code userGroupName}) that the
+ * current user has access to. Note: The Customer User Administrator (CUA) can manage user groups by
+ * name using [My Oracle Cloud Support portal](https://support.oracle.com). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,15 +35,15 @@ public final class CmosUserGroupInfo
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user
-         * group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: The identifier of a user group in My Oracle
+         * Cloud Support portal.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
         private String userGroupId;
 
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user
-         * group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: The identifier of a user group in My Oracle
+         * Cloud Support portal.
          *
          * @param userGroupId the value to set
          * @return this builder
@@ -53,15 +54,15 @@ public final class CmosUserGroupInfo
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: Name of the support request's user group in
-         * My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: Name of a user group in My Oracle Cloud
+         * Support portal.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("userGroupName")
         private String userGroupName;
 
         /**
-         * Technical support type ({@code TECH}) only: Name of the support request's user group in
-         * My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: Name of a user group in My Oracle Cloud
+         * Support portal.
          *
          * @param userGroupName the value to set
          * @return this builder
@@ -105,15 +106,15 @@ public final class CmosUserGroupInfo
     }
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user
-     * group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: The identifier of a user group in My Oracle Cloud
+     * Support portal.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
     private final String userGroupId;
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user
-     * group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: The identifier of a user group in My Oracle Cloud
+     * Support portal.
      *
      * @return the value
      */
@@ -122,15 +123,15 @@ public final class CmosUserGroupInfo
     }
 
     /**
-     * Technical support type ({@code TECH}) only: Name of the support request's user group in My
-     * Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: Name of a user group in My Oracle Cloud Support
+     * portal.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("userGroupName")
     private final String userGroupName;
 
     /**
-     * Technical support type ({@code TECH}) only: Name of the support request's user group in My
-     * Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: Name of a user group in My Oracle Cloud Support
+     * portal.
      *
      * @return the value
      */

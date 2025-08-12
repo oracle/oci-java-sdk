@@ -43,6 +43,8 @@ public class ListMaskingAnalyticsRequest
     public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
         TargetId("targetId"),
         PolicyId("policyId"),
+        TargetIdAndPolicyId("targetIdAndPolicyId"),
+        SensitiveTypeId("sensitiveTypeId"),
         ;
 
         private final String value;
@@ -90,6 +92,110 @@ public class ListMaskingAnalyticsRequest
     /** A filter to return only the resources that match the specified masking policy OCID. */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
+    }
+    /** A filter to return only items related to a specific sensitive type OCID. */
+    private String sensitiveTypeId;
+
+    /** A filter to return only items related to a specific sensitive type OCID. */
+    public String getSensitiveTypeId() {
+        return sensitiveTypeId;
+    }
+    /** A filter to return the target database group that matches the specified OCID. */
+    private String targetDatabaseGroupId;
+
+    /** A filter to return the target database group that matches the specified OCID. */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
+    /**
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for all the fields is ascending.
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for all the fields is ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+        TimeLastMasked("timeLastMasked"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
+
+    /**
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for all the fields is ascending.
+     */
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    private SortOrder sortOrder;
+
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+        Asc("ASC"),
+        Desc("DESC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortOrder> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortOrder v : SortOrder.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortOrder(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortOrder create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
+        }
+    };
+
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    public SortOrder getSortOrder() {
+        return sortOrder;
     }
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
@@ -213,6 +319,66 @@ public class ListMaskingAnalyticsRequest
             return this;
         }
 
+        /** A filter to return only items related to a specific sensitive type OCID. */
+        private String sensitiveTypeId = null;
+
+        /**
+         * A filter to return only items related to a specific sensitive type OCID.
+         *
+         * @param sensitiveTypeId the value to set
+         * @return this builder instance
+         */
+        public Builder sensitiveTypeId(String sensitiveTypeId) {
+            this.sensitiveTypeId = sensitiveTypeId;
+            return this;
+        }
+
+        /** A filter to return the target database group that matches the specified OCID. */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order for all the fields is ascending.
+         */
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order for all the fields is ascending.
+         *
+         * @param sortBy the value to set
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         *
+         * @param sortOrder the value to set
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List"
          * call. For details about how pagination works, see [List
@@ -304,6 +470,10 @@ public class ListMaskingAnalyticsRequest
             groupBy(o.getGroupBy());
             targetId(o.getTargetId());
             maskingPolicyId(o.getMaskingPolicyId());
+            sensitiveTypeId(o.getSensitiveTypeId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
+            sortBy(o.getSortBy());
+            sortOrder(o.getSortOrder());
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
@@ -346,12 +516,17 @@ public class ListMaskingAnalyticsRequest
             request.groupBy = groupBy;
             request.targetId = targetId;
             request.maskingPolicyId = maskingPolicyId;
+            request.sensitiveTypeId = sensitiveTypeId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListMaskingAnalyticsRequest(compartmentId, compartmentIdInSubtree, groupBy,
-            // targetId, maskingPolicyId, limit, page, opcRequestId);
+            // targetId, maskingPolicyId, sensitiveTypeId, targetDatabaseGroupId, sortBy, sortOrder,
+            // limit, page, opcRequestId);
         }
     }
 
@@ -367,6 +542,10 @@ public class ListMaskingAnalyticsRequest
                 .groupBy(groupBy)
                 .targetId(targetId)
                 .maskingPolicyId(maskingPolicyId)
+                .sensitiveTypeId(sensitiveTypeId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
                 .limit(limit)
                 .page(page)
                 .opcRequestId(opcRequestId);
@@ -391,6 +570,10 @@ public class ListMaskingAnalyticsRequest
         sb.append(",groupBy=").append(String.valueOf(this.groupBy));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
         sb.append(",maskingPolicyId=").append(String.valueOf(this.maskingPolicyId));
+        sb.append(",sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -415,6 +598,10 @@ public class ListMaskingAnalyticsRequest
                 && java.util.Objects.equals(this.groupBy, other.groupBy)
                 && java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.maskingPolicyId, other.maskingPolicyId)
+                && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -437,6 +624,16 @@ public class ListMaskingAnalyticsRequest
         result =
                 (result * PRIME)
                         + (this.maskingPolicyId == null ? 43 : this.maskingPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeId == null ? 43 : this.sensitiveTypeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

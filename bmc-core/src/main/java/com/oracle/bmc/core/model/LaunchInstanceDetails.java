@@ -37,7 +37,6 @@ public final class LaunchInstanceDetails
         "faultDomain",
         "clusterPlacementGroupId",
         "freeformTags",
-        "computeHostGroupId",
         "computeClusterId",
         "hostnameLabel",
         "imageId",
@@ -72,7 +71,6 @@ public final class LaunchInstanceDetails
             String faultDomain,
             String clusterPlacementGroupId,
             java.util.Map<String, String> freeformTags,
-            String computeHostGroupId,
             String computeClusterId,
             String hostnameLabel,
             String imageId,
@@ -106,7 +104,6 @@ public final class LaunchInstanceDetails
         this.faultDomain = faultDomain;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.freeformTags = freeformTags;
-        this.computeHostGroupId = computeHostGroupId;
         this.computeClusterId = computeClusterId;
         this.hostnameLabel = hostnameLabel;
         this.imageId = imageId;
@@ -401,25 +398,6 @@ public final class LaunchInstanceDetails
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
-        /**
-         * The OCID of the compute host group attached to the host where the bare metal instance
-         * will be launched.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
-        private String computeHostGroupId;
-
-        /**
-         * The OCID of the compute host group attached to the host where the bare metal instance
-         * will be launched.
-         *
-         * @param computeHostGroupId the value to set
-         * @return this builder
-         */
-        public Builder computeHostGroupId(String computeHostGroupId) {
-            this.computeHostGroupId = computeHostGroupId;
-            this.__explicitlySet__.add("computeHostGroupId");
             return this;
         }
         /**
@@ -880,7 +858,6 @@ public final class LaunchInstanceDetails
                             this.faultDomain,
                             this.clusterPlacementGroupId,
                             this.freeformTags,
-                            this.computeHostGroupId,
                             this.computeClusterId,
                             this.hostnameLabel,
                             this.imageId,
@@ -944,9 +921,6 @@ public final class LaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
-            }
-            if (model.wasPropertyExplicitlySet("computeHostGroupId")) {
-                this.computeHostGroupId(model.getComputeHostGroupId());
             }
             if (model.wasPropertyExplicitlySet("computeClusterId")) {
                 this.computeClusterId(model.getComputeClusterId());
@@ -1263,23 +1237,6 @@ public final class LaunchInstanceDetails
      */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
-    }
-
-    /**
-     * The OCID of the compute host group attached to the host where the bare metal instance will be
-     * launched.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
-    private final String computeHostGroupId;
-
-    /**
-     * The OCID of the compute host group attached to the host where the bare metal instance will be
-     * launched.
-     *
-     * @return the value
-     */
-    public String getComputeHostGroupId() {
-        return computeHostGroupId;
     }
 
     /**
@@ -1696,7 +1653,6 @@ public final class LaunchInstanceDetails
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
-        sb.append(", computeHostGroupId=").append(String.valueOf(this.computeHostGroupId));
         sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
@@ -1749,7 +1705,6 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.computeHostGroupId, other.computeHostGroupId)
                 && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.imageId, other.imageId)
@@ -1818,11 +1773,6 @@ public final class LaunchInstanceDetails
                                 ? 43
                                 : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.computeHostGroupId == null
-                                ? 43
-                                : this.computeHostGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.computeClusterId == null ? 43 : this.computeClusterId.hashCode());

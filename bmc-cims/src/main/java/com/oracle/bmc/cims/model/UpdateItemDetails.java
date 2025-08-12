@@ -24,7 +24,10 @@ package com.oracle.bmc.cims.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateActivityItemDetails.class,
-            name = "activity")
+            name = "activity"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateContactItemDetails.class,
+            name = "contact")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

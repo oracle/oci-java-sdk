@@ -339,6 +339,29 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             this.__explicitlySet__.add("endpoint");
             return this;
         }
+        /**
+         * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active
+         * Directory). Default value: https://login.microsoftonline.com When connecting to a
+         * non-public Azure Cloud, the endpoint must be provided, eg: * Azure China:
+         * https://login.chinacloudapi.cn/ * Azure US Government: https://login.microsoftonline.us/
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("azureAuthorityHost")
+        private String azureAuthorityHost;
+
+        /**
+         * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active
+         * Directory). Default value: https://login.microsoftonline.com When connecting to a
+         * non-public Azure Cloud, the endpoint must be provided, eg: * Azure China:
+         * https://login.chinacloudapi.cn/ * Azure US Government: https://login.microsoftonline.us/
+         *
+         * @param azureAuthorityHost the value to set
+         * @return this builder
+         */
+        public Builder azureAuthorityHost(String azureAuthorityHost) {
+            this.azureAuthorityHost = azureAuthorityHost;
+            this.__explicitlySet__.add("azureAuthorityHost");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -366,7 +389,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
                             this.clientId,
                             this.clientSecret,
                             this.clientSecretSecretId,
-                            this.endpoint);
+                            this.endpoint,
+                            this.azureAuthorityHost);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -438,6 +462,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             if (model.wasPropertyExplicitlySet("endpoint")) {
                 this.endpoint(model.getEndpoint());
             }
+            if (model.wasPropertyExplicitlySet("azureAuthorityHost")) {
+                this.azureAuthorityHost(model.getAzureAuthorityHost());
+            }
             return this;
         }
     }
@@ -473,7 +500,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             String clientId,
             String clientSecret,
             String clientSecretSecretId,
-            String endpoint) {
+            String endpoint,
+            String azureAuthorityHost) {
         super(
                 displayName,
                 description,
@@ -496,6 +524,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         this.clientSecret = clientSecret;
         this.clientSecretSecretId = clientSecretSecretId;
         this.endpoint = endpoint;
+        this.azureAuthorityHost = azureAuthorityHost;
     }
 
     /** Used authentication mechanism to access Azure Data Lake Storage. */
@@ -697,6 +726,27 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         return endpoint;
     }
 
+    /**
+     * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active
+     * Directory). Default value: https://login.microsoftonline.com When connecting to a non-public
+     * Azure Cloud, the endpoint must be provided, eg: * Azure China:
+     * https://login.chinacloudapi.cn/ * Azure US Government: https://login.microsoftonline.us/
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("azureAuthorityHost")
+    private final String azureAuthorityHost;
+
+    /**
+     * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active
+     * Directory). Default value: https://login.microsoftonline.com When connecting to a non-public
+     * Azure Cloud, the endpoint must be provided, eg: * Azure China:
+     * https://login.chinacloudapi.cn/ * Azure US Government: https://login.microsoftonline.us/
+     *
+     * @return the value
+     */
+    public String getAzureAuthorityHost() {
+        return azureAuthorityHost;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -723,6 +773,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         sb.append(", clientSecret=").append("<redacted>");
         sb.append(", clientSecretSecretId=").append(String.valueOf(this.clientSecretSecretId));
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", azureAuthorityHost=").append(String.valueOf(this.azureAuthorityHost));
         sb.append(")");
         return sb.toString();
     }
@@ -749,6 +800,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
                 && java.util.Objects.equals(this.clientSecret, other.clientSecret)
                 && java.util.Objects.equals(this.clientSecretSecretId, other.clientSecretSecretId)
                 && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.azureAuthorityHost, other.azureAuthorityHost)
                 && super.equals(other);
     }
 
@@ -783,6 +835,11 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
                                 ? 43
                                 : this.clientSecretSecretId.hashCode());
         result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.azureAuthorityHost == null
+                                ? 43
+                                : this.azureAuthorityHost.hashCode());
         return result;
     }
 }

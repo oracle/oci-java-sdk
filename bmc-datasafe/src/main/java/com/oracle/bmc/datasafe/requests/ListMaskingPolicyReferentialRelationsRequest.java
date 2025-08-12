@@ -186,8 +186,7 @@ public class ListMaskingPolicyReferentialRelationsRequest
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         RelationType("relationType"),
         SchemaName("schemaName"),
-        TableName("tableName"),
-        ColumnName("columnName"),
+        ObjectName("objectName"),
         ;
 
         private final String value;

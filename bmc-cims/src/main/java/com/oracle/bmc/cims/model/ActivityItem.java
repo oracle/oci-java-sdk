@@ -70,12 +70,27 @@ public final class ActivityItem extends Item {
             this.__explicitlySet__.add("issueType");
             return this;
         }
-        /** Comments added with the activity on the support ticket. */
+        /** Identifier of the activity on the support request. */
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        /**
+         * Identifier of the activity on the support request.
+         *
+         * @param id the value to set
+         * @return this builder
+         */
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+        /** Comments or file attachments added with the activity on the support request. */
         @com.fasterxml.jackson.annotation.JsonProperty("comments")
         private String comments;
 
         /**
-         * Comments added with the activity on the support ticket.
+         * Comments or file attachments added with the activity on the support request.
          *
          * @param comments the value to set
          * @return this builder
@@ -115,12 +130,12 @@ public final class ActivityItem extends Item {
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The type of activity occuring on the support ticket. */
+        /** The type of activity occuring on the support request. */
         @com.fasterxml.jackson.annotation.JsonProperty("activityType")
         private ActivityType activityType;
 
         /**
-         * The type of activity occuring on the support ticket.
+         * The type of activity occuring on the support request.
          *
          * @param activityType the value to set
          * @return this builder
@@ -148,12 +163,12 @@ public final class ActivityItem extends Item {
             this.__explicitlySet__.add("itemType");
             return this;
         }
-        /** Who updates the activity on the support ticket. */
+        /** Who updates the activity on the support request. */
         @com.fasterxml.jackson.annotation.JsonProperty("itemStatus")
         private ItemStatus itemStatus;
 
         /**
-         * Who updates the activity on the support ticket.
+         * Who updates the activity on the support request.
          *
          * @param itemStatus the value to set
          * @return this builder
@@ -190,6 +205,7 @@ public final class ActivityItem extends Item {
                             this.category,
                             this.subCategory,
                             this.issueType,
+                            this.id,
                             this.comments,
                             this.timeCreated,
                             this.timeUpdated,
@@ -220,6 +236,9 @@ public final class ActivityItem extends Item {
             }
             if (model.wasPropertyExplicitlySet("issueType")) {
                 this.issueType(model.getIssueType());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
             }
             if (model.wasPropertyExplicitlySet("comments")) {
                 this.comments(model.getComments());
@@ -265,6 +284,7 @@ public final class ActivityItem extends Item {
             Category category,
             SubCategory subCategory,
             IssueType issueType,
+            String id,
             String comments,
             Integer timeCreated,
             Integer timeUpdated,
@@ -274,6 +294,7 @@ public final class ActivityItem extends Item {
             ItemStatus itemStatus,
             String attachmentID) {
         super(itemKey, name, category, subCategory, issueType);
+        this.id = id;
         this.comments = comments;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -284,12 +305,25 @@ public final class ActivityItem extends Item {
         this.attachmentID = attachmentID;
     }
 
-    /** Comments added with the activity on the support ticket. */
+    /** Identifier of the activity on the support request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    private final String id;
+
+    /**
+     * Identifier of the activity on the support request.
+     *
+     * @return the value
+     */
+    public String getId() {
+        return id;
+    }
+
+    /** Comments or file attachments added with the activity on the support request. */
     @com.fasterxml.jackson.annotation.JsonProperty("comments")
     private final String comments;
 
     /**
-     * Comments added with the activity on the support ticket.
+     * Comments or file attachments added with the activity on the support request.
      *
      * @return the value
      */
@@ -323,7 +357,7 @@ public final class ActivityItem extends Item {
         return timeUpdated;
     }
 
-    /** The type of activity occuring on the support ticket. */
+    /** The type of activity occuring on the support request. */
     public enum ActivityType implements com.oracle.bmc.http.internal.BmcEnum {
         Notes("NOTES"),
         ProblemDescription("PROBLEM_DESCRIPTION"),
@@ -372,12 +406,12 @@ public final class ActivityItem extends Item {
             return UnknownEnumValue;
         }
     };
-    /** The type of activity occuring on the support ticket. */
+    /** The type of activity occuring on the support request. */
     @com.fasterxml.jackson.annotation.JsonProperty("activityType")
     private final ActivityType activityType;
 
     /**
-     * The type of activity occuring on the support ticket.
+     * The type of activity occuring on the support request.
      *
      * @return the value
      */
@@ -493,12 +527,14 @@ public final class ActivityItem extends Item {
         return itemType;
     }
 
-    /** Who updates the activity on the support ticket. */
+    /** Who updates the activity on the support request. */
     public enum ItemStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Processing("PROCESSING"),
         Attached("ATTACHED"),
         Removed("REMOVED"),
         Failed("FAILED"),
+        Rejected("REJECTED"),
+        Received("RECEIVED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -541,12 +577,12 @@ public final class ActivityItem extends Item {
             return UnknownEnumValue;
         }
     };
-    /** Who updates the activity on the support ticket. */
+    /** Who updates the activity on the support request. */
     @com.fasterxml.jackson.annotation.JsonProperty("itemStatus")
     private final ItemStatus itemStatus;
 
     /**
-     * Who updates the activity on the support ticket.
+     * Who updates the activity on the support request.
      *
      * @return the value
      */
@@ -582,6 +618,7 @@ public final class ActivityItem extends Item {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ActivityItem(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", comments=").append(String.valueOf(this.comments));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -604,7 +641,8 @@ public final class ActivityItem extends Item {
         }
 
         ActivityItem other = (ActivityItem) o;
-        return java.util.Objects.equals(this.comments, other.comments)
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.comments, other.comments)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.activityType, other.activityType)
@@ -619,6 +657,7 @@ public final class ActivityItem extends Item {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.comments == null ? 43 : this.comments.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());

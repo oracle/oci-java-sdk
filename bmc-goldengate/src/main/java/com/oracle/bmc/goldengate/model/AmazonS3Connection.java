@@ -249,12 +249,16 @@ public final class AmazonS3Connection extends Connection {
             this.__explicitlySet__.add("secretAccessKeySecretId");
             return this;
         }
-        /** The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com' */
+        /**
+         * The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com' If not
+         * provided, GoldenGate will default to 'https://s3.<region>.amazonaws.com'.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
         private String endpoint;
 
         /**
-         * The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com'
+         * The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com' If not
+         * provided, GoldenGate will default to 'https://s3.<region>.amazonaws.com'.
          *
          * @param endpoint the value to set
          * @return this builder
@@ -264,12 +268,16 @@ public final class AmazonS3Connection extends Connection {
             this.__explicitlySet__.add("endpoint");
             return this;
         }
-        /** The name of the region where the bucket is created. */
+        /**
+         * The name of the AWS region where the bucket is created. If not provided, GoldenGate will
+         * default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * The name of the region where the bucket is created.
+         * The name of the AWS region where the bucket is created. If not provided, GoldenGate will
+         * default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
          *
          * @param region the value to set
          * @return this builder
@@ -546,12 +554,16 @@ public final class AmazonS3Connection extends Connection {
         return secretAccessKeySecretId;
     }
 
-    /** The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com' */
+    /**
+     * The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com' If not
+     * provided, GoldenGate will default to 'https://s3.<region>.amazonaws.com'.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     private final String endpoint;
 
     /**
-     * The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com'
+     * The Amazon Endpoint for S3. e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com' If not
+     * provided, GoldenGate will default to 'https://s3.<region>.amazonaws.com'.
      *
      * @return the value
      */
@@ -559,12 +571,16 @@ public final class AmazonS3Connection extends Connection {
         return endpoint;
     }
 
-    /** The name of the region where the bucket is created. */
+    /**
+     * The name of the AWS region where the bucket is created. If not provided, GoldenGate will
+     * default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * The name of the region where the bucket is created.
+     * The name of the AWS region where the bucket is created. If not provided, GoldenGate will
+     * default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
      *
      * @return the value
      */

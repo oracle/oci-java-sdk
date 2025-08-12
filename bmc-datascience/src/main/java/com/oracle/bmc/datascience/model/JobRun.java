@@ -37,6 +37,9 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         "jobLogConfigurationOverrideDetails",
         "jobStorageMountConfigurationDetailsList",
         "logDetails",
+        "jobInfrastructureConfigurationOverrideDetails",
+        "jobNodeConfigurationOverrideDetails",
+        "nodeGroupDetailsList",
         "lifecycleState",
         "lifecycleDetails",
         "freeformTags",
@@ -59,6 +62,9 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             java.util.List<StorageMountConfigurationDetails>
                     jobStorageMountConfigurationDetailsList,
             JobRunLogDetails logDetails,
+            JobInfrastructureConfigurationDetails jobInfrastructureConfigurationOverrideDetails,
+            JobNodeConfigurationDetails jobNodeConfigurationOverrideDetails,
+            java.util.List<NodeGroupDetails> nodeGroupDetailsList,
             JobRunLifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -80,6 +86,10 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         this.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
         this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.logDetails = logDetails;
+        this.jobInfrastructureConfigurationOverrideDetails =
+                jobInfrastructureConfigurationOverrideDetails;
+        this.jobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
+        this.nodeGroupDetailsList = nodeGroupDetailsList;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
@@ -323,6 +333,44 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("logDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "jobInfrastructureConfigurationOverrideDetails")
+        private JobInfrastructureConfigurationDetails jobInfrastructureConfigurationOverrideDetails;
+
+        public Builder jobInfrastructureConfigurationOverrideDetails(
+                JobInfrastructureConfigurationDetails
+                        jobInfrastructureConfigurationOverrideDetails) {
+            this.jobInfrastructureConfigurationOverrideDetails =
+                    jobInfrastructureConfigurationOverrideDetails;
+            this.__explicitlySet__.add("jobInfrastructureConfigurationOverrideDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("jobNodeConfigurationOverrideDetails")
+        private JobNodeConfigurationDetails jobNodeConfigurationOverrideDetails;
+
+        public Builder jobNodeConfigurationOverrideDetails(
+                JobNodeConfigurationDetails jobNodeConfigurationOverrideDetails) {
+            this.jobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
+            this.__explicitlySet__.add("jobNodeConfigurationOverrideDetails");
+            return this;
+        }
+        /** Collection of NodeGroupDetails */
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeGroupDetailsList")
+        private java.util.List<NodeGroupDetails> nodeGroupDetailsList;
+
+        /**
+         * Collection of NodeGroupDetails
+         *
+         * @param nodeGroupDetailsList the value to set
+         * @return this builder
+         */
+        public Builder nodeGroupDetailsList(java.util.List<NodeGroupDetails> nodeGroupDetailsList) {
+            this.nodeGroupDetailsList = nodeGroupDetailsList;
+            this.__explicitlySet__.add("nodeGroupDetailsList");
+            return this;
+        }
         /** The state of the job run. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private JobRunLifecycleState lifecycleState;
@@ -420,6 +468,9 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                             this.jobLogConfigurationOverrideDetails,
                             this.jobStorageMountConfigurationDetailsList,
                             this.logDetails,
+                            this.jobInfrastructureConfigurationOverrideDetails,
+                            this.jobNodeConfigurationOverrideDetails,
+                            this.nodeGroupDetailsList,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
@@ -480,6 +531,17 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("logDetails")) {
                 this.logDetails(model.getLogDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobInfrastructureConfigurationOverrideDetails")) {
+                this.jobInfrastructureConfigurationOverrideDetails(
+                        model.getJobInfrastructureConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobNodeConfigurationOverrideDetails")) {
+                this.jobNodeConfigurationOverrideDetails(
+                        model.getJobNodeConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("nodeGroupDetailsList")) {
+                this.nodeGroupDetailsList(model.getNodeGroupDetailsList());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -703,6 +765,35 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         return logDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobInfrastructureConfigurationOverrideDetails")
+    private final JobInfrastructureConfigurationDetails
+            jobInfrastructureConfigurationOverrideDetails;
+
+    public JobInfrastructureConfigurationDetails
+            getJobInfrastructureConfigurationOverrideDetails() {
+        return jobInfrastructureConfigurationOverrideDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("jobNodeConfigurationOverrideDetails")
+    private final JobNodeConfigurationDetails jobNodeConfigurationOverrideDetails;
+
+    public JobNodeConfigurationDetails getJobNodeConfigurationOverrideDetails() {
+        return jobNodeConfigurationOverrideDetails;
+    }
+
+    /** Collection of NodeGroupDetails */
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeGroupDetailsList")
+    private final java.util.List<NodeGroupDetails> nodeGroupDetailsList;
+
+    /**
+     * Collection of NodeGroupDetails
+     *
+     * @return the value
+     */
+    public java.util.List<NodeGroupDetails> getNodeGroupDetailsList() {
+        return nodeGroupDetailsList;
+    }
+
     /** The state of the job run. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final JobRunLifecycleState lifecycleState;
@@ -804,6 +895,11 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", jobStorageMountConfigurationDetailsList=")
                 .append(String.valueOf(this.jobStorageMountConfigurationDetailsList));
         sb.append(", logDetails=").append(String.valueOf(this.logDetails));
+        sb.append(", jobInfrastructureConfigurationOverrideDetails=")
+                .append(String.valueOf(this.jobInfrastructureConfigurationOverrideDetails));
+        sb.append(", jobNodeConfigurationOverrideDetails=")
+                .append(String.valueOf(this.jobNodeConfigurationOverrideDetails));
+        sb.append(", nodeGroupDetailsList=").append(String.valueOf(this.nodeGroupDetailsList));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -846,6 +942,13 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                         this.jobStorageMountConfigurationDetailsList,
                         other.jobStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.logDetails, other.logDetails)
+                && java.util.Objects.equals(
+                        this.jobInfrastructureConfigurationOverrideDetails,
+                        other.jobInfrastructureConfigurationOverrideDetails)
+                && java.util.Objects.equals(
+                        this.jobNodeConfigurationOverrideDetails,
+                        other.jobNodeConfigurationOverrideDetails)
+                && java.util.Objects.equals(this.nodeGroupDetailsList, other.nodeGroupDetailsList)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -894,6 +997,21 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                                 ? 43
                                 : this.jobStorageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.logDetails == null ? 43 : this.logDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobInfrastructureConfigurationOverrideDetails == null
+                                ? 43
+                                : this.jobInfrastructureConfigurationOverrideDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobNodeConfigurationOverrideDetails == null
+                                ? 43
+                                : this.jobNodeConfigurationOverrideDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodeGroupDetailsList == null
+                                ? 43
+                                : this.nodeGroupDetailsList.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

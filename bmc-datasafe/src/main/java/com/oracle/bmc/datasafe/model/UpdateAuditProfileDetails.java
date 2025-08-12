@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details used to update a audit profile. <br>
+ * The details used to update the audit profile. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,6 +27,7 @@ public final class UpdateAuditProfileDetails
         "description",
         "displayName",
         "isPaidUsageEnabled",
+        "isOverrideGlobalPaidUsage",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +35,14 @@ public final class UpdateAuditProfileDetails
             String description,
             String displayName,
             Boolean isPaidUsageEnabled,
+            Boolean isOverrideGlobalPaidUsage,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.description = description;
         this.displayName = displayName;
         this.isPaidUsageEnabled = isPaidUsageEnabled;
+        this.isOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -104,6 +107,33 @@ public final class UpdateAuditProfileDetails
             return this;
         }
         /**
+         * Indicates whether audit paid usage settings specified at the target database level
+         * override both the global settings and the target group level paid usage settings.
+         * Enabling paid usage continues the collection of audit records beyond the free limit of
+         * one million audit records per month per target database, potentially incurring additional
+         * charges. For more information, see [Data Safe Price
+         * List](https://www.oracle.com/cloud/price-list/#data-safe).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalPaidUsage")
+        private Boolean isOverrideGlobalPaidUsage;
+
+        /**
+         * Indicates whether audit paid usage settings specified at the target database level
+         * override both the global settings and the target group level paid usage settings.
+         * Enabling paid usage continues the collection of audit records beyond the free limit of
+         * one million audit records per month per target database, potentially incurring additional
+         * charges. For more information, see [Data Safe Price
+         * List](https://www.oracle.com/cloud/price-list/#data-safe).
+         *
+         * @param isOverrideGlobalPaidUsage the value to set
+         * @return this builder
+         */
+        public Builder isOverrideGlobalPaidUsage(Boolean isOverrideGlobalPaidUsage) {
+            this.isOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
+            this.__explicitlySet__.add("isOverrideGlobalPaidUsage");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -162,6 +192,7 @@ public final class UpdateAuditProfileDetails
                             this.description,
                             this.displayName,
                             this.isPaidUsageEnabled,
+                            this.isOverrideGlobalPaidUsage,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -180,6 +211,9 @@ public final class UpdateAuditProfileDetails
             }
             if (model.wasPropertyExplicitlySet("isPaidUsageEnabled")) {
                 this.isPaidUsageEnabled(model.getIsPaidUsageEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isOverrideGlobalPaidUsage")) {
+                this.isOverrideGlobalPaidUsage(model.getIsOverrideGlobalPaidUsage());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -252,6 +286,29 @@ public final class UpdateAuditProfileDetails
     }
 
     /**
+     * Indicates whether audit paid usage settings specified at the target database level override
+     * both the global settings and the target group level paid usage settings. Enabling paid usage
+     * continues the collection of audit records beyond the free limit of one million audit records
+     * per month per target database, potentially incurring additional charges. For more
+     * information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalPaidUsage")
+    private final Boolean isOverrideGlobalPaidUsage;
+
+    /**
+     * Indicates whether audit paid usage settings specified at the target database level override
+     * both the global settings and the target group level paid usage settings. Enabling paid usage
+     * continues the collection of audit records beyond the free limit of one million audit records
+     * per month per target database, potentially incurring additional charges. For more
+     * information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     *
+     * @return the value
+     */
+    public Boolean getIsOverrideGlobalPaidUsage() {
+        return isOverrideGlobalPaidUsage;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -313,6 +370,8 @@ public final class UpdateAuditProfileDetails
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isPaidUsageEnabled=").append(String.valueOf(this.isPaidUsageEnabled));
+        sb.append(", isOverrideGlobalPaidUsage=")
+                .append(String.valueOf(this.isOverrideGlobalPaidUsage));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -332,6 +391,8 @@ public final class UpdateAuditProfileDetails
         return java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.isPaidUsageEnabled, other.isPaidUsageEnabled)
+                && java.util.Objects.equals(
+                        this.isOverrideGlobalPaidUsage, other.isOverrideGlobalPaidUsage)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -348,6 +409,11 @@ public final class UpdateAuditProfileDetails
                         + (this.isPaidUsageEnabled == null
                                 ? 43
                                 : this.isPaidUsageEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOverrideGlobalPaidUsage == null
+                                ? 43
+                                : this.isOverrideGlobalPaidUsage.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

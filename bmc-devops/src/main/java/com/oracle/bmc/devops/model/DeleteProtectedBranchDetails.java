@@ -31,12 +31,12 @@ public final class DeleteProtectedBranchDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of a protected branch. */
+        /** The branchName can either be exact branch name or branch pattern. */
         @com.fasterxml.jackson.annotation.JsonProperty("branchName")
         private String branchName;
 
         /**
-         * Name of a protected branch.
+         * The branchName can either be exact branch name or branch pattern.
          *
          * @param branchName the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class DeleteProtectedBranchDetails
         return new Builder().copy(this);
     }
 
-    /** Name of a protected branch. */
+    /** The branchName can either be exact branch name or branch pattern. */
     @com.fasterxml.jackson.annotation.JsonProperty("branchName")
     private final String branchName;
 
     /**
-     * Name of a protected branch.
+     * The branchName can either be exact branch name or branch pattern.
      *
      * @return the value
      */

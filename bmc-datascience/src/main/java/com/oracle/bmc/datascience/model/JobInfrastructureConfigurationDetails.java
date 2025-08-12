@@ -23,6 +23,12 @@ package com.oracle.bmc.datascience.model;
         defaultImpl = JobInfrastructureConfigurationDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MultiNodeJobInfrastructureConfigurationDetails.class,
+            name = "MULTI_NODE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = EmptyJobInfrastructureConfigurationDetails.class,
+            name = "EMPTY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ManagedEgressStandaloneJobInfrastructureConfigurationDetails.class,
             name = "ME_STANDALONE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -83,6 +89,8 @@ public class JobInfrastructureConfigurationDetails
     public enum JobInfrastructureType implements com.oracle.bmc.http.internal.BmcEnum {
         Standalone("STANDALONE"),
         MeStandalone("ME_STANDALONE"),
+        MultiNode("MULTI_NODE"),
+        Empty("EMPTY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

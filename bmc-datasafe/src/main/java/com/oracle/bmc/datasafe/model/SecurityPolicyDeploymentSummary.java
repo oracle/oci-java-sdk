@@ -29,6 +29,8 @@ public final class SecurityPolicyDeploymentSummary
         "displayName",
         "description",
         "targetId",
+        "targetType",
+        "timeDeployed",
         "securityPolicyId",
         "timeCreated",
         "timeUpdated",
@@ -44,6 +46,8 @@ public final class SecurityPolicyDeploymentSummary
             String displayName,
             String description,
             String targetId,
+            SecurityPolicyDeployment.TargetType targetType,
+            java.util.Date timeDeployed,
             String securityPolicyId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -58,6 +62,8 @@ public final class SecurityPolicyDeploymentSummary
         this.displayName = displayName;
         this.description = description;
         this.targetId = targetId;
+        this.targetType = targetType;
+        this.timeDeployed = timeDeployed;
         this.securityPolicyId = securityPolicyId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -130,12 +136,12 @@ public final class SecurityPolicyDeploymentSummary
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The OCID of the target where the security policy is deployed. */
+        /** The OCID of the target/target group where the security policy is deployed. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The OCID of the target where the security policy is deployed.
+         * The OCID of the target/target group where the security policy is deployed.
          *
          * @param targetId the value to set
          * @return this builder
@@ -143,6 +149,44 @@ public final class SecurityPolicyDeploymentSummary
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
+            return this;
+        }
+        /**
+         * Indicates whether the security policy deployment is for a target database or a target
+         * database group.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private SecurityPolicyDeployment.TargetType targetType;
+
+        /**
+         * Indicates whether the security policy deployment is for a target database or a target
+         * database group.
+         *
+         * @param targetType the value to set
+         * @return this builder
+         */
+        public Builder targetType(SecurityPolicyDeployment.TargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
+            return this;
+        }
+        /**
+         * The last date and time the security policy was deployed, in the format defined by
+         * RFC3339.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDeployed")
+        private java.util.Date timeDeployed;
+
+        /**
+         * The last date and time the security policy was deployed, in the format defined by
+         * RFC3339.
+         *
+         * @param timeDeployed the value to set
+         * @return this builder
+         */
+        public Builder timeDeployed(java.util.Date timeDeployed) {
+            this.timeDeployed = timeDeployed;
+            this.__explicitlySet__.add("timeDeployed");
             return this;
         }
         /** The OCID of the security policy corresponding to the security policy deployment. */
@@ -310,6 +354,8 @@ public final class SecurityPolicyDeploymentSummary
                             this.displayName,
                             this.description,
                             this.targetId,
+                            this.targetType,
+                            this.timeDeployed,
                             this.securityPolicyId,
                             this.timeCreated,
                             this.timeUpdated,
@@ -340,6 +386,12 @@ public final class SecurityPolicyDeploymentSummary
             }
             if (model.wasPropertyExplicitlySet("targetId")) {
                 this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
+            }
+            if (model.wasPropertyExplicitlySet("timeDeployed")) {
+                this.timeDeployed(model.getTimeDeployed());
             }
             if (model.wasPropertyExplicitlySet("securityPolicyId")) {
                 this.securityPolicyId(model.getSecurityPolicyId());
@@ -430,17 +482,49 @@ public final class SecurityPolicyDeploymentSummary
         return description;
     }
 
-    /** The OCID of the target where the security policy is deployed. */
+    /** The OCID of the target/target group where the security policy is deployed. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The OCID of the target where the security policy is deployed.
+     * The OCID of the target/target group where the security policy is deployed.
      *
      * @return the value
      */
     public String getTargetId() {
         return targetId;
+    }
+
+    /**
+     * Indicates whether the security policy deployment is for a target database or a target
+     * database group.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    private final SecurityPolicyDeployment.TargetType targetType;
+
+    /**
+     * Indicates whether the security policy deployment is for a target database or a target
+     * database group.
+     *
+     * @return the value
+     */
+    public SecurityPolicyDeployment.TargetType getTargetType() {
+        return targetType;
+    }
+
+    /**
+     * The last date and time the security policy was deployed, in the format defined by RFC3339.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDeployed")
+    private final java.util.Date timeDeployed;
+
+    /**
+     * The last date and time the security policy was deployed, in the format defined by RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeDeployed() {
+        return timeDeployed;
     }
 
     /** The OCID of the security policy corresponding to the security policy deployment. */
@@ -597,6 +681,8 @@ public final class SecurityPolicyDeploymentSummary
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
+        sb.append(", timeDeployed=").append(String.valueOf(this.timeDeployed));
         sb.append(", securityPolicyId=").append(String.valueOf(this.securityPolicyId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -624,6 +710,8 @@ public final class SecurityPolicyDeploymentSummary
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetType, other.targetType)
+                && java.util.Objects.equals(this.timeDeployed, other.timeDeployed)
                 && java.util.Objects.equals(this.securityPolicyId, other.securityPolicyId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -646,6 +734,8 @@ public final class SecurityPolicyDeploymentSummary
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
+        result = (result * PRIME) + (this.timeDeployed == null ? 43 : this.timeDeployed.hashCode());
         result =
                 (result * PRIME)
                         + (this.securityPolicyId == null ? 43 : this.securityPolicyId.hashCode());

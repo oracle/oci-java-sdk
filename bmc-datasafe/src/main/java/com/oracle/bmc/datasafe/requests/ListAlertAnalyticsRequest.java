@@ -289,11 +289,11 @@ public class ListAlertAnalyticsRequest extends com.oracle.bmc.requests.BmcReques
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** | query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1')
-     * query=(featureDetails.userName eq "user") and (targetNames eq "target_1") Supported fields:
-     * severity status alertType targetIds targetNames operationTime lifecycleState displayName
-     * timeCreated timeUpdated featureDetails.* (* can be any field in nestedStrMap in Feature
-     * Attributes in Alert Summary. For example -
+     * <p>*Example:** | query=(timeCreated ge "2021-06-04T01:00:26.000Z") and (targetNames eq
+     * "target_1") query=(featureDetails.userName eq "user") and (targetNames eq "target_1")
+     * Supported fields: severity status alertType targetIds targetNames operationTime
+     * lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field in
+     * nestedStrMap in Feature Attributes in Alert Summary. For example -
      * userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
      */
     private String scimQuery;
@@ -306,11 +306,11 @@ public class ListAlertAnalyticsRequest extends com.oracle.bmc.requests.BmcReques
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** | query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1')
-     * query=(featureDetails.userName eq "user") and (targetNames eq "target_1") Supported fields:
-     * severity status alertType targetIds targetNames operationTime lifecycleState displayName
-     * timeCreated timeUpdated featureDetails.* (* can be any field in nestedStrMap in Feature
-     * Attributes in Alert Summary. For example -
+     * <p>*Example:** | query=(timeCreated ge "2021-06-04T01:00:26.000Z") and (targetNames eq
+     * "target_1") query=(featureDetails.userName eq "user") and (targetNames eq "target_1")
+     * Supported fields: severity status alertType targetIds targetNames operationTime
+     * lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field in
+     * nestedStrMap in Feature Attributes in Alert Summary. For example -
      * userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
      */
     public String getScimQuery() {
@@ -687,8 +687,8 @@ public class ListAlertAnalyticsRequest extends com.oracle.bmc.requests.BmcReques
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** | query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq
-         * 'target_1') query=(featureDetails.userName eq "user") and (targetNames eq "target_1")
+         * <p>*Example:** | query=(timeCreated ge "2021-06-04T01:00:26.000Z") and (targetNames eq
+         * "target_1") query=(featureDetails.userName eq "user") and (targetNames eq "target_1")
          * Supported fields: severity status alertType targetIds targetNames operationTime
          * lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field
          * in nestedStrMap in Feature Attributes in Alert Summary. For example -
@@ -704,8 +704,8 @@ public class ListAlertAnalyticsRequest extends com.oracle.bmc.requests.BmcReques
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** | query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq
-         * 'target_1') query=(featureDetails.userName eq "user") and (targetNames eq "target_1")
+         * <p>*Example:** | query=(timeCreated ge "2021-06-04T01:00:26.000Z") and (targetNames eq
+         * "target_1") query=(featureDetails.userName eq "user") and (targetNames eq "target_1")
          * Supported fields: severity status alertType targetIds targetNames operationTime
          * lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field
          * in nestedStrMap in Feature Attributes in Alert Summary. For example -

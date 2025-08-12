@@ -195,6 +195,78 @@ public interface AIServiceVision extends AutoCloseable {
             ChangeProjectCompartmentRequest request);
 
     /**
+     * Move a streamGroup from one compartment to another. When provided, If-Match is checked
+     * against the ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/ChangeStreamGroupCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeStreamGroupCompartment API.
+     */
+    ChangeStreamGroupCompartmentResponse changeStreamGroupCompartment(
+            ChangeStreamGroupCompartmentRequest request);
+
+    /**
+     * Move a streamJob from one compartment to another. When provided, If-Match is checked against
+     * the ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/ChangeStreamJobCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeStreamJobCompartment API.
+     */
+    ChangeStreamJobCompartmentResponse changeStreamJobCompartment(
+            ChangeStreamJobCompartmentRequest request);
+
+    /**
+     * Move a streamSource from one compartment to another. When provided, If-Match is checked
+     * against the ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/ChangeStreamSourceCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeStreamSourceCompartment API.
+     */
+    ChangeStreamSourceCompartmentResponse changeStreamSourceCompartment(
+            ChangeStreamSourceCompartmentRequest request);
+
+    /**
+     * Move a visionPrivateEndpoint from one compartment to another. When provided, If-Match is
+     * checked against the ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/ChangeVisionPrivateEndpointCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeVisionPrivateEndpointCompartment API.
+     */
+    ChangeVisionPrivateEndpointCompartmentResponse changeVisionPrivateEndpointCompartment(
+            ChangeVisionPrivateEndpointCompartmentRequest request);
+
+    /**
      * Create a document analysis batch job.
      *
      * @param request The request object containing the details to send
@@ -256,6 +328,54 @@ public interface AIServiceVision extends AutoCloseable {
     CreateProjectResponse createProject(CreateProjectRequest request);
 
     /**
+     * Registration of new streamGroup
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/CreateStreamGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamGroup
+     *     API.
+     */
+    CreateStreamGroupResponse createStreamGroup(CreateStreamGroupRequest request);
+
+    /**
+     * Create a stream analysis job with given inputs and features.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/CreateStreamJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamJob
+     *     API.
+     */
+    CreateStreamJobResponse createStreamJob(CreateStreamJobRequest request);
+
+    /**
+     * Registration of new streamSource
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/CreateStreamSourceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamSource
+     *     API.
+     */
+    CreateStreamSourceResponse createStreamSource(CreateStreamSourceRequest request);
+
+    /**
      * Create a video analysis job with given inputs and features.
      *
      * @param request The request object containing the details to send
@@ -269,6 +389,23 @@ public interface AIServiceVision extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVideoJob API.
      */
     CreateVideoJobResponse createVideoJob(CreateVideoJobRequest request);
+
+    /**
+     * Create a new visionPrivateEndpoint.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/CreateVisionPrivateEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateVisionPrivateEndpoint API.
+     */
+    CreateVisionPrivateEndpointResponse createVisionPrivateEndpoint(
+            CreateVisionPrivateEndpointRequest request);
 
     /**
      * Delete a model by identifier.
@@ -299,6 +436,71 @@ public interface AIServiceVision extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProject API.
      */
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
+
+    /**
+     * Delete a streamGroup
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/DeleteStreamGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamGroup
+     *     API.
+     */
+    DeleteStreamGroupResponse deleteStreamGroup(DeleteStreamGroupRequest request);
+
+    /**
+     * Get details of a stream analysis job.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/DeleteStreamJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamJob
+     *     API.
+     */
+    DeleteStreamJobResponse deleteStreamJob(DeleteStreamJobRequest request);
+
+    /**
+     * Delete a streamSource
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/DeleteStreamSourceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamSource
+     *     API.
+     */
+    DeleteStreamSourceResponse deleteStreamSource(DeleteStreamSourceRequest request);
+
+    /**
+     * Delete a visionPrivateEndpoint by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/DeleteVisionPrivateEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteVisionPrivateEndpoint API.
+     */
+    DeleteVisionPrivateEndpointResponse deleteVisionPrivateEndpoint(
+            DeleteVisionPrivateEndpointRequest request);
 
     /**
      * Get details of a document batch job.
@@ -361,6 +563,52 @@ public interface AIServiceVision extends AutoCloseable {
     GetProjectResponse getProject(GetProjectRequest request);
 
     /**
+     * Get a streamGroup
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/GetStreamGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamGroup API.
+     */
+    GetStreamGroupResponse getStreamGroup(GetStreamGroupRequest request);
+
+    /**
+     * Get details of a stream analysis job.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/GetStreamJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamJob API.
+     */
+    GetStreamJobResponse getStreamJob(GetStreamJobRequest request);
+
+    /**
+     * Get a streamSource
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/GetStreamSourceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamSource
+     *     API.
+     */
+    GetStreamSourceResponse getStreamSource(GetStreamSourceRequest request);
+
+    /**
      * Get details of a video analysis job.
      *
      * @param request The request object containing the details to send
@@ -374,6 +622,23 @@ public interface AIServiceVision extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVideoJob API.
      */
     GetVideoJobResponse getVideoJob(GetVideoJobRequest request);
+
+    /**
+     * Get a visionPrivateEndpoint by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/GetVisionPrivateEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetVisionPrivateEndpoint API.
+     */
+    GetVisionPrivateEndpointResponse getVisionPrivateEndpoint(
+            GetVisionPrivateEndpointRequest request);
 
     /**
      * Gets the status of the work request with the given ID.
@@ -419,6 +684,70 @@ public interface AIServiceVision extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjects API.
      */
     ListProjectsResponse listProjects(ListProjectsRequest request);
+
+    /**
+     * Gets a list of the streamGroups in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/ListStreamGroupsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamGroups
+     *     API.
+     */
+    ListStreamGroupsResponse listStreamGroups(ListStreamGroupsRequest request);
+
+    /**
+     * Get list of stream jobs
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/ListStreamJobsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamJobs API.
+     */
+    ListStreamJobsResponse listStreamJobs(ListStreamJobsRequest request);
+
+    /**
+     * Gets a list of the streamSources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/ListStreamSourcesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamSources
+     *     API.
+     */
+    ListStreamSourcesResponse listStreamSources(ListStreamSourcesRequest request);
+
+    /**
+     * Returns a list of visionPrivateEndpoints.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/ListVisionPrivateEndpointsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListVisionPrivateEndpoints API.
+     */
+    ListVisionPrivateEndpointsResponse listVisionPrivateEndpoints(
+            ListVisionPrivateEndpointsRequest request);
 
     /**
      * Returns a (paginated) list of errors for a given work request.
@@ -469,6 +798,36 @@ public interface AIServiceVision extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * End a stream analysis Run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/StartStreamJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartStreamJob API.
+     */
+    StartStreamJobResponse startStreamJob(StartStreamJobRequest request);
+
+    /**
+     * End a stream analysis Run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/StopStreamJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopStreamJob API.
+     */
+    StopStreamJobResponse stopStreamJob(StopStreamJobRequest request);
+
+    /**
      * Updates the model metadata.
      *
      * @param request The request object containing the details to send
@@ -497,6 +856,71 @@ public interface AIServiceVision extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProject API.
      */
     UpdateProjectResponse updateProject(UpdateProjectRequest request);
+
+    /**
+     * Update a streamGroup
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/UpdateStreamGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamGroup
+     *     API.
+     */
+    UpdateStreamGroupResponse updateStreamGroup(UpdateStreamGroupRequest request);
+
+    /**
+     * Create a stream analysis job with given inputs and features.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/UpdateStreamJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamJob
+     *     API.
+     */
+    UpdateStreamJobResponse updateStreamJob(UpdateStreamJobRequest request);
+
+    /**
+     * Update a streamSource
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/UpdateStreamSourceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamSource
+     *     API.
+     */
+    UpdateStreamSourceResponse updateStreamSource(UpdateStreamSourceRequest request);
+
+    /**
+     * Update the visionPrivateEndpoint metadata.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/UpdateVisionPrivateEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateVisionPrivateEndpoint API.
+     */
+    UpdateVisionPrivateEndpointResponse updateVisionPrivateEndpoint(
+            UpdateVisionPrivateEndpointRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.
