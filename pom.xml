@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.71.0</version>
+  <version>3.72.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -683,12 +683,10 @@
     <module>bmc-limits</module>
     <module>bmc-functions</module>
     <module>bmc-events</module>
-    <module>bmc-dts</module>
     <module>bmc-oce</module>
     <module>bmc-oda</module>
     <module>bmc-analytics</module>
     <module>bmc-integration</module>
-    <module>bmc-osmanagement</module>
     <module>bmc-marketplace</module>
     <module>bmc-apigateway</module>
     <module>bmc-datacatalog</module>
@@ -734,7 +732,6 @@
     <module>bmc-genericartifactscontent</module>
     <module>bmc-jms</module>
     <module>bmc-devops</module>
-    <module>bmc-aianomalydetection</module>
     <module>bmc-datalabelingservice</module>
     <module>bmc-datalabelingservicedataplane</module>
     <module>bmc-apmconfig</module>
@@ -757,7 +754,6 @@
     <module>bmc-aivision</module>
     <module>bmc-aispeech</module>
     <module>bmc-stackmonitoring</module>
-    <module>bmc-servicemesh</module>
     <module>bmc-adm</module>
     <module>bmc-licensemanager</module>
     <module>bmc-onesubscription</module>

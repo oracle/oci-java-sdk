@@ -45,6 +45,8 @@ public abstract class AbstractResponseIterator<REQUESTBUILDER, REQUEST, RESPONSE
      */
     protected RESPONSE currentResponse;
 
+    private RESPONSE firstResponse;
+
     /** The page token to use on the next request to the list operation */
     protected String nextPageToken;
 
@@ -102,7 +104,16 @@ public abstract class AbstractResponseIterator<REQUESTBUILDER, REQUEST, RESPONSE
 
     /** Updates the state of this class with the next page of results */
     protected void fetchNextPage() {
-        currentResponse = pageRetrievalFunction.apply(getNextRequest());
+        if (firstResponse != null) {
+            currentResponse = firstResponse;
+            firstResponse = null;
+        } else {
+            currentResponse = pageRetrievalFunction.apply(getNextRequest());
+        }
         nextPageToken = nextPageTokenRetrievalFunction.apply(currentResponse);
+    }
+
+    protected void fetchFirstPage() {
+        firstResponse = pageRetrievalFunction.apply(getNextRequest());
     }
 }

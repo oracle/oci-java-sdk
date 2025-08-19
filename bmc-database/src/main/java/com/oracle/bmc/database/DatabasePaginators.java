@@ -8170,6 +8170,134 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listPluggableDatabaseSnapshots operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListPluggableDatabaseSnapshotsResponse>
+            listPluggableDatabaseSnapshotsResponseIterator(
+                    final ListPluggableDatabaseSnapshotsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPluggableDatabaseSnapshotsRequest.Builder,
+                ListPluggableDatabaseSnapshotsRequest,
+                ListPluggableDatabaseSnapshotsResponse>(
+                new java.util.function.Supplier<ListPluggableDatabaseSnapshotsRequest.Builder>() {
+                    @Override
+                    public ListPluggableDatabaseSnapshotsRequest.Builder get() {
+                        return ListPluggableDatabaseSnapshotsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPluggableDatabaseSnapshotsResponse, String>() {
+                    @Override
+                    public String apply(ListPluggableDatabaseSnapshotsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPluggableDatabaseSnapshotsRequest.Builder>,
+                        ListPluggableDatabaseSnapshotsRequest>() {
+                    @Override
+                    public ListPluggableDatabaseSnapshotsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPluggableDatabaseSnapshotsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPluggableDatabaseSnapshotsRequest,
+                        ListPluggableDatabaseSnapshotsResponse>() {
+                    @Override
+                    public ListPluggableDatabaseSnapshotsResponse apply(
+                            ListPluggableDatabaseSnapshotsRequest request) {
+                        return client.listPluggableDatabaseSnapshots(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.PluggableDatabaseSnapshotSummary} objects contained in
+     * responses from the listPluggableDatabaseSnapshots operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.PluggableDatabaseSnapshotSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.PluggableDatabaseSnapshotSummary>
+            listPluggableDatabaseSnapshotsRecordIterator(
+                    final ListPluggableDatabaseSnapshotsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPluggableDatabaseSnapshotsRequest.Builder,
+                ListPluggableDatabaseSnapshotsRequest,
+                ListPluggableDatabaseSnapshotsResponse,
+                com.oracle.bmc.database.model.PluggableDatabaseSnapshotSummary>(
+                new java.util.function.Supplier<ListPluggableDatabaseSnapshotsRequest.Builder>() {
+                    @Override
+                    public ListPluggableDatabaseSnapshotsRequest.Builder get() {
+                        return ListPluggableDatabaseSnapshotsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPluggableDatabaseSnapshotsResponse, String>() {
+                    @Override
+                    public String apply(ListPluggableDatabaseSnapshotsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPluggableDatabaseSnapshotsRequest.Builder>,
+                        ListPluggableDatabaseSnapshotsRequest>() {
+                    @Override
+                    public ListPluggableDatabaseSnapshotsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPluggableDatabaseSnapshotsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPluggableDatabaseSnapshotsRequest,
+                        ListPluggableDatabaseSnapshotsResponse>() {
+                    @Override
+                    public ListPluggableDatabaseSnapshotsResponse apply(
+                            ListPluggableDatabaseSnapshotsRequest request) {
+                        return client.listPluggableDatabaseSnapshots(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPluggableDatabaseSnapshotsResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.PluggableDatabaseSnapshotSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.PluggableDatabaseSnapshotSummary>
+                            apply(ListPluggableDatabaseSnapshotsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listPluggableDatabases operation. This iterable will fetch more data from the server as
      * needed.
      *

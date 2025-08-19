@@ -1658,6 +1658,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a Pluggable Database Snapshot
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePluggableDatabaseSnapshotResponse>
+            createPluggableDatabaseSnapshot(
+                    CreatePluggableDatabaseSnapshotRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreatePluggableDatabaseSnapshotRequest,
+                                    CreatePluggableDatabaseSnapshotResponse>
+                            handler);
+
+    /**
      * Creates a Scheduled Action resource.
      *
      * @param request The request object containing the details to send
@@ -2253,6 +2271,24 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeletePluggableDatabaseRequest, DeletePluggableDatabaseResponse>
                     handler);
+
+    /**
+     * Deletes the specified Exadata Pluggable Database Snapshot.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePluggableDatabaseSnapshotResponse>
+            deletePluggableDatabaseSnapshot(
+                    DeletePluggableDatabaseSnapshotRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeletePluggableDatabaseSnapshotRequest,
+                                    DeletePluggableDatabaseSnapshotResponse>
+                            handler);
 
     /**
      * Deletes the scheduled action.
@@ -4156,6 +4192,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified Exadata Pluggable Database Snapshot in the specified
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPluggableDatabaseSnapshotResponse> getPluggableDatabaseSnapshot(
+            GetPluggableDatabaseSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPluggableDatabaseSnapshotRequest,
+                            GetPluggableDatabaseSnapshotResponse>
+                    handler);
+
+    /**
      * Gets information about the specified Scheduled Action.
      *
      * @param request The request object containing the details to send
@@ -5597,6 +5651,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListPdbConversionHistoryEntriesRequest,
                                     ListPdbConversionHistoryEntriesResponse>
+                            handler);
+
+    /**
+     * Gets a list of the Exadata Pluggable Database Snapshots in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPluggableDatabaseSnapshotsResponse>
+            listPluggableDatabaseSnapshots(
+                    ListPluggableDatabaseSnapshotsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListPluggableDatabaseSnapshotsRequest,
+                                    ListPluggableDatabaseSnapshotsResponse>
                             handler);
 
     /**

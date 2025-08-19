@@ -36,6 +36,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "freeformTags",
         "id",
         "ipAddress",
+        "cidrPrefixLength",
         "lifecycleState",
         "subnetId",
         "timeCreated",
@@ -51,6 +52,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
             java.util.Map<String, String> freeformTags,
             String id,
             String ipAddress,
+            Integer cidrPrefixLength,
             LifecycleState lifecycleState,
             String subnetId,
             java.util.Date timeCreated,
@@ -65,6 +67,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.freeformTags = freeformTags;
         this.id = id;
         this.ipAddress = ipAddress;
+        this.cidrPrefixLength = cidrPrefixLength;
         this.lifecycleState = lifecycleState;
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
@@ -205,6 +208,21 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+        /** Length of cidr range. Optional field to specify flexible cidr. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
+        private Integer cidrPrefixLength;
+
+        /**
+         * Length of cidr range. Optional field to specify flexible cidr.
+         *
+         * @param cidrPrefixLength the value to set
+         * @return this builder
+         */
+        public Builder cidrPrefixLength(Integer cidrPrefixLength) {
+            this.cidrPrefixLength = cidrPrefixLength;
+            this.__explicitlySet__.add("cidrPrefixLength");
             return this;
         }
         /** The IPv6's current state. */
@@ -351,6 +369,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.freeformTags,
                             this.id,
                             this.ipAddress,
+                            this.cidrPrefixLength,
                             this.lifecycleState,
                             this.subnetId,
                             this.timeCreated,
@@ -383,6 +402,9 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("cidrPrefixLength")) {
+                this.cidrPrefixLength(model.getCidrPrefixLength());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -534,6 +556,19 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
      */
     public String getIpAddress() {
         return ipAddress;
+    }
+
+    /** Length of cidr range. Optional field to specify flexible cidr. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
+    private final Integer cidrPrefixLength;
+
+    /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     *
+     * @return the value
+     */
+    public Integer getCidrPrefixLength() {
+        return cidrPrefixLength;
     }
 
     /** The IPv6's current state. */
@@ -817,6 +852,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", cidrPrefixLength=").append(String.valueOf(this.cidrPrefixLength));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -844,6 +880,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.cidrPrefixLength, other.cidrPrefixLength)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -866,6 +903,9 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cidrPrefixLength == null ? 43 : this.cidrPrefixLength.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

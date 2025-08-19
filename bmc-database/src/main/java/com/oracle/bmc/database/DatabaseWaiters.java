@@ -5251,6 +5251,69 @@ public class DatabaseWaiters {
      * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<
+                    CreatePluggableDatabaseSnapshotRequest, CreatePluggableDatabaseSnapshotResponse>
+            forCreatePluggableDatabaseSnapshot(CreatePluggableDatabaseSnapshotRequest request) {
+        return forCreatePluggableDatabaseSnapshot(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    CreatePluggableDatabaseSnapshotRequest, CreatePluggableDatabaseSnapshotResponse>
+            forCreatePluggableDatabaseSnapshot(
+                    CreatePluggableDatabaseSnapshotRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<CreatePluggableDatabaseSnapshotResponse>() {
+                    @Override
+                    public CreatePluggableDatabaseSnapshotResponse call() throws Exception {
+                        final CreatePluggableDatabaseSnapshotResponse response =
+                                client.createPluggableDatabaseSnapshot(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<CreateScheduledActionRequest, CreateScheduledActionResponse>
             forCreateScheduledAction(CreateScheduledActionRequest request) {
         return forCreateScheduledAction(
@@ -7150,6 +7213,69 @@ public class DatabaseWaiters {
                     public DeletePluggableDatabaseResponse call() throws Exception {
                         final DeletePluggableDatabaseResponse response =
                                 client.deletePluggableDatabase(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DeletePluggableDatabaseSnapshotRequest, DeletePluggableDatabaseSnapshotResponse>
+            forDeletePluggableDatabaseSnapshot(DeletePluggableDatabaseSnapshotRequest request) {
+        return forDeletePluggableDatabaseSnapshot(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DeletePluggableDatabaseSnapshotRequest, DeletePluggableDatabaseSnapshotResponse>
+            forDeletePluggableDatabaseSnapshot(
+                    DeletePluggableDatabaseSnapshotRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<DeletePluggableDatabaseSnapshotResponse>() {
+                    @Override
+                    public DeletePluggableDatabaseSnapshotResponse call() throws Exception {
+                        final DeletePluggableDatabaseSnapshotResponse response =
+                                client.deletePluggableDatabaseSnapshot(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -14521,6 +14647,122 @@ public class DatabaseWaiters {
                         targetStatesSet.contains(
                                 com.oracle.bmc.database.model.PluggableDatabase.LifecycleState
                                         .Terminated)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetPluggableDatabaseSnapshotRequest, GetPluggableDatabaseSnapshotResponse>
+            forPluggableDatabaseSnapshot(
+                    GetPluggableDatabaseSnapshotRequest request,
+                    com.oracle.bmc.database.model.PluggableDatabaseSnapshot.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forPluggableDatabaseSnapshot(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetPluggableDatabaseSnapshotRequest, GetPluggableDatabaseSnapshotResponse>
+            forPluggableDatabaseSnapshot(
+                    GetPluggableDatabaseSnapshotRequest request,
+                    com.oracle.bmc.database.model.PluggableDatabaseSnapshot.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forPluggableDatabaseSnapshot(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetPluggableDatabaseSnapshotRequest, GetPluggableDatabaseSnapshotResponse>
+            forPluggableDatabaseSnapshot(
+                    GetPluggableDatabaseSnapshotRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.PluggableDatabaseSnapshot.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forPluggableDatabaseSnapshot(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for PluggableDatabaseSnapshot.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetPluggableDatabaseSnapshotRequest, GetPluggableDatabaseSnapshotResponse>
+            forPluggableDatabaseSnapshot(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetPluggableDatabaseSnapshotRequest request,
+                    final com.oracle.bmc.database.model.PluggableDatabaseSnapshot.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.database.model.PluggableDatabaseSnapshot.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetPluggableDatabaseSnapshotRequest,
+                                GetPluggableDatabaseSnapshotResponse>() {
+                            @Override
+                            public GetPluggableDatabaseSnapshotResponse apply(
+                                    GetPluggableDatabaseSnapshotRequest request) {
+                                return client.getPluggableDatabaseSnapshot(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetPluggableDatabaseSnapshotResponse>() {
+                            @Override
+                            public boolean test(GetPluggableDatabaseSnapshotResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getPluggableDatabaseSnapshot()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.database.model.PluggableDatabaseSnapshot
+                                        .LifecycleState.Terminated)),
                 request);
     }
 

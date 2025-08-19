@@ -49,6 +49,73 @@ public final class GenericChatRequest extends BaseChatRequest {
             return this;
         }
         /**
+         * Constrains effort on reasoning for reasoning models. Currently supported values are
+         * minimal, low, medium, and high. Reducing reasoning effort can result in faster responses
+         * and fewer tokens used on reasoning in a response.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("reasoningEffort")
+        private ReasoningEffort reasoningEffort;
+
+        /**
+         * Constrains effort on reasoning for reasoning models. Currently supported values are
+         * minimal, low, medium, and high. Reducing reasoning effort can result in faster responses
+         * and fewer tokens used on reasoning in a response.
+         *
+         * @param reasoningEffort the value to set
+         * @return this builder
+         */
+        public Builder reasoningEffort(ReasoningEffort reasoningEffort) {
+            this.reasoningEffort = reasoningEffort;
+            this.__explicitlySet__.add("reasoningEffort");
+            return this;
+        }
+        /**
+         * Constrains the verbosity of the model's response. Lower values will result in more
+         * concise responses, while higher values will result in more verbose responses.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("verbosity")
+        private Verbosity verbosity;
+
+        /**
+         * Constrains the verbosity of the model's response. Lower values will result in more
+         * concise responses, while higher values will result in more verbose responses.
+         *
+         * @param verbosity the value to set
+         * @return this builder
+         */
+        public Builder verbosity(Verbosity verbosity) {
+            this.verbosity = verbosity;
+            this.__explicitlySet__.add("verbosity");
+            return this;
+        }
+        /**
+         * Set of 16 key-value pairs that can be attached to an object. This can be useful for
+         * storing additional information about the object in a structured format, and querying for
+         * objects via API or the dashboard.
+         *
+         * <p>Keys are strings with a maximum length of 64 characters. Values are strings with a
+         * maximum length of 512 characters.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private Object metadata;
+
+        /**
+         * Set of 16 key-value pairs that can be attached to an object. This can be useful for
+         * storing additional information about the object in a structured format, and querying for
+         * objects via API or the dashboard.
+         *
+         * <p>Keys are strings with a maximum length of 64 characters. Values are strings with a
+         * maximum length of 512 characters.
+         *
+         * @param metadata the value to set
+         * @return this builder
+         */
+        public Builder metadata(Object metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
+        /**
          * Whether to stream back partial progress. If set to true, as tokens become available, they
          * are sent as data-only server-sent events.
          */
@@ -65,6 +132,15 @@ public final class GenericChatRequest extends BaseChatRequest {
         public Builder isStream(Boolean isStream) {
             this.isStream = isStream;
             this.__explicitlySet__.add("isStream");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("streamOptions")
+        private StreamOptions streamOptions;
+
+        public Builder streamOptions(StreamOptions streamOptions) {
+            this.streamOptions = streamOptions;
+            this.__explicitlySet__.add("streamOptions");
             return this;
         }
         /** The number of of generated texts that will be returned. */
@@ -307,16 +383,16 @@ public final class GenericChatRequest extends BaseChatRequest {
         }
         /**
          * The maximum number of tokens that can be generated per output sequence. The token count
-         * of your prompt plus {@code maxTokens} must not exceed the model's context length. Not
-         * setting a value for maxTokens results in the possible use of model's full context length.
+         * of your prompt plus maxTokens must not exceed the model's context length. For on-demand
+         * inferencing, the response length is capped at 4,000 tokens for each run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
         private Integer maxTokens;
 
         /**
          * The maximum number of tokens that can be generated per output sequence. The token count
-         * of your prompt plus {@code maxTokens} must not exceed the model's context length. Not
-         * setting a value for maxTokens results in the possible use of model's full context length.
+         * of your prompt plus maxTokens must not exceed the model's context length. For on-demand
+         * inferencing, the response length is capped at 4,000 tokens for each run.
          *
          * @param maxTokens the value to set
          * @return this builder
@@ -324,6 +400,25 @@ public final class GenericChatRequest extends BaseChatRequest {
         public Builder maxTokens(Integer maxTokens) {
             this.maxTokens = maxTokens;
             this.__explicitlySet__.add("maxTokens");
+            return this;
+        }
+        /**
+         * An upper bound for the number of tokens that can be generated for a completion, including
+         * visible output tokens and reasoning tokens.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCompletionTokens")
+        private Integer maxCompletionTokens;
+
+        /**
+         * An upper bound for the number of tokens that can be generated for a completion, including
+         * visible output tokens and reasoning tokens.
+         *
+         * @param maxCompletionTokens the value to set
+         * @return this builder
+         */
+        public Builder maxCompletionTokens(Integer maxCompletionTokens) {
+            this.maxCompletionTokens = maxCompletionTokens;
+            this.__explicitlySet__.add("maxCompletionTokens");
             return this;
         }
         /**
@@ -348,12 +443,45 @@ public final class GenericChatRequest extends BaseChatRequest {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("prediction")
+        private Prediction prediction;
+
+        public Builder prediction(Prediction prediction) {
+            this.prediction = prediction;
+            this.__explicitlySet__.add("prediction");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("responseFormat")
+        private ResponseFormat responseFormat;
+
+        public Builder responseFormat(ResponseFormat responseFormat) {
+            this.responseFormat = responseFormat;
+            this.__explicitlySet__.add("responseFormat");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("toolChoice")
         private ToolChoice toolChoice;
 
         public Builder toolChoice(ToolChoice toolChoice) {
             this.toolChoice = toolChoice;
             this.__explicitlySet__.add("toolChoice");
+            return this;
+        }
+        /** Whether to enable parallel function calling during tool use. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isParallelToolCalls")
+        private Boolean isParallelToolCalls;
+
+        /**
+         * Whether to enable parallel function calling during tool use.
+         *
+         * @param isParallelToolCalls the value to set
+         * @return this builder
+         */
+        public Builder isParallelToolCalls(Boolean isParallelToolCalls) {
+            this.isParallelToolCalls = isParallelToolCalls;
+            this.__explicitlySet__.add("isParallelToolCalls");
             return this;
         }
         /**
@@ -383,7 +511,11 @@ public final class GenericChatRequest extends BaseChatRequest {
             GenericChatRequest model =
                     new GenericChatRequest(
                             this.messages,
+                            this.reasoningEffort,
+                            this.verbosity,
+                            this.metadata,
                             this.isStream,
+                            this.streamOptions,
                             this.numGenerations,
                             this.seed,
                             this.isEcho,
@@ -395,8 +527,12 @@ public final class GenericChatRequest extends BaseChatRequest {
                             this.stop,
                             this.logProbs,
                             this.maxTokens,
+                            this.maxCompletionTokens,
                             this.logitBias,
+                            this.prediction,
+                            this.responseFormat,
                             this.toolChoice,
+                            this.isParallelToolCalls,
                             this.tools);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -409,8 +545,20 @@ public final class GenericChatRequest extends BaseChatRequest {
             if (model.wasPropertyExplicitlySet("messages")) {
                 this.messages(model.getMessages());
             }
+            if (model.wasPropertyExplicitlySet("reasoningEffort")) {
+                this.reasoningEffort(model.getReasoningEffort());
+            }
+            if (model.wasPropertyExplicitlySet("verbosity")) {
+                this.verbosity(model.getVerbosity());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
             if (model.wasPropertyExplicitlySet("isStream")) {
                 this.isStream(model.getIsStream());
+            }
+            if (model.wasPropertyExplicitlySet("streamOptions")) {
+                this.streamOptions(model.getStreamOptions());
             }
             if (model.wasPropertyExplicitlySet("numGenerations")) {
                 this.numGenerations(model.getNumGenerations());
@@ -445,11 +593,23 @@ public final class GenericChatRequest extends BaseChatRequest {
             if (model.wasPropertyExplicitlySet("maxTokens")) {
                 this.maxTokens(model.getMaxTokens());
             }
+            if (model.wasPropertyExplicitlySet("maxCompletionTokens")) {
+                this.maxCompletionTokens(model.getMaxCompletionTokens());
+            }
             if (model.wasPropertyExplicitlySet("logitBias")) {
                 this.logitBias(model.getLogitBias());
             }
+            if (model.wasPropertyExplicitlySet("prediction")) {
+                this.prediction(model.getPrediction());
+            }
+            if (model.wasPropertyExplicitlySet("responseFormat")) {
+                this.responseFormat(model.getResponseFormat());
+            }
             if (model.wasPropertyExplicitlySet("toolChoice")) {
                 this.toolChoice(model.getToolChoice());
+            }
+            if (model.wasPropertyExplicitlySet("isParallelToolCalls")) {
+                this.isParallelToolCalls(model.getIsParallelToolCalls());
             }
             if (model.wasPropertyExplicitlySet("tools")) {
                 this.tools(model.getTools());
@@ -470,7 +630,11 @@ public final class GenericChatRequest extends BaseChatRequest {
     @Deprecated
     public GenericChatRequest(
             java.util.List<Message> messages,
+            ReasoningEffort reasoningEffort,
+            Verbosity verbosity,
+            Object metadata,
             Boolean isStream,
+            StreamOptions streamOptions,
             Integer numGenerations,
             Integer seed,
             Boolean isEcho,
@@ -482,12 +646,20 @@ public final class GenericChatRequest extends BaseChatRequest {
             java.util.List<String> stop,
             Integer logProbs,
             Integer maxTokens,
+            Integer maxCompletionTokens,
             Object logitBias,
+            Prediction prediction,
+            ResponseFormat responseFormat,
             ToolChoice toolChoice,
+            Boolean isParallelToolCalls,
             java.util.List<ToolDefinition> tools) {
         super();
         this.messages = messages;
+        this.reasoningEffort = reasoningEffort;
+        this.verbosity = verbosity;
+        this.metadata = metadata;
         this.isStream = isStream;
+        this.streamOptions = streamOptions;
         this.numGenerations = numGenerations;
         this.seed = seed;
         this.isEcho = isEcho;
@@ -499,8 +671,12 @@ public final class GenericChatRequest extends BaseChatRequest {
         this.stop = stop;
         this.logProbs = logProbs;
         this.maxTokens = maxTokens;
+        this.maxCompletionTokens = maxCompletionTokens;
         this.logitBias = logitBias;
+        this.prediction = prediction;
+        this.responseFormat = responseFormat;
         this.toolChoice = toolChoice;
+        this.isParallelToolCalls = isParallelToolCalls;
         this.tools = tools;
     }
 
@@ -522,6 +698,143 @@ public final class GenericChatRequest extends BaseChatRequest {
     }
 
     /**
+     * Constrains effort on reasoning for reasoning models. Currently supported values are minimal,
+     * low, medium, and high. Reducing reasoning effort can result in faster responses and fewer
+     * tokens used on reasoning in a response.
+     */
+    public enum ReasoningEffort implements com.oracle.bmc.http.internal.BmcEnum {
+        Minimal("MINIMAL"),
+        Low("LOW"),
+        Medium("MEDIUM"),
+        High("HIGH"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ReasoningEffort> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ReasoningEffort v : ReasoningEffort.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ReasoningEffort(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ReasoningEffort create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ReasoningEffort: " + key);
+        }
+    };
+    /**
+     * Constrains effort on reasoning for reasoning models. Currently supported values are minimal,
+     * low, medium, and high. Reducing reasoning effort can result in faster responses and fewer
+     * tokens used on reasoning in a response.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("reasoningEffort")
+    private final ReasoningEffort reasoningEffort;
+
+    /**
+     * Constrains effort on reasoning for reasoning models. Currently supported values are minimal,
+     * low, medium, and high. Reducing reasoning effort can result in faster responses and fewer
+     * tokens used on reasoning in a response.
+     *
+     * @return the value
+     */
+    public ReasoningEffort getReasoningEffort() {
+        return reasoningEffort;
+    }
+
+    /**
+     * Constrains the verbosity of the model's response. Lower values will result in more concise
+     * responses, while higher values will result in more verbose responses.
+     */
+    public enum Verbosity implements com.oracle.bmc.http.internal.BmcEnum {
+        Low("LOW"),
+        Medium("MEDIUM"),
+        High("HIGH"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Verbosity> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Verbosity v : Verbosity.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Verbosity(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Verbosity create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Verbosity: " + key);
+        }
+    };
+    /**
+     * Constrains the verbosity of the model's response. Lower values will result in more concise
+     * responses, while higher values will result in more verbose responses.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("verbosity")
+    private final Verbosity verbosity;
+
+    /**
+     * Constrains the verbosity of the model's response. Lower values will result in more concise
+     * responses, while higher values will result in more verbose responses.
+     *
+     * @return the value
+     */
+    public Verbosity getVerbosity() {
+        return verbosity;
+    }
+
+    /**
+     * Set of 16 key-value pairs that can be attached to an object. This can be useful for storing
+     * additional information about the object in a structured format, and querying for objects via
+     * API or the dashboard.
+     *
+     * <p>Keys are strings with a maximum length of 64 characters. Values are strings with a maximum
+     * length of 512 characters.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final Object metadata;
+
+    /**
+     * Set of 16 key-value pairs that can be attached to an object. This can be useful for storing
+     * additional information about the object in a structured format, and querying for objects via
+     * API or the dashboard.
+     *
+     * <p>Keys are strings with a maximum length of 64 characters. Values are strings with a maximum
+     * length of 512 characters.
+     *
+     * @return the value
+     */
+    public Object getMetadata() {
+        return metadata;
+    }
+
+    /**
      * Whether to stream back partial progress. If set to true, as tokens become available, they are
      * sent as data-only server-sent events.
      */
@@ -536,6 +849,13 @@ public final class GenericChatRequest extends BaseChatRequest {
      */
     public Boolean getIsStream() {
         return isStream;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("streamOptions")
+    private final StreamOptions streamOptions;
+
+    public StreamOptions getStreamOptions() {
+        return streamOptions;
     }
 
     /** The number of of generated texts that will be returned. */
@@ -756,21 +1076,38 @@ public final class GenericChatRequest extends BaseChatRequest {
 
     /**
      * The maximum number of tokens that can be generated per output sequence. The token count of
-     * your prompt plus {@code maxTokens} must not exceed the model's context length. Not setting a
-     * value for maxTokens results in the possible use of model's full context length.
+     * your prompt plus maxTokens must not exceed the model's context length. For on-demand
+     * inferencing, the response length is capped at 4,000 tokens for each run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
     private final Integer maxTokens;
 
     /**
      * The maximum number of tokens that can be generated per output sequence. The token count of
-     * your prompt plus {@code maxTokens} must not exceed the model's context length. Not setting a
-     * value for maxTokens results in the possible use of model's full context length.
+     * your prompt plus maxTokens must not exceed the model's context length. For on-demand
+     * inferencing, the response length is capped at 4,000 tokens for each run.
      *
      * @return the value
      */
     public Integer getMaxTokens() {
         return maxTokens;
+    }
+
+    /**
+     * An upper bound for the number of tokens that can be generated for a completion, including
+     * visible output tokens and reasoning tokens.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxCompletionTokens")
+    private final Integer maxCompletionTokens;
+
+    /**
+     * An upper bound for the number of tokens that can be generated for a completion, including
+     * visible output tokens and reasoning tokens.
+     *
+     * @return the value
+     */
+    public Integer getMaxCompletionTokens() {
+        return maxCompletionTokens;
     }
 
     /**
@@ -792,11 +1129,38 @@ public final class GenericChatRequest extends BaseChatRequest {
         return logitBias;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("prediction")
+    private final Prediction prediction;
+
+    public Prediction getPrediction() {
+        return prediction;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("responseFormat")
+    private final ResponseFormat responseFormat;
+
+    public ResponseFormat getResponseFormat() {
+        return responseFormat;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("toolChoice")
     private final ToolChoice toolChoice;
 
     public ToolChoice getToolChoice() {
         return toolChoice;
+    }
+
+    /** Whether to enable parallel function calling during tool use. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isParallelToolCalls")
+    private final Boolean isParallelToolCalls;
+
+    /**
+     * Whether to enable parallel function calling during tool use.
+     *
+     * @return the value
+     */
+    public Boolean getIsParallelToolCalls() {
+        return isParallelToolCalls;
     }
 
     /**
@@ -832,7 +1196,11 @@ public final class GenericChatRequest extends BaseChatRequest {
         sb.append("GenericChatRequest(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", messages=").append(String.valueOf(this.messages));
+        sb.append(", reasoningEffort=").append(String.valueOf(this.reasoningEffort));
+        sb.append(", verbosity=").append(String.valueOf(this.verbosity));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", isStream=").append(String.valueOf(this.isStream));
+        sb.append(", streamOptions=").append(String.valueOf(this.streamOptions));
         sb.append(", numGenerations=").append(String.valueOf(this.numGenerations));
         sb.append(", seed=").append(String.valueOf(this.seed));
         sb.append(", isEcho=").append(String.valueOf(this.isEcho));
@@ -844,8 +1212,12 @@ public final class GenericChatRequest extends BaseChatRequest {
         sb.append(", stop=").append(String.valueOf(this.stop));
         sb.append(", logProbs=").append(String.valueOf(this.logProbs));
         sb.append(", maxTokens=").append(String.valueOf(this.maxTokens));
+        sb.append(", maxCompletionTokens=").append(String.valueOf(this.maxCompletionTokens));
         sb.append(", logitBias=").append(String.valueOf(this.logitBias));
+        sb.append(", prediction=").append(String.valueOf(this.prediction));
+        sb.append(", responseFormat=").append(String.valueOf(this.responseFormat));
         sb.append(", toolChoice=").append(String.valueOf(this.toolChoice));
+        sb.append(", isParallelToolCalls=").append(String.valueOf(this.isParallelToolCalls));
         sb.append(", tools=").append(String.valueOf(this.tools));
         sb.append(")");
         return sb.toString();
@@ -862,7 +1234,11 @@ public final class GenericChatRequest extends BaseChatRequest {
 
         GenericChatRequest other = (GenericChatRequest) o;
         return java.util.Objects.equals(this.messages, other.messages)
+                && java.util.Objects.equals(this.reasoningEffort, other.reasoningEffort)
+                && java.util.Objects.equals(this.verbosity, other.verbosity)
+                && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.isStream, other.isStream)
+                && java.util.Objects.equals(this.streamOptions, other.streamOptions)
                 && java.util.Objects.equals(this.numGenerations, other.numGenerations)
                 && java.util.Objects.equals(this.seed, other.seed)
                 && java.util.Objects.equals(this.isEcho, other.isEcho)
@@ -874,8 +1250,12 @@ public final class GenericChatRequest extends BaseChatRequest {
                 && java.util.Objects.equals(this.stop, other.stop)
                 && java.util.Objects.equals(this.logProbs, other.logProbs)
                 && java.util.Objects.equals(this.maxTokens, other.maxTokens)
+                && java.util.Objects.equals(this.maxCompletionTokens, other.maxCompletionTokens)
                 && java.util.Objects.equals(this.logitBias, other.logitBias)
+                && java.util.Objects.equals(this.prediction, other.prediction)
+                && java.util.Objects.equals(this.responseFormat, other.responseFormat)
                 && java.util.Objects.equals(this.toolChoice, other.toolChoice)
+                && java.util.Objects.equals(this.isParallelToolCalls, other.isParallelToolCalls)
                 && java.util.Objects.equals(this.tools, other.tools)
                 && super.equals(other);
     }
@@ -885,7 +1265,15 @@ public final class GenericChatRequest extends BaseChatRequest {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.messages == null ? 43 : this.messages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reasoningEffort == null ? 43 : this.reasoningEffort.hashCode());
+        result = (result * PRIME) + (this.verbosity == null ? 43 : this.verbosity.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.isStream == null ? 43 : this.isStream.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.streamOptions == null ? 43 : this.streamOptions.hashCode());
         result =
                 (result * PRIME)
                         + (this.numGenerations == null ? 43 : this.numGenerations.hashCode());
@@ -903,8 +1291,22 @@ public final class GenericChatRequest extends BaseChatRequest {
         result = (result * PRIME) + (this.stop == null ? 43 : this.stop.hashCode());
         result = (result * PRIME) + (this.logProbs == null ? 43 : this.logProbs.hashCode());
         result = (result * PRIME) + (this.maxTokens == null ? 43 : this.maxTokens.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxCompletionTokens == null
+                                ? 43
+                                : this.maxCompletionTokens.hashCode());
         result = (result * PRIME) + (this.logitBias == null ? 43 : this.logitBias.hashCode());
+        result = (result * PRIME) + (this.prediction == null ? 43 : this.prediction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responseFormat == null ? 43 : this.responseFormat.hashCode());
         result = (result * PRIME) + (this.toolChoice == null ? 43 : this.toolChoice.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isParallelToolCalls == null
+                                ? 43
+                                : this.isParallelToolCalls.hashCode());
         result = (result * PRIME) + (this.tools == null ? 43 : this.tools.hashCode());
         return result;
     }

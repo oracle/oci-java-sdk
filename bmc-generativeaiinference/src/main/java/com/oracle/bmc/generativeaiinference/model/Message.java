@@ -29,7 +29,10 @@ package com.oracle.bmc.generativeaiinference.model;
             value = AssistantMessage.class,
             name = "ASSISTANT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UserMessage.class, name = "USER"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ToolMessage.class, name = "TOOL")
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ToolMessage.class, name = "TOOL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DeveloperMessage.class,
+            name = "DEVELOPER")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -99,9 +102,10 @@ public class Message extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
     /** Indicates who is writing the current chat message. */
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
         System("SYSTEM"),
-        User("USER"),
         Assistant("ASSISTANT"),
+        User("USER"),
         Tool("TOOL"),
+        Developer("DEVELOPER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
