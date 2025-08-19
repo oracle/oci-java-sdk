@@ -5,7 +5,8 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * The tool choice for a function. <br>
+ * The tool choice for a function. The model will generate the parameters for user to call the
+ * function. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

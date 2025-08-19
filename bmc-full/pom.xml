@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.71.0</version>
+    <version>3.72.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-full</artifactId>
@@ -16,7 +16,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>3.71.0</version>
+        <version>3.72.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -133,10 +133,6 @@
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-dts</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-oce</artifactId>
     </dependency>
     <dependency>
@@ -150,10 +146,6 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-integration</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-osmanagement</artifactId>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
@@ -337,10 +329,6 @@
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-aianomalydetection</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-datalabelingservice</artifactId>
     </dependency>
     <dependency>
@@ -426,10 +414,6 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-stackmonitoring</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-servicemesh</artifactId>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>

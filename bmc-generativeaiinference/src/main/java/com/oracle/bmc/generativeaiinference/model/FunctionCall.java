@@ -34,12 +34,16 @@ public final class FunctionCall extends ToolCall {
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the function to call. */
+        /**
+         * The name of the function to call. Must be a-z, A-Z, 0-9, or contain underscores and
+         * dashes, with a maximum length of 64.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the function to call.
+         * The name of the function to call. Must be a-z, A-Z, 0-9, or contain underscores and
+         * dashes, with a maximum length of 64.
          *
          * @param name the value to set
          * @return this builder
@@ -115,12 +119,16 @@ public final class FunctionCall extends ToolCall {
         this.arguments = arguments;
     }
 
-    /** The name of the function to call. */
+    /**
+     * The name of the function to call. Must be a-z, A-Z, 0-9, or contain underscores and dashes,
+     * with a maximum length of 64.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the function to call.
+     * The name of the function to call. Must be a-z, A-Z, 0-9, or contain underscores and dashes,
+     * with a maximum length of 64.
      *
      * @return the value
      */

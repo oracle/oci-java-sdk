@@ -28,6 +28,7 @@ public final class CreateIpv6Details
         "displayName",
         "freeformTags",
         "ipAddress",
+        "cidrPrefixLength",
         "vnicId",
         "subnetId",
         "lifetime",
@@ -39,6 +40,7 @@ public final class CreateIpv6Details
             String displayName,
             java.util.Map<String, String> freeformTags,
             String ipAddress,
+            Integer cidrPrefixLength,
             String vnicId,
             String subnetId,
             Lifetime lifetime,
@@ -49,6 +51,7 @@ public final class CreateIpv6Details
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.ipAddress = ipAddress;
+        this.cidrPrefixLength = cidrPrefixLength;
         this.vnicId = vnicId;
         this.subnetId = subnetId;
         this.lifetime = lifetime;
@@ -151,6 +154,21 @@ public final class CreateIpv6Details
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+        /** Length of cidr range. Optional field to specify flexible cidr. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
+        private Integer cidrPrefixLength;
+
+        /**
+         * Length of cidr range. Optional field to specify flexible cidr.
+         *
+         * @param cidrPrefixLength the value to set
+         * @return this builder
+         */
+        public Builder cidrPrefixLength(Integer cidrPrefixLength) {
+            this.cidrPrefixLength = cidrPrefixLength;
+            this.__explicitlySet__.add("cidrPrefixLength");
             return this;
         }
         /**
@@ -259,6 +277,7 @@ public final class CreateIpv6Details
                             this.displayName,
                             this.freeformTags,
                             this.ipAddress,
+                            this.cidrPrefixLength,
                             this.vnicId,
                             this.subnetId,
                             this.lifetime,
@@ -283,6 +302,9 @@ public final class CreateIpv6Details
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("cidrPrefixLength")) {
+                this.cidrPrefixLength(model.getCidrPrefixLength());
             }
             if (model.wasPropertyExplicitlySet("vnicId")) {
                 this.vnicId(model.getVnicId());
@@ -396,6 +418,19 @@ public final class CreateIpv6Details
      */
     public String getIpAddress() {
         return ipAddress;
+    }
+
+    /** Length of cidr range. Optional field to specify flexible cidr. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
+    private final Integer cidrPrefixLength;
+
+    /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     *
+     * @return the value
+     */
+    public Integer getCidrPrefixLength() {
+        return cidrPrefixLength;
     }
 
     /**
@@ -535,6 +570,7 @@ public final class CreateIpv6Details
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", cidrPrefixLength=").append(String.valueOf(this.cidrPrefixLength));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", lifetime=").append(String.valueOf(this.lifetime));
@@ -558,6 +594,7 @@ public final class CreateIpv6Details
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.cidrPrefixLength, other.cidrPrefixLength)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.lifetime, other.lifetime)
@@ -574,6 +611,9 @@ public final class CreateIpv6Details
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cidrPrefixLength == null ? 43 : this.cidrPrefixLength.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());

@@ -61,7 +61,12 @@ public class ResponseIterator<REQUESTBUILDER, REQUEST, RESPONSE>
 
     @Override
     public boolean hasNext() {
-        return currentResponse == null || nextPageToken != null;
+        if (currentResponse == null) {
+            // fetch the first page
+            fetchFirstPage();
+            return true;
+        }
+        return nextPageToken != null;
     }
 
     @Override

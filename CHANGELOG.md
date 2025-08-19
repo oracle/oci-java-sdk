@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.72.0 - 2025-08-19
+### Added 
+- Support for calling Oracle Cloud Infrastructure services in the eu-budapest-1 region 
+- Support for pluggable database snapshot for Oracle Exadata Database Service 
+- Support for new GenericChatRequest parameters in Generative AI inference service 
+- Support for Flexible CIDR for secondary IPs on a VNIC for Virtual Cloud Network Service   
+
+### Breaking Changes 
+- Removed deprecated service Anomaly Detection 
+- Removed deprecated service Data Transfer Service 
+- Removed deprecated service OS Management Service 
+- Removed deprecated service Service Mesh
+
 ## 3.71.0 - 2025-08-12
 ### Added 
 - Support for calling Oracle Cloud Infrastructure services in the us-newark-1 region 

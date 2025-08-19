@@ -3235,6 +3235,38 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreatePluggableDatabaseSnapshotResponse createPluggableDatabaseSnapshot(
+            CreatePluggableDatabaseSnapshotRequest request) {
+        Objects.requireNonNull(
+                request.getCreatePluggableDatabaseSnapshotDetails(),
+                "createPluggableDatabaseSnapshotDetails is required");
+
+        return clientCall(request, CreatePluggableDatabaseSnapshotResponse::builder)
+                .logger(LOG, "createPluggableDatabaseSnapshot")
+                .serviceDetails("Database", "CreatePluggableDatabaseSnapshot", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePluggableDatabaseSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabaseSnapshots")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.PluggableDatabaseSnapshot.class,
+                        CreatePluggableDatabaseSnapshotResponse.Builder::pluggableDatabaseSnapshot)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreatePluggableDatabaseSnapshotResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreatePluggableDatabaseSnapshotResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreatePluggableDatabaseSnapshotResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateScheduledActionResponse createScheduledAction(
             CreateScheduledActionRequest request) {
         Objects.requireNonNull(
@@ -4236,6 +4268,37 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         DeletePluggableDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeletePluggableDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeletePluggableDatabaseSnapshotResponse deletePluggableDatabaseSnapshot(
+            DeletePluggableDatabaseSnapshotRequest request) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseSnapshotId(),
+                "pluggableDatabaseSnapshotId must not be blank");
+
+        return clientCall(request, DeletePluggableDatabaseSnapshotResponse::builder)
+                .logger(LOG, "deletePluggableDatabaseSnapshot")
+                .serviceDetails(
+                        "Database",
+                        "DeletePluggableDatabaseSnapshot",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabaseSnapshot/DeletePluggableDatabaseSnapshot")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePluggableDatabaseSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabaseSnapshots")
+                .appendPathParam(request.getPluggableDatabaseSnapshotId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeletePluggableDatabaseSnapshotResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeletePluggableDatabaseSnapshotResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -7844,6 +7907,38 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetPluggableDatabaseSnapshotResponse getPluggableDatabaseSnapshot(
+            GetPluggableDatabaseSnapshotRequest request) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseSnapshotId(),
+                "pluggableDatabaseSnapshotId must not be blank");
+
+        return clientCall(request, GetPluggableDatabaseSnapshotResponse::builder)
+                .logger(LOG, "getPluggableDatabaseSnapshot")
+                .serviceDetails(
+                        "Database",
+                        "GetPluggableDatabaseSnapshot",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabaseSnapshot/GetPluggableDatabaseSnapshot")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPluggableDatabaseSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabaseSnapshots")
+                .appendPathParam(request.getPluggableDatabaseSnapshotId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.PluggableDatabaseSnapshot.class,
+                        GetPluggableDatabaseSnapshotResponse.Builder::pluggableDatabaseSnapshot)
+                .handleResponseHeaderString(
+                        "etag", GetPluggableDatabaseSnapshotResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetPluggableDatabaseSnapshotResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetScheduledActionResponse getScheduledAction(GetScheduledActionRequest request) {
 
         Validate.notBlank(request.getScheduledActionId(), "scheduledActionId must not be blank");
@@ -10644,6 +10739,43 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListPdbConversionHistoryEntriesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListPluggableDatabaseSnapshotsResponse listPluggableDatabaseSnapshots(
+            ListPluggableDatabaseSnapshotsRequest request) {
+
+        return clientCall(request, ListPluggableDatabaseSnapshotsResponse::builder)
+                .logger(LOG, "listPluggableDatabaseSnapshots")
+                .serviceDetails(
+                        "Database",
+                        "ListPluggableDatabaseSnapshots",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabaseSnapshot/ListPluggableDatabaseSnapshots")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPluggableDatabaseSnapshotsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabaseSnapshots")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("clusterId", request.getClusterId())
+                .appendQueryParam("pluggableDatabaseId", request.getPluggableDatabaseId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.PluggableDatabaseSnapshotSummary.class,
+                        ListPluggableDatabaseSnapshotsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListPluggableDatabaseSnapshotsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListPluggableDatabaseSnapshotsResponse.Builder::opcNextPage)
                 .callSync();
     }
 

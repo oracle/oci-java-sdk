@@ -58,11 +58,21 @@ public final class GenericChatResponse extends BaseChatResponse {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("usage")
+        private Usage usage;
+
+        public Builder usage(Usage usage) {
+            this.usage = usage;
+            this.__explicitlySet__.add("usage");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenericChatResponse build() {
-            GenericChatResponse model = new GenericChatResponse(this.timeCreated, this.choices);
+            GenericChatResponse model =
+                    new GenericChatResponse(this.timeCreated, this.choices, this.usage);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -76,6 +86,9 @@ public final class GenericChatResponse extends BaseChatResponse {
             }
             if (model.wasPropertyExplicitlySet("choices")) {
                 this.choices(model.getChoices());
+            }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
             }
             return this;
         }
@@ -91,10 +104,12 @@ public final class GenericChatResponse extends BaseChatResponse {
     }
 
     @Deprecated
-    public GenericChatResponse(java.util.Date timeCreated, java.util.List<ChatChoice> choices) {
+    public GenericChatResponse(
+            java.util.Date timeCreated, java.util.List<ChatChoice> choices, Usage usage) {
         super();
         this.timeCreated = timeCreated;
         this.choices = choices;
+        this.usage = usage;
     }
 
     /** The Unix timestamp (in seconds) of when the response text was generated. */
@@ -123,6 +138,13 @@ public final class GenericChatResponse extends BaseChatResponse {
         return choices;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("usage")
+    private final Usage usage;
+
+    public Usage getUsage() {
+        return usage;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -140,6 +162,7 @@ public final class GenericChatResponse extends BaseChatResponse {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", choices=").append(String.valueOf(this.choices));
+        sb.append(", usage=").append(String.valueOf(this.usage));
         sb.append(")");
         return sb.toString();
     }
@@ -156,6 +179,7 @@ public final class GenericChatResponse extends BaseChatResponse {
         GenericChatResponse other = (GenericChatResponse) o;
         return java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.choices, other.choices)
+                && java.util.Objects.equals(this.usage, other.usage)
                 && super.equals(other);
     }
 
@@ -165,6 +189,7 @@ public final class GenericChatResponse extends BaseChatResponse {
         int result = super.hashCode();
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.choices == null ? 43 : this.choices.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
         return result;
     }
 }

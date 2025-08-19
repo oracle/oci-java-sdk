@@ -1630,6 +1630,23 @@ public interface Database extends AutoCloseable {
     CreatePluggableDatabaseResponse createPluggableDatabase(CreatePluggableDatabaseRequest request);
 
     /**
+     * Creates a Pluggable Database Snapshot
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreatePluggableDatabaseSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreatePluggableDatabaseSnapshot API.
+     */
+    CreatePluggableDatabaseSnapshotResponse createPluggableDatabaseSnapshot(
+            CreatePluggableDatabaseSnapshotRequest request);
+
+    /**
      * Creates a Scheduled Action resource.
      *
      * @param request The request object containing the details to send
@@ -2219,6 +2236,23 @@ public interface Database extends AutoCloseable {
      *     DeletePluggableDatabase API.
      */
     DeletePluggableDatabaseResponse deletePluggableDatabase(DeletePluggableDatabaseRequest request);
+
+    /**
+     * Deletes the specified Exadata Pluggable Database Snapshot.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeletePluggableDatabaseSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeletePluggableDatabaseSnapshot API.
+     */
+    DeletePluggableDatabaseSnapshotResponse deletePluggableDatabaseSnapshot(
+            DeletePluggableDatabaseSnapshotRequest request);
 
     /**
      * Deletes the scheduled action.
@@ -4115,6 +4149,24 @@ public interface Database extends AutoCloseable {
     GetPluggableDatabaseResponse getPluggableDatabase(GetPluggableDatabaseRequest request);
 
     /**
+     * Gets information about the specified Exadata Pluggable Database Snapshot in the specified
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetPluggableDatabaseSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetPluggableDatabaseSnapshot API.
+     */
+    GetPluggableDatabaseSnapshotResponse getPluggableDatabaseSnapshot(
+            GetPluggableDatabaseSnapshotRequest request);
+
+    /**
      * Gets information about the specified Scheduled Action.
      *
      * @param request The request object containing the details to send
@@ -5537,6 +5589,23 @@ public interface Database extends AutoCloseable {
      */
     ListPdbConversionHistoryEntriesResponse listPdbConversionHistoryEntries(
             ListPdbConversionHistoryEntriesRequest request);
+
+    /**
+     * Gets a list of the Exadata Pluggable Database Snapshots in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListPluggableDatabaseSnapshotsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListPluggableDatabaseSnapshots API.
+     */
+    ListPluggableDatabaseSnapshotsResponse listPluggableDatabaseSnapshots(
+            ListPluggableDatabaseSnapshotsRequest request);
 
     /**
      * Gets a list of the pluggable databases in a database or compartment. You must provide either
