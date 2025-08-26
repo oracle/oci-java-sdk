@@ -13,7 +13,8 @@ package com.oracle.bmc.disasterrecovery.model;
  * service, or Exadata Database service. - AUTONOMOUS_DATABASE - An Oracle Autonomous Database
  * Serverless. - AUTONOMOUS_CONTAINER_DATABASE - An Oracle Autonomous Container Database. -
  * OKE_CLUSTER - OCI Container Engine for Kubernetes(OKE) cluster. - LOAD_BALANCER - A load
- * balancer. - NETWORK_LOAD_BALANCER - A network load balancer. - FILE_SYSTEM - A file system.
+ * balancer. - NETWORK_LOAD_BALANCER - A network load balancer. - FILE_SYSTEM - A file system. -
+ * MYSQL_DB_SYSTEM - A HeatWave MySQL DB system.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrProtectionGroupMemberType implements com.oracle.bmc.http.internal.BmcEnum {
@@ -29,6 +30,7 @@ public enum DrProtectionGroupMemberType implements com.oracle.bmc.http.internal.
     FileSystem("FILE_SYSTEM"),
     OkeCluster("OKE_CLUSTER"),
     ObjectStorageBucket("OBJECT_STORAGE_BUCKET"),
+    MysqlDbSystem("MYSQL_DB_SYSTEM"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

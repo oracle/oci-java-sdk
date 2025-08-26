@@ -110,6 +110,29 @@ public final class CreateDrProtectionGroupMemberFileSystemDetails
             this.__explicitlySet__.add("destinationSnapshotPolicyId");
             return this;
         }
+        /**
+         * The OCID of a compartment in the destination region in which the file system should be
+         * launched.
+         *
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
+        private String destinationCompartmentId;
+
+        /**
+         * The OCID of a compartment in the destination region in which the file system should be
+         * launched.
+         *
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+         *
+         * @param destinationCompartmentId the value to set
+         * @return this builder
+         */
+        public Builder destinationCompartmentId(String destinationCompartmentId) {
+            this.destinationCompartmentId = destinationCompartmentId;
+            this.__explicitlySet__.add("destinationCompartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -121,7 +144,8 @@ public final class CreateDrProtectionGroupMemberFileSystemDetails
                             this.destinationAvailabilityDomain,
                             this.exportMappings,
                             this.destinationEncryptionKey,
-                            this.destinationSnapshotPolicyId);
+                            this.destinationSnapshotPolicyId,
+                            this.destinationCompartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -145,6 +169,9 @@ public final class CreateDrProtectionGroupMemberFileSystemDetails
             if (model.wasPropertyExplicitlySet("destinationSnapshotPolicyId")) {
                 this.destinationSnapshotPolicyId(model.getDestinationSnapshotPolicyId());
             }
+            if (model.wasPropertyExplicitlySet("destinationCompartmentId")) {
+                this.destinationCompartmentId(model.getDestinationCompartmentId());
+            }
             return this;
         }
     }
@@ -164,12 +191,14 @@ public final class CreateDrProtectionGroupMemberFileSystemDetails
             String destinationAvailabilityDomain,
             java.util.List<FileSystemExportMappingDetails> exportMappings,
             CreateVaultAndEncryptionKeyDetails destinationEncryptionKey,
-            String destinationSnapshotPolicyId) {
+            String destinationSnapshotPolicyId,
+            String destinationCompartmentId) {
         super(memberId);
         this.destinationAvailabilityDomain = destinationAvailabilityDomain;
         this.exportMappings = exportMappings;
         this.destinationEncryptionKey = destinationEncryptionKey;
         this.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
+        this.destinationCompartmentId = destinationCompartmentId;
     }
 
     /**
@@ -236,6 +265,27 @@ public final class CreateDrProtectionGroupMemberFileSystemDetails
         return destinationSnapshotPolicyId;
     }
 
+    /**
+     * The OCID of a compartment in the destination region in which the file system should be
+     * launched.
+     *
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
+    private final String destinationCompartmentId;
+
+    /**
+     * The OCID of a compartment in the destination region in which the file system should be
+     * launched.
+     *
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+     *
+     * @return the value
+     */
+    public String getDestinationCompartmentId() {
+        return destinationCompartmentId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -258,6 +308,8 @@ public final class CreateDrProtectionGroupMemberFileSystemDetails
                 .append(String.valueOf(this.destinationEncryptionKey));
         sb.append(", destinationSnapshotPolicyId=")
                 .append(String.valueOf(this.destinationSnapshotPolicyId));
+        sb.append(", destinationCompartmentId=")
+                .append(String.valueOf(this.destinationCompartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -280,6 +332,8 @@ public final class CreateDrProtectionGroupMemberFileSystemDetails
                         this.destinationEncryptionKey, other.destinationEncryptionKey)
                 && java.util.Objects.equals(
                         this.destinationSnapshotPolicyId, other.destinationSnapshotPolicyId)
+                && java.util.Objects.equals(
+                        this.destinationCompartmentId, other.destinationCompartmentId)
                 && super.equals(other);
     }
 
@@ -305,6 +359,11 @@ public final class CreateDrProtectionGroupMemberFileSystemDetails
                         + (this.destinationSnapshotPolicyId == null
                                 ? 43
                                 : this.destinationSnapshotPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationCompartmentId == null
+                                ? 43
+                                : this.destinationCompartmentId.hashCode());
         return result;
     }
 }

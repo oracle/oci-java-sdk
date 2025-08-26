@@ -49,7 +49,9 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         "memorySizeInGBs",
         "dbNodeStorageSizeInGBs",
         "totalCpuCoreCount",
-        "dbServerId"
+        "dbServerId",
+        "computeModel",
+        "computeCount"
     })
     public DbNode(
             String id,
@@ -79,7 +81,9 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             Integer memorySizeInGBs,
             Integer dbNodeStorageSizeInGBs,
             Integer totalCpuCoreCount,
-            String dbServerId) {
+            String dbServerId,
+            ComputeModel computeModel,
+            Integer computeCount) {
         super();
         this.id = id;
         this.dbSystemId = dbSystemId;
@@ -109,6 +113,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
         this.totalCpuCoreCount = totalCpuCoreCount;
         this.dbServerId = dbServerId;
+        this.computeModel = computeModel;
+        this.computeCount = computeCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -648,6 +654,44 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("dbServerId");
             return this;
         }
+        /**
+         * The compute model for Base Database Service. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. The ECPU compute model is the recommended
+         * model, and the OCPU compute model is legacy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model for Base Database Service. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. The ECPU compute model is the recommended
+         * model, and the OCPU compute model is legacy.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /** The number of compute servers for the DB system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        /**
+         * The number of compute servers for the DB system.
+         *
+         * @param computeCount the value to set
+         * @return this builder
+         */
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -682,7 +726,9 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
                             this.memorySizeInGBs,
                             this.dbNodeStorageSizeInGBs,
                             this.totalCpuCoreCount,
-                            this.dbServerId);
+                            this.dbServerId,
+                            this.computeModel,
+                            this.computeCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -774,6 +820,12 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("dbServerId")) {
                 this.dbServerId(model.getDbServerId());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             return this;
         }
@@ -1365,6 +1417,91 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         return dbServerId;
     }
 
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /** The number of compute servers for the DB system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Integer computeCount;
+
+    /**
+     * The number of compute servers for the DB system.
+     *
+     * @return the value
+     */
+    public Integer getComputeCount() {
+        return computeCount;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1411,6 +1548,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
         sb.append(", totalCpuCoreCount=").append(String.valueOf(this.totalCpuCoreCount));
         sb.append(", dbServerId=").append(String.valueOf(this.dbServerId));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(")");
         return sb.toString();
     }
@@ -1457,6 +1596,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
                         this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
                 && java.util.Objects.equals(this.totalCpuCoreCount, other.totalCpuCoreCount)
                 && java.util.Objects.equals(this.dbServerId, other.dbServerId)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && super.equals(other);
     }
 
@@ -1522,6 +1663,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
                 (result * PRIME)
                         + (this.totalCpuCoreCount == null ? 43 : this.totalCpuCoreCount.hashCode());
         result = (result * PRIME) + (this.dbServerId == null ? 43 : this.dbServerId.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

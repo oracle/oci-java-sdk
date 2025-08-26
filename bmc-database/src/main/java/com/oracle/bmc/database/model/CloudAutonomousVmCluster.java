@@ -1024,12 +1024,12 @@ public final class CloudAutonomousVmCluster
             this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
             return this;
         }
-        /** The amount of memory (in GBs) enabled per OCPU or ECPU. */
+        /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) enabled per OCPU or ECPU.
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -2451,12 +2451,12 @@ public final class CloudAutonomousVmCluster
         return dbNodeStorageSizeInGBs;
     }
 
-    /** The amount of memory (in GBs) enabled per OCPU or ECPU. */
+    /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      *
      * @return the value
      */

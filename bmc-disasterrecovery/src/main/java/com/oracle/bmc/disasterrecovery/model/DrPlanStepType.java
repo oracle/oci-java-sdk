@@ -161,7 +161,16 @@ package com.oracle.bmc.disasterrecovery.model;
  * OBJECT_STORAGE_BUCKET_FAILOVER_DELETE_REPLICATION_STANDBY - A DR plan step to delete an object
  * storage bucket replication in the standby region during a failover. -
  * OBJECT_STORAGE_BUCKET_FAILOVER_SETUP_REVERSE_REPLICATION_STANDBY - A DR plan step to set up an
- * object storage bucket reverse replication in the standby region during a failover.
+ * object storage bucket reverse replication in the standby region during a failover. -
+ * MYSQL_DB_SYSTEM_SWITCHOVER_PRECHECK - A precheck step for validating HeatWave MySQL DB System
+ * switchover. - MYSQL_DB_SYSTEM_SWITCHOVER - A DR plan step to perform a HeatWave MySQL DB System
+ * switchover. - MYSQL_DB_SYSTEM_FAILOVER_PRECHECK - A precheck step for validating HeatWave MySQL
+ * DB System failover. - MYSQL_DB_SYSTEM_FAILOVER - A DR plan step to perform a HeatWave MySQL DB
+ * System failover. - MYSQL_DB_SYSTEM_START_DRILL_PRECHECK - A precheck step for validating HeatWave
+ * MySQL DB System start drill. - MYSQL_DB_SYSTEM_START_DRILL - A DR plan step to perform a HeatWave
+ * MySQL DB System start drill. - MYSQL_DB_SYSTEM_STOP_DRILL_PRECHECK - A precheck step for
+ * validating HeatWave MySQL DB System stop drill. - MYSQL_DB_SYSTEM_STOP_DRILL - A DR plan step to
+ * perform a HeatWave MySQL DB System stop drill.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanStepType implements com.oracle.bmc.http.internal.BmcEnum {
@@ -308,6 +317,14 @@ public enum DrPlanStepType implements com.oracle.bmc.http.internal.BmcEnum {
             "OBJECT_STORAGE_BUCKET_FAILOVER_DELETE_REPLICATION_STANDBY"),
     ObjectStorageBucketFailoverSetupReverseReplicationStandby(
             "OBJECT_STORAGE_BUCKET_FAILOVER_SETUP_REVERSE_REPLICATION_STANDBY"),
+    MysqlDbSystemSwitchoverPrecheck("MYSQL_DB_SYSTEM_SWITCHOVER_PRECHECK"),
+    MysqlDbSystemSwitchover("MYSQL_DB_SYSTEM_SWITCHOVER"),
+    MysqlDbSystemFailoverPrecheck("MYSQL_DB_SYSTEM_FAILOVER_PRECHECK"),
+    MysqlDbSystemFailover("MYSQL_DB_SYSTEM_FAILOVER"),
+    MysqlDbSystemStartDrillPrecheck("MYSQL_DB_SYSTEM_START_DRILL_PRECHECK"),
+    MysqlDbSystemStartDrill("MYSQL_DB_SYSTEM_START_DRILL"),
+    MysqlDbSystemStopDrillPrecheck("MYSQL_DB_SYSTEM_STOP_DRILL_PRECHECK"),
+    MysqlDbSystemStopDrill("MYSQL_DB_SYSTEM_STOP_DRILL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.72.1 - 2025-08-26
+### Added 
+- Support for Oracle 19C databases on exascale infrastructure in the Database Service 
+- Support for VM.Standard.x86 shape for base databases in the Database Service 
+- Support for disaster recovery for MySQL database systems in the Disaster Recovery Service 
+- Support for additional languages using whisper model in the AI Speech Service 
+- Support for additional host count properties in the GPU memory fabric resource in the Compute Service 
+- Support for additional parameters on deployment create and update operations in the GoldenGate Service
+
 ## 3.72.0 - 2025-08-19
 ### Added 
 - Support for calling Oracle Cloud Infrastructure services in the eu-budapest-1 region 
@@ -15,6 +24,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Removed deprecated service Data Transfer Service 
 - Removed deprecated service OS Management Service 
 - Removed deprecated service Service Mesh
+
+### Fixed
+- The behavior of the `hasNext()` and `next()` methods in the `ResponseIterator` class was changed to make them conform to the specifications of the `Iterator` interface: If `hasNext()` returned `true`, in some cases `next()` could nonetheless throw a `BmcException`, which violated the `Iterator` contract. Now, if `hasNext()` returns `true`, it is guaranteed that `next()` will not throw an exception.
 
 ## 3.71.0 - 2025-08-12
 ### Added 

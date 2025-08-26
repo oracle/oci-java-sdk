@@ -251,12 +251,12 @@ public final class BackupDestinationConfigurationSummary
             this.__explicitlySet__.add("dbrsPolicyId");
             return this;
         }
-        /** Indicates whether the backup destination is cross-region or local region. */
+        /** Indicates whether the backup destination is cross-region or local. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRemote")
         private Boolean isRemote;
 
         /**
-         * Indicates whether the backup destination is cross-region or local region.
+         * Indicates whether the backup destination is cross-region or local.
          *
          * @param isRemote the value to set
          * @return this builder
@@ -268,9 +268,7 @@ public final class BackupDestinationConfigurationSummary
         }
         /**
          * The name of the remote region where the remote automatic incremental backups will be
-         * stored.
-         *
-         * <p>For information about valid region names, see [Regions and Availability
+         * stored. For information about valid region names, see [Regions and Availability
          * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("remoteRegion")
@@ -278,9 +276,7 @@ public final class BackupDestinationConfigurationSummary
 
         /**
          * The name of the remote region where the remote automatic incremental backups will be
-         * stored.
-         *
-         * <p>For information about valid region names, see [Regions and Availability
+         * stored. For information about valid region names, see [Regions and Availability
          * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
          *
          * @param remoteRegion the value to set
@@ -578,12 +574,12 @@ public final class BackupDestinationConfigurationSummary
         return dbrsPolicyId;
     }
 
-    /** Indicates whether the backup destination is cross-region or local region. */
+    /** Indicates whether the backup destination is cross-region or local. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRemote")
     private final Boolean isRemote;
 
     /**
-     * Indicates whether the backup destination is cross-region or local region.
+     * Indicates whether the backup destination is cross-region or local.
      *
      * @return the value
      */
@@ -593,8 +589,7 @@ public final class BackupDestinationConfigurationSummary
 
     /**
      * The name of the remote region where the remote automatic incremental backups will be stored.
-     *
-     * <p>For information about valid region names, see [Regions and Availability
+     * For information about valid region names, see [Regions and Availability
      * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("remoteRegion")
@@ -602,8 +597,7 @@ public final class BackupDestinationConfigurationSummary
 
     /**
      * The name of the remote region where the remote automatic incremental backups will be stored.
-     *
-     * <p>For information about valid region names, see [Regions and Availability
+     * For information about valid region names, see [Regions and Availability
      * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      *
      * @return the value

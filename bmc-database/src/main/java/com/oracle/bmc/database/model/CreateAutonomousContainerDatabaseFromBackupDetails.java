@@ -5,8 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Oracle Autonomous Container Database by cloning from a backup of an existing
- * Autonomous Container Database. <br>
+ * Details to create an Autonomous Container Database (ACD) by cloning a backup of an existing ACD.
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -386,16 +386,14 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Container Database Backup that you will clone to create a new
-         * Autonomous Container Database.
+         * source ACD backup that you will clone to create a new ACD.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseBackupId")
         private String autonomousContainerDatabaseBackupId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Container Database Backup that you will clone to create a new
-         * Autonomous Container Database.
+         * source ACD backup that you will clone to create a new ACD.
          *
          * @param autonomousContainerDatabaseBackupId the value to set
          * @return this builder
@@ -682,16 +680,14 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Container Database Backup that you will clone to create a new Autonomous
-     * Container Database.
+     * source ACD backup that you will clone to create a new ACD.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseBackupId")
     private final String autonomousContainerDatabaseBackupId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Container Database Backup that you will clone to create a new Autonomous
-     * Container Database.
+     * source ACD backup that you will clone to create a new ACD.
      *
      * @return the value
      */

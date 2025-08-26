@@ -214,6 +214,44 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
         /**
+         * The compute model for Base Database Service. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. The ECPU compute model is the recommended
+         * model, and the OCPU compute model is legacy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model for Base Database Service. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. The ECPU compute model is the recommended
+         * model, and the OCPU compute model is legacy.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /** The number of compute servers for the DB system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        /**
+         * The number of compute servers for the DB system.
+         *
+         * @param computeCount the value to set
+         * @return this builder
+         */
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+        /**
          * The number of nodes to launch for the DB system of the standby in the Data Guard
          * association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do
          * not supply this parameter, the default is the node count of the primary DB system.
@@ -631,6 +669,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             this.shape,
                             this.cpuCoreCount,
                             this.storageVolumePerformanceMode,
+                            this.computeModel,
+                            this.computeCount,
                             this.nodeCount,
                             this.subnetId,
                             this.nsgIds,
@@ -695,6 +735,12 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("storageVolumePerformanceMode")) {
                 this.storageVolumePerformanceMode(model.getStorageVolumePerformanceMode());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             if (model.wasPropertyExplicitlySet("nodeCount")) {
                 this.nodeCount(model.getNodeCount());
@@ -775,6 +821,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             String shape,
             Integer cpuCoreCount,
             StorageVolumePerformanceMode storageVolumePerformanceMode,
+            ComputeModel computeModel,
+            Integer computeCount,
             Integer nodeCount,
             String subnetId,
             java.util.List<String> nsgIds,
@@ -806,6 +854,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         this.shape = shape;
         this.cpuCoreCount = cpuCoreCount;
         this.storageVolumePerformanceMode = storageVolumePerformanceMode;
+        this.computeModel = computeModel;
+        this.computeCount = computeCount;
         this.nodeCount = nodeCount;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
@@ -956,6 +1006,78 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
      */
     public StorageVolumePerformanceMode getStorageVolumePerformanceMode() {
         return storageVolumePerformanceMode;
+    }
+
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ComputeModel: " + key);
+        }
+    };
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /** The number of compute servers for the DB system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Integer computeCount;
+
+    /**
+     * The number of compute servers for the DB system.
+     *
+     * @return the value
+     */
+    public Integer getComputeCount() {
+        return computeCount;
     }
 
     /**
@@ -1371,6 +1493,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", storageVolumePerformanceMode=")
                 .append(String.valueOf(this.storageVolumePerformanceMode));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
@@ -1410,6 +1534,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(
                         this.storageVolumePerformanceMode, other.storageVolumePerformanceMode)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
@@ -1448,6 +1574,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                         + (this.storageVolumePerformanceMode == null
                                 ? 43
                                 : this.storageVolumePerformanceMode.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());

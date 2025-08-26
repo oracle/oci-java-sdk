@@ -33,6 +33,7 @@ public final class CreateStandbyDetails
         "sidPrefix",
         "protectionMode",
         "transportType",
+        "storageSizeDetails",
         "freeformTags",
         "definedTags"
     })
@@ -46,6 +47,7 @@ public final class CreateStandbyDetails
             String sidPrefix,
             ProtectionMode protectionMode,
             TransportType transportType,
+            DatabaseStorageSizeDetails storageSizeDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -58,6 +60,7 @@ public final class CreateStandbyDetails
         this.sidPrefix = sidPrefix;
         this.protectionMode = protectionMode;
         this.transportType = transportType;
+        this.storageSizeDetails = storageSizeDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -236,6 +239,15 @@ public final class CreateStandbyDetails
             this.__explicitlySet__.add("transportType");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("storageSizeDetails")
+        private DatabaseStorageSizeDetails storageSizeDetails;
+
+        public Builder storageSizeDetails(DatabaseStorageSizeDetails storageSizeDetails) {
+            this.storageSizeDetails = storageSizeDetails;
+            this.__explicitlySet__.add("storageSizeDetails");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -299,6 +311,7 @@ public final class CreateStandbyDetails
                             this.sidPrefix,
                             this.protectionMode,
                             this.transportType,
+                            this.storageSizeDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -336,6 +349,9 @@ public final class CreateStandbyDetails
             }
             if (model.wasPropertyExplicitlySet("transportType")) {
                 this.transportType(model.getTransportType());
+            }
+            if (model.wasPropertyExplicitlySet("storageSizeDetails")) {
+                this.storageSizeDetails(model.getStorageSizeDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -595,6 +611,13 @@ public final class CreateStandbyDetails
         return transportType;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("storageSizeDetails")
+    private final DatabaseStorageSizeDetails storageSizeDetails;
+
+    public DatabaseStorageSizeDetails getStorageSizeDetails() {
+        return storageSizeDetails;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -663,6 +686,7 @@ public final class CreateStandbyDetails
         sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
         sb.append(", transportType=").append(String.valueOf(this.transportType));
+        sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -692,6 +716,7 @@ public final class CreateStandbyDetails
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
                 && java.util.Objects.equals(this.protectionMode, other.protectionMode)
                 && java.util.Objects.equals(this.transportType, other.transportType)
+                && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -732,6 +757,11 @@ public final class CreateStandbyDetails
         result =
                 (result * PRIME)
                         + (this.transportType == null ? 43 : this.transportType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSizeDetails == null
+                                ? 43
+                                : this.storageSizeDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

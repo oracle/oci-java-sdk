@@ -33,6 +33,7 @@ public final class ComputeGpuMemoryFabric
         "fabricHealth",
         "additionalData",
         "healthyHostCount",
+        "availableHostCount",
         "totalHostCount",
         "timeCreated",
         "definedTags",
@@ -50,6 +51,7 @@ public final class ComputeGpuMemoryFabric
             FabricHealth fabricHealth,
             java.util.Map<String, Object> additionalData,
             Long healthyHostCount,
+            Long availableHostCount,
             Long totalHostCount,
             java.util.Date timeCreated,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -66,6 +68,7 @@ public final class ComputeGpuMemoryFabric
         this.fabricHealth = fabricHealth;
         this.additionalData = additionalData;
         this.healthyHostCount = healthyHostCount;
+        this.availableHostCount = availableHostCount;
         this.totalHostCount = totalHostCount;
         this.timeCreated = timeCreated;
         this.definedTags = definedTags;
@@ -237,6 +240,23 @@ public final class ComputeGpuMemoryFabric
             this.__explicitlySet__.add("healthyHostCount");
             return this;
         }
+        /**
+         * The total number of available bare metal hosts located in this compute GPU memory fabric.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("availableHostCount")
+        private Long availableHostCount;
+
+        /**
+         * The total number of available bare metal hosts located in this compute GPU memory fabric.
+         *
+         * @param availableHostCount the value to set
+         * @return this builder
+         */
+        public Builder availableHostCount(Long availableHostCount) {
+            this.availableHostCount = availableHostCount;
+            this.__explicitlySet__.add("availableHostCount");
+            return this;
+        }
         /** The total number of bare metal hosts located in this compute GPU memory fabric. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalHostCount")
         private Long totalHostCount;
@@ -380,6 +400,7 @@ public final class ComputeGpuMemoryFabric
                             this.fabricHealth,
                             this.additionalData,
                             this.healthyHostCount,
+                            this.availableHostCount,
                             this.totalHostCount,
                             this.timeCreated,
                             this.definedTags,
@@ -420,6 +441,9 @@ public final class ComputeGpuMemoryFabric
             }
             if (model.wasPropertyExplicitlySet("healthyHostCount")) {
                 this.healthyHostCount(model.getHealthyHostCount());
+            }
+            if (model.wasPropertyExplicitlySet("availableHostCount")) {
+                this.availableHostCount(model.getAvailableHostCount());
             }
             if (model.wasPropertyExplicitlySet("totalHostCount")) {
                 this.totalHostCount(model.getTotalHostCount());
@@ -688,6 +712,19 @@ public final class ComputeGpuMemoryFabric
         return healthyHostCount;
     }
 
+    /** The total number of available bare metal hosts located in this compute GPU memory fabric. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availableHostCount")
+    private final Long availableHostCount;
+
+    /**
+     * The total number of available bare metal hosts located in this compute GPU memory fabric.
+     *
+     * @return the value
+     */
+    public Long getAvailableHostCount() {
+        return availableHostCount;
+    }
+
     /** The total number of bare metal hosts located in this compute GPU memory fabric. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalHostCount")
     private final Long totalHostCount;
@@ -826,6 +863,7 @@ public final class ComputeGpuMemoryFabric
         sb.append(", fabricHealth=").append(String.valueOf(this.fabricHealth));
         sb.append(", additionalData=").append(String.valueOf(this.additionalData));
         sb.append(", healthyHostCount=").append(String.valueOf(this.healthyHostCount));
+        sb.append(", availableHostCount=").append(String.valueOf(this.availableHostCount));
         sb.append(", totalHostCount=").append(String.valueOf(this.totalHostCount));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -855,6 +893,7 @@ public final class ComputeGpuMemoryFabric
                 && java.util.Objects.equals(this.fabricHealth, other.fabricHealth)
                 && java.util.Objects.equals(this.additionalData, other.additionalData)
                 && java.util.Objects.equals(this.healthyHostCount, other.healthyHostCount)
+                && java.util.Objects.equals(this.availableHostCount, other.availableHostCount)
                 && java.util.Objects.equals(this.totalHostCount, other.totalHostCount)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -897,6 +936,11 @@ public final class ComputeGpuMemoryFabric
         result =
                 (result * PRIME)
                         + (this.healthyHostCount == null ? 43 : this.healthyHostCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableHostCount == null
+                                ? 43
+                                : this.availableHostCount.hashCode());
         result =
                 (result * PRIME)
                         + (this.totalHostCount == null ? 43 : this.totalHostCount.hashCode());

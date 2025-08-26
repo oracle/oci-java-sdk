@@ -52,7 +52,7 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
          * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. Default
          * en-US - en-US: English - United States - en-GB: English - Great Britain - es-ES: Spanish
          * - Spain - pt-BR: Portuguese - Brazil - hi-IN: Hindi - India - fr-FR: French - France -
-         * it-IT: Italian - Italy - ja-JP: Japanese - Japan - zh-CN: Mandarin - China
+         * it-IT: Italian - Italy - ja-JP: Japanese - Japan - cmn-CN: Mandarin - China
          */
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
@@ -61,7 +61,7 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
          * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. Default
          * en-US - en-US: English - United States - en-GB: English - Great Britain - es-ES: Spanish
          * - Spain - pt-BR: Portuguese - Brazil - hi-IN: Hindi - India - fr-FR: French - France -
-         * it-IT: Italian - Italy - ja-JP: Japanese - Japan - zh-CN: Mandarin - China
+         * it-IT: Italian - Italy - ja-JP: Japanese - Japan - cmn-CN: Mandarin - China
          *
          * @param languageCode the value to set
          * @return this builder
@@ -135,7 +135,7 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
      * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. Default en-US -
      * en-US: English - United States - en-GB: English - Great Britain - es-ES: Spanish - Spain -
      * pt-BR: Portuguese - Brazil - hi-IN: Hindi - India - fr-FR: French - France - it-IT: Italian -
-     * Italy - ja-JP: Japanese - Japan - zh-CN: Mandarin - China
+     * Italy - ja-JP: Japanese - Japan - cmn-CN: Mandarin - China
      */
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
@@ -144,7 +144,7 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
      * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. Default en-US -
      * en-US: English - United States - en-GB: English - Great Britain - es-ES: Spanish - Spain -
      * pt-BR: Portuguese - Brazil - hi-IN: Hindi - India - fr-FR: French - France - it-IT: Italian -
-     * Italy - ja-JP: Japanese - Japan - zh-CN: Mandarin - China
+     * Italy - ja-JP: Japanese - Japan - cmn-CN: Mandarin - China
      *
      * @return the value
      */

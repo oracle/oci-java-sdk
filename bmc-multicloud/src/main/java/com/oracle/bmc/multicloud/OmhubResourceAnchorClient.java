@@ -135,7 +135,10 @@ public class OmhubResourceAnchorClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GetResourceAnchorResponse::builder)
                 .logger(LOG, "getResourceAnchor")
-                .serviceDetails("OmhubResourceAnchor", "GetResourceAnchor", "")
+                .serviceDetails(
+                        "OmhubResourceAnchor",
+                        "GetResourceAnchor",
+                        "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/ResourceAnchor/GetResourceAnchor")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetResourceAnchorRequest::builder)
                 .basePath("/20180828")
@@ -165,7 +168,10 @@ public class OmhubResourceAnchorClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListResourceAnchorsResponse::builder)
                 .logger(LOG, "listResourceAnchors")
-                .serviceDetails("OmhubResourceAnchor", "ListResourceAnchors", "")
+                .serviceDetails(
+                        "OmhubResourceAnchor",
+                        "ListResourceAnchors",
+                        "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/ResourceAnchorCollection/ListResourceAnchors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListResourceAnchorsRequest::builder)
                 .basePath("/20180828")

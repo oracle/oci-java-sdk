@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.72.0</version>
+  <version>3.72.1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -62,7 +62,7 @@
     <dev.profile.skip.javadoc>true</dev.profile.skip.javadoc>
     <exec.skip>true</exec.skip>
     <exec.mainClass>com.acme.Undefined</exec.mainClass>
-    <oci.codegen.version>2.135</oci.codegen.version>
+    <oci.codegen.version>2.139</oci.codegen.version>
   </properties>
   <profiles>
     <profile>
@@ -817,5 +817,6 @@
     <module>bmc-dbmulticloud</module>
     <module>bmc-apiplatform</module>
     <module>bmc-multicloud</module>
+    <module>bmc-managedkafka</module>
   </modules>
 </project>

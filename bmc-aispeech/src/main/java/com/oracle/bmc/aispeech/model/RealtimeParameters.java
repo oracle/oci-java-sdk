@@ -29,6 +29,7 @@ public final class RealtimeParameters
         "partialSilenceThresholdInMs",
         "finalSilenceThresholdInMs",
         "stabilizePartialResults",
+        "modelType",
         "modelDomain",
         "languageCode",
         "shouldIgnoreInvalidCustomizations",
@@ -41,6 +42,7 @@ public final class RealtimeParameters
             Integer partialSilenceThresholdInMs,
             Integer finalSilenceThresholdInMs,
             StabilizePartialResults stabilizePartialResults,
+            String modelType,
             ModelDomain modelDomain,
             String languageCode,
             Boolean shouldIgnoreInvalidCustomizations,
@@ -52,6 +54,7 @@ public final class RealtimeParameters
         this.partialSilenceThresholdInMs = partialSilenceThresholdInMs;
         this.finalSilenceThresholdInMs = finalSilenceThresholdInMs;
         this.stabilizePartialResults = stabilizePartialResults;
+        this.modelType = modelType;
         this.modelDomain = modelDomain;
         this.languageCode = languageCode;
         this.shouldIgnoreInvalidCustomizations = shouldIgnoreInvalidCustomizations;
@@ -95,12 +98,16 @@ public final class RealtimeParameters
             this.__explicitlySet__.add("isAckEnabled");
             return this;
         }
-        /** Silence threshold for Realtime Speech partial results in milliseconds. */
+        /**
+         * Silence threshold for Realtime Speech partial results in milliseconds. Currently
+         * supported only for Oracle model.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("partialSilenceThresholdInMs")
         private Integer partialSilenceThresholdInMs;
 
         /**
-         * Silence threshold for Realtime Speech partial results in milliseconds.
+         * Silence threshold for Realtime Speech partial results in milliseconds. Currently
+         * supported only for Oracle model.
          *
          * @param partialSilenceThresholdInMs the value to set
          * @return this builder
@@ -110,12 +117,16 @@ public final class RealtimeParameters
             this.__explicitlySet__.add("partialSilenceThresholdInMs");
             return this;
         }
-        /** Silence threshold for Realtime Speech final results in milliseconds. */
+        /**
+         * Silence threshold for Realtime Speech final results in milliseconds. Currently supported
+         * only for Oracle model.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("finalSilenceThresholdInMs")
         private Integer finalSilenceThresholdInMs;
 
         /**
-         * Silence threshold for Realtime Speech final results in milliseconds.
+         * Silence threshold for Realtime Speech final results in milliseconds. Currently supported
+         * only for Oracle model.
          *
          * @param finalSilenceThresholdInMs the value to set
          * @return this builder
@@ -127,14 +138,14 @@ public final class RealtimeParameters
         }
         /**
          * When enabled sets the amount of confidence required for latest tokens before returning
-         * them as part of a new partial result
+         * them as part of a new partial result Currently supported only for Oracle model.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("stabilizePartialResults")
         private StabilizePartialResults stabilizePartialResults;
 
         /**
          * When enabled sets the amount of confidence required for latest tokens before returning
-         * them as part of a new partial result
+         * them as part of a new partial result Currently supported only for Oracle model.
          *
          * @param stabilizePartialResults the value to set
          * @return this builder
@@ -142,6 +153,25 @@ public final class RealtimeParameters
         public Builder stabilizePartialResults(StabilizePartialResults stabilizePartialResults) {
             this.stabilizePartialResults = stabilizePartialResults;
             this.__explicitlySet__.add("stabilizePartialResults");
+            return this;
+        }
+        /**
+         * Select a model to use for generating transcriptions. Currently supported models are: -
+         * ORACLE - WHISPER
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("modelType")
+        private String modelType;
+
+        /**
+         * Select a model to use for generating transcriptions. Currently supported models are: -
+         * ORACLE - WHISPER
+         *
+         * @param modelType the value to set
+         * @return this builder
+         */
+        public Builder modelType(String modelType) {
+            this.modelType = modelType;
+            this.__explicitlySet__.add("modelType");
             return this;
         }
         /** Model Domain. */
@@ -160,19 +190,57 @@ public final class RealtimeParameters
             return this;
         }
         /**
-         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-         * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-         * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
-         * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+         * Oracle model supported language codes are locale specific. Locale value as per given in
+         * [https://datatracker.ietf.org/doc/html/rfc5646] - en-US: English - United States
+         * (default) - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB: English - Great
+         * Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi - India -
+         * fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy Whisper model
+         * supported language codes are locale agnostic - auto: Auto-detect language - af: Afrikaans
+         * - am: Amharic - ar: Arabic - as: Assamese - az: Azerbaijani - ba: Bashkir - be:
+         * Belarusian - bg: Bulgarian - bn: Bengali - bo: Tibetan - br: Breton - bs: Bosnian - ca:
+         * Catalan - cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English
+         * (default) - es: Spanish - et: Estonian - eu: Basque - fa: Persian - fi: Finnish - fo:
+         * Faroese - fr: French - gl: Galician - gu: Gujarati - ha: Hausa - haw: Hawaiian - he:
+         * Hebrew - hi: Hindi - hr: Croatian - ht: Haitian Creole - hu: Hungarian - hy: Armenian -
+         * id: Indonesian - is: Icelandic - it: Italian - ja: Japanese - jv: Javanese - ka: Georgian
+         * - kk: Kazakh - km: Khmer - kn: Kannada - ko: Korean - la: Latin - lb: Luxembourgish - ln:
+         * Lingala - lo: Lao - lt: Lithuanian - lv: Latvian - mg: Malagasy - mi: Maori - mk:
+         * Macedonian - ml: Malayalam - mn: Mongolian - mr: Marathi - ms: Malay - mt: Maltese - my:
+         * Burmese - ne: Nepali - nl: Dutch - nn: Norwegian Nynorsk - no: Norwegian - oc: Occitan -
+         * pa: Punjabi - pl: Polish - ps: Pashto - pt: Portuguese - ro: Romanian - ru: Russian - sa:
+         * Sanskrit - sd: Sindhi - si: Sinhala - sk: Slovak - sl: Slovenian - sn: Shona - so: Somali
+         * - sq: Albanian - sr: Serbian - su: Sundanese - sv: Swedish - sw: Swahili - ta: Tamil -
+         * te: Telugu - tg: Tajik - th: Thai - tk: Turkmen - tl: Tagalog - tr: Turkish - tt: Tatar -
+         * uk: Ukrainian - ur: Urdu - uz: Uzbek - vi: Vietnamese - yi: Yiddish - yo: Yoruba - zh:
+         * Chinese
          */
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
-         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-         * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-         * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
-         * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+         * Oracle model supported language codes are locale specific. Locale value as per given in
+         * [https://datatracker.ietf.org/doc/html/rfc5646] - en-US: English - United States
+         * (default) - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB: English - Great
+         * Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi - India -
+         * fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy Whisper model
+         * supported language codes are locale agnostic - auto: Auto-detect language - af: Afrikaans
+         * - am: Amharic - ar: Arabic - as: Assamese - az: Azerbaijani - ba: Bashkir - be:
+         * Belarusian - bg: Bulgarian - bn: Bengali - bo: Tibetan - br: Breton - bs: Bosnian - ca:
+         * Catalan - cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English
+         * (default) - es: Spanish - et: Estonian - eu: Basque - fa: Persian - fi: Finnish - fo:
+         * Faroese - fr: French - gl: Galician - gu: Gujarati - ha: Hausa - haw: Hawaiian - he:
+         * Hebrew - hi: Hindi - hr: Croatian - ht: Haitian Creole - hu: Hungarian - hy: Armenian -
+         * id: Indonesian - is: Icelandic - it: Italian - ja: Japanese - jv: Javanese - ka: Georgian
+         * - kk: Kazakh - km: Khmer - kn: Kannada - ko: Korean - la: Latin - lb: Luxembourgish - ln:
+         * Lingala - lo: Lao - lt: Lithuanian - lv: Latvian - mg: Malagasy - mi: Maori - mk:
+         * Macedonian - ml: Malayalam - mn: Mongolian - mr: Marathi - ms: Malay - mt: Maltese - my:
+         * Burmese - ne: Nepali - nl: Dutch - nn: Norwegian Nynorsk - no: Norwegian - oc: Occitan -
+         * pa: Punjabi - pl: Polish - ps: Pashto - pt: Portuguese - ro: Romanian - ru: Russian - sa:
+         * Sanskrit - sd: Sindhi - si: Sinhala - sk: Slovak - sl: Slovenian - sn: Shona - so: Somali
+         * - sq: Albanian - sr: Serbian - su: Sundanese - sv: Swedish - sw: Swahili - ta: Tamil -
+         * te: Telugu - tg: Tajik - th: Thai - tk: Turkmen - tl: Tagalog - tr: Turkish - tt: Tatar -
+         * uk: Ukrainian - ur: Urdu - uz: Uzbek - vi: Vietnamese - yi: Yiddish - yo: Yoruba - zh:
+         * Chinese
          *
          * @param languageCode the value to set
          * @return this builder
@@ -188,7 +256,7 @@ public final class RealtimeParameters
          * will simply be ignored and connection will continue being established with the default
          * base model and any remaining valid customizations. If set to false, if the service is
          * unable to load any of the specified customizations, an error detailing why will be
-         * returned and the session will end.
+         * returned and the session will end. Currently supported only for Oracle model.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("shouldIgnoreInvalidCustomizations")
         private Boolean shouldIgnoreInvalidCustomizations;
@@ -199,7 +267,7 @@ public final class RealtimeParameters
          * will simply be ignored and connection will continue being established with the default
          * base model and any remaining valid customizations. If set to false, if the service is
          * unable to load any of the specified customizations, an error detailing why will be
-         * returned and the session will end.
+         * returned and the session will end. Currently supported only for Oracle model.
          *
          * @param shouldIgnoreInvalidCustomizations the value to set
          * @return this builder
@@ -210,12 +278,12 @@ public final class RealtimeParameters
             this.__explicitlySet__.add("shouldIgnoreInvalidCustomizations");
             return this;
         }
-        /** Array of customization objects. */
+        /** Array of customization objects. Currently supported only for Oracle model. */
         @com.fasterxml.jackson.annotation.JsonProperty("customizations")
         private java.util.List<CustomizationInference> customizations;
 
         /**
-         * Array of customization objects.
+         * Array of customization objects. Currently supported only for Oracle model.
          *
          * @param customizations the value to set
          * @return this builder
@@ -229,7 +297,8 @@ public final class RealtimeParameters
          * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
          * punctuation in the transcription response - SPOKEN: Punctuations in response only when
          * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
-         * disabled
+         * disabled Spoken punctuation is currently supported only for the Oracle model in the
+         * Medical domain.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("punctuation")
         private Punctuation punctuation;
@@ -238,7 +307,8 @@ public final class RealtimeParameters
          * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
          * punctuation in the transcription response - SPOKEN: Punctuations in response only when
          * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
-         * disabled
+         * disabled Spoken punctuation is currently supported only for the Oracle model in the
+         * Medical domain.
          *
          * @param punctuation the value to set
          * @return this builder
@@ -260,6 +330,7 @@ public final class RealtimeParameters
                             this.partialSilenceThresholdInMs,
                             this.finalSilenceThresholdInMs,
                             this.stabilizePartialResults,
+                            this.modelType,
                             this.modelDomain,
                             this.languageCode,
                             this.shouldIgnoreInvalidCustomizations,
@@ -287,6 +358,9 @@ public final class RealtimeParameters
             }
             if (model.wasPropertyExplicitlySet("stabilizePartialResults")) {
                 this.stabilizePartialResults(model.getStabilizePartialResults());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
             }
             if (model.wasPropertyExplicitlySet("modelDomain")) {
                 this.modelDomain(model.getModelDomain());
@@ -347,12 +421,16 @@ public final class RealtimeParameters
         return isAckEnabled;
     }
 
-    /** Silence threshold for Realtime Speech partial results in milliseconds. */
+    /**
+     * Silence threshold for Realtime Speech partial results in milliseconds. Currently supported
+     * only for Oracle model.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("partialSilenceThresholdInMs")
     private final Integer partialSilenceThresholdInMs;
 
     /**
-     * Silence threshold for Realtime Speech partial results in milliseconds.
+     * Silence threshold for Realtime Speech partial results in milliseconds. Currently supported
+     * only for Oracle model.
      *
      * @return the value
      */
@@ -360,12 +438,16 @@ public final class RealtimeParameters
         return partialSilenceThresholdInMs;
     }
 
-    /** Silence threshold for Realtime Speech final results in milliseconds. */
+    /**
+     * Silence threshold for Realtime Speech final results in milliseconds. Currently supported only
+     * for Oracle model.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("finalSilenceThresholdInMs")
     private final Integer finalSilenceThresholdInMs;
 
     /**
-     * Silence threshold for Realtime Speech final results in milliseconds.
+     * Silence threshold for Realtime Speech final results in milliseconds. Currently supported only
+     * for Oracle model.
      *
      * @return the value
      */
@@ -375,7 +457,7 @@ public final class RealtimeParameters
 
     /**
      * When enabled sets the amount of confidence required for latest tokens before returning them
-     * as part of a new partial result
+     * as part of a new partial result Currently supported only for Oracle model.
      */
     public enum StabilizePartialResults implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
@@ -413,19 +495,36 @@ public final class RealtimeParameters
     };
     /**
      * When enabled sets the amount of confidence required for latest tokens before returning them
-     * as part of a new partial result
+     * as part of a new partial result Currently supported only for Oracle model.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("stabilizePartialResults")
     private final StabilizePartialResults stabilizePartialResults;
 
     /**
      * When enabled sets the amount of confidence required for latest tokens before returning them
-     * as part of a new partial result
+     * as part of a new partial result Currently supported only for Oracle model.
      *
      * @return the value
      */
     public StabilizePartialResults getStabilizePartialResults() {
         return stabilizePartialResults;
+    }
+
+    /**
+     * Select a model to use for generating transcriptions. Currently supported models are: - ORACLE
+     * - WHISPER
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("modelType")
+    private final String modelType;
+
+    /**
+     * Select a model to use for generating transcriptions. Currently supported models are: - ORACLE
+     * - WHISPER
+     *
+     * @return the value
+     */
+    public String getModelType() {
+        return modelType;
     }
 
     /** Model Domain. */
@@ -475,19 +574,53 @@ public final class RealtimeParameters
     }
 
     /**
-     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-     * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
-     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+     * Oracle model supported language codes are locale specific. Locale value as per given in
+     * [https://datatracker.ietf.org/doc/html/rfc5646] - en-US: English - United States (default) -
+     * es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB: English - Great Britain - en-AU:
+     * English - Australia - en-IN: English - India - hi-IN: Hindi - India - fr-FR: French - France
+     * - de-DE: German - Germany - it-IT: Italian - Italy Whisper model supported language codes are
+     * locale agnostic - auto: Auto-detect language - af: Afrikaans - am: Amharic - ar: Arabic - as:
+     * Assamese - az: Azerbaijani - ba: Bashkir - be: Belarusian - bg: Bulgarian - bn: Bengali - bo:
+     * Tibetan - br: Breton - bs: Bosnian - ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de:
+     * German - el: Greek - en: English (default) - es: Spanish - et: Estonian - eu: Basque - fa:
+     * Persian - fi: Finnish - fo: Faroese - fr: French - gl: Galician - gu: Gujarati - ha: Hausa -
+     * haw: Hawaiian - he: Hebrew - hi: Hindi - hr: Croatian - ht: Haitian Creole - hu: Hungarian -
+     * hy: Armenian - id: Indonesian - is: Icelandic - it: Italian - ja: Japanese - jv: Javanese -
+     * ka: Georgian - kk: Kazakh - km: Khmer - kn: Kannada - ko: Korean - la: Latin - lb:
+     * Luxembourgish - ln: Lingala - lo: Lao - lt: Lithuanian - lv: Latvian - mg: Malagasy - mi:
+     * Maori - mk: Macedonian - ml: Malayalam - mn: Mongolian - mr: Marathi - ms: Malay - mt:
+     * Maltese - my: Burmese - ne: Nepali - nl: Dutch - nn: Norwegian Nynorsk - no: Norwegian - oc:
+     * Occitan - pa: Punjabi - pl: Polish - ps: Pashto - pt: Portuguese - ro: Romanian - ru: Russian
+     * - sa: Sanskrit - sd: Sindhi - si: Sinhala - sk: Slovak - sl: Slovenian - sn: Shona - so:
+     * Somali - sq: Albanian - sr: Serbian - su: Sundanese - sv: Swedish - sw: Swahili - ta: Tamil -
+     * te: Telugu - tg: Tajik - th: Thai - tk: Turkmen - tl: Tagalog - tr: Turkish - tt: Tatar - uk:
+     * Ukrainian - ur: Urdu - uz: Uzbek - vi: Vietnamese - yi: Yiddish - yo: Yoruba - zh: Chinese
      */
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
     /**
-     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-     * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
-     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+     * Oracle model supported language codes are locale specific. Locale value as per given in
+     * [https://datatracker.ietf.org/doc/html/rfc5646] - en-US: English - United States (default) -
+     * es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB: English - Great Britain - en-AU:
+     * English - Australia - en-IN: English - India - hi-IN: Hindi - India - fr-FR: French - France
+     * - de-DE: German - Germany - it-IT: Italian - Italy Whisper model supported language codes are
+     * locale agnostic - auto: Auto-detect language - af: Afrikaans - am: Amharic - ar: Arabic - as:
+     * Assamese - az: Azerbaijani - ba: Bashkir - be: Belarusian - bg: Bulgarian - bn: Bengali - bo:
+     * Tibetan - br: Breton - bs: Bosnian - ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de:
+     * German - el: Greek - en: English (default) - es: Spanish - et: Estonian - eu: Basque - fa:
+     * Persian - fi: Finnish - fo: Faroese - fr: French - gl: Galician - gu: Gujarati - ha: Hausa -
+     * haw: Hawaiian - he: Hebrew - hi: Hindi - hr: Croatian - ht: Haitian Creole - hu: Hungarian -
+     * hy: Armenian - id: Indonesian - is: Icelandic - it: Italian - ja: Japanese - jv: Javanese -
+     * ka: Georgian - kk: Kazakh - km: Khmer - kn: Kannada - ko: Korean - la: Latin - lb:
+     * Luxembourgish - ln: Lingala - lo: Lao - lt: Lithuanian - lv: Latvian - mg: Malagasy - mi:
+     * Maori - mk: Macedonian - ml: Malayalam - mn: Mongolian - mr: Marathi - ms: Malay - mt:
+     * Maltese - my: Burmese - ne: Nepali - nl: Dutch - nn: Norwegian Nynorsk - no: Norwegian - oc:
+     * Occitan - pa: Punjabi - pl: Polish - ps: Pashto - pt: Portuguese - ro: Romanian - ru: Russian
+     * - sa: Sanskrit - sd: Sindhi - si: Sinhala - sk: Slovak - sl: Slovenian - sn: Shona - so:
+     * Somali - sq: Albanian - sr: Serbian - su: Sundanese - sv: Swedish - sw: Swahili - ta: Tamil -
+     * te: Telugu - tg: Tajik - th: Thai - tk: Turkmen - tl: Tagalog - tr: Turkish - tt: Tatar - uk:
+     * Ukrainian - ur: Urdu - uz: Uzbek - vi: Vietnamese - yi: Yiddish - yo: Yoruba - zh: Chinese
      *
      * @return the value
      */
@@ -501,7 +634,7 @@ public final class RealtimeParameters
      * simply be ignored and connection will continue being established with the default base model
      * and any remaining valid customizations. If set to false, if the service is unable to load any
      * of the specified customizations, an error detailing why will be returned and the session will
-     * end.
+     * end. Currently supported only for Oracle model.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIgnoreInvalidCustomizations")
     private final Boolean shouldIgnoreInvalidCustomizations;
@@ -512,7 +645,7 @@ public final class RealtimeParameters
      * simply be ignored and connection will continue being established with the default base model
      * and any remaining valid customizations. If set to false, if the service is unable to load any
      * of the specified customizations, an error detailing why will be returned and the session will
-     * end.
+     * end. Currently supported only for Oracle model.
      *
      * @return the value
      */
@@ -520,12 +653,12 @@ public final class RealtimeParameters
         return shouldIgnoreInvalidCustomizations;
     }
 
-    /** Array of customization objects. */
+    /** Array of customization objects. Currently supported only for Oracle model. */
     @com.fasterxml.jackson.annotation.JsonProperty("customizations")
     private final java.util.List<CustomizationInference> customizations;
 
     /**
-     * Array of customization objects.
+     * Array of customization objects. Currently supported only for Oracle model.
      *
      * @return the value
      */
@@ -537,7 +670,8 @@ public final class RealtimeParameters
      * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
      * punctuation in the transcription response - SPOKEN: Punctuations in response only when
      * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
-     * disabled
+     * disabled Spoken punctuation is currently supported only for the Oracle model in the Medical
+     * domain.
      */
     public enum Punctuation implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
@@ -576,7 +710,8 @@ public final class RealtimeParameters
      * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
      * punctuation in the transcription response - SPOKEN: Punctuations in response only when
      * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
-     * disabled
+     * disabled Spoken punctuation is currently supported only for the Oracle model in the Medical
+     * domain.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("punctuation")
     private final Punctuation punctuation;
@@ -585,7 +720,8 @@ public final class RealtimeParameters
      * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
      * punctuation in the transcription response - SPOKEN: Punctuations in response only when
      * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
-     * disabled
+     * disabled Spoken punctuation is currently supported only for the Oracle model in the Medical
+     * domain.
      *
      * @return the value
      */
@@ -616,6 +752,7 @@ public final class RealtimeParameters
                 .append(String.valueOf(this.finalSilenceThresholdInMs));
         sb.append(", stabilizePartialResults=")
                 .append(String.valueOf(this.stabilizePartialResults));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
         sb.append(", modelDomain=").append(String.valueOf(this.modelDomain));
         sb.append(", languageCode=").append(String.valueOf(this.languageCode));
         sb.append(", shouldIgnoreInvalidCustomizations=")
@@ -644,6 +781,7 @@ public final class RealtimeParameters
                         this.finalSilenceThresholdInMs, other.finalSilenceThresholdInMs)
                 && java.util.Objects.equals(
                         this.stabilizePartialResults, other.stabilizePartialResults)
+                && java.util.Objects.equals(this.modelType, other.modelType)
                 && java.util.Objects.equals(this.modelDomain, other.modelDomain)
                 && java.util.Objects.equals(this.languageCode, other.languageCode)
                 && java.util.Objects.equals(
@@ -675,6 +813,7 @@ public final class RealtimeParameters
                         + (this.stabilizePartialResults == null
                                 ? 43
                                 : this.stabilizePartialResults.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
         result = (result * PRIME) + (this.modelDomain == null ? 43 : this.modelDomain.hashCode());
         result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
         result =

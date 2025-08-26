@@ -1117,12 +1117,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("dataStorageSizeInTBs");
             return this;
         }
-        /** The amount of memory (in GBs) enabled per ECPU or OCPU. */
+        /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) enabled per ECPU or OCPU.
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -4430,12 +4430,12 @@ public final class AutonomousDwDatabase
         return dataStorageSizeInTBs;
     }
 
-    /** The amount of memory (in GBs) enabled per ECPU or OCPU. */
+    /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) enabled per ECPU or OCPU.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      *
      * @return the value
      */

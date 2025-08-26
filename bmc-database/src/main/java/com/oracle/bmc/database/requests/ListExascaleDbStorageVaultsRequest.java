@@ -161,6 +161,58 @@ public class ListExascaleDbStorageVaultsRequest
         return clusterPlacementGroupId;
     }
     /**
+     * A filter to return only Exadata Database Storage Vaults which do not match the given
+     * attachedShapeAttributes
+     */
+    private String attachedShapeAttributesNotEqualTo;
+
+    /**
+     * A filter to return only Exadata Database Storage Vaults which do not match the given
+     * attachedShapeAttributes
+     */
+    public String getAttachedShapeAttributesNotEqualTo() {
+        return attachedShapeAttributesNotEqualTo;
+    }
+    /**
+     * A filter to return only Exadata Database Storage Vaults which match the given
+     * attachedShapeAttributes or has null attachedShapeAttributes
+     */
+    private String attachedShapeAttributes;
+
+    /**
+     * A filter to return only Exadata Database Storage Vaults which match the given
+     * attachedShapeAttributes or has null attachedShapeAttributes
+     */
+    public String getAttachedShapeAttributes() {
+        return attachedShapeAttributes;
+    }
+    /**
+     * A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters
+     * less than or equal to the given count
+     */
+    private Integer vmClusterCountLessThanOrEqualTo;
+
+    /**
+     * A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters
+     * less than or equal to the given count
+     */
+    public Integer getVmClusterCountLessThanOrEqualTo() {
+        return vmClusterCountLessThanOrEqualTo;
+    }
+    /**
+     * A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters
+     * greater than or equal to the given count
+     */
+    private Integer vmClusterCountGreaterThanOrEqualTo;
+
+    /**
+     * A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters
+     * greater than or equal to the given count
+     */
+    public Integer getVmClusterCountGreaterThanOrEqualTo() {
+        return vmClusterCountGreaterThanOrEqualTo;
+    }
+    /**
      * A filter to return only resources that match the entire display name given. The match is not
      * case sensitive.
      */
@@ -314,6 +366,79 @@ public class ListExascaleDbStorageVaultsRequest
         }
 
         /**
+         * A filter to return only Exadata Database Storage Vaults which do not match the given
+         * attachedShapeAttributes
+         */
+        private String attachedShapeAttributesNotEqualTo = null;
+
+        /**
+         * A filter to return only Exadata Database Storage Vaults which do not match the given
+         * attachedShapeAttributes
+         *
+         * @param attachedShapeAttributesNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder attachedShapeAttributesNotEqualTo(String attachedShapeAttributesNotEqualTo) {
+            this.attachedShapeAttributesNotEqualTo = attachedShapeAttributesNotEqualTo;
+            return this;
+        }
+
+        /**
+         * A filter to return only Exadata Database Storage Vaults which match the given
+         * attachedShapeAttributes or has null attachedShapeAttributes
+         */
+        private String attachedShapeAttributes = null;
+
+        /**
+         * A filter to return only Exadata Database Storage Vaults which match the given
+         * attachedShapeAttributes or has null attachedShapeAttributes
+         *
+         * @param attachedShapeAttributes the value to set
+         * @return this builder instance
+         */
+        public Builder attachedShapeAttributes(String attachedShapeAttributes) {
+            this.attachedShapeAttributes = attachedShapeAttributes;
+            return this;
+        }
+
+        /**
+         * A filter to return only Exadata Database Storage Vaults with associated Exadata VM
+         * Clusters less than or equal to the given count
+         */
+        private Integer vmClusterCountLessThanOrEqualTo = null;
+
+        /**
+         * A filter to return only Exadata Database Storage Vaults with associated Exadata VM
+         * Clusters less than or equal to the given count
+         *
+         * @param vmClusterCountLessThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder vmClusterCountLessThanOrEqualTo(Integer vmClusterCountLessThanOrEqualTo) {
+            this.vmClusterCountLessThanOrEqualTo = vmClusterCountLessThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * A filter to return only Exadata Database Storage Vaults with associated Exadata VM
+         * Clusters greater than or equal to the given count
+         */
+        private Integer vmClusterCountGreaterThanOrEqualTo = null;
+
+        /**
+         * A filter to return only Exadata Database Storage Vaults with associated Exadata VM
+         * Clusters greater than or equal to the given count
+         *
+         * @param vmClusterCountGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder vmClusterCountGreaterThanOrEqualTo(
+                Integer vmClusterCountGreaterThanOrEqualTo) {
+            this.vmClusterCountGreaterThanOrEqualTo = vmClusterCountGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
          * A filter to return only resources that match the entire display name given. The match is
          * not case sensitive.
          */
@@ -398,6 +523,10 @@ public class ListExascaleDbStorageVaultsRequest
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
             clusterPlacementGroupId(o.getClusterPlacementGroupId());
+            attachedShapeAttributesNotEqualTo(o.getAttachedShapeAttributesNotEqualTo());
+            attachedShapeAttributes(o.getAttachedShapeAttributes());
+            vmClusterCountLessThanOrEqualTo(o.getVmClusterCountLessThanOrEqualTo());
+            vmClusterCountGreaterThanOrEqualTo(o.getVmClusterCountGreaterThanOrEqualTo());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
             exadataInfrastructureId(o.getExadataInfrastructureId());
@@ -442,12 +571,18 @@ public class ListExascaleDbStorageVaultsRequest
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             request.clusterPlacementGroupId = clusterPlacementGroupId;
+            request.attachedShapeAttributesNotEqualTo = attachedShapeAttributesNotEqualTo;
+            request.attachedShapeAttributes = attachedShapeAttributes;
+            request.vmClusterCountLessThanOrEqualTo = vmClusterCountLessThanOrEqualTo;
+            request.vmClusterCountGreaterThanOrEqualTo = vmClusterCountGreaterThanOrEqualTo;
             request.displayName = displayName;
             request.opcRequestId = opcRequestId;
             request.exadataInfrastructureId = exadataInfrastructureId;
             return request;
             // new ListExascaleDbStorageVaultsRequest(compartmentId, limit, page, sortBy, sortOrder,
-            // lifecycleState, clusterPlacementGroupId, displayName, opcRequestId,
+            // lifecycleState, clusterPlacementGroupId, attachedShapeAttributesNotEqualTo,
+            // attachedShapeAttributes, vmClusterCountLessThanOrEqualTo,
+            // vmClusterCountGreaterThanOrEqualTo, displayName, opcRequestId,
             // exadataInfrastructureId);
         }
     }
@@ -466,6 +601,10 @@ public class ListExascaleDbStorageVaultsRequest
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
                 .clusterPlacementGroupId(clusterPlacementGroupId)
+                .attachedShapeAttributesNotEqualTo(attachedShapeAttributesNotEqualTo)
+                .attachedShapeAttributes(attachedShapeAttributes)
+                .vmClusterCountLessThanOrEqualTo(vmClusterCountLessThanOrEqualTo)
+                .vmClusterCountGreaterThanOrEqualTo(vmClusterCountGreaterThanOrEqualTo)
                 .displayName(displayName)
                 .opcRequestId(opcRequestId)
                 .exadataInfrastructureId(exadataInfrastructureId);
@@ -492,6 +631,13 @@ public class ListExascaleDbStorageVaultsRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",clusterPlacementGroupId=").append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(",attachedShapeAttributesNotEqualTo=")
+                .append(String.valueOf(this.attachedShapeAttributesNotEqualTo));
+        sb.append(",attachedShapeAttributes=").append(String.valueOf(this.attachedShapeAttributes));
+        sb.append(",vmClusterCountLessThanOrEqualTo=")
+                .append(String.valueOf(this.vmClusterCountLessThanOrEqualTo));
+        sb.append(",vmClusterCountGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.vmClusterCountGreaterThanOrEqualTo));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",exadataInfrastructureId=").append(String.valueOf(this.exadataInfrastructureId));
@@ -518,6 +664,16 @@ public class ListExascaleDbStorageVaultsRequest
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(
+                        this.attachedShapeAttributesNotEqualTo,
+                        other.attachedShapeAttributesNotEqualTo)
+                && java.util.Objects.equals(
+                        this.attachedShapeAttributes, other.attachedShapeAttributes)
+                && java.util.Objects.equals(
+                        this.vmClusterCountLessThanOrEqualTo, other.vmClusterCountLessThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.vmClusterCountGreaterThanOrEqualTo,
+                        other.vmClusterCountGreaterThanOrEqualTo)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
@@ -543,6 +699,26 @@ public class ListExascaleDbStorageVaultsRequest
                         + (this.clusterPlacementGroupId == null
                                 ? 43
                                 : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachedShapeAttributesNotEqualTo == null
+                                ? 43
+                                : this.attachedShapeAttributesNotEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachedShapeAttributes == null
+                                ? 43
+                                : this.attachedShapeAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterCountLessThanOrEqualTo == null
+                                ? 43
+                                : this.vmClusterCountLessThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterCountGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.vmClusterCountGreaterThanOrEqualTo.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =

@@ -34,6 +34,7 @@ public final class DeploymentPeerSummary
         "timeCreated",
         "timeUpdated",
         "timeRoleChanged",
+        "timeLastSynced",
         "lifecycleState"
     })
     public DeploymentPeerSummary(
@@ -47,6 +48,7 @@ public final class DeploymentPeerSummary
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeRoleChanged,
+            java.util.Date timeLastSynced,
             LifecycleState lifecycleState) {
         super();
         this.deploymentId = deploymentId;
@@ -59,6 +61,7 @@ public final class DeploymentPeerSummary
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeRoleChanged = timeRoleChanged;
+        this.timeLastSynced = timeLastSynced;
         this.lifecycleState = lifecycleState;
     }
 
@@ -234,6 +237,25 @@ public final class DeploymentPeerSummary
             this.__explicitlySet__.add("timeRoleChanged");
             return this;
         }
+        /**
+         * The time of the last data synchronization from the primary to the standby peer.
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
+        private java.util.Date timeLastSynced;
+
+        /**
+         * The time of the last data synchronization from the primary to the standby peer.
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeLastSynced the value to set
+         * @return this builder
+         */
+        public Builder timeLastSynced(java.util.Date timeLastSynced) {
+            this.timeLastSynced = timeLastSynced;
+            this.__explicitlySet__.add("timeLastSynced");
+            return this;
+        }
         /** Possible lifecycle states for deployment peer. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -266,6 +288,7 @@ public final class DeploymentPeerSummary
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeRoleChanged,
+                            this.timeLastSynced,
                             this.lifecycleState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -304,6 +327,9 @@ public final class DeploymentPeerSummary
             }
             if (model.wasPropertyExplicitlySet("timeRoleChanged")) {
                 this.timeRoleChanged(model.getTimeRoleChanged());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSynced")) {
+                this.timeLastSynced(model.getTimeLastSynced());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -471,6 +497,23 @@ public final class DeploymentPeerSummary
         return timeRoleChanged;
     }
 
+    /**
+     * The time of the last data synchronization from the primary to the standby peer.
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
+    private final java.util.Date timeLastSynced;
+
+    /**
+     * The time of the last data synchronization from the primary to the standby peer.
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastSynced() {
+        return timeLastSynced;
+    }
+
     /** Possible lifecycle states for deployment peer. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
@@ -558,6 +601,7 @@ public final class DeploymentPeerSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeRoleChanged=").append(String.valueOf(this.timeRoleChanged));
+        sb.append(", timeLastSynced=").append(String.valueOf(this.timeLastSynced));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
@@ -583,6 +627,7 @@ public final class DeploymentPeerSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeRoleChanged, other.timeRoleChanged)
+                && java.util.Objects.equals(this.timeLastSynced, other.timeLastSynced)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && super.equals(other);
     }
@@ -607,6 +652,9 @@ public final class DeploymentPeerSummary
         result =
                 (result * PRIME)
                         + (this.timeRoleChanged == null ? 43 : this.timeRoleChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastSynced == null ? 43 : this.timeLastSynced.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
