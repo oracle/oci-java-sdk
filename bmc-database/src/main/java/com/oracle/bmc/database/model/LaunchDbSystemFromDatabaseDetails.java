@@ -291,6 +291,24 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbHome")
         private CreateDbHomeFromDatabaseDetails dbHome;
 
@@ -394,6 +412,8 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
                             this.privateIp,
                             this.privateIpV6,
                             this.dataCollectionOptions,
+                            this.computeModel,
+                            this.computeCount,
                             this.dbHome,
                             this.databaseEdition,
                             this.diskRedundancy,
@@ -493,6 +513,12 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
             }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
+            }
             if (model.wasPropertyExplicitlySet("dbHome")) {
                 this.dbHome(model.getDbHome());
             }
@@ -549,6 +575,8 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
             String privateIp,
             String privateIpV6,
             DataCollectionOptions dataCollectionOptions,
+            ComputeModel computeModel,
+            Integer computeCount,
             CreateDbHomeFromDatabaseDetails dbHome,
             DatabaseEdition databaseEdition,
             DiskRedundancy diskRedundancy,
@@ -582,7 +610,9 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
                 securityAttributes,
                 privateIp,
                 privateIpV6,
-                dataCollectionOptions);
+                dataCollectionOptions,
+                computeModel,
+                computeCount);
         this.dbHome = dbHome;
         this.databaseEdition = databaseEdition;
         this.diskRedundancy = diskRedundancy;

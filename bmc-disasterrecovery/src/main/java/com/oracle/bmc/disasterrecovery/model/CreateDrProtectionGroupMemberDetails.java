@@ -23,6 +23,27 @@ package com.oracle.bmc.disasterrecovery.model;
         defaultImpl = CreateDrProtectionGroupMemberDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberDatabaseDetails.class,
+            name = "DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberAutonomousDatabaseDetails.class,
+            name = "AUTONOMOUS_DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberNetworkLoadBalancerDetails.class,
+            name = "NETWORK_LOAD_BALANCER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberMySqlDbSystemDetails.class,
+            name = "MYSQL_DB_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberFileSystemDetails.class,
+            name = "FILE_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberObjectStorageBucketDetails.class,
+            name = "OBJECT_STORAGE_BUCKET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberLoadBalancerDetails.class,
+            name = "LOAD_BALANCER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDrProtectionGroupMemberComputeInstanceMovableDetails.class,
             name = "COMPUTE_INSTANCE_MOVABLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -35,29 +56,11 @@ package com.oracle.bmc.disasterrecovery.model;
             value = CreateDrProtectionGroupMemberComputeInstanceDetails.class,
             name = "COMPUTE_INSTANCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDrProtectionGroupMemberDatabaseDetails.class,
-            name = "DATABASE"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDrProtectionGroupMemberAutonomousDatabaseDetails.class,
-            name = "AUTONOMOUS_DATABASE"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDrProtectionGroupMemberNetworkLoadBalancerDetails.class,
-            name = "NETWORK_LOAD_BALANCER"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDrProtectionGroupMemberVolumeGroupDetails.class,
             name = "VOLUME_GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDrProtectionGroupMemberOkeClusterDetails.class,
-            name = "OKE_CLUSTER"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDrProtectionGroupMemberFileSystemDetails.class,
-            name = "FILE_SYSTEM"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDrProtectionGroupMemberObjectStorageBucketDetails.class,
-            name = "OBJECT_STORAGE_BUCKET"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDrProtectionGroupMemberLoadBalancerDetails.class,
-            name = "LOAD_BALANCER")
+            name = "OKE_CLUSTER")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

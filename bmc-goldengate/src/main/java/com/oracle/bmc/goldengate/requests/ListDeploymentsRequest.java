@@ -65,6 +65,13 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public com.oracle.bmc.goldengate.model.LifecycleSubState getLifecycleSubState() {
         return lifecycleSubState;
     }
+    /** A filter that returns only the resources matching the specified 'deploymentType'. */
+    private com.oracle.bmc.goldengate.model.DeploymentType deploymentType;
+
+    /** A filter that returns only the resources matching the specified 'deploymentType'. */
+    public com.oracle.bmc.goldengate.model.DeploymentType getDeploymentType() {
+        return deploymentType;
+    }
     /** A filter to return only the resources that match the entire 'displayName' given. */
     private String displayName;
 
@@ -270,6 +277,21 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /** A filter that returns only the resources matching the specified 'deploymentType'. */
+        private com.oracle.bmc.goldengate.model.DeploymentType deploymentType = null;
+
+        /**
+         * A filter that returns only the resources matching the specified 'deploymentType'.
+         *
+         * @param deploymentType the value to set
+         * @return this builder instance
+         */
+        public Builder deploymentType(
+                com.oracle.bmc.goldengate.model.DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            return this;
+        }
+
         /** A filter to return only the resources that match the entire 'displayName' given. */
         private String displayName = null;
 
@@ -414,6 +436,7 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             assignableConnectionId(o.getAssignableConnectionId());
             lifecycleState(o.getLifecycleState());
             lifecycleSubState(o.getLifecycleSubState());
+            deploymentType(o.getDeploymentType());
             displayName(o.getDisplayName());
             fqdn(o.getFqdn());
             limit(o.getLimit());
@@ -461,6 +484,7 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.assignableConnectionId = assignableConnectionId;
             request.lifecycleState = lifecycleState;
             request.lifecycleSubState = lifecycleSubState;
+            request.deploymentType = deploymentType;
             request.displayName = displayName;
             request.fqdn = fqdn;
             request.limit = limit;
@@ -471,7 +495,7 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return request;
             // new ListDeploymentsRequest(compartmentId, supportedConnectionType,
             // assignedConnectionId, assignableConnectionId, lifecycleState, lifecycleSubState,
-            // displayName, fqdn, limit, page, sortOrder, sortBy, opcRequestId);
+            // deploymentType, displayName, fqdn, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -488,6 +512,7 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .assignableConnectionId(assignableConnectionId)
                 .lifecycleState(lifecycleState)
                 .lifecycleSubState(lifecycleSubState)
+                .deploymentType(deploymentType)
                 .displayName(displayName)
                 .fqdn(fqdn)
                 .limit(limit)
@@ -517,6 +542,7 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append(",assignableConnectionId=").append(String.valueOf(this.assignableConnectionId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",lifecycleSubState=").append(String.valueOf(this.lifecycleSubState));
+        sb.append(",deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",fqdn=").append(String.valueOf(this.fqdn));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -547,6 +573,7 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
                         this.assignableConnectionId, other.assignableConnectionId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleSubState, other.lifecycleSubState)
+                && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -584,6 +611,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         result =
                 (result * PRIME)
                         + (this.lifecycleSubState == null ? 43 : this.lifecycleSubState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

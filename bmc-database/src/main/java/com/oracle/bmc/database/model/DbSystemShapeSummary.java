@@ -54,7 +54,8 @@ public final class DbSystemShapeSummary
         "areServerTypesSupported",
         "minimumNodeCount",
         "maximumNodeCount",
-        "availableCoreCountPerNode"
+        "availableCoreCountPerNode",
+        "shapeAttributes"
     })
     public DbSystemShapeSummary(
             String name,
@@ -81,7 +82,8 @@ public final class DbSystemShapeSummary
             Boolean areServerTypesSupported,
             Integer minimumNodeCount,
             Integer maximumNodeCount,
-            Integer availableCoreCountPerNode) {
+            Integer availableCoreCountPerNode,
+            java.util.List<String> shapeAttributes) {
         super();
         this.name = name;
         this.shapeFamily = shapeFamily;
@@ -108,6 +110,7 @@ public final class DbSystemShapeSummary
         this.minimumNodeCount = minimumNodeCount;
         this.maximumNodeCount = maximumNodeCount;
         this.availableCoreCountPerNode = availableCoreCountPerNode;
+        this.shapeAttributes = shapeAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -526,6 +529,21 @@ public final class DbSystemShapeSummary
             this.__explicitlySet__.add("availableCoreCountPerNode");
             return this;
         }
+        /** The shapeAttributes of the DB system shape. */
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeAttributes")
+        private java.util.List<String> shapeAttributes;
+
+        /**
+         * The shapeAttributes of the DB system shape.
+         *
+         * @param shapeAttributes the value to set
+         * @return this builder
+         */
+        public Builder shapeAttributes(java.util.List<String> shapeAttributes) {
+            this.shapeAttributes = shapeAttributes;
+            this.__explicitlySet__.add("shapeAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -557,7 +575,8 @@ public final class DbSystemShapeSummary
                             this.areServerTypesSupported,
                             this.minimumNodeCount,
                             this.maximumNodeCount,
-                            this.availableCoreCountPerNode);
+                            this.availableCoreCountPerNode,
+                            this.shapeAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -642,6 +661,9 @@ public final class DbSystemShapeSummary
             if (model.wasPropertyExplicitlySet("availableCoreCountPerNode")) {
                 this.availableCoreCountPerNode(model.getAvailableCoreCountPerNode());
             }
+            if (model.wasPropertyExplicitlySet("shapeAttributes")) {
+                this.shapeAttributes(model.getShapeAttributes());
+            }
             return this;
         }
     }
@@ -691,6 +713,7 @@ public final class DbSystemShapeSummary
         Intel("INTEL"),
         IntelFlexX9("INTEL_FLEX_X9"),
         AmpereFlexA1("AMPERE_FLEX_A1"),
+        StandardX86("STANDARD_X86"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1115,6 +1138,19 @@ public final class DbSystemShapeSummary
         return availableCoreCountPerNode;
     }
 
+    /** The shapeAttributes of the DB system shape. */
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeAttributes")
+    private final java.util.List<String> shapeAttributes;
+
+    /**
+     * The shapeAttributes of the DB system shape.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getShapeAttributes() {
+        return shapeAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1163,6 +1199,7 @@ public final class DbSystemShapeSummary
         sb.append(", maximumNodeCount=").append(String.valueOf(this.maximumNodeCount));
         sb.append(", availableCoreCountPerNode=")
                 .append(String.valueOf(this.availableCoreCountPerNode));
+        sb.append(", shapeAttributes=").append(String.valueOf(this.shapeAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -1211,6 +1248,7 @@ public final class DbSystemShapeSummary
                 && java.util.Objects.equals(this.maximumNodeCount, other.maximumNodeCount)
                 && java.util.Objects.equals(
                         this.availableCoreCountPerNode, other.availableCoreCountPerNode)
+                && java.util.Objects.equals(this.shapeAttributes, other.shapeAttributes)
                 && super.equals(other);
     }
 
@@ -1309,6 +1347,9 @@ public final class DbSystemShapeSummary
                         + (this.availableCoreCountPerNode == null
                                 ? 43
                                 : this.availableCoreCountPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shapeAttributes == null ? 43 : this.shapeAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

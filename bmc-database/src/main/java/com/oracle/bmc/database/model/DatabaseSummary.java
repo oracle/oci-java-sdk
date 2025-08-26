@@ -66,7 +66,8 @@ public final class DatabaseSummary
         "keyStoreId",
         "keyStoreWalletName",
         "dataGuardGroup",
-        "encryptionKeyLocationDetails"
+        "encryptionKeyLocationDetails",
+        "storageSizeDetails"
     })
     public DatabaseSummary(
             String id,
@@ -102,7 +103,8 @@ public final class DatabaseSummary
             String keyStoreId,
             String keyStoreWalletName,
             DataGuardGroup dataGuardGroup,
-            EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails,
+            DatabaseStorageSizeResponseDetails storageSizeDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -139,6 +141,7 @@ public final class DatabaseSummary
         this.keyStoreWalletName = keyStoreWalletName;
         this.dataGuardGroup = dataGuardGroup;
         this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+        this.storageSizeDetails = storageSizeDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -737,6 +740,15 @@ public final class DatabaseSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageSizeDetails")
+        private DatabaseStorageSizeResponseDetails storageSizeDetails;
+
+        public Builder storageSizeDetails(DatabaseStorageSizeResponseDetails storageSizeDetails) {
+            this.storageSizeDetails = storageSizeDetails;
+            this.__explicitlySet__.add("storageSizeDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -776,7 +788,8 @@ public final class DatabaseSummary
                             this.keyStoreId,
                             this.keyStoreWalletName,
                             this.dataGuardGroup,
-                            this.encryptionKeyLocationDetails);
+                            this.encryptionKeyLocationDetails,
+                            this.storageSizeDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -887,6 +900,9 @@ public final class DatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("encryptionKeyLocationDetails")) {
                 this.encryptionKeyLocationDetails(model.getEncryptionKeyLocationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("storageSizeDetails")) {
+                this.storageSizeDetails(model.getStorageSizeDetails());
             }
             return this;
         }
@@ -1475,6 +1491,13 @@ public final class DatabaseSummary
         return encryptionKeyLocationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("storageSizeDetails")
+    private final DatabaseStorageSizeResponseDetails storageSizeDetails;
+
+    public DatabaseStorageSizeResponseDetails getStorageSizeDetails() {
+        return storageSizeDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1530,6 +1553,7 @@ public final class DatabaseSummary
         sb.append(", dataGuardGroup=").append(String.valueOf(this.dataGuardGroup));
         sb.append(", encryptionKeyLocationDetails=")
                 .append(String.valueOf(this.encryptionKeyLocationDetails));
+        sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1585,6 +1609,7 @@ public final class DatabaseSummary
                 && java.util.Objects.equals(this.dataGuardGroup, other.dataGuardGroup)
                 && java.util.Objects.equals(
                         this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
+                && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
                 && super.equals(other);
     }
 
@@ -1674,6 +1699,11 @@ public final class DatabaseSummary
                         + (this.encryptionKeyLocationDetails == null
                                 ? 43
                                 : this.encryptionKeyLocationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSizeDetails == null
+                                ? 43
+                                : this.storageSizeDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

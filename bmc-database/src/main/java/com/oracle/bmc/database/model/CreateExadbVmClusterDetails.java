@@ -53,7 +53,8 @@ public final class CreateExadbVmClusterDetails
         "definedTags",
         "securityAttributes",
         "dataCollectionOptions",
-        "subscriptionId"
+        "subscriptionId",
+        "shapeAttribute"
     })
     public CreateExadbVmClusterDetails(
             String compartmentId,
@@ -84,7 +85,8 @@ public final class CreateExadbVmClusterDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             DataCollectionOptions dataCollectionOptions,
-            String subscriptionId) {
+            String subscriptionId,
+            ShapeAttribute shapeAttribute) {
         super();
         this.compartmentId = compartmentId;
         this.availabilityDomain = availabilityDomain;
@@ -115,6 +117,7 @@ public final class CreateExadbVmClusterDetails
         this.securityAttributes = securityAttributes;
         this.dataCollectionOptions = dataCollectionOptions;
         this.subscriptionId = subscriptionId;
+        this.shapeAttribute = shapeAttribute;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -688,6 +691,25 @@ public final class CreateExadbVmClusterDetails
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
+        /**
+         * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE
+         * which supports Oracle Database 23ai and later
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeAttribute")
+        private ShapeAttribute shapeAttribute;
+
+        /**
+         * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE
+         * which supports Oracle Database 23ai and later
+         *
+         * @param shapeAttribute the value to set
+         * @return this builder
+         */
+        public Builder shapeAttribute(ShapeAttribute shapeAttribute) {
+            this.shapeAttribute = shapeAttribute;
+            this.__explicitlySet__.add("shapeAttribute");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -723,7 +745,8 @@ public final class CreateExadbVmClusterDetails
                             this.definedTags,
                             this.securityAttributes,
                             this.dataCollectionOptions,
-                            this.subscriptionId);
+                            this.subscriptionId,
+                            this.shapeAttribute);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -818,6 +841,9 @@ public final class CreateExadbVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("subscriptionId")) {
                 this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("shapeAttribute")) {
+                this.shapeAttribute(model.getShapeAttribute());
             }
             return this;
         }
@@ -1369,6 +1395,59 @@ public final class CreateExadbVmClusterDetails
         return subscriptionId;
     }
 
+    /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which
+     * supports Oracle Database 23ai and later
+     */
+    public enum ShapeAttribute implements com.oracle.bmc.http.internal.BmcEnum {
+        SmartStorage("SMART_STORAGE"),
+        BlockStorage("BLOCK_STORAGE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ShapeAttribute> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ShapeAttribute v : ShapeAttribute.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ShapeAttribute(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ShapeAttribute create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ShapeAttribute: " + key);
+        }
+    };
+    /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which
+     * supports Oracle Database 23ai and later
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeAttribute")
+    private final ShapeAttribute shapeAttribute;
+
+    /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which
+     * supports Oracle Database 23ai and later
+     *
+     * @return the value
+     */
+    public ShapeAttribute getShapeAttribute() {
+        return shapeAttribute;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1414,6 +1493,7 @@ public final class CreateExadbVmClusterDetails
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", shapeAttribute=").append(String.valueOf(this.shapeAttribute));
         sb.append(")");
         return sb.toString();
     }
@@ -1459,6 +1539,7 @@ public final class CreateExadbVmClusterDetails
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.shapeAttribute, other.shapeAttribute)
                 && super.equals(other);
     }
 
@@ -1543,6 +1624,9 @@ public final class CreateExadbVmClusterDetails
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shapeAttribute == null ? 43 : this.shapeAttribute.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -113,6 +113,29 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
             this.__explicitlySet__.add("commonDestinationKey");
             return this;
         }
+        /**
+         * The OCID of a compartment in the destination region in which the volume group should be
+         * launched.
+         *
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
+        private String destinationCompartmentId;
+
+        /**
+         * The OCID of a compartment in the destination region in which the volume group should be
+         * launched.
+         *
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+         *
+         * @param destinationCompartmentId the value to set
+         * @return this builder
+         */
+        public Builder destinationCompartmentId(String destinationCompartmentId) {
+            this.destinationCompartmentId = destinationCompartmentId;
+            this.__explicitlySet__.add("destinationCompartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -123,7 +146,8 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
                             this.memberId,
                             this.destinationBackupPolicyId,
                             this.sourceVolumeToDestinationEncryptionKeyMappings,
-                            this.commonDestinationKey);
+                            this.commonDestinationKey,
+                            this.destinationCompartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -145,6 +169,9 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
             if (model.wasPropertyExplicitlySet("commonDestinationKey")) {
                 this.commonDestinationKey(model.getCommonDestinationKey());
             }
+            if (model.wasPropertyExplicitlySet("destinationCompartmentId")) {
+                this.destinationCompartmentId(model.getDestinationCompartmentId());
+            }
             return this;
         }
     }
@@ -164,12 +191,14 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
             String destinationBackupPolicyId,
             java.util.List<SourceVolumeToDestinationEncryptionKeyMapping>
                     sourceVolumeToDestinationEncryptionKeyMappings,
-            VaultAndEncryptionKey commonDestinationKey) {
+            VaultAndEncryptionKey commonDestinationKey,
+            String destinationCompartmentId) {
         super(memberId);
         this.destinationBackupPolicyId = destinationBackupPolicyId;
         this.sourceVolumeToDestinationEncryptionKeyMappings =
                 sourceVolumeToDestinationEncryptionKeyMappings;
         this.commonDestinationKey = commonDestinationKey;
+        this.destinationCompartmentId = destinationCompartmentId;
     }
 
     /**
@@ -239,6 +268,27 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
         return commonDestinationKey;
     }
 
+    /**
+     * The OCID of a compartment in the destination region in which the volume group should be
+     * launched.
+     *
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
+    private final String destinationCompartmentId;
+
+    /**
+     * The OCID of a compartment in the destination region in which the volume group should be
+     * launched.
+     *
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+     *
+     * @return the value
+     */
+    public String getDestinationCompartmentId() {
+        return destinationCompartmentId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -259,6 +309,8 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
         sb.append(", sourceVolumeToDestinationEncryptionKeyMappings=")
                 .append(String.valueOf(this.sourceVolumeToDestinationEncryptionKeyMappings));
         sb.append(", commonDestinationKey=").append(String.valueOf(this.commonDestinationKey));
+        sb.append(", destinationCompartmentId=")
+                .append(String.valueOf(this.destinationCompartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -279,6 +331,8 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
                         this.sourceVolumeToDestinationEncryptionKeyMappings,
                         other.sourceVolumeToDestinationEncryptionKeyMappings)
                 && java.util.Objects.equals(this.commonDestinationKey, other.commonDestinationKey)
+                && java.util.Objects.equals(
+                        this.destinationCompartmentId, other.destinationCompartmentId)
                 && super.equals(other);
     }
 
@@ -301,6 +355,11 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
                         + (this.commonDestinationKey == null
                                 ? 43
                                 : this.commonDestinationKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationCompartmentId == null
+                                ? 43
+                                : this.destinationCompartmentId.hashCode());
         return result;
     }
 }

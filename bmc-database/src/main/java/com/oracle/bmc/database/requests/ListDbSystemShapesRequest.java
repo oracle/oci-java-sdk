@@ -47,6 +47,19 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
     public String getPage() {
         return page;
     }
+    /**
+     * If provided and applicable, return DB System shape parameters based on the shapeAttribute
+     * provided
+     */
+    private String shapeAttribute;
+
+    /**
+     * If provided and applicable, return DB System shape parameters based on the shapeAttribute
+     * provided
+     */
+    public String getShapeAttribute() {
+        return shapeAttribute;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -115,6 +128,24 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * If provided and applicable, return DB System shape parameters based on the shapeAttribute
+         * provided
+         */
+        private String shapeAttribute = null;
+
+        /**
+         * If provided and applicable, return DB System shape parameters based on the shapeAttribute
+         * provided
+         *
+         * @param shapeAttribute the value to set
+         * @return this builder instance
+         */
+        public Builder shapeAttribute(String shapeAttribute) {
+            this.shapeAttribute = shapeAttribute;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -148,6 +179,7 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
             availabilityDomain(o.getAvailabilityDomain());
             limit(o.getLimit());
             page(o.getPage());
+            shapeAttribute(o.getShapeAttribute());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -186,8 +218,10 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
             request.availabilityDomain = availabilityDomain;
             request.limit = limit;
             request.page = page;
+            request.shapeAttribute = shapeAttribute;
             return request;
-            // new ListDbSystemShapesRequest(compartmentId, availabilityDomain, limit, page);
+            // new ListDbSystemShapesRequest(compartmentId, availabilityDomain, limit, page,
+            // shapeAttribute);
         }
     }
 
@@ -201,7 +235,8 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
                 .compartmentId(compartmentId)
                 .availabilityDomain(availabilityDomain)
                 .limit(limit)
-                .page(page);
+                .page(page)
+                .shapeAttribute(shapeAttribute);
     }
 
     /**
@@ -222,6 +257,7 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",shapeAttribute=").append(String.valueOf(this.shapeAttribute));
         sb.append(")");
         return sb.toString();
     }
@@ -240,7 +276,8 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.limit, other.limit)
-                && java.util.Objects.equals(this.page, other.page);
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.shapeAttribute, other.shapeAttribute);
     }
 
     @Override
@@ -257,6 +294,9 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shapeAttribute == null ? 43 : this.shapeAttribute.hashCode());
         return result;
     }
 }

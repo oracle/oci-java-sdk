@@ -110,7 +110,10 @@ public class OmhubNetworkAnchorAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, GetNetworkAnchorResponse::builder)
                 .logger(LOG, "getNetworkAnchor")
-                .serviceDetails("OmhubNetworkAnchor", "GetNetworkAnchor", "")
+                .serviceDetails(
+                        "OmhubNetworkAnchor",
+                        "GetNetworkAnchor",
+                        "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/NetworkAnchor/GetNetworkAnchor")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNetworkAnchorRequest::builder)
                 .basePath("/20180828")
@@ -146,7 +149,10 @@ public class OmhubNetworkAnchorAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListNetworkAnchorsResponse::builder)
                 .logger(LOG, "listNetworkAnchors")
-                .serviceDetails("OmhubNetworkAnchor", "ListNetworkAnchors", "")
+                .serviceDetails(
+                        "OmhubNetworkAnchor",
+                        "ListNetworkAnchors",
+                        "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/NetworkAnchorCollection/ListNetworkAnchors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNetworkAnchorsRequest::builder)
                 .basePath("/20180828")

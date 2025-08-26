@@ -24,15 +24,18 @@ public final class DbSystemStoragePerformanceSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "compartmentId",
         "shapeType",
         "dataStoragePerformanceList",
         "recoStoragePerformanceList"
     })
     public DbSystemStoragePerformanceSummary(
+            String compartmentId,
             ShapeType shapeType,
             java.util.List<StoragePerformanceDetails> dataStoragePerformanceList,
             java.util.List<StoragePerformanceDetails> recoStoragePerformanceList) {
         super();
+        this.compartmentId = compartmentId;
         this.shapeType = shapeType;
         this.dataStoragePerformanceList = dataStoragePerformanceList;
         this.recoStoragePerformanceList = recoStoragePerformanceList;
@@ -40,6 +43,25 @@ public final class DbSystemStoragePerformanceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
         /** ShapeType of the DbSystems INTEL , AMD, INTEL_FLEX_X9 or AMPERE_FLEX_A1 */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
         private ShapeType shapeType;
@@ -94,6 +116,7 @@ public final class DbSystemStoragePerformanceSummary
         public DbSystemStoragePerformanceSummary build() {
             DbSystemStoragePerformanceSummary model =
                     new DbSystemStoragePerformanceSummary(
+                            this.compartmentId,
                             this.shapeType,
                             this.dataStoragePerformanceList,
                             this.recoStoragePerformanceList);
@@ -105,6 +128,9 @@ public final class DbSystemStoragePerformanceSummary
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbSystemStoragePerformanceSummary model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
             if (model.wasPropertyExplicitlySet("shapeType")) {
                 this.shapeType(model.getShapeType());
             }
@@ -127,12 +153,30 @@ public final class DbSystemStoragePerformanceSummary
         return new Builder().copy(this);
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /** ShapeType of the DbSystems INTEL , AMD, INTEL_FLEX_X9 or AMPERE_FLEX_A1 */
     public enum ShapeType implements com.oracle.bmc.http.internal.BmcEnum {
         Amd("AMD"),
         Intel("INTEL"),
         IntelFlexX9("INTEL_FLEX_X9"),
         AmpereFlexA1("AMPERE_FLEX_A1"),
+        StandardX86("STANDARD_X86"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -229,7 +273,8 @@ public final class DbSystemStoragePerformanceSummary
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DbSystemStoragePerformanceSummary(");
         sb.append("super=").append(super.toString());
-        sb.append("shapeType=").append(String.valueOf(this.shapeType));
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", shapeType=").append(String.valueOf(this.shapeType));
         sb.append(", dataStoragePerformanceList=")
                 .append(String.valueOf(this.dataStoragePerformanceList));
         sb.append(", recoStoragePerformanceList=")
@@ -248,7 +293,8 @@ public final class DbSystemStoragePerformanceSummary
         }
 
         DbSystemStoragePerformanceSummary other = (DbSystemStoragePerformanceSummary) o;
-        return java.util.Objects.equals(this.shapeType, other.shapeType)
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.shapeType, other.shapeType)
                 && java.util.Objects.equals(
                         this.dataStoragePerformanceList, other.dataStoragePerformanceList)
                 && java.util.Objects.equals(
@@ -260,6 +306,9 @@ public final class DbSystemStoragePerformanceSummary
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.shapeType == null ? 43 : this.shapeType.hashCode());
         result =
                 (result * PRIME)

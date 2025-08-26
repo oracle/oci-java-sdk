@@ -290,6 +290,24 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
@@ -373,6 +391,8 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
                             this.privateIp,
                             this.privateIpV6,
                             this.dataCollectionOptions,
+                            this.computeModel,
+                            this.computeCount,
                             this.sourceDbSystemId,
                             this.dbHome,
                             this.licenseModel);
@@ -471,6 +491,12 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
             }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
+            }
             if (model.wasPropertyExplicitlySet("sourceDbSystemId")) {
                 this.sourceDbSystemId(model.getSourceDbSystemId());
             }
@@ -524,6 +550,8 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             String privateIp,
             String privateIpV6,
             DataCollectionOptions dataCollectionOptions,
+            ComputeModel computeModel,
+            Integer computeCount,
             String sourceDbSystemId,
             CreateDbHomeFromDbSystemDetails dbHome,
             LicenseModel licenseModel) {
@@ -556,7 +584,9 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
                 securityAttributes,
                 privateIp,
                 privateIpV6,
-                dataCollectionOptions);
+                dataCollectionOptions,
+                computeModel,
+                computeCount);
         this.sourceDbSystemId = sourceDbSystemId;
         this.dbHome = dbHome;
         this.licenseModel = licenseModel;

@@ -42,7 +42,8 @@ public final class ExascaleDbStorageVault
         "highCapacityDatabaseStorage",
         "additionalFlashCacheInPercent",
         "clusterPlacementGroupId",
-        "subscriptionId"
+        "subscriptionId",
+        "attachedShapeAttributes"
     })
     public ExascaleDbStorageVault(
             String id,
@@ -63,7 +64,8 @@ public final class ExascaleDbStorageVault
             ExascaleDbStorageDetails highCapacityDatabaseStorage,
             Integer additionalFlashCacheInPercent,
             String clusterPlacementGroupId,
-            String subscriptionId) {
+            String subscriptionId,
+            java.util.List<AttachedShapeAttributes> attachedShapeAttributes) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -84,6 +86,7 @@ public final class ExascaleDbStorageVault
         this.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.subscriptionId = subscriptionId;
+        this.attachedShapeAttributes = attachedShapeAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -431,6 +434,26 @@ public final class ExascaleDbStorageVault
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
+        /**
+         * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database
+         * Storage Vault.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("attachedShapeAttributes")
+        private java.util.List<AttachedShapeAttributes> attachedShapeAttributes;
+
+        /**
+         * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database
+         * Storage Vault.
+         *
+         * @param attachedShapeAttributes the value to set
+         * @return this builder
+         */
+        public Builder attachedShapeAttributes(
+                java.util.List<AttachedShapeAttributes> attachedShapeAttributes) {
+            this.attachedShapeAttributes = attachedShapeAttributes;
+            this.__explicitlySet__.add("attachedShapeAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -456,7 +479,8 @@ public final class ExascaleDbStorageVault
                             this.highCapacityDatabaseStorage,
                             this.additionalFlashCacheInPercent,
                             this.clusterPlacementGroupId,
-                            this.subscriptionId);
+                            this.subscriptionId,
+                            this.attachedShapeAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -521,6 +545,9 @@ public final class ExascaleDbStorageVault
             }
             if (model.wasPropertyExplicitlySet("subscriptionId")) {
                 this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("attachedShapeAttributes")) {
+                this.attachedShapeAttributes(model.getAttachedShapeAttributes());
             }
             return this;
         }
@@ -886,6 +913,69 @@ public final class ExascaleDbStorageVault
         return subscriptionId;
     }
 
+    /** */
+    public enum AttachedShapeAttributes implements com.oracle.bmc.http.internal.BmcEnum {
+        SmartStorage("SMART_STORAGE"),
+        BlockStorage("BLOCK_STORAGE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AttachedShapeAttributes.class);
+
+        private final String value;
+        private static java.util.Map<String, AttachedShapeAttributes> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AttachedShapeAttributes v : AttachedShapeAttributes.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AttachedShapeAttributes(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AttachedShapeAttributes create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AttachedShapeAttributes', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage
+     * Vault.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("attachedShapeAttributes")
+    private final java.util.List<AttachedShapeAttributes> attachedShapeAttributes;
+
+    /**
+     * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage
+     * Vault.
+     *
+     * @return the value
+     */
+    public java.util.List<AttachedShapeAttributes> getAttachedShapeAttributes() {
+        return attachedShapeAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -924,6 +1014,8 @@ public final class ExascaleDbStorageVault
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", attachedShapeAttributes=")
+                .append(String.valueOf(this.attachedShapeAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -961,6 +1053,8 @@ public final class ExascaleDbStorageVault
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(
+                        this.attachedShapeAttributes, other.attachedShapeAttributes)
                 && super.equals(other);
     }
 
@@ -1017,6 +1111,11 @@ public final class ExascaleDbStorageVault
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachedShapeAttributes == null
+                                ? 43
+                                : this.attachedShapeAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

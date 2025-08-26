@@ -111,7 +111,10 @@ public class MetadataAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, ListExternalLocationDetailsMetadataResponse::builder)
                 .logger(LOG, "listExternalLocationDetailsMetadata")
-                .serviceDetails("Metadata", "ListExternalLocationDetailsMetadata", "")
+                .serviceDetails(
+                        "Metadata",
+                        "ListExternalLocationDetailsMetadata",
+                        "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/ExternalLocationsMetadatumCollection/ListExternalLocationDetailsMetadata")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListExternalLocationDetailsMetadataRequest::builder)
                 .basePath("/20180828")
@@ -156,7 +159,10 @@ public class MetadataAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, ListExternalLocationMappingMetadataResponse::builder)
                 .logger(LOG, "listExternalLocationMappingMetadata")
-                .serviceDetails("Metadata", "ListExternalLocationMappingMetadata", "")
+                .serviceDetails(
+                        "Metadata",
+                        "ListExternalLocationMappingMetadata",
+                        "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/ExternalLocationMappingMetadatumSummaryCollection/ListExternalLocationMappingMetadata")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListExternalLocationMappingMetadataRequest::builder)
                 .basePath("/20180828")
@@ -202,7 +208,10 @@ public class MetadataAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, ListExternalLocationSummariesMetadataResponse::builder)
                 .logger(LOG, "listExternalLocationSummariesMetadata")
-                .serviceDetails("Metadata", "ListExternalLocationSummariesMetadata", "")
+                .serviceDetails(
+                        "Metadata",
+                        "ListExternalLocationSummariesMetadata",
+                        "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/ExternalLocationSummariesMetadatumSummaryCollection/ListExternalLocationSummariesMetadata")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListExternalLocationSummariesMetadataRequest::builder)
                 .basePath("/20180828")

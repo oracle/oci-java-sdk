@@ -1945,6 +1945,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("assignableConnectionId", request.getAssignableConnectionId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("lifecycleSubState", request.getLifecycleSubState())
+                .appendEnumQueryParam("deploymentType", request.getDeploymentType())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("fqdn", request.getFqdn())
                 .appendQueryParam("limit", request.getLimit())

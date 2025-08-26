@@ -11012,6 +11012,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("shapeAttribute", request.getShapeAttribute())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.database.model.DbSystemShapeSummary.class,
@@ -11046,6 +11047,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("storageManagement", request.getStorageManagement())
                 .appendQueryParam("shapeType", request.getShapeType())
                 .appendEnumQueryParam("databaseEdition", request.getDatabaseEdition())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -11198,6 +11200,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("dbSystemShape", request.getDbSystemShape())
                 .appendQueryParam("dbSystemId", request.getDbSystemId())
                 .appendEnumQueryParam("storageManagement", request.getStorageManagement())
+                .appendQueryParam("shapeAttribute", request.getShapeAttribute())
                 .appendQueryParam("isUpgradeSupported", request.getIsUpgradeSupported())
                 .appendQueryParam(
                         "isDatabaseSoftwareImageSupported",
@@ -11399,6 +11402,16 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("clusterPlacementGroupId", request.getClusterPlacementGroupId())
+                .appendQueryParam(
+                        "attachedShapeAttributesNotEqualTo",
+                        request.getAttachedShapeAttributesNotEqualTo())
+                .appendQueryParam("attachedShapeAttributes", request.getAttachedShapeAttributes())
+                .appendQueryParam(
+                        "vmClusterCountLessThanOrEqualTo",
+                        request.getVmClusterCountLessThanOrEqualTo())
+                .appendQueryParam(
+                        "vmClusterCountGreaterThanOrEqualTo",
+                        request.getVmClusterCountGreaterThanOrEqualTo())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("exadataInfrastructureId", request.getExadataInfrastructureId())
                 .accept("application/json")
@@ -11765,6 +11778,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("shape", request.getShape())
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("shapeAttribute", request.getShapeAttribute())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.database.model.GiVersionSummary.class,

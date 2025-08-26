@@ -48,6 +48,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         "loadBalancerId",
         "fqdn",
         "licenseModel",
+        "isByolCpuCoreCountLimitEnabled",
+        "byolCpuCoreCountLimit",
         "environmentType",
         "category",
         "cpuCoreCount",
@@ -102,6 +104,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             String loadBalancerId,
             String fqdn,
             LicenseModel licenseModel,
+            Boolean isByolCpuCoreCountLimitEnabled,
+            Integer byolCpuCoreCountLimit,
             EnvironmentType environmentType,
             DeploymentCategory category,
             Integer cpuCoreCount,
@@ -155,6 +159,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         this.loadBalancerId = loadBalancerId;
         this.fqdn = fqdn;
         this.licenseModel = licenseModel;
+        this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+        this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
         this.environmentType = environmentType;
         this.category = category;
         this.cpuCoreCount = cpuCoreCount;
@@ -630,6 +636,44 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If
+         * enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isByolCpuCoreCountLimitEnabled")
+        private Boolean isByolCpuCoreCountLimitEnabled;
+
+        /**
+         * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If
+         * enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         *
+         * @param isByolCpuCoreCountLimitEnabled the value to set
+         * @return this builder
+         */
+        public Builder isByolCpuCoreCountLimitEnabled(Boolean isByolCpuCoreCountLimitEnabled) {
+            this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+            this.__explicitlySet__.add("isByolCpuCoreCountLimitEnabled");
+            return this;
+        }
+        /**
+         * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+         * Any CPU usage above this limit is considered as License Included and billed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("byolCpuCoreCountLimit")
+        private Integer byolCpuCoreCountLimit;
+
+        /**
+         * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+         * Any CPU usage above this limit is considered as License Included and billed.
+         *
+         * @param byolCpuCoreCountLimit the value to set
+         * @return this builder
+         */
+        public Builder byolCpuCoreCountLimit(Integer byolCpuCoreCountLimit) {
+            this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
+            this.__explicitlySet__.add("byolCpuCoreCountLimit");
             return this;
         }
         /**
@@ -1124,6 +1168,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                             this.loadBalancerId,
                             this.fqdn,
                             this.licenseModel,
+                            this.isByolCpuCoreCountLimitEnabled,
+                            this.byolCpuCoreCountLimit,
                             this.environmentType,
                             this.category,
                             this.cpuCoreCount,
@@ -1233,6 +1279,12 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("isByolCpuCoreCountLimitEnabled")) {
+                this.isByolCpuCoreCountLimitEnabled(model.getIsByolCpuCoreCountLimitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("byolCpuCoreCountLimit")) {
+                this.byolCpuCoreCountLimit(model.getByolCpuCoreCountLimit());
             }
             if (model.wasPropertyExplicitlySet("environmentType")) {
                 this.environmentType(model.getEnvironmentType());
@@ -1725,6 +1777,40 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If
+     * enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isByolCpuCoreCountLimitEnabled")
+    private final Boolean isByolCpuCoreCountLimitEnabled;
+
+    /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If
+     * enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     *
+     * @return the value
+     */
+    public Boolean getIsByolCpuCoreCountLimitEnabled() {
+        return isByolCpuCoreCountLimitEnabled;
+    }
+
+    /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any
+     * CPU usage above this limit is considered as License Included and billed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("byolCpuCoreCountLimit")
+    private final Integer byolCpuCoreCountLimit;
+
+    /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any
+     * CPU usage above this limit is considered as License Included and billed.
+     *
+     * @return the value
+     */
+    public Integer getByolCpuCoreCountLimit() {
+        return byolCpuCoreCountLimit;
+    }
+
+    /**
      * Specifies whether the deployment is used in a production or development/testing environment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
@@ -2167,6 +2253,9 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", isByolCpuCoreCountLimitEnabled=")
+                .append(String.valueOf(this.isByolCpuCoreCountLimitEnabled));
+        sb.append(", byolCpuCoreCountLimit=").append(String.valueOf(this.byolCpuCoreCountLimit));
         sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
@@ -2242,6 +2331,9 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(
+                        this.isByolCpuCoreCountLimitEnabled, other.isByolCpuCoreCountLimitEnabled)
+                && java.util.Objects.equals(this.byolCpuCoreCountLimit, other.byolCpuCoreCountLimit)
                 && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
@@ -2341,6 +2433,16 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                         + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isByolCpuCoreCountLimitEnabled == null
+                                ? 43
+                                : this.isByolCpuCoreCountLimitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byolCpuCoreCountLimit == null
+                                ? 43
+                                : this.byolCpuCoreCountLimit.hashCode());
         result =
                 (result * PRIME)
                         + (this.environmentType == null ? 43 : this.environmentType.hashCode());

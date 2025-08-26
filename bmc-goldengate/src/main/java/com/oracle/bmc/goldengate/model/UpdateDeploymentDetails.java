@@ -26,6 +26,8 @@ public final class UpdateDeploymentDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "licenseModel",
+        "isByolCpuCoreCountLimitEnabled",
+        "byolCpuCoreCountLimit",
         "environmentType",
         "description",
         "freeformTags",
@@ -46,6 +48,8 @@ public final class UpdateDeploymentDetails
     public UpdateDeploymentDetails(
             String displayName,
             LicenseModel licenseModel,
+            Boolean isByolCpuCoreCountLimitEnabled,
+            Integer byolCpuCoreCountLimit,
             EnvironmentType environmentType,
             String description,
             java.util.Map<String, String> freeformTags,
@@ -65,6 +69,8 @@ public final class UpdateDeploymentDetails
         super();
         this.displayName = displayName;
         this.licenseModel = licenseModel;
+        this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+        this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
         this.environmentType = environmentType;
         this.description = description;
         this.freeformTags = freeformTags;
@@ -113,6 +119,44 @@ public final class UpdateDeploymentDetails
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If
+         * enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isByolCpuCoreCountLimitEnabled")
+        private Boolean isByolCpuCoreCountLimitEnabled;
+
+        /**
+         * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If
+         * enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         *
+         * @param isByolCpuCoreCountLimitEnabled the value to set
+         * @return this builder
+         */
+        public Builder isByolCpuCoreCountLimitEnabled(Boolean isByolCpuCoreCountLimitEnabled) {
+            this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+            this.__explicitlySet__.add("isByolCpuCoreCountLimitEnabled");
+            return this;
+        }
+        /**
+         * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+         * Any CPU usage above this limit is considered as License Included and billed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("byolCpuCoreCountLimit")
+        private Integer byolCpuCoreCountLimit;
+
+        /**
+         * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+         * Any CPU usage above this limit is considered as License Included and billed.
+         *
+         * @param byolCpuCoreCountLimit the value to set
+         * @return this builder
+         */
+        public Builder byolCpuCoreCountLimit(Integer byolCpuCoreCountLimit) {
+            this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
+            this.__explicitlySet__.add("byolCpuCoreCountLimit");
             return this;
         }
         /**
@@ -382,6 +426,8 @@ public final class UpdateDeploymentDetails
                     new UpdateDeploymentDetails(
                             this.displayName,
                             this.licenseModel,
+                            this.isByolCpuCoreCountLimitEnabled,
+                            this.byolCpuCoreCountLimit,
                             this.environmentType,
                             this.description,
                             this.freeformTags,
@@ -411,6 +457,12 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("isByolCpuCoreCountLimitEnabled")) {
+                this.isByolCpuCoreCountLimitEnabled(model.getIsByolCpuCoreCountLimitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("byolCpuCoreCountLimit")) {
+                this.byolCpuCoreCountLimit(model.getByolCpuCoreCountLimit());
             }
             if (model.wasPropertyExplicitlySet("environmentType")) {
                 this.environmentType(model.getEnvironmentType());
@@ -497,6 +549,40 @@ public final class UpdateDeploymentDetails
      */
     public LicenseModel getLicenseModel() {
         return licenseModel;
+    }
+
+    /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If
+     * enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isByolCpuCoreCountLimitEnabled")
+    private final Boolean isByolCpuCoreCountLimitEnabled;
+
+    /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If
+     * enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     *
+     * @return the value
+     */
+    public Boolean getIsByolCpuCoreCountLimitEnabled() {
+        return isByolCpuCoreCountLimitEnabled;
+    }
+
+    /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any
+     * CPU usage above this limit is considered as License Included and billed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("byolCpuCoreCountLimit")
+    private final Integer byolCpuCoreCountLimit;
+
+    /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any
+     * CPU usage above this limit is considered as License Included and billed.
+     *
+     * @return the value
+     */
+    public Integer getByolCpuCoreCountLimit() {
+        return byolCpuCoreCountLimit;
     }
 
     /**
@@ -738,6 +824,9 @@ public final class UpdateDeploymentDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", isByolCpuCoreCountLimitEnabled=")
+                .append(String.valueOf(this.isByolCpuCoreCountLimitEnabled));
+        sb.append(", byolCpuCoreCountLimit=").append(String.valueOf(this.byolCpuCoreCountLimit));
         sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -771,6 +860,9 @@ public final class UpdateDeploymentDetails
         UpdateDeploymentDetails other = (UpdateDeploymentDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(
+                        this.isByolCpuCoreCountLimitEnabled, other.isByolCpuCoreCountLimitEnabled)
+                && java.util.Objects.equals(this.byolCpuCoreCountLimit, other.byolCpuCoreCountLimit)
                 && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -797,6 +889,16 @@ public final class UpdateDeploymentDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isByolCpuCoreCountLimitEnabled == null
+                                ? 43
+                                : this.isByolCpuCoreCountLimitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byolCpuCoreCountLimit == null
+                                ? 43
+                                : this.byolCpuCoreCountLimit.hashCode());
         result =
                 (result * PRIME)
                         + (this.environmentType == null ? 43 : this.environmentType.hashCode());

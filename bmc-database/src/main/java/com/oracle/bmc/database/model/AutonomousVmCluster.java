@@ -450,12 +450,12 @@ public final class AutonomousVmCluster
             this.__explicitlySet__.add("totalContainerDatabases");
             return this;
         }
-        /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+        /** The amount of memory (in GBs) to be enabled per each CPU core. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         * The amount of memory (in GBs) to be enabled per each CPU core.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -1636,12 +1636,12 @@ public final class AutonomousVmCluster
         return totalContainerDatabases;
     }
 
-    /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+    /** The amount of memory (in GBs) to be enabled per each CPU core. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * The amount of memory (in GBs) to be enabled per each CPU core.
      *
      * @return the value
      */

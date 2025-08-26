@@ -71,7 +71,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         "securityAttributes",
         "privateIp",
         "privateIpV6",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "computeModel",
+        "computeCount"
     })
     protected LaunchDbSystemBase(
             String compartmentId,
@@ -102,7 +104,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
             String privateIpV6,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            ComputeModel computeModel,
+            Integer computeCount) {
         super();
         this.compartmentId = compartmentId;
         this.faultDomains = faultDomains;
@@ -133,6 +137,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         this.privateIp = privateIp;
         this.privateIpV6 = privateIpV6;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.computeModel = computeModel;
+        this.computeCount = computeCount;
     }
 
     /**
@@ -610,7 +616,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
      * Size (in GB) of the initial data volume that will be created and attached to a virtual
      * machine DB system. You can scale up storage after provisioning, as needed. Note that the
      * total storage size attached will be more than the amount you specify to allow for REDO/RECO
-     * space and software volume.
+     * space and software volume. By default this will be set to 256.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("initialDataStorageSizeInGB")
     private final Integer initialDataStorageSizeInGB;
@@ -619,7 +625,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
      * Size (in GB) of the initial data volume that will be created and attached to a virtual
      * machine DB system. You can scale up storage after provisioning, as needed. Note that the
      * total storage size attached will be more than the amount you specify to allow for REDO/RECO
-     * space and software volume.
+     * space and software volume. By default this will be set to 256.
      *
      * @return the value
      */
@@ -668,15 +674,15 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or
-     * 2.
+     * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By
+     * default this will be set to 1.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
     /**
-     * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or
-     * 2.
+     * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By
+     * default this will be set to 1.
      *
      * @return the value
      */
@@ -792,6 +798,78 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         return dataCollectionOptions;
     }
 
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ComputeModel: " + key);
+        }
+    };
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /** The number of compute servers for the DB system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Integer computeCount;
+
+    /**
+     * The number of compute servers for the DB system.
+     *
+     * @return the value
+     */
+    public Integer getComputeCount() {
+        return computeCount;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -838,6 +916,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", privateIpV6=").append(String.valueOf(this.privateIpV6));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(")");
         return sb.toString();
     }
@@ -883,6 +963,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.privateIpV6, other.privateIpV6)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && super.equals(other);
     }
 
@@ -959,6 +1041,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

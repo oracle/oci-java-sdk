@@ -98,7 +98,10 @@ public class MultiCloudsMetadataClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GetMultiCloudMetadataResponse::builder)
                 .logger(LOG, "getMultiCloudMetadata")
-                .serviceDetails("MultiCloudsMetadata", "GetMultiCloudMetadata", "")
+                .serviceDetails(
+                        "MultiCloudsMetadata",
+                        "GetMultiCloudMetadata",
+                        "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/MultiCloudMetadata/GetMultiCloudMetadata")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMultiCloudMetadataRequest::builder)
                 .basePath("/20180828")
@@ -125,7 +128,10 @@ public class MultiCloudsMetadataClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListMultiCloudMetadataResponse::builder)
                 .logger(LOG, "listMultiCloudMetadata")
-                .serviceDetails("MultiCloudsMetadata", "ListMultiCloudMetadata", "")
+                .serviceDetails(
+                        "MultiCloudsMetadata",
+                        "ListMultiCloudMetadata",
+                        "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/MultiCloudMetadataCollection/ListMultiCloudMetadata")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMultiCloudMetadataRequest::builder)
                 .basePath("/20180828")

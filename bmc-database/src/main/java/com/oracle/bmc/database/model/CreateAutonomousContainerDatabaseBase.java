@@ -1276,9 +1276,8 @@ public class CreateAutonomousContainerDatabaseBase
     }
 
     /**
-     * The source of the database: Use {@code NONE} for creating a new Autonomous Container
-     * Database. Use {@code BACKUP_FROM_ID} for creating a new Autonomous Container Database from a
-     * specified backup.
+     * The source of the database. Use {@code NONE} to create a new Autonomous Container Database
+     * (ACD). Use {@code BACKUP_FROM_ID} to create a new ACD from a specified backup.
      */
     public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),

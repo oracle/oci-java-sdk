@@ -106,7 +106,9 @@ public final class DbSystemSummary
         "securityAttributes",
         "sourceDbSystemId",
         "pointInTimeDataDiskCloneTimestamp",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "computeModel",
+        "computeCount"
     })
     public DbSystemSummary(
             String id,
@@ -161,7 +163,9 @@ public final class DbSystemSummary
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String sourceDbSystemId,
             java.util.Date pointInTimeDataDiskCloneTimestamp,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            ComputeModel computeModel,
+            Integer computeCount) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -216,6 +220,8 @@ public final class DbSystemSummary
         this.sourceDbSystemId = sourceDbSystemId;
         this.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.computeModel = computeModel;
+        this.computeCount = computeCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1247,6 +1253,44 @@ public final class DbSystemSummary
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /**
+         * The compute model for Base Database Service. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. The ECPU compute model is the recommended
+         * model, and the OCPU compute model is legacy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model for Base Database Service. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. The ECPU compute model is the recommended
+         * model, and the OCPU compute model is legacy.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /** The number of compute servers for the DB system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        /**
+         * The number of compute servers for the DB system.
+         *
+         * @param computeCount the value to set
+         * @return this builder
+         */
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1306,7 +1350,9 @@ public final class DbSystemSummary
                             this.securityAttributes,
                             this.sourceDbSystemId,
                             this.pointInTimeDataDiskCloneTimestamp,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.computeModel,
+                            this.computeCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1474,6 +1520,12 @@ public final class DbSystemSummary
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             return this;
         }
@@ -2646,6 +2698,91 @@ public final class DbSystemSummary
         return dataCollectionOptions;
     }
 
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. The ECPU compute model is the recommended model, and the
+     * OCPU compute model is legacy.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /** The number of compute servers for the DB system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Integer computeCount;
+
+    /**
+     * The number of compute servers for the DB system.
+     *
+     * @return the value
+     */
+    public Integer getComputeCount() {
+        return computeCount;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2717,6 +2854,8 @@ public final class DbSystemSummary
         sb.append(", pointInTimeDataDiskCloneTimestamp=")
                 .append(String.valueOf(this.pointInTimeDataDiskCloneTimestamp));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(")");
         return sb.toString();
     }
@@ -2788,6 +2927,8 @@ public final class DbSystemSummary
                         this.pointInTimeDataDiskCloneTimestamp,
                         other.pointInTimeDataDiskCloneTimestamp)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && super.equals(other);
     }
 
@@ -2924,6 +3065,8 @@ public final class DbSystemSummary
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
