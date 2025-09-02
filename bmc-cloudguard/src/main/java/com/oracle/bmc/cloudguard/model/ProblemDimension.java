@@ -11,6 +11,8 @@ public enum ProblemDimension implements com.oracle.bmc.http.internal.BmcEnum {
     Region("REGION"),
     CompartmentId("COMPARTMENT_ID"),
     RiskLevel("RISK_LEVEL"),
+    DetectorId("DETECTOR_ID"),
+    TargetId("TARGET_ID"),
     ;
 
     private final String value;

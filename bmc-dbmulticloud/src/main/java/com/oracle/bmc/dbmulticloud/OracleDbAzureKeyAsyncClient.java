@@ -107,10 +107,7 @@ public class OracleDbAzureKeyAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetOracleDbAzureKeyResponse::builder)
                 .logger(LOG, "getOracleDbAzureKey")
-                .serviceDetails(
-                        "OracleDbAzureKey",
-                        "GetOracleDbAzureKey",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureKey/GetOracleDbAzureKey")
+                .serviceDetails("OracleDbAzureKey", "GetOracleDbAzureKey", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOracleDbAzureKeyRequest::builder)
                 .basePath("/20240501")
@@ -140,10 +137,7 @@ public class OracleDbAzureKeyAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListOracleDbAzureKeysResponse::builder)
                 .logger(LOG, "listOracleDbAzureKeys")
-                .serviceDetails(
-                        "OracleDbAzureKey",
-                        "ListOracleDbAzureKeys",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureKey/ListOracleDbAzureKeys")
+                .serviceDetails("OracleDbAzureKey", "ListOracleDbAzureKeys", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOracleDbAzureKeysRequest::builder)
                 .basePath("/20240501")

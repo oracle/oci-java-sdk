@@ -5,8 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * Oracle DB Azure Connector Details, this resource is for to create Azure Identity on Database
- * Resource. <br>
+ * Oracle DB Azure Connector resource. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -39,6 +38,7 @@ public final class OracleDbAzureConnector
         "azureIdentityMechanism",
         "lifecycleState",
         "lifecycleStateDetails",
+        "azureIdentityConnectivityStatus",
         "timeCreated",
         "timeUpdated",
         "lastModification",
@@ -61,6 +61,7 @@ public final class OracleDbAzureConnector
             AzureIdentityMechanism azureIdentityMechanism,
             LifecycleState lifecycleState,
             String lifecycleStateDetails,
+            AzureIdentityConnectivityStatus azureIdentityConnectivityStatus,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             String lastModification,
@@ -82,6 +83,7 @@ public final class OracleDbAzureConnector
         this.azureIdentityMechanism = azureIdentityMechanism;
         this.lifecycleState = lifecycleState;
         this.lifecycleStateDetails = lifecycleStateDetails;
+        this.azureIdentityConnectivityStatus = azureIdentityConnectivityStatus;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lastModification = lastModification;
@@ -92,12 +94,16 @@ public final class OracleDbAzureConnector
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID of the Oracle DB Azure Connector resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Connector resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The ID of the Oracle DB Azure Connector resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Connector resource.
          *
          * @param id the value to set
          * @return this builder
@@ -122,12 +128,16 @@ public final class OracleDbAzureConnector
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The ID of the compartment that contains Oracle DB Azure Connector resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains Oracle DB Azure Connector resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ID of the compartment that contains Oracle DB Azure Connector resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains Oracle DB Azure Connector resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -137,12 +147,12 @@ public final class OracleDbAzureConnector
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** List of All VMs where Arc Agent is Install under VMCluster. */
+        /** List of all VMs where Arc Agent is installed under Cloud VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("arcAgentNodes")
         private java.util.List<ArcAgentNodes> arcAgentNodes;
 
         /**
-         * List of All VMs where Arc Agent is Install under VMCluster.
+         * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
          *
          * @param arcAgentNodes the value to set
          * @return this builder
@@ -152,12 +162,16 @@ public final class OracleDbAzureConnector
             this.__explicitlySet__.add("arcAgentNodes");
             return this;
         }
-        /** The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbClusterResourceId")
         private String dbClusterResourceId;
 
         /**
-         * The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
          *
          * @param dbClusterResourceId the value to set
          * @return this builder
@@ -197,12 +211,12 @@ public final class OracleDbAzureConnector
             this.__explicitlySet__.add("azureSubscriptionId");
             return this;
         }
-        /** Azure Resource Group Name. */
+        /** Azure Resource group name. */
         @com.fasterxml.jackson.annotation.JsonProperty("azureResourceGroup")
         private String azureResourceGroup;
 
         /**
-         * Azure Resource Group Name.
+         * Azure Resource group name.
          *
          * @param azureResourceGroup the value to set
          * @return this builder
@@ -212,16 +226,12 @@ public final class OracleDbAzureConnector
             this.__explicitlySet__.add("azureResourceGroup");
             return this;
         }
-        /**
-         * Azure bearer access token. If bearer access token is provided then Service Principal
-         * detail is not required.
-         */
+        /** Azure bearer access token. */
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
         /**
-         * Azure bearer access token. If bearer access token is provided then Service Principal
-         * detail is not required.
+         * Azure bearer access token.
          *
          * @param accessToken the value to set
          * @return this builder
@@ -246,12 +256,12 @@ public final class OracleDbAzureConnector
             this.__explicitlySet__.add("privateEndpointIpAddress");
             return this;
         }
-        /** Private endpoint DNS Alias. */
+        /** Private endpoint's DNS alias. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsAlias")
         private String privateEndpointDnsAlias;
 
         /**
-         * Private endpoint DNS Alias.
+         * Private endpoint's DNS alias.
          *
          * @param privateEndpointDnsAlias the value to set
          * @return this builder
@@ -261,12 +271,12 @@ public final class OracleDbAzureConnector
             this.__explicitlySet__.add("privateEndpointDnsAlias");
             return this;
         }
-        /** Azure Identity Mechanism. */
+        /** Azure Identity mechanism. */
         @com.fasterxml.jackson.annotation.JsonProperty("azureIdentityMechanism")
         private AzureIdentityMechanism azureIdentityMechanism;
 
         /**
-         * Azure Identity Mechanism.
+         * Azure Identity mechanism.
          *
          * @param azureIdentityMechanism the value to set
          * @return this builder
@@ -276,12 +286,12 @@ public final class OracleDbAzureConnector
             this.__explicitlySet__.add("azureIdentityMechanism");
             return this;
         }
-        /** The current lifecycle state of the Azure Arc Agent Resource. */
+        /** The current lifecycle state of the Azure Arc Agent resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current lifecycle state of the Azure Arc Agent Resource.
+         * The current lifecycle state of the Azure Arc Agent resource.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -306,8 +316,24 @@ public final class OracleDbAzureConnector
             this.__explicitlySet__.add("lifecycleStateDetails");
             return this;
         }
+        /** The current Connectivity status of Azure Identity Connector resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("azureIdentityConnectivityStatus")
+        private AzureIdentityConnectivityStatus azureIdentityConnectivityStatus;
+
         /**
-         * Time when the Oracle DB Azure Connector Resource was created expressed in [RFC
+         * The current Connectivity status of Azure Identity Connector resource.
+         *
+         * @param azureIdentityConnectivityStatus the value to set
+         * @return this builder
+         */
+        public Builder azureIdentityConnectivityStatus(
+                AzureIdentityConnectivityStatus azureIdentityConnectivityStatus) {
+            this.azureIdentityConnectivityStatus = azureIdentityConnectivityStatus;
+            this.__explicitlySet__.add("azureIdentityConnectivityStatus");
+            return this;
+        }
+        /**
+         * Time when the Oracle DB Azure Connector resource was created expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
@@ -315,7 +341,7 @@ public final class OracleDbAzureConnector
         private java.util.Date timeCreated;
 
         /**
-         * Time when the Oracle DB Azure Connector Resource was created expressed in [RFC
+         * Time when the Oracle DB Azure Connector resource was created expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
@@ -328,7 +354,7 @@ public final class OracleDbAzureConnector
             return this;
         }
         /**
-         * Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC
+         * Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
@@ -336,7 +362,7 @@ public final class OracleDbAzureConnector
         private java.util.Date timeUpdated;
 
         /**
-         * Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC
+         * Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
@@ -348,12 +374,12 @@ public final class OracleDbAzureConnector
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Description of the latest modification of the Oracle DB Azure Connector Resource. */
+        /** Description of the latest modification of the Oracle DB Azure Connector resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
         private String lastModification;
 
         /**
-         * Description of the latest modification of the Oracle DB Azure Connector Resource.
+         * Description of the latest modification of the Oracle DB Azure Connector resource.
          *
          * @param lastModification the value to set
          * @return this builder
@@ -456,6 +482,7 @@ public final class OracleDbAzureConnector
                             this.azureIdentityMechanism,
                             this.lifecycleState,
                             this.lifecycleStateDetails,
+                            this.azureIdentityConnectivityStatus,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lastModification,
@@ -512,6 +539,9 @@ public final class OracleDbAzureConnector
             if (model.wasPropertyExplicitlySet("lifecycleStateDetails")) {
                 this.lifecycleStateDetails(model.getLifecycleStateDetails());
             }
+            if (model.wasPropertyExplicitlySet("azureIdentityConnectivityStatus")) {
+                this.azureIdentityConnectivityStatus(model.getAzureIdentityConnectivityStatus());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
@@ -543,12 +573,16 @@ public final class OracleDbAzureConnector
         return new Builder().copy(this);
     }
 
-    /** The ID of the Oracle DB Azure Connector resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Connector resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The ID of the Oracle DB Azure Connector resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Connector resource.
      *
      * @return the value
      */
@@ -569,12 +603,16 @@ public final class OracleDbAzureConnector
         return displayName;
     }
 
-    /** The ID of the compartment that contains Oracle DB Azure Connector resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains Oracle DB Azure Connector resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ID of the compartment that contains Oracle DB Azure Connector resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains Oracle DB Azure Connector resource.
      *
      * @return the value
      */
@@ -582,12 +620,12 @@ public final class OracleDbAzureConnector
         return compartmentId;
     }
 
-    /** List of All VMs where Arc Agent is Install under VMCluster. */
+    /** List of all VMs where Arc Agent is installed under Cloud VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("arcAgentNodes")
     private final java.util.List<ArcAgentNodes> arcAgentNodes;
 
     /**
-     * List of All VMs where Arc Agent is Install under VMCluster.
+     * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      *
      * @return the value
      */
@@ -595,12 +633,16 @@ public final class OracleDbAzureConnector
         return arcAgentNodes;
     }
 
-    /** The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbClusterResourceId")
     private final String dbClusterResourceId;
 
     /**
-     * The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
      *
      * @return the value
      */
@@ -634,12 +676,12 @@ public final class OracleDbAzureConnector
         return azureSubscriptionId;
     }
 
-    /** Azure Resource Group Name. */
+    /** Azure Resource group name. */
     @com.fasterxml.jackson.annotation.JsonProperty("azureResourceGroup")
     private final String azureResourceGroup;
 
     /**
-     * Azure Resource Group Name.
+     * Azure Resource group name.
      *
      * @return the value
      */
@@ -647,16 +689,12 @@ public final class OracleDbAzureConnector
         return azureResourceGroup;
     }
 
-    /**
-     * Azure bearer access token. If bearer access token is provided then Service Principal detail
-     * is not required.
-     */
+    /** Azure bearer access token. */
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
     /**
-     * Azure bearer access token. If bearer access token is provided then Service Principal detail
-     * is not required.
+     * Azure bearer access token.
      *
      * @return the value
      */
@@ -677,12 +715,12 @@ public final class OracleDbAzureConnector
         return privateEndpointIpAddress;
     }
 
-    /** Private endpoint DNS Alias. */
+    /** Private endpoint's DNS alias. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsAlias")
     private final String privateEndpointDnsAlias;
 
     /**
-     * Private endpoint DNS Alias.
+     * Private endpoint's DNS alias.
      *
      * @return the value
      */
@@ -690,7 +728,7 @@ public final class OracleDbAzureConnector
         return privateEndpointDnsAlias;
     }
 
-    /** Azure Identity Mechanism. */
+    /** Azure Identity mechanism. */
     public enum AzureIdentityMechanism implements com.oracle.bmc.http.internal.BmcEnum {
         ArcAgent("ARC_AGENT"),
         ServicePrincipal("SERVICE_PRINCIPAL"),
@@ -736,12 +774,12 @@ public final class OracleDbAzureConnector
             return UnknownEnumValue;
         }
     };
-    /** Azure Identity Mechanism. */
+    /** Azure Identity mechanism. */
     @com.fasterxml.jackson.annotation.JsonProperty("azureIdentityMechanism")
     private final AzureIdentityMechanism azureIdentityMechanism;
 
     /**
-     * Azure Identity Mechanism.
+     * Azure Identity mechanism.
      *
      * @return the value
      */
@@ -749,7 +787,7 @@ public final class OracleDbAzureConnector
         return azureIdentityMechanism;
     }
 
-    /** The current lifecycle state of the Azure Arc Agent Resource. */
+    /** The current lifecycle state of the Azure Arc Agent resource. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -799,12 +837,12 @@ public final class OracleDbAzureConnector
             return UnknownEnumValue;
         }
     };
-    /** The current lifecycle state of the Azure Arc Agent Resource. */
+    /** The current lifecycle state of the Azure Arc Agent resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current lifecycle state of the Azure Arc Agent Resource.
+     * The current lifecycle state of the Azure Arc Agent resource.
      *
      * @return the value
      */
@@ -825,15 +863,76 @@ public final class OracleDbAzureConnector
         return lifecycleStateDetails;
     }
 
+    /** The current Connectivity status of Azure Identity Connector resource. */
+    public enum AzureIdentityConnectivityStatus implements com.oracle.bmc.http.internal.BmcEnum {
+        Connected("CONNECTED"),
+        Disconnected("DISCONNECTED"),
+        PartiallyConnected("PARTIALLY_CONNECTED"),
+        Unknown("UNKNOWN"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AzureIdentityConnectivityStatus.class);
+
+        private final String value;
+        private static java.util.Map<String, AzureIdentityConnectivityStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AzureIdentityConnectivityStatus v : AzureIdentityConnectivityStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AzureIdentityConnectivityStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AzureIdentityConnectivityStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AzureIdentityConnectivityStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The current Connectivity status of Azure Identity Connector resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("azureIdentityConnectivityStatus")
+    private final AzureIdentityConnectivityStatus azureIdentityConnectivityStatus;
+
     /**
-     * Time when the Oracle DB Azure Connector Resource was created expressed in [RFC
+     * The current Connectivity status of Azure Identity Connector resource.
+     *
+     * @return the value
+     */
+    public AzureIdentityConnectivityStatus getAzureIdentityConnectivityStatus() {
+        return azureIdentityConnectivityStatus;
+    }
+
+    /**
+     * Time when the Oracle DB Azure Connector resource was created expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Time when the Oracle DB Azure Connector Resource was created expressed in [RFC
+     * Time when the Oracle DB Azure Connector resource was created expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value
@@ -843,14 +942,14 @@ public final class OracleDbAzureConnector
     }
 
     /**
-     * Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC
+     * Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC
+     * Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value
@@ -859,12 +958,12 @@ public final class OracleDbAzureConnector
         return timeUpdated;
     }
 
-    /** Description of the latest modification of the Oracle DB Azure Connector Resource. */
+    /** Description of the latest modification of the Oracle DB Azure Connector resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
     private final String lastModification;
 
     /**
-     * Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * Description of the latest modification of the Oracle DB Azure Connector resource.
      *
      * @return the value
      */
@@ -968,6 +1067,8 @@ public final class OracleDbAzureConnector
         sb.append(", azureIdentityMechanism=").append(String.valueOf(this.azureIdentityMechanism));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
+        sb.append(", azureIdentityConnectivityStatus=")
+                .append(String.valueOf(this.azureIdentityConnectivityStatus));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lastModification=").append(String.valueOf(this.lastModification));
@@ -1005,6 +1106,8 @@ public final class OracleDbAzureConnector
                         this.azureIdentityMechanism, other.azureIdentityMechanism)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
+                && java.util.Objects.equals(
+                        this.azureIdentityConnectivityStatus, other.azureIdentityConnectivityStatus)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lastModification, other.lastModification)
@@ -1068,6 +1171,11 @@ public final class OracleDbAzureConnector
                         + (this.lifecycleStateDetails == null
                                 ? 43
                                 : this.lifecycleStateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.azureIdentityConnectivityStatus == null
+                                ? 43
+                                : this.azureIdentityConnectivityStatus.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

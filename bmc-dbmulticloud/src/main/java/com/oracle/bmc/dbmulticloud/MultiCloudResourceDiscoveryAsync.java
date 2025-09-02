@@ -8,15 +8,52 @@ import com.oracle.bmc.dbmulticloud.requests.*;
 import com.oracle.bmc.dbmulticloud.responses.*;
 
 /**
- * 1. Oracle Azure Connector Resource: This is for installing Azure Arc Server in ExaCS VM Cluster.
- * There are two way to install Azure Arc Server (Azure Identity) in ExaCS VMCluster. a. Using
- * Bearer Access Token or b. By providing Authentication token
+ * <b>Microsoft Azure:</b> <br>
+ * <b>Oracle Azure Connector Resource:</b>:&nbsp;&nbsp;The Oracle Azure Connector Resource is used
+ * to install the Azure Arc Server on an Exadata VM cluster in Oracle Exadata Database Service on
+ * Dedicated Infrastructure (ExaDB-D). The supported method to install the Azure Arc Server (Azure
+ * Identity) on the Exadata VM cluster:
  *
- * <p>2. Oracle Azure Blob Container Resource: This is for to capture Azure Container details and
- * same will be used in multiple ExaCS VMCluster to mount the Azure Container.
+ * <ul>
+ *   <li>Using a Bearer Access Token
+ * </ul>
  *
- * <p>3. Oracle Azure Blob Mount Resource: This is for to mount Azure Container in ExaCS VMCluster
- * using Oracle Azure Connector and Oracle Azure Blob Container Resource.
+ * <b>Oracle Azure Blob Container Resource:</b>&nbsp;&nbsp;The Oracle Azure Blob Container Resource
+ * is used to capture the details of an Azure Blob Container. This resource can then be reused
+ * across multiple Exadata VM clusters in Oracle Exadata Database Service on Dedicated
+ * Infrastructure (ExaDB-D) to mount the Azure container.
+ *
+ * <p><b>Oracle Azure Blob Mount Resource:</b>&nbsp;&nbsp;The Oracle Azure Blob Mount Resource is
+ * used to mount an Azure Blob Container on an Exadata VM cluster in Oracle Exadata Database Service
+ * on Dedicated Infrastructure (ExaDB-D). It relies on both the Oracle Azure Connector and the
+ * Oracle Azure Blob Container Resource to perform the mount operation.
+ *
+ * <p><b>Discover Azure Vaults and Keys Resource:</b>&nbsp;&nbsp;The Discover Oracle Azure Vaults
+ * and Azure Keys Resource is used to discover Azure Vaults and the associated encryption keys
+ * available in your Azure project.
+ *
+ * <p><b>Oracle Azure Vault:</b>&nbsp;&nbsp;The Oracle Azure Vault Resource is used to manage Azure
+ * Vaults within Oracle Cloud Infrastructure (OCI) for use with services such as Oracle Exadata
+ * Database Service on Dedicated Infrastructure.
+ *
+ * <p><b>Oracle Azure Key:</b>&nbsp;&nbsp;Oracle Azure Key Resource is used to register and manage a
+ * Oracle Azure Key Key within Oracle Cloud Infrastructure (OCI) under an associated Azure Vault.
+ * <br>
+ * <b>Google Cloud:</b><br>
+ * <b>Oracle Google Cloud Connector Resource:</b>&nbsp;&nbsp;The Oracle Google Cloud Connector
+ * Resource is used to install the Google Cloud Identity Connector on an Exadata VM cluster in
+ * Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
+ *
+ * <p><b>Discover Google Key Rings and Keys Resource:</b>&nbsp;&nbsp;The Discover Google Key Rings
+ * and Keys Resource is used to discover Google Cloud Key Rings and the associated encryption keys
+ * available in your Google Cloud project.
+ *
+ * <p><b>Google Key Rings Resource:</b>&nbsp;&nbsp;The Google Key Rings Resource is used to register
+ * and manage Google Cloud Key Rings within Oracle Cloud Infrastructure (OCI) for use with services
+ * such as Oracle Exadata Database Service on Dedicated Infrastructure.
+ *
+ * <p><b>Google Key Resource:</b>&nbsp;&nbsp;The Google Key Resource is used to register and manage
+ * a Google Cloud Key within Oracle Cloud Infrastructure (OCI) under an associated Google Key Ring.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240501")
 public interface MultiCloudResourceDiscoveryAsync extends AutoCloseable {
@@ -70,8 +107,8 @@ public interface MultiCloudResourceDiscoveryAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves the Oracle Azure Vault resource into a different compartment. When provided, 'If-Match'
-     * is checked against 'ETag' values of the resource.
+     * Moves the Multicloud Resource Discovery resource into a different compartment. When provided,
+     * 'If-Match' is checked against 'ETag' values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -89,7 +126,8 @@ public interface MultiCloudResourceDiscoveryAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Discover Azure Vaults and Keys based on the provided information.
+     * Discovers Multicloud Resource and their associated resources based on the information
+     * provided.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -107,7 +145,8 @@ public interface MultiCloudResourceDiscoveryAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Delete Multi Cloud Discovery resource.
+     * Deletes the Multicloud Resource Discovery resource and removes its associated metadata from
+     * Oracle Cloud Infrastructure.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -125,7 +164,9 @@ public interface MultiCloudResourceDiscoveryAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * Retrieves detailed information about a Multicloud discovered resource by specifying its
+     * unique resource
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -143,7 +184,7 @@ public interface MultiCloudResourceDiscoveryAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * Lists all Multicloud Resource Discovery resources based on the specified filters.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -161,7 +202,8 @@ public interface MultiCloudResourceDiscoveryAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Modifies the existing Azure Discovered Resource for a given ID.
+     * Modifies the properties of an Azure discovered resource identified by the specified resource
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

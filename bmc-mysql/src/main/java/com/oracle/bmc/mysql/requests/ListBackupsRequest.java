@@ -80,6 +80,23 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public com.oracle.bmc.mysql.model.SoftDelete getSoftDelete() {
         return softDelete;
     }
+    /** Indicates whether the backup has been prepared successfully. */
+    private com.oracle.bmc.mysql.model.BackupValidationDetails.BackupPreparationStatus
+            backupPreparationStatus;
+
+    /** Indicates whether the backup has been prepared successfully. */
+    public com.oracle.bmc.mysql.model.BackupValidationDetails.BackupPreparationStatus
+            getBackupPreparationStatus() {
+        return backupPreparationStatus;
+    }
+    /** Backup validation status */
+    private com.oracle.bmc.mysql.model.BackupValidationDetails.ValidationStatus validationStatus;
+
+    /** Backup validation status */
+    public com.oracle.bmc.mysql.model.BackupValidationDetails.ValidationStatus
+            getValidationStatus() {
+        return validationStatus;
+    }
     /** Backup creationType */
     private com.oracle.bmc.mysql.model.Backup.CreationType creationType;
 
@@ -329,6 +346,40 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** Indicates whether the backup has been prepared successfully. */
+        private com.oracle.bmc.mysql.model.BackupValidationDetails.BackupPreparationStatus
+                backupPreparationStatus = null;
+
+        /**
+         * Indicates whether the backup has been prepared successfully.
+         *
+         * @param backupPreparationStatus the value to set
+         * @return this builder instance
+         */
+        public Builder backupPreparationStatus(
+                com.oracle.bmc.mysql.model.BackupValidationDetails.BackupPreparationStatus
+                        backupPreparationStatus) {
+            this.backupPreparationStatus = backupPreparationStatus;
+            return this;
+        }
+
+        /** Backup validation status */
+        private com.oracle.bmc.mysql.model.BackupValidationDetails.ValidationStatus
+                validationStatus = null;
+
+        /**
+         * Backup validation status
+         *
+         * @param validationStatus the value to set
+         * @return this builder instance
+         */
+        public Builder validationStatus(
+                com.oracle.bmc.mysql.model.BackupValidationDetails.ValidationStatus
+                        validationStatus) {
+            this.validationStatus = validationStatus;
+            return this;
+        }
+
         /** Backup creationType */
         private com.oracle.bmc.mysql.model.Backup.CreationType creationType = null;
 
@@ -452,6 +503,8 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             dbSystemId(o.getDbSystemId());
             displayName(o.getDisplayName());
             softDelete(o.getSoftDelete());
+            backupPreparationStatus(o.getBackupPreparationStatus());
+            validationStatus(o.getValidationStatus());
             creationType(o.getCreationType());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
@@ -498,6 +551,8 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.dbSystemId = dbSystemId;
             request.displayName = displayName;
             request.softDelete = softDelete;
+            request.backupPreparationStatus = backupPreparationStatus;
+            request.validationStatus = validationStatus;
             request.creationType = creationType;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
@@ -505,7 +560,8 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.page = page;
             return request;
             // new ListBackupsRequest(compartmentId, opcRequestId, backupId, lifecycleState,
-            // dbSystemId, displayName, softDelete, creationType, sortBy, sortOrder, limit, page);
+            // dbSystemId, displayName, softDelete, backupPreparationStatus, validationStatus,
+            // creationType, sortBy, sortOrder, limit, page);
         }
     }
 
@@ -523,6 +579,8 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .dbSystemId(dbSystemId)
                 .displayName(displayName)
                 .softDelete(softDelete)
+                .backupPreparationStatus(backupPreparationStatus)
+                .validationStatus(validationStatus)
                 .creationType(creationType)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
@@ -551,6 +609,8 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",softDelete=").append(String.valueOf(this.softDelete));
+        sb.append(",backupPreparationStatus=").append(String.valueOf(this.backupPreparationStatus));
+        sb.append(",validationStatus=").append(String.valueOf(this.validationStatus));
         sb.append(",creationType=").append(String.valueOf(this.creationType));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -578,6 +638,9 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.softDelete, other.softDelete)
+                && java.util.Objects.equals(
+                        this.backupPreparationStatus, other.backupPreparationStatus)
+                && java.util.Objects.equals(this.validationStatus, other.validationStatus)
                 && java.util.Objects.equals(this.creationType, other.creationType)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -600,6 +663,14 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupPreparationStatus == null
+                                ? 43
+                                : this.backupPreparationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.validationStatus == null ? 43 : this.validationStatus.hashCode());
         result = (result * PRIME) + (this.creationType == null ? 43 : this.creationType.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

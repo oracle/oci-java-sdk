@@ -31,6 +31,7 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     CopyBackup("COPY_BACKUP"),
     CreateBackup("CREATE_BACKUP"),
     DeleteBackup("DELETE_BACKUP"),
+    UpdateBackup("UPDATE_BACKUP"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

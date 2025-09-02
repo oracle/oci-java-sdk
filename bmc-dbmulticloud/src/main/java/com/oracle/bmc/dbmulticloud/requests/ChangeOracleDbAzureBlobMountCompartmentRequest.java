@@ -16,10 +16,16 @@ public class ChangeOracleDbAzureBlobMountCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dbmulticloud.model.ChangeOracleDbAzureBlobMountCompartmentDetails> {
 
-    /** The ID of the Azure Container Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Blob Mount resource.
+     */
     private String oracleDbAzureBlobMountId;
 
-    /** The ID of the Azure Container Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Blob Mount resource.
+     */
     public String getOracleDbAzureBlobMountId() {
         return oracleDbAzureBlobMountId;
     }
@@ -33,20 +39,26 @@ public class ChangeOracleDbAzureBlobMountCompartmentRequest
         return changeOracleDbAzureBlobMountCompartmentDetails;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request, allowing it to be safely retried in the event of
+     * a timeout or server error without the risk of the action being executed more than once.
+     *
+     * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations
+     * occur.
+     *
+     * <p>For example, if a resource has been deleted and permanently purged from the system, a
+     * retry of the original creation request may be rejected.
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request, allowing it to be safely retried in the event of
+     * a timeout or server error without the risk of the action being executed more than once.
+     *
+     * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations
+     * occur.
+     *
+     * <p>For example, if a resource has been deleted and permanently purged from the system, a
+     * retry of the original creation request may be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -96,11 +108,15 @@ public class ChangeOracleDbAzureBlobMountCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the Azure Container Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Blob Mount resource.
+         */
         private String oracleDbAzureBlobMountId = null;
 
         /**
-         * The ID of the Azure Container Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Blob Mount resource.
          *
          * @param oracleDbAzureBlobMountId the value to set
          * @return this builder instance
@@ -129,20 +145,28 @@ public class ChangeOracleDbAzureBlobMountCompartmentRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request, allowing it to be safely retried in the event
+         * of a timeout or server error without the risk of the action being executed more than
+         * once.
+         *
+         * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting
+         * operations occur.
+         *
+         * <p>For example, if a resource has been deleted and permanently purged from the system, a
+         * retry of the original creation request may be rejected.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request, allowing it to be safely retried in the event
+         * of a timeout or server error without the risk of the action being executed more than
+         * once.
+         *
+         * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting
+         * operations occur.
+         *
+         * <p>For example, if a resource has been deleted and permanently purged from the system, a
+         * retry of the original creation request may be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

@@ -81,6 +81,7 @@ public final class UnregisterCloudVmClusterPkcsDetails
     public enum TdeKeyStoreType implements com.oracle.bmc.http.internal.BmcEnum {
         Azure("AZURE"),
         Oci("OCI"),
+        Gcp("GCP"),
         ;
 
         private final String value;

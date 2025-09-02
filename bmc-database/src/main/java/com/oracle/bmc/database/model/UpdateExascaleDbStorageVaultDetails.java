@@ -29,7 +29,9 @@ public final class UpdateExascaleDbStorageVaultDetails
         "highCapacityDatabaseStorage",
         "additionalFlashCacheInPercent",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "isAutoscaleEnabled",
+        "autoscaleLimitInGBs"
     })
     public UpdateExascaleDbStorageVaultDetails(
             String displayName,
@@ -37,7 +39,9 @@ public final class UpdateExascaleDbStorageVaultDetails
             ExascaleDbStorageInputDetails highCapacityDatabaseStorage,
             Integer additionalFlashCacheInPercent,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isAutoscaleEnabled,
+            Integer autoscaleLimitInGBs) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -45,6 +49,8 @@ public final class UpdateExascaleDbStorageVaultDetails
         this.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.isAutoscaleEnabled = isAutoscaleEnabled;
+        this.autoscaleLimitInGBs = autoscaleLimitInGBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -155,6 +161,44 @@ public final class UpdateExascaleDbStorageVaultDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default
+         * value is {@code FALSE}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoscaleEnabled")
+        private Boolean isAutoscaleEnabled;
+
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default
+         * value is {@code FALSE}.
+         *
+         * @param isAutoscaleEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAutoscaleEnabled(Boolean isAutoscaleEnabled) {
+            this.isAutoscaleEnabled = isAutoscaleEnabled;
+            this.__explicitlySet__.add("isAutoscaleEnabled");
+            return this;
+        }
+        /**
+         * Maximum limit storage size in gigabytes, that is applicable for the Database Storage
+         * Vault.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("autoscaleLimitInGBs")
+        private Integer autoscaleLimitInGBs;
+
+        /**
+         * Maximum limit storage size in gigabytes, that is applicable for the Database Storage
+         * Vault.
+         *
+         * @param autoscaleLimitInGBs the value to set
+         * @return this builder
+         */
+        public Builder autoscaleLimitInGBs(Integer autoscaleLimitInGBs) {
+            this.autoscaleLimitInGBs = autoscaleLimitInGBs;
+            this.__explicitlySet__.add("autoscaleLimitInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -167,7 +211,9 @@ public final class UpdateExascaleDbStorageVaultDetails
                             this.highCapacityDatabaseStorage,
                             this.additionalFlashCacheInPercent,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.isAutoscaleEnabled,
+                            this.autoscaleLimitInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -193,6 +239,12 @@ public final class UpdateExascaleDbStorageVaultDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoscaleEnabled")) {
+                this.isAutoscaleEnabled(model.getIsAutoscaleEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoscaleLimitInGBs")) {
+                this.autoscaleLimitInGBs(model.getAutoscaleLimitInGBs());
             }
             return this;
         }
@@ -299,6 +351,38 @@ public final class UpdateExascaleDbStorageVaultDetails
         return definedTags;
     }
 
+    /**
+     * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value
+     * is {@code FALSE}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoscaleEnabled")
+    private final Boolean isAutoscaleEnabled;
+
+    /**
+     * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value
+     * is {@code FALSE}.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoscaleEnabled() {
+        return isAutoscaleEnabled;
+    }
+
+    /**
+     * Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("autoscaleLimitInGBs")
+    private final Integer autoscaleLimitInGBs;
+
+    /**
+     * Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     *
+     * @return the value
+     */
+    public Integer getAutoscaleLimitInGBs() {
+        return autoscaleLimitInGBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -322,6 +406,8 @@ public final class UpdateExascaleDbStorageVaultDetails
                 .append(String.valueOf(this.additionalFlashCacheInPercent));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", isAutoscaleEnabled=").append(String.valueOf(this.isAutoscaleEnabled));
+        sb.append(", autoscaleLimitInGBs=").append(String.valueOf(this.autoscaleLimitInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -344,6 +430,8 @@ public final class UpdateExascaleDbStorageVaultDetails
                         this.additionalFlashCacheInPercent, other.additionalFlashCacheInPercent)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.isAutoscaleEnabled, other.isAutoscaleEnabled)
+                && java.util.Objects.equals(this.autoscaleLimitInGBs, other.autoscaleLimitInGBs)
                 && super.equals(other);
     }
 
@@ -365,6 +453,16 @@ public final class UpdateExascaleDbStorageVaultDetails
                                 : this.additionalFlashCacheInPercent.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoscaleEnabled == null
+                                ? 43
+                                : this.isAutoscaleEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoscaleLimitInGBs == null
+                                ? 43
+                                : this.autoscaleLimitInGBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

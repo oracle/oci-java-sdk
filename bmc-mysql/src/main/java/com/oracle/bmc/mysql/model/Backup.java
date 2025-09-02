@@ -32,6 +32,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         "displayName",
         "description",
         "softDelete",
+        "backupValidationDetails",
         "compartmentId",
         "timeCreated",
         "timeUpdated",
@@ -59,6 +60,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             String displayName,
             String description,
             SoftDelete softDelete,
+            BackupValidationDetails backupValidationDetails,
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -85,6 +87,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         this.displayName = displayName;
         this.description = description;
         this.softDelete = softDelete;
+        this.backupValidationDetails = backupValidationDetails;
         this.compartmentId = compartmentId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -172,6 +175,15 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder softDelete(SoftDelete softDelete) {
             this.softDelete = softDelete;
             this.__explicitlySet__.add("softDelete");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupValidationDetails")
+        private BackupValidationDetails backupValidationDetails;
+
+        public Builder backupValidationDetails(BackupValidationDetails backupValidationDetails) {
+            this.backupValidationDetails = backupValidationDetails;
+            this.__explicitlySet__.add("backupValidationDetails");
             return this;
         }
         /** The OCID of the compartment. */
@@ -513,6 +525,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                             this.displayName,
                             this.description,
                             this.softDelete,
+                            this.backupValidationDetails,
                             this.compartmentId,
                             this.timeCreated,
                             this.timeUpdated,
@@ -553,6 +566,9 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("softDelete")) {
                 this.softDelete(model.getSoftDelete());
+            }
+            if (model.wasPropertyExplicitlySet("backupValidationDetails")) {
+                this.backupValidationDetails(model.getBackupValidationDetails());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -684,6 +700,13 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
      */
     public SoftDelete getSoftDelete() {
         return softDelete;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("backupValidationDetails")
+    private final BackupValidationDetails backupValidationDetails;
+
+    public BackupValidationDetails getBackupValidationDetails() {
+        return backupValidationDetails;
     }
 
     /** The OCID of the compartment. */
@@ -1133,6 +1156,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", softDelete=").append(String.valueOf(this.softDelete));
+        sb.append(", backupValidationDetails=")
+                .append(String.valueOf(this.backupValidationDetails));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -1173,6 +1198,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.softDelete, other.softDelete)
+                && java.util.Objects.equals(
+                        this.backupValidationDetails, other.backupValidationDetails)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -1207,6 +1234,11 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupValidationDetails == null
+                                ? 43
+                                : this.backupValidationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

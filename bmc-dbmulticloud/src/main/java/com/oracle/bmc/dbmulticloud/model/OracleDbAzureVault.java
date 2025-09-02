@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * Oracle DB Azure Vault Resource Object. <br>
+ * Oracle DB Azure Vault resource object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -84,14 +84,14 @@ public final class OracleDbAzureVault
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DB Azure Vault Resource.
+         * oracle DB Azure Vault resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DB Azure Vault Resource.
+         * oracle DB Azure Vault resource.
          *
          * @param id the value to set
          * @return this builder
@@ -103,14 +103,14 @@ public final class OracleDbAzureVault
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DB Connector Resource.
+         * Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbConnectorId")
         private String oracleDbConnectorId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DB Connector Resource.
+         * Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
          *
          * @param oracleDbConnectorId the value to set
          * @return this builder
@@ -120,12 +120,12 @@ public final class OracleDbAzureVault
             this.__explicitlySet__.add("oracleDbConnectorId");
             return this;
         }
-        /** Display name of DB Azure Vault. */
+        /** Oracle DB Azure Vault resource name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of DB Azure Vault.
+         * Oracle DB Azure Vault resource name.
          *
          * @param displayName the value to set
          * @return this builder
@@ -135,12 +135,12 @@ public final class OracleDbAzureVault
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Display name of Azure Resource Group. */
+        /** Oracle DB Azure resource group name. */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureResourceGroup")
         private String oracleDbAzureResourceGroup;
 
         /**
-         * Display name of Azure Resource Group.
+         * Oracle DB Azure resource group name.
          *
          * @param oracleDbAzureResourceGroup the value to set
          * @return this builder
@@ -150,12 +150,12 @@ public final class OracleDbAzureVault
             this.__explicitlySet__.add("oracleDbAzureResourceGroup");
             return this;
         }
-        /** Azure Vault Id. */
+        /** Azure Vault ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("azureVaultId")
         private String azureVaultId;
 
         /**
-         * Azure Vault Id.
+         * Azure Vault ID.
          *
          * @param azureVaultId the value to set
          * @return this builder
@@ -166,17 +166,15 @@ public final class OracleDbAzureVault
             return this;
         }
         /**
-         * The Compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has
-         * this DB Azure Vault Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains this Oracle DB Azure Vault resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The Compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has
-         * this DB Azure Vault Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains this Oracle DB Azure Vault resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -186,12 +184,12 @@ public final class OracleDbAzureVault
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Vault Resource Type. */
+        /** Oracle DB Azure Vault resource type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Vault Resource Type.
+         * Oracle DB Azure Vault resource type.
          *
          * @param type the value to set
          * @return this builder
@@ -201,12 +199,12 @@ public final class OracleDbAzureVault
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Vault Resource Location. */
+        /** Oracle DB Azure Vault resource location. */
         @com.fasterxml.jackson.annotation.JsonProperty("location")
         private String location;
 
         /**
-         * Vault Resource Location.
+         * Oracle DB Azure Vault resource location.
          *
          * @param location the value to set
          * @return this builder
@@ -216,12 +214,12 @@ public final class OracleDbAzureVault
             this.__explicitlySet__.add("location");
             return this;
         }
-        /** Resource's properties. */
+        /** Oracle DB Azure Vault resource's properties. */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, String> properties;
 
         /**
-         * Resource's properties.
+         * Oracle DB Azure Vault resource's properties.
          *
          * @param properties the value to set
          * @return this builder
@@ -231,12 +229,12 @@ public final class OracleDbAzureVault
             this.__explicitlySet__.add("properties");
             return this;
         }
-        /** The lifecycle state of the DB Azure Vault Resource. */
+        /** The lifecycle state of the Oracle DB Azure Vault resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The lifecycle state of the DB Azure Vault Resource.
+         * The lifecycle state of the Oracle DB Azure Vault resource.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -262,7 +260,7 @@ public final class OracleDbAzureVault
             return this;
         }
         /**
-         * Time when the DB Azure Vault was created in [RFC
+         * Time when the DB Azure Vault resource was created in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-23T21:10:29.600Z'
          */
@@ -270,7 +268,7 @@ public final class OracleDbAzureVault
         private java.util.Date timeCreated;
 
         /**
-         * Time when the DB Azure Vault was created in [RFC
+         * Time when the DB Azure Vault resource was created in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-23T21:10:29.600Z'
          *
@@ -283,7 +281,7 @@ public final class OracleDbAzureVault
             return this;
         }
         /**
-         * Time when the DB Azure Vault was last modified, expressed in [RFC
+         * Time when the DB Azure Vault resource was last modified, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-23T21:10:29.600Z'
          */
@@ -291,7 +289,7 @@ public final class OracleDbAzureVault
         private java.util.Date timeUpdated;
 
         /**
-         * Time when the DB Azure Vault was last modified, expressed in [RFC
+         * Time when the DB Azure Vault resource was last modified, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-23T21:10:29.600Z'
          *
@@ -303,12 +301,12 @@ public final class OracleDbAzureVault
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Description of the latest modification of the DB Azure Vault Resource. */
+        /** Description of the latest modification of the Oracle DB Azure Vault resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
         private String lastModification;
 
         /**
-         * Description of the latest modification of the DB Azure Vault Resource.
+         * Description of the latest modification of the Oracle DB Azure Vault resource.
          *
          * @param lastModification the value to set
          * @return this builder
@@ -487,15 +485,15 @@ public final class OracleDbAzureVault
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
-     * Azure Vault Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * oracle DB Azure Vault resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
-     * Azure Vault Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * oracle DB Azure Vault resource.
      *
      * @return the value
      */
@@ -504,15 +502,15 @@ public final class OracleDbAzureVault
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
-     * Connector Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbConnectorId")
     private final String oracleDbConnectorId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
-     * Connector Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      *
      * @return the value
      */
@@ -520,12 +518,12 @@ public final class OracleDbAzureVault
         return oracleDbConnectorId;
     }
 
-    /** Display name of DB Azure Vault. */
+    /** Oracle DB Azure Vault resource name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of DB Azure Vault.
+     * Oracle DB Azure Vault resource name.
      *
      * @return the value
      */
@@ -533,12 +531,12 @@ public final class OracleDbAzureVault
         return displayName;
     }
 
-    /** Display name of Azure Resource Group. */
+    /** Oracle DB Azure resource group name. */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureResourceGroup")
     private final String oracleDbAzureResourceGroup;
 
     /**
-     * Display name of Azure Resource Group.
+     * Oracle DB Azure resource group name.
      *
      * @return the value
      */
@@ -546,12 +544,12 @@ public final class OracleDbAzureVault
         return oracleDbAzureResourceGroup;
     }
 
-    /** Azure Vault Id. */
+    /** Azure Vault ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("azureVaultId")
     private final String azureVaultId;
 
     /**
-     * Azure Vault Id.
+     * Azure Vault ID.
      *
      * @return the value
      */
@@ -560,15 +558,15 @@ public final class OracleDbAzureVault
     }
 
     /**
-     * The Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * that has this DB Azure Vault Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains this Oracle DB Azure Vault resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * that has this DB Azure Vault Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains this Oracle DB Azure Vault resource.
      *
      * @return the value
      */
@@ -576,12 +574,12 @@ public final class OracleDbAzureVault
         return compartmentId;
     }
 
-    /** Vault Resource Type. */
+    /** Oracle DB Azure Vault resource type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Vault Resource Type.
+     * Oracle DB Azure Vault resource type.
      *
      * @return the value
      */
@@ -589,12 +587,12 @@ public final class OracleDbAzureVault
         return type;
     }
 
-    /** Vault Resource Location. */
+    /** Oracle DB Azure Vault resource location. */
     @com.fasterxml.jackson.annotation.JsonProperty("location")
     private final String location;
 
     /**
-     * Vault Resource Location.
+     * Oracle DB Azure Vault resource location.
      *
      * @return the value
      */
@@ -602,12 +600,12 @@ public final class OracleDbAzureVault
         return location;
     }
 
-    /** Resource's properties. */
+    /** Oracle DB Azure Vault resource's properties. */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, String> properties;
 
     /**
-     * Resource's properties.
+     * Oracle DB Azure Vault resource's properties.
      *
      * @return the value
      */
@@ -615,7 +613,7 @@ public final class OracleDbAzureVault
         return properties;
     }
 
-    /** The lifecycle state of the DB Azure Vault Resource. */
+    /** The lifecycle state of the Oracle DB Azure Vault resource. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -665,12 +663,12 @@ public final class OracleDbAzureVault
             return UnknownEnumValue;
         }
     };
-    /** The lifecycle state of the DB Azure Vault Resource. */
+    /** The lifecycle state of the Oracle DB Azure Vault resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The lifecycle state of the DB Azure Vault Resource.
+     * The lifecycle state of the Oracle DB Azure Vault resource.
      *
      * @return the value
      */
@@ -692,15 +690,15 @@ public final class OracleDbAzureVault
     }
 
     /**
-     * Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-     * timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+     * Time when the DB Azure Vault resource was created in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-     * timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+     * Time when the DB Azure Vault resource was created in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      *
      * @return the value
      */
@@ -709,14 +707,14 @@ public final class OracleDbAzureVault
     }
 
     /**
-     * Time when the DB Azure Vault was last modified, expressed in [RFC
+     * Time when the DB Azure Vault resource was last modified, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Time when the DB Azure Vault was last modified, expressed in [RFC
+     * Time when the DB Azure Vault resource was last modified, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      *
      * @return the value
@@ -725,12 +723,12 @@ public final class OracleDbAzureVault
         return timeUpdated;
     }
 
-    /** Description of the latest modification of the DB Azure Vault Resource. */
+    /** Description of the latest modification of the Oracle DB Azure Vault resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
     private final String lastModification;
 
     /**
-     * Description of the latest modification of the DB Azure Vault Resource.
+     * Description of the latest modification of the Oracle DB Azure Vault resource.
      *
      * @return the value
      */

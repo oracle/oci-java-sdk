@@ -3,8 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## 3.72.1 - 2025-08-26
+## 3.72.2 - 2025-09-02
 ### Added 
+- Support for key management integration for Google Cloud Platform (GCP) in the Database Multicloud service 
+- Support for autoscale database storage vault in the Database service 
+- Support for creating Data Guards and moving encrypted keys to Google Cloud Provider in the Database service 
+- Support for validating backup for the backup in the HeatWave service 
+- Support for additional detector types, recipes and rules in the Cloud Guard service 
+- Support for internal DAC shapes in the the Generative AI service
+
+## 3.72.1 - 2025-08-26
+### Added
+- Support for OCI Streaming with Apache Kafka (OCI Managed Kafka) service 
 - Support for Oracle 19C databases on exascale infrastructure in the Database Service 
 - Support for VM.Standard.x86 shape for base databases in the Database Service 
 - Support for disaster recovery for MySQL database systems in the Disaster Recovery Service 

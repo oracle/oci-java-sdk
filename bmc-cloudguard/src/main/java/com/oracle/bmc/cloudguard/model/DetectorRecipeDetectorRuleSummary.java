@@ -31,6 +31,8 @@ public final class DetectorRecipeDetectorRuleSummary
         "detector",
         "serviceType",
         "resourceType",
+        "ruleType",
+        "isCloneable",
         "managedListTypes",
         "candidateResponderRules",
         "detectorDetails",
@@ -49,6 +51,8 @@ public final class DetectorRecipeDetectorRuleSummary
             DetectorEnum detector,
             String serviceType,
             String resourceType,
+            java.util.List<RuleType> ruleType,
+            Boolean isCloneable,
             java.util.List<ManagedListTypes> managedListTypes,
             java.util.List<CandidateResponderRule> candidateResponderRules,
             DetectorDetails detectorDetails,
@@ -66,6 +70,8 @@ public final class DetectorRecipeDetectorRuleSummary
         this.detector = detector;
         this.serviceType = serviceType;
         this.resourceType = resourceType;
+        this.ruleType = ruleType;
+        this.isCloneable = isCloneable;
         this.managedListTypes = managedListTypes;
         this.candidateResponderRules = candidateResponderRules;
         this.detectorDetails = detectorDetails;
@@ -182,6 +188,36 @@ public final class DetectorRecipeDetectorRuleSummary
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /** Rule type */
+        @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
+        private java.util.List<RuleType> ruleType;
+
+        /**
+         * Rule type
+         *
+         * @param ruleType the value to set
+         * @return this builder
+         */
+        public Builder ruleType(java.util.List<RuleType> ruleType) {
+            this.ruleType = ruleType;
+            this.__explicitlySet__.add("ruleType");
+            return this;
+        }
+        /** Is the rule cloneable? */
+        @com.fasterxml.jackson.annotation.JsonProperty("isCloneable")
+        private Boolean isCloneable;
+
+        /**
+         * Is the rule cloneable?
+         *
+         * @param isCloneable the value to set
+         * @return this builder
+         */
+        public Builder isCloneable(Boolean isCloneable) {
+            this.isCloneable = isCloneable;
+            this.__explicitlySet__.add("isCloneable");
             return this;
         }
         /** List of managed list types related to this rule */
@@ -338,6 +374,8 @@ public final class DetectorRecipeDetectorRuleSummary
                             this.detector,
                             this.serviceType,
                             this.resourceType,
+                            this.ruleType,
+                            this.isCloneable,
                             this.managedListTypes,
                             this.candidateResponderRules,
                             this.detectorDetails,
@@ -375,6 +413,12 @@ public final class DetectorRecipeDetectorRuleSummary
             }
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("ruleType")) {
+                this.ruleType(model.getRuleType());
+            }
+            if (model.wasPropertyExplicitlySet("isCloneable")) {
+                this.isCloneable(model.getIsCloneable());
             }
             if (model.wasPropertyExplicitlySet("managedListTypes")) {
                 this.managedListTypes(model.getManagedListTypes());
@@ -507,6 +551,32 @@ public final class DetectorRecipeDetectorRuleSummary
         return resourceType;
     }
 
+    /** Rule type */
+    @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
+    private final java.util.List<RuleType> ruleType;
+
+    /**
+     * Rule type
+     *
+     * @return the value
+     */
+    public java.util.List<RuleType> getRuleType() {
+        return ruleType;
+    }
+
+    /** Is the rule cloneable? */
+    @com.fasterxml.jackson.annotation.JsonProperty("isCloneable")
+    private final Boolean isCloneable;
+
+    /**
+     * Is the rule cloneable?
+     *
+     * @return the value
+     */
+    public Boolean getIsCloneable() {
+        return isCloneable;
+    }
+
     /** */
     public enum ManagedListTypes implements com.oracle.bmc.http.internal.BmcEnum {
         CidrBlock("CIDR_BLOCK"),
@@ -523,6 +593,8 @@ public final class DetectorRecipeDetectorRuleSummary
         Generic("GENERIC"),
         FusionAppsRole("FUSION_APPS_ROLE"),
         FusionAppsPermission("FUSION_APPS_PERMISSION"),
+        NamespaceSelector("NAMESPACE_SELECTOR"),
+        PodResourceSelector("POD_RESOURCE_SELECTOR"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -706,6 +778,8 @@ public final class DetectorRecipeDetectorRuleSummary
         sb.append(", detector=").append(String.valueOf(this.detector));
         sb.append(", serviceType=").append(String.valueOf(this.serviceType));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", ruleType=").append(String.valueOf(this.ruleType));
+        sb.append(", isCloneable=").append(String.valueOf(this.isCloneable));
         sb.append(", managedListTypes=").append(String.valueOf(this.managedListTypes));
         sb.append(", candidateResponderRules=")
                 .append(String.valueOf(this.candidateResponderRules));
@@ -737,6 +811,8 @@ public final class DetectorRecipeDetectorRuleSummary
                 && java.util.Objects.equals(this.detector, other.detector)
                 && java.util.Objects.equals(this.serviceType, other.serviceType)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.ruleType, other.ruleType)
+                && java.util.Objects.equals(this.isCloneable, other.isCloneable)
                 && java.util.Objects.equals(this.managedListTypes, other.managedListTypes)
                 && java.util.Objects.equals(
                         this.candidateResponderRules, other.candidateResponderRules)
@@ -763,6 +839,8 @@ public final class DetectorRecipeDetectorRuleSummary
         result = (result * PRIME) + (this.detector == null ? 43 : this.detector.hashCode());
         result = (result * PRIME) + (this.serviceType == null ? 43 : this.serviceType.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.ruleType == null ? 43 : this.ruleType.hashCode());
+        result = (result * PRIME) + (this.isCloneable == null ? 43 : this.isCloneable.hashCode());
         result =
                 (result * PRIME)
                         + (this.managedListTypes == null ? 43 : this.managedListTypes.hashCode());

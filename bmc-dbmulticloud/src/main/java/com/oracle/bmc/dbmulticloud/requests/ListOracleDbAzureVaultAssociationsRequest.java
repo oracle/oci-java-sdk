@@ -28,24 +28,46 @@ public class ListOracleDbAzureVaultAssociationsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return Oracle DB Azure Vault Resources. */
+    /**
+     * A filter to return Oracle DB Azure Vault resources that match the specified
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle
+     * DB Azure Vault resource.
+     */
     private String oracleDbAzureVaultId;
 
-    /** A filter to return Oracle DB Azure Vault Resources. */
+    /**
+     * A filter to return Oracle DB Azure Vault resources that match the specified
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle
+     * DB Azure Vault resource.
+     */
     public String getOracleDbAzureVaultId() {
         return oracleDbAzureVaultId;
     }
-    /** A filter to return Azure Vault Association. */
+    /**
+     * A filter to return Oracle DB Azure Vault Association resources that match the specified
+     * display name.
+     */
     private String displayName;
 
-    /** A filter to return Azure Vault Association. */
+    /**
+     * A filter to return Oracle DB Azure Vault Association resources that match the specified
+     * display name.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return Oracle DB Azure Vault Association Resources. */
+    /**
+     * A filter to return Oracle DB Azure Vault resources that match the specified
+     * OCID](/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association
+     * resource.
+     */
     private String oracleDbAzureVaultAssociationId;
 
-    /** A filter to return Oracle DB Azure Vault Association Resources. */
+    /**
+     * A filter to return Oracle DB Azure Vault resources that match the specified
+     * OCID](/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association
+     * resource.
+     */
     public String getOracleDbAzureVaultAssociationId() {
         return oracleDbAzureVaultAssociationId;
     }
@@ -64,10 +86,10 @@ public class ListOracleDbAzureVaultAssociationsRequest
             getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
     private String oracleDbAzureConnectorId;
 
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
     public String getOracleDbAzureConnectorId() {
         return oracleDbAzureConnectorId;
     }
@@ -183,11 +205,17 @@ public class ListOracleDbAzureVaultAssociationsRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Vault Resources. */
+        /**
+         * A filter to return Oracle DB Azure Vault resources that match the specified
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Vault resource.
+         */
         private String oracleDbAzureVaultId = null;
 
         /**
-         * A filter to return Oracle DB Azure Vault Resources.
+         * A filter to return Oracle DB Azure Vault resources that match the specified
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Vault resource.
          *
          * @param oracleDbAzureVaultId the value to set
          * @return this builder instance
@@ -197,11 +225,15 @@ public class ListOracleDbAzureVaultAssociationsRequest
             return this;
         }
 
-        /** A filter to return Azure Vault Association. */
+        /**
+         * A filter to return Oracle DB Azure Vault Association resources that match the specified
+         * display name.
+         */
         private String displayName = null;
 
         /**
-         * A filter to return Azure Vault Association.
+         * A filter to return Oracle DB Azure Vault Association resources that match the specified
+         * display name.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -211,11 +243,17 @@ public class ListOracleDbAzureVaultAssociationsRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Vault Association Resources. */
+        /**
+         * A filter to return Oracle DB Azure Vault resources that match the specified
+         * OCID](/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association
+         * resource.
+         */
         private String oracleDbAzureVaultAssociationId = null;
 
         /**
-         * A filter to return Oracle DB Azure Vault Association Resources.
+         * A filter to return Oracle DB Azure Vault resources that match the specified
+         * OCID](/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association
+         * resource.
          *
          * @param oracleDbAzureVaultAssociationId the value to set
          * @return this builder instance
@@ -246,11 +284,11 @@ public class ListOracleDbAzureVaultAssociationsRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Blob Mount Resources. */
+        /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
         private String oracleDbAzureConnectorId = null;
 
         /**
-         * A filter to return Oracle DB Azure Blob Mount Resources.
+         * A filter to return Oracle DB Azure Azure Identity Connector resources.
          *
          * @param oracleDbAzureConnectorId the value to set
          * @return this builder instance

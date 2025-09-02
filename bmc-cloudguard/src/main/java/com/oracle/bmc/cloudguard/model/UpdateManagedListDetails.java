@@ -27,6 +27,7 @@ public final class UpdateManagedListDetails
         "displayName",
         "description",
         "listItems",
+        "group",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +35,14 @@ public final class UpdateManagedListDetails
             String displayName,
             String description,
             java.util.List<String> listItems,
+            String group,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.listItems = listItems;
+        this.group = group;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -97,6 +100,21 @@ public final class UpdateManagedListDetails
             this.__explicitlySet__.add("listItems");
             return this;
         }
+        /** Managed list type group */
+        @com.fasterxml.jackson.annotation.JsonProperty("group")
+        private String group;
+
+        /**
+         * Managed list type group
+         *
+         * @param group the value to set
+         * @return this builder
+         */
+        public Builder group(String group) {
+            this.group = group;
+            this.__explicitlySet__.add("group");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -150,6 +168,7 @@ public final class UpdateManagedListDetails
                             this.displayName,
                             this.description,
                             this.listItems,
+                            this.group,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -168,6 +187,9 @@ public final class UpdateManagedListDetails
             }
             if (model.wasPropertyExplicitlySet("listItems")) {
                 this.listItems(model.getListItems());
+            }
+            if (model.wasPropertyExplicitlySet("group")) {
+                this.group(model.getGroup());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -233,6 +255,19 @@ public final class UpdateManagedListDetails
         return listItems;
     }
 
+    /** Managed list type group */
+    @com.fasterxml.jackson.annotation.JsonProperty("group")
+    private final String group;
+
+    /**
+     * Managed list type group
+     *
+     * @return the value
+     */
+    public String getGroup() {
+        return group;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -289,6 +324,7 @@ public final class UpdateManagedListDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", listItems=").append(String.valueOf(this.listItems));
+        sb.append(", group=").append(String.valueOf(this.group));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -308,6 +344,7 @@ public final class UpdateManagedListDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.listItems, other.listItems)
+                && java.util.Objects.equals(this.group, other.group)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -320,6 +357,7 @@ public final class UpdateManagedListDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.listItems == null ? 43 : this.listItems.hashCode());
+        result = (result * PRIME) + (this.group == null ? 43 : this.group.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

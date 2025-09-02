@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * Azure Arc Agent Node Details. <br>
+ * Azure Arc Agent node details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -44,12 +44,12 @@ public final class ArcAgentNodes extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Host Name or Azure Arc Agent Name. */
+        /** Host name or Azure Arc Agent name. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
-         * Host Name or Azure Arc Agent Name.
+         * Host name or Azure Arc Agent name.
          *
          * @param hostName the value to set
          * @return this builder
@@ -74,12 +74,12 @@ public final class ArcAgentNodes extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("hostId");
             return this;
         }
-        /** Current Arc Agent Version installed on this node of VM Cluster. */
+        /** Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("currentArcAgentVersion")
         private String currentArcAgentVersion;
 
         /**
-         * Current Arc Agent Version installed on this node of VM Cluster.
+         * Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
          *
          * @param currentArcAgentVersion the value to set
          * @return this builder
@@ -89,12 +89,12 @@ public final class ArcAgentNodes extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("currentArcAgentVersion");
             return this;
         }
-        /** The current status of the Azure Arc Agent Resource. */
+        /** The current status of the Azure Arc Agent resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * The current status of the Azure Arc Agent Resource.
+         * The current status of the Azure Arc Agent resource.
          *
          * @param status the value to set
          * @return this builder
@@ -105,7 +105,7 @@ public final class ArcAgentNodes extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * time when the Azure Arc Agent's status was checked [RFC
+         * Time when the Azure Arc Agent's status was checked [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
@@ -113,7 +113,7 @@ public final class ArcAgentNodes extends com.oracle.bmc.http.client.internal.Exp
         private java.util.Date timeLastChecked;
 
         /**
-         * time when the Azure Arc Agent's status was checked [RFC
+         * Time when the Azure Arc Agent's status was checked [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
@@ -173,12 +173,12 @@ public final class ArcAgentNodes extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Host Name or Azure Arc Agent Name. */
+    /** Host name or Azure Arc Agent name. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
-     * Host Name or Azure Arc Agent Name.
+     * Host name or Azure Arc Agent name.
      *
      * @return the value
      */
@@ -199,12 +199,12 @@ public final class ArcAgentNodes extends com.oracle.bmc.http.client.internal.Exp
         return hostId;
     }
 
-    /** Current Arc Agent Version installed on this node of VM Cluster. */
+    /** Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("currentArcAgentVersion")
     private final String currentArcAgentVersion;
 
     /**
-     * Current Arc Agent Version installed on this node of VM Cluster.
+     * Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
      *
      * @return the value
      */
@@ -212,7 +212,7 @@ public final class ArcAgentNodes extends com.oracle.bmc.http.client.internal.Exp
         return currentArcAgentVersion;
     }
 
-    /** The current status of the Azure Arc Agent Resource. */
+    /** The current status of the Azure Arc Agent resource. */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Connected("CONNECTED"),
         Disconnected("DISCONNECTED"),
@@ -258,12 +258,12 @@ public final class ArcAgentNodes extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The current status of the Azure Arc Agent Resource. */
+    /** The current status of the Azure Arc Agent resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * The current status of the Azure Arc Agent Resource.
+     * The current status of the Azure Arc Agent resource.
      *
      * @return the value
      */
@@ -272,14 +272,14 @@ public final class ArcAgentNodes extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * time when the Azure Arc Agent's status was checked [RFC
+     * Time when the Azure Arc Agent's status was checked [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastChecked")
     private final java.util.Date timeLastChecked;
 
     /**
-     * time when the Azure Arc Agent's status was checked [RFC
+     * Time when the Azure Arc Agent's status was checked [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value

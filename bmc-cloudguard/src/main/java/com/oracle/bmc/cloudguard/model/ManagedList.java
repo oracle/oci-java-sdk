@@ -31,6 +31,7 @@ public final class ManagedList extends com.oracle.bmc.http.client.internal.Expli
         "sourceManagedListId",
         "listType",
         "listItems",
+        "group",
         "feedProvider",
         "isEditable",
         "timeCreated",
@@ -49,6 +50,7 @@ public final class ManagedList extends com.oracle.bmc.http.client.internal.Expli
             String sourceManagedListId,
             ManagedListType listType,
             java.util.List<String> listItems,
+            String group,
             FeedProviderType feedProvider,
             Boolean isEditable,
             java.util.Date timeCreated,
@@ -66,6 +68,7 @@ public final class ManagedList extends com.oracle.bmc.http.client.internal.Expli
         this.sourceManagedListId = sourceManagedListId;
         this.listType = listType;
         this.listItems = listItems;
+        this.group = group;
         this.feedProvider = feedProvider;
         this.isEditable = isEditable;
         this.timeCreated = timeCreated;
@@ -182,6 +185,21 @@ public final class ManagedList extends com.oracle.bmc.http.client.internal.Expli
         public Builder listItems(java.util.List<String> listItems) {
             this.listItems = listItems;
             this.__explicitlySet__.add("listItems");
+            return this;
+        }
+        /** Managed list type group */
+        @com.fasterxml.jackson.annotation.JsonProperty("group")
+        private String group;
+
+        /**
+         * Managed list type group
+         *
+         * @param group the value to set
+         * @return this builder
+         */
+        public Builder group(String group) {
+            this.group = group;
+            this.__explicitlySet__.add("group");
             return this;
         }
         /** Provider of the managed list feed */
@@ -362,6 +380,7 @@ public final class ManagedList extends com.oracle.bmc.http.client.internal.Expli
                             this.sourceManagedListId,
                             this.listType,
                             this.listItems,
+                            this.group,
                             this.feedProvider,
                             this.isEditable,
                             this.timeCreated,
@@ -399,6 +418,9 @@ public final class ManagedList extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("listItems")) {
                 this.listItems(model.getListItems());
+            }
+            if (model.wasPropertyExplicitlySet("group")) {
+                this.group(model.getGroup());
             }
             if (model.wasPropertyExplicitlySet("feedProvider")) {
                 this.feedProvider(model.getFeedProvider());
@@ -529,6 +551,19 @@ public final class ManagedList extends com.oracle.bmc.http.client.internal.Expli
      */
     public java.util.List<String> getListItems() {
         return listItems;
+    }
+
+    /** Managed list type group */
+    @com.fasterxml.jackson.annotation.JsonProperty("group")
+    private final String group;
+
+    /**
+     * Managed list type group
+     *
+     * @return the value
+     */
+    public String getGroup() {
+        return group;
     }
 
     /** Provider of the managed list feed */
@@ -698,6 +733,7 @@ public final class ManagedList extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", sourceManagedListId=").append(String.valueOf(this.sourceManagedListId));
         sb.append(", listType=").append(String.valueOf(this.listType));
         sb.append(", listItems=").append(String.valueOf(this.listItems));
+        sb.append(", group=").append(String.valueOf(this.group));
         sb.append(", feedProvider=").append(String.valueOf(this.feedProvider));
         sb.append(", isEditable=").append(String.valueOf(this.isEditable));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -728,6 +764,7 @@ public final class ManagedList extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.sourceManagedListId, other.sourceManagedListId)
                 && java.util.Objects.equals(this.listType, other.listType)
                 && java.util.Objects.equals(this.listItems, other.listItems)
+                && java.util.Objects.equals(this.group, other.group)
                 && java.util.Objects.equals(this.feedProvider, other.feedProvider)
                 && java.util.Objects.equals(this.isEditable, other.isEditable)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -757,6 +794,7 @@ public final class ManagedList extends com.oracle.bmc.http.client.internal.Expli
                                 : this.sourceManagedListId.hashCode());
         result = (result * PRIME) + (this.listType == null ? 43 : this.listType.hashCode());
         result = (result * PRIME) + (this.listItems == null ? 43 : this.listItems.hashCode());
+        result = (result * PRIME) + (this.group == null ? 43 : this.group.hashCode());
         result = (result * PRIME) + (this.feedProvider == null ? 43 : this.feedProvider.hashCode());
         result = (result * PRIME) + (this.isEditable == null ? 43 : this.isEditable.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());

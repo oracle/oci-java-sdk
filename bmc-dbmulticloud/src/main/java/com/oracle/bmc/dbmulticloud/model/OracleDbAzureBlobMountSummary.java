@@ -73,12 +73,16 @@ public final class OracleDbAzureBlobMountSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID for the new Oracle DB Azure Blob Mount resource. */
+        /**
+         * TThe The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the Oracle DB Azure Blob Mount resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The ID for the new Oracle DB Azure Blob Mount resource.
+         * TThe The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the Oracle DB Azure Blob Mount resource.
          *
          * @param id the value to set
          * @return this builder
@@ -103,12 +107,16 @@ public final class OracleDbAzureBlobMountSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The ID of the compartment that contains VM where to install Azure Arc Agent. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains Oracle DB Azure Blob Mount resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ID of the compartment that contains VM where to install Azure Arc Agent.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains Oracle DB Azure Blob Mount resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -118,12 +126,16 @@ public final class OracleDbAzureBlobMountSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The ID of the Oracle DB Azure Connector Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureConnectorId")
         private String oracleDbAzureConnectorId;
 
         /**
-         * The ID of the Oracle DB Azure Connector Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
          *
          * @param oracleDbAzureConnectorId the value to set
          * @return this builder
@@ -133,12 +145,18 @@ public final class OracleDbAzureBlobMountSummary
             this.__explicitlySet__.add("oracleDbAzureConnectorId");
             return this;
         }
-        /** The ID of the Oracle DB Azure Blob Container Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount
+         * resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureBlobContainerId")
         private String oracleDbAzureBlobContainerId;
 
         /**
-         * The ID of the Oracle DB Azure Blob Container Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount
+         * resource.
          *
          * @param oracleDbAzureBlobContainerId the value to set
          * @return this builder
@@ -163,12 +181,12 @@ public final class OracleDbAzureBlobMountSummary
             this.__explicitlySet__.add("mountPath");
             return this;
         }
-        /** The current lifecycle state of the Oracle DB Azure Blob Mount Resource. */
+        /** The current lifecycle state of the Oracle DB Azure Blob Mount resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OracleDbAzureBlobMount.LifecycleState lifecycleState;
 
         /**
-         * The current lifecycle state of the Oracle DB Azure Blob Mount Resource.
+         * The current lifecycle state of the Oracle DB Azure Blob Mount resource.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -235,12 +253,12 @@ public final class OracleDbAzureBlobMountSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Description of the latest modification of the Oracle DB Azure Blob Mount Resource. */
+        /** Description of the latest modification of the Oracle DB Azure Blob Mount resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
         private String lastModification;
 
         /**
-         * Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+         * Description of the latest modification of the Oracle DB Azure Blob Mount resource.
          *
          * @param lastModification the value to set
          * @return this builder
@@ -406,12 +424,16 @@ public final class OracleDbAzureBlobMountSummary
         return new Builder().copy(this);
     }
 
-    /** The ID for the new Oracle DB Azure Blob Mount resource. */
+    /**
+     * TThe The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Blob Mount resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The ID for the new Oracle DB Azure Blob Mount resource.
+     * TThe The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Blob Mount resource.
      *
      * @return the value
      */
@@ -432,12 +454,16 @@ public final class OracleDbAzureBlobMountSummary
         return displayName;
     }
 
-    /** The ID of the compartment that contains VM where to install Azure Arc Agent. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains Oracle DB Azure Blob Mount resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ID of the compartment that contains VM where to install Azure Arc Agent.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains Oracle DB Azure Blob Mount resource.
      *
      * @return the value
      */
@@ -445,12 +471,16 @@ public final class OracleDbAzureBlobMountSummary
         return compartmentId;
     }
 
-    /** The ID of the Oracle DB Azure Connector Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureConnectorId")
     private final String oracleDbAzureConnectorId;
 
     /**
-     * The ID of the Oracle DB Azure Connector Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
      *
      * @return the value
      */
@@ -458,12 +488,16 @@ public final class OracleDbAzureBlobMountSummary
         return oracleDbAzureConnectorId;
     }
 
-    /** The ID of the Oracle DB Azure Blob Container Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureBlobContainerId")
     private final String oracleDbAzureBlobContainerId;
 
     /**
-     * The ID of the Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
      *
      * @return the value
      */
@@ -484,12 +518,12 @@ public final class OracleDbAzureBlobMountSummary
         return mountPath;
     }
 
-    /** The current lifecycle state of the Oracle DB Azure Blob Mount Resource. */
+    /** The current lifecycle state of the Oracle DB Azure Blob Mount resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OracleDbAzureBlobMount.LifecycleState lifecycleState;
 
     /**
-     * The current lifecycle state of the Oracle DB Azure Blob Mount Resource.
+     * The current lifecycle state of the Oracle DB Azure Blob Mount resource.
      *
      * @return the value
      */
@@ -544,12 +578,12 @@ public final class OracleDbAzureBlobMountSummary
         return timeUpdated;
     }
 
-    /** Description of the latest modification of the Oracle DB Azure Blob Mount Resource. */
+    /** Description of the latest modification of the Oracle DB Azure Blob Mount resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
     private final String lastModification;
 
     /**
-     * Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+     * Description of the latest modification of the Oracle DB Azure Blob Mount resource.
      *
      * @return the value
      */

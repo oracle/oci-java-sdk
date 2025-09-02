@@ -13,30 +13,52 @@ import com.oracle.bmc.dbmulticloud.model.*;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240501")
 public class RefreshOracleDbAzureVaultRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dbmulticloud.model.RefreshOracleDbAzureVaultDetails> {
 
-    /** The ID of the Oracle DB Azure Vault Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Vault resource.
+     */
     private String oracleDbAzureVaultId;
 
-    /** The ID of the Oracle DB Azure Vault Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Vault resource.
+     */
     public String getOracleDbAzureVaultId() {
         return oracleDbAzureVaultId;
     }
+    /** Details for to refresh Oracle DB Azure Vault resource. */
+    private com.oracle.bmc.dbmulticloud.model.RefreshOracleDbAzureVaultDetails
+            refreshOracleDbAzureVaultDetails;
+
+    /** Details for to refresh Oracle DB Azure Vault resource. */
+    public com.oracle.bmc.dbmulticloud.model.RefreshOracleDbAzureVaultDetails
+            getRefreshOracleDbAzureVaultDetails() {
+        return refreshOracleDbAzureVaultDetails;
+    }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request, allowing it to be safely retried in the event of
+     * a timeout or server error without the risk of the action being executed more than once.
+     *
+     * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations
+     * occur.
+     *
+     * <p>For example, if a resource has been deleted and permanently purged from the system, a
+     * retry of the original creation request may be rejected.
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request, allowing it to be safely retried in the event of
+     * a timeout or server error without the risk of the action being executed more than once.
+     *
+     * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations
+     * occur.
+     *
+     * <p>For example, if a resource has been deleted and permanently purged from the system, a
+     * retry of the original creation request may be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -66,17 +88,33 @@ public class RefreshOracleDbAzureVaultRequest
         return opcRequestId;
     }
 
+    /**
+     * Alternative accessor for the body parameter.
+     *
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.dbmulticloud.model.RefreshOracleDbAzureVaultDetails getBody$() {
+        return refreshOracleDbAzureVaultDetails;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RefreshOracleDbAzureVaultRequest, java.lang.Void> {
+                    RefreshOracleDbAzureVaultRequest,
+                    com.oracle.bmc.dbmulticloud.model.RefreshOracleDbAzureVaultDetails> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the Oracle DB Azure Vault Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Vault resource.
+         */
         private String oracleDbAzureVaultId = null;
 
         /**
-         * The ID of the Oracle DB Azure Vault Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Vault resource.
          *
          * @param oracleDbAzureVaultId the value to set
          * @return this builder instance
@@ -86,21 +124,46 @@ public class RefreshOracleDbAzureVaultRequest
             return this;
         }
 
+        /** Details for to refresh Oracle DB Azure Vault resource. */
+        private com.oracle.bmc.dbmulticloud.model.RefreshOracleDbAzureVaultDetails
+                refreshOracleDbAzureVaultDetails = null;
+
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * Details for to refresh Oracle DB Azure Vault resource.
+         *
+         * @param refreshOracleDbAzureVaultDetails the value to set
+         * @return this builder instance
+         */
+        public Builder refreshOracleDbAzureVaultDetails(
+                com.oracle.bmc.dbmulticloud.model.RefreshOracleDbAzureVaultDetails
+                        refreshOracleDbAzureVaultDetails) {
+            this.refreshOracleDbAzureVaultDetails = refreshOracleDbAzureVaultDetails;
+            return this;
+        }
+
+        /**
+         * A token that uniquely identifies a request, allowing it to be safely retried in the event
+         * of a timeout or server error without the risk of the action being executed more than
+         * once.
+         *
+         * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting
+         * operations occur.
+         *
+         * <p>For example, if a resource has been deleted and permanently purged from the system, a
+         * retry of the original creation request may be rejected.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request, allowing it to be safely retried in the event
+         * of a timeout or server error without the risk of the action being executed more than
+         * once.
+         *
+         * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting
+         * operations occur.
+         *
+         * <p>For example, if a resource has been deleted and permanently purged from the system, a
+         * retry of the original creation request may be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -177,6 +240,7 @@ public class RefreshOracleDbAzureVaultRequest
          */
         public Builder copy(RefreshOracleDbAzureVaultRequest o) {
             oracleDbAzureVaultId(o.getOracleDbAzureVaultId());
+            refreshOracleDbAzureVaultDetails(o.getRefreshOracleDbAzureVaultDetails());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
@@ -204,6 +268,19 @@ public class RefreshOracleDbAzureVaultRequest
         }
 
         /**
+         * Alternative setter for the body parameter.
+         *
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(
+                com.oracle.bmc.dbmulticloud.model.RefreshOracleDbAzureVaultDetails body) {
+            refreshOracleDbAzureVaultDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of RefreshOracleDbAzureVaultRequest as configured by this builder
          *
          * <p>Note that this method does not take calls to {@link
@@ -215,12 +292,13 @@ public class RefreshOracleDbAzureVaultRequest
         public RefreshOracleDbAzureVaultRequest buildWithoutInvocationCallback() {
             RefreshOracleDbAzureVaultRequest request = new RefreshOracleDbAzureVaultRequest();
             request.oracleDbAzureVaultId = oracleDbAzureVaultId;
+            request.refreshOracleDbAzureVaultDetails = refreshOracleDbAzureVaultDetails;
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new RefreshOracleDbAzureVaultRequest(oracleDbAzureVaultId, opcRetryToken, ifMatch,
-            // opcRequestId);
+            // new RefreshOracleDbAzureVaultRequest(oracleDbAzureVaultId,
+            // refreshOracleDbAzureVaultDetails, opcRetryToken, ifMatch, opcRequestId);
         }
     }
 
@@ -232,6 +310,7 @@ public class RefreshOracleDbAzureVaultRequest
     public Builder toBuilder() {
         return new Builder()
                 .oracleDbAzureVaultId(oracleDbAzureVaultId)
+                .refreshOracleDbAzureVaultDetails(refreshOracleDbAzureVaultDetails)
                 .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
@@ -252,6 +331,8 @@ public class RefreshOracleDbAzureVaultRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",oracleDbAzureVaultId=").append(String.valueOf(this.oracleDbAzureVaultId));
+        sb.append(",refreshOracleDbAzureVaultDetails=")
+                .append(String.valueOf(this.refreshOracleDbAzureVaultDetails));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -271,6 +352,9 @@ public class RefreshOracleDbAzureVaultRequest
         RefreshOracleDbAzureVaultRequest other = (RefreshOracleDbAzureVaultRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.oracleDbAzureVaultId, other.oracleDbAzureVaultId)
+                && java.util.Objects.equals(
+                        this.refreshOracleDbAzureVaultDetails,
+                        other.refreshOracleDbAzureVaultDetails)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -285,6 +369,11 @@ public class RefreshOracleDbAzureVaultRequest
                         + (this.oracleDbAzureVaultId == null
                                 ? 43
                                 : this.oracleDbAzureVaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.refreshOracleDbAzureVaultDetails == null
+                                ? 43
+                                : this.refreshOracleDbAzureVaultDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * Oracle DB Azure Key Resource Object. <br>
+ * Oracle DB Azure Key resource object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,6 +30,8 @@ public final class OracleDbAzureKey
         "oracleDbAzureVaultId",
         "lifecycleState",
         "lifecycleStateDetails",
+        "resourceType",
+        "keyProperties",
         "timeCreated",
         "timeUpdated",
         "lastModification",
@@ -45,6 +47,8 @@ public final class OracleDbAzureKey
             String oracleDbAzureVaultId,
             LifecycleState lifecycleState,
             String lifecycleStateDetails,
+            String resourceType,
+            Object keyProperties,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             String lastModification,
@@ -59,6 +63,8 @@ public final class OracleDbAzureKey
         this.oracleDbAzureVaultId = oracleDbAzureVaultId;
         this.lifecycleState = lifecycleState;
         this.lifecycleStateDetails = lifecycleStateDetails;
+        this.resourceType = resourceType;
+        this.keyProperties = keyProperties;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lastModification = lastModification;
@@ -71,14 +77,14 @@ public final class OracleDbAzureKey
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Vault Key Resource.
+         * Oracle DB Azure Vault Key resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Vault Key Resource.
+         * Oracle DB Azure Vault Key resource.
          *
          * @param id the value to set
          * @return this builder
@@ -90,14 +96,14 @@ public final class OracleDbAzureKey
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Oracle DB Azure Vault Key Resource.
+         * compartment that contains Oracle DB Azure Vault Key resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Oracle DB Azure Vault Key Resource.
+         * compartment that contains Oracle DB Azure Vault Key resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -107,12 +113,12 @@ public final class OracleDbAzureKey
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Display name of Oracle DB Azure Vault Key. */
+        /** Oracle DB Azure Vault Key resource name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of Oracle DB Azure Vault Key.
+         * Oracle DB Azure Vault Key resource name.
          *
          * @param displayName the value to set
          * @return this builder
@@ -122,12 +128,12 @@ public final class OracleDbAzureKey
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The Azure ID of the Azure Key, Azure Key URL. */
+        /** The ID of the Azure Key resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("azureKeyId")
         private String azureKeyId;
 
         /**
-         * The Azure ID of the Azure Key, Azure Key URL.
+         * The ID of the Azure Key resource.
          *
          * @param azureKeyId the value to set
          * @return this builder
@@ -139,14 +145,14 @@ public final class OracleDbAzureKey
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Vault Resource.
+         * Oracle DB Azure Vault resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureVaultId")
         private String oracleDbAzureVaultId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Vault Resource.
+         * Oracle DB Azure Vault resource.
          *
          * @param oracleDbAzureVaultId the value to set
          * @return this builder
@@ -156,12 +162,12 @@ public final class OracleDbAzureKey
             this.__explicitlySet__.add("oracleDbAzureVaultId");
             return this;
         }
-        /** The current lifecycle state of the Oracle DB Azure Vault Key Resource. */
+        /** The current lifecycle state of the Oracle DB Azure Vault Key resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+         * The current lifecycle state of the Oracle DB Azure Vault Key resource.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -186,8 +192,38 @@ public final class OracleDbAzureKey
             this.__explicitlySet__.add("lifecycleStateDetails");
             return this;
         }
+        /** Key Resource type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private String resourceType;
+
         /**
-         * Time when the Oracle DB Azure Vault Key was created in [RFC
+         * Key Resource type.
+         *
+         * @param resourceType the value to set
+         * @return this builder
+         */
+        public Builder resourceType(String resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /** Key properties */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyProperties")
+        private Object keyProperties;
+
+        /**
+         * Key properties
+         *
+         * @param keyProperties the value to set
+         * @return this builder
+         */
+        public Builder keyProperties(Object keyProperties) {
+            this.keyProperties = keyProperties;
+            this.__explicitlySet__.add("keyProperties");
+            return this;
+        }
+        /**
+         * Time when the Oracle DB Azure Vault Key resource was created in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
@@ -195,7 +231,7 @@ public final class OracleDbAzureKey
         private java.util.Date timeCreated;
 
         /**
-         * Time when the Oracle DB Azure Vault Key was created in [RFC
+         * Time when the Oracle DB Azure Vault Key resource was created in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
@@ -208,7 +244,7 @@ public final class OracleDbAzureKey
             return this;
         }
         /**
-         * Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC
+         * Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
@@ -216,7 +252,7 @@ public final class OracleDbAzureKey
         private java.util.Date timeUpdated;
 
         /**
-         * Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC
+         * Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
@@ -228,12 +264,12 @@ public final class OracleDbAzureKey
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Description of the latest modification of the Oracle DB Azure Vault Key Resource. */
+        /** Description of the latest modification of the Oracle DB Azure Vault Key resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
         private String lastModification;
 
         /**
-         * Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+         * Description of the latest modification of the Oracle DB Azure Vault Key resource.
          *
          * @param lastModification the value to set
          * @return this builder
@@ -329,6 +365,8 @@ public final class OracleDbAzureKey
                             this.oracleDbAzureVaultId,
                             this.lifecycleState,
                             this.lifecycleStateDetails,
+                            this.resourceType,
+                            this.keyProperties,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lastModification,
@@ -364,6 +402,12 @@ public final class OracleDbAzureKey
             if (model.wasPropertyExplicitlySet("lifecycleStateDetails")) {
                 this.lifecycleStateDetails(model.getLifecycleStateDetails());
             }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("keyProperties")) {
+                this.keyProperties(model.getKeyProperties());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
@@ -397,14 +441,14 @@ public final class OracleDbAzureKey
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Vault Key Resource.
+     * Oracle DB Azure Vault Key resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Vault Key Resource.
+     * Oracle DB Azure Vault Key resource.
      *
      * @return the value
      */
@@ -414,14 +458,14 @@ public final class OracleDbAzureKey
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Oracle DB Azure Vault Key Resource.
+     * compartment that contains Oracle DB Azure Vault Key resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Oracle DB Azure Vault Key Resource.
+     * compartment that contains Oracle DB Azure Vault Key resource.
      *
      * @return the value
      */
@@ -429,12 +473,12 @@ public final class OracleDbAzureKey
         return compartmentId;
     }
 
-    /** Display name of Oracle DB Azure Vault Key. */
+    /** Oracle DB Azure Vault Key resource name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of Oracle DB Azure Vault Key.
+     * Oracle DB Azure Vault Key resource name.
      *
      * @return the value
      */
@@ -442,12 +486,12 @@ public final class OracleDbAzureKey
         return displayName;
     }
 
-    /** The Azure ID of the Azure Key, Azure Key URL. */
+    /** The ID of the Azure Key resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("azureKeyId")
     private final String azureKeyId;
 
     /**
-     * The Azure ID of the Azure Key, Azure Key URL.
+     * The ID of the Azure Key resource.
      *
      * @return the value
      */
@@ -457,14 +501,14 @@ public final class OracleDbAzureKey
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Vault Resource.
+     * Oracle DB Azure Vault resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureVaultId")
     private final String oracleDbAzureVaultId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Vault Resource.
+     * Oracle DB Azure Vault resource.
      *
      * @return the value
      */
@@ -472,7 +516,7 @@ public final class OracleDbAzureKey
         return oracleDbAzureVaultId;
     }
 
-    /** The current lifecycle state of the Oracle DB Azure Vault Key Resource. */
+    /** The current lifecycle state of the Oracle DB Azure Vault Key resource. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -522,12 +566,12 @@ public final class OracleDbAzureKey
             return UnknownEnumValue;
         }
     };
-    /** The current lifecycle state of the Oracle DB Azure Vault Key Resource. */
+    /** The current lifecycle state of the Oracle DB Azure Vault Key resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+     * The current lifecycle state of the Oracle DB Azure Vault Key resource.
      *
      * @return the value
      */
@@ -548,15 +592,41 @@ public final class OracleDbAzureKey
         return lifecycleStateDetails;
     }
 
+    /** Key Resource type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    private final String resourceType;
+
     /**
-     * Time when the Oracle DB Azure Vault Key was created in [RFC
+     * Key Resource type.
+     *
+     * @return the value
+     */
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    /** Key properties */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyProperties")
+    private final Object keyProperties;
+
+    /**
+     * Key properties
+     *
+     * @return the value
+     */
+    public Object getKeyProperties() {
+        return keyProperties;
+    }
+
+    /**
+     * Time when the Oracle DB Azure Vault Key resource was created in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Time when the Oracle DB Azure Vault Key was created in [RFC
+     * Time when the Oracle DB Azure Vault Key resource was created in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value
@@ -566,14 +636,14 @@ public final class OracleDbAzureKey
     }
 
     /**
-     * Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC
+     * Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC
+     * Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value
@@ -582,12 +652,12 @@ public final class OracleDbAzureKey
         return timeUpdated;
     }
 
-    /** Description of the latest modification of the Oracle DB Azure Vault Key Resource. */
+    /** Description of the latest modification of the Oracle DB Azure Vault Key resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
     private final String lastModification;
 
     /**
-     * Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+     * Description of the latest modification of the Oracle DB Azure Vault Key resource.
      *
      * @return the value
      */
@@ -682,6 +752,8 @@ public final class OracleDbAzureKey
         sb.append(", oracleDbAzureVaultId=").append(String.valueOf(this.oracleDbAzureVaultId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", keyProperties=").append(String.valueOf(this.keyProperties));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lastModification=").append(String.valueOf(this.lastModification));
@@ -709,6 +781,8 @@ public final class OracleDbAzureKey
                 && java.util.Objects.equals(this.oracleDbAzureVaultId, other.oracleDbAzureVaultId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.keyProperties, other.keyProperties)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lastModification, other.lastModification)
@@ -741,6 +815,10 @@ public final class OracleDbAzureKey
                         + (this.lifecycleStateDetails == null
                                 ? 43
                                 : this.lifecycleStateDetails.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyProperties == null ? 43 : this.keyProperties.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons</artifactId>
-        <version>3.72.1</version>
+        <version>3.72.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-server</artifactId>
-            <version>9.4.57.v20241219</version>
+            <version>9.4.58.v20250814</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -53,12 +53,12 @@
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-aispeech</artifactId>
-            <version>3.72.1</version>
+            <version>3.72.2</version>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-            <version>3.72.1</version>
+            <version>3.72.2</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

@@ -86,8 +86,10 @@ public class RealtimeSpeechClient {
     private static final String stabilizePartialResultsParamString = "stabilizePartialResults";
     private static final String languageCodeParamString = "languageCode";
     private static final String modelDomainParamString = "modelDomain";
+    private static final String modelTypeParamString = "modelType";
     private static final String punctuationParamString = "punctuation";
     private static final String customizationsParamString = "customizations";
+    private static final String modelTypeDefaultValue = "ORACLE";
 
     /**
      * Constructor.
@@ -328,6 +330,12 @@ public class RealtimeSpeechClient {
             if (parameters.getModelDomain() != null) {
                 queryParameterStringBuilder.addParameter(
                         modelDomainParamString, parameters.getModelDomain().getValue());
+            }
+
+            if (parameters.getModelType() != null
+                    && !parameters.getModelType().equalsIgnoreCase(modelTypeDefaultValue)) {
+                queryParameterStringBuilder.addParameter(
+                        modelTypeParamString, parameters.getModelType());
             }
 
             if (parameters.getPunctuation() != null
