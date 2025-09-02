@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * Details of the new compartment to contain the Oracle DB Azure Connector Resource. <br>
+ * Details of the new compartment to contain the Oracle DB Azure Connector resource. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -43,12 +43,16 @@ public final class ChangeOracleDbAzureConnectorCompartmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID of the new compartment to contain the Oracle DB Azure Connector Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * new compartment to contain the Oracle DB Azure Connector resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ID of the new compartment to contain the Oracle DB Azure Connector Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * new compartment to contain the Oracle DB Azure Connector resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -174,12 +178,16 @@ public final class ChangeOracleDbAzureConnectorCompartmentDetails
         return new Builder().copy(this);
     }
 
-    /** The ID of the new compartment to contain the Oracle DB Azure Connector Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the new
+     * compartment to contain the Oracle DB Azure Connector resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ID of the new compartment to contain the Oracle DB Azure Connector Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the new
+     * compartment to contain the Oracle DB Azure Connector resource.
      *
      * @return the value
      */

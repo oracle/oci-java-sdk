@@ -28,17 +28,21 @@ public class ListOracleDbAzureConnectorsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return Oracle DB Azure Connector Resource that match the given display name. */
+    /**
+     * A filter to return Oracle DB Azure Connector resources that match the specified display name.
+     */
     private String displayName;
 
-    /** A filter to return Oracle DB Azure Connector Resource that match the given display name. */
+    /**
+     * A filter to return Oracle DB Azure Connector resources that match the specified display name.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
     private String oracleDbAzureConnectorId;
 
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
     public String getOracleDbAzureConnectorId() {
         return oracleDbAzureConnectorId;
     }
@@ -58,13 +62,13 @@ public class ListOracleDbAzureConnectorsRequest
     }
     /**
      * The [ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database Resource.
+     * Database resource.
      */
     private String dbClusterResourceId;
 
     /**
      * The [ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database Resource.
+     * Database resource.
      */
     public String getDbClusterResourceId() {
         return dbClusterResourceId;
@@ -182,12 +186,14 @@ public class ListOracleDbAzureConnectorsRequest
         }
 
         /**
-         * A filter to return Oracle DB Azure Connector Resource that match the given display name.
+         * A filter to return Oracle DB Azure Connector resources that match the specified display
+         * name.
          */
         private String displayName = null;
 
         /**
-         * A filter to return Oracle DB Azure Connector Resource that match the given display name.
+         * A filter to return Oracle DB Azure Connector resources that match the specified display
+         * name.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -197,11 +203,11 @@ public class ListOracleDbAzureConnectorsRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Blob Mount Resources. */
+        /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
         private String oracleDbAzureConnectorId = null;
 
         /**
-         * A filter to return Oracle DB Azure Blob Mount Resources.
+         * A filter to return Oracle DB Azure Azure Identity Connector resources.
          *
          * @param oracleDbAzureConnectorId the value to set
          * @return this builder instance
@@ -234,13 +240,13 @@ public class ListOracleDbAzureConnectorsRequest
 
         /**
          * The [ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database Resource.
+         * Database resource.
          */
         private String dbClusterResourceId = null;
 
         /**
          * The [ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database Resource.
+         * Database resource.
          *
          * @param dbClusterResourceId the value to set
          * @return this builder instance

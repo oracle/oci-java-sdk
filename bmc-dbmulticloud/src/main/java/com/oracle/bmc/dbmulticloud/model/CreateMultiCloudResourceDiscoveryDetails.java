@@ -28,6 +28,7 @@ public final class CreateMultiCloudResourceDiscoveryDetails
         "displayName",
         "oracleDbConnectorId",
         "resourceType",
+        "resourcesFilter",
         "freeformTags",
         "definedTags"
     })
@@ -36,6 +37,7 @@ public final class CreateMultiCloudResourceDiscoveryDetails
             String displayName,
             String oracleDbConnectorId,
             MultiCloudResourceDiscovery.ResourceType resourceType,
+            java.util.Map<String, String> resourcesFilter,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -43,6 +45,7 @@ public final class CreateMultiCloudResourceDiscoveryDetails
         this.displayName = displayName;
         this.oracleDbConnectorId = oracleDbConnectorId;
         this.resourceType = resourceType;
+        this.resourcesFilter = resourcesFilter;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -51,14 +54,14 @@ public final class CreateMultiCloudResourceDiscoveryDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Discovered Resource.
+         * compartment that contains Multicloud Resource Discovery resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Discovered Resource.
+         * compartment that contains Multicloud Resource Discovery resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -68,12 +71,12 @@ public final class CreateMultiCloudResourceDiscoveryDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Display name of Discovered Resource. */
+        /** Display name of the Multicloud Resource Discovery resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of Discovered Resource.
+         * Display name of the Multicloud Resource Discovery resource.
          *
          * @param displayName the value to set
          * @return this builder
@@ -84,15 +87,15 @@ public final class CreateMultiCloudResourceDiscoveryDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * Oracle DB Connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Connector resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbConnectorId")
         private String oracleDbConnectorId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * Oracle DB Connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Connector resource.
          *
          * @param oracleDbConnectorId the value to set
          * @return this builder
@@ -115,6 +118,33 @@ public final class CreateMultiCloudResourceDiscoveryDetails
         public Builder resourceType(MultiCloudResourceDiscovery.ResourceType resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /**
+         * Discover resource using attributes as key-value pair. For GCP supported attributes
+         * (keyRing) For Azure supported attributes (keyVault) GCP Example {@code {"keyRing":
+         * "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}} or {@code
+         * {"keyRing": "dbmci-keyring"}} Azure Example {@code {"keyVault":
+         * "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}}
+         * or {@code {"keyVault": "orp7HSM001"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourcesFilter")
+        private java.util.Map<String, String> resourcesFilter;
+
+        /**
+         * Discover resource using attributes as key-value pair. For GCP supported attributes
+         * (keyRing) For Azure supported attributes (keyVault) GCP Example {@code {"keyRing":
+         * "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}} or {@code
+         * {"keyRing": "dbmci-keyring"}} Azure Example {@code {"keyVault":
+         * "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}}
+         * or {@code {"keyVault": "orp7HSM001"}}
+         *
+         * @param resourcesFilter the value to set
+         * @return this builder
+         */
+        public Builder resourcesFilter(java.util.Map<String, String> resourcesFilter) {
+            this.resourcesFilter = resourcesFilter;
+            this.__explicitlySet__.add("resourcesFilter");
             return this;
         }
         /**
@@ -179,6 +209,7 @@ public final class CreateMultiCloudResourceDiscoveryDetails
                             this.displayName,
                             this.oracleDbConnectorId,
                             this.resourceType,
+                            this.resourcesFilter,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -201,6 +232,9 @@ public final class CreateMultiCloudResourceDiscoveryDetails
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
             }
+            if (model.wasPropertyExplicitlySet("resourcesFilter")) {
+                this.resourcesFilter(model.getResourcesFilter());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -222,14 +256,14 @@ public final class CreateMultiCloudResourceDiscoveryDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Discovered Resource.
+     * compartment that contains Multicloud Resource Discovery resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Discovered Resource.
+     * compartment that contains Multicloud Resource Discovery resource.
      *
      * @return the value
      */
@@ -237,12 +271,12 @@ public final class CreateMultiCloudResourceDiscoveryDetails
         return compartmentId;
     }
 
-    /** Display name of Discovered Resource. */
+    /** Display name of the Multicloud Resource Discovery resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of Discovered Resource.
+     * Display name of the Multicloud Resource Discovery resource.
      *
      * @return the value
      */
@@ -251,15 +285,15 @@ public final class CreateMultiCloudResourceDiscoveryDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle
-     * DB Connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Connector resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbConnectorId")
     private final String oracleDbConnectorId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle
-     * DB Connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Connector resource.
      *
      * @return the value
      */
@@ -278,6 +312,31 @@ public final class CreateMultiCloudResourceDiscoveryDetails
      */
     public MultiCloudResourceDiscovery.ResourceType getResourceType() {
         return resourceType;
+    }
+
+    /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing)
+     * For Azure supported attributes (keyVault) GCP Example {@code {"keyRing":
+     * "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}} or {@code {"keyRing":
+     * "dbmci-keyring"}} Azure Example {@code {"keyVault":
+     * "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}}
+     * or {@code {"keyVault": "orp7HSM001"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourcesFilter")
+    private final java.util.Map<String, String> resourcesFilter;
+
+    /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing)
+     * For Azure supported attributes (keyVault) GCP Example {@code {"keyRing":
+     * "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}} or {@code {"keyRing":
+     * "dbmci-keyring"}} Azure Example {@code {"keyVault":
+     * "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}}
+     * or {@code {"keyVault": "orp7HSM001"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getResourcesFilter() {
+        return resourcesFilter;
     }
 
     /**
@@ -345,6 +404,7 @@ public final class CreateMultiCloudResourceDiscoveryDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", oracleDbConnectorId=").append(String.valueOf(this.oracleDbConnectorId));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", resourcesFilter=").append(String.valueOf(this.resourcesFilter));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -366,6 +426,7 @@ public final class CreateMultiCloudResourceDiscoveryDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.oracleDbConnectorId, other.oracleDbConnectorId)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.resourcesFilter, other.resourcesFilter)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -385,6 +446,9 @@ public final class CreateMultiCloudResourceDiscoveryDetails
                                 ? 43
                                 : this.oracleDbConnectorId.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcesFilter == null ? 43 : this.resourcesFilter.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

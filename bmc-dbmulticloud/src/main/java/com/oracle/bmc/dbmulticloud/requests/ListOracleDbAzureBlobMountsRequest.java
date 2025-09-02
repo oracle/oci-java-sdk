@@ -28,17 +28,29 @@ public class ListOracleDbAzureBlobMountsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /**
+     * A filter to return Oracle DB Azure Blob Mount resources that match the specified display
+     * name.
+     */
     private String displayName;
 
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /**
+     * A filter to return Oracle DB Azure Blob Mount resources that match the specified display
+     * name.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** ID of Oracle DB Azure Blob Mount Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Blob Mount resource.
+     */
     private String oracleDbAzureBlobMountId;
 
-    /** ID of Oracle DB Azure Blob Mount Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Blob Mount resource.
+     */
     public String getOracleDbAzureBlobMountId() {
         return oracleDbAzureBlobMountId;
     }
@@ -56,17 +68,17 @@ public class ListOracleDbAzureBlobMountsRequest
             getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Blob Container resource. */
     private String oracleDbAzureBlobContainerId;
 
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Blob Container resource. */
     public String getOracleDbAzureBlobContainerId() {
         return oracleDbAzureBlobContainerId;
     }
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
     private String oracleDbAzureConnectorId;
 
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
     public String getOracleDbAzureConnectorId() {
         return oracleDbAzureConnectorId;
     }
@@ -182,11 +194,15 @@ public class ListOracleDbAzureBlobMountsRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Blob Mount Resources. */
+        /**
+         * A filter to return Oracle DB Azure Blob Mount resources that match the specified display
+         * name.
+         */
         private String displayName = null;
 
         /**
-         * A filter to return Oracle DB Azure Blob Mount Resources.
+         * A filter to return Oracle DB Azure Blob Mount resources that match the specified display
+         * name.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -196,11 +212,15 @@ public class ListOracleDbAzureBlobMountsRequest
             return this;
         }
 
-        /** ID of Oracle DB Azure Blob Mount Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Blob Mount resource.
+         */
         private String oracleDbAzureBlobMountId = null;
 
         /**
-         * ID of Oracle DB Azure Blob Mount Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Blob Mount resource.
          *
          * @param oracleDbAzureBlobMountId the value to set
          * @return this builder instance
@@ -231,11 +251,11 @@ public class ListOracleDbAzureBlobMountsRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Blob Mount Resources. */
+        /** A filter to return Oracle DB Azure Blob Container resource. */
         private String oracleDbAzureBlobContainerId = null;
 
         /**
-         * A filter to return Oracle DB Azure Blob Mount Resources.
+         * A filter to return Oracle DB Azure Blob Container resource.
          *
          * @param oracleDbAzureBlobContainerId the value to set
          * @return this builder instance
@@ -245,11 +265,11 @@ public class ListOracleDbAzureBlobMountsRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Blob Mount Resources. */
+        /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
         private String oracleDbAzureConnectorId = null;
 
         /**
-         * A filter to return Oracle DB Azure Blob Mount Resources.
+         * A filter to return Oracle DB Azure Azure Identity Connector resources.
          *
          * @param oracleDbAzureConnectorId the value to set
          * @return this builder instance

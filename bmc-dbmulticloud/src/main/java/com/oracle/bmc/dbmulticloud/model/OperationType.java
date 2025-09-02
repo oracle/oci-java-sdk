@@ -11,6 +11,7 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     DeleteAzureConnector("DELETE_AZURE_CONNECTOR"),
     UpdateAzureConnector("UPDATE_AZURE_CONNECTOR"),
     MoveAzureConnector("MOVE_AZURE_CONNECTOR"),
+    RefreshAzureConnector("REFRESH_AZURE_CONNECTOR"),
     CreateAzureBlobContainer("CREATE_AZURE_BLOB_CONTAINER"),
     DeleteAzureBlobContainer("DELETE_AZURE_BLOB_CONTAINER"),
     UpdateAzureBlobContainer("UPDATE_AZURE_BLOB_CONTAINER"),
@@ -34,6 +35,17 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     MoveAzureVaultAssociation("MOVE_AZURE_VAULT_ASSOCIATION"),
     PatchDbResource("PATCH_DB_RESOURCE"),
     CreateGcpIdentityConfiguration("CREATE_GCP_IDENTITY_CONFIGURATION"),
+    CreateGcpConnector("CREATE_GCP_CONNECTOR"),
+    DeleteGcpConnector("DELETE_GCP_CONNECTOR"),
+    UpdateGcpConnector("UPDATE_GCP_CONNECTOR"),
+    MoveGcpConnector("MOVE_GCP_CONNECTOR"),
+    RefreshGcpConnector("REFRESH_GCP_CONNECTOR"),
+    GcpDiscovery("GCP_DISCOVERY"),
+    CreateGcpKeyRing("CREATE_GCP_KEY_RING"),
+    DeleteGcpKeyRing("DELETE_GCP_KEY_RING"),
+    UpdateGcpKeyRing("UPDATE_GCP_KEY_RING"),
+    MoveGcpKeyRing("MOVE_GCP_KEY_RING"),
+    RefreshGcpKeyRing("REFRESH_GCP_KEY_RING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

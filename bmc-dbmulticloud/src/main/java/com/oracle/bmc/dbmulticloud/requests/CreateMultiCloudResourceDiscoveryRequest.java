@@ -16,30 +16,36 @@ public class CreateMultiCloudResourceDiscoveryRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dbmulticloud.model.CreateMultiCloudResourceDiscoveryDetails> {
 
-    /** Details for to Discover Azure Vaults and Keys. */
+    /** Details for to Discover Multicloud Resource and their associated resources. */
     private com.oracle.bmc.dbmulticloud.model.CreateMultiCloudResourceDiscoveryDetails
             createMultiCloudResourceDiscoveryDetails;
 
-    /** Details for to Discover Azure Vaults and Keys. */
+    /** Details for to Discover Multicloud Resource and their associated resources. */
     public com.oracle.bmc.dbmulticloud.model.CreateMultiCloudResourceDiscoveryDetails
             getCreateMultiCloudResourceDiscoveryDetails() {
         return createMultiCloudResourceDiscoveryDetails;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request, allowing it to be safely retried in the event of
+     * a timeout or server error without the risk of the action being executed more than once.
+     *
+     * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations
+     * occur.
+     *
+     * <p>For example, if a resource has been deleted and permanently purged from the system, a
+     * retry of the original creation request may be rejected.
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request, allowing it to be safely retried in the event of
+     * a timeout or server error without the risk of the action being executed more than once.
+     *
+     * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations
+     * occur.
+     *
+     * <p>For example, if a resource has been deleted and permanently purged from the system, a
+     * retry of the original creation request may be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -87,12 +93,12 @@ public class CreateMultiCloudResourceDiscoveryRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for to Discover Azure Vaults and Keys. */
+        /** Details for to Discover Multicloud Resource and their associated resources. */
         private com.oracle.bmc.dbmulticloud.model.CreateMultiCloudResourceDiscoveryDetails
                 createMultiCloudResourceDiscoveryDetails = null;
 
         /**
-         * Details for to Discover Azure Vaults and Keys.
+         * Details for to Discover Multicloud Resource and their associated resources.
          *
          * @param createMultiCloudResourceDiscoveryDetails the value to set
          * @return this builder instance
@@ -106,20 +112,28 @@ public class CreateMultiCloudResourceDiscoveryRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request, allowing it to be safely retried in the event
+         * of a timeout or server error without the risk of the action being executed more than
+         * once.
+         *
+         * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting
+         * operations occur.
+         *
+         * <p>For example, if a resource has been deleted and permanently purged from the system, a
+         * retry of the original creation request may be rejected.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request, allowing it to be safely retried in the event
+         * of a timeout or server error without the risk of the action being executed more than
+         * once.
+         *
+         * <p>Retry tokens expire after 24 hours but can be invalidated sooner if conflicting
+         * operations occur.
+         *
+         * <p>For example, if a resource has been deleted and permanently purged from the system, a
+         * retry of the original creation request may be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

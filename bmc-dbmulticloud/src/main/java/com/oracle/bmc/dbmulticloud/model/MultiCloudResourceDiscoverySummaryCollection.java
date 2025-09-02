@@ -32,12 +32,12 @@ public final class MultiCloudResourceDiscoverySummaryCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** This list contains the summary of Multi Cloud Resource Discovery. */
+        /** This list contains the summary of Multicloud Resource Discovery. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<MultiCloudResourceDiscoverySummary> items;
 
         /**
-         * This list contains the summary of Multi Cloud Resource Discovery.
+         * This list contains the summary of Multicloud Resource Discovery.
          *
          * @param items the value to set
          * @return this builder
@@ -78,12 +78,12 @@ public final class MultiCloudResourceDiscoverySummaryCollection
         return new Builder().copy(this);
     }
 
-    /** This list contains the summary of Multi Cloud Resource Discovery. */
+    /** This list contains the summary of Multicloud Resource Discovery. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<MultiCloudResourceDiscoverySummary> items;
 
     /**
-     * This list contains the summary of Multi Cloud Resource Discovery.
+     * This list contains the summary of Multicloud Resource Discovery.
      *
      * @return the value
      */

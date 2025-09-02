@@ -314,6 +314,9 @@ public class DbBackupsAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .appendQueryParam("dbSystemId", request.getDbSystemId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("softDelete", request.getSoftDelete())
+                .appendEnumQueryParam(
+                        "backupPreparationStatus", request.getBackupPreparationStatus())
+                .appendEnumQueryParam("validationStatus", request.getValidationStatus())
                 .appendEnumQueryParam("creationType", request.getCreationType())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -361,6 +364,44 @@ public class DbBackupsAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateBackupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateBackupResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateBackupResponse> validateBackup(
+            ValidateBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ValidateBackupRequest, ValidateBackupResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBackupId(), "backupId must not be blank");
+
+        return clientCall(request, ValidateBackupResponse::builder)
+                .logger(LOG, "validateBackup")
+                .serviceDetails(
+                        "DbBackups",
+                        "ValidateBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/ValidateBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateBackupRequest::builder)
+                .basePath("/20190415")
+                .appendPathParam("backups")
+                .appendPathParam(request.getBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("validate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mysql.model.Backup.class,
+                        ValidateBackupResponse.Builder::backup)
+                .handleResponseHeaderString("etag", ValidateBackupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ValidateBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ValidateBackupResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

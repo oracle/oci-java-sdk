@@ -15,10 +15,16 @@ import com.oracle.bmc.dbmulticloud.model.*;
 public class DeleteOracleDbAzureConnectorRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the Oracle DB Azure Connector Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Connector resource.
+     */
     private String oracleDbAzureConnectorId;
 
-    /** The ID of the Oracle DB Azure Connector Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Connector resource.
+     */
     public String getOracleDbAzureConnectorId() {
         return oracleDbAzureConnectorId;
     }
@@ -53,11 +59,15 @@ public class DeleteOracleDbAzureConnectorRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the Oracle DB Azure Connector Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Connector resource.
+         */
         private String oracleDbAzureConnectorId = null;
 
         /**
-         * The ID of the Oracle DB Azure Connector Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Connector resource.
          *
          * @param oracleDbAzureConnectorId the value to set
          * @return this builder instance

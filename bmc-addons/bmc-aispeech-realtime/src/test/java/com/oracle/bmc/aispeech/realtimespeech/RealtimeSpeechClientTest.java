@@ -189,7 +189,6 @@ public class RealtimeSpeechClientTest {
                         .encoding("audio/raw;rate=16000")
                         .stabilizePartialResults(RealtimeParameters.StabilizePartialResults.None)
                         .shouldIgnoreInvalidCustomizations(false)
-                        .shouldIgnoreInvalidCustomizations(false)
                         .partialSilenceThresholdInMs(501)
                         .finalSilenceThresholdInMs(2005)
                         .languageCode("en-US")
@@ -238,7 +237,6 @@ public class RealtimeSpeechClientTest {
                         .isAckEnabled(true)
                         .encoding("audio/raw;rate=16000")
                         .stabilizePartialResults(RealtimeParameters.StabilizePartialResults.None)
-                        .shouldIgnoreInvalidCustomizations(false)
                         .shouldIgnoreInvalidCustomizations(false)
                         .partialSilenceThresholdInMs(501)
                         .finalSilenceThresholdInMs(2005)
@@ -290,7 +288,6 @@ public class RealtimeSpeechClientTest {
                         .encoding("audio/raw;rate=16000")
                         .stabilizePartialResults(RealtimeParameters.StabilizePartialResults.None)
                         .shouldIgnoreInvalidCustomizations(false)
-                        .shouldIgnoreInvalidCustomizations(false)
                         .partialSilenceThresholdInMs(501)
                         .finalSilenceThresholdInMs(2005)
                         .languageCode("en-US")
@@ -318,6 +315,100 @@ public class RealtimeSpeechClientTest {
     }
 
     @Test
+    public void testModelTypeOracle()
+            throws IOException, RealtimeSpeechConnectException, ExecutionException,
+                    InterruptedException, TimeoutException {
+        RealtimeSpeechClient realtimeSpeechClientSpy = Mockito.spy(realtimeSpeechClient);
+
+        Mockito.doReturn(true).when(mockWebsocketClient).isStarted();
+
+        Future<Session> futureMock = mock(Future.class);
+        when(mockWebsocketClient.connect(any(), any(), any())).thenReturn(futureMock);
+        doReturn(mockSession).when(futureMock).get(eq(10), eq(TimeUnit.SECONDS));
+
+        CustomizationInference cm1 =
+                CustomizationInference.builder()
+                        .customizationId("testCustomizationId")
+                        .compartmentId("testCompartmentId")
+                        .build();
+
+        final RealtimeParameters realtimeParameters =
+                RealtimeParameters.builder()
+                        .isAckEnabled(true)
+                        .encoding("audio/raw;rate=16000")
+                        .stabilizePartialResults(RealtimeParameters.StabilizePartialResults.None)
+                        .shouldIgnoreInvalidCustomizations(false)
+                        .partialSilenceThresholdInMs(501)
+                        .finalSilenceThresholdInMs(2005)
+                        .languageCode("en-US")
+                        .modelDomain(RealtimeParameters.ModelDomain.Generic)
+                        .modelType("ORACLE")
+                        .punctuation(RealtimeParameters.Punctuation.Spoken)
+                        .customizations(Arrays.asList(cm1))
+                        .build();
+
+        realtimeSpeechClient.open("wss://test-endpoint.com", realtimeParameters);
+
+        ArgumentCaptor<URI> uriArgumentCaptor = ArgumentCaptor.forClass(URI.class);
+        ArgumentCaptor<ClientUpgradeRequest> upgradeRequestArgCaptor =
+                ArgumentCaptor.forClass(ClientUpgradeRequest.class);
+        Mockito.verify(mockWebsocketClient, times(1))
+                .connect(any(), uriArgumentCaptor.capture(), upgradeRequestArgCaptor.capture());
+
+        final String expectedURIString =
+                "wss://test-endpoint.com/ws/transcribe/stream?isAckEnabled=true&encoding=audio%2Fraw%3Brate%3D16000&shouldIgnoreInvalidCustomizations=false"
+                        + "&partialSilenceThresholdInMs=501&finalSilenceThresholdInMs=2005&stabilizePartialResults=NONE&languageCode=en-US&modelDomain=GENERIC"
+                        + "&punctuation=SPOKEN"
+                        + "&customizations=%5B%7B%22customizationId%22%3A%22testCustomizationId%22%2C%22customizationAlias%22%3Anull%2C%22"
+                        + "compartmentId%22%3A%22testCompartmentId%22%2C%22entities%22%3Anull%7D%5D";
+
+        Assert.assertEquals(expectedURIString, uriArgumentCaptor.getValue().toString());
+    }
+
+    @Test
+    public void testModelTypeWhisper()
+            throws IOException, RealtimeSpeechConnectException, ExecutionException,
+                    InterruptedException, TimeoutException {
+        RealtimeSpeechClient realtimeSpeechClientSpy = Mockito.spy(realtimeSpeechClient);
+
+        Mockito.doReturn(true).when(mockWebsocketClient).isStarted();
+
+        Future<Session> futureMock = mock(Future.class);
+        when(mockWebsocketClient.connect(any(), any(), any())).thenReturn(futureMock);
+        doReturn(mockSession).when(futureMock).get(eq(10), eq(TimeUnit.SECONDS));
+
+        CustomizationInference cm1 =
+                CustomizationInference.builder()
+                        .customizationId("testCustomizationId")
+                        .compartmentId("testCompartmentId")
+                        .build();
+
+        final RealtimeParameters realtimeParameters =
+                RealtimeParameters.builder()
+                        .isAckEnabled(true)
+                        .encoding("audio/raw;rate=16000")
+                        .languageCode("en")
+                        .modelDomain(RealtimeParameters.ModelDomain.Generic)
+                        .modelType("WHISPER")
+                        .punctuation(RealtimeParameters.Punctuation.Auto)
+                        .build();
+
+        realtimeSpeechClient.open("wss://test-endpoint.com", realtimeParameters);
+
+        ArgumentCaptor<URI> uriArgumentCaptor = ArgumentCaptor.forClass(URI.class);
+        ArgumentCaptor<ClientUpgradeRequest> upgradeRequestArgCaptor =
+                ArgumentCaptor.forClass(ClientUpgradeRequest.class);
+        Mockito.verify(mockWebsocketClient, times(1))
+                .connect(any(), uriArgumentCaptor.capture(), upgradeRequestArgCaptor.capture());
+
+        final String expectedURIString =
+                "wss://test-endpoint.com/ws/transcribe/stream?isAckEnabled=true&encoding=audio%2Fraw%3Brate%3D16000"
+                        + "&languageCode=en&modelDomain=GENERIC&modelType=WHISPER&punctuation=AUTO";
+
+        Assert.assertEquals(expectedURIString, uriArgumentCaptor.getValue().toString());
+    }
+
+    @Test
     public void testOnOpenWithSingleParameters()
             throws IOException, RealtimeSpeechConnectException, InvocationTargetException,
                     NoSuchMethodException, IllegalAccessException, ExecutionException,
@@ -340,6 +431,8 @@ public class RealtimeSpeechClientTest {
                 "modelDomain", RealtimeParameters.ModelDomain.Generic, "?modelDomain=GENERIC");
         runSingleTest("punctuation", RealtimeParameters.Punctuation.None, "");
         runSingleTest("punctuation", RealtimeParameters.Punctuation.Auto, "?punctuation=AUTO");
+        runSingleTest("modelType", "ORACLE", "");
+        runSingleTest("modelType", "WHISPER", "?modelType=WHISPER");
     }
 
     private void runSingleTest(String paramName, Object paramValue, String queryParamValue)

@@ -60,6 +60,19 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return id;
     }
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private endpoint.
+     */
+    private String generativeAiPrivateEndpointId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private endpoint.
+     */
+    public String getGenerativeAiPrivateEndpointId() {
+        return generativeAiPrivateEndpointId;
+    }
+    /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
      * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -238,6 +251,24 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private endpoint.
+         */
+        private String generativeAiPrivateEndpointId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private endpoint.
+         *
+         * @param generativeAiPrivateEndpointId the value to set
+         * @return this builder instance
+         */
+        public Builder generativeAiPrivateEndpointId(String generativeAiPrivateEndpointId) {
+            this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
+            return this;
+        }
+
+        /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
          * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -363,6 +394,7 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
             id(o.getId());
+            generativeAiPrivateEndpointId(o.getGenerativeAiPrivateEndpointId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -406,14 +438,15 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
             request.id = id;
+            request.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListEndpointsRequest(compartmentId, lifecycleState, displayName, id, limit, page,
-            // sortOrder, sortBy, opcRequestId);
+            // new ListEndpointsRequest(compartmentId, lifecycleState, displayName, id,
+            // generativeAiPrivateEndpointId, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -428,6 +461,7 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
                 .id(id)
+                .generativeAiPrivateEndpointId(generativeAiPrivateEndpointId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -453,6 +487,8 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",generativeAiPrivateEndpointId=")
+                .append(String.valueOf(this.generativeAiPrivateEndpointId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -477,6 +513,8 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(
+                        this.generativeAiPrivateEndpointId, other.generativeAiPrivateEndpointId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -496,6 +534,11 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.generativeAiPrivateEndpointId == null
+                                ? 43
+                                : this.generativeAiPrivateEndpointId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

@@ -32,12 +32,12 @@ public final class OracleDbAzureConnectorSummaryCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** contains OracleDbAzureConnectorSummary */
+        /** OracleDbAzureConnectorSummary object. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<OracleDbAzureConnectorSummary> items;
 
         /**
-         * contains OracleDbAzureConnectorSummary
+         * OracleDbAzureConnectorSummary object.
          *
          * @param items the value to set
          * @return this builder
@@ -78,12 +78,12 @@ public final class OracleDbAzureConnectorSummaryCollection
         return new Builder().copy(this);
     }
 
-    /** contains OracleDbAzureConnectorSummary */
+    /** OracleDbAzureConnectorSummary object. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<OracleDbAzureConnectorSummary> items;
 
     /**
-     * contains OracleDbAzureConnectorSummary
+     * OracleDbAzureConnectorSummary object.
      *
      * @return the value
      */

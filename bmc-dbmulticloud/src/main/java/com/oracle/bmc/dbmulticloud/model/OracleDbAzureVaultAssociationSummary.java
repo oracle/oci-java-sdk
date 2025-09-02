@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * Oracle DB Azure Vault Association Resource Summary. <br>
+ * Oracle DB Azure Vault Association resource summary. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -75,14 +75,14 @@ public final class OracleDbAzureVaultAssociationSummary
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * Oracle DB Azure Vault Association.
+         * Oracle DB Azure Vault Association resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * Oracle DB Azure Vault Association.
+         * Oracle DB Azure Vault Association resource.
          *
          * @param id the value to set
          * @return this builder
@@ -109,14 +109,14 @@ public final class OracleDbAzureVaultAssociationSummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment contains Oracle DB Azure Vault Association Resource.
+         * compartment contains Oracle DB Azure Vault Association resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment contains Oracle DB Azure Vault Association Resource.
+         * compartment contains Oracle DB Azure Vault Association resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -128,14 +128,14 @@ public final class OracleDbAzureVaultAssociationSummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Vault.
+         * Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureVaultId")
         private String oracleDbAzureVaultId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Vault.
+         * Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
          *
          * @param oracleDbAzureVaultId the value to set
          * @return this builder
@@ -147,14 +147,14 @@ public final class OracleDbAzureVaultAssociationSummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Connector.
+         * Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureConnectorId")
         private String oracleDbAzureConnectorId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Connector.
+         * Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
          *
          * @param oracleDbAzureConnectorId the value to set
          * @return this builder
@@ -164,12 +164,12 @@ public final class OracleDbAzureVaultAssociationSummary
             this.__explicitlySet__.add("oracleDbAzureConnectorId");
             return this;
         }
-        /** The Associated Resources are accessible or not. */
+        /** The Associated resource is accessible or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isResourceAccessible")
         private Boolean isResourceAccessible;
 
         /**
-         * The Associated Resources are accessible or not.
+         * The Associated resource is accessible or not.
          *
          * @param isResourceAccessible the value to set
          * @return this builder
@@ -179,12 +179,12 @@ public final class OracleDbAzureVaultAssociationSummary
             this.__explicitlySet__.add("isResourceAccessible");
             return this;
         }
-        /** The current lifecycle state of the Oracle DB Azure Vault Association Resource. */
+        /** The current lifecycle state of the Oracle DB Azure Vault Association resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OracleDbAzureVaultAssociation.LifecycleState lifecycleState;
 
         /**
-         * The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+         * The current lifecycle state of the Oracle DB Azure Vault Association resource.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -210,7 +210,7 @@ public final class OracleDbAzureVaultAssociationSummary
             return this;
         }
         /**
-         * Time when the Oracle DB Azure Vault Association was created in [RFC
+         * Time when the Oracle DB Azure Vault Association resource was created in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
@@ -218,7 +218,7 @@ public final class OracleDbAzureVaultAssociationSummary
         private java.util.Date timeCreated;
 
         /**
-         * Time when the Oracle DB Azure Vault Association was created in [RFC
+         * Time when the Oracle DB Azure Vault Association resource was created in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
@@ -231,16 +231,16 @@ public final class OracleDbAzureVaultAssociationSummary
             return this;
         }
         /**
-         * Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
+         * Time when the Oracle DB Azure Vault Association resource was last modified, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
+         * Time when the Oracle DB Azure Vault Association resource was last modified, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
          * @param timeUpdated the value to set
@@ -252,13 +252,13 @@ public final class OracleDbAzureVaultAssociationSummary
             return this;
         }
         /**
-         * Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+         * Description of the latest modification of the Oracle DB Azure Vault Association resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
         private String lastModification;
 
         /**
-         * Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+         * Description of the latest modification of the Oracle DB Azure Vault Association resource.
          *
          * @param lastModification the value to set
          * @return this builder
@@ -426,14 +426,14 @@ public final class OracleDbAzureVaultAssociationSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * Oracle DB Azure Vault Association.
+     * Oracle DB Azure Vault Association resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * Oracle DB Azure Vault Association.
+     * Oracle DB Azure Vault Association resource.
      *
      * @return the value
      */
@@ -456,14 +456,14 @@ public final class OracleDbAzureVaultAssociationSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment contains Oracle DB Azure Vault Association Resource.
+     * compartment contains Oracle DB Azure Vault Association resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment contains Oracle DB Azure Vault Association Resource.
+     * compartment contains Oracle DB Azure Vault Association resource.
      *
      * @return the value
      */
@@ -473,14 +473,14 @@ public final class OracleDbAzureVaultAssociationSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Vault.
+     * Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureVaultId")
     private final String oracleDbAzureVaultId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Vault.
+     * Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      *
      * @return the value
      */
@@ -490,14 +490,14 @@ public final class OracleDbAzureVaultAssociationSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Connector.
+     * Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureConnectorId")
     private final String oracleDbAzureConnectorId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Connector.
+     * Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      *
      * @return the value
      */
@@ -505,12 +505,12 @@ public final class OracleDbAzureVaultAssociationSummary
         return oracleDbAzureConnectorId;
     }
 
-    /** The Associated Resources are accessible or not. */
+    /** The Associated resource is accessible or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isResourceAccessible")
     private final Boolean isResourceAccessible;
 
     /**
-     * The Associated Resources are accessible or not.
+     * The Associated resource is accessible or not.
      *
      * @return the value
      */
@@ -518,12 +518,12 @@ public final class OracleDbAzureVaultAssociationSummary
         return isResourceAccessible;
     }
 
-    /** The current lifecycle state of the Oracle DB Azure Vault Association Resource. */
+    /** The current lifecycle state of the Oracle DB Azure Vault Association resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OracleDbAzureVaultAssociation.LifecycleState lifecycleState;
 
     /**
-     * The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+     * The current lifecycle state of the Oracle DB Azure Vault Association resource.
      *
      * @return the value
      */
@@ -545,14 +545,14 @@ public final class OracleDbAzureVaultAssociationSummary
     }
 
     /**
-     * Time when the Oracle DB Azure Vault Association was created in [RFC
+     * Time when the Oracle DB Azure Vault Association resource was created in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Time when the Oracle DB Azure Vault Association was created in [RFC
+     * Time when the Oracle DB Azure Vault Association resource was created in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value
@@ -562,14 +562,14 @@ public final class OracleDbAzureVaultAssociationSummary
     }
 
     /**
-     * Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC
+     * Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC
+     * Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value
@@ -578,12 +578,12 @@ public final class OracleDbAzureVaultAssociationSummary
         return timeUpdated;
     }
 
-    /** Description of the latest modification of the Oracle DB Azure Vault Association Resource. */
+    /** Description of the latest modification of the Oracle DB Azure Vault Association resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
     private final String lastModification;
 
     /**
-     * Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+     * Description of the latest modification of the Oracle DB Azure Vault Association resource.
      *
      * @return the value
      */

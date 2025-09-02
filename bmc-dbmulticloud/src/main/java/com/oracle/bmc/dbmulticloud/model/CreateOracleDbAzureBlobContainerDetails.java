@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * This object is about to provide input params to create Oracle DB Azure Blob Container. <br>
+ * Create Oracle DB Azure Blob Container object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -55,12 +55,16 @@ public final class CreateOracleDbAzureBlobContainerDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment that contains Oracle DB Azure Blob Container Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Oracle DB Azure Blob Container resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Oracle DB Azure Blob Container resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -70,12 +74,12 @@ public final class CreateOracleDbAzureBlobContainerDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Display name of Oracle DB Azure Blob Container. */
+        /** Oracle DB Azure Blob Container resource name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of Oracle DB Azure Blob Container.
+         * Oracle DB Azure Blob Container resource name.
          *
          * @param displayName the value to set
          * @return this builder
@@ -100,12 +104,12 @@ public final class CreateOracleDbAzureBlobContainerDetails
             this.__explicitlySet__.add("privateEndpointIpAddress");
             return this;
         }
-        /** Private endpoint DNS Alias. */
+        /** Private endpoint's DNS alias. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsAlias")
         private String privateEndpointDnsAlias;
 
         /**
-         * Private endpoint DNS Alias.
+         * Private endpoint's DNS alias.
          *
          * @param privateEndpointDnsAlias the value to set
          * @return this builder
@@ -115,12 +119,12 @@ public final class CreateOracleDbAzureBlobContainerDetails
             this.__explicitlySet__.add("privateEndpointDnsAlias");
             return this;
         }
-        /** Azure Storage Account Name. */
+        /** Azure Storage account name. */
         @com.fasterxml.jackson.annotation.JsonProperty("azureStorageAccountName")
         private String azureStorageAccountName;
 
         /**
-         * Azure Storage Account Name.
+         * Azure Storage account name.
          *
          * @param azureStorageAccountName the value to set
          * @return this builder
@@ -130,12 +134,12 @@ public final class CreateOracleDbAzureBlobContainerDetails
             this.__explicitlySet__.add("azureStorageAccountName");
             return this;
         }
-        /** Azure Storage Container Name. */
+        /** Azure Storage container name. */
         @com.fasterxml.jackson.annotation.JsonProperty("azureStorageContainerName")
         private String azureStorageContainerName;
 
         /**
-         * Azure Storage Container Name.
+         * Azure Storage container name.
          *
          * @param azureStorageContainerName the value to set
          * @return this builder
@@ -256,12 +260,16 @@ public final class CreateOracleDbAzureBlobContainerDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment that contains Oracle DB Azure Blob Container Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle
+     * DB Azure Blob Container resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle
+     * DB Azure Blob Container resource.
      *
      * @return the value
      */
@@ -269,12 +277,12 @@ public final class CreateOracleDbAzureBlobContainerDetails
         return compartmentId;
     }
 
-    /** Display name of Oracle DB Azure Blob Container. */
+    /** Oracle DB Azure Blob Container resource name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of Oracle DB Azure Blob Container.
+     * Oracle DB Azure Blob Container resource name.
      *
      * @return the value
      */
@@ -295,12 +303,12 @@ public final class CreateOracleDbAzureBlobContainerDetails
         return privateEndpointIpAddress;
     }
 
-    /** Private endpoint DNS Alias. */
+    /** Private endpoint's DNS alias. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsAlias")
     private final String privateEndpointDnsAlias;
 
     /**
-     * Private endpoint DNS Alias.
+     * Private endpoint's DNS alias.
      *
      * @return the value
      */
@@ -308,12 +316,12 @@ public final class CreateOracleDbAzureBlobContainerDetails
         return privateEndpointDnsAlias;
     }
 
-    /** Azure Storage Account Name. */
+    /** Azure Storage account name. */
     @com.fasterxml.jackson.annotation.JsonProperty("azureStorageAccountName")
     private final String azureStorageAccountName;
 
     /**
-     * Azure Storage Account Name.
+     * Azure Storage account name.
      *
      * @return the value
      */
@@ -321,12 +329,12 @@ public final class CreateOracleDbAzureBlobContainerDetails
         return azureStorageAccountName;
     }
 
-    /** Azure Storage Container Name. */
+    /** Azure Storage container name. */
     @com.fasterxml.jackson.annotation.JsonProperty("azureStorageContainerName")
     private final String azureStorageContainerName;
 
     /**
-     * Azure Storage Container Name.
+     * Azure Storage container name.
      *
      * @return the value
      */

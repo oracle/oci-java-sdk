@@ -16,18 +16,24 @@ public class UpdateOracleDbAzureConnectorRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dbmulticloud.model.UpdateOracleDbAzureConnectorDetails> {
 
-    /** The ID of the Oracle DB Azure Connector Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Connector resource.
+     */
     private String oracleDbAzureConnectorId;
 
-    /** The ID of the Oracle DB Azure Connector Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Connector resource.
+     */
     public String getOracleDbAzureConnectorId() {
         return oracleDbAzureConnectorId;
     }
-    /** Details for to update Oracle DB Azure Connector Resource. */
+    /** Details for to update Oracle DB Azure Connector resource. */
     private com.oracle.bmc.dbmulticloud.model.UpdateOracleDbAzureConnectorDetails
             updateOracleDbAzureConnectorDetails;
 
-    /** Details for to update Oracle DB Azure Connector Resource. */
+    /** Details for to update Oracle DB Azure Connector resource. */
     public com.oracle.bmc.dbmulticloud.model.UpdateOracleDbAzureConnectorDetails
             getUpdateOracleDbAzureConnectorDetails() {
         return updateOracleDbAzureConnectorDetails;
@@ -75,11 +81,15 @@ public class UpdateOracleDbAzureConnectorRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the Oracle DB Azure Connector Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Connector resource.
+         */
         private String oracleDbAzureConnectorId = null;
 
         /**
-         * The ID of the Oracle DB Azure Connector Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Connector resource.
          *
          * @param oracleDbAzureConnectorId the value to set
          * @return this builder instance
@@ -89,12 +99,12 @@ public class UpdateOracleDbAzureConnectorRequest
             return this;
         }
 
-        /** Details for to update Oracle DB Azure Connector Resource. */
+        /** Details for to update Oracle DB Azure Connector resource. */
         private com.oracle.bmc.dbmulticloud.model.UpdateOracleDbAzureConnectorDetails
                 updateOracleDbAzureConnectorDetails = null;
 
         /**
-         * Details for to update Oracle DB Azure Connector Resource.
+         * Details for to update Oracle DB Azure Connector resource.
          *
          * @param updateOracleDbAzureConnectorDetails the value to set
          * @return this builder instance

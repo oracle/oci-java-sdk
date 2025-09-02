@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * Oracle DB Azure Blob Container Resource Object. <br>
+ * Oracle DB Azure Blob Container resource object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -76,12 +76,16 @@ public final class OracleDbAzureBlobContainer
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID of the compartment that contains Oracle DB Azure Blob Container Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Oracle DB Azure Blob Container resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Oracle DB Azure Blob Container resource.
          *
          * @param id the value to set
          * @return this builder
@@ -91,12 +95,16 @@ public final class OracleDbAzureBlobContainer
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The ID of the compartment that contains Oracle DB Azure Blob Container Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of
+         * the compartment that contains Oracle DB Azure Blob Container resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of
+         * the compartment that contains Oracle DB Azure Blob Container resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -106,12 +114,12 @@ public final class OracleDbAzureBlobContainer
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Display name of Oracle DB Azure Blob Container. */
+        /** Oracle DB Azure Blob Container resource name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of Oracle DB Azure Blob Container.
+         * Oracle DB Azure Blob Container resource name.
          *
          * @param displayName the value to set
          * @return this builder
@@ -136,12 +144,12 @@ public final class OracleDbAzureBlobContainer
             this.__explicitlySet__.add("privateEndpointIpAddress");
             return this;
         }
-        /** Private endpoint DNS Alias. */
+        /** Private endpoint's DNS Alias. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsAlias")
         private String privateEndpointDnsAlias;
 
         /**
-         * Private endpoint DNS Alias.
+         * Private endpoint's DNS Alias.
          *
          * @param privateEndpointDnsAlias the value to set
          * @return this builder
@@ -151,12 +159,12 @@ public final class OracleDbAzureBlobContainer
             this.__explicitlySet__.add("privateEndpointDnsAlias");
             return this;
         }
-        /** Azure Storage Account Name. */
+        /** Azure Storage account name. */
         @com.fasterxml.jackson.annotation.JsonProperty("azureStorageAccountName")
         private String azureStorageAccountName;
 
         /**
-         * Azure Storage Account Name.
+         * Azure Storage account name.
          *
          * @param azureStorageAccountName the value to set
          * @return this builder
@@ -166,12 +174,12 @@ public final class OracleDbAzureBlobContainer
             this.__explicitlySet__.add("azureStorageAccountName");
             return this;
         }
-        /** Azure Storage Container Name. */
+        /** Azure Storage container name. */
         @com.fasterxml.jackson.annotation.JsonProperty("azureStorageContainerName")
         private String azureStorageContainerName;
 
         /**
-         * Azure Storage Container Name.
+         * Azure Storage container name.
          *
          * @param azureStorageContainerName the value to set
          * @return this builder
@@ -181,12 +189,12 @@ public final class OracleDbAzureBlobContainer
             this.__explicitlySet__.add("azureStorageContainerName");
             return this;
         }
-        /** The current lifecycle state of the Oracle DB Azure Blob Container Resource. */
+        /** The current lifecycle state of the Oracle DB Azure Blob Container resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+         * The current lifecycle state of the Oracle DB Azure Blob Container resource.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -254,13 +262,13 @@ public final class OracleDbAzureBlobContainer
             return this;
         }
         /**
-         * Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+         * Description of the latest modification of the Oracle DB Azure Blob Container resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
         private String lastModification;
 
         /**
-         * Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+         * Description of the latest modification of the Oracle DB Azure Blob Container resource.
          *
          * @param lastModification the value to set
          * @return this builder
@@ -430,12 +438,16 @@ public final class OracleDbAzureBlobContainer
         return new Builder().copy(this);
     }
 
-    /** The ID of the compartment that contains Oracle DB Azure Blob Container Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle
+     * DB Azure Blob Container resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle
+     * DB Azure Blob Container resource.
      *
      * @return the value
      */
@@ -443,12 +455,16 @@ public final class OracleDbAzureBlobContainer
         return id;
     }
 
-    /** The ID of the compartment that contains Oracle DB Azure Blob Container Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the
+     * compartment that contains Oracle DB Azure Blob Container resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the
+     * compartment that contains Oracle DB Azure Blob Container resource.
      *
      * @return the value
      */
@@ -456,12 +472,12 @@ public final class OracleDbAzureBlobContainer
         return compartmentId;
     }
 
-    /** Display name of Oracle DB Azure Blob Container. */
+    /** Oracle DB Azure Blob Container resource name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of Oracle DB Azure Blob Container.
+     * Oracle DB Azure Blob Container resource name.
      *
      * @return the value
      */
@@ -482,12 +498,12 @@ public final class OracleDbAzureBlobContainer
         return privateEndpointIpAddress;
     }
 
-    /** Private endpoint DNS Alias. */
+    /** Private endpoint's DNS Alias. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsAlias")
     private final String privateEndpointDnsAlias;
 
     /**
-     * Private endpoint DNS Alias.
+     * Private endpoint's DNS Alias.
      *
      * @return the value
      */
@@ -495,12 +511,12 @@ public final class OracleDbAzureBlobContainer
         return privateEndpointDnsAlias;
     }
 
-    /** Azure Storage Account Name. */
+    /** Azure Storage account name. */
     @com.fasterxml.jackson.annotation.JsonProperty("azureStorageAccountName")
     private final String azureStorageAccountName;
 
     /**
-     * Azure Storage Account Name.
+     * Azure Storage account name.
      *
      * @return the value
      */
@@ -508,12 +524,12 @@ public final class OracleDbAzureBlobContainer
         return azureStorageAccountName;
     }
 
-    /** Azure Storage Container Name. */
+    /** Azure Storage container name. */
     @com.fasterxml.jackson.annotation.JsonProperty("azureStorageContainerName")
     private final String azureStorageContainerName;
 
     /**
-     * Azure Storage Container Name.
+     * Azure Storage container name.
      *
      * @return the value
      */
@@ -521,7 +537,7 @@ public final class OracleDbAzureBlobContainer
         return azureStorageContainerName;
     }
 
-    /** The current lifecycle state of the Oracle DB Azure Blob Container Resource. */
+    /** The current lifecycle state of the Oracle DB Azure Blob Container resource. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -571,12 +587,12 @@ public final class OracleDbAzureBlobContainer
             return UnknownEnumValue;
         }
     };
-    /** The current lifecycle state of the Oracle DB Azure Blob Container Resource. */
+    /** The current lifecycle state of the Oracle DB Azure Blob Container resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * The current lifecycle state of the Oracle DB Azure Blob Container resource.
      *
      * @return the value
      */
@@ -631,12 +647,12 @@ public final class OracleDbAzureBlobContainer
         return timeUpdated;
     }
 
-    /** Description of the latest modification of the Oracle DB Azure Blob Container Resource. */
+    /** Description of the latest modification of the Oracle DB Azure Blob Container resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
     private final String lastModification;
 
     /**
-     * Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+     * Description of the latest modification of the Oracle DB Azure Blob Container resource.
      *
      * @return the value
      */

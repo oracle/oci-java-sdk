@@ -113,10 +113,7 @@ public class OracleDbAzureVaultAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ChangeOracleDbAzureVaultCompartmentResponse::builder)
                 .logger(LOG, "changeOracleDbAzureVaultCompartment")
-                .serviceDetails(
-                        "OracleDbAzureVault",
-                        "ChangeOracleDbAzureVaultCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/ChangeOracleDbAzureVaultCompartment")
+                .serviceDetails("OracleDbAzureVault", "ChangeOracleDbAzureVaultCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOracleDbAzureVaultCompartmentRequest::builder)
                 .basePath("/20240501")
@@ -150,10 +147,7 @@ public class OracleDbAzureVaultAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, CreateOracleDbAzureVaultResponse::builder)
                 .logger(LOG, "createOracleDbAzureVault")
-                .serviceDetails(
-                        "OracleDbAzureVault",
-                        "CreateOracleDbAzureVault",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDBAzureVault/CreateOracleDbAzureVault")
+                .serviceDetails("OracleDbAzureVault", "CreateOracleDbAzureVault", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOracleDbAzureVaultRequest::builder)
                 .basePath("/20240501")
@@ -192,10 +186,7 @@ public class OracleDbAzureVaultAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, DeleteOracleDbAzureVaultResponse::builder)
                 .logger(LOG, "deleteOracleDbAzureVault")
-                .serviceDetails(
-                        "OracleDbAzureVault",
-                        "DeleteOracleDbAzureVault",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/DeleteOracleDbAzureVault")
+                .serviceDetails("OracleDbAzureVault", "DeleteOracleDbAzureVault", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOracleDbAzureVaultRequest::builder)
                 .basePath("/20240501")
@@ -224,10 +215,7 @@ public class OracleDbAzureVaultAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, GetOracleDbAzureVaultResponse::builder)
                 .logger(LOG, "getOracleDbAzureVault")
-                .serviceDetails(
-                        "OracleDbAzureVault",
-                        "GetOracleDbAzureVault",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/GetOracleDbAzureVault")
+                .serviceDetails("OracleDbAzureVault", "GetOracleDbAzureVault", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOracleDbAzureVaultRequest::builder)
                 .basePath("/20240501")
@@ -257,10 +245,7 @@ public class OracleDbAzureVaultAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOracleDbAzureVaultsResponse::builder)
                 .logger(LOG, "listOracleDbAzureVaults")
-                .serviceDetails(
-                        "OracleDbAzureVault",
-                        "ListOracleDbAzureVaults",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/ListOracleDbAzureVaults")
+                .serviceDetails("OracleDbAzureVault", "ListOracleDbAzureVaults", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOracleDbAzureVaultsRequest::builder)
                 .basePath("/20240501")
@@ -301,10 +286,7 @@ public class OracleDbAzureVaultAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, RefreshOracleDbAzureVaultResponse::builder)
                 .logger(LOG, "refreshOracleDbAzureVault")
-                .serviceDetails(
-                        "OracleDbAzureVault",
-                        "RefreshOracleDbAzureVault",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/RefreshOracleDbAzureVault")
+                .serviceDetails("OracleDbAzureVault", "RefreshOracleDbAzureVault", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RefreshOracleDbAzureVaultRequest::builder)
                 .basePath("/20240501")
@@ -316,6 +298,7 @@ public class OracleDbAzureVaultAsyncClient extends com.oracle.bmc.http.internal.
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RefreshOracleDbAzureVaultResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
@@ -339,10 +322,7 @@ public class OracleDbAzureVaultAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, UpdateOracleDbAzureVaultResponse::builder)
                 .logger(LOG, "updateOracleDbAzureVault")
-                .serviceDetails(
-                        "OracleDbAzureVault",
-                        "UpdateOracleDbAzureVault",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/UpdateOracleDbAzureVault")
+                .serviceDetails("OracleDbAzureVault", "UpdateOracleDbAzureVault", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOracleDbAzureVaultRequest::builder)
                 .basePath("/20240501")

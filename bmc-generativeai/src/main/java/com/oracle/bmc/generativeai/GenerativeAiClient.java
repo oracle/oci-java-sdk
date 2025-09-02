@@ -581,6 +581,8 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("id", request.getId())
+                .appendQueryParam(
+                        "generativeAiPrivateEndpointId", request.getGenerativeAiPrivateEndpointId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())

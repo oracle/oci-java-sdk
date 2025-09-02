@@ -26,6 +26,9 @@ package com.oracle.bmc.database.model;
             value = ExternalHsmEncryptionDetails.class,
             name = "EXTERNAL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GoogleCloudProviderEncryptionKeyDetails.class,
+            name = "GCP"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AzureEncryptionKeyDetails.class,
             name = "AZURE")
 })
@@ -81,11 +84,13 @@ public class EncryptionKeyLocationDetails
 
     /**
      * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM.
-     * Use 'AZURE' for creating a new database or migrating a database key to Azure.
+     * Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'GCP' for
+     * creating a new database or migrating a database key to Google Cloud Provider.
      */
     public enum ProviderType implements com.oracle.bmc.http.internal.BmcEnum {
         External("EXTERNAL"),
         Azure("AZURE"),
+        Gcp("GCP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

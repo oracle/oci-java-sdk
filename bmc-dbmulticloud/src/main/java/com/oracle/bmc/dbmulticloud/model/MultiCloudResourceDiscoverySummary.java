@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * Multi Cloud Resource Discovery Summary. <br>
+ * Multicloud Resource Discovery Summary. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -75,14 +75,14 @@ public final class MultiCloudResourceDiscoverySummary
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Multi Cloud Discovery Resource.
+         * Multicloud Resource Discovery resource
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Multi Cloud Discovery Resource.
+         * Multicloud Resource Discovery resource
          *
          * @param id the value to set
          * @return this builder
@@ -94,14 +94,14 @@ public final class MultiCloudResourceDiscoverySummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Multi Cloud Discovery Resource.
+         * compartment that contains Multicloud Resource Discovery resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Multi Cloud Discovery Resource.
+         * compartment that contains Multicloud Resource Discovery resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -111,12 +111,12 @@ public final class MultiCloudResourceDiscoverySummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Display name of Multi Cloud Discovery Resource. */
+        /** Display name of the Multicloud Resource Discovery resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of Multi Cloud Discovery Resource.
+         * Display name of the Multicloud Resource Discovery resource.
          *
          * @param displayName the value to set
          * @return this builder
@@ -128,14 +128,14 @@ public final class MultiCloudResourceDiscoverySummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Connector Resource.
+         * Oracle DB Connector resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbConnectorId")
         private String oracleDbConnectorId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Connector Resource.
+         * Oracle DB Connector resource.
          *
          * @param oracleDbConnectorId the value to set
          * @return this builder
@@ -175,12 +175,12 @@ public final class MultiCloudResourceDiscoverySummary
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The current lifecycle state of the Discovered Resource. */
+        /** The current lifecycle state of the discovered resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private MultiCloudResourceDiscovery.LifecycleState lifecycleState;
 
         /**
-         * The current lifecycle state of the Discovered Resource.
+         * The current lifecycle state of the discovered resource.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -206,7 +206,7 @@ public final class MultiCloudResourceDiscoverySummary
             return this;
         }
         /**
-         * Time when the Multi Cloud Discovery Resource was created in [RFC
+         * Time when the Multicloud Discovery Resource was created in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
@@ -214,7 +214,7 @@ public final class MultiCloudResourceDiscoverySummary
         private java.util.Date timeCreated;
 
         /**
-         * Time when the Multi Cloud Discovery Resource was created in [RFC
+         * Time when the Multicloud Discovery Resource was created in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
@@ -227,7 +227,7 @@ public final class MultiCloudResourceDiscoverySummary
             return this;
         }
         /**
-         * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC
+         * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
@@ -235,7 +235,7 @@ public final class MultiCloudResourceDiscoverySummary
         private java.util.Date timeUpdated;
 
         /**
-         * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC
+         * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
@@ -247,12 +247,12 @@ public final class MultiCloudResourceDiscoverySummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Description of the latest modification of the Multi Cloud Discovery Resource. */
+        /** Description of the latest modification of the Multicloud Resource Discovery resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
         private String lastModification;
 
         /**
-         * Description of the latest modification of the Multi Cloud Discovery Resource.
+         * Description of the latest modification of the Multicloud Resource Discovery resource.
          *
          * @param lastModification the value to set
          * @return this builder
@@ -420,14 +420,14 @@ public final class MultiCloudResourceDiscoverySummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Multi Cloud Discovery Resource.
+     * Multicloud Resource Discovery resource
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Multi Cloud Discovery Resource.
+     * Multicloud Resource Discovery resource
      *
      * @return the value
      */
@@ -437,14 +437,14 @@ public final class MultiCloudResourceDiscoverySummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Multi Cloud Discovery Resource.
+     * compartment that contains Multicloud Resource Discovery resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Multi Cloud Discovery Resource.
+     * compartment that contains Multicloud Resource Discovery resource.
      *
      * @return the value
      */
@@ -452,12 +452,12 @@ public final class MultiCloudResourceDiscoverySummary
         return compartmentId;
     }
 
-    /** Display name of Multi Cloud Discovery Resource. */
+    /** Display name of the Multicloud Resource Discovery resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of Multi Cloud Discovery Resource.
+     * Display name of the Multicloud Resource Discovery resource.
      *
      * @return the value
      */
@@ -467,14 +467,14 @@ public final class MultiCloudResourceDiscoverySummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Connector Resource.
+     * Oracle DB Connector resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbConnectorId")
     private final String oracleDbConnectorId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Connector Resource.
+     * Oracle DB Connector resource.
      *
      * @return the value
      */
@@ -508,12 +508,12 @@ public final class MultiCloudResourceDiscoverySummary
         return resourceType;
     }
 
-    /** The current lifecycle state of the Discovered Resource. */
+    /** The current lifecycle state of the discovered resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final MultiCloudResourceDiscovery.LifecycleState lifecycleState;
 
     /**
-     * The current lifecycle state of the Discovered Resource.
+     * The current lifecycle state of the discovered resource.
      *
      * @return the value
      */
@@ -535,14 +535,14 @@ public final class MultiCloudResourceDiscoverySummary
     }
 
     /**
-     * Time when the Multi Cloud Discovery Resource was created in [RFC
+     * Time when the Multicloud Discovery Resource was created in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Time when the Multi Cloud Discovery Resource was created in [RFC
+     * Time when the Multicloud Discovery Resource was created in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value
@@ -552,14 +552,14 @@ public final class MultiCloudResourceDiscoverySummary
     }
 
     /**
-     * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC
+     * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC
+     * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value
@@ -568,12 +568,12 @@ public final class MultiCloudResourceDiscoverySummary
         return timeUpdated;
     }
 
-    /** Description of the latest modification of the Multi Cloud Discovery Resource. */
+    /** Description of the latest modification of the Multicloud Resource Discovery resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
     private final String lastModification;
 
     /**
-     * Description of the latest modification of the Multi Cloud Discovery Resource.
+     * Description of the latest modification of the Multicloud Resource Discovery resource.
      *
      * @return the value
      */

@@ -15,13 +15,13 @@ public class GetOracleDbAzureKeyRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Vault Key Resource.
+     * Oracle DB Azure Vault Key resource.
      */
     private String oracleDbAzureKeyId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Vault Key Resource.
+     * Oracle DB Azure Vault Key resource.
      */
     public String getOracleDbAzureKeyId() {
         return oracleDbAzureKeyId;
@@ -69,13 +69,13 @@ public class GetOracleDbAzureKeyRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Vault Key Resource.
+         * Oracle DB Azure Vault Key resource.
          */
         private String oracleDbAzureKeyId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Vault Key Resource.
+         * Oracle DB Azure Vault Key resource.
          *
          * @param oracleDbAzureKeyId the value to set
          * @return this builder instance

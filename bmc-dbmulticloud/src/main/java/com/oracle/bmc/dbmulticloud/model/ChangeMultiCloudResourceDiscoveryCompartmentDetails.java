@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * Details of the new compartment to contain the Multi Cloud Resource Discovery. <br>
+ * Details of the new compartment to contain the Multicloud Resource Discovery. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -45,14 +45,14 @@ public final class ChangeMultiCloudResourceDiscoveryCompartmentDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * new compartment to contain the Multi Cloud Resource Discovery.
+         * new compartment that contains Multicloud Resource Discovery resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * new compartment to contain the Multi Cloud Resource Discovery.
+         * new compartment that contains Multicloud Resource Discovery resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -180,14 +180,14 @@ public final class ChangeMultiCloudResourceDiscoveryCompartmentDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the new
-     * compartment to contain the Multi Cloud Resource Discovery.
+     * compartment that contains Multicloud Resource Discovery resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the new
-     * compartment to contain the Multi Cloud Resource Discovery.
+     * compartment that contains Multicloud Resource Discovery resource.
      *
      * @return the value
      */

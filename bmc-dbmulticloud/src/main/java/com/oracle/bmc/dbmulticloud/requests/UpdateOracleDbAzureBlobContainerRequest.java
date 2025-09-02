@@ -16,10 +16,16 @@ public class UpdateOracleDbAzureBlobContainerRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dbmulticloud.model.UpdateOracleDbAzureBlobContainerDetails> {
 
-    /** The ID of the Oracle DB Azure Blob Container Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Blob Container resource.
+     */
     private String oracleDbAzureBlobContainerId;
 
-    /** The ID of the Oracle DB Azure Blob Container Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Blob Container resource.
+     */
     public String getOracleDbAzureBlobContainerId() {
         return oracleDbAzureBlobContainerId;
     }
@@ -75,11 +81,15 @@ public class UpdateOracleDbAzureBlobContainerRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the Oracle DB Azure Blob Container Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Blob Container resource.
+         */
         private String oracleDbAzureBlobContainerId = null;
 
         /**
-         * The ID of the Oracle DB Azure Blob Container Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Blob Container resource.
          *
          * @param oracleDbAzureBlobContainerId the value to set
          * @return this builder instance

@@ -28,17 +28,23 @@ public class ListOracleDbAzureBlobContainersRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return Azure Containers. */
+    /**
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified display
+     * name.
+     */
     private String displayName;
 
-    /** A filter to return Azure Containers. */
+    /**
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified display
+     * name.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Blob Container resource. */
     private String oracleDbAzureBlobContainerId;
 
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Blob Container resource. */
     public String getOracleDbAzureBlobContainerId() {
         return oracleDbAzureBlobContainerId;
     }
@@ -57,17 +63,29 @@ public class ListOracleDbAzureBlobContainersRequest
             getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return Azure Blob Containers. */
+    /**
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure
+     * Account name.
+     */
     private String azureStorageAccountName;
 
-    /** A filter to return Azure Blob Containers. */
+    /**
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure
+     * Account name.
+     */
     public String getAzureStorageAccountName() {
         return azureStorageAccountName;
     }
-    /** A filter to return Azure Blob containers. */
+    /**
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure
+     * Storage name.
+     */
     private String azureStorageContainerName;
 
-    /** A filter to return Azure Blob containers. */
+    /**
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure
+     * Storage name.
+     */
     public String getAzureStorageContainerName() {
         return azureStorageContainerName;
     }
@@ -183,11 +201,15 @@ public class ListOracleDbAzureBlobContainersRequest
             return this;
         }
 
-        /** A filter to return Azure Containers. */
+        /**
+         * A filter to return Oracle DB Azure Blob Container resources that match the specified
+         * display name.
+         */
         private String displayName = null;
 
         /**
-         * A filter to return Azure Containers.
+         * A filter to return Oracle DB Azure Blob Container resources that match the specified
+         * display name.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -197,11 +219,11 @@ public class ListOracleDbAzureBlobContainersRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Blob Mount Resources. */
+        /** A filter to return Oracle DB Azure Blob Container resource. */
         private String oracleDbAzureBlobContainerId = null;
 
         /**
-         * A filter to return Oracle DB Azure Blob Mount Resources.
+         * A filter to return Oracle DB Azure Blob Container resource.
          *
          * @param oracleDbAzureBlobContainerId the value to set
          * @return this builder instance
@@ -232,11 +254,15 @@ public class ListOracleDbAzureBlobContainersRequest
             return this;
         }
 
-        /** A filter to return Azure Blob Containers. */
+        /**
+         * A filter to return Oracle DB Azure Blob Container resources that match the specified
+         * Azure Account name.
+         */
         private String azureStorageAccountName = null;
 
         /**
-         * A filter to return Azure Blob Containers.
+         * A filter to return Oracle DB Azure Blob Container resources that match the specified
+         * Azure Account name.
          *
          * @param azureStorageAccountName the value to set
          * @return this builder instance
@@ -246,11 +272,15 @@ public class ListOracleDbAzureBlobContainersRequest
             return this;
         }
 
-        /** A filter to return Azure Blob containers. */
+        /**
+         * A filter to return Oracle DB Azure Blob Container resources that match the specified
+         * Azure Storage name.
+         */
         private String azureStorageContainerName = null;
 
         /**
-         * A filter to return Azure Blob containers.
+         * A filter to return Oracle DB Azure Blob Container resources that match the specified
+         * Azure Storage name.
          *
          * @param azureStorageContainerName the value to set
          * @return this builder instance

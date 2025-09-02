@@ -69,6 +69,26 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.cloudguard.model.AdditionalConfigPropertyDefinition",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.cloudguard.model.AdditionalConfigPropertyDefinition$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.cloudguard.model.AdditionalConfigPropertyDefinition$PropertyType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.cloudguard.model.AdhocQuery",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -2632,6 +2652,26 @@
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.cloudguard.model.RuleType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.cloudguard.model.RuleType$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.cloudguard.model.RuleType$Key",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },

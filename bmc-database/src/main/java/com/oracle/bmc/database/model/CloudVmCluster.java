@@ -2757,6 +2757,7 @@ public final class CloudVmCluster
     public enum TdeKeyStoreType implements com.oracle.bmc.http.internal.BmcEnum {
         Azure("AZURE"),
         Oci("OCI"),
+        Gcp("GCP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

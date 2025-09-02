@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * Multi Cloud Resource Discovery Object. <br>
+ * Multicloud Resource Discovery resource object <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -28,6 +28,7 @@ public final class MultiCloudResourceDiscovery
         "compartmentId",
         "displayName",
         "oracleDbConnectorId",
+        "resourcesFilter",
         "resources",
         "resourceType",
         "lifecycleState",
@@ -44,6 +45,7 @@ public final class MultiCloudResourceDiscovery
             String compartmentId,
             String displayName,
             String oracleDbConnectorId,
+            java.util.Map<String, String> resourcesFilter,
             java.util.List<Resources> resources,
             ResourceType resourceType,
             LifecycleState lifecycleState,
@@ -59,6 +61,7 @@ public final class MultiCloudResourceDiscovery
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.oracleDbConnectorId = oracleDbConnectorId;
+        this.resourcesFilter = resourcesFilter;
         this.resources = resources;
         this.resourceType = resourceType;
         this.lifecycleState = lifecycleState;
@@ -75,14 +78,14 @@ public final class MultiCloudResourceDiscovery
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Multi Cloud Discovery Resource.
+         * Multicloud Resource Discovery resource
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Multi Cloud Discovery Resource.
+         * Multicloud Resource Discovery resource
          *
          * @param id the value to set
          * @return this builder
@@ -94,14 +97,14 @@ public final class MultiCloudResourceDiscovery
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Multi Cloud Discovery Resource.
+         * compartment that contains Multicloud Resource Discovery resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Multi Cloud Discovery Resource.
+         * compartment that contains Multicloud Resource Discovery resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -111,12 +114,12 @@ public final class MultiCloudResourceDiscovery
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Display name of Multi Cloud Discovery Resource. */
+        /** Display name of the Multicloud Resource Discovery resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of Multi Cloud Discovery Resource.
+         * Display name of the Multicloud Resource Discovery resource.
          *
          * @param displayName the value to set
          * @return this builder
@@ -128,14 +131,14 @@ public final class MultiCloudResourceDiscovery
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Connector Resource.
+         * Oracle DB Connector resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbConnectorId")
         private String oracleDbConnectorId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Connector Resource.
+         * Oracle DB Connector resource.
          *
          * @param oracleDbConnectorId the value to set
          * @return this builder
@@ -143,6 +146,33 @@ public final class MultiCloudResourceDiscovery
         public Builder oracleDbConnectorId(String oracleDbConnectorId) {
             this.oracleDbConnectorId = oracleDbConnectorId;
             this.__explicitlySet__.add("oracleDbConnectorId");
+            return this;
+        }
+        /**
+         * Discover resource using attributes as key-value pair. For GCP supported attributes
+         * (keyRing) For Azure supported attributes (keyVault) GCP Example {@code {"keyRing":
+         * "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}} or {@code
+         * {"keyRing": "dbmci-keyring"}} Azure Example {@code {"keyVault":
+         * "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}}
+         * or {@code {"keyVault": "orp7HSM001"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourcesFilter")
+        private java.util.Map<String, String> resourcesFilter;
+
+        /**
+         * Discover resource using attributes as key-value pair. For GCP supported attributes
+         * (keyRing) For Azure supported attributes (keyVault) GCP Example {@code {"keyRing":
+         * "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}} or {@code
+         * {"keyRing": "dbmci-keyring"}} Azure Example {@code {"keyVault":
+         * "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}}
+         * or {@code {"keyVault": "orp7HSM001"}}
+         *
+         * @param resourcesFilter the value to set
+         * @return this builder
+         */
+        public Builder resourcesFilter(java.util.Map<String, String> resourcesFilter) {
+            this.resourcesFilter = resourcesFilter;
+            this.__explicitlySet__.add("resourcesFilter");
             return this;
         }
         /** List of All Discovered resources. */
@@ -206,7 +236,7 @@ public final class MultiCloudResourceDiscovery
             return this;
         }
         /**
-         * Time when the Multi Cloud Discovery Resource was created in [RFC
+         * Time when the Multicloud Discovery Resource was created in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
@@ -214,7 +244,7 @@ public final class MultiCloudResourceDiscovery
         private java.util.Date timeCreated;
 
         /**
-         * Time when the Multi Cloud Discovery Resource was created in [RFC
+         * Time when the Multicloud Discovery Resource was created in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
@@ -227,7 +257,7 @@ public final class MultiCloudResourceDiscovery
             return this;
         }
         /**
-         * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC
+         * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          */
@@ -235,7 +265,7 @@ public final class MultiCloudResourceDiscovery
         private java.util.Date timeUpdated;
 
         /**
-         * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC
+         * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
          * '2020-05-22T21:10:29.600Z'
          *
@@ -247,12 +277,12 @@ public final class MultiCloudResourceDiscovery
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Description of the latest modification of the Multi Cloud Discovery Resource. */
+        /** Description of the latest modification of the Multicloud Resource Discovery resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
         private String lastModification;
 
         /**
-         * Description of the latest modification of the Multi Cloud Discovery Resource.
+         * Description of the latest modification of the Multicloud Resource Discovery resource.
          *
          * @param lastModification the value to set
          * @return this builder
@@ -345,6 +375,7 @@ public final class MultiCloudResourceDiscovery
                             this.compartmentId,
                             this.displayName,
                             this.oracleDbConnectorId,
+                            this.resourcesFilter,
                             this.resources,
                             this.resourceType,
                             this.lifecycleState,
@@ -374,6 +405,9 @@ public final class MultiCloudResourceDiscovery
             }
             if (model.wasPropertyExplicitlySet("oracleDbConnectorId")) {
                 this.oracleDbConnectorId(model.getOracleDbConnectorId());
+            }
+            if (model.wasPropertyExplicitlySet("resourcesFilter")) {
+                this.resourcesFilter(model.getResourcesFilter());
             }
             if (model.wasPropertyExplicitlySet("resources")) {
                 this.resources(model.getResources());
@@ -420,14 +454,14 @@ public final class MultiCloudResourceDiscovery
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Multi Cloud Discovery Resource.
+     * Multicloud Resource Discovery resource
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Multi Cloud Discovery Resource.
+     * Multicloud Resource Discovery resource
      *
      * @return the value
      */
@@ -437,14 +471,14 @@ public final class MultiCloudResourceDiscovery
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Multi Cloud Discovery Resource.
+     * compartment that contains Multicloud Resource Discovery resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Multi Cloud Discovery Resource.
+     * compartment that contains Multicloud Resource Discovery resource.
      *
      * @return the value
      */
@@ -452,12 +486,12 @@ public final class MultiCloudResourceDiscovery
         return compartmentId;
     }
 
-    /** Display name of Multi Cloud Discovery Resource. */
+    /** Display name of the Multicloud Resource Discovery resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of Multi Cloud Discovery Resource.
+     * Display name of the Multicloud Resource Discovery resource.
      *
      * @return the value
      */
@@ -467,19 +501,44 @@ public final class MultiCloudResourceDiscovery
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Connector Resource.
+     * Oracle DB Connector resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbConnectorId")
     private final String oracleDbConnectorId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Connector Resource.
+     * Oracle DB Connector resource.
      *
      * @return the value
      */
     public String getOracleDbConnectorId() {
         return oracleDbConnectorId;
+    }
+
+    /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing)
+     * For Azure supported attributes (keyVault) GCP Example {@code {"keyRing":
+     * "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}} or {@code {"keyRing":
+     * "dbmci-keyring"}} Azure Example {@code {"keyVault":
+     * "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}}
+     * or {@code {"keyVault": "orp7HSM001"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourcesFilter")
+    private final java.util.Map<String, String> resourcesFilter;
+
+    /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing)
+     * For Azure supported attributes (keyVault) GCP Example {@code {"keyRing":
+     * "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}} or {@code {"keyRing":
+     * "dbmci-keyring"}} Azure Example {@code {"keyVault":
+     * "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}}
+     * or {@code {"keyVault": "orp7HSM001"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getResourcesFilter() {
+        return resourcesFilter;
     }
 
     /** List of All Discovered resources. */
@@ -499,6 +558,7 @@ public final class MultiCloudResourceDiscovery
     public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
         Vaults("VAULTS"),
         Storage("STORAGE"),
+        GcpKeyRings("GCP_KEY_RINGS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -634,14 +694,14 @@ public final class MultiCloudResourceDiscovery
     }
 
     /**
-     * Time when the Multi Cloud Discovery Resource was created in [RFC
+     * Time when the Multicloud Discovery Resource was created in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Time when the Multi Cloud Discovery Resource was created in [RFC
+     * Time when the Multicloud Discovery Resource was created in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value
@@ -651,14 +711,14 @@ public final class MultiCloudResourceDiscovery
     }
 
     /**
-     * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC
+     * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC
+     * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      *
      * @return the value
@@ -667,12 +727,12 @@ public final class MultiCloudResourceDiscovery
         return timeUpdated;
     }
 
-    /** Description of the latest modification of the Multi Cloud Discovery Resource. */
+    /** Description of the latest modification of the Multicloud Resource Discovery resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastModification")
     private final String lastModification;
 
     /**
-     * Description of the latest modification of the Multi Cloud Discovery Resource.
+     * Description of the latest modification of the Multicloud Resource Discovery resource.
      *
      * @return the value
      */
@@ -764,6 +824,7 @@ public final class MultiCloudResourceDiscovery
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", oracleDbConnectorId=").append(String.valueOf(this.oracleDbConnectorId));
+        sb.append(", resourcesFilter=").append(String.valueOf(this.resourcesFilter));
         sb.append(", resources=").append(String.valueOf(this.resources));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -792,6 +853,7 @@ public final class MultiCloudResourceDiscovery
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.oracleDbConnectorId, other.oracleDbConnectorId)
+                && java.util.Objects.equals(this.resourcesFilter, other.resourcesFilter)
                 && java.util.Objects.equals(this.resources, other.resources)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -819,6 +881,9 @@ public final class MultiCloudResourceDiscovery
                         + (this.oracleDbConnectorId == null
                                 ? 43
                                 : this.oracleDbConnectorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcesFilter == null ? 43 : this.resourcesFilter.hashCode());
         result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result =

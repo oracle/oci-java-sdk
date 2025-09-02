@@ -30,7 +30,8 @@ public final class DetectorConfiguration
         "dataType",
         "values",
         "allowedValuesDataType",
-        "allowedValues"
+        "allowedValues",
+        "additionalProperties"
     })
     public DetectorConfiguration(
             String configKey,
@@ -39,7 +40,8 @@ public final class DetectorConfiguration
             String dataType,
             java.util.List<ConfigValue> values,
             String allowedValuesDataType,
-            java.util.List<PropertyTuple> allowedValues) {
+            java.util.List<PropertyTuple> allowedValues,
+            java.util.List<AdditionalConfigPropertyDefinition> additionalProperties) {
         super();
         this.configKey = configKey;
         this.name = name;
@@ -48,6 +50,7 @@ public final class DetectorConfiguration
         this.values = values;
         this.allowedValuesDataType = allowedValuesDataType;
         this.allowedValues = allowedValues;
+        this.additionalProperties = additionalProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -157,6 +160,22 @@ public final class DetectorConfiguration
             this.__explicitlySet__.add("allowedValues");
             return this;
         }
+        /** Map of additional property values for configuration */
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
+        private java.util.List<AdditionalConfigPropertyDefinition> additionalProperties;
+
+        /**
+         * Map of additional property values for configuration
+         *
+         * @param additionalProperties the value to set
+         * @return this builder
+         */
+        public Builder additionalProperties(
+                java.util.List<AdditionalConfigPropertyDefinition> additionalProperties) {
+            this.additionalProperties = additionalProperties;
+            this.__explicitlySet__.add("additionalProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -170,7 +189,8 @@ public final class DetectorConfiguration
                             this.dataType,
                             this.values,
                             this.allowedValuesDataType,
-                            this.allowedValues);
+                            this.allowedValues,
+                            this.additionalProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -199,6 +219,9 @@ public final class DetectorConfiguration
             }
             if (model.wasPropertyExplicitlySet("allowedValues")) {
                 this.allowedValues(model.getAllowedValues());
+            }
+            if (model.wasPropertyExplicitlySet("additionalProperties")) {
+                this.additionalProperties(model.getAdditionalProperties());
             }
             return this;
         }
@@ -304,6 +327,19 @@ public final class DetectorConfiguration
         return allowedValues;
     }
 
+    /** Map of additional property values for configuration */
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
+    private final java.util.List<AdditionalConfigPropertyDefinition> additionalProperties;
+
+    /**
+     * Map of additional property values for configuration
+     *
+     * @return the value
+     */
+    public java.util.List<AdditionalConfigPropertyDefinition> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -326,6 +362,7 @@ public final class DetectorConfiguration
         sb.append(", values=").append(String.valueOf(this.values));
         sb.append(", allowedValuesDataType=").append(String.valueOf(this.allowedValuesDataType));
         sb.append(", allowedValues=").append(String.valueOf(this.allowedValues));
+        sb.append(", additionalProperties=").append(String.valueOf(this.additionalProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -347,6 +384,7 @@ public final class DetectorConfiguration
                 && java.util.Objects.equals(this.values, other.values)
                 && java.util.Objects.equals(this.allowedValuesDataType, other.allowedValuesDataType)
                 && java.util.Objects.equals(this.allowedValues, other.allowedValues)
+                && java.util.Objects.equals(this.additionalProperties, other.additionalProperties)
                 && super.equals(other);
     }
 
@@ -367,6 +405,11 @@ public final class DetectorConfiguration
         result =
                 (result * PRIME)
                         + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalProperties == null
+                                ? 43
+                                : this.additionalProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

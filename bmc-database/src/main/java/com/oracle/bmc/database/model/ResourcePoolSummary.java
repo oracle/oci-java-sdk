@@ -23,10 +23,21 @@ package com.oracle.bmc.database.model;
 public final class ResourcePoolSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"poolSize", "isDisabled"})
-    public ResourcePoolSummary(Integer poolSize, Boolean isDisabled) {
+    @java.beans.ConstructorProperties({
+        "poolSize",
+        "totalComputeCapacity",
+        "availableComputeCapacity",
+        "isDisabled"
+    })
+    public ResourcePoolSummary(
+            Integer poolSize,
+            Integer totalComputeCapacity,
+            Integer availableComputeCapacity,
+            Boolean isDisabled) {
         super();
         this.poolSize = poolSize;
+        this.totalComputeCapacity = totalComputeCapacity;
+        this.availableComputeCapacity = availableComputeCapacity;
         this.isDisabled = isDisabled;
     }
 
@@ -45,6 +56,36 @@ public final class ResourcePoolSummary
         public Builder poolSize(Integer poolSize) {
             this.poolSize = poolSize;
             this.__explicitlySet__.add("poolSize");
+            return this;
+        }
+        /** Resource Pool total capacity, it's currently 4x of pool size */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalComputeCapacity")
+        private Integer totalComputeCapacity;
+
+        /**
+         * Resource Pool total capacity, it's currently 4x of pool size
+         *
+         * @param totalComputeCapacity the value to set
+         * @return this builder
+         */
+        public Builder totalComputeCapacity(Integer totalComputeCapacity) {
+            this.totalComputeCapacity = totalComputeCapacity;
+            this.__explicitlySet__.add("totalComputeCapacity");
+            return this;
+        }
+        /** Available capacity left for new elastic pool members provision */
+        @com.fasterxml.jackson.annotation.JsonProperty("availableComputeCapacity")
+        private Integer availableComputeCapacity;
+
+        /**
+         * Available capacity left for new elastic pool members provision
+         *
+         * @param availableComputeCapacity the value to set
+         * @return this builder
+         */
+        public Builder availableComputeCapacity(Integer availableComputeCapacity) {
+            this.availableComputeCapacity = availableComputeCapacity;
+            this.__explicitlySet__.add("availableComputeCapacity");
             return this;
         }
         /** Indicates if the resource pool should be deleted for the Autonomous Database. */
@@ -67,7 +108,12 @@ public final class ResourcePoolSummary
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourcePoolSummary build() {
-            ResourcePoolSummary model = new ResourcePoolSummary(this.poolSize, this.isDisabled);
+            ResourcePoolSummary model =
+                    new ResourcePoolSummary(
+                            this.poolSize,
+                            this.totalComputeCapacity,
+                            this.availableComputeCapacity,
+                            this.isDisabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +124,12 @@ public final class ResourcePoolSummary
         public Builder copy(ResourcePoolSummary model) {
             if (model.wasPropertyExplicitlySet("poolSize")) {
                 this.poolSize(model.getPoolSize());
+            }
+            if (model.wasPropertyExplicitlySet("totalComputeCapacity")) {
+                this.totalComputeCapacity(model.getTotalComputeCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("availableComputeCapacity")) {
+                this.availableComputeCapacity(model.getAvailableComputeCapacity());
             }
             if (model.wasPropertyExplicitlySet("isDisabled")) {
                 this.isDisabled(model.getIsDisabled());
@@ -106,6 +158,32 @@ public final class ResourcePoolSummary
      */
     public Integer getPoolSize() {
         return poolSize;
+    }
+
+    /** Resource Pool total capacity, it's currently 4x of pool size */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalComputeCapacity")
+    private final Integer totalComputeCapacity;
+
+    /**
+     * Resource Pool total capacity, it's currently 4x of pool size
+     *
+     * @return the value
+     */
+    public Integer getTotalComputeCapacity() {
+        return totalComputeCapacity;
+    }
+
+    /** Available capacity left for new elastic pool members provision */
+    @com.fasterxml.jackson.annotation.JsonProperty("availableComputeCapacity")
+    private final Integer availableComputeCapacity;
+
+    /**
+     * Available capacity left for new elastic pool members provision
+     *
+     * @return the value
+     */
+    public Integer getAvailableComputeCapacity() {
+        return availableComputeCapacity;
     }
 
     /** Indicates if the resource pool should be deleted for the Autonomous Database. */
@@ -137,6 +215,9 @@ public final class ResourcePoolSummary
         sb.append("ResourcePoolSummary(");
         sb.append("super=").append(super.toString());
         sb.append("poolSize=").append(String.valueOf(this.poolSize));
+        sb.append(", totalComputeCapacity=").append(String.valueOf(this.totalComputeCapacity));
+        sb.append(", availableComputeCapacity=")
+                .append(String.valueOf(this.availableComputeCapacity));
         sb.append(", isDisabled=").append(String.valueOf(this.isDisabled));
         sb.append(")");
         return sb.toString();
@@ -153,6 +234,9 @@ public final class ResourcePoolSummary
 
         ResourcePoolSummary other = (ResourcePoolSummary) o;
         return java.util.Objects.equals(this.poolSize, other.poolSize)
+                && java.util.Objects.equals(this.totalComputeCapacity, other.totalComputeCapacity)
+                && java.util.Objects.equals(
+                        this.availableComputeCapacity, other.availableComputeCapacity)
                 && java.util.Objects.equals(this.isDisabled, other.isDisabled)
                 && super.equals(other);
     }
@@ -162,6 +246,16 @@ public final class ResourcePoolSummary
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.poolSize == null ? 43 : this.poolSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalComputeCapacity == null
+                                ? 43
+                                : this.totalComputeCapacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableComputeCapacity == null
+                                ? 43
+                                : this.availableComputeCapacity.hashCode());
         result = (result * PRIME) + (this.isDisabled == null ? 43 : this.isDisabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

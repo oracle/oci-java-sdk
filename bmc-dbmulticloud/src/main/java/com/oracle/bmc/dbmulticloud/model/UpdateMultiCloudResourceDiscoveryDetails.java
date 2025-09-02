@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * This object is about to provide input params to update Multi Cloud Resource Discovery. <br>
+ * This object is about to provide input params to update Multicloud Resource Discovery. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -51,14 +51,14 @@ public final class UpdateMultiCloudResourceDiscoveryDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Multi Cloud Resource Discovery.
+         * compartment that contains Multicloud Resource Discovery resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Multi Cloud Resource Discovery.
+         * compartment that contains Multicloud Resource Discovery resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -68,12 +68,12 @@ public final class UpdateMultiCloudResourceDiscoveryDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Display name of Oracle Multi Cloud Resource Discovery. */
+        /** Display name of the Multicloud Resource Discovery resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of Oracle Multi Cloud Resource Discovery.
+         * Display name of the Multicloud Resource Discovery resource.
          *
          * @param displayName the value to set
          * @return this builder
@@ -85,14 +85,14 @@ public final class UpdateMultiCloudResourceDiscoveryDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Connector.
+         * Oracle DB Connector resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbConnectorId")
         private String oracleDbConnectorId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Connector.
+         * Oracle DB Connector resource.
          *
          * @param oracleDbConnectorId the value to set
          * @return this builder
@@ -222,14 +222,14 @@ public final class UpdateMultiCloudResourceDiscoveryDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Multi Cloud Resource Discovery.
+     * compartment that contains Multicloud Resource Discovery resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Multi Cloud Resource Discovery.
+     * compartment that contains Multicloud Resource Discovery resource.
      *
      * @return the value
      */
@@ -237,12 +237,12 @@ public final class UpdateMultiCloudResourceDiscoveryDetails
         return compartmentId;
     }
 
-    /** Display name of Oracle Multi Cloud Resource Discovery. */
+    /** Display name of the Multicloud Resource Discovery resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of Oracle Multi Cloud Resource Discovery.
+     * Display name of the Multicloud Resource Discovery resource.
      *
      * @return the value
      */
@@ -252,14 +252,14 @@ public final class UpdateMultiCloudResourceDiscoveryDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Connector.
+     * Oracle DB Connector resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbConnectorId")
     private final String oracleDbConnectorId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Connector.
+     * Oracle DB Connector resource.
      *
      * @return the value
      */

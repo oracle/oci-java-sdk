@@ -6902,6 +6902,20 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.database.model.GoogleCloudProviderEncryptionKeyDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.database.model.GoogleCloudProviderEncryptionKeyDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.database.model.GranularMaintenanceHistoryDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

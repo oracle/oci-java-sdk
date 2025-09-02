@@ -18,13 +18,13 @@ public class UpdateMultiCloudResourceDiscoveryRequest
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Multi Cloud Discovery Resource.
+     * Multicloud Discovery Resource.
      */
     private String multiCloudResourceDiscoveryId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Multi Cloud Discovery Resource.
+     * Multicloud Discovery Resource.
      */
     public String getMultiCloudResourceDiscoveryId() {
         return multiCloudResourceDiscoveryId;
@@ -83,13 +83,13 @@ public class UpdateMultiCloudResourceDiscoveryRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Multi Cloud Discovery Resource.
+         * Multicloud Discovery Resource.
          */
         private String multiCloudResourceDiscoveryId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Multi Cloud Discovery Resource.
+         * Multicloud Discovery Resource.
          *
          * @param multiCloudResourceDiscoveryId the value to set
          * @return this builder instance

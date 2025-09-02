@@ -43,6 +43,8 @@ public final class ExascaleDbStorageVault
         "additionalFlashCacheInPercent",
         "clusterPlacementGroupId",
         "subscriptionId",
+        "isAutoscaleEnabled",
+        "autoscaleLimitInGBs",
         "attachedShapeAttributes"
     })
     public ExascaleDbStorageVault(
@@ -65,6 +67,8 @@ public final class ExascaleDbStorageVault
             Integer additionalFlashCacheInPercent,
             String clusterPlacementGroupId,
             String subscriptionId,
+            Boolean isAutoscaleEnabled,
+            Integer autoscaleLimitInGBs,
             java.util.List<AttachedShapeAttributes> attachedShapeAttributes) {
         super();
         this.id = id;
@@ -86,6 +90,8 @@ public final class ExascaleDbStorageVault
         this.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.subscriptionId = subscriptionId;
+        this.isAutoscaleEnabled = isAutoscaleEnabled;
+        this.autoscaleLimitInGBs = autoscaleLimitInGBs;
         this.attachedShapeAttributes = attachedShapeAttributes;
     }
 
@@ -435,6 +441,44 @@ public final class ExascaleDbStorageVault
             return this;
         }
         /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default
+         * value is {@code FALSE}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoscaleEnabled")
+        private Boolean isAutoscaleEnabled;
+
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default
+         * value is {@code FALSE}.
+         *
+         * @param isAutoscaleEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAutoscaleEnabled(Boolean isAutoscaleEnabled) {
+            this.isAutoscaleEnabled = isAutoscaleEnabled;
+            this.__explicitlySet__.add("isAutoscaleEnabled");
+            return this;
+        }
+        /**
+         * Maximum limit storage size in gigabytes, that is applicable for the Database Storage
+         * Vault.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("autoscaleLimitInGBs")
+        private Integer autoscaleLimitInGBs;
+
+        /**
+         * Maximum limit storage size in gigabytes, that is applicable for the Database Storage
+         * Vault.
+         *
+         * @param autoscaleLimitInGBs the value to set
+         * @return this builder
+         */
+        public Builder autoscaleLimitInGBs(Integer autoscaleLimitInGBs) {
+            this.autoscaleLimitInGBs = autoscaleLimitInGBs;
+            this.__explicitlySet__.add("autoscaleLimitInGBs");
+            return this;
+        }
+        /**
          * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database
          * Storage Vault.
          */
@@ -480,6 +524,8 @@ public final class ExascaleDbStorageVault
                             this.additionalFlashCacheInPercent,
                             this.clusterPlacementGroupId,
                             this.subscriptionId,
+                            this.isAutoscaleEnabled,
+                            this.autoscaleLimitInGBs,
                             this.attachedShapeAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -545,6 +591,12 @@ public final class ExascaleDbStorageVault
             }
             if (model.wasPropertyExplicitlySet("subscriptionId")) {
                 this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoscaleEnabled")) {
+                this.isAutoscaleEnabled(model.getIsAutoscaleEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoscaleLimitInGBs")) {
+                this.autoscaleLimitInGBs(model.getAutoscaleLimitInGBs());
             }
             if (model.wasPropertyExplicitlySet("attachedShapeAttributes")) {
                 this.attachedShapeAttributes(model.getAttachedShapeAttributes());
@@ -913,6 +965,38 @@ public final class ExascaleDbStorageVault
         return subscriptionId;
     }
 
+    /**
+     * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value
+     * is {@code FALSE}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoscaleEnabled")
+    private final Boolean isAutoscaleEnabled;
+
+    /**
+     * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value
+     * is {@code FALSE}.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoscaleEnabled() {
+        return isAutoscaleEnabled;
+    }
+
+    /**
+     * Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("autoscaleLimitInGBs")
+    private final Integer autoscaleLimitInGBs;
+
+    /**
+     * Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     *
+     * @return the value
+     */
+    public Integer getAutoscaleLimitInGBs() {
+        return autoscaleLimitInGBs;
+    }
+
     /** */
     public enum AttachedShapeAttributes implements com.oracle.bmc.http.internal.BmcEnum {
         SmartStorage("SMART_STORAGE"),
@@ -1014,6 +1098,8 @@ public final class ExascaleDbStorageVault
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", isAutoscaleEnabled=").append(String.valueOf(this.isAutoscaleEnabled));
+        sb.append(", autoscaleLimitInGBs=").append(String.valueOf(this.autoscaleLimitInGBs));
         sb.append(", attachedShapeAttributes=")
                 .append(String.valueOf(this.attachedShapeAttributes));
         sb.append(")");
@@ -1053,6 +1139,8 @@ public final class ExascaleDbStorageVault
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.isAutoscaleEnabled, other.isAutoscaleEnabled)
+                && java.util.Objects.equals(this.autoscaleLimitInGBs, other.autoscaleLimitInGBs)
                 && java.util.Objects.equals(
                         this.attachedShapeAttributes, other.attachedShapeAttributes)
                 && super.equals(other);
@@ -1111,6 +1199,16 @@ public final class ExascaleDbStorageVault
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoscaleEnabled == null
+                                ? 43
+                                : this.isAutoscaleEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoscaleLimitInGBs == null
+                                ? 43
+                                : this.autoscaleLimitInGBs.hashCode());
         result =
                 (result * PRIME)
                         + (this.attachedShapeAttributes == null

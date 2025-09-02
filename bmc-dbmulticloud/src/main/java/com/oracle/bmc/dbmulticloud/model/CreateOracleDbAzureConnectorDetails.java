@@ -5,7 +5,7 @@
 package com.oracle.bmc.dbmulticloud.model;
 
 /**
- * This object is about to provide input params to create Oracle DB Azure Connector Resource. <br>
+ * Create Oracle DB Azure Connector resource object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -67,12 +67,16 @@ public final class CreateOracleDbAzureConnectorDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID of the compartment that contains Oracle DB Azure Connector Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains Oracle DB Azure Connector resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ID of the compartment that contains Oracle DB Azure Connector Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains Oracle DB Azure Connector resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -82,12 +86,12 @@ public final class CreateOracleDbAzureConnectorDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Oracle DB Azure Connector Resource name. */
+        /** Oracle DB Azure Connector resource name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Oracle DB Azure Connector Resource name.
+         * Oracle DB Azure Connector resource name.
          *
          * @param displayName the value to set
          * @return this builder
@@ -97,12 +101,16 @@ public final class CreateOracleDbAzureConnectorDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbClusterResourceId")
         private String dbClusterResourceId;
 
         /**
-         * The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
          *
          * @param dbClusterResourceId the value to set
          * @return this builder
@@ -112,12 +120,12 @@ public final class CreateOracleDbAzureConnectorDetails
             this.__explicitlySet__.add("dbClusterResourceId");
             return this;
         }
-        /** Azure Identity Mechanism. */
+        /** Azure Identity mechanism. */
         @com.fasterxml.jackson.annotation.JsonProperty("azureIdentityMechanism")
         private OracleDbAzureConnector.AzureIdentityMechanism azureIdentityMechanism;
 
         /**
-         * Azure Identity Mechanism.
+         * Azure Identity mechanism.
          *
          * @param azureIdentityMechanism the value to set
          * @return this builder
@@ -158,12 +166,12 @@ public final class CreateOracleDbAzureConnectorDetails
             this.__explicitlySet__.add("azureSubscriptionId");
             return this;
         }
-        /** Azure Resource Group Name. */
+        /** Azure Resource group name. */
         @com.fasterxml.jackson.annotation.JsonProperty("azureResourceGroup")
         private String azureResourceGroup;
 
         /**
-         * Azure Resource Group Name.
+         * Azure Resource group name.
          *
          * @param azureResourceGroup the value to set
          * @return this builder
@@ -173,16 +181,12 @@ public final class CreateOracleDbAzureConnectorDetails
             this.__explicitlySet__.add("azureResourceGroup");
             return this;
         }
-        /**
-         * Azure bearer access token. If bearer access token is provided then Service Principal
-         * details are not requires.
-         */
+        /** Azure bearer access token. */
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
         /**
-         * Azure bearer access token. If bearer access token is provided then Service Principal
-         * details are not requires.
+         * Azure bearer access token.
          *
          * @param accessToken the value to set
          * @return this builder
@@ -207,12 +211,12 @@ public final class CreateOracleDbAzureConnectorDetails
             this.__explicitlySet__.add("privateEndpointIpAddress");
             return this;
         }
-        /** Private endpoint DNS Alias. */
+        /** Private endpoint's DNS alias. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsAlias")
         private String privateEndpointDnsAlias;
 
         /**
-         * Private endpoint DNS Alias.
+         * Private endpoint's DNS alias.
          *
          * @param privateEndpointDnsAlias the value to set
          * @return this builder
@@ -349,12 +353,16 @@ public final class CreateOracleDbAzureConnectorDetails
         return new Builder().copy(this);
     }
 
-    /** The ID of the compartment that contains Oracle DB Azure Connector Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains Oracle DB Azure Connector resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ID of the compartment that contains Oracle DB Azure Connector Resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains Oracle DB Azure Connector resource.
      *
      * @return the value
      */
@@ -362,12 +370,12 @@ public final class CreateOracleDbAzureConnectorDetails
         return compartmentId;
     }
 
-    /** Oracle DB Azure Connector Resource name. */
+    /** Oracle DB Azure Connector resource name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Oracle DB Azure Connector Resource name.
+     * Oracle DB Azure Connector resource name.
      *
      * @return the value
      */
@@ -375,12 +383,16 @@ public final class CreateOracleDbAzureConnectorDetails
         return displayName;
     }
 
-    /** The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbClusterResourceId")
     private final String dbClusterResourceId;
 
     /**
-     * The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      *
      * @return the value
      */
@@ -388,12 +400,12 @@ public final class CreateOracleDbAzureConnectorDetails
         return dbClusterResourceId;
     }
 
-    /** Azure Identity Mechanism. */
+    /** Azure Identity mechanism. */
     @com.fasterxml.jackson.annotation.JsonProperty("azureIdentityMechanism")
     private final OracleDbAzureConnector.AzureIdentityMechanism azureIdentityMechanism;
 
     /**
-     * Azure Identity Mechanism.
+     * Azure Identity mechanism.
      *
      * @return the value
      */
@@ -427,12 +439,12 @@ public final class CreateOracleDbAzureConnectorDetails
         return azureSubscriptionId;
     }
 
-    /** Azure Resource Group Name. */
+    /** Azure Resource group name. */
     @com.fasterxml.jackson.annotation.JsonProperty("azureResourceGroup")
     private final String azureResourceGroup;
 
     /**
-     * Azure Resource Group Name.
+     * Azure Resource group name.
      *
      * @return the value
      */
@@ -440,16 +452,12 @@ public final class CreateOracleDbAzureConnectorDetails
         return azureResourceGroup;
     }
 
-    /**
-     * Azure bearer access token. If bearer access token is provided then Service Principal details
-     * are not requires.
-     */
+    /** Azure bearer access token. */
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
     /**
-     * Azure bearer access token. If bearer access token is provided then Service Principal details
-     * are not requires.
+     * Azure bearer access token.
      *
      * @return the value
      */
@@ -470,12 +478,12 @@ public final class CreateOracleDbAzureConnectorDetails
         return privateEndpointIpAddress;
     }
 
-    /** Private endpoint DNS Alias. */
+    /** Private endpoint's DNS alias. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsAlias")
     private final String privateEndpointDnsAlias;
 
     /**
-     * Private endpoint DNS Alias.
+     * Private endpoint's DNS alias.
      *
      * @return the value
      */

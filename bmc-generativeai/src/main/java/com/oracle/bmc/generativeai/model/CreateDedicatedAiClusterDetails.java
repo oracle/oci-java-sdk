@@ -144,7 +144,8 @@ public final class CreateDedicatedAiClusterDetails
          *
          * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2
          * - SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
-         * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE
+         * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
+         * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1
          */
         @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
         private DedicatedAiCluster.UnitShape unitShape;
@@ -155,7 +156,8 @@ public final class CreateDedicatedAiClusterDetails
          *
          * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2
          * - SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
-         * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE
+         * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
+         * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1
          *
          * @param unitShape the value to set
          * @return this builder
@@ -355,7 +357,8 @@ public final class CreateDedicatedAiClusterDetails
      *
      * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2 -
      * SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
-     * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE
+     * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
+     * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1
      */
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
     private final DedicatedAiCluster.UnitShape unitShape;
@@ -366,7 +369,8 @@ public final class CreateDedicatedAiClusterDetails
      *
      * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2 -
      * SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
-     * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE
+     * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
+     * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1
      *
      * @return the value
      */

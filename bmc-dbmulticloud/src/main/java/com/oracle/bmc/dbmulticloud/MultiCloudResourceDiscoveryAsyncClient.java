@@ -118,7 +118,7 @@ public class MultiCloudResourceDiscoveryAsyncClient
                 .serviceDetails(
                         "MultiCloudResourceDiscovery",
                         "ChangeMultiCloudResourceDiscoveryCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/ChangeMultiCloudResourceDiscoveryCompartment")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeMultiCloudResourceDiscoveryCompartmentRequest::builder)
                 .basePath("/20240501")
@@ -156,9 +156,7 @@ public class MultiCloudResourceDiscoveryAsyncClient
         return clientCall(request, CreateMultiCloudResourceDiscoveryResponse::builder)
                 .logger(LOG, "createMultiCloudResourceDiscovery")
                 .serviceDetails(
-                        "MultiCloudResourceDiscovery",
-                        "CreateMultiCloudResourceDiscovery",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/CreateMultiCloudResourceDiscovery")
+                        "MultiCloudResourceDiscovery", "CreateMultiCloudResourceDiscovery", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMultiCloudResourceDiscoveryRequest::builder)
                 .basePath("/20240501")
@@ -204,9 +202,7 @@ public class MultiCloudResourceDiscoveryAsyncClient
         return clientCall(request, DeleteMultiCloudResourceDiscoveryResponse::builder)
                 .logger(LOG, "deleteMultiCloudResourceDiscovery")
                 .serviceDetails(
-                        "MultiCloudResourceDiscovery",
-                        "DeleteMultiCloudResourceDiscovery",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/DeleteMultiCloudResourceDiscovery")
+                        "MultiCloudResourceDiscovery", "DeleteMultiCloudResourceDiscovery", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMultiCloudResourceDiscoveryRequest::builder)
                 .basePath("/20240501")
@@ -239,10 +235,7 @@ public class MultiCloudResourceDiscoveryAsyncClient
 
         return clientCall(request, GetMultiCloudResourceDiscoveryResponse::builder)
                 .logger(LOG, "getMultiCloudResourceDiscovery")
-                .serviceDetails(
-                        "MultiCloudResourceDiscovery",
-                        "GetMultiCloudResourceDiscovery",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/GetMultiCloudResourceDiscovery")
+                .serviceDetails("MultiCloudResourceDiscovery", "GetMultiCloudResourceDiscovery", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMultiCloudResourceDiscoveryRequest::builder)
                 .basePath("/20240501")
@@ -277,9 +270,7 @@ public class MultiCloudResourceDiscoveryAsyncClient
         return clientCall(request, ListMultiCloudResourceDiscoveriesResponse::builder)
                 .logger(LOG, "listMultiCloudResourceDiscoveries")
                 .serviceDetails(
-                        "MultiCloudResourceDiscovery",
-                        "ListMultiCloudResourceDiscoveries",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/ListMultiCloudResourceDiscoveries")
+                        "MultiCloudResourceDiscovery", "ListMultiCloudResourceDiscoveries", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMultiCloudResourceDiscoveriesRequest::builder)
                 .basePath("/20240501")
@@ -291,6 +282,10 @@ public class MultiCloudResourceDiscoveryAsyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("oracleDbAzureConnectorId", request.getOracleDbAzureConnectorId())
                 .appendEnumQueryParam("resourceType", request.getResourceType())
+                .appendListQueryParam(
+                        "resourcesFilter",
+                        request.getResourcesFilter(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -330,9 +325,7 @@ public class MultiCloudResourceDiscoveryAsyncClient
         return clientCall(request, UpdateMultiCloudResourceDiscoveryResponse::builder)
                 .logger(LOG, "updateMultiCloudResourceDiscovery")
                 .serviceDetails(
-                        "MultiCloudResourceDiscovery",
-                        "UpdateMultiCloudResourceDiscovery",
-                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/UpdateMultiCloudResourceDiscovery")
+                        "MultiCloudResourceDiscovery", "UpdateMultiCloudResourceDiscovery", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMultiCloudResourceDiscoveryRequest::builder)
                 .basePath("/20240501")

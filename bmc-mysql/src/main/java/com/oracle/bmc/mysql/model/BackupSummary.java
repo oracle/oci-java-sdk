@@ -31,6 +31,8 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         "displayName",
         "description",
         "softDelete",
+        "backupPreparationStatus",
+        "validationStatus",
         "timeCreated",
         "lifecycleState",
         "lifecycleDetails",
@@ -57,6 +59,8 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             String displayName,
             String description,
             SoftDelete softDelete,
+            BackupValidationDetails.BackupPreparationStatus backupPreparationStatus,
+            BackupValidationDetails.ValidationStatus validationStatus,
             java.util.Date timeCreated,
             Backup.LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -82,6 +86,8 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         this.displayName = displayName;
         this.description = description;
         this.softDelete = softDelete;
+        this.backupPreparationStatus = backupPreparationStatus;
+        this.validationStatus = validationStatus;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -168,6 +174,37 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         public Builder softDelete(SoftDelete softDelete) {
             this.softDelete = softDelete;
             this.__explicitlySet__.add("softDelete");
+            return this;
+        }
+        /** Indicates whether the backup has been prepared successfully. */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupPreparationStatus")
+        private BackupValidationDetails.BackupPreparationStatus backupPreparationStatus;
+
+        /**
+         * Indicates whether the backup has been prepared successfully.
+         *
+         * @param backupPreparationStatus the value to set
+         * @return this builder
+         */
+        public Builder backupPreparationStatus(
+                BackupValidationDetails.BackupPreparationStatus backupPreparationStatus) {
+            this.backupPreparationStatus = backupPreparationStatus;
+            this.__explicitlySet__.add("backupPreparationStatus");
+            return this;
+        }
+        /** Status of the backup validation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
+        private BackupValidationDetails.ValidationStatus validationStatus;
+
+        /**
+         * Status of the backup validation.
+         *
+         * @param validationStatus the value to set
+         * @return this builder
+         */
+        public Builder validationStatus(BackupValidationDetails.ValidationStatus validationStatus) {
+            this.validationStatus = validationStatus;
+            this.__explicitlySet__.add("validationStatus");
             return this;
         }
         /** The time the backup was created. */
@@ -494,6 +531,8 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.displayName,
                             this.description,
                             this.softDelete,
+                            this.backupPreparationStatus,
+                            this.validationStatus,
                             this.timeCreated,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -533,6 +572,12 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("softDelete")) {
                 this.softDelete(model.getSoftDelete());
+            }
+            if (model.wasPropertyExplicitlySet("backupPreparationStatus")) {
+                this.backupPreparationStatus(model.getBackupPreparationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("validationStatus")) {
+                this.validationStatus(model.getValidationStatus());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -661,6 +706,32 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
      */
     public SoftDelete getSoftDelete() {
         return softDelete;
+    }
+
+    /** Indicates whether the backup has been prepared successfully. */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupPreparationStatus")
+    private final BackupValidationDetails.BackupPreparationStatus backupPreparationStatus;
+
+    /**
+     * Indicates whether the backup has been prepared successfully.
+     *
+     * @return the value
+     */
+    public BackupValidationDetails.BackupPreparationStatus getBackupPreparationStatus() {
+        return backupPreparationStatus;
+    }
+
+    /** Status of the backup validation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
+    private final BackupValidationDetails.ValidationStatus validationStatus;
+
+    /**
+     * Status of the backup validation.
+     *
+     * @return the value
+     */
+    public BackupValidationDetails.ValidationStatus getValidationStatus() {
+        return validationStatus;
     }
 
     /** The time the backup was created. */
@@ -952,6 +1023,9 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", softDelete=").append(String.valueOf(this.softDelete));
+        sb.append(", backupPreparationStatus=")
+                .append(String.valueOf(this.backupPreparationStatus));
+        sb.append(", validationStatus=").append(String.valueOf(this.validationStatus));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -992,6 +1066,9 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.softDelete, other.softDelete)
+                && java.util.Objects.equals(
+                        this.backupPreparationStatus, other.backupPreparationStatus)
+                && java.util.Objects.equals(this.validationStatus, other.validationStatus)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -1026,6 +1103,14 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupPreparationStatus == null
+                                ? 43
+                                : this.backupPreparationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.validationStatus == null ? 43 : this.validationStatus.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)

@@ -15,10 +15,16 @@ import com.oracle.bmc.dbmulticloud.model.*;
 public class DeleteOracleDbAzureVaultRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the Oracle DB Azure Vault Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Vault resource.
+     */
     private String oracleDbAzureVaultId;
 
-    /** The ID of the Oracle DB Azure Vault Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Vault resource.
+     */
     public String getOracleDbAzureVaultId() {
         return oracleDbAzureVaultId;
     }
@@ -53,11 +59,15 @@ public class DeleteOracleDbAzureVaultRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the Oracle DB Azure Vault Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Vault resource.
+         */
         private String oracleDbAzureVaultId = null;
 
         /**
-         * The ID of the Oracle DB Azure Vault Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Vault resource.
          *
          * @param oracleDbAzureVaultId the value to set
          * @return this builder instance

@@ -33,6 +33,7 @@ public class RealtimeSpeechExampleClient implements RealtimeSpeechClientListener
     private static final String LANGUAGE_CODE = "en-US";
     private static final RealtimeParameters.ModelDomain MODEL_DOMAIN =
             RealtimeParameters.ModelDomain.Generic;
+    private static final String MODEL_TYPE = "ORACLE";
     private static final RealtimeParameters.StabilizePartialResults STABILIZE_PARTIAL_RESULTS =
             RealtimeParameters.StabilizePartialResults.None;
     private static final String ENCODING = "audio/raw;rate=16000";
@@ -245,8 +246,9 @@ public class RealtimeSpeechExampleClient implements RealtimeSpeechClientListener
                             .finalSilenceThresholdInMs(FINAL_SILENCE_THRESHOLD)
                             .shouldIgnoreInvalidCustomizations(
                                     SHOULD_IGNORE_CUSTOMIZATION_LOAD_ERRORS)
-                            .languageCode(LANGUAGE_CODE) // Could be one
+                            .languageCode(LANGUAGE_CODE)
                             .modelDomain(MODEL_DOMAIN)
+                            .modelType(MODEL_TYPE)
                             .punctuation(PUNCTUATION)
                             .encoding(ENCODING)
                             .stabilizePartialResults(STABILIZE_PARTIAL_RESULTS)

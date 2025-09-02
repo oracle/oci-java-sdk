@@ -16,18 +16,24 @@ public class PatchOracleDbAzureConnectorRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dbmulticloud.model.PatchOracleDbAzureConnectorDetails> {
 
-    /** The ID of the Oracle DB Azure Connector Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Connector resource.
+     */
     private String oracleDbAzureConnectorId;
 
-    /** The ID of the Oracle DB Azure Connector Resource. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB Azure Connector resource.
+     */
     public String getOracleDbAzureConnectorId() {
         return oracleDbAzureConnectorId;
     }
-    /** Patch Azure Arc Agent on VM Cluster with new version. */
+    /** Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version. */
     private com.oracle.bmc.dbmulticloud.model.PatchOracleDbAzureConnectorDetails
             patchOracleDbAzureConnectorDetails;
 
-    /** Patch Azure Arc Agent on VM Cluster with new version. */
+    /** Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version. */
     public com.oracle.bmc.dbmulticloud.model.PatchOracleDbAzureConnectorDetails
             getPatchOracleDbAzureConnectorDetails() {
         return patchOracleDbAzureConnectorDetails;
@@ -75,11 +81,15 @@ public class PatchOracleDbAzureConnectorRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the Oracle DB Azure Connector Resource. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Connector resource.
+         */
         private String oracleDbAzureConnectorId = null;
 
         /**
-         * The ID of the Oracle DB Azure Connector Resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Connector resource.
          *
          * @param oracleDbAzureConnectorId the value to set
          * @return this builder instance
@@ -89,12 +99,12 @@ public class PatchOracleDbAzureConnectorRequest
             return this;
         }
 
-        /** Patch Azure Arc Agent on VM Cluster with new version. */
+        /** Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version. */
         private com.oracle.bmc.dbmulticloud.model.PatchOracleDbAzureConnectorDetails
                 patchOracleDbAzureConnectorDetails = null;
 
         /**
-         * Patch Azure Arc Agent on VM Cluster with new version.
+         * Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
          *
          * @param patchOracleDbAzureConnectorDetails the value to set
          * @return this builder instance

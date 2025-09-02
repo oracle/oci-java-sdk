@@ -28,24 +28,44 @@ public class ListOracleDbAzureKeysRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return Azure Vault Keys. */
+    /**
+     * A filter to return Oracle DB Azure Vault Keys resources that match the specified display
+     * name.
+     */
     private String displayName;
 
-    /** A filter to return Azure Vault Keys. */
+    /**
+     * A filter to return Oracle DB Azure Vault Keys resources that match the specified display
+     * name.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return Oracle DB Azure Vault Resources. */
+    /**
+     * A filter to return Oracle DB Azure Vault resources that match the specified
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle
+     * DB Azure Vault resource.
+     */
     private String oracleDbAzureVaultId;
 
-    /** A filter to return Oracle DB Azure Vault Resources. */
+    /**
+     * A filter to return Oracle DB Azure Vault resources that match the specified
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle
+     * DB Azure Vault resource.
+     */
     public String getOracleDbAzureVaultId() {
         return oracleDbAzureVaultId;
     }
-    /** A filter to return Oracle DB Azure Vault Key Resources. */
+    /**
+     * A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB
+     * Azure Key [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     private String oracleDbAzureKeyId;
 
-    /** A filter to return Oracle DB Azure Vault Key Resources. */
+    /**
+     * A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB
+     * Azure Key [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     public String getOracleDbAzureKeyId() {
         return oracleDbAzureKeyId;
     }
@@ -174,11 +194,15 @@ public class ListOracleDbAzureKeysRequest
             return this;
         }
 
-        /** A filter to return Azure Vault Keys. */
+        /**
+         * A filter to return Oracle DB Azure Vault Keys resources that match the specified display
+         * name.
+         */
         private String displayName = null;
 
         /**
-         * A filter to return Azure Vault Keys.
+         * A filter to return Oracle DB Azure Vault Keys resources that match the specified display
+         * name.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -188,11 +212,17 @@ public class ListOracleDbAzureKeysRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Vault Resources. */
+        /**
+         * A filter to return Oracle DB Azure Vault resources that match the specified
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Vault resource.
+         */
         private String oracleDbAzureVaultId = null;
 
         /**
-         * A filter to return Oracle DB Azure Vault Resources.
+         * A filter to return Oracle DB Azure Vault resources that match the specified
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB Azure Vault resource.
          *
          * @param oracleDbAzureVaultId the value to set
          * @return this builder instance
@@ -202,11 +232,15 @@ public class ListOracleDbAzureKeysRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Vault Key Resources. */
+        /**
+         * A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB
+         * Azure Key [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         private String oracleDbAzureKeyId = null;
 
         /**
-         * A filter to return Oracle DB Azure Vault Key Resources.
+         * A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB
+         * Azure Key [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param oracleDbAzureKeyId the value to set
          * @return this builder instance

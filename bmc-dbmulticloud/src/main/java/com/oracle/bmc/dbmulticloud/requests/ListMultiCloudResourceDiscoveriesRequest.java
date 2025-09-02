@@ -28,55 +28,68 @@ public class ListMultiCloudResourceDiscoveriesRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Display Name of the Multi Cloud Discovery Resource. */
+    /**
+     * A filter to return Oracle DB Multicloud Discovery resources that match the specified display
+     * name.
+     */
     private String displayName;
 
-    /** Display Name of the Multi Cloud Discovery Resource. */
+    /**
+     * A filter to return Oracle DB Multicloud Discovery resources that match the specified display
+     * name.
+     */
     public String getDisplayName() {
         return displayName;
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Multi Cloud Discovery Resource.
+     * Multicloud Discovery resource.
      */
     private String multiCloudResourceDiscoveryId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Multi Cloud Discovery Resource.
+     * Multicloud Discovery resource.
      */
     public String getMultiCloudResourceDiscoveryId() {
         return multiCloudResourceDiscoveryId;
     }
     /**
-     * A filter to return only resources that match the given lifecycle state. The state value is
-     * case-insensitive.
+     * A filter to return only resources that match the specified lifecycle state. The state value
+     * is case-insensitive.
      */
     private com.oracle.bmc.dbmulticloud.model.MultiCloudResourceDiscovery.LifecycleState
             lifecycleState;
 
     /**
-     * A filter to return only resources that match the given lifecycle state. The state value is
-     * case-insensitive.
+     * A filter to return only resources that match the specified lifecycle state. The state value
+     * is case-insensitive.
      */
     public com.oracle.bmc.dbmulticloud.model.MultiCloudResourceDiscovery.LifecycleState
             getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
     private String oracleDbAzureConnectorId;
 
-    /** A filter to return Oracle DB Azure Blob Mount Resources. */
+    /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
     public String getOracleDbAzureConnectorId() {
         return oracleDbAzureConnectorId;
     }
-    /** The type of Multi Cloud Resource. */
+    /** The type of Multicloud Resource. */
     private com.oracle.bmc.dbmulticloud.model.MultiCloudResourceDiscovery.ResourceType resourceType;
 
-    /** The type of Multi Cloud Resource. */
+    /** The type of Multicloud Resource. */
     public com.oracle.bmc.dbmulticloud.model.MultiCloudResourceDiscovery.ResourceType
             getResourceType() {
         return resourceType;
+    }
+    /** Specifies the type(s) of resources to discover in the target cloud provider. */
+    private java.util.List<String> resourcesFilter;
+
+    /** Specifies the type(s) of resources to discover in the target cloud provider. */
+    public java.util.List<String> getResourcesFilter() {
+        return resourcesFilter;
     }
     /** The maximum number of items to return. */
     private Integer limit;
@@ -190,11 +203,15 @@ public class ListMultiCloudResourceDiscoveriesRequest
             return this;
         }
 
-        /** Display Name of the Multi Cloud Discovery Resource. */
+        /**
+         * A filter to return Oracle DB Multicloud Discovery resources that match the specified
+         * display name.
+         */
         private String displayName = null;
 
         /**
-         * Display Name of the Multi Cloud Discovery Resource.
+         * A filter to return Oracle DB Multicloud Discovery resources that match the specified
+         * display name.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -206,13 +223,13 @@ public class ListMultiCloudResourceDiscoveriesRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Multi Cloud Discovery Resource.
+         * Multicloud Discovery resource.
          */
         private String multiCloudResourceDiscoveryId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Multi Cloud Discovery Resource.
+         * Multicloud Discovery resource.
          *
          * @param multiCloudResourceDiscoveryId the value to set
          * @return this builder instance
@@ -223,15 +240,15 @@ public class ListMultiCloudResourceDiscoveriesRequest
         }
 
         /**
-         * A filter to return only resources that match the given lifecycle state. The state value
-         * is case-insensitive.
+         * A filter to return only resources that match the specified lifecycle state. The state
+         * value is case-insensitive.
          */
         private com.oracle.bmc.dbmulticloud.model.MultiCloudResourceDiscovery.LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only resources that match the given lifecycle state. The state value
-         * is case-insensitive.
+         * A filter to return only resources that match the specified lifecycle state. The state
+         * value is case-insensitive.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -243,11 +260,11 @@ public class ListMultiCloudResourceDiscoveriesRequest
             return this;
         }
 
-        /** A filter to return Oracle DB Azure Blob Mount Resources. */
+        /** A filter to return Oracle DB Azure Azure Identity Connector resources. */
         private String oracleDbAzureConnectorId = null;
 
         /**
-         * A filter to return Oracle DB Azure Blob Mount Resources.
+         * A filter to return Oracle DB Azure Azure Identity Connector resources.
          *
          * @param oracleDbAzureConnectorId the value to set
          * @return this builder instance
@@ -257,12 +274,12 @@ public class ListMultiCloudResourceDiscoveriesRequest
             return this;
         }
 
-        /** The type of Multi Cloud Resource. */
+        /** The type of Multicloud Resource. */
         private com.oracle.bmc.dbmulticloud.model.MultiCloudResourceDiscovery.ResourceType
                 resourceType = null;
 
         /**
-         * The type of Multi Cloud Resource.
+         * The type of Multicloud Resource.
          *
          * @param resourceType the value to set
          * @return this builder instance
@@ -272,6 +289,31 @@ public class ListMultiCloudResourceDiscoveriesRequest
                         resourceType) {
             this.resourceType = resourceType;
             return this;
+        }
+
+        /** Specifies the type(s) of resources to discover in the target cloud provider. */
+        private java.util.List<String> resourcesFilter = null;
+
+        /**
+         * Specifies the type(s) of resources to discover in the target cloud provider.
+         *
+         * @param resourcesFilter the value to set
+         * @return this builder instance
+         */
+        public Builder resourcesFilter(java.util.List<String> resourcesFilter) {
+            this.resourcesFilter = resourcesFilter;
+            return this;
+        }
+
+        /**
+         * Singular setter. Specifies the type(s) of resources to discover in the target cloud
+         * provider.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder resourcesFilter(String singularValue) {
+            return this.resourcesFilter(java.util.Arrays.asList(singularValue));
         }
 
         /** The maximum number of items to return. */
@@ -390,6 +432,7 @@ public class ListMultiCloudResourceDiscoveriesRequest
             lifecycleState(o.getLifecycleState());
             oracleDbAzureConnectorId(o.getOracleDbAzureConnectorId());
             resourceType(o.getResourceType());
+            resourcesFilter(o.getResourcesFilter());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -438,6 +481,7 @@ public class ListMultiCloudResourceDiscoveriesRequest
             request.lifecycleState = lifecycleState;
             request.oracleDbAzureConnectorId = oracleDbAzureConnectorId;
             request.resourceType = resourceType;
+            request.resourcesFilter = resourcesFilter;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -446,7 +490,7 @@ public class ListMultiCloudResourceDiscoveriesRequest
             return request;
             // new ListMultiCloudResourceDiscoveriesRequest(compartmentId, displayName,
             // multiCloudResourceDiscoveryId, lifecycleState, oracleDbAzureConnectorId,
-            // resourceType, limit, page, sortOrder, sortBy, opcRequestId);
+            // resourceType, resourcesFilter, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -463,6 +507,7 @@ public class ListMultiCloudResourceDiscoveriesRequest
                 .lifecycleState(lifecycleState)
                 .oracleDbAzureConnectorId(oracleDbAzureConnectorId)
                 .resourceType(resourceType)
+                .resourcesFilter(resourcesFilter)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -492,6 +537,7 @@ public class ListMultiCloudResourceDiscoveriesRequest
         sb.append(",oracleDbAzureConnectorId=")
                 .append(String.valueOf(this.oracleDbAzureConnectorId));
         sb.append(",resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(",resourcesFilter=").append(String.valueOf(this.resourcesFilter));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -521,6 +567,7 @@ public class ListMultiCloudResourceDiscoveriesRequest
                 && java.util.Objects.equals(
                         this.oracleDbAzureConnectorId, other.oracleDbAzureConnectorId)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.resourcesFilter, other.resourcesFilter)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -550,6 +597,9 @@ public class ListMultiCloudResourceDiscoveriesRequest
                                 ? 43
                                 : this.oracleDbAzureConnectorId.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcesFilter == null ? 43 : this.resourcesFilter.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

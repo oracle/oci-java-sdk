@@ -6,7 +6,7 @@ package com.oracle.bmc.dbmulticloud.model;
 
 /**
  * This object is about to provide input params to update Oracle DB Azure Vault Association
- * Resource. <br>
+ * resource. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -52,14 +52,14 @@ public final class UpdateOracleDbAzureVaultAssociationDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Oracle DB Azure Vault Association Resource.
+         * compartment that contains Oracle DB Azure Vault Association resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains Oracle DB Azure Vault Association Resource.
+         * compartment that contains Oracle DB Azure Vault Association resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -69,12 +69,12 @@ public final class UpdateOracleDbAzureVaultAssociationDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Display name of Oracle DB Azure Vault Association Resource. */
+        /** Oracle DB Azure Vault Association resource name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of Oracle DB Azure Vault Association Resource.
+         * Oracle DB Azure Vault Association resource name.
          *
          * @param displayName the value to set
          * @return this builder
@@ -86,14 +86,14 @@ public final class UpdateOracleDbAzureVaultAssociationDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Vault.
+         * Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureVaultId")
         private String oracleDbAzureVaultId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Vault.
+         * Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
          *
          * @param oracleDbAzureVaultId the value to set
          * @return this builder
@@ -105,14 +105,14 @@ public final class UpdateOracleDbAzureVaultAssociationDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Connector.
+         * Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureConnectorId")
         private String oracleDbAzureConnectorId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle DB Azure Connector.
+         * Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
          *
          * @param oracleDbAzureConnectorId the value to set
          * @return this builder
@@ -227,14 +227,14 @@ public final class UpdateOracleDbAzureVaultAssociationDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Oracle DB Azure Vault Association Resource.
+     * compartment that contains Oracle DB Azure Vault Association resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains Oracle DB Azure Vault Association Resource.
+     * compartment that contains Oracle DB Azure Vault Association resource.
      *
      * @return the value
      */
@@ -242,12 +242,12 @@ public final class UpdateOracleDbAzureVaultAssociationDetails
         return compartmentId;
     }
 
-    /** Display name of Oracle DB Azure Vault Association Resource. */
+    /** Oracle DB Azure Vault Association resource name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of Oracle DB Azure Vault Association Resource.
+     * Oracle DB Azure Vault Association resource name.
      *
      * @return the value
      */
@@ -257,14 +257,14 @@ public final class UpdateOracleDbAzureVaultAssociationDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Vault.
+     * Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureVaultId")
     private final String oracleDbAzureVaultId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Vault.
+     * Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      *
      * @return the value
      */
@@ -274,14 +274,14 @@ public final class UpdateOracleDbAzureVaultAssociationDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Connector.
+     * Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAzureConnectorId")
     private final String oracleDbAzureConnectorId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle DB Azure Connector.
+     * Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      *
      * @return the value
      */

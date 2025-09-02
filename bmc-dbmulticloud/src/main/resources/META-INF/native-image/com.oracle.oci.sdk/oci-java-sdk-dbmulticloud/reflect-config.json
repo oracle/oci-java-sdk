@@ -111,6 +111,34 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.ChangeOracleDbGcpIdentityConnectorCompartmentDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.ChangeOracleDbGcpIdentityConnectorCompartmentDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.ChangeOracleDbGcpKeyRingCompartmentDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.ChangeOracleDbGcpKeyRingCompartmentDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.dbmulticloud.model.CreateMultiCloudResourceDiscoveryDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -192,6 +220,54 @@
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.CreateOracleDbGcpIdentityConnectorDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.CreateOracleDbGcpIdentityConnectorDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.CreateOracleDbGcpKeyRingDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.CreateOracleDbGcpKeyRingDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.GcpNodes",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.GcpNodes$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.GcpNodes$Status",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
@@ -383,6 +459,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbAzureConnector$AzureIdentityConnectivityStatus",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.dbmulticloud.model.OracleDbAzureConnectorSummary",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -555,6 +637,156 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpIdentityConnector",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpIdentityConnector$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpIdentityConnector$GcpIdentityConnectivityStatus",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpIdentityConnector$LifecycleState",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpIdentityConnectorSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpIdentityConnectorSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpIdentityConnectorSummaryCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpIdentityConnectorSummaryCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKey",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKey$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKey$LifecycleState",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeyRing",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeyRing$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeyRing$LifecycleState",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeyRingSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeyRingSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeyRingSummaryCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeyRingSummaryCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeySummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeySummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeySummaryCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.OracleDbGcpKeySummaryCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.dbmulticloud.model.PatchOracleDbAzureConnectorDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -563,6 +795,34 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.dbmulticloud.model.PatchOracleDbAzureConnectorDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.RefreshOracleDbAzureVaultDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.RefreshOracleDbAzureVaultDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.RefreshOracleDbGcpKeyRingDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.RefreshOracleDbGcpKeyRingDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -667,6 +927,34 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.dbmulticloud.model.UpdateOracleDbAzureVaultDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.UpdateOracleDbGcpIdentityConnectorDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.UpdateOracleDbGcpIdentityConnectorDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.UpdateOracleDbGcpKeyRingDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.dbmulticloud.model.UpdateOracleDbGcpKeyRingDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
