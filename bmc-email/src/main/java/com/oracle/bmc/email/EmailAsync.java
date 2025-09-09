@@ -69,6 +69,53 @@ public interface EmailAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddEmailDomainLockResponse> addEmailDomainLock(
+            AddEmailDomainLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddEmailDomainLockRequest, AddEmailDomainLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddReturnPathLockResponse> addReturnPathLock(
+            AddReturnPathLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddReturnPathLockRequest, AddReturnPathLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddSenderLockResponse> addSenderLock(
+            AddSenderLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddSenderLockRequest, AddSenderLockResponse>
+                    handler);
+
+    /**
      * Moves an email domain into a different compartment. When provided, If-Match is checked
      * against ETag value of the resource. For information about moving resources between
      * compartments, see [Moving Resources to a Different
@@ -499,6 +546,53 @@ public interface EmailAsync extends AutoCloseable {
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Remove a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveEmailDomainLockResponse> removeEmailDomainLock(
+            RemoveEmailDomainLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveEmailDomainLockRequest, RemoveEmailDomainLockResponse>
+                    handler);
+
+    /**
+     * Remove a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveReturnPathLockResponse> removeReturnPathLock(
+            RemoveReturnPathLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveReturnPathLockRequest, RemoveReturnPathLockResponse>
+                    handler);
+
+    /**
+     * Remove a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveSenderLockResponse> removeSenderLock(
+            RemoveSenderLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RemoveSenderLockRequest, RemoveSenderLockResponse>
                     handler);
 
     /**

@@ -3906,6 +3906,9 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .basePath("/20160918")
                 .appendPathParam("autonomousDatabases")
                 .appendPathParam(request.getAutonomousDatabaseId())
+                .appendQueryParam(
+                        "mustDeleteAssociatedLongTermBackups",
+                        request.getMustDeleteAssociatedLongTermBackups())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -9520,6 +9523,9 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("type", request.getType())
+                .appendQueryParam("backupDestinationId", request.getBackupDestinationId())
+                .appendQueryParam("keyStoreId", request.getKeyStoreId())
+                .appendEnumQueryParam("infrastructureType", request.getInfrastructureType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

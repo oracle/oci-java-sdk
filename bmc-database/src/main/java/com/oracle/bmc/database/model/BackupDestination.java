@@ -29,6 +29,8 @@ public final class BackupDestination
         "compartmentId",
         "type",
         "associatedDatabases",
+        "associatedLongTermBackups",
+        "associatedLongTermBackupCount",
         "connectionString",
         "vpcUsers",
         "localMountPointPath",
@@ -51,6 +53,8 @@ public final class BackupDestination
             String compartmentId,
             Type type,
             java.util.List<AssociatedDatabaseDetails> associatedDatabases,
+            java.util.List<AssociatedLongTermBackup> associatedLongTermBackups,
+            Integer associatedLongTermBackupCount,
             String connectionString,
             java.util.List<String> vpcUsers,
             String localMountPointPath,
@@ -72,6 +76,8 @@ public final class BackupDestination
         this.compartmentId = compartmentId;
         this.type = type;
         this.associatedDatabases = associatedDatabases;
+        this.associatedLongTermBackups = associatedLongTermBackups;
+        this.associatedLongTermBackupCount = associatedLongTermBackupCount;
         this.connectionString = connectionString;
         this.vpcUsers = vpcUsers;
         this.localMountPointPath = localMountPointPath;
@@ -173,6 +179,45 @@ public final class BackupDestination
                 java.util.List<AssociatedDatabaseDetails> associatedDatabases) {
             this.associatedDatabases = associatedDatabases;
             this.__explicitlySet__.add("associatedDatabases");
+            return this;
+        }
+        /**
+         * List of long term backups of Autonomous Databases associated with this backup
+         * destination.The maximum associated number of long term backup listed here would be 1024.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackups")
+        private java.util.List<AssociatedLongTermBackup> associatedLongTermBackups;
+
+        /**
+         * List of long term backups of Autonomous Databases associated with this backup
+         * destination.The maximum associated number of long term backup listed here would be 1024.
+         *
+         * @param associatedLongTermBackups the value to set
+         * @return this builder
+         */
+        public Builder associatedLongTermBackups(
+                java.util.List<AssociatedLongTermBackup> associatedLongTermBackups) {
+            this.associatedLongTermBackups = associatedLongTermBackups;
+            this.__explicitlySet__.add("associatedLongTermBackups");
+            return this;
+        }
+        /**
+         * Indicates the number of long term backups of Autonomous Databases associated with this
+         * backup destination.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackupCount")
+        private Integer associatedLongTermBackupCount;
+
+        /**
+         * Indicates the number of long term backups of Autonomous Databases associated with this
+         * backup destination.
+         *
+         * @param associatedLongTermBackupCount the value to set
+         * @return this builder
+         */
+        public Builder associatedLongTermBackupCount(Integer associatedLongTermBackupCount) {
+            this.associatedLongTermBackupCount = associatedLongTermBackupCount;
+            this.__explicitlySet__.add("associatedLongTermBackupCount");
             return this;
         }
         /**
@@ -466,6 +511,8 @@ public final class BackupDestination
                             this.compartmentId,
                             this.type,
                             this.associatedDatabases,
+                            this.associatedLongTermBackups,
+                            this.associatedLongTermBackupCount,
                             this.connectionString,
                             this.vpcUsers,
                             this.localMountPointPath,
@@ -503,6 +550,12 @@ public final class BackupDestination
             }
             if (model.wasPropertyExplicitlySet("associatedDatabases")) {
                 this.associatedDatabases(model.getAssociatedDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("associatedLongTermBackups")) {
+                this.associatedLongTermBackups(model.getAssociatedLongTermBackups());
+            }
+            if (model.wasPropertyExplicitlySet("associatedLongTermBackupCount")) {
+                this.associatedLongTermBackupCount(model.getAssociatedLongTermBackupCount());
             }
             if (model.wasPropertyExplicitlySet("connectionString")) {
                 this.connectionString(model.getConnectionString());
@@ -678,6 +731,40 @@ public final class BackupDestination
      */
     public java.util.List<AssociatedDatabaseDetails> getAssociatedDatabases() {
         return associatedDatabases;
+    }
+
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The
+     * maximum associated number of long term backup listed here would be 1024.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackups")
+    private final java.util.List<AssociatedLongTermBackup> associatedLongTermBackups;
+
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The
+     * maximum associated number of long term backup listed here would be 1024.
+     *
+     * @return the value
+     */
+    public java.util.List<AssociatedLongTermBackup> getAssociatedLongTermBackups() {
+        return associatedLongTermBackups;
+    }
+
+    /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup
+     * destination.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackupCount")
+    private final Integer associatedLongTermBackupCount;
+
+    /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup
+     * destination.
+     *
+     * @return the value
+     */
+    public Integer getAssociatedLongTermBackupCount() {
+        return associatedLongTermBackupCount;
     }
 
     /**
@@ -1038,6 +1125,10 @@ public final class BackupDestination
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", associatedDatabases=").append(String.valueOf(this.associatedDatabases));
+        sb.append(", associatedLongTermBackups=")
+                .append(String.valueOf(this.associatedLongTermBackups));
+        sb.append(", associatedLongTermBackupCount=")
+                .append(String.valueOf(this.associatedLongTermBackupCount));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", vpcUsers=").append(String.valueOf(this.vpcUsers));
         sb.append(", localMountPointPath=").append(String.valueOf(this.localMountPointPath));
@@ -1074,6 +1165,10 @@ public final class BackupDestination
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.associatedDatabases, other.associatedDatabases)
+                && java.util.Objects.equals(
+                        this.associatedLongTermBackups, other.associatedLongTermBackups)
+                && java.util.Objects.equals(
+                        this.associatedLongTermBackupCount, other.associatedLongTermBackupCount)
                 && java.util.Objects.equals(this.connectionString, other.connectionString)
                 && java.util.Objects.equals(this.vpcUsers, other.vpcUsers)
                 && java.util.Objects.equals(this.localMountPointPath, other.localMountPointPath)
@@ -1110,6 +1205,16 @@ public final class BackupDestination
                         + (this.associatedDatabases == null
                                 ? 43
                                 : this.associatedDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedLongTermBackups == null
+                                ? 43
+                                : this.associatedLongTermBackups.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedLongTermBackupCount == null
+                                ? 43
+                                : this.associatedLongTermBackupCount.hashCode());
         result =
                 (result * PRIME)
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());

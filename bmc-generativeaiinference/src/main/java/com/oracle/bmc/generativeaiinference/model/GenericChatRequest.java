@@ -504,6 +504,15 @@ public final class GenericChatRequest extends BaseChatRequest {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("webSearchOptions")
+        private WebSearchOptions webSearchOptions;
+
+        public Builder webSearchOptions(WebSearchOptions webSearchOptions) {
+            this.webSearchOptions = webSearchOptions;
+            this.__explicitlySet__.add("webSearchOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -533,7 +542,8 @@ public final class GenericChatRequest extends BaseChatRequest {
                             this.responseFormat,
                             this.toolChoice,
                             this.isParallelToolCalls,
-                            this.tools);
+                            this.tools,
+                            this.webSearchOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -614,6 +624,9 @@ public final class GenericChatRequest extends BaseChatRequest {
             if (model.wasPropertyExplicitlySet("tools")) {
                 this.tools(model.getTools());
             }
+            if (model.wasPropertyExplicitlySet("webSearchOptions")) {
+                this.webSearchOptions(model.getWebSearchOptions());
+            }
             return this;
         }
     }
@@ -652,7 +665,8 @@ public final class GenericChatRequest extends BaseChatRequest {
             ResponseFormat responseFormat,
             ToolChoice toolChoice,
             Boolean isParallelToolCalls,
-            java.util.List<ToolDefinition> tools) {
+            java.util.List<ToolDefinition> tools,
+            WebSearchOptions webSearchOptions) {
         super();
         this.messages = messages;
         this.reasoningEffort = reasoningEffort;
@@ -678,6 +692,7 @@ public final class GenericChatRequest extends BaseChatRequest {
         this.toolChoice = toolChoice;
         this.isParallelToolCalls = isParallelToolCalls;
         this.tools = tools;
+        this.webSearchOptions = webSearchOptions;
     }
 
     /**
@@ -1180,6 +1195,13 @@ public final class GenericChatRequest extends BaseChatRequest {
         return tools;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("webSearchOptions")
+    private final WebSearchOptions webSearchOptions;
+
+    public WebSearchOptions getWebSearchOptions() {
+        return webSearchOptions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1219,6 +1241,7 @@ public final class GenericChatRequest extends BaseChatRequest {
         sb.append(", toolChoice=").append(String.valueOf(this.toolChoice));
         sb.append(", isParallelToolCalls=").append(String.valueOf(this.isParallelToolCalls));
         sb.append(", tools=").append(String.valueOf(this.tools));
+        sb.append(", webSearchOptions=").append(String.valueOf(this.webSearchOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -1257,6 +1280,7 @@ public final class GenericChatRequest extends BaseChatRequest {
                 && java.util.Objects.equals(this.toolChoice, other.toolChoice)
                 && java.util.Objects.equals(this.isParallelToolCalls, other.isParallelToolCalls)
                 && java.util.Objects.equals(this.tools, other.tools)
+                && java.util.Objects.equals(this.webSearchOptions, other.webSearchOptions)
                 && super.equals(other);
     }
 
@@ -1308,6 +1332,9 @@ public final class GenericChatRequest extends BaseChatRequest {
                                 ? 43
                                 : this.isParallelToolCalls.hashCode());
         result = (result * PRIME) + (this.tools == null ? 43 : this.tools.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.webSearchOptions == null ? 43 : this.webSearchOptions.hashCode());
         return result;
     }
 }

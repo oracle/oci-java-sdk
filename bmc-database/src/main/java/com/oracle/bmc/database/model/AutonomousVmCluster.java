@@ -40,6 +40,7 @@ public final class AutonomousVmCluster
         "availableCpus",
         "totalContainerDatabases",
         "memoryPerOracleComputeUnitInGBs",
+        "memoryPerComputeUnitInGBs",
         "cpuCoreCountPerNode",
         "autonomousDataStorageSizeInTBs",
         "maintenanceWindow",
@@ -93,6 +94,7 @@ public final class AutonomousVmCluster
             Integer availableCpus,
             Integer totalContainerDatabases,
             Integer memoryPerOracleComputeUnitInGBs,
+            Float memoryPerComputeUnitInGBs,
             Integer cpuCoreCountPerNode,
             Double autonomousDataStorageSizeInTBs,
             MaintenanceWindow maintenanceWindow,
@@ -145,6 +147,7 @@ public final class AutonomousVmCluster
         this.availableCpus = availableCpus;
         this.totalContainerDatabases = totalContainerDatabases;
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+        this.memoryPerComputeUnitInGBs = memoryPerComputeUnitInGBs;
         this.cpuCoreCountPerNode = cpuCoreCountPerNode;
         this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
         this.maintenanceWindow = maintenanceWindow;
@@ -450,12 +453,16 @@ public final class AutonomousVmCluster
             this.__explicitlySet__.add("totalContainerDatabases");
             return this;
         }
-        /** The amount of memory (in GBs) to be enabled per each CPU core. */
+        /**
+         * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or
+         * OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) to be enabled per each CPU core.
+         * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or
+         * OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -463,6 +470,21 @@ public final class AutonomousVmCluster
         public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
             this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
             this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+        /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerComputeUnitInGBs")
+        private Float memoryPerComputeUnitInGBs;
+
+        /**
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         *
+         * @param memoryPerComputeUnitInGBs the value to set
+         * @return this builder
+         */
+        public Builder memoryPerComputeUnitInGBs(Float memoryPerComputeUnitInGBs) {
+            this.memoryPerComputeUnitInGBs = memoryPerComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerComputeUnitInGBs");
             return this;
         }
         /** The number of CPU cores enabled per VM cluster node. */
@@ -1085,6 +1107,7 @@ public final class AutonomousVmCluster
                             this.availableCpus,
                             this.totalContainerDatabases,
                             this.memoryPerOracleComputeUnitInGBs,
+                            this.memoryPerComputeUnitInGBs,
                             this.cpuCoreCountPerNode,
                             this.autonomousDataStorageSizeInTBs,
                             this.maintenanceWindow,
@@ -1175,6 +1198,9 @@ public final class AutonomousVmCluster
             }
             if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
                 this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("memoryPerComputeUnitInGBs")) {
+                this.memoryPerComputeUnitInGBs(model.getMemoryPerComputeUnitInGBs());
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCountPerNode")) {
                 this.cpuCoreCountPerNode(model.getCpuCoreCountPerNode());
@@ -1636,17 +1662,34 @@ public final class AutonomousVmCluster
         return totalContainerDatabases;
     }
 
-    /** The amount of memory (in GBs) to be enabled per each CPU core. */
+    /**
+     * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU.
+     * This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU.
+     * This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      *
      * @return the value
      */
     public Integer getMemoryPerOracleComputeUnitInGBs() {
         return memoryPerOracleComputeUnitInGBs;
+    }
+
+    /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerComputeUnitInGBs")
+    private final Float memoryPerComputeUnitInGBs;
+
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     *
+     * @return the value
+     */
+    public Float getMemoryPerComputeUnitInGBs() {
+        return memoryPerComputeUnitInGBs;
     }
 
     /** The number of CPU cores enabled per VM cluster node. */
@@ -2245,6 +2288,8 @@ public final class AutonomousVmCluster
                 .append(String.valueOf(this.totalContainerDatabases));
         sb.append(", memoryPerOracleComputeUnitInGBs=")
                 .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
+        sb.append(", memoryPerComputeUnitInGBs=")
+                .append(String.valueOf(this.memoryPerComputeUnitInGBs));
         sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
         sb.append(", autonomousDataStorageSizeInTBs=")
                 .append(String.valueOf(this.autonomousDataStorageSizeInTBs));
@@ -2326,6 +2371,8 @@ public final class AutonomousVmCluster
                         this.totalContainerDatabases, other.totalContainerDatabases)
                 && java.util.Objects.equals(
                         this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
+                && java.util.Objects.equals(
+                        this.memoryPerComputeUnitInGBs, other.memoryPerComputeUnitInGBs)
                 && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
                 && java.util.Objects.equals(
                         this.autonomousDataStorageSizeInTBs, other.autonomousDataStorageSizeInTBs)
@@ -2433,6 +2480,11 @@ public final class AutonomousVmCluster
                         + (this.memoryPerOracleComputeUnitInGBs == null
                                 ? 43
                                 : this.memoryPerOracleComputeUnitInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryPerComputeUnitInGBs == null
+                                ? 43
+                                : this.memoryPerComputeUnitInGBs.hashCode());
         result =
                 (result * PRIME)
                         + (this.cpuCoreCountPerNode == null

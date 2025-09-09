@@ -51,6 +51,19 @@ public class DeleteAutonomousDatabaseRequest
         return opcRequestId;
     }
     /**
+     * If set to true, terminating the Autonomous Database also deletes its associated long-term
+     * backups if the retention lock is not enabled.
+     */
+    private Boolean mustDeleteAssociatedLongTermBackups;
+
+    /**
+     * If set to true, terminating the Autonomous Database also deletes its associated long-term
+     * backups if the retention lock is not enabled.
+     */
+    public Boolean getMustDeleteAssociatedLongTermBackups() {
+        return mustDeleteAssociatedLongTermBackups;
+    }
+    /**
      * Indicates that the request is a dry run, if set to "true". A dry run request does not
      * actually creating or updating a resource and is used only to perform validation on the
      * submitted data.
@@ -127,6 +140,25 @@ public class DeleteAutonomousDatabaseRequest
         }
 
         /**
+         * If set to true, terminating the Autonomous Database also deletes its associated long-term
+         * backups if the retention lock is not enabled.
+         */
+        private Boolean mustDeleteAssociatedLongTermBackups = null;
+
+        /**
+         * If set to true, terminating the Autonomous Database also deletes its associated long-term
+         * backups if the retention lock is not enabled.
+         *
+         * @param mustDeleteAssociatedLongTermBackups the value to set
+         * @return this builder instance
+         */
+        public Builder mustDeleteAssociatedLongTermBackups(
+                Boolean mustDeleteAssociatedLongTermBackups) {
+            this.mustDeleteAssociatedLongTermBackups = mustDeleteAssociatedLongTermBackups;
+            return this;
+        }
+
+        /**
          * Indicates that the request is a dry run, if set to "true". A dry run request does not
          * actually creating or updating a resource and is used only to perform validation on the
          * submitted data.
@@ -179,6 +211,7 @@ public class DeleteAutonomousDatabaseRequest
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            mustDeleteAssociatedLongTermBackups(o.getMustDeleteAssociatedLongTermBackups());
             opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -217,10 +250,11 @@ public class DeleteAutonomousDatabaseRequest
             request.autonomousDatabaseId = autonomousDatabaseId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.mustDeleteAssociatedLongTermBackups = mustDeleteAssociatedLongTermBackups;
             request.opcDryRun = opcDryRun;
             return request;
             // new DeleteAutonomousDatabaseRequest(autonomousDatabaseId, ifMatch, opcRequestId,
-            // opcDryRun);
+            // mustDeleteAssociatedLongTermBackups, opcDryRun);
         }
     }
 
@@ -234,6 +268,7 @@ public class DeleteAutonomousDatabaseRequest
                 .autonomousDatabaseId(autonomousDatabaseId)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
+                .mustDeleteAssociatedLongTermBackups(mustDeleteAssociatedLongTermBackups)
                 .opcDryRun(opcDryRun);
     }
 
@@ -254,6 +289,8 @@ public class DeleteAutonomousDatabaseRequest
         sb.append(",autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",mustDeleteAssociatedLongTermBackups=")
+                .append(String.valueOf(this.mustDeleteAssociatedLongTermBackups));
         sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
@@ -273,6 +310,9 @@ public class DeleteAutonomousDatabaseRequest
                 && java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.mustDeleteAssociatedLongTermBackups,
+                        other.mustDeleteAssociatedLongTermBackups)
                 && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
@@ -287,6 +327,11 @@ public class DeleteAutonomousDatabaseRequest
                                 : this.autonomousDatabaseId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mustDeleteAssociatedLongTermBackups == null
+                                ? 43
+                                : this.mustDeleteAssociatedLongTermBackups.hashCode());
         result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }

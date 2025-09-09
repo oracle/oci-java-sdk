@@ -592,6 +592,7 @@ public final class AutonomousContainerDatabaseBackupSummary
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Incremental("INCREMENTAL"),
         Full("FULL"),
+        VirtualFull("VIRTUAL_FULL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
