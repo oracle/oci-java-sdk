@@ -56,8 +56,8 @@ public final class ClientOptions extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Clients these options should apply to. Must be a either single IPv4 address or single
-         * IPv4 CIDR block.
+         * Clients these options should apply to. Must be a either single IPv4/IPv6 address or
+         * single IPv4/IPv6 CIDR block.
          *
          * <p>*Note:** Access will also be limited by any applicable VCN security rules and the
          * ability to route IP packets to the mount target. Mount targets do not have
@@ -67,8 +67,8 @@ public final class ClientOptions extends com.oracle.bmc.http.client.internal.Exp
         private String source;
 
         /**
-         * Clients these options should apply to. Must be a either single IPv4 address or single
-         * IPv4 CIDR block.
+         * Clients these options should apply to. Must be a either single IPv4/IPv6 address or
+         * single IPv4/IPv6 CIDR block.
          *
          * <p>*Note:** Access will also be limited by any applicable VCN security rules and the
          * ability to route IP packets to the mount target. Mount targets do not have
@@ -278,8 +278,8 @@ public final class ClientOptions extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Clients these options should apply to. Must be a either single IPv4 address or single IPv4
-     * CIDR block.
+     * Clients these options should apply to. Must be a either single IPv4/IPv6 address or single
+     * IPv4/IPv6 CIDR block.
      *
      * <p>*Note:** Access will also be limited by any applicable VCN security rules and the ability
      * to route IP packets to the mount target. Mount targets do not have Internet-routable IP
@@ -289,8 +289,8 @@ public final class ClientOptions extends com.oracle.bmc.http.client.internal.Exp
     private final String source;
 
     /**
-     * Clients these options should apply to. Must be a either single IPv4 address or single IPv4
-     * CIDR block.
+     * Clients these options should apply to. Must be a either single IPv4/IPv6 address or single
+     * IPv4/IPv6 CIDR block.
      *
      * <p>*Note:** Access will also be limited by any applicable VCN security rules and the ability
      * to route IP packets to the mount target. Mount targets do not have Internet-routable IP

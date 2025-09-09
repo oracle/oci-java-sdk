@@ -45,7 +45,10 @@ public final class AutonomousDatabaseBackup
         "timeAvailableTill",
         "dbVersion",
         "sizeInTBs",
-        "backupDestinationDetails"
+        "backupDestinationDetails",
+        "infrastructureType",
+        "region",
+        "sourceDatabaseDetails"
     })
     public AutonomousDatabaseBackup(
             String id,
@@ -69,7 +72,10 @@ public final class AutonomousDatabaseBackup
             java.util.Date timeAvailableTill,
             String dbVersion,
             Double sizeInTBs,
-            BackupDestinationDetails backupDestinationDetails) {
+            BackupDestinationDetails backupDestinationDetails,
+            InfrastructureType infrastructureType,
+            String region,
+            SourceDatabaseDetails sourceDatabaseDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -93,6 +99,9 @@ public final class AutonomousDatabaseBackup
         this.dbVersion = dbVersion;
         this.sizeInTBs = sizeInTBs;
         this.backupDestinationDetails = backupDestinationDetails;
+        this.infrastructureType = infrastructureType;
+        this.region = region;
+        this.sourceDatabaseDetails = sourceDatabaseDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -461,6 +470,45 @@ public final class AutonomousDatabaseBackup
             this.__explicitlySet__.add("backupDestinationDetails");
             return this;
         }
+        /** The infrastructure type this resource belongs to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
+        private InfrastructureType infrastructureType;
+
+        /**
+         * The infrastructure type this resource belongs to.
+         *
+         * @param infrastructureType the value to set
+         * @return this builder
+         */
+        public Builder infrastructureType(InfrastructureType infrastructureType) {
+            this.infrastructureType = infrastructureType;
+            this.__explicitlySet__.add("infrastructureType");
+            return this;
+        }
+        /** Name of the region in which backup is taken in. */
+        @com.fasterxml.jackson.annotation.JsonProperty("region")
+        private String region;
+
+        /**
+         * Name of the region in which backup is taken in.
+         *
+         * @param region the value to set
+         * @return this builder
+         */
+        public Builder region(String region) {
+            this.region = region;
+            this.__explicitlySet__.add("region");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseDetails")
+        private SourceDatabaseDetails sourceDatabaseDetails;
+
+        public Builder sourceDatabaseDetails(SourceDatabaseDetails sourceDatabaseDetails) {
+            this.sourceDatabaseDetails = sourceDatabaseDetails;
+            this.__explicitlySet__.add("sourceDatabaseDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -489,7 +537,10 @@ public final class AutonomousDatabaseBackup
                             this.timeAvailableTill,
                             this.dbVersion,
                             this.sizeInTBs,
-                            this.backupDestinationDetails);
+                            this.backupDestinationDetails,
+                            this.infrastructureType,
+                            this.region,
+                            this.sourceDatabaseDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -563,6 +614,15 @@ public final class AutonomousDatabaseBackup
             }
             if (model.wasPropertyExplicitlySet("backupDestinationDetails")) {
                 this.backupDestinationDetails(model.getBackupDestinationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("infrastructureType")) {
+                this.infrastructureType(model.getInfrastructureType());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDatabaseDetails")) {
+                this.sourceDatabaseDetails(model.getSourceDatabaseDetails());
             }
             return this;
         }
@@ -993,6 +1053,85 @@ public final class AutonomousDatabaseBackup
         return backupDestinationDetails;
     }
 
+    /** The infrastructure type this resource belongs to. */
+    public enum InfrastructureType implements com.oracle.bmc.http.internal.BmcEnum {
+        Cloud("CLOUD"),
+        CloudAtCustomer("CLOUD_AT_CUSTOMER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(InfrastructureType.class);
+
+        private final String value;
+        private static java.util.Map<String, InfrastructureType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (InfrastructureType v : InfrastructureType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        InfrastructureType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static InfrastructureType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'InfrastructureType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The infrastructure type this resource belongs to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
+    private final InfrastructureType infrastructureType;
+
+    /**
+     * The infrastructure type this resource belongs to.
+     *
+     * @return the value
+     */
+    public InfrastructureType getInfrastructureType() {
+        return infrastructureType;
+    }
+
+    /** Name of the region in which backup is taken in. */
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
+    private final String region;
+
+    /**
+     * Name of the region in which backup is taken in.
+     *
+     * @return the value
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseDetails")
+    private final SourceDatabaseDetails sourceDatabaseDetails;
+
+    public SourceDatabaseDetails getSourceDatabaseDetails() {
+        return sourceDatabaseDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1031,6 +1170,9 @@ public final class AutonomousDatabaseBackup
         sb.append(", sizeInTBs=").append(String.valueOf(this.sizeInTBs));
         sb.append(", backupDestinationDetails=")
                 .append(String.valueOf(this.backupDestinationDetails));
+        sb.append(", infrastructureType=").append(String.valueOf(this.infrastructureType));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", sourceDatabaseDetails=").append(String.valueOf(this.sourceDatabaseDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1068,6 +1210,9 @@ public final class AutonomousDatabaseBackup
                 && java.util.Objects.equals(this.sizeInTBs, other.sizeInTBs)
                 && java.util.Objects.equals(
                         this.backupDestinationDetails, other.backupDestinationDetails)
+                && java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.sourceDatabaseDetails, other.sourceDatabaseDetails)
                 && super.equals(other);
     }
 
@@ -1125,6 +1270,17 @@ public final class AutonomousDatabaseBackup
                         + (this.backupDestinationDetails == null
                                 ? 43
                                 : this.backupDestinationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infrastructureType == null
+                                ? 43
+                                : this.infrastructureType.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDatabaseDetails == null
+                                ? 43
+                                : this.sourceDatabaseDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

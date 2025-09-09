@@ -58,6 +58,7 @@ public final class AutonomousDwDatabase
         "provisionableCpus",
         "dataStorageSizeInTBs",
         "memoryPerOracleComputeUnitInGBs",
+        "memoryPerComputeUnitInGBs",
         "dataStorageSizeInGBs",
         "usedDataStorageSizeInGBs",
         "infrastructureType",
@@ -189,6 +190,7 @@ public final class AutonomousDwDatabase
             java.util.List<Float> provisionableCpus,
             Integer dataStorageSizeInTBs,
             Integer memoryPerOracleComputeUnitInGBs,
+            Float memoryPerComputeUnitInGBs,
             Integer dataStorageSizeInGBs,
             Integer usedDataStorageSizeInGBs,
             InfrastructureType infrastructureType,
@@ -319,6 +321,7 @@ public final class AutonomousDwDatabase
         this.provisionableCpus = provisionableCpus;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+        this.memoryPerComputeUnitInGBs = memoryPerComputeUnitInGBs;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
         this.usedDataStorageSizeInGBs = usedDataStorageSizeInGBs;
         this.infrastructureType = infrastructureType;
@@ -1117,12 +1120,16 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("dataStorageSizeInTBs");
             return this;
         }
-        /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+        /**
+         * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or
+         * OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or
+         * OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -1130,6 +1137,21 @@ public final class AutonomousDwDatabase
         public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
             this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
             this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+        /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerComputeUnitInGBs")
+        private Float memoryPerComputeUnitInGBs;
+
+        /**
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         *
+         * @param memoryPerComputeUnitInGBs the value to set
+         * @return this builder
+         */
+        public Builder memoryPerComputeUnitInGBs(Float memoryPerComputeUnitInGBs) {
+            this.memoryPerComputeUnitInGBs = memoryPerComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerComputeUnitInGBs");
             return this;
         }
         /**
@@ -3213,6 +3235,7 @@ public final class AutonomousDwDatabase
                             this.provisionableCpus,
                             this.dataStorageSizeInTBs,
                             this.memoryPerOracleComputeUnitInGBs,
+                            this.memoryPerComputeUnitInGBs,
                             this.dataStorageSizeInGBs,
                             this.usedDataStorageSizeInGBs,
                             this.infrastructureType,
@@ -3420,6 +3443,9 @@ public final class AutonomousDwDatabase
             }
             if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
                 this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("memoryPerComputeUnitInGBs")) {
+                this.memoryPerComputeUnitInGBs(model.getMemoryPerComputeUnitInGBs());
             }
             if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
                 this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
@@ -4430,17 +4456,34 @@ public final class AutonomousDwDatabase
         return dataStorageSizeInTBs;
     }
 
-    /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+    /**
+     * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU.
+     * This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
+
+    /**
+     * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU.
+     * This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+     *
+     * @return the value
+     */
+    public Integer getMemoryPerOracleComputeUnitInGBs() {
+        return memoryPerOracleComputeUnitInGBs;
+    }
+
+    /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerComputeUnitInGBs")
+    private final Float memoryPerComputeUnitInGBs;
 
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      *
      * @return the value
      */
-    public Integer getMemoryPerOracleComputeUnitInGBs() {
-        return memoryPerOracleComputeUnitInGBs;
+    public Float getMemoryPerComputeUnitInGBs() {
+        return memoryPerComputeUnitInGBs;
     }
 
     /**
@@ -6923,6 +6966,8 @@ public final class AutonomousDwDatabase
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
         sb.append(", memoryPerOracleComputeUnitInGBs=")
                 .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
+        sb.append(", memoryPerComputeUnitInGBs=")
+                .append(String.valueOf(this.memoryPerComputeUnitInGBs));
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
         sb.append(", usedDataStorageSizeInGBs=")
                 .append(String.valueOf(this.usedDataStorageSizeInGBs));
@@ -7113,6 +7158,8 @@ public final class AutonomousDwDatabase
                 && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
                 && java.util.Objects.equals(
                         this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
+                && java.util.Objects.equals(
+                        this.memoryPerComputeUnitInGBs, other.memoryPerComputeUnitInGBs)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
                 && java.util.Objects.equals(
                         this.usedDataStorageSizeInGBs, other.usedDataStorageSizeInGBs)
@@ -7358,6 +7405,11 @@ public final class AutonomousDwDatabase
                         + (this.memoryPerOracleComputeUnitInGBs == null
                                 ? 43
                                 : this.memoryPerOracleComputeUnitInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryPerComputeUnitInGBs == null
+                                ? 43
+                                : this.memoryPerComputeUnitInGBs.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataStorageSizeInGBs == null

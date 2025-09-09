@@ -30,6 +30,8 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
         "lifecycleDetails",
         "typeDetails",
         "associatedDatabases",
+        "associatedLongTermBackups",
+        "associatedLongTermBackupCount",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -43,6 +45,8 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
             String lifecycleDetails,
             KeyStoreTypeDetails typeDetails,
             java.util.List<KeyStoreAssociatedDatabaseDetails> associatedDatabases,
+            java.util.List<AssociatedLongTermBackup> associatedLongTermBackups,
+            Integer associatedLongTermBackupCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -55,6 +59,8 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
         this.lifecycleDetails = lifecycleDetails;
         this.typeDetails = typeDetails;
         this.associatedDatabases = associatedDatabases;
+        this.associatedLongTermBackups = associatedLongTermBackups;
+        this.associatedLongTermBackupCount = associatedLongTermBackupCount;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -186,6 +192,45 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
+         * List of long term backups of Autonomous Databases associated with this backup
+         * destination.The maximum associated number of long term backup listed here would be 1024.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackups")
+        private java.util.List<AssociatedLongTermBackup> associatedLongTermBackups;
+
+        /**
+         * List of long term backups of Autonomous Databases associated with this backup
+         * destination.The maximum associated number of long term backup listed here would be 1024.
+         *
+         * @param associatedLongTermBackups the value to set
+         * @return this builder
+         */
+        public Builder associatedLongTermBackups(
+                java.util.List<AssociatedLongTermBackup> associatedLongTermBackups) {
+            this.associatedLongTermBackups = associatedLongTermBackups;
+            this.__explicitlySet__.add("associatedLongTermBackups");
+            return this;
+        }
+        /**
+         * Indicates the number of long term backups of Autonomous Databases associated with this
+         * backup destination.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackupCount")
+        private Integer associatedLongTermBackupCount;
+
+        /**
+         * Indicates the number of long term backups of Autonomous Databases associated with this
+         * backup destination.
+         *
+         * @param associatedLongTermBackupCount the value to set
+         * @return this builder
+         */
+        public Builder associatedLongTermBackupCount(Integer associatedLongTermBackupCount) {
+            this.associatedLongTermBackupCount = associatedLongTermBackupCount;
+            this.__explicitlySet__.add("associatedLongTermBackupCount");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -268,6 +313,8 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
                             this.lifecycleDetails,
                             this.typeDetails,
                             this.associatedDatabases,
+                            this.associatedLongTermBackups,
+                            this.associatedLongTermBackupCount,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -302,6 +349,12 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("associatedDatabases")) {
                 this.associatedDatabases(model.getAssociatedDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("associatedLongTermBackups")) {
+                this.associatedLongTermBackups(model.getAssociatedLongTermBackups());
+            }
+            if (model.wasPropertyExplicitlySet("associatedLongTermBackupCount")) {
+                this.associatedLongTermBackupCount(model.getAssociatedLongTermBackupCount());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -479,6 +532,40 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The
+     * maximum associated number of long term backup listed here would be 1024.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackups")
+    private final java.util.List<AssociatedLongTermBackup> associatedLongTermBackups;
+
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The
+     * maximum associated number of long term backup listed here would be 1024.
+     *
+     * @return the value
+     */
+    public java.util.List<AssociatedLongTermBackup> getAssociatedLongTermBackups() {
+        return associatedLongTermBackups;
+    }
+
+    /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup
+     * destination.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackupCount")
+    private final Integer associatedLongTermBackupCount;
+
+    /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup
+     * destination.
+     *
+     * @return the value
+     */
+    public Integer getAssociatedLongTermBackupCount() {
+        return associatedLongTermBackupCount;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -562,6 +649,10 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", typeDetails=").append(String.valueOf(this.typeDetails));
         sb.append(", associatedDatabases=").append(String.valueOf(this.associatedDatabases));
+        sb.append(", associatedLongTermBackups=")
+                .append(String.valueOf(this.associatedLongTermBackups));
+        sb.append(", associatedLongTermBackupCount=")
+                .append(String.valueOf(this.associatedLongTermBackupCount));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -587,6 +678,10 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.typeDetails, other.typeDetails)
                 && java.util.Objects.equals(this.associatedDatabases, other.associatedDatabases)
+                && java.util.Objects.equals(
+                        this.associatedLongTermBackups, other.associatedLongTermBackups)
+                && java.util.Objects.equals(
+                        this.associatedLongTermBackupCount, other.associatedLongTermBackupCount)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -615,6 +710,16 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.associatedDatabases == null
                                 ? 43
                                 : this.associatedDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedLongTermBackups == null
+                                ? 43
+                                : this.associatedLongTermBackups.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedLongTermBackupCount == null
+                                ? 43
+                                : this.associatedLongTermBackupCount.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

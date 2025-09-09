@@ -31,6 +31,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         "lifecycleDetails",
         "lifecycleState",
         "privateIpIds",
+        "mountTargetIpv6Ids",
         "subnetId",
         "idmapType",
         "ldapIdmap",
@@ -55,6 +56,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             String lifecycleDetails,
             LifecycleState lifecycleState,
             java.util.List<String> privateIpIds,
+            java.util.List<String> mountTargetIpv6Ids,
             String subnetId,
             IdmapType idmapType,
             LdapIdmap ldapIdmap,
@@ -78,6 +80,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         this.lifecycleDetails = lifecycleDetails;
         this.lifecycleState = lifecycleState;
         this.privateIpIds = privateIpIds;
+        this.mountTargetIpv6Ids = mountTargetIpv6Ids;
         this.subnetId = subnetId;
         this.idmapType = idmapType;
         this.ldapIdmap = ldapIdmap;
@@ -242,6 +245,21 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         public Builder privateIpIds(java.util.List<String> privateIpIds) {
             this.privateIpIds = privateIpIds;
             this.__explicitlySet__.add("privateIpIds");
+            return this;
+        }
+        /** The OCIDs of the IPv6 addresses associated with this mount target. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mountTargetIpv6Ids")
+        private java.util.List<String> mountTargetIpv6Ids;
+
+        /**
+         * The OCIDs of the IPv6 addresses associated with this mount target.
+         *
+         * @param mountTargetIpv6Ids the value to set
+         * @return this builder
+         */
+        public Builder mountTargetIpv6Ids(java.util.List<String> mountTargetIpv6Ids) {
+            this.mountTargetIpv6Ids = mountTargetIpv6Ids;
+            this.__explicitlySet__.add("mountTargetIpv6Ids");
             return this;
         }
         /**
@@ -526,6 +544,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
                             this.lifecycleDetails,
                             this.lifecycleState,
                             this.privateIpIds,
+                            this.mountTargetIpv6Ids,
                             this.subnetId,
                             this.idmapType,
                             this.ldapIdmap,
@@ -571,6 +590,9 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("privateIpIds")) {
                 this.privateIpIds(model.getPrivateIpIds());
+            }
+            if (model.wasPropertyExplicitlySet("mountTargetIpv6Ids")) {
+                this.mountTargetIpv6Ids(model.getMountTargetIpv6Ids());
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
@@ -807,6 +829,19 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
      */
     public java.util.List<String> getPrivateIpIds() {
         return privateIpIds;
+    }
+
+    /** The OCIDs of the IPv6 addresses associated with this mount target. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mountTargetIpv6Ids")
+    private final java.util.List<String> mountTargetIpv6Ids;
+
+    /**
+     * The OCIDs of the IPv6 addresses associated with this mount target.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getMountTargetIpv6Ids() {
+        return mountTargetIpv6Ids;
     }
 
     /**
@@ -1115,6 +1150,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", privateIpIds=").append(String.valueOf(this.privateIpIds));
+        sb.append(", mountTargetIpv6Ids=").append(String.valueOf(this.mountTargetIpv6Ids));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", idmapType=").append(String.valueOf(this.idmapType));
         sb.append(", ldapIdmap=").append(String.valueOf(this.ldapIdmap));
@@ -1152,6 +1188,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.privateIpIds, other.privateIpIds)
+                && java.util.Objects.equals(this.mountTargetIpv6Ids, other.mountTargetIpv6Ids)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.idmapType, other.idmapType)
                 && java.util.Objects.equals(this.ldapIdmap, other.ldapIdmap)
@@ -1192,6 +1229,11 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.privateIpIds == null ? 43 : this.privateIpIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mountTargetIpv6Ids == null
+                                ? 43
+                                : this.mountTargetIpv6Ids.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.idmapType == null ? 43 : this.idmapType.hashCode());
         result = (result * PRIME) + (this.ldapIdmap == null ? 43 : this.ldapIdmap.hashCode());

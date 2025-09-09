@@ -122,6 +122,102 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     }
 
     @Override
+    public AddEmailDomainLockResponse addEmailDomainLock(AddEmailDomainLockRequest request) {
+
+        Validate.notBlank(request.getEmailDomainId(), "emailDomainId must not be blank");
+        Objects.requireNonNull(request.getAddLockDetails(), "addLockDetails is required");
+
+        return clientCall(request, AddEmailDomainLockResponse::builder)
+                .logger(LOG, "addEmailDomainLock")
+                .serviceDetails(
+                        "Email",
+                        "AddEmailDomainLock",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/AddEmailDomainLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddEmailDomainLockRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailDomains")
+                .appendPathParam(request.getEmailDomainId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailDomain.class,
+                        AddEmailDomainLockResponse.Builder::emailDomain)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddEmailDomainLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddEmailDomainLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public AddReturnPathLockResponse addReturnPathLock(AddReturnPathLockRequest request) {
+
+        Validate.notBlank(request.getEmailReturnPathId(), "emailReturnPathId must not be blank");
+        Objects.requireNonNull(request.getAddLockDetails(), "addLockDetails is required");
+
+        return clientCall(request, AddReturnPathLockResponse::builder)
+                .logger(LOG, "addReturnPathLock")
+                .serviceDetails(
+                        "Email",
+                        "AddReturnPathLock",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/AddReturnPathLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddReturnPathLockRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailReturnPaths")
+                .appendPathParam(request.getEmailReturnPathId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailReturnPath.class,
+                        AddReturnPathLockResponse.Builder::emailReturnPath)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddReturnPathLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddReturnPathLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public AddSenderLockResponse addSenderLock(AddSenderLockRequest request) {
+
+        Validate.notBlank(request.getSenderId(), "senderId must not be blank");
+        Objects.requireNonNull(request.getAddLockDetails(), "addLockDetails is required");
+
+        return clientCall(request, AddSenderLockResponse::builder)
+                .logger(LOG, "addSenderLock")
+                .serviceDetails(
+                        "Email",
+                        "AddSenderLock",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/AddSenderLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddSenderLockRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("senders")
+                .appendPathParam(request.getSenderId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.email.model.Sender.class,
+                        AddSenderLockResponse.Builder::sender)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddSenderLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddSenderLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public ChangeEmailDomainCompartmentResponse changeEmailDomainCompartment(
             ChangeEmailDomainCompartmentRequest request) {
 
@@ -143,6 +239,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendPathParam(request.getEmailDomainId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -179,6 +276,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendPathParam(request.getSenderId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -382,6 +480,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .basePath("/20170907")
                 .appendPathParam("emailDomains")
                 .appendPathParam(request.getEmailDomainId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -409,6 +508,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .basePath("/20170907")
                 .appendPathParam("emailReturnPaths")
                 .appendPathParam(request.getEmailReturnPathId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -436,6 +536,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .basePath("/20170907")
                 .appendPathParam("senders")
                 .appendPathParam(request.getSenderId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -922,6 +1023,103 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     }
 
     @Override
+    public RemoveEmailDomainLockResponse removeEmailDomainLock(
+            RemoveEmailDomainLockRequest request) {
+
+        Validate.notBlank(request.getEmailDomainId(), "emailDomainId must not be blank");
+        Objects.requireNonNull(request.getRemoveLockDetails(), "removeLockDetails is required");
+
+        return clientCall(request, RemoveEmailDomainLockResponse::builder)
+                .logger(LOG, "removeEmailDomainLock")
+                .serviceDetails(
+                        "Email",
+                        "RemoveEmailDomainLock",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/RemoveEmailDomainLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveEmailDomainLockRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailDomains")
+                .appendPathParam(request.getEmailDomainId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailDomain.class,
+                        RemoveEmailDomainLockResponse.Builder::emailDomain)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveEmailDomainLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveEmailDomainLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public RemoveReturnPathLockResponse removeReturnPathLock(RemoveReturnPathLockRequest request) {
+
+        Validate.notBlank(request.getEmailReturnPathId(), "emailReturnPathId must not be blank");
+        Objects.requireNonNull(request.getRemoveLockDetails(), "removeLockDetails is required");
+
+        return clientCall(request, RemoveReturnPathLockResponse::builder)
+                .logger(LOG, "removeReturnPathLock")
+                .serviceDetails(
+                        "Email",
+                        "RemoveReturnPathLock",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/RemoveReturnPathLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveReturnPathLockRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailReturnPaths")
+                .appendPathParam(request.getEmailReturnPathId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailReturnPath.class,
+                        RemoveReturnPathLockResponse.Builder::emailReturnPath)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveReturnPathLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveReturnPathLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public RemoveSenderLockResponse removeSenderLock(RemoveSenderLockRequest request) {
+
+        Validate.notBlank(request.getSenderId(), "senderId must not be blank");
+        Objects.requireNonNull(request.getRemoveLockDetails(), "removeLockDetails is required");
+
+        return clientCall(request, RemoveSenderLockResponse::builder)
+                .logger(LOG, "removeSenderLock")
+                .serviceDetails(
+                        "Email",
+                        "RemoveSenderLock",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/RemoveSenderLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveSenderLockRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("senders")
+                .appendPathParam(request.getSenderId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.email.model.Sender.class,
+                        RemoveSenderLockResponse.Builder::sender)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveSenderLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveSenderLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public UpdateDkimResponse updateDkim(UpdateDkimRequest request) {
 
         Validate.notBlank(request.getDkimId(), "dkimId must not be blank");
@@ -967,6 +1165,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .basePath("/20170907")
                 .appendPathParam("emailDomains")
                 .appendPathParam(request.getEmailDomainId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -998,6 +1197,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .basePath("/20170907")
                 .appendPathParam("emailReturnPaths")
                 .appendPathParam(request.getEmailReturnPathId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1027,6 +1227,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .basePath("/20170907")
                 .appendPathParam("senders")
                 .appendPathParam(request.getSenderId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

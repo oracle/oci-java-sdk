@@ -30,6 +30,8 @@ public final class BackupDestinationDetails
         "vpcPassword",
         "internetProxy",
         "dbrsPolicyId",
+        "isRetentionLockEnabled",
+        "backupRetentionPolicyOnTerminate",
         "isRemote",
         "remoteRegion"
     })
@@ -40,6 +42,8 @@ public final class BackupDestinationDetails
             String vpcPassword,
             String internetProxy,
             String dbrsPolicyId,
+            Boolean isRetentionLockEnabled,
+            BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate,
             Boolean isRemote,
             String remoteRegion) {
         super();
@@ -49,6 +53,8 @@ public final class BackupDestinationDetails
         this.vpcPassword = vpcPassword;
         this.internetProxy = internetProxy;
         this.dbrsPolicyId = dbrsPolicyId;
+        this.isRetentionLockEnabled = isRetentionLockEnabled;
+        this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
         this.isRemote = isRemote;
         this.remoteRegion = remoteRegion;
     }
@@ -161,6 +167,63 @@ public final class BackupDestinationDetails
             this.__explicitlySet__.add("dbrsPolicyId");
             return this;
         }
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous
+         * Container Database (ACD). The retention window cannot be decreased if the backup
+         * retention lock is enabled. Once applied on the Autonomous Container Database, the
+         * retention lock cannot be removed, or the retention period cannot be decreased after a
+         * 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the
+         * backup cannot be deleted and must expire. The retention lock set on the Autonomous
+         * Container Database is not applicable for cross region remote backups and backups hosted
+         * on recovery Appliance backup destination.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isRetentionLockEnabled")
+        private Boolean isRetentionLockEnabled;
+
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous
+         * Container Database (ACD). The retention window cannot be decreased if the backup
+         * retention lock is enabled. Once applied on the Autonomous Container Database, the
+         * retention lock cannot be removed, or the retention period cannot be decreased after a
+         * 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the
+         * backup cannot be deleted and must expire. The retention lock set on the Autonomous
+         * Container Database is not applicable for cross region remote backups and backups hosted
+         * on recovery Appliance backup destination.
+         *
+         * @param isRetentionLockEnabled the value to set
+         * @return this builder
+         */
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
+            this.__explicitlySet__.add("isRetentionLockEnabled");
+            return this;
+        }
+        /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database
+         * termination. The retention policy set on the Autonomous Container Database is not
+         * applicable for cross region remote backups and backups hosted on recovery Appliance
+         * backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or
+         * 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPolicyOnTerminate")
+        private BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate;
+
+        /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database
+         * termination. The retention policy set on the Autonomous Container Database is not
+         * applicable for cross region remote backups and backups hosted on recovery Appliance
+         * backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or
+         * 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         *
+         * @param backupRetentionPolicyOnTerminate the value to set
+         * @return this builder
+         */
+        public Builder backupRetentionPolicyOnTerminate(
+                BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate) {
+            this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+            this.__explicitlySet__.add("backupRetentionPolicyOnTerminate");
+            return this;
+        }
         /** Indicates whether the backup destination is cross-region or local. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRemote")
         private Boolean isRemote;
@@ -210,6 +273,8 @@ public final class BackupDestinationDetails
                             this.vpcPassword,
                             this.internetProxy,
                             this.dbrsPolicyId,
+                            this.isRetentionLockEnabled,
+                            this.backupRetentionPolicyOnTerminate,
                             this.isRemote,
                             this.remoteRegion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -237,6 +302,12 @@ public final class BackupDestinationDetails
             }
             if (model.wasPropertyExplicitlySet("dbrsPolicyId")) {
                 this.dbrsPolicyId(model.getDbrsPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("isRetentionLockEnabled")) {
+                this.isRetentionLockEnabled(model.getIsRetentionLockEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("backupRetentionPolicyOnTerminate")) {
+                this.backupRetentionPolicyOnTerminate(model.getBackupRetentionPolicyOnTerminate());
             }
             if (model.wasPropertyExplicitlySet("isRemote")) {
                 this.isRemote(model.getIsRemote());
@@ -399,6 +470,108 @@ public final class BackupDestinationDetails
         return dbrsPolicyId;
     }
 
+    /**
+     * Indicates if backup retention is locked for all the database backups in the Autonomous
+     * Container Database (ACD). The retention window cannot be decreased if the backup retention
+     * lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot
+     * be removed, or the retention period cannot be decreased after a 14-day period. If the backup
+     * is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must
+     * expire. The retention lock set on the Autonomous Container Database is not applicable for
+     * cross region remote backups and backups hosted on recovery Appliance backup destination.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isRetentionLockEnabled")
+    private final Boolean isRetentionLockEnabled;
+
+    /**
+     * Indicates if backup retention is locked for all the database backups in the Autonomous
+     * Container Database (ACD). The retention window cannot be decreased if the backup retention
+     * lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot
+     * be removed, or the retention period cannot be decreased after a 14-day period. If the backup
+     * is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must
+     * expire. The retention lock set on the Autonomous Container Database is not applicable for
+     * cross region remote backups and backups hosted on recovery Appliance backup destination.
+     *
+     * @return the value
+     */
+    public Boolean getIsRetentionLockEnabled() {
+        return isRetentionLockEnabled;
+    }
+
+    /**
+     * Defines the automatic and manual backup retention policy for the Autonomous Database
+     * termination. The retention policy set on the Autonomous Container Database is not applicable
+     * for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is
+     * 'RETAIN_FOR_72_HOURS'.
+     */
+    public enum BackupRetentionPolicyOnTerminate implements com.oracle.bmc.http.internal.BmcEnum {
+        RetainPerRetentionWindow("RETAIN_PER_RETENTION_WINDOW"),
+        RetainFor72Hours("RETAIN_FOR_72_HOURS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BackupRetentionPolicyOnTerminate.class);
+
+        private final String value;
+        private static java.util.Map<String, BackupRetentionPolicyOnTerminate> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BackupRetentionPolicyOnTerminate v : BackupRetentionPolicyOnTerminate.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BackupRetentionPolicyOnTerminate(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BackupRetentionPolicyOnTerminate create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BackupRetentionPolicyOnTerminate', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Defines the automatic and manual backup retention policy for the Autonomous Database
+     * termination. The retention policy set on the Autonomous Container Database is not applicable
+     * for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is
+     * 'RETAIN_FOR_72_HOURS'.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPolicyOnTerminate")
+    private final BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate;
+
+    /**
+     * Defines the automatic and manual backup retention policy for the Autonomous Database
+     * termination. The retention policy set on the Autonomous Container Database is not applicable
+     * for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is
+     * 'RETAIN_FOR_72_HOURS'.
+     *
+     * @return the value
+     */
+    public BackupRetentionPolicyOnTerminate getBackupRetentionPolicyOnTerminate() {
+        return backupRetentionPolicyOnTerminate;
+    }
+
     /** Indicates whether the backup destination is cross-region or local. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRemote")
     private final Boolean isRemote;
@@ -452,6 +625,9 @@ public final class BackupDestinationDetails
         sb.append(", vpcPassword=").append(String.valueOf(this.vpcPassword));
         sb.append(", internetProxy=").append(String.valueOf(this.internetProxy));
         sb.append(", dbrsPolicyId=").append(String.valueOf(this.dbrsPolicyId));
+        sb.append(", isRetentionLockEnabled=").append(String.valueOf(this.isRetentionLockEnabled));
+        sb.append(", backupRetentionPolicyOnTerminate=")
+                .append(String.valueOf(this.backupRetentionPolicyOnTerminate));
         sb.append(", isRemote=").append(String.valueOf(this.isRemote));
         sb.append(", remoteRegion=").append(String.valueOf(this.remoteRegion));
         sb.append(")");
@@ -474,6 +650,11 @@ public final class BackupDestinationDetails
                 && java.util.Objects.equals(this.vpcPassword, other.vpcPassword)
                 && java.util.Objects.equals(this.internetProxy, other.internetProxy)
                 && java.util.Objects.equals(this.dbrsPolicyId, other.dbrsPolicyId)
+                && java.util.Objects.equals(
+                        this.isRetentionLockEnabled, other.isRetentionLockEnabled)
+                && java.util.Objects.equals(
+                        this.backupRetentionPolicyOnTerminate,
+                        other.backupRetentionPolicyOnTerminate)
                 && java.util.Objects.equals(this.isRemote, other.isRemote)
                 && java.util.Objects.equals(this.remoteRegion, other.remoteRegion)
                 && super.equals(other);
@@ -491,6 +672,16 @@ public final class BackupDestinationDetails
                 (result * PRIME)
                         + (this.internetProxy == null ? 43 : this.internetProxy.hashCode());
         result = (result * PRIME) + (this.dbrsPolicyId == null ? 43 : this.dbrsPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRetentionLockEnabled == null
+                                ? 43
+                                : this.isRetentionLockEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupRetentionPolicyOnTerminate == null
+                                ? 43
+                                : this.backupRetentionPolicyOnTerminate.hashCode());
         result = (result * PRIME) + (this.isRemote == null ? 43 : this.isRemote.hashCode());
         result = (result * PRIME) + (this.remoteRegion == null ? 43 : this.remoteRegion.hashCode());
         result = (result * PRIME) + super.hashCode();

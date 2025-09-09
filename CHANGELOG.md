@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.73.0 - 2025-09-09
+### Added 
+- Support for resource locking in the Email Delivery service 
+- Support for setting backup retention policies while creating and updating autonomous container databases in the Database service 
+- Support for deleting associated long term backups while deleting the autonomous databases in the Database service 
+- Support for listing autonomous database backups by backup destination id and infrastructure type in the Database service 
+- Support for listing autonomous database backups by key store id and infrastructure type in the Database service 
+- Support for undeleting autonomous databases on public cloud and Cloud at Customer in the Database service 
+- Support for additional database edition query parameters in the Database service    
+
+### Breaking Changes 
+- Field `EnterpriseEditionExtreme` has been removed from `com.oracle.bmc.database.requests.ListDbSystemStoragePerformancesRequest$DatabaseEdition` in the Database service
+
 ## 3.72.2 - 2025-09-02
 ### Added 
 - Support for key management integration for Google Cloud Platform (GCP) in the Database Multicloud service 
