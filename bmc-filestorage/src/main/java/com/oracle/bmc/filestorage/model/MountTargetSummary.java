@@ -31,7 +31,6 @@ public final class MountTargetSummary
         "id",
         "lifecycleState",
         "privateIpIds",
-        "mountTargetIpv6Ids",
         "subnetId",
         "nsgIds",
         "timeBillingCycleEnd",
@@ -52,7 +51,6 @@ public final class MountTargetSummary
             String id,
             LifecycleState lifecycleState,
             java.util.List<String> privateIpIds,
-            java.util.List<String> mountTargetIpv6Ids,
             String subnetId,
             java.util.List<String> nsgIds,
             java.util.Date timeBillingCycleEnd,
@@ -72,7 +70,6 @@ public final class MountTargetSummary
         this.id = id;
         this.lifecycleState = lifecycleState;
         this.privateIpIds = privateIpIds;
-        this.mountTargetIpv6Ids = mountTargetIpv6Ids;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
         this.timeBillingCycleEnd = timeBillingCycleEnd;
@@ -219,21 +216,6 @@ public final class MountTargetSummary
         public Builder privateIpIds(java.util.List<String> privateIpIds) {
             this.privateIpIds = privateIpIds;
             this.__explicitlySet__.add("privateIpIds");
-            return this;
-        }
-        /** The OCIDs of the IPv6 addresses associated with this mount target. */
-        @com.fasterxml.jackson.annotation.JsonProperty("mountTargetIpv6Ids")
-        private java.util.List<String> mountTargetIpv6Ids;
-
-        /**
-         * The OCIDs of the IPv6 addresses associated with this mount target.
-         *
-         * @param mountTargetIpv6Ids the value to set
-         * @return this builder
-         */
-        public Builder mountTargetIpv6Ids(java.util.List<String> mountTargetIpv6Ids) {
-            this.mountTargetIpv6Ids = mountTargetIpv6Ids;
-            this.__explicitlySet__.add("mountTargetIpv6Ids");
             return this;
         }
         /**
@@ -482,7 +464,6 @@ public final class MountTargetSummary
                             this.id,
                             this.lifecycleState,
                             this.privateIpIds,
-                            this.mountTargetIpv6Ids,
                             this.subnetId,
                             this.nsgIds,
                             this.timeBillingCycleEnd,
@@ -522,9 +503,6 @@ public final class MountTargetSummary
             }
             if (model.wasPropertyExplicitlySet("privateIpIds")) {
                 this.privateIpIds(model.getPrivateIpIds());
-            }
-            if (model.wasPropertyExplicitlySet("mountTargetIpv6Ids")) {
-                this.mountTargetIpv6Ids(model.getMountTargetIpv6Ids());
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
@@ -739,19 +717,6 @@ public final class MountTargetSummary
      */
     public java.util.List<String> getPrivateIpIds() {
         return privateIpIds;
-    }
-
-    /** The OCIDs of the IPv6 addresses associated with this mount target. */
-    @com.fasterxml.jackson.annotation.JsonProperty("mountTargetIpv6Ids")
-    private final java.util.List<String> mountTargetIpv6Ids;
-
-    /**
-     * The OCIDs of the IPv6 addresses associated with this mount target.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getMountTargetIpv6Ids() {
-        return mountTargetIpv6Ids;
     }
 
     /**
@@ -981,7 +946,6 @@ public final class MountTargetSummary
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", privateIpIds=").append(String.valueOf(this.privateIpIds));
-        sb.append(", mountTargetIpv6Ids=").append(String.valueOf(this.mountTargetIpv6Ids));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", timeBillingCycleEnd=").append(String.valueOf(this.timeBillingCycleEnd));
@@ -1015,7 +979,6 @@ public final class MountTargetSummary
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.privateIpIds, other.privateIpIds)
-                && java.util.Objects.equals(this.mountTargetIpv6Ids, other.mountTargetIpv6Ids)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.timeBillingCycleEnd, other.timeBillingCycleEnd)
@@ -1050,11 +1013,6 @@ public final class MountTargetSummary
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.privateIpIds == null ? 43 : this.privateIpIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.mountTargetIpv6Ids == null
-                                ? 43
-                                : this.mountTargetIpv6Ids.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result =

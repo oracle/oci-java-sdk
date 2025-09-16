@@ -192,14 +192,14 @@ public final class CloudExadataInfrastructureSummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cluster placement group of the Exadata Infrastructure.
+         * cluster placement group of the Exadata Infrastructure or Db System.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
         private String clusterPlacementGroupId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cluster placement group of the Exadata Infrastructure.
+         * cluster placement group of the Exadata Infrastructure or Db System.
          *
          * @param clusterPlacementGroupId the value to set
          * @return this builder
@@ -1072,14 +1072,14 @@ public final class CloudExadataInfrastructureSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cluster placement group of the Exadata Infrastructure.
+     * cluster placement group of the Exadata Infrastructure or Db System.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
     private final String clusterPlacementGroupId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cluster placement group of the Exadata Infrastructure.
+     * cluster placement group of the Exadata Infrastructure or Db System.
      *
      * @return the value
      */

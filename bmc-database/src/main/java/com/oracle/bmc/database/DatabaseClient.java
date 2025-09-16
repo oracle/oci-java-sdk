@@ -904,6 +904,42 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeCloudDbSystemSubscriptionResponse changeCloudDbSystemSubscription(
+            ChangeCloudDbSystemSubscriptionRequest request) {
+        Objects.requireNonNull(
+                request.getChangeCloudDbSystemSubscriptionDetails(),
+                "changeCloudDbSystemSubscriptionDetails is required");
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+
+        return clientCall(request, ChangeCloudDbSystemSubscriptionResponse::builder)
+                .logger(LOG, "changeCloudDbSystemSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeCloudDbSystemSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ChangeCloudDbSystemSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCloudDbSystemSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCloudDbSystemSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCloudDbSystemSubscriptionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeCloudExadataInfrastructureCompartmentResponse
             changeCloudExadataInfrastructureCompartment(
                     ChangeCloudExadataInfrastructureCompartmentRequest request) {
@@ -8292,6 +8328,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("dbSystems")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.DbSystem.class,
@@ -14321,6 +14358,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getDbSystemId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.DbSystem.class,

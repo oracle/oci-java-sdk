@@ -960,6 +960,47 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeCloudDbSystemSubscriptionResponse>
+            changeCloudDbSystemSubscription(
+                    ChangeCloudDbSystemSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudDbSystemSubscriptionRequest,
+                                    ChangeCloudDbSystemSubscriptionResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeCloudDbSystemSubscriptionDetails(),
+                "changeCloudDbSystemSubscriptionDetails is required");
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+
+        return clientCall(request, ChangeCloudDbSystemSubscriptionResponse::builder)
+                .logger(LOG, "changeCloudDbSystemSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeCloudDbSystemSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ChangeCloudDbSystemSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCloudDbSystemSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCloudDbSystemSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCloudDbSystemSubscriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeCloudExadataInfrastructureCompartmentResponse>
             changeCloudExadataInfrastructureCompartment(
                     ChangeCloudExadataInfrastructureCompartmentRequest request,
@@ -9260,6 +9301,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("dbSystems")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.DbSystem.class,
@@ -15977,6 +16019,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam(request.getDbSystemId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.DbSystem.class,

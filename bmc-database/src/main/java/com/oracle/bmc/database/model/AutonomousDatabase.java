@@ -153,7 +153,8 @@ public final class AutonomousDatabase
         "netServicesArchitecture",
         "availabilityDomain",
         "clusterPlacementGroupId",
-        "cloneTableSpaceList"
+        "cloneTableSpaceList",
+        "cloneType"
     })
     public AutonomousDatabase(
             String id,
@@ -285,7 +286,8 @@ public final class AutonomousDatabase
             NetServicesArchitecture netServicesArchitecture,
             String availabilityDomain,
             String clusterPlacementGroupId,
-            java.util.List<Integer> cloneTableSpaceList) {
+            java.util.List<Integer> cloneTableSpaceList,
+            CloneType cloneType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -417,6 +419,7 @@ public final class AutonomousDatabase
         this.availabilityDomain = availabilityDomain;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.cloneTableSpaceList = cloneTableSpaceList;
+        this.cloneType = cloneType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -3194,6 +3197,21 @@ public final class AutonomousDatabase
             this.__explicitlySet__.add("cloneTableSpaceList");
             return this;
         }
+        /** The Autonomous Database clone type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
+        private CloneType cloneType;
+
+        /**
+         * The Autonomous Database clone type.
+         *
+         * @param cloneType the value to set
+         * @return this builder
+         */
+        public Builder cloneType(CloneType cloneType) {
+            this.cloneType = cloneType;
+            this.__explicitlySet__.add("cloneType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -3330,7 +3348,8 @@ public final class AutonomousDatabase
                             this.netServicesArchitecture,
                             this.availabilityDomain,
                             this.clusterPlacementGroupId,
-                            this.cloneTableSpaceList);
+                            this.cloneTableSpaceList,
+                            this.cloneType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -3735,6 +3754,9 @@ public final class AutonomousDatabase
             }
             if (model.wasPropertyExplicitlySet("cloneTableSpaceList")) {
                 this.cloneTableSpaceList(model.getCloneTableSpaceList());
+            }
+            if (model.wasPropertyExplicitlySet("cloneType")) {
+                this.cloneType(model.getCloneType());
             }
             return this;
         }
@@ -7141,6 +7163,66 @@ public final class AutonomousDatabase
         return cloneTableSpaceList;
     }
 
+    /** The Autonomous Database clone type. */
+    public enum CloneType implements com.oracle.bmc.http.internal.BmcEnum {
+        Full("FULL"),
+        Metadata("METADATA"),
+        Partial("PARTIAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CloneType.class);
+
+        private final String value;
+        private static java.util.Map<String, CloneType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CloneType v : CloneType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CloneType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CloneType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CloneType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The Autonomous Database clone type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
+    private final CloneType cloneType;
+
+    /**
+     * The Autonomous Database clone type.
+     *
+     * @return the value
+     */
+    public CloneType getCloneType() {
+        return cloneType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -7329,6 +7411,7 @@ public final class AutonomousDatabase
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", cloneTableSpaceList=").append(String.valueOf(this.cloneTableSpaceList));
+        sb.append(", cloneType=").append(String.valueOf(this.cloneType));
         sb.append(")");
         return sb.toString();
     }
@@ -7528,6 +7611,7 @@ public final class AutonomousDatabase
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.cloneTableSpaceList, other.cloneTableSpaceList)
+                && java.util.Objects.equals(this.cloneType, other.cloneType)
                 && super.equals(other);
     }
 
@@ -8005,6 +8089,7 @@ public final class AutonomousDatabase
                         + (this.cloneTableSpaceList == null
                                 ? 43
                                 : this.cloneTableSpaceList.hashCode());
+        result = (result * PRIME) + (this.cloneType == null ? 43 : this.cloneType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
