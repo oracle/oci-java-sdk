@@ -20,8 +20,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("FILESTORAGE")
                     .serviceEndpointPrefix("filestorage")
-                    .serviceEndpointTemplate(
-                            "https://filestorage.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://filestorage.{region}.{secondLevelDomain}")
                     .endpointServiceName("filestorage")
                     .build();
 
@@ -131,10 +130,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getAddExportLockDetails(), "addExportLockDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("exportId", request.getExportId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, AddExportLockResponse::builder)
                 .logger(LOG, "addExportLock")
                 .serviceDetails(
@@ -167,10 +162,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
         Objects.requireNonNull(
                 request.getAddFileSystemLockDetails(), "addFileSystemLockDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, AddFileSystemLockResponse::builder)
                 .logger(LOG, "addFileSystemLock")
@@ -209,11 +200,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getAddFilesystemSnapshotPolicyLockDetails(),
                 "addFilesystemSnapshotPolicyLockDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put(
-                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, AddFilesystemSnapshotPolicyLockResponse::builder)
                 .logger(LOG, "addFilesystemSnapshotPolicyLock")
                 .serviceDetails(
@@ -248,10 +234,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
         Objects.requireNonNull(
                 request.getAddMountTargetLockDetails(), "addMountTargetLockDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, AddMountTargetLockResponse::builder)
                 .logger(LOG, "addMountTargetLock")
@@ -289,10 +271,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getAddOutboundConnectorLockDetails(),
                 "addOutboundConnectorLockDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, AddOutboundConnectorLockResponse::builder)
                 .logger(LOG, "addOutboundConnectorLock")
                 .serviceDetails(
@@ -325,10 +303,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
         Objects.requireNonNull(
                 request.getAddReplicationLockDetails(), "addReplicationLockDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("replicationId", request.getReplicationId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, AddReplicationLockResponse::builder)
                 .logger(LOG, "addReplicationLock")
@@ -363,10 +337,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getAddSnapshotLockDetails(), "addSnapshotLockDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("snapshotId", request.getSnapshotId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, AddSnapshotLockResponse::builder)
                 .logger(LOG, "addSnapshotLock")
                 .serviceDetails(
@@ -398,10 +368,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
             CancelDowngradeShapeMountTargetRequest request) {
 
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CancelDowngradeShapeMountTargetResponse::builder)
                 .logger(LOG, "cancelDowngradeShapeMountTarget")
@@ -439,10 +405,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getChangeFileSystemCompartmentDetails(),
                 "changeFileSystemCompartmentDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ChangeFileSystemCompartmentResponse::builder)
                 .logger(LOG, "changeFileSystemCompartment")
                 .serviceDetails(
@@ -478,11 +440,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getChangeFilesystemSnapshotPolicyCompartmentDetails(),
                 "changeFilesystemSnapshotPolicyCompartmentDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put(
-                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ChangeFilesystemSnapshotPolicyCompartmentResponse::builder)
                 .logger(LOG, "changeFilesystemSnapshotPolicyCompartment")
                 .serviceDetails(
@@ -515,10 +472,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getChangeMountTargetCompartmentDetails(),
                 "changeMountTargetCompartmentDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ChangeMountTargetCompartmentResponse::builder)
                 .logger(LOG, "changeMountTargetCompartment")
@@ -554,10 +507,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getChangeOutboundConnectorCompartmentDetails(),
                 "changeOutboundConnectorCompartmentDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ChangeOutboundConnectorCompartmentResponse::builder)
                 .logger(LOG, "changeOutboundConnectorCompartment")
                 .serviceDetails(
@@ -591,10 +540,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getChangeReplicationCompartmentDetails(),
                 "changeReplicationCompartmentDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("replicationId", request.getReplicationId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ChangeReplicationCompartmentResponse::builder)
                 .logger(LOG, "changeReplicationCompartment")
                 .serviceDetails(
@@ -623,9 +568,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public CreateExportResponse createExport(CreateExportRequest request) {
         Objects.requireNonNull(request.getCreateExportDetails(), "createExportDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, CreateExportResponse::builder)
                 .logger(LOG, "createExport")
                 .serviceDetails(
@@ -653,9 +595,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public CreateFileSystemResponse createFileSystem(CreateFileSystemRequest request) {
         Objects.requireNonNull(
                 request.getCreateFileSystemDetails(), "createFileSystemDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateFileSystemResponse::builder)
                 .logger(LOG, "createFileSystem")
@@ -687,9 +626,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getCreateFilesystemSnapshotPolicyDetails(),
                 "createFilesystemSnapshotPolicyDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, CreateFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "createFilesystemSnapshotPolicy")
                 .serviceDetails(
@@ -719,9 +655,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public CreateMountTargetResponse createMountTarget(CreateMountTargetRequest request) {
         Objects.requireNonNull(
                 request.getCreateMountTargetDetails(), "createMountTargetDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateMountTargetResponse::builder)
                 .logger(LOG, "createMountTarget")
@@ -754,9 +687,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getCreateOutboundConnectorDetails(),
                 "createOutboundConnectorDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, CreateOutboundConnectorResponse::builder)
                 .logger(LOG, "createOutboundConnector")
                 .serviceDetails(
@@ -786,10 +716,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getCreateQuotaRuleDetails(), "createQuotaRuleDetails is required");
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateQuotaRuleResponse::builder)
                 .logger(LOG, "createQuotaRule")
@@ -822,9 +748,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getCreateReplicationDetails(), "createReplicationDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, CreateReplicationResponse::builder)
                 .logger(LOG, "createReplication")
                 .serviceDetails(
@@ -852,9 +775,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public CreateSnapshotResponse createSnapshot(CreateSnapshotRequest request) {
         Objects.requireNonNull(
                 request.getCreateSnapshotDetails(), "createSnapshotDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateSnapshotResponse::builder)
                 .logger(LOG, "createSnapshot")
@@ -884,10 +804,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getExportId(), "exportId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("exportId", request.getExportId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, DeleteExportResponse::builder)
                 .logger(LOG, "deleteExport")
                 .serviceDetails(
@@ -912,10 +828,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public DeleteFileSystemResponse deleteFileSystem(DeleteFileSystemRequest request) {
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeleteFileSystemResponse::builder)
                 .logger(LOG, "deleteFileSystem")
@@ -946,11 +858,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getFilesystemSnapshotPolicyId(),
                 "filesystemSnapshotPolicyId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put(
-                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, DeleteFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "deleteFilesystemSnapshotPolicy")
                 .serviceDetails(
@@ -976,10 +883,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public DeleteMountTargetResponse deleteMountTarget(DeleteMountTargetRequest request) {
 
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeleteMountTargetResponse::builder)
                 .logger(LOG, "deleteMountTarget")
@@ -1008,10 +911,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(
                 request.getOutboundConnectorId(), "outboundConnectorId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, DeleteOutboundConnectorResponse::builder)
                 .logger(LOG, "deleteOutboundConnector")
                 .serviceDetails(
@@ -1039,11 +938,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getQuotaRuleId(), "quotaRuleId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        requiredParametersMap.put("quotaRuleId", request.getQuotaRuleId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, DeleteQuotaRuleResponse::builder)
                 .logger(LOG, "deleteQuotaRule")
                 .serviceDetails(
@@ -1069,10 +963,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public DeleteReplicationResponse deleteReplication(DeleteReplicationRequest request) {
 
         Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("replicationId", request.getReplicationId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeleteReplicationResponse::builder)
                 .logger(LOG, "deleteReplication")
@@ -1102,10 +992,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(
                 request.getReplicationTargetId(), "replicationTargetId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("replicationTargetId", request.getReplicationTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, DeleteReplicationTargetResponse::builder)
                 .logger(LOG, "deleteReplicationTarget")
                 .serviceDetails(
@@ -1130,10 +1016,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public DeleteSnapshotResponse deleteSnapshot(DeleteSnapshotRequest request) {
 
         Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("snapshotId", request.getSnapshotId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeleteSnapshotResponse::builder)
                 .logger(LOG, "deleteSnapshot")
@@ -1160,10 +1042,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, DetachCloneResponse::builder)
                 .logger(LOG, "detachClone")
                 .serviceDetails(
@@ -1189,10 +1067,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public EstimateReplicationResponse estimateReplication(EstimateReplicationRequest request) {
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, EstimateReplicationResponse::builder)
                 .logger(LOG, "estimateReplication")
@@ -1225,10 +1099,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getExportId(), "exportId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("exportId", request.getExportId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, GetExportResponse::builder)
                 .logger(LOG, "getExport")
                 .serviceDetails(
@@ -1256,10 +1126,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getExportSetId(), "exportSetId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("exportSetId", request.getExportSetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, GetExportSetResponse::builder)
                 .logger(LOG, "getExportSet")
                 .serviceDetails(
@@ -1286,10 +1152,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public GetFileSystemResponse getFileSystem(GetFileSystemRequest request) {
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetFileSystemResponse::builder)
                 .logger(LOG, "getFileSystem")
@@ -1321,11 +1183,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getFilesystemSnapshotPolicyId(),
                 "filesystemSnapshotPolicyId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put(
-                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, GetFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "getFilesystemSnapshotPolicy")
                 .serviceDetails(
@@ -1353,10 +1210,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public GetMountTargetResponse getMountTarget(GetMountTargetRequest request) {
 
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetMountTargetResponse::builder)
                 .logger(LOG, "getMountTarget")
@@ -1386,10 +1239,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(
                 request.getOutboundConnectorId(), "outboundConnectorId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, GetOutboundConnectorResponse::builder)
                 .logger(LOG, "getOutboundConnector")
                 .serviceDetails(
@@ -1418,11 +1267,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
 
         Validate.notBlank(request.getQuotaRuleId(), "quotaRuleId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        requiredParametersMap.put("quotaRuleId", request.getQuotaRuleId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetQuotaRuleResponse::builder)
                 .logger(LOG, "getQuotaRule")
@@ -1454,10 +1298,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("replicationId", request.getReplicationId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, GetReplicationResponse::builder)
                 .logger(LOG, "getReplication")
                 .serviceDetails(
@@ -1486,10 +1326,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(
                 request.getReplicationTargetId(), "replicationTargetId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("replicationTargetId", request.getReplicationTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, GetReplicationTargetResponse::builder)
                 .logger(LOG, "getReplicationTarget")
                 .serviceDetails(
@@ -1516,10 +1352,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public GetSnapshotResponse getSnapshot(GetSnapshotRequest request) {
 
         Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("snapshotId", request.getSnapshotId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetSnapshotResponse::builder)
                 .logger(LOG, "getSnapshot")
@@ -1548,11 +1380,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("compartmentId", request.getCompartmentId());
-        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListExportSetsResponse::builder)
                 .logger(LOG, "listExportSets")
@@ -1587,9 +1414,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     @Override
     public ListExportsResponse listExports(ListExportsRequest request) {
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListExportsResponse::builder)
                 .logger(LOG, "listExports")
@@ -1627,11 +1451,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("compartmentId", request.getCompartmentId());
-        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListFileSystemsResponse::builder)
                 .logger(LOG, "listFileSystems")
@@ -1675,11 +1494,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("compartmentId", request.getCompartmentId());
-        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListFilesystemSnapshotPoliciesResponse::builder)
                 .logger(LOG, "listFilesystemSnapshotPolicies")
                 .serviceDetails(
@@ -1718,11 +1532,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("compartmentId", request.getCompartmentId());
-        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListMountTargetsResponse::builder)
                 .logger(LOG, "listMountTargets")
@@ -1763,11 +1572,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("compartmentId", request.getCompartmentId());
-        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListOutboundConnectorsResponse::builder)
                 .logger(LOG, "listOutboundConnectors")
                 .serviceDetails(
@@ -1804,11 +1608,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
         Objects.requireNonNull(request.getPrincipalType(), "principalType is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        requiredParametersMap.put("principalType", request.getPrincipalType());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListQuotaRulesResponse::builder)
                 .logger(LOG, "listQuotaRules")
@@ -1848,11 +1647,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("compartmentId", request.getCompartmentId());
-        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListReplicationTargetsResponse::builder)
                 .logger(LOG, "listReplicationTargets")
                 .serviceDetails(
@@ -1890,11 +1684,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("compartmentId", request.getCompartmentId());
-        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListReplicationsResponse::builder)
                 .logger(LOG, "listReplications")
                 .serviceDetails(
@@ -1929,9 +1718,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     @Override
     public ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request) {
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListSnapshotsResponse::builder)
                 .logger(LOG, "listSnapshots")
@@ -1972,11 +1758,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getFilesystemSnapshotPolicyId(),
                 "filesystemSnapshotPolicyId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put(
-                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, PauseFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "pauseFilesystemSnapshotPolicy")
                 .serviceDetails(
@@ -2012,10 +1793,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getRemoveExportLockDetails(), "removeExportLockDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("exportId", request.getExportId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, RemoveExportLockResponse::builder)
                 .logger(LOG, "removeExportLock")
                 .serviceDetails(
@@ -2049,10 +1826,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getRemoveFileSystemLockDetails(),
                 "removeFileSystemLockDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, RemoveFileSystemLockResponse::builder)
                 .logger(LOG, "removeFileSystemLock")
@@ -2090,11 +1863,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getRemoveFilesystemSnapshotPolicyLockDetails(),
                 "removeFilesystemSnapshotPolicyLockDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put(
-                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, RemoveFilesystemSnapshotPolicyLockResponse::builder)
                 .logger(LOG, "removeFilesystemSnapshotPolicyLock")
@@ -2134,10 +1902,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getRemoveMountTargetLockDetails(),
                 "removeMountTargetLockDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, RemoveMountTargetLockResponse::builder)
                 .logger(LOG, "removeMountTargetLock")
                 .serviceDetails(
@@ -2173,10 +1937,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getRemoveOutboundConnectorLockDetails(),
                 "removeOutboundConnectorLockDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, RemoveOutboundConnectorLockResponse::builder)
                 .logger(LOG, "removeOutboundConnectorLock")
@@ -2214,10 +1974,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getRemoveReplicationLockDetails(),
                 "removeReplicationLockDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("replicationId", request.getReplicationId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, RemoveReplicationLockResponse::builder)
                 .logger(LOG, "removeReplicationLock")
                 .serviceDetails(
@@ -2250,10 +2006,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
         Objects.requireNonNull(
                 request.getRemoveSnapshotLockDetails(), "removeSnapshotLockDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("snapshotId", request.getSnapshotId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, RemoveSnapshotLockResponse::builder)
                 .logger(LOG, "removeSnapshotLock")
@@ -2290,10 +2042,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getScheduleDowngradeShapeMountTargetDetails(),
                 "scheduleDowngradeShapeMountTargetDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ScheduleDowngradeShapeMountTargetResponse::builder)
                 .logger(LOG, "scheduleDowngradeShapeMountTarget")
                 .serviceDetails(
@@ -2329,10 +2077,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getToggleQuotaRulesDetails(), "toggleQuotaRulesDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ToggleQuotaRulesResponse::builder)
                 .logger(LOG, "toggleQuotaRules")
                 .serviceDetails(
@@ -2363,11 +2107,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(
                 request.getFilesystemSnapshotPolicyId(),
                 "filesystemSnapshotPolicyId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put(
-                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UnpauseFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "unpauseFilesystemSnapshotPolicy")
@@ -2403,10 +2142,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getExportId(), "exportId must not be blank");
         Objects.requireNonNull(request.getUpdateExportDetails(), "updateExportDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("exportId", request.getExportId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, UpdateExportResponse::builder)
                 .logger(LOG, "updateExport")
                 .serviceDetails(
@@ -2439,10 +2174,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getUpdateExportSetDetails(), "updateExportSetDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("exportSetId", request.getExportSetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, UpdateExportSetResponse::builder)
                 .logger(LOG, "updateExportSet")
                 .serviceDetails(
@@ -2473,10 +2204,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
         Objects.requireNonNull(
                 request.getUpdateFileSystemDetails(), "updateFileSystemDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateFileSystemResponse::builder)
                 .logger(LOG, "updateFileSystem")
@@ -2514,11 +2241,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getUpdateFilesystemSnapshotPolicyDetails(),
                 "updateFilesystemSnapshotPolicyDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put(
-                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, UpdateFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "updateFilesystemSnapshotPolicy")
                 .serviceDetails(
@@ -2552,10 +2274,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
         Objects.requireNonNull(
                 request.getUpdateMountTargetDetails(), "updateMountTargetDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateMountTargetResponse::builder)
                 .logger(LOG, "updateMountTarget")
@@ -2592,10 +2310,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getUpdateOutboundConnectorDetails(),
                 "updateOutboundConnectorDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, UpdateOutboundConnectorResponse::builder)
                 .logger(LOG, "updateOutboundConnector")
                 .serviceDetails(
@@ -2630,11 +2344,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getQuotaRuleId(), "quotaRuleId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
-        requiredParametersMap.put("quotaRuleId", request.getQuotaRuleId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, UpdateQuotaRuleResponse::builder)
                 .logger(LOG, "updateQuotaRule")
                 .serviceDetails(
@@ -2668,10 +2377,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getUpdateReplicationDetails(), "updateReplicationDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("replicationId", request.getReplicationId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, UpdateReplicationResponse::builder)
                 .logger(LOG, "updateReplication")
                 .serviceDetails(
@@ -2703,10 +2408,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
         Objects.requireNonNull(
                 request.getUpdateSnapshotDetails(), "updateSnapshotDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("snapshotId", request.getSnapshotId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateSnapshotResponse::builder)
                 .logger(LOG, "updateSnapshot")
@@ -2742,10 +2443,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getUpgradeShapeMountTargetDetails(),
                 "upgradeShapeMountTargetDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, UpgradeShapeMountTargetResponse::builder)
                 .logger(LOG, "upgradeShapeMountTarget")
                 .serviceDetails(
@@ -2776,9 +2473,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public ValidateKeyTabsResponse validateKeyTabs(ValidateKeyTabsRequest request) {
         Objects.requireNonNull(
                 request.getValidateKeyTabsDetails(), "validateKeyTabsDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ValidateKeyTabsResponse::builder)
                 .logger(LOG, "validateKeyTabs")

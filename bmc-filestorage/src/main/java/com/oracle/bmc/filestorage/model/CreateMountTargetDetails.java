@@ -146,25 +146,15 @@ public final class CreateMountTargetDetails
          *
          * <p>Note:
          *
-         * <p>If the IP address is IPv4, this attribute value is stored in the
+         * <p>This attribute value is stored in the
          * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
          * resource, not in the {@code mountTarget} resource. To update the {@code hostnameLabel},
          * use {@code GetMountTarget} to obtain the
          * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target's private IPs ({@code privateIpIds}). Then, you can use
          * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
-         * to update the {@code hostnameLabel} value.
-         *
-         * <p>If the IP address is IPv6, it is stored in the [Ipv6]
-         * (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the
-         * {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * mount target's IPv6 address ({@code mountTargetIpv6Ids}). Then, you can use
-         * [UpdateIpv6](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6)
-         * to update the {@code hostnameLabel} value.
-         *
-         * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * to update the {@code hostnameLabel} value. For more information, see [DNS in Your Virtual
+         * Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code files-1}
          */
@@ -181,25 +171,15 @@ public final class CreateMountTargetDetails
          *
          * <p>Note:
          *
-         * <p>If the IP address is IPv4, this attribute value is stored in the
+         * <p>This attribute value is stored in the
          * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
          * resource, not in the {@code mountTarget} resource. To update the {@code hostnameLabel},
          * use {@code GetMountTarget} to obtain the
          * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target's private IPs ({@code privateIpIds}). Then, you can use
          * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
-         * to update the {@code hostnameLabel} value.
-         *
-         * <p>If the IP address is IPv6, it is stored in the [Ipv6]
-         * (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the
-         * {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * mount target's IPv6 address ({@code mountTargetIpv6Ids}). Then, you can use
-         * [UpdateIpv6](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6)
-         * to update the {@code hostnameLabel} value.
-         *
-         * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * to update the {@code hostnameLabel} value. For more information, see [DNS in Your Virtual
+         * Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code files-1}
          *
@@ -550,25 +530,15 @@ public final class CreateMountTargetDetails
      *
      * <p>Note:
      *
-     * <p>If the IP address is IPv4, this attribute value is stored in the
+     * <p>This attribute value is stored in the
      * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
      * resource, not in the {@code mountTarget} resource. To update the {@code hostnameLabel}, use
      * {@code GetMountTarget} to obtain the
      * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount
      * target's private IPs ({@code privateIpIds}). Then, you can use
      * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
-     * to update the {@code hostnameLabel} value.
-     *
-     * <p>If the IP address is IPv6, it is stored in the [Ipv6]
-     * (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the
-     * {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount
-     * target's IPv6 address ({@code mountTargetIpv6Ids}). Then, you can use
-     * [UpdateIpv6](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6)
-     * to update the {@code hostnameLabel} value.
-     *
-     * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * to update the {@code hostnameLabel} value. For more information, see [DNS in Your Virtual
+     * Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code files-1}
      */
@@ -584,25 +554,15 @@ public final class CreateMountTargetDetails
      *
      * <p>Note:
      *
-     * <p>If the IP address is IPv4, this attribute value is stored in the
+     * <p>This attribute value is stored in the
      * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
      * resource, not in the {@code mountTarget} resource. To update the {@code hostnameLabel}, use
      * {@code GetMountTarget} to obtain the
      * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount
      * target's private IPs ({@code privateIpIds}). Then, you can use
      * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
-     * to update the {@code hostnameLabel} value.
-     *
-     * <p>If the IP address is IPv6, it is stored in the [Ipv6]
-     * (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the
-     * {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount
-     * target's IPv6 address ({@code mountTargetIpv6Ids}). Then, you can use
-     * [UpdateIpv6](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6)
-     * to update the {@code hostnameLabel} value.
-     *
-     * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * to update the {@code hostnameLabel} value. For more information, see [DNS in Your Virtual
+     * Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code files-1}
      *

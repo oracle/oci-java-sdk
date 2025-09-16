@@ -649,6 +649,44 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * cluster placement group of the Exadata Infrastructure or Db System.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * cluster placement group of the Exadata Infrastructure or Db System.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -687,7 +725,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             this.dbSystemSecurityAttributes,
                             this.databaseFreeformTags,
                             this.databaseDefinedTags,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.clusterPlacementGroupId,
+                            this.subscriptionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -793,6 +833,12 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             return this;
         }
     }
@@ -839,7 +885,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes,
             java.util.Map<String, String> databaseFreeformTags,
             java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            String clusterPlacementGroupId,
+            String subscriptionId) {
         super(
                 databaseSoftwareImageId,
                 databaseAdminPassword,
@@ -873,6 +921,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         this.databaseFreeformTags = databaseFreeformTags;
         this.databaseDefinedTags = databaseDefinedTags;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.subscriptionId = subscriptionId;
     }
 
     /**
@@ -1472,6 +1522,40 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         return dataCollectionOptions;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Exadata Infrastructure or Db System.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Exadata Infrastructure or Db System.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1513,6 +1597,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", databaseFreeformTags=").append(String.valueOf(this.databaseFreeformTags));
         sb.append(", databaseDefinedTags=").append(String.valueOf(this.databaseDefinedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -1554,6 +1641,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.databaseFreeformTags, other.databaseFreeformTags)
                 && java.util.Objects.equals(this.databaseDefinedTags, other.databaseDefinedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && super.equals(other);
     }
 
@@ -1621,6 +1711,14 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         return result;
     }
 }

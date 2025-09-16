@@ -50,6 +50,21 @@ public class UpdateDbSystemRequest
     public String getIfMatch() {
         return ifMatch;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not
+     * actually creating or updating a resource and is used only to perform validation on the
+     * submitted data.
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -124,6 +139,26 @@ public class UpdateDbSystemRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not
+         * actually creating or updating a resource and is used only to perform validation on the
+         * submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -156,6 +191,7 @@ public class UpdateDbSystemRequest
             dbSystemId(o.getDbSystemId());
             updateDbSystemDetails(o.getUpdateDbSystemDetails());
             ifMatch(o.getIfMatch());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -205,8 +241,9 @@ public class UpdateDbSystemRequest
             request.dbSystemId = dbSystemId;
             request.updateDbSystemDetails = updateDbSystemDetails;
             request.ifMatch = ifMatch;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new UpdateDbSystemRequest(dbSystemId, updateDbSystemDetails, ifMatch);
+            // new UpdateDbSystemRequest(dbSystemId, updateDbSystemDetails, ifMatch, opcDryRun);
         }
     }
 
@@ -219,7 +256,8 @@ public class UpdateDbSystemRequest
         return new Builder()
                 .dbSystemId(dbSystemId)
                 .updateDbSystemDetails(updateDbSystemDetails)
-                .ifMatch(ifMatch);
+                .ifMatch(ifMatch)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -239,6 +277,7 @@ public class UpdateDbSystemRequest
         sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(",updateDbSystemDetails=").append(String.valueOf(this.updateDbSystemDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -256,7 +295,8 @@ public class UpdateDbSystemRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.updateDbSystemDetails, other.updateDbSystemDetails)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -270,6 +310,7 @@ public class UpdateDbSystemRequest
                                 ? 43
                                 : this.updateDbSystemDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

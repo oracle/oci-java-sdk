@@ -71,6 +71,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         "securityAttributes",
         "privateIp",
         "privateIpV6",
+        "clusterPlacementGroupId",
+        "subscriptionId",
         "dataCollectionOptions",
         "computeModel",
         "computeCount"
@@ -104,6 +106,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
             String privateIpV6,
+            String clusterPlacementGroupId,
+            String subscriptionId,
             DataCollectionOptions dataCollectionOptions,
             ComputeModel computeModel,
             Integer computeCount) {
@@ -136,6 +140,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         this.securityAttributes = securityAttributes;
         this.privateIp = privateIp;
         this.privateIpV6 = privateIpV6;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.subscriptionId = subscriptionId;
         this.dataCollectionOptions = dataCollectionOptions;
         this.computeModel = computeModel;
         this.computeCount = computeCount;
@@ -791,6 +797,40 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         return privateIpV6;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Exadata Infrastructure or Db System.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Exadata Infrastructure or Db System.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
     private final DataCollectionOptions dataCollectionOptions;
 
@@ -915,6 +955,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", privateIpV6=").append(String.valueOf(this.privateIpV6));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
@@ -962,6 +1005,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.privateIpV6, other.privateIpV6)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
@@ -1036,6 +1082,14 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
                                 : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         result = (result * PRIME) + (this.privateIpV6 == null ? 43 : this.privateIpV6.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataCollectionOptions == null

@@ -283,6 +283,24 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
         private DataCollectionOptions dataCollectionOptions;
 
@@ -421,6 +439,8 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
                             this.securityAttributes,
                             this.privateIp,
                             this.privateIpV6,
+                            this.clusterPlacementGroupId,
+                            this.subscriptionId,
                             this.dataCollectionOptions,
                             this.computeModel,
                             this.computeCount,
@@ -521,6 +541,12 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             if (model.wasPropertyExplicitlySet("privateIpV6")) {
                 this.privateIpV6(model.getPrivateIpV6());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
             }
@@ -588,6 +614,8 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
             String privateIpV6,
+            String clusterPlacementGroupId,
+            String subscriptionId,
             DataCollectionOptions dataCollectionOptions,
             ComputeModel computeModel,
             Integer computeCount,
@@ -625,6 +653,8 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
                 securityAttributes,
                 privateIp,
                 privateIpV6,
+                clusterPlacementGroupId,
+                subscriptionId,
                 dataCollectionOptions,
                 computeModel,
                 computeCount);

@@ -642,6 +642,21 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             this.__explicitlySet__.add("openMode");
             return this;
         }
+        /** The Autonomous Database clone type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
+        private CloneType cloneType;
+
+        /**
+         * The Autonomous Database clone type.
+         *
+         * @param cloneType the value to set
+         * @return this builder
+         */
+        public Builder cloneType(CloneType cloneType) {
+            this.cloneType = cloneType;
+            this.__explicitlySet__.add("cloneType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -707,7 +722,8 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                             this.autoRefreshFrequencyInSeconds,
                             this.autoRefreshPointLagInSeconds,
                             this.timeOfAutoRefreshStart,
-                            this.openMode);
+                            this.openMode,
+                            this.cloneType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -895,6 +911,9 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             if (model.wasPropertyExplicitlySet("openMode")) {
                 this.openMode(model.getOpenMode());
             }
+            if (model.wasPropertyExplicitlySet("cloneType")) {
+                this.cloneType(model.getCloneType());
+            }
             return this;
         }
     }
@@ -968,7 +987,8 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             Integer autoRefreshFrequencyInSeconds,
             Integer autoRefreshPointLagInSeconds,
             java.util.Date timeOfAutoRefreshStart,
-            OpenMode openMode) {
+            OpenMode openMode,
+            CloneType cloneType) {
         super(
                 subscriptionId,
                 compartmentId,
@@ -1029,6 +1049,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         this.autoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
         this.timeOfAutoRefreshStart = timeOfAutoRefreshStart;
         this.openMode = openMode;
+        this.cloneType = cloneType;
     }
 
     /**
@@ -1227,6 +1248,53 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         return openMode;
     }
 
+    /** The Autonomous Database clone type. */
+    public enum CloneType implements com.oracle.bmc.http.internal.BmcEnum {
+        Full("FULL"),
+        Metadata("METADATA"),
+        Partial("PARTIAL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CloneType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CloneType v : CloneType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CloneType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CloneType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CloneType: " + key);
+        }
+    };
+    /** The Autonomous Database clone type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
+    private final CloneType cloneType;
+
+    /**
+     * The Autonomous Database clone type.
+     *
+     * @return the value
+     */
+    public CloneType getCloneType() {
+        return cloneType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1250,6 +1318,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                 .append(String.valueOf(this.autoRefreshPointLagInSeconds));
         sb.append(", timeOfAutoRefreshStart=").append(String.valueOf(this.timeOfAutoRefreshStart));
         sb.append(", openMode=").append(String.valueOf(this.openMode));
+        sb.append(", cloneType=").append(String.valueOf(this.cloneType));
         sb.append(")");
         return sb.toString();
     }
@@ -1274,6 +1343,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                 && java.util.Objects.equals(
                         this.timeOfAutoRefreshStart, other.timeOfAutoRefreshStart)
                 && java.util.Objects.equals(this.openMode, other.openMode)
+                && java.util.Objects.equals(this.cloneType, other.cloneType)
                 && super.equals(other);
     }
 
@@ -1301,6 +1371,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                                 ? 43
                                 : this.timeOfAutoRefreshStart.hashCode());
         result = (result * PRIME) + (this.openMode == null ? 43 : this.openMode.hashCode());
+        result = (result * PRIME) + (this.cloneType == null ? 43 : this.cloneType.hashCode());
         return result;
     }
 }
