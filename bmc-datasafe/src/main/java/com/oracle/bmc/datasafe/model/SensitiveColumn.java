@@ -44,6 +44,8 @@ public final class SensitiveColumn
         "parentColumnKeys",
         "relationType",
         "estimatedDataValueCount",
+        "confidenceLevel",
+        "confidenceLevelDetails",
         "sampleDataValues",
         "appDefinedChildColumnKeys",
         "dbDefinedChildColumnKeys",
@@ -68,6 +70,8 @@ public final class SensitiveColumn
             java.util.List<String> parentColumnKeys,
             RelationType relationType,
             Long estimatedDataValueCount,
+            ConfidenceLevelEnum confidenceLevel,
+            java.util.List<Object> confidenceLevelDetails,
             java.util.List<String> sampleDataValues,
             java.util.List<String> appDefinedChildColumnKeys,
             java.util.List<String> dbDefinedChildColumnKeys,
@@ -91,6 +95,8 @@ public final class SensitiveColumn
         this.parentColumnKeys = parentColumnKeys;
         this.relationType = relationType;
         this.estimatedDataValueCount = estimatedDataValueCount;
+        this.confidenceLevel = confidenceLevel;
+        this.confidenceLevelDetails = confidenceLevelDetails;
         this.sampleDataValues = sampleDataValues;
         this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
         this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
@@ -416,6 +422,46 @@ public final class SensitiveColumn
             return this;
         }
         /**
+         * The confidence level of the sensitive column associated with the sensitive type. The
+         * confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW.
+         * The confidence level will be NONE for manually added sensitive columns.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("confidenceLevel")
+        private ConfidenceLevelEnum confidenceLevel;
+
+        /**
+         * The confidence level of the sensitive column associated with the sensitive type. The
+         * confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW.
+         * The confidence level will be NONE for manually added sensitive columns.
+         *
+         * @param confidenceLevel the value to set
+         * @return this builder
+         */
+        public Builder confidenceLevel(ConfidenceLevelEnum confidenceLevel) {
+            this.confidenceLevel = confidenceLevel;
+            this.__explicitlySet__.add("confidenceLevel");
+            return this;
+        }
+        /**
+         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
+         * }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("confidenceLevelDetails")
+        private java.util.List<Object> confidenceLevelDetails;
+
+        /**
+         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
+         * }}
+         *
+         * @param confidenceLevelDetails the value to set
+         * @return this builder
+         */
+        public Builder confidenceLevelDetails(java.util.List<Object> confidenceLevelDetails) {
+            this.confidenceLevelDetails = confidenceLevelDetails;
+            this.__explicitlySet__.add("confidenceLevelDetails");
+            return this;
+        }
+        /**
          * Original data values collected for the sensitive column from the associated database.
          * Sample data helps review the column and ensure that it actually contains sensitive data.
          * Note that sample data is retrieved by a data discovery job only if the
@@ -524,6 +570,8 @@ public final class SensitiveColumn
                             this.parentColumnKeys,
                             this.relationType,
                             this.estimatedDataValueCount,
+                            this.confidenceLevel,
+                            this.confidenceLevelDetails,
                             this.sampleDataValues,
                             this.appDefinedChildColumnKeys,
                             this.dbDefinedChildColumnKeys,
@@ -589,6 +637,12 @@ public final class SensitiveColumn
             }
             if (model.wasPropertyExplicitlySet("estimatedDataValueCount")) {
                 this.estimatedDataValueCount(model.getEstimatedDataValueCount());
+            }
+            if (model.wasPropertyExplicitlySet("confidenceLevel")) {
+                this.confidenceLevel(model.getConfidenceLevel());
+            }
+            if (model.wasPropertyExplicitlySet("confidenceLevelDetails")) {
+                this.confidenceLevelDetails(model.getConfidenceLevelDetails());
             }
             if (model.wasPropertyExplicitlySet("sampleDataValues")) {
                 this.sampleDataValues(model.getSampleDataValues());
@@ -1089,6 +1143,40 @@ public final class SensitiveColumn
     }
 
     /**
+     * The confidence level of the sensitive column associated with the sensitive type. The
+     * confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The
+     * confidence level will be NONE for manually added sensitive columns.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("confidenceLevel")
+    private final ConfidenceLevelEnum confidenceLevel;
+
+    /**
+     * The confidence level of the sensitive column associated with the sensitive type. The
+     * confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The
+     * confidence level will be NONE for manually added sensitive columns.
+     *
+     * @return the value
+     */
+    public ConfidenceLevelEnum getConfidenceLevel() {
+        return confidenceLevel;
+    }
+
+    /**
+     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("confidenceLevelDetails")
+    private final java.util.List<Object> confidenceLevelDetails;
+
+    /**
+     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     *
+     * @return the value
+     */
+    public java.util.List<Object> getConfidenceLevelDetails() {
+        return confidenceLevelDetails;
+    }
+
+    /**
      * Original data values collected for the sensitive column from the associated database. Sample
      * data helps review the column and ensure that it actually contains sensitive data. Note that
      * sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled
@@ -1196,6 +1284,8 @@ public final class SensitiveColumn
         sb.append(", relationType=").append(String.valueOf(this.relationType));
         sb.append(", estimatedDataValueCount=")
                 .append(String.valueOf(this.estimatedDataValueCount));
+        sb.append(", confidenceLevel=").append(String.valueOf(this.confidenceLevel));
+        sb.append(", confidenceLevelDetails=").append(String.valueOf(this.confidenceLevelDetails));
         sb.append(", sampleDataValues=").append(String.valueOf(this.sampleDataValues));
         sb.append(", appDefinedChildColumnKeys=")
                 .append(String.valueOf(this.appDefinedChildColumnKeys));
@@ -1235,6 +1325,9 @@ public final class SensitiveColumn
                 && java.util.Objects.equals(this.relationType, other.relationType)
                 && java.util.Objects.equals(
                         this.estimatedDataValueCount, other.estimatedDataValueCount)
+                && java.util.Objects.equals(this.confidenceLevel, other.confidenceLevel)
+                && java.util.Objects.equals(
+                        this.confidenceLevelDetails, other.confidenceLevelDetails)
                 && java.util.Objects.equals(this.sampleDataValues, other.sampleDataValues)
                 && java.util.Objects.equals(
                         this.appDefinedChildColumnKeys, other.appDefinedChildColumnKeys)
@@ -1282,6 +1375,14 @@ public final class SensitiveColumn
                         + (this.estimatedDataValueCount == null
                                 ? 43
                                 : this.estimatedDataValueCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.confidenceLevel == null ? 43 : this.confidenceLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.confidenceLevelDetails == null
+                                ? 43
+                                : this.confidenceLevelDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.sampleDataValues == null ? 43 : this.sampleDataValues.hashCode());

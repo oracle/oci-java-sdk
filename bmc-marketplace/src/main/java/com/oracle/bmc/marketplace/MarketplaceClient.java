@@ -188,6 +188,41 @@ public class MarketplaceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public CreateMarketplaceExternalAttestedMetadataResponse
+            createMarketplaceExternalAttestedMetadata(
+                    CreateMarketplaceExternalAttestedMetadataRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMarketplaceExternalAttestedMetadataDetails(),
+                "createMarketplaceExternalAttestedMetadataDetails is required");
+
+        return clientCall(request, CreateMarketplaceExternalAttestedMetadataResponse::builder)
+                .logger(LOG, "createMarketplaceExternalAttestedMetadata")
+                .serviceDetails(
+                        "Marketplace",
+                        "CreateMarketplaceExternalAttestedMetadata",
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/CreateMarketplaceExternalAttestedMetadataDetails/CreateMarketplaceExternalAttestedMetadata")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMarketplaceExternalAttestedMetadataRequest::builder)
+                .basePath("/20181001")
+                .appendPathParam("marketplaceExternalAttestedMetadata")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.marketplace.model.MarketplaceExternalAttestedMetadata.class,
+                        CreateMarketplaceExternalAttestedMetadataResponse.Builder
+                                ::marketplaceExternalAttestedMetadata)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateMarketplaceExternalAttestedMetadataResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateMarketplaceExternalAttestedMetadataResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public CreatePublicationResponse createPublication(CreatePublicationRequest request) {
         Objects.requireNonNull(
                 request.getCreatePublicationDetails(), "createPublicationDetails is required");
@@ -680,6 +715,40 @@ public class MarketplaceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListListingsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListListingsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMarketplaceMetadataPublicKeysResponse listMarketplaceMetadataPublicKeys(
+            ListMarketplaceMetadataPublicKeysRequest request) {
+
+        return clientCall(request, ListMarketplaceMetadataPublicKeysResponse::builder)
+                .logger(LOG, "listMarketplaceMetadataPublicKeys")
+                .serviceDetails(
+                        "Marketplace",
+                        "ListMarketplaceMetadataPublicKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/MarketplaceMetadataPublicKeySummary/ListMarketplaceMetadataPublicKeys")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMarketplaceMetadataPublicKeysRequest::builder)
+                .basePath("/20181001")
+                .appendPathParam("marketplaceMetadataPublicKeys")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.marketplace.model.MarketplaceMetadataPublicKeySummary.class,
+                        ListMarketplaceMetadataPublicKeysResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMarketplaceMetadataPublicKeysResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMarketplaceMetadataPublicKeysResponse.Builder::opcNextPage)
                 .callSync();
     }
 

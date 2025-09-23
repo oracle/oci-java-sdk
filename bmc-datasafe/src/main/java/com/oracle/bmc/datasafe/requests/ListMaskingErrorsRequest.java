@@ -25,6 +25,8 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
 
     /** A filter to return only masking errors that match the specified step name. */
     public enum StepName implements com.oracle.bmc.http.internal.BmcEnum {
+        Validate("VALIDATE"),
+        GenerateScript("GENERATE_SCRIPT"),
         ExecuteMasking("EXECUTE_MASKING"),
         PreMasking("PRE_MASKING"),
         PostMasking("POST_MASKING"),

@@ -189,6 +189,22 @@ public interface JavaManagementService extends AutoCloseable {
     CreateJmsPluginResponse createJmsPlugin(CreateJmsPluginRequest request);
 
     /**
+     * Create a task schedule using the information provided.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateTaskScheduleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskSchedule
+     *     API.
+     */
+    CreateTaskScheduleResponse createTaskSchedule(CreateTaskScheduleRequest request);
+
+    /**
      * Deletes the blocklist record specified by an identifier.
      *
      * @param request The request object containing the details to send
@@ -304,6 +320,22 @@ public interface JavaManagementService extends AutoCloseable {
      */
     DeletePerformanceTuningAnalysisResultResponse deletePerformanceTuningAnalysisResult(
             DeletePerformanceTuningAnalysisResultRequest request);
+
+    /**
+     * Deletes the task schedule record specified by an identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteTaskScheduleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskSchedule
+     *     API.
+     */
+    DeleteTaskScheduleResponse deleteTaskSchedule(DeleteTaskScheduleRequest request);
 
     /**
      * Request to disable the DRS in the selected target in the Fleet.
@@ -578,6 +610,22 @@ public interface JavaManagementService extends AutoCloseable {
             GetPerformanceTuningAnalysisResultRequest request);
 
     /**
+     * Returns a task schedule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetTaskScheduleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskSchedule
+     *     API.
+     */
+    GetTaskScheduleResponse getTaskSchedule(GetTaskScheduleRequest request);
+
+    /**
      * Retrieve the details of a work request with the specified ID.
      *
      * @param request The request object containing the details to send
@@ -638,6 +686,21 @@ public interface JavaManagementService extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBlocklists API.
      */
     ListBlocklistsResponse listBlocklists(ListBlocklistsRequest request);
+
+    /**
+     * List containers in a fleet filtered by query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListContainersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainers API.
+     */
+    ListContainersResponse listContainers(ListContainersRequest request);
 
     /**
      * Lists the results of a Crypto event analysis.
@@ -817,6 +880,40 @@ public interface JavaManagementService extends AutoCloseable {
     ListJreUsageResponse listJreUsage(ListJreUsageRequest request);
 
     /**
+     * List applications where a library has been detected filtered by query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListLibraryApplicationUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListLibraryApplicationUsage API.
+     */
+    ListLibraryApplicationUsageResponse listLibraryApplicationUsage(
+            ListLibraryApplicationUsageRequest request);
+
+    /**
+     * List managed instances where a library has been detected, filtered by query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListLibraryManagedInstanceUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListLibraryManagedInstanceUsage API.
+     */
+    ListLibraryManagedInstanceUsageResponse listLibraryManagedInstanceUsage(
+            ListLibraryManagedInstanceUsageRequest request);
+
+    /**
      * List Performance Tuning Analysis results.
      *
      * @param request The request object containing the details to send
@@ -848,6 +945,77 @@ public interface JavaManagementService extends AutoCloseable {
      *     API.
      */
     ListPluginErrorsResponse listPluginErrors(ListPluginErrorsRequest request);
+
+    /**
+     * Returns a list of task schedules.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListTaskSchedulesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskSchedules
+     *     API.
+     */
+    ListTaskSchedulesResponse listTaskSchedules(ListTaskSchedulesRequest request);
+
+    /**
+     * List applications where an uncorrelated package has been detected, filtered by query
+     * parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListUncorrelatedPackageApplicationUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListUncorrelatedPackageApplicationUsage API.
+     */
+    ListUncorrelatedPackageApplicationUsageResponse listUncorrelatedPackageApplicationUsage(
+            ListUncorrelatedPackageApplicationUsageRequest request);
+
+    /**
+     * List managed instances where an uncorrelated package has been detected, filtered by query
+     * parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListUncorrelatedPackageManagedInstanceUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListUncorrelatedPackageManagedInstanceUsage API.
+     */
+    ListUncorrelatedPackageManagedInstanceUsageResponse listUncorrelatedPackageManagedInstanceUsage(
+            ListUncorrelatedPackageManagedInstanceUsageRequest request);
+
+    /**
+     * List uncorrelated package summaries in a fleet, filtered by query parameters. Uncorrelated
+     * packages are Java packages which can't be accurately correlated to a library during a library
+     * scan.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListUncorrelatedPackageUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListUncorrelatedPackageUsage API.
+     */
+    ListUncorrelatedPackageUsageResponse listUncorrelatedPackageUsage(
+            ListUncorrelatedPackageUsageRequest request);
 
     /**
      * Retrieve a paginated list of work items for a specified work request.
@@ -1214,6 +1382,25 @@ public interface JavaManagementService extends AutoCloseable {
     SummarizeJreUsageResponse summarizeJreUsage(SummarizeJreUsageRequest request);
 
     /**
+     * Retrieve the inventory of libraries in the specified fleet: Statically detected library
+     * count, Dynamically detected library count, Uncorrelated package count, High, Medium and Low
+     * severity library count.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeLibraryInventoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeLibraryInventory API.
+     */
+    SummarizeLibraryInventoryResponse summarizeLibraryInventory(
+            SummarizeLibraryInventoryRequest request);
+
+    /**
      * List libraries in a fleet filtered by query parameters.
      *
      * @param request The request object containing the details to send
@@ -1377,6 +1564,22 @@ public interface JavaManagementService extends AutoCloseable {
      *     API.
      */
     UpdateJmsPluginResponse updateJmsPlugin(UpdateJmsPluginRequest request);
+
+    /**
+     * Update the task schedule for the given task type.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateTaskScheduleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskSchedule
+     *     API.
+     */
+    UpdateTaskScheduleResponse updateTaskSchedule(UpdateTaskScheduleRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

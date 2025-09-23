@@ -26,6 +26,7 @@ public final class CreateJmsPluginDetails
     @java.beans.ConstructorProperties({
         "agentId",
         "compartmentId",
+        "agentType",
         "fleetId",
         "definedTags",
         "freeformTags"
@@ -33,12 +34,14 @@ public final class CreateJmsPluginDetails
     public CreateJmsPluginDetails(
             String agentId,
             String compartmentId,
+            AgentType agentType,
             String fleetId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags) {
         super();
         this.agentId = agentId;
         this.compartmentId = compartmentId;
+        this.agentType = agentType;
         this.fleetId = fleetId;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
@@ -48,16 +51,16 @@ public final class CreateJmsPluginDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-         * deployed.
+         * Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management
+         * Agent (OCMA) instance where the JMS plugin is deployed.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-         * deployed.
+         * Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management
+         * Agent (OCMA) instance where the JMS plugin is deployed.
          *
          * @param agentId the value to set
          * @return this builder
@@ -68,14 +71,14 @@ public final class CreateJmsPluginDetails
             return this;
         }
         /**
-         * The OMA/OCA agent's compartment
+         * The OMA/OCA/OCMA agent's compartment
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OMA/OCA agent's compartment
+         * The OMA/OCA/OCMA agent's compartment
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
@@ -84,6 +87,21 @@ public final class CreateJmsPluginDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /** The agent type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("agentType")
+        private AgentType agentType;
+
+        /**
+         * The agent type.
+         *
+         * @param agentType the value to set
+         * @return this builder
+         */
+        public Builder agentType(AgentType agentType) {
+            this.agentType = agentType;
+            this.__explicitlySet__.add("agentType");
             return this;
         }
         /**
@@ -159,6 +177,7 @@ public final class CreateJmsPluginDetails
                     new CreateJmsPluginDetails(
                             this.agentId,
                             this.compartmentId,
+                            this.agentType,
                             this.fleetId,
                             this.definedTags,
                             this.freeformTags);
@@ -175,6 +194,9 @@ public final class CreateJmsPluginDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("agentType")) {
+                this.agentType(model.getAgentType());
             }
             if (model.wasPropertyExplicitlySet("fleetId")) {
                 this.fleetId(model.getFleetId());
@@ -200,16 +222,16 @@ public final class CreateJmsPluginDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-     * deployed.
+     * Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management
+     * Agent (OCMA) instance where the JMS plugin is deployed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-     * deployed.
+     * Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management
+     * Agent (OCMA) instance where the JMS plugin is deployed.
      *
      * @return the value
      */
@@ -218,20 +240,33 @@ public final class CreateJmsPluginDetails
     }
 
     /**
-     * The OMA/OCA agent's compartment
+     * The OMA/OCA/OCMA agent's compartment
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OMA/OCA agent's compartment
+     * The OMA/OCA/OCMA agent's compartment
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /** The agent type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("agentType")
+    private final AgentType agentType;
+
+    /**
+     * The agent type.
+     *
+     * @return the value
+     */
+    public AgentType getAgentType() {
+        return agentType;
     }
 
     /**
@@ -306,6 +341,7 @@ public final class CreateJmsPluginDetails
         sb.append("super=").append(super.toString());
         sb.append("agentId=").append(String.valueOf(this.agentId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", agentType=").append(String.valueOf(this.agentType));
         sb.append(", fleetId=").append(String.valueOf(this.fleetId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -325,6 +361,7 @@ public final class CreateJmsPluginDetails
         CreateJmsPluginDetails other = (CreateJmsPluginDetails) o;
         return java.util.Objects.equals(this.agentId, other.agentId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.agentType, other.agentType)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -339,6 +376,7 @@ public final class CreateJmsPluginDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.agentType == null ? 43 : this.agentType.hashCode());
         result = (result * PRIME) + (this.fleetId == null ? 43 : this.fleetId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

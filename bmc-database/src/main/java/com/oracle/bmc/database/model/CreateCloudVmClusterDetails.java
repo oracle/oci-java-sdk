@@ -59,6 +59,7 @@ public final class CreateCloudVmClusterDetails
         "systemVersion",
         "fileSystemConfigurationDetails",
         "cloudAutomationUpdateDetails",
+        "exascaleDbStorageVaultId",
         "vmClusterType"
     })
     public CreateCloudVmClusterDetails(
@@ -96,6 +97,7 @@ public final class CreateCloudVmClusterDetails
             String systemVersion,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
             CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
+            String exascaleDbStorageVaultId,
             VmClusterType vmClusterType) {
         super();
         this.compartmentId = compartmentId;
@@ -132,6 +134,7 @@ public final class CreateCloudVmClusterDetails
         this.systemVersion = systemVersion;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
         this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
         this.vmClusterType = vmClusterType;
     }
 
@@ -801,6 +804,25 @@ public final class CreateCloudVmClusterDetails
             this.__explicitlySet__.add("cloudAutomationUpdateDetails");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Database Storage Vault.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+        private String exascaleDbStorageVaultId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Database Storage Vault.
+         *
+         * @param exascaleDbStorageVaultId the value to set
+         * @return this builder
+         */
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            this.__explicitlySet__.add("exascaleDbStorageVaultId");
+            return this;
+        }
         /** The vmcluster type for the VM cluster/Cloud VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
         private VmClusterType vmClusterType;
@@ -857,6 +879,7 @@ public final class CreateCloudVmClusterDetails
                             this.systemVersion,
                             this.fileSystemConfigurationDetails,
                             this.cloudAutomationUpdateDetails,
+                            this.exascaleDbStorageVaultId,
                             this.vmClusterType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -967,6 +990,9 @@ public final class CreateCloudVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
                 this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("exascaleDbStorageVaultId")) {
+                this.exascaleDbStorageVaultId(model.getExascaleDbStorageVaultId());
             }
             if (model.wasPropertyExplicitlySet("vmClusterType")) {
                 this.vmClusterType(model.getVmClusterType());
@@ -1602,6 +1628,23 @@ public final class CreateCloudVmClusterDetails
         return cloudAutomationUpdateDetails;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Database Storage Vault.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+    private final String exascaleDbStorageVaultId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Database Storage Vault.
+     *
+     * @return the value
+     */
+    public String getExascaleDbStorageVaultId() {
+        return exascaleDbStorageVaultId;
+    }
+
     /** The vmcluster type for the VM cluster/Cloud VM cluster. */
     public enum VmClusterType implements com.oracle.bmc.http.internal.BmcEnum {
         Regular("REGULAR"),
@@ -1701,6 +1744,8 @@ public final class CreateCloudVmClusterDetails
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(", cloudAutomationUpdateDetails=")
                 .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", exascaleDbStorageVaultId=")
+                .append(String.valueOf(this.exascaleDbStorageVaultId));
         sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
         sb.append(")");
         return sb.toString();
@@ -1756,6 +1801,8 @@ public final class CreateCloudVmClusterDetails
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && java.util.Objects.equals(
                         this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(
+                        this.exascaleDbStorageVaultId, other.exascaleDbStorageVaultId)
                 && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
                 && super.equals(other);
     }
@@ -1864,6 +1911,11 @@ public final class CreateCloudVmClusterDetails
                         + (this.cloudAutomationUpdateDetails == null
                                 ? 43
                                 : this.cloudAutomationUpdateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exascaleDbStorageVaultId == null
+                                ? 43
+                                : this.exascaleDbStorageVaultId.hashCode());
         result =
                 (result * PRIME)
                         + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());

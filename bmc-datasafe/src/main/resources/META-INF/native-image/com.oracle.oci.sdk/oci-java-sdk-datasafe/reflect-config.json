@@ -1788,6 +1788,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.datasafe.model.ConfidenceLevelEnum",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.datasafe.model.ConnectionOption",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

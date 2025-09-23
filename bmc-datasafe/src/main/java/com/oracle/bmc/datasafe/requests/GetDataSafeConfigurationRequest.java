@@ -15,10 +15,10 @@ import com.oracle.bmc.datasafe.model.*;
 public class GetDataSafeConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /** A filter to return the Data Safe configuration for the specified tenancy OCID. */
     private String compartmentId;
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /** A filter to return the Data Safe configuration for the specified tenancy OCID. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -36,11 +36,11 @@ public class GetDataSafeConfigurationRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A filter to return only resources that match the specified compartment OCID. */
+        /** A filter to return the Data Safe configuration for the specified tenancy OCID. */
         private String compartmentId = null;
 
         /**
-         * A filter to return only resources that match the specified compartment OCID.
+         * A filter to return the Data Safe configuration for the specified tenancy OCID.
          *
          * @param compartmentId the value to set
          * @return this builder instance

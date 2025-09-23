@@ -145,6 +145,20 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.marketplace.model.CreateMarketplaceExternalAttestedMetadataDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.marketplace.model.CreateMarketplaceExternalAttestedMetadataDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.marketplace.model.CreatePublicationDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -400,12 +414,6 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.marketplace.model.ListingSummary$PricingTypes",
-    "allDeclaredFields": true,
-    "allDeclaredMethods": true
-  },
-  {
-    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.marketplace.model.ListingSummary$CompatibleArchitectures",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
@@ -415,6 +423,34 @@
     "name": "com.oracle.bmc.marketplace.model.ListingType",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.marketplace.model.MarketplaceExternalAttestedMetadata",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.marketplace.model.MarketplaceExternalAttestedMetadata$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.marketplace.model.MarketplaceMetadataPublicKeySummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.marketplace.model.MarketplaceMetadataPublicKeySummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },

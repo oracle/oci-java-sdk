@@ -16,6 +16,7 @@ public enum InstallationSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     ApproximateApplicationCount("approximateApplicationCount"),
     ApproximateManagedInstanceCount("approximateManagedInstanceCount"),
     OsName("osName"),
+    SecurityStatus("securityStatus"),
     ;
 
     private final String value;

@@ -16,6 +16,8 @@ public enum LibrarySortBy implements com.oracle.bmc.http.internal.BmcEnum {
     ManagedInstanceCount("managedInstanceCount"),
     TimeFirstSeen("timeFirstSeen"),
     TimeLastSeen("timeLastSeen"),
+    HighestVulnerabilityScore("highestVulnerabilityScore"),
+    ConfidenceLevel("confidenceLevel"),
     ;
 
     private final String value;

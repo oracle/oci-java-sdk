@@ -1915,6 +1915,52 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ConfigureExascaleCloudExadataInfrastructureResponse
+            configureExascaleCloudExadataInfrastructure(
+                    ConfigureExascaleCloudExadataInfrastructureRequest request) {
+
+        Validate.notBlank(
+                request.getCloudExadataInfrastructureId(),
+                "cloudExadataInfrastructureId must not be blank");
+        Objects.requireNonNull(
+                request.getConfigureExascaleCloudExadataInfrastructureDetails(),
+                "configureExascaleCloudExadataInfrastructureDetails is required");
+
+        return clientCall(request, ConfigureExascaleCloudExadataInfrastructureResponse::builder)
+                .logger(LOG, "configureExascaleCloudExadataInfrastructure")
+                .serviceDetails(
+                        "Database",
+                        "ConfigureExascaleCloudExadataInfrastructure",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ConfigureExascaleCloudExadataInfrastructure")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfigureExascaleCloudExadataInfrastructureRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudExadataInfrastructures")
+                .appendPathParam(request.getCloudExadataInfrastructureId())
+                .appendPathParam("actions")
+                .appendPathParam("configureExascale")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.CloudExadataInfrastructure.class,
+                        ConfigureExascaleCloudExadataInfrastructureResponse.Builder
+                                ::cloudExadataInfrastructure)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConfigureExascaleCloudExadataInfrastructureResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", ConfigureExascaleCloudExadataInfrastructureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConfigureExascaleCloudExadataInfrastructureResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ConfigureExascaleExadataInfrastructureResponse configureExascaleExadataInfrastructure(
             ConfigureExascaleExadataInfrastructureRequest request) {
 

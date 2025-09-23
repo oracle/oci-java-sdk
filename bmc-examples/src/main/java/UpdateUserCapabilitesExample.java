@@ -12,19 +12,21 @@ import com.oracle.bmc.identity.model.*;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.GetUserResponse;
 import com.oracle.bmc.model.BmcException;
-import net.jodah.failsafe.Failsafe;
-import net.jodah.failsafe.RetryPolicy;
-import net.jodah.failsafe.function.Predicate;
-import java.util.concurrent.Callable;
+import dev.failsafe.Failsafe;
+import dev.failsafe.RetryPolicy;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class UpdateUserCapabilitesExample {
     static final RetryPolicy RETRY_POLICY =
-            new RetryPolicy()
-                    .retryOn(new RetryPredicate())
-                    .withDelay(1, TimeUnit.SECONDS)
-                    .withMaxRetries(10);
+            RetryPolicy.builder()
+                    .handleIf(
+                            throwable ->
+                                    throwable instanceof BmcException
+                                            && ((BmcException) throwable).getStatusCode() == 404)
+                    .withDelay(Duration.ofSeconds(1))
+                    .withMaxRetries(10)
+                    .build();
 
     public static void main(String[] args) throws Exception {
         // TODO: Fill in this value
@@ -59,13 +61,9 @@ public class UpdateUserCapabilitesExample {
         // a 404.
         // To try and avoid this, this example uses retries with a short delay.
         GetUserResponse getUserResponse =
-                Failsafe.with(RETRY_POLICY)
-                        .get(
-                                new Callable<GetUserResponse>() {
-                                    public GetUserResponse call() {
-                                        return identityClient.getUser(getUserRequest);
-                                    }
-                                });
+                (GetUserResponse)
+                        Failsafe.with(RETRY_POLICY)
+                                .get(() -> identityClient.getUser(getUserRequest));
         System.out.println("Getting the created user with userId:" + user.getId());
         System.out.println();
 
@@ -122,18 +120,6 @@ public class UpdateUserCapabilitesExample {
         } catch (Exception ex) {
             throw new RuntimeException(
                     "User update capabilities fails with error:" + ex.getMessage());
-        }
-    }
-
-    private static class RetryPredicate implements Predicate<Throwable> {
-        /**
-         * Checks if the exception can be retried or not.
-         *
-         * @param e Exception object.
-         * @return Returns true if the exception can be retried otherwise false.
-         */
-        public boolean test(Throwable e) {
-            return e instanceof BmcException && ((BmcException) e).getStatusCode() == 404;
         }
     }
 }

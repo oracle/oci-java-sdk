@@ -203,6 +203,13 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getPage() {
         return page;
     }
+    /** A filter to return only resources that match the specified compartment OCID. */
+    private String compartmentId;
+
+    /** A filter to return only resources that match the specified compartment OCID. */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all
      * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
@@ -696,6 +703,20 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /** A filter to return only resources that match the specified compartment OCID. */
+        private String compartmentId = null;
+
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
         /**
          * Default is false. When set to true, the hierarchy of compartments is traversed and all
          * compartments and subcompartments in the tenancy are returned. Depends on the
@@ -938,6 +959,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             containsReferences(o.getContainsReferences());
             limit(o.getLimit());
             page(o.getPage());
+            compartmentId(o.getCompartmentId());
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             accessLevel(o.getAccessLevel());
             targetId(o.getTargetId());
@@ -992,6 +1014,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.containsReferences = containsReferences;
             request.limit = limit;
             request.page = page;
+            request.compartmentId = compartmentId;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
             request.targetId = targetId;
@@ -1004,8 +1027,8 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return request;
             // new ListFindingsRequest(securityAssessmentId, opcRequestId, isTopFinding, severity,
             // containsSeverity, category, lifecycleState, references, containsReferences, limit,
-            // page, compartmentIdInSubtree, accessLevel, targetId, targetIds, scimQuery, field,
-            // sortBy, sortOrder, findingKey);
+            // page, compartmentId, compartmentIdInSubtree, accessLevel, targetId, targetIds,
+            // scimQuery, field, sortBy, sortOrder, findingKey);
         }
     }
 
@@ -1027,6 +1050,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .containsReferences(containsReferences)
                 .limit(limit)
                 .page(page)
+                .compartmentId(compartmentId)
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .accessLevel(accessLevel)
                 .targetId(targetId)
@@ -1063,6 +1087,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",containsReferences=").append(String.valueOf(this.containsReferences));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
@@ -1098,6 +1123,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.containsReferences, other.containsReferences)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.accessLevel, other.accessLevel)
@@ -1137,6 +1163,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                                 : this.containsReferences.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentIdInSubtree == null

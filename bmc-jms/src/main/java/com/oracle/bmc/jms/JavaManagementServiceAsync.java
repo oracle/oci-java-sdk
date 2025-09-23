@@ -183,6 +183,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a task schedule using the information provided.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateTaskScheduleResponse> createTaskSchedule(
+            CreateTaskScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateTaskScheduleRequest, CreateTaskScheduleResponse>
+                    handler);
+
+    /**
      * Deletes the blocklist record specified by an identifier.
      *
      * @param request The request object containing the details to send
@@ -296,6 +312,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                                     DeletePerformanceTuningAnalysisResultRequest,
                                     DeletePerformanceTuningAnalysisResultResponse>
                             handler);
+
+    /**
+     * Deletes the task schedule record specified by an identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteTaskScheduleResponse> deleteTaskSchedule(
+            DeleteTaskScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>
+                    handler);
 
     /**
      * Request to disable the DRS in the selected target in the Fleet.
@@ -565,6 +597,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Returns a task schedule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTaskScheduleResponse> getTaskSchedule(
+            GetTaskScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTaskScheduleRequest, GetTaskScheduleResponse>
+                    handler);
+
+    /**
      * Retrieve the details of a work request with the specified ID.
      *
      * @param request The request object containing the details to send
@@ -624,6 +671,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<ListBlocklistsResponse> listBlocklists(
             ListBlocklistsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListBlocklistsRequest, ListBlocklistsResponse>
+                    handler);
+
+    /**
+     * List containers in a fleet filtered by query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListContainersResponse> listContainers(
+            ListContainersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListContainersRequest, ListContainersResponse>
                     handler);
 
     /**
@@ -800,6 +862,40 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List applications where a library has been detected filtered by query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListLibraryApplicationUsageResponse> listLibraryApplicationUsage(
+            ListLibraryApplicationUsageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListLibraryApplicationUsageRequest, ListLibraryApplicationUsageResponse>
+                    handler);
+
+    /**
+     * List managed instances where a library has been detected, filtered by query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListLibraryManagedInstanceUsageResponse>
+            listLibraryManagedInstanceUsage(
+                    ListLibraryManagedInstanceUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListLibraryManagedInstanceUsageRequest,
+                                    ListLibraryManagedInstanceUsageResponse>
+                            handler);
+
+    /**
      * List Performance Tuning Analysis results.
      *
      * @param request The request object containing the details to send
@@ -830,6 +926,79 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<ListPluginErrorsResponse> listPluginErrors(
             ListPluginErrorsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListPluginErrorsRequest, ListPluginErrorsResponse>
+                    handler);
+
+    /**
+     * Returns a list of task schedules.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTaskSchedulesResponse> listTaskSchedules(
+            ListTaskSchedulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTaskSchedulesRequest, ListTaskSchedulesResponse>
+                    handler);
+
+    /**
+     * List applications where an uncorrelated package has been detected, filtered by query
+     * parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUncorrelatedPackageApplicationUsageResponse>
+            listUncorrelatedPackageApplicationUsage(
+                    ListUncorrelatedPackageApplicationUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListUncorrelatedPackageApplicationUsageRequest,
+                                    ListUncorrelatedPackageApplicationUsageResponse>
+                            handler);
+
+    /**
+     * List managed instances where an uncorrelated package has been detected, filtered by query
+     * parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUncorrelatedPackageManagedInstanceUsageResponse>
+            listUncorrelatedPackageManagedInstanceUsage(
+                    ListUncorrelatedPackageManagedInstanceUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListUncorrelatedPackageManagedInstanceUsageRequest,
+                                    ListUncorrelatedPackageManagedInstanceUsageResponse>
+                            handler);
+
+    /**
+     * List uncorrelated package summaries in a fleet, filtered by query parameters. Uncorrelated
+     * packages are Java packages which can't be accurately correlated to a library during a library
+     * scan.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUncorrelatedPackageUsageResponse> listUncorrelatedPackageUsage(
+            ListUncorrelatedPackageUsageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListUncorrelatedPackageUsageRequest,
+                            ListUncorrelatedPackageUsageResponse>
                     handler);
 
     /**
@@ -1197,6 +1366,24 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieve the inventory of libraries in the specified fleet: Statically detected library
+     * count, Dynamically detected library count, Uncorrelated package count, High, Medium and Low
+     * severity library count.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeLibraryInventoryResponse> summarizeLibraryInventory(
+            SummarizeLibraryInventoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeLibraryInventoryRequest, SummarizeLibraryInventoryResponse>
+                    handler);
+
+    /**
      * List libraries in a fleet filtered by query parameters.
      *
      * @param request The request object containing the details to send
@@ -1359,5 +1546,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateJmsPluginResponse> updateJmsPlugin(
             UpdateJmsPluginRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateJmsPluginRequest, UpdateJmsPluginResponse>
+                    handler);
+
+    /**
+     * Update the task schedule for the given task type.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTaskScheduleResponse> updateTaskSchedule(
+            UpdateTaskScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>
                     handler);
 }

@@ -142,6 +142,8 @@ public final class MaskingErrorSummary
 
     /** The stepName of the masking error. */
     public enum StepName implements com.oracle.bmc.http.internal.BmcEnum {
+        Validate("VALIDATE"),
+        GenerateScript("GENERATE_SCRIPT"),
         ExecuteMasking("EXECUTE_MASKING"),
         PreMasking("PRE_MASKING"),
         PostMasking("POST_MASKING"),

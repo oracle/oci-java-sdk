@@ -29,6 +29,7 @@ public final class InstallationUsage
         "jreVendor",
         "jreDistribution",
         "jreVersion",
+        "securityStatus",
         "path",
         "os",
         "architecture",
@@ -45,6 +46,7 @@ public final class InstallationUsage
             String jreVendor,
             String jreDistribution,
             String jreVersion,
+            JreSecurityStatus securityStatus,
             String path,
             String os,
             String architecture,
@@ -60,6 +62,7 @@ public final class InstallationUsage
         this.jreVendor = jreVendor;
         this.jreDistribution = jreDistribution;
         this.jreVersion = jreVersion;
+        this.securityStatus = securityStatus;
         this.path = path;
         this.os = os;
         this.architecture = architecture;
@@ -136,6 +139,21 @@ public final class InstallationUsage
         public Builder jreVersion(String jreVersion) {
             this.jreVersion = jreVersion;
             this.__explicitlySet__.add("jreVersion");
+            return this;
+        }
+        /** The security status of the Java Runtime. */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityStatus")
+        private JreSecurityStatus securityStatus;
+
+        /**
+         * The security status of the Java Runtime.
+         *
+         * @param securityStatus the value to set
+         * @return this builder
+         */
+        public Builder securityStatus(JreSecurityStatus securityStatus) {
+            this.securityStatus = securityStatus;
+            this.__explicitlySet__.add("securityStatus");
             return this;
         }
         /** The file system path of the Java installation. */
@@ -325,6 +343,7 @@ public final class InstallationUsage
                             this.jreVendor,
                             this.jreDistribution,
                             this.jreVersion,
+                            this.securityStatus,
                             this.path,
                             this.os,
                             this.architecture,
@@ -354,6 +373,9 @@ public final class InstallationUsage
             }
             if (model.wasPropertyExplicitlySet("jreVersion")) {
                 this.jreVersion(model.getJreVersion());
+            }
+            if (model.wasPropertyExplicitlySet("securityStatus")) {
+                this.securityStatus(model.getSecurityStatus());
             }
             if (model.wasPropertyExplicitlySet("path")) {
                 this.path(model.getPath());
@@ -452,6 +474,19 @@ public final class InstallationUsage
      */
     public String getJreVersion() {
         return jreVersion;
+    }
+
+    /** The security status of the Java Runtime. */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityStatus")
+    private final JreSecurityStatus securityStatus;
+
+    /**
+     * The security status of the Java Runtime.
+     *
+     * @return the value
+     */
+    public JreSecurityStatus getSecurityStatus() {
+        return securityStatus;
     }
 
     /** The file system path of the Java installation. */
@@ -627,6 +662,7 @@ public final class InstallationUsage
         sb.append(", jreVendor=").append(String.valueOf(this.jreVendor));
         sb.append(", jreDistribution=").append(String.valueOf(this.jreDistribution));
         sb.append(", jreVersion=").append(String.valueOf(this.jreVersion));
+        sb.append(", securityStatus=").append(String.valueOf(this.securityStatus));
         sb.append(", path=").append(String.valueOf(this.path));
         sb.append(", os=").append(String.valueOf(this.os));
         sb.append(", architecture=").append(String.valueOf(this.architecture));
@@ -657,6 +693,7 @@ public final class InstallationUsage
                 && java.util.Objects.equals(this.jreVendor, other.jreVendor)
                 && java.util.Objects.equals(this.jreDistribution, other.jreDistribution)
                 && java.util.Objects.equals(this.jreVersion, other.jreVersion)
+                && java.util.Objects.equals(this.securityStatus, other.securityStatus)
                 && java.util.Objects.equals(this.path, other.path)
                 && java.util.Objects.equals(this.os, other.os)
                 && java.util.Objects.equals(this.architecture, other.architecture)
@@ -684,6 +721,9 @@ public final class InstallationUsage
                 (result * PRIME)
                         + (this.jreDistribution == null ? 43 : this.jreDistribution.hashCode());
         result = (result * PRIME) + (this.jreVersion == null ? 43 : this.jreVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityStatus == null ? 43 : this.securityStatus.hashCode());
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
         result = (result * PRIME) + (this.os == null ? 43 : this.os.hashCode());
         result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());

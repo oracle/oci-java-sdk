@@ -32,6 +32,8 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "approximateApplicationCount",
         "approximateManagedInstanceCount",
         "approximateJavaServerCount",
+        "approximateLibraryCount",
+        "approximateLibraryVulnerabilityCount",
         "inventoryLog",
         "operationLog",
         "isAdvancedFeaturesEnabled",
@@ -52,6 +54,8 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             Integer approximateApplicationCount,
             Integer approximateManagedInstanceCount,
             Integer approximateJavaServerCount,
+            Integer approximateLibraryCount,
+            Integer approximateLibraryVulnerabilityCount,
             CustomLog inventoryLog,
             CustomLog operationLog,
             Boolean isAdvancedFeaturesEnabled,
@@ -71,6 +75,8 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.approximateApplicationCount = approximateApplicationCount;
         this.approximateManagedInstanceCount = approximateManagedInstanceCount;
         this.approximateJavaServerCount = approximateJavaServerCount;
+        this.approximateLibraryCount = approximateLibraryCount;
+        this.approximateLibraryVulnerabilityCount = approximateLibraryVulnerabilityCount;
         this.inventoryLog = inventoryLog;
         this.operationLog = operationLog;
         this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
@@ -257,6 +263,49 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("approximateJavaServerCount");
             return this;
         }
+        /**
+         * The approximate count of all unique libraries in the Fleet in the past seven days. This
+         * metric is provided on a best-effort manner, and isn't taken into account when computing
+         * the resource ETag.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("approximateLibraryCount")
+        private Integer approximateLibraryCount;
+
+        /**
+         * The approximate count of all unique libraries in the Fleet in the past seven days. This
+         * metric is provided on a best-effort manner, and isn't taken into account when computing
+         * the resource ETag.
+         *
+         * @param approximateLibraryCount the value to set
+         * @return this builder
+         */
+        public Builder approximateLibraryCount(Integer approximateLibraryCount) {
+            this.approximateLibraryCount = approximateLibraryCount;
+            this.__explicitlySet__.add("approximateLibraryCount");
+            return this;
+        }
+        /**
+         * The approximate count of all unique library vulnerabilities in the Fleet in the past
+         * seven days. This metric is provided on a best-effort manner, and isn't taken into account
+         * when computing the resource ETag.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("approximateLibraryVulnerabilityCount")
+        private Integer approximateLibraryVulnerabilityCount;
+
+        /**
+         * The approximate count of all unique library vulnerabilities in the Fleet in the past
+         * seven days. This metric is provided on a best-effort manner, and isn't taken into account
+         * when computing the resource ETag.
+         *
+         * @param approximateLibraryVulnerabilityCount the value to set
+         * @return this builder
+         */
+        public Builder approximateLibraryVulnerabilityCount(
+                Integer approximateLibraryVulnerabilityCount) {
+            this.approximateLibraryVulnerabilityCount = approximateLibraryVulnerabilityCount;
+            this.__explicitlySet__.add("approximateLibraryVulnerabilityCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("inventoryLog")
         private CustomLog inventoryLog;
@@ -431,6 +480,8 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.approximateApplicationCount,
                             this.approximateManagedInstanceCount,
                             this.approximateJavaServerCount,
+                            this.approximateLibraryCount,
+                            this.approximateLibraryVulnerabilityCount,
                             this.inventoryLog,
                             this.operationLog,
                             this.isAdvancedFeaturesEnabled,
@@ -474,6 +525,13 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("approximateJavaServerCount")) {
                 this.approximateJavaServerCount(model.getApproximateJavaServerCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateLibraryCount")) {
+                this.approximateLibraryCount(model.getApproximateLibraryCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateLibraryVulnerabilityCount")) {
+                this.approximateLibraryVulnerabilityCount(
+                        model.getApproximateLibraryVulnerabilityCount());
             }
             if (model.wasPropertyExplicitlySet("inventoryLog")) {
                 this.inventoryLog(model.getInventoryLog());
@@ -670,6 +728,44 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return approximateJavaServerCount;
     }
 
+    /**
+     * The approximate count of all unique libraries in the Fleet in the past seven days. This
+     * metric is provided on a best-effort manner, and isn't taken into account when computing the
+     * resource ETag.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("approximateLibraryCount")
+    private final Integer approximateLibraryCount;
+
+    /**
+     * The approximate count of all unique libraries in the Fleet in the past seven days. This
+     * metric is provided on a best-effort manner, and isn't taken into account when computing the
+     * resource ETag.
+     *
+     * @return the value
+     */
+    public Integer getApproximateLibraryCount() {
+        return approximateLibraryCount;
+    }
+
+    /**
+     * The approximate count of all unique library vulnerabilities in the Fleet in the past seven
+     * days. This metric is provided on a best-effort manner, and isn't taken into account when
+     * computing the resource ETag.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("approximateLibraryVulnerabilityCount")
+    private final Integer approximateLibraryVulnerabilityCount;
+
+    /**
+     * The approximate count of all unique library vulnerabilities in the Fleet in the past seven
+     * days. This metric is provided on a best-effort manner, and isn't taken into account when
+     * computing the resource ETag.
+     *
+     * @return the value
+     */
+    public Integer getApproximateLibraryVulnerabilityCount() {
+        return approximateLibraryVulnerabilityCount;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("inventoryLog")
     private final CustomLog inventoryLog;
 
@@ -835,6 +931,10 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 .append(String.valueOf(this.approximateManagedInstanceCount));
         sb.append(", approximateJavaServerCount=")
                 .append(String.valueOf(this.approximateJavaServerCount));
+        sb.append(", approximateLibraryCount=")
+                .append(String.valueOf(this.approximateLibraryCount));
+        sb.append(", approximateLibraryVulnerabilityCount=")
+                .append(String.valueOf(this.approximateLibraryVulnerabilityCount));
         sb.append(", inventoryLog=").append(String.valueOf(this.inventoryLog));
         sb.append(", operationLog=").append(String.valueOf(this.operationLog));
         sb.append(", isAdvancedFeaturesEnabled=")
@@ -872,6 +972,11 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
                         this.approximateManagedInstanceCount, other.approximateManagedInstanceCount)
                 && java.util.Objects.equals(
                         this.approximateJavaServerCount, other.approximateJavaServerCount)
+                && java.util.Objects.equals(
+                        this.approximateLibraryCount, other.approximateLibraryCount)
+                && java.util.Objects.equals(
+                        this.approximateLibraryVulnerabilityCount,
+                        other.approximateLibraryVulnerabilityCount)
                 && java.util.Objects.equals(this.inventoryLog, other.inventoryLog)
                 && java.util.Objects.equals(this.operationLog, other.operationLog)
                 && java.util.Objects.equals(
@@ -921,6 +1026,16 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
                         + (this.approximateJavaServerCount == null
                                 ? 43
                                 : this.approximateJavaServerCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateLibraryCount == null
+                                ? 43
+                                : this.approximateLibraryCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateLibraryVulnerabilityCount == null
+                                ? 43
+                                : this.approximateLibraryVulnerabilityCount.hashCode());
         result = (result * PRIME) + (this.inventoryLog == null ? 43 : this.inventoryLog.hashCode());
         result = (result * PRIME) + (this.operationLog == null ? 43 : this.operationLog.hashCode());
         result =

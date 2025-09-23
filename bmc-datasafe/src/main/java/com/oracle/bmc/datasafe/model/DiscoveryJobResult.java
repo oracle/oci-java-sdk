@@ -47,7 +47,9 @@ public final class DiscoveryJobResult
         "plannedAction",
         "isResultApplied",
         "discoveryJobId",
-        "modifiedAttributes"
+        "modifiedAttributes",
+        "confidenceLevel",
+        "confidenceLevelDetails"
     })
     public DiscoveryJobResult(
             String key,
@@ -69,7 +71,9 @@ public final class DiscoveryJobResult
             PlannedAction plannedAction,
             Boolean isResultApplied,
             String discoveryJobId,
-            ModifiedAttributes modifiedAttributes) {
+            ModifiedAttributes modifiedAttributes,
+            ConfidenceLevelEnum confidenceLevel,
+            java.util.List<Object> confidenceLevelDetails) {
         super();
         this.key = key;
         this.discoveryType = discoveryType;
@@ -91,6 +95,8 @@ public final class DiscoveryJobResult
         this.isResultApplied = isResultApplied;
         this.discoveryJobId = discoveryJobId;
         this.modifiedAttributes = modifiedAttributes;
+        this.confidenceLevel = confidenceLevel;
+        this.confidenceLevelDetails = confidenceLevelDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -461,6 +467,44 @@ public final class DiscoveryJobResult
             this.__explicitlySet__.add("modifiedAttributes");
             return this;
         }
+        /**
+         * The confidence level of the discovery job result associated with the sensitive type. The
+         * confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("confidenceLevel")
+        private ConfidenceLevelEnum confidenceLevel;
+
+        /**
+         * The confidence level of the discovery job result associated with the sensitive type. The
+         * confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+         *
+         * @param confidenceLevel the value to set
+         * @return this builder
+         */
+        public Builder confidenceLevel(ConfidenceLevelEnum confidenceLevel) {
+            this.confidenceLevel = confidenceLevel;
+            this.__explicitlySet__.add("confidenceLevel");
+            return this;
+        }
+        /**
+         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
+         * }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("confidenceLevelDetails")
+        private java.util.List<Object> confidenceLevelDetails;
+
+        /**
+         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
+         * }}
+         *
+         * @param confidenceLevelDetails the value to set
+         * @return this builder
+         */
+        public Builder confidenceLevelDetails(java.util.List<Object> confidenceLevelDetails) {
+            this.confidenceLevelDetails = confidenceLevelDetails;
+            this.__explicitlySet__.add("confidenceLevelDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -487,7 +531,9 @@ public final class DiscoveryJobResult
                             this.plannedAction,
                             this.isResultApplied,
                             this.discoveryJobId,
-                            this.modifiedAttributes);
+                            this.modifiedAttributes,
+                            this.confidenceLevel,
+                            this.confidenceLevelDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -555,6 +601,12 @@ public final class DiscoveryJobResult
             }
             if (model.wasPropertyExplicitlySet("modifiedAttributes")) {
                 this.modifiedAttributes(model.getModifiedAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("confidenceLevel")) {
+                this.confidenceLevel(model.getConfidenceLevel());
+            }
+            if (model.wasPropertyExplicitlySet("confidenceLevelDetails")) {
+                this.confidenceLevelDetails(model.getConfidenceLevelDetails());
             }
             return this;
         }
@@ -1100,6 +1152,38 @@ public final class DiscoveryJobResult
         return modifiedAttributes;
     }
 
+    /**
+     * The confidence level of the discovery job result associated with the sensitive type. The
+     * confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("confidenceLevel")
+    private final ConfidenceLevelEnum confidenceLevel;
+
+    /**
+     * The confidence level of the discovery job result associated with the sensitive type. The
+     * confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+     *
+     * @return the value
+     */
+    public ConfidenceLevelEnum getConfidenceLevel() {
+        return confidenceLevel;
+    }
+
+    /**
+     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("confidenceLevelDetails")
+    private final java.util.List<Object> confidenceLevelDetails;
+
+    /**
+     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     *
+     * @return the value
+     */
+    public java.util.List<Object> getConfidenceLevelDetails() {
+        return confidenceLevelDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1138,6 +1222,8 @@ public final class DiscoveryJobResult
         sb.append(", isResultApplied=").append(String.valueOf(this.isResultApplied));
         sb.append(", discoveryJobId=").append(String.valueOf(this.discoveryJobId));
         sb.append(", modifiedAttributes=").append(String.valueOf(this.modifiedAttributes));
+        sb.append(", confidenceLevel=").append(String.valueOf(this.confidenceLevel));
+        sb.append(", confidenceLevelDetails=").append(String.valueOf(this.confidenceLevelDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1175,6 +1261,9 @@ public final class DiscoveryJobResult
                 && java.util.Objects.equals(this.isResultApplied, other.isResultApplied)
                 && java.util.Objects.equals(this.discoveryJobId, other.discoveryJobId)
                 && java.util.Objects.equals(this.modifiedAttributes, other.modifiedAttributes)
+                && java.util.Objects.equals(this.confidenceLevel, other.confidenceLevel)
+                && java.util.Objects.equals(
+                        this.confidenceLevelDetails, other.confidenceLevelDetails)
                 && super.equals(other);
     }
 
@@ -1236,6 +1325,14 @@ public final class DiscoveryJobResult
                         + (this.modifiedAttributes == null
                                 ? 43
                                 : this.modifiedAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.confidenceLevel == null ? 43 : this.confidenceLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.confidenceLevelDetails == null
+                                ? 43
+                                : this.confidenceLevelDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -156,10 +156,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails(
-                        "JavaDownload",
-                        "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/CancelWorkRequest")
+                .serviceDetails("JavaDownload", "CancelWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/")
@@ -184,10 +181,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateJavaDownloadReportResponse::builder)
                 .logger(LOG, "createJavaDownloadReport")
-                .serviceDetails(
-                        "JavaDownload",
-                        "CreateJavaDownloadReport",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/CreateJavaDownloadReport")
+                .serviceDetails("JavaDownload", "CreateJavaDownloadReport", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJavaDownloadReportRequest::builder)
                 .basePath("/")
@@ -215,10 +209,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateJavaDownloadTokenResponse::builder)
                 .logger(LOG, "createJavaDownloadToken")
-                .serviceDetails(
-                        "JavaDownload",
-                        "CreateJavaDownloadToken",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/CreateJavaDownloadToken")
+                .serviceDetails("JavaDownload", "CreateJavaDownloadToken", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -250,10 +241,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "createJavaLicenseAcceptanceRecord")
-                .serviceDetails(
-                        "JavaDownload",
-                        "CreateJavaLicenseAcceptanceRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/CreateJavaLicenseAcceptanceRecord")
+                .serviceDetails("JavaDownload", "CreateJavaLicenseAcceptanceRecord", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")
@@ -285,10 +273,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteJavaDownloadReportResponse::builder)
                 .logger(LOG, "deleteJavaDownloadReport")
-                .serviceDetails(
-                        "JavaDownload",
-                        "DeleteJavaDownloadReport",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/DeleteJavaDownloadReport")
+                .serviceDetails("JavaDownload", "DeleteJavaDownloadReport", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaDownloadReportRequest::builder)
                 .basePath("/")
@@ -316,10 +301,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteJavaDownloadTokenResponse::builder)
                 .logger(LOG, "deleteJavaDownloadToken")
-                .serviceDetails(
-                        "JavaDownload",
-                        "DeleteJavaDownloadToken",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/DeleteJavaDownloadToken")
+                .serviceDetails("JavaDownload", "DeleteJavaDownloadToken", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -348,10 +330,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "deleteJavaLicenseAcceptanceRecord")
-                .serviceDetails(
-                        "JavaDownload",
-                        "DeleteJavaLicenseAcceptanceRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/DeleteJavaLicenseAcceptanceRecord")
+                .serviceDetails("JavaDownload", "DeleteJavaLicenseAcceptanceRecord", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")
@@ -377,10 +356,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GenerateArtifactDownloadUrlResponse::builder)
                 .logger(LOG, "generateArtifactDownloadUrl")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GenerateArtifactDownloadUrl",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl")
+                .serviceDetails("JavaDownload", "GenerateArtifactDownloadUrl", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateArtifactDownloadUrlRequest::builder)
                 .basePath("/")
@@ -408,10 +384,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetJavaDownloadReportResponse::builder)
                 .logger(LOG, "getJavaDownloadReport")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetJavaDownloadReport",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReport")
+                .serviceDetails("JavaDownload", "GetJavaDownloadReport", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaDownloadReportRequest::builder)
                 .basePath("/")
@@ -439,10 +412,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetJavaDownloadReportContentResponse::builder)
                 .logger(LOG, "getJavaDownloadReportContent")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetJavaDownloadReportContent",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReportContent")
+                .serviceDetails("JavaDownload", "GetJavaDownloadReportContent", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaDownloadReportContentRequest::builder)
                 .basePath("/")
@@ -472,10 +442,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetJavaDownloadTokenResponse::builder)
                 .logger(LOG, "getJavaDownloadToken")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetJavaDownloadToken",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/GetJavaDownloadToken")
+                .serviceDetails("JavaDownload", "GetJavaDownloadToken", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -501,10 +468,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetJavaLicenseResponse::builder)
                 .logger(LOG, "getJavaLicense")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetJavaLicense",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/GetJavaLicense")
+                .serviceDetails("JavaDownload", "GetJavaLicense", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaLicenseRequest::builder)
                 .basePath("/")
@@ -532,10 +496,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "getJavaLicenseAcceptanceRecord")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetJavaLicenseAcceptanceRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/GetJavaLicenseAcceptanceRecord")
+                .serviceDetails("JavaDownload", "GetJavaLicenseAcceptanceRecord", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")
@@ -563,10 +524,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/GetWorkRequest")
+                .serviceDetails("JavaDownload", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/")
@@ -593,10 +551,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListJavaDownloadRecordsResponse::builder)
                 .logger(LOG, "listJavaDownloadRecords")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListJavaDownloadRecords",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadRecord/ListJavaDownloadRecords")
+                .serviceDetails("JavaDownload", "ListJavaDownloadRecords", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaDownloadRecordsRequest::builder)
                 .basePath("/")
@@ -634,10 +589,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListJavaDownloadReportsResponse::builder)
                 .logger(LOG, "listJavaDownloadReports")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListJavaDownloadReports",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/ListJavaDownloadReports")
+                .serviceDetails("JavaDownload", "ListJavaDownloadReports", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaDownloadReportsRequest::builder)
                 .basePath("/")
@@ -671,10 +623,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListJavaDownloadTokensResponse::builder)
                 .logger(LOG, "listJavaDownloadTokens")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListJavaDownloadTokens",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/ListJavaDownloadTokens")
+                .serviceDetails("JavaDownload", "ListJavaDownloadTokens", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaDownloadTokensRequest::builder)
                 .basePath("/")
@@ -711,10 +660,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListJavaLicenseAcceptanceRecordsResponse::builder)
                 .logger(LOG, "listJavaLicenseAcceptanceRecords")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListJavaLicenseAcceptanceRecords",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/ListJavaLicenseAcceptanceRecords")
+                .serviceDetails("JavaDownload", "ListJavaLicenseAcceptanceRecords", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaLicenseAcceptanceRecordsRequest::builder)
                 .basePath("/")
@@ -751,10 +697,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListJavaLicensesResponse::builder)
                 .logger(LOG, "listJavaLicenses")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListJavaLicenses",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/ListJavaLicenses")
+                .serviceDetails("JavaDownload", "ListJavaLicenses", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaLicensesRequest::builder)
                 .basePath("/")
@@ -787,10 +730,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestError/ListWorkRequestErrors")
+                .serviceDetails("JavaDownload", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/")
@@ -822,10 +762,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestLogEntry/ListWorkRequestLogs")
+                .serviceDetails("JavaDownload", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/")
@@ -856,10 +793,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/ListWorkRequests")
+                .serviceDetails("JavaDownload", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/")
@@ -895,10 +829,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, RequestSummarizedJavaDownloadCountsResponse::builder)
                 .logger(LOG, "requestSummarizedJavaDownloadCounts")
-                .serviceDetails(
-                        "JavaDownload",
-                        "RequestSummarizedJavaDownloadCounts",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadCountAggregation/RequestSummarizedJavaDownloadCounts")
+                .serviceDetails("JavaDownload", "RequestSummarizedJavaDownloadCounts", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestSummarizedJavaDownloadCountsRequest::builder)
                 .basePath("/")
@@ -935,10 +866,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateJavaDownloadTokenResponse::builder)
                 .logger(LOG, "updateJavaDownloadToken")
-                .serviceDetails(
-                        "JavaDownload",
-                        "UpdateJavaDownloadToken",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/UpdateJavaDownloadToken")
+                .serviceDetails("JavaDownload", "UpdateJavaDownloadToken", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -971,10 +899,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "updateJavaLicenseAcceptanceRecord")
-                .serviceDetails(
-                        "JavaDownload",
-                        "UpdateJavaLicenseAcceptanceRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/UpdateJavaLicenseAcceptanceRecord")
+                .serviceDetails("JavaDownload", "UpdateJavaLicenseAcceptanceRecord", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")

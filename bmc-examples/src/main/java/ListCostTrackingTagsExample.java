@@ -14,20 +14,22 @@ import com.oracle.bmc.identity.responses.GetTagNamespaceResponse;
 import com.oracle.bmc.identity.responses.ListCostTrackingTagsResponse;
 import com.oracle.bmc.model.BmcException;
 
-import net.jodah.failsafe.Failsafe;
-import net.jodah.failsafe.RetryPolicy;
-import net.jodah.failsafe.function.Predicate;
+import dev.failsafe.Failsafe;
+import dev.failsafe.RetryPolicy;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class ListCostTrackingTagsExample {
 
     static final RetryPolicy RETRY_POLICY =
-            new RetryPolicy()
-                    .retryOn(new RetryPredicate())
-                    .withDelay(1, TimeUnit.SECONDS)
-                    .withMaxRetries(10);
+            RetryPolicy.builder()
+                    .handleIf(
+                            throwable ->
+                                    throwable instanceof BmcException
+                                            && ((BmcException) throwable).getStatusCode() == 404)
+                    .withDelay(Duration.ofSeconds(1))
+                    .withMaxRetries(10)
+                    .build();
 
     public static void main(String[] args) throws Exception {
 
@@ -64,14 +66,9 @@ public class ListCostTrackingTagsExample {
                 GetTagNamespaceRequest.builder().tagNamespaceId(tagNamespace1.getId()).build();
 
         GetTagNamespaceResponse getTagNamespaceResponse =
-                Failsafe.with(RETRY_POLICY)
-                        .get(
-                                new Callable<GetTagNamespaceResponse>() {
-                                    public GetTagNamespaceResponse call() {
-                                        return identityClient.getTagNamespace(
-                                                getTagNamespaceRequest);
-                                    }
-                                });
+                (GetTagNamespaceResponse)
+                        Failsafe.with(RETRY_POLICY)
+                                .get(() -> identityClient.getTagNamespace(getTagNamespaceRequest));
 
         final Tag tag1 =
                 createTag(
@@ -196,18 +193,6 @@ public class ListCostTrackingTagsExample {
             return tag;
         } catch (Exception ex) {
             throw new RuntimeException("Tag update fails with error:" + ex.getMessage());
-        }
-    }
-
-    private static class RetryPredicate implements Predicate<Throwable> {
-        /**
-         * Checks if the exception can be retried or not.
-         *
-         * @param e Exception object.
-         * @return Returns true if the exception can be retried otherwise false.
-         */
-        public boolean test(Throwable e) {
-            return e instanceof BmcException && ((BmcException) e).getStatusCode() == 404;
         }
     }
 }

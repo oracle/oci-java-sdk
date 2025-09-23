@@ -60,16 +60,16 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return fleetId;
     }
     /**
-     * The ManagementAgent (OMA) or Instance (OCA)
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies
-     * the Agent.
+     * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent
+     * (OCMA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * identifies the Agent.
      */
     private String agentId;
 
     /**
-     * The ManagementAgent (OMA) or Instance (OCA)
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies
-     * the Agent.
+     * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent
+     * (OCMA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * identifies the Agent.
      */
     public String getAgentId() {
         return agentId;
@@ -251,14 +251,16 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The ManagementAgent (OMA) or Instance (OCA)
+         * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management
+         * Agent (OCMA)
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
          * identifies the Agent.
          */
         private String agentId = null;
 
         /**
-         * The ManagementAgent (OMA) or Instance (OCA)
+         * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management
+         * Agent (OCMA)
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
          * identifies the Agent.
          *

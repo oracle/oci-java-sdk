@@ -98,6 +98,24 @@ public interface MarketplaceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Generates attested marketplace metadata
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMarketplaceExternalAttestedMetadataResponse>
+            createMarketplaceExternalAttestedMetadata(
+                    CreateMarketplaceExternalAttestedMetadataRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateMarketplaceExternalAttestedMetadataRequest,
+                                    CreateMarketplaceExternalAttestedMetadataResponse>
+                            handler);
+
+    /**
      * Creates a publication of the specified listing type with an optional default package.
      *
      * @param request The request object containing the details to send
@@ -402,6 +420,24 @@ public interface MarketplaceAsync extends AutoCloseable {
             ListListingsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListListingsRequest, ListListingsResponse>
                     handler);
+
+    /**
+     * Get public certificates used in JWT signing, in JSON Web Key Sets format
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMarketplaceMetadataPublicKeysResponse>
+            listMarketplaceMetadataPublicKeys(
+                    ListMarketplaceMetadataPublicKeysRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListMarketplaceMetadataPublicKeysRequest,
+                                    ListMarketplaceMetadataPublicKeysResponse>
+                            handler);
 
     /**
      * Gets the list of packages for a listing.
