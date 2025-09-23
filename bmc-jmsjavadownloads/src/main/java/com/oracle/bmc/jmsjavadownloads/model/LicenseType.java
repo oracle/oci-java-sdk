@@ -9,6 +9,7 @@ package com.oracle.bmc.jmsjavadownloads.model;
 public enum LicenseType implements com.oracle.bmc.http.internal.BmcEnum {
     Otn("OTN"),
     Nftc("NFTC"),
+    Bcl("BCL"),
     Restricted("RESTRICTED"),
 
     /**

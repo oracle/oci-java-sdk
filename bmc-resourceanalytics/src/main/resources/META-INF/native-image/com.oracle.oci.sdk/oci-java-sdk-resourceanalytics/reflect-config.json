@@ -1,0 +1,473 @@
+[
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ActionType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.AdwAdminPasswordDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.AdwAdminPasswordDetails$PasswordType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ChangeResourceAnalyticsInstanceCompartmentDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ChangeResourceAnalyticsInstanceCompartmentDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.CreateMonitoredRegionDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.CreateMonitoredRegionDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.CreateResourceAnalyticsInstanceDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.CreateResourceAnalyticsInstanceDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.CreateResourceAnalyticsInstanceDetails$LicenseModel",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.CreateTenancyAttachmentDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.CreateTenancyAttachmentDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.MonitoredRegion",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.MonitoredRegion$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.MonitoredRegion$LifecycleState",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.MonitoredRegionCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.MonitoredRegionCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.MonitoredRegionSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.MonitoredRegionSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.OperationStatus",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.OperationType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.PlainTextPasswordDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.PlainTextPasswordDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstance",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstance$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstance$LifecycleState",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceEnableOacDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceEnableOacDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceEnableOacDetails$AttachmentType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceOacAttachmentDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceOacAttachmentDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceOacAttachmentDetails$LicenseModel",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceOacNetworkDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceOacNetworkDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.ResourceAnalyticsInstanceSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.SortOrder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.TenancyAttachment",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.TenancyAttachment$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.TenancyAttachment$LifecycleState",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.TenancyAttachmentCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.TenancyAttachmentCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.TenancyAttachmentSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.TenancyAttachmentSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.UpdateResourceAnalyticsInstanceDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.UpdateResourceAnalyticsInstanceDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.UpdateTenancyAttachmentDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.UpdateTenancyAttachmentDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.VaultSecretPasswordDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.VaultSecretPasswordDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequest",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequest$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestError",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestError$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestErrorCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestErrorCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestLogEntry",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestLogEntry$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestLogEntryCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestLogEntryCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestResource",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestResource$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestResourceMetadataKey",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestSummaryCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.resourceanalytics.model.WorkRequestSummaryCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  }
+]

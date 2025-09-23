@@ -101,16 +101,16 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-         * deployed.
+         * Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management
+         * Agent (OCMA) instance where the JMS plugin is deployed.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-         * deployed.
+         * Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management
+         * Agent (OCMA) instance where the JMS plugin is deployed.
          *
          * @param agentId the value to set
          * @return this builder
@@ -185,14 +185,14 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * The OMA/OCA agent's compartment
+         * The OMA/OCA/OCMA agent's compartment
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OMA/OCA agent's compartment
+         * The OMA/OCA/OCMA agent's compartment
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
@@ -503,16 +503,16 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-     * deployed.
+     * Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management
+     * Agent (OCMA) instance where the JMS plugin is deployed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-     * deployed.
+     * Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management
+     * Agent (OCMA) instance where the JMS plugin is deployed.
      *
      * @return the value
      */
@@ -577,14 +577,14 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The OMA/OCA agent's compartment
+     * The OMA/OCA/OCMA agent's compartment
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OMA/OCA agent's compartment
+     * The OMA/OCA/OCMA agent's compartment
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value

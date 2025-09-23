@@ -20,7 +20,15 @@ public enum PostInstallationActions implements com.oracle.bmc.http.internal.BmcE
     SetupSocksProxy("SETUP_SOCKS_PROXY"),
     AddFileHandler("ADD_FILE_HANDLER"),
     LoggingLevel("LOGGING_LEVEL"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(PostInstallationActions.class);
 
     private final String value;
     private static java.util.Map<String, PostInstallationActions> map;
@@ -28,7 +36,9 @@ public enum PostInstallationActions implements com.oracle.bmc.http.internal.BmcE
     static {
         map = new java.util.HashMap<>();
         for (PostInstallationActions v : PostInstallationActions.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -46,6 +56,9 @@ public enum PostInstallationActions implements com.oracle.bmc.http.internal.BmcE
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid PostInstallationActions: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'PostInstallationActions', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

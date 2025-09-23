@@ -95,6 +95,60 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
             this.__explicitlySet__.add("applicationInstallationPath");
             return this;
         }
+        /** The Object Storage namespace of the JFR upload result. */
+        @com.fasterxml.jackson.annotation.JsonProperty("namespace")
+        private String namespace;
+
+        /**
+         * The Object Storage namespace of the JFR upload result.
+         *
+         * @param namespace the value to set
+         * @return this builder
+         */
+        public Builder namespace(String namespace) {
+            this.namespace = namespace;
+            this.__explicitlySet__.add("namespace");
+            return this;
+        }
+        /** The Object Storage bucket name of the JFR upload result. */
+        @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
+        private String bucketName;
+
+        /**
+         * The Object Storage bucket name of the JFR upload result.
+         *
+         * @param bucketName the value to set
+         * @return this builder
+         */
+        public Builder bucketName(String bucketName) {
+            this.bucketName = bucketName;
+            this.__explicitlySet__.add("bucketName");
+            return this;
+        }
+        /** The Object Storage object name of the JFR upload result. */
+        @com.fasterxml.jackson.annotation.JsonProperty("objectName")
+        private String objectName;
+
+        /**
+         * The Object Storage object name of the JFR upload result.
+         *
+         * @param objectName the value to set
+         * @return this builder
+         */
+        public Builder objectName(String objectName) {
+            this.objectName = objectName;
+            this.__explicitlySet__.add("objectName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("containerInfo")
+        private ContainerSummary containerInfo;
+
+        public Builder containerInfo(ContainerSummary containerInfo) {
+            this.containerInfo = containerInfo;
+            this.__explicitlySet__.add("containerInfo");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -106,7 +160,11 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
                             this.applicationKey,
                             this.applicationInstallationKey,
                             this.applicationName,
-                            this.applicationInstallationPath);
+                            this.applicationInstallationPath,
+                            this.namespace,
+                            this.bucketName,
+                            this.objectName,
+                            this.containerInfo);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -130,6 +188,18 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
             if (model.wasPropertyExplicitlySet("applicationInstallationPath")) {
                 this.applicationInstallationPath(model.getApplicationInstallationPath());
             }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("containerInfo")) {
+                this.containerInfo(model.getContainerInfo());
+            }
             return this;
         }
     }
@@ -149,12 +219,20 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
             String applicationKey,
             String applicationInstallationKey,
             String applicationName,
-            String applicationInstallationPath) {
+            String applicationInstallationPath,
+            String namespace,
+            String bucketName,
+            String objectName,
+            ContainerSummary containerInfo) {
         super(workItemType);
         this.applicationKey = applicationKey;
         this.applicationInstallationKey = applicationInstallationKey;
         this.applicationName = applicationName;
         this.applicationInstallationPath = applicationInstallationPath;
+        this.namespace = namespace;
+        this.bucketName = bucketName;
+        this.objectName = objectName;
+        this.containerInfo = containerInfo;
     }
 
     /** The unique key of the application of the JFR. */
@@ -209,6 +287,52 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
         return applicationInstallationPath;
     }
 
+    /** The Object Storage namespace of the JFR upload result. */
+    @com.fasterxml.jackson.annotation.JsonProperty("namespace")
+    private final String namespace;
+
+    /**
+     * The Object Storage namespace of the JFR upload result.
+     *
+     * @return the value
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    /** The Object Storage bucket name of the JFR upload result. */
+    @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
+    private final String bucketName;
+
+    /**
+     * The Object Storage bucket name of the JFR upload result.
+     *
+     * @return the value
+     */
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    /** The Object Storage object name of the JFR upload result. */
+    @com.fasterxml.jackson.annotation.JsonProperty("objectName")
+    private final String objectName;
+
+    /**
+     * The Object Storage object name of the JFR upload result.
+     *
+     * @return the value
+     */
+    public String getObjectName() {
+        return objectName;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("containerInfo")
+    private final ContainerSummary containerInfo;
+
+    public ContainerSummary getContainerInfo() {
+        return containerInfo;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -230,6 +354,10 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
         sb.append(", applicationName=").append(String.valueOf(this.applicationName));
         sb.append(", applicationInstallationPath=")
                 .append(String.valueOf(this.applicationInstallationPath));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", containerInfo=").append(String.valueOf(this.containerInfo));
         sb.append(")");
         return sb.toString();
     }
@@ -250,6 +378,10 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
                 && java.util.Objects.equals(this.applicationName, other.applicationName)
                 && java.util.Objects.equals(
                         this.applicationInstallationPath, other.applicationInstallationPath)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.containerInfo, other.containerInfo)
                 && super.equals(other);
     }
 
@@ -273,6 +405,12 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
                         + (this.applicationInstallationPath == null
                                 ? 43
                                 : this.applicationInstallationPath.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containerInfo == null ? 43 : this.containerInfo.hashCode());
         return result;
     }
 }

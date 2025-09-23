@@ -62,6 +62,7 @@ public final class CloudExadataInfrastructure
         "monthlyDbServerVersion",
         "definedFileSystemConfigurations",
         "isSchedulingPolicyAssociated",
+        "exascaleConfig",
         "databaseServerType",
         "storageServerType",
         "computeModel"
@@ -104,6 +105,7 @@ public final class CloudExadataInfrastructure
             String monthlyDbServerVersion,
             java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations,
             Boolean isSchedulingPolicyAssociated,
+            ExascaleConfigDetails exascaleConfig,
             String databaseServerType,
             String storageServerType,
             ComputeModel computeModel) {
@@ -145,6 +147,7 @@ public final class CloudExadataInfrastructure
         this.monthlyDbServerVersion = monthlyDbServerVersion;
         this.definedFileSystemConfigurations = definedFileSystemConfigurations;
         this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
+        this.exascaleConfig = exascaleConfig;
         this.databaseServerType = databaseServerType;
         this.storageServerType = storageServerType;
         this.computeModel = computeModel;
@@ -795,6 +798,15 @@ public final class CloudExadataInfrastructure
             this.__explicitlySet__.add("isSchedulingPolicyAssociated");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleConfig")
+        private ExascaleConfigDetails exascaleConfig;
+
+        public Builder exascaleConfig(ExascaleConfigDetails exascaleConfig) {
+            this.exascaleConfig = exascaleConfig;
+            this.__explicitlySet__.add("exascaleConfig");
+            return this;
+        }
         /** The database server type of the Exadata infrastructure. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseServerType")
         private String databaseServerType;
@@ -892,6 +904,7 @@ public final class CloudExadataInfrastructure
                             this.monthlyDbServerVersion,
                             this.definedFileSystemConfigurations,
                             this.isSchedulingPolicyAssociated,
+                            this.exascaleConfig,
                             this.databaseServerType,
                             this.storageServerType,
                             this.computeModel);
@@ -1013,6 +1026,9 @@ public final class CloudExadataInfrastructure
             }
             if (model.wasPropertyExplicitlySet("isSchedulingPolicyAssociated")) {
                 this.isSchedulingPolicyAssociated(model.getIsSchedulingPolicyAssociated());
+            }
+            if (model.wasPropertyExplicitlySet("exascaleConfig")) {
+                this.exascaleConfig(model.getExascaleConfig());
             }
             if (model.wasPropertyExplicitlySet("databaseServerType")) {
                 this.databaseServerType(model.getDatabaseServerType());
@@ -1650,6 +1666,13 @@ public final class CloudExadataInfrastructure
         return isSchedulingPolicyAssociated;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleConfig")
+    private final ExascaleConfigDetails exascaleConfig;
+
+    public ExascaleConfigDetails getExascaleConfig() {
+        return exascaleConfig;
+    }
+
     /** The database server type of the Exadata infrastructure. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseServerType")
     private final String databaseServerType;
@@ -1805,6 +1828,7 @@ public final class CloudExadataInfrastructure
                 .append(String.valueOf(this.definedFileSystemConfigurations));
         sb.append(", isSchedulingPolicyAssociated=")
                 .append(String.valueOf(this.isSchedulingPolicyAssociated));
+        sb.append(", exascaleConfig=").append(String.valueOf(this.exascaleConfig));
         sb.append(", databaseServerType=").append(String.valueOf(this.databaseServerType));
         sb.append(", storageServerType=").append(String.valueOf(this.storageServerType));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
@@ -1867,6 +1891,7 @@ public final class CloudExadataInfrastructure
                         this.definedFileSystemConfigurations, other.definedFileSystemConfigurations)
                 && java.util.Objects.equals(
                         this.isSchedulingPolicyAssociated, other.isSchedulingPolicyAssociated)
+                && java.util.Objects.equals(this.exascaleConfig, other.exascaleConfig)
                 && java.util.Objects.equals(this.databaseServerType, other.databaseServerType)
                 && java.util.Objects.equals(this.storageServerType, other.storageServerType)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
@@ -2000,6 +2025,9 @@ public final class CloudExadataInfrastructure
                         + (this.isSchedulingPolicyAssociated == null
                                 ? 43
                                 : this.isSchedulingPolicyAssociated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exascaleConfig == null ? 43 : this.exascaleConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseServerType == null

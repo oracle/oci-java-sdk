@@ -31,8 +31,12 @@ public final class ManagedInstanceUsage
         "managedInstanceType",
         "hostname",
         "hostId",
+        "ipAddresses",
+        "hostnames",
+        "fqdns",
         "operatingSystem",
         "agent",
+        "clusterDetails",
         "approximateApplicationCount",
         "approximateInstallationCount",
         "approximateJreCount",
@@ -48,8 +52,12 @@ public final class ManagedInstanceUsage
             ManagedInstanceType managedInstanceType,
             String hostname,
             String hostId,
+            java.util.List<String> ipAddresses,
+            java.util.List<String> hostnames,
+            java.util.List<String> fqdns,
             OperatingSystem operatingSystem,
             Agent agent,
+            ClusterDetails clusterDetails,
             Integer approximateApplicationCount,
             Integer approximateInstallationCount,
             Integer approximateJreCount,
@@ -64,8 +72,12 @@ public final class ManagedInstanceUsage
         this.managedInstanceType = managedInstanceType;
         this.hostname = hostname;
         this.hostId = hostId;
+        this.ipAddresses = ipAddresses;
+        this.hostnames = hostnames;
+        this.fqdns = fqdns;
         this.operatingSystem = operatingSystem;
         this.agent = agent;
+        this.clusterDetails = clusterDetails;
         this.approximateApplicationCount = approximateApplicationCount;
         this.approximateInstallationCount = approximateInstallationCount;
         this.approximateJreCount = approximateJreCount;
@@ -147,6 +159,51 @@ public final class ManagedInstanceUsage
             this.__explicitlySet__.add("hostId");
             return this;
         }
+        /** Captured IP addresses of the managed instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
+        private java.util.List<String> ipAddresses;
+
+        /**
+         * Captured IP addresses of the managed instance.
+         *
+         * @param ipAddresses the value to set
+         * @return this builder
+         */
+        public Builder ipAddresses(java.util.List<String> ipAddresses) {
+            this.ipAddresses = ipAddresses;
+            this.__explicitlySet__.add("ipAddresses");
+            return this;
+        }
+        /** Captured hostnames of the managed instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
+        private java.util.List<String> hostnames;
+
+        /**
+         * Captured hostnames of the managed instance.
+         *
+         * @param hostnames the value to set
+         * @return this builder
+         */
+        public Builder hostnames(java.util.List<String> hostnames) {
+            this.hostnames = hostnames;
+            this.__explicitlySet__.add("hostnames");
+            return this;
+        }
+        /** Captured fully qualify domain names of the managed instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fqdns")
+        private java.util.List<String> fqdns;
+
+        /**
+         * Captured fully qualify domain names of the managed instance.
+         *
+         * @param fqdns the value to set
+         * @return this builder
+         */
+        public Builder fqdns(java.util.List<String> fqdns) {
+            this.fqdns = fqdns;
+            this.__explicitlySet__.add("fqdns");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
         private OperatingSystem operatingSystem;
@@ -163,6 +220,15 @@ public final class ManagedInstanceUsage
         public Builder agent(Agent agent) {
             this.agent = agent;
             this.__explicitlySet__.add("agent");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterDetails")
+        private ClusterDetails clusterDetails;
+
+        public Builder clusterDetails(ClusterDetails clusterDetails) {
+            this.clusterDetails = clusterDetails;
+            this.__explicitlySet__.add("clusterDetails");
             return this;
         }
         /** The approximate count of applications reported by this managed instance. */
@@ -339,8 +405,12 @@ public final class ManagedInstanceUsage
                             this.managedInstanceType,
                             this.hostname,
                             this.hostId,
+                            this.ipAddresses,
+                            this.hostnames,
+                            this.fqdns,
                             this.operatingSystem,
                             this.agent,
+                            this.clusterDetails,
                             this.approximateApplicationCount,
                             this.approximateInstallationCount,
                             this.approximateJreCount,
@@ -370,11 +440,23 @@ public final class ManagedInstanceUsage
             if (model.wasPropertyExplicitlySet("hostId")) {
                 this.hostId(model.getHostId());
             }
+            if (model.wasPropertyExplicitlySet("ipAddresses")) {
+                this.ipAddresses(model.getIpAddresses());
+            }
+            if (model.wasPropertyExplicitlySet("hostnames")) {
+                this.hostnames(model.getHostnames());
+            }
+            if (model.wasPropertyExplicitlySet("fqdns")) {
+                this.fqdns(model.getFqdns());
+            }
             if (model.wasPropertyExplicitlySet("operatingSystem")) {
                 this.operatingSystem(model.getOperatingSystem());
             }
             if (model.wasPropertyExplicitlySet("agent")) {
                 this.agent(model.getAgent());
+            }
+            if (model.wasPropertyExplicitlySet("clusterDetails")) {
+                this.clusterDetails(model.getClusterDetails());
             }
             if (model.wasPropertyExplicitlySet("approximateApplicationCount")) {
                 this.approximateApplicationCount(model.getApproximateApplicationCount());
@@ -476,6 +558,45 @@ public final class ManagedInstanceUsage
         return hostId;
     }
 
+    /** Captured IP addresses of the managed instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
+    private final java.util.List<String> ipAddresses;
+
+    /**
+     * Captured IP addresses of the managed instance.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getIpAddresses() {
+        return ipAddresses;
+    }
+
+    /** Captured hostnames of the managed instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
+    private final java.util.List<String> hostnames;
+
+    /**
+     * Captured hostnames of the managed instance.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getHostnames() {
+        return hostnames;
+    }
+
+    /** Captured fully qualify domain names of the managed instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fqdns")
+    private final java.util.List<String> fqdns;
+
+    /**
+     * Captured fully qualify domain names of the managed instance.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getFqdns() {
+        return fqdns;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     private final OperatingSystem operatingSystem;
 
@@ -488,6 +609,13 @@ public final class ManagedInstanceUsage
 
     public Agent getAgent() {
         return agent;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterDetails")
+    private final ClusterDetails clusterDetails;
+
+    public ClusterDetails getClusterDetails() {
+        return clusterDetails;
     }
 
     /** The approximate count of applications reported by this managed instance. */
@@ -652,8 +780,12 @@ public final class ManagedInstanceUsage
         sb.append(", managedInstanceType=").append(String.valueOf(this.managedInstanceType));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", hostId=").append(String.valueOf(this.hostId));
+        sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
+        sb.append(", hostnames=").append(String.valueOf(this.hostnames));
+        sb.append(", fqdns=").append(String.valueOf(this.fqdns));
         sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
         sb.append(", agent=").append(String.valueOf(this.agent));
+        sb.append(", clusterDetails=").append(String.valueOf(this.clusterDetails));
         sb.append(", approximateApplicationCount=")
                 .append(String.valueOf(this.approximateApplicationCount));
         sb.append(", approximateInstallationCount=")
@@ -683,8 +815,12 @@ public final class ManagedInstanceUsage
                 && java.util.Objects.equals(this.managedInstanceType, other.managedInstanceType)
                 && java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.hostId, other.hostId)
+                && java.util.Objects.equals(this.ipAddresses, other.ipAddresses)
+                && java.util.Objects.equals(this.hostnames, other.hostnames)
+                && java.util.Objects.equals(this.fqdns, other.fqdns)
                 && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
                 && java.util.Objects.equals(this.agent, other.agent)
+                && java.util.Objects.equals(this.clusterDetails, other.clusterDetails)
                 && java.util.Objects.equals(
                         this.approximateApplicationCount, other.approximateApplicationCount)
                 && java.util.Objects.equals(
@@ -713,10 +849,16 @@ public final class ManagedInstanceUsage
                                 : this.managedInstanceType.hashCode());
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
         result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
+        result = (result * PRIME) + (this.ipAddresses == null ? 43 : this.ipAddresses.hashCode());
+        result = (result * PRIME) + (this.hostnames == null ? 43 : this.hostnames.hashCode());
+        result = (result * PRIME) + (this.fqdns == null ? 43 : this.fqdns.hashCode());
         result =
                 (result * PRIME)
                         + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
         result = (result * PRIME) + (this.agent == null ? 43 : this.agent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterDetails == null ? 43 : this.clusterDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.approximateApplicationCount == null

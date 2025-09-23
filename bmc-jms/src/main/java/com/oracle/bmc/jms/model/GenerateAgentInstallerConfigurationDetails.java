@@ -23,11 +23,13 @@ package com.oracle.bmc.jms.model;
 public final class GenerateAgentInstallerConfigurationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"installKeyId", "fleetId"})
-    public GenerateAgentInstallerConfigurationDetails(String installKeyId, String fleetId) {
+    @java.beans.ConstructorProperties({"installKeyId", "fleetId", "agentType"})
+    public GenerateAgentInstallerConfigurationDetails(
+            String installKeyId, String fleetId, AgentType agentType) {
         super();
         this.installKeyId = installKeyId;
         this.fleetId = fleetId;
+        this.agentType = agentType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -70,13 +72,29 @@ public final class GenerateAgentInstallerConfigurationDetails
             this.__explicitlySet__.add("fleetId");
             return this;
         }
+        /** The JMS plugin type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("agentType")
+        private AgentType agentType;
+
+        /**
+         * The JMS plugin type.
+         *
+         * @param agentType the value to set
+         * @return this builder
+         */
+        public Builder agentType(AgentType agentType) {
+            this.agentType = agentType;
+            this.__explicitlySet__.add("agentType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenerateAgentInstallerConfigurationDetails build() {
             GenerateAgentInstallerConfigurationDetails model =
-                    new GenerateAgentInstallerConfigurationDetails(this.installKeyId, this.fleetId);
+                    new GenerateAgentInstallerConfigurationDetails(
+                            this.installKeyId, this.fleetId, this.agentType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -90,6 +108,9 @@ public final class GenerateAgentInstallerConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("fleetId")) {
                 this.fleetId(model.getFleetId());
+            }
+            if (model.wasPropertyExplicitlySet("agentType")) {
+                this.agentType(model.getAgentType());
             }
             return this;
         }
@@ -138,6 +159,19 @@ public final class GenerateAgentInstallerConfigurationDetails
         return fleetId;
     }
 
+    /** The JMS plugin type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("agentType")
+    private final AgentType agentType;
+
+    /**
+     * The JMS plugin type.
+     *
+     * @return the value
+     */
+    public AgentType getAgentType() {
+        return agentType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -155,6 +189,7 @@ public final class GenerateAgentInstallerConfigurationDetails
         sb.append("super=").append(super.toString());
         sb.append("installKeyId=").append(String.valueOf(this.installKeyId));
         sb.append(", fleetId=").append(String.valueOf(this.fleetId));
+        sb.append(", agentType=").append(String.valueOf(this.agentType));
         sb.append(")");
         return sb.toString();
     }
@@ -172,6 +207,7 @@ public final class GenerateAgentInstallerConfigurationDetails
                 (GenerateAgentInstallerConfigurationDetails) o;
         return java.util.Objects.equals(this.installKeyId, other.installKeyId)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
+                && java.util.Objects.equals(this.agentType, other.agentType)
                 && super.equals(other);
     }
 
@@ -181,6 +217,7 @@ public final class GenerateAgentInstallerConfigurationDetails
         int result = 1;
         result = (result * PRIME) + (this.installKeyId == null ? 43 : this.installKeyId.hashCode());
         result = (result * PRIME) + (this.fleetId == null ? 43 : this.fleetId.hashCode());
+        result = (result * PRIME) + (this.agentType == null ? 43 : this.agentType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

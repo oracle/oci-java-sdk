@@ -100,6 +100,23 @@ public interface Marketplace extends AutoCloseable {
     CreateAcceptedAgreementResponse createAcceptedAgreement(CreateAcceptedAgreementRequest request);
 
     /**
+     * Generates attested marketplace metadata
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/CreateMarketplaceExternalAttestedMetadataExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateMarketplaceExternalAttestedMetadata API.
+     */
+    CreateMarketplaceExternalAttestedMetadataResponse createMarketplaceExternalAttestedMetadata(
+            CreateMarketplaceExternalAttestedMetadataRequest request);
+
+    /**
      * Creates a publication of the specified listing type with an optional default package.
      *
      * @param request The request object containing the details to send
@@ -406,6 +423,23 @@ public interface Marketplace extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListings API.
      */
     ListListingsResponse listListings(ListListingsRequest request);
+
+    /**
+     * Get public certificates used in JWT signing, in JSON Web Key Sets format
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListMarketplaceMetadataPublicKeysExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMarketplaceMetadataPublicKeys API.
+     */
+    ListMarketplaceMetadataPublicKeysResponse listMarketplaceMetadataPublicKeys(
+            ListMarketplaceMetadataPublicKeysRequest request);
 
     /**
      * Gets the list of packages for a listing.

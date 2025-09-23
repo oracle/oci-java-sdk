@@ -166,6 +166,7 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // OC9
     public static final Region ME_DCC_MUSCAT_1 = register("me-dcc-muscat-1", Realm.OC9, "mct");
+    public static final Region ME_IBRI_1 = register("me-ibri-1", Realm.OC9, "ibr");
 
     // OC10
     public static final Region AP_DCC_CANBERRA_1 = register("ap-dcc-canberra-1", Realm.OC10, "wga");

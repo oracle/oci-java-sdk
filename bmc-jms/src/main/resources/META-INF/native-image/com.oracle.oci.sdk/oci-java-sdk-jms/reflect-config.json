@@ -21,6 +21,20 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.AddInstallationSiteTaskDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.AddInstallationSiteTaskDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.AdvancedUsageTracking",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -313,6 +327,66 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ClusterDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ClusterDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ClusterDetails$ClusterType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ConfidenceLevel",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ContainerCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ContainerCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ContainerSortBy",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ContainerSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ContainerSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.CreateBlocklistDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -363,6 +437,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.CreateJmsPluginDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.CreateTaskScheduleDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.CreateTaskScheduleDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -437,6 +525,20 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.CryptoTaskDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.CryptoTaskDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.CustomLog",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -493,6 +595,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.DeployedApplicationMigrationAnalysesTarget$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.DeployedApplicationMigrationTaskDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.DeployedApplicationMigrationTaskDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -663,6 +779,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.ExistingInstallationSiteId$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ExportDataFilters",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ExportDataFilters$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -1223,6 +1353,48 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.JavaMigrationApplicationWorkItemDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.JavaMigrationApplicationWorkItemDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.JavaMigrationDeployedApplicationWorkItemDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.JavaMigrationDeployedApplicationWorkItemDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.JavaMigrationTaskDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.JavaMigrationTaskDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.JavaRelease",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -1381,6 +1553,20 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.JfrTaskDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.JfrTaskDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.JmsPlugin",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -1523,6 +1709,88 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryApplicationSortBy",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryApplicationUsageCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryApplicationUsageCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryApplicationUsageSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryApplicationUsageSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryInventory",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryInventory$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryManagedInstanceSortBy",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryManagedInstanceUsageCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryManagedInstanceUsageCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryManagedInstanceUsageSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryManagedInstanceUsageSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.LibrarySortBy",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
@@ -1551,6 +1819,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.LibraryUsageCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryVulnerability",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.LibraryVulnerability$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -1683,6 +1965,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.PackageSortBy",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.PackageType",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
@@ -1768,6 +2056,20 @@
     "name": "com.oracle.bmc.jms.model.PerformanceTuningResultStatus",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.PerformanceTuningTaskDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.PerformanceTuningTaskDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
@@ -1955,6 +2257,20 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.RemoveInstallationSiteTaskDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.RemoveInstallationSiteTaskDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.RequestCryptoAnalysesDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -2039,6 +2355,20 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ScanJavaServerTaskDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ScanJavaServerTaskDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.ScanJavaServerUsageDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -2047,6 +2377,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.ScanJavaServerUsageDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ScanLibraryTaskDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.ScanLibraryTaskDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -2123,9 +2467,172 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.TaskDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.TaskDetails$TaskType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.TaskSchedule",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.TaskSchedule$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.TaskSchedule$LifecycleState",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.TaskScheduleCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.TaskScheduleCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.TaskScheduleSortBy",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.TaskScheduleSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.TaskScheduleSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.TlsVersions",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageApplicationSortBy",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageApplicationUsageCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageApplicationUsageCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageApplicationUsageSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageApplicationUsageSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageManagedInstanceSortBy",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageManagedInstanceUsageCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageManagedInstanceUsageCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageManagedInstanceUsageSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageManagedInstanceUsageSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageUsageCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageUsageCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageUsageSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UncorrelatedPackageUsageSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
@@ -2207,6 +2714,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.jms.model.UpdateJmsPluginDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UpdateTaskScheduleDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.jms.model.UpdateTaskScheduleDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true

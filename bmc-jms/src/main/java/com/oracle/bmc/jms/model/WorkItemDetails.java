@@ -23,6 +23,9 @@ package com.oracle.bmc.jms.model;
         defaultImpl = WorkItemDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = JavaMigrationDeployedApplicationWorkItemDetails.class,
+            name = "JAVA_MIGRATION_DEPLOYED_APPLICATION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DeployedApplicationWorkItemDetails.class,
             name = "DEPLOYED_APPLICATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -33,7 +36,10 @@ package com.oracle.bmc.jms.model;
             name = "BASIC"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ApplicationWorkItemDetails.class,
-            name = "APPLICATION")
+            name = "APPLICATION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = JavaMigrationApplicationWorkItemDetails.class,
+            name = "JAVA_MIGRATION_APPLICATION")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

@@ -66,6 +66,13 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
     public String getTargetId() {
         return targetId;
     }
+    /** A filter to return the target database group that matches the specified OCID. */
+    private String targetDatabaseGroupId;
+
+    /** A filter to return the target database group that matches the specified OCID. */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
     /** The sort order to use, either ascending (ASC) or descending (DESC). */
     private SortOrder sortOrder;
 
@@ -325,6 +332,20 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /** A filter to return the target database group that matches the specified OCID. */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         *
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
         /** The sort order to use, either ascending (ASC) or descending (DESC). */
         private SortOrder sortOrder = null;
 
@@ -448,6 +469,7 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
             page(o.getPage());
             maskingPolicyId(o.getMaskingPolicyId());
             targetId(o.getTargetId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
@@ -492,6 +514,7 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
             request.page = page;
             request.maskingPolicyId = maskingPolicyId;
             request.targetId = targetId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
@@ -499,7 +522,8 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
             request.accessLevel = accessLevel;
             return request;
             // new ListMaskingReportsRequest(compartmentId, limit, page, maskingPolicyId, targetId,
-            // sortOrder, sortBy, opcRequestId, compartmentIdInSubtree, accessLevel);
+            // targetDatabaseGroupId, sortOrder, sortBy, opcRequestId, compartmentIdInSubtree,
+            // accessLevel);
         }
     }
 
@@ -515,6 +539,7 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
                 .page(page)
                 .maskingPolicyId(maskingPolicyId)
                 .targetId(targetId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
@@ -541,6 +566,7 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",maskingPolicyId=").append(String.valueOf(this.maskingPolicyId));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -566,6 +592,7 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.maskingPolicyId, other.maskingPolicyId)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
@@ -587,6 +614,11 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
                 (result * PRIME)
                         + (this.maskingPolicyId == null ? 43 : this.maskingPolicyId.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

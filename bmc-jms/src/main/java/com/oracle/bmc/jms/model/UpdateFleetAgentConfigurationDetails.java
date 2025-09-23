@@ -30,6 +30,8 @@ public final class UpdateFleetAgentConfigurationDetails
         "agentPollingIntervalInMinutes",
         "isCollectingManagedInstanceMetricsEnabled",
         "isCollectingUsernamesEnabled",
+        "isCapturingIpAddressAndFqdnEnabled",
+        "isLibrariesScanEnabled",
         "linuxConfiguration",
         "windowsConfiguration",
         "macOsConfiguration"
@@ -41,6 +43,8 @@ public final class UpdateFleetAgentConfigurationDetails
             Integer agentPollingIntervalInMinutes,
             Boolean isCollectingManagedInstanceMetricsEnabled,
             Boolean isCollectingUsernamesEnabled,
+            Boolean isCapturingIpAddressAndFqdnEnabled,
+            Boolean isLibrariesScanEnabled,
             FleetAgentOsConfiguration linuxConfiguration,
             FleetAgentOsConfiguration windowsConfiguration,
             FleetAgentOsConfiguration macOsConfiguration) {
@@ -52,6 +56,8 @@ public final class UpdateFleetAgentConfigurationDetails
         this.agentPollingIntervalInMinutes = agentPollingIntervalInMinutes;
         this.isCollectingManagedInstanceMetricsEnabled = isCollectingManagedInstanceMetricsEnabled;
         this.isCollectingUsernamesEnabled = isCollectingUsernamesEnabled;
+        this.isCapturingIpAddressAndFqdnEnabled = isCapturingIpAddressAndFqdnEnabled;
+        this.isLibrariesScanEnabled = isLibrariesScanEnabled;
         this.linuxConfiguration = linuxConfiguration;
         this.windowsConfiguration = windowsConfiguration;
         this.macOsConfiguration = macOsConfiguration;
@@ -162,6 +168,37 @@ public final class UpdateFleetAgentConfigurationDetails
             this.__explicitlySet__.add("isCollectingUsernamesEnabled");
             return this;
         }
+        /** Collect network addresses of managed instances in the fleet. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isCapturingIpAddressAndFqdnEnabled")
+        private Boolean isCapturingIpAddressAndFqdnEnabled;
+
+        /**
+         * Collect network addresses of managed instances in the fleet.
+         *
+         * @param isCapturingIpAddressAndFqdnEnabled the value to set
+         * @return this builder
+         */
+        public Builder isCapturingIpAddressAndFqdnEnabled(
+                Boolean isCapturingIpAddressAndFqdnEnabled) {
+            this.isCapturingIpAddressAndFqdnEnabled = isCapturingIpAddressAndFqdnEnabled;
+            this.__explicitlySet__.add("isCapturingIpAddressAndFqdnEnabled");
+            return this;
+        }
+        /** Enable libraries scan on all managed instances in the fleet. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isLibrariesScanEnabled")
+        private Boolean isLibrariesScanEnabled;
+
+        /**
+         * Enable libraries scan on all managed instances in the fleet.
+         *
+         * @param isLibrariesScanEnabled the value to set
+         * @return this builder
+         */
+        public Builder isLibrariesScanEnabled(Boolean isLibrariesScanEnabled) {
+            this.isLibrariesScanEnabled = isLibrariesScanEnabled;
+            this.__explicitlySet__.add("isLibrariesScanEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("linuxConfiguration")
         private FleetAgentOsConfiguration linuxConfiguration;
@@ -202,6 +239,8 @@ public final class UpdateFleetAgentConfigurationDetails
                             this.agentPollingIntervalInMinutes,
                             this.isCollectingManagedInstanceMetricsEnabled,
                             this.isCollectingUsernamesEnabled,
+                            this.isCapturingIpAddressAndFqdnEnabled,
+                            this.isLibrariesScanEnabled,
                             this.linuxConfiguration,
                             this.windowsConfiguration,
                             this.macOsConfiguration);
@@ -232,6 +271,13 @@ public final class UpdateFleetAgentConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("isCollectingUsernamesEnabled")) {
                 this.isCollectingUsernamesEnabled(model.getIsCollectingUsernamesEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isCapturingIpAddressAndFqdnEnabled")) {
+                this.isCapturingIpAddressAndFqdnEnabled(
+                        model.getIsCapturingIpAddressAndFqdnEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isLibrariesScanEnabled")) {
+                this.isLibrariesScanEnabled(model.getIsLibrariesScanEnabled());
             }
             if (model.wasPropertyExplicitlySet("linuxConfiguration")) {
                 this.linuxConfiguration(model.getLinuxConfiguration());
@@ -341,6 +387,32 @@ public final class UpdateFleetAgentConfigurationDetails
         return isCollectingUsernamesEnabled;
     }
 
+    /** Collect network addresses of managed instances in the fleet. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isCapturingIpAddressAndFqdnEnabled")
+    private final Boolean isCapturingIpAddressAndFqdnEnabled;
+
+    /**
+     * Collect network addresses of managed instances in the fleet.
+     *
+     * @return the value
+     */
+    public Boolean getIsCapturingIpAddressAndFqdnEnabled() {
+        return isCapturingIpAddressAndFqdnEnabled;
+    }
+
+    /** Enable libraries scan on all managed instances in the fleet. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isLibrariesScanEnabled")
+    private final Boolean isLibrariesScanEnabled;
+
+    /**
+     * Enable libraries scan on all managed instances in the fleet.
+     *
+     * @return the value
+     */
+    public Boolean getIsLibrariesScanEnabled() {
+        return isLibrariesScanEnabled;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("linuxConfiguration")
     private final FleetAgentOsConfiguration linuxConfiguration;
 
@@ -389,6 +461,9 @@ public final class UpdateFleetAgentConfigurationDetails
                 .append(String.valueOf(this.isCollectingManagedInstanceMetricsEnabled));
         sb.append(", isCollectingUsernamesEnabled=")
                 .append(String.valueOf(this.isCollectingUsernamesEnabled));
+        sb.append(", isCapturingIpAddressAndFqdnEnabled=")
+                .append(String.valueOf(this.isCapturingIpAddressAndFqdnEnabled));
+        sb.append(", isLibrariesScanEnabled=").append(String.valueOf(this.isLibrariesScanEnabled));
         sb.append(", linuxConfiguration=").append(String.valueOf(this.linuxConfiguration));
         sb.append(", windowsConfiguration=").append(String.valueOf(this.windowsConfiguration));
         sb.append(", macOsConfiguration=").append(String.valueOf(this.macOsConfiguration));
@@ -420,6 +495,11 @@ public final class UpdateFleetAgentConfigurationDetails
                         other.isCollectingManagedInstanceMetricsEnabled)
                 && java.util.Objects.equals(
                         this.isCollectingUsernamesEnabled, other.isCollectingUsernamesEnabled)
+                && java.util.Objects.equals(
+                        this.isCapturingIpAddressAndFqdnEnabled,
+                        other.isCapturingIpAddressAndFqdnEnabled)
+                && java.util.Objects.equals(
+                        this.isLibrariesScanEnabled, other.isLibrariesScanEnabled)
                 && java.util.Objects.equals(this.linuxConfiguration, other.linuxConfiguration)
                 && java.util.Objects.equals(this.windowsConfiguration, other.windowsConfiguration)
                 && java.util.Objects.equals(this.macOsConfiguration, other.macOsConfiguration)
@@ -460,6 +540,16 @@ public final class UpdateFleetAgentConfigurationDetails
                         + (this.isCollectingUsernamesEnabled == null
                                 ? 43
                                 : this.isCollectingUsernamesEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCapturingIpAddressAndFqdnEnabled == null
+                                ? 43
+                                : this.isCapturingIpAddressAndFqdnEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLibrariesScanEnabled == null
+                                ? 43
+                                : this.isLibrariesScanEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.linuxConfiguration == null

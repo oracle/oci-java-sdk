@@ -72,6 +72,10 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /** Metadata URL from environment variable, to use if present. */
     public static final String METADATA_URL_OVERRIDE = System.getenv(METADATA_BASE_URL_ENV_VAR);
 
+    /** Environment variable used to disable circuit breaker. */
+    public static final String ENABLE_DEFAULT_CIRCUIT_BREAKER_CONFIG =
+            "OCI_SDK_DEFAULT_AUTH_CIRCUITBREAKER_ENABLED";
+
     /** The Authorization header value to be sent for requests to the metadata service. */
     public static final String AUTHORIZATION_HEADER_VALUE = "Bearer Oracle";
 
@@ -202,6 +206,12 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         return (B) this;
     }
 
+    /** Fetch the value from environment variable for disabling circuit breaker. */
+    protected boolean getDefaultCircuitBreakerOverride() {
+        String envValue = System.getenv(ENABLE_DEFAULT_CIRCUIT_BREAKER_CONFIG);
+        return StringUtils.isEmpty(envValue) || Boolean.valueOf(envValue).equals(Boolean.TRUE);
+    }
+
     /**
      * Build a new AuthenticationDetailsProvider that uses the FederationClient.
      *
@@ -223,11 +233,18 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      * @return the federation client
      */
     protected FederationClient createFederationClient(SessionKeySupplier sessionKeySupplier) {
-
-        CircuitBreakerConfiguration circuitBreakerConfig =
-                circuitBreakerConfiguration != null
-                        ? circuitBreakerConfiguration
-                        : CircuitBreakerUtils.getDefaultAuthClientCircuitBreakerConfiguration();
+        CircuitBreakerConfiguration circuitBreakerConfig;
+        if (getDefaultCircuitBreakerOverride()) {
+            circuitBreakerConfig =
+                    circuitBreakerConfiguration != null
+                            ? circuitBreakerConfiguration
+                            : CircuitBreakerUtils.getDefaultAuthClientCircuitBreakerConfiguration();
+        } else {
+            circuitBreakerConfig =
+                    circuitBreakerConfiguration != null
+                            ? circuitBreakerConfiguration
+                            : CircuitBreakerUtils.getNoCircuitBreakerConfiguration();
+        }
 
         if (purpose != null) {
             return new X509FederationClient(

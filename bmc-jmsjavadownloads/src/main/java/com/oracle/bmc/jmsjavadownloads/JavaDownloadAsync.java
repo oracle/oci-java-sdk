@@ -8,8 +8,8 @@ import com.oracle.bmc.jmsjavadownloads.requests.*;
 import com.oracle.bmc.jmsjavadownloads.responses.*;
 
 /**
- * The APIs for the <a href="https://docs.oracle.com/en-us/iaas/jms/doc/java-download.html">Java
- * Download</a> feature of Java Management Service.
+ * The APIs for the [Java Download](https://docs.oracle.com/en-us/iaas/jms/doc/java-download.html)
+ * feature of Java Management Service.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 public interface JavaDownloadAsync extends AutoCloseable {

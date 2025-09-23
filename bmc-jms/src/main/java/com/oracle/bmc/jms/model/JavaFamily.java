@@ -31,7 +31,8 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
         "docUrl",
         "latestReleaseVersion",
         "isSupportedVersion",
-        "releaseDate"
+        "releaseDate",
+        "licenseTypes"
     })
     public JavaFamily(
             java.util.List<JavaArtifact> latestReleaseArtifacts,
@@ -42,7 +43,8 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
             String docUrl,
             String latestReleaseVersion,
             Boolean isSupportedVersion,
-            java.util.Date releaseDate) {
+            java.util.Date releaseDate,
+            java.util.List<LicenseType> licenseTypes) {
         super();
         this.latestReleaseArtifacts = latestReleaseArtifacts;
         this.familyVersion = familyVersion;
@@ -53,6 +55,7 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
         this.latestReleaseVersion = latestReleaseVersion;
         this.isSupportedVersion = isSupportedVersion;
         this.releaseDate = releaseDate;
+        this.licenseTypes = licenseTypes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -212,6 +215,21 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("releaseDate");
             return this;
         }
+        /** The license type(s) associated with the Java family. */
+        @com.fasterxml.jackson.annotation.JsonProperty("licenseTypes")
+        private java.util.List<LicenseType> licenseTypes;
+
+        /**
+         * The license type(s) associated with the Java family.
+         *
+         * @param licenseTypes the value to set
+         * @return this builder
+         */
+        public Builder licenseTypes(java.util.List<LicenseType> licenseTypes) {
+            this.licenseTypes = licenseTypes;
+            this.__explicitlySet__.add("licenseTypes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -227,7 +245,8 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
                             this.docUrl,
                             this.latestReleaseVersion,
                             this.isSupportedVersion,
-                            this.releaseDate);
+                            this.releaseDate,
+                            this.licenseTypes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -262,6 +281,9 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("releaseDate")) {
                 this.releaseDate(model.getReleaseDate());
+            }
+            if (model.wasPropertyExplicitlySet("licenseTypes")) {
+                this.licenseTypes(model.getLicenseTypes());
             }
             return this;
         }
@@ -413,6 +435,19 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
         return releaseDate;
     }
 
+    /** The license type(s) associated with the Java family. */
+    @com.fasterxml.jackson.annotation.JsonProperty("licenseTypes")
+    private final java.util.List<LicenseType> licenseTypes;
+
+    /**
+     * The license type(s) associated with the Java family.
+     *
+     * @return the value
+     */
+    public java.util.List<LicenseType> getLicenseTypes() {
+        return licenseTypes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -437,6 +472,7 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", latestReleaseVersion=").append(String.valueOf(this.latestReleaseVersion));
         sb.append(", isSupportedVersion=").append(String.valueOf(this.isSupportedVersion));
         sb.append(", releaseDate=").append(String.valueOf(this.releaseDate));
+        sb.append(", licenseTypes=").append(String.valueOf(this.licenseTypes));
         sb.append(")");
         return sb.toString();
     }
@@ -460,6 +496,7 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.latestReleaseVersion, other.latestReleaseVersion)
                 && java.util.Objects.equals(this.isSupportedVersion, other.isSupportedVersion)
                 && java.util.Objects.equals(this.releaseDate, other.releaseDate)
+                && java.util.Objects.equals(this.licenseTypes, other.licenseTypes)
                 && super.equals(other);
     }
 
@@ -494,6 +531,7 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
                                 ? 43
                                 : this.isSupportedVersion.hashCode());
         result = (result * PRIME) + (this.releaseDate == null ? 43 : this.releaseDate.hashCode());
+        result = (result * PRIME) + (this.licenseTypes == null ? 43 : this.licenseTypes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

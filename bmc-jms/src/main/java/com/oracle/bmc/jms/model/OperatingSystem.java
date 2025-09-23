@@ -28,7 +28,8 @@ public final class OperatingSystem
         "distribution",
         "version",
         "architecture",
-        "managedInstanceCount"
+        "managedInstanceCount",
+        "containerCount"
     })
     public OperatingSystem(
             OsFamily family,
@@ -36,7 +37,8 @@ public final class OperatingSystem
             String distribution,
             String version,
             String architecture,
-            Integer managedInstanceCount) {
+            Integer managedInstanceCount,
+            Integer containerCount) {
         super();
         this.family = family;
         this.name = name;
@@ -44,6 +46,7 @@ public final class OperatingSystem
         this.version = version;
         this.architecture = architecture;
         this.managedInstanceCount = managedInstanceCount;
+        this.containerCount = containerCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -146,6 +149,21 @@ public final class OperatingSystem
             this.__explicitlySet__.add("managedInstanceCount");
             return this;
         }
+        /** Number of containers running the operating system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("containerCount")
+        private Integer containerCount;
+
+        /**
+         * Number of containers running the operating system.
+         *
+         * @param containerCount the value to set
+         * @return this builder
+         */
+        public Builder containerCount(Integer containerCount) {
+            this.containerCount = containerCount;
+            this.__explicitlySet__.add("containerCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -158,7 +176,8 @@ public final class OperatingSystem
                             this.distribution,
                             this.version,
                             this.architecture,
-                            this.managedInstanceCount);
+                            this.managedInstanceCount,
+                            this.containerCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -184,6 +203,9 @@ public final class OperatingSystem
             }
             if (model.wasPropertyExplicitlySet("managedInstanceCount")) {
                 this.managedInstanceCount(model.getManagedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("containerCount")) {
+                this.containerCount(model.getContainerCount());
             }
             return this;
         }
@@ -280,6 +302,19 @@ public final class OperatingSystem
         return managedInstanceCount;
     }
 
+    /** Number of containers running the operating system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("containerCount")
+    private final Integer containerCount;
+
+    /**
+     * Number of containers running the operating system.
+     *
+     * @return the value
+     */
+    public Integer getContainerCount() {
+        return containerCount;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -301,6 +336,7 @@ public final class OperatingSystem
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", architecture=").append(String.valueOf(this.architecture));
         sb.append(", managedInstanceCount=").append(String.valueOf(this.managedInstanceCount));
+        sb.append(", containerCount=").append(String.valueOf(this.containerCount));
         sb.append(")");
         return sb.toString();
     }
@@ -321,6 +357,7 @@ public final class OperatingSystem
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.architecture, other.architecture)
                 && java.util.Objects.equals(this.managedInstanceCount, other.managedInstanceCount)
+                && java.util.Objects.equals(this.containerCount, other.containerCount)
                 && super.equals(other);
     }
 
@@ -338,6 +375,9 @@ public final class OperatingSystem
                         + (this.managedInstanceCount == null
                                 ? 43
                                 : this.managedInstanceCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containerCount == null ? 43 : this.containerCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

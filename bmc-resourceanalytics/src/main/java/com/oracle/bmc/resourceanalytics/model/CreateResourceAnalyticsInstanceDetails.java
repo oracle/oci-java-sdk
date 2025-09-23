@@ -1,0 +1,591 @@
+/**
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.resourceanalytics.model;
+
+/**
+ * The data to create a ResourceAnalyticsInstance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
+ * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
+ * fields into account. The constructor, on the other hand, does not take the explicitly set fields
+ * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
+ * null}).
+ */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241031")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+        builder = CreateResourceAnalyticsInstanceDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+public final class CreateResourceAnalyticsInstanceDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "compartmentId",
+        "description",
+        "adwAdminPassword",
+        "subnetId",
+        "isMutualTlsRequired",
+        "nsgIds",
+        "licenseModel",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateResourceAnalyticsInstanceDetails(
+            String displayName,
+            String compartmentId,
+            String description,
+            AdwAdminPasswordDetails adwAdminPassword,
+            String subnetId,
+            Boolean isMutualTlsRequired,
+            java.util.List<String> nsgIds,
+            LicenseModel licenseModel,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.description = description;
+        this.adwAdminPassword = adwAdminPassword;
+        this.subnetId = subnetId;
+        this.isMutualTlsRequired = isMutualTlsRequired;
+        this.nsgIds = nsgIds;
+        this.licenseModel = licenseModel;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+        private String displayName;
+
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to create the ResourceAnalyticsInstance in.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to create the ResourceAnalyticsInstance in.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /** A description of the ResourceAnalyticsInstance instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * A description of the ResourceAnalyticsInstance instance.
+         *
+         * @param description the value to set
+         * @return this builder
+         */
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("adwAdminPassword")
+        private AdwAdminPasswordDetails adwAdminPassword;
+
+        public Builder adwAdminPassword(AdwAdminPasswordDetails adwAdminPassword) {
+            this.adwAdminPassword = adwAdminPassword;
+            this.__explicitlySet__.add("adwAdminPassword");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet the resource is associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet the resource is associated with.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         */
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /** Require mutual TLS (mTLS) when authenticating connections to the ADW database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMutualTlsRequired")
+        private Boolean isMutualTlsRequired;
+
+        /**
+         * Require mutual TLS (mTLS) when authenticating connections to the ADW database.
+         *
+         * @param isMutualTlsRequired the value to set
+         * @return this builder
+         */
+        public Builder isMutualTlsRequired(Boolean isMutualTlsRequired) {
+            this.isMutualTlsRequired = isMutualTlsRequired;
+            this.__explicitlySet__.add("isMutualTlsRequired");
+            return this;
+        }
+        /**
+         * List of Network Security Group
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s.
+         *
+         * <p>Example: {@code ["ocid...", "ocid..."]}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * List of Network Security Group
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s.
+         *
+         * <p>Example: {@code ["ocid...", "ocid..."]}
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         */
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /** The Oracle license model that applies to the ADW instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
+        private LicenseModel licenseModel;
+
+        /**
+         * The Oracle license model that applies to the ADW instance.
+         *
+         * @param licenseModel the value to set
+         * @return this builder
+         */
+        public Builder licenseModel(LicenseModel licenseModel) {
+            this.licenseModel = licenseModel;
+            this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public CreateResourceAnalyticsInstanceDetails build() {
+            CreateResourceAnalyticsInstanceDetails model =
+                    new CreateResourceAnalyticsInstanceDetails(
+                            this.displayName,
+                            this.compartmentId,
+                            this.description,
+                            this.adwAdminPassword,
+                            this.subnetId,
+                            this.isMutualTlsRequired,
+                            this.nsgIds,
+                            this.licenseModel,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(CreateResourceAnalyticsInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("adwAdminPassword")) {
+                this.adwAdminPassword(model.getAdwAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("isMutualTlsRequired")) {
+                this.isMutualTlsRequired(model.getIsMutualTlsRequired());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
+        }
+    }
+
+    /** Create a new builder. */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    private final String displayName;
+
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     *
+     * @return the value
+     */
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to create the ResourceAnalyticsInstance in.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to create the ResourceAnalyticsInstance in.
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
+    /** A description of the ResourceAnalyticsInstance instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * A description of the ResourceAnalyticsInstance instance.
+     *
+     * @return the value
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("adwAdminPassword")
+    private final AdwAdminPasswordDetails adwAdminPassword;
+
+    public AdwAdminPasswordDetails getAdwAdminPassword() {
+        return adwAdminPassword;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet the resource is associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet the resource is associated with.
+     *
+     * @return the value
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    /** Require mutual TLS (mTLS) when authenticating connections to the ADW database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMutualTlsRequired")
+    private final Boolean isMutualTlsRequired;
+
+    /**
+     * Require mutual TLS (mTLS) when authenticating connections to the ADW database.
+     *
+     * @return the value
+     */
+    public Boolean getIsMutualTlsRequired() {
+        return isMutualTlsRequired;
+    }
+
+    /**
+     * List of Network Security Group
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s.
+     *
+     * <p>Example: {@code ["ocid...", "ocid..."]}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * List of Network Security Group
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s.
+     *
+     * <p>Example: {@code ["ocid...", "ocid..."]}
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
+    /** The Oracle license model that applies to the ADW instance. */
+    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
+        LicenseIncluded("LICENSE_INCLUDED"),
+        BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, LicenseModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LicenseModel v : LicenseModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        LicenseModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LicenseModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid LicenseModel: " + key);
+        }
+    };
+    /** The Oracle license model that applies to the ADW instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
+    private final LicenseModel licenseModel;
+
+    /**
+     * The Oracle license model that applies to the ADW instance.
+     *
+     * @return the value
+     */
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     *
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateResourceAnalyticsInstanceDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", adwAdminPassword=").append(String.valueOf(this.adwAdminPassword));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", isMutualTlsRequired=").append(String.valueOf(this.isMutualTlsRequired));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateResourceAnalyticsInstanceDetails)) {
+            return false;
+        }
+
+        CreateResourceAnalyticsInstanceDetails other = (CreateResourceAnalyticsInstanceDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.adwAdminPassword, other.adwAdminPassword)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.isMutualTlsRequired, other.isMutualTlsRequired)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adwAdminPassword == null ? 43 : this.adwAdminPassword.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMutualTlsRequired == null
+                                ? 43
+                                : this.isMutualTlsRequired.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
+        return result;
+    }
+}

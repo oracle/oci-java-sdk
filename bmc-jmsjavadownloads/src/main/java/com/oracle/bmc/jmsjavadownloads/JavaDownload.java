@@ -8,8 +8,8 @@ import com.oracle.bmc.jmsjavadownloads.requests.*;
 import com.oracle.bmc.jmsjavadownloads.responses.*;
 
 /**
- * The APIs for the <a href="https://docs.oracle.com/en-us/iaas/jms/doc/java-download.html">Java
- * Download</a> feature of Java Management Service. This service client uses
+ * The APIs for the [Java Download](https://docs.oracle.com/en-us/iaas/jms/doc/java-download.html)
+ * feature of Java Management Service. This service client uses
  * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
  * breaker configuration is defined by the user.
  */

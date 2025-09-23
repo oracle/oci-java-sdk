@@ -71,17 +71,17 @@ public class SummarizeLibraryUsageRequest
         return libraryName;
     }
     /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
-    private Integer cvssScoreGreaterThan;
+    private Float cvssScoreGreaterThan;
 
     /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
-    public Integer getCvssScoreGreaterThan() {
+    public Float getCvssScoreGreaterThan() {
         return cvssScoreGreaterThan;
     }
     /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
-    private Integer cvssScoreLessThan;
+    private Float cvssScoreLessThan;
 
     /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
-    public Integer getCvssScoreLessThan() {
+    public Float getCvssScoreLessThan() {
         return cvssScoreLessThan;
     }
     /**
@@ -267,7 +267,7 @@ public class SummarizeLibraryUsageRequest
         }
 
         /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
-        private Integer cvssScoreGreaterThan = null;
+        private Float cvssScoreGreaterThan = null;
 
         /**
          * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
@@ -275,13 +275,13 @@ public class SummarizeLibraryUsageRequest
          * @param cvssScoreGreaterThan the value to set
          * @return this builder instance
          */
-        public Builder cvssScoreGreaterThan(Integer cvssScoreGreaterThan) {
+        public Builder cvssScoreGreaterThan(Float cvssScoreGreaterThan) {
             this.cvssScoreGreaterThan = cvssScoreGreaterThan;
             return this;
         }
 
         /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
-        private Integer cvssScoreLessThan = null;
+        private Float cvssScoreLessThan = null;
 
         /**
          * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
@@ -289,7 +289,7 @@ public class SummarizeLibraryUsageRequest
          * @param cvssScoreLessThan the value to set
          * @return this builder instance
          */
-        public Builder cvssScoreLessThan(Integer cvssScoreLessThan) {
+        public Builder cvssScoreLessThan(Float cvssScoreLessThan) {
             this.cvssScoreLessThan = cvssScoreLessThan;
             return this;
         }

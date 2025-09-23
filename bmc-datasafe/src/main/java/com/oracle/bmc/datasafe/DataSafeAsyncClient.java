@@ -8417,6 +8417,10 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         request.getColumnName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "confidenceLevel",
+                        request.getConfidenceLevel(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -8572,6 +8576,7 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .appendQueryParam("targetId", request.getTargetId())
@@ -9297,6 +9302,7 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("maskingPolicyId", request.getMaskingPolicyId())
                 .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("targetDatabaseGroupId", request.getTargetDatabaseGroupId())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
@@ -10405,6 +10411,11 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("timeUpdatedLessThan", request.getTimeUpdatedLessThan())
                 .appendEnumQueryParam(
                         "sensitiveColumnLifecycleState", request.getSensitiveColumnLifecycleState())
+                .appendEnumQueryParam("columnDataCountFilter", request.getColumnDataCountFilter())
+                .appendListQueryParam(
+                        "confidenceLevel",
+                        request.getConfidenceLevel(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendListQueryParam(
                         "schemaName",
                         request.getSchemaName(),

@@ -34,12 +34,11 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 import java.util.Base64;
-import net.jodah.failsafe.Failsafe;
-import net.jodah.failsafe.RetryPolicy;
-import net.jodah.failsafe.function.Predicate;
+
+import dev.failsafe.Failsafe;
+import dev.failsafe.RetryPolicy;
 
 public class ResourceManagerExample {
 
@@ -49,39 +48,29 @@ public class ResourceManagerExample {
     private static String compartmentId;
     private static String zipFilePath;
 
-    static final RetryPolicy JOB_NOT_COMPLETED_RETRY_POLICY =
-            new RetryPolicy()
-                    .retryIf(
-                            new Predicate<GetJobResponse>() {
-                                @Override
-                                public boolean test(GetJobResponse response) {
-                                    return response.getJob().getLifecycleState()
-                                                    != LifecycleState.Failed
+    static final RetryPolicy<GetJobResponse> JOB_NOT_COMPLETED_RETRY_POLICY =
+            RetryPolicy.<GetJobResponse>builder()
+                    .handleResultIf(
+                            response ->
+                                    response.getJob().getLifecycleState() != LifecycleState.Failed
                                             && response.getJob().getLifecycleState()
-                                                    != LifecycleState.Succeeded;
-                                }
-                            })
-                    .withDelay(5, TimeUnit.SECONDS)
-                    .withMaxDuration(24, TimeUnit.HOURS);
+                                                    != LifecycleState.Succeeded)
+                    .withDelay(Duration.ofSeconds(5))
+                    .withMaxDuration(Duration.ofHours(24))
+                    .build();
 
     static final RetryPolicy STACK_LOCKED_RETRY_POLICY =
-            new RetryPolicy()
-                    .retryOn(
-                            new Predicate<Throwable>() {
-                                @Override
-                                public boolean test(Throwable e) {
-                                    if (!(e instanceof BmcException)) {
-                                        return false;
-                                    }
-                                    BmcException bmcException = (BmcException) e;
-                                    return bmcException.getStatusCode() == 409
-                                            && bmcException
+            RetryPolicy.builder()
+                    .handleIf(
+                            throwable ->
+                                    throwable instanceof BmcException
+                                            && ((BmcException) throwable).getStatusCode() == 409
+                                            && ((BmcException) throwable)
                                                     .getServiceCode()
-                                                    .equals("IncorrectState");
-                                }
-                            })
-                    .withDelay(5, TimeUnit.SECONDS)
-                    .withMaxDuration(5, TimeUnit.MINUTES);
+                                                    .equals("IncorrectState"))
+                    .withDelay(Duration.ofSeconds(5))
+                    .withMaxDuration(Duration.ofMinutes(5))
+                    .build();
 
     public static void main(String[] args) throws Exception {
 
@@ -143,15 +132,12 @@ public class ResourceManagerExample {
 
         // Create Apply Job
         CreateJobResponse createApplyJobResponse =
-                Failsafe.with(STACK_LOCKED_RETRY_POLICY)
-                        .get(
-                                new Callable<CreateJobResponse>() {
-                                    @Override
-                                    public CreateJobResponse call() throws Exception {
-                                        return createApplyJob(
-                                                resourceManagerClient, stackId, planJobId);
-                                    }
-                                });
+                (CreateJobResponse)
+                        Failsafe.with(STACK_LOCKED_RETRY_POLICY)
+                                .get(
+                                        () ->
+                                                createApplyJob(
+                                                        resourceManagerClient, stackId, planJobId));
         String applyJobId = createApplyJobResponse.getJob().getId();
         waitForJobToComplete(resourceManagerClient, applyJobId);
 
@@ -163,29 +149,18 @@ public class ResourceManagerExample {
 
         // Create Destroy Job
         CreateJobResponse createDestroyJobResponse =
-                Failsafe.with(STACK_LOCKED_RETRY_POLICY)
-                        .get(
-                                new Callable<CreateJobResponse>() {
-                                    @Override
-                                    public CreateJobResponse call() throws Exception {
-                                        return createDestroyJob(resourceManagerClient, stackId);
-                                    }
-                                });
+                (CreateJobResponse)
+                        Failsafe.with(STACK_LOCKED_RETRY_POLICY)
+                                .get(() -> createDestroyJob(resourceManagerClient, stackId));
         waitForJobToComplete(resourceManagerClient, createDestroyJobResponse.getJob().getId());
 
         // Delete Stack
         final DeleteStackRequest deleteStackRequest =
                 DeleteStackRequest.builder().stackId(stackId).build();
         DeleteStackResponse deleteStackResponse =
-                Failsafe.with(STACK_LOCKED_RETRY_POLICY)
-                        .get(
-                                new Callable<DeleteStackResponse>() {
-                                    @Override
-                                    public DeleteStackResponse call() throws Exception {
-                                        return resourceManagerClient.deleteStack(
-                                                deleteStackRequest);
-                                    }
-                                });
+                (DeleteStackResponse)
+                        Failsafe.with(STACK_LOCKED_RETRY_POLICY)
+                                .get(() -> resourceManagerClient.deleteStack(deleteStackRequest));
         System.out.println("Deleted Stack : " + createStackResponse.getStack().getId());
     }
 
@@ -199,13 +174,7 @@ public class ResourceManagerExample {
             final ResourceManagerClient resourceManagerClient, final String jobId) {
         final GetJobRequest getJobRequest = GetJobRequest.builder().jobId(jobId).build();
         Failsafe.with(JOB_NOT_COMPLETED_RETRY_POLICY)
-                .get(
-                        new Callable<GetJobResponse>() {
-                            @Override
-                            public GetJobResponse call() throws Exception {
-                                return resourceManagerClient.getJob(getJobRequest);
-                            }
-                        });
+                .get(() -> resourceManagerClient.getJob(getJobRequest));
     }
 
     private static CreateJobResponse createImportStateJob(

@@ -369,6 +369,35 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public CreateTaskScheduleResponse createTaskSchedule(CreateTaskScheduleRequest request) {
+        Objects.requireNonNull(
+                request.getCreateTaskScheduleDetails(), "createTaskScheduleDetails is required");
+
+        return clientCall(request, CreateTaskScheduleResponse::builder)
+                .logger(LOG, "createTaskSchedule")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "CreateTaskSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/TaskSchedule/CreateTaskSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateTaskScheduleRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("taskSchedules")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.jms.model.TaskSchedule.class,
+                        CreateTaskScheduleResponse.Builder::taskSchedule)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateTaskScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateTaskScheduleResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public DeleteBlocklistResponse deleteBlocklist(DeleteBlocklistRequest request) {
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
@@ -583,6 +612,32 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeletePerformanceTuningAnalysisResultResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteTaskScheduleResponse deleteTaskSchedule(DeleteTaskScheduleRequest request) {
+
+        Validate.notBlank(request.getTaskScheduleId(), "taskScheduleId must not be blank");
+
+        return clientCall(request, DeleteTaskScheduleResponse::builder)
+                .logger(LOG, "deleteTaskSchedule")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteTaskSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/TaskSchedule/DeleteTaskSchedule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTaskScheduleRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("taskSchedules")
+                .appendPathParam(request.getTaskScheduleId())
+                .appendQueryParam("fleetId", request.getFleetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTaskScheduleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1138,6 +1193,35 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public GetTaskScheduleResponse getTaskSchedule(GetTaskScheduleRequest request) {
+
+        Validate.notBlank(request.getTaskScheduleId(), "taskScheduleId must not be blank");
+
+        return clientCall(request, GetTaskScheduleResponse::builder)
+                .logger(LOG, "getTaskSchedule")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetTaskSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/TaskSchedule/GetTaskSchedule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTaskScheduleRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("taskSchedules")
+                .appendPathParam(request.getTaskScheduleId())
+                .appendQueryParam("fleetId", request.getFleetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.TaskSchedule.class,
+                        GetTaskScheduleResponse.Builder::taskSchedule)
+                .handleResponseHeaderString("etag", GetTaskScheduleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTaskScheduleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
@@ -1267,6 +1351,50 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListBlocklistsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBlocklistsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListContainersResponse listContainers(ListContainersRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, ListContainersResponse::builder)
+                .logger(LOG, "listContainers")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListContainers",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ContainerSummary/ListContainers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListContainersRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("containers")
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("applicationName", request.getApplicationName())
+                .appendQueryParam("jreVersion", request.getJreVersion())
+                .appendEnumQueryParam("jreSecurityStatus", request.getJreSecurityStatus())
+                .appendQueryParam(
+                        "timeStartedGreaterThanOrEqualTo",
+                        request.getTimeStartedGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeStartedLessThanOrEqualTo", request.getTimeStartedLessThanOrEqualTo())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.ContainerCollection.class,
+                        ListContainersResponse.Builder::containerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListContainersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListContainersResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1702,6 +1830,100 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public ListLibraryApplicationUsageResponse listLibraryApplicationUsage(
+            ListLibraryApplicationUsageRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        Validate.notBlank(request.getLibraryKey(), "libraryKey must not be blank");
+
+        return clientCall(request, ListLibraryApplicationUsageResponse::builder)
+                .logger(LOG, "listLibraryApplicationUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListLibraryApplicationUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryApplicationUsageSummary/ListLibraryApplicationUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLibraryApplicationUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("libraries")
+                .appendPathParam(request.getLibraryKey())
+                .appendPathParam("applications")
+                .appendQueryParam("applicationId", request.getApplicationId())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("applicationName", request.getApplicationName())
+                .appendQueryParam("applicationNameContains", request.getApplicationNameContains())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.LibraryApplicationUsageCollection.class,
+                        ListLibraryApplicationUsageResponse.Builder
+                                ::libraryApplicationUsageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLibraryApplicationUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListLibraryApplicationUsageResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListLibraryManagedInstanceUsageResponse listLibraryManagedInstanceUsage(
+            ListLibraryManagedInstanceUsageRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        Validate.notBlank(request.getLibraryKey(), "libraryKey must not be blank");
+
+        return clientCall(request, ListLibraryManagedInstanceUsageResponse::builder)
+                .logger(LOG, "listLibraryManagedInstanceUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListLibraryManagedInstanceUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryManagedInstanceUsageSummary/ListLibraryManagedInstanceUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLibraryManagedInstanceUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("libraries")
+                .appendPathParam(request.getLibraryKey())
+                .appendPathParam("managedInstances")
+                .appendQueryParam("applicationId", request.getApplicationId())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("hostName", request.getHostName())
+                .appendQueryParam("hostnameContains", request.getHostnameContains())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.LibraryManagedInstanceUsageCollection.class,
+                        ListLibraryManagedInstanceUsageResponse.Builder
+                                ::libraryManagedInstanceUsageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListLibraryManagedInstanceUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListLibraryManagedInstanceUsageResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListPerformanceTuningAnalysisResultsResponse listPerformanceTuningAnalysisResults(
             ListPerformanceTuningAnalysisResultsRequest request) {
 
@@ -1786,6 +2008,178 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListPluginErrorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPluginErrorsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListTaskSchedulesResponse listTaskSchedules(ListTaskSchedulesRequest request) {
+
+        return clientCall(request, ListTaskSchedulesResponse::builder)
+                .logger(LOG, "listTaskSchedules")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListTaskSchedules",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/TaskSchedule/ListTaskSchedules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTaskSchedulesRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("taskSchedules")
+                .appendQueryParam("fleetId", request.getFleetId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("taskScheduleNameContains", request.getTaskScheduleNameContains())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.TaskScheduleCollection.class,
+                        ListTaskSchedulesResponse.Builder::taskScheduleCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTaskSchedulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTaskSchedulesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListUncorrelatedPackageApplicationUsageResponse listUncorrelatedPackageApplicationUsage(
+            ListUncorrelatedPackageApplicationUsageRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        Validate.notBlank(request.getPackageName(), "packageName must not be blank");
+
+        return clientCall(request, ListUncorrelatedPackageApplicationUsageResponse::builder)
+                .logger(LOG, "listUncorrelatedPackageApplicationUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListUncorrelatedPackageApplicationUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/UncorrelatedPackageApplicationUsageSummary/ListUncorrelatedPackageApplicationUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUncorrelatedPackageApplicationUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("uncorrelatedPackages")
+                .appendPathParam(request.getPackageName())
+                .appendPathParam("applications")
+                .appendQueryParam("applicationId", request.getApplicationId())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.UncorrelatedPackageApplicationUsageCollection
+                                .class,
+                        ListUncorrelatedPackageApplicationUsageResponse.Builder
+                                ::uncorrelatedPackageApplicationUsageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListUncorrelatedPackageApplicationUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListUncorrelatedPackageApplicationUsageResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListUncorrelatedPackageManagedInstanceUsageResponse
+            listUncorrelatedPackageManagedInstanceUsage(
+                    ListUncorrelatedPackageManagedInstanceUsageRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        Validate.notBlank(request.getPackageName(), "packageName must not be blank");
+
+        return clientCall(request, ListUncorrelatedPackageManagedInstanceUsageResponse::builder)
+                .logger(LOG, "listUncorrelatedPackageManagedInstanceUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListUncorrelatedPackageManagedInstanceUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/UncorrelatedPackageManagedInstanceUsageSummary/ListUncorrelatedPackageManagedInstanceUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUncorrelatedPackageManagedInstanceUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("uncorrelatedPackages")
+                .appendPathParam(request.getPackageName())
+                .appendPathParam("managedInstances")
+                .appendQueryParam("applicationId", request.getApplicationId())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.UncorrelatedPackageManagedInstanceUsageCollection
+                                .class,
+                        ListUncorrelatedPackageManagedInstanceUsageResponse.Builder
+                                ::uncorrelatedPackageManagedInstanceUsageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListUncorrelatedPackageManagedInstanceUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListUncorrelatedPackageManagedInstanceUsageResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListUncorrelatedPackageUsageResponse listUncorrelatedPackageUsage(
+            ListUncorrelatedPackageUsageRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, ListUncorrelatedPackageUsageResponse::builder)
+                .logger(LOG, "listUncorrelatedPackageUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListUncorrelatedPackageUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/UncorrelatedPackageUsageSummary/ListUncorrelatedPackageUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUncorrelatedPackageUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("uncorrelatedPackages")
+                .appendQueryParam("packageName", request.getPackageName())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("applicationId", request.getApplicationId())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.UncorrelatedPackageUsageCollection.class,
+                        ListUncorrelatedPackageUsageResponse.Builder
+                                ::uncorrelatedPackageUsageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListUncorrelatedPackageUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListUncorrelatedPackageUsageResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -2646,6 +3040,41 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public SummarizeLibraryInventoryResponse summarizeLibraryInventory(
+            SummarizeLibraryInventoryRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, SummarizeLibraryInventoryResponse::builder)
+                .logger(LOG, "summarizeLibraryInventory")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeLibraryInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryInventory/SummarizeLibraryInventory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeLibraryInventoryRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("summarizeLibraryInventory")
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("applicationId", request.getApplicationId())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.LibraryInventory.class,
+                        SummarizeLibraryInventoryResponse.Builder::libraryInventory)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeLibraryInventoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeLibraryInventoryResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public SummarizeLibraryUsageResponse summarizeLibraryUsage(
             SummarizeLibraryUsageRequest request) {
 
@@ -3008,6 +3437,39 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString("etag", UpdateJmsPluginResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJmsPluginResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateTaskScheduleResponse updateTaskSchedule(UpdateTaskScheduleRequest request) {
+        Objects.requireNonNull(
+                request.getUpdateTaskScheduleDetails(), "updateTaskScheduleDetails is required");
+
+        Validate.notBlank(request.getTaskScheduleId(), "taskScheduleId must not be blank");
+
+        return clientCall(request, UpdateTaskScheduleResponse::builder)
+                .logger(LOG, "updateTaskSchedule")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateTaskSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/TaskSchedule/UpdateTaskSchedule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTaskScheduleRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("taskSchedules")
+                .appendPathParam(request.getTaskScheduleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.jms.model.TaskSchedule.class,
+                        UpdateTaskScheduleResponse.Builder::taskSchedule)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTaskScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateTaskScheduleResponse.Builder::etag)
                 .callSync();
     }
 

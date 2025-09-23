@@ -133,20 +133,22 @@ public final class MaskingPolicyHealthReportLogSummary
          * type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in
          * the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege
          * to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP
-         * tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system
-         * triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for
-         * the undo tablespace. If it's not enabled, it further checks if the undo tablespace has
-         * any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table
-         * is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK
-         * checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database
-         * (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database
-         * Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC
-         * ENCRYPTION as masking format has average column size greater than 27 or not.
-         * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target
-         * database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has
+         * tablespace. Also verifies that the specified tablespace by the user is valid, if user has
+         * provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system
+         * triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo
+         * tablespace the AUTOEXTEND feature is enabled. If it's not enabled, it further checks if
+         * the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the
+         * statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK
+         * and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS)
+         * or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks
+         * if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column
+         * with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27
+         * or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the
+         * target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has
          * deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns
          * are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have
-         * Time Travel enabled.
+         * Time Travel enabled. INVALID_PACKAGE_CHECK checks if any of the required packages are in
+         * invalid state.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckType")
         private HealthCheckType healthCheckType;
@@ -156,20 +158,22 @@ public final class MaskingPolicyHealthReportLogSummary
          * type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in
          * the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege
          * to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP
-         * tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system
-         * triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for
-         * the undo tablespace. If it's not enabled, it further checks if the undo tablespace has
-         * any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table
-         * is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK
-         * checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database
-         * (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database
-         * Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC
-         * ENCRYPTION as masking format has average column size greater than 27 or not.
-         * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target
-         * database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has
+         * tablespace. Also verifies that the specified tablespace by the user is valid, if user has
+         * provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system
+         * triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo
+         * tablespace the AUTOEXTEND feature is enabled. If it's not enabled, it further checks if
+         * the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the
+         * statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK
+         * and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS)
+         * or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks
+         * if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column
+         * with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27
+         * or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the
+         * target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has
          * deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns
          * are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have
-         * Time Travel enabled.
+         * Time Travel enabled. INVALID_PACKAGE_CHECK checks if any of the required packages are in
+         * invalid state.
          *
          * @param healthCheckType the value to set
          * @return this builder
@@ -351,20 +355,22 @@ public final class MaskingPolicyHealthReportLogSummary
      * An enum type entry for each health check in the masking policy. Each enum describes a type of
      * health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking
      * tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
-     * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+     * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies
+     * that the specified tablespace by the user is valid, if user has provided one
      * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers
-     * available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo
-     * tablespace. If it's not enabled, it further checks if the undo tablespace has any space
-     * remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or
-     * not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking
-     * tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction
-     * policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+     * available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the
+     * AUTOEXTEND feature is enabled. If it's not enabled, it further checks if the undo tablespace
+     * has any space remaining. STATE_STATS_CHECK checks if all the statistics of the masking table
+     * is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if
+     * the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or
+     * Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
      * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking
      * format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there
      * is any active masking job running on the target database.
      * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic
      * encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in
      * the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
+     * INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
      */
     public enum HealthCheckType implements com.oracle.bmc.http.internal.BmcEnum {
         InvalidObjectCheck("INVALID_OBJECT_CHECK"),
@@ -383,6 +389,7 @@ public final class MaskingPolicyHealthReportLogSummary
         DeterministicEncryptionFormatCheck("DETERMINISTIC_ENCRYPTION_FORMAT_CHECK"),
         ColumnExistCheck("COLUMN_EXIST_CHECK"),
         TimeTravelCheck("TIME_TRAVEL_CHECK"),
+        InvalidPackageCheck("INVALID_PACKAGE_CHECK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -429,20 +436,22 @@ public final class MaskingPolicyHealthReportLogSummary
      * An enum type entry for each health check in the masking policy. Each enum describes a type of
      * health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking
      * tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
-     * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+     * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies
+     * that the specified tablespace by the user is valid, if user has provided one
      * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers
-     * available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo
-     * tablespace. If it's not enabled, it further checks if the undo tablespace has any space
-     * remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or
-     * not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking
-     * tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction
-     * policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+     * available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the
+     * AUTOEXTEND feature is enabled. If it's not enabled, it further checks if the undo tablespace
+     * has any space remaining. STATE_STATS_CHECK checks if all the statistics of the masking table
+     * is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if
+     * the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or
+     * Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
      * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking
      * format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there
      * is any active masking job running on the target database.
      * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic
      * encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in
      * the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
+     * INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckType")
     private final HealthCheckType healthCheckType;
@@ -451,20 +460,22 @@ public final class MaskingPolicyHealthReportLogSummary
      * An enum type entry for each health check in the masking policy. Each enum describes a type of
      * health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking
      * tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
-     * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+     * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies
+     * that the specified tablespace by the user is valid, if user has provided one
      * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers
-     * available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo
-     * tablespace. If it's not enabled, it further checks if the undo tablespace has any space
-     * remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or
-     * not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking
-     * tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction
-     * policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+     * available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the
+     * AUTOEXTEND feature is enabled. If it's not enabled, it further checks if the undo tablespace
+     * has any space remaining. STATE_STATS_CHECK checks if all the statistics of the masking table
+     * is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if
+     * the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or
+     * Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
      * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking
      * format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there
      * is any active masking job running on the target database.
      * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic
      * encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in
      * the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
+     * INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
      *
      * @return the value
      */

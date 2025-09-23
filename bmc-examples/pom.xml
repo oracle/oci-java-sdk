@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.73.1</version>
+    <version>3.74.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-examples</artifactId>
@@ -71,14 +71,14 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>3.73.1</version>
+        <version>3.74.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-        <version>3.73.1</version>
+        <version>3.74.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -94,7 +94,7 @@
       <artifactId>jackson-databind</artifactId>
     </dependency>
     <dependency>
-      <groupId>net.jodah</groupId>
+      <groupId>dev.failsafe</groupId>
       <artifactId>failsafe</artifactId>
     </dependency>
     <dependency>
@@ -755,15 +755,23 @@
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-multicloud</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-managedkafka</artifactId>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-aidataplatform</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-multicloud</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-resourceanalytics</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-jmsutils</artifactId>
     </dependency>
   </dependencies>
 </project>

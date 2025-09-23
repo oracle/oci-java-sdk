@@ -29,6 +29,7 @@ public final class NetworkAnchorSummary
         "compartmentId",
         "resourceAnchorId",
         "vcnId",
+        "clusterPlacementGroupId",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -43,6 +44,7 @@ public final class NetworkAnchorSummary
             String compartmentId,
             String resourceAnchorId,
             String vcnId,
+            String clusterPlacementGroupId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             NetworkAnchor.LifecycleState lifecycleState,
@@ -56,6 +58,7 @@ public final class NetworkAnchorSummary
         this.compartmentId = compartmentId;
         this.resourceAnchorId = resourceAnchorId;
         this.vcnId = vcnId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -148,6 +151,21 @@ public final class NetworkAnchorSummary
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
+            return this;
+        }
+        /** The CPG ID in which Network Anchor will be created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The CPG ID in which Network Anchor will be created.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /**
@@ -316,6 +334,7 @@ public final class NetworkAnchorSummary
                             this.compartmentId,
                             this.resourceAnchorId,
                             this.vcnId,
+                            this.clusterPlacementGroupId,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -345,6 +364,9 @@ public final class NetworkAnchorSummary
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -451,6 +473,19 @@ public final class NetworkAnchorSummary
      */
     public String getVcnId() {
         return vcnId;
+    }
+
+    /** The CPG ID in which Network Anchor will be created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The CPG ID in which Network Anchor will be created.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
 
     /**
@@ -610,6 +645,8 @@ public final class NetworkAnchorSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resourceAnchorId=").append(String.valueOf(this.resourceAnchorId));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -636,6 +673,8 @@ public final class NetworkAnchorSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.resourceAnchorId, other.resourceAnchorId)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -659,6 +698,11 @@ public final class NetworkAnchorSummary
                 (result * PRIME)
                         + (this.resourceAnchorId == null ? 43 : this.resourceAnchorId.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

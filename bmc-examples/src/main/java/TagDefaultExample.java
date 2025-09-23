@@ -10,36 +10,23 @@ import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.model.Compartment;
 import com.oracle.bmc.identity.model.CreateCompartmentDetails;
 import com.oracle.bmc.identity.model.CreateTagDefaultDetails;
-import com.oracle.bmc.identity.model.CreateTagDetails;
-import com.oracle.bmc.identity.model.CreateTagNamespaceDetails;
-import com.oracle.bmc.identity.model.Tag;
 import com.oracle.bmc.identity.model.TagDefault;
 import com.oracle.bmc.identity.model.TagDefaultSummary;
-import com.oracle.bmc.identity.model.TagNamespace;
 import com.oracle.bmc.identity.model.TagNamespaceSummary;
 import com.oracle.bmc.identity.model.TagSummary;
 import com.oracle.bmc.identity.model.UpdateTagDefaultDetails;
 import com.oracle.bmc.identity.requests.CreateCompartmentRequest;
 import com.oracle.bmc.identity.requests.CreateTagDefaultRequest;
-import com.oracle.bmc.identity.requests.CreateTagNamespaceRequest;
-import com.oracle.bmc.identity.requests.CreateTagRequest;
 import com.oracle.bmc.identity.requests.DeleteTagDefaultRequest;
 import com.oracle.bmc.identity.requests.GetTagDefaultRequest;
-import com.oracle.bmc.identity.requests.GetTagNamespaceRequest;
 import com.oracle.bmc.identity.requests.ListTagDefaultsRequest;
 import com.oracle.bmc.identity.requests.ListTagNamespacesRequest;
 import com.oracle.bmc.identity.requests.ListTagsRequest;
 import com.oracle.bmc.identity.requests.UpdateTagDefaultRequest;
-import com.oracle.bmc.identity.responses.GetTagNamespaceResponse;
 import com.oracle.bmc.identity.responses.ListTagDefaultsResponse;
-import com.oracle.bmc.model.BmcException;
-import net.jodah.failsafe.Failsafe;
-import net.jodah.failsafe.RetryPolicy;
 
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
 /*
  * Example Class to show the usage of Tag Default API.
  * This sample will do following things:

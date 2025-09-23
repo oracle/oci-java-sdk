@@ -31,7 +31,8 @@ public final class UpdateExportSettingDetails
         "targetBucketNamespace",
         "targetBucketRegion",
         "exportFrequency",
-        "isEnabled"
+        "isEnabled",
+        "exportDataFilters"
     })
     public UpdateExportSettingDetails(
             ExportDuration exportDuration,
@@ -41,7 +42,8 @@ public final class UpdateExportSettingDetails
             String targetBucketNamespace,
             String targetBucketRegion,
             ExportFrequency exportFrequency,
-            Boolean isEnabled) {
+            Boolean isEnabled,
+            ExportDataFilters exportDataFilters) {
         super();
         this.exportDuration = exportDuration;
         this.exportResources = exportResources;
@@ -51,6 +53,7 @@ public final class UpdateExportSettingDetails
         this.targetBucketRegion = targetBucketRegion;
         this.exportFrequency = exportFrequency;
         this.isEnabled = isEnabled;
+        this.exportDataFilters = exportDataFilters;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -176,6 +179,15 @@ public final class UpdateExportSettingDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exportDataFilters")
+        private ExportDataFilters exportDataFilters;
+
+        public Builder exportDataFilters(ExportDataFilters exportDataFilters) {
+            this.exportDataFilters = exportDataFilters;
+            this.__explicitlySet__.add("exportDataFilters");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -189,7 +201,8 @@ public final class UpdateExportSettingDetails
                             this.targetBucketNamespace,
                             this.targetBucketRegion,
                             this.exportFrequency,
-                            this.isEnabled);
+                            this.isEnabled,
+                            this.exportDataFilters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -221,6 +234,9 @@ public final class UpdateExportSettingDetails
             }
             if (model.wasPropertyExplicitlySet("isEnabled")) {
                 this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("exportDataFilters")) {
+                this.exportDataFilters(model.getExportDataFilters());
             }
             return this;
         }
@@ -339,6 +355,13 @@ public final class UpdateExportSettingDetails
         return isEnabled;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exportDataFilters")
+    private final ExportDataFilters exportDataFilters;
+
+    public ExportDataFilters getExportDataFilters() {
+        return exportDataFilters;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -363,6 +386,7 @@ public final class UpdateExportSettingDetails
         sb.append(", targetBucketRegion=").append(String.valueOf(this.targetBucketRegion));
         sb.append(", exportFrequency=").append(String.valueOf(this.exportFrequency));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", exportDataFilters=").append(String.valueOf(this.exportDataFilters));
         sb.append(")");
         return sb.toString();
     }
@@ -386,6 +410,7 @@ public final class UpdateExportSettingDetails
                 && java.util.Objects.equals(this.targetBucketRegion, other.targetBucketRegion)
                 && java.util.Objects.equals(this.exportFrequency, other.exportFrequency)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.exportDataFilters, other.exportDataFilters)
                 && super.equals(other);
     }
 
@@ -421,6 +446,9 @@ public final class UpdateExportSettingDetails
                 (result * PRIME)
                         + (this.exportFrequency == null ? 43 : this.exportFrequency.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exportDataFilters == null ? 43 : this.exportDataFilters.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

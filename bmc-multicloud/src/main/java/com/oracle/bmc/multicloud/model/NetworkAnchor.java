@@ -40,6 +40,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         "definedTags",
         "systemTags",
         "setupMode",
+        "clusterPlacementGroupId",
         "ociMetadataItem",
         "cloudServiceProviderMetadataItem"
     })
@@ -56,6 +57,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             SetupMode setupMode,
+            String clusterPlacementGroupId,
             OciNetworkMetadata ociMetadataItem,
             CloudServiceProviderNetworkMetadataItem cloudServiceProviderMetadataItem) {
         super();
@@ -71,6 +73,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.setupMode = setupMode;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.ociMetadataItem = ociMetadataItem;
         this.cloudServiceProviderMetadataItem = cloudServiceProviderMetadataItem;
     }
@@ -320,6 +323,21 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("setupMode");
             return this;
         }
+        /** The CPG ID in which Network Anchor will be created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The CPG ID in which Network Anchor will be created.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("ociMetadataItem")
         private OciNetworkMetadata ociMetadataItem;
@@ -358,6 +376,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
                             this.definedTags,
                             this.systemTags,
                             this.setupMode,
+                            this.clusterPlacementGroupId,
                             this.ociMetadataItem,
                             this.cloudServiceProviderMetadataItem);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -403,6 +422,9 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("setupMode")) {
                 this.setupMode(model.getSetupMode());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("ociMetadataItem")) {
                 this.ociMetadataItem(model.getOciMetadataItem());
@@ -739,6 +761,19 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         return setupMode;
     }
 
+    /** The CPG ID in which Network Anchor will be created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The CPG ID in which Network Anchor will be created.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("ociMetadataItem")
     private final OciNetworkMetadata ociMetadataItem;
 
@@ -780,6 +815,8 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", setupMode=").append(String.valueOf(this.setupMode));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", ociMetadataItem=").append(String.valueOf(this.ociMetadataItem));
         sb.append(", cloudServiceProviderMetadataItem=")
                 .append(String.valueOf(this.cloudServiceProviderMetadataItem));
@@ -809,6 +846,8 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.setupMode, other.setupMode)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.ociMetadataItem, other.ociMetadataItem)
                 && java.util.Objects.equals(
                         this.cloudServiceProviderMetadataItem,
@@ -840,6 +879,11 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.setupMode == null ? 43 : this.setupMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.ociMetadataItem == null ? 43 : this.ociMetadataItem.hashCode());

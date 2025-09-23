@@ -36,6 +36,8 @@ public final class RedisClusterSummary
         "primaryEndpointIpAddress",
         "replicasFqdn",
         "replicasEndpointIpAddress",
+        "discoveryFqdn",
+        "discoveryEndpointIpAddress",
         "softwareVersion",
         "subnetId",
         "timeCreated",
@@ -60,6 +62,8 @@ public final class RedisClusterSummary
             String primaryEndpointIpAddress,
             String replicasFqdn,
             String replicasEndpointIpAddress,
+            String discoveryFqdn,
+            String discoveryEndpointIpAddress,
             RedisCluster.SoftwareVersion softwareVersion,
             String subnetId,
             java.util.Date timeCreated,
@@ -83,6 +87,8 @@ public final class RedisClusterSummary
         this.primaryEndpointIpAddress = primaryEndpointIpAddress;
         this.replicasFqdn = replicasFqdn;
         this.replicasEndpointIpAddress = replicasEndpointIpAddress;
+        this.discoveryFqdn = discoveryFqdn;
+        this.discoveryEndpointIpAddress = discoveryEndpointIpAddress;
         this.softwareVersion = softwareVersion;
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
@@ -289,6 +295,38 @@ public final class RedisClusterSummary
         public Builder replicasEndpointIpAddress(String replicasEndpointIpAddress) {
             this.replicasEndpointIpAddress = replicasEndpointIpAddress;
             this.__explicitlySet__.add("replicasEndpointIpAddress");
+            return this;
+        }
+        /**
+         * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("discoveryFqdn")
+        private String discoveryFqdn;
+
+        /**
+         * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+         *
+         * @param discoveryFqdn the value to set
+         * @return this builder
+         */
+        public Builder discoveryFqdn(String discoveryFqdn) {
+            this.discoveryFqdn = discoveryFqdn;
+            this.__explicitlySet__.add("discoveryFqdn");
+            return this;
+        }
+        /** The private IP address of the API endpoint for shareded cluster discovery. */
+        @com.fasterxml.jackson.annotation.JsonProperty("discoveryEndpointIpAddress")
+        private String discoveryEndpointIpAddress;
+
+        /**
+         * The private IP address of the API endpoint for shareded cluster discovery.
+         *
+         * @param discoveryEndpointIpAddress the value to set
+         * @return this builder
+         */
+        public Builder discoveryEndpointIpAddress(String discoveryEndpointIpAddress) {
+            this.discoveryEndpointIpAddress = discoveryEndpointIpAddress;
+            this.__explicitlySet__.add("discoveryEndpointIpAddress");
             return this;
         }
         /** The OCI Cache engine version that the cluster is running. */
@@ -509,6 +547,8 @@ public final class RedisClusterSummary
                             this.primaryEndpointIpAddress,
                             this.replicasFqdn,
                             this.replicasEndpointIpAddress,
+                            this.discoveryFqdn,
+                            this.discoveryEndpointIpAddress,
                             this.softwareVersion,
                             this.subnetId,
                             this.timeCreated,
@@ -560,6 +600,12 @@ public final class RedisClusterSummary
             }
             if (model.wasPropertyExplicitlySet("replicasEndpointIpAddress")) {
                 this.replicasEndpointIpAddress(model.getReplicasEndpointIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("discoveryFqdn")) {
+                this.discoveryFqdn(model.getDiscoveryFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("discoveryEndpointIpAddress")) {
+                this.discoveryEndpointIpAddress(model.getDiscoveryEndpointIpAddress());
             }
             if (model.wasPropertyExplicitlySet("softwareVersion")) {
                 this.softwareVersion(model.getSoftwareVersion());
@@ -774,6 +820,32 @@ public final class RedisClusterSummary
         return replicasEndpointIpAddress;
     }
 
+    /** The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery. */
+    @com.fasterxml.jackson.annotation.JsonProperty("discoveryFqdn")
+    private final String discoveryFqdn;
+
+    /**
+     * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     *
+     * @return the value
+     */
+    public String getDiscoveryFqdn() {
+        return discoveryFqdn;
+    }
+
+    /** The private IP address of the API endpoint for shareded cluster discovery. */
+    @com.fasterxml.jackson.annotation.JsonProperty("discoveryEndpointIpAddress")
+    private final String discoveryEndpointIpAddress;
+
+    /**
+     * The private IP address of the API endpoint for shareded cluster discovery.
+     *
+     * @return the value
+     */
+    public String getDiscoveryEndpointIpAddress() {
+        return discoveryEndpointIpAddress;
+    }
+
     /** The OCI Cache engine version that the cluster is running. */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
     private final RedisCluster.SoftwareVersion softwareVersion;
@@ -977,6 +1049,9 @@ public final class RedisClusterSummary
         sb.append(", replicasFqdn=").append(String.valueOf(this.replicasFqdn));
         sb.append(", replicasEndpointIpAddress=")
                 .append(String.valueOf(this.replicasEndpointIpAddress));
+        sb.append(", discoveryFqdn=").append(String.valueOf(this.discoveryFqdn));
+        sb.append(", discoveryEndpointIpAddress=")
+                .append(String.valueOf(this.discoveryEndpointIpAddress));
         sb.append(", softwareVersion=").append(String.valueOf(this.softwareVersion));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -1015,6 +1090,9 @@ public final class RedisClusterSummary
                 && java.util.Objects.equals(this.replicasFqdn, other.replicasFqdn)
                 && java.util.Objects.equals(
                         this.replicasEndpointIpAddress, other.replicasEndpointIpAddress)
+                && java.util.Objects.equals(this.discoveryFqdn, other.discoveryFqdn)
+                && java.util.Objects.equals(
+                        this.discoveryEndpointIpAddress, other.discoveryEndpointIpAddress)
                 && java.util.Objects.equals(this.softwareVersion, other.softwareVersion)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -1060,6 +1138,14 @@ public final class RedisClusterSummary
                         + (this.replicasEndpointIpAddress == null
                                 ? 43
                                 : this.replicasEndpointIpAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discoveryFqdn == null ? 43 : this.discoveryFqdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discoveryEndpointIpAddress == null
+                                ? 43
+                                : this.discoveryEndpointIpAddress.hashCode());
         result =
                 (result * PRIME)
                         + (this.softwareVersion == null ? 43 : this.softwareVersion.hashCode());
