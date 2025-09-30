@@ -5,7 +5,10 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Add Targets to a Exadata Fleet Update Collection. <br>
+ * Add Targets to an Exadata Fleet Update Collection. Targets belonging to another Exadata Fleet
+ * Update Collection of the same type will be rejected. If automated maintenance is enabled for the
+ * Exadata Fleet Update Collection, then ensure that the scheduling policy and window can
+ * accommodate the targets being added. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

@@ -5,7 +5,8 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * The information about new Exadata Fleet Update Collection. <br>
+ * Details to create a new Exadata Fleet Update Collection. Targets belonging to another Exadata
+ * Fleet Update Collection of the same type will be rejected. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,7 +28,13 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
             name = "DB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateGiFsuCollectionDetails.class,
-            name = "GI")
+            name = "GI"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateGuestOsFsuCollectionDetails.class,
+            name = "GUEST_OS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateExadbStackFsuCollectionDetails.class,
+            name = "EXADB_STACK")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -55,12 +62,12 @@ public class CreateFsuCollectionDetails
         this.definedTags = definedTags;
     }
 
-    /** Exadata Fleet Update Collection Identifier. */
+    /** The user-friendly name for the Exadata Fleet Update Collection. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Exadata Fleet Update Collection Identifier.
+     * The user-friendly name for the Exadata Fleet Update Collection.
      *
      * @return the value
      */
@@ -81,12 +88,16 @@ public class CreateFsuCollectionDetails
         return serviceType;
     }
 
-    /** Compartment Identifier */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compartment.
      *
      * @return the value
      */

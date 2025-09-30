@@ -316,6 +316,7 @@ public final class AmdRomeBmLaunchInstancePlatformConfig extends LaunchInstanceP
         Nps1("NPS1"),
         Nps2("NPS2"),
         Nps4("NPS4"),
+        Nps6("NPS6"),
         ;
 
         private final String value;

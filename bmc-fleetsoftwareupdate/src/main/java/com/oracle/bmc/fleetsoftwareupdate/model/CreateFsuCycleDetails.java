@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Exadata Fleet Update Cycle resource creation details. <br>
+ * Details to create an Exadata Fleet Update Cycle. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -70,12 +70,12 @@ public class CreateFsuCycleDetails
         this.definedTags = definedTags;
     }
 
-    /** Exadata Fleet Update Cycle display name. */
+    /** The user-friendly name for the Exadata Fleet Update Cycle. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Exadata Fleet Update Cycle display name.
+     * The user-friendly name for the Exadata Fleet Update Cycle.
      *
      * @return the value
      */
@@ -83,12 +83,16 @@ public class CreateFsuCycleDetails
         return displayName;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compartment.
      *
      * @return the value
      */
@@ -96,12 +100,18 @@ public class CreateFsuCycleDetails
         return compartmentId;
     }
 
-    /** OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being
+     * created.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
     private final String fsuCollectionId;
 
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being
+     * created.
      *
      * @return the value
      */

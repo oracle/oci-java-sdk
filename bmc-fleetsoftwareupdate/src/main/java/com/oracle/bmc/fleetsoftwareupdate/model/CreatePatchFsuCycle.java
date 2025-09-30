@@ -5,7 +5,8 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Patch Exadata Fleet Update Cycle resource creation details. <br>
+ * Details to create an Exadata Fleet Update Cycle for a single maintenance update for an Exadata
+ * Fleet Update Collection. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -117,12 +118,16 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** Ignore all patches between the source and target homes during patching. */
+        /**
+         * Ignore patch conflicts or missing patches between the source and goal homes. This
+         * attribute will be ignored for Exadata Image (Guest OS) maintenance update.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isIgnorePatches")
         private Boolean isIgnorePatches;
 
         /**
-         * Ignore all patches between the source and target homes during patching.
+         * Ignore patch conflicts or missing patches between the source and goal homes. This
+         * attribute will be ignored for Exadata Image (Guest OS) maintenance update.
          *
          * @param isIgnorePatches the value to set
          * @return this builder
@@ -132,12 +137,16 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
             this.__explicitlySet__.add("isIgnorePatches");
             return this;
         }
-        /** List of patch IDs to ignore. */
+        /**
+         * List of identifiers of patches to ignore. This attribute will be ignored for Exadata
+         * Image (Guest OS) maintenance update.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreMissingPatches")
         private java.util.List<String> isIgnoreMissingPatches;
 
         /**
-         * List of patch IDs to ignore.
+         * List of identifiers of patches to ignore. This attribute will be ignored for Exadata
+         * Image (Guest OS) maintenance update.
          *
          * @param isIgnoreMissingPatches the value to set
          * @return this builder
@@ -147,12 +156,12 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
             this.__explicitlySet__.add("isIgnoreMissingPatches");
             return this;
         }
-        /** Service drain timeout specified in seconds. */
+        /** Timeout for session draining for database services specified in seconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxDrainTimeoutInSeconds")
         private Integer maxDrainTimeoutInSeconds;
 
         /**
-         * Service drain timeout specified in seconds.
+         * Timeout for session draining for database services specified in seconds.
          *
          * @param maxDrainTimeoutInSeconds the value to set
          * @return this builder
@@ -163,15 +172,15 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
             return this;
         }
         /**
-         * Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are
-         * running on the same instances before and after the move operation.
+         * Ensure that database services are online on the same VMs before and after the maintenance
+         * update.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isKeepPlacement")
         private Boolean isKeepPlacement;
 
         /**
-         * Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are
-         * running on the same instances before and after the move operation.
+         * Ensure that database services are online on the same VMs before and after the maintenance
+         * update.
          *
          * @param isKeepPlacement the value to set
          * @return this builder
@@ -298,12 +307,16 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
         this.isKeepPlacement = isKeepPlacement;
     }
 
-    /** Ignore all patches between the source and target homes during patching. */
+    /**
+     * Ignore patch conflicts or missing patches between the source and goal homes. This attribute
+     * will be ignored for Exadata Image (Guest OS) maintenance update.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isIgnorePatches")
     private final Boolean isIgnorePatches;
 
     /**
-     * Ignore all patches between the source and target homes during patching.
+     * Ignore patch conflicts or missing patches between the source and goal homes. This attribute
+     * will be ignored for Exadata Image (Guest OS) maintenance update.
      *
      * @return the value
      */
@@ -311,12 +324,16 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
         return isIgnorePatches;
     }
 
-    /** List of patch IDs to ignore. */
+    /**
+     * List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image
+     * (Guest OS) maintenance update.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreMissingPatches")
     private final java.util.List<String> isIgnoreMissingPatches;
 
     /**
-     * List of patch IDs to ignore.
+     * List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image
+     * (Guest OS) maintenance update.
      *
      * @return the value
      */
@@ -324,12 +341,12 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
         return isIgnoreMissingPatches;
     }
 
-    /** Service drain timeout specified in seconds. */
+    /** Timeout for session draining for database services specified in seconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxDrainTimeoutInSeconds")
     private final Integer maxDrainTimeoutInSeconds;
 
     /**
-     * Service drain timeout specified in seconds.
+     * Timeout for session draining for database services specified in seconds.
      *
      * @return the value
      */
@@ -338,15 +355,15 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
     }
 
     /**
-     * Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are
-     * running on the same instances before and after the move operation.
+     * Ensure that database services are online on the same VMs before and after the maintenance
+     * update.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isKeepPlacement")
     private final Boolean isKeepPlacement;
 
     /**
-     * Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are
-     * running on the same instances before and after the move operation.
+     * Ensure that database services are online on the same VMs before and after the maintenance
+     * update.
      *
      * @return the value
      */

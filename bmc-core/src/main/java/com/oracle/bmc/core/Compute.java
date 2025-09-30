@@ -2282,7 +2282,7 @@ public interface Compute extends AutoCloseable {
             UpdateComputeGpuMemoryClusterRequest request);
 
     /**
-     * Customer can update displayName and tags for compute GPU memory fabric record
+     * Customer can update displayName, tags and for compute GPU memory fabric record
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

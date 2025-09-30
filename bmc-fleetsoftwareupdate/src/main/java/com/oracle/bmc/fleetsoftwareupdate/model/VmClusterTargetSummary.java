@@ -76,6 +76,21 @@ public final class VmClusterTargetSummary extends TargetDetails {
             this.__explicitlySet__.add("softwareImageId");
             return this;
         }
+        /** Exadata Image (Guest OS) version. */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+        private String systemVersion;
+
+        /**
+         * Exadata Image (Guest OS) version.
+         *
+         * @param systemVersion the value to set
+         * @return this builder
+         */
+        public Builder systemVersion(String systemVersion) {
+            this.systemVersion = systemVersion;
+            this.__explicitlySet__.add("systemVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -86,7 +101,8 @@ public final class VmClusterTargetSummary extends TargetDetails {
                             this.id,
                             this.compartmentId,
                             this.infrastructureId,
-                            this.softwareImageId);
+                            this.softwareImageId,
+                            this.systemVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -107,6 +123,9 @@ public final class VmClusterTargetSummary extends TargetDetails {
             if (model.wasPropertyExplicitlySet("softwareImageId")) {
                 this.softwareImageId(model.getSoftwareImageId());
             }
+            if (model.wasPropertyExplicitlySet("systemVersion")) {
+                this.systemVersion(model.getSystemVersion());
+            }
             return this;
         }
     }
@@ -122,10 +141,15 @@ public final class VmClusterTargetSummary extends TargetDetails {
 
     @Deprecated
     public VmClusterTargetSummary(
-            String id, String compartmentId, String infrastructureId, String softwareImageId) {
+            String id,
+            String compartmentId,
+            String infrastructureId,
+            String softwareImageId,
+            String systemVersion) {
         super(id, compartmentId);
         this.infrastructureId = infrastructureId;
         this.softwareImageId = softwareImageId;
+        this.systemVersion = systemVersion;
     }
 
     /** OCID of the related Exadata Infrastructure or Cloud Exadata Infrastructure resource. */
@@ -154,6 +178,19 @@ public final class VmClusterTargetSummary extends TargetDetails {
         return softwareImageId;
     }
 
+    /** Exadata Image (Guest OS) version. */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+    private final String systemVersion;
+
+    /**
+     * Exadata Image (Guest OS) version.
+     *
+     * @return the value
+     */
+    public String getSystemVersion() {
+        return systemVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -171,6 +208,7 @@ public final class VmClusterTargetSummary extends TargetDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", infrastructureId=").append(String.valueOf(this.infrastructureId));
         sb.append(", softwareImageId=").append(String.valueOf(this.softwareImageId));
+        sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -187,6 +225,7 @@ public final class VmClusterTargetSummary extends TargetDetails {
         VmClusterTargetSummary other = (VmClusterTargetSummary) o;
         return java.util.Objects.equals(this.infrastructureId, other.infrastructureId)
                 && java.util.Objects.equals(this.softwareImageId, other.softwareImageId)
+                && java.util.Objects.equals(this.systemVersion, other.systemVersion)
                 && super.equals(other);
     }
 
@@ -200,6 +239,9 @@ public final class VmClusterTargetSummary extends TargetDetails {
         result =
                 (result * PRIME)
                         + (this.softwareImageId == null ? 43 : this.softwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
         return result;
     }
 }

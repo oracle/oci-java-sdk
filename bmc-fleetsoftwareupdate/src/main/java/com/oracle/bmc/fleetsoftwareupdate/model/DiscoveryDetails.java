@@ -27,7 +27,13 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
             name = "GI"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DbDiscoveryDetails.class,
-            name = "DB")
+            name = "DB"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExadbStackDiscoveryDetails.class,
+            name = "EXADB_STACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GuestOsDiscoveryDetails.class,
+            name = "GUEST_OS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

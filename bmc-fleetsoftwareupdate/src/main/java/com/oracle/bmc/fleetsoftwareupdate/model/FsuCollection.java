@@ -22,6 +22,12 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
         property = "type",
         defaultImpl = FsuCollection.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GuestOsCollection.class,
+            name = "GUEST_OS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExadbStackCollection.class,
+            name = "EXADB_STACK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GiCollection.class, name = "GI"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = DbCollection.class, name = "DB")
 })
@@ -77,12 +83,16 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
         this.systemTags = systemTags;
     }
 
-    /** OCID identifier for the Exadata Fleet Update Collection. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Collection.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * OCID identifier for the Exadata Fleet Update Collection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Collection.
      *
      * @return the value
      */
@@ -90,12 +100,12 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
         return id;
     }
 
-    /** Exadata Fleet Update Collection resource display name. */
+    /** The user-friendly name for the Exadata Fleet Update Collection. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Exadata Fleet Update Collection resource display name.
+     * The user-friendly name for the Exadata Fleet Update Collection.
      *
      * @return the value
      */
@@ -116,12 +126,16 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
         return serviceType;
     }
 
-    /** Compartment Identifier */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compartment.
      *
      * @return the value
      */

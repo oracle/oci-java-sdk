@@ -36,7 +36,8 @@ public final class InitialClusterConfiguration
         "initialHostOcpuCount",
         "isShieldedInstanceEnabled",
         "capacityReservationId",
-        "datastores"
+        "datastores",
+        "datastoreClusterIds"
     })
     public InitialClusterConfiguration(
             VsphereTypes vsphereType,
@@ -51,7 +52,8 @@ public final class InitialClusterConfiguration
             Float initialHostOcpuCount,
             Boolean isShieldedInstanceEnabled,
             String capacityReservationId,
-            java.util.List<DatastoreInfo> datastores) {
+            java.util.List<DatastoreInfo> datastores,
+            java.util.List<String> datastoreClusterIds) {
         super();
         this.vsphereType = vsphereType;
         this.computeAvailabilityDomain = computeAvailabilityDomain;
@@ -66,6 +68,7 @@ public final class InitialClusterConfiguration
         this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
         this.capacityReservationId = capacityReservationId;
         this.datastores = datastores;
+        this.datastoreClusterIds = datastoreClusterIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -105,7 +108,7 @@ public final class InitialClusterConfiguration
             return this;
         }
         /**
-         * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
+         * A descriptive name for the Cluster. Cluster name requirements are 1-22 character length
          * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
          * hyphens, Must be unique within the region. Avoid entering confidential information.
          */
@@ -113,7 +116,7 @@ public final class InitialClusterConfiguration
         private String displayName;
 
         /**
-         * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
+         * A descriptive name for the Cluster. Cluster name requirements are 1-22 character length
          * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
          * hyphens, Must be unique within the region. Avoid entering confidential information.
          *
@@ -313,6 +316,21 @@ public final class InitialClusterConfiguration
             this.__explicitlySet__.add("datastores");
             return this;
         }
+        /** A list of datastore clusters. */
+        @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+        private java.util.List<String> datastoreClusterIds;
+
+        /**
+         * A list of datastore clusters.
+         *
+         * @param datastoreClusterIds the value to set
+         * @return this builder
+         */
+        public Builder datastoreClusterIds(java.util.List<String> datastoreClusterIds) {
+            this.datastoreClusterIds = datastoreClusterIds;
+            this.__explicitlySet__.add("datastoreClusterIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -332,7 +350,8 @@ public final class InitialClusterConfiguration
                             this.initialHostOcpuCount,
                             this.isShieldedInstanceEnabled,
                             this.capacityReservationId,
-                            this.datastores);
+                            this.datastores,
+                            this.datastoreClusterIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -380,6 +399,9 @@ public final class InitialClusterConfiguration
             if (model.wasPropertyExplicitlySet("datastores")) {
                 this.datastores(model.getDatastores());
             }
+            if (model.wasPropertyExplicitlySet("datastoreClusterIds")) {
+                this.datastoreClusterIds(model.getDatastoreClusterIds());
+            }
             return this;
         }
     }
@@ -424,7 +446,7 @@ public final class InitialClusterConfiguration
     }
 
     /**
-     * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
+     * A descriptive name for the Cluster. Cluster name requirements are 1-22 character length
      * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
      * hyphens, Must be unique within the region. Avoid entering confidential information.
      */
@@ -432,7 +454,7 @@ public final class InitialClusterConfiguration
     private final String displayName;
 
     /**
-     * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
+     * A descriptive name for the Cluster. Cluster name requirements are 1-22 character length
      * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
      * hyphens, Must be unique within the region. Avoid entering confidential information.
      *
@@ -610,6 +632,19 @@ public final class InitialClusterConfiguration
         return datastores;
     }
 
+    /** A list of datastore clusters. */
+    @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+    private final java.util.List<String> datastoreClusterIds;
+
+    /**
+     * A list of datastore clusters.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDatastoreClusterIds() {
+        return datastoreClusterIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -641,6 +676,7 @@ public final class InitialClusterConfiguration
                 .append(String.valueOf(this.isShieldedInstanceEnabled));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", datastores=").append(String.valueOf(this.datastores));
+        sb.append(", datastoreClusterIds=").append(String.valueOf(this.datastoreClusterIds));
         sb.append(")");
         return sb.toString();
     }
@@ -671,6 +707,7 @@ public final class InitialClusterConfiguration
                         this.isShieldedInstanceEnabled, other.isShieldedInstanceEnabled)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.datastores, other.datastores)
+                && java.util.Objects.equals(this.datastoreClusterIds, other.datastoreClusterIds)
                 && super.equals(other);
     }
 
@@ -727,6 +764,11 @@ public final class InitialClusterConfiguration
                                 ? 43
                                 : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.datastores == null ? 43 : this.datastores.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.datastoreClusterIds == null
+                                ? 43
+                                : this.datastoreClusterIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

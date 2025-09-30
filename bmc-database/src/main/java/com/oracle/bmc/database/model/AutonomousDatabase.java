@@ -154,7 +154,8 @@ public final class AutonomousDatabase
         "availabilityDomain",
         "clusterPlacementGroupId",
         "cloneTableSpaceList",
-        "cloneType"
+        "cloneType",
+        "additionalAttributes"
     })
     public AutonomousDatabase(
             String id,
@@ -287,7 +288,8 @@ public final class AutonomousDatabase
             String availabilityDomain,
             String clusterPlacementGroupId,
             java.util.List<Integer> cloneTableSpaceList,
-            CloneType cloneType) {
+            CloneType cloneType,
+            java.util.Map<String, String> additionalAttributes) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -420,6 +422,7 @@ public final class AutonomousDatabase
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.cloneTableSpaceList = cloneTableSpaceList;
         this.cloneType = cloneType;
+        this.additionalAttributes = additionalAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -3212,6 +3215,25 @@ public final class AutonomousDatabase
             this.__explicitlySet__.add("cloneType");
             return this;
         }
+        /**
+         * Additional attributes for this resource. Each attribute is a simple key-value pair with
+         * no predefined name, type, or namespace. Example: {@code { "gcpAccountName": "gcpName" }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalAttributes")
+        private java.util.Map<String, String> additionalAttributes;
+
+        /**
+         * Additional attributes for this resource. Each attribute is a simple key-value pair with
+         * no predefined name, type, or namespace. Example: {@code { "gcpAccountName": "gcpName" }}
+         *
+         * @param additionalAttributes the value to set
+         * @return this builder
+         */
+        public Builder additionalAttributes(java.util.Map<String, String> additionalAttributes) {
+            this.additionalAttributes = additionalAttributes;
+            this.__explicitlySet__.add("additionalAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -3349,7 +3371,8 @@ public final class AutonomousDatabase
                             this.availabilityDomain,
                             this.clusterPlacementGroupId,
                             this.cloneTableSpaceList,
-                            this.cloneType);
+                            this.cloneType,
+                            this.additionalAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -3757,6 +3780,9 @@ public final class AutonomousDatabase
             }
             if (model.wasPropertyExplicitlySet("cloneType")) {
                 this.cloneType(model.getCloneType());
+            }
+            if (model.wasPropertyExplicitlySet("additionalAttributes")) {
+                this.additionalAttributes(model.getAdditionalAttributes());
             }
             return this;
         }
@@ -7223,6 +7249,23 @@ public final class AutonomousDatabase
         return cloneType;
     }
 
+    /**
+     * Additional attributes for this resource. Each attribute is a simple key-value pair with no
+     * predefined name, type, or namespace. Example: {@code { "gcpAccountName": "gcpName" }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalAttributes")
+    private final java.util.Map<String, String> additionalAttributes;
+
+    /**
+     * Additional attributes for this resource. Each attribute is a simple key-value pair with no
+     * predefined name, type, or namespace. Example: {@code { "gcpAccountName": "gcpName" }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getAdditionalAttributes() {
+        return additionalAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -7412,6 +7455,7 @@ public final class AutonomousDatabase
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", cloneTableSpaceList=").append(String.valueOf(this.cloneTableSpaceList));
         sb.append(", cloneType=").append(String.valueOf(this.cloneType));
+        sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -7612,6 +7656,7 @@ public final class AutonomousDatabase
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.cloneTableSpaceList, other.cloneTableSpaceList)
                 && java.util.Objects.equals(this.cloneType, other.cloneType)
+                && java.util.Objects.equals(this.additionalAttributes, other.additionalAttributes)
                 && super.equals(other);
     }
 
@@ -8090,6 +8135,11 @@ public final class AutonomousDatabase
                                 ? 43
                                 : this.cloneTableSpaceList.hashCode());
         result = (result * PRIME) + (this.cloneType == null ? 43 : this.cloneType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalAttributes == null
+                                ? 43
+                                : this.additionalAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

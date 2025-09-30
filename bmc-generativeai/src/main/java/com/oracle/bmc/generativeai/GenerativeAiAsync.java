@@ -115,6 +115,25 @@ public interface GenerativeAiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a Generative AI private endpoint into a different compartment. When provided, If-Match
+     * is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeGenerativeAiPrivateEndpointCompartmentResponse>
+            changeGenerativeAiPrivateEndpointCompartment(
+                    ChangeGenerativeAiPrivateEndpointCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeGenerativeAiPrivateEndpointCompartmentRequest,
+                                    ChangeGenerativeAiPrivateEndpointCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a custom model into a different compartment. For information about moving resources
      * between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -165,6 +184,24 @@ public interface GenerativeAiAsync extends AutoCloseable {
             CreateEndpointRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateEndpointRequest, CreateEndpointResponse>
                     handler);
+
+    /**
+     * Creates a Generative AI private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateGenerativeAiPrivateEndpointResponse>
+            createGenerativeAiPrivateEndpoint(
+                    CreateGenerativeAiPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateGenerativeAiPrivateEndpointRequest,
+                                    CreateGenerativeAiPrivateEndpointResponse>
+                            handler);
 
     /**
      * Creates a custom model by fine-tuning a base model with your own dataset. You can create a
@@ -221,6 +258,24 @@ public interface GenerativeAiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a Generative AI private endpoint using `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteGenerativeAiPrivateEndpointResponse>
+            deleteGenerativeAiPrivateEndpoint(
+                    DeleteGenerativeAiPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteGenerativeAiPrivateEndpointRequest,
+                                    DeleteGenerativeAiPrivateEndpointResponse>
+                            handler);
+
+    /**
      * Deletes a custom model. A model shouldn't be deleted if there's one or more active endpoints
      * associated with that model.
      *
@@ -264,6 +319,24 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<GetEndpointResponse> getEndpoint(
             GetEndpointRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetEndpointRequest, GetEndpointResponse> handler);
+
+    /**
+     * Retrieves an Generative AI private endpoint using a `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetGenerativeAiPrivateEndpointResponse>
+            getGenerativeAiPrivateEndpoint(
+                    GetGenerativeAiPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetGenerativeAiPrivateEndpointRequest,
+                                    GetGenerativeAiPrivateEndpointResponse>
+                            handler);
 
     /**
      * Gets information about a custom model.
@@ -324,6 +397,24 @@ public interface GenerativeAiAsync extends AutoCloseable {
             ListEndpointsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListEndpointsRequest, ListEndpointsResponse>
                     handler);
+
+    /**
+     * Lists all Generative AI private endpoints in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListGenerativeAiPrivateEndpointsResponse>
+            listGenerativeAiPrivateEndpoints(
+                    ListGenerativeAiPrivateEndpointsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListGenerativeAiPrivateEndpointsRequest,
+                                    ListGenerativeAiPrivateEndpointsResponse>
+                            handler);
 
     /**
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned
@@ -417,6 +508,24 @@ public interface GenerativeAiAsync extends AutoCloseable {
             UpdateEndpointRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateEndpointRequest, UpdateEndpointResponse>
                     handler);
+
+    /**
+     * Updates a Generative AI private endpoint using a `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateGenerativeAiPrivateEndpointResponse>
+            updateGenerativeAiPrivateEndpoint(
+                    UpdateGenerativeAiPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateGenerativeAiPrivateEndpointRequest,
+                                    UpdateGenerativeAiPrivateEndpointResponse>
+                            handler);
 
     /**
      * Updates the properties of a custom model such as name, description, version, freeform tags,

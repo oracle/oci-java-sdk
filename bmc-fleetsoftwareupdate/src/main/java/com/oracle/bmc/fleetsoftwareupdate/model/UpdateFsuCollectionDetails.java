@@ -5,7 +5,8 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * The information to Update Exadata Fleet Update Collection. <br>
+ * Updates specified fields for the specified Exadata Fleet Update Collection. Fields that are not
+ * specified in the request will not be updated. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -36,12 +37,12 @@ public final class UpdateFsuCollectionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Exadata Fleet Update Collection display name. */
+        /** The user-friendly name for the Exadata Fleet Update Collection. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Exadata Fleet Update Collection display name.
+         * The user-friendly name for the Exadata Fleet Update Collection.
          *
          * @param displayName the value to set
          * @return this builder
@@ -128,12 +129,12 @@ public final class UpdateFsuCollectionDetails
         return new Builder().copy(this);
     }
 
-    /** Exadata Fleet Update Collection display name. */
+    /** The user-friendly name for the Exadata Fleet Update Collection. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Exadata Fleet Update Collection display name.
+     * The user-friendly name for the Exadata Fleet Update Collection.
      *
      * @return the value
      */

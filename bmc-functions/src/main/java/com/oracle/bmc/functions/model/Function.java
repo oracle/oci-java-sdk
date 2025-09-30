@@ -36,6 +36,9 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         "config",
         "timeoutInSeconds",
         "provisionedConcurrencyConfig",
+        "detachedModeTimeoutInSeconds",
+        "failureDestination",
+        "successDestination",
         "traceConfig",
         "freeformTags",
         "invokeEndpoint",
@@ -57,6 +60,9 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Map<String, String> config,
             Integer timeoutInSeconds,
             FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig,
+            Integer detachedModeTimeoutInSeconds,
+            FailureDestinationDetails failureDestination,
+            SuccessDestinationDetails successDestination,
             FunctionTraceConfig traceConfig,
             java.util.Map<String, String> freeformTags,
             String invokeEndpoint,
@@ -77,6 +83,9 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         this.config = config;
         this.timeoutInSeconds = timeoutInSeconds;
         this.provisionedConcurrencyConfig = provisionedConcurrencyConfig;
+        this.detachedModeTimeoutInSeconds = detachedModeTimeoutInSeconds;
+        this.failureDestination = failureDestination;
+        this.successDestination = successDestination;
         this.traceConfig = traceConfig;
         this.freeformTags = freeformTags;
         this.invokeEndpoint = invokeEndpoint;
@@ -313,6 +322,45 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("provisionedConcurrencyConfig");
             return this;
         }
+        /**
+         * Timeout for detached function invocations. Value in seconds.
+         *
+         * <p>Example: {@code {"detachedModeTimeoutInSeconds": 900}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("detachedModeTimeoutInSeconds")
+        private Integer detachedModeTimeoutInSeconds;
+
+        /**
+         * Timeout for detached function invocations. Value in seconds.
+         *
+         * <p>Example: {@code {"detachedModeTimeoutInSeconds": 900}}
+         *
+         * @param detachedModeTimeoutInSeconds the value to set
+         * @return this builder
+         */
+        public Builder detachedModeTimeoutInSeconds(Integer detachedModeTimeoutInSeconds) {
+            this.detachedModeTimeoutInSeconds = detachedModeTimeoutInSeconds;
+            this.__explicitlySet__.add("detachedModeTimeoutInSeconds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("failureDestination")
+        private FailureDestinationDetails failureDestination;
+
+        public Builder failureDestination(FailureDestinationDetails failureDestination) {
+            this.failureDestination = failureDestination;
+            this.__explicitlySet__.add("failureDestination");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("successDestination")
+        private SuccessDestinationDetails successDestination;
+
+        public Builder successDestination(SuccessDestinationDetails successDestination) {
+            this.successDestination = successDestination;
+            this.__explicitlySet__.add("successDestination");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
         private FunctionTraceConfig traceConfig;
@@ -458,6 +506,9 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
                             this.config,
                             this.timeoutInSeconds,
                             this.provisionedConcurrencyConfig,
+                            this.detachedModeTimeoutInSeconds,
+                            this.failureDestination,
+                            this.successDestination,
                             this.traceConfig,
                             this.freeformTags,
                             this.invokeEndpoint,
@@ -510,6 +561,15 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("provisionedConcurrencyConfig")) {
                 this.provisionedConcurrencyConfig(model.getProvisionedConcurrencyConfig());
+            }
+            if (model.wasPropertyExplicitlySet("detachedModeTimeoutInSeconds")) {
+                this.detachedModeTimeoutInSeconds(model.getDetachedModeTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("failureDestination")) {
+                this.failureDestination(model.getFailureDestination());
+            }
+            if (model.wasPropertyExplicitlySet("successDestination")) {
+                this.successDestination(model.getSuccessDestination());
             }
             if (model.wasPropertyExplicitlySet("traceConfig")) {
                 this.traceConfig(model.getTraceConfig());
@@ -841,6 +901,39 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         return provisionedConcurrencyConfig;
     }
 
+    /**
+     * Timeout for detached function invocations. Value in seconds.
+     *
+     * <p>Example: {@code {"detachedModeTimeoutInSeconds": 900}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("detachedModeTimeoutInSeconds")
+    private final Integer detachedModeTimeoutInSeconds;
+
+    /**
+     * Timeout for detached function invocations. Value in seconds.
+     *
+     * <p>Example: {@code {"detachedModeTimeoutInSeconds": 900}}
+     *
+     * @return the value
+     */
+    public Integer getDetachedModeTimeoutInSeconds() {
+        return detachedModeTimeoutInSeconds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("failureDestination")
+    private final FailureDestinationDetails failureDestination;
+
+    public FailureDestinationDetails getFailureDestination() {
+        return failureDestination;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("successDestination")
+    private final SuccessDestinationDetails successDestination;
+
+    public SuccessDestinationDetails getSuccessDestination() {
+        return successDestination;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
     private final FunctionTraceConfig traceConfig;
 
@@ -982,6 +1075,10 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
         sb.append(", provisionedConcurrencyConfig=")
                 .append(String.valueOf(this.provisionedConcurrencyConfig));
+        sb.append(", detachedModeTimeoutInSeconds=")
+                .append(String.valueOf(this.detachedModeTimeoutInSeconds));
+        sb.append(", failureDestination=").append(String.valueOf(this.failureDestination));
+        sb.append(", successDestination=").append(String.valueOf(this.successDestination));
         sb.append(", traceConfig=").append(String.valueOf(this.traceConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", invokeEndpoint=").append(String.valueOf(this.invokeEndpoint));
@@ -1016,6 +1113,10 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(
                         this.provisionedConcurrencyConfig, other.provisionedConcurrencyConfig)
+                && java.util.Objects.equals(
+                        this.detachedModeTimeoutInSeconds, other.detachedModeTimeoutInSeconds)
+                && java.util.Objects.equals(this.failureDestination, other.failureDestination)
+                && java.util.Objects.equals(this.successDestination, other.successDestination)
                 && java.util.Objects.equals(this.traceConfig, other.traceConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.invokeEndpoint, other.invokeEndpoint)
@@ -1056,6 +1157,21 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.provisionedConcurrencyConfig == null
                                 ? 43
                                 : this.provisionedConcurrencyConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detachedModeTimeoutInSeconds == null
+                                ? 43
+                                : this.detachedModeTimeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failureDestination == null
+                                ? 43
+                                : this.failureDestination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.successDestination == null
+                                ? 43
+                                : this.successDestination.hashCode());
         result = (result * PRIME) + (this.traceConfig == null ? 43 : this.traceConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result =

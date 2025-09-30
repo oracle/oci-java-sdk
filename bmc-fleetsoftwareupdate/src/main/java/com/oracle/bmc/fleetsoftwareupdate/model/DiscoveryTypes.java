@@ -9,6 +9,8 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
 public enum DiscoveryTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Db("DB"),
     Gi("GI"),
+    GuestOs("GUEST_OS"),
+    ExadbStack("EXADB_STACK"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

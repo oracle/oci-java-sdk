@@ -35,6 +35,7 @@ public final class CreateFusionEnvironmentDetails
         "kmsKeyId",
         "dnsPrefix",
         "additionalLanguagePacks",
+        "isIPv6DualStackEnabled",
         "rules",
         "createFusionEnvironmentAdminUserDetails",
         "freeformTags",
@@ -49,6 +50,7 @@ public final class CreateFusionEnvironmentDetails
             String kmsKeyId,
             String dnsPrefix,
             java.util.List<String> additionalLanguagePacks,
+            Boolean isIPv6DualStackEnabled,
             java.util.List<Rule> rules,
             CreateFusionEnvironmentAdminUserDetails createFusionEnvironmentAdminUserDetails,
             java.util.Map<String, String> freeformTags,
@@ -62,6 +64,7 @@ public final class CreateFusionEnvironmentDetails
         this.kmsKeyId = kmsKeyId;
         this.dnsPrefix = dnsPrefix;
         this.additionalLanguagePacks = additionalLanguagePacks;
+        this.isIPv6DualStackEnabled = isIPv6DualStackEnabled;
         this.rules = rules;
         this.createFusionEnvironmentAdminUserDetails = createFusionEnvironmentAdminUserDetails;
         this.freeformTags = freeformTags;
@@ -191,6 +194,27 @@ public final class CreateFusionEnvironmentDetails
             this.__explicitlySet__.add("additionalLanguagePacks");
             return this;
         }
+        /**
+         * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an
+         * IPv6 address to the environment in addition to an IPv4 address. Default value will be
+         * false if not set
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
+        private Boolean isIPv6DualStackEnabled;
+
+        /**
+         * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an
+         * IPv6 address to the environment in addition to an IPv4 address. Default value will be
+         * false if not set
+         *
+         * @param isIPv6DualStackEnabled the value to set
+         * @return this builder
+         */
+        public Builder isIPv6DualStackEnabled(Boolean isIPv6DualStackEnabled) {
+            this.isIPv6DualStackEnabled = isIPv6DualStackEnabled;
+            this.__explicitlySet__.add("isIPv6DualStackEnabled");
+            return this;
+        }
         /** Rules. */
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<Rule> rules;
@@ -270,6 +294,7 @@ public final class CreateFusionEnvironmentDetails
                             this.kmsKeyId,
                             this.dnsPrefix,
                             this.additionalLanguagePacks,
+                            this.isIPv6DualStackEnabled,
                             this.rules,
                             this.createFusionEnvironmentAdminUserDetails,
                             this.freeformTags,
@@ -305,6 +330,9 @@ public final class CreateFusionEnvironmentDetails
             }
             if (model.wasPropertyExplicitlySet("additionalLanguagePacks")) {
                 this.additionalLanguagePacks(model.getAdditionalLanguagePacks());
+            }
+            if (model.wasPropertyExplicitlySet("isIPv6DualStackEnabled")) {
+                this.isIPv6DualStackEnabled(model.getIsIPv6DualStackEnabled());
             }
             if (model.wasPropertyExplicitlySet("rules")) {
                 this.rules(model.getRules());
@@ -434,6 +462,25 @@ public final class CreateFusionEnvironmentDetails
         return additionalLanguagePacks;
     }
 
+    /**
+     * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an IPv6
+     * address to the environment in addition to an IPv4 address. Default value will be false if not
+     * set
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
+    private final Boolean isIPv6DualStackEnabled;
+
+    /**
+     * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an IPv6
+     * address to the environment in addition to an IPv4 address. Default value will be false if not
+     * set
+     *
+     * @return the value
+     */
+    public Boolean getIsIPv6DualStackEnabled() {
+        return isIPv6DualStackEnabled;
+    }
+
     /** Rules. */
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<Rule> rules;
@@ -513,6 +560,7 @@ public final class CreateFusionEnvironmentDetails
         sb.append(", dnsPrefix=").append(String.valueOf(this.dnsPrefix));
         sb.append(", additionalLanguagePacks=")
                 .append(String.valueOf(this.additionalLanguagePacks));
+        sb.append(", isIPv6DualStackEnabled=").append(String.valueOf(this.isIPv6DualStackEnabled));
         sb.append(", rules=").append(String.valueOf(this.rules));
         sb.append(", createFusionEnvironmentAdminUserDetails=")
                 .append(String.valueOf(this.createFusionEnvironmentAdminUserDetails));
@@ -542,6 +590,8 @@ public final class CreateFusionEnvironmentDetails
                 && java.util.Objects.equals(this.dnsPrefix, other.dnsPrefix)
                 && java.util.Objects.equals(
                         this.additionalLanguagePacks, other.additionalLanguagePacks)
+                && java.util.Objects.equals(
+                        this.isIPv6DualStackEnabled, other.isIPv6DualStackEnabled)
                 && java.util.Objects.equals(this.rules, other.rules)
                 && java.util.Objects.equals(
                         this.createFusionEnvironmentAdminUserDetails,
@@ -579,6 +629,11 @@ public final class CreateFusionEnvironmentDetails
                         + (this.additionalLanguagePacks == null
                                 ? 43
                                 : this.additionalLanguagePacks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIPv6DualStackEnabled == null
+                                ? 43
+                                : this.isIPv6DualStackEnabled.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
         result =
                 (result * PRIME)

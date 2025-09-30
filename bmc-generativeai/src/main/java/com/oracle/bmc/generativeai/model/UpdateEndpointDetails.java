@@ -26,6 +26,7 @@ public final class UpdateEndpointDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
+        "generativeAiPrivateEndpointId",
         "contentModerationConfig",
         "freeformTags",
         "definedTags"
@@ -33,12 +34,14 @@ public final class UpdateEndpointDetails
     public UpdateEndpointDetails(
             String displayName,
             String description,
+            String generativeAiPrivateEndpointId,
             ContentModerationConfig contentModerationConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
+        this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
         this.contentModerationConfig = contentModerationConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -74,6 +77,23 @@ public final class UpdateEndpointDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * The OCID of the Generative AI private endpoint to which this endpoint will be attached.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("generativeAiPrivateEndpointId")
+        private String generativeAiPrivateEndpointId;
+
+        /**
+         * The OCID of the Generative AI private endpoint to which this endpoint will be attached.
+         *
+         * @param generativeAiPrivateEndpointId the value to set
+         * @return this builder
+         */
+        public Builder generativeAiPrivateEndpointId(String generativeAiPrivateEndpointId) {
+            this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
+            this.__explicitlySet__.add("generativeAiPrivateEndpointId");
             return this;
         }
 
@@ -145,6 +165,7 @@ public final class UpdateEndpointDetails
                     new UpdateEndpointDetails(
                             this.displayName,
                             this.description,
+                            this.generativeAiPrivateEndpointId,
                             this.contentModerationConfig,
                             this.freeformTags,
                             this.definedTags);
@@ -161,6 +182,9 @@ public final class UpdateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("generativeAiPrivateEndpointId")) {
+                this.generativeAiPrivateEndpointId(model.getGenerativeAiPrivateEndpointId());
             }
             if (model.wasPropertyExplicitlySet("contentModerationConfig")) {
                 this.contentModerationConfig(model.getContentModerationConfig());
@@ -208,6 +232,19 @@ public final class UpdateEndpointDetails
      */
     public String getDescription() {
         return description;
+    }
+
+    /** The OCID of the Generative AI private endpoint to which this endpoint will be attached. */
+    @com.fasterxml.jackson.annotation.JsonProperty("generativeAiPrivateEndpointId")
+    private final String generativeAiPrivateEndpointId;
+
+    /**
+     * The OCID of the Generative AI private endpoint to which this endpoint will be attached.
+     *
+     * @return the value
+     */
+    public String getGenerativeAiPrivateEndpointId() {
+        return generativeAiPrivateEndpointId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("contentModerationConfig")
@@ -280,6 +317,8 @@ public final class UpdateEndpointDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", generativeAiPrivateEndpointId=")
+                .append(String.valueOf(this.generativeAiPrivateEndpointId));
         sb.append(", contentModerationConfig=")
                 .append(String.valueOf(this.contentModerationConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -301,6 +340,8 @@ public final class UpdateEndpointDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(
+                        this.generativeAiPrivateEndpointId, other.generativeAiPrivateEndpointId)
+                && java.util.Objects.equals(
                         this.contentModerationConfig, other.contentModerationConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -313,6 +354,11 @@ public final class UpdateEndpointDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.generativeAiPrivateEndpointId == null
+                                ? 43
+                                : this.generativeAiPrivateEndpointId.hashCode());
         result =
                 (result * PRIME)
                         + (this.contentModerationConfig == null

@@ -52,12 +52,12 @@ public final class PatchAction extends Action {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** A string that describeds whether the change is applied hot or cold */
+        /** A string that describes whether the change is applied hot or cold */
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
 
         /**
-         * A string that describeds whether the change is applied hot or cold
+         * A string that describes whether the change is applied hot or cold
          *
          * @param mode the value to set
          * @return this builder
@@ -163,7 +163,7 @@ public final class PatchAction extends Action {
         this.artifact = artifact;
     }
 
-    /** A string that describeds whether the change is applied hot or cold */
+    /** A string that describes whether the change is applied hot or cold */
     public enum Mode implements com.oracle.bmc.http.internal.BmcEnum {
         Hot("HOT"),
         Cold("COLD"),
@@ -207,12 +207,12 @@ public final class PatchAction extends Action {
             return UnknownEnumValue;
         }
     };
-    /** A string that describeds whether the change is applied hot or cold */
+    /** A string that describes whether the change is applied hot or cold */
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final Mode mode;
 
     /**
-     * A string that describeds whether the change is applied hot or cold
+     * A string that describes whether the change is applied hot or cold
      *
      * @return the value
      */

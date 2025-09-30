@@ -21,15 +21,28 @@ package com.oracle.bmc.generativeaiinference.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class ChatChoice extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"index", "message", "finishReason", "logprobs", "usage"})
+    @java.beans.ConstructorProperties({
+        "index",
+        "message",
+        "finishReason",
+        "logprobs",
+        "usage",
+        "groundingMetadata"
+    })
     public ChatChoice(
-            Integer index, Message message, String finishReason, Logprobs logprobs, Usage usage) {
+            Integer index,
+            Message message,
+            String finishReason,
+            Logprobs logprobs,
+            Usage usage,
+            GroundingMetadata groundingMetadata) {
         super();
         this.index = index;
         this.message = message;
         this.finishReason = finishReason;
         this.logprobs = logprobs;
         this.usage = usage;
+        this.groundingMetadata = groundingMetadata;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -100,13 +113,27 @@ public final class ChatChoice extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("groundingMetadata")
+        private GroundingMetadata groundingMetadata;
+
+        public Builder groundingMetadata(GroundingMetadata groundingMetadata) {
+            this.groundingMetadata = groundingMetadata;
+            this.__explicitlySet__.add("groundingMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChatChoice build() {
             ChatChoice model =
                     new ChatChoice(
-                            this.index, this.message, this.finishReason, this.logprobs, this.usage);
+                            this.index,
+                            this.message,
+                            this.finishReason,
+                            this.logprobs,
+                            this.usage,
+                            this.groundingMetadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -129,6 +156,9 @@ public final class ChatChoice extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("usage")) {
                 this.usage(model.getUsage());
+            }
+            if (model.wasPropertyExplicitlySet("groundingMetadata")) {
+                this.groundingMetadata(model.getGroundingMetadata());
             }
             return this;
         }
@@ -198,6 +228,13 @@ public final class ChatChoice extends com.oracle.bmc.http.client.internal.Explic
         return usage;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("groundingMetadata")
+    private final GroundingMetadata groundingMetadata;
+
+    public GroundingMetadata getGroundingMetadata() {
+        return groundingMetadata;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -218,6 +255,7 @@ public final class ChatChoice extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", finishReason=").append(String.valueOf(this.finishReason));
         sb.append(", logprobs=").append(String.valueOf(this.logprobs));
         sb.append(", usage=").append(String.valueOf(this.usage));
+        sb.append(", groundingMetadata=").append(String.valueOf(this.groundingMetadata));
         sb.append(")");
         return sb.toString();
     }
@@ -237,6 +275,7 @@ public final class ChatChoice extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.finishReason, other.finishReason)
                 && java.util.Objects.equals(this.logprobs, other.logprobs)
                 && java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.groundingMetadata, other.groundingMetadata)
                 && super.equals(other);
     }
 
@@ -249,6 +288,9 @@ public final class ChatChoice extends com.oracle.bmc.http.client.internal.Explic
         result = (result * PRIME) + (this.finishReason == null ? 43 : this.finishReason.hashCode());
         result = (result * PRIME) + (this.logprobs == null ? 43 : this.logprobs.hashCode());
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groundingMetadata == null ? 43 : this.groundingMetadata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

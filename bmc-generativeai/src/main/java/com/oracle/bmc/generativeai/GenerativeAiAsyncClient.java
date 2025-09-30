@@ -170,6 +170,50 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeGenerativeAiPrivateEndpointCompartmentResponse>
+            changeGenerativeAiPrivateEndpointCompartment(
+                    ChangeGenerativeAiPrivateEndpointCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeGenerativeAiPrivateEndpointCompartmentRequest,
+                                    ChangeGenerativeAiPrivateEndpointCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getGenerativeAiPrivateEndpointId(),
+                "generativeAiPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeGenerativeAiPrivateEndpointCompartmentDetails(),
+                "changeGenerativeAiPrivateEndpointCompartmentDetails is required");
+
+        return clientCall(request, ChangeGenerativeAiPrivateEndpointCompartmentResponse::builder)
+                .logger(LOG, "changeGenerativeAiPrivateEndpointCompartment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeGenerativeAiPrivateEndpointCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiPrivateEndpoint/ChangeGenerativeAiPrivateEndpointCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeGenerativeAiPrivateEndpointCompartmentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiPrivateEndpoints")
+                .appendPathParam(request.getGenerativeAiPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeGenerativeAiPrivateEndpointCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeGenerativeAiPrivateEndpointCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeModelCompartmentResponse> changeModelCompartment(
             ChangeModelCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -281,6 +325,44 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGenerativeAiPrivateEndpointResponse>
+            createGenerativeAiPrivateEndpoint(
+                    CreateGenerativeAiPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateGenerativeAiPrivateEndpointRequest,
+                                    CreateGenerativeAiPrivateEndpointResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateGenerativeAiPrivateEndpointDetails(),
+                "createGenerativeAiPrivateEndpointDetails is required");
+
+        return clientCall(request, CreateGenerativeAiPrivateEndpointResponse::builder)
+                .logger(LOG, "createGenerativeAiPrivateEndpoint")
+                .serviceDetails("GenerativeAi", "CreateGenerativeAiPrivateEndpoint", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateGenerativeAiPrivateEndpointRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiPrivateEndpoints")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpoint.class,
+                        CreateGenerativeAiPrivateEndpointResponse.Builder
+                                ::generativeAiPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "etag", CreateGenerativeAiPrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateGenerativeAiPrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateGenerativeAiPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelResponse> createModel(
             CreateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
@@ -377,6 +459,42 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteGenerativeAiPrivateEndpointResponse>
+            deleteGenerativeAiPrivateEndpoint(
+                    DeleteGenerativeAiPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteGenerativeAiPrivateEndpointRequest,
+                                    DeleteGenerativeAiPrivateEndpointResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getGenerativeAiPrivateEndpointId(),
+                "generativeAiPrivateEndpointId must not be blank");
+
+        return clientCall(request, DeleteGenerativeAiPrivateEndpointResponse::builder)
+                .logger(LOG, "deleteGenerativeAiPrivateEndpoint")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteGenerativeAiPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiPrivateEndpoint/DeleteGenerativeAiPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteGenerativeAiPrivateEndpointRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiPrivateEndpoints")
+                .appendPathParam(request.getGenerativeAiPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteGenerativeAiPrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteGenerativeAiPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteModelResponse> deleteModel(
             DeleteModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse>
@@ -464,6 +582,43 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString("etag", GetEndpointResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetEndpointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGenerativeAiPrivateEndpointResponse>
+            getGenerativeAiPrivateEndpoint(
+                    GetGenerativeAiPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetGenerativeAiPrivateEndpointRequest,
+                                    GetGenerativeAiPrivateEndpointResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getGenerativeAiPrivateEndpointId(),
+                "generativeAiPrivateEndpointId must not be blank");
+
+        return clientCall(request, GetGenerativeAiPrivateEndpointResponse::builder)
+                .logger(LOG, "getGenerativeAiPrivateEndpoint")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetGenerativeAiPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiPrivateEndpoint/GetGenerativeAiPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetGenerativeAiPrivateEndpointRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiPrivateEndpoints")
+                .appendPathParam(request.getGenerativeAiPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpoint.class,
+                        GetGenerativeAiPrivateEndpointResponse.Builder::generativeAiPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "etag", GetGenerativeAiPrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetGenerativeAiPrivateEndpointResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -604,6 +759,50 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", ListEndpointsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEndpointsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGenerativeAiPrivateEndpointsResponse>
+            listGenerativeAiPrivateEndpoints(
+                    ListGenerativeAiPrivateEndpointsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListGenerativeAiPrivateEndpointsRequest,
+                                    ListGenerativeAiPrivateEndpointsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListGenerativeAiPrivateEndpointsResponse::builder)
+                .logger(LOG, "listGenerativeAiPrivateEndpoints")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListGenerativeAiPrivateEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiPrivateEndpointCollection/ListGenerativeAiPrivateEndpoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGenerativeAiPrivateEndpointsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiPrivateEndpoints")
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpointCollection
+                                .class,
+                        ListGenerativeAiPrivateEndpointsResponse.Builder
+                                ::generativeAiPrivateEndpointCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListGenerativeAiPrivateEndpointsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListGenerativeAiPrivateEndpointsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -835,6 +1034,52 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateEndpointResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGenerativeAiPrivateEndpointResponse>
+            updateGenerativeAiPrivateEndpoint(
+                    UpdateGenerativeAiPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateGenerativeAiPrivateEndpointRequest,
+                                    UpdateGenerativeAiPrivateEndpointResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getGenerativeAiPrivateEndpointId(),
+                "generativeAiPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateGenerativeAiPrivateEndpointDetails(),
+                "updateGenerativeAiPrivateEndpointDetails is required");
+
+        return clientCall(request, UpdateGenerativeAiPrivateEndpointResponse::builder)
+                .logger(LOG, "updateGenerativeAiPrivateEndpoint")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateGenerativeAiPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiPrivateEndpoint/UpdateGenerativeAiPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateGenerativeAiPrivateEndpointRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiPrivateEndpoints")
+                .appendPathParam(request.getGenerativeAiPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpoint.class,
+                        UpdateGenerativeAiPrivateEndpointResponse.Builder
+                                ::generativeAiPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateGenerativeAiPrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateGenerativeAiPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateGenerativeAiPrivateEndpointResponse.Builder::etag)
                 .callAsync(handler);
     }
 

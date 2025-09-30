@@ -52,6 +52,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         "isShieldedInstanceEnabled",
         "capacityReservationId",
         "datastores",
+        "datastoreClusterIds",
         "vsphereType",
         "freeformTags",
         "definedTags",
@@ -80,6 +81,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
             Boolean isShieldedInstanceEnabled,
             String capacityReservationId,
             java.util.List<DatastoreDetails> datastores,
+            java.util.List<String> datastoreClusterIds,
             VsphereTypes vsphereType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -107,6 +109,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
         this.capacityReservationId = capacityReservationId;
         this.datastores = datastores;
+        this.datastoreClusterIds = datastoreClusterIds;
         this.vsphereType = vsphereType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -566,6 +569,21 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("datastores");
             return this;
         }
+        /** A list of datastore clusters. */
+        @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+        private java.util.List<String> datastoreClusterIds;
+
+        /**
+         * A list of datastore clusters.
+         *
+         * @param datastoreClusterIds the value to set
+         * @return this builder
+         */
+        public Builder datastoreClusterIds(java.util.List<String> datastoreClusterIds) {
+            this.datastoreClusterIds = datastoreClusterIds;
+            this.__explicitlySet__.add("datastoreClusterIds");
+            return this;
+        }
         /** vSphere Cluster types. */
         @com.fasterxml.jackson.annotation.JsonProperty("vsphereType")
         private VsphereTypes vsphereType;
@@ -680,6 +698,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
                             this.isShieldedInstanceEnabled,
                             this.capacityReservationId,
                             this.datastores,
+                            this.datastoreClusterIds,
                             this.vsphereType,
                             this.freeformTags,
                             this.definedTags,
@@ -757,6 +776,9 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("datastores")) {
                 this.datastores(model.getDatastores());
+            }
+            if (model.wasPropertyExplicitlySet("datastoreClusterIds")) {
+                this.datastoreClusterIds(model.getDatastoreClusterIds());
             }
             if (model.wasPropertyExplicitlySet("vsphereType")) {
                 this.vsphereType(model.getVsphereType());
@@ -1187,6 +1209,19 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         return datastores;
     }
 
+    /** A list of datastore clusters. */
+    @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+    private final java.util.List<String> datastoreClusterIds;
+
+    /**
+     * A list of datastore clusters.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDatastoreClusterIds() {
+        return datastoreClusterIds;
+    }
+
     /** vSphere Cluster types. */
     @com.fasterxml.jackson.annotation.JsonProperty("vsphereType")
     private final VsphereTypes vsphereType;
@@ -1303,6 +1338,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
                 .append(String.valueOf(this.isShieldedInstanceEnabled));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", datastores=").append(String.valueOf(this.datastores));
+        sb.append(", datastoreClusterIds=").append(String.valueOf(this.datastoreClusterIds));
         sb.append(", vsphereType=").append(String.valueOf(this.vsphereType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1346,6 +1382,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
                         this.isShieldedInstanceEnabled, other.isShieldedInstanceEnabled)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.datastores, other.datastores)
+                && java.util.Objects.equals(this.datastoreClusterIds, other.datastoreClusterIds)
                 && java.util.Objects.equals(this.vsphereType, other.vsphereType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1433,6 +1470,11 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
                                 ? 43
                                 : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.datastores == null ? 43 : this.datastores.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.datastoreClusterIds == null
+                                ? 43
+                                : this.datastoreClusterIds.hashCode());
         result = (result * PRIME) + (this.vsphereType == null ? 43 : this.vsphereType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

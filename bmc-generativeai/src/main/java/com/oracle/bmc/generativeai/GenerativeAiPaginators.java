@@ -280,6 +280,138 @@ public class GenerativeAiPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listGenerativeAiPrivateEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListGenerativeAiPrivateEndpointsResponse>
+            listGenerativeAiPrivateEndpointsResponseIterator(
+                    final ListGenerativeAiPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListGenerativeAiPrivateEndpointsRequest.Builder,
+                ListGenerativeAiPrivateEndpointsRequest,
+                ListGenerativeAiPrivateEndpointsResponse>(
+                new java.util.function.Supplier<ListGenerativeAiPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListGenerativeAiPrivateEndpointsRequest.Builder get() {
+                        return ListGenerativeAiPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListGenerativeAiPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListGenerativeAiPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGenerativeAiPrivateEndpointsRequest.Builder>,
+                        ListGenerativeAiPrivateEndpointsRequest>() {
+                    @Override
+                    public ListGenerativeAiPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGenerativeAiPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListGenerativeAiPrivateEndpointsRequest,
+                        ListGenerativeAiPrivateEndpointsResponse>() {
+                    @Override
+                    public ListGenerativeAiPrivateEndpointsResponse apply(
+                            ListGenerativeAiPrivateEndpointsRequest request) {
+                        return client.listGenerativeAiPrivateEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpointSummary} objects contained in
+     * responses from the listGenerativeAiPrivateEndpoints operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpointSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpointSummary>
+            listGenerativeAiPrivateEndpointsRecordIterator(
+                    final ListGenerativeAiPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListGenerativeAiPrivateEndpointsRequest.Builder,
+                ListGenerativeAiPrivateEndpointsRequest,
+                ListGenerativeAiPrivateEndpointsResponse,
+                com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpointSummary>(
+                new java.util.function.Supplier<ListGenerativeAiPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListGenerativeAiPrivateEndpointsRequest.Builder get() {
+                        return ListGenerativeAiPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListGenerativeAiPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListGenerativeAiPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGenerativeAiPrivateEndpointsRequest.Builder>,
+                        ListGenerativeAiPrivateEndpointsRequest>() {
+                    @Override
+                    public ListGenerativeAiPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGenerativeAiPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListGenerativeAiPrivateEndpointsRequest,
+                        ListGenerativeAiPrivateEndpointsResponse>() {
+                    @Override
+                    public ListGenerativeAiPrivateEndpointsResponse apply(
+                            ListGenerativeAiPrivateEndpointsRequest request) {
+                        return client.listGenerativeAiPrivateEndpoints(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListGenerativeAiPrivateEndpointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeai.model
+                                        .GenerativeAiPrivateEndpointSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.generativeai.model
+                                            .GenerativeAiPrivateEndpointSummary>
+                            apply(ListGenerativeAiPrivateEndpointsResponse response) {
+                        return response.getGenerativeAiPrivateEndpointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listModels
      * operation. This iterable will fetch more data from the server as needed.
      *

@@ -93,12 +93,16 @@ public final class FsuCycleSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID identifier for the Exadata Fleet Update Cycle. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Fleet Update Cycle.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * OCID identifier for the Exadata Fleet Update Cycle.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Fleet Update Cycle.
          *
          * @param id the value to set
          * @return this builder
@@ -108,12 +112,12 @@ public final class FsuCycleSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Exadata Fleet Update Cycle display name. */
+        /** The user-friendly name for the Exadata Fleet Update Cycle. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Exadata Fleet Update Cycle display name.
+         * The user-friendly name for the Exadata Fleet Update Cycle.
          *
          * @param displayName the value to set
          * @return this builder
@@ -123,12 +127,16 @@ public final class FsuCycleSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -153,12 +161,16 @@ public final class FsuCycleSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
         private String fsuCollectionId;
 
         /**
-         * OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
          *
          * @param fsuCollectionId the value to set
          * @return this builder
@@ -168,12 +180,14 @@ public final class FsuCycleSummary
             this.__explicitlySet__.add("fsuCollectionId");
             return this;
         }
-        /** Type of Collection this Exadata Fleet Update Cycle belongs to. */
+        /**
+         * Type of Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("collectionType")
         private CollectionTypes collectionType;
 
         /**
-         * Type of Collection this Exadata Fleet Update Cycle belongs to.
+         * Type of Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
          *
          * @param collectionType the value to set
          * @return this builder
@@ -183,12 +197,16 @@ public final class FsuCycleSummary
             this.__explicitlySet__.add("collectionType");
             return this;
         }
-        /** OCID identifier for the Action that is currently in execution, if applicable. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Fleet Update Action that is currently in progress, if applicable.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("executingFsuActionId")
         private String executingFsuActionId;
 
         /**
-         * OCID identifier for the Action that is currently in execution, if applicable.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Fleet Update Action that is currently in progress, if applicable.
          *
          * @param executingFsuActionId the value to set
          * @return this builder
@@ -556,12 +574,16 @@ public final class FsuCycleSummary
         return new Builder().copy(this);
     }
 
-    /** OCID identifier for the Exadata Fleet Update Cycle. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Cycle.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * OCID identifier for the Exadata Fleet Update Cycle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Cycle.
      *
      * @return the value
      */
@@ -569,12 +591,12 @@ public final class FsuCycleSummary
         return id;
     }
 
-    /** Exadata Fleet Update Cycle display name. */
+    /** The user-friendly name for the Exadata Fleet Update Cycle. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Exadata Fleet Update Cycle display name.
+     * The user-friendly name for the Exadata Fleet Update Cycle.
      *
      * @return the value
      */
@@ -582,12 +604,16 @@ public final class FsuCycleSummary
         return displayName;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compartment.
      *
      * @return the value
      */
@@ -608,12 +634,16 @@ public final class FsuCycleSummary
         return type;
     }
 
-    /** OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
     private final String fsuCollectionId;
 
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
      *
      * @return the value
      */
@@ -621,12 +651,12 @@ public final class FsuCycleSummary
         return fsuCollectionId;
     }
 
-    /** Type of Collection this Exadata Fleet Update Cycle belongs to. */
+    /** Type of Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle. */
     @com.fasterxml.jackson.annotation.JsonProperty("collectionType")
     private final CollectionTypes collectionType;
 
     /**
-     * Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * Type of Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
      *
      * @return the value
      */
@@ -634,12 +664,16 @@ public final class FsuCycleSummary
         return collectionType;
     }
 
-    /** OCID identifier for the Action that is currently in execution, if applicable. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Action that is currently in progress, if applicable.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("executingFsuActionId")
     private final String executingFsuActionId;
 
     /**
-     * OCID identifier for the Action that is currently in execution, if applicable.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Action that is currently in progress, if applicable.
      *
      * @return the value
      */
