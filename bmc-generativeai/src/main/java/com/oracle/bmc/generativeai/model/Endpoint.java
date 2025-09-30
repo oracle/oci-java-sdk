@@ -36,6 +36,7 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         "modelId",
         "compartmentId",
         "dedicatedAiClusterId",
+        "generativeAiPrivateEndpointId",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -53,6 +54,7 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             String modelId,
             String compartmentId,
             String dedicatedAiClusterId,
+            String generativeAiPrivateEndpointId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -69,6 +71,7 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         this.modelId = modelId;
         this.compartmentId = compartmentId;
         this.dedicatedAiClusterId = dedicatedAiClusterId;
+        this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -170,6 +173,21 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         public Builder dedicatedAiClusterId(String dedicatedAiClusterId) {
             this.dedicatedAiClusterId = dedicatedAiClusterId;
             this.__explicitlySet__.add("dedicatedAiClusterId");
+            return this;
+        }
+        /** The OCID of the Generative AI private endpoint to which this endpoint is attached to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("generativeAiPrivateEndpointId")
+        private String generativeAiPrivateEndpointId;
+
+        /**
+         * The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+         *
+         * @param generativeAiPrivateEndpointId the value to set
+         * @return this builder
+         */
+        public Builder generativeAiPrivateEndpointId(String generativeAiPrivateEndpointId) {
+            this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
+            this.__explicitlySet__.add("generativeAiPrivateEndpointId");
             return this;
         }
         /**
@@ -347,6 +365,7 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
                             this.modelId,
                             this.compartmentId,
                             this.dedicatedAiClusterId,
+                            this.generativeAiPrivateEndpointId,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -381,6 +400,9 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("dedicatedAiClusterId")) {
                 this.dedicatedAiClusterId(model.getDedicatedAiClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("generativeAiPrivateEndpointId")) {
+                this.generativeAiPrivateEndpointId(model.getGenerativeAiPrivateEndpointId());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -498,6 +520,19 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
      */
     public String getDedicatedAiClusterId() {
         return dedicatedAiClusterId;
+    }
+
+    /** The OCID of the Generative AI private endpoint to which this endpoint is attached to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("generativeAiPrivateEndpointId")
+    private final String generativeAiPrivateEndpointId;
+
+    /**
+     * The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     *
+     * @return the value
+     */
+    public String getGenerativeAiPrivateEndpointId() {
+        return generativeAiPrivateEndpointId;
     }
 
     /**
@@ -710,6 +745,8 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dedicatedAiClusterId=").append(String.valueOf(this.dedicatedAiClusterId));
+        sb.append(", generativeAiPrivateEndpointId=")
+                .append(String.valueOf(this.generativeAiPrivateEndpointId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -740,6 +777,8 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.modelId, other.modelId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.dedicatedAiClusterId, other.dedicatedAiClusterId)
+                && java.util.Objects.equals(
+                        this.generativeAiPrivateEndpointId, other.generativeAiPrivateEndpointId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -769,6 +808,11 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.dedicatedAiClusterId == null
                                 ? 43
                                 : this.dedicatedAiClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.generativeAiPrivateEndpointId == null
+                                ? 43
+                                : this.generativeAiPrivateEndpointId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

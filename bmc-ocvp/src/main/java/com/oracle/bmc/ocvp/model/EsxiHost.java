@@ -58,7 +58,9 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         "capacityReservationId",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "datastoreClusterIds",
+        "datastoreAttachments"
     })
     public EsxiHost(
             String id,
@@ -90,7 +92,9 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             String capacityReservationId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<String> datastoreClusterIds,
+            java.util.List<DatastoreAttachment> datastoreAttachments) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -122,6 +126,8 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.datastoreClusterIds = datastoreClusterIds;
+        this.datastoreAttachments = datastoreAttachments;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -705,6 +711,37 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /** A list of datastore clusters. */
+        @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+        private java.util.List<String> datastoreClusterIds;
+
+        /**
+         * A list of datastore clusters.
+         *
+         * @param datastoreClusterIds the value to set
+         * @return this builder
+         */
+        public Builder datastoreClusterIds(java.util.List<String> datastoreClusterIds) {
+            this.datastoreClusterIds = datastoreClusterIds;
+            this.__explicitlySet__.add("datastoreClusterIds");
+            return this;
+        }
+        /** List of DatastoreAttachment objects containing information about attachment details */
+        @com.fasterxml.jackson.annotation.JsonProperty("datastoreAttachments")
+        private java.util.List<DatastoreAttachment> datastoreAttachments;
+
+        /**
+         * List of DatastoreAttachment objects containing information about attachment details
+         *
+         * @param datastoreAttachments the value to set
+         * @return this builder
+         */
+        public Builder datastoreAttachments(
+                java.util.List<DatastoreAttachment> datastoreAttachments) {
+            this.datastoreAttachments = datastoreAttachments;
+            this.__explicitlySet__.add("datastoreAttachments");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -741,7 +778,9 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                             this.capacityReservationId,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.datastoreClusterIds,
+                            this.datastoreAttachments);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -839,6 +878,12 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("datastoreClusterIds")) {
+                this.datastoreClusterIds(model.getDatastoreClusterIds());
+            }
+            if (model.wasPropertyExplicitlySet("datastoreAttachments")) {
+                this.datastoreAttachments(model.getDatastoreAttachments());
             }
             return this;
         }
@@ -1367,6 +1412,32 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         return systemTags;
     }
 
+    /** A list of datastore clusters. */
+    @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+    private final java.util.List<String> datastoreClusterIds;
+
+    /**
+     * A list of datastore clusters.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDatastoreClusterIds() {
+        return datastoreClusterIds;
+    }
+
+    /** List of DatastoreAttachment objects containing information about attachment details */
+    @com.fasterxml.jackson.annotation.JsonProperty("datastoreAttachments")
+    private final java.util.List<DatastoreAttachment> datastoreAttachments;
+
+    /**
+     * List of DatastoreAttachment objects containing information about attachment details
+     *
+     * @return the value
+     */
+    public java.util.List<DatastoreAttachment> getDatastoreAttachments() {
+        return datastoreAttachments;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1416,6 +1487,8 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", datastoreClusterIds=").append(String.valueOf(this.datastoreClusterIds));
+        sb.append(", datastoreAttachments=").append(String.valueOf(this.datastoreAttachments));
         sb.append(")");
         return sb.toString();
     }
@@ -1465,6 +1538,8 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.datastoreClusterIds, other.datastoreClusterIds)
+                && java.util.Objects.equals(this.datastoreAttachments, other.datastoreAttachments)
                 && super.equals(other);
     }
 
@@ -1568,6 +1643,16 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.datastoreClusterIds == null
+                                ? 43
+                                : this.datastoreClusterIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.datastoreAttachments == null
+                                ? 43
+                                : this.datastoreAttachments.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

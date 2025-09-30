@@ -30,6 +30,7 @@ public final class ComputeImageCapabilitySchema
         "computeGlobalImageCapabilitySchemaId",
         "computeGlobalImageCapabilitySchemaVersionName",
         "imageId",
+        "lifecycleState",
         "definedTags",
         "displayName",
         "freeformTags",
@@ -42,6 +43,7 @@ public final class ComputeImageCapabilitySchema
             String computeGlobalImageCapabilitySchemaId,
             String computeGlobalImageCapabilitySchemaVersionName,
             String imageId,
+            LifecycleState lifecycleState,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
@@ -54,6 +56,7 @@ public final class ComputeImageCapabilitySchema
         this.computeGlobalImageCapabilitySchemaVersionName =
                 computeGlobalImageCapabilitySchemaVersionName;
         this.imageId = imageId;
+        this.lifecycleState = lifecycleState;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
@@ -140,6 +143,21 @@ public final class ComputeImageCapabilitySchema
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
+            return this;
+        }
+        /** The ComputeImageCapabilitySchema current lifecycle state. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        /**
+         * The ComputeImageCapabilitySchema current lifecycle state.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         */
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
@@ -263,6 +281,7 @@ public final class ComputeImageCapabilitySchema
                             this.computeGlobalImageCapabilitySchemaId,
                             this.computeGlobalImageCapabilitySchemaVersionName,
                             this.imageId,
+                            this.lifecycleState,
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
@@ -292,6 +311,9 @@ public final class ComputeImageCapabilitySchema
             }
             if (model.wasPropertyExplicitlySet("imageId")) {
                 this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -384,6 +406,66 @@ public final class ComputeImageCapabilitySchema
      */
     public String getImageId() {
         return imageId;
+    }
+
+    /** The ComputeImageCapabilitySchema current lifecycle state. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+        Creating("CREATING"),
+        Active("ACTIVE"),
+        Deleted("DELETED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The ComputeImageCapabilitySchema current lifecycle state. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final LifecycleState lifecycleState;
+
+    /**
+     * The ComputeImageCapabilitySchema current lifecycle state.
+     *
+     * @return the value
+     */
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
     }
 
     /**
@@ -505,6 +587,7 @@ public final class ComputeImageCapabilitySchema
         sb.append(", computeGlobalImageCapabilitySchemaVersionName=")
                 .append(String.valueOf(this.computeGlobalImageCapabilitySchemaVersionName));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -533,6 +616,7 @@ public final class ComputeImageCapabilitySchema
                         this.computeGlobalImageCapabilitySchemaVersionName,
                         other.computeGlobalImageCapabilitySchemaVersionName)
                 && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -560,6 +644,9 @@ public final class ComputeImageCapabilitySchema
                                 ? 43
                                 : this.computeGlobalImageCapabilitySchemaVersionName.hashCode());
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

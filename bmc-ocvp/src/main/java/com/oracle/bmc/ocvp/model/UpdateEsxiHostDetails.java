@@ -48,7 +48,7 @@ public final class UpdateEsxiHostDetails
     public static class Builder {
         /**
          * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are
-         * 1-16 character length limit, Must start with a letter, Must be English letters, numbers,
+         * 1-25 character length limit, Must start with a letter, Must be English letters, numbers,
          * - only, No repeating hyphens, Must be unique within the Cluster.
          *
          * <p>Avoid entering confidential information.
@@ -58,7 +58,7 @@ public final class UpdateEsxiHostDetails
 
         /**
          * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are
-         * 1-16 character length limit, Must start with a letter, Must be English letters, numbers,
+         * 1-25 character length limit, Must start with a letter, Must be English letters, numbers,
          * - only, No repeating hyphens, Must be unique within the Cluster.
          *
          * <p>Avoid entering confidential information.
@@ -96,14 +96,22 @@ public final class UpdateEsxiHostDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deleted ESXi Host with LeftOver billing cycle.
+         * deleted ESXi Host with leftover billing cycle.
+         *
+         * <p>*Note:** This option also requires the {@code nextCommitment} parameter to be
+         * populated with a value other than {@code HOUR}. Otherwise, any update request fails with
+         * the error \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
          */
         @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
         private String billingDonorHostId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deleted ESXi Host with LeftOver billing cycle.
+         * deleted ESXi Host with leftover billing cycle.
+         *
+         * <p>*Note:** This option also requires the {@code nextCommitment} parameter to be
+         * populated with a value other than {@code HOUR}. Otherwise, any update request fails with
+         * the error \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
          *
          * @param billingDonorHostId the value to set
          * @return this builder
@@ -213,7 +221,7 @@ public final class UpdateEsxiHostDetails
     }
 
     /**
-     * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16
+     * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25
      * character length limit, Must start with a letter, Must be English letters, numbers, - only,
      * No repeating hyphens, Must be unique within the Cluster.
      *
@@ -223,7 +231,7 @@ public final class UpdateEsxiHostDetails
     private final String displayName;
 
     /**
-     * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16
+     * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25
      * character length limit, Must start with a letter, Must be English letters, numbers, - only,
      * No repeating hyphens, Must be unique within the Cluster.
      *
@@ -258,14 +266,22 @@ public final class UpdateEsxiHostDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deleted ESXi Host with LeftOver billing cycle.
+     * deleted ESXi Host with leftover billing cycle.
+     *
+     * <p>*Note:** This option also requires the {@code nextCommitment} parameter to be populated
+     * with a value other than {@code HOUR}. Otherwise, any update request fails with the error
+     * \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
      */
     @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
     private final String billingDonorHostId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deleted ESXi Host with LeftOver billing cycle.
+     * deleted ESXi Host with leftover billing cycle.
+     *
+     * <p>*Note:** This option also requires the {@code nextCommitment} parameter to be populated
+     * with a value other than {@code HOUR}. Otherwise, any update request fails with the error
+     * \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
      *
      * @return the value
      */

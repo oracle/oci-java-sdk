@@ -29,6 +29,7 @@ public final class CreateEndpointDetails
         "compartmentId",
         "modelId",
         "dedicatedAiClusterId",
+        "generativeAiPrivateEndpointId",
         "contentModerationConfig",
         "freeformTags",
         "definedTags"
@@ -39,6 +40,7 @@ public final class CreateEndpointDetails
             String compartmentId,
             String modelId,
             String dedicatedAiClusterId,
+            String generativeAiPrivateEndpointId,
             ContentModerationConfig contentModerationConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -48,6 +50,7 @@ public final class CreateEndpointDetails
         this.compartmentId = compartmentId;
         this.modelId = modelId;
         this.dedicatedAiClusterId = dedicatedAiClusterId;
+        this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
         this.contentModerationConfig = contentModerationConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -130,6 +133,21 @@ public final class CreateEndpointDetails
             this.__explicitlySet__.add("dedicatedAiClusterId");
             return this;
         }
+        /** The OCID of the Generative AI private endpoint to which this endpoint is attached to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("generativeAiPrivateEndpointId")
+        private String generativeAiPrivateEndpointId;
+
+        /**
+         * The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+         *
+         * @param generativeAiPrivateEndpointId the value to set
+         * @return this builder
+         */
+        public Builder generativeAiPrivateEndpointId(String generativeAiPrivateEndpointId) {
+            this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
+            this.__explicitlySet__.add("generativeAiPrivateEndpointId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("contentModerationConfig")
         private ContentModerationConfig contentModerationConfig;
@@ -202,6 +220,7 @@ public final class CreateEndpointDetails
                             this.compartmentId,
                             this.modelId,
                             this.dedicatedAiClusterId,
+                            this.generativeAiPrivateEndpointId,
                             this.contentModerationConfig,
                             this.freeformTags,
                             this.definedTags);
@@ -227,6 +246,9 @@ public final class CreateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("dedicatedAiClusterId")) {
                 this.dedicatedAiClusterId(model.getDedicatedAiClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("generativeAiPrivateEndpointId")) {
+                this.generativeAiPrivateEndpointId(model.getGenerativeAiPrivateEndpointId());
             }
             if (model.wasPropertyExplicitlySet("contentModerationConfig")) {
                 this.contentModerationConfig(model.getContentModerationConfig());
@@ -315,6 +337,19 @@ public final class CreateEndpointDetails
         return dedicatedAiClusterId;
     }
 
+    /** The OCID of the Generative AI private endpoint to which this endpoint is attached to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("generativeAiPrivateEndpointId")
+    private final String generativeAiPrivateEndpointId;
+
+    /**
+     * The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     *
+     * @return the value
+     */
+    public String getGenerativeAiPrivateEndpointId() {
+        return generativeAiPrivateEndpointId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("contentModerationConfig")
     private final ContentModerationConfig contentModerationConfig;
 
@@ -388,6 +423,8 @@ public final class CreateEndpointDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(", dedicatedAiClusterId=").append(String.valueOf(this.dedicatedAiClusterId));
+        sb.append(", generativeAiPrivateEndpointId=")
+                .append(String.valueOf(this.generativeAiPrivateEndpointId));
         sb.append(", contentModerationConfig=")
                 .append(String.valueOf(this.contentModerationConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -412,6 +449,8 @@ public final class CreateEndpointDetails
                 && java.util.Objects.equals(this.modelId, other.modelId)
                 && java.util.Objects.equals(this.dedicatedAiClusterId, other.dedicatedAiClusterId)
                 && java.util.Objects.equals(
+                        this.generativeAiPrivateEndpointId, other.generativeAiPrivateEndpointId)
+                && java.util.Objects.equals(
                         this.contentModerationConfig, other.contentModerationConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -433,6 +472,11 @@ public final class CreateEndpointDetails
                         + (this.dedicatedAiClusterId == null
                                 ? 43
                                 : this.dedicatedAiClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.generativeAiPrivateEndpointId == null
+                                ? 43
+                                : this.generativeAiPrivateEndpointId.hashCode());
         result =
                 (result * PRIME)
                         + (this.contentModerationConfig == null

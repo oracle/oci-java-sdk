@@ -118,6 +118,25 @@ public interface GenerativeAi extends AutoCloseable {
             ChangeEndpointCompartmentRequest request);
 
     /**
+     * Moves a Generative AI private endpoint into a different compartment. When provided, If-Match
+     * is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ChangeGenerativeAiPrivateEndpointCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeGenerativeAiPrivateEndpointCompartment API.
+     */
+    ChangeGenerativeAiPrivateEndpointCompartmentResponse
+            changeGenerativeAiPrivateEndpointCompartment(
+                    ChangeGenerativeAiPrivateEndpointCompartmentRequest request);
+
+    /**
      * Moves a custom model into a different compartment. For information about moving resources
      * between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -169,6 +188,23 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEndpoint API.
      */
     CreateEndpointResponse createEndpoint(CreateEndpointRequest request);
+
+    /**
+     * Creates a Generative AI private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateGenerativeAiPrivateEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateGenerativeAiPrivateEndpoint API.
+     */
+    CreateGenerativeAiPrivateEndpointResponse createGenerativeAiPrivateEndpoint(
+            CreateGenerativeAiPrivateEndpointRequest request);
 
     /**
      * Creates a custom model by fine-tuning a base model with your own dataset. You can create a
@@ -227,6 +263,23 @@ public interface GenerativeAi extends AutoCloseable {
     DeleteEndpointResponse deleteEndpoint(DeleteEndpointRequest request);
 
     /**
+     * Deletes a Generative AI private endpoint using `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteGenerativeAiPrivateEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteGenerativeAiPrivateEndpoint API.
+     */
+    DeleteGenerativeAiPrivateEndpointResponse deleteGenerativeAiPrivateEndpoint(
+            DeleteGenerativeAiPrivateEndpointRequest request);
+
+    /**
      * Deletes a custom model. A model shouldn't be deleted if there's one or more active endpoints
      * associated with that model.
      *
@@ -272,6 +325,23 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEndpoint API.
      */
     GetEndpointResponse getEndpoint(GetEndpointRequest request);
+
+    /**
+     * Retrieves an Generative AI private endpoint using a `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetGenerativeAiPrivateEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetGenerativeAiPrivateEndpoint API.
+     */
+    GetGenerativeAiPrivateEndpointResponse getGenerativeAiPrivateEndpoint(
+            GetGenerativeAiPrivateEndpointRequest request);
 
     /**
      * Gets information about a custom model.
@@ -333,6 +403,23 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEndpoints API.
      */
     ListEndpointsResponse listEndpoints(ListEndpointsRequest request);
+
+    /**
+     * Lists all Generative AI private endpoints in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListGenerativeAiPrivateEndpointsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListGenerativeAiPrivateEndpoints API.
+     */
+    ListGenerativeAiPrivateEndpointsResponse listGenerativeAiPrivateEndpoints(
+            ListGenerativeAiPrivateEndpointsRequest request);
 
     /**
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned
@@ -429,6 +516,23 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEndpoint API.
      */
     UpdateEndpointResponse updateEndpoint(UpdateEndpointRequest request);
+
+    /**
+     * Updates a Generative AI private endpoint using a `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateGenerativeAiPrivateEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateGenerativeAiPrivateEndpoint API.
+     */
+    UpdateGenerativeAiPrivateEndpointResponse updateGenerativeAiPrivateEndpoint(
+            UpdateGenerativeAiPrivateEndpointRequest request);
 
     /**
      * Updates the properties of a custom model such as name, description, version, freeform tags,

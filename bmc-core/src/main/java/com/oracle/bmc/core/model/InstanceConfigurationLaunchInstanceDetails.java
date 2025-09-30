@@ -29,6 +29,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
+        "isAIEnterpriseEnabled",
         "capacityReservationId",
         "placementConstraintDetails",
         "computeClusterId",
@@ -60,6 +61,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
     })
     public InstanceConfigurationLaunchInstanceDetails(
             String availabilityDomain,
+            Boolean isAIEnterpriseEnabled,
             String capacityReservationId,
             InstanceConfigurationPlacementConstraintDetails placementConstraintDetails,
             String computeClusterId,
@@ -90,6 +92,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
             java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
         super();
         this.availabilityDomain = availabilityDomain;
+        this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
         this.capacityReservationId = capacityReservationId;
         this.placementConstraintDetails = placementConstraintDetails;
         this.computeClusterId = computeClusterId;
@@ -141,6 +144,21 @@ public final class InstanceConfigurationLaunchInstanceDetails
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /** Whether to enable AI enterprise on the instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+        private Boolean isAIEnterpriseEnabled;
+
+        /**
+         * Whether to enable AI enterprise on the instance.
+         *
+         * @param isAIEnterpriseEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAIEnterpriseEnabled(Boolean isAIEnterpriseEnabled) {
+            this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
+            this.__explicitlySet__.add("isAIEnterpriseEnabled");
             return this;
         }
         /** The OCID of the compute capacity reservation this instance is launched under. */
@@ -793,6 +811,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
             InstanceConfigurationLaunchInstanceDetails model =
                     new InstanceConfigurationLaunchInstanceDetails(
                             this.availabilityDomain,
+                            this.isAIEnterpriseEnabled,
                             this.capacityReservationId,
                             this.placementConstraintDetails,
                             this.computeClusterId,
@@ -831,6 +850,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
         public Builder copy(InstanceConfigurationLaunchInstanceDetails model) {
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("isAIEnterpriseEnabled")) {
+                this.isAIEnterpriseEnabled(model.getIsAIEnterpriseEnabled());
             }
             if (model.wasPropertyExplicitlySet("capacityReservationId")) {
                 this.capacityReservationId(model.getCapacityReservationId());
@@ -946,6 +968,19 @@ public final class InstanceConfigurationLaunchInstanceDetails
      */
     public String getAvailabilityDomain() {
         return availabilityDomain;
+    }
+
+    /** Whether to enable AI enterprise on the instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+    private final Boolean isAIEnterpriseEnabled;
+
+    /**
+     * Whether to enable AI enterprise on the instance.
+     *
+     * @return the value
+     */
+    public Boolean getIsAIEnterpriseEnabled() {
+        return isAIEnterpriseEnabled;
     }
 
     /** The OCID of the compute capacity reservation this instance is launched under. */
@@ -1636,6 +1671,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         sb.append("InstanceConfigurationLaunchInstanceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", isAIEnterpriseEnabled=").append(String.valueOf(this.isAIEnterpriseEnabled));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", placementConstraintDetails=")
                 .append(String.valueOf(this.placementConstraintDetails));
@@ -1685,6 +1721,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         InstanceConfigurationLaunchInstanceDetails other =
                 (InstanceConfigurationLaunchInstanceDetails) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.isAIEnterpriseEnabled, other.isAIEnterpriseEnabled)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(
                         this.placementConstraintDetails, other.placementConstraintDetails)
@@ -1730,6 +1767,11 @@ public final class InstanceConfigurationLaunchInstanceDetails
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAIEnterpriseEnabled == null
+                                ? 43
+                                : this.isAIEnterpriseEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.capacityReservationId == null

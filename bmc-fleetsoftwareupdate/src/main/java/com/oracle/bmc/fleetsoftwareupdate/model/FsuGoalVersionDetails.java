@@ -23,6 +23,9 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
         defaultImpl = FsuGoalVersionDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExadbStackFsuGoalVersionDetails.class,
+            name = "EXADB_STACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VersionFsuTargetDetails.class,
             name = "VERSION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -189,10 +192,11 @@ public class FsuGoalVersionDetails
         return result;
     }
 
-    /** Type of goal target version specified */
+    /** Type of goal version specified */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Version("VERSION"),
         ImageId("IMAGE_ID"),
+        ExadbStack("EXADB_STACK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

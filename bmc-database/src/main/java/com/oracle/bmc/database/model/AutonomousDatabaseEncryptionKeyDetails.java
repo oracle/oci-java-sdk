@@ -28,6 +28,7 @@ package com.oracle.bmc.database.model;
             name = "AZURE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AwsKeyDetails.class, name = "AWS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = OciKeyDetails.class, name = "OCI"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GcpKeyDetails.class, name = "GCP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OracleManagedKeyDetails.class,
             name = "ORACLE_MANAGED")

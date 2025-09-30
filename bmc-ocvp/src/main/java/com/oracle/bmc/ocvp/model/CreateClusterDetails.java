@@ -37,6 +37,7 @@ public final class CreateClusterDetails
         "isShieldedInstanceEnabled",
         "capacityReservationId",
         "datastores",
+        "datastoreClusterIds",
         "vmwareSoftwareVersion",
         "esxiSoftwareVersion",
         "freeformTags",
@@ -56,6 +57,7 @@ public final class CreateClusterDetails
             Boolean isShieldedInstanceEnabled,
             String capacityReservationId,
             java.util.List<DatastoreInfo> datastores,
+            java.util.List<String> datastoreClusterIds,
             String vmwareSoftwareVersion,
             String esxiSoftwareVersion,
             java.util.Map<String, String> freeformTags,
@@ -74,6 +76,7 @@ public final class CreateClusterDetails
         this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
         this.capacityReservationId = capacityReservationId;
         this.datastores = datastores;
+        this.datastoreClusterIds = datastoreClusterIds;
         this.vmwareSoftwareVersion = vmwareSoftwareVersion;
         this.esxiSoftwareVersion = esxiSoftwareVersion;
         this.freeformTags = freeformTags;
@@ -121,7 +124,7 @@ public final class CreateClusterDetails
             return this;
         }
         /**
-         * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
+         * A descriptive name for the Cluster. Cluster name requirements are 1-22 character length
          * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
          * hyphens, Must be unique within the region. Avoid entering confidential information.
          */
@@ -129,7 +132,7 @@ public final class CreateClusterDetails
         private String displayName;
 
         /**
-         * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
+         * A descriptive name for the Cluster. Cluster name requirements are 1-22 character length
          * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
          * hyphens, Must be unique within the region. Avoid entering confidential information.
          *
@@ -329,6 +332,21 @@ public final class CreateClusterDetails
             this.__explicitlySet__.add("datastores");
             return this;
         }
+        /** A list of datastore clusters. */
+        @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+        private java.util.List<String> datastoreClusterIds;
+
+        /**
+         * A list of datastore clusters.
+         *
+         * @param datastoreClusterIds the value to set
+         * @return this builder
+         */
+        public Builder datastoreClusterIds(java.util.List<String> datastoreClusterIds) {
+            this.datastoreClusterIds = datastoreClusterIds;
+            this.__explicitlySet__.add("datastoreClusterIds");
+            return this;
+        }
         /**
          * The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of
          * the available versions, use {@link
@@ -448,6 +466,7 @@ public final class CreateClusterDetails
                             this.isShieldedInstanceEnabled,
                             this.capacityReservationId,
                             this.datastores,
+                            this.datastoreClusterIds,
                             this.vmwareSoftwareVersion,
                             this.esxiSoftwareVersion,
                             this.freeformTags,
@@ -498,6 +517,9 @@ public final class CreateClusterDetails
             }
             if (model.wasPropertyExplicitlySet("datastores")) {
                 this.datastores(model.getDatastores());
+            }
+            if (model.wasPropertyExplicitlySet("datastoreClusterIds")) {
+                this.datastoreClusterIds(model.getDatastoreClusterIds());
             }
             if (model.wasPropertyExplicitlySet("vmwareSoftwareVersion")) {
                 this.vmwareSoftwareVersion(model.getVmwareSoftwareVersion());
@@ -559,7 +581,7 @@ public final class CreateClusterDetails
     }
 
     /**
-     * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
+     * A descriptive name for the Cluster. Cluster name requirements are 1-22 character length
      * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
      * hyphens, Must be unique within the region. Avoid entering confidential information.
      */
@@ -567,7 +589,7 @@ public final class CreateClusterDetails
     private final String displayName;
 
     /**
-     * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
+     * A descriptive name for the Cluster. Cluster name requirements are 1-22 character length
      * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
      * hyphens, Must be unique within the region. Avoid entering confidential information.
      *
@@ -745,6 +767,19 @@ public final class CreateClusterDetails
         return datastores;
     }
 
+    /** A list of datastore clusters. */
+    @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+    private final java.util.List<String> datastoreClusterIds;
+
+    /**
+     * A list of datastore clusters.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDatastoreClusterIds() {
+        return datastoreClusterIds;
+    }
+
     /**
      * The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the
      * available versions, use {@link
@@ -866,6 +901,7 @@ public final class CreateClusterDetails
                 .append(String.valueOf(this.isShieldedInstanceEnabled));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", datastores=").append(String.valueOf(this.datastores));
+        sb.append(", datastoreClusterIds=").append(String.valueOf(this.datastoreClusterIds));
         sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
         sb.append(", esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -900,6 +936,7 @@ public final class CreateClusterDetails
                         this.isShieldedInstanceEnabled, other.isShieldedInstanceEnabled)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.datastores, other.datastores)
+                && java.util.Objects.equals(this.datastoreClusterIds, other.datastoreClusterIds)
                 && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
                 && java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -960,6 +997,11 @@ public final class CreateClusterDetails
                                 ? 43
                                 : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.datastores == null ? 43 : this.datastores.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.datastoreClusterIds == null
+                                ? 43
+                                : this.datastoreClusterIds.hashCode());
         result =
                 (result * PRIME)
                         + (this.vmwareSoftwareVersion == null

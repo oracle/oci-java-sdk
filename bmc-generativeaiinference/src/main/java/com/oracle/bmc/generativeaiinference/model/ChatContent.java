@@ -22,7 +22,9 @@ package com.oracle.bmc.generativeaiinference.model;
         property = "type",
         defaultImpl = ChatContent.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VideoContent.class, name = "VIDEO"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ImageContent.class, name = "IMAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AudioContent.class, name = "AUDIO"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = TextContent.class, name = "TEXT")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(

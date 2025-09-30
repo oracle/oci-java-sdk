@@ -52,12 +52,12 @@ public final class CloneFsuCycleDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Exadata Fleet Update Cycle display name. */
+        /** The user-friendly name for the Exadata Fleet Update Cycle. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Exadata Fleet Update Cycle display name.
+         * The user-friendly name for the Exadata Fleet Update Cycle.
          *
          * @param displayName the value to set
          * @return this builder
@@ -67,12 +67,16 @@ public final class CloneFsuCycleDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -83,17 +87,19 @@ public final class CloneFsuCycleDetails
             return this;
         }
         /**
-         * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
-         * If not specified, it will be assigned to the same Collection as the source Exadata Fleet
-         * Update Cycle.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle
+         * being created. If not specified, the cloned Exadata Fleet Update Cycle will be assigned
+         * to the same Exadata Fleet Update Collection as the source Exadata Fleet Update Cycle.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
         private String fsuCollectionId;
 
         /**
-         * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
-         * If not specified, it will be assigned to the same Collection as the source Exadata Fleet
-         * Update Cycle.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle
+         * being created. If not specified, the cloned Exadata Fleet Update Cycle will be assigned
+         * to the same Exadata Fleet Update Collection as the source Exadata Fleet Update Cycle.
          *
          * @param fsuCollectionId the value to set
          * @return this builder
@@ -195,12 +201,12 @@ public final class CloneFsuCycleDetails
         return new Builder().copy(this);
     }
 
-    /** Exadata Fleet Update Cycle display name. */
+    /** The user-friendly name for the Exadata Fleet Update Cycle. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Exadata Fleet Update Cycle display name.
+     * The user-friendly name for the Exadata Fleet Update Cycle.
      *
      * @return the value
      */
@@ -208,12 +214,16 @@ public final class CloneFsuCycleDetails
         return displayName;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compartment.
      *
      * @return the value
      */
@@ -222,17 +232,19 @@ public final class CloneFsuCycleDetails
     }
 
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to. If
-     * not specified, it will be assigned to the same Collection as the source Exadata Fleet Update
-     * Cycle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being
+     * created. If not specified, the cloned Exadata Fleet Update Cycle will be assigned to the same
+     * Exadata Fleet Update Collection as the source Exadata Fleet Update Cycle.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
     private final String fsuCollectionId;
 
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to. If
-     * not specified, it will be assigned to the same Collection as the source Exadata Fleet Update
-     * Cycle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being
+     * created. If not specified, the cloned Exadata Fleet Update Cycle will be assigned to the same
+     * Exadata Fleet Update Collection as the source Exadata Fleet Update Cycle.
      *
      * @return the value
      */

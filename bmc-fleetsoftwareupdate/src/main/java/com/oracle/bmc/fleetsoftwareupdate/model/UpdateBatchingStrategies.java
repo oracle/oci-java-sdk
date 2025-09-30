@@ -4,10 +4,7 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/**
- * Possible Batching Strategy types to specify during an update Exadata Fleet Update Cycle
- * operation.
- */
+/** Possible strategies for rolling or non-rolling update. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 public enum UpdateBatchingStrategies implements com.oracle.bmc.http.internal.BmcEnum {
     Sequential("SEQUENTIAL"),

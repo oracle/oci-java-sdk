@@ -48,6 +48,7 @@ public final class EsxiHostSummary
         "swapBillingHostId",
         "isBillingContinuationInProgress",
         "isBillingSwappingInProgress",
+        "datastoreClusterIds",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -78,6 +79,7 @@ public final class EsxiHostSummary
             String swapBillingHostId,
             Boolean isBillingContinuationInProgress,
             Boolean isBillingSwappingInProgress,
+            java.util.List<String> datastoreClusterIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -107,6 +109,7 @@ public final class EsxiHostSummary
         this.swapBillingHostId = swapBillingHostId;
         this.isBillingContinuationInProgress = isBillingContinuationInProgress;
         this.isBillingSwappingInProgress = isBillingSwappingInProgress;
+        this.datastoreClusterIds = datastoreClusterIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -585,6 +588,21 @@ public final class EsxiHostSummary
             this.__explicitlySet__.add("isBillingSwappingInProgress");
             return this;
         }
+        /** A list of datastore clusters. */
+        @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+        private java.util.List<String> datastoreClusterIds;
+
+        /**
+         * A list of datastore clusters.
+         *
+         * @param datastoreClusterIds the value to set
+         * @return this builder
+         */
+        public Builder datastoreClusterIds(java.util.List<String> datastoreClusterIds) {
+            this.datastoreClusterIds = datastoreClusterIds;
+            this.__explicitlySet__.add("datastoreClusterIds");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -687,6 +705,7 @@ public final class EsxiHostSummary
                             this.swapBillingHostId,
                             this.isBillingContinuationInProgress,
                             this.isBillingSwappingInProgress,
+                            this.datastoreClusterIds,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -772,6 +791,9 @@ public final class EsxiHostSummary
             }
             if (model.wasPropertyExplicitlySet("isBillingSwappingInProgress")) {
                 this.isBillingSwappingInProgress(model.getIsBillingSwappingInProgress());
+            }
+            if (model.wasPropertyExplicitlySet("datastoreClusterIds")) {
+                this.datastoreClusterIds(model.getDatastoreClusterIds());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1214,6 +1236,19 @@ public final class EsxiHostSummary
         return isBillingSwappingInProgress;
     }
 
+    /** A list of datastore clusters. */
+    @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+    private final java.util.List<String> datastoreClusterIds;
+
+    /**
+     * A list of datastore clusters.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDatastoreClusterIds() {
+        return datastoreClusterIds;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -1321,6 +1356,7 @@ public final class EsxiHostSummary
                 .append(String.valueOf(this.isBillingContinuationInProgress));
         sb.append(", isBillingSwappingInProgress=")
                 .append(String.valueOf(this.isBillingSwappingInProgress));
+        sb.append(", datastoreClusterIds=").append(String.valueOf(this.datastoreClusterIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1368,6 +1404,7 @@ public final class EsxiHostSummary
                         this.isBillingContinuationInProgress, other.isBillingContinuationInProgress)
                 && java.util.Objects.equals(
                         this.isBillingSwappingInProgress, other.isBillingSwappingInProgress)
+                && java.util.Objects.equals(this.datastoreClusterIds, other.datastoreClusterIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1461,6 +1498,11 @@ public final class EsxiHostSummary
                         + (this.isBillingSwappingInProgress == null
                                 ? 43
                                 : this.isBillingSwappingInProgress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.datastoreClusterIds == null
+                                ? 43
+                                : this.datastoreClusterIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

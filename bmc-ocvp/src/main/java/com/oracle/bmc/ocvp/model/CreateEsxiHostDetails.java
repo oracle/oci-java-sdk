@@ -88,7 +88,7 @@ public final class CreateEsxiHostDetails
         }
         /**
          * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are
-         * 1-16 character length limit, Must start with a letter, Must be English letters, numbers,
+         * 1-25 character length limit, Must start with a letter, Must be English letters, numbers,
          * - only, No repeating hyphens, Must be unique within the Cluster.
          *
          * <p>If this attribute is not specified, the Cluster's {@code instanceDisplayNamePrefix}
@@ -103,7 +103,7 @@ public final class CreateEsxiHostDetails
 
         /**
          * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are
-         * 1-16 character length limit, Must start with a letter, Must be English letters, numbers,
+         * 1-25 character length limit, Must start with a letter, Must be English letters, numbers,
          * - only, No repeating hyphens, Must be unique within the Cluster.
          *
          * <p>If this attribute is not specified, the Cluster's {@code instanceDisplayNamePrefix}
@@ -428,7 +428,7 @@ public final class CreateEsxiHostDetails
     }
 
     /**
-     * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16
+     * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25
      * character length limit, Must start with a letter, Must be English letters, numbers, - only,
      * No repeating hyphens, Must be unique within the Cluster.
      *
@@ -443,7 +443,7 @@ public final class CreateEsxiHostDetails
     private final String displayName;
 
     /**
-     * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16
+     * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25
      * character length limit, Must start with a letter, Must be English letters, numbers, - only,
      * No repeating hyphens, Must be unique within the Cluster.
      *

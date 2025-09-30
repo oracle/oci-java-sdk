@@ -47,6 +47,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         "capacityReservationId",
         "compartmentId",
         "placementConstraintDetails",
+        "isAIEnterpriseEnabled",
         "clusterPlacementGroupId",
         "dedicatedVmHostId",
         "definedTags",
@@ -84,6 +85,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             String capacityReservationId,
             String compartmentId,
             PlacementConstraintDetails placementConstraintDetails,
+            Boolean isAIEnterpriseEnabled,
             String clusterPlacementGroupId,
             String dedicatedVmHostId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -120,6 +122,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         this.capacityReservationId = capacityReservationId;
         this.compartmentId = compartmentId;
         this.placementConstraintDetails = placementConstraintDetails;
+        this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.dedicatedVmHostId = dedicatedVmHostId;
         this.definedTags = definedTags;
@@ -222,6 +225,21 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 PlacementConstraintDetails placementConstraintDetails) {
             this.placementConstraintDetails = placementConstraintDetails;
             this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
+        /** Whether AI enterprise is enabled on the instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+        private Boolean isAIEnterpriseEnabled;
+
+        /**
+         * Whether AI enterprise is enabled on the instance.
+         *
+         * @param isAIEnterpriseEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAIEnterpriseEnabled(Boolean isAIEnterpriseEnabled) {
+            this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
+            this.__explicitlySet__.add("isAIEnterpriseEnabled");
             return this;
         }
         /** The OCID of the cluster placement group of the instance. */
@@ -837,6 +855,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                             this.capacityReservationId,
                             this.compartmentId,
                             this.placementConstraintDetails,
+                            this.isAIEnterpriseEnabled,
                             this.clusterPlacementGroupId,
                             this.dedicatedVmHostId,
                             this.definedTags,
@@ -887,6 +906,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
                 this.placementConstraintDetails(model.getPlacementConstraintDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAIEnterpriseEnabled")) {
+                this.isAIEnterpriseEnabled(model.getIsAIEnterpriseEnabled());
             }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
@@ -1052,6 +1074,19 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
 
     public PlacementConstraintDetails getPlacementConstraintDetails() {
         return placementConstraintDetails;
+    }
+
+    /** Whether AI enterprise is enabled on the instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+    private final Boolean isAIEnterpriseEnabled;
+
+    /**
+     * Whether AI enterprise is enabled on the instance.
+     *
+     * @return the value
+     */
+    public Boolean getIsAIEnterpriseEnabled() {
+        return isAIEnterpriseEnabled;
     }
 
     /** The OCID of the cluster placement group of the instance. */
@@ -1762,6 +1797,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", placementConstraintDetails=")
                 .append(String.valueOf(this.placementConstraintDetails));
+        sb.append(", isAIEnterpriseEnabled=").append(String.valueOf(this.isAIEnterpriseEnabled));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
@@ -1817,6 +1853,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.placementConstraintDetails, other.placementConstraintDetails)
+                && java.util.Objects.equals(this.isAIEnterpriseEnabled, other.isAIEnterpriseEnabled)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
@@ -1878,6 +1915,11 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.placementConstraintDetails == null
                                 ? 43
                                 : this.placementConstraintDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAIEnterpriseEnabled == null
+                                ? 43
+                                : this.isAIEnterpriseEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterPlacementGroupId == null

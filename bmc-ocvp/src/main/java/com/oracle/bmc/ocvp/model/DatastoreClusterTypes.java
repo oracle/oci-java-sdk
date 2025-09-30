@@ -9,7 +9,15 @@ package com.oracle.bmc.ocvp.model;
 public enum DatastoreClusterTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Management("MANAGEMENT"),
     Workload("WORKLOAD"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DatastoreClusterTypes.class);
 
     private final String value;
     private static java.util.Map<String, DatastoreClusterTypes> map;
@@ -17,7 +25,9 @@ public enum DatastoreClusterTypes implements com.oracle.bmc.http.internal.BmcEnu
     static {
         map = new java.util.HashMap<>();
         for (DatastoreClusterTypes v : DatastoreClusterTypes.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -35,6 +45,9 @@ public enum DatastoreClusterTypes implements com.oracle.bmc.http.internal.BmcEnu
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid DatastoreClusterTypes: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'DatastoreClusterTypes', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

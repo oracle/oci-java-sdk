@@ -33,6 +33,12 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     DeleteDatastoreCluster("DELETE_DATASTORE_CLUSTER"),
     AddDatastoreToDatastoreCluster("ADD_DATASTORE_TO_DATASTORE_CLUSTER"),
     RemoveDatastoreFromDatastoreCluster("REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER"),
+    CreateManagementAppliance("CREATE_MANAGEMENT_APPLIANCE"),
+    UpdateManagementAppliance("UPDATE_MANAGEMENT_APPLIANCE"),
+    DeleteManagementAppliance("DELETE_MANAGEMENT_APPLIANCE"),
+    AbandonManagementApplianceJobs("ABANDON_MANAGEMENT_APPLIANCE_JOBS"),
+    ManagementApplianceEsxiHostProvisioning("MANAGEMENT_APPLIANCE_ESXI_HOST_PROVISIONING"),
+    ManagementApplianceDatastoreProvisioning("MANAGEMENT_APPLIANCE_DATASTORE_PROVISIONING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

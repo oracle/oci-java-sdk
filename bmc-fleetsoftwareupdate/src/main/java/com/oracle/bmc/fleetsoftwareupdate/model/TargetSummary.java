@@ -27,7 +27,8 @@ public final class TargetSummary extends com.oracle.bmc.http.client.internal.Exp
         "status",
         "executingFsuJobId",
         "activeFsuCycleId",
-        "progress"
+        "progress",
+        "memberships"
     })
     public TargetSummary(
             TargetDetails target,
@@ -35,7 +36,8 @@ public final class TargetSummary extends com.oracle.bmc.http.client.internal.Exp
             Status status,
             String executingFsuJobId,
             String activeFsuCycleId,
-            TargetProgressSummary progress) {
+            TargetProgressSummary progress,
+            java.util.List<MembershipSummary> memberships) {
         super();
         this.target = target;
         this.currentVersion = currentVersion;
@@ -43,6 +45,7 @@ public final class TargetSummary extends com.oracle.bmc.http.client.internal.Exp
         this.executingFsuJobId = executingFsuJobId;
         this.activeFsuCycleId = activeFsuCycleId;
         this.progress = progress;
+        this.memberships = memberships;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -133,6 +136,21 @@ public final class TargetSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("progress");
             return this;
         }
+        /** List of Exadata Fleet Update Collections containing this target. */
+        @com.fasterxml.jackson.annotation.JsonProperty("memberships")
+        private java.util.List<MembershipSummary> memberships;
+
+        /**
+         * List of Exadata Fleet Update Collections containing this target.
+         *
+         * @param memberships the value to set
+         * @return this builder
+         */
+        public Builder memberships(java.util.List<MembershipSummary> memberships) {
+            this.memberships = memberships;
+            this.__explicitlySet__.add("memberships");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -145,7 +163,8 @@ public final class TargetSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.status,
                             this.executingFsuJobId,
                             this.activeFsuCycleId,
-                            this.progress);
+                            this.progress,
+                            this.memberships);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -171,6 +190,9 @@ public final class TargetSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("progress")) {
                 this.progress(model.getProgress());
+            }
+            if (model.wasPropertyExplicitlySet("memberships")) {
+                this.memberships(model.getMemberships());
             }
             return this;
         }
@@ -305,6 +327,19 @@ public final class TargetSummary extends com.oracle.bmc.http.client.internal.Exp
         return progress;
     }
 
+    /** List of Exadata Fleet Update Collections containing this target. */
+    @com.fasterxml.jackson.annotation.JsonProperty("memberships")
+    private final java.util.List<MembershipSummary> memberships;
+
+    /**
+     * List of Exadata Fleet Update Collections containing this target.
+     *
+     * @return the value
+     */
+    public java.util.List<MembershipSummary> getMemberships() {
+        return memberships;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -326,6 +361,7 @@ public final class TargetSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", executingFsuJobId=").append(String.valueOf(this.executingFsuJobId));
         sb.append(", activeFsuCycleId=").append(String.valueOf(this.activeFsuCycleId));
         sb.append(", progress=").append(String.valueOf(this.progress));
+        sb.append(", memberships=").append(String.valueOf(this.memberships));
         sb.append(")");
         return sb.toString();
     }
@@ -346,6 +382,7 @@ public final class TargetSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.executingFsuJobId, other.executingFsuJobId)
                 && java.util.Objects.equals(this.activeFsuCycleId, other.activeFsuCycleId)
                 && java.util.Objects.equals(this.progress, other.progress)
+                && java.util.Objects.equals(this.memberships, other.memberships)
                 && super.equals(other);
     }
 
@@ -365,6 +402,7 @@ public final class TargetSummary extends com.oracle.bmc.http.client.internal.Exp
                 (result * PRIME)
                         + (this.activeFsuCycleId == null ? 43 : this.activeFsuCycleId.hashCode());
         result = (result * PRIME) + (this.progress == null ? 43 : this.progress.hashCode());
+        result = (result * PRIME) + (this.memberships == null ? 43 : this.memberships.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

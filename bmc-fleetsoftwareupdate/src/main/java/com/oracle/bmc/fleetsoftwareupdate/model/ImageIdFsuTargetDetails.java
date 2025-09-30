@@ -47,12 +47,16 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
             this.__explicitlySet__.add("newHomePrefix");
             return this;
         }
-        /** Target database software image OCID. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * goal database software image.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareImageId")
         private String softwareImageId;
 
         /**
-         * Target database software image OCID.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * goal database software image.
          *
          * @param softwareImageId the value to set
          * @return this builder
@@ -107,12 +111,16 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
         this.softwareImageId = softwareImageId;
     }
 
-    /** Target database software image OCID. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal
+     * database software image.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareImageId")
     private final String softwareImageId;
 
     /**
-     * Target database software image OCID.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal
+     * database software image.
      *
      * @return the value
      */

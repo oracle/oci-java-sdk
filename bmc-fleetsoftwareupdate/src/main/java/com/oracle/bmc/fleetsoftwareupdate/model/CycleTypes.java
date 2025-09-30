@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible Exadata Fleet Update Cycle types to specify. */
+/** Possible Exadata Fleet Update Cycle types. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 public enum CycleTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Patch("PATCH"),
