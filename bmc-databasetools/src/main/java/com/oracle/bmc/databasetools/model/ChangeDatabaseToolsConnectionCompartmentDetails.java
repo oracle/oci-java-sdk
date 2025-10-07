@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Contains the details for the compartment to move the {@code DatabaseToolsConnection} to. <br>
+ * Contains the details for the compartment to move the Database Tools connection to. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,14 +33,14 @@ public final class ChangeDatabaseToolsConnectionCompartmentDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment to move the {@code DatabaseToolsConnection} to.
+         * compartment to move the Database Tools connection to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment to move the {@code DatabaseToolsConnection} to.
+         * compartment to move the Database Tools connection to.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -83,14 +83,14 @@ public final class ChangeDatabaseToolsConnectionCompartmentDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment to move the {@code DatabaseToolsConnection} to.
+     * compartment to move the Database Tools connection to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment to move the {@code DatabaseToolsConnection} to.
+     * compartment to move the Database Tools connection to.
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * DatabaseToolsConnectionSummary of a PostgreSQL Server. <br>
+ * Database Tools connection summary of a PostgreSQL Server. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -159,12 +159,12 @@ public final class DatabaseToolsConnectionPostgresqlSummary extends DatabaseTool
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-        /** The user name. */
+        /** The database user name. */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
-         * The user name.
+         * The database user name.
          *
          * @param userName the value to set
          * @return this builder
@@ -219,14 +219,14 @@ public final class DatabaseToolsConnectionPostgresqlSummary extends DatabaseTool
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+         * Database Tools private endpoint used to access the database in the customer VCN.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+         * Database Tools private endpoint used to access the database in the customer VCN.
          *
          * @param privateEndpointId the value to set
          * @return this builder
@@ -403,12 +403,12 @@ public final class DatabaseToolsConnectionPostgresqlSummary extends DatabaseTool
         return connectionString;
     }
 
-    /** The user name. */
+    /** The database user name. */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
-     * The user name.
+     * The database user name.
      *
      * @return the value
      */
@@ -455,14 +455,14 @@ public final class DatabaseToolsConnectionPostgresqlSummary extends DatabaseTool
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+     * Database Tools private endpoint used to access the database in the customer VCN.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+     * Database Tools private endpoint used to access the database in the customer VCN.
      *
      * @return the value
      */

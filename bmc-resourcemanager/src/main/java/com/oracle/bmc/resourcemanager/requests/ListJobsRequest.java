@@ -68,16 +68,12 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     /**
      * A filter that returns all resources that match the specified lifecycle state. The state value
      * is case-insensitive.
-     *
-     * <p>Allowable values: - ACCEPTED - IN_PROGRESS - FAILED - SUCCEEDED - CANCELING - CANCELED
      */
     private com.oracle.bmc.resourcemanager.model.Job.LifecycleState lifecycleState;
 
     /**
      * A filter that returns all resources that match the specified lifecycle state. The state value
      * is case-insensitive.
-     *
-     * <p>Allowable values: - ACCEPTED - IN_PROGRESS - FAILED - SUCCEEDED - CANCELING - CANCELED
      */
     public com.oracle.bmc.resourcemanager.model.Job.LifecycleState getLifecycleState() {
         return lifecycleState;
@@ -311,16 +307,12 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * A filter that returns all resources that match the specified lifecycle state. The state
          * value is case-insensitive.
-         *
-         * <p>Allowable values: - ACCEPTED - IN_PROGRESS - FAILED - SUCCEEDED - CANCELING - CANCELED
          */
         private com.oracle.bmc.resourcemanager.model.Job.LifecycleState lifecycleState = null;
 
         /**
          * A filter that returns all resources that match the specified lifecycle state. The state
          * value is case-insensitive.
-         *
-         * <p>Allowable values: - ACCEPTED - IN_PROGRESS - FAILED - SUCCEEDED - CANCELING - CANCELED
          *
          * @param lifecycleState the value to set
          * @return this builder instance

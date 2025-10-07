@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Description of the Database Tools connection. <br>
+ * Provides connectivity details required to establish a connection to a database. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -176,12 +176,12 @@ public class DatabaseToolsConnection
         return timeCreated;
     }
 
-    /** The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string. */
+    /** The time the Database Tools connection was updated. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      *
      * @return the value
      */

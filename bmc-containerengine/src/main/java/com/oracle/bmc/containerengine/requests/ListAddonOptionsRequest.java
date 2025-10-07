@@ -120,6 +120,13 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
     public SortBy getSortBy() {
         return sortBy;
     }
+    /** Whether to show all add-on versions */
+    private Boolean shouldShowAllVersions;
+
+    /** Whether to show all add-on versions */
+    public Boolean getShouldShowAllVersions() {
+        return shouldShowAllVersions;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -243,6 +250,20 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** Whether to show all add-on versions */
+        private Boolean shouldShowAllVersions = null;
+
+        /**
+         * Whether to show all add-on versions
+         *
+         * @param shouldShowAllVersions the value to set
+         * @return this builder instance
+         */
+        public Builder shouldShowAllVersions(Boolean shouldShowAllVersions) {
+            this.shouldShowAllVersions = shouldShowAllVersions;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -280,6 +301,7 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            shouldShowAllVersions(o.getShouldShowAllVersions());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -321,9 +343,10 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.shouldShowAllVersions = shouldShowAllVersions;
             return request;
             // new ListAddonOptionsRequest(kubernetesVersion, addonName, opcRequestId, limit, page,
-            // sortOrder, sortBy);
+            // sortOrder, sortBy, shouldShowAllVersions);
         }
     }
 
@@ -340,7 +363,8 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
-                .sortBy(sortBy);
+                .sortBy(sortBy)
+                .shouldShowAllVersions(shouldShowAllVersions);
     }
 
     /**
@@ -364,6 +388,7 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",shouldShowAllVersions=").append(String.valueOf(this.shouldShowAllVersions));
         sb.append(")");
         return sb.toString();
     }
@@ -385,7 +410,9 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.sortBy, other.sortBy);
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(
+                        this.shouldShowAllVersions, other.shouldShowAllVersions);
     }
 
     @Override
@@ -401,6 +428,11 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldShowAllVersions == null
+                                ? 43
+                                : this.shouldShowAllVersions.hashCode());
         return result;
     }
 }

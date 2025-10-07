@@ -135,6 +135,34 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** The Kafka (e.g. Confluent) Schema Registry technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private KafkaSchemaRegistryConnection.TechnologyType technologyType;
@@ -506,6 +534,9 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.url,
                             this.authenticationType,
@@ -566,6 +597,15 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -645,6 +685,9 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             KafkaSchemaRegistryConnection.TechnologyType technologyType,
             String url,
             KafkaSchemaRegistryConnection.AuthenticationType authenticationType,
@@ -674,7 +717,10 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.url = url;
         this.authenticationType = authenticationType;

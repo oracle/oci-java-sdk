@@ -310,6 +310,7 @@ public class OpensearchClusterAsyncClient extends com.oracle.bmc.http.internal.B
                                     ListOpensearchClusterShapesRequest,
                                     ListOpensearchClusterShapesResponse>
                             handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListOpensearchClusterShapesResponse::builder)
                 .logger(LOG, "listOpensearchClusterShapes")
@@ -321,6 +322,7 @@ public class OpensearchClusterAsyncClient extends com.oracle.bmc.http.internal.B
                 .requestBuilder(ListOpensearchClusterShapesRequest::builder)
                 .basePath("/20180828")
                 .appendPathParam("shapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .handleBody(
                         com.oracle.bmc.opensearch.model.ShapesDetails.class,

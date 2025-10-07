@@ -36,6 +36,7 @@ public final class IntegrationInstance
         "freeformTags",
         "definedTags",
         "systemTags",
+        "securityAttributes",
         "isByol",
         "instanceUrl",
         "instanceDesignTimeUrl",
@@ -67,6 +68,7 @@ public final class IntegrationInstance
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             Boolean isByol,
             String instanceUrl,
             String instanceDesignTimeUrl,
@@ -97,6 +99,7 @@ public final class IntegrationInstance
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.securityAttributes = securityAttributes;
         this.isByol = isByol;
         this.instanceUrl = instanceUrl;
         this.instanceDesignTimeUrl = instanceDesignTimeUrl;
@@ -165,14 +168,14 @@ public final class IntegrationInstance
         }
         /**
          * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and
-         * STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         * STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
          */
         @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
         private IntegrationInstanceType integrationInstanceType;
 
         /**
          * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and
-         * STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         * STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
          *
          * @param integrationInstanceType the value to set
          * @return this builder
@@ -319,6 +322,34 @@ public final class IntegrationInstance
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /** Bring your own license. */
@@ -567,6 +598,7 @@ public final class IntegrationInstance
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.securityAttributes,
                             this.isByol,
                             this.instanceUrl,
                             this.instanceDesignTimeUrl,
@@ -627,6 +659,9 @@ public final class IntegrationInstance
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("isByol")) {
                 this.isByol(model.getIsByol());
@@ -734,7 +769,7 @@ public final class IntegrationInstance
 
     /**
      * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
-     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
      */
     public enum IntegrationInstanceType implements com.oracle.bmc.http.internal.BmcEnum {
         Standard("STANDARD"),
@@ -786,14 +821,14 @@ public final class IntegrationInstance
     };
     /**
      * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
-     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
      */
     @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
     private final IntegrationInstanceType integrationInstanceType;
 
     /**
      * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
-     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
      *
      * @return the value
      */
@@ -970,6 +1005,29 @@ public final class IntegrationInstance
      */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
+    }
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /** Bring your own license. */
@@ -1330,6 +1388,7 @@ public final class IntegrationInstance
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", isByol=").append(String.valueOf(this.isByol));
         sb.append(", instanceUrl=").append(String.valueOf(this.instanceUrl));
         sb.append(", instanceDesignTimeUrl=").append(String.valueOf(this.instanceDesignTimeUrl));
@@ -1378,6 +1437,7 @@ public final class IntegrationInstance
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.isByol, other.isByol)
                 && java.util.Objects.equals(this.instanceUrl, other.instanceUrl)
                 && java.util.Objects.equals(this.instanceDesignTimeUrl, other.instanceDesignTimeUrl)
@@ -1431,6 +1491,11 @@ public final class IntegrationInstance
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.isByol == null ? 43 : this.isByol.hashCode());
         result = (result * PRIME) + (this.instanceUrl == null ? 43 : this.instanceUrl.hashCode());
         result =

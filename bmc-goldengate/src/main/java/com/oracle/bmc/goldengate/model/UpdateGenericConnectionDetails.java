@@ -117,6 +117,16 @@ public final class UpdateGenericConnectionDetails extends UpdateConnectionDetail
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * Host and port separated by colon. Example: {@code "server.example.com:1234"}
          *
@@ -157,6 +167,7 @@ public final class UpdateGenericConnectionDetails extends UpdateConnectionDetail
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.host);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -196,6 +207,9 @@ public final class UpdateGenericConnectionDetails extends UpdateConnectionDetail
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("host")) {
                 this.host(model.getHost());
             }
@@ -224,6 +238,7 @@ public final class UpdateGenericConnectionDetails extends UpdateConnectionDetail
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String host) {
         super(
                 displayName,
@@ -235,7 +250,8 @@ public final class UpdateGenericConnectionDetails extends UpdateConnectionDetail
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.host = host;
     }
 

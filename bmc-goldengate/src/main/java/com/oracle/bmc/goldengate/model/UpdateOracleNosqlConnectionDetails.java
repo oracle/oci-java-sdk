@@ -117,6 +117,16 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related OCI tenancy.
@@ -323,6 +333,7 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.tenancyId,
                             this.region,
                             this.userId,
@@ -369,6 +380,9 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("tenancyId")) {
                 this.tenancyId(model.getTenancyId());
@@ -422,6 +436,7 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String tenancyId,
             String region,
             String userId,
@@ -441,7 +456,8 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.tenancyId = tenancyId;
         this.region = region;
         this.userId = userId;

@@ -408,6 +408,43 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public ChangeConnectionSubscriptionResponse changeConnectionSubscription(
+            ChangeConnectionSubscriptionRequest request) {
+        Objects.requireNonNull(
+                request.getChangeConnectionSubscriptionDetails(),
+                "changeConnectionSubscriptionDetails is required");
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+
+        return clientCall(request, ChangeConnectionSubscriptionResponse::builder)
+                .logger(LOG, "changeConnectionSubscription")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ChangeConnectionSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/ChangeConnectionSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeConnectionSubscriptionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeConnectionSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeConnectionSubscriptionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeDatabaseRegistrationCompartmentResponse changeDatabaseRegistrationCompartment(
             ChangeDatabaseRegistrationCompartmentRequest request) {
 
@@ -516,6 +553,43 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         ChangeDeploymentCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeDeploymentCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeDeploymentSubscriptionResponse changeDeploymentSubscription(
+            ChangeDeploymentSubscriptionRequest request) {
+        Objects.requireNonNull(
+                request.getChangeDeploymentSubscriptionDetails(),
+                "changeDeploymentSubscriptionDetails is required");
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        return clientCall(request, ChangeDeploymentSubscriptionResponse::builder)
+                .logger(LOG, "changeDeploymentSubscription")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ChangeDeploymentSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ChangeDeploymentSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDeploymentSubscriptionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDeploymentSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDeploymentSubscriptionResponse.Builder::opcRequestId)
                 .callSync();
     }
 

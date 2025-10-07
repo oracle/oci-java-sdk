@@ -32,12 +32,12 @@ public final class TerraformVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A supported Terraform version. Example: {@code 0.12.x} */
+        /** A supported Terraform version. Example: {@code 1.5.x} */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * A supported Terraform version. Example: {@code 0.12.x}
+         * A supported Terraform version. Example: {@code 1.5.x}
          *
          * @param name the value to set
          * @return this builder
@@ -99,12 +99,12 @@ public final class TerraformVersionSummary
         return new Builder().copy(this);
     }
 
-    /** A supported Terraform version. Example: {@code 0.12.x} */
+    /** A supported Terraform version. Example: {@code 1.5.x} */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * A supported Terraform version. Example: {@code 0.12.x}
+     * A supported Terraform version. Example: {@code 1.5.x}
      *
      * @return the value
      */

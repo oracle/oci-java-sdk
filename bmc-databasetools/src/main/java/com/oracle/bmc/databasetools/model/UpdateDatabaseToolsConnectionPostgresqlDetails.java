@@ -80,12 +80,12 @@ public final class UpdateDatabaseToolsConnectionPostgresqlDetails
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-        /** The user name. */
+        /** The database user name. */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
-         * The user name.
+         * The database user name.
          *
          * @param userName the value to set
          * @return this builder
@@ -140,14 +140,14 @@ public final class UpdateDatabaseToolsConnectionPostgresqlDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+         * Database Tools private endpoint used to access the database in the Customer VCN.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+         * Database Tools private endpoint used to access the database in the Customer VCN.
          *
          * @param privateEndpointId the value to set
          * @return this builder
@@ -267,12 +267,12 @@ public final class UpdateDatabaseToolsConnectionPostgresqlDetails
         return connectionString;
     }
 
-    /** The user name. */
+    /** The database user name. */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
-     * The user name.
+     * The database user name.
      *
      * @return the value
      */
@@ -319,14 +319,14 @@ public final class UpdateDatabaseToolsConnectionPostgresqlDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * Database Tools private endpoint used to access the database in the Customer VCN.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * Database Tools private endpoint used to access the database in the Customer VCN.
      *
      * @return the value
      */

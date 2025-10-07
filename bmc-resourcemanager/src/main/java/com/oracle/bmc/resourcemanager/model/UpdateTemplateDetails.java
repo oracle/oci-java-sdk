@@ -52,12 +52,16 @@ public final class UpdateTemplateDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The template's display name. Avoid entering confidential information. */
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The template's display name. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -229,12 +233,16 @@ public final class UpdateTemplateDetails
         return new Builder().copy(this);
     }
 
-    /** The template's display name. Avoid entering confidential information. */
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The template's display name. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
      */

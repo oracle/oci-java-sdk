@@ -73,7 +73,8 @@ public interface ResourceManager extends AutoCloseable {
      * immediate, and may be delayed, or may not happen at all. You can optionally choose forced
      * cancellation by setting `isForced` to true. A forced cancellation can result in an incorrect
      * state file. For example, the state file might not reflect the exact state of the provisioned
-     * resources.
+     * resources. For more information, see [Canceling a
+     * Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/cancel-job.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -89,9 +90,8 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Moves a configuration source provider into a different compartment within the same tenancy.
-     * For information about moving resources between compartments, see [Moving Resources to a
-     * Different
-     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * For more information, see [Moving a Configuration Source
+     * Provider](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/change-compartment-csp.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -109,9 +109,9 @@ public interface ResourceManager extends AutoCloseable {
                     ChangeConfigurationSourceProviderCompartmentRequest request);
 
     /**
-     * Moves a private endpoint to a different compartment within the same tenancy. For information
-     * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves a private endpoint to a different compartment within the same tenancy. For more
+     * information, see [Moving a Private
+     * Endpoint](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/move-private-endpoints.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -129,9 +129,8 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Moves a stack (and its associated jobs) into a different compartment within the same tenancy.
-     * For information about moving resources between compartments, see [Moving Resources to a
-     * Different
-     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * For more information, see [Moving a
+     * Stack](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/change-compartment-stack.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -147,9 +146,9 @@ public interface ResourceManager extends AutoCloseable {
     ChangeStackCompartmentResponse changeStackCompartment(ChangeStackCompartmentRequest request);
 
     /**
-     * Moves a template into a different compartment within the same tenancy. For information about
-     * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves a template into a different compartment within the same tenancy. For more information,
+     * see [Moving a Private
+     * Template](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/change-compartment-template.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -167,8 +166,8 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Creates a configuration source provider in the specified compartment. For more information,
-     * see [To create a configuration source
-     * provider](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#CreateConfigurationSourceProvider).
+     * see [Creating a Configuration Source
+     * Provider](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-csp.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -185,7 +184,8 @@ public interface ResourceManager extends AutoCloseable {
             CreateConfigurationSourceProviderRequest request);
 
     /**
-     * Creates a job.
+     * Creates a job. For more information, see [Creating a
+     * Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -200,7 +200,9 @@ public interface ResourceManager extends AutoCloseable {
     CreateJobResponse createJob(CreateJobRequest request);
 
     /**
-     * Creates a private endpoint in the specified compartment.
+     * Creates a private endpoint in the specified compartment. For more information, see [Creating
+     * a Private
+     * Endpoint](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-private-endpoints.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -220,8 +222,8 @@ public interface ResourceManager extends AutoCloseable {
      * configuration. The Terraform configuration can be directly uploaded or referenced from a
      * source code control system. You can also create a stack from an existing compartment, which
      * generates a Terraform configuration. You can also upload the Terraform configuration from an
-     * Object Storage bucket. For more information, see [Creating
-     * Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-stack.htm).
+     * Object Storage bucket. For more information, see [Creating a
+     * Stack](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-stack.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -236,7 +238,9 @@ public interface ResourceManager extends AutoCloseable {
     CreateStackResponse createStack(CreateStackRequest request);
 
     /**
-     * Creates a private template in the specified compartment.
+     * Creates a private template in the specified compartment. For more information, see [Creating
+     * a Private
+     * Template](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-template.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -251,7 +255,9 @@ public interface ResourceManager extends AutoCloseable {
     CreateTemplateResponse createTemplate(CreateTemplateRequest request);
 
     /**
-     * Deletes the specified configuration source provider.
+     * Deletes the specified configuration source provider. For more information, see [Deleting a
+     * Configuration Source
+     * Provider](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/delete-csp.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -268,7 +274,8 @@ public interface ResourceManager extends AutoCloseable {
             DeleteConfigurationSourceProviderRequest request);
 
     /**
-     * Deletes the specified private endpoint.
+     * Deletes the specified private endpoint. For more information, see [Deleting a Private
+     * Endpoint](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/delete-private-endpoints.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -284,7 +291,8 @@ public interface ResourceManager extends AutoCloseable {
     DeletePrivateEndpointResponse deletePrivateEndpoint(DeletePrivateEndpointRequest request);
 
     /**
-     * Deletes the specified stack.
+     * Deletes the specified stack. For more information, see [Deleting a
+     * Stack](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/delete-stack.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -299,7 +307,8 @@ public interface ResourceManager extends AutoCloseable {
     DeleteStackResponse deleteStack(DeleteStackRequest request);
 
     /**
-     * Deletes the specified template.
+     * Deletes the specified template. For more information, see [Deleting a Private
+     * Template](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/delete-template.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -314,7 +323,8 @@ public interface ResourceManager extends AutoCloseable {
     DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request);
 
     /**
-     * Checks drift status for the specified stack.
+     * Checks drift status for the specified stack. For more information, see [Detecting
+     * Drift](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/detect-drift.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -330,7 +340,9 @@ public interface ResourceManager extends AutoCloseable {
     DetectStackDriftResponse detectStackDrift(DetectStackDriftRequest request);
 
     /**
-     * Gets the properties of the specified configuration source provider.
+     * Gets the properties of the specified configuration source provider. For more information, see
+     * [Getting a Configuration Source Provider's
+     * Details](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-csp.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -347,7 +359,8 @@ public interface ResourceManager extends AutoCloseable {
             GetConfigurationSourceProviderRequest request);
 
     /**
-     * Gets the properties of the specified job.
+     * Gets the properties of the specified job. For more information, see [Getting a Job's
+     * Details](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -363,7 +376,9 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Returns the Terraform detailed log content for the specified job in plain text. [Learn about
-     * Terraform detailed log.](https://www.terraform.io/docs/internals/debugging.html)
+     * Terraform detailed log.](https://www.terraform.io/docs/internals/debugging.html) For more
+     * information, see [Getting Detailed Log Content for a
+     * Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-detailed-log-content.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -380,7 +395,9 @@ public interface ResourceManager extends AutoCloseable {
             GetJobDetailedLogContentRequest request);
 
     /**
-     * Returns console log entries for the specified job in JSON format.
+     * Returns console log entries for the specified job in JSON format. For more information, see
+     * [Getting Logs for a
+     * Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-logs.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -396,7 +413,8 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Returns the raw log file for the specified job in text format. The file includes a maximum of
-     * 100,000 log entries.
+     * 100,000 log entries. For more information, see [Getting Logs Content for a
+     * Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-logs-content.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -413,7 +431,8 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Returns the Terraform configuration for the specified job in zip format. If no zip file is
-     * found, returns an error.
+     * found, returns an error. For more information, see [Getting a Job Terraform
+     * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-tf-config.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -428,9 +447,9 @@ public interface ResourceManager extends AutoCloseable {
     GetJobTfConfigResponse getJobTfConfig(GetJobTfConfigRequest request);
 
     /**
-     * Returns the output of the specified Terraform plan job in binary or JSON format. For
-     * information about running Terraform plan jobs, see [Creating Plan
-     * Jobs](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job.htm).
+     * Returns the output of the specified Terraform plan job in binary or JSON format. For more
+     * information, see [Getting the Terraform Output for a Plan
+     * Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-tf-plan.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -445,7 +464,9 @@ public interface ResourceManager extends AutoCloseable {
     GetJobTfPlanResponse getJobTfPlan(GetJobTfPlanRequest request);
 
     /**
-     * Returns the Terraform state for the specified job.
+     * Returns the Terraform state for the specified job. For more information, see [Getting a Job
+     * Terraform
+     * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-tf-config.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -460,7 +481,8 @@ public interface ResourceManager extends AutoCloseable {
     GetJobTfStateResponse getJobTfState(GetJobTfStateRequest request);
 
     /**
-     * Gets the specified private endpoint.
+     * Gets the specified private endpoint. For more information, see [Getting a Private Endpoint's
+     * Details](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -478,7 +500,9 @@ public interface ResourceManager extends AutoCloseable {
     /**
      * Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated
      * with the private endpoint. Resource Manager uses this IP address to connect to nonpublic
-     * resources through the associated private endpoint.
+     * resources through the associated private endpoint. For more information, see [Getting the
+     * Reachable IP Address for a Private
+     * Endpoint](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -493,7 +517,8 @@ public interface ResourceManager extends AutoCloseable {
     GetReachableIpResponse getReachableIp(GetReachableIpRequest request);
 
     /**
-     * Gets the specified stack.
+     * Gets the specified stack. For more information, see [Getting a Stack's
+     * Details](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -509,7 +534,8 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Returns the Terraform configuration file for the specified stack in zip format. Returns an
-     * error if no zip file is found.
+     * error if no zip file is found. For more information, see [Getting a Stack Terraform
+     * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-config.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -525,7 +551,9 @@ public interface ResourceManager extends AutoCloseable {
     GetStackTfConfigResponse getStackTfConfig(GetStackTfConfigRequest request);
 
     /**
-     * Returns the Terraform state for the specified stack.
+     * Returns the Terraform state for the specified stack. For more information, see [Getting a
+     * Stack State
+     * File](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -541,7 +569,8 @@ public interface ResourceManager extends AutoCloseable {
     GetStackTfStateResponse getStackTfState(GetStackTfStateRequest request);
 
     /**
-     * Gets the specified template.
+     * Gets the specified template. For more information, see [Getting a Private Template's
+     * Details](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-template.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -557,7 +586,8 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Returns the Terraform logo file in .logo format for the specified template. Returns an error
-     * if no logo file is found.
+     * if no logo file is found. For more information, see [Getting a Private Template's
+     * Logo](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-template-logo.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -574,7 +604,9 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Returns the Terraform configuration file in zip format for the specified template. Returns an
-     * error if no zip file is found.
+     * error if no zip file is found. For more information, see [Getting a Private Template's
+     * Terraform
+     * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-template-tf-config.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -590,7 +622,8 @@ public interface ResourceManager extends AutoCloseable {
     GetTemplateTfConfigResponse getTemplateTfConfig(GetTemplateTfConfigRequest request);
 
     /**
-     * Returns the specified work request.
+     * Returns the specified work request. For more information, see [Getting a Work Request's
+     * Details](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-work-request.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -605,7 +638,9 @@ public interface ResourceManager extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Lists configuration source providers according to the specified filter. - For
+     * Lists configuration source providers according to the specified filter. For more information,
+     * see [Listing Configuration Source
+     * Providers](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-csp.htm). - For
      * `compartmentId`, lists all configuration source providers in the matching compartment. - For
      * `configurationSourceProviderId`, lists the matching configuration source provider.
      *
@@ -624,7 +659,9 @@ public interface ResourceManager extends AutoCloseable {
             ListConfigurationSourceProvidersRequest request);
 
     /**
-     * Gets the list of resources associated with the specified job.
+     * Gets the list of resources associated with the specified job. For more information, see
+     * [Listing Job
+     * Resources](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-job-resources.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -641,7 +678,9 @@ public interface ResourceManager extends AutoCloseable {
             ListJobAssociatedResourcesRequest request);
 
     /**
-     * Gets the list of outputs associated with the specified job.
+     * Gets the list of outputs associated with the specified job. For more information, see
+     * [Listing Job
+     * Outputs](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-job-outputs.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -657,7 +696,8 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Lists jobs according to the specified filter. By default, the list is ordered by time
-     * created.
+     * created. For more information, see [Listing
+     * Jobs](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-jobs.htm).
      *
      * <p>- To list all jobs in a stack, provide the stack
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). - To list all
@@ -680,9 +720,11 @@ public interface ResourceManager extends AutoCloseable {
     ListJobsResponse listJobs(ListJobsRequest request);
 
     /**
-     * Lists private endpoints according to the specified filter. - For `compartmentId`, lists all
-     * private endpoints in the matching compartment. - For `privateEndpointId`, lists the matching
-     * private endpoint.
+     * Lists private endpoints according to the specified filter. For more information, see [Listing
+     * Private
+     * Endpoints](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+     * - For `compartmentId`, lists all private endpoints in the matching compartment. - For
+     * `privateEndpointId`, lists the matching private endpoint.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -702,6 +744,8 @@ public interface ResourceManager extends AutoCloseable {
      * Discovery](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resource-discovery.htm).
      * For reference on service names, see the [Terraform provider
      * documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+     * For more information, see [Listing Resource Discovery
+     * Services](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-discovery-services.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -718,7 +762,9 @@ public interface ResourceManager extends AutoCloseable {
             ListResourceDiscoveryServicesRequest request);
 
     /**
-     * Gets the list of resources associated with the specified stack.
+     * Gets the list of resources associated with the specified stack. For more information, see
+     * [Listing Stack
+     * Resources](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-stack-resources.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -739,7 +785,9 @@ public interface ResourceManager extends AutoCloseable {
      * details for a given resource indicate differences, if any, between the actual state and the
      * expected (defined) state for that resource. The drift status details correspond to the
      * specified work request (`workRequestId`). If no work request is specified, then the drift
-     * status details correspond to the latest completed work request for the stack.
+     * status details correspond to the latest completed work request for the stack. For more
+     * information, see [Listing Drift
+     * Status](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-drift.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -756,9 +804,11 @@ public interface ResourceManager extends AutoCloseable {
             ListStackResourceDriftDetailsRequest request);
 
     /**
-     * Lists stacks according to the specified filter. - If called using the compartment ID, returns
-     * all stacks in the specified compartment. - If called using the stack ID, returns the
-     * specified stack. (See also {@link #getStack(GetStackRequest) getStack}.)
+     * Lists stacks according to the specified filter. For more information, see [Listing
+     * Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm). - If
+     * called using the compartment ID, returns all stacks in the specified compartment. - If called
+     * using the stack ID, returns the specified stack. (See also {@link #getStack(GetStackRequest)
+     * getStack}.)
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -773,7 +823,8 @@ public interface ResourceManager extends AutoCloseable {
     ListStacksResponse listStacks(ListStacksRequest request);
 
     /**
-     * Lists template categories.
+     * Lists template categories. For more information, see [Listing Template
+     * Categories](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-template-categories.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -790,7 +841,9 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Lists templates according to the specified filter. The attributes `compartmentId` and
-     * `templateCategoryId` are required unless `templateId` is specified.
+     * `templateCategoryId` are required unless `templateId` is specified. For more information, see
+     * [Listing
+     * Templates](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-template.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -805,7 +858,9 @@ public interface ResourceManager extends AutoCloseable {
     ListTemplatesResponse listTemplates(ListTemplatesRequest request);
 
     /**
-     * Returns a list of supported Terraform versions for use with stacks.
+     * Returns a list of supported Terraform versions for use with stacks. For more information, see
+     * [Listing Terraform
+     * Versions](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-tf-versions.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -821,7 +876,9 @@ public interface ResourceManager extends AutoCloseable {
     ListTerraformVersionsResponse listTerraformVersions(ListTerraformVersionsRequest request);
 
     /**
-     * Returns a paginated list of errors for the specified work request.
+     * Returns a paginated list of errors for the specified work request. For more information, see
+     * [Listing Errors for a Work
+     * Request](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-work-request-errors.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -837,7 +894,9 @@ public interface ResourceManager extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Returns a paginated list of logs for the specified work request.
+     * Returns a paginated list of logs for the specified work request. For more information, see
+     * [Listing Logs for a Work
+     * Request](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-work-request-logs.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -853,7 +912,9 @@ public interface ResourceManager extends AutoCloseable {
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
     /**
-     * Lists the work requests in the specified compartment or for the specified resource.
+     * Lists the work requests in the specified compartment or for the specified resource. For more
+     * information, see [Listing Work
+     * Requests](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-work-request.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -870,8 +931,8 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Updates the properties of the specified configuration source provider. For more information,
-     * see [To edit a configuration source
-     * provider](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#EditConfigurationSourceProvider).
+     * see [Updating a Configuration Source
+     * Provider](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-csp.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -888,7 +949,8 @@ public interface ResourceManager extends AutoCloseable {
             UpdateConfigurationSourceProviderRequest request);
 
     /**
-     * Updates the specified job.
+     * Updates the specified job. For more information, see [Updating a
+     * Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-job.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -903,7 +965,8 @@ public interface ResourceManager extends AutoCloseable {
     UpdateJobResponse updateJob(UpdateJobRequest request);
 
     /**
-     * Updates the specified private endpoint.
+     * Updates the specified private endpoint. For more information, see [Updating a Private
+     * Endpoint](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-private-endpoints.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -921,8 +984,8 @@ public interface ResourceManager extends AutoCloseable {
     /**
      * Updates the specified stack. Use `UpdateStack` when you update your Terraform configuration
      * and want your changes to be reflected in the execution plan. For more information, see
-     * [Updating
-     * Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack.htm).
+     * [Updating a
+     * Stack](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -937,7 +1000,8 @@ public interface ResourceManager extends AutoCloseable {
     UpdateStackResponse updateStack(UpdateStackRequest request);
 
     /**
-     * Updates the specified template.
+     * Updates the specified template. For more information, see [Updating a Private
+     * Template](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-template.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

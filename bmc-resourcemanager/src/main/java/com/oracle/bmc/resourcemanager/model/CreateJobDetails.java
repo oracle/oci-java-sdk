@@ -70,12 +70,16 @@ public final class CreateJobDetails
             this.__explicitlySet__.add("stackId");
             return this;
         }
-        /** Description of the job. */
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Description of the job.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -238,12 +242,16 @@ public final class CreateJobDetails
         return stackId;
     }
 
-    /** Description of the job. */
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Description of the job.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
      */

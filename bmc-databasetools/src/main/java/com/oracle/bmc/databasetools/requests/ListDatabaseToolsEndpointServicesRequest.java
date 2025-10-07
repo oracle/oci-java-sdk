@@ -15,10 +15,16 @@ import com.oracle.bmc.databasetools.model.*;
 public class ListDatabaseToolsEndpointServicesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -143,11 +149,15 @@ public class ListDatabaseToolsEndpointServicesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance

@@ -117,6 +117,16 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * Connection URL. e.g.:
          * 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
@@ -222,6 +232,7 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.connectionUrl,
                             this.username,
                             this.password,
@@ -264,6 +275,9 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("connectionUrl")) {
                 this.connectionUrl(model.getConnectionUrl());
             }
@@ -301,6 +315,7 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String connectionUrl,
             String username,
             String password,
@@ -315,7 +330,8 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.connectionUrl = connectionUrl;
         this.username = username;
         this.password = password;

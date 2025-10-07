@@ -35,12 +35,16 @@ public final class UpdateJobDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The new display name to set. */
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The new display name to set.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -134,12 +138,16 @@ public final class UpdateJobDetails
         return new Builder().copy(this);
     }
 
-    /** The new display name to set. */
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The new display name to set.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
      */

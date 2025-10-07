@@ -404,6 +404,9 @@ public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSync
                         CreatePrivateEndpointResponse.Builder::privateEndpoint)
                 .handleResponseHeaderString(
                         "opc-request-id", CreatePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreatePrivateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", CreatePrivateEndpointResponse.Builder::etag)
                 .callSync();
     }
@@ -519,6 +522,9 @@ public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSync
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeletePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeletePrivateEndpointResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1687,6 +1693,9 @@ public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSync
                         UpdatePrivateEndpointResponse.Builder::privateEndpoint)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdatePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdatePrivateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", UpdatePrivateEndpointResponse.Builder::etag)
                 .callSync();
     }

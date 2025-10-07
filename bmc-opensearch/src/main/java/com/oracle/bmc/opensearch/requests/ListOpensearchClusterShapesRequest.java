@@ -15,11 +15,33 @@ import com.oracle.bmc.opensearch.model.*;
 public class ListOpensearchClusterShapesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
+    /** The ID of the compartment in which to list resources. */
+    private String compartmentId;
+
+    /** The ID of the compartment in which to list resources. */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListOpensearchClusterShapesRequest, java.lang.Void> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        /** The ID of the compartment in which to list resources. */
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -51,7 +73,7 @@ public class ListOpensearchClusterShapesRequest
          * @return this builder instance
          */
         public Builder copy(ListOpensearchClusterShapesRequest o) {
-
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -86,8 +108,9 @@ public class ListOpensearchClusterShapesRequest
          */
         public ListOpensearchClusterShapesRequest buildWithoutInvocationCallback() {
             ListOpensearchClusterShapesRequest request = new ListOpensearchClusterShapesRequest();
+            request.compartmentId = compartmentId;
             return request;
-            // new ListOpensearchClusterShapesRequest();
+            // new ListOpensearchClusterShapesRequest(compartmentId);
         }
     }
 
@@ -97,7 +120,7 @@ public class ListOpensearchClusterShapesRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder();
+        return new Builder().compartmentId(compartmentId);
     }
 
     /**
@@ -114,6 +137,7 @@ public class ListOpensearchClusterShapesRequest
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -128,13 +152,16 @@ public class ListOpensearchClusterShapesRequest
         }
 
         ListOpensearchClusterShapesRequest other = (ListOpensearchClusterShapesRequest) o;
-        return super.equals(o);
+        return super.equals(o) && java.util.Objects.equals(this.compartmentId, other.compartmentId);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         return result;
     }
 }

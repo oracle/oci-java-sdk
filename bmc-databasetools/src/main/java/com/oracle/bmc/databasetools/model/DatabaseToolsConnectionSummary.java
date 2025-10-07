@@ -84,14 +84,14 @@ public class DatabaseToolsConnectionSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@code DatabaseToolsConnection}.
+     * Database Tools connection.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@code DatabaseToolsConnection}.
+     * Database Tools connection.
      *
      * @return the value
      */

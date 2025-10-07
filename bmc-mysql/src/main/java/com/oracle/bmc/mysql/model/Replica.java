@@ -37,6 +37,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         "availabilityDomain",
         "faultDomain",
         "nsgIds",
+        "securityAttributes",
         "ipAddress",
         "port",
         "portX",
@@ -63,6 +64,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
             String availabilityDomain,
             String faultDomain,
             java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String ipAddress,
             Integer port,
             Integer portX,
@@ -88,6 +90,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
         this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
         this.ipAddress = ipAddress;
         this.port = port;
         this.portX = portX;
@@ -322,6 +325,30 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** The IP address the read replica is configured to listen on. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
@@ -502,6 +529,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
                             this.availabilityDomain,
                             this.faultDomain,
                             this.nsgIds,
+                            this.securityAttributes,
                             this.ipAddress,
                             this.port,
                             this.portX,
@@ -563,6 +591,9 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
@@ -847,6 +878,27 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         return nsgIds;
     }
 
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     /** The IP address the read replica is configured to listen on. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
@@ -1016,6 +1068,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", portX=").append(String.valueOf(this.portX));
@@ -1054,6 +1107,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.portX, other.portX)
@@ -1097,6 +1151,11 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.portX == null ? 43 : this.portX.hashCode());

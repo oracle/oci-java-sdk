@@ -150,12 +150,12 @@ public final class DatabaseToolsConnectionGenericJdbc extends DatabaseToolsConne
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** The user name. */
+        /** The database user name. */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
-         * The user name.
+         * The database user name.
          *
          * @param userName the value to set
          * @return this builder
@@ -356,12 +356,12 @@ public final class DatabaseToolsConnectionGenericJdbc extends DatabaseToolsConne
         return url;
     }
 
-    /** The user name. */
+    /** The database user name. */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
-     * The user name.
+     * The database user name.
      *
      * @return the value
      */

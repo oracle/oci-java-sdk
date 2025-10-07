@@ -73,12 +73,16 @@ public final class WorkRequestResource
             this.__explicitlySet__.add("actionType");
             return this;
         }
-        /** The identifier of the resource the work request affects. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource the work request affects.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * The identifier of the resource the work request affects.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource the work request affects.
          *
          * @param identifier the value to set
          * @return this builder
@@ -180,12 +184,16 @@ public final class WorkRequestResource
         return actionType;
     }
 
-    /** The identifier of the resource the work request affects. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * resource the work request affects.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * The identifier of the resource the work request affects.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * resource the work request affects.
      *
      * @return the value
      */

@@ -6,12 +6,12 @@ package com.oracle.bmc.resourcemanager.model;
 
 /**
  * Location information about custom Terraform providers for a stack. For more information, see
- * [Custom
- * Providers](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#features__custom-providers).
+ * [Using Custom Providers with a
+ * Stack](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-custom-providers.htm).
  * Note: Older stacks must be explicitly updated to use Terraform Registry ({@code
  * isThirdPartyProviderExperienceEnabled=true}). See {@link #updateStack(UpdateStackRequest)
- * updateStack}. For more information, see [Using Terraform Registry with Older
- * Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-tf-reg.htm). <br>
+ * updateStack}. For more information, see [Using Terraform Registry with an Older
+ * Stack](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-tf-reg.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

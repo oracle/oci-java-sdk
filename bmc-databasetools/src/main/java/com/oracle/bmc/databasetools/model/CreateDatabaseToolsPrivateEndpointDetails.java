@@ -27,6 +27,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
         "compartmentId",
         "definedTags",
         "freeformTags",
+        "securityAttributes",
         "locks",
         "displayName",
         "description",
@@ -39,6 +40,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
             String compartmentId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.List<ResourceLock> locks,
             String displayName,
             String description,
@@ -50,6 +52,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.locks = locks;
         this.displayName = displayName;
         this.description = description;
@@ -117,6 +120,30 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is
+         * predefined and scoped to a namespace. For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is
+         * predefined and scoped to a namespace. For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /** Locks associated with this resource. */
@@ -256,6 +283,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
                             this.compartmentId,
                             this.definedTags,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.locks,
                             this.displayName,
                             this.description,
@@ -279,6 +307,9 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
@@ -363,6 +394,27 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
      */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
+    }
+
+    /**
+     * Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined
+     * and scoped to a namespace. For more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined
+     * and scoped to a namespace. For more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /** Locks associated with this resource. */
@@ -494,6 +546,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -519,6 +572,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
@@ -538,6 +592,11 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());

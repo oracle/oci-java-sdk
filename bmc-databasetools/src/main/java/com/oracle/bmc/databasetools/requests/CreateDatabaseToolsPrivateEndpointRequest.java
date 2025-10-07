@@ -16,11 +16,11 @@ public class CreateDatabaseToolsPrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasetools.model.CreateDatabaseToolsPrivateEndpointDetails> {
 
-    /** Details for the new DatabaseToolsPrivateEndpoint. */
+    /** Details for the new Database Tools private endpoint. */
     private com.oracle.bmc.databasetools.model.CreateDatabaseToolsPrivateEndpointDetails
             createDatabaseToolsPrivateEndpointDetails;
 
-    /** Details for the new DatabaseToolsPrivateEndpoint. */
+    /** Details for the new Database Tools private endpoint. */
     public com.oracle.bmc.databasetools.model.CreateDatabaseToolsPrivateEndpointDetails
             getCreateDatabaseToolsPrivateEndpointDetails() {
         return createDatabaseToolsPrivateEndpointDetails;
@@ -76,12 +76,12 @@ public class CreateDatabaseToolsPrivateEndpointRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new DatabaseToolsPrivateEndpoint. */
+        /** Details for the new Database Tools private endpoint. */
         private com.oracle.bmc.databasetools.model.CreateDatabaseToolsPrivateEndpointDetails
                 createDatabaseToolsPrivateEndpointDetails = null;
 
         /**
-         * Details for the new DatabaseToolsPrivateEndpoint.
+         * Details for the new Database Tools private endpoint.
          *
          * @param createDatabaseToolsPrivateEndpointDetails the value to set
          * @return this builder instance

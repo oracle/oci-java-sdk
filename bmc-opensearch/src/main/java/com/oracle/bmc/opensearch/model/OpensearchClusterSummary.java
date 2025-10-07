@@ -33,6 +33,7 @@ public final class OpensearchClusterSummary
         "freeformTags",
         "definedTags",
         "systemTags",
+        "securityAttributes",
         "softwareVersion",
         "totalStorageGB",
         "lifecycleState",
@@ -51,6 +52,7 @@ public final class OpensearchClusterSummary
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String softwareVersion,
             Integer totalStorageGB,
             OpensearchCluster.LifecycleState lifecycleState,
@@ -68,6 +70,7 @@ public final class OpensearchClusterSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.securityAttributes = securityAttributes;
         this.softwareVersion = softwareVersion;
         this.totalStorageGB = totalStorageGB;
         this.lifecycleState = lifecycleState;
@@ -235,6 +238,34 @@ public final class OpensearchClusterSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** The software version the cluster is running. */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
         private String softwareVersion;
@@ -344,6 +375,7 @@ public final class OpensearchClusterSummary
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.securityAttributes,
                             this.softwareVersion,
                             this.totalStorageGB,
                             this.lifecycleState,
@@ -385,6 +417,9 @@ public final class OpensearchClusterSummary
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("softwareVersion")) {
                 this.softwareVersion(model.getSoftwareVersion());
@@ -557,6 +592,29 @@ public final class OpensearchClusterSummary
         return systemTags;
     }
 
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     /** The software version the cluster is running. */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
     private final String softwareVersion;
@@ -660,6 +718,7 @@ public final class OpensearchClusterSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", softwareVersion=").append(String.valueOf(this.softwareVersion));
         sb.append(", totalStorageGB=").append(String.valueOf(this.totalStorageGB));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -690,6 +749,7 @@ public final class OpensearchClusterSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.softwareVersion, other.softwareVersion)
                 && java.util.Objects.equals(this.totalStorageGB, other.totalStorageGB)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -717,6 +777,11 @@ public final class OpensearchClusterSummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.softwareVersion == null ? 43 : this.softwareVersion.hashCode());

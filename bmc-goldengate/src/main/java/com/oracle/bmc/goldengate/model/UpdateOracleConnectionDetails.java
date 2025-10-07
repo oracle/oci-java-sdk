@@ -117,6 +117,16 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The username Oracle GoldenGate uses to connect the associated system of the given
          * technology. This username must already exist and be available by the system/application
@@ -356,6 +366,7 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.username,
                             this.password,
                             this.passwordSecretId,
@@ -403,6 +414,9 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
@@ -459,6 +473,7 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String username,
             String password,
             String passwordSecretId,
@@ -479,7 +494,8 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.username = username;
         this.password = password;
         this.passwordSecretId = passwordSecretId;

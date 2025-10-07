@@ -56,6 +56,9 @@ public final class DeploymentSummary
         "deploymentType",
         "storageUtilizationInBytes",
         "isStorageUtilizationLimitExceeded",
+        "subscriptionId",
+        "clusterPlacementGroupId",
+        "securityAttributes",
         "locks"
     })
     public DeploymentSummary(
@@ -91,6 +94,9 @@ public final class DeploymentSummary
             DeploymentType deploymentType,
             Long storageUtilizationInBytes,
             Boolean isStorageUtilizationLimitExceeded,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
@@ -125,6 +131,9 @@ public final class DeploymentSummary
         this.deploymentType = deploymentType;
         this.storageUtilizationInBytes = storageUtilizationInBytes;
         this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
+        this.subscriptionId = subscriptionId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.securityAttributes = securityAttributes;
         this.locks = locks;
     }
 
@@ -734,6 +743,76 @@ public final class DeploymentSummary
             this.__explicitlySet__.add("isStorageUtilizationLimitExceeded");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
+         * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for
+         * the resource. Only applicable for multicloud subscriptions. The cluster placement group
+         * id must be provided when a multicloud subscription id is provided. Otherwise the cluster
+         * placement group must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for
+         * the resource. Only applicable for multicloud subscriptions. The cluster placement group
+         * id must be provided when a multicloud subscription id is provided. Otherwise the cluster
+         * placement group must not be provided.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** Locks associated with this resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
@@ -788,6 +867,9 @@ public final class DeploymentSummary
                             this.deploymentType,
                             this.storageUtilizationInBytes,
                             this.isStorageUtilizationLimitExceeded,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -893,6 +975,15 @@ public final class DeploymentSummary
             if (model.wasPropertyExplicitlySet("isStorageUtilizationLimitExceeded")) {
                 this.isStorageUtilizationLimitExceeded(
                         model.getIsStorageUtilizationLimitExceeded());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
@@ -1446,6 +1537,67 @@ public final class DeploymentSummary
         return isStorageUtilizationLimitExceeded;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the
+     * resource. Only applicable for multicloud subscriptions. The cluster placement group id must
+     * be provided when a multicloud subscription id is provided. Otherwise the cluster placement
+     * group must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the
+     * resource. Only applicable for multicloud subscriptions. The cluster placement group id must
+     * be provided when a multicloud subscription id is provided. Otherwise the cluster placement
+     * group must not be provided.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     /** Locks associated with this resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
@@ -1509,6 +1661,10 @@ public final class DeploymentSummary
                 .append(String.valueOf(this.storageUtilizationInBytes));
         sb.append(", isStorageUtilizationLimitExceeded=")
                 .append(String.valueOf(this.isStorageUtilizationLimitExceeded));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
@@ -1560,6 +1716,10 @@ public final class DeploymentSummary
                 && java.util.Objects.equals(
                         this.isStorageUtilizationLimitExceeded,
                         other.isStorageUtilizationLimitExceeded)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
@@ -1650,6 +1810,19 @@ public final class DeploymentSummary
                         + (this.isStorageUtilizationLimitExceeded == null
                                 ? 43
                                 : this.isStorageUtilizationLimitExceeded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

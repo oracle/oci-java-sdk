@@ -56,8 +56,6 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * A filter that returns only those resources that match the specified lifecycle state. The
      * state value is case-insensitive. For more information about stack lifecycle states, see [Key
      * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
-     *
-     * <p>Allowable values: - CREATING - ACTIVE - DELETING - DELETED - FAILED
      */
     private com.oracle.bmc.resourcemanager.model.Stack.LifecycleState lifecycleState;
 
@@ -65,8 +63,6 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * A filter that returns only those resources that match the specified lifecycle state. The
      * state value is case-insensitive. For more information about stack lifecycle states, see [Key
      * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
-     *
-     * <p>Allowable values: - CREATING - ACTIVE - DELETING - DELETED - FAILED
      */
     public com.oracle.bmc.resourcemanager.model.Stack.LifecycleState getLifecycleState() {
         return lifecycleState;
@@ -285,8 +281,6 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * state value is case-insensitive. For more information about stack lifecycle states, see
          * [Key
          * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
-         *
-         * <p>Allowable values: - CREATING - ACTIVE - DELETING - DELETED - FAILED
          */
         private com.oracle.bmc.resourcemanager.model.Stack.LifecycleState lifecycleState = null;
 
@@ -295,8 +289,6 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * state value is case-insensitive. For more information about stack lifecycle states, see
          * [Key
          * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
-         *
-         * <p>Allowable values: - CREATING - ACTIVE - DELETING - DELETED - FAILED
          *
          * @param lifecycleState the value to set
          * @return this builder instance

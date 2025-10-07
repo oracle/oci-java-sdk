@@ -29,6 +29,7 @@ public final class DbSystemSnapshot
         "compartmentId",
         "subnetId",
         "nsgIds",
+        "securityAttributes",
         "availabilityDomain",
         "faultDomain",
         "shapeName",
@@ -63,6 +64,7 @@ public final class DbSystemSnapshot
             String compartmentId,
             String subnetId,
             java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String availabilityDomain,
             String faultDomain,
             String shapeName,
@@ -96,6 +98,7 @@ public final class DbSystemSnapshot
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
         this.shapeName = shapeName;
@@ -214,6 +217,30 @@ public final class DbSystemSnapshot
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /** The Availability Domain where the primary DB System should be located. */
@@ -620,6 +647,7 @@ public final class DbSystemSnapshot
                             this.compartmentId,
                             this.subnetId,
                             this.nsgIds,
+                            this.securityAttributes,
                             this.availabilityDomain,
                             this.faultDomain,
                             this.shapeName,
@@ -671,6 +699,9 @@ public final class DbSystemSnapshot
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
@@ -839,6 +870,27 @@ public final class DbSystemSnapshot
      */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /** The Availability Domain where the primary DB System should be located. */
@@ -1200,6 +1252,7 @@ public final class DbSystemSnapshot
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
@@ -1246,6 +1299,7 @@ public final class DbSystemSnapshot
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
@@ -1287,6 +1341,11 @@ public final class DbSystemSnapshot
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.availabilityDomain == null

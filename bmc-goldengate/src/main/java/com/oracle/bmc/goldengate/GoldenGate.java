@@ -201,6 +201,23 @@ public interface GoldenGate extends AutoCloseable {
             ChangeConnectionCompartmentRequest request);
 
     /**
+     * Associate a GoldanGate connection with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ChangeConnectionSubscriptionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeConnectionSubscription API.
+     */
+    ChangeConnectionSubscriptionResponse changeConnectionSubscription(
+            ChangeConnectionSubscriptionRequest request);
+
+    /**
      * Note: Deprecated. Use the /connections API instead. Moves the DatabaseRegistration into a
      * different compartment within the same tenancy. When provided, If-Match is checked against
      * ETag values of the resource. For information about moving resources between compartments, see
@@ -260,6 +277,23 @@ public interface GoldenGate extends AutoCloseable {
      */
     ChangeDeploymentCompartmentResponse changeDeploymentCompartment(
             ChangeDeploymentCompartmentRequest request);
+
+    /**
+     * Associate a GoldanGate deployment with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ChangeDeploymentSubscriptionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeDeploymentSubscription API.
+     */
+    ChangeDeploymentSubscriptionResponse changeDeploymentSubscription(
+            ChangeDeploymentSubscriptionRequest request);
 
     /**
      * Moves the Pipeline into a different compartment within the same tenancy. When provided,

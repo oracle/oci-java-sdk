@@ -58,12 +58,16 @@ public final class UpdateStackDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the stack. */
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The name of the stack.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -157,12 +161,12 @@ public final class UpdateStackDetails
             this.__explicitlySet__.add("variables");
             return this;
         }
-        /** The version of Terraform to use with the stack. Example: {@code 0.12.x} */
+        /** The version of Terraform to use with the stack. Example: {@code 1.5.x} */
         @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
         private String terraformVersion;
 
         /**
-         * The version of Terraform to use with the stack. Example: {@code 0.12.x}
+         * The version of Terraform to use with the stack. Example: {@code 1.5.x}
          *
          * @param terraformVersion the value to set
          * @return this builder
@@ -284,12 +288,16 @@ public final class UpdateStackDetails
         return new Builder().copy(this);
     }
 
-    /** The name of the stack. */
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The name of the stack.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
      */
@@ -368,12 +376,12 @@ public final class UpdateStackDetails
         return variables;
     }
 
-    /** The version of Terraform to use with the stack. Example: {@code 0.12.x} */
+    /** The version of Terraform to use with the stack. Example: {@code 1.5.x} */
     @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
     private final String terraformVersion;
 
     /**
-     * The version of Terraform to use with the stack. Example: {@code 0.12.x}
+     * The version of Terraform to use with the stack. Example: {@code 1.5.x}
      *
      * @return the value
      */

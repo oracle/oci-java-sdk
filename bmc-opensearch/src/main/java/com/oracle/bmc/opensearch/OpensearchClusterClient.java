@@ -313,6 +313,7 @@ public class OpensearchClusterClient extends com.oracle.bmc.http.internal.BaseSy
     @Override
     public ListOpensearchClusterShapesResponse listOpensearchClusterShapes(
             ListOpensearchClusterShapesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListOpensearchClusterShapesResponse::builder)
                 .logger(LOG, "listOpensearchClusterShapes")
@@ -324,6 +325,7 @@ public class OpensearchClusterClient extends com.oracle.bmc.http.internal.BaseSy
                 .requestBuilder(ListOpensearchClusterShapesRequest::builder)
                 .basePath("/20180828")
                 .appendPathParam("shapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .handleBody(
                         com.oracle.bmc.opensearch.model.ShapesDetails.class,

@@ -1030,6 +1030,28 @@ public interface Database extends AutoCloseable {
             ConvertStandbyAutonomousContainerDatabaseRequest request);
 
     /**
+     * Performs transition from standby database into a snapshot standby and vice versa. The
+     * transition performed based on the current role of the database, if the current role is
+     * standby then this operation will convert it to snapshot standby and if the current role is
+     * snapshot standby then this operation will convert it to standby.
+     *
+     * <p>This operation should be performed on respective standby/snapshot standby database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertStandbyDatabaseTypeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ConvertStandbyDatabaseType API.
+     */
+    ConvertStandbyDatabaseTypeResponse convertStandbyDatabaseType(
+            ConvertStandbyDatabaseTypeRequest request);
+
+    /**
      * Converts a non-container database to a pluggable database.
      *
      * @param request The request object containing the details to send

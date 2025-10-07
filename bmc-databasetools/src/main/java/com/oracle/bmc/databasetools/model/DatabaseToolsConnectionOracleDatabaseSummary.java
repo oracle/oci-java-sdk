@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * DatabaseToolsConnectionSummary of an Oracle Database. <br>
+ * Database Tools connection summary of an Oracle Database. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -226,14 +226,14 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+         * Database Tools private endpoint used to access the database in the customer VCN.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+         * Database Tools private endpoint used to access the database in the customer VCN.
          *
          * @param privateEndpointId the value to set
          * @return this builder
@@ -484,14 +484,14 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+     * Database Tools private endpoint used to access the database in the customer VCN.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+     * Database Tools private endpoint used to access the database in the customer VCN.
      *
      * @return the value
      */
