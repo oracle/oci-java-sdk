@@ -117,6 +117,16 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** Used authentication mechanism to access Databricks. */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private DatabricksConnection.AuthenticationType authenticationType;
@@ -287,6 +297,7 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.authenticationType,
                             this.connectionUrl,
                             this.password,
@@ -332,6 +343,9 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("authenticationType")) {
                 this.authenticationType(model.getAuthenticationType());
@@ -382,6 +396,7 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             DatabricksConnection.AuthenticationType authenticationType,
             String connectionUrl,
             String password,
@@ -400,7 +415,8 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.authenticationType = authenticationType;
         this.connectionUrl = connectionUrl;
         this.password = password;

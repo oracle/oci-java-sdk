@@ -56,7 +56,7 @@ public class ListStackResourceDriftDetailsRequest
     }
     /**
      * A filter that returns only resources that match the given drift status. The value is
-     * case-insensitive. Allowable values - - NOT_CHECKED - MODIFIED - IN_SYNC - DELETED
+     * case-insensitive.
      */
     private java.util.List<
                     com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary
@@ -65,7 +65,7 @@ public class ListStackResourceDriftDetailsRequest
 
     /**
      * A filter that returns only resources that match the given drift status. The value is
-     * case-insensitive. Allowable values - - NOT_CHECKED - MODIFIED - IN_SYNC - DELETED
+     * case-insensitive.
      */
     public java.util.List<
                     com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary
@@ -166,7 +166,7 @@ public class ListStackResourceDriftDetailsRequest
 
         /**
          * A filter that returns only resources that match the given drift status. The value is
-         * case-insensitive. Allowable values - - NOT_CHECKED - MODIFIED - IN_SYNC - DELETED
+         * case-insensitive.
          */
         private java.util.List<
                         com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary
@@ -175,7 +175,7 @@ public class ListStackResourceDriftDetailsRequest
 
         /**
          * A filter that returns only resources that match the given drift status. The value is
-         * case-insensitive. Allowable values - - NOT_CHECKED - MODIFIED - IN_SYNC - DELETED
+         * case-insensitive.
          *
          * @param resourceDriftStatus the value to set
          * @return this builder instance
@@ -191,8 +191,7 @@ public class ListStackResourceDriftDetailsRequest
 
         /**
          * Singular setter. A filter that returns only resources that match the given drift status.
-         * The value is case-insensitive. Allowable values - - NOT_CHECKED - MODIFIED - IN_SYNC -
-         * DELETED
+         * The value is case-insensitive.
          *
          * @param singularValue the singular value to set
          * @return this builder instance

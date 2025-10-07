@@ -117,6 +117,16 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment being referenced.
@@ -277,6 +287,7 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.deploymentId,
                             this.host,
                             this.port,
@@ -321,6 +332,9 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("deploymentId")) {
                 this.deploymentId(model.getDeploymentId());
@@ -368,6 +382,7 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String deploymentId,
             String host,
             Integer port,
@@ -385,7 +400,8 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.deploymentId = deploymentId;
         this.host = host;
         this.port = port;

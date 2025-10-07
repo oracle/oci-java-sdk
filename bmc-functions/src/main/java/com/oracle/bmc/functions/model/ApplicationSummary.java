@@ -36,7 +36,8 @@ public final class ApplicationSummary
         "definedTags",
         "timeCreated",
         "timeUpdated",
-        "imagePolicyConfig"
+        "imagePolicyConfig",
+        "securityAttributes"
     })
     public ApplicationSummary(
             String id,
@@ -51,7 +52,8 @@ public final class ApplicationSummary
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            ImagePolicyConfig imagePolicyConfig) {
+            ImagePolicyConfig imagePolicyConfig,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -66,6 +68,7 @@ public final class ApplicationSummary
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.imagePolicyConfig = imagePolicyConfig;
+        this.securityAttributes = securityAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -318,6 +321,34 @@ public final class ApplicationSummary
             this.__explicitlySet__.add("imagePolicyConfig");
             return this;
         }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -337,7 +368,8 @@ public final class ApplicationSummary
                             this.definedTags,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.imagePolicyConfig);
+                            this.imagePolicyConfig,
+                            this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -384,6 +416,9 @@ public final class ApplicationSummary
             }
             if (model.wasPropertyExplicitlySet("imagePolicyConfig")) {
                 this.imagePolicyConfig(model.getImagePolicyConfig());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             return this;
         }
@@ -673,6 +708,29 @@ public final class ApplicationSummary
         return imagePolicyConfig;
     }
 
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -702,6 +760,7 @@ public final class ApplicationSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", imagePolicyConfig=").append(String.valueOf(this.imagePolicyConfig));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -730,6 +789,7 @@ public final class ApplicationSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.imagePolicyConfig, other.imagePolicyConfig)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -760,6 +820,11 @@ public final class ApplicationSummary
         result =
                 (result * PRIME)
                         + (this.imagePolicyConfig == null ? 43 : this.imagePolicyConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

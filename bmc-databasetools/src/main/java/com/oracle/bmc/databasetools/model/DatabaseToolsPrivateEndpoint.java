@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Description of Database Tools private endpoint. <br>
+ * Allows the Database Tools service to connect to databases in a customer's virtual cloud network
+ * (VCN). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -28,6 +29,7 @@ public final class DatabaseToolsPrivateEndpoint
         "definedTags",
         "freeformTags",
         "systemTags",
+        "securityAttributes",
         "locks",
         "displayName",
         "description",
@@ -51,6 +53,7 @@ public final class DatabaseToolsPrivateEndpoint
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.List<ResourceLock> locks,
             String displayName,
             String description,
@@ -74,6 +77,7 @@ public final class DatabaseToolsPrivateEndpoint
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
         this.systemTags = systemTags;
+        this.securityAttributes = securityAttributes;
         this.locks = locks;
         this.displayName = displayName;
         this.description = description;
@@ -170,6 +174,30 @@ public final class DatabaseToolsPrivateEndpoint
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
+         * Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is
+         * predefined and scoped to a namespace. For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is
+         * predefined and scoped to a namespace. For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /** Locks associated with this resource. */
@@ -481,6 +509,7 @@ public final class DatabaseToolsPrivateEndpoint
                             this.definedTags,
                             this.freeformTags,
                             this.systemTags,
+                            this.securityAttributes,
                             this.locks,
                             this.displayName,
                             this.description,
@@ -517,6 +546,9 @@ public final class DatabaseToolsPrivateEndpoint
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
@@ -648,6 +680,27 @@ public final class DatabaseToolsPrivateEndpoint
      */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
+    }
+
+    /**
+     * Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined
+     * and scoped to a namespace. For more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined
+     * and scoped to a namespace. For more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /** Locks associated with this resource. */
@@ -930,6 +983,7 @@ public final class DatabaseToolsPrivateEndpoint
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -966,6 +1020,7 @@ public final class DatabaseToolsPrivateEndpoint
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
@@ -997,6 +1052,11 @@ public final class DatabaseToolsPrivateEndpoint
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());

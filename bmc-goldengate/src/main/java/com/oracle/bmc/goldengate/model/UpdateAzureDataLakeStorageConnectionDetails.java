@@ -117,6 +117,16 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** Used authentication mechanism to access Azure Data Lake Storage. */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AzureDataLakeStorageConnection.AuthenticationType authenticationType;
@@ -379,6 +389,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.authenticationType,
                             this.accountName,
                             this.accountKey,
@@ -428,6 +439,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("authenticationType")) {
                 this.authenticationType(model.getAuthenticationType());
@@ -490,6 +504,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             AzureDataLakeStorageConnection.AuthenticationType authenticationType,
             String accountName,
             String accountKey,
@@ -512,7 +527,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.authenticationType = authenticationType;
         this.accountName = accountName;
         this.accountKey = accountKey;

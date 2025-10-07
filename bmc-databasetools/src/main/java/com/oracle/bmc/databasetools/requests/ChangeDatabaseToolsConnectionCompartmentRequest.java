@@ -30,11 +30,11 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
     public String getDatabaseToolsConnectionId() {
         return databaseToolsConnectionId;
     }
-    /** Request to change the compartment of the DatabaseToolsConnection. */
+    /** Request to change the compartment of the Database Tools connection. */
     private com.oracle.bmc.databasetools.model.ChangeDatabaseToolsConnectionCompartmentDetails
             changeDatabaseToolsConnectionCompartmentDetails;
 
-    /** Request to change the compartment of the DatabaseToolsConnection. */
+    /** Request to change the compartment of the Database Tools connection. */
     public com.oracle.bmc.databasetools.model.ChangeDatabaseToolsConnectionCompartmentDetails
             getChangeDatabaseToolsConnectionCompartmentDetails() {
         return changeDatabaseToolsConnectionCompartmentDetails;
@@ -109,12 +109,12 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
             return this;
         }
 
-        /** Request to change the compartment of the DatabaseToolsConnection. */
+        /** Request to change the compartment of the Database Tools connection. */
         private com.oracle.bmc.databasetools.model.ChangeDatabaseToolsConnectionCompartmentDetails
                 changeDatabaseToolsConnectionCompartmentDetails = null;
 
         /**
-         * Request to change the compartment of the DatabaseToolsConnection.
+         * Request to change the compartment of the Database Tools connection.
          *
          * @param changeDatabaseToolsConnectionCompartmentDetails the value to set
          * @return this builder instance

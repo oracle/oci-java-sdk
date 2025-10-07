@@ -504,6 +504,7 @@ public final class DataGuardAssociation
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
+        SnapshotStandby("SNAPSHOT_STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -707,6 +708,7 @@ public final class DataGuardAssociation
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
+        SnapshotStandby("SNAPSHOT_STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

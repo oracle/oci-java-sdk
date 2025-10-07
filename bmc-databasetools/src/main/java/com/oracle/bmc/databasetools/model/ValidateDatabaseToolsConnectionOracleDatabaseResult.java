@@ -93,6 +93,21 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
             this.__explicitlySet__.add("databaseVersion");
             return this;
         }
+        /** The DBMS_CLOUD package installation status. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbmsCloudStatus")
+        private DbmsCloudStatus dbmsCloudStatus;
+
+        /**
+         * The DBMS_CLOUD package installation status.
+         *
+         * @param dbmsCloudStatus the value to set
+         * @return this builder
+         */
+        public Builder dbmsCloudStatus(DbmsCloudStatus dbmsCloudStatus) {
+            this.dbmsCloudStatus = dbmsCloudStatus;
+            this.__explicitlySet__.add("dbmsCloudStatus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -105,7 +120,8 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
                             this.cause,
                             this.action,
                             this.databaseName,
-                            this.databaseVersion);
+                            this.databaseVersion,
+                            this.dbmsCloudStatus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -132,6 +148,9 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
             if (model.wasPropertyExplicitlySet("databaseVersion")) {
                 this.databaseVersion(model.getDatabaseVersion());
             }
+            if (model.wasPropertyExplicitlySet("dbmsCloudStatus")) {
+                this.dbmsCloudStatus(model.getDbmsCloudStatus());
+            }
             return this;
         }
     }
@@ -152,10 +171,12 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
             String cause,
             String action,
             String databaseName,
-            String databaseVersion) {
+            String databaseVersion,
+            DbmsCloudStatus dbmsCloudStatus) {
         super(code, message, cause, action);
         this.databaseName = databaseName;
         this.databaseVersion = databaseVersion;
+        this.dbmsCloudStatus = dbmsCloudStatus;
     }
 
     /** The database name. */
@@ -184,6 +205,19 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
         return databaseVersion;
     }
 
+    /** The DBMS_CLOUD package installation status. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbmsCloudStatus")
+    private final DbmsCloudStatus dbmsCloudStatus;
+
+    /**
+     * The DBMS_CLOUD package installation status.
+     *
+     * @return the value
+     */
+    public DbmsCloudStatus getDbmsCloudStatus() {
+        return dbmsCloudStatus;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -201,6 +235,7 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
+        sb.append(", dbmsCloudStatus=").append(String.valueOf(this.dbmsCloudStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -218,6 +253,7 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
                 (ValidateDatabaseToolsConnectionOracleDatabaseResult) o;
         return java.util.Objects.equals(this.databaseName, other.databaseName)
                 && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
+                && java.util.Objects.equals(this.dbmsCloudStatus, other.dbmsCloudStatus)
                 && super.equals(other);
     }
 
@@ -229,6 +265,9 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
         result =
                 (result * PRIME)
                         + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbmsCloudStatus == null ? 43 : this.dbmsCloudStatus.hashCode());
         return result;
     }
 }

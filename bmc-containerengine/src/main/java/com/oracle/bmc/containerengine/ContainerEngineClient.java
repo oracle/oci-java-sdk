@@ -967,6 +967,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("shouldShowAllVersions", request.getShouldShowAllVersions())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

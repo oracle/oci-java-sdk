@@ -57,12 +57,12 @@ public final class TemplateCategorySummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the template category. */
+        /** The name of the template category. Not changeable. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The name of the template category.
+         * The name of the template category. Not changeable.
          *
          * @param displayName the value to set
          * @return this builder
@@ -128,12 +128,12 @@ public final class TemplateCategorySummary
         return id;
     }
 
-    /** The name of the template category. */
+    /** The name of the template category. Not changeable. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The name of the template category.
+     * The name of the template category. Not changeable.
      *
      * @return the value
      */

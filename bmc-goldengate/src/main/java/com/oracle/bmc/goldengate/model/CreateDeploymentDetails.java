@@ -47,6 +47,9 @@ public final class CreateDeploymentDetails
         "cpuCoreCount",
         "isAutoScalingEnabled",
         "deploymentType",
+        "subscriptionId",
+        "clusterPlacementGroupId",
+        "securityAttributes",
         "oggData",
         "maintenanceWindow",
         "maintenanceConfiguration",
@@ -76,6 +79,9 @@ public final class CreateDeploymentDetails
             Integer cpuCoreCount,
             Boolean isAutoScalingEnabled,
             DeploymentType deploymentType,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             CreateOggDeploymentDetails oggData,
             CreateMaintenanceWindowDetails maintenanceWindow,
             CreateMaintenanceConfigurationDetails maintenanceConfiguration,
@@ -104,6 +110,9 @@ public final class CreateDeploymentDetails
         this.cpuCoreCount = cpuCoreCount;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.deploymentType = deploymentType;
+        this.subscriptionId = subscriptionId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.securityAttributes = securityAttributes;
         this.oggData = oggData;
         this.maintenanceWindow = maintenanceWindow;
         this.maintenanceConfiguration = maintenanceConfiguration;
@@ -524,6 +533,76 @@ public final class CreateDeploymentDetails
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
+         * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for
+         * the resource. Only applicable for multicloud subscriptions. The cluster placement group
+         * id must be provided when a multicloud subscription id is provided. Otherwise the cluster
+         * placement group must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for
+         * the resource. Only applicable for multicloud subscriptions. The cluster placement group
+         * id must be provided when a multicloud subscription id is provided. Otherwise the cluster
+         * placement group must not be provided.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("oggData")
         private CreateOggDeploymentDetails oggData;
@@ -591,6 +670,9 @@ public final class CreateDeploymentDetails
                             this.cpuCoreCount,
                             this.isAutoScalingEnabled,
                             this.deploymentType,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.oggData,
                             this.maintenanceWindow,
                             this.maintenanceConfiguration,
@@ -671,6 +753,15 @@ public final class CreateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("deploymentType")) {
                 this.deploymentType(model.getDeploymentType());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("oggData")) {
                 this.oggData(model.getOggData());
@@ -1060,6 +1151,67 @@ public final class CreateDeploymentDetails
         return deploymentType;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the
+     * resource. Only applicable for multicloud subscriptions. The cluster placement group id must
+     * be provided when a multicloud subscription id is provided. Otherwise the cluster placement
+     * group must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the
+     * resource. Only applicable for multicloud subscriptions. The cluster placement group id must
+     * be provided when a multicloud subscription id is provided. Otherwise the cluster placement
+     * group must not be provided.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("oggData")
     private final CreateOggDeploymentDetails oggData;
 
@@ -1127,6 +1279,10 @@ public final class CreateDeploymentDetails
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", maintenanceConfiguration=")
@@ -1170,6 +1326,10 @@ public final class CreateDeploymentDetails
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.oggData, other.oggData)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(
@@ -1239,6 +1399,19 @@ public final class CreateDeploymentDetails
         result =
                 (result * PRIME)
                         + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
         result =
                 (result * PRIME)

@@ -29,11 +29,11 @@ public class ValidateDatabaseToolsConnectionRequest
     public String getDatabaseToolsConnectionId() {
         return databaseToolsConnectionId;
     }
-    /** Request to validate a DatabaseToolsConnection. */
+    /** Request to validate a Database Tools connection. */
     private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails
             validateDatabaseToolsConnectionDetails;
 
-    /** Request to validate a DatabaseToolsConnection. */
+    /** Request to validate a Database Tools connection. */
     public com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails
             getValidateDatabaseToolsConnectionDetails() {
         return validateDatabaseToolsConnectionDetails;
@@ -99,12 +99,12 @@ public class ValidateDatabaseToolsConnectionRequest
             return this;
         }
 
-        /** Request to validate a DatabaseToolsConnection. */
+        /** Request to validate a Database Tools connection. */
         private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails
                 validateDatabaseToolsConnectionDetails = null;
 
         /**
-         * Request to validate a DatabaseToolsConnection.
+         * Request to validate a Database Tools connection.
          *
          * @param validateDatabaseToolsConnectionDetails the value to set
          * @return this builder instance

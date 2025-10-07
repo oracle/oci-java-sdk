@@ -117,6 +117,16 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
          */
@@ -643,6 +653,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.shouldUseJndi,
                             this.jndiConnectionFactory,
                             this.jndiProviderUrl,
@@ -705,6 +716,9 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("shouldUseJndi")) {
                 this.shouldUseJndi(model.getShouldUseJndi());
@@ -806,6 +820,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             Boolean shouldUseJndi,
             String jndiConnectionFactory,
             String jndiProviderUrl,
@@ -841,7 +856,8 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.shouldUseJndi = shouldUseJndi;
         this.jndiConnectionFactory = jndiConnectionFactory;
         this.jndiProviderUrl = jndiProviderUrl;

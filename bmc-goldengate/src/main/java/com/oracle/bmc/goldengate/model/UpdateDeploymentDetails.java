@@ -40,6 +40,7 @@ public final class UpdateDeploymentDetails
         "cpuCoreCount",
         "isAutoScalingEnabled",
         "placements",
+        "securityAttributes",
         "oggData",
         "maintenanceWindow",
         "maintenanceConfiguration",
@@ -62,6 +63,7 @@ public final class UpdateDeploymentDetails
             Integer cpuCoreCount,
             Boolean isAutoScalingEnabled,
             java.util.List<DeploymentPlacementDetails> placements,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             UpdateOggDeploymentDetails oggData,
             UpdateMaintenanceWindowDetails maintenanceWindow,
             UpdateMaintenanceConfigurationDetails maintenanceConfiguration,
@@ -83,6 +85,7 @@ public final class UpdateDeploymentDetails
         this.cpuCoreCount = cpuCoreCount;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.placements = placements;
+        this.securityAttributes = securityAttributes;
         this.oggData = oggData;
         this.maintenanceWindow = maintenanceWindow;
         this.maintenanceConfiguration = maintenanceConfiguration;
@@ -380,6 +383,34 @@ public final class UpdateDeploymentDetails
             this.__explicitlySet__.add("placements");
             return this;
         }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("oggData")
         private UpdateOggDeploymentDetails oggData;
@@ -440,6 +471,7 @@ public final class UpdateDeploymentDetails
                             this.cpuCoreCount,
                             this.isAutoScalingEnabled,
                             this.placements,
+                            this.securityAttributes,
                             this.oggData,
                             this.maintenanceWindow,
                             this.maintenanceConfiguration,
@@ -499,6 +531,9 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("placements")) {
                 this.placements(model.getPlacements());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("oggData")) {
                 this.oggData(model.getOggData());
@@ -779,6 +814,29 @@ public final class UpdateDeploymentDetails
         return placements;
     }
 
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("oggData")
     private final UpdateOggDeploymentDetails oggData;
 
@@ -839,6 +897,7 @@ public final class UpdateDeploymentDetails
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
         sb.append(", placements=").append(String.valueOf(this.placements));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", maintenanceConfiguration=")
@@ -875,6 +934,7 @@ public final class UpdateDeploymentDetails
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
                 && java.util.Objects.equals(this.placements, other.placements)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.oggData, other.oggData)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(
@@ -921,6 +981,11 @@ public final class UpdateDeploymentDetails
                                 ? 43
                                 : this.isAutoScalingEnabled.hashCode());
         result = (result * PRIME) + (this.placements == null ? 43 : this.placements.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
         result =
                 (result * PRIME)

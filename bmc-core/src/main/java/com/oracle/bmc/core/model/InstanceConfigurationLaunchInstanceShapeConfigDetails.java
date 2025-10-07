@@ -35,20 +35,23 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
         "vcpus",
         "memoryInGBs",
         "baselineOcpuUtilization",
-        "nvmes"
+        "nvmes",
+        "resourceManagement"
     })
     public InstanceConfigurationLaunchInstanceShapeConfigDetails(
             Float ocpus,
             Integer vcpus,
             Float memoryInGBs,
             BaselineOcpuUtilization baselineOcpuUtilization,
-            Integer nvmes) {
+            Integer nvmes,
+            ResourceManagement resourceManagement) {
         super();
         this.ocpus = ocpus;
         this.vcpus = vcpus;
         this.memoryInGBs = memoryInGBs;
         this.baselineOcpuUtilization = baselineOcpuUtilization;
         this.nvmes = nvmes;
+        this.resourceManagement = resourceManagement;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -152,6 +155,21 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
             this.__explicitlySet__.add("nvmes");
             return this;
         }
+        /** This field is reserved for internal use. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceManagement")
+        private ResourceManagement resourceManagement;
+
+        /**
+         * This field is reserved for internal use.
+         *
+         * @param resourceManagement the value to set
+         * @return this builder
+         */
+        public Builder resourceManagement(ResourceManagement resourceManagement) {
+            this.resourceManagement = resourceManagement;
+            this.__explicitlySet__.add("resourceManagement");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -163,7 +181,8 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
                             this.vcpus,
                             this.memoryInGBs,
                             this.baselineOcpuUtilization,
-                            this.nvmes);
+                            this.nvmes,
+                            this.resourceManagement);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -186,6 +205,9 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
             }
             if (model.wasPropertyExplicitlySet("nvmes")) {
                 this.nvmes(model.getNvmes());
+            }
+            if (model.wasPropertyExplicitlySet("resourceManagement")) {
+                this.resourceManagement(model.getResourceManagement());
             }
             return this;
         }
@@ -337,6 +359,65 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
         return nvmes;
     }
 
+    /** This field is reserved for internal use. */
+    public enum ResourceManagement implements com.oracle.bmc.http.internal.BmcEnum {
+        Dynamic("DYNAMIC"),
+        Static("STATIC"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResourceManagement.class);
+
+        private final String value;
+        private static java.util.Map<String, ResourceManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ResourceManagement v : ResourceManagement.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ResourceManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ResourceManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ResourceManagement', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** This field is reserved for internal use. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceManagement")
+    private final ResourceManagement resourceManagement;
+
+    /**
+     * This field is reserved for internal use.
+     *
+     * @return the value
+     */
+    public ResourceManagement getResourceManagement() {
+        return resourceManagement;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -358,6 +439,7 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
         sb.append(", baselineOcpuUtilization=")
                 .append(String.valueOf(this.baselineOcpuUtilization));
         sb.append(", nvmes=").append(String.valueOf(this.nvmes));
+        sb.append(", resourceManagement=").append(String.valueOf(this.resourceManagement));
         sb.append(")");
         return sb.toString();
     }
@@ -379,6 +461,7 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
                 && java.util.Objects.equals(
                         this.baselineOcpuUtilization, other.baselineOcpuUtilization)
                 && java.util.Objects.equals(this.nvmes, other.nvmes)
+                && java.util.Objects.equals(this.resourceManagement, other.resourceManagement)
                 && super.equals(other);
     }
 
@@ -395,6 +478,11 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
                                 ? 43
                                 : this.baselineOcpuUtilization.hashCode());
         result = (result * PRIME) + (this.nvmes == null ? 43 : this.nvmes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceManagement == null
+                                ? 43
+                                : this.resourceManagement.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

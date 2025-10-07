@@ -118,6 +118,16 @@ public final class UpdateIcebergConnectionDetails extends UpdateConnectionDetail
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("catalog")
         private UpdateIcebergCatalogDetails catalog;
 
@@ -152,6 +162,7 @@ public final class UpdateIcebergConnectionDetails extends UpdateConnectionDetail
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.catalog,
                             this.storage);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -192,6 +203,9 @@ public final class UpdateIcebergConnectionDetails extends UpdateConnectionDetail
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("catalog")) {
                 this.catalog(model.getCatalog());
             }
@@ -223,6 +237,7 @@ public final class UpdateIcebergConnectionDetails extends UpdateConnectionDetail
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             UpdateIcebergCatalogDetails catalog,
             UpdateIcebergStorageDetails storage) {
         super(
@@ -235,7 +250,8 @@ public final class UpdateIcebergConnectionDetails extends UpdateConnectionDetail
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.catalog = catalog;
         this.storage = storage;
     }

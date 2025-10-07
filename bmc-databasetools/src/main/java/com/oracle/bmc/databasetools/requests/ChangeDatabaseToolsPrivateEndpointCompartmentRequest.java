@@ -30,11 +30,11 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
     public String getDatabaseToolsPrivateEndpointId() {
         return databaseToolsPrivateEndpointId;
     }
-    /** Request to change the compartment of the DatabaseToolsPrivateEndpoint. */
+    /** Request to change the compartment of the Database Tools private endpoint. */
     private com.oracle.bmc.databasetools.model.ChangeDatabaseToolsPrivateEndpointCompartmentDetails
             changeDatabaseToolsPrivateEndpointCompartmentDetails;
 
-    /** Request to change the compartment of the DatabaseToolsPrivateEndpoint. */
+    /** Request to change the compartment of the Database Tools private endpoint. */
     public com.oracle.bmc.databasetools.model.ChangeDatabaseToolsPrivateEndpointCompartmentDetails
             getChangeDatabaseToolsPrivateEndpointCompartmentDetails() {
         return changeDatabaseToolsPrivateEndpointCompartmentDetails;
@@ -109,13 +109,13 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
             return this;
         }
 
-        /** Request to change the compartment of the DatabaseToolsPrivateEndpoint. */
+        /** Request to change the compartment of the Database Tools private endpoint. */
         private com.oracle.bmc.databasetools.model
                         .ChangeDatabaseToolsPrivateEndpointCompartmentDetails
                 changeDatabaseToolsPrivateEndpointCompartmentDetails = null;
 
         /**
-         * Request to change the compartment of the DatabaseToolsPrivateEndpoint.
+         * Request to change the compartment of the Database Tools private endpoint.
          *
          * @param changeDatabaseToolsPrivateEndpointCompartmentDetails the value to set
          * @return this builder instance

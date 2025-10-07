@@ -198,6 +198,34 @@ public final class AzureSynapseConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** The Azure Synapse Analytics technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
@@ -304,6 +332,9 @@ public final class AzureSynapseConnection extends Connection {
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.connectionString,
                             this.username,
@@ -373,6 +404,15 @@ public final class AzureSynapseConnection extends Connection {
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -419,6 +459,9 @@ public final class AzureSynapseConnection extends Connection {
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             TechnologyType technologyType,
             String connectionString,
             String username,
@@ -442,7 +485,10 @@ public final class AzureSynapseConnection extends Connection {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.connectionString = connectionString;
         this.username = username;

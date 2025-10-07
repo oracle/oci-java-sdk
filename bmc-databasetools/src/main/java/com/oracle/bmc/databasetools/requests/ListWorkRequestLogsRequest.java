@@ -13,10 +13,16 @@ import com.oracle.bmc.databasetools.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the asynchronous request. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous request.
+     */
     private String workRequestId;
 
-    /** The ID of the asynchronous request. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -114,11 +120,15 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the asynchronous request. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous request.
+         */
         private String workRequestId = null;
 
         /**
-         * The ID of the asynchronous request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous request.
          *
          * @param workRequestId the value to set
          * @return this builder instance

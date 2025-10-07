@@ -196,6 +196,23 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Associate a GoldanGate connection with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeConnectionSubscriptionResponse> changeConnectionSubscription(
+            ChangeConnectionSubscriptionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeConnectionSubscriptionRequest,
+                            ChangeConnectionSubscriptionResponse>
+                    handler);
+
+    /**
      * Note: Deprecated. Use the /connections API instead. Moves the DatabaseRegistration into a
      * different compartment within the same tenancy. When provided, If-Match is checked against
      * ETag values of the resource. For information about moving resources between compartments, see
@@ -255,6 +272,23 @@ public interface GoldenGateAsync extends AutoCloseable {
             ChangeDeploymentCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeDeploymentCompartmentRequest, ChangeDeploymentCompartmentResponse>
+                    handler);
+
+    /**
+     * Associate a GoldanGate deployment with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDeploymentSubscriptionResponse> changeDeploymentSubscription(
+            ChangeDeploymentSubscriptionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDeploymentSubscriptionRequest,
+                            ChangeDeploymentSubscriptionResponse>
                     handler);
 
     /**

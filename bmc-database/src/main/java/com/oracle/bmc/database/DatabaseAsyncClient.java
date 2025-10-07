@@ -2318,6 +2318,52 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ConvertStandbyDatabaseTypeResponse>
+            convertStandbyDatabaseType(
+                    ConvertStandbyDatabaseTypeRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConvertStandbyDatabaseTypeRequest,
+                                    ConvertStandbyDatabaseTypeResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getConvertStandbyDatabaseTypeDetails(),
+                "convertStandbyDatabaseTypeDetails is required");
+
+        return clientCall(request, ConvertStandbyDatabaseTypeResponse::builder)
+                .logger(LOG, "convertStandbyDatabaseType")
+                .serviceDetails(
+                        "Database",
+                        "ConvertStandbyDatabaseType",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ConvertStandbyDatabaseType")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertStandbyDatabaseTypeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("convertStandbyDatabaseType")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        ConvertStandbyDatabaseTypeResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConvertStandbyDatabaseTypeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", ConvertStandbyDatabaseTypeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConvertStandbyDatabaseTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ConvertToPdbResponse> convertToPdb(
             ConvertToPdbRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ConvertToPdbRequest, ConvertToPdbResponse>

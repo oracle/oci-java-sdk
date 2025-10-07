@@ -4,7 +4,10 @@
  */
 package com.oracle.bmc.databasetools.model;
 
-/** Specifies whether a connection is supported by the Database Tools Runtime. */
+/**
+ * The runtime support status. Must be set to UNSUPPORTED for Generic JDBC and PostgreSQL
+ * connections.
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum RuntimeSupport implements com.oracle.bmc.http.internal.BmcEnum {
     Supported("SUPPORTED"),

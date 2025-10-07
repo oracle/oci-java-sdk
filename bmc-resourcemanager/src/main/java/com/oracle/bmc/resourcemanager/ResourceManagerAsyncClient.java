@@ -399,6 +399,9 @@ public class ResourceManagerAsyncClient extends com.oracle.bmc.http.internal.Bas
                         CreatePrivateEndpointResponse.Builder::privateEndpoint)
                 .handleResponseHeaderString(
                         "opc-request-id", CreatePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreatePrivateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", CreatePrivateEndpointResponse.Builder::etag)
                 .callAsync(handler);
     }
@@ -525,6 +528,9 @@ public class ResourceManagerAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DeletePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeletePrivateEndpointResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1797,6 +1803,9 @@ public class ResourceManagerAsyncClient extends com.oracle.bmc.http.internal.Bas
                         UpdatePrivateEndpointResponse.Builder::privateEndpoint)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdatePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdatePrivateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", UpdatePrivateEndpointResponse.Builder::etag)
                 .callAsync(handler);
     }

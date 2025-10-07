@@ -117,6 +117,16 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The base64 encoded content of the service account key file containing the credentials
          * required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced
@@ -178,6 +188,7 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.serviceAccountKeyFile,
                             this.serviceAccountKeyFileSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -218,6 +229,9 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("serviceAccountKeyFile")) {
                 this.serviceAccountKeyFile(model.getServiceAccountKeyFile());
             }
@@ -249,6 +263,7 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String serviceAccountKeyFile,
             String serviceAccountKeyFileSecretId) {
         super(
@@ -261,7 +276,8 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.serviceAccountKeyFile = serviceAccountKeyFile;
         this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
     }

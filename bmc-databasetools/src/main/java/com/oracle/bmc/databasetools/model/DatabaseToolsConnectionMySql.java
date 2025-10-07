@@ -159,12 +159,12 @@ public final class DatabaseToolsConnectionMySql extends DatabaseToolsConnection 
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-        /** The user name. */
+        /** The database user name. */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
-         * The user name.
+         * The database user name.
          *
          * @param userName the value to set
          * @return this builder
@@ -403,12 +403,12 @@ public final class DatabaseToolsConnectionMySql extends DatabaseToolsConnection 
         return connectionString;
     }
 
-    /** The user name. */
+    /** The database user name. */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
-     * The user name.
+     * The database user name.
      *
      * @return the value
      */

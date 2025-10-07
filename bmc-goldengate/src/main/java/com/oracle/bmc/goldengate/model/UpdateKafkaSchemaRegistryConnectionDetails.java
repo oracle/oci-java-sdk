@@ -117,6 +117,16 @@ public final class UpdateKafkaSchemaRegistryConnectionDetails extends UpdateConn
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081' */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
@@ -471,6 +481,7 @@ public final class UpdateKafkaSchemaRegistryConnectionDetails extends UpdateConn
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.url,
                             this.authenticationType,
                             this.username,
@@ -524,6 +535,9 @@ public final class UpdateKafkaSchemaRegistryConnectionDetails extends UpdateConn
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("url")) {
                 this.url(model.getUrl());
@@ -598,6 +612,7 @@ public final class UpdateKafkaSchemaRegistryConnectionDetails extends UpdateConn
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String url,
             KafkaSchemaRegistryConnection.AuthenticationType authenticationType,
             String username,
@@ -624,7 +639,8 @@ public final class UpdateKafkaSchemaRegistryConnectionDetails extends UpdateConn
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.url = url;
         this.authenticationType = authenticationType;
         this.username = username;

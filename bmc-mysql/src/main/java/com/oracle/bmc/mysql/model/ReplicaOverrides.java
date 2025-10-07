@@ -25,17 +25,25 @@ package com.oracle.bmc.mysql.model;
 public final class ReplicaOverrides
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"mysqlVersion", "shapeName", "configurationId", "nsgIds"})
+    @java.beans.ConstructorProperties({
+        "mysqlVersion",
+        "shapeName",
+        "configurationId",
+        "nsgIds",
+        "securityAttributes"
+    })
     public ReplicaOverrides(
             String mysqlVersion,
             String shapeName,
             String configurationId,
-            java.util.List<String> nsgIds) {
+            java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.mysqlVersion = mysqlVersion;
         this.shapeName = shapeName;
         this.configurationId = configurationId;
         this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -108,6 +116,30 @@ public final class ReplicaOverrides
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -115,7 +147,11 @@ public final class ReplicaOverrides
         public ReplicaOverrides build() {
             ReplicaOverrides model =
                     new ReplicaOverrides(
-                            this.mysqlVersion, this.shapeName, this.configurationId, this.nsgIds);
+                            this.mysqlVersion,
+                            this.shapeName,
+                            this.configurationId,
+                            this.nsgIds,
+                            this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -135,6 +171,9 @@ public final class ReplicaOverrides
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             return this;
         }
@@ -207,6 +246,27 @@ public final class ReplicaOverrides
         return nsgIds;
     }
 
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -226,6 +286,7 @@ public final class ReplicaOverrides
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", configurationId=").append(String.valueOf(this.configurationId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -244,6 +305,7 @@ public final class ReplicaOverrides
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -257,6 +319,11 @@ public final class ReplicaOverrides
                 (result * PRIME)
                         + (this.configurationId == null ? 43 : this.configurationId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

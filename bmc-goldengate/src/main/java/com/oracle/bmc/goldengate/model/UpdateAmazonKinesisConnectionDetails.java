@@ -117,6 +117,16 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** Access key ID to access the Amazon Kinesis. */
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
         private String accessKeyId;
@@ -229,6 +239,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.accessKeyId,
                             this.secretAccessKey,
                             this.secretAccessKeySecretId,
@@ -272,6 +283,9 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("accessKeyId")) {
                 this.accessKeyId(model.getAccessKeyId());
             }
@@ -312,6 +326,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String accessKeyId,
             String secretAccessKey,
             String secretAccessKeySecretId,
@@ -327,7 +342,8 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.accessKeyId = accessKeyId;
         this.secretAccessKey = secretAccessKey;
         this.secretAccessKeySecretId = secretAccessKeySecretId;

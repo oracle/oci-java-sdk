@@ -47,6 +47,9 @@ package com.oracle.bmc.goldengate.model;
             value = UpdateGoogleCloudStorageConnectionDetails.class,
             name = "GOOGLE_CLOUD_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOracleAiDataPlatformConnectionDetails.class,
+            name = "ORACLE_AI_DATA_PLATFORM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateMicrosoftFabricConnectionDetails.class,
             name = "MICROSOFT_FABRIC"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -122,7 +125,8 @@ public class UpdateConnectionDetails
         "nsgIds",
         "subnetId",
         "routingMethod",
-        "doesUseSecretIds"
+        "doesUseSecretIds",
+        "securityAttributes"
     })
     protected UpdateConnectionDetails(
             String displayName,
@@ -134,7 +138,8 @@ public class UpdateConnectionDetails
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
-            Boolean doesUseSecretIds) {
+            Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -146,6 +151,7 @@ public class UpdateConnectionDetails
         this.subnetId = subnetId;
         this.routingMethod = routingMethod;
         this.doesUseSecretIds = doesUseSecretIds;
+        this.securityAttributes = securityAttributes;
     }
 
     /** An object's Display Name. */
@@ -322,6 +328,29 @@ public class UpdateConnectionDetails
         return doesUseSecretIds;
     }
 
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -347,6 +376,7 @@ public class UpdateConnectionDetails
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", routingMethod=").append(String.valueOf(this.routingMethod));
         sb.append(", doesUseSecretIds=").append(String.valueOf(this.doesUseSecretIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -371,6 +401,7 @@ public class UpdateConnectionDetails
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.routingMethod, other.routingMethod)
                 && java.util.Objects.equals(this.doesUseSecretIds, other.doesUseSecretIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -392,6 +423,11 @@ public class UpdateConnectionDetails
         result =
                 (result * PRIME)
                         + (this.doesUseSecretIds == null ? 43 : this.doesUseSecretIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

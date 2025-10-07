@@ -74,12 +74,16 @@ public final class CreateTemplateDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The template's display name. Avoid entering confidential information. */
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The template's display name. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -276,12 +280,16 @@ public final class CreateTemplateDetails
         return compartmentId;
     }
 
-    /** The template's display name. Avoid entering confidential information. */
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The template's display name. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
      */

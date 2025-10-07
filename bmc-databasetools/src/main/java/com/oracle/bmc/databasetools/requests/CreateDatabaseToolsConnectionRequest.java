@@ -16,11 +16,11 @@ public class CreateDatabaseToolsConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasetools.model.CreateDatabaseToolsConnectionDetails> {
 
-    /** Details for the new {@code DatabaseToolsConnection}. */
+    /** Details for the new Database Tools connection. */
     private com.oracle.bmc.databasetools.model.CreateDatabaseToolsConnectionDetails
             createDatabaseToolsConnectionDetails;
 
-    /** Details for the new {@code DatabaseToolsConnection}. */
+    /** Details for the new Database Tools connection. */
     public com.oracle.bmc.databasetools.model.CreateDatabaseToolsConnectionDetails
             getCreateDatabaseToolsConnectionDetails() {
         return createDatabaseToolsConnectionDetails;
@@ -76,12 +76,12 @@ public class CreateDatabaseToolsConnectionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new {@code DatabaseToolsConnection}. */
+        /** Details for the new Database Tools connection. */
         private com.oracle.bmc.databasetools.model.CreateDatabaseToolsConnectionDetails
                 createDatabaseToolsConnectionDetails = null;
 
         /**
-         * Details for the new {@code DatabaseToolsConnection}.
+         * Details for the new Database Tools connection.
          *
          * @param createDatabaseToolsConnectionDetails the value to set
          * @return this builder instance

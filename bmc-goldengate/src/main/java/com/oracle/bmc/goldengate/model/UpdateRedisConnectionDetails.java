@@ -117,6 +117,16 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * Comma separated list of Redis server addresses, specified as host:port entries, where
          * :port is optional. If port is not specified, it defaults to 6379. Used for establishing
@@ -435,6 +445,7 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.servers,
                             this.securityProtocol,
                             this.authenticationType,
@@ -487,6 +498,9 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("servers")) {
                 this.servers(model.getServers());
@@ -558,6 +572,7 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String servers,
             RedisConnection.SecurityProtocol securityProtocol,
             RedisConnection.AuthenticationType authenticationType,
@@ -583,7 +598,8 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.servers = servers;
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;

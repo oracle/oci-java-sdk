@@ -1054,6 +1054,27 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Performs transition from standby database into a snapshot standby and vice versa. The
+     * transition performed based on the current role of the database, if the current role is
+     * standby then this operation will convert it to snapshot standby and if the current role is
+     * snapshot standby then this operation will convert it to standby.
+     *
+     * <p>This operation should be performed on respective standby/snapshot standby database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConvertStandbyDatabaseTypeResponse> convertStandbyDatabaseType(
+            ConvertStandbyDatabaseTypeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ConvertStandbyDatabaseTypeRequest, ConvertStandbyDatabaseTypeResponse>
+                    handler);
+
+    /**
      * Converts a non-container database to a pluggable database.
      *
      * @param request The request object containing the details to send

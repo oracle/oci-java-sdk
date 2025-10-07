@@ -130,6 +130,15 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** The Bitbucket cloud service endpoint. Example: {@code https://bitbucket.org/} */
         @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
         private String apiEndpoint;
@@ -163,6 +172,7 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
                             this.secretId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.apiEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -205,6 +215,9 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("apiEndpoint")) {
                 this.apiEndpoint(model.getApiEndpoint());
             }
@@ -234,6 +247,7 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
             String secretId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String apiEndpoint) {
         super(
                 id,
@@ -246,7 +260,8 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
                 username,
                 secretId,
                 freeformTags,
-                definedTags);
+                definedTags,
+                systemTags);
         this.apiEndpoint = apiEndpoint;
     }
 

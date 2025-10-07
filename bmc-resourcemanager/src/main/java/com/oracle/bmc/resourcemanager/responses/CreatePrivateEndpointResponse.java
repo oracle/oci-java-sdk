@@ -20,6 +20,22 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
@@ -48,6 +64,7 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         "__httpStatusCode__",
         "headers",
         "opcRequestId",
+        "opcWorkRequestId",
         "etag",
         "privateEndpoint"
     })
@@ -55,10 +72,12 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
+            String opcWorkRequestId,
             String etag,
             com.oracle.bmc.resourcemanager.model.PrivateEndpoint privateEndpoint) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.etag = etag;
         this.privateEndpoint = privateEndpoint;
     }
@@ -92,6 +111,24 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -134,6 +171,7 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
             privateEndpoint(o.getPrivateEndpoint());
 
@@ -148,7 +186,12 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         @Override
         public CreatePrivateEndpointResponse build() {
             return new CreatePrivateEndpointResponse(
-                    __httpStatusCode__, headers, opcRequestId, etag, privateEndpoint);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    etag,
+                    privateEndpoint);
         }
     }
 
@@ -167,6 +210,7 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",privateEndpoint=").append(String.valueOf(privateEndpoint));
         sb.append(")");
@@ -185,6 +229,7 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         CreatePrivateEndpointResponse other = (CreatePrivateEndpointResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.privateEndpoint, other.privateEndpoint);
     }
@@ -194,6 +239,9 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result =
                 (result * PRIME)

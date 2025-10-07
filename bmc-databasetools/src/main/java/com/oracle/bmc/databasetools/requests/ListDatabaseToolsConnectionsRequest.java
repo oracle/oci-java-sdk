@@ -15,10 +15,16 @@ import com.oracle.bmc.databasetools.model.*;
 public class ListDatabaseToolsConnectionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -49,22 +55,22 @@ public class ListDatabaseToolsConnectionsRequest
     public java.util.List<com.oracle.bmc.databasetools.model.ConnectionType> getType() {
         return type;
     }
-    /** A filter to return only resources with one of the specified runtimeSupport values. */
+    /** A filter to return only resources with one of the specified type values. */
     private java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> runtimeSupport;
 
-    /** A filter to return only resources with one of the specified runtimeSupport values. */
+    /** A filter to return only resources with one of the specified type values. */
     public java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> getRuntimeSupport() {
         return runtimeSupport;
     }
     /**
-     * A filter to return only resources associated to the related resource identifier OCID passed
-     * in the query string.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * related resource.
      */
     private String relatedResourceIdentifier;
 
     /**
-     * A filter to return only resources associated to the related resource identifier OCID passed
-     * in the query string.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * related resource.
      */
     public String getRelatedResourceIdentifier() {
         return relatedResourceIdentifier;
@@ -163,11 +169,15 @@ public class ListDatabaseToolsConnectionsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -235,12 +245,12 @@ public class ListDatabaseToolsConnectionsRequest
             return this.type(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only resources with one of the specified runtimeSupport values. */
+        /** A filter to return only resources with one of the specified type values. */
         private java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> runtimeSupport =
                 null;
 
         /**
-         * A filter to return only resources with one of the specified runtimeSupport values.
+         * A filter to return only resources with one of the specified type values.
          *
          * @param runtimeSupport the value to set
          * @return this builder instance
@@ -252,8 +262,7 @@ public class ListDatabaseToolsConnectionsRequest
         }
 
         /**
-         * Singular setter. A filter to return only resources with one of the specified
-         * runtimeSupport values.
+         * Singular setter. A filter to return only resources with one of the specified type values.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -263,14 +272,14 @@ public class ListDatabaseToolsConnectionsRequest
         }
 
         /**
-         * A filter to return only resources associated to the related resource identifier OCID
-         * passed in the query string.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * related resource.
          */
         private String relatedResourceIdentifier = null;
 
         /**
-         * A filter to return only resources associated to the related resource identifier OCID
-         * passed in the query string.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * related resource.
          *
          * @param relatedResourceIdentifier the value to set
          * @return this builder instance

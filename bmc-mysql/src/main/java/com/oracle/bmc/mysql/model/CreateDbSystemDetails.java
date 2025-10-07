@@ -36,6 +36,7 @@ public final class CreateDbSystemDetails
         "mysqlVersion",
         "subnetId",
         "nsgIds",
+        "securityAttributes",
         "adminUsername",
         "adminPassword",
         "dataStorageSizeInGBs",
@@ -72,6 +73,7 @@ public final class CreateDbSystemDetails
             String mysqlVersion,
             String subnetId,
             java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String adminUsername,
             String adminPassword,
             Integer dataStorageSizeInGBs,
@@ -107,6 +109,7 @@ public final class CreateDbSystemDetails
         this.mysqlVersion = mysqlVersion;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
         this.adminUsername = adminUsername;
         this.adminPassword = adminPassword;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
@@ -361,6 +364,30 @@ public final class CreateDbSystemDetails
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /** The username for the administrative user. */
@@ -749,6 +776,7 @@ public final class CreateDbSystemDetails
                             this.mysqlVersion,
                             this.subnetId,
                             this.nsgIds,
+                            this.securityAttributes,
                             this.adminUsername,
                             this.adminPassword,
                             this.dataStorageSizeInGBs,
@@ -814,6 +842,9 @@ public final class CreateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("adminUsername")) {
                 this.adminUsername(model.getAdminUsername());
@@ -1096,6 +1127,27 @@ public final class CreateDbSystemDetails
      */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /** The username for the administrative user. */
@@ -1443,6 +1495,7 @@ public final class CreateDbSystemDetails
         sb.append(", mysqlVersion=").append(String.valueOf(this.mysqlVersion));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
         sb.append(", adminPassword=").append("<redacted>");
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
@@ -1491,6 +1544,7 @@ public final class CreateDbSystemDetails
                 && java.util.Objects.equals(this.mysqlVersion, other.mysqlVersion)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.adminUsername, other.adminUsername)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
@@ -1542,6 +1596,11 @@ public final class CreateDbSystemDetails
         result = (result * PRIME) + (this.mysqlVersion == null ? 43 : this.mysqlVersion.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.adminUsername == null ? 43 : this.adminUsername.hashCode());

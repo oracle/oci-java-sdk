@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * DatabaseToolsConnectionSummary of a Generic JDBC database system. <br>
+ * Database Tools connection summary of a Generic JDBC database system. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -151,12 +151,12 @@ public final class DatabaseToolsConnectionGenericJdbcSummary
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** The user name. */
+        /** The database user name. */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
-         * The user name.
+         * The database user name.
          *
          * @param userName the value to set
          * @return this builder
@@ -358,12 +358,12 @@ public final class DatabaseToolsConnectionGenericJdbcSummary
         return url;
     }
 
-    /** The user name. */
+    /** The database user name. */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
-     * The user name.
+     * The database user name.
      *
      * @return the value
      */

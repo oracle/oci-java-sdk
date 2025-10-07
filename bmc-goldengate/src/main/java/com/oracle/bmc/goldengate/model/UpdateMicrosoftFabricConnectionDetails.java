@@ -117,6 +117,16 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f */
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
@@ -223,6 +233,7 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.tenantId,
                             this.clientId,
                             this.clientSecret,
@@ -266,6 +277,9 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("tenantId")) {
                 this.tenantId(model.getTenantId());
             }
@@ -306,6 +320,7 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String tenantId,
             String clientId,
             String clientSecret,
@@ -321,7 +336,8 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.tenantId = tenantId;
         this.clientId = clientId;
         this.clientSecret = clientSecret;

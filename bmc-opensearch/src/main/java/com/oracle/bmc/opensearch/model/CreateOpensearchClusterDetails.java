@@ -59,13 +59,16 @@ public final class CreateOpensearchClusterDetails
         "securityMasterUserPasswordHash",
         "securitySamlConfig",
         "backupPolicy",
+        "nsgId",
         "reverseConnectionEndpointCustomerIps",
         "inboundClusterIds",
         "outboundClusterConfig",
         "maintenanceDetails",
+        "certificateConfig",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "securityAttributes"
     })
     public CreateOpensearchClusterDetails(
             String displayName,
@@ -103,13 +106,16 @@ public final class CreateOpensearchClusterDetails
             String securityMasterUserPasswordHash,
             SecuritySamlConfig securitySamlConfig,
             BackupPolicy backupPolicy,
+            String nsgId,
             java.util.List<String> reverseConnectionEndpointCustomerIps,
             java.util.List<String> inboundClusterIds,
             OutboundClusterConfig outboundClusterConfig,
             CreateMaintenanceDetails maintenanceDetails,
+            CertificateConfig certificateConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -146,13 +152,16 @@ public final class CreateOpensearchClusterDetails
         this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
         this.securitySamlConfig = securitySamlConfig;
         this.backupPolicy = backupPolicy;
+        this.nsgId = nsgId;
         this.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
         this.inboundClusterIds = inboundClusterIds;
         this.outboundClusterConfig = outboundClusterConfig;
         this.maintenanceDetails = maintenanceDetails;
+        this.certificateConfig = certificateConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.securityAttributes = securityAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -672,6 +681,21 @@ public final class CreateOpensearchClusterDetails
             this.__explicitlySet__.add("backupPolicy");
             return this;
         }
+        /** The OCID of the NSG where the private endpoint vnic will be attached. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgId")
+        private String nsgId;
+
+        /**
+         * The OCID of the NSG where the private endpoint vnic will be attached.
+         *
+         * @param nsgId the value to set
+         * @return this builder
+         */
+        public Builder nsgId(String nsgId) {
+            this.nsgId = nsgId;
+            this.__explicitlySet__.add("nsgId");
+            return this;
+        }
         /** The customer IP addresses of the endpoint in customer VCN */
         @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpointCustomerIps")
         private java.util.List<String> reverseConnectionEndpointCustomerIps;
@@ -719,6 +743,15 @@ public final class CreateOpensearchClusterDetails
         public Builder maintenanceDetails(CreateMaintenanceDetails maintenanceDetails) {
             this.maintenanceDetails = maintenanceDetails;
             this.__explicitlySet__.add("maintenanceDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateConfig")
+        private CertificateConfig certificateConfig;
+
+        public Builder certificateConfig(CertificateConfig certificateConfig) {
+            this.certificateConfig = certificateConfig;
+            this.__explicitlySet__.add("certificateConfig");
             return this;
         }
         /**
@@ -779,6 +812,34 @@ public final class CreateOpensearchClusterDetails
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -821,13 +882,16 @@ public final class CreateOpensearchClusterDetails
                             this.securityMasterUserPasswordHash,
                             this.securitySamlConfig,
                             this.backupPolicy,
+                            this.nsgId,
                             this.reverseConnectionEndpointCustomerIps,
                             this.inboundClusterIds,
                             this.outboundClusterConfig,
                             this.maintenanceDetails,
+                            this.certificateConfig,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -941,6 +1005,9 @@ public final class CreateOpensearchClusterDetails
             if (model.wasPropertyExplicitlySet("backupPolicy")) {
                 this.backupPolicy(model.getBackupPolicy());
             }
+            if (model.wasPropertyExplicitlySet("nsgId")) {
+                this.nsgId(model.getNsgId());
+            }
             if (model.wasPropertyExplicitlySet("reverseConnectionEndpointCustomerIps")) {
                 this.reverseConnectionEndpointCustomerIps(
                         model.getReverseConnectionEndpointCustomerIps());
@@ -954,6 +1021,9 @@ public final class CreateOpensearchClusterDetails
             if (model.wasPropertyExplicitlySet("maintenanceDetails")) {
                 this.maintenanceDetails(model.getMaintenanceDetails());
             }
+            if (model.wasPropertyExplicitlySet("certificateConfig")) {
+                this.certificateConfig(model.getCertificateConfig());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -962,6 +1032,9 @@ public final class CreateOpensearchClusterDetails
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             return this;
         }
@@ -1419,6 +1492,19 @@ public final class CreateOpensearchClusterDetails
         return backupPolicy;
     }
 
+    /** The OCID of the NSG where the private endpoint vnic will be attached. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgId")
+    private final String nsgId;
+
+    /**
+     * The OCID of the NSG where the private endpoint vnic will be attached.
+     *
+     * @return the value
+     */
+    public String getNsgId() {
+        return nsgId;
+    }
+
     /** The customer IP addresses of the endpoint in customer VCN */
     @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpointCustomerIps")
     private final java.util.List<String> reverseConnectionEndpointCustomerIps;
@@ -1457,6 +1543,13 @@ public final class CreateOpensearchClusterDetails
 
     public CreateMaintenanceDetails getMaintenanceDetails() {
         return maintenanceDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateConfig")
+    private final CertificateConfig certificateConfig;
+
+    public CertificateConfig getCertificateConfig() {
+        return certificateConfig;
     }
 
     /**
@@ -1508,6 +1601,29 @@ public final class CreateOpensearchClusterDetails
      */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
+    }
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     @Override
@@ -1568,14 +1684,17 @@ public final class CreateOpensearchClusterDetails
                 .append(String.valueOf(this.securityMasterUserPasswordHash));
         sb.append(", securitySamlConfig=").append(String.valueOf(this.securitySamlConfig));
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
+        sb.append(", nsgId=").append(String.valueOf(this.nsgId));
         sb.append(", reverseConnectionEndpointCustomerIps=")
                 .append(String.valueOf(this.reverseConnectionEndpointCustomerIps));
         sb.append(", inboundClusterIds=").append(String.valueOf(this.inboundClusterIds));
         sb.append(", outboundClusterConfig=").append(String.valueOf(this.outboundClusterConfig));
         sb.append(", maintenanceDetails=").append(String.valueOf(this.maintenanceDetails));
+        sb.append(", certificateConfig=").append(String.valueOf(this.certificateConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -1637,15 +1756,18 @@ public final class CreateOpensearchClusterDetails
                         this.securityMasterUserPasswordHash, other.securityMasterUserPasswordHash)
                 && java.util.Objects.equals(this.securitySamlConfig, other.securitySamlConfig)
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
+                && java.util.Objects.equals(this.nsgId, other.nsgId)
                 && java.util.Objects.equals(
                         this.reverseConnectionEndpointCustomerIps,
                         other.reverseConnectionEndpointCustomerIps)
                 && java.util.Objects.equals(this.inboundClusterIds, other.inboundClusterIds)
                 && java.util.Objects.equals(this.outboundClusterConfig, other.outboundClusterConfig)
                 && java.util.Objects.equals(this.maintenanceDetails, other.maintenanceDetails)
+                && java.util.Objects.equals(this.certificateConfig, other.certificateConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -1790,6 +1912,7 @@ public final class CreateOpensearchClusterDetails
                                 ? 43
                                 : this.securitySamlConfig.hashCode());
         result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
+        result = (result * PRIME) + (this.nsgId == null ? 43 : this.nsgId.hashCode());
         result =
                 (result * PRIME)
                         + (this.reverseConnectionEndpointCustomerIps == null
@@ -1808,9 +1931,17 @@ public final class CreateOpensearchClusterDetails
                         + (this.maintenanceDetails == null
                                 ? 43
                                 : this.maintenanceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateConfig == null ? 43 : this.certificateConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

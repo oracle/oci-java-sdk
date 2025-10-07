@@ -117,6 +117,16 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** The name of the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
@@ -403,6 +413,7 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.databaseName,
                             this.host,
                             this.port,
@@ -453,6 +464,9 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("databaseName")) {
                 this.databaseName(model.getDatabaseName());
@@ -518,6 +532,7 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String databaseName,
             String host,
             Integer port,
@@ -541,7 +556,8 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.databaseName = databaseName;
         this.host = host;
         this.port = port;

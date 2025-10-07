@@ -28,6 +28,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "compartmentId",
         "subnetId",
         "nsgIds",
+        "securityAttributes",
         "rest",
         "isHighlyAvailable",
         "currentPlacement",
@@ -74,6 +75,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             String compartmentId,
             String subnetId,
             java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             RestDetails rest,
             Boolean isHighlyAvailable,
             DbSystemPlacement currentPlacement,
@@ -119,6 +121,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
         this.rest = rest;
         this.isHighlyAvailable = isHighlyAvailable;
         this.currentPlacement = currentPlacement;
@@ -249,6 +252,30 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR
+         * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
 
@@ -880,6 +907,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.compartmentId,
                             this.subnetId,
                             this.nsgIds,
+                            this.securityAttributes,
                             this.rest,
                             this.isHighlyAvailable,
                             this.currentPlacement,
@@ -943,6 +971,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("rest")) {
                 this.rest(model.getRest());
@@ -1147,6 +1178,27 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
      */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [ZPR
+     * Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("rest")
@@ -1862,6 +1914,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", rest=").append(String.valueOf(this.rest));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", currentPlacement=").append(String.valueOf(this.currentPlacement));
@@ -1922,6 +1975,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.rest, other.rest)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.currentPlacement, other.currentPlacement)
@@ -1977,6 +2031,11 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
         result =
                 (result * PRIME)

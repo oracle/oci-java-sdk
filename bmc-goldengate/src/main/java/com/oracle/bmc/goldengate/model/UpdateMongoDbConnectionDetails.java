@@ -117,6 +117,16 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
          */
@@ -354,6 +364,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.connectionString,
                             this.username,
                             this.password,
@@ -402,6 +413,9 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("connectionString")) {
                 this.connectionString(model.getConnectionString());
@@ -462,6 +476,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String connectionString,
             String username,
             String password,
@@ -483,7 +498,8 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.connectionString = connectionString;
         this.username = username;
         this.password = password;

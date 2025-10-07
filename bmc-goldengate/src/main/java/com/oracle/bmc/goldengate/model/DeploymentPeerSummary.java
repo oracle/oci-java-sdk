@@ -35,6 +35,8 @@ public final class DeploymentPeerSummary
         "timeUpdated",
         "timeRoleChanged",
         "timeLastSynced",
+        "subscriptionId",
+        "clusterPlacementGroupId",
         "lifecycleState"
     })
     public DeploymentPeerSummary(
@@ -49,6 +51,8 @@ public final class DeploymentPeerSummary
             java.util.Date timeUpdated,
             java.util.Date timeRoleChanged,
             java.util.Date timeLastSynced,
+            String subscriptionId,
+            String clusterPlacementGroupId,
             LifecycleState lifecycleState) {
         super();
         this.deploymentId = deploymentId;
@@ -62,6 +66,8 @@ public final class DeploymentPeerSummary
         this.timeUpdated = timeUpdated;
         this.timeRoleChanged = timeRoleChanged;
         this.timeLastSynced = timeLastSynced;
+        this.subscriptionId = subscriptionId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.lifecycleState = lifecycleState;
     }
 
@@ -256,6 +262,48 @@ public final class DeploymentPeerSummary
             this.__explicitlySet__.add("timeLastSynced");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
+         * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for
+         * the resource. Only applicable for multicloud subscriptions. The cluster placement group
+         * id must be provided when a multicloud subscription id is provided. Otherwise the cluster
+         * placement group must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for
+         * the resource. Only applicable for multicloud subscriptions. The cluster placement group
+         * id must be provided when a multicloud subscription id is provided. Otherwise the cluster
+         * placement group must not be provided.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
         /** Possible lifecycle states for deployment peer. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -289,6 +337,8 @@ public final class DeploymentPeerSummary
                             this.timeUpdated,
                             this.timeRoleChanged,
                             this.timeLastSynced,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
                             this.lifecycleState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -330,6 +380,12 @@ public final class DeploymentPeerSummary
             }
             if (model.wasPropertyExplicitlySet("timeLastSynced")) {
                 this.timeLastSynced(model.getTimeLastSynced());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -514,6 +570,44 @@ public final class DeploymentPeerSummary
         return timeLastSynced;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the
+     * resource. Only applicable for multicloud subscriptions. The cluster placement group id must
+     * be provided when a multicloud subscription id is provided. Otherwise the cluster placement
+     * group must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the
+     * resource. Only applicable for multicloud subscriptions. The cluster placement group id must
+     * be provided when a multicloud subscription id is provided. Otherwise the cluster placement
+     * group must not be provided.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     /** Possible lifecycle states for deployment peer. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
@@ -602,6 +696,9 @@ public final class DeploymentPeerSummary
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeRoleChanged=").append(String.valueOf(this.timeRoleChanged));
         sb.append(", timeLastSynced=").append(String.valueOf(this.timeLastSynced));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
@@ -628,6 +725,9 @@ public final class DeploymentPeerSummary
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeRoleChanged, other.timeRoleChanged)
                 && java.util.Objects.equals(this.timeLastSynced, other.timeLastSynced)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && super.equals(other);
     }
@@ -655,6 +755,14 @@ public final class DeploymentPeerSummary
         result =
                 (result * PRIME)
                         + (this.timeLastSynced == null ? 43 : this.timeLastSynced.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

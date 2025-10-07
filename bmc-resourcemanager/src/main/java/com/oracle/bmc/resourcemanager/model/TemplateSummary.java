@@ -29,7 +29,10 @@ public final class TemplateSummary
         "description",
         "isFreeTier",
         "timeCreated",
-        "lifecycleState"
+        "lifecycleState",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
     })
     public TemplateSummary(
             String id,
@@ -38,7 +41,10 @@ public final class TemplateSummary
             String description,
             Boolean isFreeTier,
             java.util.Date timeCreated,
-            Template.LifecycleState lifecycleState) {
+            Template.LifecycleState lifecycleState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -47,6 +53,9 @@ public final class TemplateSummary
         this.isFreeTier = isFreeTier;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -85,12 +94,16 @@ public final class TemplateSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Human-readable display name for the template. */
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Human-readable display name for the template.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -149,12 +162,12 @@ public final class TemplateSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The current lifecycle state of the template. Allowable values: - ACTIVE */
+        /** The current lifecycle state of the template. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Template.LifecycleState lifecycleState;
 
         /**
-         * The current lifecycle state of the template. Allowable values: - ACTIVE
+         * The current lifecycle state of the template.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -162,6 +175,78 @@ public final class TemplateSummary
         public Builder lifecycleState(Template.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Free-form tags associated with the resource. Each tag is a key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags associated with the resource. Each tag is a key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle
+         * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {orcl-cloud: {free-tier-retain: true}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle
+         * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
 
@@ -177,7 +262,10 @@ public final class TemplateSummary
                             this.description,
                             this.isFreeTier,
                             this.timeCreated,
-                            this.lifecycleState);
+                            this.lifecycleState,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -206,6 +294,15 @@ public final class TemplateSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -250,12 +347,16 @@ public final class TemplateSummary
         return compartmentId;
     }
 
-    /** Human-readable display name for the template. */
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Human-readable display name for the template.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
      */
@@ -306,17 +407,82 @@ public final class TemplateSummary
         return timeCreated;
     }
 
-    /** The current lifecycle state of the template. Allowable values: - ACTIVE */
+    /** The current lifecycle state of the template. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Template.LifecycleState lifecycleState;
 
     /**
-     * The current lifecycle state of the template. Allowable values: - ACTIVE
+     * The current lifecycle state of the template.
      *
      * @return the value
      */
     public Template.LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle
+     * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {orcl-cloud: {free-tier-retain: true}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle
+     * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     @Override
@@ -341,6 +507,9 @@ public final class TemplateSummary
         sb.append(", isFreeTier=").append(String.valueOf(this.isFreeTier));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -362,6 +531,9 @@ public final class TemplateSummary
                 && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -380,6 +552,9 @@ public final class TemplateSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
