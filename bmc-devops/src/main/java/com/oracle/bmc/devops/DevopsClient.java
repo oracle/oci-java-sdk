@@ -4221,6 +4221,38 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public TriggerDeploymentDryRunResponse triggerDeploymentDryRun(
+            TriggerDeploymentDryRunRequest request) {
+        Objects.requireNonNull(
+                request.getTriggerDeploymentDryRunDetails(),
+                "triggerDeploymentDryRunDetails is required");
+
+        return clientCall(request, TriggerDeploymentDryRunResponse::builder)
+                .logger(LOG, "triggerDeploymentDryRun")
+                .serviceDetails(
+                        "Devops",
+                        "TriggerDeploymentDryRun",
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerDryRunResult/TriggerDeploymentDryRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TriggerDeploymentDryRunRequest::builder)
+                .basePath("/20210630")
+                .appendPathParam("deployments")
+                .appendPathParam("actions")
+                .appendPathParam("triggerDryRun")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.devops.model.TriggerDryRunResult.class,
+                        TriggerDeploymentDryRunResponse.Builder::triggerDryRunResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", TriggerDeploymentDryRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UnlikePullRequestCommentResponse unlikePullRequestComment(
             UnlikePullRequestCommentRequest request) {
 

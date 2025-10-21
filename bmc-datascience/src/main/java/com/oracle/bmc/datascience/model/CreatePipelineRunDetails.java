@@ -31,6 +31,8 @@ public final class CreatePipelineRunDetails
         "configurationOverrideDetails",
         "logConfigurationOverrideDetails",
         "infrastructureConfigurationOverrideDetails",
+        "storageMountConfigurationOverrideDetailsList",
+        "parametersOverride",
         "stepOverrideDetails",
         "freeformTags",
         "definedTags",
@@ -44,6 +46,9 @@ public final class CreatePipelineRunDetails
             PipelineConfigurationDetails configurationOverrideDetails,
             PipelineLogConfigurationDetails logConfigurationOverrideDetails,
             PipelineInfrastructureConfigurationDetails infrastructureConfigurationOverrideDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    storageMountConfigurationOverrideDetailsList,
+            java.util.Map<String, String> parametersOverride,
             java.util.List<PipelineStepOverrideDetails> stepOverrideDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -57,6 +62,9 @@ public final class CreatePipelineRunDetails
         this.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
         this.infrastructureConfigurationOverrideDetails =
                 infrastructureConfigurationOverrideDetails;
+        this.storageMountConfigurationOverrideDetailsList =
+                storageMountConfigurationOverrideDetailsList;
+        this.parametersOverride = parametersOverride;
         this.stepOverrideDetails = stepOverrideDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -170,6 +178,43 @@ public final class CreatePipelineRunDetails
             this.__explicitlySet__.add("infrastructureConfigurationOverrideDetails");
             return this;
         }
+        /**
+         * The storage mount override details to mount to the instance running the pipeline step.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "storageMountConfigurationOverrideDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                storageMountConfigurationOverrideDetailsList;
+
+        /**
+         * The storage mount override details to mount to the instance running the pipeline step.
+         *
+         * @param storageMountConfigurationOverrideDetailsList the value to set
+         * @return this builder
+         */
+        public Builder storageMountConfigurationOverrideDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        storageMountConfigurationOverrideDetailsList) {
+            this.storageMountConfigurationOverrideDetailsList =
+                    storageMountConfigurationOverrideDetailsList;
+            this.__explicitlySet__.add("storageMountConfigurationOverrideDetailsList");
+            return this;
+        }
+        /** Parameters override used in the pipeline run. */
+        @com.fasterxml.jackson.annotation.JsonProperty("parametersOverride")
+        private java.util.Map<String, String> parametersOverride;
+
+        /**
+         * Parameters override used in the pipeline run.
+         *
+         * @param parametersOverride the value to set
+         * @return this builder
+         */
+        public Builder parametersOverride(java.util.Map<String, String> parametersOverride) {
+            this.parametersOverride = parametersOverride;
+            this.__explicitlySet__.add("parametersOverride");
+            return this;
+        }
         /** Array of step override details. Only Step Configuration is allowed to be overridden. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepOverrideDetails")
         private java.util.List<PipelineStepOverrideDetails> stepOverrideDetails;
@@ -264,6 +309,8 @@ public final class CreatePipelineRunDetails
                             this.configurationOverrideDetails,
                             this.logConfigurationOverrideDetails,
                             this.infrastructureConfigurationOverrideDetails,
+                            this.storageMountConfigurationOverrideDetailsList,
+                            this.parametersOverride,
                             this.stepOverrideDetails,
                             this.freeformTags,
                             this.definedTags,
@@ -297,6 +344,13 @@ public final class CreatePipelineRunDetails
             if (model.wasPropertyExplicitlySet("infrastructureConfigurationOverrideDetails")) {
                 this.infrastructureConfigurationOverrideDetails(
                         model.getInfrastructureConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("storageMountConfigurationOverrideDetailsList")) {
+                this.storageMountConfigurationOverrideDetailsList(
+                        model.getStorageMountConfigurationOverrideDetailsList());
+            }
+            if (model.wasPropertyExplicitlySet("parametersOverride")) {
+                this.parametersOverride(model.getParametersOverride());
             }
             if (model.wasPropertyExplicitlySet("stepOverrideDetails")) {
                 this.stepOverrideDetails(model.getStepOverrideDetails());
@@ -410,6 +464,34 @@ public final class CreatePipelineRunDetails
         return infrastructureConfigurationOverrideDetails;
     }
 
+    /** The storage mount override details to mount to the instance running the pipeline step. */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationOverrideDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            storageMountConfigurationOverrideDetailsList;
+
+    /**
+     * The storage mount override details to mount to the instance running the pipeline step.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getStorageMountConfigurationOverrideDetailsList() {
+        return storageMountConfigurationOverrideDetailsList;
+    }
+
+    /** Parameters override used in the pipeline run. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parametersOverride")
+    private final java.util.Map<String, String> parametersOverride;
+
+    /**
+     * Parameters override used in the pipeline run.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getParametersOverride() {
+        return parametersOverride;
+    }
+
     /** Array of step override details. Only Step Configuration is allowed to be overridden. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepOverrideDetails")
     private final java.util.List<PipelineStepOverrideDetails> stepOverrideDetails;
@@ -505,6 +587,9 @@ public final class CreatePipelineRunDetails
                 .append(String.valueOf(this.logConfigurationOverrideDetails));
         sb.append(", infrastructureConfigurationOverrideDetails=")
                 .append(String.valueOf(this.infrastructureConfigurationOverrideDetails));
+        sb.append(", storageMountConfigurationOverrideDetailsList=")
+                .append(String.valueOf(this.storageMountConfigurationOverrideDetailsList));
+        sb.append(", parametersOverride=").append(String.valueOf(this.parametersOverride));
         sb.append(", stepOverrideDetails=").append(String.valueOf(this.stepOverrideDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -534,6 +619,10 @@ public final class CreatePipelineRunDetails
                 && java.util.Objects.equals(
                         this.infrastructureConfigurationOverrideDetails,
                         other.infrastructureConfigurationOverrideDetails)
+                && java.util.Objects.equals(
+                        this.storageMountConfigurationOverrideDetailsList,
+                        other.storageMountConfigurationOverrideDetailsList)
+                && java.util.Objects.equals(this.parametersOverride, other.parametersOverride)
                 && java.util.Objects.equals(this.stepOverrideDetails, other.stepOverrideDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -566,6 +655,16 @@ public final class CreatePipelineRunDetails
                         + (this.infrastructureConfigurationOverrideDetails == null
                                 ? 43
                                 : this.infrastructureConfigurationOverrideDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageMountConfigurationOverrideDetailsList == null
+                                ? 43
+                                : this.storageMountConfigurationOverrideDetailsList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parametersOverride == null
+                                ? 43
+                                : this.parametersOverride.hashCode());
         result =
                 (result * PRIME)
                         + (this.stepOverrideDetails == null

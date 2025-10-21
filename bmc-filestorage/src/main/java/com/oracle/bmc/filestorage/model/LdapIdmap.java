@@ -264,6 +264,7 @@ public final class LdapIdmap extends com.oracle.bmc.http.client.internal.Explici
     /** Schema type of the LDAP account. */
     public enum SchemaType implements com.oracle.bmc.http.internal.BmcEnum {
         Rfc2307("RFC2307"),
+        Rfc2307Bis("RFC2307BIS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -36,6 +36,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         "jobEnvironmentConfigurationOverrideDetails",
         "jobLogConfigurationOverrideDetails",
         "jobStorageMountConfigurationDetailsList",
+        "jobStorageMountConfigurationOverrideDetailsList",
         "logDetails",
         "jobInfrastructureConfigurationOverrideDetails",
         "jobNodeConfigurationOverrideDetails",
@@ -61,6 +62,8 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             JobLogConfigurationDetails jobLogConfigurationOverrideDetails,
             java.util.List<StorageMountConfigurationDetails>
                     jobStorageMountConfigurationDetailsList,
+            java.util.List<StorageMountConfigurationDetails>
+                    jobStorageMountConfigurationOverrideDetailsList,
             JobRunLogDetails logDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationOverrideDetails,
             JobNodeConfigurationDetails jobNodeConfigurationOverrideDetails,
@@ -85,6 +88,8 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                 jobEnvironmentConfigurationOverrideDetails;
         this.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
         this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
+        this.jobStorageMountConfigurationOverrideDetailsList =
+                jobStorageMountConfigurationOverrideDetailsList;
         this.logDetails = logDetails;
         this.jobInfrastructureConfigurationOverrideDetails =
                 jobInfrastructureConfigurationOverrideDetails;
@@ -324,6 +329,26 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("jobStorageMountConfigurationDetailsList");
             return this;
         }
+        /** Collection of JobStorageMountConfigurationDetails. */
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "jobStorageMountConfigurationOverrideDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                jobStorageMountConfigurationOverrideDetailsList;
+
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         *
+         * @param jobStorageMountConfigurationOverrideDetailsList the value to set
+         * @return this builder
+         */
+        public Builder jobStorageMountConfigurationOverrideDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        jobStorageMountConfigurationOverrideDetailsList) {
+            this.jobStorageMountConfigurationOverrideDetailsList =
+                    jobStorageMountConfigurationOverrideDetailsList;
+            this.__explicitlySet__.add("jobStorageMountConfigurationOverrideDetailsList");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("logDetails")
         private JobRunLogDetails logDetails;
@@ -467,6 +492,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                             this.jobEnvironmentConfigurationOverrideDetails,
                             this.jobLogConfigurationOverrideDetails,
                             this.jobStorageMountConfigurationDetailsList,
+                            this.jobStorageMountConfigurationOverrideDetailsList,
                             this.logDetails,
                             this.jobInfrastructureConfigurationOverrideDetails,
                             this.jobNodeConfigurationOverrideDetails,
@@ -528,6 +554,10 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("jobStorageMountConfigurationDetailsList")) {
                 this.jobStorageMountConfigurationDetailsList(
                         model.getJobStorageMountConfigurationDetailsList());
+            }
+            if (model.wasPropertyExplicitlySet("jobStorageMountConfigurationOverrideDetailsList")) {
+                this.jobStorageMountConfigurationOverrideDetailsList(
+                        model.getJobStorageMountConfigurationOverrideDetailsList());
             }
             if (model.wasPropertyExplicitlySet("logDetails")) {
                 this.logDetails(model.getLogDetails());
@@ -758,6 +788,22 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         return jobStorageMountConfigurationDetailsList;
     }
 
+    /** Collection of JobStorageMountConfigurationDetails. */
+    @com.fasterxml.jackson.annotation.JsonProperty(
+            "jobStorageMountConfigurationOverrideDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            jobStorageMountConfigurationOverrideDetailsList;
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getJobStorageMountConfigurationOverrideDetailsList() {
+        return jobStorageMountConfigurationOverrideDetailsList;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("logDetails")
     private final JobRunLogDetails logDetails;
 
@@ -894,6 +940,8 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                 .append(String.valueOf(this.jobLogConfigurationOverrideDetails));
         sb.append(", jobStorageMountConfigurationDetailsList=")
                 .append(String.valueOf(this.jobStorageMountConfigurationDetailsList));
+        sb.append(", jobStorageMountConfigurationOverrideDetailsList=")
+                .append(String.valueOf(this.jobStorageMountConfigurationOverrideDetailsList));
         sb.append(", logDetails=").append(String.valueOf(this.logDetails));
         sb.append(", jobInfrastructureConfigurationOverrideDetails=")
                 .append(String.valueOf(this.jobInfrastructureConfigurationOverrideDetails));
@@ -941,6 +989,9 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(
                         this.jobStorageMountConfigurationDetailsList,
                         other.jobStorageMountConfigurationDetailsList)
+                && java.util.Objects.equals(
+                        this.jobStorageMountConfigurationOverrideDetailsList,
+                        other.jobStorageMountConfigurationOverrideDetailsList)
                 && java.util.Objects.equals(this.logDetails, other.logDetails)
                 && java.util.Objects.equals(
                         this.jobInfrastructureConfigurationOverrideDetails,
@@ -996,6 +1047,11 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.jobStorageMountConfigurationDetailsList == null
                                 ? 43
                                 : this.jobStorageMountConfigurationDetailsList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobStorageMountConfigurationOverrideDetailsList == null
+                                ? 43
+                                : this.jobStorageMountConfigurationOverrideDetailsList.hashCode());
         result = (result * PRIME) + (this.logDetails == null ? 43 : this.logDetails.hashCode());
         result =
                 (result * PRIME)

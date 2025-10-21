@@ -90,6 +90,21 @@ public final class PipelineMLJobStepRun extends PipelineStepRun {
             this.__explicitlySet__.add("jobRunId");
             return this;
         }
+        /** Name used when creating the steprun. */
+        @com.fasterxml.jackson.annotation.JsonProperty("stepRunName")
+        private String stepRunName;
+
+        /**
+         * Name used when creating the steprun.
+         *
+         * @param stepRunName the value to set
+         * @return this builder
+         */
+        public Builder stepRunName(String stepRunName) {
+            this.stepRunName = stepRunName;
+            this.__explicitlySet__.add("stepRunName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -102,7 +117,8 @@ public final class PipelineMLJobStepRun extends PipelineStepRun {
                             this.stepName,
                             this.lifecycleState,
                             this.lifecycleDetails,
-                            this.jobRunId);
+                            this.jobRunId,
+                            this.stepRunName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -129,6 +145,9 @@ public final class PipelineMLJobStepRun extends PipelineStepRun {
             if (model.wasPropertyExplicitlySet("jobRunId")) {
                 this.jobRunId(model.getJobRunId());
             }
+            if (model.wasPropertyExplicitlySet("stepRunName")) {
+                this.stepRunName(model.getStepRunName());
+            }
             return this;
         }
     }
@@ -149,9 +168,11 @@ public final class PipelineMLJobStepRun extends PipelineStepRun {
             String stepName,
             LifecycleState lifecycleState,
             String lifecycleDetails,
-            String jobRunId) {
+            String jobRunId,
+            String stepRunName) {
         super(timeStarted, timeFinished, stepName, lifecycleState, lifecycleDetails);
         this.jobRunId = jobRunId;
+        this.stepRunName = stepRunName;
     }
 
     /**
@@ -171,6 +192,19 @@ public final class PipelineMLJobStepRun extends PipelineStepRun {
         return jobRunId;
     }
 
+    /** Name used when creating the steprun. */
+    @com.fasterxml.jackson.annotation.JsonProperty("stepRunName")
+    private final String stepRunName;
+
+    /**
+     * Name used when creating the steprun.
+     *
+     * @return the value
+     */
+    public String getStepRunName() {
+        return stepRunName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -187,6 +221,7 @@ public final class PipelineMLJobStepRun extends PipelineStepRun {
         sb.append("PipelineMLJobStepRun(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", jobRunId=").append(String.valueOf(this.jobRunId));
+        sb.append(", stepRunName=").append(String.valueOf(this.stepRunName));
         sb.append(")");
         return sb.toString();
     }
@@ -201,7 +236,9 @@ public final class PipelineMLJobStepRun extends PipelineStepRun {
         }
 
         PipelineMLJobStepRun other = (PipelineMLJobStepRun) o;
-        return java.util.Objects.equals(this.jobRunId, other.jobRunId) && super.equals(other);
+        return java.util.Objects.equals(this.jobRunId, other.jobRunId)
+                && java.util.Objects.equals(this.stepRunName, other.stepRunName)
+                && super.equals(other);
     }
 
     @Override
@@ -209,6 +246,7 @@ public final class PipelineMLJobStepRun extends PipelineStepRun {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.jobRunId == null ? 43 : this.jobRunId.hashCode());
+        result = (result * PRIME) + (this.stepRunName == null ? 43 : this.stepRunName.hashCode());
         return result;
     }
 }

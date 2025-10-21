@@ -4526,6 +4526,40 @@ public class DevopsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     }
 
     @Override
+    public java.util.concurrent.Future<TriggerDeploymentDryRunResponse> triggerDeploymentDryRun(
+            TriggerDeploymentDryRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            TriggerDeploymentDryRunRequest, TriggerDeploymentDryRunResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getTriggerDeploymentDryRunDetails(),
+                "triggerDeploymentDryRunDetails is required");
+
+        return clientCall(request, TriggerDeploymentDryRunResponse::builder)
+                .logger(LOG, "triggerDeploymentDryRun")
+                .serviceDetails(
+                        "Devops",
+                        "TriggerDeploymentDryRun",
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerDryRunResult/TriggerDeploymentDryRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TriggerDeploymentDryRunRequest::builder)
+                .basePath("/20210630")
+                .appendPathParam("deployments")
+                .appendPathParam("actions")
+                .appendPathParam("triggerDryRun")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.devops.model.TriggerDryRunResult.class,
+                        TriggerDeploymentDryRunResponse.Builder::triggerDryRunResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", TriggerDeploymentDryRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UnlikePullRequestCommentResponse> unlikePullRequestComment(
             UnlikePullRequestCommentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

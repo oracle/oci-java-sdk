@@ -82,6 +82,30 @@ public final class PipelineMLJobStepDetails extends PipelineStepDetails {
             this.__explicitlySet__.add("jobId");
             return this;
         }
+        /** Name used when creating the steprun. */
+        @com.fasterxml.jackson.annotation.JsonProperty("stepRunName")
+        private String stepRunName;
+
+        /**
+         * Name used when creating the steprun.
+         *
+         * @param stepRunName the value to set
+         * @return this builder
+         */
+        public Builder stepRunName(String stepRunName) {
+            this.stepRunName = stepRunName;
+            this.__explicitlySet__.add("stepRunName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("stepParameters")
+        private PipelineStepParameterDetails stepParameters;
+
+        public Builder stepParameters(PipelineStepParameterDetails stepParameters) {
+            this.stepParameters = stepParameters;
+            this.__explicitlySet__.add("stepParameters");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -93,7 +117,9 @@ public final class PipelineMLJobStepDetails extends PipelineStepDetails {
                             this.description,
                             this.dependsOn,
                             this.stepConfigurationDetails,
-                            this.jobId);
+                            this.jobId,
+                            this.stepRunName,
+                            this.stepParameters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -117,6 +143,12 @@ public final class PipelineMLJobStepDetails extends PipelineStepDetails {
             if (model.wasPropertyExplicitlySet("jobId")) {
                 this.jobId(model.getJobId());
             }
+            if (model.wasPropertyExplicitlySet("stepRunName")) {
+                this.stepRunName(model.getStepRunName());
+            }
+            if (model.wasPropertyExplicitlySet("stepParameters")) {
+                this.stepParameters(model.getStepParameters());
+            }
             return this;
         }
     }
@@ -136,9 +168,13 @@ public final class PipelineMLJobStepDetails extends PipelineStepDetails {
             String description,
             java.util.List<String> dependsOn,
             PipelineStepConfigurationDetails stepConfigurationDetails,
-            String jobId) {
+            String jobId,
+            String stepRunName,
+            PipelineStepParameterDetails stepParameters) {
         super(stepName, description, dependsOn, stepConfigurationDetails);
         this.jobId = jobId;
+        this.stepRunName = stepRunName;
+        this.stepParameters = stepParameters;
     }
 
     /**
@@ -158,6 +194,26 @@ public final class PipelineMLJobStepDetails extends PipelineStepDetails {
         return jobId;
     }
 
+    /** Name used when creating the steprun. */
+    @com.fasterxml.jackson.annotation.JsonProperty("stepRunName")
+    private final String stepRunName;
+
+    /**
+     * Name used when creating the steprun.
+     *
+     * @return the value
+     */
+    public String getStepRunName() {
+        return stepRunName;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("stepParameters")
+    private final PipelineStepParameterDetails stepParameters;
+
+    public PipelineStepParameterDetails getStepParameters() {
+        return stepParameters;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -174,6 +230,8 @@ public final class PipelineMLJobStepDetails extends PipelineStepDetails {
         sb.append("PipelineMLJobStepDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", jobId=").append(String.valueOf(this.jobId));
+        sb.append(", stepRunName=").append(String.valueOf(this.stepRunName));
+        sb.append(", stepParameters=").append(String.valueOf(this.stepParameters));
         sb.append(")");
         return sb.toString();
     }
@@ -188,7 +246,10 @@ public final class PipelineMLJobStepDetails extends PipelineStepDetails {
         }
 
         PipelineMLJobStepDetails other = (PipelineMLJobStepDetails) o;
-        return java.util.Objects.equals(this.jobId, other.jobId) && super.equals(other);
+        return java.util.Objects.equals(this.jobId, other.jobId)
+                && java.util.Objects.equals(this.stepRunName, other.stepRunName)
+                && java.util.Objects.equals(this.stepParameters, other.stepParameters)
+                && super.equals(other);
     }
 
     @Override
@@ -196,6 +257,10 @@ public final class PipelineMLJobStepDetails extends PipelineStepDetails {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.jobId == null ? 43 : this.jobId.hashCode());
+        result = (result * PRIME) + (this.stepRunName == null ? 43 : this.stepRunName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stepParameters == null ? 43 : this.stepParameters.hashCode());
         return result;
     }
 }

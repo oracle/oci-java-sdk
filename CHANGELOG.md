@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.74.3 - 2025-10-21
+### Added 
+- Support for LDAP schema version RFC2307bis when creating and updating mount targets in the File Storage service 
+- Support for Helm Critical Resource Protection (HCRP) in the DevOps Deploy service 
+- Support for parameterized pipelines in the Data Science service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes in the Streaming service 
+- Support for configurable version upgrade policies in the MySQL HeatWave service 
+- Support for 26ai version in the Exadata Fleet Update service  
+
+### Changed 
+- Updated the Jersey version to `v2.47` and Jackson version to `v2.19.2`
+
 ## 3.74.2 - 2025-10-07
 ### Added 
 - Support for OCI Internet of Things (OCI IoT) service  
