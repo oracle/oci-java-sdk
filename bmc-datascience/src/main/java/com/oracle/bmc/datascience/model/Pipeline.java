@@ -34,6 +34,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
         "logConfigurationDetails",
         "infrastructureConfigurationDetails",
         "storageMountConfigurationDetailsList",
+        "parameters",
         "stepDetails",
         "lifecycleState",
         "lifecycleDetails",
@@ -54,6 +55,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
             PipelineLogConfigurationDetails logConfigurationDetails,
             PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails,
             java.util.List<StorageMountConfigurationDetails> storageMountConfigurationDetailsList,
+            java.util.Map<String, String> parameters,
             java.util.List<PipelineStepDetails> stepDetails,
             PipelineLifecycleState lifecycleState,
             String lifecycleDetails,
@@ -73,6 +75,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
         this.logConfigurationDetails = logConfigurationDetails;
         this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
         this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
+        this.parameters = parameters;
         this.stepDetails = stepDetails;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -274,6 +277,21 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("storageMountConfigurationDetailsList");
             return this;
         }
+        /** Parameters used in the pipeline. */
+        @com.fasterxml.jackson.annotation.JsonProperty("parameters")
+        private java.util.Map<String, String> parameters;
+
+        /**
+         * Parameters used in the pipeline.
+         *
+         * @param parameters the value to set
+         * @return this builder
+         */
+        public Builder parameters(java.util.Map<String, String> parameters) {
+            this.parameters = parameters;
+            this.__explicitlySet__.add("parameters");
+            return this;
+        }
         /** Array of step details for each step. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
         private java.util.List<PipelineStepDetails> stepDetails;
@@ -406,6 +424,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
                             this.logConfigurationDetails,
                             this.infrastructureConfigurationDetails,
                             this.storageMountConfigurationDetailsList,
+                            this.parameters,
                             this.stepDetails,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -457,6 +476,9 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("storageMountConfigurationDetailsList")) {
                 this.storageMountConfigurationDetailsList(
                         model.getStorageMountConfigurationDetailsList());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
             }
             if (model.wasPropertyExplicitlySet("stepDetails")) {
                 this.stepDetails(model.getStepDetails());
@@ -653,6 +675,19 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
         return storageMountConfigurationDetailsList;
     }
 
+    /** Parameters used in the pipeline. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parameters")
+    private final java.util.Map<String, String> parameters;
+
+    /**
+     * Parameters used in the pipeline.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
     /** Array of step details for each step. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
     private final java.util.List<PipelineStepDetails> stepDetails;
@@ -783,6 +818,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
                 .append(String.valueOf(this.infrastructureConfigurationDetails));
         sb.append(", storageMountConfigurationDetailsList=")
                 .append(String.valueOf(this.storageMountConfigurationDetailsList));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", stepDetails=").append(String.valueOf(this.stepDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -820,6 +856,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(
                         this.storageMountConfigurationDetailsList,
                         other.storageMountConfigurationDetailsList)
+                && java.util.Objects.equals(this.parameters, other.parameters)
                 && java.util.Objects.equals(this.stepDetails, other.stepDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -863,6 +900,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.storageMountConfigurationDetailsList == null
                                 ? 43
                                 : this.storageMountConfigurationDetailsList.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
         result = (result * PRIME) + (this.stepDetails == null ? 43 : this.stepDetails.hashCode());
         result =
                 (result * PRIME)

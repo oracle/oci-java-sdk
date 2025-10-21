@@ -109,6 +109,15 @@ public final class PipelineCustomScriptStepDetails extends PipelineStepDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("stepParameters")
+        private PipelineStepParameterDetails stepParameters;
+
+        public Builder stepParameters(PipelineStepParameterDetails stepParameters) {
+            this.stepParameters = stepParameters;
+            this.__explicitlySet__.add("stepParameters");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -121,7 +130,8 @@ public final class PipelineCustomScriptStepDetails extends PipelineStepDetails {
                             this.stepConfigurationDetails,
                             this.stepInfrastructureConfigurationDetails,
                             this.stepStorageMountConfigurationDetailsList,
-                            this.isArtifactUploaded);
+                            this.isArtifactUploaded,
+                            this.stepParameters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -153,6 +163,9 @@ public final class PipelineCustomScriptStepDetails extends PipelineStepDetails {
             if (model.wasPropertyExplicitlySet("isArtifactUploaded")) {
                 this.isArtifactUploaded(model.getIsArtifactUploaded());
             }
+            if (model.wasPropertyExplicitlySet("stepParameters")) {
+                this.stepParameters(model.getStepParameters());
+            }
             return this;
         }
     }
@@ -175,11 +188,13 @@ public final class PipelineCustomScriptStepDetails extends PipelineStepDetails {
             PipelineInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails,
             java.util.List<StorageMountConfigurationDetails>
                     stepStorageMountConfigurationDetailsList,
-            Boolean isArtifactUploaded) {
+            Boolean isArtifactUploaded,
+            PipelineStepParameterDetails stepParameters) {
         super(stepName, description, dependsOn, stepConfigurationDetails);
         this.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
         this.stepStorageMountConfigurationDetailsList = stepStorageMountConfigurationDetailsList;
         this.isArtifactUploaded = isArtifactUploaded;
+        this.stepParameters = stepParameters;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("stepInfrastructureConfigurationDetails")
@@ -217,6 +232,13 @@ public final class PipelineCustomScriptStepDetails extends PipelineStepDetails {
         return isArtifactUploaded;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("stepParameters")
+    private final PipelineStepParameterDetails stepParameters;
+
+    public PipelineStepParameterDetails getStepParameters() {
+        return stepParameters;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -237,6 +259,7 @@ public final class PipelineCustomScriptStepDetails extends PipelineStepDetails {
         sb.append(", stepStorageMountConfigurationDetailsList=")
                 .append(String.valueOf(this.stepStorageMountConfigurationDetailsList));
         sb.append(", isArtifactUploaded=").append(String.valueOf(this.isArtifactUploaded));
+        sb.append(", stepParameters=").append(String.valueOf(this.stepParameters));
         sb.append(")");
         return sb.toString();
     }
@@ -258,6 +281,7 @@ public final class PipelineCustomScriptStepDetails extends PipelineStepDetails {
                         this.stepStorageMountConfigurationDetailsList,
                         other.stepStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.isArtifactUploaded, other.isArtifactUploaded)
+                && java.util.Objects.equals(this.stepParameters, other.stepParameters)
                 && super.equals(other);
     }
 
@@ -280,6 +304,9 @@ public final class PipelineCustomScriptStepDetails extends PipelineStepDetails {
                         + (this.isArtifactUploaded == null
                                 ? 43
                                 : this.isArtifactUploaded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stepParameters == null ? 43 : this.stepParameters.hashCode());
         return result;
     }
 }

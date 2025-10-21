@@ -31,6 +31,7 @@ public final class UpdatePipelineDetails
         "logConfigurationDetails",
         "storageMountConfigurationDetailsList",
         "stepDetails",
+        "parameters",
         "freeformTags",
         "definedTags"
     })
@@ -42,6 +43,7 @@ public final class UpdatePipelineDetails
             PipelineLogConfigurationDetails logConfigurationDetails,
             java.util.List<StorageMountConfigurationDetails> storageMountConfigurationDetailsList,
             java.util.List<PipelineStepUpdateDetails> stepDetails,
+            java.util.Map<String, String> parameters,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -52,6 +54,7 @@ public final class UpdatePipelineDetails
         this.logConfigurationDetails = logConfigurationDetails;
         this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
         this.stepDetails = stepDetails;
+        this.parameters = parameters;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -154,6 +157,21 @@ public final class UpdatePipelineDetails
             this.__explicitlySet__.add("stepDetails");
             return this;
         }
+        /** Parameters used in the pipeline. */
+        @com.fasterxml.jackson.annotation.JsonProperty("parameters")
+        private java.util.Map<String, String> parameters;
+
+        /**
+         * Parameters used in the pipeline.
+         *
+         * @param parameters the value to set
+         * @return this builder
+         */
+        public Builder parameters(java.util.Map<String, String> parameters) {
+            this.parameters = parameters;
+            this.__explicitlySet__.add("parameters");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
@@ -213,6 +231,7 @@ public final class UpdatePipelineDetails
                             this.logConfigurationDetails,
                             this.storageMountConfigurationDetailsList,
                             this.stepDetails,
+                            this.parameters,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -245,6 +264,9 @@ public final class UpdatePipelineDetails
             }
             if (model.wasPropertyExplicitlySet("stepDetails")) {
                 this.stepDetails(model.getStepDetails());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -344,6 +366,19 @@ public final class UpdatePipelineDetails
         return stepDetails;
     }
 
+    /** Parameters used in the pipeline. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parameters")
+    private final java.util.Map<String, String> parameters;
+
+    /**
+     * Parameters used in the pipeline.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
@@ -409,6 +444,7 @@ public final class UpdatePipelineDetails
         sb.append(", storageMountConfigurationDetailsList=")
                 .append(String.valueOf(this.storageMountConfigurationDetailsList));
         sb.append(", stepDetails=").append(String.valueOf(this.stepDetails));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -437,6 +473,7 @@ public final class UpdatePipelineDetails
                         this.storageMountConfigurationDetailsList,
                         other.storageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.stepDetails, other.stepDetails)
+                && java.util.Objects.equals(this.parameters, other.parameters)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -469,6 +506,7 @@ public final class UpdatePipelineDetails
                                 ? 43
                                 : this.storageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.stepDetails == null ? 43 : this.stepDetails.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

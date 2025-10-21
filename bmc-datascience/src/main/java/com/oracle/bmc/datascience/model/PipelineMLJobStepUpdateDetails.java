@@ -54,6 +54,30 @@ public final class PipelineMLJobStepUpdateDetails extends PipelineStepUpdateDeta
             this.__explicitlySet__.add("stepConfigurationDetails");
             return this;
         }
+        /** Name used when creating the steprun. */
+        @com.fasterxml.jackson.annotation.JsonProperty("stepRunName")
+        private String stepRunName;
+
+        /**
+         * Name used when creating the steprun.
+         *
+         * @param stepRunName the value to set
+         * @return this builder
+         */
+        public Builder stepRunName(String stepRunName) {
+            this.stepRunName = stepRunName;
+            this.__explicitlySet__.add("stepRunName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("stepParameters")
+        private PipelineStepParameterDetails stepParameters;
+
+        public Builder stepParameters(PipelineStepParameterDetails stepParameters) {
+            this.stepParameters = stepParameters;
+            this.__explicitlySet__.add("stepParameters");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -61,7 +85,11 @@ public final class PipelineMLJobStepUpdateDetails extends PipelineStepUpdateDeta
         public PipelineMLJobStepUpdateDetails build() {
             PipelineMLJobStepUpdateDetails model =
                     new PipelineMLJobStepUpdateDetails(
-                            this.stepName, this.description, this.stepConfigurationDetails);
+                            this.stepName,
+                            this.description,
+                            this.stepConfigurationDetails,
+                            this.stepRunName,
+                            this.stepParameters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +106,12 @@ public final class PipelineMLJobStepUpdateDetails extends PipelineStepUpdateDeta
             }
             if (model.wasPropertyExplicitlySet("stepConfigurationDetails")) {
                 this.stepConfigurationDetails(model.getStepConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("stepRunName")) {
+                this.stepRunName(model.getStepRunName());
+            }
+            if (model.wasPropertyExplicitlySet("stepParameters")) {
+                this.stepParameters(model.getStepParameters());
             }
             return this;
         }
@@ -96,8 +130,32 @@ public final class PipelineMLJobStepUpdateDetails extends PipelineStepUpdateDeta
     public PipelineMLJobStepUpdateDetails(
             String stepName,
             String description,
-            PipelineStepConfigurationDetails stepConfigurationDetails) {
+            PipelineStepConfigurationDetails stepConfigurationDetails,
+            String stepRunName,
+            PipelineStepParameterDetails stepParameters) {
         super(stepName, description, stepConfigurationDetails);
+        this.stepRunName = stepRunName;
+        this.stepParameters = stepParameters;
+    }
+
+    /** Name used when creating the steprun. */
+    @com.fasterxml.jackson.annotation.JsonProperty("stepRunName")
+    private final String stepRunName;
+
+    /**
+     * Name used when creating the steprun.
+     *
+     * @return the value
+     */
+    public String getStepRunName() {
+        return stepRunName;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("stepParameters")
+    private final PipelineStepParameterDetails stepParameters;
+
+    public PipelineStepParameterDetails getStepParameters() {
+        return stepParameters;
     }
 
     @Override
@@ -115,6 +173,8 @@ public final class PipelineMLJobStepUpdateDetails extends PipelineStepUpdateDeta
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PipelineMLJobStepUpdateDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", stepRunName=").append(String.valueOf(this.stepRunName));
+        sb.append(", stepParameters=").append(String.valueOf(this.stepParameters));
         sb.append(")");
         return sb.toString();
     }
@@ -129,13 +189,19 @@ public final class PipelineMLJobStepUpdateDetails extends PipelineStepUpdateDeta
         }
 
         PipelineMLJobStepUpdateDetails other = (PipelineMLJobStepUpdateDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.stepRunName, other.stepRunName)
+                && java.util.Objects.equals(this.stepParameters, other.stepParameters)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.stepRunName == null ? 43 : this.stepRunName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stepParameters == null ? 43 : this.stepParameters.hashCode());
         return result;
     }
 }

@@ -24,26 +24,35 @@ package com.oracle.bmc.datascience.model;
 public final class PipelineShapeConfigDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "cpuBaseline"})
-    public PipelineShapeConfigDetails(Float ocpus, Float memoryInGBs, CpuBaseline cpuBaseline) {
+    @java.beans.ConstructorProperties({
+        "ocpus",
+        "memoryInGBs",
+        "cpuBaseline",
+        "ocpusParameterized",
+        "memoryInGBsParameterized"
+    })
+    public PipelineShapeConfigDetails(
+            Float ocpus,
+            Float memoryInGBs,
+            CpuBaseline cpuBaseline,
+            String ocpusParameterized,
+            String memoryInGBsParameterized) {
         super();
         this.ocpus = ocpus;
         this.memoryInGBs = memoryInGBs;
         this.cpuBaseline = cpuBaseline;
+        this.ocpusParameterized = ocpusParameterized;
+        this.memoryInGBsParameterized = memoryInGBsParameterized;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be
-         * specified.
-         */
+        /** The total number of OCPUs available to the pipeline step run instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be
-         * specified.
+         * The total number of OCPUs available to the pipeline step run instance.
          *
          * @param ocpus the value to set
          * @return this builder
@@ -53,16 +62,12 @@ public final class PipelineShapeConfigDetails
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-        /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified.
-         * This specifies the size of the memory in GBs.
-         */
+        /** The total amount of memory available to the pipeline step run instance GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified.
-         * This specifies the size of the memory in GBs.
+         * The total amount of memory available to the pipeline step run instance GBs.
          *
          * @param memoryInGBs the value to set
          * @return this builder
@@ -97,13 +102,60 @@ public final class PipelineShapeConfigDetails
             this.__explicitlySet__.add("cpuBaseline");
             return this;
         }
+        /**
+         * The total number of OCPUs available to the pipeline step run instance specified as a
+         * parameter. This overrides the ocpus value. The request will fail if the parameters used
+         * are null or invalid.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpusParameterized")
+        private String ocpusParameterized;
+
+        /**
+         * The total number of OCPUs available to the pipeline step run instance specified as a
+         * parameter. This overrides the ocpus value. The request will fail if the parameters used
+         * are null or invalid.
+         *
+         * @param ocpusParameterized the value to set
+         * @return this builder
+         */
+        public Builder ocpusParameterized(String ocpusParameterized) {
+            this.ocpusParameterized = ocpusParameterized;
+            this.__explicitlySet__.add("ocpusParameterized");
+            return this;
+        }
+        /**
+         * The total amount of memory available to the pipeline step run instance in GBs specified
+         * as a parameter. This overrides the memoryInGBs value. The request will fail if the
+         * parameters used are null or invalid.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBsParameterized")
+        private String memoryInGBsParameterized;
+
+        /**
+         * The total amount of memory available to the pipeline step run instance in GBs specified
+         * as a parameter. This overrides the memoryInGBs value. The request will fail if the
+         * parameters used are null or invalid.
+         *
+         * @param memoryInGBsParameterized the value to set
+         * @return this builder
+         */
+        public Builder memoryInGBsParameterized(String memoryInGBsParameterized) {
+            this.memoryInGBsParameterized = memoryInGBsParameterized;
+            this.__explicitlySet__.add("memoryInGBsParameterized");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PipelineShapeConfigDetails build() {
             PipelineShapeConfigDetails model =
-                    new PipelineShapeConfigDetails(this.ocpus, this.memoryInGBs, this.cpuBaseline);
+                    new PipelineShapeConfigDetails(
+                            this.ocpus,
+                            this.memoryInGBs,
+                            this.cpuBaseline,
+                            this.ocpusParameterized,
+                            this.memoryInGBsParameterized);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -121,6 +173,12 @@ public final class PipelineShapeConfigDetails
             if (model.wasPropertyExplicitlySet("cpuBaseline")) {
                 this.cpuBaseline(model.getCpuBaseline());
             }
+            if (model.wasPropertyExplicitlySet("ocpusParameterized")) {
+                this.ocpusParameterized(model.getOcpusParameterized());
+            }
+            if (model.wasPropertyExplicitlySet("memoryInGBsParameterized")) {
+                this.memoryInGBsParameterized(model.getMemoryInGBsParameterized());
+            }
             return this;
         }
     }
@@ -134,16 +192,12 @@ public final class PipelineShapeConfigDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be
-     * specified.
-     */
+    /** The total number of OCPUs available to the pipeline step run instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
     /**
-     * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be
-     * specified.
+     * The total number of OCPUs available to the pipeline step run instance.
      *
      * @return the value
      */
@@ -151,16 +205,12 @@ public final class PipelineShapeConfigDetails
         return ocpus;
     }
 
-    /**
-     * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This
-     * specifies the size of the memory in GBs.
-     */
+    /** The total amount of memory available to the pipeline step run instance GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
     /**
-     * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This
-     * specifies the size of the memory in GBs.
+     * The total amount of memory available to the pipeline step run instance GBs.
      *
      * @return the value
      */
@@ -244,6 +294,44 @@ public final class PipelineShapeConfigDetails
         return cpuBaseline;
     }
 
+    /**
+     * The total number of OCPUs available to the pipeline step run instance specified as a
+     * parameter. This overrides the ocpus value. The request will fail if the parameters used are
+     * null or invalid.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpusParameterized")
+    private final String ocpusParameterized;
+
+    /**
+     * The total number of OCPUs available to the pipeline step run instance specified as a
+     * parameter. This overrides the ocpus value. The request will fail if the parameters used are
+     * null or invalid.
+     *
+     * @return the value
+     */
+    public String getOcpusParameterized() {
+        return ocpusParameterized;
+    }
+
+    /**
+     * The total amount of memory available to the pipeline step run instance in GBs specified as a
+     * parameter. This overrides the memoryInGBs value. The request will fail if the parameters used
+     * are null or invalid.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBsParameterized")
+    private final String memoryInGBsParameterized;
+
+    /**
+     * The total amount of memory available to the pipeline step run instance in GBs specified as a
+     * parameter. This overrides the memoryInGBs value. The request will fail if the parameters used
+     * are null or invalid.
+     *
+     * @return the value
+     */
+    public String getMemoryInGBsParameterized() {
+        return memoryInGBsParameterized;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -262,6 +350,9 @@ public final class PipelineShapeConfigDetails
         sb.append("ocpus=").append(String.valueOf(this.ocpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
         sb.append(", cpuBaseline=").append(String.valueOf(this.cpuBaseline));
+        sb.append(", ocpusParameterized=").append(String.valueOf(this.ocpusParameterized));
+        sb.append(", memoryInGBsParameterized=")
+                .append(String.valueOf(this.memoryInGBsParameterized));
         sb.append(")");
         return sb.toString();
     }
@@ -279,6 +370,9 @@ public final class PipelineShapeConfigDetails
         return java.util.Objects.equals(this.ocpus, other.ocpus)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
                 && java.util.Objects.equals(this.cpuBaseline, other.cpuBaseline)
+                && java.util.Objects.equals(this.ocpusParameterized, other.ocpusParameterized)
+                && java.util.Objects.equals(
+                        this.memoryInGBsParameterized, other.memoryInGBsParameterized)
                 && super.equals(other);
     }
 
@@ -289,6 +383,16 @@ public final class PipelineShapeConfigDetails
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
         result = (result * PRIME) + (this.cpuBaseline == null ? 43 : this.cpuBaseline.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ocpusParameterized == null
+                                ? 43
+                                : this.ocpusParameterized.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryInGBsParameterized == null
+                                ? 43
+                                : this.memoryInGBsParameterized.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

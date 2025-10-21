@@ -33,6 +33,7 @@ public final class CreateJobRunDetails
         "jobEnvironmentConfigurationOverrideDetails",
         "jobInfrastructureConfigurationOverrideDetails",
         "jobNodeConfigurationOverrideDetails",
+        "jobStorageMountConfigurationOverrideDetailsList",
         "freeformTags",
         "definedTags"
     })
@@ -46,6 +47,8 @@ public final class CreateJobRunDetails
             JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationOverrideDetails,
             JobNodeConfigurationDetails jobNodeConfigurationOverrideDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    jobStorageMountConfigurationOverrideDetailsList,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -60,6 +63,8 @@ public final class CreateJobRunDetails
         this.jobInfrastructureConfigurationOverrideDetails =
                 jobInfrastructureConfigurationOverrideDetails;
         this.jobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
+        this.jobStorageMountConfigurationOverrideDetailsList =
+                jobStorageMountConfigurationOverrideDetailsList;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -192,6 +197,26 @@ public final class CreateJobRunDetails
             this.__explicitlySet__.add("jobNodeConfigurationOverrideDetails");
             return this;
         }
+        /** Collection of JobStorageMountConfigurationDetails. */
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "jobStorageMountConfigurationOverrideDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                jobStorageMountConfigurationOverrideDetailsList;
+
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         *
+         * @param jobStorageMountConfigurationOverrideDetailsList the value to set
+         * @return this builder
+         */
+        public Builder jobStorageMountConfigurationOverrideDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        jobStorageMountConfigurationOverrideDetailsList) {
+            this.jobStorageMountConfigurationOverrideDetailsList =
+                    jobStorageMountConfigurationOverrideDetailsList;
+            this.__explicitlySet__.add("jobStorageMountConfigurationOverrideDetailsList");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
@@ -253,6 +278,7 @@ public final class CreateJobRunDetails
                             this.jobEnvironmentConfigurationOverrideDetails,
                             this.jobInfrastructureConfigurationOverrideDetails,
                             this.jobNodeConfigurationOverrideDetails,
+                            this.jobStorageMountConfigurationOverrideDetailsList,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -293,6 +319,10 @@ public final class CreateJobRunDetails
             if (model.wasPropertyExplicitlySet("jobNodeConfigurationOverrideDetails")) {
                 this.jobNodeConfigurationOverrideDetails(
                         model.getJobNodeConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobStorageMountConfigurationOverrideDetailsList")) {
+                this.jobStorageMountConfigurationOverrideDetailsList(
+                        model.getJobStorageMountConfigurationOverrideDetailsList());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -414,6 +444,22 @@ public final class CreateJobRunDetails
         return jobNodeConfigurationOverrideDetails;
     }
 
+    /** Collection of JobStorageMountConfigurationDetails. */
+    @com.fasterxml.jackson.annotation.JsonProperty(
+            "jobStorageMountConfigurationOverrideDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            jobStorageMountConfigurationOverrideDetailsList;
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getJobStorageMountConfigurationOverrideDetailsList() {
+        return jobStorageMountConfigurationOverrideDetailsList;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
@@ -483,6 +529,8 @@ public final class CreateJobRunDetails
                 .append(String.valueOf(this.jobInfrastructureConfigurationOverrideDetails));
         sb.append(", jobNodeConfigurationOverrideDetails=")
                 .append(String.valueOf(this.jobNodeConfigurationOverrideDetails));
+        sb.append(", jobStorageMountConfigurationOverrideDetailsList=")
+                .append(String.valueOf(this.jobStorageMountConfigurationOverrideDetailsList));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -517,6 +565,9 @@ public final class CreateJobRunDetails
                 && java.util.Objects.equals(
                         this.jobNodeConfigurationOverrideDetails,
                         other.jobNodeConfigurationOverrideDetails)
+                && java.util.Objects.equals(
+                        this.jobStorageMountConfigurationOverrideDetailsList,
+                        other.jobStorageMountConfigurationOverrideDetailsList)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -557,6 +608,11 @@ public final class CreateJobRunDetails
                         + (this.jobNodeConfigurationOverrideDetails == null
                                 ? 43
                                 : this.jobNodeConfigurationOverrideDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobStorageMountConfigurationOverrideDetailsList == null
+                                ? 43
+                                : this.jobStorageMountConfigurationOverrideDetailsList.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
