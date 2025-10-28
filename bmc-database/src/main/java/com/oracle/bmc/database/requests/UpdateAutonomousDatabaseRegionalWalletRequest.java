@@ -16,11 +16,11 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails> {
 
-    /** Request to update the properties of Autonomous Database regional wallet. */
+    /** Request to update the properties of Autonomous AI Database regional wallet. */
     private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
             updateAutonomousDatabaseWalletDetails;
 
-    /** Request to update the properties of Autonomous Database regional wallet. */
+    /** Request to update the properties of Autonomous AI Database regional wallet. */
     public com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
             getUpdateAutonomousDatabaseWalletDetails() {
         return updateAutonomousDatabaseWalletDetails;
@@ -66,12 +66,12 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Request to update the properties of Autonomous Database regional wallet. */
+        /** Request to update the properties of Autonomous AI Database regional wallet. */
         private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
                 updateAutonomousDatabaseWalletDetails = null;
 
         /**
-         * Request to update the properties of Autonomous Database regional wallet.
+         * Request to update the properties of Autonomous AI Database regional wallet.
          *
          * @param updateAutonomousDatabaseWalletDetails the value to set
          * @return this builder instance

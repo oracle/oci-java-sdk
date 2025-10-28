@@ -361,8 +361,8 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
@@ -371,8 +371,8 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
@@ -1044,9 +1044,9 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -1054,9 +1054,9 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      *
      * @return the value
      */

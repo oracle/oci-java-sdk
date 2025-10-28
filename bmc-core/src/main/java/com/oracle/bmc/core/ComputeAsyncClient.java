@@ -3437,6 +3437,7 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                         "computeHostLifecycleState", request.getComputeHostLifecycleState())
                 .appendQueryParam("computeHostHealth", request.getComputeHostHealth())
                 .appendQueryParam("computeHostGroupId", request.getComputeHostGroupId())
+                .appendQueryParam("computeHostInSubtree", request.getComputeHostInSubtree())
                 .accept("application/json, application/x-json-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

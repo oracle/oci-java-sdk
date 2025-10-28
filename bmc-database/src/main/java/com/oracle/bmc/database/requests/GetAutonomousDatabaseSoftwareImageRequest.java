@@ -16,13 +16,13 @@ public class GetAutonomousDatabaseSoftwareImageRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousDatabaseSoftwareImageId;
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousDatabaseSoftwareImageId() {
@@ -43,13 +43,13 @@ public class GetAutonomousDatabaseSoftwareImageRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Autonomous Database Software Image
+         * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousDatabaseSoftwareImageId = null;
 
         /**
-         * The Autonomous Database Software Image
+         * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param autonomousDatabaseSoftwareImageId the value to set

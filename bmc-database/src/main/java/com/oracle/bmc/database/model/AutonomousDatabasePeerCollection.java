@@ -5,8 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The object holds details about the peer Autonomous Databases for an Oracle Autonomous Database.
- * <br>
+ * The object holds details about the peer Autonomous AI Databases for an Oracle Autonomous AI
+ * Database. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,14 +33,14 @@ public final class AutonomousDatabasePeerCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * This array holds details about Autonomous Database Peers for Oracle an Autonomous
+         * This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI
          * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AutonomousDatabasePeerSummary> items;
 
         /**
-         * This array holds details about Autonomous Database Peers for Oracle an Autonomous
+         * This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI
          * Database.
          *
          * @param items the value to set
@@ -83,13 +83,15 @@ public final class AutonomousDatabasePeerCollection
     }
 
     /**
-     * This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+     * This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI
+     * Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AutonomousDatabasePeerSummary> items;
 
     /**
-     * This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+     * This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI
+     * Database.
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * An Autonomous Database backup. <br>
+ * An Autonomous AI Database backup. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -108,14 +108,14 @@ public final class AutonomousDatabaseBackup
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          *
          * @param id the value to set
          * @return this builder
@@ -146,14 +146,14 @@ public final class AutonomousDatabaseBackup
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database.
+         * Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database.
+         * Autonomous AI Database.
          *
          * @param autonomousDatabaseId the value to set
          * @return this builder
@@ -284,13 +284,15 @@ public final class AutonomousDatabaseBackup
             return this;
         }
         /**
-         * Indicates whether the backup can be used to restore the associated Autonomous Database.
+         * Indicates whether the backup can be used to restore the associated Autonomous AI
+         * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isRestorable")
         private Boolean isRestorable;
 
         /**
-         * Indicates whether the backup can be used to restore the associated Autonomous Database.
+         * Indicates whether the backup can be used to restore the associated Autonomous AI
+         * Database.
          *
          * @param isRestorable the value to set
          * @return this builder
@@ -379,8 +381,8 @@ public final class AutonomousDatabaseBackup
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
@@ -389,8 +391,8 @@ public final class AutonomousDatabaseBackup
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
@@ -431,12 +433,12 @@ public final class AutonomousDatabaseBackup
             this.__explicitlySet__.add("timeAvailableTill");
             return this;
         }
-        /** A valid Oracle Database version for Autonomous Database. */
+        /** A valid Oracle AI Database version for Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * A valid Oracle Database version for Autonomous Database.
+         * A valid Oracle AI Database version for Autonomous AI Database.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -639,14 +641,14 @@ public final class AutonomousDatabaseBackup
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      *
      * @return the value
      */
@@ -673,14 +675,14 @@ public final class AutonomousDatabaseBackup
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database.
+     * Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database.
+     * Autonomous AI Database.
      *
      * @return the value
      */
@@ -890,12 +892,14 @@ public final class AutonomousDatabaseBackup
         return lifecycleState;
     }
 
-    /** Indicates whether the backup can be used to restore the associated Autonomous Database. */
+    /**
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isRestorable")
     private final Boolean isRestorable;
 
     /**
-     * Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      *
      * @return the value
      */
@@ -974,9 +978,9 @@ public final class AutonomousDatabaseBackup
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -984,9 +988,9 @@ public final class AutonomousDatabaseBackup
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      *
      * @return the value
      */
@@ -1020,12 +1024,12 @@ public final class AutonomousDatabaseBackup
         return timeAvailableTill;
     }
 
-    /** A valid Oracle Database version for Autonomous Database. */
+    /** A valid Oracle AI Database version for Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
      *
      * @return the value
      */

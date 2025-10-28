@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of manual refresh for an Autonomous Database refreshable clone. <br>
+ * Details of manual refresh for an Autonomous AI Database refreshable clone. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,7 +32,7 @@ public final class AutonomousDatabaseManualRefreshDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The timestamp to which the Autonomous Database refreshable clone will be refreshed.
+         * The timestamp to which the Autonomous AI Database refreshable clone will be refreshed.
          * Changes made in the primary database after this timestamp are not part of the data
          * refresh.
          */
@@ -40,7 +40,7 @@ public final class AutonomousDatabaseManualRefreshDetails
         private java.util.Date timeRefreshCutoff;
 
         /**
-         * The timestamp to which the Autonomous Database refreshable clone will be refreshed.
+         * The timestamp to which the Autonomous AI Database refreshable clone will be refreshed.
          * Changes made in the primary database after this timestamp are not part of the data
          * refresh.
          *
@@ -84,15 +84,15 @@ public final class AutonomousDatabaseManualRefreshDetails
     }
 
     /**
-     * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes
-     * made in the primary database after this timestamp are not part of the data refresh.
+     * The timestamp to which the Autonomous AI Database refreshable clone will be refreshed.
+     * Changes made in the primary database after this timestamp are not part of the data refresh.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeRefreshCutoff")
     private final java.util.Date timeRefreshCutoff;
 
     /**
-     * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes
-     * made in the primary database after this timestamp are not part of the data refresh.
+     * The timestamp to which the Autonomous AI Database refreshable clone will be refreshed.
+     * Changes made in the primary database after this timestamp are not part of the data refresh.
      *
      * @return the value
      */

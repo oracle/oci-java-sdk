@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of Autonomous Database in Autonomous Container Database <br>
+ * Details of Autonomous AI Database in Autonomous Container Database <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -52,13 +52,15 @@ public final class AutonomousDatabaseInBackup
             return this;
         }
         /**
-         * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+         * The user-friendly name for the Autonomous AI Database. The name does not have to be
+         * unique.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+         * The user-friendly name for the Autonomous AI Database. The name does not have to be
+         * unique.
          *
          * @param displayName the value to set
          * @return this builder
@@ -119,12 +121,14 @@ public final class AutonomousDatabaseInBackup
         return compartmentId;
     }
 
-    /** The user-friendly name for the Autonomous Database. The name does not have to be unique. */
+    /**
+     * The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      *
      * @return the value
      */

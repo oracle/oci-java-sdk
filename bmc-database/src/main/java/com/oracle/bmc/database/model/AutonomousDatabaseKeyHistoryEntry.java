@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Autonomous Database
+ * The Autonomous AI Database
  * [Vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts)
  * service key management history entry. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
@@ -38,7 +38,7 @@ public final class AutonomousDatabaseKeyHistoryEntry
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The id of the Autonomous Database
+         * The id of the Autonomous AI Database
          * [Vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts)
          * service key management history entry.
          */
@@ -46,7 +46,7 @@ public final class AutonomousDatabaseKeyHistoryEntry
         private String id;
 
         /**
-         * The id of the Autonomous Database
+         * The id of the Autonomous AI Database
          * [Vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts)
          * service key management history entry.
          *
@@ -61,8 +61,8 @@ public final class AutonomousDatabaseKeyHistoryEntry
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
@@ -71,8 +71,8 @@ public final class AutonomousDatabaseKeyHistoryEntry
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
@@ -163,7 +163,7 @@ public final class AutonomousDatabaseKeyHistoryEntry
     }
 
     /**
-     * The id of the Autonomous Database
+     * The id of the Autonomous AI Database
      * [Vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts)
      * service key management history entry.
      */
@@ -171,7 +171,7 @@ public final class AutonomousDatabaseKeyHistoryEntry
     private final String id;
 
     /**
-     * The id of the Autonomous Database
+     * The id of the Autonomous AI Database
      * [Vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts)
      * service key management history entry.
      *
@@ -184,9 +184,9 @@ public final class AutonomousDatabaseKeyHistoryEntry
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -194,9 +194,9 @@ public final class AutonomousDatabaseKeyHistoryEntry
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      *
      * @return the value
      */

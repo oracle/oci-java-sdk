@@ -107,7 +107,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Container Database that has a relationship with the peer Autonomous Container
-         * Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+         * Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
         private String autonomousContainerDatabaseId;
@@ -115,7 +115,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Container Database that has a relationship with the peer Autonomous Container
-         * Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+         * Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
          *
          * @param autonomousContainerDatabaseId the value to set
          * @return this builder
@@ -126,14 +126,14 @@ public final class AutonomousContainerDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          *
          * @param role the value to set
@@ -212,14 +212,14 @@ public final class AutonomousContainerDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
         private PeerRole peerRole;
 
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          *
          * @param peerRole the value to set
@@ -543,7 +543,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Container Database that has a relationship with the peer Autonomous Container
-     * Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
     private final String autonomousContainerDatabaseId;
@@ -551,7 +551,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Container Database that has a relationship with the peer Autonomous Container
-     * Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      *
      * @return the value
      */
@@ -560,7 +560,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
@@ -610,14 +610,14 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      *
      * @return the value
@@ -736,7 +736,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     public enum PeerRole implements com.oracle.bmc.http.internal.BmcEnum {
@@ -788,14 +788,14 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
     private final PeerRole peerRole;
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      *
      * @return the value

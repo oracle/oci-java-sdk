@@ -134,12 +134,12 @@ public final class CloudAutonomousVmClusterResourceUsage
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The data disk group size allocated for Autonomous Databases, in TBs. */
+        /** The data disk group size allocated for Autonomous AI Databases, in TBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
         private Float autonomousDataStorageSizeInTBs;
 
         /**
-         * The data disk group size allocated for Autonomous Databases, in TBs.
+         * The data disk group size allocated for Autonomous AI Databases, in TBs.
          *
          * @param autonomousDataStorageSizeInTBs the value to set
          * @return this builder
@@ -194,12 +194,12 @@ public final class CloudAutonomousVmClusterResourceUsage
             this.__explicitlySet__.add("totalContainerDatabases");
             return this;
         }
-        /** The data disk group size available for Autonomous Databases, in TBs. */
+        /** The data disk group size available for Autonomous AI Databases, in TBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("availableAutonomousDataStorageSizeInTBs")
         private Float availableAutonomousDataStorageSizeInTBs;
 
         /**
-         * The data disk group size available for Autonomous Databases, in TBs.
+         * The data disk group size available for Autonomous AI Databases, in TBs.
          *
          * @param availableAutonomousDataStorageSizeInTBs the value to set
          * @return this builder
@@ -210,12 +210,12 @@ public final class CloudAutonomousVmClusterResourceUsage
             this.__explicitlySet__.add("availableAutonomousDataStorageSizeInTBs");
             return this;
         }
-        /** The data disk group size used for Autonomous Databases, in TBs. */
+        /** The data disk group size used for Autonomous AI Databases, in TBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("usedAutonomousDataStorageSizeInTBs")
         private Float usedAutonomousDataStorageSizeInTBs;
 
         /**
-         * The data disk group size used for Autonomous Databases, in TBs.
+         * The data disk group size used for Autonomous AI Databases, in TBs.
          *
          * @param usedAutonomousDataStorageSizeInTBs the value to set
          * @return this builder
@@ -330,7 +330,7 @@ public final class CloudAutonomousVmClusterResourceUsage
         }
         /**
          * CPU cores that continue to be included in the count of OCPUs available to the Autonomous
-         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * Container Database even after one of its Autonomous AI Database is terminated or scaled
          * down. You can release them to the available OCPUs at its parent AVMC level by restarting
          * the Autonomous Container Database.
          */
@@ -339,7 +339,7 @@ public final class CloudAutonomousVmClusterResourceUsage
 
         /**
          * CPU cores that continue to be included in the count of OCPUs available to the Autonomous
-         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * Container Database even after one of its Autonomous AI Database is terminated or scaled
          * down. You can release them to the available OCPUs at its parent AVMC level by restarting
          * the Autonomous Container Database.
          *
@@ -603,12 +603,12 @@ public final class CloudAutonomousVmClusterResourceUsage
         return id;
     }
 
-    /** The data disk group size allocated for Autonomous Databases, in TBs. */
+    /** The data disk group size allocated for Autonomous AI Databases, in TBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
     private final Float autonomousDataStorageSizeInTBs;
 
     /**
-     * The data disk group size allocated for Autonomous Databases, in TBs.
+     * The data disk group size allocated for Autonomous AI Databases, in TBs.
      *
      * @return the value
      */
@@ -655,12 +655,12 @@ public final class CloudAutonomousVmClusterResourceUsage
         return totalContainerDatabases;
     }
 
-    /** The data disk group size available for Autonomous Databases, in TBs. */
+    /** The data disk group size available for Autonomous AI Databases, in TBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("availableAutonomousDataStorageSizeInTBs")
     private final Float availableAutonomousDataStorageSizeInTBs;
 
     /**
-     * The data disk group size available for Autonomous Databases, in TBs.
+     * The data disk group size available for Autonomous AI Databases, in TBs.
      *
      * @return the value
      */
@@ -668,12 +668,12 @@ public final class CloudAutonomousVmClusterResourceUsage
         return availableAutonomousDataStorageSizeInTBs;
     }
 
-    /** The data disk group size used for Autonomous Databases, in TBs. */
+    /** The data disk group size used for Autonomous AI Databases, in TBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("usedAutonomousDataStorageSizeInTBs")
     private final Float usedAutonomousDataStorageSizeInTBs;
 
     /**
-     * The data disk group size used for Autonomous Databases, in TBs.
+     * The data disk group size used for Autonomous AI Databases, in TBs.
      *
      * @return the value
      */
@@ -773,7 +773,7 @@ public final class CloudAutonomousVmClusterResourceUsage
 
     /**
      * CPU cores that continue to be included in the count of OCPUs available to the Autonomous
-     * Container Database even after one of its Autonomous Database is terminated or scaled down.
+     * Container Database even after one of its Autonomous AI Database is terminated or scaled down.
      * You can release them to the available OCPUs at its parent AVMC level by restarting the
      * Autonomous Container Database.
      */
@@ -782,7 +782,7 @@ public final class CloudAutonomousVmClusterResourceUsage
 
     /**
      * CPU cores that continue to be included in the count of OCPUs available to the Autonomous
-     * Container Database even after one of its Autonomous Database is terminated or scaled down.
+     * Container Database even after one of its Autonomous AI Database is terminated or scaled down.
      * You can release them to the available OCPUs at its parent AVMC level by restarting the
      * Autonomous Container Database.
      *

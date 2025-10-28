@@ -49,11 +49,11 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
     public Boolean getOpcDryRun() {
         return opcDryRun;
     }
-    /** Details for deregistering an Autonomous Database with Data Safe. */
+    /** Details for deregistering an Autonomous AI Database with Data Safe. */
     private com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails
             deregisterAutonomousDatabaseDataSafeDetails;
 
-    /** Details for deregistering an Autonomous Database with Data Safe. */
+    /** Details for deregistering an Autonomous AI Database with Data Safe. */
     public com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails
             getDeregisterAutonomousDatabaseDataSafeDetails() {
         return deregisterAutonomousDatabaseDataSafeDetails;
@@ -129,12 +129,12 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
             return this;
         }
 
-        /** Details for deregistering an Autonomous Database with Data Safe. */
+        /** Details for deregistering an Autonomous AI Database with Data Safe. */
         private com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails
                 deregisterAutonomousDatabaseDataSafeDetails = null;
 
         /**
-         * Details for deregistering an Autonomous Database with Data Safe.
+         * Details for deregistering an Autonomous AI Database with Data Safe.
          *
          * @param deregisterAutonomousDatabaseDataSafeDetails the value to set
          * @return this builder instance

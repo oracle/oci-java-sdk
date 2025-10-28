@@ -39,6 +39,8 @@ public final class ExtensionSocialIdentityProvider
         "adminScope",
         "consumerKey",
         "consumerSecret",
+        "appleDevId",
+        "appleKeyId",
         "serviceProviderName",
         "clockSkewInSeconds",
         "redirectUrl",
@@ -62,6 +64,8 @@ public final class ExtensionSocialIdentityProvider
             java.util.List<String> adminScope,
             String consumerKey,
             String consumerSecret,
+            String appleDevId,
+            String appleKeyId,
             String serviceProviderName,
             Integer clockSkewInSeconds,
             String redirectUrl,
@@ -84,6 +88,8 @@ public final class ExtensionSocialIdentityProvider
         this.adminScope = adminScope;
         this.consumerKey = consumerKey;
         this.consumerSecret = consumerSecret;
+        this.appleDevId = appleDevId;
+        this.appleKeyId = appleKeyId;
         this.serviceProviderName = serviceProviderName;
         this.clockSkewInSeconds = clockSkewInSeconds;
         this.redirectUrl = redirectUrl;
@@ -538,6 +544,64 @@ public final class ExtensionSocialIdentityProvider
             return this;
         }
         /**
+         * Apple Developer ID
+         *
+         * <p>*Added In:** 2311180004
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
+         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
+         * none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("appleDevId")
+        private String appleDevId;
+
+        /**
+         * Apple Developer ID
+         *
+         * <p>*Added In:** 2311180004
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
+         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
+         * none
+         *
+         * @param appleDevId the value to set
+         * @return this builder
+         */
+        public Builder appleDevId(String appleDevId) {
+            this.appleDevId = appleDevId;
+            this.__explicitlySet__.add("appleDevId");
+            return this;
+        }
+        /**
+         * Apple Private Key ID
+         *
+         * <p>*Added In:** 2311180004
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
+         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
+         * none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("appleKeyId")
+        private String appleKeyId;
+
+        /**
+         * Apple Private Key ID
+         *
+         * <p>*Added In:** 2311180004
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
+         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
+         * none
+         *
+         * @param appleKeyId the value to set
+         * @return this builder
+         */
+        public Builder appleKeyId(String appleKeyId) {
+            this.appleKeyId = appleKeyId;
+            this.__explicitlySet__.add("appleKeyId");
+            return this;
+        }
+        /**
          * Service Provider Name
          *
          * <p>*Added In:** 20.1.3
@@ -731,6 +795,8 @@ public final class ExtensionSocialIdentityProvider
                             this.adminScope,
                             this.consumerKey,
                             this.consumerSecret,
+                            this.appleDevId,
+                            this.appleKeyId,
                             this.serviceProviderName,
                             this.clockSkewInSeconds,
                             this.redirectUrl,
@@ -789,6 +855,12 @@ public final class ExtensionSocialIdentityProvider
             }
             if (model.wasPropertyExplicitlySet("consumerSecret")) {
                 this.consumerSecret(model.getConsumerSecret());
+            }
+            if (model.wasPropertyExplicitlySet("appleDevId")) {
+                this.appleDevId(model.getAppleDevId());
+            }
+            if (model.wasPropertyExplicitlySet("appleKeyId")) {
+                this.appleKeyId(model.getAppleKeyId());
             }
             if (model.wasPropertyExplicitlySet("serviceProviderName")) {
                 this.serviceProviderName(model.getServiceProviderName());
@@ -1267,6 +1339,56 @@ public final class ExtensionSocialIdentityProvider
     }
 
     /**
+     * Apple Developer ID
+     *
+     * <p>*Added In:** 2311180004
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("appleDevId")
+    private final String appleDevId;
+
+    /**
+     * Apple Developer ID
+     *
+     * <p>*Added In:** 2311180004
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     *
+     * @return the value
+     */
+    public String getAppleDevId() {
+        return appleDevId;
+    }
+
+    /**
+     * Apple Private Key ID
+     *
+     * <p>*Added In:** 2311180004
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("appleKeyId")
+    private final String appleKeyId;
+
+    /**
+     * Apple Private Key ID
+     *
+     * <p>*Added In:** 2311180004
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     *
+     * @return the value
+     */
+    public String getAppleKeyId() {
+        return appleKeyId;
+    }
+
+    /**
      * Service Provider Name
      *
      * <p>*Added In:** 20.1.3
@@ -1450,6 +1572,8 @@ public final class ExtensionSocialIdentityProvider
         sb.append(", adminScope=").append(String.valueOf(this.adminScope));
         sb.append(", consumerKey=").append(String.valueOf(this.consumerKey));
         sb.append(", consumerSecret=").append(String.valueOf(this.consumerSecret));
+        sb.append(", appleDevId=").append(String.valueOf(this.appleDevId));
+        sb.append(", appleKeyId=").append(String.valueOf(this.appleKeyId));
         sb.append(", serviceProviderName=").append(String.valueOf(this.serviceProviderName));
         sb.append(", clockSkewInSeconds=").append(String.valueOf(this.clockSkewInSeconds));
         sb.append(", redirectUrl=").append(String.valueOf(this.redirectUrl));
@@ -1488,6 +1612,8 @@ public final class ExtensionSocialIdentityProvider
                 && java.util.Objects.equals(this.adminScope, other.adminScope)
                 && java.util.Objects.equals(this.consumerKey, other.consumerKey)
                 && java.util.Objects.equals(this.consumerSecret, other.consumerSecret)
+                && java.util.Objects.equals(this.appleDevId, other.appleDevId)
+                && java.util.Objects.equals(this.appleKeyId, other.appleKeyId)
                 && java.util.Objects.equals(this.serviceProviderName, other.serviceProviderName)
                 && java.util.Objects.equals(this.clockSkewInSeconds, other.clockSkewInSeconds)
                 && java.util.Objects.equals(this.redirectUrl, other.redirectUrl)
@@ -1549,6 +1675,8 @@ public final class ExtensionSocialIdentityProvider
         result =
                 (result * PRIME)
                         + (this.consumerSecret == null ? 43 : this.consumerSecret.hashCode());
+        result = (result * PRIME) + (this.appleDevId == null ? 43 : this.appleDevId.hashCode());
+        result = (result * PRIME) + (this.appleKeyId == null ? 43 : this.appleKeyId.hashCode());
         result =
                 (result * PRIME)
                         + (this.serviceProviderName == null

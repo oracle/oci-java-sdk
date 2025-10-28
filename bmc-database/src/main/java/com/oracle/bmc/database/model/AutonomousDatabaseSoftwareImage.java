@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Autonomous Database Software Images created from Autonomous Container Database <br>
+ * Autonomous AI Database Software Images created from Autonomous Container Database <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -75,14 +75,14 @@ public final class AutonomousDatabaseSoftwareImage
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database Software Image.
+         * Autonomous AI Database Software Image.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database Software Image.
+         * Autonomous AI Database Software Image.
          *
          * @param id the value to set
          * @return this builder
@@ -112,13 +112,13 @@ public final class AutonomousDatabaseSoftwareImage
             return this;
         }
         /**
-         * The database version with which the Autonomous Database Software Image is to be built.
+         * The database version with which the Autonomous AI Database Software Image is to be built.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
         private String databaseVersion;
 
         /**
-         * The database version with which the Autonomous Database Software Image is to be built.
+         * The database version with which the Autonomous AI Database Software Image is to be built.
          *
          * @param databaseVersion the value to set
          * @return this builder
@@ -129,15 +129,15 @@ public final class AutonomousDatabaseSoftwareImage
             return this;
         }
         /**
-         * The user-friendly name for the Autonomous Database Software Image. The name does not have
-         * to be unique.
+         * The user-friendly name for the Autonomous AI Database Software Image. The name does not
+         * have to be unique.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Autonomous Database Software Image. The name does not have
-         * to be unique.
+         * The user-friendly name for the Autonomous AI Database Software Image. The name does not
+         * have to be unique.
          *
          * @param displayName the value to set
          * @return this builder
@@ -147,12 +147,12 @@ public final class AutonomousDatabaseSoftwareImage
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The current state of the Autonomous Database Software Image. */
+        /** The current state of the Autonomous AI Database Software Image. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Autonomous Database Software Image.
+         * The current state of the Autonomous AI Database Software Image.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -177,12 +177,12 @@ public final class AutonomousDatabaseSoftwareImage
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The date and time the Autonomous Database Software Image was created. */
+        /** The date and time the Autonomous AI Database Software Image was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the Autonomous Database Software Image was created.
+         * The date and time the Autonomous AI Database Software Image was created.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -275,12 +275,12 @@ public final class AutonomousDatabaseSoftwareImage
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** One-off patches included in the Autonomous Database Software Image */
+        /** One-off patches included in the Autonomous AI Database Software Image */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDsiOneOffPatches")
         private java.util.List<String> autonomousDsiOneOffPatches;
 
         /**
-         * One-off patches included in the Autonomous Database Software Image
+         * One-off patches included in the Autonomous AI Database Software Image
          *
          * @param autonomousDsiOneOffPatches the value to set
          * @return this builder
@@ -407,14 +407,14 @@ public final class AutonomousDatabaseSoftwareImage
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database Software Image.
+     * Autonomous AI Database Software Image.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database Software Image.
+     * Autonomous AI Database Software Image.
      *
      * @return the value
      */
@@ -439,12 +439,12 @@ public final class AutonomousDatabaseSoftwareImage
         return compartmentId;
     }
 
-    /** The database version with which the Autonomous Database Software Image is to be built. */
+    /** The database version with which the Autonomous AI Database Software Image is to be built. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     private final String databaseVersion;
 
     /**
-     * The database version with which the Autonomous Database Software Image is to be built.
+     * The database version with which the Autonomous AI Database Software Image is to be built.
      *
      * @return the value
      */
@@ -453,15 +453,15 @@ public final class AutonomousDatabaseSoftwareImage
     }
 
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to
-     * be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have
+     * to be unique.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to
-     * be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have
+     * to be unique.
      *
      * @return the value
      */
@@ -469,7 +469,7 @@ public final class AutonomousDatabaseSoftwareImage
         return displayName;
     }
 
-    /** The current state of the Autonomous Database Software Image. */
+    /** The current state of the Autonomous AI Database Software Image. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Available("AVAILABLE"),
         Failed("FAILED"),
@@ -520,12 +520,12 @@ public final class AutonomousDatabaseSoftwareImage
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Autonomous Database Software Image. */
+    /** The current state of the Autonomous AI Database Software Image. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Autonomous Database Software Image.
+     * The current state of the Autonomous AI Database Software Image.
      *
      * @return the value
      */
@@ -546,12 +546,12 @@ public final class AutonomousDatabaseSoftwareImage
         return lifecycleDetails;
     }
 
-    /** The date and time the Autonomous Database Software Image was created. */
+    /** The date and time the Autonomous AI Database Software Image was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the Autonomous Database Software Image was created.
+     * The date and time the Autonomous AI Database Software Image was created.
      *
      * @return the value
      */
@@ -633,12 +633,12 @@ public final class AutonomousDatabaseSoftwareImage
         return systemTags;
     }
 
-    /** One-off patches included in the Autonomous Database Software Image */
+    /** One-off patches included in the Autonomous AI Database Software Image */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDsiOneOffPatches")
     private final java.util.List<String> autonomousDsiOneOffPatches;
 
     /**
-     * One-off patches included in the Autonomous Database Software Image
+     * One-off patches included in the Autonomous AI Database Software Image
      *
      * @return the value
      */

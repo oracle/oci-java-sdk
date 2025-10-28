@@ -167,6 +167,245 @@ public class LustreFileStoragePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listObjectStorageLinks operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListObjectStorageLinksResponse> listObjectStorageLinksResponseIterator(
+            final ListObjectStorageLinksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListObjectStorageLinksRequest.Builder,
+                ListObjectStorageLinksRequest,
+                ListObjectStorageLinksResponse>(
+                new java.util.function.Supplier<ListObjectStorageLinksRequest.Builder>() {
+                    @Override
+                    public ListObjectStorageLinksRequest.Builder get() {
+                        return ListObjectStorageLinksRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListObjectStorageLinksResponse, String>() {
+                    @Override
+                    public String apply(ListObjectStorageLinksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListObjectStorageLinksRequest.Builder>,
+                        ListObjectStorageLinksRequest>() {
+                    @Override
+                    public ListObjectStorageLinksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListObjectStorageLinksRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListObjectStorageLinksRequest, ListObjectStorageLinksResponse>() {
+                    @Override
+                    public ListObjectStorageLinksResponse apply(
+                            ListObjectStorageLinksRequest request) {
+                        return client.listObjectStorageLinks(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.lustrefilestorage.model.ObjectStorageLinkSummary} objects contained in
+     * responses from the listObjectStorageLinks operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.lustrefilestorage.model.ObjectStorageLinkSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.lustrefilestorage.model.ObjectStorageLinkSummary>
+            listObjectStorageLinksRecordIterator(final ListObjectStorageLinksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListObjectStorageLinksRequest.Builder,
+                ListObjectStorageLinksRequest,
+                ListObjectStorageLinksResponse,
+                com.oracle.bmc.lustrefilestorage.model.ObjectStorageLinkSummary>(
+                new java.util.function.Supplier<ListObjectStorageLinksRequest.Builder>() {
+                    @Override
+                    public ListObjectStorageLinksRequest.Builder get() {
+                        return ListObjectStorageLinksRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListObjectStorageLinksResponse, String>() {
+                    @Override
+                    public String apply(ListObjectStorageLinksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListObjectStorageLinksRequest.Builder>,
+                        ListObjectStorageLinksRequest>() {
+                    @Override
+                    public ListObjectStorageLinksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListObjectStorageLinksRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListObjectStorageLinksRequest, ListObjectStorageLinksResponse>() {
+                    @Override
+                    public ListObjectStorageLinksResponse apply(
+                            ListObjectStorageLinksRequest request) {
+                        return client.listObjectStorageLinks(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListObjectStorageLinksResponse,
+                        java.util.List<
+                                com.oracle.bmc.lustrefilestorage.model
+                                        .ObjectStorageLinkSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.lustrefilestorage.model.ObjectStorageLinkSummary>
+                            apply(ListObjectStorageLinksResponse response) {
+                        return response.getObjectStorageLinkCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSyncJobs
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSyncJobsResponse> listSyncJobsResponseIterator(
+            final ListSyncJobsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSyncJobsRequest.Builder, ListSyncJobsRequest, ListSyncJobsResponse>(
+                new java.util.function.Supplier<ListSyncJobsRequest.Builder>() {
+                    @Override
+                    public ListSyncJobsRequest.Builder get() {
+                        return ListSyncJobsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSyncJobsResponse, String>() {
+                    @Override
+                    public String apply(ListSyncJobsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSyncJobsRequest.Builder>,
+                        ListSyncJobsRequest>() {
+                    @Override
+                    public ListSyncJobsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSyncJobsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListSyncJobsRequest, ListSyncJobsResponse>() {
+                    @Override
+                    public ListSyncJobsResponse apply(ListSyncJobsRequest request) {
+                        return client.listSyncJobs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.lustrefilestorage.model.SyncJobSummary} objects contained in responses from
+     * the listSyncJobs operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.lustrefilestorage.model.SyncJobSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.lustrefilestorage.model.SyncJobSummary>
+            listSyncJobsRecordIterator(final ListSyncJobsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSyncJobsRequest.Builder,
+                ListSyncJobsRequest,
+                ListSyncJobsResponse,
+                com.oracle.bmc.lustrefilestorage.model.SyncJobSummary>(
+                new java.util.function.Supplier<ListSyncJobsRequest.Builder>() {
+                    @Override
+                    public ListSyncJobsRequest.Builder get() {
+                        return ListSyncJobsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSyncJobsResponse, String>() {
+                    @Override
+                    public String apply(ListSyncJobsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSyncJobsRequest.Builder>,
+                        ListSyncJobsRequest>() {
+                    @Override
+                    public ListSyncJobsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSyncJobsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListSyncJobsRequest, ListSyncJobsResponse>() {
+                    @Override
+                    public ListSyncJobsResponse apply(ListSyncJobsRequest request) {
+                        return client.listSyncJobs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSyncJobsResponse,
+                        java.util.List<com.oracle.bmc.lustrefilestorage.model.SyncJobSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.lustrefilestorage.model.SyncJobSummary>
+                            apply(ListSyncJobsResponse response) {
+                        return response.getSyncJobCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *

@@ -73,11 +73,11 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Key details provided by the user for rotate key operation for Autonomous Database. */
+    /** Key details provided by the user for rotate key operation for Autonomous AI Database. */
     private com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
             rotateAutonomousContainerDatabaseEncryptionKeyDetails;
 
-    /** Key details provided by the user for rotate key operation for Autonomous Database. */
+    /** Key details provided by the user for rotate key operation for Autonomous AI Database. */
     public com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
             getRotateAutonomousContainerDatabaseEncryptionKeyDetails() {
         return rotateAutonomousContainerDatabaseEncryptionKeyDetails;
@@ -181,12 +181,12 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
             return this;
         }
 
-        /** Key details provided by the user for rotate key operation for Autonomous Database. */
+        /** Key details provided by the user for rotate key operation for Autonomous AI Database. */
         private com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
                 rotateAutonomousContainerDatabaseEncryptionKeyDetails = null;
 
         /**
-         * Key details provided by the user for rotate key operation for Autonomous Database.
+         * Key details provided by the user for rotate key operation for Autonomous AI Database.
          *
          * @param rotateAutonomousContainerDatabaseEncryptionKeyDetails the value to set
          * @return this builder instance

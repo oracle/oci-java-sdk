@@ -16,11 +16,11 @@ public class CreateAutonomousDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.CreateAutonomousDatabaseBase> {
 
-    /** Request to create a new Autonomous Database. */
+    /** Request to create a new Autonomous AI Database. */
     private com.oracle.bmc.database.model.CreateAutonomousDatabaseBase
             createAutonomousDatabaseDetails;
 
-    /** Request to create a new Autonomous Database. */
+    /** Request to create a new Autonomous AI Database. */
     public com.oracle.bmc.database.model.CreateAutonomousDatabaseBase
             getCreateAutonomousDatabaseDetails() {
         return createAutonomousDatabaseDetails;
@@ -85,12 +85,12 @@ public class CreateAutonomousDatabaseRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Request to create a new Autonomous Database. */
+        /** Request to create a new Autonomous AI Database. */
         private com.oracle.bmc.database.model.CreateAutonomousDatabaseBase
                 createAutonomousDatabaseDetails = null;
 
         /**
-         * Request to create a new Autonomous Database.
+         * Request to create a new Autonomous AI Database.
          *
          * @param createAutonomousDatabaseDetails the value to set
          * @return this builder instance

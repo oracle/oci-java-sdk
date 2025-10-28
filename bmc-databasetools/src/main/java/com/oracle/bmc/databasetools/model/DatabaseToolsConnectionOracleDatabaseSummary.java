@@ -137,6 +137,24 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeEndpoint")
+        private String runtimeEndpoint;
+
+        public Builder runtimeEndpoint(String runtimeEndpoint) {
+            this.runtimeEndpoint = runtimeEndpoint;
+            this.__explicitlySet__.add("runtimeEndpoint");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeIdentity")
+        private RuntimeIdentity runtimeIdentity;
+
+        public Builder runtimeIdentity(RuntimeIdentity runtimeIdentity) {
+            this.runtimeIdentity = runtimeIdentity;
+            this.__explicitlySet__.add("runtimeIdentity");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
         private DatabaseToolsRelatedResource relatedResource;
 
@@ -272,6 +290,8 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
                             this.systemTags,
                             this.locks,
                             this.runtimeSupport,
+                            this.runtimeEndpoint,
+                            this.runtimeIdentity,
                             this.relatedResource,
                             this.connectionString,
                             this.userName,
@@ -324,6 +344,12 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
             if (model.wasPropertyExplicitlySet("runtimeSupport")) {
                 this.runtimeSupport(model.getRuntimeSupport());
             }
+            if (model.wasPropertyExplicitlySet("runtimeEndpoint")) {
+                this.runtimeEndpoint(model.getRuntimeEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeIdentity")) {
+                this.runtimeIdentity(model.getRuntimeIdentity());
+            }
             if (model.wasPropertyExplicitlySet("relatedResource")) {
                 this.relatedResource(model.getRelatedResource());
             }
@@ -375,6 +401,8 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<ResourceLock> locks,
             RuntimeSupport runtimeSupport,
+            String runtimeEndpoint,
+            RuntimeIdentity runtimeIdentity,
             DatabaseToolsRelatedResource relatedResource,
             String connectionString,
             String userName,
@@ -395,7 +423,9 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
                 freeformTags,
                 systemTags,
                 locks,
-                runtimeSupport);
+                runtimeSupport,
+                runtimeEndpoint,
+                runtimeIdentity);
         this.relatedResource = relatedResource;
         this.connectionString = connectionString;
         this.userName = userName;

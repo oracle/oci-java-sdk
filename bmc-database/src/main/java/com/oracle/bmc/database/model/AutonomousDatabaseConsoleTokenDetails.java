@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The token that allows the OCI Console to access the Autonomous Database Service Console. <br>
+ * The token that allows the OCI Console to access the Autonomous AI Database Service Console. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,14 +33,14 @@ public final class AutonomousDatabaseConsoleTokenDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The token that allows the OCI Console to access the Autonomous Transaction Processing
+         * The token that allows the OCI Console to access the Autonomous AI Transaction Processing
          * Service Console.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("token")
         private String token;
 
         /**
-         * The token that allows the OCI Console to access the Autonomous Transaction Processing
+         * The token that allows the OCI Console to access the Autonomous AI Transaction Processing
          * Service Console.
          *
          * @param token the value to set
@@ -52,15 +52,15 @@ public final class AutonomousDatabaseConsoleTokenDetails
             return this;
         }
         /**
-         * The login URL that allows the OCI Console to access the Autonomous Transaction Processing
-         * Service Console.
+         * The login URL that allows the OCI Console to access the Autonomous AI Transaction
+         * Processing Service Console.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
         private String loginUrl;
 
         /**
-         * The login URL that allows the OCI Console to access the Autonomous Transaction Processing
-         * Service Console.
+         * The login URL that allows the OCI Console to access the Autonomous AI Transaction
+         * Processing Service Console.
          *
          * @param loginUrl the value to set
          * @return this builder
@@ -105,15 +105,15 @@ public final class AutonomousDatabaseConsoleTokenDetails
     }
 
     /**
-     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service
-     * Console.
+     * The token that allows the OCI Console to access the Autonomous AI Transaction Processing
+     * Service Console.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("token")
     private final String token;
 
     /**
-     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service
-     * Console.
+     * The token that allows the OCI Console to access the Autonomous AI Transaction Processing
+     * Service Console.
      *
      * @return the value
      */
@@ -122,14 +122,14 @@ public final class AutonomousDatabaseConsoleTokenDetails
     }
 
     /**
-     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing
+     * The login URL that allows the OCI Console to access the Autonomous AI Transaction Processing
      * Service Console.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
     private final String loginUrl;
 
     /**
-     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing
+     * The login URL that allows the OCI Console to access the Autonomous AI Transaction Processing
      * Service Console.
      *
      * @return the value

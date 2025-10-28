@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * An Autonomous Database backup. <br>
+ * An Autonomous AI Database backup. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -87,14 +87,14 @@ public final class AutonomousContainerDatabaseBackup
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          *
          * @param id the value to set
          * @return this builder
@@ -382,13 +382,13 @@ public final class AutonomousContainerDatabaseBackup
             return this;
         }
         /**
-         * List of Autonomous Databases that is part of this Autonomous Container Database Backup
+         * List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabases")
         private java.util.List<AutonomousDatabaseInBackup> autonomousDatabases;
 
         /**
-         * List of Autonomous Databases that is part of this Autonomous Container Database Backup
+         * List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
          *
          * @param autonomousDatabases the value to set
          * @return this builder
@@ -501,14 +501,14 @@ public final class AutonomousContainerDatabaseBackup
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      *
      * @return the value
      */
@@ -863,12 +863,12 @@ public final class AutonomousContainerDatabaseBackup
         return systemTags;
     }
 
-    /** List of Autonomous Databases that is part of this Autonomous Container Database Backup */
+    /** List of Autonomous AI Databases that is part of this Autonomous Container Database Backup */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabases")
     private final java.util.List<AutonomousDatabaseInBackup> autonomousDatabases;
 
     /**
-     * List of Autonomous Databases that is part of this Autonomous Container Database Backup
+     * List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
      *
      * @return the value
      */

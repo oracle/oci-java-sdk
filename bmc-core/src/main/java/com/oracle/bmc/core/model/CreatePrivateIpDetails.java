@@ -29,9 +29,11 @@ public final class CreatePrivateIpDetails
         "freeformTags",
         "hostnameLabel",
         "ipAddress",
+        "cidrPrefixLength",
         "vnicId",
         "vlanId",
         "subnetId",
+        "ipv4SubnetCidrAtCreation",
         "lifetime",
         "routeTableId"
     })
@@ -41,9 +43,11 @@ public final class CreatePrivateIpDetails
             java.util.Map<String, String> freeformTags,
             String hostnameLabel,
             String ipAddress,
+            Integer cidrPrefixLength,
             String vnicId,
             String vlanId,
             String subnetId,
+            String ipv4SubnetCidrAtCreation,
             Lifetime lifetime,
             String routeTableId) {
         super();
@@ -52,9 +56,11 @@ public final class CreatePrivateIpDetails
         this.freeformTags = freeformTags;
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
+        this.cidrPrefixLength = cidrPrefixLength;
         this.vnicId = vnicId;
         this.vlanId = vlanId;
         this.subnetId = subnetId;
+        this.ipv4SubnetCidrAtCreation = ipv4SubnetCidrAtCreation;
         this.lifetime = lifetime;
         this.routeTableId = routeTableId;
     }
@@ -192,6 +198,37 @@ public final class CreatePrivateIpDetails
             return this;
         }
         /**
+         * An optional field that when combined with the ipAddress field, will be used to allocate
+         * secondary IPv4 CIDRs. The CIDR range created by this combination must be within the
+         * subnet's CIDR and the CIDR range should not collide with any existing IPv4 address
+         * allocation. The VNIC ID specified in the request object should not already been assigned
+         * more than the max IPv4 addresses. If you don't specify a value, this option will be
+         * ignored.
+         *
+         * <p>Example: 18
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
+        private Integer cidrPrefixLength;
+
+        /**
+         * An optional field that when combined with the ipAddress field, will be used to allocate
+         * secondary IPv4 CIDRs. The CIDR range created by this combination must be within the
+         * subnet's CIDR and the CIDR range should not collide with any existing IPv4 address
+         * allocation. The VNIC ID specified in the request object should not already been assigned
+         * more than the max IPv4 addresses. If you don't specify a value, this option will be
+         * ignored.
+         *
+         * <p>Example: 18
+         *
+         * @param cidrPrefixLength the value to set
+         * @return this builder
+         */
+        public Builder cidrPrefixLength(Integer cidrPrefixLength) {
+            this.cidrPrefixLength = cidrPrefixLength;
+            this.__explicitlySet__.add("cidrPrefixLength");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VNIC to assign the private IP to. The VNIC and private IP must be in the same subnet.
          */
@@ -256,6 +293,21 @@ public final class CreatePrivateIpDetails
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+        /** Any one of the IPv4 CIDRs allocated to the subnet. */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv4SubnetCidrAtCreation")
+        private String ipv4SubnetCidrAtCreation;
+
+        /**
+         * Any one of the IPv4 CIDRs allocated to the subnet.
+         *
+         * @param ipv4SubnetCidrAtCreation the value to set
+         * @return this builder
+         */
+        public Builder ipv4SubnetCidrAtCreation(String ipv4SubnetCidrAtCreation) {
+            this.ipv4SubnetCidrAtCreation = ipv4SubnetCidrAtCreation;
+            this.__explicitlySet__.add("ipv4SubnetCidrAtCreation");
+            return this;
+        }
         /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
         @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
         private Lifetime lifetime;
@@ -304,9 +356,11 @@ public final class CreatePrivateIpDetails
                             this.freeformTags,
                             this.hostnameLabel,
                             this.ipAddress,
+                            this.cidrPrefixLength,
                             this.vnicId,
                             this.vlanId,
                             this.subnetId,
+                            this.ipv4SubnetCidrAtCreation,
                             this.lifetime,
                             this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -332,6 +386,9 @@ public final class CreatePrivateIpDetails
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
             }
+            if (model.wasPropertyExplicitlySet("cidrPrefixLength")) {
+                this.cidrPrefixLength(model.getCidrPrefixLength());
+            }
             if (model.wasPropertyExplicitlySet("vnicId")) {
                 this.vnicId(model.getVnicId());
             }
@@ -340,6 +397,9 @@ public final class CreatePrivateIpDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("ipv4SubnetCidrAtCreation")) {
+                this.ipv4SubnetCidrAtCreation(model.getIpv4SubnetCidrAtCreation());
             }
             if (model.wasPropertyExplicitlySet("lifetime")) {
                 this.lifetime(model.getLifetime());
@@ -480,6 +540,33 @@ public final class CreatePrivateIpDetails
     }
 
     /**
+     * An optional field that when combined with the ipAddress field, will be used to allocate
+     * secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's
+     * CIDR and the CIDR range should not collide with any existing IPv4 address allocation. The
+     * VNIC ID specified in the request object should not already been assigned more than the max
+     * IPv4 addresses. If you don't specify a value, this option will be ignored.
+     *
+     * <p>Example: 18
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
+    private final Integer cidrPrefixLength;
+
+    /**
+     * An optional field that when combined with the ipAddress field, will be used to allocate
+     * secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's
+     * CIDR and the CIDR range should not collide with any existing IPv4 address allocation. The
+     * VNIC ID specified in the request object should not already been assigned more than the max
+     * IPv4 addresses. If you don't specify a value, this option will be ignored.
+     *
+     * <p>Example: 18
+     *
+     * @return the value
+     */
+    public Integer getCidrPrefixLength() {
+        return cidrPrefixLength;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
      * to assign the private IP to. The VNIC and private IP must be in the same subnet.
      */
@@ -536,6 +623,19 @@ public final class CreatePrivateIpDetails
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /** Any one of the IPv4 CIDRs allocated to the subnet. */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv4SubnetCidrAtCreation")
+    private final String ipv4SubnetCidrAtCreation;
+
+    /**
+     * Any one of the IPv4 CIDRs allocated to the subnet.
+     *
+     * @return the value
+     */
+    public String getIpv4SubnetCidrAtCreation() {
+        return ipv4SubnetCidrAtCreation;
     }
 
     /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
@@ -623,9 +723,12 @@ public final class CreatePrivateIpDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", cidrPrefixLength=").append(String.valueOf(this.cidrPrefixLength));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
         sb.append(", vlanId=").append(String.valueOf(this.vlanId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", ipv4SubnetCidrAtCreation=")
+                .append(String.valueOf(this.ipv4SubnetCidrAtCreation));
         sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
@@ -647,9 +750,12 @@ public final class CreatePrivateIpDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.cidrPrefixLength, other.cidrPrefixLength)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
                 && java.util.Objects.equals(this.vlanId, other.vlanId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(
+                        this.ipv4SubnetCidrAtCreation, other.ipv4SubnetCidrAtCreation)
                 && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
@@ -666,9 +772,17 @@ public final class CreatePrivateIpDetails
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cidrPrefixLength == null ? 43 : this.cidrPrefixLength.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
         result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv4SubnetCidrAtCreation == null
+                                ? 43
+                                : this.ipv4SubnetCidrAtCreation.hashCode());
         result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();

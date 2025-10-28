@@ -6,17 +6,18 @@ package com.oracle.bmc.database.model;
 
 /**
  * The following are the details necessary to create a cross-tenancy disaster recovery (DR)
- * association for an existing Autonomous Database. This may be in the same region, or in another.
- * *IMPORTANT* For creating a standby databases in a cross-tenancy local DR association: - To create
- * the standby database in different tenancy, use the compartment OCID in the tenancy where the
- * standby is located. - To create the request in the standby database, the sourceId value must be
- * the OCID of the primary database. - Creating a ADG DR in the same tenancy and region is not
- * allowed. Use changeDisasterRecoveryConfiguration instead. The following parameters are required
- * for the cross-tenancy standby database - disasterRecoveryType The following parameters are
- * optional for the cross-tenancy standby database. If included in the request, these parameters
- * must contain the same values as the source Autonomous Database: - dbName - dbVersion - ecpuCount
- * - dataStorageSizeInTB - customerContacts - scheduledOperations - isAutoScalingForStorageEnabled -
- * definedTags - freeformTags - licenseModel - whitelistedIps - isMtlsConnectionRequired <br>
+ * association for an existing Autonomous AI Database. This may be in the same region, or in
+ * another. *IMPORTANT* For creating a standby databases in a cross-tenancy local DR association: -
+ * To create the standby database in different tenancy, use the compartment OCID in the tenancy
+ * where the standby is located. - To create the request in the standby database, the sourceId value
+ * must be the OCID of the primary database. - Creating a ADG DR in the same tenancy and region is
+ * not allowed. Use changeDisasterRecoveryConfiguration instead. The following parameters are
+ * required for the cross-tenancy standby database - disasterRecoveryType The following parameters
+ * are optional for the cross-tenancy standby database. If included in the request, these parameters
+ * must contain the same values as the source Autonomous AI Database: - dbName - dbVersion -
+ * ecpuCount - dataStorageSizeInTB - customerContacts - scheduledOperations -
+ * isAutoScalingForStorageEnabled - definedTags - freeformTags - licenseModel - whitelistedIps -
+ * isMtlsConnectionRequired <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -522,7 +523,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new peer database for the DR
+         * source Autonomous AI Database that will be used to create a new peer database for the DR
          * association.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
@@ -530,7 +531,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new peer database for the DR
+         * source Autonomous AI Database that will be used to create a new peer database for the DR
          * association.
          *
          * @param sourceId the value to set
@@ -542,19 +543,19 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             return this;
         }
         /**
-         * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless
-         * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
-         * recovery time objective (RTO) during failover or switchover. Backup-based DR type
-         * provides lower cost DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the standby Autonomous AI Database
+         * Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR
+         * with a faster recovery time objective (RTO) during failover or switchover. Backup-based
+         * DR type provides lower cost DR with a slower RTO during failover or switchover.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryType")
         private DisasterRecoveryConfiguration.DisasterRecoveryType disasterRecoveryType;
 
         /**
-         * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless
-         * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
-         * recovery time objective (RTO) during failover or switchover. Backup-based DR type
-         * provides lower cost DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the standby Autonomous AI Database
+         * Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR
+         * with a faster recovery time objective (RTO) during failover or switchover. Backup-based
+         * DR type provides lower cost DR with a slower RTO during failover or switchover.
          *
          * @param disasterRecoveryType the value to set
          * @return this builder
@@ -959,7 +960,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new peer database for the DR
+     * source Autonomous AI Database that will be used to create a new peer database for the DR
      * association.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
@@ -967,7 +968,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new peer database for the DR
+     * source Autonomous AI Database that will be used to create a new peer database for the DR
      * association.
      *
      * @return the value
@@ -977,7 +978,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
     }
 
     /**
-     * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless
+     * Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless
      * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
      * recovery time objective (RTO) during failover or switchover. Backup-based DR type provides
      * lower cost DR with a slower RTO during failover or switchover.
@@ -986,7 +987,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
     private final DisasterRecoveryConfiguration.DisasterRecoveryType disasterRecoveryType;
 
     /**
-     * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless
+     * Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless
      * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
      * recovery time objective (RTO) during failover or switchover. Backup-based DR type provides
      * lower cost DR with a slower RTO during failover or switchover.

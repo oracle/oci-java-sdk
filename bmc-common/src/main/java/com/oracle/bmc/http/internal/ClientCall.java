@@ -19,6 +19,7 @@ import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.model.Range;
+import com.oracle.bmc.model.SdkRuntimeException;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.requests.HasContentLength;
 import com.oracle.bmc.responses.AsyncHandler;
@@ -33,7 +34,6 @@ import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
 import com.oracle.bmc.waiter.WaiterScheduler;
 import jakarta.annotation.Nullable;
-import com.oracle.bmc.model.SdkRuntimeException;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -988,126 +988,134 @@ public final class ClientCall<
         }
 
         HttpRequest transientRequest = httpRequest.copy();
+        boolean executed = false;
 
-        RequestInterceptor invocationCallback = request.getInvocationCallback();
-        if (invocationCallback != null) {
-            invocationCallback.intercept(transientRequest);
-        }
+        try {
+            RequestInterceptor invocationCallback = request.getInvocationCallback();
+            if (invocationCallback != null) {
+                invocationCallback.intercept(transientRequest);
+            }
 
-        List<String> present =
-                transientRequest
-                        .headers()
-                        .getOrDefault(OPC_REQUEST_ID_HEADER, Collections.emptyList());
-        if (present.isEmpty()) {
-            // only add if the customer has not added it themselves.
-            logger.debug("Generated request ID: {} for URI {}", requestId, httpRequest.uri());
-            transientRequest.header(BmcException.OPC_REQUEST_ID_HEADER, requestId);
-        } else {
-            logger.debug("User-set request ID: {}", present.get(0));
-        }
+            List<String> present =
+                    transientRequest
+                            .headers()
+                            .getOrDefault(OPC_REQUEST_ID_HEADER, Collections.emptyList());
+            if (present.isEmpty()) {
+                // only add if the customer has not added it themselves.
+                logger.debug("Generated request ID: {} for URI {}", requestId, httpRequest.uri());
+                transientRequest.header(BmcException.OPC_REQUEST_ID_HEADER, requestId);
+            } else {
+                logger.debug("User-set request ID: {}", present.get(0));
+            }
 
-        if (circuitBreaker == null) {
-            CompletionStage<HttpResponse> upstream;
-            try {
-                upstream =
-                        transientRequest
-                                .execute()
-                                .handle(
-                                        (r, t) -> {
-                                            if (isProcessingException(t)) {
-                                                throw new BmcException(
-                                                        true, t.getMessage(), t, requestId);
-                                            } else if (t != null) {
-                                                return ClientCall.<HttpResponse>failedFuture(t);
-                                            } else {
-                                                return CompletableFuture.completedFuture(r);
-                                            }
-                                        })
-                                .thenCompose(Function.identity());
-            } catch (Exception e) {
-                return failedFuture(e);
-            }
-            return upstream.thenCompose(this::transformResponse);
-        } else {
-            if (!circuitBreaker.tryAcquirePermission()) {
-                CallNotAllowedException callNotAllowed =
-                        circuitBreaker.createCallNotAllowedException();
-                return failedFuture(
-                        BmcException.createClientSide(
-                                circuitBreaker.circuitBreakerCallNotPermittedErrorMessage(
-                                        httpRequest.uri().toString()),
-                                callNotAllowed,
-                                null,
-                                buildServiceDetails()));
-            }
-            long start = circuitBreaker.getCurrentTimestamp();
-            CompletionStage<HttpResponse> upstream;
-            try {
-                upstream =
-                        transientRequest
-                                .execute()
-                                .handle(
-                                        (r, t) -> {
-                                            if (isProcessingException(t)) {
-                                                addToHistory(t);
-                                                circuitBreaker.onError(
-                                                        circuitBreaker.getCurrentTimestamp()
-                                                                - start,
-                                                        circuitBreaker.getTimestampUnit(),
-                                                        t);
-                                                throw new BmcException(
-                                                        true, t.getMessage(), t, requestId);
-                                            } else if (t != null) {
-                                                return ClientCall.<HttpResponse>failedFuture(t);
-                                            } else {
-                                                return CompletableFuture.completedFuture(r);
-                                            }
-                                        })
-                                .thenCompose(Function.identity());
-            } catch (Exception e) {
-                addToHistory(e);
-                circuitBreaker.onError(
-                        circuitBreaker.getCurrentTimestamp() - start,
-                        circuitBreaker.getTimestampUnit(),
-                        e);
-                return failedFuture(e);
-            }
-            // this is a bit unwieldy, but it's necessary to pass the HttpResponse (not the RESP
-            // type) to the circuit breaker
-            return thenCompose(
-                    upstream,
-                    resp -> {
-                        try {
-                            return transformResponse(resp)
-                                    .whenComplete(
+            if (circuitBreaker == null) {
+                CompletionStage<HttpResponse> upstream;
+                try {
+                    executed = true;
+                    upstream =
+                            transientRequest
+                                    .execute()
+                                    .handle(
                                             (r, t) -> {
-                                                if (t instanceof CompletionException) {
-                                                    t = t.getCause();
-                                                }
-                                                if (t == null) {
-                                                    circuitBreaker.onResult(
-                                                            circuitBreaker.getCurrentTimestamp()
-                                                                    - start,
-                                                            circuitBreaker.getTimestampUnit(),
-                                                            resp);
+                                                if (isProcessingException(t)) {
+                                                    throw new BmcException(
+                                                            true, t.getMessage(), t, requestId);
+                                                } else if (t != null) {
+                                                    return ClientCall.<HttpResponse>failedFuture(t);
                                                 } else {
+                                                    return CompletableFuture.completedFuture(r);
+                                                }
+                                            })
+                                    .thenCompose(Function.identity());
+                } catch (Exception e) {
+                    return failedFuture(e);
+                }
+                return upstream.thenCompose(this::transformResponse);
+            } else {
+                if (!circuitBreaker.tryAcquirePermission()) {
+                    CallNotAllowedException callNotAllowed =
+                            circuitBreaker.createCallNotAllowedException();
+                    return failedFuture(
+                            BmcException.createClientSide(
+                                    circuitBreaker.circuitBreakerCallNotPermittedErrorMessage(
+                                            httpRequest.uri().toString()),
+                                    callNotAllowed,
+                                    null,
+                                    buildServiceDetails()));
+                }
+                long start = circuitBreaker.getCurrentTimestamp();
+                CompletionStage<HttpResponse> upstream;
+                try {
+                    upstream =
+                            transientRequest
+                                    .execute()
+                                    .handle(
+                                            (r, t) -> {
+                                                if (isProcessingException(t)) {
                                                     addToHistory(t);
                                                     circuitBreaker.onError(
                                                             circuitBreaker.getCurrentTimestamp()
                                                                     - start,
                                                             circuitBreaker.getTimestampUnit(),
                                                             t);
+                                                    throw new BmcException(
+                                                            true, t.getMessage(), t, requestId);
+                                                } else if (t != null) {
+                                                    return ClientCall.<HttpResponse>failedFuture(t);
+                                                } else {
+                                                    return CompletableFuture.completedFuture(r);
                                                 }
-                                            });
-                        } catch (Exception e) {
-                            addToHistory(e);
-                            circuitBreaker.onError(
-                                    circuitBreaker.getCurrentTimestamp() - start,
-                                    circuitBreaker.getTimestampUnit(),
-                                    e);
-                            throw e;
-                        }
-                    });
+                                            })
+                                    .thenCompose(Function.identity());
+                } catch (Exception e) {
+                    addToHistory(e);
+                    circuitBreaker.onError(
+                            circuitBreaker.getCurrentTimestamp() - start,
+                            circuitBreaker.getTimestampUnit(),
+                            e);
+                    return failedFuture(e);
+                }
+                // this is a bit unwieldy, but it's necessary to pass the HttpResponse (not the RESP
+                // type) to the circuit breaker
+                return thenCompose(
+                        upstream,
+                        resp -> {
+                            try {
+                                return transformResponse(resp)
+                                        .whenComplete(
+                                                (r, t) -> {
+                                                    if (t instanceof CompletionException) {
+                                                        t = t.getCause();
+                                                    }
+                                                    if (t == null) {
+                                                        circuitBreaker.onResult(
+                                                                circuitBreaker.getCurrentTimestamp()
+                                                                        - start,
+                                                                circuitBreaker.getTimestampUnit(),
+                                                                resp);
+                                                    } else {
+                                                        addToHistory(t);
+                                                        circuitBreaker.onError(
+                                                                circuitBreaker.getCurrentTimestamp()
+                                                                        - start,
+                                                                circuitBreaker.getTimestampUnit(),
+                                                                t);
+                                                    }
+                                                });
+                            } catch (Exception e) {
+                                addToHistory(e);
+                                circuitBreaker.onError(
+                                        circuitBreaker.getCurrentTimestamp() - start,
+                                        circuitBreaker.getTimestampUnit(),
+                                        e);
+                                throw e;
+                            }
+                        });
+            }
+        } finally {
+            if (!executed) {
+                transientRequest.discard();
+            }
         }
     }
 

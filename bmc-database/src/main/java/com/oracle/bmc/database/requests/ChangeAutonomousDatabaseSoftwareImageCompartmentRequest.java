@@ -17,23 +17,23 @@ public class ChangeAutonomousDatabaseSoftwareImageCompartmentRequest
                 com.oracle.bmc.database.model
                         .ChangeAutonomousDatabaseSoftwareImageCompartmentDetails> {
 
-    /** Request to move Autonomous Database Software Image to a different compartment */
+    /** Request to move Autonomous AI Database Software Image to a different compartment */
     private com.oracle.bmc.database.model.ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
             changeAutonomousDatabaseSoftwareImageCompartmentDetails;
 
-    /** Request to move Autonomous Database Software Image to a different compartment */
+    /** Request to move Autonomous AI Database Software Image to a different compartment */
     public com.oracle.bmc.database.model.ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
             getChangeAutonomousDatabaseSoftwareImageCompartmentDetails() {
         return changeAutonomousDatabaseSoftwareImageCompartmentDetails;
     }
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousDatabaseSoftwareImageId;
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousDatabaseSoftwareImageId() {
@@ -103,13 +103,13 @@ public class ChangeAutonomousDatabaseSoftwareImageCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Request to move Autonomous Database Software Image to a different compartment */
+        /** Request to move Autonomous AI Database Software Image to a different compartment */
         private com.oracle.bmc.database.model
                         .ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
                 changeAutonomousDatabaseSoftwareImageCompartmentDetails = null;
 
         /**
-         * Request to move Autonomous Database Software Image to a different compartment
+         * Request to move Autonomous AI Database Software Image to a different compartment
          *
          * @param changeAutonomousDatabaseSoftwareImageCompartmentDetails the value to set
          * @return this builder instance
@@ -124,13 +124,13 @@ public class ChangeAutonomousDatabaseSoftwareImageCompartmentRequest
         }
 
         /**
-         * The Autonomous Database Software Image
+         * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousDatabaseSoftwareImageId = null;
 
         /**
-         * The Autonomous Database Software Image
+         * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param autonomousDatabaseSoftwareImageId the value to set

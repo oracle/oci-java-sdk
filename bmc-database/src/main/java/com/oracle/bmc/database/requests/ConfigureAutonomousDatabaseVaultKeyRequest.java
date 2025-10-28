@@ -28,14 +28,14 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
         return autonomousDatabaseId;
     }
     /**
-     * Configuration details for the Autonomous Database Vault service
+     * Configuration details for the Autonomous AI Database Vault service
      * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     private com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails
             configureAutonomousDatabaseVaultKeyDetails;
 
     /**
-     * Configuration details for the Autonomous Database Vault service
+     * Configuration details for the Autonomous AI Database Vault service
      * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     public com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails
@@ -138,14 +138,14 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
         }
 
         /**
-         * Configuration details for the Autonomous Database Vault service
+         * Configuration details for the Autonomous AI Database Vault service
          * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          */
         private com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails
                 configureAutonomousDatabaseVaultKeyDetails = null;
 
         /**
-         * Configuration details for the Autonomous Database Vault service
+         * Configuration details for the Autonomous AI Database Vault service
          * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          *
          * @param configureAutonomousDatabaseVaultKeyDetails the value to set

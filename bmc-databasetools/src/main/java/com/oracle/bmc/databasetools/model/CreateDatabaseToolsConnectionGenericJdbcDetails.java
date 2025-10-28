@@ -82,6 +82,15 @@ public final class CreateDatabaseToolsConnectionGenericJdbcDetails
             this.__explicitlySet__.add("runtimeSupport");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeIdentity")
+        private RuntimeIdentity runtimeIdentity;
+
+        public Builder runtimeIdentity(RuntimeIdentity runtimeIdentity) {
+            this.runtimeIdentity = runtimeIdentity;
+            this.__explicitlySet__.add("runtimeIdentity");
+            return this;
+        }
         /** The JDBC URL used to connect to the Generic JDBC database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
@@ -169,6 +178,7 @@ public final class CreateDatabaseToolsConnectionGenericJdbcDetails
                             this.freeformTags,
                             this.locks,
                             this.runtimeSupport,
+                            this.runtimeIdentity,
                             this.url,
                             this.userName,
                             this.userPassword,
@@ -199,6 +209,9 @@ public final class CreateDatabaseToolsConnectionGenericJdbcDetails
             }
             if (model.wasPropertyExplicitlySet("runtimeSupport")) {
                 this.runtimeSupport(model.getRuntimeSupport());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeIdentity")) {
+                this.runtimeIdentity(model.getRuntimeIdentity());
             }
             if (model.wasPropertyExplicitlySet("url")) {
                 this.url(model.getUrl());
@@ -236,12 +249,20 @@ public final class CreateDatabaseToolsConnectionGenericJdbcDetails
             java.util.Map<String, String> freeformTags,
             java.util.List<ResourceLock> locks,
             RuntimeSupport runtimeSupport,
+            RuntimeIdentity runtimeIdentity,
             String url,
             String userName,
             DatabaseToolsUserPasswordDetails userPassword,
             java.util.Map<String, String> advancedProperties,
             java.util.List<DatabaseToolsKeyStoreGenericJdbcDetails> keyStores) {
-        super(displayName, compartmentId, definedTags, freeformTags, locks, runtimeSupport);
+        super(
+                displayName,
+                compartmentId,
+                definedTags,
+                freeformTags,
+                locks,
+                runtimeSupport,
+                runtimeIdentity);
         this.url = url;
         this.userName = userName;
         this.userPassword = userPassword;

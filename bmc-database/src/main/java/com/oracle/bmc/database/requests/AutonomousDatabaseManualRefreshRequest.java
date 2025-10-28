@@ -27,11 +27,11 @@ public class AutonomousDatabaseManualRefreshRequest
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
-    /** Request details for manually refreshing an Autonomous Database refreshable clone. */
+    /** Request details for manually refreshing an Autonomous AI Database refreshable clone. */
     private com.oracle.bmc.database.model.AutonomousDatabaseManualRefreshDetails
             autonomousDatabaseManualRefreshDetails;
 
-    /** Request details for manually refreshing an Autonomous Database refreshable clone. */
+    /** Request details for manually refreshing an Autonomous AI Database refreshable clone. */
     public com.oracle.bmc.database.model.AutonomousDatabaseManualRefreshDetails
             getAutonomousDatabaseManualRefreshDetails() {
         return autonomousDatabaseManualRefreshDetails;
@@ -131,12 +131,12 @@ public class AutonomousDatabaseManualRefreshRequest
             return this;
         }
 
-        /** Request details for manually refreshing an Autonomous Database refreshable clone. */
+        /** Request details for manually refreshing an Autonomous AI Database refreshable clone. */
         private com.oracle.bmc.database.model.AutonomousDatabaseManualRefreshDetails
                 autonomousDatabaseManualRefreshDetails = null;
 
         /**
-         * Request details for manually refreshing an Autonomous Database refreshable clone.
+         * Request details for manually refreshing an Autonomous AI Database refreshable clone.
          *
          * @param autonomousDatabaseManualRefreshDetails the value to set
          * @return this builder instance

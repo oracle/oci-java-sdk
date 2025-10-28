@@ -5,10 +5,10 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Oracle Autonomous Database.
+ * Details to create an Oracle Autonomous AI Database.
  *
  * <p>**Notes:** - To specify OCPU core count, you must use either {@code ocpuCount} or {@code
- * cpuCoreCount}. You cannot use both parameters at the same time. For Autonomous Database
+ * cpuCoreCount}. You cannot use both parameters at the same time. For Autonomous AI Database
  * Serverless instances, {@code ocpuCount} is not used. - To specify a storage allocation, you must
  * use either {@code dataStorageSizeInGBs} or {@code dataStorageSizeInTBs}. - See the individual
  * parameter discriptions for more information on the OCPU and storage value parameters.
@@ -248,14 +248,14 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment of the Autonomous Database.
+     * compartment of the Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment of the Autonomous Database.
+     * compartment of the Autonomous AI Database.
      *
      * @return the value
      */
@@ -264,11 +264,12 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The character set for the autonomous database. The default is AL32UTF8. Allowed values for an
-     * Autonomous Database Serverless instance as as returned by [List Autonomous Database Character
+     * The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values for
+     * an Autonomous AI Database Serverless instance as as returned by [List Autonomous AI Database
+     * Character
      * Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
      *
-     * <p>For an Autonomous Database on dedicated infrastructure, the allowed values are:
+     * <p>For an Autonomous AI Database on dedicated infrastructure, the allowed values are:
      *
      * <p>AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6,
      * AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707,
@@ -290,11 +291,12 @@ public class CreateAutonomousDatabaseBase
     private final String characterSet;
 
     /**
-     * The character set for the autonomous database. The default is AL32UTF8. Allowed values for an
-     * Autonomous Database Serverless instance as as returned by [List Autonomous Database Character
+     * The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values for
+     * an Autonomous AI Database Serverless instance as as returned by [List Autonomous AI Database
+     * Character
      * Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
      *
-     * <p>For an Autonomous Database on dedicated infrastructure, the allowed values are:
+     * <p>For an Autonomous AI Database on dedicated infrastructure, the allowed values are:
      *
      * <p>AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6,
      * AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707,
@@ -319,21 +321,23 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The character set for the Autonomous Database. The default is AL32UTF8. Use [List Autonomous
-     * Database Character
+     * The character set for the Autonomous AI Database. The default is AL32UTF8. Use [List
+     * Autonomous AI Database Character
      * Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
-     * to list the allowed values for an Autonomous Database Serverless instance. For an Autonomous
-     * Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
+     * to list the allowed values for an Autonomous AI Database Serverless instance. For an
+     * Autonomous AI Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16
+     * or UTF8.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
     private final String ncharacterSet;
 
     /**
-     * The character set for the Autonomous Database. The default is AL32UTF8. Use [List Autonomous
-     * Database Character
+     * The character set for the Autonomous AI Database. The default is AL32UTF8. Use [List
+     * Autonomous AI Database Character
      * Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
-     * to list the allowed values for an Autonomous Database Serverless instance. For an Autonomous
-     * Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
+     * to list the allowed values for an Autonomous AI Database Serverless instance. For an
+     * Autonomous AI Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16
+     * or UTF8.
      *
      * @return the value
      */
@@ -363,11 +367,11 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The number of CPU cores to be made available to the database. For Autonomous Databases on
+     * The number of CPU cores to be made available to the database. For Autonomous AI Databases on
      * dedicated Exadata infrastructure, the maximum number of cores is determined by the
      * infrastructure shape. See [Characteristics of Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-     * for shape details.
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape
+     * details.
      *
      * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
      */
@@ -375,11 +379,11 @@ public class CreateAutonomousDatabaseBase
     private final Integer cpuCoreCount;
 
     /**
-     * The number of CPU cores to be made available to the database. For Autonomous Databases on
+     * The number of CPU cores to be made available to the database. For Autonomous AI Databases on
      * dedicated Exadata infrastructure, the maximum number of cores is determined by the
      * infrastructure shape. See [Characteristics of Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-     * for shape details.
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape
+     * details.
      *
      * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
      *
@@ -403,7 +407,7 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
+     * The compute model of the Autonomous AI Database. This is required if using the {@code
      * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
      * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
      * compute model is legacy.
@@ -441,7 +445,7 @@ public class CreateAutonomousDatabaseBase
         }
     };
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
+     * The compute model of the Autonomous AI Database. This is required if using the {@code
      * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
      * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
      * compute model is legacy.
@@ -450,7 +454,7 @@ public class CreateAutonomousDatabaseBase
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
+     * The compute model of the Autonomous AI Database. This is required if using the {@code
      * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
      * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
      * compute model is legacy.
@@ -463,9 +467,9 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the
-     * compute model and whether the database is an Autonomous Database Serverless instance or an
-     * Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires a
-     * minimum value of one, for databases in the elastic resource pool and minimum value of two,
+     * compute model and whether the database is an Autonomous AI Database Serverless instance or an
+     * Autonomous AI Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires
+     * a minimum value of one, for databases in the elastic resource pool and minimum value of two,
      * otherwise. Required when using the {@code computeModel} parameter. When using {@code
      * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
      * Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU
@@ -476,9 +480,9 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the
-     * compute model and whether the database is an Autonomous Database Serverless instance or an
-     * Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires a
-     * minimum value of one, for databases in the elastic resource pool and minimum value of two,
+     * compute model and whether the database is an Autonomous AI Database Serverless instance or an
+     * Autonomous AI Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires
+     * a minimum value of one, for databases in the elastic resource pool and minimum value of two,
      * otherwise. Required when using the {@code computeModel} parameter. When using {@code
      * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
      * Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU
@@ -493,20 +497,20 @@ public class CreateAutonomousDatabaseBase
     /**
      * The number of OCPU cores to be made available to the database.
      *
-     * <p>The following points apply: - For Autonomous Databases on Dedicated Exadata
+     * <p>The following points apply: - For Autonomous AI Databases on Dedicated Exadata
      * infrastructure, to provision less than 1 core, enter a fractional value in an increment of
      * 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that
-     * fractional OCPU values are not supported for Autonomous Database Serverless instances.) - To
-     * provision 1 or more cores, you must enter an integer between 1 and the maximum number of
+     * fractional OCPU values are not supported for Autonomous AI Database Serverless instances.) -
+     * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of
      * cores available for the infrastructure shape. For example, you can provision 2 cores or 3
-     * cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an
-     * Autonomous Database on Dedicated Exadata Infrastructure. - For Autonomous Database Serverless
-     * instances, this parameter is not used.
+     * cores, but not 2.5 cores. This applies to an Autonomous AI Database Serverless instance or an
+     * Autonomous AI Database on Dedicated Exadata Infrastructure. - For Autonomous AI Database
+     * Serverless instances, this parameter is not used.
      *
-     * <p>For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores
-     * is determined by the infrastructure shape. See [Characteristics of Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-     * for shape details.
+     * <p>For Autonomous AI Databases on Dedicated Exadata infrastructure, the maximum number of
+     * cores is determined by the infrastructure shape. See [Characteristics of Infrastructure
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape
+     * details.
      *
      * <p>*Note:** This parameter cannot be used with the {@code cpuCoreCount} parameter.
      */
@@ -516,20 +520,20 @@ public class CreateAutonomousDatabaseBase
     /**
      * The number of OCPU cores to be made available to the database.
      *
-     * <p>The following points apply: - For Autonomous Databases on Dedicated Exadata
+     * <p>The following points apply: - For Autonomous AI Databases on Dedicated Exadata
      * infrastructure, to provision less than 1 core, enter a fractional value in an increment of
      * 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that
-     * fractional OCPU values are not supported for Autonomous Database Serverless instances.) - To
-     * provision 1 or more cores, you must enter an integer between 1 and the maximum number of
+     * fractional OCPU values are not supported for Autonomous AI Database Serverless instances.) -
+     * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of
      * cores available for the infrastructure shape. For example, you can provision 2 cores or 3
-     * cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an
-     * Autonomous Database on Dedicated Exadata Infrastructure. - For Autonomous Database Serverless
-     * instances, this parameter is not used.
+     * cores, but not 2.5 cores. This applies to an Autonomous AI Database Serverless instance or an
+     * Autonomous AI Database on Dedicated Exadata Infrastructure. - For Autonomous AI Database
+     * Serverless instances, this parameter is not used.
      *
-     * <p>For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores
-     * is determined by the infrastructure shape. See [Characteristics of Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-     * for shape details.
+     * <p>For Autonomous AI Databases on Dedicated Exadata infrastructure, the maximum number of
+     * cores is determined by the infrastructure shape. See [Characteristics of Infrastructure
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape
+     * details.
      *
      * <p>*Note:** This parameter cannot be used with the {@code cpuCoreCount} parameter.
      *
@@ -540,11 +544,11 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid: - OLTP - indicates
+     * an Autonomous AI Transaction Processing database - DW - indicates an Autonomous AI Lakehouse
+     * database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates an Autonomous AI
+     * Database with the Oracle APEX AI Application Development workload type. - LH - indicates an
+     * Oracle Autonomous AI Lakehouse database
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -556,6 +560,7 @@ public class CreateAutonomousDatabaseBase
         Dw("DW"),
         Ajd("AJD"),
         Apex("APEX"),
+        Lh("LH"),
         ;
 
         private final String value;
@@ -586,11 +591,11 @@ public class CreateAutonomousDatabaseBase
         }
     };
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid: - OLTP - indicates
+     * an Autonomous AI Transaction Processing database - DW - indicates an Autonomous AI Lakehouse
+     * database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates an Autonomous AI
+     * Database with the Oracle APEX AI Application Development workload type. - LH - indicates an
+     * Oracle Autonomous AI Lakehouse database
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -601,11 +606,11 @@ public class CreateAutonomousDatabaseBase
     private final DbWorkload dbWorkload;
 
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid: - OLTP - indicates
+     * an Autonomous AI Transaction Processing database - DW - indicates an Autonomous AI Lakehouse
+     * database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates an Autonomous AI
+     * Database with the Oracle APEX AI Application Development workload type. - LH - indicates an
+     * Oracle Autonomous AI Lakehouse database
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -620,12 +625,12 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * The size, in terabytes, of the data volume that will be created and attached to the database.
-     * This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata
-     * infrastructure, the maximum storage value is determined by the infrastructure shape. See
-     * [Characteristics of Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-     * for shape details. A full Exadata service is allocated when the Autonomous Database size is
-     * set to the upper limit (384 TB).
+     * This storage can later be scaled up if needed. For Autonomous AI Databases on dedicated
+     * Exadata infrastructure, the maximum storage value is determined by the infrastructure shape.
+     * See [Characteristics of Infrastructure
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape
+     * details. A full Exadata service is allocated when the Autonomous AI Database size is set to
+     * the upper limit (384 TB).
      *
      * <p>*Note:** This parameter cannot be used with the {@code dataStorageSizeInGBs} parameter.
      */
@@ -634,12 +639,12 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * The size, in terabytes, of the data volume that will be created and attached to the database.
-     * This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata
-     * infrastructure, the maximum storage value is determined by the infrastructure shape. See
-     * [Characteristics of Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-     * for shape details. A full Exadata service is allocated when the Autonomous Database size is
-     * set to the upper limit (384 TB).
+     * This storage can later be scaled up if needed. For Autonomous AI Databases on dedicated
+     * Exadata infrastructure, the maximum storage value is determined by the infrastructure shape.
+     * See [Characteristics of Infrastructure
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape
+     * details. A full Exadata service is allocated when the Autonomous AI Database size is set to
+     * the upper limit (384 TB).
      *
      * <p>*Note:** This parameter cannot be used with the {@code dataStorageSizeInGBs} parameter.
      *
@@ -653,8 +658,8 @@ public class CreateAutonomousDatabaseBase
      * The size, in gigabytes, of the data volume that will be created and attached to the database.
      * This storage can later be scaled up if needed. The maximum storage value is determined by the
      * infrastructure shape. See [Characteristics of Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-     * for shape details.
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape
+     * details.
      *
      * <p>*Notes** - This parameter is only supported for dedicated Exadata infrastructure. - This
      * parameter cannot be used with the {@code dataStorageSizeInTBs} parameter.
@@ -666,8 +671,8 @@ public class CreateAutonomousDatabaseBase
      * The size, in gigabytes, of the data volume that will be created and attached to the database.
      * This storage can later be scaled up if needed. The maximum storage value is determined by the
      * infrastructure shape. See [Characteristics of Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-     * for shape details.
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape
+     * details.
      *
      * <p>*Notes** - This parameter is only supported for dedicated Exadata infrastructure. - This
      * parameter cannot be used with the {@code dataStorageSizeInTBs} parameter.
@@ -680,7 +685,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * Indicates if this is an Always Free resource. The default value is false. Note that Always
-     * Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
+     * Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
      * and CPU cannot be scaled.
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
@@ -693,7 +698,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * Indicates if this is an Always Free resource. The default value is false. Note that Always
-     * Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
+     * Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
      * and CPU cannot be scaled.
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
@@ -754,7 +759,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * **Important** The {@code adminPassword} or {@code secretId} must be specified for all
-     * Autonomous Databases except for refreshable clones. The password must be between 12 and 30
+     * Autonomous AI Databases except for refreshable clones. The password must be between 12 and 30
      * characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character.
      * It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
      *
@@ -765,7 +770,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * **Important** The {@code adminPassword} or {@code secretId} must be specified for all
-     * Autonomous Databases except for refreshable clones. The password must be between 12 and 30
+     * Autonomous AI Databases except for refreshable clones. The password must be between 12 and 30
      * characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character.
      * It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
      *
@@ -777,12 +782,14 @@ public class CreateAutonomousDatabaseBase
         return adminPassword;
     }
 
-    /** The user-friendly name for the Autonomous Database. The name does not have to be unique. */
+    /**
+     * The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      *
      * @return the value
      */
@@ -791,14 +798,14 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -841,14 +848,14 @@ public class CreateAutonomousDatabaseBase
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -862,14 +869,14 @@ public class CreateAutonomousDatabaseBase
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -905,18 +912,18 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * If set to {@code TRUE}, indicates that an Autonomous Database preview version is being
+     * If set to {@code TRUE}, indicates that an Autonomous AI Database preview version is being
      * provisioned, and that the preview version's terms of service have been accepted. Note that
-     * preview version software is only available for Autonomous Database Serverless instances
+     * preview version software is only available for Autonomous AI Database Serverless instances
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
     private final Boolean isPreviewVersionWithServiceTermsAccepted;
 
     /**
-     * If set to {@code TRUE}, indicates that an Autonomous Database preview version is being
+     * If set to {@code TRUE}, indicates that an Autonomous AI Database preview version is being
      * provisioned, and that the preview version's terms of service have been accepted. Note that
-     * preview version software is only available for Autonomous Database Serverless instances
+     * preview version software is only available for Autonomous AI Database Serverless instances
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
      *
      * @return the value
@@ -926,15 +933,15 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default
-     * value is {@code TRUE}.
+     * Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The
+     * default value is {@code TRUE}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default
-     * value is {@code TRUE}.
+     * Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The
+     * default value is {@code TRUE}.
      *
      * @return the value
      */
@@ -943,8 +950,8 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can
-     * use to build and test new applications. On Serverless, these are low-cost and billed per
+     * Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers
+     * can use to build and test new applications. On Serverless, these are low-cost and billed per
      * instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer
      * databases. Developer databases come with limited resources and is not intended for
      * large-scale testing and production deployments. When you need more compute or storage
@@ -954,8 +961,8 @@ public class CreateAutonomousDatabaseBase
     private final Boolean isDevTier;
 
     /**
-     * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can
-     * use to build and test new applications. On Serverless, these are low-cost and billed per
+     * Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers
+     * can use to build and test new applications. On Serverless, these are low-cost and billed per
      * instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer
      * databases. Developer databases come with limited resources and is not intended for
      * large-scale testing and production deployments. When you need more compute or storage
@@ -987,7 +994,7 @@ public class CreateAutonomousDatabaseBase
     /**
      * The Autonomous Container Database
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by
-     * Autonomous Database on Dedicated Exadata Infrastructure.
+     * Autonomous AI Database on Dedicated Exadata Infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
     private final String autonomousContainerDatabaseId;
@@ -995,7 +1002,7 @@ public class CreateAutonomousDatabaseBase
     /**
      * The Autonomous Container Database
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by
-     * Autonomous Database on Dedicated Exadata Infrastructure.
+     * Autonomous AI Database on Dedicated Exadata Infrastructure.
      *
      * @return the value
      */
@@ -1004,16 +1011,16 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
-     * Database. This property is applicable only to Autonomous Databases on the Exadata
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI
+     * Database. This property is applicable only to Autonomous AI Databases on the Exadata
      * Cloud@Customer platform.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
     private final Integer inMemoryPercentage;
 
     /**
-     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
-     * Database. This property is applicable only to Autonomous Databases on the Exadata
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI
+     * Database. This property is applicable only to Autonomous AI Databases on the Exadata
      * Cloud@Customer platform.
      *
      * @return the value
@@ -1032,8 +1039,8 @@ public class CreateAutonomousDatabaseBase
      * console. When creating a database clone, the desired access control setting should be
      * specified. By default, database-level access control will be disabled for the clone.
      *
-     * <p>This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer
-     * platform. For Autonomous Database Serverless instances, {@code whitelistedIps} is used.
+     * <p>This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer
+     * platform. For Autonomous AI Database Serverless instances, {@code whitelistedIps} is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlEnabled")
     private final Boolean isAccessControlEnabled;
@@ -1048,8 +1055,8 @@ public class CreateAutonomousDatabaseBase
      * console. When creating a database clone, the desired access control setting should be
      * specified. By default, database-level access control will be disabled for the clone.
      *
-     * <p>This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer
-     * platform. For Autonomous Database Serverless instances, {@code whitelistedIps} is used.
+     * <p>This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer
+     * platform. For Autonomous AI Database Serverless instances, {@code whitelistedIps} is used.
      *
      * @return the value
      */
@@ -1058,14 +1065,14 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The client IP access control list (ACL). This feature is available for [Autonomous Database
-     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
-     * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
-     * access the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
-     * then Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-     * recovery peer called {@code standbywhitelistedips}.
+     * The client IP access control list (ACL). This feature is available for [Autonomous AI
+     * Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+     * and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
+     * may access the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is
+     * 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+     * disaster recovery peer called {@code standbywhitelistedips}.
      *
-     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain
      * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple
      * IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other
      * configurations that need multiple pieces of information then its each piece is connected with
@@ -1086,14 +1093,14 @@ public class CreateAutonomousDatabaseBase
     private final java.util.List<String> whitelistedIps;
 
     /**
-     * The client IP access control list (ACL). This feature is available for [Autonomous Database
-     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
-     * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
-     * access the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
-     * then Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-     * recovery peer called {@code standbywhitelistedips}.
+     * The client IP access control list (ACL). This feature is available for [Autonomous AI
+     * Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+     * and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
+     * may access the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is
+     * 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+     * disaster recovery peer called {@code standbywhitelistedips}.
      *
-     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain
      * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple
      * IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other
      * configurations that need multiple pieces of information then its each piece is connected with
@@ -1117,23 +1124,23 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * This field will be null if the Autonomous Database is not Data Guard enabled or Access
-     * Control is disabled. It's value would be {@code TRUE} if Autonomous Database is Data Guard
-     * enabled and Access Control is enabled and if the Autonomous Database uses primary IP access
-     * control list (ACL) for standby. It's value would be {@code FALSE} if Autonomous Database is
-     * Data Guard enabled and Access Control is enabled and if the Autonomous Database uses
-     * different IP access control list (ACL) for standby compared to primary.
+     * This field will be null if the Autonomous AI Database is not Data Guard enabled or Access
+     * Control is disabled. It's value would be {@code TRUE} if Autonomous AI Database is Data Guard
+     * enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP
+     * access control list (ACL) for standby. It's value would be {@code FALSE} if Autonomous AI
+     * Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI
+     * Database uses different IP access control list (ACL) for standby compared to primary.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
     private final Boolean arePrimaryWhitelistedIpsUsed;
 
     /**
-     * This field will be null if the Autonomous Database is not Data Guard enabled or Access
-     * Control is disabled. It's value would be {@code TRUE} if Autonomous Database is Data Guard
-     * enabled and Access Control is enabled and if the Autonomous Database uses primary IP access
-     * control list (ACL) for standby. It's value would be {@code FALSE} if Autonomous Database is
-     * Data Guard enabled and Access Control is enabled and if the Autonomous Database uses
-     * different IP access control list (ACL) for standby compared to primary.
+     * This field will be null if the Autonomous AI Database is not Data Guard enabled or Access
+     * Control is disabled. It's value would be {@code TRUE} if Autonomous AI Database is Data Guard
+     * enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP
+     * access control list (ACL) for standby. It's value would be {@code FALSE} if Autonomous AI
+     * Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI
+     * Database uses different IP access control list (ACL) for standby compared to primary.
      *
      * @return the value
      */
@@ -1142,14 +1149,14 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The client IP access control list (ACL). This feature is available for [Autonomous Database
-     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
-     * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
-     * access the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
-     * then Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-     * recovery peer called {@code standbywhitelistedips}.
+     * The client IP access control list (ACL). This feature is available for [Autonomous AI
+     * Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+     * and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
+     * may access the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is
+     * 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+     * disaster recovery peer called {@code standbywhitelistedips}.
      *
-     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain
      * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple
      * IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other
      * configurations that need multiple pieces of information then its each piece is connected with
@@ -1170,14 +1177,14 @@ public class CreateAutonomousDatabaseBase
     private final java.util.List<String> standbyWhitelistedIps;
 
     /**
-     * The client IP access control list (ACL). This feature is available for [Autonomous Database
-     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
-     * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
-     * access the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
-     * then Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-     * recovery peer called {@code standbywhitelistedips}.
+     * The client IP access control list (ACL). This feature is available for [Autonomous AI
+     * Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+     * and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
+     * may access the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is
+     * 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+     * disaster recovery peer called {@code standbywhitelistedips}.
      *
-     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain
      * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple
      * IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other
      * configurations that need multiple pieces of information then its each piece is connected with
@@ -1201,17 +1208,17 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard
      * enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous
-     * Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
     private final Boolean isDataGuardEnabled;
 
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard
      * enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous
-     * Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      *
      * @return the value
      */
@@ -1220,16 +1227,16 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not
-     * applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases
+     * Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not
+     * applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases
      * using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isLocalDataGuardEnabled")
     private final Boolean isLocalDataGuardEnabled;
 
     /**
-     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not
-     * applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases
+     * Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not
+     * applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases
      * using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      *
      * @return the value
@@ -1245,7 +1252,7 @@ public class CreateAutonomousDatabaseBase
      * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual machine DB
      * systems, do not use a subnet that overlaps with 192.168.16.16/28. - For Exadata and virtual
      * machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20. - For
-     * Autonomous Database, setting this will disable public secure access to the database.
+     * Autonomous AI Database, setting this will disable public secure access to the database.
      *
      * <p>These subnets are used by the Oracle Clusterware private interconnect on the database
      * instance. Specifying an overlapping subnet will cause the private interconnect to
@@ -1261,7 +1268,7 @@ public class CreateAutonomousDatabaseBase
      * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual machine DB
      * systems, do not use a subnet that overlaps with 192.168.16.16/28. - For Exadata and virtual
      * machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20. - For
-     * Autonomous Database, setting this will disable public secure access to the database.
+     * Autonomous AI Database, setting this will disable public secure access to the database.
      *
      * <p>These subnets are used by the Oracle Clusterware private interconnect on the database
      * instance. Specifying an overlapping subnet will cause the private interconnect to
@@ -1278,7 +1285,7 @@ public class CreateAutonomousDatabaseBase
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -1289,7 +1296,7 @@ public class CreateAutonomousDatabaseBase
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
@@ -1407,12 +1414,12 @@ public class CreateAutonomousDatabaseBase
         return privateEndpointIp;
     }
 
-    /** A valid Oracle Database version for Autonomous Database. */
+    /** A valid Oracle AI Database version for Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
      *
      * @return the value
      */
@@ -1434,7 +1441,7 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * Specifies if the Autonomous Database requires mTLS connections.
+     * Specifies if the Autonomous AI Database requires mTLS connections.
      *
      * <p>This may not be updated in parallel with any of the following: licenseModel,
      * databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode,
@@ -1444,7 +1451,7 @@ public class CreateAutonomousDatabaseBase
      * <p>Service Change: The default value of the isMTLSConnectionRequired attribute will change
      * from true to false on July 1, 2023 in the following APIs: - CreateAutonomousDatabase -
      * GetAutonomousDatabase - UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change,
-     * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous
+     * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI
      * Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform
      * scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or
      * UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the
@@ -1458,7 +1465,7 @@ public class CreateAutonomousDatabaseBase
     private final Boolean isMtlsConnectionRequired;
 
     /**
-     * Specifies if the Autonomous Database requires mTLS connections.
+     * Specifies if the Autonomous AI Database requires mTLS connections.
      *
      * <p>This may not be updated in parallel with any of the following: licenseModel,
      * databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode,
@@ -1468,7 +1475,7 @@ public class CreateAutonomousDatabaseBase
      * <p>Service Change: The default value of the isMTLSConnectionRequired attribute will change
      * from true to false on July 1, 2023 in the following APIs: - CreateAutonomousDatabase -
      * GetAutonomousDatabase - UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change,
-     * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous
+     * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI
      * Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform
      * scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or
      * UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the
@@ -1485,14 +1492,14 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The unique identifier for leader autonomous database OCID
+     * The unique identifier for leader Autonomous AI Database OCID
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
     private final String resourcePoolLeaderId;
 
     /**
-     * The unique identifier for leader autonomous database OCID
+     * The unique identifier for leader Autonomous AI Database OCID
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
@@ -1509,7 +1516,7 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+     * The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance
      * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
      * maintenance schedule follows the normal cycle
      */
@@ -1546,7 +1553,7 @@ public class CreateAutonomousDatabaseBase
         }
     };
     /**
-     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+     * The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance
      * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
      * maintenance schedule follows the normal cycle
      */
@@ -1554,7 +1561,7 @@ public class CreateAutonomousDatabaseBase
     private final AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
     /**
-     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+     * The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance
      * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
      * maintenance schedule follows the normal cycle
      *
@@ -1592,15 +1599,15 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database storage. The default value
-     * is {@code FALSE}.
+     * Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default
+     * value is {@code FALSE}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
     private final Boolean isAutoScalingForStorageEnabled;
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database storage. The default value
-     * is {@code FALSE}.
+     * Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default
+     * value is {@code FALSE}.
      *
      * @return the value
      */
@@ -1609,15 +1616,15 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts
-     * options {@code STANDARD_EDITION} and {@code ENTERPRISE_EDITION}.
+     * The Oracle AI Database Edition that applies to the Autonomous AI Databases. This parameter
+     * accepts options {@code STANDARD_EDITION} and {@code ENTERPRISE_EDITION}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
 
     /**
-     * The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts
-     * options {@code STANDARD_EDITION} and {@code ENTERPRISE_EDITION}.
+     * The Oracle AI Database Edition that applies to the Autonomous AI Databases. This parameter
+     * accepts options {@code STANDARD_EDITION} and {@code ENTERPRISE_EDITION}.
      *
      * @return the value
      */
@@ -1650,12 +1657,12 @@ public class CreateAutonomousDatabaseBase
         return dbToolsDetails;
     }
 
-    /** True if the Autonomous Database is backup retention locked. */
+    /** True if the Autonomous AI Database is backup retention locked. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
     private final Boolean isBackupRetentionLocked;
 
     /**
-     * True if the Autonomous Database is backup retention locked.
+     * True if the Autonomous AI Database is backup retention locked.
      *
      * @return the value
      */
@@ -2030,17 +2037,17 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The source of the database: Use {@code NONE} for creating a new Autonomous Database. Use
-     * {@code DATABASE} for creating a new Autonomous Database by cloning an existing Autonomous
-     * Database. Use {@code CROSS_REGION_DATAGUARD} to create a standby Data Guard database in
+     * The source of the database: Use {@code NONE} for creating a new Autonomous AI Database. Use
+     * {@code DATABASE} for creating a new Autonomous AI Database by cloning an existing Autonomous
+     * AI Database. Use {@code CROSS_REGION_DATAGUARD} to create a standby Data Guard database in
      * another region.
      *
-     * <p>For [Autonomous Database Serverless
+     * <p>For [Autonomous AI Database Serverless
      * instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/), the
      * following cloning options are available: Use {@code BACKUP_FROM_ID} for creating a new
-     * Autonomous Database from a specified backup. Use {@code BACKUP_FROM_TIMESTAMP} for creating a
-     * point-in-time Autonomous Database clone using backups. For more information, see [Cloning and
-     * Moving an Autonomous
+     * Autonomous AI Database from a specified backup. Use {@code BACKUP_FROM_TIMESTAMP} for
+     * creating a point-in-time Autonomous AI Database clone using backups. For more information,
+     * see [Cloning and Moving an Autonomous AI
      * Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
      */
     public enum Source implements com.oracle.bmc.http.internal.BmcEnum {

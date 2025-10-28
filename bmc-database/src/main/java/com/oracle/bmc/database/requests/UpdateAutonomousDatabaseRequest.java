@@ -27,11 +27,11 @@ public class UpdateAutonomousDatabaseRequest
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
-    /** Request to update the properties of an Autonomous Database. */
+    /** Request to update the properties of an Autonomous AI Database. */
     private com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails
             updateAutonomousDatabaseDetails;
 
-    /** Request to update the properties of an Autonomous Database. */
+    /** Request to update the properties of an Autonomous AI Database. */
     public com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails
             getUpdateAutonomousDatabaseDetails() {
         return updateAutonomousDatabaseDetails;
@@ -112,12 +112,12 @@ public class UpdateAutonomousDatabaseRequest
             return this;
         }
 
-        /** Request to update the properties of an Autonomous Database. */
+        /** Request to update the properties of an Autonomous AI Database. */
         private com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails
                 updateAutonomousDatabaseDetails = null;
 
         /**
-         * Request to update the properties of an Autonomous Database.
+         * Request to update the properties of an Autonomous AI Database.
          *
          * @param updateAutonomousDatabaseDetails the value to set
          * @return this builder instance

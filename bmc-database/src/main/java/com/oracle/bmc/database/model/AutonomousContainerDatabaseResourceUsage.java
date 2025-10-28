@@ -126,14 +126,14 @@ public final class AutonomousContainerDatabaseResourceUsage
             return this;
         }
         /**
-         * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous
+         * CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous
          * Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Float availableCpus;
 
         /**
-         * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous
+         * CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous
          * Container Database.
          *
          * @param availableCpus the value to set
@@ -215,12 +215,12 @@ public final class AutonomousContainerDatabaseResourceUsage
             this.__explicitlySet__.add("usedCpus");
             return this;
         }
-        /** Valid list of provisionable CPUs for Autonomous Database. */
+        /** Valid list of provisionable CPUs for Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
         private java.util.List<Float> provisionableCpus;
 
         /**
-         * Valid list of provisionable CPUs for Autonomous Database.
+         * Valid list of provisionable CPUs for Autonomous AI Database.
          *
          * @param provisionableCpus the value to set
          * @return this builder
@@ -423,15 +423,15 @@ public final class AutonomousContainerDatabaseResourceUsage
     }
 
     /**
-     * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container
-     * Database.
+     * CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous
+     * Container Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     private final Float availableCpus;
 
     /**
-     * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container
-     * Database.
+     * CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous
+     * Container Database.
      *
      * @return the value
      */
@@ -499,12 +499,12 @@ public final class AutonomousContainerDatabaseResourceUsage
         return usedCpus;
     }
 
-    /** Valid list of provisionable CPUs for Autonomous Database. */
+    /** Valid list of provisionable CPUs for Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
     private final java.util.List<Float> provisionableCpus;
 
     /**
-     * Valid list of provisionable CPUs for Autonomous Database.
+     * Valid list of provisionable CPUs for Autonomous AI Database.
      *
      * @return the value
      */

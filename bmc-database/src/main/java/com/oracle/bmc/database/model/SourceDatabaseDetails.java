@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Source Autonomous Database details. <br>
+ * Source Autonomous AI Database details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -141,12 +141,12 @@ public final class SourceDatabaseDetails
             this.__explicitlySet__.add("autonomousContainerDatabaseDstFileVersion");
             return this;
         }
-        /** Autonomous Database's name. */
+        /** Autonomous AI Database's name. */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseName")
         private String autonomousDatabaseName;
 
         /**
-         * Autonomous Database's name.
+         * Autonomous AI Database's name.
          *
          * @param autonomousDatabaseName the value to set
          * @return this builder
@@ -156,12 +156,12 @@ public final class SourceDatabaseDetails
             this.__explicitlySet__.add("autonomousDatabaseName");
             return this;
         }
-        /** Customer Contacts for the Autonomous database. */
+        /** Customer Contacts for the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseCustomerContacts")
         private java.util.List<CustomerContact> autonomousDatabaseCustomerContacts;
 
         /**
-         * Customer Contacts for the Autonomous database.
+         * Customer Contacts for the Autonomous AI Database.
          *
          * @param autonomousDatabaseCustomerContacts the value to set
          * @return this builder
@@ -173,12 +173,11 @@ public final class SourceDatabaseDetails
             return this;
         }
         /**
-         * The Autonomous Database workload type. The following values are valid:
-         *
-         * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-         * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-         * indicates an Autonomous Database with the Oracle APEX Application Development workload
-         * type.
+         * The Autonomous AI Database workload type. The following values are valid: - OLTP -
+         * indicates an Autonomous AI Transaction Processing database - DW - indicates an Autonomous
+         * AI Lakehouse database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates
+         * an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+         * - LH - indicates an Oracle Autonomous AI Lakehouse database
          *
          * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
          * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -189,12 +188,11 @@ public final class SourceDatabaseDetails
         private DbWorkload dbWorkload;
 
         /**
-         * The Autonomous Database workload type. The following values are valid:
-         *
-         * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-         * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-         * indicates an Autonomous Database with the Oracle APEX Application Development workload
-         * type.
+         * The Autonomous AI Database workload type. The following values are valid: - OLTP -
+         * indicates an Autonomous AI Transaction Processing database - DW - indicates an Autonomous
+         * AI Lakehouse database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates
+         * an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+         * - LH - indicates an Oracle Autonomous AI Lakehouse database
          *
          * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
          * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -342,12 +340,12 @@ public final class SourceDatabaseDetails
         return autonomousContainerDatabaseDstFileVersion;
     }
 
-    /** Autonomous Database's name. */
+    /** Autonomous AI Database's name. */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseName")
     private final String autonomousDatabaseName;
 
     /**
-     * Autonomous Database's name.
+     * Autonomous AI Database's name.
      *
      * @return the value
      */
@@ -355,12 +353,12 @@ public final class SourceDatabaseDetails
         return autonomousDatabaseName;
     }
 
-    /** Customer Contacts for the Autonomous database. */
+    /** Customer Contacts for the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseCustomerContacts")
     private final java.util.List<CustomerContact> autonomousDatabaseCustomerContacts;
 
     /**
-     * Customer Contacts for the Autonomous database.
+     * Customer Contacts for the Autonomous AI Database.
      *
      * @return the value
      */
@@ -369,11 +367,11 @@ public final class SourceDatabaseDetails
     }
 
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid: - OLTP - indicates
+     * an Autonomous AI Transaction Processing database - DW - indicates an Autonomous AI Lakehouse
+     * database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates an Autonomous AI
+     * Database with the Oracle APEX AI Application Development workload type. - LH - indicates an
+     * Oracle Autonomous AI Lakehouse database
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -385,6 +383,7 @@ public final class SourceDatabaseDetails
         Dw("DW"),
         Ajd("AJD"),
         Apex("APEX"),
+        Lh("LH"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -428,11 +427,11 @@ public final class SourceDatabaseDetails
         }
     };
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid: - OLTP - indicates
+     * an Autonomous AI Transaction Processing database - DW - indicates an Autonomous AI Lakehouse
+     * database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates an Autonomous AI
+     * Database with the Oracle APEX AI Application Development workload type. - LH - indicates an
+     * Oracle Autonomous AI Lakehouse database
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -443,11 +442,11 @@ public final class SourceDatabaseDetails
     private final DbWorkload dbWorkload;
 
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid: - OLTP - indicates
+     * an Autonomous AI Transaction Processing database - DW - indicates an Autonomous AI Lakehouse
+     * database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates an Autonomous AI
+     * Database with the Oracle APEX AI Application Development workload type. - LH - indicates an
+     * Oracle Autonomous AI Lakehouse database
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,

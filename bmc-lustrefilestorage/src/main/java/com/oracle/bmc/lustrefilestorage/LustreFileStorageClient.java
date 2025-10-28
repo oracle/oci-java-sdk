@@ -186,6 +186,46 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public ChangeObjectStorageLinkCompartmentResponse changeObjectStorageLinkCompartment(
+            ChangeObjectStorageLinkCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getObjectStorageLinkId(), "objectStorageLinkId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeObjectStorageLinkCompartmentDetails(),
+                "changeObjectStorageLinkCompartmentDetails is required");
+
+        return clientCall(request, ChangeObjectStorageLinkCompartmentResponse::builder)
+                .logger(LOG, "changeObjectStorageLinkCompartment")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "ChangeObjectStorageLinkCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/ChangeObjectStorageLinkCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeObjectStorageLinkCompartmentRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendPathParam(request.getObjectStorageLinkId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.lustrefilestorage.model.ObjectStorageLink.class,
+                        ChangeObjectStorageLinkCompartmentResponse.Builder::objectStorageLink)
+                .handleResponseHeaderString(
+                        "etag", ChangeObjectStorageLinkCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeObjectStorageLinkCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateLustreFileSystemResponse createLustreFileSystem(
             CreateLustreFileSystemRequest request) {
         Objects.requireNonNull(
@@ -224,6 +264,42 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public CreateObjectStorageLinkResponse createObjectStorageLink(
+            CreateObjectStorageLinkRequest request) {
+        Objects.requireNonNull(
+                request.getCreateObjectStorageLinkDetails(),
+                "createObjectStorageLinkDetails is required");
+
+        return clientCall(request, CreateObjectStorageLinkResponse::builder)
+                .logger(LOG, "createObjectStorageLink")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "CreateObjectStorageLink",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/CreateObjectStorageLink")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateObjectStorageLinkRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.lustrefilestorage.model.ObjectStorageLink.class,
+                        CreateObjectStorageLinkResponse.Builder::objectStorageLink)
+                .handleResponseHeaderString(
+                        "location", CreateObjectStorageLinkResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateObjectStorageLinkResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateObjectStorageLinkResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateObjectStorageLinkResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteLustreFileSystemResponse deleteLustreFileSystem(
             DeleteLustreFileSystemRequest request) {
 
@@ -253,6 +329,36 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public DeleteObjectStorageLinkResponse deleteObjectStorageLink(
+            DeleteObjectStorageLinkRequest request) {
+
+        Validate.notBlank(
+                request.getObjectStorageLinkId(), "objectStorageLinkId must not be blank");
+
+        return clientCall(request, DeleteObjectStorageLinkResponse::builder)
+                .logger(LOG, "deleteObjectStorageLink")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "DeleteObjectStorageLink",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/DeleteObjectStorageLink")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteObjectStorageLinkRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendPathParam(request.getObjectStorageLinkId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteObjectStorageLinkResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteObjectStorageLinkResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetLustreFileSystemResponse getLustreFileSystem(GetLustreFileSystemRequest request) {
 
         Validate.notBlank(request.getLustreFileSystemId(), "lustreFileSystemId must not be blank");
@@ -277,6 +383,69 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString("etag", GetLustreFileSystemResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLustreFileSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetObjectStorageLinkResponse getObjectStorageLink(GetObjectStorageLinkRequest request) {
+
+        Validate.notBlank(
+                request.getObjectStorageLinkId(), "objectStorageLinkId must not be blank");
+
+        return clientCall(request, GetObjectStorageLinkResponse::builder)
+                .logger(LOG, "getObjectStorageLink")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "GetObjectStorageLink",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/GetObjectStorageLink")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetObjectStorageLinkRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendPathParam(request.getObjectStorageLinkId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.lustrefilestorage.model.ObjectStorageLink.class,
+                        GetObjectStorageLinkResponse.Builder::objectStorageLink)
+                .handleResponseHeaderString("etag", GetObjectStorageLinkResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetObjectStorageLinkResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSyncJobResponse getSyncJob(GetSyncJobRequest request) {
+
+        Validate.notBlank(
+                request.getObjectStorageLinkId(), "objectStorageLinkId must not be blank");
+
+        Validate.notBlank(request.getSyncJobId(), "syncJobId must not be blank");
+
+        return clientCall(request, GetSyncJobResponse::builder)
+                .logger(LOG, "getSyncJob")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "GetSyncJob",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/GetSyncJob")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSyncJobRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendPathParam(request.getObjectStorageLinkId())
+                .appendPathParam("syncJobs")
+                .appendPathParam(request.getSyncJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.lustrefilestorage.model.SyncJob.class,
+                        GetSyncJobResponse.Builder::syncJob)
+                .handleResponseHeaderString("etag", GetSyncJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSyncJobResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -343,6 +512,80 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListLustreFileSystemsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListLustreFileSystemsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListObjectStorageLinksResponse listObjectStorageLinks(
+            ListObjectStorageLinksRequest request) {
+
+        return clientCall(request, ListObjectStorageLinksResponse::builder)
+                .logger(LOG, "listObjectStorageLinks")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "ListObjectStorageLinks",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLinkCollection/ListObjectStorageLinks")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListObjectStorageLinksRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("lustreFileSystemId", request.getLustreFileSystemId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.lustrefilestorage.model.ObjectStorageLinkCollection.class,
+                        ListObjectStorageLinksResponse.Builder::objectStorageLinkCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListObjectStorageLinksResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListObjectStorageLinksResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSyncJobsResponse listSyncJobs(ListSyncJobsRequest request) {
+
+        Validate.notBlank(
+                request.getObjectStorageLinkId(), "objectStorageLinkId must not be blank");
+
+        return clientCall(request, ListSyncJobsResponse::builder)
+                .logger(LOG, "listSyncJobs")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "ListSyncJobs",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/ListSyncJobs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSyncJobsRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendPathParam(request.getObjectStorageLinkId())
+                .appendPathParam("syncJobs")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.lustrefilestorage.model.SyncJobCollection.class,
+                        ListSyncJobsResponse.Builder::syncJobCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSyncJobsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSyncJobsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -450,6 +693,131 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public StartExportToObjectResponse startExportToObject(StartExportToObjectRequest request) {
+
+        Validate.notBlank(
+                request.getObjectStorageLinkId(), "objectStorageLinkId must not be blank");
+
+        return clientCall(request, StartExportToObjectResponse::builder)
+                .logger(LOG, "startExportToObject")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "StartExportToObject",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/StartExportToObject")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartExportToObjectRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendPathParam(request.getObjectStorageLinkId())
+                .appendPathParam("actions")
+                .appendPathParam("startExportToObject")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.lustrefilestorage.model.SyncJob.class,
+                        StartExportToObjectResponse.Builder::syncJob)
+                .handleResponseHeaderString("etag", StartExportToObjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartExportToObjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StartImportFromObjectResponse startImportFromObject(
+            StartImportFromObjectRequest request) {
+
+        Validate.notBlank(
+                request.getObjectStorageLinkId(), "objectStorageLinkId must not be blank");
+
+        return clientCall(request, StartImportFromObjectResponse::builder)
+                .logger(LOG, "startImportFromObject")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "StartImportFromObject",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/StartImportFromObject")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartImportFromObjectRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendPathParam(request.getObjectStorageLinkId())
+                .appendPathParam("actions")
+                .appendPathParam("startImportFromObject")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.lustrefilestorage.model.SyncJob.class,
+                        StartImportFromObjectResponse.Builder::syncJob)
+                .handleResponseHeaderString("etag", StartImportFromObjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartImportFromObjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StopExportToObjectResponse stopExportToObject(StopExportToObjectRequest request) {
+
+        Validate.notBlank(
+                request.getObjectStorageLinkId(), "objectStorageLinkId must not be blank");
+
+        return clientCall(request, StopExportToObjectResponse::builder)
+                .logger(LOG, "stopExportToObject")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "StopExportToObject",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/StopExportToObject")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopExportToObjectRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendPathParam(request.getObjectStorageLinkId())
+                .appendPathParam("actions")
+                .appendPathParam("stopExportToObject")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", StopExportToObjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StopImportFromObjectResponse stopImportFromObject(StopImportFromObjectRequest request) {
+
+        Validate.notBlank(
+                request.getObjectStorageLinkId(), "objectStorageLinkId must not be blank");
+
+        return clientCall(request, StopImportFromObjectResponse::builder)
+                .logger(LOG, "stopImportFromObject")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "StopImportFromObject",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/StopImportFromObject")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopImportFromObjectRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendPathParam(request.getObjectStorageLinkId())
+                .appendPathParam("actions")
+                .appendPathParam("stopImportFromObject")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", StopImportFromObjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateLustreFileSystemResponse updateLustreFileSystem(
             UpdateLustreFileSystemRequest request) {
 
@@ -479,6 +847,41 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
                         UpdateLustreFileSystemResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateLustreFileSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateObjectStorageLinkResponse updateObjectStorageLink(
+            UpdateObjectStorageLinkRequest request) {
+
+        Validate.notBlank(
+                request.getObjectStorageLinkId(), "objectStorageLinkId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateObjectStorageLinkDetails(),
+                "updateObjectStorageLinkDetails is required");
+
+        return clientCall(request, UpdateObjectStorageLinkResponse::builder)
+                .logger(LOG, "updateObjectStorageLink")
+                .serviceDetails(
+                        "LustreFileStorage",
+                        "UpdateObjectStorageLink",
+                        "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/ObjectStorageLink/UpdateObjectStorageLink")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateObjectStorageLinkRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("objectStorageLinks")
+                .appendPathParam(request.getObjectStorageLinkId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.lustrefilestorage.model.ObjectStorageLink.class,
+                        UpdateObjectStorageLinkResponse.Builder::objectStorageLink)
+                .handleResponseHeaderString("etag", UpdateObjectStorageLinkResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateObjectStorageLinkResponse.Builder::opcRequestId)
                 .callSync();
     }
 

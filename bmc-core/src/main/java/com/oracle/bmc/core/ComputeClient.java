@@ -3115,6 +3115,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "computeHostLifecycleState", request.getComputeHostLifecycleState())
                 .appendQueryParam("computeHostHealth", request.getComputeHostHealth())
                 .appendQueryParam("computeHostGroupId", request.getComputeHostGroupId())
+                .appendQueryParam("computeHostInSubtree", request.getComputeHostInSubtree())
                 .accept("application/json, application/x-json-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

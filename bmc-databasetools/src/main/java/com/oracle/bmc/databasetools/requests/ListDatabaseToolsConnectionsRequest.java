@@ -62,6 +62,13 @@ public class ListDatabaseToolsConnectionsRequest
     public java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> getRuntimeSupport() {
         return runtimeSupport;
     }
+    /** A filter to return only resources with one of the specified runtimeIdentity values. */
+    private java.util.List<com.oracle.bmc.databasetools.model.RuntimeIdentity> runtimeIdentity;
+
+    /** A filter to return only resources with one of the specified runtimeIdentity values. */
+    public java.util.List<com.oracle.bmc.databasetools.model.RuntimeIdentity> getRuntimeIdentity() {
+        return runtimeIdentity;
+    }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related resource.
@@ -271,6 +278,34 @@ public class ListDatabaseToolsConnectionsRequest
             return this.runtimeSupport(java.util.Arrays.asList(singularValue));
         }
 
+        /** A filter to return only resources with one of the specified runtimeIdentity values. */
+        private java.util.List<com.oracle.bmc.databasetools.model.RuntimeIdentity> runtimeIdentity =
+                null;
+
+        /**
+         * A filter to return only resources with one of the specified runtimeIdentity values.
+         *
+         * @param runtimeIdentity the value to set
+         * @return this builder instance
+         */
+        public Builder runtimeIdentity(
+                java.util.List<com.oracle.bmc.databasetools.model.RuntimeIdentity>
+                        runtimeIdentity) {
+            this.runtimeIdentity = runtimeIdentity;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources with one of the specified
+         * runtimeIdentity values.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder runtimeIdentity(RuntimeIdentity singularValue) {
+            return this.runtimeIdentity(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related resource.
@@ -404,6 +439,7 @@ public class ListDatabaseToolsConnectionsRequest
             displayName(o.getDisplayName());
             type(o.getType());
             runtimeSupport(o.getRuntimeSupport());
+            runtimeIdentity(o.getRuntimeIdentity());
             relatedResourceIdentifier(o.getRelatedResourceIdentifier());
             limit(o.getLimit());
             page(o.getPage());
@@ -449,6 +485,7 @@ public class ListDatabaseToolsConnectionsRequest
             request.displayName = displayName;
             request.type = type;
             request.runtimeSupport = runtimeSupport;
+            request.runtimeIdentity = runtimeIdentity;
             request.relatedResourceIdentifier = relatedResourceIdentifier;
             request.limit = limit;
             request.page = page;
@@ -457,8 +494,8 @@ public class ListDatabaseToolsConnectionsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListDatabaseToolsConnectionsRequest(compartmentId, lifecycleState, displayName,
-            // type, runtimeSupport, relatedResourceIdentifier, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // type, runtimeSupport, runtimeIdentity, relatedResourceIdentifier, limit, page,
+            // sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -474,6 +511,7 @@ public class ListDatabaseToolsConnectionsRequest
                 .displayName(displayName)
                 .type(type)
                 .runtimeSupport(runtimeSupport)
+                .runtimeIdentity(runtimeIdentity)
                 .relatedResourceIdentifier(relatedResourceIdentifier)
                 .limit(limit)
                 .page(page)
@@ -501,6 +539,7 @@ public class ListDatabaseToolsConnectionsRequest
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",type=").append(String.valueOf(this.type));
         sb.append(",runtimeSupport=").append(String.valueOf(this.runtimeSupport));
+        sb.append(",runtimeIdentity=").append(String.valueOf(this.runtimeIdentity));
         sb.append(",relatedResourceIdentifier=")
                 .append(String.valueOf(this.relatedResourceIdentifier));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -528,6 +567,7 @@ public class ListDatabaseToolsConnectionsRequest
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.runtimeSupport, other.runtimeSupport)
+                && java.util.Objects.equals(this.runtimeIdentity, other.runtimeIdentity)
                 && java.util.Objects.equals(
                         this.relatedResourceIdentifier, other.relatedResourceIdentifier)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -552,6 +592,9 @@ public class ListDatabaseToolsConnectionsRequest
         result =
                 (result * PRIME)
                         + (this.runtimeSupport == null ? 43 : this.runtimeSupport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runtimeIdentity == null ? 43 : this.runtimeIdentity.hashCode());
         result =
                 (result * PRIME)
                         + (this.relatedResourceIdentifier == null

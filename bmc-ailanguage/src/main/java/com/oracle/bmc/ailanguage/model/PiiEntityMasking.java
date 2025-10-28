@@ -23,6 +23,9 @@ package com.oracle.bmc.ailanguage.model;
         defaultImpl = PiiEntityMasking.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PiiEntityRelexify.class,
+            name = "RELEXIFY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PiiEntityReplace.class,
             name = "REPLACE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -118,6 +121,7 @@ public class PiiEntityMasking extends com.oracle.bmc.http.client.internal.Explic
         Replace("REPLACE"),
         Mask("MASK"),
         Remove("REMOVE"),
+        Relexify("RELEXIFY"),
         ;
 
         private final String value;

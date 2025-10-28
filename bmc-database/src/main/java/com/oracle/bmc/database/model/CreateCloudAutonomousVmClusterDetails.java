@@ -233,12 +233,12 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
             return this;
         }
-        /** The data disk group size to be allocated for Autonomous Databases, in TBs. */
+        /** The data disk group size to be allocated for Autonomous AI Databases, in TBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
         private Double autonomousDataStorageSizeInTBs;
 
         /**
-         * The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * The data disk group size to be allocated for Autonomous AI Databases, in TBs.
          *
          * @param autonomousDataStorageSizeInTBs the value to set
          * @return this builder
@@ -360,14 +360,14 @@ public final class CreateCloudAutonomousVmClusterDetails
             return this;
         }
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
-         * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-         * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-         * subscribe to new Oracle Database software licenses and the Oracle Database service. Note
-         * that when provisioning an [Autonomous Database on dedicated Exadata
+         * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your
+         * own license (BYOL) allows you to apply your current on-premises Oracle software licenses
+         * to equivalent, highly automated Oracle services in the cloud. License Included allows you
+         * to subscribe to new Oracle AI Database software licenses and the Oracle AI Database
+         * service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
          * this attribute must be null. It is already set at the Autonomous Exadata Infrastructure
-         * level. When provisioning an [Autonomous Database Serverless]
+         * level. When provisioning an [Autonomous AI Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
          * Bring your own license (BYOL) also allows you to select the DB edition using the optional
@@ -382,14 +382,14 @@ public final class CreateCloudAutonomousVmClusterDetails
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
-         * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-         * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-         * subscribe to new Oracle Database software licenses and the Oracle Database service. Note
-         * that when provisioning an [Autonomous Database on dedicated Exadata
+         * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your
+         * own license (BYOL) allows you to apply your current on-premises Oracle software licenses
+         * to equivalent, highly automated Oracle services in the cloud. License Included allows you
+         * to subscribe to new Oracle AI Database software licenses and the Oracle AI Database
+         * service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
          * this attribute must be null. It is already set at the Autonomous Exadata Infrastructure
-         * level. When provisioning an [Autonomous Database Serverless]
+         * level. When provisioning an [Autonomous AI Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
          * Bring your own license (BYOL) also allows you to select the DB edition using the optional
@@ -414,7 +414,7 @@ public final class CreateCloudAutonomousVmClusterDetails
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
          * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * restrictions:** - A network security group (NSG) is optional for Autonomous AI Databases
          * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -426,7 +426,7 @@ public final class CreateCloudAutonomousVmClusterDetails
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
          * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * restrictions:** - A network security group (NSG) is optional for Autonomous AI Databases
          * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
@@ -763,12 +763,12 @@ public final class CreateCloudAutonomousVmClusterDetails
         return memoryPerOracleComputeUnitInGBs;
     }
 
-    /** The data disk group size to be allocated for Autonomous Databases, in TBs. */
+    /** The data disk group size to be allocated for Autonomous AI Databases, in TBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
     private final Double autonomousDataStorageSizeInTBs;
 
     /**
-     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * The data disk group size to be allocated for Autonomous AI Databases, in TBs.
      *
      * @return the value
      */
@@ -910,14 +910,14 @@ public final class CreateCloudAutonomousVmClusterDetails
     }
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -960,14 +960,14 @@ public final class CreateCloudAutonomousVmClusterDetails
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -981,14 +981,14 @@ public final class CreateCloudAutonomousVmClusterDetails
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -1009,7 +1009,7 @@ public final class CreateCloudAutonomousVmClusterDetails
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -1020,7 +1020,7 @@ public final class CreateCloudAutonomousVmClusterDetails
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      *
      * @return the value

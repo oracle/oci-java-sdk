@@ -168,14 +168,14 @@ public final class CreateMaintenanceRunDetails
             return this;
         }
         /**
-         * The Autonomous Database Software Image
+         * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
-         * The Autonomous Database Software Image
+         * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          *
          * @param databaseSoftwareImageId the value to set
@@ -420,14 +420,14 @@ public final class CreateMaintenanceRunDetails
     }
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value

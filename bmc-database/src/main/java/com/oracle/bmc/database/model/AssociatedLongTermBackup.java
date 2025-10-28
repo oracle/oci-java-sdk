@@ -34,14 +34,14 @@ public final class AssociatedLongTermBackup
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          *
          * @param id the value to set
          * @return this builder
@@ -51,12 +51,12 @@ public final class AssociatedLongTermBackup
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The display name for the long term backup for the autonomous database. */
+        /** The display name for the long term backup for the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name for the long term backup for the autonomous database.
+         * The display name for the long term backup for the Autonomous AI Database.
          *
          * @param displayName the value to set
          * @return this builder
@@ -102,14 +102,14 @@ public final class AssociatedLongTermBackup
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      *
      * @return the value
      */
@@ -117,12 +117,12 @@ public final class AssociatedLongTermBackup
         return id;
     }
 
-    /** The display name for the long term backup for the autonomous database. */
+    /** The display name for the long term backup for the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name for the long term backup for the autonomous database.
+     * The display name for the long term backup for the Autonomous AI Database.
      *
      * @return the value
      */

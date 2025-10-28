@@ -80,7 +80,7 @@ public final class UpdateAutonomousExadataInfrastructureDetails
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
          * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * restrictions:** - A network security group (NSG) is optional for Autonomous AI Databases
          * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -92,7 +92,7 @@ public final class UpdateAutonomousExadataInfrastructureDetails
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
          * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * restrictions:** - A network security group (NSG) is optional for Autonomous AI Databases
          * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
@@ -227,7 +227,7 @@ public final class UpdateAutonomousExadataInfrastructureDetails
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -238,7 +238,7 @@ public final class UpdateAutonomousExadataInfrastructureDetails
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      *
      * @return the value

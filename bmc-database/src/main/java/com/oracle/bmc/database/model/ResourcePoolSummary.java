@@ -88,12 +88,12 @@ public final class ResourcePoolSummary
             this.__explicitlySet__.add("availableComputeCapacity");
             return this;
         }
-        /** Indicates if the resource pool should be deleted for the Autonomous Database. */
+        /** Indicates if the resource pool should be deleted for the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("isDisabled")
         private Boolean isDisabled;
 
         /**
-         * Indicates if the resource pool should be deleted for the Autonomous Database.
+         * Indicates if the resource pool should be deleted for the Autonomous AI Database.
          *
          * @param isDisabled the value to set
          * @return this builder
@@ -186,12 +186,12 @@ public final class ResourcePoolSummary
         return availableComputeCapacity;
     }
 
-    /** Indicates if the resource pool should be deleted for the Autonomous Database. */
+    /** Indicates if the resource pool should be deleted for the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("isDisabled")
     private final Boolean isDisabled;
 
     /**
-     * Indicates if the resource pool should be deleted for the Autonomous Database.
+     * Indicates if the resource pool should be deleted for the Autonomous AI Database.
      *
      * @return the value
      */

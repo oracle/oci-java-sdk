@@ -106,12 +106,12 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("machineLearningUserManagementUrl");
             return this;
         }
-        /** The URL of the Graph Studio for the Autonomous Database. */
+        /** The URL of the Graph Studio for the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("graphStudioUrl")
         private String graphStudioUrl;
 
         /**
-         * The URL of the Graph Studio for the Autonomous Database.
+         * The URL of the Graph Studio for the Autonomous AI Database.
          *
          * @param graphStudioUrl the value to set
          * @return this builder
@@ -121,12 +121,12 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("graphStudioUrl");
             return this;
         }
-        /** The URL of the MongoDB API for the Autonomous Database. */
+        /** The URL of the MongoDB API for the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("mongoDbUrl")
         private String mongoDbUrl;
 
         /**
-         * The URL of the MongoDB API for the Autonomous Database.
+         * The URL of the MongoDB API for the Autonomous AI Database.
          *
          * @param mongoDbUrl the value to set
          * @return this builder
@@ -136,12 +136,12 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("mongoDbUrl");
             return this;
         }
-        /** The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database. */
+        /** The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("machineLearningNotebookUrl")
         private String machineLearningNotebookUrl;
 
         /**
-         * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+         * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database.
          *
          * @param machineLearningNotebookUrl the value to set
          * @return this builder
@@ -152,13 +152,15 @@ public final class AutonomousDatabaseConnectionUrls
             return this;
         }
         /**
-         * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+         * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous AI
+         * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ordsUrl")
         private String ordsUrl;
 
         /**
-         * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+         * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous AI
+         * Database.
          *
          * @param ordsUrl the value to set
          * @return this builder
@@ -168,12 +170,12 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("ordsUrl");
             return this;
         }
-        /** The URL of the Database Transforms for the Autonomous Database. */
+        /** The URL of the Database Transforms for the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseTransformsUrl")
         private String databaseTransformsUrl;
 
         /**
-         * The URL of the Database Transforms for the Autonomous Database.
+         * The URL of the Database Transforms for the Autonomous AI Database.
          *
          * @param databaseTransformsUrl the value to set
          * @return this builder
@@ -282,12 +284,12 @@ public final class AutonomousDatabaseConnectionUrls
         return machineLearningUserManagementUrl;
     }
 
-    /** The URL of the Graph Studio for the Autonomous Database. */
+    /** The URL of the Graph Studio for the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("graphStudioUrl")
     private final String graphStudioUrl;
 
     /**
-     * The URL of the Graph Studio for the Autonomous Database.
+     * The URL of the Graph Studio for the Autonomous AI Database.
      *
      * @return the value
      */
@@ -295,12 +297,12 @@ public final class AutonomousDatabaseConnectionUrls
         return graphStudioUrl;
     }
 
-    /** The URL of the MongoDB API for the Autonomous Database. */
+    /** The URL of the MongoDB API for the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("mongoDbUrl")
     private final String mongoDbUrl;
 
     /**
-     * The URL of the MongoDB API for the Autonomous Database.
+     * The URL of the MongoDB API for the Autonomous AI Database.
      *
      * @return the value
      */
@@ -308,12 +310,12 @@ public final class AutonomousDatabaseConnectionUrls
         return mongoDbUrl;
     }
 
-    /** The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database. */
+    /** The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("machineLearningNotebookUrl")
     private final String machineLearningNotebookUrl;
 
     /**
-     * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+     * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database.
      *
      * @return the value
      */
@@ -321,12 +323,14 @@ public final class AutonomousDatabaseConnectionUrls
         return machineLearningNotebookUrl;
     }
 
-    /** The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database. */
+    /**
+     * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous AI Database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ordsUrl")
     private final String ordsUrl;
 
     /**
-     * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+     * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous AI Database.
      *
      * @return the value
      */
@@ -334,12 +338,12 @@ public final class AutonomousDatabaseConnectionUrls
         return ordsUrl;
     }
 
-    /** The URL of the Database Transforms for the Autonomous Database. */
+    /** The URL of the Database Transforms for the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseTransformsUrl")
     private final String databaseTransformsUrl;
 
     /**
-     * The URL of the Database Transforms for the Autonomous Database.
+     * The URL of the Database Transforms for the Autonomous AI Database.
      *
      * @return the value
      */

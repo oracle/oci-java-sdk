@@ -18,22 +18,22 @@ public class UpdateAutonomousDatabaseBackupRequest
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      */
     private String autonomousDatabaseBackupId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      */
     public String getAutonomousDatabaseBackupId() {
         return autonomousDatabaseBackupId;
     }
-    /** Request to update an existing Autonomous Database backup. */
+    /** Request to update an existing Autonomous AI Database backup. */
     private com.oracle.bmc.database.model.UpdateAutonomousDatabaseBackupDetails
             updateAutonomousDatabaseBackupDetails;
 
-    /** Request to update an existing Autonomous Database backup. */
+    /** Request to update an existing Autonomous AI Database backup. */
     public com.oracle.bmc.database.model.UpdateAutonomousDatabaseBackupDetails
             getUpdateAutonomousDatabaseBackupDetails() {
         return updateAutonomousDatabaseBackupDetails;
@@ -98,13 +98,13 @@ public class UpdateAutonomousDatabaseBackupRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          */
         private String autonomousDatabaseBackupId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          *
          * @param autonomousDatabaseBackupId the value to set
          * @return this builder instance
@@ -114,12 +114,12 @@ public class UpdateAutonomousDatabaseBackupRequest
             return this;
         }
 
-        /** Request to update an existing Autonomous Database backup. */
+        /** Request to update an existing Autonomous AI Database backup. */
         private com.oracle.bmc.database.model.UpdateAutonomousDatabaseBackupDetails
                 updateAutonomousDatabaseBackupDetails = null;
 
         /**
-         * Request to update an existing Autonomous Database backup.
+         * Request to update an existing Autonomous AI Database backup.
          *
          * @param updateAutonomousDatabaseBackupDetails the value to set
          * @return this builder instance

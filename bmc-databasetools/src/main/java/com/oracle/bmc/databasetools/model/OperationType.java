@@ -16,6 +16,10 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateDatabaseToolsPrivateEndpoint("CREATE_DATABASE_TOOLS_PRIVATE_ENDPOINT"),
     UpdateDatabaseToolsPrivateEndpoint("UPDATE_DATABASE_TOOLS_PRIVATE_ENDPOINT"),
     DeleteDatabaseToolsPrivateEndpoint("DELETE_DATABASE_TOOLS_PRIVATE_ENDPOINT"),
+    CreateDatabaseToolsIdentity("CREATE_DATABASE_TOOLS_IDENTITY"),
+    DeleteDatabaseToolsIdentity("DELETE_DATABASE_TOOLS_IDENTITY"),
+    UpdateDatabaseToolsIdentity("UPDATE_DATABASE_TOOLS_IDENTITY"),
+    RefreshDatabaseToolsIdentityCredential("REFRESH_DATABASE_TOOLS_IDENTITY_CREDENTIAL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

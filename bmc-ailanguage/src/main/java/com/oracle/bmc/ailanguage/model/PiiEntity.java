@@ -21,14 +21,29 @@ package com.oracle.bmc.ailanguage.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class PiiEntity extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "offset", "length", "text", "type", "score"})
+    @java.beans.ConstructorProperties({
+        "id",
+        "offset",
+        "length",
+        "text",
+        "relexifyText",
+        "type",
+        "score"
+    })
     public PiiEntity(
-            String id, Integer offset, Integer length, String text, String type, Double score) {
+            String id,
+            Integer offset,
+            Integer length,
+            String text,
+            String relexifyText,
+            String type,
+            Double score) {
         super();
         this.id = id;
         this.offset = offset;
         this.length = length;
         this.text = text;
+        this.relexifyText = relexifyText;
         this.type = type;
         this.score = score;
     }
@@ -95,6 +110,21 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("text");
             return this;
         }
+        /** Redacted entity text */
+        @com.fasterxml.jackson.annotation.JsonProperty("relexifyText")
+        private String relexifyText;
+
+        /**
+         * Redacted entity text
+         *
+         * @param relexifyText the value to set
+         * @return this builder
+         */
+        public Builder relexifyText(String relexifyText) {
+            this.relexifyText = relexifyText;
+            this.__explicitlySet__.add("relexifyText");
+            return this;
+        }
         /**
          * Entity type supported PERSON ADDRESS AGE DATE_TIME SSN_OR_TAXPAYER EMAIL
          * PASSPORT_NUMBER_US TELEPHONE_NUMBER DRIVER_ID_US BANK_ACCOUNT_NUMBER BANK_SWIFT
@@ -148,7 +178,13 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
         public PiiEntity build() {
             PiiEntity model =
                     new PiiEntity(
-                            this.id, this.offset, this.length, this.text, this.type, this.score);
+                            this.id,
+                            this.offset,
+                            this.length,
+                            this.text,
+                            this.relexifyText,
+                            this.type,
+                            this.score);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -168,6 +204,9 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("text")) {
                 this.text(model.getText());
+            }
+            if (model.wasPropertyExplicitlySet("relexifyText")) {
+                this.relexifyText(model.getRelexifyText());
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
@@ -240,6 +279,19 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
         return text;
     }
 
+    /** Redacted entity text */
+    @com.fasterxml.jackson.annotation.JsonProperty("relexifyText")
+    private final String relexifyText;
+
+    /**
+     * Redacted entity text
+     *
+     * @return the value
+     */
+    public String getRelexifyText() {
+        return relexifyText;
+    }
+
     /**
      * Entity type supported PERSON ADDRESS AGE DATE_TIME SSN_OR_TAXPAYER EMAIL PASSPORT_NUMBER_US
      * TELEPHONE_NUMBER DRIVER_ID_US BANK_ACCOUNT_NUMBER BANK_SWIFT BANK_ROUTING CREDIT_DEBIT_NUMBER
@@ -299,6 +351,7 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", offset=").append(String.valueOf(this.offset));
         sb.append(", length=").append(String.valueOf(this.length));
         sb.append(", text=").append(String.valueOf(this.text));
+        sb.append(", relexifyText=").append(String.valueOf(this.relexifyText));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", score=").append(String.valueOf(this.score));
         sb.append(")");
@@ -319,6 +372,7 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.offset, other.offset)
                 && java.util.Objects.equals(this.length, other.length)
                 && java.util.Objects.equals(this.text, other.text)
+                && java.util.Objects.equals(this.relexifyText, other.relexifyText)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.score, other.score)
                 && super.equals(other);
@@ -332,6 +386,7 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
         result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
         result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
         result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());
+        result = (result * PRIME) + (this.relexifyText == null ? 43 : this.relexifyText.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.score == null ? 43 : this.score.hashCode());
         result = (result * PRIME) + super.hashCode();

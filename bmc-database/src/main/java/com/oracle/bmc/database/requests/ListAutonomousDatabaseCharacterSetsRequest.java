@@ -23,27 +23,27 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         return opcRequestId;
     }
     /**
-     * Specifies whether this request is for an Autonomous Database Serverless instance. By default,
-     * this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By
+     * default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
      */
     private Boolean isShared;
 
     /**
-     * Specifies whether this request is for an Autonomous Database Serverless instance. By default,
-     * this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By
+     * default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
      */
     public Boolean getIsShared() {
         return isShared;
     }
     /**
-     * Specifies if the request is for an Autonomous Database Dedicated instance. The default
-     * request is for an Autonomous Database Dedicated instance.
+     * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default
+     * request is for an Autonomous AI Database Dedicated instance.
      */
     private Boolean isDedicated;
 
     /**
-     * Specifies if the request is for an Autonomous Database Dedicated instance. The default
-     * request is for an Autonomous Database Dedicated instance.
+     * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default
+     * request is for an Autonomous AI Database Dedicated instance.
      */
     public Boolean getIsDedicated() {
         return isDedicated;
@@ -120,15 +120,15 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         }
 
         /**
-         * Specifies whether this request is for an Autonomous Database Serverless instance. By
-         * default, this request will be for Autonomous Database on Dedicated Exadata
+         * Specifies whether this request is for an Autonomous AI Database Serverless instance. By
+         * default, this request will be for Autonomous AI Database on Dedicated Exadata
          * Infrastructure.
          */
         private Boolean isShared = null;
 
         /**
-         * Specifies whether this request is for an Autonomous Database Serverless instance. By
-         * default, this request will be for Autonomous Database on Dedicated Exadata
+         * Specifies whether this request is for an Autonomous AI Database Serverless instance. By
+         * default, this request will be for Autonomous AI Database on Dedicated Exadata
          * Infrastructure.
          *
          * @param isShared the value to set
@@ -140,14 +140,14 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         }
 
         /**
-         * Specifies if the request is for an Autonomous Database Dedicated instance. The default
-         * request is for an Autonomous Database Dedicated instance.
+         * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default
+         * request is for an Autonomous AI Database Dedicated instance.
          */
         private Boolean isDedicated = null;
 
         /**
-         * Specifies if the request is for an Autonomous Database Dedicated instance. The default
-         * request is for an Autonomous Database Dedicated instance.
+         * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default
+         * request is for an Autonomous AI Database Dedicated instance.
          *
          * @param isDedicated the value to set
          * @return this builder instance

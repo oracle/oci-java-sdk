@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Parameters for creating a Autonomous Database Software Image <br>
+ * Parameters for creating a Autonomous AI Database Software Image <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -69,15 +69,15 @@ public final class CreateAutonomousDatabaseSoftwareImageDetails
             return this;
         }
         /**
-         * The user-friendly name for the Autonomous Database Software Image. The name does not have
-         * to be unique.
+         * The user-friendly name for the Autonomous AI Database Software Image. The name does not
+         * have to be unique.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Autonomous Database Software Image. The name does not have
-         * to be unique.
+         * The user-friendly name for the Autonomous AI Database Software Image. The name does not
+         * have to be unique.
          *
          * @param displayName the value to set
          * @return this builder
@@ -90,7 +90,7 @@ public final class CreateAutonomousDatabaseSoftwareImageDetails
         /**
          * The source Autonomous Container Database
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which
-         * to create Autonomous Database Software Image.
+         * to create Autonomous AI Database Software Image.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceCdbId")
         private String sourceCdbId;
@@ -98,7 +98,7 @@ public final class CreateAutonomousDatabaseSoftwareImageDetails
         /**
          * The source Autonomous Container Database
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which
-         * to create Autonomous Database Software Image.
+         * to create Autonomous AI Database Software Image.
          *
          * @param sourceCdbId the value to set
          * @return this builder
@@ -240,15 +240,15 @@ public final class CreateAutonomousDatabaseSoftwareImageDetails
     }
 
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to
-     * be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have
+     * to be unique.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to
-     * be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have
+     * to be unique.
      *
      * @return the value
      */
@@ -259,7 +259,7 @@ public final class CreateAutonomousDatabaseSoftwareImageDetails
     /**
      * The source Autonomous Container Database
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to
-     * create Autonomous Database Software Image.
+     * create Autonomous AI Database Software Image.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceCdbId")
     private final String sourceCdbId;
@@ -267,7 +267,7 @@ public final class CreateAutonomousDatabaseSoftwareImageDetails
     /**
      * The source Autonomous Container Database
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to
-     * create Autonomous Database Software Image.
+     * create Autonomous AI Database Software Image.
      *
      * @return the value
      */

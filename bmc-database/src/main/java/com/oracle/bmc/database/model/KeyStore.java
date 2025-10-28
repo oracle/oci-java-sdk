@@ -192,14 +192,14 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * List of long term backups of Autonomous Databases associated with this backup
+         * List of long term backups of Autonomous AI Databases associated with this backup
          * destination.The maximum associated number of long term backup listed here would be 1024.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackups")
         private java.util.List<AssociatedLongTermBackup> associatedLongTermBackups;
 
         /**
-         * List of long term backups of Autonomous Databases associated with this backup
+         * List of long term backups of Autonomous AI Databases associated with this backup
          * destination.The maximum associated number of long term backup listed here would be 1024.
          *
          * @param associatedLongTermBackups the value to set
@@ -212,14 +212,14 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * Indicates the number of long term backups of Autonomous Databases associated with this
+         * Indicates the number of long term backups of Autonomous AI Databases associated with this
          * backup destination.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackupCount")
         private Integer associatedLongTermBackupCount;
 
         /**
-         * Indicates the number of long term backups of Autonomous Databases associated with this
+         * Indicates the number of long term backups of Autonomous AI Databases associated with this
          * backup destination.
          *
          * @param associatedLongTermBackupCount the value to set
@@ -532,15 +532,15 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * List of long term backups of Autonomous Databases associated with this backup destination.The
-     * maximum associated number of long term backup listed here would be 1024.
+     * List of long term backups of Autonomous AI Databases associated with this backup
+     * destination.The maximum associated number of long term backup listed here would be 1024.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackups")
     private final java.util.List<AssociatedLongTermBackup> associatedLongTermBackups;
 
     /**
-     * List of long term backups of Autonomous Databases associated with this backup destination.The
-     * maximum associated number of long term backup listed here would be 1024.
+     * List of long term backups of Autonomous AI Databases associated with this backup
+     * destination.The maximum associated number of long term backup listed here would be 1024.
      *
      * @return the value
      */
@@ -549,15 +549,15 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * Indicates the number of long term backups of Autonomous Databases associated with this backup
-     * destination.
+     * Indicates the number of long term backups of Autonomous AI Databases associated with this
+     * backup destination.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("associatedLongTermBackupCount")
     private final Integer associatedLongTermBackupCount;
 
     /**
-     * Indicates the number of long term backups of Autonomous Databases associated with this backup
-     * destination.
+     * Indicates the number of long term backups of Autonomous AI Databases associated with this
+     * backup destination.
      *
      * @return the value
      */

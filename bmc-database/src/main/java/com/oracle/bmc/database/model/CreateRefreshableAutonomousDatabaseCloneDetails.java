@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Oracle Autonomous Database refreshable clone. <br>
+ * Details to create an Oracle Autonomous AI Database refreshable clone. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -512,14 +512,14 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that you will clone to create a new Autonomous Database.
+         * source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that you will clone to create a new Autonomous Database.
+         * source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
          *
          * @param sourceId the value to set
          * @return this builder
@@ -531,14 +531,14 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         }
         /**
          * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-         * refreshed with data from the source Autonomous Database.
+         * refreshed with data from the source Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
         private RefreshableMode refreshableMode;
 
         /**
          * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-         * refreshed with data from the source Autonomous Database.
+         * refreshed with data from the source Autonomous AI Database.
          *
          * @param refreshableMode the value to set
          * @return this builder
@@ -593,7 +593,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             return this;
         }
         /**
-         * The the date and time that auto-refreshing will begin for an Autonomous Database
+         * The the date and time that auto-refreshing will begin for an Autonomous AI Database
          * refreshable clone. This value controls only the start time for the first refresh
          * operation. Subsequent (ongoing) refresh operations have start times controlled by the
          * value of the {@code autoRefreshFrequencyInSeconds} parameter.
@@ -602,7 +602,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         private java.util.Date timeOfAutoRefreshStart;
 
         /**
-         * The the date and time that auto-refreshing will begin for an Autonomous Database
+         * The the date and time that auto-refreshing will begin for an Autonomous AI Database
          * refreshable clone. This value controls only the start time for the first refresh
          * operation. Subsequent (ongoing) refresh operations have start times controlled by the
          * value of the {@code autoRefreshFrequencyInSeconds} parameter.
@@ -616,8 +616,8 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             return this;
         }
         /**
-         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY}
-         * or {@code READ_WRITE} mode.
+         * Indicates the Autonomous AI Database mode. The database can be opened in {@code
+         * READ_ONLY} or {@code READ_WRITE} mode.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
@@ -627,8 +627,8 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         private OpenMode openMode;
 
         /**
-         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY}
-         * or {@code READ_WRITE} mode.
+         * Indicates the Autonomous AI Database mode. The database can be opened in {@code
+         * READ_ONLY} or {@code READ_WRITE} mode.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
@@ -642,12 +642,12 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             this.__explicitlySet__.add("openMode");
             return this;
         }
-        /** The Autonomous Database clone type. */
+        /** The Autonomous AI Database clone type. */
         @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
         private CloneType cloneType;
 
         /**
-         * The Autonomous Database clone type.
+         * The Autonomous AI Database clone type.
          *
          * @param cloneType the value to set
          * @return this builder
@@ -1054,14 +1054,14 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that you will clone to create a new Autonomous Database.
+     * source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that you will clone to create a new Autonomous Database.
+     * source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
      *
      * @return the value
      */
@@ -1071,7 +1071,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
 
     /**
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-     * refreshed with data from the source Autonomous Database.
+     * refreshed with data from the source Autonomous AI Database.
      */
     public enum RefreshableMode implements com.oracle.bmc.http.internal.BmcEnum {
         Automatic("AUTOMATIC"),
@@ -1107,14 +1107,14 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
     };
     /**
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-     * refreshed with data from the source Autonomous Database.
+     * refreshed with data from the source Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
     private final RefreshableMode refreshableMode;
 
     /**
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-     * refreshed with data from the source Autonomous Database.
+     * refreshed with data from the source Autonomous AI Database.
      *
      * @return the value
      */
@@ -1163,19 +1163,19 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
     }
 
     /**
-     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable
-     * clone. This value controls only the start time for the first refresh operation. Subsequent
-     * (ongoing) refresh operations have start times controlled by the value of the {@code
-     * autoRefreshFrequencyInSeconds} parameter.
+     * The the date and time that auto-refreshing will begin for an Autonomous AI Database
+     * refreshable clone. This value controls only the start time for the first refresh operation.
+     * Subsequent (ongoing) refresh operations have start times controlled by the value of the
+     * {@code autoRefreshFrequencyInSeconds} parameter.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfAutoRefreshStart")
     private final java.util.Date timeOfAutoRefreshStart;
 
     /**
-     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable
-     * clone. This value controls only the start time for the first refresh operation. Subsequent
-     * (ongoing) refresh operations have start times controlled by the value of the {@code
-     * autoRefreshFrequencyInSeconds} parameter.
+     * The the date and time that auto-refreshing will begin for an Autonomous AI Database
+     * refreshable clone. This value controls only the start time for the first refresh operation.
+     * Subsequent (ongoing) refresh operations have start times controlled by the value of the
+     * {@code autoRefreshFrequencyInSeconds} parameter.
      *
      * @return the value
      */
@@ -1184,7 +1184,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
     }
 
     /**
-     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * Indicates the Autonomous AI Database mode. The database can be opened in {@code READ_ONLY} or
      * {@code READ_WRITE} mode.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
@@ -1224,7 +1224,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         }
     };
     /**
-     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * Indicates the Autonomous AI Database mode. The database can be opened in {@code READ_ONLY} or
      * {@code READ_WRITE} mode.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
@@ -1235,7 +1235,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
     private final OpenMode openMode;
 
     /**
-     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * Indicates the Autonomous AI Database mode. The database can be opened in {@code READ_ONLY} or
      * {@code READ_WRITE} mode.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
@@ -1248,7 +1248,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         return openMode;
     }
 
-    /** The Autonomous Database clone type. */
+    /** The Autonomous AI Database clone type. */
     public enum CloneType implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Metadata("METADATA"),
@@ -1282,12 +1282,12 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             throw new IllegalArgumentException("Invalid CloneType: " + key);
         }
     };
-    /** The Autonomous Database clone type. */
+    /** The Autonomous AI Database clone type. */
     @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
     private final CloneType cloneType;
 
     /**
-     * The Autonomous Database clone type.
+     * The Autonomous AI Database clone type.
      *
      * @return the value
      */

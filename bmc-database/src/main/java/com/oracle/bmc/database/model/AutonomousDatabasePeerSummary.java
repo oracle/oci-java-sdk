@@ -5,7 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The object holds details about a peer Autonomous Database for Oracle Autonomous Database. <br>
+ * The object holds details about a peer Autonomous AI Database for Oracle Autonomous AI Database.
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,14 +35,14 @@ public final class AutonomousDatabasePeerSummary
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database.
+         * Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database.
+         * Autonomous AI Database.
          *
          * @param id the value to set
          * @return this builder
@@ -51,12 +52,12 @@ public final class AutonomousDatabasePeerSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the region where this peer Autonomous Database clone exists. */
+        /** The name of the region where this peer Autonomous AI Database clone exists. */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * The name of the region where this peer Autonomous Database clone exists.
+         * The name of the region where this peer Autonomous AI Database clone exists.
          *
          * @param region the value to set
          * @return this builder
@@ -102,14 +103,14 @@ public final class AutonomousDatabasePeerSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database.
+     * Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database.
+     * Autonomous AI Database.
      *
      * @return the value
      */
@@ -117,12 +118,12 @@ public final class AutonomousDatabasePeerSummary
         return id;
     }
 
-    /** The name of the region where this peer Autonomous Database clone exists. */
+    /** The name of the region where this peer Autonomous AI Database clone exists. */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * The name of the region where this peer Autonomous Database clone exists.
+     * The name of the region where this peer Autonomous AI Database clone exists.
      *
      * @return the value
      */

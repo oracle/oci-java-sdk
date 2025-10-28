@@ -27,11 +27,11 @@ public class RestoreAutonomousDatabaseRequest
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
-    /** Request to perform an Autonomous Database restore. */
+    /** Request to perform an Autonomous AI Database restore. */
     private com.oracle.bmc.database.model.RestoreAutonomousDatabaseDetails
             restoreAutonomousDatabaseDetails;
 
-    /** Request to perform an Autonomous Database restore. */
+    /** Request to perform an Autonomous AI Database restore. */
     public com.oracle.bmc.database.model.RestoreAutonomousDatabaseDetails
             getRestoreAutonomousDatabaseDetails() {
         return restoreAutonomousDatabaseDetails;
@@ -105,12 +105,12 @@ public class RestoreAutonomousDatabaseRequest
             return this;
         }
 
-        /** Request to perform an Autonomous Database restore. */
+        /** Request to perform an Autonomous AI Database restore. */
         private com.oracle.bmc.database.model.RestoreAutonomousDatabaseDetails
                 restoreAutonomousDatabaseDetails = null;
 
         /**
-         * Request to perform an Autonomous Database restore.
+         * Request to perform an Autonomous AI Database restore.
          *
          * @param restoreAutonomousDatabaseDetails the value to set
          * @return this builder instance

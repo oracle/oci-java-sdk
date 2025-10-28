@@ -49,11 +49,11 @@ public class RegisterAutonomousDatabaseDataSafeRequest
     public Boolean getOpcDryRun() {
         return opcDryRun;
     }
-    /** Request to register an Autonomous Database with Data Safe. */
+    /** Request to register an Autonomous AI Database with Data Safe. */
     private com.oracle.bmc.database.model.RegisterAutonomousDatabaseDataSafeDetails
             registerAutonomousDatabaseDataSafeDetails;
 
-    /** Request to register an Autonomous Database with Data Safe. */
+    /** Request to register an Autonomous AI Database with Data Safe. */
     public com.oracle.bmc.database.model.RegisterAutonomousDatabaseDataSafeDetails
             getRegisterAutonomousDatabaseDataSafeDetails() {
         return registerAutonomousDatabaseDataSafeDetails;
@@ -129,12 +129,12 @@ public class RegisterAutonomousDatabaseDataSafeRequest
             return this;
         }
 
-        /** Request to register an Autonomous Database with Data Safe. */
+        /** Request to register an Autonomous AI Database with Data Safe. */
         private com.oracle.bmc.database.model.RegisterAutonomousDatabaseDataSafeDetails
                 registerAutonomousDatabaseDataSafeDetails = null;
 
         /**
-         * Request to register an Autonomous Database with Data Safe.
+         * Request to register an Autonomous AI Database with Data Safe.
          *
          * @param registerAutonomousDatabaseDataSafeDetails the value to set
          * @return this builder instance

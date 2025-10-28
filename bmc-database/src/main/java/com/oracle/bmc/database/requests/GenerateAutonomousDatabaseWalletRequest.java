@@ -27,11 +27,11 @@ public class GenerateAutonomousDatabaseWalletRequest
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
-    /** Request to create a new Autonomous Database wallet. */
+    /** Request to create a new Autonomous AI Database wallet. */
     private com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails
             generateAutonomousDatabaseWalletDetails;
 
-    /** Request to create a new Autonomous Database wallet. */
+    /** Request to create a new Autonomous AI Database wallet. */
     public com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails
             getGenerateAutonomousDatabaseWalletDetails() {
         return generateAutonomousDatabaseWalletDetails;
@@ -114,12 +114,12 @@ public class GenerateAutonomousDatabaseWalletRequest
             return this;
         }
 
-        /** Request to create a new Autonomous Database wallet. */
+        /** Request to create a new Autonomous AI Database wallet. */
         private com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails
                 generateAutonomousDatabaseWalletDetails = null;
 
         /**
-         * Request to create a new Autonomous Database wallet.
+         * Request to create a new Autonomous AI Database wallet.
          *
          * @param generateAutonomousDatabaseWalletDetails the value to set
          * @return this builder instance

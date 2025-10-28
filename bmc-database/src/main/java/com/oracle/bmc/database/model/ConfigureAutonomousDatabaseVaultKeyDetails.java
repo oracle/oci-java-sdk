@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Configuration details for the Autonomous Database
+ * Configuration details for the Autonomous AI Database
  * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts)
  * key. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model

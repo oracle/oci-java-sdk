@@ -65,14 +65,14 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
         return page;
     }
     /**
-     * A filter to return the maintenance history results for the local standby Autonomous Database
-     * Serverless only.
+     * A filter to return the maintenance history results for the local standby Autonomous AI
+     * Database Serverless only.
      */
     private Boolean isLocalAdg;
 
     /**
-     * A filter to return the maintenance history results for the local standby Autonomous Database
-     * Serverless only.
+     * A filter to return the maintenance history results for the local standby Autonomous AI
+     * Database Serverless only.
      */
     public Boolean getIsLocalAdg() {
         return isLocalAdg;
@@ -306,13 +306,13 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A filter to return the maintenance history results for the local standby Autonomous
+         * A filter to return the maintenance history results for the local standby Autonomous AI
          * Database Serverless only.
          */
         private Boolean isLocalAdg = null;
 
         /**
-         * A filter to return the maintenance history results for the local standby Autonomous
+         * A filter to return the maintenance history results for the local standby Autonomous AI
          * Database Serverless only.
          *
          * @param isLocalAdg the value to set

@@ -44,19 +44,19 @@ public final class DisasterRecoveryConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
-         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery
-         * time objective (RTO) during failover or switchover. Backup-based DR type provides lower
-         * cost DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless
+         * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
+         * recovery time objective (RTO) during failover or switchover. Backup-based DR type
+         * provides lower cost DR with a slower RTO during failover or switchover.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryType")
         private DisasterRecoveryType disasterRecoveryType;
 
         /**
-         * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
-         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery
-         * time objective (RTO) during failover or switchover. Backup-based DR type provides lower
-         * cost DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless
+         * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
+         * recovery time objective (RTO) during failover or switchover. Backup-based DR type
+         * provides lower cost DR with a slower RTO during failover or switchover.
          *
          * @param disasterRecoveryType the value to set
          * @return this builder
@@ -175,7 +175,7 @@ public final class DisasterRecoveryConfiguration
     }
 
     /**
-     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+     * Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
      * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
      * with a slower RTO during failover or switchover.
@@ -226,7 +226,7 @@ public final class DisasterRecoveryConfiguration
         }
     };
     /**
-     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+     * Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
      * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
      * with a slower RTO during failover or switchover.
@@ -235,7 +235,7 @@ public final class DisasterRecoveryConfiguration
     private final DisasterRecoveryType disasterRecoveryType;
 
     /**
-     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+     * Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
      * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
      * with a slower RTO during failover or switchover.

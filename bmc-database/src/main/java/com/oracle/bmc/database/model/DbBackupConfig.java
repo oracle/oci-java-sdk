@@ -216,17 +216,19 @@ public final class DbBackupConfig
             return this;
         }
         /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for
-         * predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the
-         * backups as per the policy defined for database backups.
+         * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the
+         * backup for predefined time i.e 72 hours and then delete permanently... -
+         * DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for
+         * database backups.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupDeletionPolicy")
         private BackupDeletionPolicy backupDeletionPolicy;
 
         /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for
-         * predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the
-         * backups as per the policy defined for database backups.
+         * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the
+         * backup for predefined time i.e 72 hours and then delete permanently... -
+         * DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for
+         * database backups.
          *
          * @param backupDeletionPolicy the value to set
          * @return this builder
@@ -622,9 +624,10 @@ public final class DbBackupConfig
     }
 
     /**
-     * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for
-     * predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as
-     * per the policy defined for database backups.
+     * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup
+     * for predefined time i.e 72 hours and then delete permanently... -
+     * DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database
+     * backups.
      */
     public enum BackupDeletionPolicy implements com.oracle.bmc.http.internal.BmcEnum {
         DeleteImmediately("DELETE_IMMEDIATELY"),
@@ -672,17 +675,19 @@ public final class DbBackupConfig
         }
     };
     /**
-     * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for
-     * predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as
-     * per the policy defined for database backups.
+     * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup
+     * for predefined time i.e 72 hours and then delete permanently... -
+     * DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database
+     * backups.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupDeletionPolicy")
     private final BackupDeletionPolicy backupDeletionPolicy;
 
     /**
-     * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for
-     * predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as
-     * per the policy defined for database backups.
+     * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup
+     * for predefined time i.e 72 hours and then delete permanently... -
+     * DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database
+     * backups.
      *
      * @return the value
      */

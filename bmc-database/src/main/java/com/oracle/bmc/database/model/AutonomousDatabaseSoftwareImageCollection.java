@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Result of List Autonomous Database Software Images. <br>
+ * Result of List Autonomous AI Database Software Images. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class AutonomousDatabaseSoftwareImageCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Autonomous Database Software Images. */
+        /** List of Autonomous AI Database Software Images. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AutonomousDatabaseSoftwareImageSummary> items;
 
         /**
-         * List of Autonomous Database Software Images.
+         * List of Autonomous AI Database Software Images.
          *
          * @param items the value to set
          * @return this builder
@@ -78,12 +78,12 @@ public final class AutonomousDatabaseSoftwareImageCollection
         return new Builder().copy(this);
     }
 
-    /** List of Autonomous Database Software Images. */
+    /** List of Autonomous AI Database Software Images. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AutonomousDatabaseSoftwareImageSummary> items;
 
     /**
-     * List of Autonomous Database Software Images.
+     * List of Autonomous AI Database Software Images.
      *
      * @return the value
      */

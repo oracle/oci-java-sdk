@@ -11,6 +11,7 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UpdateLustreFileSystem("UPDATE_LUSTRE_FILE_SYSTEM"),
     DeleteLustreFileSystem("DELETE_LUSTRE_FILE_SYSTEM"),
     MoveLustreFileSystem("MOVE_LUSTRE_FILE_SYSTEM"),
+    DeleteObjectStorageLink("DELETE_OBJECT_STORAGE_LINK"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

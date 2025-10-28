@@ -16,10 +16,10 @@ public class ChangeAutonomousDatabaseCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.ChangeCompartmentDetails> {
 
-    /** Request to move Autonomous Database to a different compartment */
+    /** Request to move Autonomous AI Database to a different compartment */
     private com.oracle.bmc.database.model.ChangeCompartmentDetails changeCompartmentDetails;
 
-    /** Request to move Autonomous Database to a different compartment */
+    /** Request to move Autonomous AI Database to a different compartment */
     public com.oracle.bmc.database.model.ChangeCompartmentDetails getChangeCompartmentDetails() {
         return changeCompartmentDetails;
     }
@@ -111,12 +111,12 @@ public class ChangeAutonomousDatabaseCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Request to move Autonomous Database to a different compartment */
+        /** Request to move Autonomous AI Database to a different compartment */
         private com.oracle.bmc.database.model.ChangeCompartmentDetails changeCompartmentDetails =
                 null;
 
         /**
-         * Request to move Autonomous Database to a different compartment
+         * Request to move Autonomous AI Database to a different compartment
          *
          * @param changeCompartmentDetails the value to set
          * @return this builder instance

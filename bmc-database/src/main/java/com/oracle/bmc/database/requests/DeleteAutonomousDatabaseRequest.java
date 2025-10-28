@@ -51,13 +51,13 @@ public class DeleteAutonomousDatabaseRequest
         return opcRequestId;
     }
     /**
-     * If set to true, terminating the Autonomous Database also deletes its associated long-term
+     * If set to true, terminating the Autonomous AI Database also deletes its associated long-term
      * backups if the retention lock is not enabled.
      */
     private Boolean mustDeleteAssociatedLongTermBackups;
 
     /**
-     * If set to true, terminating the Autonomous Database also deletes its associated long-term
+     * If set to true, terminating the Autonomous AI Database also deletes its associated long-term
      * backups if the retention lock is not enabled.
      */
     public Boolean getMustDeleteAssociatedLongTermBackups() {
@@ -140,14 +140,14 @@ public class DeleteAutonomousDatabaseRequest
         }
 
         /**
-         * If set to true, terminating the Autonomous Database also deletes its associated long-term
-         * backups if the retention lock is not enabled.
+         * If set to true, terminating the Autonomous AI Database also deletes its associated
+         * long-term backups if the retention lock is not enabled.
          */
         private Boolean mustDeleteAssociatedLongTermBackups = null;
 
         /**
-         * If set to true, terminating the Autonomous Database also deletes its associated long-term
-         * backups if the retention lock is not enabled.
+         * If set to true, terminating the Autonomous AI Database also deletes its associated
+         * long-term backups if the retention lock is not enabled.
          *
          * @param mustDeleteAssociatedLongTermBackups the value to set
          * @return this builder instance

@@ -50,12 +50,14 @@ public class ListAutonomousDbVersionsRequest
         return opcRequestId;
     }
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload
+     * type.
      */
     private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload;
 
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload
+     * type.
      */
     public com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload getDbWorkload() {
         return dbWorkload;
@@ -169,15 +171,15 @@ public class ListAutonomousDbVersionsRequest
         }
 
         /**
-         * A filter to return only autonomous database resources that match the specified workload
-         * type.
+         * A filter to return only Autonomous AI Database resources that match the specified
+         * workload type.
          */
         private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload =
                 null;
 
         /**
-         * A filter to return only autonomous database resources that match the specified workload
-         * type.
+         * A filter to return only Autonomous AI Database resources that match the specified
+         * workload type.
          *
          * @param dbWorkload the value to set
          * @return this builder instance

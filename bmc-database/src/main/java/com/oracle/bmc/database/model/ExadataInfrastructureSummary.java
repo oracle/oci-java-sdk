@@ -1080,7 +1080,7 @@ public final class ExadataInfrastructureSummary
             return this;
         }
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code
+         * The compute model of the Autonomous AI Database. This is required if using the {@code
          * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
          * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
          * OCPU compute model is legacy.
@@ -1089,7 +1089,7 @@ public final class ExadataInfrastructureSummary
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code
+         * The compute model of the Autonomous AI Database. This is required if using the {@code
          * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
          * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
          * OCPU compute model is legacy.
@@ -2276,7 +2276,7 @@ public final class ExadataInfrastructureSummary
     }
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
+     * The compute model of the Autonomous AI Database. This is required if using the {@code
      * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
      * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
      * compute model is legacy.
@@ -2327,7 +2327,7 @@ public final class ExadataInfrastructureSummary
         }
     };
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
+     * The compute model of the Autonomous AI Database. This is required if using the {@code
      * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
      * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
      * compute model is legacy.
@@ -2336,7 +2336,7 @@ public final class ExadataInfrastructureSummary
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
+     * The compute model of the Autonomous AI Database. This is required if using the {@code
      * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
      * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
      * compute model is legacy.

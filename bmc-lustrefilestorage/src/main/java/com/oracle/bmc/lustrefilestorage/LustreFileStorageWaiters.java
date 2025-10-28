@@ -136,6 +136,214 @@ public class LustreFileStorageWaiters {
     }
 
     /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetObjectStorageLinkRequest, GetObjectStorageLinkResponse>
+            forObjectStorageLink(
+                    GetObjectStorageLinkRequest request,
+                    com.oracle.bmc.lustrefilestorage.model.ObjectStorageLink.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forObjectStorageLink(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetObjectStorageLinkRequest, GetObjectStorageLinkResponse>
+            forObjectStorageLink(
+                    GetObjectStorageLinkRequest request,
+                    com.oracle.bmc.lustrefilestorage.model.ObjectStorageLink.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forObjectStorageLink(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetObjectStorageLinkRequest, GetObjectStorageLinkResponse>
+            forObjectStorageLink(
+                    GetObjectStorageLinkRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.lustrefilestorage.model.ObjectStorageLink.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forObjectStorageLink(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for ObjectStorageLink.
+    private com.oracle.bmc.waiter.Waiter<GetObjectStorageLinkRequest, GetObjectStorageLinkResponse>
+            forObjectStorageLink(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetObjectStorageLinkRequest request,
+                    final com.oracle.bmc.lustrefilestorage.model.ObjectStorageLink.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.lustrefilestorage.model.ObjectStorageLink.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetObjectStorageLinkRequest, GetObjectStorageLinkResponse>() {
+                            @Override
+                            public GetObjectStorageLinkResponse apply(
+                                    GetObjectStorageLinkRequest request) {
+                                return client.getObjectStorageLink(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetObjectStorageLinkResponse>() {
+                            @Override
+                            public boolean test(GetObjectStorageLinkResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getObjectStorageLink().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.lustrefilestorage.model.ObjectStorageLink
+                                        .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSyncJobRequest, GetSyncJobResponse> forSyncJob(
+            GetSyncJobRequest request,
+            com.oracle.bmc.lustrefilestorage.model.SyncJob.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSyncJob(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSyncJobRequest, GetSyncJobResponse> forSyncJob(
+            GetSyncJobRequest request,
+            com.oracle.bmc.lustrefilestorage.model.SyncJob.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forSyncJob(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSyncJobRequest, GetSyncJobResponse> forSyncJob(
+            GetSyncJobRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.lustrefilestorage.model.SyncJob.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forSyncJob(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SyncJob.
+    private com.oracle.bmc.waiter.Waiter<GetSyncJobRequest, GetSyncJobResponse> forSyncJob(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetSyncJobRequest request,
+            final com.oracle.bmc.lustrefilestorage.model.SyncJob.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.lustrefilestorage.model.SyncJob.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<GetSyncJobRequest, GetSyncJobResponse>() {
+                            @Override
+                            public GetSyncJobResponse apply(GetSyncJobRequest request) {
+                                return client.getSyncJob(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetSyncJobResponse>() {
+                            @Override
+                            public boolean test(GetSyncJobResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSyncJob().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using default configuration.
      *
      * @param request the request to send
