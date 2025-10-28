@@ -59,6 +59,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         "hostnameLabel",
         "id",
         "ipAddress",
+        "cidrPrefixLength",
         "isPrimary",
         "vlanId",
         "subnetId",
@@ -66,7 +67,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         "vnicId",
         "ipState",
         "lifetime",
-        "routeTableId"
+        "routeTableId",
+        "ipv4SubnetCidrAtCreation"
     })
     public PrivateIp(
             String availabilityDomain,
@@ -77,6 +79,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             String hostnameLabel,
             String id,
             String ipAddress,
+            Integer cidrPrefixLength,
             Boolean isPrimary,
             String vlanId,
             String subnetId,
@@ -84,7 +87,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             String vnicId,
             IpState ipState,
             Lifetime lifetime,
-            String routeTableId) {
+            String routeTableId,
+            String ipv4SubnetCidrAtCreation) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -94,6 +98,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         this.hostnameLabel = hostnameLabel;
         this.id = id;
         this.ipAddress = ipAddress;
+        this.cidrPrefixLength = cidrPrefixLength;
         this.isPrimary = isPrimary;
         this.vlanId = vlanId;
         this.subnetId = subnetId;
@@ -102,6 +107,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         this.ipState = ipState;
         this.lifetime = lifetime;
         this.routeTableId = routeTableId;
+        this.ipv4SubnetCidrAtCreation = ipv4SubnetCidrAtCreation;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -303,6 +309,21 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
+        /** The secondary IPv4 CIDR prefix length. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
+        private Integer cidrPrefixLength;
+
+        /**
+         * The secondary IPv4 CIDR prefix length.
+         *
+         * @param cidrPrefixLength the value to set
+         * @return this builder
+         */
+        public Builder cidrPrefixLength(Integer cidrPrefixLength) {
+            this.cidrPrefixLength = cidrPrefixLength;
+            this.__explicitlySet__.add("cidrPrefixLength");
+            return this;
+        }
         /**
          * Whether this private IP is the primary one on the VNIC. Primary private IPs are
          * unassigned and deleted automatically when the VNIC is terminated.
@@ -475,6 +496,21 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
+        /** Ipv4 Subnet CIDR specified whn creating the PrivateIP. */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv4SubnetCidrAtCreation")
+        private String ipv4SubnetCidrAtCreation;
+
+        /**
+         * Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+         *
+         * @param ipv4SubnetCidrAtCreation the value to set
+         * @return this builder
+         */
+        public Builder ipv4SubnetCidrAtCreation(String ipv4SubnetCidrAtCreation) {
+            this.ipv4SubnetCidrAtCreation = ipv4SubnetCidrAtCreation;
+            this.__explicitlySet__.add("ipv4SubnetCidrAtCreation");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -490,6 +526,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                             this.hostnameLabel,
                             this.id,
                             this.ipAddress,
+                            this.cidrPrefixLength,
                             this.isPrimary,
                             this.vlanId,
                             this.subnetId,
@@ -497,7 +534,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                             this.vnicId,
                             this.ipState,
                             this.lifetime,
-                            this.routeTableId);
+                            this.routeTableId,
+                            this.ipv4SubnetCidrAtCreation);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -530,6 +568,9 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
             }
+            if (model.wasPropertyExplicitlySet("cidrPrefixLength")) {
+                this.cidrPrefixLength(model.getCidrPrefixLength());
+            }
             if (model.wasPropertyExplicitlySet("isPrimary")) {
                 this.isPrimary(model.getIsPrimary());
             }
@@ -553,6 +594,9 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("routeTableId")) {
                 this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("ipv4SubnetCidrAtCreation")) {
+                this.ipv4SubnetCidrAtCreation(model.getIpv4SubnetCidrAtCreation());
             }
             return this;
         }
@@ -745,6 +789,19 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
      */
     public String getIpAddress() {
         return ipAddress;
+    }
+
+    /** The secondary IPv4 CIDR prefix length. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
+    private final Integer cidrPrefixLength;
+
+    /**
+     * The secondary IPv4 CIDR prefix length.
+     *
+     * @return the value
+     */
+    public Integer getCidrPrefixLength() {
+        return cidrPrefixLength;
     }
 
     /**
@@ -998,6 +1055,19 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         return routeTableId;
     }
 
+    /** Ipv4 Subnet CIDR specified whn creating the PrivateIP. */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv4SubnetCidrAtCreation")
+    private final String ipv4SubnetCidrAtCreation;
+
+    /**
+     * Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+     *
+     * @return the value
+     */
+    public String getIpv4SubnetCidrAtCreation() {
+        return ipv4SubnetCidrAtCreation;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1021,6 +1091,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", cidrPrefixLength=").append(String.valueOf(this.cidrPrefixLength));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
         sb.append(", vlanId=").append(String.valueOf(this.vlanId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
@@ -1029,6 +1100,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", ipState=").append(String.valueOf(this.ipState));
         sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", ipv4SubnetCidrAtCreation=")
+                .append(String.valueOf(this.ipv4SubnetCidrAtCreation));
         sb.append(")");
         return sb.toString();
     }
@@ -1051,6 +1124,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.cidrPrefixLength, other.cidrPrefixLength)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
                 && java.util.Objects.equals(this.vlanId, other.vlanId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
@@ -1059,6 +1133,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.ipState, other.ipState)
                 && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(
+                        this.ipv4SubnetCidrAtCreation, other.ipv4SubnetCidrAtCreation)
                 && super.equals(other);
     }
 
@@ -1082,6 +1158,9 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cidrPrefixLength == null ? 43 : this.cidrPrefixLength.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
         result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
@@ -1090,6 +1169,11 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         result = (result * PRIME) + (this.ipState == null ? 43 : this.ipState.hashCode());
         result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv4SubnetCidrAtCreation == null
+                                ? 43
+                                : this.ipv4SubnetCidrAtCreation.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

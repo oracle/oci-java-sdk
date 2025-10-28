@@ -92,10 +92,10 @@ public class ListAutonomousDatabaseSoftwareImagesRequest
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** parameter according to which Autonomous Database Software Images will be sorted. */
+    /** parameter according to which Autonomous AI Database Software Images will be sorted. */
     private SortBy sortBy;
 
-    /** parameter according to which Autonomous Database Software Images will be sorted. */
+    /** parameter according to which Autonomous AI Database Software Images will be sorted. */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
@@ -129,7 +129,7 @@ public class ListAutonomousDatabaseSoftwareImagesRequest
         }
     };
 
-    /** parameter according to which Autonomous Database Software Images will be sorted. */
+    /** parameter according to which Autonomous AI Database Software Images will be sorted. */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -246,11 +246,11 @@ public class ListAutonomousDatabaseSoftwareImagesRequest
             return this;
         }
 
-        /** parameter according to which Autonomous Database Software Images will be sorted. */
+        /** parameter according to which Autonomous AI Database Software Images will be sorted. */
         private SortBy sortBy = null;
 
         /**
-         * parameter according to which Autonomous Database Software Images will be sorted.
+         * parameter according to which Autonomous AI Database Software Images will be sorted.
          *
          * @param sortBy the value to set
          * @return this builder instance

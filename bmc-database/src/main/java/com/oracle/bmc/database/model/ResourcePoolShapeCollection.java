@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Results of an Autonomous Database resouce pool shape collection that contains
+ * Results of an Autonomous AI Database resouce pool shape collection that contains
  * ResourcePoolShapeSummary items. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -32,12 +32,12 @@ public final class ResourcePoolShapeCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Autonomous Database resource pools Shapes. */
+        /** List of Autonomous AI Database resource pools Shapes. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourcePoolShapeSummary> items;
 
         /**
-         * List of Autonomous Database resource pools Shapes.
+         * List of Autonomous AI Database resource pools Shapes.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class ResourcePoolShapeCollection
         return new Builder().copy(this);
     }
 
-    /** List of Autonomous Database resource pools Shapes. */
+    /** List of Autonomous AI Database resource pools Shapes. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourcePoolShapeSummary> items;
 
     /**
-     * List of Autonomous Database resource pools Shapes.
+     * List of Autonomous AI Database resource pools Shapes.
      *
      * @return the value
      */

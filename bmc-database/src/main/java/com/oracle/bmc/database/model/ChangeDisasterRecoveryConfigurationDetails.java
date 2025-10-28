@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to update the cross-region disaster recovery (DR) details of the standby Autonomous
+ * Details to update the cross-region disaster recovery (DR) details of the standby Autonomous AI
  * Database Serverless instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -45,19 +45,19 @@ public final class ChangeDisasterRecoveryConfigurationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
-         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery
-         * time objective (RTO) during failover or switchover. Backup-based DR type provides lower
-         * cost DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless
+         * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
+         * recovery time objective (RTO) during failover or switchover. Backup-based DR type
+         * provides lower cost DR with a slower RTO during failover or switchover.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryType")
         private DisasterRecoveryType disasterRecoveryType;
 
         /**
-         * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
-         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery
-         * time objective (RTO) during failover or switchover. Backup-based DR type provides lower
-         * cost DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless
+         * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
+         * recovery time objective (RTO) during failover or switchover. Backup-based DR type
+         * provides lower cost DR with a slower RTO during failover or switchover.
          *
          * @param disasterRecoveryType the value to set
          * @return this builder
@@ -176,7 +176,7 @@ public final class ChangeDisasterRecoveryConfigurationDetails
     }
 
     /**
-     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+     * Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
      * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
      * with a slower RTO during failover or switchover.
@@ -214,7 +214,7 @@ public final class ChangeDisasterRecoveryConfigurationDetails
         }
     };
     /**
-     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+     * Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
      * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
      * with a slower RTO during failover or switchover.
@@ -223,7 +223,7 @@ public final class ChangeDisasterRecoveryConfigurationDetails
     private final DisasterRecoveryType disasterRecoveryType;
 
     /**
-     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+     * Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
      * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
      * with a slower RTO during failover or switchover.

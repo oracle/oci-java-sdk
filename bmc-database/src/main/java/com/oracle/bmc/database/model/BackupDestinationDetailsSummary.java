@@ -267,7 +267,7 @@ public final class BackupDestinationDetailsSummary
             return this;
         }
         /**
-         * Defines the automatic and manual backup retention policy for the Autonomous Database
+         * Defines the automatic and manual backup retention policy for the Autonomous AI Database
          * termination. The retention policy set on the Autonomous Container Database is not
          * applicable for cross region remote backups and backups hosted on recovery Appliance
          * backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or
@@ -277,7 +277,7 @@ public final class BackupDestinationDetailsSummary
         private BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate;
 
         /**
-         * Defines the automatic and manual backup retention policy for the Autonomous Database
+         * Defines the automatic and manual backup retention policy for the Autonomous AI Database
          * termination. The retention policy set on the Autonomous Container Database is not
          * applicable for cross region remote backups and backups hosted on recovery Appliance
          * backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or
@@ -630,7 +630,7 @@ public final class BackupDestinationDetailsSummary
     }
 
     /**
-     * Defines the automatic and manual backup retention policy for the Autonomous Database
+     * Defines the automatic and manual backup retention policy for the Autonomous AI Database
      * termination. The retention policy set on the Autonomous Container Database is not applicable
      * for cross region remote backups and backups hosted on recovery Appliance backup destination.
      * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is
@@ -682,7 +682,7 @@ public final class BackupDestinationDetailsSummary
         }
     };
     /**
-     * Defines the automatic and manual backup retention policy for the Autonomous Database
+     * Defines the automatic and manual backup retention policy for the Autonomous AI Database
      * termination. The retention policy set on the Autonomous Container Database is not applicable
      * for cross region remote backups and backups hosted on recovery Appliance backup destination.
      * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is
@@ -692,7 +692,7 @@ public final class BackupDestinationDetailsSummary
     private final BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate;
 
     /**
-     * Defines the automatic and manual backup retention policy for the Autonomous Database
+     * Defines the automatic and manual backup retention policy for the Autonomous AI Database
      * termination. The retention policy set on the Autonomous Container Database is not applicable
      * for cross region remote backups and backups hosted on recovery Appliance backup destination.
      * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is

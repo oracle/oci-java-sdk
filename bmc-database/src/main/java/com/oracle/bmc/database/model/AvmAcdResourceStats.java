@@ -90,12 +90,12 @@ public final class AvmAcdResourceStats
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** CPUs/cores assigned to Autonomous Databases in the ACD instances. */
+        /** CPUs/cores assigned to Autonomous AI Databases in the ACD instances. */
         @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
         private Float provisionedCpus;
 
         /**
-         * CPUs/cores assigned to Autonomous Databases in the ACD instances.
+         * CPUs/cores assigned to Autonomous AI Databases in the ACD instances.
          *
          * @param provisionedCpus the value to set
          * @return this builder
@@ -160,7 +160,7 @@ public final class AvmAcdResourceStats
         }
         /**
          * CPUs/cores that continue to be included in the count of OCPUs available to the Autonomous
-         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * Container Database even after one of its Autonomous AI Database is terminated or scaled
          * down. You can release them to the available OCPUs at its parent AVMC level by restarting
          * the Autonomous Container Database.
          */
@@ -169,7 +169,7 @@ public final class AvmAcdResourceStats
 
         /**
          * CPUs/cores that continue to be included in the count of OCPUs available to the Autonomous
-         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * Container Database even after one of its Autonomous AI Database is terminated or scaled
          * down. You can release them to the available OCPUs at its parent AVMC level by restarting
          * the Autonomous Container Database.
          *
@@ -271,12 +271,12 @@ public final class AvmAcdResourceStats
         return displayName;
     }
 
-    /** CPUs/cores assigned to Autonomous Databases in the ACD instances. */
+    /** CPUs/cores assigned to Autonomous AI Databases in the ACD instances. */
     @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
     private final Float provisionedCpus;
 
     /**
-     * CPUs/cores assigned to Autonomous Databases in the ACD instances.
+     * CPUs/cores assigned to Autonomous AI Databases in the ACD instances.
      *
      * @return the value
      */
@@ -333,7 +333,7 @@ public final class AvmAcdResourceStats
 
     /**
      * CPUs/cores that continue to be included in the count of OCPUs available to the Autonomous
-     * Container Database even after one of its Autonomous Database is terminated or scaled down.
+     * Container Database even after one of its Autonomous AI Database is terminated or scaled down.
      * You can release them to the available OCPUs at its parent AVMC level by restarting the
      * Autonomous Container Database.
      */
@@ -342,7 +342,7 @@ public final class AvmAcdResourceStats
 
     /**
      * CPUs/cores that continue to be included in the count of OCPUs available to the Autonomous
-     * Container Database even after one of its Autonomous Database is terminated or scaled down.
+     * Container Database even after one of its Autonomous AI Database is terminated or scaled down.
      * You can release them to the available OCPUs at its parent AVMC level by restarting the
      * Autonomous Container Database.
      *

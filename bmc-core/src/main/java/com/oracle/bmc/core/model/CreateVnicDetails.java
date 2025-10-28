@@ -36,6 +36,7 @@ public final class CreateVnicDetails
         "securityAttributes",
         "hostnameLabel",
         "ipv6AddressIpv6SubnetCidrPairDetails",
+        "subnetCidr",
         "nsgIds",
         "privateIp",
         "skipSourceDestCheck",
@@ -53,6 +54,7 @@ public final class CreateVnicDetails
             String hostnameLabel,
             java.util.List<Ipv6AddressIpv6SubnetCidrPairDetails>
                     ipv6AddressIpv6SubnetCidrPairDetails,
+            String subnetCidr,
             java.util.List<String> nsgIds,
             String privateIp,
             Boolean skipSourceDestCheck,
@@ -68,6 +70,7 @@ public final class CreateVnicDetails
         this.securityAttributes = securityAttributes;
         this.hostnameLabel = hostnameLabel;
         this.ipv6AddressIpv6SubnetCidrPairDetails = ipv6AddressIpv6SubnetCidrPairDetails;
+        this.subnetCidr = subnetCidr;
         this.nsgIds = nsgIds;
         this.privateIp = privateIp;
         this.skipSourceDestCheck = skipSourceDestCheck;
@@ -370,6 +373,31 @@ public final class CreateVnicDetails
             return this;
         }
         /**
+         * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which
+         * the VNIC's private IP address will be assigned if {@code privateIp} or {@code
+         * privateIpId} is not specified. Either this field or the {@code privateIp} (or {@code
+         * privateIpId}, if applicable) field must be provided, but not both simultaneously.
+         * Example: {@code 192.168.1.0/28}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetCidr")
+        private String subnetCidr;
+
+        /**
+         * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which
+         * the VNIC's private IP address will be assigned if {@code privateIp} or {@code
+         * privateIpId} is not specified. Either this field or the {@code privateIp} (or {@code
+         * privateIpId}, if applicable) field must be provided, but not both simultaneously.
+         * Example: {@code 192.168.1.0/28}
+         *
+         * @param subnetCidr the value to set
+         * @return this builder
+         */
+        public Builder subnetCidr(String subnetCidr) {
+            this.subnetCidr = subnetCidr;
+            this.__explicitlySet__.add("subnetCidr");
+            return this;
+        }
+        /**
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
          * information about NSGs, see {@link NetworkSecurityGroup}.
          *
@@ -548,6 +576,7 @@ public final class CreateVnicDetails
                             this.securityAttributes,
                             this.hostnameLabel,
                             this.ipv6AddressIpv6SubnetCidrPairDetails,
+                            this.subnetCidr,
                             this.nsgIds,
                             this.privateIp,
                             this.skipSourceDestCheck,
@@ -588,6 +617,9 @@ public final class CreateVnicDetails
             if (model.wasPropertyExplicitlySet("ipv6AddressIpv6SubnetCidrPairDetails")) {
                 this.ipv6AddressIpv6SubnetCidrPairDetails(
                         model.getIpv6AddressIpv6SubnetCidrPairDetails());
+            }
+            if (model.wasPropertyExplicitlySet("subnetCidr")) {
+                this.subnetCidr(model.getSubnetCidr());
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
@@ -887,6 +919,27 @@ public final class CreateVnicDetails
     }
 
     /**
+     * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the
+     * VNIC's private IP address will be assigned if {@code privateIp} or {@code privateIpId} is not
+     * specified. Either this field or the {@code privateIp} (or {@code privateIpId}, if applicable)
+     * field must be provided, but not both simultaneously. Example: {@code 192.168.1.0/28}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetCidr")
+    private final String subnetCidr;
+
+    /**
+     * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the
+     * VNIC's private IP address will be assigned if {@code privateIp} or {@code privateIpId} is not
+     * specified. Either this field or the {@code privateIp} (or {@code privateIpId}, if applicable)
+     * field must be provided, but not both simultaneously. Example: {@code 192.168.1.0/28}
+     *
+     * @return the value
+     */
+    public String getSubnetCidr() {
+        return subnetCidr;
+    }
+
+    /**
      * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
      * information about NSGs, see {@link NetworkSecurityGroup}.
      *
@@ -1062,6 +1115,7 @@ public final class CreateVnicDetails
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipv6AddressIpv6SubnetCidrPairDetails=")
                 .append(String.valueOf(this.ipv6AddressIpv6SubnetCidrPairDetails));
+        sb.append(", subnetCidr=").append(String.valueOf(this.subnetCidr));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", skipSourceDestCheck=").append(String.valueOf(this.skipSourceDestCheck));
@@ -1093,6 +1147,7 @@ public final class CreateVnicDetails
                 && java.util.Objects.equals(
                         this.ipv6AddressIpv6SubnetCidrPairDetails,
                         other.ipv6AddressIpv6SubnetCidrPairDetails)
+                && java.util.Objects.equals(this.subnetCidr, other.subnetCidr)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.skipSourceDestCheck, other.skipSourceDestCheck)
@@ -1130,6 +1185,7 @@ public final class CreateVnicDetails
                         + (this.ipv6AddressIpv6SubnetCidrPairDetails == null
                                 ? 43
                                 : this.ipv6AddressIpv6SubnetCidrPairDetails.hashCode());
+        result = (result * PRIME) + (this.subnetCidr == null ? 43 : this.subnetCidr.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         result =

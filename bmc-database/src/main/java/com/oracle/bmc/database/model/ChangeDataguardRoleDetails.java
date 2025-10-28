@@ -42,14 +42,14 @@ public final class ChangeDataguardRoleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          *
          * @param role the value to set
@@ -140,7 +140,7 @@ public final class ChangeDataguardRoleDetails
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
@@ -179,14 +179,14 @@ public final class ChangeDataguardRoleDetails
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      *
      * @return the value

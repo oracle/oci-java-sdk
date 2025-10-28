@@ -5,9 +5,9 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Oracle APEX Application Development is a low-code development platform that enables you to build
- * scalable, secure enterprise apps, with world-class features. Autonomous Database with the APEX
- * workload type is optimized to support APEX development. <br>
+ * Oracle APEX AI Application Development is a low-code development platform that enables you to
+ * build scalable, secure enterprise apps, with world-class features. Autonomous AI Database with
+ * the APEX workload type is optimized to support APEX development. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,12 +34,12 @@ public final class AutonomousDatabaseApex
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Oracle APEX Application Development version. */
+        /** The Oracle APEX AI Application Development version. */
         @com.fasterxml.jackson.annotation.JsonProperty("apexVersion")
         private String apexVersion;
 
         /**
-         * The Oracle APEX Application Development version.
+         * The Oracle APEX AI Application Development version.
          *
          * @param apexVersion the value to set
          * @return this builder
@@ -98,12 +98,12 @@ public final class AutonomousDatabaseApex
         return new Builder().copy(this);
     }
 
-    /** The Oracle APEX Application Development version. */
+    /** The Oracle APEX AI Application Development version. */
     @com.fasterxml.jackson.annotation.JsonProperty("apexVersion")
     private final String apexVersion;
 
     /**
-     * The Oracle APEX Application Development version.
+     * The Oracle APEX AI Application Development version.
      *
      * @return the value
      */

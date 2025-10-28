@@ -17,23 +17,23 @@ public class UpdateAutonomousDatabaseSoftwareImageRequest
                 com.oracle.bmc.database.model.UpdateAutonomousDatabaseSoftwareImageDetails> {
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousDatabaseSoftwareImageId;
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousDatabaseSoftwareImageId() {
         return autonomousDatabaseSoftwareImageId;
     }
-    /** Request to update the properties of an Autonomous Database Software Image. */
+    /** Request to update the properties of an Autonomous AI Database Software Image. */
     private com.oracle.bmc.database.model.UpdateAutonomousDatabaseSoftwareImageDetails
             updateAutonomousDatabaseSoftwareImageDetails;
 
-    /** Request to update the properties of an Autonomous Database Software Image. */
+    /** Request to update the properties of an Autonomous AI Database Software Image. */
     public com.oracle.bmc.database.model.UpdateAutonomousDatabaseSoftwareImageDetails
             getUpdateAutonomousDatabaseSoftwareImageDetails() {
         return updateAutonomousDatabaseSoftwareImageDetails;
@@ -82,13 +82,13 @@ public class UpdateAutonomousDatabaseSoftwareImageRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Autonomous Database Software Image
+         * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousDatabaseSoftwareImageId = null;
 
         /**
-         * The Autonomous Database Software Image
+         * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param autonomousDatabaseSoftwareImageId the value to set
@@ -99,12 +99,12 @@ public class UpdateAutonomousDatabaseSoftwareImageRequest
             return this;
         }
 
-        /** Request to update the properties of an Autonomous Database Software Image. */
+        /** Request to update the properties of an Autonomous AI Database Software Image. */
         private com.oracle.bmc.database.model.UpdateAutonomousDatabaseSoftwareImageDetails
                 updateAutonomousDatabaseSoftwareImageDetails = null;
 
         /**
-         * Request to update the properties of an Autonomous Database Software Image.
+         * Request to update the properties of an Autonomous AI Database Software Image.
          *
          * @param updateAutonomousDatabaseSoftwareImageDetails the value to set
          * @return this builder instance

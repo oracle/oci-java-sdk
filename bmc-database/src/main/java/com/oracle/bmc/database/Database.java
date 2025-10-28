@@ -105,8 +105,8 @@ public interface Database extends AutoCloseable {
 
     /**
      * Makes the storage capacity from additional storage servers available for Cloud VM Cluster
-     * consumption. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated
-     * Exadata infrastructure only.
+     * consumption. Applies to Exadata Cloud Service instances and Autonomous AI Database on
+     * dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -176,8 +176,8 @@ public interface Database extends AutoCloseable {
             AddVirtualMachineToVmClusterRequest request);
 
     /**
-     * Initiates a data refresh for an Autonomous Database refreshable clone. Data is refreshed from
-     * the source database to the point of a specified timestamp.
+     * Initiates a data refresh for an Autonomous AI Database refreshable clone. Data is refreshed
+     * from the source database to the point of a specified timestamp.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -265,8 +265,8 @@ public interface Database extends AutoCloseable {
                     ChangeAutonomousContainerDatabaseCompartmentRequest request);
 
     /**
-     * Move the Autonomous Database and its dependent resources to the specified compartment. For
-     * more information about moving Autonomous Databases, see [Moving Database Resources to a
+     * Move the Autonomous AI Database and its dependent resources to the specified compartment. For
+     * more information about moving Autonomous AI Databases, see [Moving Database Resources to a
      * Different
      * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
@@ -285,7 +285,7 @@ public interface Database extends AutoCloseable {
             ChangeAutonomousDatabaseCompartmentRequest request);
 
     /**
-     * Move the Autonomous Database Software Image and its dependent resources to the specified
+     * Move the Autonomous AI Database Software Image and its dependent resources to the specified
      * compartment.
      *
      * @param request The request object containing the details to send
@@ -304,7 +304,7 @@ public interface Database extends AutoCloseable {
                     ChangeAutonomousDatabaseSoftwareImageCompartmentRequest request);
 
     /**
-     * Associate an Autonomous Database with a different subscription.
+     * Associate an Autonomous AI Database with a different subscription.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -441,9 +441,9 @@ public interface Database extends AutoCloseable {
 
     /**
      * Moves a cloud Exadata infrastructure resource and its dependent resources to another
-     * compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated
-     * Exadata infrastructure only.For more information about moving resources to a different
-     * compartment, see [Moving Database Resources to a Different
+     * compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on
+     * dedicated Exadata infrastructure only.For more information about moving resources to a
+     * different compartment, see [Moving Database Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
@@ -578,7 +578,7 @@ public interface Database extends AutoCloseable {
 
     /**
      * This operation updates the cross-region disaster recovery (DR) details of the standby
-     * Autonomous Database Serverless database, and must be run on the standby side.
+     * Autonomous AI Database Serverless database, and must be run on the standby side.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -918,7 +918,7 @@ public interface Database extends AutoCloseable {
             CompleteExternalBackupJobRequest request);
 
     /**
-     * Configures the Autonomous Database Vault service
+     * Configures the Autonomous AI Database Vault service
      * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      *
      * @param request The request object containing the details to send
@@ -972,7 +972,7 @@ public interface Database extends AutoCloseable {
             ConfigureExascaleExadataInfrastructureRequest request);
 
     /**
-     * This operation updates SaaS administrative user configuration of the Autonomous Database.
+     * This operation updates SaaS administrative user configuration of the Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1164,7 +1164,7 @@ public interface Database extends AutoCloseable {
                     CreateAutonomousContainerDatabaseDataguardAssociationRequest request);
 
     /**
-     * Creates a new Autonomous Database.
+     * Creates a new Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1181,7 +1181,7 @@ public interface Database extends AutoCloseable {
             CreateAutonomousDatabaseRequest request);
 
     /**
-     * Creates a new Autonomous Database backup for the specified database based on the provided
+     * Creates a new Autonomous AI Database backup for the specified database based on the provided
      * request parameters.
      *
      * @param request The request object containing the details to send
@@ -1199,7 +1199,7 @@ public interface Database extends AutoCloseable {
             CreateAutonomousDatabaseBackupRequest request);
 
     /**
-     * create Autonomous Database Software Image in the specified compartment.
+     * create Autonomous AI Database Software Image in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1293,7 +1293,7 @@ public interface Database extends AutoCloseable {
      * Creates a cloud Exadata infrastructure resource. This resource is used to create either an
      * [Exadata Cloud
      * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or
-     * an Autonomous Database on dedicated Exadata infrastructure.
+     * an Autonomous AI Database on dedicated Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1842,7 +1842,7 @@ public interface Database extends AutoCloseable {
     DeleteApplicationVipResponse deleteApplicationVip(DeleteApplicationVipRequest request);
 
     /**
-     * Deletes the specified Autonomous Database.
+     * Deletes the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1876,7 +1876,7 @@ public interface Database extends AutoCloseable {
             DeleteAutonomousDatabaseBackupRequest request);
 
     /**
-     * Delete an Autonomous Database Software Image
+     * Delete an Autonomous AI Database Software Image
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1964,7 +1964,7 @@ public interface Database extends AutoCloseable {
 
     /**
      * Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances
-     * and Autonomous Database on dedicated Exadata infrastructure only.
+     * and Autonomous AI Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2410,7 +2410,7 @@ public interface Database extends AutoCloseable {
     DeleteVmClusterNetworkResponse deleteVmClusterNetwork(DeleteVmClusterNetworkRequest request);
 
     /**
-     * Asynchronously deregisters this Autonomous Database with Data Safe.
+     * Asynchronously deregisters this Autonomous AI Database with Data Safe.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2427,7 +2427,7 @@ public interface Database extends AutoCloseable {
             DeregisterAutonomousDatabaseDataSafeRequest request);
 
     /**
-     * Disables Database Management for the Autonomous Database resource.
+     * Disables Database Management for the Autonomous AI Database resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2444,7 +2444,7 @@ public interface Database extends AutoCloseable {
             DisableAutonomousDatabaseManagementRequest request);
 
     /**
-     * Disables Operations Insights for the Autonomous Database resource.
+     * Disables Operations Insights for the Autonomous AI Database resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2732,7 +2732,7 @@ public interface Database extends AutoCloseable {
             EditAutonomousContainerDatabaseDataguardRequest request);
 
     /**
-     * Enables Database Management for Autonomous Database.
+     * Enables Database Management for Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2749,7 +2749,7 @@ public interface Database extends AutoCloseable {
             EnableAutonomousDatabaseManagementRequest request);
 
     /**
-     * Enables the specified Autonomous Database with Operations Insights.
+     * Enables the specified Autonomous AI Database with Operations Insights.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2955,7 +2955,7 @@ public interface Database extends AutoCloseable {
             EnablePluggableDatabaseManagementRequest request);
 
     /**
-     * Initiates a failover of the specified Autonomous Database to the associated peer database.
+     * Initiates a failover of the specified Autonomous AI Database to the associated peer database.
      * Applicable only to databases with Disaster Recovery enabled. This API should be called in the
      * remote region where the peer database resides. Below parameter is optional: - `peerDbId` Use
      * this parameter to specify the database OCID of the Disaster Recovery peer, which is located
@@ -3069,7 +3069,7 @@ public interface Database extends AutoCloseable {
             FailoverDataGuardAssociationRequest request);
 
     /**
-     * Creates and downloads a wallet for the specified Autonomous Database.
+     * Creates and downloads a wallet for the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3174,7 +3174,7 @@ public interface Database extends AutoCloseable {
             GetAutonomousContainerDatabaseResourceUsageRequest request);
 
     /**
-     * Gets the details of the specified Autonomous Database.
+     * Gets the details of the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3190,7 +3190,7 @@ public interface Database extends AutoCloseable {
     GetAutonomousDatabaseResponse getAutonomousDatabase(GetAutonomousDatabaseRequest request);
 
     /**
-     * Gets information about the specified Autonomous Database backup.
+     * Gets information about the specified Autonomous AI Database backup.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3210,7 +3210,7 @@ public interface Database extends AutoCloseable {
      * *Deprecated.* Use the {@link
      * #getAutonomousContainerDatabase(GetAutonomousContainerDatabaseRequest)
      * getAutonomousContainerDatabase} operation to gets an Autonomous Data Guard-enabled database
-     * associated with the specified Autonomous Database.
+     * associated with the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3227,7 +3227,7 @@ public interface Database extends AutoCloseable {
             GetAutonomousDatabaseDataguardAssociationRequest request);
 
     /**
-     * Gets the Autonomous Database regional wallet details.
+     * Gets the Autonomous AI Database regional wallet details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3244,7 +3244,7 @@ public interface Database extends AutoCloseable {
             GetAutonomousDatabaseRegionalWalletRequest request);
 
     /**
-     * Gets information about the specified Autonomous Database Software Image.
+     * Gets information about the specified Autonomous AI Database Software Image.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3261,7 +3261,7 @@ public interface Database extends AutoCloseable {
             GetAutonomousDatabaseSoftwareImageRequest request);
 
     /**
-     * Gets the wallet details for the specified Autonomous Database.
+     * Gets the wallet details for the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3436,8 +3436,8 @@ public interface Database extends AutoCloseable {
 
     /**
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to
-     * Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure
-     * only.
+     * Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata
+     * infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4390,7 +4390,7 @@ public interface Database extends AutoCloseable {
             GetVmClusterUpdateHistoryEntryRequest request);
 
     /**
-     * **Deprecated** To create a new Autonomous Database system on dedicated Exadata
+     * **Deprecated** To create a new Autonomous AI Database system on dedicated Exadata
      * Infrastructure, use the {@link
      * #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest)
      * createCloudExadataInfrastructure} and {@link
@@ -4538,7 +4538,7 @@ public interface Database extends AutoCloseable {
             ListAutonomousContainerDatabasesRequest request);
 
     /**
-     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or
+     * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or
      * `compartmentId` specified as a query parameter.
      *
      * @param request The request object containing the details to send
@@ -4573,7 +4573,7 @@ public interface Database extends AutoCloseable {
             ListAutonomousDatabaseCharacterSetsRequest request);
 
     /**
-     * Lists the Autonomous Database clones for the specified Autonomous Database.
+     * Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4593,7 +4593,7 @@ public interface Database extends AutoCloseable {
      * *Deprecated.* Use the {@link
      * #getAutonomousContainerDatabase(GetAutonomousContainerDatabaseRequest)
      * getAutonomousContainerDatabase} operation to get a list of the Autonomous Data Guard-enabled
-     * databases associated with the specified Autonomous Database.
+     * databases associated with the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4610,7 +4610,7 @@ public interface Database extends AutoCloseable {
             ListAutonomousDatabaseDataguardAssociationsRequest request);
 
     /**
-     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4627,8 +4627,8 @@ public interface Database extends AutoCloseable {
             ListAutonomousDatabasePeersRequest request);
 
     /**
-     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with
-     * the region where they exist for the specified source database.
+     * Lists the OCIDs of the Autonomous AI Database local and connected remote refreshable clones
+     * with the region where they exist for the specified source database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4645,7 +4645,7 @@ public interface Database extends AutoCloseable {
             ListAutonomousDatabaseRefreshableClonesRequest request);
 
     /**
-     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * Gets a list of the Autonomous AI Database Software Images in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4662,7 +4662,7 @@ public interface Database extends AutoCloseable {
             ListAutonomousDatabaseSoftwareImagesRequest request);
 
     /**
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets a list of Autonomous AI Databases based on the query parameters specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4678,8 +4678,8 @@ public interface Database extends AutoCloseable {
     ListAutonomousDatabasesResponse listAutonomousDatabases(ListAutonomousDatabasesRequest request);
 
     /**
-     * Gets a list of supported Autonomous Database versions. Note that preview version software is
-     * only available for Autonomous Database Serverless
+     * Gets a list of supported Autonomous AI Database versions. Note that preview version software
+     * is only available for Autonomous AI Database Serverless
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      *
      * @param request The request object containing the details to send
@@ -4697,7 +4697,7 @@ public interface Database extends AutoCloseable {
             ListAutonomousDbPreviewVersionsRequest request);
 
     /**
-     * Gets a list of supported Autonomous Database versions.
+     * Gets a list of supported Autonomous AI Database versions.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4878,7 +4878,7 @@ public interface Database extends AutoCloseable {
 
     /**
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment.
-     * Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata
+     * Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata
      * infrastructure only.
      *
      * @param request The request object containing the details to send
@@ -5700,8 +5700,8 @@ public interface Database extends AutoCloseable {
             ListRecommendedScheduledActionsRequest request);
 
     /**
-     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous
-     * Database leader.
+     * Lists the OCIDs of the Autonomous AI Database resource pool members for the specified
+     * Autonomous AI Database leader.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -6083,7 +6083,7 @@ public interface Database extends AutoCloseable {
             RefreshPluggableDatabaseRequest request);
 
     /**
-     * Asynchronously registers this Autonomous Database with Data Safe.
+     * Asynchronously registers this Autonomous AI Database with Data Safe.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -6355,7 +6355,7 @@ public interface Database extends AutoCloseable {
             RestartAutonomousContainerDatabaseRequest request);
 
     /**
-     * Restarts the specified Autonomous Database.
+     * Restarts the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -6372,7 +6372,7 @@ public interface Database extends AutoCloseable {
             RestartAutonomousDatabaseRequest request);
 
     /**
-     * Restores an Autonomous Database based on the provided request parameters.
+     * Restores an Autonomous AI Database based on the provided request parameters.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -6581,7 +6581,7 @@ public interface Database extends AutoCloseable {
     RotateVaultKeyResponse rotateVaultKey(RotateVaultKeyRequest request);
 
     /**
-     * This operation gets SaaS administrative user status of the Autonomous Database.
+     * This operation gets SaaS administrative user status of the Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -6671,7 +6671,7 @@ public interface Database extends AutoCloseable {
             ShrinkAutonomousDatabaseRequest request);
 
     /**
-     * Starts the specified Autonomous Database.
+     * Starts the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -6704,7 +6704,7 @@ public interface Database extends AutoCloseable {
     StartPluggableDatabaseResponse startPluggableDatabase(StartPluggableDatabaseRequest request);
 
     /**
-     * Stops the specified Autonomous Database.
+     * Stops the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -6806,12 +6806,12 @@ public interface Database extends AutoCloseable {
                     SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest request);
 
     /**
-     * Initiates a switchover of the specified Autonomous Database to the associated peer database.
-     * Applicable only to databases with Disaster Recovery enabled. This API should be called in the
-     * remote region where the peer database resides. Below parameter is optional: - `peerDbId` Use
-     * this parameter to specify the database OCID of the Disaster Recovery peer, which is located
-     * in a different (remote) region from the current peer database. If this parameter is not
-     * provided, the switchover will happen in the same region.
+     * Initiates a switchover of the specified Autonomous AI Database to the associated peer
+     * database. Applicable only to databases with Disaster Recovery enabled. This API should be
+     * called in the remote region where the peer database resides. Below parameter is optional: -
+     * `peerDbId` Use this parameter to specify the database OCID of the Disaster Recovery peer,
+     * which is located in a different (remote) region from the current peer database. If this
+     * parameter is not provided, the switchover will happen in the same region.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -6976,7 +6976,7 @@ public interface Database extends AutoCloseable {
                     UpdateAutonomousContainerDatabaseDataguardAssociationRequest request);
 
     /**
-     * Updates one or more attributes of the specified Autonomous Database. See the
+     * Updates one or more attributes of the specified Autonomous AI Database. See the
      * UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
      *
      * @param request The request object containing the details to send
@@ -6994,7 +6994,7 @@ public interface Database extends AutoCloseable {
             UpdateAutonomousDatabaseRequest request);
 
     /**
-     * Updates the Autonomous Database backup of the specified database based on the request
+     * Updates the Autonomous AI Database backup of the specified database based on the request
      * parameters.
      *
      * @param request The request object containing the details to send
@@ -7012,7 +7012,7 @@ public interface Database extends AutoCloseable {
             UpdateAutonomousDatabaseBackupRequest request);
 
     /**
-     * Updates the Autonomous Database regional wallet.
+     * Updates the Autonomous AI Database regional wallet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -7029,7 +7029,7 @@ public interface Database extends AutoCloseable {
             UpdateAutonomousDatabaseRegionalWalletRequest request);
 
     /**
-     * Updates the properties of an Autonomous Database Software Image, like add tags
+     * Updates the properties of an Autonomous AI Database Software Image, like add tags
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -7046,7 +7046,7 @@ public interface Database extends AutoCloseable {
             UpdateAutonomousDatabaseSoftwareImageRequest request);
 
     /**
-     * Updates the wallet for the specified Autonomous Database.
+     * Updates the wallet for the specified Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -7157,7 +7157,7 @@ public interface Database extends AutoCloseable {
 
     /**
      * Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances
-     * and Autonomous Database on dedicated Exadata infrastructure only.
+     * and Autonomous AI Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

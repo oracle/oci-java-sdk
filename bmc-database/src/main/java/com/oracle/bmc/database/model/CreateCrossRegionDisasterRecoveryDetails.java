@@ -6,7 +6,7 @@ package com.oracle.bmc.database.model;
 
 /**
  * The following are the details necessary to create a disaster recovery (DR) association for an
- * existing Autonomous Database with a standby in a remote region. *IMPORTANT* For creating a
+ * existing Autonomous AI Database with a standby in a remote region. *IMPORTANT* For creating a
  * standby databases in a cross-region DR association: - To create the standby database in a remote
  * region, use the API endpoint in the region where the standby is located. For example, if the
  * primary database is in the IAD region and the standby is in the PHX region, make the API call
@@ -14,11 +14,11 @@ package com.oracle.bmc.database.model;
  * list of Database Service API endpoints. - To create the request in the standby database, the
  * sourceId value must be the OCID of the primary database. The following parameters are required
  * for the cross-region standby database and must contain the same values as the source Autonomous
- * Database: - remoteDisasterRecoveryType The following parameters are optional for the cross-region
- * standby database. If included in the request, these parameters must contain the same values as
- * the source Autonomous Database: - dbName - dbVersion - ecpuCount - dataStorageSizeInTB -
- * customerContacts - scheduledOperations - isAutoScalingForStorageEnabled - definedTags -
- * freeformTags - licenseModel - whitelistedIps - isMtlsConnectionRequired <br>
+ * AI Database: - remoteDisasterRecoveryType The following parameters are optional for the
+ * cross-region standby database. If included in the request, these parameters must contain the same
+ * values as the source Autonomous AI Database: - dbName - dbVersion - ecpuCount -
+ * dataStorageSizeInTB - customerContacts - scheduledOperations - isAutoScalingForStorageEnabled -
+ * definedTags - freeformTags - licenseModel - whitelistedIps - isMtlsConnectionRequired <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -524,7 +524,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new peer database for the DR
+         * source Autonomous AI Database that will be used to create a new peer database for the DR
          * association.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
@@ -532,7 +532,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new peer database for the DR
+         * source Autonomous AI Database that will be used to create a new peer database for the DR
          * association.
          *
          * @param sourceId the value to set
@@ -544,19 +544,21 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
         /**
-         * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database
-         * Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR
-         * with a faster recovery time objective (RTO) during failover or switchover. Backup-based
-         * DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous AI
+         * Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business
+         * critical DR with a faster recovery time objective (RTO) during failover or switchover.
+         * Backup-based DR type provides lower cost DR with a slower RTO during failover or
+         * switchover.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("remoteDisasterRecoveryType")
         private DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType;
 
         /**
-         * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database
-         * Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR
-         * with a faster recovery time objective (RTO) during failover or switchover. Backup-based
-         * DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous AI
+         * Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business
+         * critical DR with a faster recovery time objective (RTO) during failover or switchover.
+         * Backup-based DR type provides lower cost DR with a slower RTO during failover or
+         * switchover.
          *
          * @param remoteDisasterRecoveryType the value to set
          * @return this builder
@@ -961,7 +963,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new peer database for the DR
+     * source Autonomous AI Database that will be used to create a new peer database for the DR
      * association.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
@@ -969,7 +971,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new peer database for the DR
+     * source Autonomous AI Database that will be used to create a new peer database for the DR
      * association.
      *
      * @return the value
@@ -979,7 +981,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
     }
 
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database
+     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous AI Database
      * Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a
      * faster recovery time objective (RTO) during failover or switchover. Backup-based DR type
      * provides lower cost DR with a slower RTO during failover or switchover.
@@ -988,7 +990,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
     private final DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType;
 
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database
+     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous AI Database
      * Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a
      * faster recovery time objective (RTO) during failover or switchover. Backup-based DR type
      * provides lower cost DR with a slower RTO during failover or switchover.

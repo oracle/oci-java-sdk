@@ -27,6 +27,9 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CancelDrPlanExecution("CANCEL_DR_PLAN_EXECUTION"),
     PauseDrPlanExecution("PAUSE_DR_PLAN_EXECUTION"),
     ResumeDrPlanExecution("RESUME_DR_PLAN_EXECUTION"),
+    CreateAutomaticDrConfiguration("CREATE_AUTOMATIC_DR_CONFIGURATION"),
+    DeleteAutomaticDrConfiguration("DELETE_AUTOMATIC_DR_CONFIGURATION"),
+    UpdateAutomaticDrConfiguration("UPDATE_AUTOMATIC_DR_CONFIGURATION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

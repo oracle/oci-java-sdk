@@ -83,6 +83,15 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeIdentity")
+        private RuntimeIdentity runtimeIdentity;
+
+        public Builder runtimeIdentity(RuntimeIdentity runtimeIdentity) {
+            this.runtimeIdentity = runtimeIdentity;
+            this.__explicitlySet__.add("runtimeIdentity");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
         private CreateDatabaseToolsRelatedResourceDetails relatedResource;
 
@@ -212,6 +221,7 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
                             this.freeformTags,
                             this.locks,
                             this.runtimeSupport,
+                            this.runtimeIdentity,
                             this.relatedResource,
                             this.connectionString,
                             this.userName,
@@ -245,6 +255,9 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("runtimeSupport")) {
                 this.runtimeSupport(model.getRuntimeSupport());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeIdentity")) {
+                this.runtimeIdentity(model.getRuntimeIdentity());
             }
             if (model.wasPropertyExplicitlySet("relatedResource")) {
                 this.relatedResource(model.getRelatedResource());
@@ -291,6 +304,7 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             java.util.Map<String, String> freeformTags,
             java.util.List<ResourceLock> locks,
             RuntimeSupport runtimeSupport,
+            RuntimeIdentity runtimeIdentity,
             CreateDatabaseToolsRelatedResourceDetails relatedResource,
             String connectionString,
             String userName,
@@ -299,7 +313,14 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             java.util.List<DatabaseToolsKeyStoreDetails> keyStores,
             String privateEndpointId,
             DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient) {
-        super(displayName, compartmentId, definedTags, freeformTags, locks, runtimeSupport);
+        super(
+                displayName,
+                compartmentId,
+                definedTags,
+                freeformTags,
+                locks,
+                runtimeSupport,
+                runtimeIdentity);
         this.relatedResource = relatedResource;
         this.connectionString = connectionString;
         this.userName = userName;

@@ -105,6 +105,22 @@ public interface VirtualNetwork extends AutoCloseable {
     AddDrgRouteRulesResponse addDrgRouteRules(AddDrgRouteRulesRequest request);
 
     /**
+     * Add an IPv4 prefix to a subnet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddIpv4SubnetCidrExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddIpv4SubnetCidr
+     *     API.
+     */
+    AddIpv4SubnetCidrResponse addIpv4SubnetCidr(AddIpv4SubnetCidrRequest request);
+
+    /**
      * Add an IPv6 prefix to a subnet.
      *
      * @param request The request object containing the details to send
@@ -4194,6 +4210,29 @@ public interface VirtualNetwork extends AutoCloseable {
     ListVtapsResponse listVtaps(ListVtapsRequest request);
 
     /**
+     * Updates the specified Ipv4 CIDR block of a Subnet. The new Ipv4 CIDR IP range must meet the
+     * following criteria:
+     *
+     * <p>- Must be valid. - Must not overlap with another Ipv4 CIDR block in the Subnet or the
+     * on-premises network CIDR block. - Must not exceed the limit of Ipv4 CIDR blocks allowed per
+     * Subnet. - Must include IP addresses from the original CIDR block that are used in the VCN's
+     * existing route rules. - No IP address in an existing subnet should be outside of the new CIDR
+     * block range.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ModifyIpv4SubnetCidrExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ModifyIpv4SubnetCidr API.
+     */
+    ModifyIpv4SubnetCidrResponse modifyIpv4SubnetCidr(ModifyIpv4SubnetCidrRequest request);
+
+    /**
      * Updates the specified CIDR block of a VCN. The new CIDR IP range must meet the following
      * criteria:
      *
@@ -4308,6 +4347,22 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     RemoveImportDrgRouteDistributionResponse removeImportDrgRouteDistribution(
             RemoveImportDrgRouteDistributionRequest request);
+
+    /**
+     * Remove an IPv4 prefix from a subnet
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveIpv4SubnetCidrExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveIpv4SubnetCidr API.
+     */
+    RemoveIpv4SubnetCidrResponse removeIpv4SubnetCidr(RemoveIpv4SubnetCidrRequest request);
 
     /**
      * Remove an IPv6 prefix from a subnet. At least one IPv6 CIDR should remain.

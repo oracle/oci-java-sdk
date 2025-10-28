@@ -17,13 +17,13 @@ public class DeleteAutonomousDatabaseBackupRequest
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      */
     private String autonomousDatabaseBackupId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      */
     public String getAutonomousDatabaseBackupId() {
         return autonomousDatabaseBackupId;
@@ -76,13 +76,13 @@ public class DeleteAutonomousDatabaseBackupRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          */
         private String autonomousDatabaseBackupId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          *
          * @param autonomousDatabaseBackupId the value to set
          * @return this builder instance

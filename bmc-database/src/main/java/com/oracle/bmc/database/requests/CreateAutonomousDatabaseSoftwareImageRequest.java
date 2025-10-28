@@ -16,11 +16,11 @@ public class CreateAutonomousDatabaseSoftwareImageRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.CreateAutonomousDatabaseSoftwareImageDetails> {
 
-    /** Request to create Autonomous Database Software Image. */
+    /** Request to create Autonomous AI Database Software Image. */
     private com.oracle.bmc.database.model.CreateAutonomousDatabaseSoftwareImageDetails
             createAutonomousDatabaseSoftwareImageDetails;
 
-    /** Request to create Autonomous Database Software Image. */
+    /** Request to create Autonomous AI Database Software Image. */
     public com.oracle.bmc.database.model.CreateAutonomousDatabaseSoftwareImageDetails
             getCreateAutonomousDatabaseSoftwareImageDetails() {
         return createAutonomousDatabaseSoftwareImageDetails;
@@ -70,12 +70,12 @@ public class CreateAutonomousDatabaseSoftwareImageRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Request to create Autonomous Database Software Image. */
+        /** Request to create Autonomous AI Database Software Image. */
         private com.oracle.bmc.database.model.CreateAutonomousDatabaseSoftwareImageDetails
                 createAutonomousDatabaseSoftwareImageDetails = null;
 
         /**
-         * Request to create Autonomous Database Software Image.
+         * Request to create Autonomous AI Database Software Image.
          *
          * @param createAutonomousDatabaseSoftwareImageDetails the value to set
          * @return this builder instance

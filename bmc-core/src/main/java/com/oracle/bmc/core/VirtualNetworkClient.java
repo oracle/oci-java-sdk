@@ -217,6 +217,39 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
     }
 
     @Override
+    public AddIpv4SubnetCidrResponse addIpv4SubnetCidr(AddIpv4SubnetCidrRequest request) {
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(
+                request.getAddIpv4SubnetCidrDetails(), "addIpv4SubnetCidrDetails is required");
+
+        return clientCall(request, AddIpv4SubnetCidrResponse::builder)
+                .logger(LOG, "addIpv4SubnetCidr")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "AddIpv4SubnetCidr",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv4SubnetCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddIpv4SubnetCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("actions")
+                .appendPathParam("addIpv4Cidr")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddIpv4SubnetCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddIpv4SubnetCidrResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public AddIpv6SubnetCidrResponse addIpv6SubnetCidr(AddIpv6SubnetCidrRequest request) {
 
         Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
@@ -6172,6 +6205,41 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
     }
 
     @Override
+    public ModifyIpv4SubnetCidrResponse modifyIpv4SubnetCidr(ModifyIpv4SubnetCidrRequest request) {
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyIpv4SubnetCidrDetails(),
+                "modifyIpv4SubnetCidrDetails is required");
+
+        return clientCall(request, ModifyIpv4SubnetCidrResponse::builder)
+                .logger(LOG, "modifyIpv4SubnetCidr")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ModifyIpv4SubnetCidr",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ModifyIpv4SubnetCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyIpv4SubnetCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyIpv4Cidr")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ModifyIpv4SubnetCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyIpv4SubnetCidrResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public ModifyVcnCidrResponse modifyVcnCidr(ModifyVcnCidrRequest request) {
 
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
@@ -6355,6 +6423,41 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RemoveImportDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveIpv4SubnetCidrResponse removeIpv4SubnetCidr(RemoveIpv4SubnetCidrRequest request) {
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveIpv4SubnetCidrDetails(),
+                "removeIpv4SubnetCidrDetails is required");
+
+        return clientCall(request, RemoveIpv4SubnetCidrResponse::builder)
+                .logger(LOG, "removeIpv4SubnetCidr")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "RemoveIpv4SubnetCidr",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv4SubnetCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveIpv4SubnetCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("actions")
+                .appendPathParam("removeIpv4Cidr")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveIpv4SubnetCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveIpv4SubnetCidrResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

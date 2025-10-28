@@ -83,6 +83,15 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeIdentity")
+        private RuntimeIdentity runtimeIdentity;
+
+        public Builder runtimeIdentity(RuntimeIdentity runtimeIdentity) {
+            this.runtimeIdentity = runtimeIdentity;
+            this.__explicitlySet__.add("runtimeIdentity");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
         private CreateDatabaseToolsRelatedResourceMySqlDetails relatedResource;
 
@@ -197,6 +206,7 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
                             this.freeformTags,
                             this.locks,
                             this.runtimeSupport,
+                            this.runtimeIdentity,
                             this.relatedResource,
                             this.connectionString,
                             this.userName,
@@ -229,6 +239,9 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             }
             if (model.wasPropertyExplicitlySet("runtimeSupport")) {
                 this.runtimeSupport(model.getRuntimeSupport());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeIdentity")) {
+                this.runtimeIdentity(model.getRuntimeIdentity());
             }
             if (model.wasPropertyExplicitlySet("relatedResource")) {
                 this.relatedResource(model.getRelatedResource());
@@ -272,6 +285,7 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             java.util.Map<String, String> freeformTags,
             java.util.List<ResourceLock> locks,
             RuntimeSupport runtimeSupport,
+            RuntimeIdentity runtimeIdentity,
             CreateDatabaseToolsRelatedResourceMySqlDetails relatedResource,
             String connectionString,
             String userName,
@@ -279,7 +293,14 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             java.util.Map<String, String> advancedProperties,
             java.util.List<DatabaseToolsKeyStoreMySqlDetails> keyStores,
             String privateEndpointId) {
-        super(displayName, compartmentId, definedTags, freeformTags, locks, runtimeSupport);
+        super(
+                displayName,
+                compartmentId,
+                definedTags,
+                freeformTags,
+                locks,
+                runtimeSupport,
+                runtimeIdentity);
         this.relatedResource = relatedResource;
         this.connectionString = connectionString;
         this.userName = userName;

@@ -41,6 +41,8 @@ public final class DrPlanExecution
         "groupExecutions",
         "lifecycleState",
         "lifeCycleDetails",
+        "isAutomatic",
+        "automaticExecutionDetails",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -64,6 +66,8 @@ public final class DrPlanExecution
             java.util.List<DrPlanGroupExecution> groupExecutions,
             DrPlanExecutionLifecycleState lifecycleState,
             String lifeCycleDetails,
+            Boolean isAutomatic,
+            AutomaticExecutionDetails automaticExecutionDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -86,6 +90,8 @@ public final class DrPlanExecution
         this.groupExecutions = groupExecutions;
         this.lifecycleState = lifecycleState;
         this.lifeCycleDetails = lifeCycleDetails;
+        this.isAutomatic = isAutomatic;
+        this.automaticExecutionDetails = automaticExecutionDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -430,6 +436,39 @@ public final class DrPlanExecution
             return this;
         }
         /**
+         * A flag indicating whether execution was submitted automatically by Automatic DR
+         * Configuration.
+         *
+         * <p>Example: {@code false}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutomatic")
+        private Boolean isAutomatic;
+
+        /**
+         * A flag indicating whether execution was submitted automatically by Automatic DR
+         * Configuration.
+         *
+         * <p>Example: {@code false}
+         *
+         * @param isAutomatic the value to set
+         * @return this builder
+         */
+        public Builder isAutomatic(Boolean isAutomatic) {
+            this.isAutomatic = isAutomatic;
+            this.__explicitlySet__.add("isAutomatic");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("automaticExecutionDetails")
+        private AutomaticExecutionDetails automaticExecutionDetails;
+
+        public Builder automaticExecutionDetails(
+                AutomaticExecutionDetails automaticExecutionDetails) {
+            this.automaticExecutionDetails = automaticExecutionDetails;
+            this.__explicitlySet__.add("automaticExecutionDetails");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only.
          *
@@ -520,6 +559,8 @@ public final class DrPlanExecution
                             this.groupExecutions,
                             this.lifecycleState,
                             this.lifeCycleDetails,
+                            this.isAutomatic,
+                            this.automaticExecutionDetails,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -584,6 +625,12 @@ public final class DrPlanExecution
             }
             if (model.wasPropertyExplicitlySet("lifeCycleDetails")) {
                 this.lifeCycleDetails(model.getLifeCycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAutomatic")) {
+                this.isAutomatic(model.getIsAutomatic());
+            }
+            if (model.wasPropertyExplicitlySet("automaticExecutionDetails")) {
+                this.automaticExecutionDetails(model.getAutomaticExecutionDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -906,6 +953,34 @@ public final class DrPlanExecution
     }
 
     /**
+     * A flag indicating whether execution was submitted automatically by Automatic DR
+     * Configuration.
+     *
+     * <p>Example: {@code false}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutomatic")
+    private final Boolean isAutomatic;
+
+    /**
+     * A flag indicating whether execution was submitted automatically by Automatic DR
+     * Configuration.
+     *
+     * <p>Example: {@code false}
+     *
+     * @return the value
+     */
+    public Boolean getIsAutomatic() {
+        return isAutomatic;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("automaticExecutionDetails")
+    private final AutomaticExecutionDetails automaticExecutionDetails;
+
+    public AutomaticExecutionDetails getAutomaticExecutionDetails() {
+        return automaticExecutionDetails;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only.
      *
@@ -998,6 +1073,9 @@ public final class DrPlanExecution
         sb.append(", groupExecutions=").append(String.valueOf(this.groupExecutions));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifeCycleDetails=").append(String.valueOf(this.lifeCycleDetails));
+        sb.append(", isAutomatic=").append(String.valueOf(this.isAutomatic));
+        sb.append(", automaticExecutionDetails=")
+                .append(String.valueOf(this.automaticExecutionDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1035,6 +1113,9 @@ public final class DrPlanExecution
                 && java.util.Objects.equals(this.groupExecutions, other.groupExecutions)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifeCycleDetails, other.lifeCycleDetails)
+                && java.util.Objects.equals(this.isAutomatic, other.isAutomatic)
+                && java.util.Objects.equals(
+                        this.automaticExecutionDetails, other.automaticExecutionDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1087,6 +1168,12 @@ public final class DrPlanExecution
         result =
                 (result * PRIME)
                         + (this.lifeCycleDetails == null ? 43 : this.lifeCycleDetails.hashCode());
+        result = (result * PRIME) + (this.isAutomatic == null ? 43 : this.isAutomatic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.automaticExecutionDetails == null
+                                ? 43
+                                : this.automaticExecutionDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

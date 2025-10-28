@@ -305,7 +305,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
          * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * restrictions:** - A network security group (NSG) is optional for Autonomous AI Databases
          * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -317,7 +317,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
          * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * restrictions:** - A network security group (NSG) is optional for Autonomous AI Databases
          * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
@@ -504,7 +504,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * The Oracle license model that applies to all the databases on the dataguard standby DB
          * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to
-         * select the DB edition using the optional parameter, for Autonomous Database Serverless.
+         * select the DB edition using the optional parameter, for Autonomous AI Database
+         * Serverless.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
@@ -512,7 +513,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * The Oracle license model that applies to all the databases on the dataguard standby DB
          * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to
-         * select the DB edition using the optional parameter, for Autonomous Database Serverless.
+         * select the DB edition using the optional parameter, for Autonomous AI Database
+         * Serverless.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -1179,7 +1181,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -1190,7 +1192,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
@@ -1357,7 +1359,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB
      * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select
-     * the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      */
     public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
         LicenseIncluded("LICENSE_INCLUDED"),
@@ -1394,7 +1396,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB
      * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select
-     * the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
@@ -1402,7 +1404,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB
      * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select
-     * the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      *
      * @return the value
      */

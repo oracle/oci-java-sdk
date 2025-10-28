@@ -3,6 +3,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.75.0 - 2025-10-28
+### Added 
+- Support for calling Oracle Cloud Infrastructure services in the eu-madrid-3 region 
+- Support for Zero Trust Packet Routing (ZPR) security attributes for mount targets in the File Storage service 
+- Support for Object Storage bi-directional sync in the File Storage with Lustre service 
+- Support for renaming autonomous databases in the Database service 
+- Support for vanity connection urls and vanity url details when updating autonomous databases in the Database service 
+- Support for Apple as a social Identity Domains Provider (IDP) in the Identity Domains service 
+- Support for APEX cloud integrations in the Database Tools service 
+- Support for automatic disaster recovery based on database events in the Disaster Recovery service  
+- Support for providing non-translation words in the AI Language service   
+- Support for new mode for detecting PII entities in the AI Language service 
+- Support for online conversion of IPv4 load balancer to dual stack IPv4 and IPv6 load balancer in the Load Balancer service 
+- Support for compute hosts in subtree when listing compute hosts in the Compute service 
+- Support for additional parameters when creating IPv4 Flex CIDR in the Networking service 
+- Support for additional parameters when creating subnet with multiple CIDR blocks in the Networking service   
+
+### Breaking Changes 
+- Method `public com.oracle.bmc.ailanguage.model.CreateEndpointDetails$ComputeType getComputeType()` has been removed in the model `com.oracle.bmc.ailanguage.model.CreateEndpointDetails` in the AI Language service 
+- Method `public com.oracle.bmc.ailanguage.model.Endpoint$ComputeType getComputeType()` has been removed in the model `com.oracle.bmc.ailanguage.model.Endpoint` in the AI Language service 
+- Method `public com.oracle.bmc.ailanguage.model.EndpointSummary$ComputeType getComputeType()` has been removed in the model `com.oracle.bmc.ailanguage.model.EndpointSummary` in the AI Language service 
+- Class `com.oracle.bmc.ailanguage.model.CreateEndpointDetails$ComputeType` has been removed in the AI Language service 
+- Class `com.oracle.bmc.ailanguage.model.Endpoint$ComputeType` has been removed in the AI Language service 
+- Class `com.oracle.bmc.ailanguage.model.EndpointSummary$ComputeType` has been removed in the AI Language service  
+
+### Fixed 
+- Fixed ClientCall leaving transient requests open in some conditions
+
 ## 3.74.3 - 2025-10-21
 ### Added 
 - Support for LDAP schema version RFC2307bis when creating and updating mount targets in the File Storage service 

@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * **Deprecated.** See {@link AutonomousDatabase} for reference information about Autonomous
+ * **Deprecated.** See {@link AutonomousDatabase} for reference information about Autonomous AI
  * Databases with the warehouse workload type. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -79,14 +79,14 @@ public final class AutonomousDataWarehouse
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Data Warehouse.
+         * Autonomous AI Lakehouse.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Data Warehouse.
+         * Autonomous AI Lakehouse.
          *
          * @param id the value to set
          * @return this builder
@@ -206,14 +206,14 @@ public final class AutonomousDataWarehouse
             return this;
         }
         /**
-         * The user-friendly name for the Autonomous Data Warehouse. The name does not have to be
+         * The user-friendly name for the Autonomous AI Lakehouse. The name does not have to be
          * unique.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Autonomous Data Warehouse. The name does not have to be
+         * The user-friendly name for the Autonomous AI Lakehouse. The name does not have to be
          * unique.
          *
          * @param displayName the value to set
@@ -224,12 +224,12 @@ public final class AutonomousDataWarehouse
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The URL of the Service Console for the Data Warehouse. */
+        /** The URL of the Service Console for the AI Lakehouse. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceConsoleUrl")
         private String serviceConsoleUrl;
 
         /**
-         * The URL of the Service Console for the Data Warehouse.
+         * The URL of the Service Console for the AI Lakehouse.
          *
          * @param serviceConsoleUrl the value to set
          * @return this builder
@@ -240,17 +240,17 @@ public final class AutonomousDataWarehouse
             return this;
         }
         /**
-         * The connection string used to connect to the Data Warehouse. The username for the Service
-         * Console is ADMIN. Use the password you entered when creating the Autonomous Data
-         * Warehouse for the password value.
+         * The connection string used to connect to the AI Lakehouse. The username for the Service
+         * Console is ADMIN. Use the password you entered when creating the Autonomous AI Lakehouse
+         * for the password value.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
         private AutonomousDataWarehouseConnectionStrings connectionStrings;
 
         /**
-         * The connection string used to connect to the Data Warehouse. The username for the Service
-         * Console is ADMIN. Use the password you entered when creating the Autonomous Data
-         * Warehouse for the password value.
+         * The connection string used to connect to the AI Lakehouse. The username for the Service
+         * Console is ADMIN. Use the password you entered when creating the Autonomous AI Lakehouse
+         * for the password value.
          *
          * @param connectionStrings the value to set
          * @return this builder
@@ -262,15 +262,15 @@ public final class AutonomousDataWarehouse
             return this;
         }
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The
-         * default is BRING_YOUR_OWN_LICENSE.
+         * The Oracle license model that applies to the Oracle Autonomous AI Lakehouse. The default
+         * is BRING_YOUR_OWN_LICENSE.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The
-         * default is BRING_YOUR_OWN_LICENSE.
+         * The Oracle license model that applies to the Oracle Autonomous AI Lakehouse. The default
+         * is BRING_YOUR_OWN_LICENSE.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -327,12 +327,12 @@ public final class AutonomousDataWarehouse
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** A valid Oracle Database version for Autonomous Data Warehouse. */
+        /** A valid Oracle AI Database version for Autonomous AI Lakehouse. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * A valid Oracle Database version for Autonomous Data Warehouse.
+         * A valid Oracle AI Database version for Autonomous AI Lakehouse.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -432,14 +432,14 @@ public final class AutonomousDataWarehouse
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Data Warehouse.
+     * Autonomous AI Lakehouse.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Data Warehouse.
+     * Autonomous AI Lakehouse.
      *
      * @return the value
      */
@@ -587,15 +587,13 @@ public final class AutonomousDataWarehouse
     }
 
     /**
-     * The user-friendly name for the Autonomous Data Warehouse. The name does not have to be
-     * unique.
+     * The user-friendly name for the Autonomous AI Lakehouse. The name does not have to be unique.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Autonomous Data Warehouse. The name does not have to be
-     * unique.
+     * The user-friendly name for the Autonomous AI Lakehouse. The name does not have to be unique.
      *
      * @return the value
      */
@@ -603,12 +601,12 @@ public final class AutonomousDataWarehouse
         return displayName;
     }
 
-    /** The URL of the Service Console for the Data Warehouse. */
+    /** The URL of the Service Console for the AI Lakehouse. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceConsoleUrl")
     private final String serviceConsoleUrl;
 
     /**
-     * The URL of the Service Console for the Data Warehouse.
+     * The URL of the Service Console for the AI Lakehouse.
      *
      * @return the value
      */
@@ -617,17 +615,17 @@ public final class AutonomousDataWarehouse
     }
 
     /**
-     * The connection string used to connect to the Data Warehouse. The username for the Service
-     * Console is ADMIN. Use the password you entered when creating the Autonomous Data Warehouse
-     * for the password value.
+     * The connection string used to connect to the AI Lakehouse. The username for the Service
+     * Console is ADMIN. Use the password you entered when creating the Autonomous AI Lakehouse for
+     * the password value.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
     private final AutonomousDataWarehouseConnectionStrings connectionStrings;
 
     /**
-     * The connection string used to connect to the Data Warehouse. The username for the Service
-     * Console is ADMIN. Use the password you entered when creating the Autonomous Data Warehouse
-     * for the password value.
+     * The connection string used to connect to the AI Lakehouse. The username for the Service
+     * Console is ADMIN. Use the password you entered when creating the Autonomous AI Lakehouse for
+     * the password value.
      *
      * @return the value
      */
@@ -636,7 +634,7 @@ public final class AutonomousDataWarehouse
     }
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is
+     * The Oracle license model that applies to the Oracle Autonomous AI Lakehouse. The default is
      * BRING_YOUR_OWN_LICENSE.
      */
     public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
@@ -672,14 +670,14 @@ public final class AutonomousDataWarehouse
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is
+     * The Oracle license model that applies to the Oracle Autonomous AI Lakehouse. The default is
      * BRING_YOUR_OWN_LICENSE.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is
+     * The Oracle license model that applies to the Oracle Autonomous AI Lakehouse. The default is
      * BRING_YOUR_OWN_LICENSE.
      *
      * @return the value
@@ -730,12 +728,12 @@ public final class AutonomousDataWarehouse
         return definedTags;
     }
 
-    /** A valid Oracle Database version for Autonomous Data Warehouse. */
+    /** A valid Oracle AI Database version for Autonomous AI Lakehouse. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * A valid Oracle Database version for Autonomous Data Warehouse.
+     * A valid Oracle AI Database version for Autonomous AI Lakehouse.
      *
      * @return the value
      */

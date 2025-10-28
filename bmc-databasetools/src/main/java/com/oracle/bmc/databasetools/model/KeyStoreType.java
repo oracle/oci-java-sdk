@@ -9,6 +9,7 @@ package com.oracle.bmc.databasetools.model;
 public enum KeyStoreType implements com.oracle.bmc.http.internal.BmcEnum {
     JavaKeyStore("JAVA_KEY_STORE"),
     JavaTrustStore("JAVA_TRUST_STORE"),
+    Pem("PEM"),
     Pkcs12("PKCS12"),
     Sso("SSO"),
 

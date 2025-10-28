@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * An Oracle Autonomous Database. <br>
+ * An Oracle Autonomous AI Database. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -75,6 +75,7 @@ public final class AutonomousDwDatabase
         "connectionStrings",
         "connectionUrls",
         "publicConnectionUrls",
+        "vanityConnectionUrls",
         "licenseModel",
         "byolComputeCountLimit",
         "usedDataStorageSizeInTBs",
@@ -146,6 +147,7 @@ public final class AutonomousDwDatabase
         "actualUsedDataStorageSizeInTBs",
         "databaseEdition",
         "dbToolsDetails",
+        "vanityUrlDetails",
         "localDisasterRecoveryType",
         "disasterRecoveryRegionType",
         "timeDisasterRecoveryRoleChanged",
@@ -209,6 +211,7 @@ public final class AutonomousDwDatabase
             AutonomousDatabaseConnectionStrings connectionStrings,
             AutonomousDatabaseConnectionUrls connectionUrls,
             AutonomousDatabaseConnectionUrls publicConnectionUrls,
+            AutonomousDatabaseConnectionUrls vanityConnectionUrls,
             LicenseModel licenseModel,
             Float byolComputeCountLimit,
             Integer usedDataStorageSizeInTBs,
@@ -280,6 +283,7 @@ public final class AutonomousDwDatabase
             Double actualUsedDataStorageSizeInTBs,
             DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
+            VanityUrlDetails vanityUrlDetails,
             DisasterRecoveryConfiguration.DisasterRecoveryType localDisasterRecoveryType,
             DisasterRecoveryRegionType disasterRecoveryRegionType,
             java.util.Date timeDisasterRecoveryRoleChanged,
@@ -342,6 +346,7 @@ public final class AutonomousDwDatabase
         this.connectionStrings = connectionStrings;
         this.connectionUrls = connectionUrls;
         this.publicConnectionUrls = publicConnectionUrls;
+        this.vanityConnectionUrls = vanityConnectionUrls;
         this.licenseModel = licenseModel;
         this.byolComputeCountLimit = byolComputeCountLimit;
         this.usedDataStorageSizeInTBs = usedDataStorageSizeInTBs;
@@ -413,6 +418,7 @@ public final class AutonomousDwDatabase
         this.actualUsedDataStorageSizeInTBs = actualUsedDataStorageSizeInTBs;
         this.databaseEdition = databaseEdition;
         this.dbToolsDetails = dbToolsDetails;
+        this.vanityUrlDetails = vanityUrlDetails;
         this.localDisasterRecoveryType = localDisasterRecoveryType;
         this.disasterRecoveryRegionType = disasterRecoveryRegionType;
         this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
@@ -429,14 +435,14 @@ public final class AutonomousDwDatabase
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database.
+         * Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database.
+         * Autonomous AI Database.
          *
          * @param id the value to set
          * @return this builder
@@ -484,12 +490,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
-        /** The current state of the Autonomous Database. */
+        /** The current state of the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Autonomous Database.
+         * The current state of the Autonomous AI Database.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -583,8 +589,8 @@ public final class AutonomousDwDatabase
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
@@ -593,8 +599,8 @@ public final class AutonomousDwDatabase
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
@@ -621,7 +627,7 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The character set for the autonomous database. The default is AL32UTF8. Allowed values
+         * The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values
          * are:
          *
          * <p>AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6,
@@ -645,7 +651,7 @@ public final class AutonomousDwDatabase
         private String characterSet;
 
         /**
-         * The character set for the autonomous database. The default is AL32UTF8. Allowed values
+         * The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values
          * are:
          *
          * <p>AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6,
@@ -674,15 +680,15 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The national character set for the autonomous database. The default is AL16UTF16. Allowed
-         * values are: AL16UTF16 or UTF8.
+         * The national character set for the Autonomous AI Database. The default is AL16UTF16.
+         * Allowed values are: AL16UTF16 or UTF8.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
         private String ncharacterSet;
 
         /**
-         * The national character set for the autonomous database. The default is AL16UTF16. Allowed
-         * values are: AL16UTF16 or UTF8.
+         * The national character set for the Autonomous AI Database. The default is AL16UTF16.
+         * Allowed values are: AL16UTF16 or UTF8.
          *
          * @param ncharacterSet the value to set
          * @return this builder
@@ -694,7 +700,7 @@ public final class AutonomousDwDatabase
         }
         /**
          * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
-         * Database. This property is applicable only to Autonomous Databases on the Exadata
+         * AI Database. This property is applicable only to Autonomous AI Databases on the Exadata
          * Cloud@Customer platform.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
@@ -702,7 +708,7 @@ public final class AutonomousDwDatabase
 
         /**
          * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
-         * Database. This property is applicable only to Autonomous Databases on the Exadata
+         * AI Database. This property is applicable only to Autonomous AI Databases on the Exadata
          * Cloud@Customer platform.
          *
          * @param inMemoryPercentage the value to set
@@ -713,12 +719,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("inMemoryPercentage");
             return this;
         }
-        /** The area assigned to In-Memory tables in Autonomous Database. */
+        /** The area assigned to In-Memory tables in Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("inMemoryAreaInGBs")
         private Integer inMemoryAreaInGBs;
 
         /**
-         * The area assigned to In-Memory tables in Autonomous Database.
+         * The area assigned to In-Memory tables in Autonomous AI Database.
          *
          * @param inMemoryAreaInGBs the value to set
          * @return this builder
@@ -755,7 +761,7 @@ public final class AutonomousDwDatabase
         }
         /**
          * Indicates if this is an Always Free resource. The default value is false. Note that
-         * Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free
+         * Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free
          * databases, memory and CPU cannot be scaled.
          *
          * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
@@ -769,7 +775,7 @@ public final class AutonomousDwDatabase
 
         /**
          * Indicates if this is an Always Free resource. The default value is false. Note that
-         * Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free
+         * Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free
          * databases, memory and CPU cannot be scaled.
          *
          * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
@@ -896,11 +902,11 @@ public final class AutonomousDwDatabase
         }
         /**
          * The number of CPU cores to be made available to the database. When the ECPU is selected,
-         * the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata
+         * the value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata
          * infrastructure, the maximum number of cores is determined by the infrastructure shape.
          * See [Characteristics of Infrastructure
-         * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-         * for shape details.
+         * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for
+         * shape details.
          *
          * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
          */
@@ -909,11 +915,11 @@ public final class AutonomousDwDatabase
 
         /**
          * The number of CPU cores to be made available to the database. When the ECPU is selected,
-         * the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata
+         * the value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata
          * infrastructure, the maximum number of cores is determined by the infrastructure shape.
          * See [Characteristics of Infrastructure
-         * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-         * for shape details.
+         * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for
+         * shape details.
          *
          * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
          *
@@ -948,7 +954,7 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code
+         * The compute model of the Autonomous AI Database. This is required if using the {@code
          * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
          * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
          * OCPU compute model is legacy.
@@ -957,7 +963,7 @@ public final class AutonomousDwDatabase
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code
+         * The compute model of the Autonomous AI Database. This is required if using the {@code
          * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
          * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
          * OCPU compute model is legacy.
@@ -972,26 +978,26 @@ public final class AutonomousDwDatabase
         }
         /**
          * The compute amount (CPUs) available to the database. Minimum and maximum values depend on
-         * the compute model and whether the database is an Autonomous Database Serverless instance
-         * or an Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model
-         * requires a minimum value of one, for databases in the elastic resource pool and minimum
-         * value of two, otherwise. Required when using the {@code computeModel} parameter. When
-         * using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a
-         * non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred
-         * method for both OCPU and ECPU.
+         * the compute model and whether the database is an Autonomous AI Database Serverless
+         * instance or an Autonomous AI Database on Dedicated Exadata Infrastructure. The 'ECPU'
+         * compute model requires a minimum value of one, for databases in the elastic resource pool
+         * and minimum value of two, otherwise. Required when using the {@code computeModel}
+         * parameter. When using {@code cpuCoreCount} parameter, it is an error to specify
+         * computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount}
+         * is the preferred method for both OCPU and ECPU.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
         private Float computeCount;
 
         /**
          * The compute amount (CPUs) available to the database. Minimum and maximum values depend on
-         * the compute model and whether the database is an Autonomous Database Serverless instance
-         * or an Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model
-         * requires a minimum value of one, for databases in the elastic resource pool and minimum
-         * value of two, otherwise. Required when using the {@code computeModel} parameter. When
-         * using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a
-         * non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred
-         * method for both OCPU and ECPU.
+         * the compute model and whether the database is an Autonomous AI Database Serverless
+         * instance or an Autonomous AI Database on Dedicated Exadata Infrastructure. The 'ECPU'
+         * compute model requires a minimum value of one, for databases in the elastic resource pool
+         * and minimum value of two, otherwise. Required when using the {@code computeModel}
+         * parameter. When using {@code cpuCoreCount} parameter, it is an error to specify
+         * computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount}
+         * is the preferred method for both OCPU and ECPU.
          *
          * @param computeCount the value to set
          * @return this builder
@@ -1034,17 +1040,17 @@ public final class AutonomousDwDatabase
         /**
          * The number of OCPU cores to be made available to the database.
          *
-         * <p>The following points apply: - For Autonomous Databases on Dedicated Exadata
+         * <p>The following points apply: - For Autonomous AI Databases on Dedicated Exadata
          * Infrastructure, to provision less than 1 core, enter a fractional value in an increment
          * of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that
-         * fractional OCPU values are not supported for Autonomous Database Serverless instances.) -
-         * To provision cores, enter an integer between 1 and the maximum number of cores available
-         * for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not
-         * 2.5 cores. This applies to Autonomous Databases on both serverless and dedicated Exadata
-         * infrastructure. - For Autonomous Database Serverless instances, this parameter is not
-         * used.
+         * fractional OCPU values are not supported for Autonomous AI Database Serverless
+         * instances.) - To provision cores, enter an integer between 1 and the maximum number of
+         * cores available for the infrastructure shape. For example, you can provision 2 cores or 3
+         * cores, but not 2.5 cores. This applies to Autonomous AI Databases on both serverless and
+         * dedicated Exadata infrastructure. - For Autonomous AI Database Serverless instances, this
+         * parameter is not used.
          *
-         * <p>For Autonomous Databases on Dedicated Exadata Infrastructure, the maximum number of
+         * <p>For Autonomous AI Databases on Dedicated Exadata Infrastructure, the maximum number of
          * cores is determined by the infrastructure shape. See [Characteristics of Infrastructure
          * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/index.html)
          * for shape details.
@@ -1057,17 +1063,17 @@ public final class AutonomousDwDatabase
         /**
          * The number of OCPU cores to be made available to the database.
          *
-         * <p>The following points apply: - For Autonomous Databases on Dedicated Exadata
+         * <p>The following points apply: - For Autonomous AI Databases on Dedicated Exadata
          * Infrastructure, to provision less than 1 core, enter a fractional value in an increment
          * of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that
-         * fractional OCPU values are not supported for Autonomous Database Serverless instances.) -
-         * To provision cores, enter an integer between 1 and the maximum number of cores available
-         * for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not
-         * 2.5 cores. This applies to Autonomous Databases on both serverless and dedicated Exadata
-         * infrastructure. - For Autonomous Database Serverless instances, this parameter is not
-         * used.
+         * fractional OCPU values are not supported for Autonomous AI Database Serverless
+         * instances.) - To provision cores, enter an integer between 1 and the maximum number of
+         * cores available for the infrastructure shape. For example, you can provision 2 cores or 3
+         * cores, but not 2.5 cores. This applies to Autonomous AI Databases on both serverless and
+         * dedicated Exadata infrastructure. - For Autonomous AI Database Serverless instances, this
+         * parameter is not used.
          *
-         * <p>For Autonomous Databases on Dedicated Exadata Infrastructure, the maximum number of
+         * <p>For Autonomous AI Databases on Dedicated Exadata Infrastructure, the maximum number of
          * cores is determined by the infrastructure shape. See [Characteristics of Infrastructure
          * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/index.html)
          * for shape details.
@@ -1082,12 +1088,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
-        /** An array of CPU values that an Autonomous Database can be scaled to. */
+        /** An array of CPU values that an Autonomous AI Database can be scaled to. */
         @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
         private java.util.List<Float> provisionableCpus;
 
         /**
-         * An array of CPU values that an Autonomous Database can be scaled to.
+         * An array of CPU values that an Autonomous AI Database can be scaled to.
          *
          * @param provisionableCpus the value to set
          * @return this builder
@@ -1100,11 +1106,11 @@ public final class AutonomousDwDatabase
         /**
          * The quantity of data in the database, in terabytes.
          *
-         * <p>The following points apply to Autonomous Databases on Serverless Infrastructure: -
+         * <p>The following points apply to Autonomous AI Databases on Serverless Infrastructure: -
          * This is an integer field whose value remains null when the data size is in GBs and cannot
          * be converted to TBs (by dividing the GB value by 1024) without rounding error. - To get
          * the exact value of data storage size without rounding error, please see {@code
-         * dataStorageSizeInGBs} of Autonomous Database.
+         * dataStorageSizeInGBs} of Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
         private Integer dataStorageSizeInTBs;
@@ -1112,11 +1118,11 @@ public final class AutonomousDwDatabase
         /**
          * The quantity of data in the database, in terabytes.
          *
-         * <p>The following points apply to Autonomous Databases on Serverless Infrastructure: -
+         * <p>The following points apply to Autonomous AI Databases on Serverless Infrastructure: -
          * This is an integer field whose value remains null when the data size is in GBs and cannot
          * be converted to TBs (by dividing the GB value by 1024) without rounding error. - To get
          * the exact value of data storage size without rounding error, please see {@code
-         * dataStorageSizeInGBs} of Autonomous Database.
+         * dataStorageSizeInGBs} of Autonomous AI Database.
          *
          * @param dataStorageSizeInTBs the value to set
          * @return this builder
@@ -1163,7 +1169,7 @@ public final class AutonomousDwDatabase
         /**
          * The quantity of data in the database, in gigabytes.
          *
-         * <p>For Autonomous Transaction Processing databases using ECPUs on Serverless
+         * <p>For Autonomous AI Transaction Processing databases using ECPUs on Serverless
          * Infrastructure, this value is always populated. In all the other cases, this value will
          * be null and {@code dataStorageSizeInTBs} will be populated instead.
          */
@@ -1173,7 +1179,7 @@ public final class AutonomousDwDatabase
         /**
          * The quantity of data in the database, in gigabytes.
          *
-         * <p>For Autonomous Transaction Processing databases using ECPUs on Serverless
+         * <p>For Autonomous AI Transaction Processing databases using ECPUs on Serverless
          * Infrastructure, this value is always populated. In all the other cases, this value will
          * be null and {@code dataStorageSizeInTBs} will be populated instead.
          *
@@ -1185,12 +1191,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
-        /** The storage space consumed by Autonomous Database in GBs. */
+        /** The storage space consumed by Autonomous AI Database in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInGBs")
         private Integer usedDataStorageSizeInGBs;
 
         /**
-         * The storage space consumed by Autonomous Database in GBs.
+         * The storage space consumed by Autonomous AI Database in GBs.
          *
          * @param usedDataStorageSizeInGBs the value to set
          * @return this builder
@@ -1237,7 +1243,7 @@ public final class AutonomousDwDatabase
         /**
          * The Autonomous Container Database
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only
-         * by Autonomous Database on Dedicated Exadata Infrastructure.
+         * by Autonomous AI Database on Dedicated Exadata Infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
         private String autonomousContainerDatabaseId;
@@ -1245,7 +1251,7 @@ public final class AutonomousDwDatabase
         /**
          * The Autonomous Container Database
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only
-         * by Autonomous Database on Dedicated Exadata Infrastructure.
+         * by Autonomous AI Database on Dedicated Exadata Infrastructure.
          *
          * @param autonomousContainerDatabaseId the value to set
          * @return this builder
@@ -1255,12 +1261,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("autonomousContainerDatabaseId");
             return this;
         }
-        /** Indicates if the Autonomous Database is backup retention locked. */
+        /** Indicates if the Autonomous AI Database is backup retention locked. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
         private Boolean isBackupRetentionLocked;
 
         /**
-         * Indicates if the Autonomous Database is backup retention locked.
+         * Indicates if the Autonomous AI Database is backup retention locked.
          *
          * @param isBackupRetentionLocked the value to set
          * @return this builder
@@ -1270,12 +1276,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("isBackupRetentionLocked");
             return this;
         }
-        /** The date and time the Autonomous Database was most recently undeleted. */
+        /** The date and time the Autonomous AI Database was most recently undeleted. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUndeleted")
         private java.util.Date timeUndeleted;
 
         /**
-         * The date and time the Autonomous Database was most recently undeleted.
+         * The date and time the Autonomous AI Database was most recently undeleted.
          *
          * @param timeUndeleted the value to set
          * @return this builder
@@ -1286,15 +1292,15 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to
-         * 23ai.
+         * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to
+         * 26ai.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestAvailableDbVersionUpgrade")
         private java.util.Date timeEarliestAvailableDbVersionUpgrade;
 
         /**
-         * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to
-         * 23ai.
+         * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to
+         * 26ai.
          *
          * @param timeEarliestAvailableDbVersionUpgrade the value to set
          * @return this builder
@@ -1305,12 +1311,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("timeEarliestAvailableDbVersionUpgrade");
             return this;
         }
-        /** The max date and time the Autonomous Database can be scheduled to upgrade to 23ai. */
+        /** The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLatestAvailableDbVersionUpgrade")
         private java.util.Date timeLatestAvailableDbVersionUpgrade;
 
         /**
-         * The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+         * The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
          *
          * @param timeLatestAvailableDbVersionUpgrade the value to set
          * @return this builder
@@ -1321,12 +1327,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("timeLatestAvailableDbVersionUpgrade");
             return this;
         }
-        /** The date and time the Autonomous Database scheduled to upgrade to 23ai. */
+        /** The date and time the Autonomous AI Database scheduled to upgrade to 26ai. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledDbVersionUpgrade")
         private java.util.Date timeScheduledDbVersionUpgrade;
 
         /**
-         * The date and time the Autonomous Database scheduled to upgrade to 23ai.
+         * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
          *
          * @param timeScheduledDbVersionUpgrade the value to set
          * @return this builder
@@ -1336,12 +1342,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("timeScheduledDbVersionUpgrade");
             return this;
         }
-        /** The date and time the Autonomous Database was created. */
+        /** The date and time the Autonomous AI Database was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the Autonomous Database was created.
+         * The date and time the Autonomous AI Database was created.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -1352,13 +1358,15 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+         * The user-friendly name for the Autonomous AI Database. The name does not have to be
+         * unique.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+         * The user-friendly name for the Autonomous AI Database. The name does not have to be
+         * unique.
          *
          * @param displayName the value to set
          * @return this builder
@@ -1368,12 +1376,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The URL of the Service Console for the Autonomous Database. */
+        /** The URL of the Service Console for the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceConsoleUrl")
         private String serviceConsoleUrl;
 
         /**
-         * The URL of the Service Console for the Autonomous Database.
+         * The URL of the Service Console for the Autonomous AI Database.
          *
          * @param serviceConsoleUrl the value to set
          * @return this builder
@@ -1384,16 +1392,16 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The connection string used to connect to the Autonomous Database. The username for the
-         * Service Console is ADMIN. Use the password you entered when creating the Autonomous
+         * The connection string used to connect to the Autonomous AI Database. The username for the
+         * Service Console is ADMIN. Use the password you entered when creating the Autonomous AI
          * Database for the password value.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
         private AutonomousDatabaseConnectionStrings connectionStrings;
 
         /**
-         * The connection string used to connect to the Autonomous Database. The username for the
-         * Service Console is ADMIN. Use the password you entered when creating the Autonomous
+         * The connection string used to connect to the Autonomous AI Database. The username for the
+         * Service Console is ADMIN. Use the password you entered when creating the Autonomous AI
          * Database for the password value.
          *
          * @param connectionStrings the value to set
@@ -1434,15 +1442,24 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("publicConnectionUrls");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vanityConnectionUrls")
+        private AutonomousDatabaseConnectionUrls vanityConnectionUrls;
+
+        public Builder vanityConnectionUrls(AutonomousDatabaseConnectionUrls vanityConnectionUrls) {
+            this.vanityConnectionUrls = vanityConnectionUrls;
+            this.__explicitlySet__.add("vanityConnectionUrls");
+            return this;
+        }
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
-         * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-         * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-         * subscribe to new Oracle Database software licenses and the Oracle Database service. Note
-         * that when provisioning an [Autonomous Database on dedicated Exadata
+         * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your
+         * own license (BYOL) allows you to apply your current on-premises Oracle software licenses
+         * to equivalent, highly automated Oracle services in the cloud. License Included allows you
+         * to subscribe to new Oracle AI Database software licenses and the Oracle AI Database
+         * service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
          * this attribute must be null. It is already set at the Autonomous Exadata Infrastructure
-         * level. When provisioning an [Autonomous Database Serverless]
+         * level. When provisioning an [Autonomous AI Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
          * Bring your own license (BYOL) also allows you to select the DB edition using the optional
@@ -1457,14 +1474,14 @@ public final class AutonomousDwDatabase
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
-         * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-         * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-         * subscribe to new Oracle Database software licenses and the Oracle Database service. Note
-         * that when provisioning an [Autonomous Database on dedicated Exadata
+         * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your
+         * own license (BYOL) allows you to apply your current on-premises Oracle software licenses
+         * to equivalent, highly automated Oracle services in the cloud. License Included allows you
+         * to subscribe to new Oracle AI Database software licenses and the Oracle AI Database
+         * service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
          * this attribute must be null. It is already set at the Autonomous Exadata Infrastructure
-         * level. When provisioning an [Autonomous Database Serverless]
+         * level. When provisioning an [Autonomous AI Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
          * Bring your own license (BYOL) also allows you to select the DB edition using the optional
@@ -1505,14 +1522,14 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The amount of storage that has been used for Autonomous Databases in dedicated
+         * The amount of storage that has been used for Autonomous AI Databases in dedicated
          * infrastructure, in terabytes.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInTBs")
         private Integer usedDataStorageSizeInTBs;
 
         /**
-         * The amount of storage that has been used for Autonomous Databases in dedicated
+         * The amount of storage that has been used for Autonomous AI Databases in dedicated
          * infrastructure, in terabytes.
          *
          * @param usedDataStorageSizeInTBs the value to set
@@ -1601,7 +1618,7 @@ public final class AutonomousDwDatabase
          * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual
          * machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28. - For
          * Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with
-         * 192.168.128.0/20. - For Autonomous Database, setting this will disable public secure
+         * 192.168.128.0/20. - For Autonomous AI Database, setting this will disable public secure
          * access to the database.
          *
          * <p>These subnets are used by the Oracle Clusterware private interconnect on the database
@@ -1618,7 +1635,7 @@ public final class AutonomousDwDatabase
          * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual
          * machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28. - For
          * Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with
-         * 192.168.128.0/20. - For Autonomous Database, setting this will disable public secure
+         * 192.168.128.0/20. - For Autonomous AI Database, setting this will disable public secure
          * access to the database.
          *
          * <p>These subnets are used by the Oracle Clusterware private interconnect on the database
@@ -1639,7 +1656,7 @@ public final class AutonomousDwDatabase
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
          * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * restrictions:** - A network security group (NSG) is optional for Autonomous AI Databases
          * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -1651,7 +1668,7 @@ public final class AutonomousDwDatabase
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
          * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * restrictions:** - A network security group (NSG) is optional for Autonomous AI Databases
          * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
@@ -1744,12 +1761,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("privateEndpointIp");
             return this;
         }
-        /** A valid Oracle Database version for Autonomous Database. */
+        /** A valid Oracle AI Database version for Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * A valid Oracle Database version for Autonomous Database.
+         * A valid Oracle AI Database version for Autonomous AI Database.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -1759,12 +1776,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** Indicates if the Autonomous Database version is a preview version. */
+        /** Indicates if the Autonomous AI Database version is a preview version. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPreview")
         private Boolean isPreview;
 
         /**
-         * Indicates if the Autonomous Database version is a preview version.
+         * Indicates if the Autonomous AI Database version is a preview version.
          *
          * @param isPreview the value to set
          * @return this builder
@@ -1775,12 +1792,11 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The Autonomous Database workload type. The following values are valid:
-         *
-         * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-         * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-         * indicates an Autonomous Database with the Oracle APEX Application Development workload
-         * type.
+         * The Autonomous AI Database workload type. The following values are valid: - OLTP -
+         * indicates an Autonomous AI Transaction Processing database - DW - indicates an Autonomous
+         * AI Lakehouse database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates
+         * an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+         * - LH - indicates an Oracle Autonomous AI Lakehouse database
          *
          * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
          * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -1791,12 +1807,11 @@ public final class AutonomousDwDatabase
         private DbWorkload dbWorkload;
 
         /**
-         * The Autonomous Database workload type. The following values are valid:
-         *
-         * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-         * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-         * indicates an Autonomous Database with the Oracle APEX Application Development workload
-         * type.
+         * The Autonomous AI Database workload type. The following values are valid: - OLTP -
+         * indicates an Autonomous AI Transaction Processing database - DW - indicates an Autonomous
+         * AI Lakehouse database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates
+         * an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+         * - LH - indicates an Oracle Autonomous AI Lakehouse database
          *
          * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
          * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -1812,23 +1827,23 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers
-         * can use to build and test new applications. On Serverless, these are low-cost and billed
-         * per instance, on Dedicated and Cloud@Customer there is no additional cost to create
-         * Developer databases. Developer databases come with limited resources and is not intended
-         * for large-scale testing and production deployments. When you need more compute or storage
-         * resources, you may upgrade to a full paid production database.
+         * Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that
+         * developers can use to build and test new applications. On Serverless, these are low-cost
+         * and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to
+         * create Developer databases. Developer databases come with limited resources and is not
+         * intended for large-scale testing and production deployments. When you need more compute
+         * or storage resources, you may upgrade to a full paid production database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
         private Boolean isDevTier;
 
         /**
-         * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers
-         * can use to build and test new applications. On Serverless, these are low-cost and billed
-         * per instance, on Dedicated and Cloud@Customer there is no additional cost to create
-         * Developer databases. Developer databases come with limited resources and is not intended
-         * for large-scale testing and production deployments. When you need more compute or storage
-         * resources, you may upgrade to a full paid production database.
+         * Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that
+         * developers can use to build and test new applications. On Serverless, these are low-cost
+         * and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to
+         * create Developer databases. Developer databases come with limited resources and is not
+         * intended for large-scale testing and production deployments. When you need more compute
+         * or storage resources, you may upgrade to a full paid production database.
          *
          * @param isDevTier the value to set
          * @return this builder
@@ -1849,8 +1864,9 @@ public final class AutonomousDwDatabase
          * should be specified. By default, database-level access control will be disabled for the
          * clone.
          *
-         * <p>This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer
-         * platform. For Autonomous Database Serverless instances, {@code whitelistedIps} is used.
+         * <p>This property is applicable only to Autonomous AI Databases on the Exadata
+         * Cloud@Customer platform. For Autonomous AI Database Serverless instances, {@code
+         * whitelistedIps} is used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlEnabled")
         private Boolean isAccessControlEnabled;
@@ -1866,8 +1882,9 @@ public final class AutonomousDwDatabase
          * should be specified. By default, database-level access control will be disabled for the
          * clone.
          *
-         * <p>This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer
-         * platform. For Autonomous Database Serverless instances, {@code whitelistedIps} is used.
+         * <p>This property is applicable only to Autonomous AI Databases on the Exadata
+         * Cloud@Customer platform. For Autonomous AI Database Serverless instances, {@code
+         * whitelistedIps} is used.
          *
          * @param isAccessControlEnabled the value to set
          * @return this builder
@@ -1878,18 +1895,18 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The client IP access control list (ACL). This feature is available for [Autonomous
+         * The client IP access control list (ACL). This feature is available for [Autonomous AI
          * Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata
          * Cloud@Customer. Only clients connecting from an IP address included in the ACL may access
-         * the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE' then
-         * Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-         * recovery peer called {@code standbywhitelistedips}.
+         * the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
+         * then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+         * disaster recovery peer called {@code standbywhitelistedips}.
          *
-         * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
-         * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
-         * Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if
-         * it\u2019s other configurations that need multiple pieces of information then its each
+         * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless
+         * inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle
+         * Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but
+         * if it\u2019s other configurations that need multiple pieces of information then its each
          * piece is connected with semicolon (;) as a delimiter. Example: {@code
          * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
          * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
@@ -1907,18 +1924,18 @@ public final class AutonomousDwDatabase
         private java.util.List<String> whitelistedIps;
 
         /**
-         * The client IP access control list (ACL). This feature is available for [Autonomous
+         * The client IP access control list (ACL). This feature is available for [Autonomous AI
          * Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata
          * Cloud@Customer. Only clients connecting from an IP address included in the ACL may access
-         * the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE' then
-         * Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-         * recovery peer called {@code standbywhitelistedips}.
+         * the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
+         * then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+         * disaster recovery peer called {@code standbywhitelistedips}.
          *
-         * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
-         * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
-         * Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if
-         * it\u2019s other configurations that need multiple pieces of information then its each
+         * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless
+         * inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle
+         * Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but
+         * if it\u2019s other configurations that need multiple pieces of information then its each
          * piece is connected with semicolon (;) as a delimiter. Example: {@code
          * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
          * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
@@ -1941,23 +1958,25 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * This field will be null if the Autonomous Database is not Data Guard enabled or Access
-         * Control is disabled. It's value would be {@code TRUE} if Autonomous Database is Data
-         * Guard enabled and Access Control is enabled and if the Autonomous Database uses primary
-         * IP access control list (ACL) for standby. It's value would be {@code FALSE} if Autonomous
-         * Database is Data Guard enabled and Access Control is enabled and if the Autonomous
-         * Database uses different IP access control list (ACL) for standby compared to primary.
+         * This field will be null if the Autonomous AI Database is not Data Guard enabled or Access
+         * Control is disabled. It's value would be {@code TRUE} if Autonomous AI Database is Data
+         * Guard enabled and Access Control is enabled and if the Autonomous AI Database uses
+         * primary IP access control list (ACL) for standby. It's value would be {@code FALSE} if
+         * Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the
+         * Autonomous AI Database uses different IP access control list (ACL) for standby compared
+         * to primary.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
         private Boolean arePrimaryWhitelistedIpsUsed;
 
         /**
-         * This field will be null if the Autonomous Database is not Data Guard enabled or Access
-         * Control is disabled. It's value would be {@code TRUE} if Autonomous Database is Data
-         * Guard enabled and Access Control is enabled and if the Autonomous Database uses primary
-         * IP access control list (ACL) for standby. It's value would be {@code FALSE} if Autonomous
-         * Database is Data Guard enabled and Access Control is enabled and if the Autonomous
-         * Database uses different IP access control list (ACL) for standby compared to primary.
+         * This field will be null if the Autonomous AI Database is not Data Guard enabled or Access
+         * Control is disabled. It's value would be {@code TRUE} if Autonomous AI Database is Data
+         * Guard enabled and Access Control is enabled and if the Autonomous AI Database uses
+         * primary IP access control list (ACL) for standby. It's value would be {@code FALSE} if
+         * Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the
+         * Autonomous AI Database uses different IP access control list (ACL) for standby compared
+         * to primary.
          *
          * @param arePrimaryWhitelistedIpsUsed the value to set
          * @return this builder
@@ -1968,18 +1987,18 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The client IP access control list (ACL). This feature is available for [Autonomous
+         * The client IP access control list (ACL). This feature is available for [Autonomous AI
          * Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata
          * Cloud@Customer. Only clients connecting from an IP address included in the ACL may access
-         * the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE' then
-         * Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-         * recovery peer called {@code standbywhitelistedips}.
+         * the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
+         * then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+         * disaster recovery peer called {@code standbywhitelistedips}.
          *
-         * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
-         * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
-         * Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if
-         * it\u2019s other configurations that need multiple pieces of information then its each
+         * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless
+         * inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle
+         * Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but
+         * if it\u2019s other configurations that need multiple pieces of information then its each
          * piece is connected with semicolon (;) as a delimiter. Example: {@code
          * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
          * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
@@ -1997,18 +2016,18 @@ public final class AutonomousDwDatabase
         private java.util.List<String> standbyWhitelistedIps;
 
         /**
-         * The client IP access control list (ACL). This feature is available for [Autonomous
+         * The client IP access control list (ACL). This feature is available for [Autonomous AI
          * Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata
          * Cloud@Customer. Only clients connecting from an IP address included in the ACL may access
-         * the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE' then
-         * Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-         * recovery peer called {@code standbywhitelistedips}.
+         * the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
+         * then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+         * disaster recovery peer called {@code standbywhitelistedips}.
          *
-         * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
-         * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
-         * Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if
-         * it\u2019s other configurations that need multiple pieces of information then its each
+         * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless
+         * inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle
+         * Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but
+         * if it\u2019s other configurations that need multiple pieces of information then its each
          * piece is connected with semicolon (;) as a delimiter. Example: {@code
          * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
          * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
@@ -2030,12 +2049,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("standbyWhitelistedIps");
             return this;
         }
-        /** Information about Oracle APEX Application Development. */
+        /** Information about Oracle APEX AI Application Development. */
         @com.fasterxml.jackson.annotation.JsonProperty("apexDetails")
         private AutonomousDatabaseApex apexDetails;
 
         /**
-         * Information about Oracle APEX Application Development.
+         * Information about Oracle APEX AI Application Development.
          *
          * @param apexDetails the value to set
          * @return this builder
@@ -2046,14 +2065,14 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The
+         * Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The
          * default value is {@code TRUE}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
         /**
-         * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The
+         * Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The
          * default value is {@code TRUE}.
          *
          * @param isAutoScalingEnabled the value to set
@@ -2064,12 +2083,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
-        /** Status of the Data Safe registration for this Autonomous Database. */
+        /** Status of the Data Safe registration for this Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataSafeStatus")
         private DataSafeStatus dataSafeStatus;
 
         /**
-         * Status of the Data Safe registration for this Autonomous Database.
+         * Status of the Data Safe registration for this Autonomous AI Database.
          *
          * @param dataSafeStatus the value to set
          * @return this builder
@@ -2079,12 +2098,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("dataSafeStatus");
             return this;
         }
-        /** Status of Operations Insights for this Autonomous Database. */
+        /** Status of Operations Insights for this Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
         private OperationsInsightsStatus operationsInsightsStatus;
 
         /**
-         * Status of Operations Insights for this Autonomous Database.
+         * Status of Operations Insights for this Autonomous AI Database.
          *
          * @param operationsInsightsStatus the value to set
          * @return this builder
@@ -2094,12 +2113,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("operationsInsightsStatus");
             return this;
         }
-        /** Status of Database Management for this Autonomous Database. */
+        /** Status of Database Management for this Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
         private DatabaseManagementStatus databaseManagementStatus;
 
         /**
-         * Status of Database Management for this Autonomous Database.
+         * Status of Database Management for this Autonomous AI Database.
          *
          * @param databaseManagementStatus the value to set
          * @return this builder
@@ -2155,7 +2174,7 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * Indicates if the Autonomous Database is a refreshable clone.
+         * Indicates if the Autonomous AI Database is a refreshable clone.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel,
@@ -2166,7 +2185,7 @@ public final class AutonomousDwDatabase
         private Boolean isRefreshableClone;
 
         /**
-         * Indicates if the Autonomous Database is a refreshable clone.
+         * Indicates if the Autonomous AI Database is a refreshable clone.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel,
@@ -2233,8 +2252,8 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY}
-         * or {@code READ_WRITE} mode.
+         * Indicates the Autonomous AI Database mode. The database can be opened in {@code
+         * READ_ONLY} or {@code READ_WRITE} mode.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
@@ -2244,8 +2263,8 @@ public final class AutonomousDwDatabase
         private OpenMode openMode;
 
         /**
-         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY}
-         * or {@code READ_WRITE} mode.
+         * Indicates the Autonomous AI Database mode. The database can be opened in {@code
+         * READ_ONLY} or {@code READ_WRITE} mode.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
@@ -2261,14 +2280,14 @@ public final class AutonomousDwDatabase
         }
         /**
          * The refresh status of the clone. REFRESHING indicates that the clone is currently being
-         * refreshed with data from the source Autonomous Database.
+         * refreshed with data from the source Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("refreshableStatus")
         private RefreshableStatus refreshableStatus;
 
         /**
          * The refresh status of the clone. REFRESHING indicates that the clone is currently being
-         * refreshed with data from the source Autonomous Database.
+         * refreshed with data from the source Autonomous AI Database.
          *
          * @param refreshableStatus the value to set
          * @return this builder
@@ -2280,14 +2299,14 @@ public final class AutonomousDwDatabase
         }
         /**
          * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-         * refreshed with data from the source Autonomous Database.
+         * refreshed with data from the source Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
         private RefreshableMode refreshableMode;
 
         /**
          * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-         * refreshed with data from the source Autonomous Database.
+         * refreshed with data from the source Autonomous AI Database.
          *
          * @param refreshableMode the value to set
          * @return this builder
@@ -2299,14 +2318,16 @@ public final class AutonomousDwDatabase
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that was cloned to create the current Autonomous Database.
+         * source Autonomous AI Database that was cloned to create the current Autonomous AI
+         * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that was cloned to create the current Autonomous Database.
+         * source Autonomous AI Database that was cloned to create the current Autonomous AI
+         * Database.
          *
          * @param sourceId the value to set
          * @return this builder
@@ -2317,7 +2338,7 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The Autonomous Database permission level. Restricted mode allows access only by admin
+         * The Autonomous AI Database permission level. Restricted mode allows access only by admin
          * users.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
@@ -2329,7 +2350,7 @@ public final class AutonomousDwDatabase
         private PermissionLevel permissionLevel;
 
         /**
-         * The Autonomous Database permission level. Restricted mode allows access only by admin
+         * The Autonomous AI Database permission level. Restricted mode allows access only by admin
          * users.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
@@ -2345,12 +2366,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("permissionLevel");
             return this;
         }
-        /** The timestamp of the last switchover operation for the Autonomous Database. */
+        /** The timestamp of the last switchover operation for the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastSwitchover")
         private java.util.Date timeOfLastSwitchover;
 
         /**
-         * The timestamp of the last switchover operation for the Autonomous Database.
+         * The timestamp of the last switchover operation for the Autonomous AI Database.
          *
          * @param timeOfLastSwitchover the value to set
          * @return this builder
@@ -2376,18 +2397,18 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data
+         * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data
          * Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
-         * Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
+         * Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
          * infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
         private Boolean isDataGuardEnabled;
 
         /**
-         * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data
+         * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data
          * Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
-         * Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
+         * Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
          * infrastructure.
          *
          * @param isDataGuardEnabled the value to set
@@ -2429,17 +2450,19 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not
-         * applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases
-         * using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled.
+         * Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI
+         * Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
+         * infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isLocalDataGuardEnabled")
         private Boolean isLocalDataGuardEnabled;
 
         /**
-         * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not
-         * applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases
-         * using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled.
+         * Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI
+         * Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
+         * infrastructure.
          *
          * @param isLocalDataGuardEnabled the value to set
          * @return this builder
@@ -2450,16 +2473,16 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not
-         * applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata
+         * Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not
+         * applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata
          * Cloud@Customer infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isRemoteDataGuardEnabled")
         private Boolean isRemoteDataGuardEnabled;
 
         /**
-         * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not
-         * applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata
+         * Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not
+         * applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata
          * Cloud@Customer infrastructure.
          *
          * @param isRemoteDataGuardEnabled the value to set
@@ -2480,14 +2503,14 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          *
          * @param role the value to set
@@ -2499,14 +2522,14 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * List of Oracle Database versions available for a database upgrade. If there are no
+         * List of Oracle AI Database versions available for a database upgrade. If there are no
          * version upgrades available, this list is empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("availableUpgradeVersions")
         private java.util.List<String> availableUpgradeVersions;
 
         /**
-         * List of Oracle Database versions available for a database upgrade. If there are no
+         * List of Oracle AI Database versions available for a database upgrade. If there are no
          * version upgrades available, this list is empty.
          *
          * @param availableUpgradeVersions the value to set
@@ -2596,7 +2619,7 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The the date and time that auto-refreshing will begin for an Autonomous Database
+         * The the date and time that auto-refreshing will begin for an Autonomous AI Database
          * refreshable clone. This value controls only the start time for the first refresh
          * operation. Subsequent (ongoing) refresh operations have start times controlled by the
          * value of the {@code autoRefreshFrequencyInSeconds} parameter.
@@ -2605,7 +2628,7 @@ public final class AutonomousDwDatabase
         private java.util.Date timeOfAutoRefreshStart;
 
         /**
-         * The the date and time that auto-refreshing will begin for an Autonomous Database
+         * The the date and time that auto-refreshing will begin for an Autonomous AI Database
          * refreshable clone. This value controls only the start time for the first refresh
          * operation. Subsequent (ongoing) refresh operations have start times controlled by the
          * value of the {@code autoRefreshFrequencyInSeconds} parameter.
@@ -2619,14 +2642,14 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The list of regions that support the creation of an Autonomous Database clone or an
+         * The list of regions that support the creation of an Autonomous AI Database clone or an
          * Autonomous Data Guard standby database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("supportedRegionsToCloneTo")
         private java.util.List<String> supportedRegionsToCloneTo;
 
         /**
-         * The list of regions that support the creation of an Autonomous Database clone or an
+         * The list of regions that support the creation of an Autonomous AI Database clone or an
          * Autonomous Data Guard standby database.
          *
          * @param supportedRegionsToCloneTo the value to set
@@ -2653,15 +2676,15 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where
-         * the standby was provisioned in the same region as the primary database.
+         * The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database
+         * where the standby was provisioned in the same region as the primary database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLocalDataGuardEnabled")
         private java.util.Date timeLocalDataGuardEnabled;
 
         /**
-         * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where
-         * the standby was provisioned in the same region as the primary database.
+         * The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database
+         * where the standby was provisioned in the same region as the primary database.
          *
          * @param timeLocalDataGuardEnabled the value to set
          * @return this builder
@@ -2672,8 +2695,8 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For
-         * Autonomous Database Serverless, Autonomous Data Guard associations have designated
+         * **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For
+         * Autonomous AI Database Serverless, Autonomous Data Guard associations have designated
          * primary and standby regions, and these region types do not change when the database
          * changes roles. The standby regions in Autonomous Data Guard associations can be the same
          * region designated as the primary region, or they can be remote regions. Certain database
@@ -2685,8 +2708,8 @@ public final class AutonomousDwDatabase
         private DataguardRegionType dataguardRegionType;
 
         /**
-         * **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For
-         * Autonomous Database Serverless, Autonomous Data Guard associations have designated
+         * **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For
+         * Autonomous AI Database Serverless, Autonomous Data Guard associations have designated
          * primary and standby regions, and these region types do not change when the database
          * changes roles. The standby regions in Autonomous Data Guard associations can be the same
          * region designated as the primary region, or they can be remote regions. Certain database
@@ -2703,7 +2726,7 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The date and time the Autonomous Data Guard role was switched for the Autonomous
+         * The date and time the Autonomous Data Guard role was switched for the Autonomous AI
          * Database. For databases that have standbys in both the primary Data Guard region and a
          * remote Data Guard standby region, this is the latest timestamp of either the database
          * using the "primary" role in the primary Data Guard region, or database located in the
@@ -2713,7 +2736,7 @@ public final class AutonomousDwDatabase
         private java.util.Date timeDataGuardRoleChanged;
 
         /**
-         * The date and time the Autonomous Data Guard role was switched for the Autonomous
+         * The date and time the Autonomous Data Guard role was switched for the Autonomous AI
          * Database. For databases that have standbys in both the primary Data Guard region and a
          * remote Data Guard standby region, this is the latest timestamp of either the database
          * using the "primary" role in the primary Data Guard region, or database located in the
@@ -2731,7 +2754,7 @@ public final class AutonomousDwDatabase
          * The list of
          * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby
          * databases located in Autonomous Data Guard remote regions that are associated with the
-         * source database. Note that for Autonomous Database Serverless instances, standby
+         * source database. Note that for Autonomous AI Database Serverless instances, standby
          * databases located in the same region as the source primary database do not have OCIDs.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerDbIds")
@@ -2741,7 +2764,7 @@ public final class AutonomousDwDatabase
          * The list of
          * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby
          * databases located in Autonomous Data Guard remote regions that are associated with the
-         * source database. Note that for Autonomous Database Serverless instances, standby
+         * source database. Note that for Autonomous AI Database Serverless instances, standby
          * databases located in the same region as the source primary database do not have OCIDs.
          *
          * @param peerDbIds the value to set
@@ -2753,7 +2776,7 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * Specifies if the Autonomous Database requires mTLS connections.
+         * Specifies if the Autonomous AI Database requires mTLS connections.
          *
          * <p>This may not be updated in parallel with any of the following: licenseModel,
          * databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps,
@@ -2764,20 +2787,21 @@ public final class AutonomousDwDatabase
          * change from true to false on July 1, 2023 in the following APIs: -
          * CreateAutonomousDatabase - GetAutonomousDatabase - UpdateAutonomousDatabase Details:
          * Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value
-         * was true. This applies to Autonomous Database Serverless. Does this impact me? If you use
-         * or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase,
-         * GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly
-         * modify, the scripts for the changed default value of the attribute. Should you choose not
-         * to leave your scripts unchanged, the API calls containing this attribute will continue to
-         * work, but the default value will switch from true to false. How do I make this change?
-         * Using either OCI SDKs or command line tools, update your custom scripts to explicitly set
-         * the isMTLSConnectionRequired attribute to true.
+         * was true. This applies to Autonomous AI Database Serverless. Does this impact me? If you
+         * use or maintain custom scripts or Terraform scripts referencing the
+         * CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you
+         * want to check, and possibly modify, the scripts for the changed default value of the
+         * attribute. Should you choose not to leave your scripts unchanged, the API calls
+         * containing this attribute will continue to work, but the default value will switch from
+         * true to false. How do I make this change? Using either OCI SDKs or command line tools,
+         * update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to
+         * true.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
         private Boolean isMtlsConnectionRequired;
 
         /**
-         * Specifies if the Autonomous Database requires mTLS connections.
+         * Specifies if the Autonomous AI Database requires mTLS connections.
          *
          * <p>This may not be updated in parallel with any of the following: licenseModel,
          * databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps,
@@ -2788,14 +2812,15 @@ public final class AutonomousDwDatabase
          * change from true to false on July 1, 2023 in the following APIs: -
          * CreateAutonomousDatabase - GetAutonomousDatabase - UpdateAutonomousDatabase Details:
          * Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value
-         * was true. This applies to Autonomous Database Serverless. Does this impact me? If you use
-         * or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase,
-         * GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly
-         * modify, the scripts for the changed default value of the attribute. Should you choose not
-         * to leave your scripts unchanged, the API calls containing this attribute will continue to
-         * work, but the default value will switch from true to false. How do I make this change?
-         * Using either OCI SDKs or command line tools, update your custom scripts to explicitly set
-         * the isMTLSConnectionRequired attribute to true.
+         * was true. This applies to Autonomous AI Database Serverless. Does this impact me? If you
+         * use or maintain custom scripts or Terraform scripts referencing the
+         * CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you
+         * want to check, and possibly modify, the scripts for the changed default value of the
+         * attribute. Should you choose not to leave your scripts unchanged, the API calls
+         * containing this attribute will continue to work, but the default value will switch from
+         * true to false. How do I make this change? Using either OCI SDKs or command line tools,
+         * update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to
+         * true.
          *
          * @param isMtlsConnectionRequired the value to set
          * @return this builder
@@ -2821,14 +2846,14 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The unique identifier for leader autonomous database OCID
+         * The unique identifier for leader Autonomous AI Database OCID
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
         private String resourcePoolLeaderId;
 
         /**
-         * The unique identifier for leader autonomous database OCID
+         * The unique identifier for leader Autonomous AI Database OCID
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param resourcePoolLeaderId the value to set
@@ -2884,17 +2909,17 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
-         * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
-         * maintenance schedule follows the normal cycle
+         * The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY
+         * maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A
+         * REGULAR maintenance schedule follows the normal cycle
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
         private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
         /**
-         * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
-         * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
-         * maintenance schedule follows the normal cycle
+         * The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY
+         * maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A
+         * REGULAR maintenance schedule follows the normal cycle
          *
          * @param autonomousMaintenanceScheduleType the value to set
          * @return this builder
@@ -2936,14 +2961,14 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * Indicates if auto scaling is enabled for the Autonomous Database storage. The default
+         * Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default
          * value is {@code FALSE}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
         private Boolean isAutoScalingForStorageEnabled;
 
         /**
-         * Indicates if auto scaling is enabled for the Autonomous Database storage. The default
+         * Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default
          * value is {@code FALSE}.
          *
          * @param isAutoScalingForStorageEnabled the value to set
@@ -3000,12 +3025,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("actualUsedDataStorageSizeInTBs");
             return this;
         }
-        /** The Oracle Database Edition that applies to the Autonomous databases. */
+        /** The Oracle AI Database Edition that applies to the Autonomous AI Databases. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private DatabaseEdition databaseEdition;
 
         /**
-         * The Oracle Database Edition that applies to the Autonomous databases.
+         * The Oracle AI Database Edition that applies to the Autonomous AI Databases.
          *
          * @param databaseEdition the value to set
          * @return this builder
@@ -3042,8 +3067,17 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("dbToolsDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vanityUrlDetails")
+        private VanityUrlDetails vanityUrlDetails;
+
+        public Builder vanityUrlDetails(VanityUrlDetails vanityUrlDetails) {
+            this.vanityUrlDetails = vanityUrlDetails;
+            this.__explicitlySet__.add("vanityUrlDetails");
+            return this;
+        }
         /**
-         * Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless
+         * Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless
          * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
          * recovery time objective (RTO) during failover or switchover. Backup-based DR type
          * provides lower cost DR with a slower RTO during failover or switchover.
@@ -3052,7 +3086,7 @@ public final class AutonomousDwDatabase
         private DisasterRecoveryConfiguration.DisasterRecoveryType localDisasterRecoveryType;
 
         /**
-         * Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless
+         * Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless
          * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
          * recovery time objective (RTO) during failover or switchover. Backup-based DR type
          * provides lower cost DR with a slower RTO during failover or switchover.
@@ -3067,8 +3101,8 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For
-         * Autonomous Database Serverless instances, DR associations have designated primary and
+         * **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For
+         * Autonomous AI Database Serverless instances, DR associations have designated primary and
          * standby regions. These region types do not change when the database changes roles. The
          * standby region in DR associations can be the same region as the primary region, or they
          * can be in a remote regions. Some database administration operations may be available only
@@ -3079,8 +3113,8 @@ public final class AutonomousDwDatabase
         private DisasterRecoveryRegionType disasterRecoveryRegionType;
 
         /**
-         * **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For
-         * Autonomous Database Serverless instances, DR associations have designated primary and
+         * **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For
+         * Autonomous AI Database Serverless instances, DR associations have designated primary and
          * standby regions. These region types do not change when the database changes roles. The
          * standby region in DR associations can be the same region as the primary region, or they
          * can be in a remote regions. Some database administration operations may be available only
@@ -3097,14 +3131,14 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * The date and time the Disaster Recovery role was switched for the standby Autonomous
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous AI
          * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeDisasterRecoveryRoleChanged")
         private java.util.Date timeDisasterRecoveryRoleChanged;
 
         /**
-         * The date and time the Disaster Recovery role was switched for the standby Autonomous
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous AI
          * Database.
          *
          * @param timeDisasterRecoveryRoleChanged the value to set
@@ -3147,12 +3181,14 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("netServicesArchitecture");
             return this;
         }
-        /** The availability domain where the Autonomous Database Serverless instance is located. */
+        /**
+         * The availability domain where the Autonomous AI Database Serverless instance is located.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain where the Autonomous Database Serverless instance is located.
+         * The availability domain where the Autonomous AI Database Serverless instance is located.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -3182,14 +3218,14 @@ public final class AutonomousDwDatabase
             return this;
         }
         /**
-         * A list of the source Autonomous Database's table space number(s) used to create this
+         * A list of the source Autonomous AI Database's table space number(s) used to create this
          * partial clone from the backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
         private java.util.List<Integer> cloneTableSpaceList;
 
         /**
-         * A list of the source Autonomous Database's table space number(s) used to create this
+         * A list of the source Autonomous AI Database's table space number(s) used to create this
          * partial clone from the backup.
          *
          * @param cloneTableSpaceList the value to set
@@ -3200,12 +3236,12 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("cloneTableSpaceList");
             return this;
         }
-        /** The Autonomous Database clone type. */
+        /** The Autonomous AI Database clone type. */
         @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
         private CloneType cloneType;
 
         /**
-         * The Autonomous Database clone type.
+         * The Autonomous AI Database clone type.
          *
          * @param cloneType the value to set
          * @return this builder
@@ -3292,6 +3328,7 @@ public final class AutonomousDwDatabase
                             this.connectionStrings,
                             this.connectionUrls,
                             this.publicConnectionUrls,
+                            this.vanityConnectionUrls,
                             this.licenseModel,
                             this.byolComputeCountLimit,
                             this.usedDataStorageSizeInTBs,
@@ -3363,6 +3400,7 @@ public final class AutonomousDwDatabase
                             this.actualUsedDataStorageSizeInTBs,
                             this.databaseEdition,
                             this.dbToolsDetails,
+                            this.vanityUrlDetails,
                             this.localDisasterRecoveryType,
                             this.disasterRecoveryRegionType,
                             this.timeDisasterRecoveryRoleChanged,
@@ -3538,6 +3576,9 @@ public final class AutonomousDwDatabase
             }
             if (model.wasPropertyExplicitlySet("publicConnectionUrls")) {
                 this.publicConnectionUrls(model.getPublicConnectionUrls());
+            }
+            if (model.wasPropertyExplicitlySet("vanityConnectionUrls")) {
+                this.vanityConnectionUrls(model.getVanityConnectionUrls());
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
@@ -3753,6 +3794,9 @@ public final class AutonomousDwDatabase
             if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
                 this.dbToolsDetails(model.getDbToolsDetails());
             }
+            if (model.wasPropertyExplicitlySet("vanityUrlDetails")) {
+                this.vanityUrlDetails(model.getVanityUrlDetails());
+            }
             if (model.wasPropertyExplicitlySet("localDisasterRecoveryType")) {
                 this.localDisasterRecoveryType(model.getLocalDisasterRecoveryType());
             }
@@ -3799,14 +3843,14 @@ public final class AutonomousDwDatabase
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database.
+     * Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database.
+     * Autonomous AI Database.
      *
      * @return the value
      */
@@ -3848,7 +3892,7 @@ public final class AutonomousDwDatabase
         return subscriptionId;
     }
 
-    /** The current state of the Autonomous Database. */
+    /** The current state of the Autonomous AI Database. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -3900,12 +3944,12 @@ public final class AutonomousDwDatabase
             throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-    /** The current state of the Autonomous Database. */
+    /** The current state of the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Autonomous Database.
+     * The current state of the Autonomous AI Database.
      *
      * @return the value
      */
@@ -3987,9 +4031,9 @@ public final class AutonomousDwDatabase
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -3997,9 +4041,9 @@ public final class AutonomousDwDatabase
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      *
      * @return the value
      */
@@ -4021,7 +4065,8 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The character set for the autonomous database. The default is AL32UTF8. Allowed values are:
+     * The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values
+     * are:
      *
      * <p>AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6,
      * AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707,
@@ -4043,7 +4088,8 @@ public final class AutonomousDwDatabase
     private final String characterSet;
 
     /**
-     * The character set for the autonomous database. The default is AL32UTF8. Allowed values are:
+     * The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values
+     * are:
      *
      * <p>AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6,
      * AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707,
@@ -4068,14 +4114,14 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The national character set for the autonomous database. The default is AL16UTF16. Allowed
+     * The national character set for the Autonomous AI Database. The default is AL16UTF16. Allowed
      * values are: AL16UTF16 or UTF8.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
     private final String ncharacterSet;
 
     /**
-     * The national character set for the autonomous database. The default is AL16UTF16. Allowed
+     * The national character set for the Autonomous AI Database. The default is AL16UTF16. Allowed
      * values are: AL16UTF16 or UTF8.
      *
      * @return the value
@@ -4085,16 +4131,16 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
-     * Database. This property is applicable only to Autonomous Databases on the Exadata
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI
+     * Database. This property is applicable only to Autonomous AI Databases on the Exadata
      * Cloud@Customer platform.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
     private final Integer inMemoryPercentage;
 
     /**
-     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
-     * Database. This property is applicable only to Autonomous Databases on the Exadata
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI
+     * Database. This property is applicable only to Autonomous AI Databases on the Exadata
      * Cloud@Customer platform.
      *
      * @return the value
@@ -4103,12 +4149,12 @@ public final class AutonomousDwDatabase
         return inMemoryPercentage;
     }
 
-    /** The area assigned to In-Memory tables in Autonomous Database. */
+    /** The area assigned to In-Memory tables in Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("inMemoryAreaInGBs")
     private final Integer inMemoryAreaInGBs;
 
     /**
-     * The area assigned to In-Memory tables in Autonomous Database.
+     * The area assigned to In-Memory tables in Autonomous AI Database.
      *
      * @return the value
      */
@@ -4138,7 +4184,7 @@ public final class AutonomousDwDatabase
 
     /**
      * Indicates if this is an Always Free resource. The default value is false. Note that Always
-     * Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
+     * Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
      * and CPU cannot be scaled.
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
@@ -4151,7 +4197,7 @@ public final class AutonomousDwDatabase
 
     /**
      * Indicates if this is an Always Free resource. The default value is false. Note that Always
-     * Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
+     * Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
      * and CPU cannot be scaled.
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
@@ -4259,11 +4305,11 @@ public final class AutonomousDwDatabase
 
     /**
      * The number of CPU cores to be made available to the database. When the ECPU is selected, the
-     * value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the
-     * maximum number of cores is determined by the infrastructure shape. See [Characteristics of
-     * Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-     * for shape details.
+     * value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata infrastructure,
+     * the maximum number of cores is determined by the infrastructure shape. See [Characteristics
+     * of Infrastructure
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape
+     * details.
      *
      * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
      */
@@ -4272,11 +4318,11 @@ public final class AutonomousDwDatabase
 
     /**
      * The number of CPU cores to be made available to the database. When the ECPU is selected, the
-     * value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the
-     * maximum number of cores is determined by the infrastructure shape. See [Characteristics of
-     * Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
-     * for shape details.
+     * value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata infrastructure,
+     * the maximum number of cores is determined by the infrastructure shape. See [Characteristics
+     * of Infrastructure
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape
+     * details.
      *
      * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
      *
@@ -4304,7 +4350,7 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
+     * The compute model of the Autonomous AI Database. This is required if using the {@code
      * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
      * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
      * compute model is legacy.
@@ -4342,7 +4388,7 @@ public final class AutonomousDwDatabase
         }
     };
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
+     * The compute model of the Autonomous AI Database. This is required if using the {@code
      * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
      * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
      * compute model is legacy.
@@ -4351,7 +4397,7 @@ public final class AutonomousDwDatabase
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
+     * The compute model of the Autonomous AI Database. This is required if using the {@code
      * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
      * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
      * compute model is legacy.
@@ -4364,9 +4410,9 @@ public final class AutonomousDwDatabase
 
     /**
      * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the
-     * compute model and whether the database is an Autonomous Database Serverless instance or an
-     * Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires a
-     * minimum value of one, for databases in the elastic resource pool and minimum value of two,
+     * compute model and whether the database is an Autonomous AI Database Serverless instance or an
+     * Autonomous AI Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires
+     * a minimum value of one, for databases in the elastic resource pool and minimum value of two,
      * otherwise. Required when using the {@code computeModel} parameter. When using {@code
      * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
      * Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU
@@ -4377,9 +4423,9 @@ public final class AutonomousDwDatabase
 
     /**
      * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the
-     * compute model and whether the database is an Autonomous Database Serverless instance or an
-     * Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires a
-     * minimum value of one, for databases in the elastic resource pool and minimum value of two,
+     * compute model and whether the database is an Autonomous AI Database Serverless instance or an
+     * Autonomous AI Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires
+     * a minimum value of one, for databases in the elastic resource pool and minimum value of two,
      * otherwise. Required when using the {@code computeModel} parameter. When using {@code
      * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
      * Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU
@@ -4420,17 +4466,18 @@ public final class AutonomousDwDatabase
     /**
      * The number of OCPU cores to be made available to the database.
      *
-     * <p>The following points apply: - For Autonomous Databases on Dedicated Exadata
+     * <p>The following points apply: - For Autonomous AI Databases on Dedicated Exadata
      * Infrastructure, to provision less than 1 core, enter a fractional value in an increment of
      * 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that
-     * fractional OCPU values are not supported for Autonomous Database Serverless instances.) - To
-     * provision cores, enter an integer between 1 and the maximum number of cores available for the
-     * infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores.
-     * This applies to Autonomous Databases on both serverless and dedicated Exadata infrastructure.
-     * - For Autonomous Database Serverless instances, this parameter is not used.
+     * fractional OCPU values are not supported for Autonomous AI Database Serverless instances.) -
+     * To provision cores, enter an integer between 1 and the maximum number of cores available for
+     * the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5
+     * cores. This applies to Autonomous AI Databases on both serverless and dedicated Exadata
+     * infrastructure. - For Autonomous AI Database Serverless instances, this parameter is not
+     * used.
      *
-     * <p>For Autonomous Databases on Dedicated Exadata Infrastructure, the maximum number of cores
-     * is determined by the infrastructure shape. See [Characteristics of Infrastructure
+     * <p>For Autonomous AI Databases on Dedicated Exadata Infrastructure, the maximum number of
+     * cores is determined by the infrastructure shape. See [Characteristics of Infrastructure
      * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/index.html)
      * for shape details.
      *
@@ -4442,17 +4489,18 @@ public final class AutonomousDwDatabase
     /**
      * The number of OCPU cores to be made available to the database.
      *
-     * <p>The following points apply: - For Autonomous Databases on Dedicated Exadata
+     * <p>The following points apply: - For Autonomous AI Databases on Dedicated Exadata
      * Infrastructure, to provision less than 1 core, enter a fractional value in an increment of
      * 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that
-     * fractional OCPU values are not supported for Autonomous Database Serverless instances.) - To
-     * provision cores, enter an integer between 1 and the maximum number of cores available for the
-     * infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores.
-     * This applies to Autonomous Databases on both serverless and dedicated Exadata infrastructure.
-     * - For Autonomous Database Serverless instances, this parameter is not used.
+     * fractional OCPU values are not supported for Autonomous AI Database Serverless instances.) -
+     * To provision cores, enter an integer between 1 and the maximum number of cores available for
+     * the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5
+     * cores. This applies to Autonomous AI Databases on both serverless and dedicated Exadata
+     * infrastructure. - For Autonomous AI Database Serverless instances, this parameter is not
+     * used.
      *
-     * <p>For Autonomous Databases on Dedicated Exadata Infrastructure, the maximum number of cores
-     * is determined by the infrastructure shape. See [Characteristics of Infrastructure
+     * <p>For Autonomous AI Databases on Dedicated Exadata Infrastructure, the maximum number of
+     * cores is determined by the infrastructure shape. See [Characteristics of Infrastructure
      * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/index.html)
      * for shape details.
      *
@@ -4464,12 +4512,12 @@ public final class AutonomousDwDatabase
         return ocpuCount;
     }
 
-    /** An array of CPU values that an Autonomous Database can be scaled to. */
+    /** An array of CPU values that an Autonomous AI Database can be scaled to. */
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
     private final java.util.List<Float> provisionableCpus;
 
     /**
-     * An array of CPU values that an Autonomous Database can be scaled to.
+     * An array of CPU values that an Autonomous AI Database can be scaled to.
      *
      * @return the value
      */
@@ -4480,11 +4528,11 @@ public final class AutonomousDwDatabase
     /**
      * The quantity of data in the database, in terabytes.
      *
-     * <p>The following points apply to Autonomous Databases on Serverless Infrastructure: - This is
-     * an integer field whose value remains null when the data size is in GBs and cannot be
+     * <p>The following points apply to Autonomous AI Databases on Serverless Infrastructure: - This
+     * is an integer field whose value remains null when the data size is in GBs and cannot be
      * converted to TBs (by dividing the GB value by 1024) without rounding error. - To get the
      * exact value of data storage size without rounding error, please see {@code
-     * dataStorageSizeInGBs} of Autonomous Database.
+     * dataStorageSizeInGBs} of Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     private final Integer dataStorageSizeInTBs;
@@ -4492,11 +4540,11 @@ public final class AutonomousDwDatabase
     /**
      * The quantity of data in the database, in terabytes.
      *
-     * <p>The following points apply to Autonomous Databases on Serverless Infrastructure: - This is
-     * an integer field whose value remains null when the data size is in GBs and cannot be
+     * <p>The following points apply to Autonomous AI Databases on Serverless Infrastructure: - This
+     * is an integer field whose value remains null when the data size is in GBs and cannot be
      * converted to TBs (by dividing the GB value by 1024) without rounding error. - To get the
      * exact value of data storage size without rounding error, please see {@code
-     * dataStorageSizeInGBs} of Autonomous Database.
+     * dataStorageSizeInGBs} of Autonomous AI Database.
      *
      * @return the value
      */
@@ -4537,9 +4585,9 @@ public final class AutonomousDwDatabase
     /**
      * The quantity of data in the database, in gigabytes.
      *
-     * <p>For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure,
-     * this value is always populated. In all the other cases, this value will be null and {@code
-     * dataStorageSizeInTBs} will be populated instead.
+     * <p>For Autonomous AI Transaction Processing databases using ECPUs on Serverless
+     * Infrastructure, this value is always populated. In all the other cases, this value will be
+     * null and {@code dataStorageSizeInTBs} will be populated instead.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Integer dataStorageSizeInGBs;
@@ -4547,9 +4595,9 @@ public final class AutonomousDwDatabase
     /**
      * The quantity of data in the database, in gigabytes.
      *
-     * <p>For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure,
-     * this value is always populated. In all the other cases, this value will be null and {@code
-     * dataStorageSizeInTBs} will be populated instead.
+     * <p>For Autonomous AI Transaction Processing databases using ECPUs on Serverless
+     * Infrastructure, this value is always populated. In all the other cases, this value will be
+     * null and {@code dataStorageSizeInTBs} will be populated instead.
      *
      * @return the value
      */
@@ -4557,12 +4605,12 @@ public final class AutonomousDwDatabase
         return dataStorageSizeInGBs;
     }
 
-    /** The storage space consumed by Autonomous Database in GBs. */
+    /** The storage space consumed by Autonomous AI Database in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInGBs")
     private final Integer usedDataStorageSizeInGBs;
 
     /**
-     * The storage space consumed by Autonomous Database in GBs.
+     * The storage space consumed by Autonomous AI Database in GBs.
      *
      * @return the value
      */
@@ -4636,7 +4684,7 @@ public final class AutonomousDwDatabase
     /**
      * The Autonomous Container Database
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by
-     * Autonomous Database on Dedicated Exadata Infrastructure.
+     * Autonomous AI Database on Dedicated Exadata Infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
     private final String autonomousContainerDatabaseId;
@@ -4644,7 +4692,7 @@ public final class AutonomousDwDatabase
     /**
      * The Autonomous Container Database
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by
-     * Autonomous Database on Dedicated Exadata Infrastructure.
+     * Autonomous AI Database on Dedicated Exadata Infrastructure.
      *
      * @return the value
      */
@@ -4652,12 +4700,12 @@ public final class AutonomousDwDatabase
         return autonomousContainerDatabaseId;
     }
 
-    /** Indicates if the Autonomous Database is backup retention locked. */
+    /** Indicates if the Autonomous AI Database is backup retention locked. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
     private final Boolean isBackupRetentionLocked;
 
     /**
-     * Indicates if the Autonomous Database is backup retention locked.
+     * Indicates if the Autonomous AI Database is backup retention locked.
      *
      * @return the value
      */
@@ -4665,12 +4713,12 @@ public final class AutonomousDwDatabase
         return isBackupRetentionLocked;
     }
 
-    /** The date and time the Autonomous Database was most recently undeleted. */
+    /** The date and time the Autonomous AI Database was most recently undeleted. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUndeleted")
     private final java.util.Date timeUndeleted;
 
     /**
-     * The date and time the Autonomous Database was most recently undeleted.
+     * The date and time the Autonomous AI Database was most recently undeleted.
      *
      * @return the value
      */
@@ -4679,13 +4727,15 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to
+     * 26ai.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestAvailableDbVersionUpgrade")
     private final java.util.Date timeEarliestAvailableDbVersionUpgrade;
 
     /**
-     * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to
+     * 26ai.
      *
      * @return the value
      */
@@ -4693,12 +4743,12 @@ public final class AutonomousDwDatabase
         return timeEarliestAvailableDbVersionUpgrade;
     }
 
-    /** The max date and time the Autonomous Database can be scheduled to upgrade to 23ai. */
+    /** The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLatestAvailableDbVersionUpgrade")
     private final java.util.Date timeLatestAvailableDbVersionUpgrade;
 
     /**
-     * The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      *
      * @return the value
      */
@@ -4706,12 +4756,12 @@ public final class AutonomousDwDatabase
         return timeLatestAvailableDbVersionUpgrade;
     }
 
-    /** The date and time the Autonomous Database scheduled to upgrade to 23ai. */
+    /** The date and time the Autonomous AI Database scheduled to upgrade to 26ai. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledDbVersionUpgrade")
     private final java.util.Date timeScheduledDbVersionUpgrade;
 
     /**
-     * The date and time the Autonomous Database scheduled to upgrade to 23ai.
+     * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      *
      * @return the value
      */
@@ -4719,12 +4769,12 @@ public final class AutonomousDwDatabase
         return timeScheduledDbVersionUpgrade;
     }
 
-    /** The date and time the Autonomous Database was created. */
+    /** The date and time the Autonomous AI Database was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the Autonomous Database was created.
+     * The date and time the Autonomous AI Database was created.
      *
      * @return the value
      */
@@ -4732,12 +4782,14 @@ public final class AutonomousDwDatabase
         return timeCreated;
     }
 
-    /** The user-friendly name for the Autonomous Database. The name does not have to be unique. */
+    /**
+     * The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      *
      * @return the value
      */
@@ -4745,12 +4797,12 @@ public final class AutonomousDwDatabase
         return displayName;
     }
 
-    /** The URL of the Service Console for the Autonomous Database. */
+    /** The URL of the Service Console for the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceConsoleUrl")
     private final String serviceConsoleUrl;
 
     /**
-     * The URL of the Service Console for the Autonomous Database.
+     * The URL of the Service Console for the Autonomous AI Database.
      *
      * @return the value
      */
@@ -4759,17 +4811,17 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The connection string used to connect to the Autonomous Database. The username for the
-     * Service Console is ADMIN. Use the password you entered when creating the Autonomous Database
-     * for the password value.
+     * The connection string used to connect to the Autonomous AI Database. The username for the
+     * Service Console is ADMIN. Use the password you entered when creating the Autonomous AI
+     * Database for the password value.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
     private final AutonomousDatabaseConnectionStrings connectionStrings;
 
     /**
-     * The connection string used to connect to the Autonomous Database. The username for the
-     * Service Console is ADMIN. Use the password you entered when creating the Autonomous Database
-     * for the password value.
+     * The connection string used to connect to the Autonomous AI Database. The username for the
+     * Service Console is ADMIN. Use the password you entered when creating the Autonomous AI
+     * Database for the password value.
      *
      * @return the value
      */
@@ -4803,15 +4855,22 @@ public final class AutonomousDwDatabase
         return publicConnectionUrls;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("vanityConnectionUrls")
+    private final AutonomousDatabaseConnectionUrls vanityConnectionUrls;
+
+    public AutonomousDatabaseConnectionUrls getVanityConnectionUrls() {
+        return vanityConnectionUrls;
+    }
+
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -4854,14 +4913,14 @@ public final class AutonomousDwDatabase
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -4875,14 +4934,14 @@ public final class AutonomousDwDatabase
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -4918,14 +4977,14 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The amount of storage that has been used for Autonomous Databases in dedicated
+     * The amount of storage that has been used for Autonomous AI Databases in dedicated
      * infrastructure, in terabytes.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInTBs")
     private final Integer usedDataStorageSizeInTBs;
 
     /**
-     * The amount of storage that has been used for Autonomous Databases in dedicated
+     * The amount of storage that has been used for Autonomous AI Databases in dedicated
      * infrastructure, in terabytes.
      *
      * @return the value
@@ -5004,7 +5063,7 @@ public final class AutonomousDwDatabase
      * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual machine DB
      * systems, do not use a subnet that overlaps with 192.168.16.16/28. - For Exadata and virtual
      * machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20. - For
-     * Autonomous Database, setting this will disable public secure access to the database.
+     * Autonomous AI Database, setting this will disable public secure access to the database.
      *
      * <p>These subnets are used by the Oracle Clusterware private interconnect on the database
      * instance. Specifying an overlapping subnet will cause the private interconnect to
@@ -5020,7 +5079,7 @@ public final class AutonomousDwDatabase
      * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual machine DB
      * systems, do not use a subnet that overlaps with 192.168.16.16/28. - For Exadata and virtual
      * machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20. - For
-     * Autonomous Database, setting this will disable public secure access to the database.
+     * Autonomous AI Database, setting this will disable public secure access to the database.
      *
      * <p>These subnets are used by the Oracle Clusterware private interconnect on the database
      * instance. Specifying an overlapping subnet will cause the private interconnect to
@@ -5037,7 +5096,7 @@ public final class AutonomousDwDatabase
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -5048,7 +5107,7 @@ public final class AutonomousDwDatabase
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
@@ -5129,12 +5188,12 @@ public final class AutonomousDwDatabase
         return privateEndpointIp;
     }
 
-    /** A valid Oracle Database version for Autonomous Database. */
+    /** A valid Oracle AI Database version for Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
      *
      * @return the value
      */
@@ -5142,12 +5201,12 @@ public final class AutonomousDwDatabase
         return dbVersion;
     }
 
-    /** Indicates if the Autonomous Database version is a preview version. */
+    /** Indicates if the Autonomous AI Database version is a preview version. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPreview")
     private final Boolean isPreview;
 
     /**
-     * Indicates if the Autonomous Database version is a preview version.
+     * Indicates if the Autonomous AI Database version is a preview version.
      *
      * @return the value
      */
@@ -5156,11 +5215,11 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid: - OLTP - indicates
+     * an Autonomous AI Transaction Processing database - DW - indicates an Autonomous AI Lakehouse
+     * database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates an Autonomous AI
+     * Database with the Oracle APEX AI Application Development workload type. - LH - indicates an
+     * Oracle Autonomous AI Lakehouse database
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -5172,6 +5231,7 @@ public final class AutonomousDwDatabase
         Dw("DW"),
         Ajd("AJD"),
         Apex("APEX"),
+        Lh("LH"),
         ;
 
         private final String value;
@@ -5202,11 +5262,11 @@ public final class AutonomousDwDatabase
         }
     };
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid: - OLTP - indicates
+     * an Autonomous AI Transaction Processing database - DW - indicates an Autonomous AI Lakehouse
+     * database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates an Autonomous AI
+     * Database with the Oracle APEX AI Application Development workload type. - LH - indicates an
+     * Oracle Autonomous AI Lakehouse database
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -5217,11 +5277,11 @@ public final class AutonomousDwDatabase
     private final DbWorkload dbWorkload;
 
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid: - OLTP - indicates
+     * an Autonomous AI Transaction Processing database - DW - indicates an Autonomous AI Lakehouse
+     * database - AJD - indicates an Autonomous AI JSON Database - APEX - indicates an Autonomous AI
+     * Database with the Oracle APEX AI Application Development workload type. - LH - indicates an
+     * Oracle Autonomous AI Lakehouse database
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -5235,8 +5295,8 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can
-     * use to build and test new applications. On Serverless, these are low-cost and billed per
+     * Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers
+     * can use to build and test new applications. On Serverless, these are low-cost and billed per
      * instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer
      * databases. Developer databases come with limited resources and is not intended for
      * large-scale testing and production deployments. When you need more compute or storage
@@ -5246,8 +5306,8 @@ public final class AutonomousDwDatabase
     private final Boolean isDevTier;
 
     /**
-     * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can
-     * use to build and test new applications. On Serverless, these are low-cost and billed per
+     * Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers
+     * can use to build and test new applications. On Serverless, these are low-cost and billed per
      * instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer
      * databases. Developer databases come with limited resources and is not intended for
      * large-scale testing and production deployments. When you need more compute or storage
@@ -5269,8 +5329,8 @@ public final class AutonomousDwDatabase
      * console. When creating a database clone, the desired access control setting should be
      * specified. By default, database-level access control will be disabled for the clone.
      *
-     * <p>This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer
-     * platform. For Autonomous Database Serverless instances, {@code whitelistedIps} is used.
+     * <p>This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer
+     * platform. For Autonomous AI Database Serverless instances, {@code whitelistedIps} is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlEnabled")
     private final Boolean isAccessControlEnabled;
@@ -5285,8 +5345,8 @@ public final class AutonomousDwDatabase
      * console. When creating a database clone, the desired access control setting should be
      * specified. By default, database-level access control will be disabled for the clone.
      *
-     * <p>This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer
-     * platform. For Autonomous Database Serverless instances, {@code whitelistedIps} is used.
+     * <p>This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer
+     * platform. For Autonomous AI Database Serverless instances, {@code whitelistedIps} is used.
      *
      * @return the value
      */
@@ -5295,14 +5355,14 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The client IP access control list (ACL). This feature is available for [Autonomous Database
-     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
-     * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
-     * access the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
-     * then Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-     * recovery peer called {@code standbywhitelistedips}.
+     * The client IP access control list (ACL). This feature is available for [Autonomous AI
+     * Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+     * and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
+     * may access the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is
+     * 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+     * disaster recovery peer called {@code standbywhitelistedips}.
      *
-     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain
      * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple
      * IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other
      * configurations that need multiple pieces of information then its each piece is connected with
@@ -5323,14 +5383,14 @@ public final class AutonomousDwDatabase
     private final java.util.List<String> whitelistedIps;
 
     /**
-     * The client IP access control list (ACL). This feature is available for [Autonomous Database
-     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
-     * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
-     * access the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
-     * then Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-     * recovery peer called {@code standbywhitelistedips}.
+     * The client IP access control list (ACL). This feature is available for [Autonomous AI
+     * Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+     * and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
+     * may access the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is
+     * 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+     * disaster recovery peer called {@code standbywhitelistedips}.
      *
-     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain
      * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple
      * IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other
      * configurations that need multiple pieces of information then its each piece is connected with
@@ -5354,23 +5414,23 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * This field will be null if the Autonomous Database is not Data Guard enabled or Access
-     * Control is disabled. It's value would be {@code TRUE} if Autonomous Database is Data Guard
-     * enabled and Access Control is enabled and if the Autonomous Database uses primary IP access
-     * control list (ACL) for standby. It's value would be {@code FALSE} if Autonomous Database is
-     * Data Guard enabled and Access Control is enabled and if the Autonomous Database uses
-     * different IP access control list (ACL) for standby compared to primary.
+     * This field will be null if the Autonomous AI Database is not Data Guard enabled or Access
+     * Control is disabled. It's value would be {@code TRUE} if Autonomous AI Database is Data Guard
+     * enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP
+     * access control list (ACL) for standby. It's value would be {@code FALSE} if Autonomous AI
+     * Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI
+     * Database uses different IP access control list (ACL) for standby compared to primary.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
     private final Boolean arePrimaryWhitelistedIpsUsed;
 
     /**
-     * This field will be null if the Autonomous Database is not Data Guard enabled or Access
-     * Control is disabled. It's value would be {@code TRUE} if Autonomous Database is Data Guard
-     * enabled and Access Control is enabled and if the Autonomous Database uses primary IP access
-     * control list (ACL) for standby. It's value would be {@code FALSE} if Autonomous Database is
-     * Data Guard enabled and Access Control is enabled and if the Autonomous Database uses
-     * different IP access control list (ACL) for standby compared to primary.
+     * This field will be null if the Autonomous AI Database is not Data Guard enabled or Access
+     * Control is disabled. It's value would be {@code TRUE} if Autonomous AI Database is Data Guard
+     * enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP
+     * access control list (ACL) for standby. It's value would be {@code FALSE} if Autonomous AI
+     * Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI
+     * Database uses different IP access control list (ACL) for standby compared to primary.
      *
      * @return the value
      */
@@ -5379,14 +5439,14 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The client IP access control list (ACL). This feature is available for [Autonomous Database
-     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
-     * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
-     * access the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
-     * then Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-     * recovery peer called {@code standbywhitelistedips}.
+     * The client IP access control list (ACL). This feature is available for [Autonomous AI
+     * Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+     * and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
+     * may access the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is
+     * 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+     * disaster recovery peer called {@code standbywhitelistedips}.
      *
-     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain
      * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple
      * IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other
      * configurations that need multiple pieces of information then its each piece is connected with
@@ -5407,14 +5467,14 @@ public final class AutonomousDwDatabase
     private final java.util.List<String> standbyWhitelistedIps;
 
     /**
-     * The client IP access control list (ACL). This feature is available for [Autonomous Database
-     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
-     * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
-     * access the Autonomous Database instance. If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE'
-     * then Autonomous Database uses this primary's IP access control list (ACL) for the disaster
-     * recovery peer called {@code standbywhitelistedips}.
+     * The client IP access control list (ACL). This feature is available for [Autonomous AI
+     * Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+     * and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
+     * may access the Autonomous AI Database instance. If {@code arePrimaryWhitelistedIpsUsed} is
+     * 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the
+     * disaster recovery peer called {@code standbywhitelistedips}.
      *
-     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * <p>For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain
      * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple
      * IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other
      * configurations that need multiple pieces of information then its each piece is connected with
@@ -5437,12 +5497,12 @@ public final class AutonomousDwDatabase
         return standbyWhitelistedIps;
     }
 
-    /** Information about Oracle APEX Application Development. */
+    /** Information about Oracle APEX AI Application Development. */
     @com.fasterxml.jackson.annotation.JsonProperty("apexDetails")
     private final AutonomousDatabaseApex apexDetails;
 
     /**
-     * Information about Oracle APEX Application Development.
+     * Information about Oracle APEX AI Application Development.
      *
      * @return the value
      */
@@ -5451,15 +5511,15 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default
-     * value is {@code TRUE}.
+     * Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The
+     * default value is {@code TRUE}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default
-     * value is {@code TRUE}.
+     * Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The
+     * default value is {@code TRUE}.
      *
      * @return the value
      */
@@ -5467,7 +5527,7 @@ public final class AutonomousDwDatabase
         return isAutoScalingEnabled;
     }
 
-    /** Status of the Data Safe registration for this Autonomous Database. */
+    /** Status of the Data Safe registration for this Autonomous AI Database. */
     public enum DataSafeStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Registering("REGISTERING"),
         Registered("REGISTERED"),
@@ -5503,12 +5563,12 @@ public final class AutonomousDwDatabase
             throw new IllegalArgumentException("Invalid DataSafeStatus: " + key);
         }
     };
-    /** Status of the Data Safe registration for this Autonomous Database. */
+    /** Status of the Data Safe registration for this Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataSafeStatus")
     private final DataSafeStatus dataSafeStatus;
 
     /**
-     * Status of the Data Safe registration for this Autonomous Database.
+     * Status of the Data Safe registration for this Autonomous AI Database.
      *
      * @return the value
      */
@@ -5516,7 +5576,7 @@ public final class AutonomousDwDatabase
         return dataSafeStatus;
     }
 
-    /** Status of Operations Insights for this Autonomous Database. */
+    /** Status of Operations Insights for this Autonomous AI Database. */
     public enum OperationsInsightsStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
@@ -5553,12 +5613,12 @@ public final class AutonomousDwDatabase
             throw new IllegalArgumentException("Invalid OperationsInsightsStatus: " + key);
         }
     };
-    /** Status of Operations Insights for this Autonomous Database. */
+    /** Status of Operations Insights for this Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
     private final OperationsInsightsStatus operationsInsightsStatus;
 
     /**
-     * Status of Operations Insights for this Autonomous Database.
+     * Status of Operations Insights for this Autonomous AI Database.
      *
      * @return the value
      */
@@ -5566,7 +5626,7 @@ public final class AutonomousDwDatabase
         return operationsInsightsStatus;
     }
 
-    /** Status of Database Management for this Autonomous Database. */
+    /** Status of Database Management for this Autonomous AI Database. */
     public enum DatabaseManagementStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
@@ -5603,12 +5663,12 @@ public final class AutonomousDwDatabase
             throw new IllegalArgumentException("Invalid DatabaseManagementStatus: " + key);
         }
     };
-    /** Status of Database Management for this Autonomous Database. */
+    /** Status of Database Management for this Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
     private final DatabaseManagementStatus databaseManagementStatus;
 
     /**
-     * Status of Database Management for this Autonomous Database.
+     * Status of Database Management for this Autonomous AI Database.
      *
      * @return the value
      */
@@ -5656,7 +5716,7 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * Indicates if the Autonomous Database is a refreshable clone.
+     * Indicates if the Autonomous AI Database is a refreshable clone.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload,
@@ -5667,7 +5727,7 @@ public final class AutonomousDwDatabase
     private final Boolean isRefreshableClone;
 
     /**
-     * Indicates if the Autonomous Database is a refreshable clone.
+     * Indicates if the Autonomous AI Database is a refreshable clone.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload,
@@ -5724,7 +5784,7 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * Indicates the Autonomous AI Database mode. The database can be opened in {@code READ_ONLY} or
      * {@code READ_WRITE} mode.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
@@ -5764,7 +5824,7 @@ public final class AutonomousDwDatabase
         }
     };
     /**
-     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * Indicates the Autonomous AI Database mode. The database can be opened in {@code READ_ONLY} or
      * {@code READ_WRITE} mode.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
@@ -5775,7 +5835,7 @@ public final class AutonomousDwDatabase
     private final OpenMode openMode;
 
     /**
-     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * Indicates the Autonomous AI Database mode. The database can be opened in {@code READ_ONLY} or
      * {@code READ_WRITE} mode.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
@@ -5790,7 +5850,7 @@ public final class AutonomousDwDatabase
 
     /**
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being
-     * refreshed with data from the source Autonomous Database.
+     * refreshed with data from the source Autonomous AI Database.
      */
     public enum RefreshableStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Refreshing("REFRESHING"),
@@ -5826,14 +5886,14 @@ public final class AutonomousDwDatabase
     };
     /**
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being
-     * refreshed with data from the source Autonomous Database.
+     * refreshed with data from the source Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("refreshableStatus")
     private final RefreshableStatus refreshableStatus;
 
     /**
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being
-     * refreshed with data from the source Autonomous Database.
+     * refreshed with data from the source Autonomous AI Database.
      *
      * @return the value
      */
@@ -5843,7 +5903,7 @@ public final class AutonomousDwDatabase
 
     /**
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-     * refreshed with data from the source Autonomous Database.
+     * refreshed with data from the source Autonomous AI Database.
      */
     public enum RefreshableMode implements com.oracle.bmc.http.internal.BmcEnum {
         Automatic("AUTOMATIC"),
@@ -5879,14 +5939,14 @@ public final class AutonomousDwDatabase
     };
     /**
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-     * refreshed with data from the source Autonomous Database.
+     * refreshed with data from the source Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
     private final RefreshableMode refreshableMode;
 
     /**
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-     * refreshed with data from the source Autonomous Database.
+     * refreshed with data from the source Autonomous AI Database.
      *
      * @return the value
      */
@@ -5896,14 +5956,14 @@ public final class AutonomousDwDatabase
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that was cloned to create the current Autonomous Database.
+     * source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that was cloned to create the current Autonomous Database.
+     * source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
      *
      * @return the value
      */
@@ -5912,7 +5972,8 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
+     * The Autonomous AI Database permission level. Restricted mode allows access only by admin
+     * users.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion,
@@ -5951,7 +6012,8 @@ public final class AutonomousDwDatabase
         }
     };
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
+     * The Autonomous AI Database permission level. Restricted mode allows access only by admin
+     * users.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion,
@@ -5961,7 +6023,8 @@ public final class AutonomousDwDatabase
     private final PermissionLevel permissionLevel;
 
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
+     * The Autonomous AI Database permission level. Restricted mode allows access only by admin
+     * users.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion,
@@ -5973,12 +6036,12 @@ public final class AutonomousDwDatabase
         return permissionLevel;
     }
 
-    /** The timestamp of the last switchover operation for the Autonomous Database. */
+    /** The timestamp of the last switchover operation for the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastSwitchover")
     private final java.util.Date timeOfLastSwitchover;
 
     /**
-     * The timestamp of the last switchover operation for the Autonomous Database.
+     * The timestamp of the last switchover operation for the Autonomous AI Database.
      *
      * @return the value
      */
@@ -6000,17 +6063,17 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard
      * enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous
-     * Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
     private final Boolean isDataGuardEnabled;
 
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard
      * enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous
-     * Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      *
      * @return the value
      */
@@ -6045,16 +6108,16 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not
-     * applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases
+     * Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not
+     * applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases
      * using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isLocalDataGuardEnabled")
     private final Boolean isLocalDataGuardEnabled;
 
     /**
-     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not
-     * applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases
+     * Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not
+     * applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases
      * using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      *
      * @return the value
@@ -6064,17 +6127,17 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable
-     * to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
-     * infrastructure.
+     * Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not
+     * applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata
+     * Cloud@Customer infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isRemoteDataGuardEnabled")
     private final Boolean isRemoteDataGuardEnabled;
 
     /**
-     * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable
-     * to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
-     * infrastructure.
+     * Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not
+     * applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata
+     * Cloud@Customer infrastructure.
      *
      * @return the value
      */
@@ -6090,7 +6153,7 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
@@ -6129,14 +6192,14 @@ public final class AutonomousDwDatabase
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      *
      * @return the value
@@ -6146,14 +6209,14 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * List of Oracle Database versions available for a database upgrade. If there are no version
+     * List of Oracle AI Database versions available for a database upgrade. If there are no version
      * upgrades available, this list is empty.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("availableUpgradeVersions")
     private final java.util.List<String> availableUpgradeVersions;
 
     /**
-     * List of Oracle Database versions available for a database upgrade. If there are no version
+     * List of Oracle AI Database versions available for a database upgrade. If there are no version
      * upgrades available, this list is empty.
      *
      * @return the value
@@ -6233,19 +6296,19 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable
-     * clone. This value controls only the start time for the first refresh operation. Subsequent
-     * (ongoing) refresh operations have start times controlled by the value of the {@code
-     * autoRefreshFrequencyInSeconds} parameter.
+     * The the date and time that auto-refreshing will begin for an Autonomous AI Database
+     * refreshable clone. This value controls only the start time for the first refresh operation.
+     * Subsequent (ongoing) refresh operations have start times controlled by the value of the
+     * {@code autoRefreshFrequencyInSeconds} parameter.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfAutoRefreshStart")
     private final java.util.Date timeOfAutoRefreshStart;
 
     /**
-     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable
-     * clone. This value controls only the start time for the first refresh operation. Subsequent
-     * (ongoing) refresh operations have start times controlled by the value of the {@code
-     * autoRefreshFrequencyInSeconds} parameter.
+     * The the date and time that auto-refreshing will begin for an Autonomous AI Database
+     * refreshable clone. This value controls only the start time for the first refresh operation.
+     * Subsequent (ongoing) refresh operations have start times controlled by the value of the
+     * {@code autoRefreshFrequencyInSeconds} parameter.
      *
      * @return the value
      */
@@ -6254,14 +6317,14 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The list of regions that support the creation of an Autonomous Database clone or an
+     * The list of regions that support the creation of an Autonomous AI Database clone or an
      * Autonomous Data Guard standby database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("supportedRegionsToCloneTo")
     private final java.util.List<String> supportedRegionsToCloneTo;
 
     /**
-     * The list of regions that support the creation of an Autonomous Database clone or an
+     * The list of regions that support the creation of an Autonomous AI Database clone or an
      * Autonomous Data Guard standby database.
      *
      * @return the value
@@ -6284,15 +6347,15 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the
-     * standby was provisioned in the same region as the primary database.
+     * The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where
+     * the standby was provisioned in the same region as the primary database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLocalDataGuardEnabled")
     private final java.util.Date timeLocalDataGuardEnabled;
 
     /**
-     * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the
-     * standby was provisioned in the same region as the primary database.
+     * The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where
+     * the standby was provisioned in the same region as the primary database.
      *
      * @return the value
      */
@@ -6301,8 +6364,8 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For
-     * Autonomous Database Serverless, Autonomous Data Guard associations have designated primary
+     * **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For
+     * Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary
      * and standby regions, and these region types do not change when the database changes roles.
      * The standby regions in Autonomous Data Guard associations can be the same region designated
      * as the primary region, or they can be remote regions. Certain database administrative
@@ -6343,8 +6406,8 @@ public final class AutonomousDwDatabase
         }
     };
     /**
-     * **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For
-     * Autonomous Database Serverless, Autonomous Data Guard associations have designated primary
+     * **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For
+     * Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary
      * and standby regions, and these region types do not change when the database changes roles.
      * The standby regions in Autonomous Data Guard associations can be the same region designated
      * as the primary region, or they can be remote regions. Certain database administrative
@@ -6356,8 +6419,8 @@ public final class AutonomousDwDatabase
     private final DataguardRegionType dataguardRegionType;
 
     /**
-     * **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For
-     * Autonomous Database Serverless, Autonomous Data Guard associations have designated primary
+     * **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For
+     * Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary
      * and standby regions, and these region types do not change when the database changes roles.
      * The standby regions in Autonomous Data Guard associations can be the same region designated
      * as the primary region, or they can be remote regions. Certain database administrative
@@ -6372,7 +6435,7 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The date and time the Autonomous Data Guard role was switched for the Autonomous Database.
+     * The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database.
      * For databases that have standbys in both the primary Data Guard region and a remote Data
      * Guard standby region, this is the latest timestamp of either the database using the "primary"
      * role in the primary Data Guard region, or database located in the remote Data Guard standby
@@ -6382,7 +6445,7 @@ public final class AutonomousDwDatabase
     private final java.util.Date timeDataGuardRoleChanged;
 
     /**
-     * The date and time the Autonomous Data Guard role was switched for the Autonomous Database.
+     * The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database.
      * For databases that have standbys in both the primary Data Guard region and a remote Data
      * Guard standby region, this is the latest timestamp of either the database using the "primary"
      * role in the primary Data Guard region, or database located in the remote Data Guard standby
@@ -6397,7 +6460,7 @@ public final class AutonomousDwDatabase
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * standby databases located in Autonomous Data Guard remote regions that are associated with
-     * the source database. Note that for Autonomous Database Serverless instances, standby
+     * the source database. Note that for Autonomous AI Database Serverless instances, standby
      * databases located in the same region as the source primary database do not have OCIDs.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbIds")
@@ -6406,7 +6469,7 @@ public final class AutonomousDwDatabase
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * standby databases located in Autonomous Data Guard remote regions that are associated with
-     * the source database. Note that for Autonomous Database Serverless instances, standby
+     * the source database. Note that for Autonomous AI Database Serverless instances, standby
      * databases located in the same region as the source primary database do not have OCIDs.
      *
      * @return the value
@@ -6416,7 +6479,7 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * Specifies if the Autonomous Database requires mTLS connections.
+     * Specifies if the Autonomous AI Database requires mTLS connections.
      *
      * <p>This may not be updated in parallel with any of the following: licenseModel,
      * databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode,
@@ -6426,7 +6489,7 @@ public final class AutonomousDwDatabase
      * <p>Service Change: The default value of the isMTLSConnectionRequired attribute will change
      * from true to false on July 1, 2023 in the following APIs: - CreateAutonomousDatabase -
      * GetAutonomousDatabase - UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change,
-     * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous
+     * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI
      * Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform
      * scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or
      * UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the
@@ -6440,7 +6503,7 @@ public final class AutonomousDwDatabase
     private final Boolean isMtlsConnectionRequired;
 
     /**
-     * Specifies if the Autonomous Database requires mTLS connections.
+     * Specifies if the Autonomous AI Database requires mTLS connections.
      *
      * <p>This may not be updated in parallel with any of the following: licenseModel,
      * databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode,
@@ -6450,7 +6513,7 @@ public final class AutonomousDwDatabase
      * <p>Service Change: The default value of the isMTLSConnectionRequired attribute will change
      * from true to false on July 1, 2023 in the following APIs: - CreateAutonomousDatabase -
      * GetAutonomousDatabase - UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change,
-     * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous
+     * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI
      * Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform
      * scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or
      * UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the
@@ -6480,14 +6543,14 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The unique identifier for leader autonomous database OCID
+     * The unique identifier for leader Autonomous AI Database OCID
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
     private final String resourcePoolLeaderId;
 
     /**
-     * The unique identifier for leader autonomous database OCID
+     * The unique identifier for leader Autonomous AI Database OCID
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
@@ -6534,7 +6597,7 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+     * The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance
      * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
      * maintenance schedule follows the normal cycle
      */
@@ -6571,7 +6634,7 @@ public final class AutonomousDwDatabase
         }
     };
     /**
-     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+     * The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance
      * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
      * maintenance schedule follows the normal cycle
      */
@@ -6579,7 +6642,7 @@ public final class AutonomousDwDatabase
     private final AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
     /**
-     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+     * The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance
      * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
      * maintenance schedule follows the normal cycle
      *
@@ -6617,15 +6680,15 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database storage. The default value
-     * is {@code FALSE}.
+     * Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default
+     * value is {@code FALSE}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
     private final Boolean isAutoScalingForStorageEnabled;
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database storage. The default value
-     * is {@code FALSE}.
+     * Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default
+     * value is {@code FALSE}.
      *
      * @return the value
      */
@@ -6673,7 +6736,7 @@ public final class AutonomousDwDatabase
         return actualUsedDataStorageSizeInTBs;
     }
 
-    /** The Oracle Database Edition that applies to the Autonomous databases. */
+    /** The Oracle AI Database Edition that applies to the Autonomous AI Databases. */
     public enum DatabaseEdition implements com.oracle.bmc.http.internal.BmcEnum {
         StandardEdition("STANDARD_EDITION"),
         EnterpriseEdition("ENTERPRISE_EDITION"),
@@ -6706,12 +6769,12 @@ public final class AutonomousDwDatabase
             throw new IllegalArgumentException("Invalid DatabaseEdition: " + key);
         }
     };
-    /** The Oracle Database Edition that applies to the Autonomous databases. */
+    /** The Oracle AI Database Edition that applies to the Autonomous AI Databases. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final DatabaseEdition databaseEdition;
 
     /**
-     * The Oracle Database Edition that applies to the Autonomous databases.
+     * The Oracle AI Database Edition that applies to the Autonomous AI Databases.
      *
      * @return the value
      */
@@ -6744,8 +6807,15 @@ public final class AutonomousDwDatabase
         return dbToolsDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("vanityUrlDetails")
+    private final VanityUrlDetails vanityUrlDetails;
+
+    public VanityUrlDetails getVanityUrlDetails() {
+        return vanityUrlDetails;
+    }
+
     /**
-     * Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless
+     * Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless
      * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
      * recovery time objective (RTO) during failover or switchover. Backup-based DR type provides
      * lower cost DR with a slower RTO during failover or switchover.
@@ -6754,7 +6824,7 @@ public final class AutonomousDwDatabase
     private final DisasterRecoveryConfiguration.DisasterRecoveryType localDisasterRecoveryType;
 
     /**
-     * Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless
+     * Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless
      * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
      * recovery time objective (RTO) during failover or switchover. Backup-based DR type provides
      * lower cost DR with a slower RTO during failover or switchover.
@@ -6766,13 +6836,13 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For
-     * Autonomous Database Serverless instances, DR associations have designated primary and standby
-     * regions. These region types do not change when the database changes roles. The standby region
-     * in DR associations can be the same region as the primary region, or they can be in a remote
-     * regions. Some database administration operations may be available only in the primary region
-     * of the DR association, and cannot be performed when the database using the primary role is
-     * operating in a remote region.
+     * **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For
+     * Autonomous AI Database Serverless instances, DR associations have designated primary and
+     * standby regions. These region types do not change when the database changes roles. The
+     * standby region in DR associations can be the same region as the primary region, or they can
+     * be in a remote regions. Some database administration operations may be available only in the
+     * primary region of the DR association, and cannot be performed when the database using the
+     * primary role is operating in a remote region.
      */
     public enum DisasterRecoveryRegionType implements com.oracle.bmc.http.internal.BmcEnum {
         Primary("PRIMARY"),
@@ -6807,25 +6877,25 @@ public final class AutonomousDwDatabase
         }
     };
     /**
-     * **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For
-     * Autonomous Database Serverless instances, DR associations have designated primary and standby
-     * regions. These region types do not change when the database changes roles. The standby region
-     * in DR associations can be the same region as the primary region, or they can be in a remote
-     * regions. Some database administration operations may be available only in the primary region
-     * of the DR association, and cannot be performed when the database using the primary role is
-     * operating in a remote region.
+     * **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For
+     * Autonomous AI Database Serverless instances, DR associations have designated primary and
+     * standby regions. These region types do not change when the database changes roles. The
+     * standby region in DR associations can be the same region as the primary region, or they can
+     * be in a remote regions. Some database administration operations may be available only in the
+     * primary region of the DR association, and cannot be performed when the database using the
+     * primary role is operating in a remote region.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryRegionType")
     private final DisasterRecoveryRegionType disasterRecoveryRegionType;
 
     /**
-     * **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For
-     * Autonomous Database Serverless instances, DR associations have designated primary and standby
-     * regions. These region types do not change when the database changes roles. The standby region
-     * in DR associations can be the same region as the primary region, or they can be in a remote
-     * regions. Some database administration operations may be available only in the primary region
-     * of the DR association, and cannot be performed when the database using the primary role is
-     * operating in a remote region.
+     * **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For
+     * Autonomous AI Database Serverless instances, DR associations have designated primary and
+     * standby regions. These region types do not change when the database changes roles. The
+     * standby region in DR associations can be the same region as the primary region, or they can
+     * be in a remote regions. Some database administration operations may be available only in the
+     * primary region of the DR association, and cannot be performed when the database using the
+     * primary role is operating in a remote region.
      *
      * @return the value
      */
@@ -6834,14 +6904,14 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * The date and time the Disaster Recovery role was switched for the standby Autonomous
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous AI
      * Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeDisasterRecoveryRoleChanged")
     private final java.util.Date timeDisasterRecoveryRoleChanged;
 
     /**
-     * The date and time the Disaster Recovery role was switched for the standby Autonomous
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous AI
      * Database.
      *
      * @return the value
@@ -6910,12 +6980,12 @@ public final class AutonomousDwDatabase
         return netServicesArchitecture;
     }
 
-    /** The availability domain where the Autonomous Database Serverless instance is located. */
+    /** The availability domain where the Autonomous AI Database Serverless instance is located. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain where the Autonomous Database Serverless instance is located.
+     * The availability domain where the Autonomous AI Database Serverless instance is located.
      *
      * @return the value
      */
@@ -6941,15 +7011,15 @@ public final class AutonomousDwDatabase
     }
 
     /**
-     * A list of the source Autonomous Database's table space number(s) used to create this partial
-     * clone from the backup.
+     * A list of the source Autonomous AI Database's table space number(s) used to create this
+     * partial clone from the backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
     private final java.util.List<Integer> cloneTableSpaceList;
 
     /**
-     * A list of the source Autonomous Database's table space number(s) used to create this partial
-     * clone from the backup.
+     * A list of the source Autonomous AI Database's table space number(s) used to create this
+     * partial clone from the backup.
      *
      * @return the value
      */
@@ -6957,7 +7027,7 @@ public final class AutonomousDwDatabase
         return cloneTableSpaceList;
     }
 
-    /** The Autonomous Database clone type. */
+    /** The Autonomous AI Database clone type. */
     public enum CloneType implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Metadata("METADATA"),
@@ -6991,12 +7061,12 @@ public final class AutonomousDwDatabase
             throw new IllegalArgumentException("Invalid CloneType: " + key);
         }
     };
-    /** The Autonomous Database clone type. */
+    /** The Autonomous AI Database clone type. */
     @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
     private final CloneType cloneType;
 
     /**
-     * The Autonomous Database clone type.
+     * The Autonomous AI Database clone type.
      *
      * @return the value
      */
@@ -7102,6 +7172,7 @@ public final class AutonomousDwDatabase
         sb.append(", connectionStrings=").append(String.valueOf(this.connectionStrings));
         sb.append(", connectionUrls=").append(String.valueOf(this.connectionUrls));
         sb.append(", publicConnectionUrls=").append(String.valueOf(this.publicConnectionUrls));
+        sb.append(", vanityConnectionUrls=").append(String.valueOf(this.vanityConnectionUrls));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", byolComputeCountLimit=").append(String.valueOf(this.byolComputeCountLimit));
         sb.append(", usedDataStorageSizeInTBs=")
@@ -7195,6 +7266,7 @@ public final class AutonomousDwDatabase
                 .append(String.valueOf(this.actualUsedDataStorageSizeInTBs));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
         sb.append(", dbToolsDetails=").append(String.valueOf(this.dbToolsDetails));
+        sb.append(", vanityUrlDetails=").append(String.valueOf(this.vanityUrlDetails));
         sb.append(", localDisasterRecoveryType=")
                 .append(String.valueOf(this.localDisasterRecoveryType));
         sb.append(", disasterRecoveryRegionType=")
@@ -7298,6 +7370,7 @@ public final class AutonomousDwDatabase
                 && java.util.Objects.equals(this.connectionStrings, other.connectionStrings)
                 && java.util.Objects.equals(this.connectionUrls, other.connectionUrls)
                 && java.util.Objects.equals(this.publicConnectionUrls, other.publicConnectionUrls)
+                && java.util.Objects.equals(this.vanityConnectionUrls, other.vanityConnectionUrls)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.byolComputeCountLimit, other.byolComputeCountLimit)
                 && java.util.Objects.equals(
@@ -7395,6 +7468,7 @@ public final class AutonomousDwDatabase
                         this.actualUsedDataStorageSizeInTBs, other.actualUsedDataStorageSizeInTBs)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
                 && java.util.Objects.equals(this.dbToolsDetails, other.dbToolsDetails)
+                && java.util.Objects.equals(this.vanityUrlDetails, other.vanityUrlDetails)
                 && java.util.Objects.equals(
                         this.localDisasterRecoveryType, other.localDisasterRecoveryType)
                 && java.util.Objects.equals(
@@ -7586,6 +7660,11 @@ public final class AutonomousDwDatabase
                         + (this.publicConnectionUrls == null
                                 ? 43
                                 : this.publicConnectionUrls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vanityConnectionUrls == null
+                                ? 43
+                                : this.vanityConnectionUrls.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result =
                 (result * PRIME)
@@ -7849,6 +7928,9 @@ public final class AutonomousDwDatabase
         result =
                 (result * PRIME)
                         + (this.dbToolsDetails == null ? 43 : this.dbToolsDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vanityUrlDetails == null ? 43 : this.vanityUrlDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.localDisasterRecoveryType == null

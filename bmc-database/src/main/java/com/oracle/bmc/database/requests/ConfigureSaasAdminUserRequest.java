@@ -27,11 +27,11 @@ public class ConfigureSaasAdminUserRequest
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
-    /** Request to update SaaS administrative user configuration of the Autonomous Database. */
+    /** Request to update SaaS administrative user configuration of the Autonomous AI Database. */
     private com.oracle.bmc.database.model.ConfigureSaasAdminUserDetails
             configureSaasAdminUserDetails;
 
-    /** Request to update SaaS administrative user configuration of the Autonomous Database. */
+    /** Request to update SaaS administrative user configuration of the Autonomous AI Database. */
     public com.oracle.bmc.database.model.ConfigureSaasAdminUserDetails
             getConfigureSaasAdminUserDetails() {
         return configureSaasAdminUserDetails;
@@ -112,12 +112,14 @@ public class ConfigureSaasAdminUserRequest
             return this;
         }
 
-        /** Request to update SaaS administrative user configuration of the Autonomous Database. */
+        /**
+         * Request to update SaaS administrative user configuration of the Autonomous AI Database.
+         */
         private com.oracle.bmc.database.model.ConfigureSaasAdminUserDetails
                 configureSaasAdminUserDetails = null;
 
         /**
-         * Request to update SaaS administrative user configuration of the Autonomous Database.
+         * Request to update SaaS administrative user configuration of the Autonomous AI Database.
          *
          * @param configureSaasAdminUserDetails the value to set
          * @return this builder instance

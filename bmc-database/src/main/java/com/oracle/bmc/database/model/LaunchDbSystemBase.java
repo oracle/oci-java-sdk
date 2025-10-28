@@ -298,7 +298,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -309,7 +309,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
@@ -659,9 +659,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -669,9 +669,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      *
      * @return the value
      */

@@ -307,6 +307,133 @@ public class DatabaseToolsPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listDatabaseToolsIdentities operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDatabaseToolsIdentitiesResponse>
+            listDatabaseToolsIdentitiesResponseIterator(
+                    final ListDatabaseToolsIdentitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDatabaseToolsIdentitiesRequest.Builder,
+                ListDatabaseToolsIdentitiesRequest,
+                ListDatabaseToolsIdentitiesResponse>(
+                new java.util.function.Supplier<ListDatabaseToolsIdentitiesRequest.Builder>() {
+                    @Override
+                    public ListDatabaseToolsIdentitiesRequest.Builder get() {
+                        return ListDatabaseToolsIdentitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDatabaseToolsIdentitiesResponse, String>() {
+                    @Override
+                    public String apply(ListDatabaseToolsIdentitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabaseToolsIdentitiesRequest.Builder>,
+                        ListDatabaseToolsIdentitiesRequest>() {
+                    @Override
+                    public ListDatabaseToolsIdentitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabaseToolsIdentitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDatabaseToolsIdentitiesRequest, ListDatabaseToolsIdentitiesResponse>() {
+                    @Override
+                    public ListDatabaseToolsIdentitiesResponse apply(
+                            ListDatabaseToolsIdentitiesRequest request) {
+                        return client.listDatabaseToolsIdentities(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasetools.model.DatabaseToolsIdentitySummary} objects contained in
+     * responses from the listDatabaseToolsIdentities operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasetools.model.DatabaseToolsIdentitySummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasetools.model.DatabaseToolsIdentitySummary>
+            listDatabaseToolsIdentitiesRecordIterator(
+                    final ListDatabaseToolsIdentitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDatabaseToolsIdentitiesRequest.Builder,
+                ListDatabaseToolsIdentitiesRequest,
+                ListDatabaseToolsIdentitiesResponse,
+                com.oracle.bmc.databasetools.model.DatabaseToolsIdentitySummary>(
+                new java.util.function.Supplier<ListDatabaseToolsIdentitiesRequest.Builder>() {
+                    @Override
+                    public ListDatabaseToolsIdentitiesRequest.Builder get() {
+                        return ListDatabaseToolsIdentitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDatabaseToolsIdentitiesResponse, String>() {
+                    @Override
+                    public String apply(ListDatabaseToolsIdentitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabaseToolsIdentitiesRequest.Builder>,
+                        ListDatabaseToolsIdentitiesRequest>() {
+                    @Override
+                    public ListDatabaseToolsIdentitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabaseToolsIdentitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDatabaseToolsIdentitiesRequest, ListDatabaseToolsIdentitiesResponse>() {
+                    @Override
+                    public ListDatabaseToolsIdentitiesResponse apply(
+                            ListDatabaseToolsIdentitiesRequest request) {
+                        return client.listDatabaseToolsIdentities(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDatabaseToolsIdentitiesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasetools.model
+                                        .DatabaseToolsIdentitySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasetools.model.DatabaseToolsIdentitySummary>
+                            apply(ListDatabaseToolsIdentitiesResponse response) {
+                        return response.getDatabaseToolsIdentityCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listDatabaseToolsPrivateEndpoints operation. This iterable will fetch more data from the
      * server as needed.
      *

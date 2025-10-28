@@ -8,7 +8,15 @@ package com.oracle.bmc.databasetools.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum IdentityType implements com.oracle.bmc.http.internal.BmcEnum {
     OracleDatabaseResourcePrincipal("ORACLE_DATABASE_RESOURCE_PRINCIPAL"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(IdentityType.class);
 
     private final String value;
     private static java.util.Map<String, IdentityType> map;
@@ -16,7 +24,9 @@ public enum IdentityType implements com.oracle.bmc.http.internal.BmcEnum {
     static {
         map = new java.util.HashMap<>();
         for (IdentityType v : IdentityType.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -34,6 +44,9 @@ public enum IdentityType implements com.oracle.bmc.http.internal.BmcEnum {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid IdentityType: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'IdentityType', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

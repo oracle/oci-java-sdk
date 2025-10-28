@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for updating the Autonomous Database backup.
+ * Details for updating the Autonomous AI Database backup.
  *
  * <p>*Warning:** Oracle recommends avoiding using confidential information when you supply string
  * values using the API. <br>

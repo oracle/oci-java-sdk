@@ -178,7 +178,7 @@ public final class DatabaseConnectionStringProfile
         }
         /**
          * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect
-         * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous
+         * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous AI
          * Database Serverless instances always use the long format.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("syntaxFormat")
@@ -186,7 +186,7 @@ public final class DatabaseConnectionStringProfile
 
         /**
          * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect
-         * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous
+         * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous AI
          * Database Serverless instances always use the long format.
          *
          * @param syntaxFormat the value to set
@@ -619,8 +619,8 @@ public final class DatabaseConnectionStringProfile
 
     /**
      * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect
-     * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous Database
-     * Serverless instances always use the long format.
+     * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous AI
+     * Database Serverless instances always use the long format.
      */
     public enum SyntaxFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Long("LONG"),
@@ -670,16 +670,16 @@ public final class DatabaseConnectionStringProfile
     };
     /**
      * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect
-     * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous Database
-     * Serverless instances always use the long format.
+     * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous AI
+     * Database Serverless instances always use the long format.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("syntaxFormat")
     private final SyntaxFormat syntaxFormat;
 
     /**
      * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect
-     * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous Database
-     * Serverless instances always use the long format.
+     * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous AI
+     * Database Serverless instances always use the long format.
      *
      * @return the value
      */

@@ -132,6 +132,24 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Create a Automatic DR configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAutomaticDrConfigurationResponse>
+            createAutomaticDrConfiguration(
+                    CreateAutomaticDrConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAutomaticDrConfigurationRequest,
+                                    CreateAutomaticDrConfigurationResponse>
+                            handler);
+
+    /**
      * Create a DR plan of the specified DR plan type.
      *
      * @param request The request object containing the details to send
@@ -177,6 +195,24 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateDrProtectionGroupRequest, CreateDrProtectionGroupResponse>
                     handler);
+
+    /**
+     * Delete the automatic DR configuration identified by *automaticDrConfigurationId*.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAutomaticDrConfigurationResponse>
+            deleteAutomaticDrConfiguration(
+                    DeleteAutomaticDrConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteAutomaticDrConfigurationRequest,
+                                    DeleteAutomaticDrConfigurationResponse>
+                            handler);
 
     /**
      * Delete the DR plan identified by *drPlanId*.
@@ -243,6 +279,22 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                                     DisassociateDrProtectionGroupRequest,
                                     DisassociateDrProtectionGroupResponse>
                             handler);
+
+    /**
+     * Get details for the Automatic DR configuration identified by *automaticDrConfigurationId*.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutomaticDrConfigurationResponse> getAutomaticDrConfiguration(
+            GetAutomaticDrConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAutomaticDrConfigurationRequest, GetAutomaticDrConfigurationResponse>
+                    handler);
 
     /**
      * Get details for the DR plan identified by *drPlanId*.
@@ -321,6 +373,24 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             IgnoreDrPlanExecutionRequest, IgnoreDrPlanExecutionResponse>
                     handler);
+
+    /**
+     * Get a summary list of automatic DR configurations for a DR protection group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutomaticDrConfigurationsResponse>
+            listAutomaticDrConfigurations(
+                    ListAutomaticDrConfigurationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutomaticDrConfigurationsRequest,
+                                    ListAutomaticDrConfigurationsResponse>
+                            handler);
 
     /**
      * Get a summary list of all DR plan executions for a DR protection group.
@@ -478,6 +548,24 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             RetryDrPlanExecutionRequest, RetryDrPlanExecutionResponse>
                     handler);
+
+    /**
+     * Update the Automatic DR configuration identified by *automaticDrConfigurationId*.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAutomaticDrConfigurationResponse>
+            updateAutomaticDrConfiguration(
+                    UpdateAutomaticDrConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutomaticDrConfigurationRequest,
+                                    UpdateAutomaticDrConfigurationResponse>
+                            handler);
 
     /**
      * Update the DR plan identified by *drPlanId*.

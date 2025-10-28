@@ -246,6 +246,48 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAutomaticDrConfigurationResponse>
+            createAutomaticDrConfiguration(
+                    CreateAutomaticDrConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAutomaticDrConfigurationRequest,
+                                    CreateAutomaticDrConfigurationResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateAutomaticDrConfigurationDetails(),
+                "createAutomaticDrConfigurationDetails is required");
+
+        return clientCall(request, CreateAutomaticDrConfigurationResponse::builder)
+                .logger(LOG, "createAutomaticDrConfiguration")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "CreateAutomaticDrConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/CreateAutomaticDrConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAutomaticDrConfigurationRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("automaticDrConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.disasterrecovery.model.AutomaticDrConfiguration.class,
+                        CreateAutomaticDrConfigurationResponse.Builder::automaticDrConfiguration)
+                .handleResponseHeaderString(
+                        "location", CreateAutomaticDrConfigurationResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "etag", CreateAutomaticDrConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateAutomaticDrConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateAutomaticDrConfigurationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDrPlanResponse> createDrPlan(
             CreateDrPlanRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateDrPlanRequest, CreateDrPlanResponse>
@@ -351,6 +393,39 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                         CreateDrProtectionGroupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDrProtectionGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAutomaticDrConfigurationResponse>
+            deleteAutomaticDrConfiguration(
+                    DeleteAutomaticDrConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteAutomaticDrConfigurationRequest,
+                                    DeleteAutomaticDrConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutomaticDrConfigurationId(),
+                "automaticDrConfigurationId must not be blank");
+
+        return clientCall(request, DeleteAutomaticDrConfigurationResponse::builder)
+                .logger(LOG, "deleteAutomaticDrConfiguration")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "DeleteAutomaticDrConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/DeleteAutomaticDrConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAutomaticDrConfigurationRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("automaticDrConfigurations")
+                .appendPathParam(request.getAutomaticDrConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteAutomaticDrConfigurationResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -483,6 +558,42 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisassociateDrProtectionGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAutomaticDrConfigurationResponse>
+            getAutomaticDrConfiguration(
+                    GetAutomaticDrConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutomaticDrConfigurationRequest,
+                                    GetAutomaticDrConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutomaticDrConfigurationId(),
+                "automaticDrConfigurationId must not be blank");
+
+        return clientCall(request, GetAutomaticDrConfigurationResponse::builder)
+                .logger(LOG, "getAutomaticDrConfiguration")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "GetAutomaticDrConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/GetAutomaticDrConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAutomaticDrConfigurationRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("automaticDrConfigurations")
+                .appendPathParam(request.getAutomaticDrConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.disasterrecovery.model.AutomaticDrConfiguration.class,
+                        GetAutomaticDrConfigurationResponse.Builder::automaticDrConfiguration)
+                .handleResponseHeaderString(
+                        "etag", GetAutomaticDrConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAutomaticDrConfigurationResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -647,6 +758,52 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                         IgnoreDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", IgnoreDrPlanExecutionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAutomaticDrConfigurationsResponse>
+            listAutomaticDrConfigurations(
+                    ListAutomaticDrConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutomaticDrConfigurationsRequest,
+                                    ListAutomaticDrConfigurationsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getDrProtectionGroupId(), "drProtectionGroupId is required");
+
+        return clientCall(request, ListAutomaticDrConfigurationsResponse::builder)
+                .logger(LOG, "listAutomaticDrConfigurations")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "ListAutomaticDrConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/ListAutomaticDrConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutomaticDrConfigurationsRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("automaticDrConfigurations")
+                .appendQueryParam("drProtectionGroupId", request.getDrProtectionGroupId())
+                .appendQueryParam(
+                        "automaticDrConfigurationId", request.getAutomaticDrConfigurationId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam(
+                        "lifecycleStateNotEqualTo", request.getLifecycleStateNotEqualTo())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.disasterrecovery.model.AutomaticDrConfigurationCollection
+                                .class,
+                        ListAutomaticDrConfigurationsResponse.Builder
+                                ::automaticDrConfigurationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutomaticDrConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAutomaticDrConfigurationsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -1024,6 +1181,46 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                         RetryDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RetryDrPlanExecutionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAutomaticDrConfigurationResponse>
+            updateAutomaticDrConfiguration(
+                    UpdateAutomaticDrConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutomaticDrConfigurationRequest,
+                                    UpdateAutomaticDrConfigurationResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getUpdateAutomaticDrConfigurationDetails(),
+                "updateAutomaticDrConfigurationDetails is required");
+
+        Validate.notBlank(
+                request.getAutomaticDrConfigurationId(),
+                "automaticDrConfigurationId must not be blank");
+
+        return clientCall(request, UpdateAutomaticDrConfigurationResponse::builder)
+                .logger(LOG, "updateAutomaticDrConfiguration")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "UpdateAutomaticDrConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/UpdateAutomaticDrConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAutomaticDrConfigurationRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("automaticDrConfigurations")
+                .appendPathParam(request.getAutomaticDrConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateAutomaticDrConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateAutomaticDrConfigurationResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

@@ -7586,7 +7586,7 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "IdentityDomains",
                         "ListSocialIdentityProviders",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/ListSocialIdentityProviders")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/ListSocialIdentityProviders")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSocialIdentityProvidersRequest::builder)
                 .basePath("")
@@ -12348,7 +12348,7 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "IdentityDomains",
                         "SearchSocialIdentityProviders",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/SearchSocialIdentityProviders")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/SearchSocialIdentityProviders")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchSocialIdentityProvidersRequest::builder)
                 .basePath("")

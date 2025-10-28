@@ -100,6 +100,26 @@ public interface LustreFileStorageAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves an Object Storage link into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeObjectStorageLinkCompartmentResponse>
+            changeObjectStorageLinkCompartment(
+                    ChangeObjectStorageLinkCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeObjectStorageLinkCompartmentRequest,
+                                    ChangeObjectStorageLinkCompartmentResponse>
+                            handler);
+
+    /**
      * Creates a Lustre file system.
      *
      * @param request The request object containing the details to send
@@ -113,6 +133,22 @@ public interface LustreFileStorageAsync extends AutoCloseable {
             CreateLustreFileSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateLustreFileSystemRequest, CreateLustreFileSystemResponse>
+                    handler);
+
+    /**
+     * Creates an Object Storage link.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateObjectStorageLinkResponse> createObjectStorageLink(
+            CreateObjectStorageLinkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateObjectStorageLinkRequest, CreateObjectStorageLinkResponse>
                     handler);
 
     /**
@@ -132,6 +168,22 @@ public interface LustreFileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes an Object Storage link.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteObjectStorageLinkResponse> deleteObjectStorageLink(
+            DeleteObjectStorageLinkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteObjectStorageLinkRequest, DeleteObjectStorageLinkResponse>
+                    handler);
+
+    /**
      * Gets information about a Lustre file system.
      *
      * @param request The request object containing the details to send
@@ -146,6 +198,37 @@ public interface LustreFileStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetLustreFileSystemRequest, GetLustreFileSystemResponse>
                     handler);
+
+    /**
+     * Gets information about an Object Storage link.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetObjectStorageLinkResponse> getObjectStorageLink(
+            GetObjectStorageLinkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetObjectStorageLinkRequest, GetObjectStorageLinkResponse>
+                    handler);
+
+    /**
+     * Gets details of a sync job associated with an Object Storage link when `objectStorageLink`
+     * and a unique ID are provided.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSyncJobResponse> getSyncJob(
+            GetSyncJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSyncJobRequest, GetSyncJobResponse> handler);
 
     /**
      * Gets the details of a work request.
@@ -176,6 +259,38 @@ public interface LustreFileStorageAsync extends AutoCloseable {
             ListLustreFileSystemsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListLustreFileSystemsRequest, ListLustreFileSystemsResponse>
+                    handler);
+
+    /**
+     * Gets a list of Object Storage links.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListObjectStorageLinksResponse> listObjectStorageLinks(
+            ListObjectStorageLinksRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListObjectStorageLinksRequest, ListObjectStorageLinksResponse>
+                    handler);
+
+    /**
+     * Lists all sync jobs associated with the Object Storage link. Contains a unique ID for each
+     * sync job.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSyncJobsResponse> listSyncJobs(
+            ListSyncJobsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListSyncJobsRequest, ListSyncJobsResponse>
                     handler);
 
     /**
@@ -226,6 +341,74 @@ public interface LustreFileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Starts the export of data from the Lustre file system to Object Storage. The Lustre file
+     * system path and Object Storage object prefix are defined in the Object Storage link resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StartExportToObjectResponse> startExportToObject(
+            StartExportToObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StartExportToObjectRequest, StartExportToObjectResponse>
+                    handler);
+
+    /**
+     * Starts the import of data from Object Storage to the Lustre file system. The Lustre file
+     * system path and Object Storage object prefix are defined in the Object Storage link resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StartImportFromObjectResponse> startImportFromObject(
+            StartImportFromObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StartImportFromObjectRequest, StartImportFromObjectResponse>
+                    handler);
+
+    /**
+     * Stops the export of data from the Lustre file system to Object Storage. The Lustre file
+     * system path and Object Storage object prefix are defined in the Object Storage link resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StopExportToObjectResponse> stopExportToObject(
+            StopExportToObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StopExportToObjectRequest, StopExportToObjectResponse>
+                    handler);
+
+    /**
+     * Stops the import of data from Object Storage to the Lustre file system. The Lustre file
+     * system path and Object Storage object prefix are defined in the Object Storage link resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StopImportFromObjectResponse> stopImportFromObject(
+            StopImportFromObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StopImportFromObjectRequest, StopImportFromObjectResponse>
+                    handler);
+
+    /**
      * Updates a Lustre file system.
      *
      * @param request The request object containing the details to send
@@ -239,5 +422,21 @@ public interface LustreFileStorageAsync extends AutoCloseable {
             UpdateLustreFileSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateLustreFileSystemRequest, UpdateLustreFileSystemResponse>
+                    handler);
+
+    /**
+     * Updates an Object Storage link.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateObjectStorageLinkResponse> updateObjectStorageLink(
+            UpdateObjectStorageLinkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateObjectStorageLinkRequest, UpdateObjectStorageLinkResponse>
                     handler);
 }

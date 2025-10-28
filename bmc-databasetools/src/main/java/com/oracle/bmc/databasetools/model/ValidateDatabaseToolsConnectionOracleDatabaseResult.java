@@ -108,6 +108,39 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
             this.__explicitlySet__.add("dbmsCloudStatus");
             return this;
         }
+        /** Displays the CLOUD_SERVICE value within the USERENV context */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudService")
+        private String cloudService;
+
+        /**
+         * Displays the CLOUD_SERVICE value within the USERENV context
+         *
+         * @param cloudService the value to set
+         * @return this builder
+         */
+        public Builder cloudService(String cloudService) {
+            this.cloudService = cloudService;
+            this.__explicitlySet__.add("cloudService");
+            return this;
+        }
+        /**
+         * Status on whether a Database Tools identity type can be used with this connection or not.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseToolsIdentityStatuses")
+        private java.util.List<ValidationIdentityStatus> databaseToolsIdentityStatuses;
+
+        /**
+         * Status on whether a Database Tools identity type can be used with this connection or not.
+         *
+         * @param databaseToolsIdentityStatuses the value to set
+         * @return this builder
+         */
+        public Builder databaseToolsIdentityStatuses(
+                java.util.List<ValidationIdentityStatus> databaseToolsIdentityStatuses) {
+            this.databaseToolsIdentityStatuses = databaseToolsIdentityStatuses;
+            this.__explicitlySet__.add("databaseToolsIdentityStatuses");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -121,7 +154,9 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
                             this.action,
                             this.databaseName,
                             this.databaseVersion,
-                            this.dbmsCloudStatus);
+                            this.dbmsCloudStatus,
+                            this.cloudService,
+                            this.databaseToolsIdentityStatuses);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -151,6 +186,12 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
             if (model.wasPropertyExplicitlySet("dbmsCloudStatus")) {
                 this.dbmsCloudStatus(model.getDbmsCloudStatus());
             }
+            if (model.wasPropertyExplicitlySet("cloudService")) {
+                this.cloudService(model.getCloudService());
+            }
+            if (model.wasPropertyExplicitlySet("databaseToolsIdentityStatuses")) {
+                this.databaseToolsIdentityStatuses(model.getDatabaseToolsIdentityStatuses());
+            }
             return this;
         }
     }
@@ -172,11 +213,15 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
             String action,
             String databaseName,
             String databaseVersion,
-            DbmsCloudStatus dbmsCloudStatus) {
+            DbmsCloudStatus dbmsCloudStatus,
+            String cloudService,
+            java.util.List<ValidationIdentityStatus> databaseToolsIdentityStatuses) {
         super(code, message, cause, action);
         this.databaseName = databaseName;
         this.databaseVersion = databaseVersion;
         this.dbmsCloudStatus = dbmsCloudStatus;
+        this.cloudService = cloudService;
+        this.databaseToolsIdentityStatuses = databaseToolsIdentityStatuses;
     }
 
     /** The database name. */
@@ -218,6 +263,32 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
         return dbmsCloudStatus;
     }
 
+    /** Displays the CLOUD_SERVICE value within the USERENV context */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudService")
+    private final String cloudService;
+
+    /**
+     * Displays the CLOUD_SERVICE value within the USERENV context
+     *
+     * @return the value
+     */
+    public String getCloudService() {
+        return cloudService;
+    }
+
+    /** Status on whether a Database Tools identity type can be used with this connection or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseToolsIdentityStatuses")
+    private final java.util.List<ValidationIdentityStatus> databaseToolsIdentityStatuses;
+
+    /**
+     * Status on whether a Database Tools identity type can be used with this connection or not.
+     *
+     * @return the value
+     */
+    public java.util.List<ValidationIdentityStatus> getDatabaseToolsIdentityStatuses() {
+        return databaseToolsIdentityStatuses;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -236,6 +307,9 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
         sb.append(", dbmsCloudStatus=").append(String.valueOf(this.dbmsCloudStatus));
+        sb.append(", cloudService=").append(String.valueOf(this.cloudService));
+        sb.append(", databaseToolsIdentityStatuses=")
+                .append(String.valueOf(this.databaseToolsIdentityStatuses));
         sb.append(")");
         return sb.toString();
     }
@@ -254,6 +328,9 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
         return java.util.Objects.equals(this.databaseName, other.databaseName)
                 && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
                 && java.util.Objects.equals(this.dbmsCloudStatus, other.dbmsCloudStatus)
+                && java.util.Objects.equals(this.cloudService, other.cloudService)
+                && java.util.Objects.equals(
+                        this.databaseToolsIdentityStatuses, other.databaseToolsIdentityStatuses)
                 && super.equals(other);
     }
 
@@ -268,6 +345,12 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
         result =
                 (result * PRIME)
                         + (this.dbmsCloudStatus == null ? 43 : this.dbmsCloudStatus.hashCode());
+        result = (result * PRIME) + (this.cloudService == null ? 43 : this.cloudService.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseToolsIdentityStatuses == null
+                                ? 43
+                                : this.databaseToolsIdentityStatuses.hashCode());
         return result;
     }
 }

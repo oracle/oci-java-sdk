@@ -5,8 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Oracle Autonomous Database by cloning from a backup of an existing
- * Autonomous Database. <br>
+ * Details to create an Oracle Autonomous AI Database by cloning from a backup of an existing
+ * Autonomous AI Database. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -512,7 +512,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database Backup that you will clone to create a new Autonomous
+         * source Autonomous AI Database Backup that you will clone to create a new Autonomous AI
          * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
@@ -520,7 +520,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database Backup that you will clone to create a new Autonomous
+         * source Autonomous AI Database Backup that you will clone to create a new Autonomous AI
          * Database.
          *
          * @param autonomousDatabaseBackupId the value to set
@@ -531,12 +531,12 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             this.__explicitlySet__.add("autonomousDatabaseBackupId");
             return this;
         }
-        /** The Autonomous Database clone type. */
+        /** The Autonomous AI Database clone type. */
         @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
         private CloneType cloneType;
 
         /**
-         * The Autonomous Database clone type.
+         * The Autonomous AI Database clone type.
          *
          * @param cloneType the value to set
          * @return this builder
@@ -547,14 +547,14 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
         /**
-         * A list of the source Autonomous Database's table space number(s) used to create this
+         * A list of the source Autonomous AI Database's table space number(s) used to create this
          * partial clone from the backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
         private java.util.List<Integer> cloneTableSpaceList;
 
         /**
-         * A list of the source Autonomous Database's table space number(s) used to create this
+         * A list of the source Autonomous AI Database's table space number(s) used to create this
          * partial clone from the backup.
          *
          * @param cloneTableSpaceList the value to set
@@ -938,14 +938,16 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database Backup that you will clone to create a new Autonomous Database.
+     * source Autonomous AI Database Backup that you will clone to create a new Autonomous AI
+     * Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
     private final String autonomousDatabaseBackupId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database Backup that you will clone to create a new Autonomous Database.
+     * source Autonomous AI Database Backup that you will clone to create a new Autonomous AI
+     * Database.
      *
      * @return the value
      */
@@ -953,7 +955,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         return autonomousDatabaseBackupId;
     }
 
-    /** The Autonomous Database clone type. */
+    /** The Autonomous AI Database clone type. */
     public enum CloneType implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Metadata("METADATA"),
@@ -987,12 +989,12 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             throw new IllegalArgumentException("Invalid CloneType: " + key);
         }
     };
-    /** The Autonomous Database clone type. */
+    /** The Autonomous AI Database clone type. */
     @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
     private final CloneType cloneType;
 
     /**
-     * The Autonomous Database clone type.
+     * The Autonomous AI Database clone type.
      *
      * @return the value
      */
@@ -1001,15 +1003,15 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
     }
 
     /**
-     * A list of the source Autonomous Database's table space number(s) used to create this partial
-     * clone from the backup.
+     * A list of the source Autonomous AI Database's table space number(s) used to create this
+     * partial clone from the backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
     private final java.util.List<Integer> cloneTableSpaceList;
 
     /**
-     * A list of the source Autonomous Database's table space number(s) used to create this partial
-     * clone from the backup.
+     * A list of the source Autonomous AI Database's table space number(s) used to create this
+     * partial clone from the backup.
      *
      * @return the value
      */

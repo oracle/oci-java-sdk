@@ -353,14 +353,14 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the
+         * **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the
          * container database is created within a specified {@code cloudAutonomousVmCluster}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
         private String autonomousExadataInfrastructureId;
 
         /**
-         * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the
+         * **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the
          * container database is created within a specified {@code cloudAutonomousVmCluster}.
          *
          * @param autonomousExadataInfrastructureId the value to set
@@ -465,8 +465,8 @@ public final class AutonomousContainerDatabaseSummary
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
@@ -475,8 +475,8 @@ public final class AutonomousContainerDatabaseSummary
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
@@ -789,14 +789,14 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          *
          * @param role the value to set
@@ -822,12 +822,12 @@ public final class AutonomousContainerDatabaseSummary
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** Oracle Database version of the Autonomous Container Database. */
+        /** Oracle AI Database version of the Autonomous Container Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * Oracle Database version of the Autonomous Container Database.
+         * Oracle AI Database version of the Autonomous Container Database.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -1009,7 +1009,7 @@ public final class AutonomousContainerDatabaseSummary
         }
         /**
          * CPUs that continue to be included in the count of CPUs available to the Autonomous
-         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * Container Database even after one of its Autonomous AI Database is terminated or scaled
          * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
          * level by restarting the Autonomous Container Database.
          */
@@ -1018,7 +1018,7 @@ public final class AutonomousContainerDatabaseSummary
 
         /**
          * CPUs that continue to be included in the count of CPUs available to the Autonomous
-         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * Container Database even after one of its Autonomous AI Database is terminated or scaled
          * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
          * level by restarting the Autonomous Container Database.
          *
@@ -1031,14 +1031,14 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * An array of CPU values that can be used to successfully provision a single Autonomous
+         * An array of CPU values that can be used to successfully provision a single Autonomous AI
          * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
         private java.util.List<Float> provisionableCpus;
 
         /**
-         * An array of CPU values that can be used to successfully provision a single Autonomous
+         * An array of CPU values that can be used to successfully provision a single Autonomous AI
          * Database.
          *
          * @param provisionableCpus the value to set
@@ -1069,10 +1069,10 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * The compute model of the Autonomous Container Database. For Autonomous Database on
+         * The compute model of the Autonomous Container Database. For Autonomous AI Database on
          * Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the
          * parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the
-         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous
+         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI
          * Database on Dedicated Exadata
          * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
          * for more details.
@@ -1081,10 +1081,10 @@ public final class AutonomousContainerDatabaseSummary
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous Container Database. For Autonomous Database on
+         * The compute model of the Autonomous Container Database. For Autonomous AI Database on
          * Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the
          * parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the
-         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous
+         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI
          * Database on Dedicated Exadata
          * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
          * for more details.
@@ -1128,16 +1128,16 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container
-         * Database.
+         * The largest Autonomous AI Database (CPU) that can be created in a new Autonomous
+         * Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "largestProvisionableAutonomousDatabaseInCpus")
         private Float largestProvisionableAutonomousDatabaseInCpus;
 
         /**
-         * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container
-         * Database.
+         * The largest Autonomous AI Database (CPU) that can be created in a new Autonomous
+         * Container Database.
          *
          * @param largestProvisionableAutonomousDatabaseInCpus the value to set
          * @return this builder
@@ -1169,15 +1169,15 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * The CPU value beyond which an Autonomous Database will be opened across multiple nodes.
-         * The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+         * The CPU value beyond which an Autonomous AI Database will be opened across multiple
+         * nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
         private Integer dbSplitThreshold;
 
         /**
-         * The CPU value beyond which an Autonomous Database will be opened across multiple nodes.
-         * The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+         * The CPU value beyond which an Autonomous AI Database will be opened across multiple
+         * nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
          *
          * @param dbSplitThreshold the value to set
          * @return this builder
@@ -1207,14 +1207,14 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * Determines whether an Autonomous Database must be opened across the maximum number of
+         * Determines whether an Autonomous AI Database must be opened across the maximum number of
          * nodes or the least number of nodes. By default, Minimum nodes is selected.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
         private DistributionAffinity distributionAffinity;
 
         /**
-         * Determines whether an Autonomous Database must be opened across the maximum number of
+         * Determines whether an Autonomous AI Database must be opened across the maximum number of
          * nodes or the least number of nodes. By default, Minimum nodes is selected.
          *
          * @param distributionAffinity the value to set
@@ -1262,18 +1262,18 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data
+         * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data
          * Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
-         * Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
+         * Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
          * infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
         private Boolean isDataGuardEnabled;
 
         /**
-         * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data
+         * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data
          * Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
-         * Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
+         * Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer
          * infrastructure.
          *
          * @param isDataGuardEnabled the value to set
@@ -1748,14 +1748,14 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the
+     * **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the
      * container database is created within a specified {@code cloudAutonomousVmCluster}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
     private final String autonomousExadataInfrastructureId;
 
     /**
-     * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the
+     * **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the
      * container database is created within a specified {@code cloudAutonomousVmCluster}.
      *
      * @return the value
@@ -1894,9 +1894,9 @@ public final class AutonomousContainerDatabaseSummary
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -1904,9 +1904,9 @@ public final class AutonomousContainerDatabaseSummary
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      *
      * @return the value
      */
@@ -2330,7 +2330,7 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
@@ -2380,14 +2380,14 @@ public final class AutonomousContainerDatabaseSummary
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      *
      * @return the value
@@ -2409,12 +2409,12 @@ public final class AutonomousContainerDatabaseSummary
         return availabilityDomain;
     }
 
-    /** Oracle Database version of the Autonomous Container Database. */
+    /** Oracle AI Database version of the Autonomous Container Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * Oracle Database version of the Autonomous Container Database.
+     * Oracle AI Database version of the Autonomous Container Database.
      *
      * @return the value
      */
@@ -2572,7 +2572,7 @@ public final class AutonomousContainerDatabaseSummary
 
     /**
      * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
-     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * Database even after one of its Autonomous AI Database is terminated or scaled down. You can
      * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
      * the Autonomous Container Database.
      */
@@ -2581,7 +2581,7 @@ public final class AutonomousContainerDatabaseSummary
 
     /**
      * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
-     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * Database even after one of its Autonomous AI Database is terminated or scaled down. You can
      * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
      * the Autonomous Container Database.
      *
@@ -2592,14 +2592,14 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * An array of CPU values that can be used to successfully provision a single Autonomous
+     * An array of CPU values that can be used to successfully provision a single Autonomous AI
      * Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
     private final java.util.List<Float> provisionableCpus;
 
     /**
-     * An array of CPU values that can be used to successfully provision a single Autonomous
+     * An array of CPU values that can be used to successfully provision a single Autonomous AI
      * Database.
      *
      * @return the value
@@ -2624,10 +2624,11 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated
-     * Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU
-     * compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata
+     * The compute model of the Autonomous Container Database. For Autonomous AI Database on
+     * Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent
+     * Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated
+     * Exadata
      * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
      * for more details.
      */
@@ -2677,10 +2678,11 @@ public final class AutonomousContainerDatabaseSummary
         }
     };
     /**
-     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated
-     * Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU
-     * compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata
+     * The compute model of the Autonomous Container Database. For Autonomous AI Database on
+     * Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent
+     * Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated
+     * Exadata
      * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
      * for more details.
      */
@@ -2688,10 +2690,11 @@ public final class AutonomousContainerDatabaseSummary
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated
-     * Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU
-     * compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata
+     * The compute model of the Autonomous Container Database. For Autonomous AI Database on
+     * Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent
+     * Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated
+     * Exadata
      * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
      * for more details.
      *
@@ -2728,14 +2731,14 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container
+     * The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container
      * Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("largestProvisionableAutonomousDatabaseInCpus")
     private final Float largestProvisionableAutonomousDatabaseInCpus;
 
     /**
-     * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container
+     * The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container
      * Database.
      *
      * @return the value
@@ -2762,15 +2765,15 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The
-     * default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes.
+     * The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
     private final Integer dbSplitThreshold;
 
     /**
-     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The
-     * default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes.
+     * The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      *
      * @return the value
      */
@@ -2796,8 +2799,8 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * Determines whether an Autonomous Database must be opened across the maximum number of nodes
-     * or the least number of nodes. By default, Minimum nodes is selected.
+     * Determines whether an Autonomous AI Database must be opened across the maximum number of
+     * nodes or the least number of nodes. By default, Minimum nodes is selected.
      */
     public enum DistributionAffinity implements com.oracle.bmc.http.internal.BmcEnum {
         MinimumDistribution("MINIMUM_DISTRIBUTION"),
@@ -2845,15 +2848,15 @@ public final class AutonomousContainerDatabaseSummary
         }
     };
     /**
-     * Determines whether an Autonomous Database must be opened across the maximum number of nodes
-     * or the least number of nodes. By default, Minimum nodes is selected.
+     * Determines whether an Autonomous AI Database must be opened across the maximum number of
+     * nodes or the least number of nodes. By default, Minimum nodes is selected.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
     private final DistributionAffinity distributionAffinity;
 
     /**
-     * Determines whether an Autonomous Database must be opened across the maximum number of nodes
-     * or the least number of nodes. By default, Minimum nodes is selected.
+     * Determines whether an Autonomous AI Database must be opened across the maximum number of
+     * nodes or the least number of nodes. By default, Minimum nodes is selected.
      *
      * @return the value
      */
@@ -2941,17 +2944,17 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard
      * enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous
-     * Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
     private final Boolean isDataGuardEnabled;
 
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard
      * enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous
-     * Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      *
      * @return the value
      */

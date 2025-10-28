@@ -5,8 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The properties that define dataguard association between two different Autonomous Databases. Note
- * that Autonomous Databases inherit DataGuard association from parent Autonomous Container
+ * The properties that define dataguard association between two different Autonomous AI Databases.
+ * Note that Autonomous AI Databases inherit DataGuard association from parent Autonomous Container
  * Database. No actions can be taken on AutonomousDatabaseDataguardAssociation, usage is strictly
  * informational. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
@@ -84,14 +84,14 @@ public final class AutonomousDatabaseDataguardAssociation
     public static class Builder {
         /**
          * The OCID of the Autonomous Dataguard created for Autonomous Container Database where
-         * given Autonomous Database resides in.
+         * given Autonomous AI Database resides in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the Autonomous Dataguard created for Autonomous Container Database where
-         * given Autonomous Database resides in.
+         * given Autonomous AI Database resides in.
          *
          * @param id the value to set
          * @return this builder
@@ -103,14 +103,14 @@ public final class AutonomousDatabaseDataguardAssociation
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database that has a relationship with the peer Autonomous Database.
+         * Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database that has a relationship with the peer Autonomous Database.
+         * Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
          *
          * @param autonomousDatabaseId the value to set
          * @return this builder
@@ -121,14 +121,14 @@ public final class AutonomousDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          *
          * @param role the value to set
@@ -170,14 +170,14 @@ public final class AutonomousDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
         private PeerRole peerRole;
 
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
          * Autonomous Data Guard is enabled.
          *
          * @param peerRole the value to set
@@ -190,14 +190,14 @@ public final class AutonomousDatabaseDataguardAssociation
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * peer Autonomous Database.
+         * peer Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousDatabaseId")
         private String peerAutonomousDatabaseId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * peer Autonomous Database.
+         * peer Autonomous AI Database.
          *
          * @param peerAutonomousDatabaseId the value to set
          * @return this builder
@@ -207,12 +207,12 @@ public final class AutonomousDatabaseDataguardAssociation
             this.__explicitlySet__.add("peerAutonomousDatabaseId");
             return this;
         }
-        /** The current state of the Autonomous Database. */
+        /** The current state of the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousDatabaseLifeCycleState")
         private PeerAutonomousDatabaseLifeCycleState peerAutonomousDatabaseLifeCycleState;
 
         /**
-         * The current state of the Autonomous Database.
+         * The current state of the Autonomous AI Database.
          *
          * @param peerAutonomousDatabaseLifeCycleState the value to set
          * @return this builder
@@ -476,14 +476,14 @@ public final class AutonomousDatabaseDataguardAssociation
 
     /**
      * The OCID of the Autonomous Dataguard created for Autonomous Container Database where given
-     * Autonomous Database resides in.
+     * Autonomous AI Database resides in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the Autonomous Dataguard created for Autonomous Container Database where given
-     * Autonomous Database resides in.
+     * Autonomous AI Database resides in.
      *
      * @return the value
      */
@@ -493,14 +493,14 @@ public final class AutonomousDatabaseDataguardAssociation
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database that has a relationship with the peer Autonomous Database.
+     * Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database that has a relationship with the peer Autonomous Database.
+     * Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
      *
      * @return the value
      */
@@ -509,7 +509,7 @@ public final class AutonomousDatabaseDataguardAssociation
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
@@ -559,14 +559,14 @@ public final class AutonomousDatabaseDataguardAssociation
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      *
      * @return the value
@@ -654,7 +654,7 @@ public final class AutonomousDatabaseDataguardAssociation
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     public enum PeerRole implements com.oracle.bmc.http.internal.BmcEnum {
@@ -706,14 +706,14 @@ public final class AutonomousDatabaseDataguardAssociation
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
     private final PeerRole peerRole;
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if
      * Autonomous Data Guard is enabled.
      *
      * @return the value
@@ -724,14 +724,14 @@ public final class AutonomousDatabaseDataguardAssociation
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * Autonomous Database.
+     * Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousDatabaseId")
     private final String peerAutonomousDatabaseId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * Autonomous Database.
+     * Autonomous AI Database.
      *
      * @return the value
      */
@@ -739,7 +739,7 @@ public final class AutonomousDatabaseDataguardAssociation
         return peerAutonomousDatabaseId;
     }
 
-    /** The current state of the Autonomous Database. */
+    /** The current state of the Autonomous AI Database. */
     public enum PeerAutonomousDatabaseLifeCycleState
             implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
@@ -806,12 +806,12 @@ public final class AutonomousDatabaseDataguardAssociation
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Autonomous Database. */
+    /** The current state of the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousDatabaseLifeCycleState")
     private final PeerAutonomousDatabaseLifeCycleState peerAutonomousDatabaseLifeCycleState;
 
     /**
-     * The current state of the Autonomous Database.
+     * The current state of the Autonomous AI Database.
      *
      * @return the value
      */

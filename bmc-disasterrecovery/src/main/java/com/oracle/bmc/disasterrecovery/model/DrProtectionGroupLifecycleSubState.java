@@ -6,11 +6,15 @@ package com.oracle.bmc.disasterrecovery.model;
 
 /**
  * The secondary lifecycle states of a DR protection group. Provides information in addition to the
- * lifecycle state. - DR_DRILL_IN_PROGRESS - A DR Drill is in progress.
+ * lifecycle state. - DR_DRILL_IN_PROGRESS - A DR Drill is in progress. -
+ * DR_PLAN_EXECUTION_IN_PROGRESS - DR Plan Execution is in progress. -
+ * AUTOMATIC_DR_PLAN_EXECUTION_IN_PROGRESS - Automatic DR Plan Execution is in progress.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrProtectionGroupLifecycleSubState implements com.oracle.bmc.http.internal.BmcEnum {
     DrDrillInProgress("DR_DRILL_IN_PROGRESS"),
+    DrPlanExecutionInProgress("DR_PLAN_EXECUTION_IN_PROGRESS"),
+    AutomaticDrPlanExecutionInProgress("AUTOMATIC_DR_PLAN_EXECUTION_IN_PROGRESS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

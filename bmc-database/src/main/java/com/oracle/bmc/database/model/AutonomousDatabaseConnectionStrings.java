@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Connection strings to connect to an Oracle Autonomous Database.
+ * Connection strings to connect to an Oracle Autonomous AI Database.
  *
  * <p>Example output for connection strings. See {@link
  * #databaseConnectionStringProfile(DatabaseConnectionStringProfileRequest)
@@ -155,8 +155,8 @@ public final class AutonomousDatabaseConnectionStrings
             return this;
         }
         /**
-         * Returns all connection strings that can be used to connect to the Autonomous Database.
-         * For more information, please see [Predefined Database Service Names for Autonomous
+         * Returns all connection strings that can be used to connect to the Autonomous AI Database.
+         * For more information, please see [Predefined Database Service Names for Autonomous AI
          * Transaction
          * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
          */
@@ -164,8 +164,8 @@ public final class AutonomousDatabaseConnectionStrings
         private java.util.Map<String, String> allConnectionStrings;
 
         /**
-         * Returns all connection strings that can be used to connect to the Autonomous Database.
-         * For more information, please see [Predefined Database Service Names for Autonomous
+         * Returns all connection strings that can be used to connect to the Autonomous AI Database.
+         * For more information, please see [Predefined Database Service Names for Autonomous AI
          * Transaction
          * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
          *
@@ -321,16 +321,16 @@ public final class AutonomousDatabaseConnectionStrings
     }
 
     /**
-     * Returns all connection strings that can be used to connect to the Autonomous Database. For
-     * more information, please see [Predefined Database Service Names for Autonomous Transaction
+     * Returns all connection strings that can be used to connect to the Autonomous AI Database. For
+     * more information, please see [Predefined Database Service Names for Autonomous AI Transaction
      * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
     private final java.util.Map<String, String> allConnectionStrings;
 
     /**
-     * Returns all connection strings that can be used to connect to the Autonomous Database. For
-     * more information, please see [Predefined Database Service Names for Autonomous Transaction
+     * Returns all connection strings that can be used to connect to the Autonomous AI Database. For
+     * more information, please see [Predefined Database Service Names for Autonomous AI Transaction
      * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      *
      * @return the value

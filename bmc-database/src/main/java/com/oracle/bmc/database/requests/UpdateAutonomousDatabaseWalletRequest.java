@@ -27,11 +27,11 @@ public class UpdateAutonomousDatabaseWalletRequest
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
-    /** Request to update the properties of an Autonomous Database wallet. */
+    /** Request to update the properties of an Autonomous AI Database wallet. */
     private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
             updateAutonomousDatabaseWalletDetails;
 
-    /** Request to update the properties of an Autonomous Database wallet. */
+    /** Request to update the properties of an Autonomous AI Database wallet. */
     public com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
             getUpdateAutonomousDatabaseWalletDetails() {
         return updateAutonomousDatabaseWalletDetails;
@@ -95,12 +95,12 @@ public class UpdateAutonomousDatabaseWalletRequest
             return this;
         }
 
-        /** Request to update the properties of an Autonomous Database wallet. */
+        /** Request to update the properties of an Autonomous AI Database wallet. */
         private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
                 updateAutonomousDatabaseWalletDetails = null;
 
         /**
-         * Request to update the properties of an Autonomous Database wallet.
+         * Request to update the properties of an Autonomous AI Database wallet.
          *
          * @param updateAutonomousDatabaseWalletDetails the value to set
          * @return this builder instance

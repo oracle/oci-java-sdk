@@ -324,7 +324,7 @@ public final class CloudAutonomousVmCluster
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
          * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * restrictions:** - A network security group (NSG) is optional for Autonomous AI Databases
          * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -336,7 +336,7 @@ public final class CloudAutonomousVmCluster
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
          * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * restrictions:** - A network security group (NSG) is optional for Autonomous AI Databases
          * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
@@ -605,7 +605,7 @@ public final class CloudAutonomousVmCluster
         }
         /**
          * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the
-         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous
+         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI
          * Database on Dedicated Exadata
          * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
          * for more details.
@@ -615,7 +615,7 @@ public final class CloudAutonomousVmCluster
 
         /**
          * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the
-         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous
+         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI
          * Database on Dedicated Exadata
          * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
          * for more details.
@@ -678,14 +678,14 @@ public final class CloudAutonomousVmCluster
             return this;
         }
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
-         * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-         * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-         * subscribe to new Oracle Database software licenses and the Oracle Database service. Note
-         * that when provisioning an [Autonomous Database on dedicated Exadata
+         * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your
+         * own license (BYOL) allows you to apply your current on-premises Oracle software licenses
+         * to equivalent, highly automated Oracle services in the cloud. License Included allows you
+         * to subscribe to new Oracle AI Database software licenses and the Oracle AI Database
+         * service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
          * this attribute must be null. It is already set at the Autonomous Exadata Infrastructure
-         * level. When provisioning an [Autonomous Database Serverless]
+         * level. When provisioning an [Autonomous AI Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
          * Bring your own license (BYOL) also allows you to select the DB edition using the optional
@@ -700,14 +700,14 @@ public final class CloudAutonomousVmCluster
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
-         * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-         * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-         * subscribe to new Oracle Database software licenses and the Oracle Database service. Note
-         * that when provisioning an [Autonomous Database on dedicated Exadata
+         * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your
+         * own license (BYOL) allows you to apply your current on-premises Oracle software licenses
+         * to equivalent, highly automated Oracle services in the cloud. License Included allows you
+         * to subscribe to new Oracle AI Database software licenses and the Oracle AI Database
+         * service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
          * this attribute must be null. It is already set at the Autonomous Exadata Infrastructure
-         * level. When provisioning an [Autonomous Database Serverless]
+         * level. When provisioning an [Autonomous AI Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
          * Bring your own license (BYOL) also allows you to select the DB edition using the optional
@@ -905,12 +905,12 @@ public final class CloudAutonomousVmCluster
             this.__explicitlySet__.add("timeOrdsCertificateExpires");
             return this;
         }
-        /** CPU cores available for allocation to Autonomous Databases. */
+        /** CPU cores available for allocation to Autonomous AI Databases. */
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Float availableCpus;
 
         /**
-         * CPU cores available for allocation to Autonomous Databases.
+         * CPU cores available for allocation to Autonomous AI Databases.
          *
          * @param availableCpus the value to set
          * @return this builder
@@ -922,7 +922,7 @@ public final class CloudAutonomousVmCluster
         }
         /**
          * CPUs that continue to be included in the count of CPUs available to the Autonomous
-         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * Container Database even after one of its Autonomous AI Database is terminated or scaled
          * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
          * level by restarting the Autonomous Container Database.
          */
@@ -931,7 +931,7 @@ public final class CloudAutonomousVmCluster
 
         /**
          * CPUs that continue to be included in the count of CPUs available to the Autonomous
-         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * Container Database even after one of its Autonomous AI Database is terminated or scaled
          * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
          * level by restarting the Autonomous Container Database.
          *
@@ -981,12 +981,12 @@ public final class CloudAutonomousVmCluster
             this.__explicitlySet__.add("totalContainerDatabases");
             return this;
         }
-        /** The data disk group size available for Autonomous Databases, in TBs. */
+        /** The data disk group size available for Autonomous AI Databases, in TBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("availableAutonomousDataStorageSizeInTBs")
         private Double availableAutonomousDataStorageSizeInTBs;
 
         /**
-         * The data disk group size available for Autonomous Databases, in TBs.
+         * The data disk group size available for Autonomous AI Databases, in TBs.
          *
          * @param availableAutonomousDataStorageSizeInTBs the value to set
          * @return this builder
@@ -997,12 +997,12 @@ public final class CloudAutonomousVmCluster
             this.__explicitlySet__.add("availableAutonomousDataStorageSizeInTBs");
             return this;
         }
-        /** The data disk group size allocated for Autonomous Databases, in TBs. */
+        /** The data disk group size allocated for Autonomous AI Databases, in TBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
         private Double autonomousDataStorageSizeInTBs;
 
         /**
-         * The data disk group size allocated for Autonomous Databases, in TBs.
+         * The data disk group size allocated for Autonomous AI Databases, in TBs.
          *
          * @param autonomousDataStorageSizeInTBs the value to set
          * @return this builder
@@ -1098,15 +1098,15 @@ public final class CloudAutonomousVmCluster
             return this;
         }
         /**
-         * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM
-         * Cluster.
+         * The percentage of the data storage used for the Autonomous AI Databases in an Autonomous
+         * VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStoragePercentage")
         private Float autonomousDataStoragePercentage;
 
         /**
-         * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM
-         * Cluster.
+         * The percentage of the data storage used for the Autonomous AI Databases in an Autonomous
+         * VM Cluster.
          *
          * @param autonomousDataStoragePercentage the value to set
          * @return this builder
@@ -1146,12 +1146,12 @@ public final class CloudAutonomousVmCluster
             this.__explicitlySet__.add("totalCpus");
             return this;
         }
-        /** The total data disk group size for Autonomous Databases, in TBs. */
+        /** The total data disk group size for Autonomous AI Databases, in TBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalAutonomousDataStorageInTBs")
         private Float totalAutonomousDataStorageInTBs;
 
         /**
-         * The total data disk group size for Autonomous Databases, in TBs.
+         * The total data disk group size for Autonomous AI Databases, in TBs.
          *
          * @param totalAutonomousDataStorageInTBs the value to set
          * @return this builder
@@ -1693,7 +1693,7 @@ public final class CloudAutonomousVmCluster
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -1704,7 +1704,7 @@ public final class CloudAutonomousVmCluster
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
      * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
+     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous AI
      * Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
@@ -1990,7 +1990,7 @@ public final class CloudAutonomousVmCluster
 
     /**
      * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended
-     * model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on
+     * model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on
      * Dedicated Exadata
      * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
      * for more details.
@@ -2042,7 +2042,7 @@ public final class CloudAutonomousVmCluster
     };
     /**
      * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended
-     * model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on
+     * model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on
      * Dedicated Exadata
      * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
      * for more details.
@@ -2052,7 +2052,7 @@ public final class CloudAutonomousVmCluster
 
     /**
      * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended
-     * model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on
+     * model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on
      * Dedicated Exadata
      * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
      * for more details.
@@ -2107,14 +2107,14 @@ public final class CloudAutonomousVmCluster
     }
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -2170,14 +2170,14 @@ public final class CloudAutonomousVmCluster
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -2191,14 +2191,14 @@ public final class CloudAutonomousVmCluster
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
+     * The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
-     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
-     * when provisioning an [Autonomous Database on dedicated Exadata
+     * subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+     * Note that when provisioning an [Autonomous AI Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
-     * When provisioning an [Autonomous Database Serverless]
+     * When provisioning an [Autonomous AI Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
      * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
      * own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -2370,12 +2370,12 @@ public final class CloudAutonomousVmCluster
         return timeOrdsCertificateExpires;
     }
 
-    /** CPU cores available for allocation to Autonomous Databases. */
+    /** CPU cores available for allocation to Autonomous AI Databases. */
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     private final Float availableCpus;
 
     /**
-     * CPU cores available for allocation to Autonomous Databases.
+     * CPU cores available for allocation to Autonomous AI Databases.
      *
      * @return the value
      */
@@ -2385,7 +2385,7 @@ public final class CloudAutonomousVmCluster
 
     /**
      * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
-     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * Database even after one of its Autonomous AI Database is terminated or scaled down. You can
      * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
      * the Autonomous Container Database.
      */
@@ -2394,7 +2394,7 @@ public final class CloudAutonomousVmCluster
 
     /**
      * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
-     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * Database even after one of its Autonomous AI Database is terminated or scaled down. You can
      * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
      * the Autonomous Container Database.
      *
@@ -2438,12 +2438,12 @@ public final class CloudAutonomousVmCluster
         return totalContainerDatabases;
     }
 
-    /** The data disk group size available for Autonomous Databases, in TBs. */
+    /** The data disk group size available for Autonomous AI Databases, in TBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("availableAutonomousDataStorageSizeInTBs")
     private final Double availableAutonomousDataStorageSizeInTBs;
 
     /**
-     * The data disk group size available for Autonomous Databases, in TBs.
+     * The data disk group size available for Autonomous AI Databases, in TBs.
      *
      * @return the value
      */
@@ -2451,12 +2451,12 @@ public final class CloudAutonomousVmCluster
         return availableAutonomousDataStorageSizeInTBs;
     }
 
-    /** The data disk group size allocated for Autonomous Databases, in TBs. */
+    /** The data disk group size allocated for Autonomous AI Databases, in TBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
     private final Double autonomousDataStorageSizeInTBs;
 
     /**
-     * The data disk group size allocated for Autonomous Databases, in TBs.
+     * The data disk group size allocated for Autonomous AI Databases, in TBs.
      *
      * @return the value
      */
@@ -2538,14 +2538,14 @@ public final class CloudAutonomousVmCluster
     }
 
     /**
-     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM
+     * The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM
      * Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStoragePercentage")
     private final Float autonomousDataStoragePercentage;
 
     /**
-     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM
+     * The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM
      * Cluster.
      *
      * @return the value
@@ -2580,12 +2580,12 @@ public final class CloudAutonomousVmCluster
         return totalCpus;
     }
 
-    /** The total data disk group size for Autonomous Databases, in TBs. */
+    /** The total data disk group size for Autonomous AI Databases, in TBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalAutonomousDataStorageInTBs")
     private final Float totalAutonomousDataStorageInTBs;
 
     /**
-     * The total data disk group size for Autonomous Databases, in TBs.
+     * The total data disk group size for Autonomous AI Databases, in TBs.
      *
      * @return the value
      */

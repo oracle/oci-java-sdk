@@ -102,6 +102,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Add an IPv4 prefix to a subnet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddIpv4SubnetCidrResponse> addIpv4SubnetCidr(
+            AddIpv4SubnetCidrRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddIpv4SubnetCidrRequest, AddIpv4SubnetCidrResponse>
+                    handler);
+
+    /**
      * Add an IPv6 prefix to a subnet.
      *
      * @param request The request object containing the details to send
@@ -4158,6 +4174,29 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListVtapsRequest, ListVtapsResponse> handler);
 
     /**
+     * Updates the specified Ipv4 CIDR block of a Subnet. The new Ipv4 CIDR IP range must meet the
+     * following criteria:
+     *
+     * <p>- Must be valid. - Must not overlap with another Ipv4 CIDR block in the Subnet or the
+     * on-premises network CIDR block. - Must not exceed the limit of Ipv4 CIDR blocks allowed per
+     * Subnet. - Must include IP addresses from the original CIDR block that are used in the VCN's
+     * existing route rules. - No IP address in an existing subnet should be outside of the new CIDR
+     * block range.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ModifyIpv4SubnetCidrResponse> modifyIpv4SubnetCidr(
+            ModifyIpv4SubnetCidrRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ModifyIpv4SubnetCidrRequest, ModifyIpv4SubnetCidrResponse>
+                    handler);
+
+    /**
      * Updates the specified CIDR block of a VCN. The new CIDR IP range must meet the following
      * criteria:
      *
@@ -4275,6 +4314,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                                     RemoveImportDrgRouteDistributionRequest,
                                     RemoveImportDrgRouteDistributionResponse>
                             handler);
+
+    /**
+     * Remove an IPv4 prefix from a subnet
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveIpv4SubnetCidrResponse> removeIpv4SubnetCidr(
+            RemoveIpv4SubnetCidrRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveIpv4SubnetCidrRequest, RemoveIpv4SubnetCidrResponse>
+                    handler);
 
     /**
      * Remove an IPv6 prefix from a subnet. At least one IPv6 CIDR should remain.

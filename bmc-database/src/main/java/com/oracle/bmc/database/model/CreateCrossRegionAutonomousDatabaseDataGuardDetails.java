@@ -5,21 +5,21 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Autonomous Data Guard association for an existing Autonomous Database where
- * the standby is in a different (remote) region from the source primary database. *IMPORTANT* Note
- * the following for creating standby databases in cross-region Autonomous Data Guard associations:
- * - To create your standby database in a region different from the region of the primary, use the
- * API endpoint of the region in which the standby will be located. For example, if the primary
- * database is in the IAD region, and you want to create the standby in the PHX region, make the API
- * call using the PHX endpoint (https://database.us-phoenix-1.oraclecloud.com). See [API
- * Endpoints](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs) for the list
- * of Database Service API endpoints. - In the request to create the standby database, the {@code
- * sourceId} value should be the OCID of the primary database. The following parameters are optional
- * for the cross-region standby database. If included in the request, these parameters contain the
- * same values as the source Autonomous Database: - customerContacts - scheduledOperations -
- * isAutoScalingForStorageEnabled - definedTags - freeformTags - licenseModel - whitelistedIps -
- * isMtlsConnectionRequired - dbName - adminPassword - cpuCoreCount - dataStorageSizeInTB -
- * dbVersion <br>
+ * Details to create an Autonomous Data Guard association for an existing Autonomous AI Database
+ * where the standby is in a different (remote) region from the source primary database. *IMPORTANT*
+ * Note the following for creating standby databases in cross-region Autonomous Data Guard
+ * associations: - To create your standby database in a region different from the region of the
+ * primary, use the API endpoint of the region in which the standby will be located. For example, if
+ * the primary database is in the IAD region, and you want to create the standby in the PHX region,
+ * make the API call using the PHX endpoint (https://database.us-phoenix-1.oraclecloud.com). See
+ * [API Endpoints](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs) for the
+ * list of Database Service API endpoints. - In the request to create the standby database, the
+ * {@code sourceId} value should be the OCID of the primary database. The following parameters are
+ * optional for the cross-region standby database. If included in the request, these parameters
+ * contain the same values as the source Autonomous AI Database: - customerContacts -
+ * scheduledOperations - isAutoScalingForStorageEnabled - definedTags - freeformTags - licenseModel
+ * - whitelistedIps - isMtlsConnectionRequired - dbName - adminPassword - cpuCoreCount -
+ * dataStorageSizeInTB - dbVersion <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -526,16 +526,16 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new peer database for the Data
-         * Guard association.
+         * source Autonomous AI Database that will be used to create a new peer database for the
+         * Data Guard association.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new peer database for the Data
-         * Guard association.
+         * source Autonomous AI Database that will be used to create a new peer database for the
+         * Data Guard association.
          *
          * @param sourceId the value to set
          * @return this builder
@@ -906,16 +906,16 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new peer database for the Data Guard
-     * association.
+     * source Autonomous AI Database that will be used to create a new peer database for the Data
+     * Guard association.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new peer database for the Data Guard
-     * association.
+     * source Autonomous AI Database that will be used to create a new peer database for the Data
+     * Guard association.
      *
      * @return the value
      */

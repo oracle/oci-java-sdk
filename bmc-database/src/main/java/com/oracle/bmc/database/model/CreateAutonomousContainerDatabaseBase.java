@@ -291,7 +291,7 @@ public class CreateAutonomousContainerDatabaseBase
     }
 
     /**
-     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated
+     * **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated
      * Exadata infrasture. Specify a {@code cloudAutonomousVmClusterId} instead. Using this
      * parameter will cause the operation to fail.
      */
@@ -299,7 +299,7 @@ public class CreateAutonomousContainerDatabaseBase
     private final String autonomousExadataInfrastructureId;
 
     /**
-     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated
+     * **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated
      * Exadata infrasture. Specify a {@code cloudAutonomousVmClusterId} instead. Using this
      * parameter will cause the operation to fail.
      *
@@ -323,14 +323,14 @@ public class CreateAutonomousContainerDatabaseBase
     }
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
@@ -340,7 +340,7 @@ public class CreateAutonomousContainerDatabaseBase
     }
 
     /**
-     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated
+     * *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated
      * Exadata infrasture. Specify a {@code peerCloudAutonomousVmClusterId} instead. Using this
      * parameter will cause the operation to fail.
      */
@@ -348,7 +348,7 @@ public class CreateAutonomousContainerDatabaseBase
     private final String peerAutonomousExadataInfrastructureId;
 
     /**
-     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated
+     * *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated
      * Exadata infrasture. Specify a {@code peerCloudAutonomousVmClusterId} instead. Using this
      * parameter will cause the operation to fail.
      *
@@ -792,9 +792,9 @@ public class CreateAutonomousContainerDatabaseBase
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -802,9 +802,9 @@ public class CreateAutonomousContainerDatabaseBase
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      *
      * @return the value
      */
@@ -851,15 +851,15 @@ public class CreateAutonomousContainerDatabaseBase
     }
 
     /**
-     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The
-     * default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes.
+     * The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
     private final Integer dbSplitThreshold;
 
     /**
-     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The
-     * default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes.
+     * The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      *
      * @return the value
      */
@@ -885,7 +885,7 @@ public class CreateAutonomousContainerDatabaseBase
     }
 
     /**
-     * Determines whether an Autonomous Database must be opened across a minimum or maximum of
+     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of
      * nodes. By default, Minimum nodes is selected.
      */
     public enum DistributionAffinity implements com.oracle.bmc.http.internal.BmcEnum {
@@ -921,14 +921,14 @@ public class CreateAutonomousContainerDatabaseBase
         }
     };
     /**
-     * Determines whether an Autonomous Database must be opened across a minimum or maximum of
+     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of
      * nodes. By default, Minimum nodes is selected.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
     private final DistributionAffinity distributionAffinity;
 
     /**
-     * Determines whether an Autonomous Database must be opened across a minimum or maximum of
+     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of
      * nodes. By default, Minimum nodes is selected.
      *
      * @return the value

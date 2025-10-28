@@ -5,9 +5,9 @@
 package com.oracle.bmc.database.model;
 
 /**
- * An Autonomous Database backup. To use any of the API operations, you must be authorized in an IAM
- * policy. If you're not authorized, talk to an administrator. If you're an administrator who needs
- * to write policies to give users access, see [Getting Started with
+ * An Autonomous AI Database backup. To use any of the API operations, you must be authorized in an
+ * IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who
+ * needs to write policies to give users access, see [Getting Started with
  * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>**Warning:** Oracle recommends that you avoid using any confidential information when you
@@ -114,14 +114,14 @@ public final class AutonomousDatabaseBackupSummary
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          *
          * @param id the value to set
          * @return this builder
@@ -152,14 +152,14 @@ public final class AutonomousDatabaseBackupSummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database.
+         * Autonomous AI Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database.
+         * Autonomous AI Database.
          *
          * @param autonomousDatabaseId the value to set
          * @return this builder
@@ -290,13 +290,15 @@ public final class AutonomousDatabaseBackupSummary
             return this;
         }
         /**
-         * Indicates whether the backup can be used to restore the associated Autonomous Database.
+         * Indicates whether the backup can be used to restore the associated Autonomous AI
+         * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isRestorable")
         private Boolean isRestorable;
 
         /**
-         * Indicates whether the backup can be used to restore the associated Autonomous Database.
+         * Indicates whether the backup can be used to restore the associated Autonomous AI
+         * Database.
          *
          * @param isRestorable the value to set
          * @return this builder
@@ -385,8 +387,8 @@ public final class AutonomousDatabaseBackupSummary
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
@@ -395,8 +397,8 @@ public final class AutonomousDatabaseBackupSummary
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation. Autonomous
-         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous AI
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous AI
          * Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
@@ -437,12 +439,12 @@ public final class AutonomousDatabaseBackupSummary
             this.__explicitlySet__.add("timeAvailableTill");
             return this;
         }
-        /** A valid Oracle Database version for Autonomous Database. */
+        /** A valid Oracle AI Database version for Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * A valid Oracle Database version for Autonomous Database.
+         * A valid Oracle AI Database version for Autonomous AI Database.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -645,14 +647,14 @@ public final class AutonomousDatabaseBackupSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      *
      * @return the value
      */
@@ -679,14 +681,14 @@ public final class AutonomousDatabaseBackupSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database.
+     * Autonomous AI Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database.
+     * Autonomous AI Database.
      *
      * @return the value
      */
@@ -896,12 +898,14 @@ public final class AutonomousDatabaseBackupSummary
         return lifecycleState;
     }
 
-    /** Indicates whether the backup can be used to restore the associated Autonomous Database. */
+    /**
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isRestorable")
     private final Boolean isRestorable;
 
     /**
-     * Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      *
      * @return the value
      */
@@ -980,9 +984,9 @@ public final class AutonomousDatabaseBackupSummary
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -990,9 +994,9 @@ public final class AutonomousDatabaseBackupSummary
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * key version (latest) of the Key Id is used for the operation. Autonomous AI Database
+     * Serverless does not use key versions, hence is not applicable for Autonomous AI Database
+     * Serverless instances.
      *
      * @return the value
      */
@@ -1026,12 +1030,12 @@ public final class AutonomousDatabaseBackupSummary
         return timeAvailableTill;
     }
 
-    /** A valid Oracle Database version for Autonomous Database. */
+    /** A valid Oracle AI Database version for Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
      *
      * @return the value
      */

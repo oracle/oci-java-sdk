@@ -194,15 +194,15 @@ public final class MaintenanceRunSummary
             return this;
         }
         /**
-         * The current state of the maintenance run. For Autonomous Database Serverless instances,
-         * valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+         * The current state of the maintenance run. For Autonomous AI Database Serverless
+         * instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the maintenance run. For Autonomous Database Serverless instances,
-         * valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+         * The current state of the maintenance run. For Autonomous AI Database Serverless
+         * instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -319,18 +319,18 @@ public final class MaintenanceRunSummary
         }
         /**
          * The unique identifier of the patch. The identifier string includes the patch type, the
-         * Oracle Database version, and the patch creation date (using the format YYMMDD). For
+         * Oracle AI Database version, and the patch creation date (using the format YYMMDD). For
          * example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for
-         * Oracle Database 19.9.0.0 that was released October 30, 2020.
+         * Oracle AI Database 19.9.0.0 that was released October 30, 2020.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
 
         /**
          * The unique identifier of the patch. The identifier string includes the patch type, the
-         * Oracle Database version, and the patch creation date (using the format YYMMDD). For
+         * Oracle AI Database version, and the patch creation date (using the format YYMMDD). For
          * example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for
-         * Oracle Database 19.9.0.0 that was released October 30, 2020.
+         * Oracle AI Database 19.9.0.0 that was released October 30, 2020.
          *
          * @param patchId the value to set
          * @return this builder
@@ -682,14 +682,14 @@ public final class MaintenanceRunSummary
             return this;
         }
         /**
-         * The Autonomous Database Software Image
+         * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
-         * The Autonomous Database Software Image
+         * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          *
          * @param databaseSoftwareImageId the value to set
@@ -918,8 +918,8 @@ public final class MaintenanceRunSummary
     }
 
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid
-     * states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances,
+     * valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Scheduled("SCHEDULED"),
@@ -974,15 +974,15 @@ public final class MaintenanceRunSummary
         }
     };
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid
-     * states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances,
+     * valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid
-     * states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances,
+     * valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      *
      * @return the value
      */
@@ -1181,8 +1181,8 @@ public final class MaintenanceRunSummary
 
     /**
      * The unique identifier of the patch. The identifier string includes the patch type, the Oracle
-     * Database version, and the patch creation date (using the format YYMMDD). For example, the
-     * identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database
+     * AI Database version, and the patch creation date (using the format YYMMDD). For example, the
+     * identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle AI Database
      * 19.9.0.0 that was released October 30, 2020.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
@@ -1190,8 +1190,8 @@ public final class MaintenanceRunSummary
 
     /**
      * The unique identifier of the patch. The identifier string includes the patch type, the Oracle
-     * Database version, and the patch creation date (using the format YYMMDD). For example, the
-     * identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database
+     * AI Database version, and the patch creation date (using the format YYMMDD). For example, the
+     * identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle AI Database
      * 19.9.0.0 that was released October 30, 2020.
      *
      * @return the value
@@ -1655,14 +1655,14 @@ public final class MaintenanceRunSummary
     }
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
-     * The Autonomous Database Software Image
+     * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value

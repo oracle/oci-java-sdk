@@ -93,14 +93,14 @@ public final class AutonomousContainerDatabaseBackupSummary
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Database backup.
+         * Autonomous AI Database backup.
          *
          * @param id the value to set
          * @return this builder
@@ -388,13 +388,13 @@ public final class AutonomousContainerDatabaseBackupSummary
             return this;
         }
         /**
-         * List of Autonomous Databases that is part of this Autonomous Container Database Backup
+         * List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabases")
         private java.util.List<AutonomousDatabaseInBackup> autonomousDatabases;
 
         /**
-         * List of Autonomous Databases that is part of this Autonomous Container Database Backup
+         * List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
          *
          * @param autonomousDatabases the value to set
          * @return this builder
@@ -507,14 +507,14 @@ public final class AutonomousContainerDatabaseBackupSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Database backup.
+     * Autonomous AI Database backup.
      *
      * @return the value
      */
@@ -906,12 +906,12 @@ public final class AutonomousContainerDatabaseBackupSummary
         return systemTags;
     }
 
-    /** List of Autonomous Databases that is part of this Autonomous Container Database Backup */
+    /** List of Autonomous AI Databases that is part of this Autonomous Container Database Backup */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabases")
     private final java.util.List<AutonomousDatabaseInBackup> autonomousDatabases;
 
     /**
-     * List of Autonomous Databases that is part of this Autonomous Container Database Backup
+     * List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
      *
      * @return the value
      */

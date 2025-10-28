@@ -101,6 +101,25 @@ public interface LustreFileStorage extends AutoCloseable {
             ChangeLustreFileSystemCompartmentRequest request);
 
     /**
+     * Moves an Object Storage link into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/ChangeObjectStorageLinkCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeObjectStorageLinkCompartment API.
+     */
+    ChangeObjectStorageLinkCompartmentResponse changeObjectStorageLinkCompartment(
+            ChangeObjectStorageLinkCompartmentRequest request);
+
+    /**
      * Creates a Lustre file system.
      *
      * @param request The request object containing the details to send
@@ -115,6 +134,22 @@ public interface LustreFileStorage extends AutoCloseable {
      *     CreateLustreFileSystem API.
      */
     CreateLustreFileSystemResponse createLustreFileSystem(CreateLustreFileSystemRequest request);
+
+    /**
+     * Creates an Object Storage link.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/CreateObjectStorageLinkExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateObjectStorageLink API.
+     */
+    CreateObjectStorageLinkResponse createObjectStorageLink(CreateObjectStorageLinkRequest request);
 
     /**
      * Deletes a Lustre file system.
@@ -133,6 +168,22 @@ public interface LustreFileStorage extends AutoCloseable {
     DeleteLustreFileSystemResponse deleteLustreFileSystem(DeleteLustreFileSystemRequest request);
 
     /**
+     * Deletes an Object Storage link.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/DeleteObjectStorageLinkExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteObjectStorageLink API.
+     */
+    DeleteObjectStorageLinkResponse deleteObjectStorageLink(DeleteObjectStorageLinkRequest request);
+
+    /**
      * Gets information about a Lustre file system.
      *
      * @param request The request object containing the details to send
@@ -147,6 +198,38 @@ public interface LustreFileStorage extends AutoCloseable {
      *     API.
      */
     GetLustreFileSystemResponse getLustreFileSystem(GetLustreFileSystemRequest request);
+
+    /**
+     * Gets information about an Object Storage link.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/GetObjectStorageLinkExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetObjectStorageLink API.
+     */
+    GetObjectStorageLinkResponse getObjectStorageLink(GetObjectStorageLinkRequest request);
+
+    /**
+     * Gets details of a sync job associated with an Object Storage link when `objectStorageLink`
+     * and a unique ID are provided.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/GetSyncJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSyncJob API.
+     */
+    GetSyncJobResponse getSyncJob(GetSyncJobRequest request);
 
     /**
      * Gets the details of a work request.
@@ -178,6 +261,38 @@ public interface LustreFileStorage extends AutoCloseable {
      *     ListLustreFileSystems API.
      */
     ListLustreFileSystemsResponse listLustreFileSystems(ListLustreFileSystemsRequest request);
+
+    /**
+     * Gets a list of Object Storage links.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/ListObjectStorageLinksExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListObjectStorageLinks API.
+     */
+    ListObjectStorageLinksResponse listObjectStorageLinks(ListObjectStorageLinksRequest request);
+
+    /**
+     * Lists all sync jobs associated with the Object Storage link. Contains a unique ID for each
+     * sync job.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/ListSyncJobsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSyncJobs API.
+     */
+    ListSyncJobsResponse listSyncJobs(ListSyncJobsRequest request);
 
     /**
      * Lists the errors for a work request.
@@ -228,6 +343,74 @@ public interface LustreFileStorage extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Starts the export of data from the Lustre file system to Object Storage. The Lustre file
+     * system path and Object Storage object prefix are defined in the Object Storage link resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/StartExportToObjectExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartExportToObject
+     *     API.
+     */
+    StartExportToObjectResponse startExportToObject(StartExportToObjectRequest request);
+
+    /**
+     * Starts the import of data from Object Storage to the Lustre file system. The Lustre file
+     * system path and Object Storage object prefix are defined in the Object Storage link resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/StartImportFromObjectExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     StartImportFromObject API.
+     */
+    StartImportFromObjectResponse startImportFromObject(StartImportFromObjectRequest request);
+
+    /**
+     * Stops the export of data from the Lustre file system to Object Storage. The Lustre file
+     * system path and Object Storage object prefix are defined in the Object Storage link resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/StopExportToObjectExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopExportToObject
+     *     API.
+     */
+    StopExportToObjectResponse stopExportToObject(StopExportToObjectRequest request);
+
+    /**
+     * Stops the import of data from Object Storage to the Lustre file system. The Lustre file
+     * system path and Object Storage object prefix are defined in the Object Storage link resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/StopImportFromObjectExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     StopImportFromObject API.
+     */
+    StopImportFromObjectResponse stopImportFromObject(StopImportFromObjectRequest request);
+
+    /**
      * Updates a Lustre file system.
      *
      * @param request The request object containing the details to send
@@ -242,6 +425,22 @@ public interface LustreFileStorage extends AutoCloseable {
      *     UpdateLustreFileSystem API.
      */
     UpdateLustreFileSystemResponse updateLustreFileSystem(UpdateLustreFileSystemRequest request);
+
+    /**
+     * Updates an Object Storage link.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lustrefilestorage/UpdateObjectStorageLinkExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateObjectStorageLink API.
+     */
+    UpdateObjectStorageLinkResponse updateObjectStorageLink(UpdateObjectStorageLinkRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

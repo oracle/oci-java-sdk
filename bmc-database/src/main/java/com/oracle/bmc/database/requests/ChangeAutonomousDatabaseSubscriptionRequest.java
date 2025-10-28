@@ -16,11 +16,11 @@ public class ChangeAutonomousDatabaseSubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.ChangeAutonomousDatabaseSubscriptionDetails> {
 
-    /** Associate an Autonomous Database with a different subscription. */
+    /** Associate an Autonomous AI Database with a different subscription. */
     private com.oracle.bmc.database.model.ChangeAutonomousDatabaseSubscriptionDetails
             changeAutonomousDatabaseSubscriptionDetails;
 
-    /** Associate an Autonomous Database with a different subscription. */
+    /** Associate an Autonomous AI Database with a different subscription. */
     public com.oracle.bmc.database.model.ChangeAutonomousDatabaseSubscriptionDetails
             getChangeAutonomousDatabaseSubscriptionDetails() {
         return changeAutonomousDatabaseSubscriptionDetails;
@@ -113,12 +113,12 @@ public class ChangeAutonomousDatabaseSubscriptionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Associate an Autonomous Database with a different subscription. */
+        /** Associate an Autonomous AI Database with a different subscription. */
         private com.oracle.bmc.database.model.ChangeAutonomousDatabaseSubscriptionDetails
                 changeAutonomousDatabaseSubscriptionDetails = null;
 
         /**
-         * Associate an Autonomous Database with a different subscription.
+         * Associate an Autonomous AI Database with a different subscription.
          *
          * @param changeAutonomousDatabaseSubscriptionDetails the value to set
          * @return this builder instance

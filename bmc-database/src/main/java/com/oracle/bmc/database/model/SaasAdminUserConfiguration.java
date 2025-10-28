@@ -132,12 +132,12 @@ public final class SaasAdminUserConfiguration
             this.__explicitlySet__.add("duration");
             return this;
         }
-        /** Indicates if the SaaS administrative user is enabled for the Autonomous Database. */
+        /** Indicates if the SaaS administrative user is enabled for the Autonomous AI Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Indicates if the SaaS administrative user is enabled for the Autonomous Database.
+         * Indicates if the SaaS administrative user is enabled for the Autonomous AI Database.
          *
          * @param isEnabled the value to set
          * @return this builder
@@ -167,14 +167,14 @@ public final class SaasAdminUserConfiguration
             return this;
         }
         /**
-         * The date and time the SaaS administrative user was enabled at, for the Autonomous
+         * The date and time the SaaS administrative user was enabled at, for the Autonomous AI
          * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeSaasAdminUserEnabled")
         private java.util.Date timeSaasAdminUserEnabled;
 
         /**
-         * The date and time the SaaS administrative user was enabled at, for the Autonomous
+         * The date and time the SaaS administrative user was enabled at, for the Autonomous AI
          * Database.
          *
          * @param timeSaasAdminUserEnabled the value to set
@@ -311,12 +311,12 @@ public final class SaasAdminUserConfiguration
         return duration;
     }
 
-    /** Indicates if the SaaS administrative user is enabled for the Autonomous Database. */
+    /** Indicates if the SaaS administrative user is enabled for the Autonomous AI Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Indicates if the SaaS administrative user is enabled for the Autonomous Database.
+     * Indicates if the SaaS administrative user is enabled for the Autonomous AI Database.
      *
      * @return the value
      */
@@ -379,13 +379,15 @@ public final class SaasAdminUserConfiguration
     }
 
     /**
-     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous AI
+     * Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeSaasAdminUserEnabled")
     private final java.util.Date timeSaasAdminUserEnabled;
 
     /**
-     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous AI
+     * Database.
      *
      * @return the value
      */

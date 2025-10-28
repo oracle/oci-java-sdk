@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The supported Autonomous Database version. <br>
+ * The supported Autonomous AI Database version. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,12 +34,12 @@ public final class AutonomousContainerDatabaseVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A valid Oracle Database version for provisioning an Autonomous Container Database. */
+        /** A valid Oracle AI Database version for provisioning an Autonomous Container Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * A valid Oracle Database version for provisioning an Autonomous Container Database.
+         * A valid Oracle AI Database version for provisioning an Autonomous Container Database.
          *
          * @param version the value to set
          * @return this builder
@@ -119,12 +119,12 @@ public final class AutonomousContainerDatabaseVersionSummary
         return new Builder().copy(this);
     }
 
-    /** A valid Oracle Database version for provisioning an Autonomous Container Database. */
+    /** A valid Oracle AI Database version for provisioning an Autonomous Container Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * A valid Oracle Database version for provisioning an Autonomous Container Database.
+     * A valid Oracle AI Database version for provisioning an Autonomous Container Database.
      *
      * @return the value
      */
