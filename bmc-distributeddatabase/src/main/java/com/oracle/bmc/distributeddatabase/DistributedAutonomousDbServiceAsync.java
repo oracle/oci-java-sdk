@@ -101,6 +101,24 @@ public interface DistributedAutonomousDbServiceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Change the DbBackupConfig for the Globally distributed autonomous database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDistributedAutonomousDbBackupConfigResponse>
+            changeDistributedAutonomousDbBackupConfig(
+                    ChangeDistributedAutonomousDbBackupConfigRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDistributedAutonomousDbBackupConfigRequest,
+                                    ChangeDistributedAutonomousDbBackupConfigResponse>
+                            handler);
+
+    /**
      * Configure new Global Service Manager(GSM aka shard manager) instances for the Globally
      * distributed autonomous database.
      *
@@ -301,7 +319,8 @@ public interface DistributedAutonomousDbServiceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Rotate passwords for different components of the Globally distributed autonomous database.
+     * Rotate the gsmuser and gsmcatuser passwords for shards and catalog of the Globally
+     * distributed autonomous database. This operation will also remove GdsCtlNodes if present.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

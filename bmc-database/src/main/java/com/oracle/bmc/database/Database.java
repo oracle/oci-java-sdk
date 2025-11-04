@@ -85,6 +85,23 @@ public interface Database extends AutoCloseable {
             ActivateExadataInfrastructureRequest request);
 
     /**
+     * Add a database node snapshots to the Exadb VM cluster..
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddDbnodeSnapshotsForExadbVmClusterExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddDbnodeSnapshotsForExadbVmCluster API.
+     */
+    AddDbnodeSnapshotsForExadbVmClusterResponse addDbnodeSnapshotsForExadbVmCluster(
+            AddDbnodeSnapshotsForExadbVmClusterRequest request);
+
+    /**
      * Add a standby Autonomous Container Database. For more information about Autonomous Data
      * Guard,see [Protect Critical Databases from Failures and Disasters Using Autonomous Data
      * Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
@@ -2089,6 +2106,22 @@ public interface Database extends AutoCloseable {
     DeleteDbHomeResponse deleteDbHome(DeleteDbHomeRequest request);
 
     /**
+     * Deletes the specified Exadata Database Node Snapshot.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDbnodeSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteDbnodeSnapshot API.
+     */
+    DeleteDbnodeSnapshotResponse deleteDbnodeSnapshot(DeleteDbnodeSnapshotRequest request);
+
+    /**
      * Deletes the Exadata Cloud@Customer infrastructure.
      *
      * @param request The request object containing the details to send
@@ -3809,6 +3842,23 @@ public interface Database extends AutoCloseable {
             GetDbSystemUpgradeHistoryEntryRequest request);
 
     /**
+     * Gets information about the specified Exadata Database Node Snapshot in the specified
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbnodeSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbnodeSnapshot
+     *     API.
+     */
+    GetDbnodeSnapshotResponse getDbnodeSnapshot(GetDbnodeSnapshotRequest request);
+
+    /**
      * Gets information about the specified Exadata infrastructure. Applies to Exadata
      * Cloud@Customer instances only. To get information on an Exadata Cloud Service infrastructure
      * resource, use the {@link #getCloudExadataInfrastructure(GetCloudExadataInfrastructureRequest)
@@ -5306,6 +5356,22 @@ public interface Database extends AutoCloseable {
     ListDbVersionsResponse listDbVersions(ListDbVersionsRequest request);
 
     /**
+     * Gets a list of the Exadata Database Node Snapshots in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbnodeSnapshotsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbnodeSnapshots
+     *     API.
+     */
+    ListDbnodeSnapshotsResponse listDbnodeSnapshots(ListDbnodeSnapshotsRequest request);
+
+    /**
      * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata
      * Cloud@Customer instances only. To list the Exadata Cloud Service infrastructure resources in
      * a compartment, use the {@link
@@ -6047,6 +6113,22 @@ public interface Database extends AutoCloseable {
      */
     ModifyPluggableDatabaseManagementResponse modifyPluggableDatabaseManagement(
             ModifyPluggableDatabaseManagementRequest request);
+
+    /**
+     * Mounts the snapshot for the provided dbNode.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MountDbnodeSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use MountDbnodeSnapshot
+     *     API.
+     */
+    MountDbnodeSnapshotResponse mountDbnodeSnapshot(MountDbnodeSnapshotRequest request);
 
     /**
      * Moves an execution action member to this execution action resource from another.
@@ -6918,6 +7000,22 @@ public interface Database extends AutoCloseable {
      *     API.
      */
     TerminateDbSystemResponse terminateDbSystem(TerminateDbSystemRequest request);
+
+    /**
+     * Unmounts the snapshot for the provided dbNode.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UnmountDbnodeSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UnmountDbnodeSnapshot API.
+     */
+    UnmountDbnodeSnapshotResponse unmountDbnodeSnapshot(UnmountDbnodeSnapshotRequest request);
 
     /**
      * Uninstall the PKCS11 driver for given keystore type

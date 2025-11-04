@@ -132,7 +132,10 @@ public class MonitoredRegionClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, CreateMonitoredRegionResponse::builder)
                 .logger(LOG, "createMonitoredRegion")
-                .serviceDetails("MonitoredRegion", "CreateMonitoredRegion", "")
+                .serviceDetails(
+                        "MonitoredRegion",
+                        "CreateMonitoredRegion",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/MonitoredRegion/CreateMonitoredRegion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMonitoredRegionRequest::builder)
                 .basePath("/20241031")
@@ -166,7 +169,10 @@ public class MonitoredRegionClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteMonitoredRegionResponse::builder)
                 .logger(LOG, "deleteMonitoredRegion")
-                .serviceDetails("MonitoredRegion", "DeleteMonitoredRegion", "")
+                .serviceDetails(
+                        "MonitoredRegion",
+                        "DeleteMonitoredRegion",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/MonitoredRegion/DeleteMonitoredRegion")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMonitoredRegionRequest::builder)
                 .basePath("/20241031")
@@ -191,7 +197,10 @@ public class MonitoredRegionClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMonitoredRegionResponse::builder)
                 .logger(LOG, "getMonitoredRegion")
-                .serviceDetails("MonitoredRegion", "GetMonitoredRegion", "")
+                .serviceDetails(
+                        "MonitoredRegion",
+                        "GetMonitoredRegion",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/MonitoredRegion/GetMonitoredRegion")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMonitoredRegionRequest::builder)
                 .basePath("/20241031")
@@ -214,7 +223,10 @@ public class MonitoredRegionClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMonitoredRegionsResponse::builder)
                 .logger(LOG, "listMonitoredRegions")
-                .serviceDetails("MonitoredRegion", "ListMonitoredRegions", "")
+                .serviceDetails(
+                        "MonitoredRegion",
+                        "ListMonitoredRegions",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/MonitoredRegionCollection/ListMonitoredRegions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMonitoredRegionsRequest::builder)
                 .basePath("/20241031")

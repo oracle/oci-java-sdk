@@ -94,6 +94,8 @@ public final class DrgAttachmentTypeDrgRouteDistributionMatchCriteria
         VirtualCircuit("VIRTUAL_CIRCUIT"),
         RemotePeeringConnection("REMOTE_PEERING_CONNECTION"),
         IpsecTunnel("IPSEC_TUNNEL"),
+        FlexTunnel("FLEX_TUNNEL"),
+        Loopback("LOOPBACK"),
         ;
 
         private final String value;

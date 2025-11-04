@@ -108,17 +108,17 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
             return this;
         }
         /**
-         * The collection of
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-         * cloud Autonomous VM Clusters.
+         * This field is deprecated. This should not be used while creation of new distributed
+         * autonomous database. To set the peers on catalog of distributed autonomous database
+         * please use peerDetails.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterIds")
         private java.util.List<String> peerCloudAutonomousVmClusterIds;
 
         /**
-         * The collection of
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-         * cloud Autonomous VM Clusters.
+         * This field is deprecated. This should not be used while creation of new distributed
+         * autonomous database. To set the peers on catalog of distributed autonomous database
+         * please use peerDetails.
          *
          * @param peerCloudAutonomousVmClusterIds the value to set
          * @return this builder
@@ -127,6 +127,26 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
                 java.util.List<String> peerCloudAutonomousVmClusterIds) {
             this.peerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
             this.__explicitlySet__.add("peerCloudAutonomousVmClusterIds");
+            return this;
+        }
+        /**
+         * The details required for creation of the peer for the autonomous dedicated infrastructure
+         * based catalog.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
+        private java.util.List<CreateCatalogPeerWithDedicatedInfraDetails> peerDetails;
+
+        /**
+         * The details required for creation of the peer for the autonomous dedicated infrastructure
+         * based catalog.
+         *
+         * @param peerDetails the value to set
+         * @return this builder
+         */
+        public Builder peerDetails(
+                java.util.List<CreateCatalogPeerWithDedicatedInfraDetails> peerDetails) {
+            this.peerDetails = peerDetails;
+            this.__explicitlySet__.add("peerDetails");
             return this;
         }
         /**
@@ -203,6 +223,7 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
                             this.isAutoScalingEnabled,
                             this.cloudAutonomousVmClusterId,
                             this.peerCloudAutonomousVmClusterIds,
+                            this.peerDetails,
                             this.vaultId,
                             this.kmsKeyId,
                             this.kmsKeyVersionId);
@@ -232,6 +253,9 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
             }
             if (model.wasPropertyExplicitlySet("peerCloudAutonomousVmClusterIds")) {
                 this.peerCloudAutonomousVmClusterIds(model.getPeerCloudAutonomousVmClusterIds());
+            }
+            if (model.wasPropertyExplicitlySet("peerDetails")) {
+                this.peerDetails(model.getPeerDetails());
             }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
@@ -263,6 +287,7 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
             Boolean isAutoScalingEnabled,
             String cloudAutonomousVmClusterId,
             java.util.List<String> peerCloudAutonomousVmClusterIds,
+            java.util.List<CreateCatalogPeerWithDedicatedInfraDetails> peerDetails,
             String vaultId,
             String kmsKeyId,
             String kmsKeyVersionId) {
@@ -273,6 +298,7 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
         this.peerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
+        this.peerDetails = peerDetails;
         this.vaultId = vaultId;
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
@@ -348,22 +374,39 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
     }
 
     /**
-     * The collection of
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * cloud Autonomous VM Clusters.
+     * This field is deprecated. This should not be used while creation of new distributed
+     * autonomous database. To set the peers on catalog of distributed autonomous database please
+     * use peerDetails.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterIds")
     private final java.util.List<String> peerCloudAutonomousVmClusterIds;
 
     /**
-     * The collection of
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * cloud Autonomous VM Clusters.
+     * This field is deprecated. This should not be used while creation of new distributed
+     * autonomous database. To set the peers on catalog of distributed autonomous database please
+     * use peerDetails.
      *
      * @return the value
      */
     public java.util.List<String> getPeerCloudAutonomousVmClusterIds() {
         return peerCloudAutonomousVmClusterIds;
+    }
+
+    /**
+     * The details required for creation of the peer for the autonomous dedicated infrastructure
+     * based catalog.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
+    private final java.util.List<CreateCatalogPeerWithDedicatedInfraDetails> peerDetails;
+
+    /**
+     * The details required for creation of the peer for the autonomous dedicated infrastructure
+     * based catalog.
+     *
+     * @return the value
+     */
+    public java.util.List<CreateCatalogPeerWithDedicatedInfraDetails> getPeerDetails() {
+        return peerDetails;
     }
 
     /**
@@ -444,6 +487,7 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
                 .append(String.valueOf(this.cloudAutonomousVmClusterId));
         sb.append(", peerCloudAutonomousVmClusterIds=")
                 .append(String.valueOf(this.peerCloudAutonomousVmClusterIds));
+        sb.append(", peerDetails=").append(String.valueOf(this.peerDetails));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
@@ -470,6 +514,7 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
                         this.cloudAutonomousVmClusterId, other.cloudAutonomousVmClusterId)
                 && java.util.Objects.equals(
                         this.peerCloudAutonomousVmClusterIds, other.peerCloudAutonomousVmClusterIds)
+                && java.util.Objects.equals(this.peerDetails, other.peerDetails)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
@@ -504,6 +549,7 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
                         + (this.peerCloudAutonomousVmClusterIds == null
                                 ? 43
                                 : this.peerCloudAutonomousVmClusterIds.hashCode());
+        result = (result * PRIME) + (this.peerDetails == null ? 43 : this.peerDetails.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =

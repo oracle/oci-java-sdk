@@ -62,6 +62,24 @@ public final class VisibleTrafficNode extends TrafficNode {
             this.__explicitlySet__.add("ingressSecurityAction");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("zprEgressSecurityAction")
+        private SecurityAction zprEgressSecurityAction;
+
+        public Builder zprEgressSecurityAction(SecurityAction zprEgressSecurityAction) {
+            this.zprEgressSecurityAction = zprEgressSecurityAction;
+            this.__explicitlySet__.add("zprEgressSecurityAction");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("zprIngressSecurityAction")
+        private SecurityAction zprIngressSecurityAction;
+
+        public Builder zprIngressSecurityAction(SecurityAction zprIngressSecurityAction) {
+            this.zprIngressSecurityAction = zprIngressSecurityAction;
+            this.__explicitlySet__.add("zprIngressSecurityAction");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * OCI entity that represents the traffic node (Instance, GW, LB, etc.).
@@ -111,6 +129,8 @@ public final class VisibleTrafficNode extends TrafficNode {
                             this.nextHopRoutingAction,
                             this.egressSecurityAction,
                             this.ingressSecurityAction,
+                            this.zprEgressSecurityAction,
+                            this.zprIngressSecurityAction,
                             this.entityId,
                             this.transformationDescription);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -132,6 +152,12 @@ public final class VisibleTrafficNode extends TrafficNode {
             }
             if (model.wasPropertyExplicitlySet("ingressSecurityAction")) {
                 this.ingressSecurityAction(model.getIngressSecurityAction());
+            }
+            if (model.wasPropertyExplicitlySet("zprEgressSecurityAction")) {
+                this.zprEgressSecurityAction(model.getZprEgressSecurityAction());
+            }
+            if (model.wasPropertyExplicitlySet("zprIngressSecurityAction")) {
+                this.zprIngressSecurityAction(model.getZprIngressSecurityAction());
             }
             if (model.wasPropertyExplicitlySet("entityId")) {
                 this.entityId(model.getEntityId());
@@ -158,9 +184,17 @@ public final class VisibleTrafficNode extends TrafficNode {
             RoutingAction nextHopRoutingAction,
             SecurityAction egressSecurityAction,
             SecurityAction ingressSecurityAction,
+            SecurityAction zprEgressSecurityAction,
+            SecurityAction zprIngressSecurityAction,
             String entityId,
             String transformationDescription) {
-        super(egressTraffic, nextHopRoutingAction, egressSecurityAction, ingressSecurityAction);
+        super(
+                egressTraffic,
+                nextHopRoutingAction,
+                egressSecurityAction,
+                ingressSecurityAction,
+                zprEgressSecurityAction,
+                zprIngressSecurityAction);
         this.entityId = entityId;
         this.transformationDescription = transformationDescription;
     }

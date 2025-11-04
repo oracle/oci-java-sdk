@@ -7,9 +7,16 @@ package com.oracle.bmc.http.client.jersey3;
 import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.HttpProvider;
 
+import com.oracle.bmc.http.client.HttpProviderCapability;
 import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.http.client.StandardHttpProviderCapability;
 import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 import jakarta.ws.rs.client.Client;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Jersey3HttpProvider implements HttpProvider {
     private static final String SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS =
@@ -82,5 +89,10 @@ public class Jersey3HttpProvider implements HttpProvider {
                             + "; the OCI SDK needs to set this property to true. Failing...");
         }
         System.setProperty(SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS, "true");
+    }
+
+    @Override
+    public boolean hasCapability(HttpProviderCapability capability) {
+        return capability == StandardHttpProviderCapability.PARAMETERIZED_ENDPOINTS;
     }
 }

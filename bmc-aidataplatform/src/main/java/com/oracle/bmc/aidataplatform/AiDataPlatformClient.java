@@ -129,7 +129,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("AiDataPlatform", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20240831")
@@ -155,7 +158,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ChangeAiDataPlatformCompartmentResponse::builder)
                 .logger(LOG, "changeAiDataPlatformCompartment")
-                .serviceDetails("AiDataPlatform", "ChangeAiDataPlatformCompartment", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "ChangeAiDataPlatformCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/ChangeAiDataPlatformCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeAiDataPlatformCompartmentRequest::builder)
                 .basePath("/20240831")
@@ -185,7 +191,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, CreateAiDataPlatformResponse::builder)
                 .logger(LOG, "createAiDataPlatform")
-                .serviceDetails("AiDataPlatform", "CreateAiDataPlatform", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "CreateAiDataPlatform",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/CreateAiDataPlatform")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateAiDataPlatformRequest::builder)
                 .basePath("/20240831")
@@ -218,7 +227,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, DeleteAiDataPlatformResponse::builder)
                 .logger(LOG, "deleteAiDataPlatform")
-                .serviceDetails("AiDataPlatform", "DeleteAiDataPlatform", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "DeleteAiDataPlatform",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/DeleteAiDataPlatform")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteAiDataPlatformRequest::builder)
                 .basePath("/20240831")
@@ -244,7 +256,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetAiDataPlatformResponse::builder)
                 .logger(LOG, "getAiDataPlatform")
-                .serviceDetails("AiDataPlatform", "GetAiDataPlatform", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "GetAiDataPlatform",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/GetAiDataPlatform")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAiDataPlatformRequest::builder)
                 .basePath("/20240831")
@@ -269,7 +284,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("AiDataPlatform", "GetWorkRequest", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20240831")
@@ -294,7 +312,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListAiDataPlatformsResponse::builder)
                 .logger(LOG, "listAiDataPlatforms")
-                .serviceDetails("AiDataPlatform", "ListAiDataPlatforms", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "ListAiDataPlatforms",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatformCollection/ListAiDataPlatforms")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAiDataPlatformsRequest::builder)
                 .basePath("/20240831")
@@ -330,7 +351,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("AiDataPlatform", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20240831")
@@ -361,7 +385,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("AiDataPlatform", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20240831")
@@ -390,7 +417,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("AiDataPlatform", "ListWorkRequests", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20240831")
@@ -426,7 +456,10 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, UpdateAiDataPlatformResponse::builder)
                 .logger(LOG, "updateAiDataPlatform")
-                .serviceDetails("AiDataPlatform", "UpdateAiDataPlatform", "")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "UpdateAiDataPlatform",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/UpdateAiDataPlatform")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateAiDataPlatformRequest::builder)
                 .basePath("/20240831")

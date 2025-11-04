@@ -102,6 +102,23 @@ public interface DistributedAutonomousDbService extends AutoCloseable {
                     ChangeDistributedAutonomousDatabaseCompartmentRequest request);
 
     /**
+     * Change the DbBackupConfig for the Globally distributed autonomous database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/ChangeDistributedAutonomousDbBackupConfigExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeDistributedAutonomousDbBackupConfig API.
+     */
+    ChangeDistributedAutonomousDbBackupConfigResponse changeDistributedAutonomousDbBackupConfig(
+            ChangeDistributedAutonomousDbBackupConfigRequest request);
+
+    /**
      * Configure new Global Service Manager(GSM aka shard manager) instances for the Globally
      * distributed autonomous database.
      *
@@ -293,7 +310,8 @@ public interface DistributedAutonomousDbService extends AutoCloseable {
             PatchDistributedAutonomousDatabaseRequest request);
 
     /**
-     * Rotate passwords for different components of the Globally distributed autonomous database.
+     * Rotate the gsmuser and gsmcatuser passwords for shards and catalog of the Globally
+     * distributed autonomous database. This operation will also remove GdsCtlNodes if present.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

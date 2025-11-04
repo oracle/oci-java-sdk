@@ -131,7 +131,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ChangeIotDomainCompartmentResponse::builder)
                 .logger(LOG, "changeIotDomainCompartment")
-                .serviceDetails("Iot", "ChangeIotDomainCompartment", "")
+                .serviceDetails(
+                        "Iot",
+                        "ChangeIotDomainCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/ChangeIotDomainCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeIotDomainCompartmentRequest::builder)
                 .basePath("/20250531")
@@ -164,7 +167,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ChangeIotDomainDataRetentionPeriodResponse::builder)
                 .logger(LOG, "changeIotDomainDataRetentionPeriod")
-                .serviceDetails("Iot", "ChangeIotDomainDataRetentionPeriod", "")
+                .serviceDetails(
+                        "Iot",
+                        "ChangeIotDomainDataRetentionPeriod",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/ChangeIotDomainDataRetentionPeriod")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeIotDomainDataRetentionPeriodRequest::builder)
                 .basePath("/20250531")
@@ -198,7 +204,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ChangeIotDomainGroupCompartmentResponse::builder)
                 .logger(LOG, "changeIotDomainGroupCompartment")
-                .serviceDetails("Iot", "ChangeIotDomainGroupCompartment", "")
+                .serviceDetails(
+                        "Iot",
+                        "ChangeIotDomainGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/ChangeIotDomainGroupCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeIotDomainGroupCompartmentRequest::builder)
                 .basePath("/20250531")
@@ -232,7 +241,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ConfigureIotDomainDataAccessResponse::builder)
                 .logger(LOG, "configureIotDomainDataAccess")
-                .serviceDetails("Iot", "ConfigureIotDomainDataAccess", "")
+                .serviceDetails(
+                        "Iot",
+                        "ConfigureIotDomainDataAccess",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/ConfigureIotDomainDataAccess")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConfigureIotDomainDataAccessRequest::builder)
                 .basePath("/20250531")
@@ -266,7 +278,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ConfigureIotDomainGroupDataAccessResponse::builder)
                 .logger(LOG, "configureIotDomainGroupDataAccess")
-                .serviceDetails("Iot", "ConfigureIotDomainGroupDataAccess", "")
+                .serviceDetails(
+                        "Iot",
+                        "ConfigureIotDomainGroupDataAccess",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/ConfigureIotDomainGroupDataAccess")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConfigureIotDomainGroupDataAccessRequest::builder)
                 .basePath("/20250531")
@@ -298,7 +313,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, CreateDigitalTwinAdapterResponse::builder)
                 .logger(LOG, "createDigitalTwinAdapter")
-                .serviceDetails("Iot", "CreateDigitalTwinAdapter", "")
+                .serviceDetails(
+                        "Iot",
+                        "CreateDigitalTwinAdapter",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinAdapter/CreateDigitalTwinAdapter")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDigitalTwinAdapterRequest::builder)
                 .basePath("/20250531")
@@ -326,7 +344,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, CreateDigitalTwinInstanceResponse::builder)
                 .logger(LOG, "createDigitalTwinInstance")
-                .serviceDetails("Iot", "CreateDigitalTwinInstance", "")
+                .serviceDetails(
+                        "Iot",
+                        "CreateDigitalTwinInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/CreateDigitalTwinInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDigitalTwinInstanceRequest::builder)
                 .basePath("/20250531")
@@ -354,7 +375,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, CreateDigitalTwinModelResponse::builder)
                 .logger(LOG, "createDigitalTwinModel")
-                .serviceDetails("Iot", "CreateDigitalTwinModel", "")
+                .serviceDetails(
+                        "Iot",
+                        "CreateDigitalTwinModel",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/CreateDigitalTwinModel")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDigitalTwinModelRequest::builder)
                 .basePath("/20250531")
@@ -382,7 +406,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, CreateDigitalTwinRelationshipResponse::builder)
                 .logger(LOG, "createDigitalTwinRelationship")
-                .serviceDetails("Iot", "CreateDigitalTwinRelationship", "")
+                .serviceDetails(
+                        "Iot",
+                        "CreateDigitalTwinRelationship",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinRelationship/CreateDigitalTwinRelationship")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDigitalTwinRelationshipRequest::builder)
                 .basePath("/20250531")
@@ -410,7 +437,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, CreateIotDomainResponse::builder)
                 .logger(LOG, "createIotDomain")
-                .serviceDetails("Iot", "CreateIotDomain", "")
+                .serviceDetails(
+                        "Iot",
+                        "CreateIotDomain",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/CreateIotDomain")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateIotDomainRequest::builder)
                 .basePath("/20250531")
@@ -442,7 +472,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, CreateIotDomainGroupResponse::builder)
                 .logger(LOG, "createIotDomainGroup")
-                .serviceDetails("Iot", "CreateIotDomainGroup", "")
+                .serviceDetails(
+                        "Iot",
+                        "CreateIotDomainGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/CreateIotDomainGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateIotDomainGroupRequest::builder)
                 .basePath("/20250531")
@@ -477,7 +510,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, DeleteDigitalTwinAdapterResponse::builder)
                 .logger(LOG, "deleteDigitalTwinAdapter")
-                .serviceDetails("Iot", "DeleteDigitalTwinAdapter", "")
+                .serviceDetails(
+                        "Iot",
+                        "DeleteDigitalTwinAdapter",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinAdapter/DeleteDigitalTwinAdapter")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDigitalTwinAdapterRequest::builder)
                 .basePath("/20250531")
@@ -501,7 +537,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, DeleteDigitalTwinInstanceResponse::builder)
                 .logger(LOG, "deleteDigitalTwinInstance")
-                .serviceDetails("Iot", "DeleteDigitalTwinInstance", "")
+                .serviceDetails(
+                        "Iot",
+                        "DeleteDigitalTwinInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/DeleteDigitalTwinInstance")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDigitalTwinInstanceRequest::builder)
                 .basePath("/20250531")
@@ -524,7 +563,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, DeleteDigitalTwinModelResponse::builder)
                 .logger(LOG, "deleteDigitalTwinModel")
-                .serviceDetails("Iot", "DeleteDigitalTwinModel", "")
+                .serviceDetails(
+                        "Iot",
+                        "DeleteDigitalTwinModel",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/DeleteDigitalTwinModel")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDigitalTwinModelRequest::builder)
                 .basePath("/20250531")
@@ -549,7 +591,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, DeleteDigitalTwinRelationshipResponse::builder)
                 .logger(LOG, "deleteDigitalTwinRelationship")
-                .serviceDetails("Iot", "DeleteDigitalTwinRelationship", "")
+                .serviceDetails(
+                        "Iot",
+                        "DeleteDigitalTwinRelationship",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinRelationship/DeleteDigitalTwinRelationship")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDigitalTwinRelationshipRequest::builder)
                 .basePath("/20250531")
@@ -572,7 +617,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, DeleteIotDomainResponse::builder)
                 .logger(LOG, "deleteIotDomain")
-                .serviceDetails("Iot", "DeleteIotDomain", "")
+                .serviceDetails(
+                        "Iot",
+                        "DeleteIotDomain",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/DeleteIotDomain")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteIotDomainRequest::builder)
                 .basePath("/20250531")
@@ -596,7 +644,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, DeleteIotDomainGroupResponse::builder)
                 .logger(LOG, "deleteIotDomainGroup")
-                .serviceDetails("Iot", "DeleteIotDomainGroup", "")
+                .serviceDetails(
+                        "Iot",
+                        "DeleteIotDomainGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/DeleteIotDomainGroup")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteIotDomainGroupRequest::builder)
                 .basePath("/20250531")
@@ -623,7 +674,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetDigitalTwinAdapterResponse::builder)
                 .logger(LOG, "getDigitalTwinAdapter")
-                .serviceDetails("Iot", "GetDigitalTwinAdapter", "")
+                .serviceDetails(
+                        "Iot",
+                        "GetDigitalTwinAdapter",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinAdapter/GetDigitalTwinAdapter")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDigitalTwinAdapterRequest::builder)
                 .basePath("/20250531")
@@ -650,7 +704,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetDigitalTwinInstanceResponse::builder)
                 .logger(LOG, "getDigitalTwinInstance")
-                .serviceDetails("Iot", "GetDigitalTwinInstance", "")
+                .serviceDetails(
+                        "Iot",
+                        "GetDigitalTwinInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/GetDigitalTwinInstance")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDigitalTwinInstanceRequest::builder)
                 .basePath("/20250531")
@@ -677,7 +734,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetDigitalTwinInstanceContentResponse::builder)
                 .logger(LOG, "getDigitalTwinInstanceContent")
-                .serviceDetails("Iot", "GetDigitalTwinInstanceContent", "")
+                .serviceDetails(
+                        "Iot",
+                        "GetDigitalTwinInstanceContent",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/GetDigitalTwinInstanceContent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDigitalTwinInstanceContentRequest::builder)
                 .basePath("/20250531")
@@ -706,7 +766,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetDigitalTwinModelResponse::builder)
                 .logger(LOG, "getDigitalTwinModel")
-                .serviceDetails("Iot", "GetDigitalTwinModel", "")
+                .serviceDetails(
+                        "Iot",
+                        "GetDigitalTwinModel",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/GetDigitalTwinModel")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDigitalTwinModelRequest::builder)
                 .basePath("/20250531")
@@ -732,7 +795,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetDigitalTwinModelSpecResponse::builder)
                 .logger(LOG, "getDigitalTwinModelSpec")
-                .serviceDetails("Iot", "GetDigitalTwinModelSpec", "")
+                .serviceDetails(
+                        "Iot",
+                        "GetDigitalTwinModelSpec",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/GetDigitalTwinModelSpec")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDigitalTwinModelSpecRequest::builder)
                 .basePath("/20250531")
@@ -761,7 +827,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetDigitalTwinRelationshipResponse::builder)
                 .logger(LOG, "getDigitalTwinRelationship")
-                .serviceDetails("Iot", "GetDigitalTwinRelationship", "")
+                .serviceDetails(
+                        "Iot",
+                        "GetDigitalTwinRelationship",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinRelationship/GetDigitalTwinRelationship")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDigitalTwinRelationshipRequest::builder)
                 .basePath("/20250531")
@@ -787,7 +856,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetIotDomainResponse::builder)
                 .logger(LOG, "getIotDomain")
-                .serviceDetails("Iot", "GetIotDomain", "")
+                .serviceDetails(
+                        "Iot",
+                        "GetIotDomain",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/GetIotDomain")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIotDomainRequest::builder)
                 .basePath("/20250531")
@@ -812,7 +884,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetIotDomainGroupResponse::builder)
                 .logger(LOG, "getIotDomainGroup")
-                .serviceDetails("Iot", "GetIotDomainGroup", "")
+                .serviceDetails(
+                        "Iot",
+                        "GetIotDomainGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/GetIotDomainGroup")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIotDomainGroupRequest::builder)
                 .basePath("/20250531")
@@ -837,7 +912,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("Iot", "GetWorkRequest", "")
+                .serviceDetails(
+                        "Iot",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20250531")
@@ -867,7 +945,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, InvokeRawCommandResponse::builder)
                 .logger(LOG, "invokeRawCommand")
-                .serviceDetails("Iot", "InvokeRawCommand", "")
+                .serviceDetails(
+                        "Iot",
+                        "InvokeRawCommand",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/InvokeRawCommand")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InvokeRawCommandRequest::builder)
                 .basePath("/20250531")
@@ -894,7 +975,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListDigitalTwinAdaptersResponse::builder)
                 .logger(LOG, "listDigitalTwinAdapters")
-                .serviceDetails("Iot", "ListDigitalTwinAdapters", "")
+                .serviceDetails(
+                        "Iot",
+                        "ListDigitalTwinAdapters",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinAdapter/ListDigitalTwinAdapters")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDigitalTwinAdaptersRequest::builder)
                 .basePath("/20250531")
@@ -931,7 +1015,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListDigitalTwinInstancesResponse::builder)
                 .logger(LOG, "listDigitalTwinInstances")
-                .serviceDetails("Iot", "ListDigitalTwinInstances", "")
+                .serviceDetails(
+                        "Iot",
+                        "ListDigitalTwinInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/ListDigitalTwinInstances")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDigitalTwinInstancesRequest::builder)
                 .basePath("/20250531")
@@ -968,7 +1055,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListDigitalTwinModelsResponse::builder)
                 .logger(LOG, "listDigitalTwinModels")
-                .serviceDetails("Iot", "ListDigitalTwinModels", "")
+                .serviceDetails(
+                        "Iot",
+                        "ListDigitalTwinModels",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/ListDigitalTwinModels")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDigitalTwinModelsRequest::builder)
                 .basePath("/20250531")
@@ -1004,7 +1094,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListDigitalTwinRelationshipsResponse::builder)
                 .logger(LOG, "listDigitalTwinRelationships")
-                .serviceDetails("Iot", "ListDigitalTwinRelationships", "")
+                .serviceDetails(
+                        "Iot",
+                        "ListDigitalTwinRelationships",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinRelationship/ListDigitalTwinRelationships")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDigitalTwinRelationshipsRequest::builder)
                 .basePath("/20250531")
@@ -1045,7 +1138,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListIotDomainGroupsResponse::builder)
                 .logger(LOG, "listIotDomainGroups")
-                .serviceDetails("Iot", "ListIotDomainGroups", "")
+                .serviceDetails(
+                        "Iot",
+                        "ListIotDomainGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/ListIotDomainGroups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIotDomainGroupsRequest::builder)
                 .basePath("/20250531")
@@ -1079,7 +1175,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListIotDomainsResponse::builder)
                 .logger(LOG, "listIotDomains")
-                .serviceDetails("Iot", "ListIotDomains", "")
+                .serviceDetails(
+                        "Iot",
+                        "ListIotDomains",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/ListIotDomains")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIotDomainsRequest::builder)
                 .basePath("/20250531")
@@ -1116,7 +1215,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("Iot", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "Iot",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/WorkRequest/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20250531")
@@ -1149,7 +1251,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("Iot", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "Iot",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/WorkRequest/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20250531")
@@ -1181,7 +1286,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("Iot", "ListWorkRequests", "")
+                .serviceDetails(
+                        "Iot",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20250531")
@@ -1221,7 +1329,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, UpdateDigitalTwinAdapterResponse::builder)
                 .logger(LOG, "updateDigitalTwinAdapter")
-                .serviceDetails("Iot", "UpdateDigitalTwinAdapter", "")
+                .serviceDetails(
+                        "Iot",
+                        "UpdateDigitalTwinAdapter",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinAdapter/UpdateDigitalTwinAdapter")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDigitalTwinAdapterRequest::builder)
                 .basePath("/20250531")
@@ -1253,7 +1364,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, UpdateDigitalTwinInstanceResponse::builder)
                 .logger(LOG, "updateDigitalTwinInstance")
-                .serviceDetails("Iot", "UpdateDigitalTwinInstance", "")
+                .serviceDetails(
+                        "Iot",
+                        "UpdateDigitalTwinInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/UpdateDigitalTwinInstance")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDigitalTwinInstanceRequest::builder)
                 .basePath("/20250531")
@@ -1284,7 +1398,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, UpdateDigitalTwinModelResponse::builder)
                 .logger(LOG, "updateDigitalTwinModel")
-                .serviceDetails("Iot", "UpdateDigitalTwinModel", "")
+                .serviceDetails(
+                        "Iot",
+                        "UpdateDigitalTwinModel",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/UpdateDigitalTwinModel")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDigitalTwinModelRequest::builder)
                 .basePath("/20250531")
@@ -1317,7 +1434,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, UpdateDigitalTwinRelationshipResponse::builder)
                 .logger(LOG, "updateDigitalTwinRelationship")
-                .serviceDetails("Iot", "UpdateDigitalTwinRelationship", "")
+                .serviceDetails(
+                        "Iot",
+                        "UpdateDigitalTwinRelationship",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinRelationship/UpdateDigitalTwinRelationship")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDigitalTwinRelationshipRequest::builder)
                 .basePath("/20250531")
@@ -1348,7 +1468,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, UpdateIotDomainResponse::builder)
                 .logger(LOG, "updateIotDomain")
-                .serviceDetails("Iot", "UpdateIotDomain", "")
+                .serviceDetails(
+                        "Iot",
+                        "UpdateIotDomain",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/UpdateIotDomain")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateIotDomainRequest::builder)
                 .basePath("/20250531")
@@ -1376,7 +1499,10 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, UpdateIotDomainGroupResponse::builder)
                 .logger(LOG, "updateIotDomainGroup")
-                .serviceDetails("Iot", "UpdateIotDomainGroup", "")
+                .serviceDetails(
+                        "Iot",
+                        "UpdateIotDomainGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/UpdateIotDomainGroup")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateIotDomainGroupRequest::builder)
                 .basePath("/20250531")

@@ -23,16 +23,24 @@ package com.oracle.bmc.vnmonitoring.model;
 public final class UpdateIpv6Details
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"definedTags", "displayName", "freeformTags", "vnicId"})
+    @java.beans.ConstructorProperties({
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "isInternetAccessAllowed",
+        "vnicId"
+    })
     public UpdateIpv6Details(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            Boolean isInternetAccessAllowed,
             String vnicId) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.isInternetAccessAllowed = isInternetAccessAllowed;
         this.vnicId = vnicId;
     }
 
@@ -97,6 +105,37 @@ public final class UpdateIpv6Details
             return this;
         }
         /**
+         * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6
+         * in a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code
+         * true}, the IPv6 uses its public IP address for internet communication.
+         *
+         * <p>If you switch this from {@code true} to {@code false}, the {@code publicIpAddress}
+         * attribute for the IPv6 becomes null.
+         *
+         * <p>Example: {@code false}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isInternetAccessAllowed")
+        private Boolean isInternetAccessAllowed;
+
+        /**
+         * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6
+         * in a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code
+         * true}, the IPv6 uses its public IP address for internet communication.
+         *
+         * <p>If you switch this from {@code true} to {@code false}, the {@code publicIpAddress}
+         * attribute for the IPv6 becomes null.
+         *
+         * <p>Example: {@code false}
+         *
+         * @param isInternetAccessAllowed the value to set
+         * @return this builder
+         */
+        public Builder isInternetAccessAllowed(Boolean isInternetAccessAllowed) {
+            this.isInternetAccessAllowed = isInternetAccessAllowed;
+            this.__explicitlySet__.add("isInternetAccessAllowed");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VNIC to reassign the IPv6 to. The VNIC must be in the same subnet as the current VNIC.
          */
@@ -122,7 +161,11 @@ public final class UpdateIpv6Details
         public UpdateIpv6Details build() {
             UpdateIpv6Details model =
                     new UpdateIpv6Details(
-                            this.definedTags, this.displayName, this.freeformTags, this.vnicId);
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.isInternetAccessAllowed,
+                            this.vnicId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -139,6 +182,9 @@ public final class UpdateIpv6Details
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("isInternetAccessAllowed")) {
+                this.isInternetAccessAllowed(model.getIsInternetAccessAllowed());
             }
             if (model.wasPropertyExplicitlySet("vnicId")) {
                 this.vnicId(model.getVnicId());
@@ -208,6 +254,35 @@ public final class UpdateIpv6Details
     }
 
     /**
+     * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in a
+     * public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true},
+     * the IPv6 uses its public IP address for internet communication.
+     *
+     * <p>If you switch this from {@code true} to {@code false}, the {@code publicIpAddress}
+     * attribute for the IPv6 becomes null.
+     *
+     * <p>Example: {@code false}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isInternetAccessAllowed")
+    private final Boolean isInternetAccessAllowed;
+
+    /**
+     * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in a
+     * public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true},
+     * the IPv6 uses its public IP address for internet communication.
+     *
+     * <p>If you switch this from {@code true} to {@code false}, the {@code publicIpAddress}
+     * attribute for the IPv6 becomes null.
+     *
+     * <p>Example: {@code false}
+     *
+     * @return the value
+     */
+    public Boolean getIsInternetAccessAllowed() {
+        return isInternetAccessAllowed;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
      * to reassign the IPv6 to. The VNIC must be in the same subnet as the current VNIC.
      */
@@ -242,6 +317,8 @@ public final class UpdateIpv6Details
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", isInternetAccessAllowed=")
+                .append(String.valueOf(this.isInternetAccessAllowed));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
         sb.append(")");
         return sb.toString();
@@ -260,6 +337,8 @@ public final class UpdateIpv6Details
         return java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.isInternetAccessAllowed, other.isInternetAccessAllowed)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
                 && super.equals(other);
     }
@@ -271,6 +350,11 @@ public final class UpdateIpv6Details
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInternetAccessAllowed == null
+                                ? 43
+                                : this.isInternetAccessAllowed.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -33,7 +33,8 @@ public final class CreateInstancePoolDetails
         "size",
         "loadBalancers",
         "instanceDisplayNameFormatter",
-        "instanceHostnameFormatter"
+        "instanceHostnameFormatter",
+        "lifecycleManagement"
     })
     public CreateInstancePoolDetails(
             String compartmentId,
@@ -45,7 +46,8 @@ public final class CreateInstancePoolDetails
             Integer size,
             java.util.List<AttachLoadBalancerDetails> loadBalancers,
             String instanceDisplayNameFormatter,
-            String instanceHostnameFormatter) {
+            String instanceHostnameFormatter,
+            InstancePoolLifecycleManagementDetails lifecycleManagement) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -57,6 +59,7 @@ public final class CreateInstancePoolDetails
         this.loadBalancers = loadBalancers;
         this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = instanceHostnameFormatter;
+        this.lifecycleManagement = lifecycleManagement;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -272,6 +275,16 @@ public final class CreateInstancePoolDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleManagement")
+        private InstancePoolLifecycleManagementDetails lifecycleManagement;
+
+        public Builder lifecycleManagement(
+                InstancePoolLifecycleManagementDetails lifecycleManagement) {
+            this.lifecycleManagement = lifecycleManagement;
+            this.__explicitlySet__.add("lifecycleManagement");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -287,7 +300,8 @@ public final class CreateInstancePoolDetails
                             this.size,
                             this.loadBalancers,
                             this.instanceDisplayNameFormatter,
-                            this.instanceHostnameFormatter);
+                            this.instanceHostnameFormatter,
+                            this.lifecycleManagement);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -325,6 +339,9 @@ public final class CreateInstancePoolDetails
             }
             if (model.wasPropertyExplicitlySet("instanceHostnameFormatter")) {
                 this.instanceHostnameFormatter(model.getInstanceHostnameFormatter());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleManagement")) {
+                this.lifecycleManagement(model.getLifecycleManagement());
             }
             return this;
         }
@@ -525,6 +542,13 @@ public final class CreateInstancePoolDetails
         return instanceHostnameFormatter;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleManagement")
+    private final InstancePoolLifecycleManagementDetails lifecycleManagement;
+
+    public InstancePoolLifecycleManagementDetails getLifecycleManagement() {
+        return lifecycleManagement;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -554,6 +578,7 @@ public final class CreateInstancePoolDetails
                 .append(String.valueOf(this.instanceDisplayNameFormatter));
         sb.append(", instanceHostnameFormatter=")
                 .append(String.valueOf(this.instanceHostnameFormatter));
+        sb.append(", lifecycleManagement=").append(String.valueOf(this.lifecycleManagement));
         sb.append(")");
         return sb.toString();
     }
@@ -582,6 +607,7 @@ public final class CreateInstancePoolDetails
                         this.instanceDisplayNameFormatter, other.instanceDisplayNameFormatter)
                 && java.util.Objects.equals(
                         this.instanceHostnameFormatter, other.instanceHostnameFormatter)
+                && java.util.Objects.equals(this.lifecycleManagement, other.lifecycleManagement)
                 && super.equals(other);
     }
 
@@ -619,6 +645,11 @@ public final class CreateInstancePoolDetails
                         + (this.instanceHostnameFormatter == null
                                 ? 43
                                 : this.instanceHostnameFormatter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleManagement == null
+                                ? 43
+                                : this.lifecycleManagement.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

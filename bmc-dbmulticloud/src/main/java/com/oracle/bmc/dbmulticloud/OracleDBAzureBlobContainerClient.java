@@ -142,7 +142,7 @@ public class OracleDBAzureBlobContainerClient extends com.oracle.bmc.http.intern
                 .serviceDetails(
                         "OracleDBAzureBlobContainer",
                         "ChangeOracleDbAzureBlobContainerCompartment",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/ChangeOracleDbAzureBlobContainerCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOracleDbAzureBlobContainerCompartmentRequest::builder)
                 .basePath("/20240501")
@@ -176,7 +176,9 @@ public class OracleDBAzureBlobContainerClient extends com.oracle.bmc.http.intern
         return clientCall(request, CreateOracleDbAzureBlobContainerResponse::builder)
                 .logger(LOG, "createOracleDbAzureBlobContainer")
                 .serviceDetails(
-                        "OracleDBAzureBlobContainer", "CreateOracleDbAzureBlobContainer", "")
+                        "OracleDBAzureBlobContainer",
+                        "CreateOracleDbAzureBlobContainer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/CreateOracleDbAzureBlobContainer")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOracleDbAzureBlobContainerRequest::builder)
                 .basePath("/20240501")
@@ -218,7 +220,9 @@ public class OracleDBAzureBlobContainerClient extends com.oracle.bmc.http.intern
         return clientCall(request, DeleteOracleDbAzureBlobContainerResponse::builder)
                 .logger(LOG, "deleteOracleDbAzureBlobContainer")
                 .serviceDetails(
-                        "OracleDBAzureBlobContainer", "DeleteOracleDbAzureBlobContainer", "")
+                        "OracleDBAzureBlobContainer",
+                        "DeleteOracleDbAzureBlobContainer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/DeleteOracleDbAzureBlobContainer")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOracleDbAzureBlobContainerRequest::builder)
                 .basePath("/20240501")
@@ -247,7 +251,10 @@ public class OracleDBAzureBlobContainerClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetOracleDbAzureBlobContainerResponse::builder)
                 .logger(LOG, "getOracleDbAzureBlobContainer")
-                .serviceDetails("OracleDBAzureBlobContainer", "GetOracleDbAzureBlobContainer", "")
+                .serviceDetails(
+                        "OracleDBAzureBlobContainer",
+                        "GetOracleDbAzureBlobContainer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/GetOracleDbAzureBlobContainer")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOracleDbAzureBlobContainerRequest::builder)
                 .basePath("/20240501")
@@ -277,7 +284,10 @@ public class OracleDBAzureBlobContainerClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListOracleDbAzureBlobContainersResponse::builder)
                 .logger(LOG, "listOracleDbAzureBlobContainers")
-                .serviceDetails("OracleDBAzureBlobContainer", "ListOracleDbAzureBlobContainers", "")
+                .serviceDetails(
+                        "OracleDBAzureBlobContainer",
+                        "ListOracleDbAzureBlobContainers",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/ListOracleDbAzureBlobContainers")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOracleDbAzureBlobContainersRequest::builder)
                 .basePath("/20240501")
@@ -325,7 +335,9 @@ public class OracleDBAzureBlobContainerClient extends com.oracle.bmc.http.intern
         return clientCall(request, UpdateOracleDbAzureBlobContainerResponse::builder)
                 .logger(LOG, "updateOracleDbAzureBlobContainer")
                 .serviceDetails(
-                        "OracleDBAzureBlobContainer", "UpdateOracleDbAzureBlobContainer", "")
+                        "OracleDBAzureBlobContainer",
+                        "UpdateOracleDbAzureBlobContainer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/UpdateOracleDbAzureBlobContainer")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOracleDbAzureBlobContainerRequest::builder)
                 .basePath("/20240501")

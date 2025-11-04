@@ -10,7 +10,6 @@ import com.oracle.bmc.internal.Alloy;
 import org.slf4j.Logger;
 
 import java.util.Locale;
-import java.util.Optional;
 
 /**
  * A builder for clients that can be configured to target a certain region
@@ -43,14 +42,7 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
                 Alloy.throwUnknownAlloyRegionIfAppropriate(region.getRegionId(), e);
             }
         }
-        setRegion(region);
-        Optional<String> endpoint = region.getEndpoint(service);
-        if (endpoint.isPresent()) {
-            endpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + service + " is not known in region " + region);
-        }
+        this.region = region;
         return (B) this;
     }
 
@@ -73,8 +65,8 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
         }
     }
 
-    private B setRegion(Region region) {
-        this.region = region;
-        return (B) this;
+    @Override
+    public B copyFrom(B fromBuilder) {
+        return (B) super.copyFrom(fromBuilder).region(region);
     }
 }

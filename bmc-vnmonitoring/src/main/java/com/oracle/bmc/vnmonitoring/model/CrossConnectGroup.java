@@ -38,41 +38,23 @@ public final class CrossConnectGroup
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
-        "definedTags",
         "displayName",
-        "freeformTags",
         "id",
         "lifecycleState",
-        "customerReferenceName",
-        "timeCreated",
-        "macsecProperties",
-        "ociPhysicalDeviceName",
-        "ociLogicalDeviceName"
+        "timeCreated"
     })
     public CrossConnectGroup(
             String compartmentId,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
-            java.util.Map<String, String> freeformTags,
             String id,
             LifecycleState lifecycleState,
-            String customerReferenceName,
-            java.util.Date timeCreated,
-            MacsecProperties macsecProperties,
-            String ociPhysicalDeviceName,
-            String ociLogicalDeviceName) {
+            java.util.Date timeCreated) {
         super();
         this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
         this.displayName = displayName;
-        this.freeformTags = freeformTags;
         this.id = id;
         this.lifecycleState = lifecycleState;
-        this.customerReferenceName = customerReferenceName;
         this.timeCreated = timeCreated;
-        this.macsecProperties = macsecProperties;
-        this.ociPhysicalDeviceName = ociPhysicalDeviceName;
-        this.ociLogicalDeviceName = ociLogicalDeviceName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -97,26 +79,6 @@ public final class CrossConnectGroup
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         * @param definedTags the value to set
-         * @return this builder
-         */
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
-        /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
          * confidential information.
          */
@@ -133,25 +95,6 @@ public final class CrossConnectGroup
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
-            return this;
-        }
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         *
-         * @param freeformTags the value to set
-         * @return this builder
-         */
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /** The cross-connect group's Oracle ID (OCID). */
@@ -185,25 +128,6 @@ public final class CrossConnectGroup
             return this;
         }
         /**
-         * A reference name or identifier for the physical fiber connection that this cross-connect
-         * group uses.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
-        private String customerReferenceName;
-
-        /**
-         * A reference name or identifier for the physical fiber connection that this cross-connect
-         * group uses.
-         *
-         * @param customerReferenceName the value to set
-         * @return this builder
-         */
-        public Builder customerReferenceName(String customerReferenceName) {
-            this.customerReferenceName = customerReferenceName;
-            this.__explicitlySet__.add("customerReferenceName");
-            return this;
-        }
-        /**
          * The date and time the cross-connect group was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
@@ -227,49 +151,6 @@ public final class CrossConnectGroup
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
-        private MacsecProperties macsecProperties;
-
-        public Builder macsecProperties(MacsecProperties macsecProperties) {
-            this.macsecProperties = macsecProperties;
-            this.__explicitlySet__.add("macsecProperties");
-            return this;
-        }
-        /** The FastConnect device that terminates the physical connection. */
-        @com.fasterxml.jackson.annotation.JsonProperty("ociPhysicalDeviceName")
-        private String ociPhysicalDeviceName;
-
-        /**
-         * The FastConnect device that terminates the physical connection.
-         *
-         * @param ociPhysicalDeviceName the value to set
-         * @return this builder
-         */
-        public Builder ociPhysicalDeviceName(String ociPhysicalDeviceName) {
-            this.ociPhysicalDeviceName = ociPhysicalDeviceName;
-            this.__explicitlySet__.add("ociPhysicalDeviceName");
-            return this;
-        }
-        /**
-         * The FastConnect device that terminates the logical connection. This device might be
-         * different than the device that terminates the physical connection.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalDeviceName")
-        private String ociLogicalDeviceName;
-
-        /**
-         * The FastConnect device that terminates the logical connection. This device might be
-         * different than the device that terminates the physical connection.
-         *
-         * @param ociLogicalDeviceName the value to set
-         * @return this builder
-         */
-        public Builder ociLogicalDeviceName(String ociLogicalDeviceName) {
-            this.ociLogicalDeviceName = ociLogicalDeviceName;
-            this.__explicitlySet__.add("ociLogicalDeviceName");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -277,16 +158,10 @@ public final class CrossConnectGroup
             CrossConnectGroup model =
                     new CrossConnectGroup(
                             this.compartmentId,
-                            this.definedTags,
                             this.displayName,
-                            this.freeformTags,
                             this.id,
                             this.lifecycleState,
-                            this.customerReferenceName,
-                            this.timeCreated,
-                            this.macsecProperties,
-                            this.ociPhysicalDeviceName,
-                            this.ociLogicalDeviceName);
+                            this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -298,14 +173,8 @@ public final class CrossConnectGroup
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
-            if (model.wasPropertyExplicitlySet("definedTags")) {
-                this.definedTags(model.getDefinedTags());
-            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
-            }
-            if (model.wasPropertyExplicitlySet("freeformTags")) {
-                this.freeformTags(model.getFreeformTags());
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
@@ -313,20 +182,8 @@ public final class CrossConnectGroup
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
-            if (model.wasPropertyExplicitlySet("customerReferenceName")) {
-                this.customerReferenceName(model.getCustomerReferenceName());
-            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
-            }
-            if (model.wasPropertyExplicitlySet("macsecProperties")) {
-                this.macsecProperties(model.getMacsecProperties());
-            }
-            if (model.wasPropertyExplicitlySet("ociPhysicalDeviceName")) {
-                this.ociPhysicalDeviceName(model.getOciPhysicalDeviceName());
-            }
-            if (model.wasPropertyExplicitlySet("ociLogicalDeviceName")) {
-                this.ociLogicalDeviceName(model.getOciLogicalDeviceName());
             }
             return this;
         }
@@ -359,23 +216,6 @@ public final class CrossConnectGroup
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     * @return the value
-     */
-    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
-        return definedTags;
-    }
-
-    /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
      * confidential information.
      */
@@ -390,23 +230,6 @@ public final class CrossConnectGroup
      */
     public String getDisplayName() {
         return displayName;
-    }
-
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    private final java.util.Map<String, String> freeformTags;
-
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     *
-     * @return the value
-     */
-    public java.util.Map<String, String> getFreeformTags() {
-        return freeformTags;
     }
 
     /** The cross-connect group's Oracle ID (OCID). */
@@ -472,23 +295,6 @@ public final class CrossConnectGroup
     }
 
     /**
-     * A reference name or identifier for the physical fiber connection that this cross-connect
-     * group uses.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
-    private final String customerReferenceName;
-
-    /**
-     * A reference name or identifier for the physical fiber connection that this cross-connect
-     * group uses.
-     *
-     * @return the value
-     */
-    public String getCustomerReferenceName() {
-        return customerReferenceName;
-    }
-
-    /**
      * The date and time the cross-connect group was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
@@ -509,43 +315,6 @@ public final class CrossConnectGroup
         return timeCreated;
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
-    private final MacsecProperties macsecProperties;
-
-    public MacsecProperties getMacsecProperties() {
-        return macsecProperties;
-    }
-
-    /** The FastConnect device that terminates the physical connection. */
-    @com.fasterxml.jackson.annotation.JsonProperty("ociPhysicalDeviceName")
-    private final String ociPhysicalDeviceName;
-
-    /**
-     * The FastConnect device that terminates the physical connection.
-     *
-     * @return the value
-     */
-    public String getOciPhysicalDeviceName() {
-        return ociPhysicalDeviceName;
-    }
-
-    /**
-     * The FastConnect device that terminates the logical connection. This device might be different
-     * than the device that terminates the physical connection.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalDeviceName")
-    private final String ociLogicalDeviceName;
-
-    /**
-     * The FastConnect device that terminates the logical connection. This device might be different
-     * than the device that terminates the physical connection.
-     *
-     * @return the value
-     */
-    public String getOciLogicalDeviceName() {
-        return ociLogicalDeviceName;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -562,16 +331,10 @@ public final class CrossConnectGroup
         sb.append("CrossConnectGroup(");
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
-        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append(", customerReferenceName=").append(String.valueOf(this.customerReferenceName));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append(", macsecProperties=").append(String.valueOf(this.macsecProperties));
-        sb.append(", ociPhysicalDeviceName=").append(String.valueOf(this.ociPhysicalDeviceName));
-        sb.append(", ociLogicalDeviceName=").append(String.valueOf(this.ociLogicalDeviceName));
         sb.append(")");
         return sb.toString();
     }
@@ -587,16 +350,10 @@ public final class CrossConnectGroup
 
         CrossConnectGroup other = (CrossConnectGroup) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.customerReferenceName, other.customerReferenceName)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.macsecProperties, other.macsecProperties)
-                && java.util.Objects.equals(this.ociPhysicalDeviceName, other.ociPhysicalDeviceName)
-                && java.util.Objects.equals(this.ociLogicalDeviceName, other.ociLogicalDeviceName)
                 && super.equals(other);
     }
 
@@ -607,32 +364,12 @@ public final class CrossConnectGroup
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.customerReferenceName == null
-                                ? 43
-                                : this.customerReferenceName.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.macsecProperties == null ? 43 : this.macsecProperties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.ociPhysicalDeviceName == null
-                                ? 43
-                                : this.ociPhysicalDeviceName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.ociLogicalDeviceName == null
-                                ? 43
-                                : this.ociLogicalDeviceName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

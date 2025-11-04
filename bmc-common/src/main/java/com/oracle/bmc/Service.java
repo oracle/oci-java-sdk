@@ -56,4 +56,10 @@ public interface Service {
      * be ignored in this case.
      */
     String getEndpointServiceName();
+
+    /**
+     * A boolean which determines whether dual stack endpoints have been enabled by the service.
+     * Default value is false.
+     */
+    boolean serviceUsesDualStackByDefault();
 }

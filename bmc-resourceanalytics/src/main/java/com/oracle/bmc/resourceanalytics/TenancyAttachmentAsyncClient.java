@@ -108,7 +108,10 @@ public class TenancyAttachmentAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, CreateTenancyAttachmentResponse::builder)
                 .logger(LOG, "createTenancyAttachment")
-                .serviceDetails("TenancyAttachment", "CreateTenancyAttachment", "")
+                .serviceDetails(
+                        "TenancyAttachment",
+                        "CreateTenancyAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/TenancyAttachment/CreateTenancyAttachment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateTenancyAttachmentRequest::builder)
                 .basePath("/20241031")
@@ -146,7 +149,10 @@ public class TenancyAttachmentAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, DeleteTenancyAttachmentResponse::builder)
                 .logger(LOG, "deleteTenancyAttachment")
-                .serviceDetails("TenancyAttachment", "DeleteTenancyAttachment", "")
+                .serviceDetails(
+                        "TenancyAttachment",
+                        "DeleteTenancyAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/TenancyAttachment/DeleteTenancyAttachment")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteTenancyAttachmentRequest::builder)
                 .basePath("/20241031")
@@ -175,7 +181,10 @@ public class TenancyAttachmentAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, GetTenancyAttachmentResponse::builder)
                 .logger(LOG, "getTenancyAttachment")
-                .serviceDetails("TenancyAttachment", "GetTenancyAttachment", "")
+                .serviceDetails(
+                        "TenancyAttachment",
+                        "GetTenancyAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/TenancyAttachment/GetTenancyAttachment")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetTenancyAttachmentRequest::builder)
                 .basePath("/20241031")
@@ -201,7 +210,10 @@ public class TenancyAttachmentAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ListTenancyAttachmentsResponse::builder)
                 .logger(LOG, "listTenancyAttachments")
-                .serviceDetails("TenancyAttachment", "ListTenancyAttachments", "")
+                .serviceDetails(
+                        "TenancyAttachment",
+                        "ListTenancyAttachments",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/TenancyAttachmentCollection/ListTenancyAttachments")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListTenancyAttachmentsRequest::builder)
                 .basePath("/20241031")
@@ -241,7 +253,10 @@ public class TenancyAttachmentAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, UpdateTenancyAttachmentResponse::builder)
                 .logger(LOG, "updateTenancyAttachment")
-                .serviceDetails("TenancyAttachment", "UpdateTenancyAttachment", "")
+                .serviceDetails(
+                        "TenancyAttachment",
+                        "UpdateTenancyAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/TenancyAttachment/UpdateTenancyAttachment")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateTenancyAttachmentRequest::builder)
                 .basePath("/20241031")

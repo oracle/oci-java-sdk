@@ -23,25 +23,13 @@ package com.oracle.bmc.vnmonitoring.model;
 public final class CreateRemotePeeringConnectionDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({
-        "compartmentId",
-        "definedTags",
-        "displayName",
-        "drgId",
-        "freeformTags"
-    })
+    @java.beans.ConstructorProperties({"compartmentId", "displayName", "drgId"})
     public CreateRemotePeeringConnectionDetails(
-            String compartmentId,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String displayName,
-            String drgId,
-            java.util.Map<String, String> freeformTags) {
+            String compartmentId, String displayName, String drgId) {
         super();
         this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
         this.displayName = displayName;
         this.drgId = drgId;
-        this.freeformTags = freeformTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,26 +51,6 @@ public final class CreateRemotePeeringConnectionDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
-            return this;
-        }
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         * @param definedTags the value to set
-         * @return this builder
-         */
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
             return this;
         }
         /**
@@ -123,25 +91,6 @@ public final class CreateRemotePeeringConnectionDetails
             this.__explicitlySet__.add("drgId");
             return this;
         }
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         *
-         * @param freeformTags the value to set
-         * @return this builder
-         */
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -149,11 +98,7 @@ public final class CreateRemotePeeringConnectionDetails
         public CreateRemotePeeringConnectionDetails build() {
             CreateRemotePeeringConnectionDetails model =
                     new CreateRemotePeeringConnectionDetails(
-                            this.compartmentId,
-                            this.definedTags,
-                            this.displayName,
-                            this.drgId,
-                            this.freeformTags);
+                            this.compartmentId, this.displayName, this.drgId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -165,17 +110,11 @@ public final class CreateRemotePeeringConnectionDetails
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
-            if (model.wasPropertyExplicitlySet("definedTags")) {
-                this.definedTags(model.getDefinedTags());
-            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
             if (model.wasPropertyExplicitlySet("drgId")) {
                 this.drgId(model.getDrgId());
-            }
-            if (model.wasPropertyExplicitlySet("freeformTags")) {
-                this.freeformTags(model.getFreeformTags());
             }
             return this;
         }
@@ -205,23 +144,6 @@ public final class CreateRemotePeeringConnectionDetails
      */
     public String getCompartmentId() {
         return compartmentId;
-    }
-
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     * @return the value
-     */
-    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
-        return definedTags;
     }
 
     /**
@@ -258,23 +180,6 @@ public final class CreateRemotePeeringConnectionDetails
         return drgId;
     }
 
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    private final java.util.Map<String, String> freeformTags;
-
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     *
-     * @return the value
-     */
-    public java.util.Map<String, String> getFreeformTags() {
-        return freeformTags;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -291,10 +196,8 @@ public final class CreateRemotePeeringConnectionDetails
         sb.append("CreateRemotePeeringConnectionDetails(");
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", drgId=").append(String.valueOf(this.drgId));
-        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(")");
         return sb.toString();
     }
@@ -310,10 +213,8 @@ public final class CreateRemotePeeringConnectionDetails
 
         CreateRemotePeeringConnectionDetails other = (CreateRemotePeeringConnectionDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.drgId, other.drgId)
-                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && super.equals(other);
     }
 
@@ -324,10 +225,8 @@ public final class CreateRemotePeeringConnectionDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.drgId == null ? 43 : this.drgId.hashCode());
-        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

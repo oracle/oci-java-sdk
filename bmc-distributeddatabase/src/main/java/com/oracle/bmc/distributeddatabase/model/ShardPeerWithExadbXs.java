@@ -31,6 +31,8 @@ public final class ShardPeerWithExadbXs
         "containerDatabaseId",
         "timeCreated",
         "timeUpdated",
+        "protectionMode",
+        "transportType",
         "metadata"
     })
     public ShardPeerWithExadbXs(
@@ -41,6 +43,8 @@ public final class ShardPeerWithExadbXs
             String containerDatabaseId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            DistributedDbProtectionMode protectionMode,
+            DistributedDbTransportType transportType,
             DistributedDbMetadata metadata) {
         super();
         this.vmClusterId = vmClusterId;
@@ -50,6 +54,8 @@ public final class ShardPeerWithExadbXs
         this.containerDatabaseId = containerDatabaseId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.protectionMode = protectionMode;
+        this.transportType = transportType;
         this.metadata = metadata;
     }
 
@@ -89,12 +95,12 @@ public final class ShardPeerWithExadbXs
             this.__explicitlySet__.add("shardGroup");
             return this;
         }
-        /** Status of catalog with VmCluster for the Globally ditributed database. */
+        /** Status of EXADB_XS based shard peer. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Status of catalog with VmCluster for the Globally ditributed database.
+         * Status of EXADB_XS based shard peer.
          *
          * @param status the value to set
          * @return this builder
@@ -164,6 +170,36 @@ public final class ShardPeerWithExadbXs
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** The protectionMode for the shard peer. */
+        @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+        private DistributedDbProtectionMode protectionMode;
+
+        /**
+         * The protectionMode for the shard peer.
+         *
+         * @param protectionMode the value to set
+         * @return this builder
+         */
+        public Builder protectionMode(DistributedDbProtectionMode protectionMode) {
+            this.protectionMode = protectionMode;
+            this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+        /** The redo transport type to use for this Data Guard association. */
+        @com.fasterxml.jackson.annotation.JsonProperty("transportType")
+        private DistributedDbTransportType transportType;
+
+        /**
+         * The redo transport type to use for this Data Guard association.
+         *
+         * @param transportType the value to set
+         * @return this builder
+         */
+        public Builder transportType(DistributedDbTransportType transportType) {
+            this.transportType = transportType;
+            this.__explicitlySet__.add("transportType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private DistributedDbMetadata metadata;
@@ -187,6 +223,8 @@ public final class ShardPeerWithExadbXs
                             this.containerDatabaseId,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.protectionMode,
+                            this.transportType,
                             this.metadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -216,6 +254,12 @@ public final class ShardPeerWithExadbXs
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("transportType")) {
+                this.transportType(model.getTransportType());
             }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
@@ -263,7 +307,7 @@ public final class ShardPeerWithExadbXs
         return shardGroup;
     }
 
-    /** Status of catalog with VmCluster for the Globally ditributed database. */
+    /** Status of EXADB_XS based shard peer. */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Failed("FAILED"),
         Deleting("DELETING"),
@@ -315,12 +359,12 @@ public final class ShardPeerWithExadbXs
             return UnknownEnumValue;
         }
     };
-    /** Status of catalog with VmCluster for the Globally ditributed database. */
+    /** Status of EXADB_XS based shard peer. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Status of catalog with VmCluster for the Globally ditributed database.
+     * Status of EXADB_XS based shard peer.
      *
      * @return the value
      */
@@ -380,6 +424,32 @@ public final class ShardPeerWithExadbXs
         return timeUpdated;
     }
 
+    /** The protectionMode for the shard peer. */
+    @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+    private final DistributedDbProtectionMode protectionMode;
+
+    /**
+     * The protectionMode for the shard peer.
+     *
+     * @return the value
+     */
+    public DistributedDbProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
+
+    /** The redo transport type to use for this Data Guard association. */
+    @com.fasterxml.jackson.annotation.JsonProperty("transportType")
+    private final DistributedDbTransportType transportType;
+
+    /**
+     * The redo transport type to use for this Data Guard association.
+     *
+     * @return the value
+     */
+    public DistributedDbTransportType getTransportType() {
+        return transportType;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final DistributedDbMetadata metadata;
 
@@ -409,6 +479,8 @@ public final class ShardPeerWithExadbXs
         sb.append(", containerDatabaseId=").append(String.valueOf(this.containerDatabaseId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", transportType=").append(String.valueOf(this.transportType));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(")");
         return sb.toString();
@@ -431,6 +503,8 @@ public final class ShardPeerWithExadbXs
                 && java.util.Objects.equals(this.containerDatabaseId, other.containerDatabaseId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(this.transportType, other.transportType)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && super.equals(other);
     }
@@ -454,6 +528,12 @@ public final class ShardPeerWithExadbXs
                                 : this.containerDatabaseId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transportType == null ? 43 : this.transportType.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

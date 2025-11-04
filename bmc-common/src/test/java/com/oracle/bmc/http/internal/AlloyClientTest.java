@@ -6,6 +6,7 @@ package com.oracle.bmc.http.internal;
 
 import com.oracle.bmc.AlloyConfigTest;
 import com.oracle.bmc.Region;
+import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.common.InternalBuilderAccess;
@@ -27,7 +28,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertFalse;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -127,6 +127,8 @@ public class AlloyClientTest extends AlloyConfigTest {
                 .thenReturn(mockRequestSigner);
 
         PowerMockito.mockStatic(InternalBuilderAccess.class);
+        PowerMockito.when(InternalBuilderAccess.getService(any()))
+                .thenReturn(TestBaseClient.SERVICE);
         PowerMockito.when(InternalBuilderAccess.getRequestSignerFactory(any()))
                 .thenReturn(mockRequestSignerFactory);
         Map<SigningStrategy, RequestSignerFactory> factories = new HashMap<>();

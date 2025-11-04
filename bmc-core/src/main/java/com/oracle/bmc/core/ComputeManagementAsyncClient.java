@@ -1117,6 +1117,42 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<TerminationProceedInstancePoolInstanceResponse>
+            terminationProceedInstancePoolInstance(
+                    TerminationProceedInstancePoolInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    TerminationProceedInstancePoolInstanceRequest,
+                                    TerminationProceedInstancePoolInstanceResponse>
+                            handler) {
+
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+        Objects.requireNonNull(
+                request.getTerminationProceedInstancePoolInstanceDetails(),
+                "terminationProceedInstancePoolInstanceDetails is required");
+
+        return clientCall(request, TerminationProceedInstancePoolInstanceResponse::builder)
+                .logger(LOG, "terminationProceedInstancePoolInstance")
+                .serviceDetails(
+                        "ComputeManagement",
+                        "TerminationProceedInstancePoolInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/TerminationProceedInstancePoolInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TerminationProceedInstancePoolInstanceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("terminationProceed")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        TerminationProceedInstancePoolInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateClusterNetworkResponse> updateClusterNetwork(
             UpdateClusterNetworkRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.oracle.bmc.internal.SpiClientConfigurator;
-import com.oracle.bmc.util.internal.ClientCompatibilityChecker;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.ClientRuntime;
 import com.oracle.bmc.Realm;
@@ -27,29 +25,33 @@ import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.HttpProvider;
 import com.oracle.bmc.http.client.StandardClientProperties;
+import com.oracle.bmc.http.client.StandardHttpProviderCapability;
+import com.oracle.bmc.http.client.internal.parameterizedendpoints.ParameterizedEndpointUtil;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.internal.Alloy;
 import com.oracle.bmc.internal.EndpointBuilder;
+import com.oracle.bmc.internal.SpiClientConfigurator;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.BmcResponse;
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils;
+import com.oracle.bmc.util.internal.ClientCompatibilityChecker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.URI;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.HashSet;
-import java.util.Arrays;
 import java.util.Optional;
 import java.util.function.Supplier;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 abstract class BaseClient implements AutoCloseable {
     private static final ClientConfigurator DEFAULT_CONFIGURATOR = new DefaultConfigurator();
@@ -71,6 +73,7 @@ abstract class BaseClient implements AutoCloseable {
     private volatile String endpoint;
     private volatile HttpClient httpClient;
     private volatile Region region;
+    private final Map<String, Boolean> optionsMap = new HashMap<>();
 
     /** Compatible SDK version, provided by the codegen. */
     public final String clientCommonLibraryVersion;
@@ -162,6 +165,9 @@ abstract class BaseClient implements AutoCloseable {
             this.clientConfigurator = preferredClientConfigurator;
         }
 
+        enableDualStackEndpoints(
+                EndpointTemplateForOptionsUtils.isDualStackEnabledForClientDefault(service));
+
         String endpoint = InternalBuilderAccess.getEndpoint(builder);
         if (this.authenticationDetailsProvider instanceof RegionProvider) {
             RegionProvider provider = (RegionProvider) this.authenticationDetailsProvider;
@@ -238,6 +244,39 @@ abstract class BaseClient implements AutoCloseable {
     }
 
     /**
+     * This method should be used to enable or disable the use of dual-stack endpoints. The default
+     * value is false i.e. dual-stack endpoints are disabled by default.
+     *
+     * @param enableDualStackEndpoints This flag can be set to true or false to enable or disable
+     *     the use of dual-stack endpoints respectively
+     */
+    public synchronized void enableDualStackEndpoints(boolean enableDualStackEndpoints) {
+        optionsMap.put(ParameterizedEndpointUtil.DUAL_STACK_OPTION, enableDualStackEndpoints);
+    }
+
+    /**
+     * Return an immutable snapshot representing the current options set for this client.
+     *
+     * @return immutable snapshot representing the current options set for this client
+     */
+    public synchronized Map<String, Boolean> getOptionsMap() {
+        return Collections.unmodifiableMap(new HashMap<>(optionsMap));
+    }
+
+    /**
+     * Returns the endpoint after filling in the current options, as determined by {@link
+     * BaseClient#getOptionsMap()}, and then filling in the required parameters in {@code
+     * requiredParametersMap} into the placeholders in the endpoint.
+     *
+     * @param requiredParametersMap the map from required parameter name to their values
+     * @return resolved endpoint, with all options and placeholders filled in
+     */
+    public synchronized String getResolvedEndpoint(Map<String, Object> requiredParametersMap) {
+        return ParameterizedEndpointUtil.INSTANCE.getEndpointWithPopulatedServiceParameters(
+                this.getEndpoint(), requiredParametersMap, this.optionsMap);
+    }
+
+    /**
      * This method should be used to enable or disable the use of realm-specific endpoint template.
      * The default value is null. To enable the use of endpoint template defined for the realm in
      * use, set the flag to true To disable the use of endpoint template defined for the realm in
@@ -282,92 +321,24 @@ abstract class BaseClient implements AutoCloseable {
         }
     }
 
-    /**
-     * Populate the parameters in the endpoint with its corresponding value and update the base
-     * endpoint. The value will be populated iff the parameter in endpoint is a required request
-     * path parameter or a required request query parameter. If not, the parameter in the endpoint
-     * will be ignored and left blank.
-     *
-     * @param endpoint The endpoint template in use
-     * @param requiredParametersMap Map of parameter name as key and value set in request path or
-     *     query parameter as value
-     */
-    public final void populateServiceParametersInEndpoint(
-            String endpoint, Map<String, Object> requiredParametersMap) {
-        if (!endpoint.contains("{")) {
-            return;
-        }
-
-        List<String> parameters = parseEndpointForParams(endpoint);
-        String updatedEndpoint = endpoint;
-        if (parameters != null && parameters.size() > 0 && requiredParametersMap.isEmpty()) {
-            updatedEndpoint = updatedEndpoint.replaceAll("\\{.*?\\}", "");
-            updateBaseEndpoint(updatedEndpoint);
-            return;
-        }
-
-        for (String parameter : parameters) {
-            boolean appendDot = false;
-            String paramName;
-
-            // If the parameter is defined with a "+Dot" string, it means we need to append a "."
-            // after populating the paramName value
-            if (parameter.endsWith("+Dot}")) {
-                appendDot = true;
-                paramName = parameter.substring(1, parameter.indexOf("+"));
-            } else {
-                paramName = parameter.substring(1, parameter.length() - 1);
-            }
-
-            if (requiredParametersMap.containsKey(paramName)) {
-                if (!(requiredParametersMap.get(paramName) instanceof String)) {
-                    logger.debug(
-                            "The parameter for {} cannot be populated since the value is not of type String",
-                            paramName);
-                    updatedEndpoint = updatedEndpoint.replace(parameter, "");
-                    updateBaseEndpoint(updatedEndpoint);
-                    continue;
-                }
-                if (appendDot) {
-                    updatedEndpoint =
-                            updatedEndpoint.replace(
-                                    parameter, requiredParametersMap.get(paramName) + ".");
-                } else {
-                    updatedEndpoint =
-                            updatedEndpoint.replace(
-                                    parameter, requiredParametersMap.get(paramName).toString());
-                }
-            } else {
-                updatedEndpoint = updatedEndpoint.replace(parameter, "");
-            }
-        }
-        updateBaseEndpoint(updatedEndpoint);
-    }
-
-    private List<String> parseEndpointForParams(String endpointTemplate) {
-        List<String> parsedParams = new ArrayList<>();
-        Matcher matcher = Pattern.compile("\\{(.*?)\\}").matcher(endpointTemplate);
-        while (matcher.find()) {
-            parsedParams.add(matcher.group());
-        }
-        return parsedParams;
-    }
-
-    /**
-     * This method should be used for parameterized endpoint templates only. This does not include
-     * {region} and {secondLevelDomain} parameters.
-     *
-     * @param endpoint The updated endpoint to use
-     */
-    public final synchronized void updateBaseEndpoint(String endpoint) {
-        Validate.notBlank(endpoint, "Cannot update the endpoint since it is null or blank.");
-        logger.info("Updating endpoint to {}", endpoint);
-        this.httpClient.updateEndpoint(endpoint);
-    }
-
     public final synchronized void setEndpoint(String endpoint) {
-        logger.info("Setting endpoint to {}", endpoint);
+        if (ParameterizedEndpointUtil.INSTANCE.isEndpointParameterized(endpoint)) {
+            if (!httpProvider.hasCapability(
+                    StandardHttpProviderCapability.PARAMETERIZED_ENDPOINTS)) {
+                String unparameterizedEndpoint =
+                        ParameterizedEndpointUtil.INSTANCE.removeAllParametersFromEndpoint(
+                                endpoint);
+                logger.info(
+                        "HTTP client provider '{}' does not support '{}' capability, changing parameterized endpoint '{}' to unparameterized endpoint '{}'",
+                        httpProvider.getClass().getName(),
+                        StandardHttpProviderCapability.PARAMETERIZED_ENDPOINTS,
+                        endpoint,
+                        unparameterizedEndpoint);
+                endpoint = unparameterizedEndpoint;
+            }
+        }
 
+        logger.info("Setting endpoint to {}", endpoint);
         this.endpoint = endpoint;
 
         HttpClientBuilder builder =
@@ -404,6 +375,45 @@ abstract class BaseClient implements AutoCloseable {
                                 httpClient, circuitBreakerConfiguration);
     }
 
+    /**
+     * Get the endpoint of the client.
+     *
+     * <p>Note that the endpoint may be parameterized and contain placeholders and options. The
+     * region subdomain and realm domain will have been properly replaced already if the endpoint
+     * was selected using a {@link Region}.
+     *
+     * <p>Examples of endpoints this may return:
+     *
+     * <ul>
+     *   <li>Unparameterized endpoints
+     *       <pre>
+     *             https://identity.us-phoenix-1.oci.oraclecloud.com
+     *             https://identity.us-ashburn-1.oci.oraclecloud.com
+     *             https://test-namespace.objectstorage.us-ashburn-1.oci.customer-oci.com
+     *         </pre>
+     *   <li>Parameterized endpoints with placeholders
+     *       <pre>
+     *             https://{namespaceName+Dot}objectstorage.us-phoenix-1.oci.customer-oci.com
+     *             https://{namespaceName+Dot}objectstorage.us-ashburn-1.oci.customer-oci.com
+     *         </pre>
+     *   <li>Parameterized endpoints with options
+     *       <pre>
+     *             https://{dualStack?ds.:}identity.us-phoenix-1.oci.oraclecloud.com
+     *             https://{dualStack?ds.:}identity.us-ashburn-1.oci.oraclecloud.com
+     *         </pre>
+     *   <li>Parameterized endpoints with placeholders and options
+     *       <pre>
+     *             https://{namespaceName+Dot}{dualStack?ds.:}objectstorage.us-phoenix-1.oci.customer-oci.com
+     *             https://{namespaceName+Dot}{dualStack?ds.:}objectstorage.us-ashburn-1.oci.customer-oci.com
+     *         </pre>
+     * </ul>
+     *
+     * To get the actual endpoint for a parameterized request, you can use {@link
+     * BaseClient#getResolvedEndpoint(Map)} or {@link
+     * ParameterizedEndpointUtil#getEndpointWithPopulatedServiceParameters(String, Map, Map)}.
+     *
+     * @return the endpoint being used by the client
+     */
     public final String getEndpoint() {
         return endpoint;
     }
@@ -427,7 +437,7 @@ abstract class BaseClient implements AutoCloseable {
                 Alloy.throwUnknownAlloyRegionIfAppropriate(region.getRegionId(), e);
             }
         }
-        Optional<String> endpoint = region.getEndpoint(service);
+        Optional<String> endpoint = region.getEndpoint(service, httpProvider::hasCapability);
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -474,6 +484,7 @@ abstract class BaseClient implements AutoCloseable {
         return ClientCall.builder(httpClient, request, responseBuilder)
                 .clientConfigurator(clientConfigurator)
                 .authenticationDetailsProvider(authenticationDetailsProvider)
-                .circuitBreaker(circuitBreaker);
+                .circuitBreaker(circuitBreaker)
+                .optionsMap(optionsMap);
     }
 }

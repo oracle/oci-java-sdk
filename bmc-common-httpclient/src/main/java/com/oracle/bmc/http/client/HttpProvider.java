@@ -24,6 +24,18 @@ public interface HttpProvider {
         }
         return httpProvider;
     }
+
+    /**
+     * Returns true if this HTTP provider has the requested capability.
+     *
+     * <p>By default, this method returns false, indicating that no specific capabilities are
+     * supported. Subclasses may override this method to provide their own capabilities.
+     *
+     * @return true if this HTTP provider has the requested capability.
+     */
+    default boolean hasCapability(HttpProviderCapability capability) {
+        return false;
+    }
 }
 
 class DefaultHolder {

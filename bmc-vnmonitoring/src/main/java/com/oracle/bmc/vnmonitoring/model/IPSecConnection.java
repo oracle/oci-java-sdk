@@ -6,21 +6,9 @@ package com.oracle.bmc.vnmonitoring.model;
 
 /**
  * A connection between a DRG and CPE. This connection consists of multiple IPSec tunnels. Creating
- * this connection is one of the steps required when setting up a Site-to-Site VPN.
- *
- * <p>*Important:** Each tunnel in an IPSec connection can use either static routing or BGP dynamic
- * routing (see the {@link IPSecConnectionTunnel} object's {@code routing} attribute). Originally
- * only static routing was supported and every IPSec connection was required to have at least one
- * static route configured. To maintain backward compatibility in the API when support for BPG
- * dynamic routing was introduced, the API accepts an empty list of static routes if you configure
- * both of the IPSec tunnels to use BGP dynamic routing. If you switch a tunnel's routing from
- * {@code BGP} to {@code STATIC}, you must first ensure that the IPSec connection is configured with
- * at least one valid CIDR block static route. Oracle uses the IPSec connection's static routes when
- * routing a tunnel's traffic *only* if that tunnel's {@code routing} attribute = {@code STATIC}.
- * Otherwise the static routes are ignored.
- *
- * <p>For more information about the workflow for setting up an IPSec connection, see [Site-to-Site
- * VPN Overview](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
+ * this connection is one of the steps required when setting up a Site-to-Site VPN. For more
+ * information, see [Site-to-Site VPN
+ * Overview](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
@@ -51,8 +39,6 @@ public final class IPSecConnection
         "freeformTags",
         "id",
         "lifecycleState",
-        "cpeLocalIdentifier",
-        "cpeLocalIdentifierType",
         "staticRoutes",
         "timeCreated",
         "transportType"
@@ -66,8 +52,6 @@ public final class IPSecConnection
             java.util.Map<String, String> freeformTags,
             String id,
             LifecycleState lifecycleState,
-            String cpeLocalIdentifier,
-            CpeLocalIdentifierType cpeLocalIdentifierType,
             java.util.List<String> staticRoutes,
             java.util.Date timeCreated,
             TransportType transportType) {
@@ -80,8 +64,6 @@ public final class IPSecConnection
         this.freeformTags = freeformTags;
         this.id = id;
         this.lifecycleState = lifecycleState;
-        this.cpeLocalIdentifier = cpeLocalIdentifier;
-        this.cpeLocalIdentifierType = cpeLocalIdentifierType;
         this.staticRoutes = staticRoutes;
         this.timeCreated = timeCreated;
         this.transportType = transportType;
@@ -239,82 +221,11 @@ public final class IPSecConnection
             return this;
         }
         /**
-         * Your identifier for your CPE device. Can be either an IP address or a hostname
-         * (specifically, the fully qualified domain name (FQDN)). The type of identifier here must
-         * correspond to the value for {@code cpeLocalIdentifierType}.
-         *
-         * <p>If you don't provide a value when creating the IPSec connection, the {@code ipAddress}
-         * attribute for the {@link Cpe} object specified by {@code cpeId} is used as the {@code
-         * cpeLocalIdentifier}.
-         *
-         * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-         * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-         *
-         * <p>Example IP address: {@code 10.0.3.3}
-         *
-         * <p>Example hostname: {@code cpe.example.com}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
-        private String cpeLocalIdentifier;
-
-        /**
-         * Your identifier for your CPE device. Can be either an IP address or a hostname
-         * (specifically, the fully qualified domain name (FQDN)). The type of identifier here must
-         * correspond to the value for {@code cpeLocalIdentifierType}.
-         *
-         * <p>If you don't provide a value when creating the IPSec connection, the {@code ipAddress}
-         * attribute for the {@link Cpe} object specified by {@code cpeId} is used as the {@code
-         * cpeLocalIdentifier}.
-         *
-         * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-         * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-         *
-         * <p>Example IP address: {@code 10.0.3.3}
-         *
-         * <p>Example hostname: {@code cpe.example.com}
-         *
-         * @param cpeLocalIdentifier the value to set
-         * @return this builder
-         */
-        public Builder cpeLocalIdentifier(String cpeLocalIdentifier) {
-            this.cpeLocalIdentifier = cpeLocalIdentifier;
-            this.__explicitlySet__.add("cpeLocalIdentifier");
-            return this;
-        }
-        /**
-         * The type of identifier for your CPE device. The value here must correspond to the value
-         * for {@code cpeLocalIdentifier}.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
-        private CpeLocalIdentifierType cpeLocalIdentifierType;
-
-        /**
-         * The type of identifier for your CPE device. The value here must correspond to the value
-         * for {@code cpeLocalIdentifier}.
-         *
-         * @param cpeLocalIdentifierType the value to set
-         * @return this builder
-         */
-        public Builder cpeLocalIdentifierType(CpeLocalIdentifierType cpeLocalIdentifierType) {
-            this.cpeLocalIdentifierType = cpeLocalIdentifierType;
-            this.__explicitlySet__.add("cpeLocalIdentifierType");
-            return this;
-        }
-        /**
          * Static routes to the CPE. The CIDR must not be a multicast address or class E address.
          *
-         * <p>Used for routing a given IPSec tunnel's traffic only if the tunnel is using static
-         * routing. If you configure at least one tunnel to use static routing, then you must
-         * provide at least one valid static route. If you configure both tunnels to use BGP dynamic
-         * routing, you can provide an empty list for the static routes.
-         *
-         * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial
-         * and government regions. See [IPv6
-         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
          *
          * <p>Example: {@code 10.0.1.0/24}
-         *
-         * <p>Example: {@code 2001:db8::/32}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
         private java.util.List<String> staticRoutes;
@@ -322,18 +233,9 @@ public final class IPSecConnection
         /**
          * Static routes to the CPE. The CIDR must not be a multicast address or class E address.
          *
-         * <p>Used for routing a given IPSec tunnel's traffic only if the tunnel is using static
-         * routing. If you configure at least one tunnel to use static routing, then you must
-         * provide at least one valid static route. If you configure both tunnels to use BGP dynamic
-         * routing, you can provide an empty list for the static routes.
-         *
-         * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial
-         * and government regions. See [IPv6
-         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
          *
          * <p>Example: {@code 10.0.1.0/24}
-         *
-         * <p>Example: {@code 2001:db8::/32}
          *
          * @param staticRoutes the value to set
          * @return this builder
@@ -396,8 +298,6 @@ public final class IPSecConnection
                             this.freeformTags,
                             this.id,
                             this.lifecycleState,
-                            this.cpeLocalIdentifier,
-                            this.cpeLocalIdentifierType,
                             this.staticRoutes,
                             this.timeCreated,
                             this.transportType);
@@ -432,12 +332,6 @@ public final class IPSecConnection
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
-            }
-            if (model.wasPropertyExplicitlySet("cpeLocalIdentifier")) {
-                this.cpeLocalIdentifier(model.getCpeLocalIdentifier());
-            }
-            if (model.wasPropertyExplicitlySet("cpeLocalIdentifierType")) {
-                this.cpeLocalIdentifierType(model.getCpeLocalIdentifierType());
             }
             if (model.wasPropertyExplicitlySet("staticRoutes")) {
                 this.staticRoutes(model.getStaticRoutes());
@@ -627,114 +521,11 @@ public final class IPSecConnection
     }
 
     /**
-     * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
-     * the fully qualified domain name (FQDN)). The type of identifier here must correspond to the
-     * value for {@code cpeLocalIdentifierType}.
-     *
-     * <p>If you don't provide a value when creating the IPSec connection, the {@code ipAddress}
-     * attribute for the {@link Cpe} object specified by {@code cpeId} is used as the {@code
-     * cpeLocalIdentifier}.
-     *
-     * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-     * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-     *
-     * <p>Example IP address: {@code 10.0.3.3}
-     *
-     * <p>Example hostname: {@code cpe.example.com}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
-    private final String cpeLocalIdentifier;
-
-    /**
-     * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
-     * the fully qualified domain name (FQDN)). The type of identifier here must correspond to the
-     * value for {@code cpeLocalIdentifierType}.
-     *
-     * <p>If you don't provide a value when creating the IPSec connection, the {@code ipAddress}
-     * attribute for the {@link Cpe} object specified by {@code cpeId} is used as the {@code
-     * cpeLocalIdentifier}.
-     *
-     * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-     * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-     *
-     * <p>Example IP address: {@code 10.0.3.3}
-     *
-     * <p>Example hostname: {@code cpe.example.com}
-     *
-     * @return the value
-     */
-    public String getCpeLocalIdentifier() {
-        return cpeLocalIdentifier;
-    }
-
-    /**
-     * The type of identifier for your CPE device. The value here must correspond to the value for
-     * {@code cpeLocalIdentifier}.
-     */
-    public enum CpeLocalIdentifierType implements com.oracle.bmc.http.internal.BmcEnum {
-        IpAddress("IP_ADDRESS"),
-        Hostname("HOSTNAME"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, CpeLocalIdentifierType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (CpeLocalIdentifierType v : CpeLocalIdentifierType.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        CpeLocalIdentifierType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static CpeLocalIdentifierType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid CpeLocalIdentifierType: " + key);
-        }
-    };
-    /**
-     * The type of identifier for your CPE device. The value here must correspond to the value for
-     * {@code cpeLocalIdentifier}.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
-    private final CpeLocalIdentifierType cpeLocalIdentifierType;
-
-    /**
-     * The type of identifier for your CPE device. The value here must correspond to the value for
-     * {@code cpeLocalIdentifier}.
-     *
-     * @return the value
-     */
-    public CpeLocalIdentifierType getCpeLocalIdentifierType() {
-        return cpeLocalIdentifierType;
-    }
-
-    /**
      * Static routes to the CPE. The CIDR must not be a multicast address or class E address.
      *
-     * <p>Used for routing a given IPSec tunnel's traffic only if the tunnel is using static
-     * routing. If you configure at least one tunnel to use static routing, then you must provide at
-     * least one valid static route. If you configure both tunnels to use BGP dynamic routing, you
-     * can provide an empty list for the static routes.
-     *
-     * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and
-     * government regions. See [IPv6
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
      *
      * <p>Example: {@code 10.0.1.0/24}
-     *
-     * <p>Example: {@code 2001:db8::/32}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
     private final java.util.List<String> staticRoutes;
@@ -742,18 +533,9 @@ public final class IPSecConnection
     /**
      * Static routes to the CPE. The CIDR must not be a multicast address or class E address.
      *
-     * <p>Used for routing a given IPSec tunnel's traffic only if the tunnel is using static
-     * routing. If you configure at least one tunnel to use static routing, then you must provide at
-     * least one valid static route. If you configure both tunnels to use BGP dynamic routing, you
-     * can provide an empty list for the static routes.
-     *
-     * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and
-     * government regions. See [IPv6
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
      *
      * <p>Example: {@code 10.0.1.0/24}
-     *
-     * <p>Example: {@code 2001:db8::/32}
      *
      * @return the value
      */
@@ -851,8 +633,6 @@ public final class IPSecConnection
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append(", cpeLocalIdentifier=").append(String.valueOf(this.cpeLocalIdentifier));
-        sb.append(", cpeLocalIdentifierType=").append(String.valueOf(this.cpeLocalIdentifierType));
         sb.append(", staticRoutes=").append(String.valueOf(this.staticRoutes));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", transportType=").append(String.valueOf(this.transportType));
@@ -878,9 +658,6 @@ public final class IPSecConnection
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.cpeLocalIdentifier, other.cpeLocalIdentifier)
-                && java.util.Objects.equals(
-                        this.cpeLocalIdentifierType, other.cpeLocalIdentifierType)
                 && java.util.Objects.equals(this.staticRoutes, other.staticRoutes)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.transportType, other.transportType)
@@ -903,16 +680,6 @@ public final class IPSecConnection
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.cpeLocalIdentifier == null
-                                ? 43
-                                : this.cpeLocalIdentifier.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.cpeLocalIdentifierType == null
-                                ? 43
-                                : this.cpeLocalIdentifierType.hashCode());
         result = (result * PRIME) + (this.staticRoutes == null ? 43 : this.staticRoutes.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =

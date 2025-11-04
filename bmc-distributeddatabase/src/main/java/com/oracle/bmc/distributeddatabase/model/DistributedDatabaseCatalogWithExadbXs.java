@@ -167,12 +167,12 @@ public final class DistributedDatabaseCatalogWithExadbXs extends DistributedData
             this.__explicitlySet__.add("kmsKeyVersionId");
             return this;
         }
-        /** Status of catalog with VmCluster for the Globally ditributed database. */
+        /** Status of EXADB_XS based catalog. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Status of catalog with VmCluster for the Globally ditributed database.
+         * Status of EXADB_XS based catalog.
          *
          * @param status the value to set
          * @return this builder
@@ -452,7 +452,7 @@ public final class DistributedDatabaseCatalogWithExadbXs extends DistributedData
         return kmsKeyVersionId;
     }
 
-    /** Status of catalog with VmCluster for the Globally ditributed database. */
+    /** Status of EXADB_XS based catalog. */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Failed("FAILED"),
         Deleting("DELETING"),
@@ -504,12 +504,12 @@ public final class DistributedDatabaseCatalogWithExadbXs extends DistributedData
             return UnknownEnumValue;
         }
     };
-    /** Status of catalog with VmCluster for the Globally ditributed database. */
+    /** Status of EXADB_XS based catalog. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Status of catalog with VmCluster for the Globally ditributed database.
+     * Status of EXADB_XS based catalog.
      *
      * @return the value
      */

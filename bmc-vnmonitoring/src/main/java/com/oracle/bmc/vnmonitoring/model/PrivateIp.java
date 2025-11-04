@@ -27,10 +27,6 @@ package com.oracle.bmc.vnmonitoring.model;
  * #attachVnic(AttachVnicRequest) attachVnic}. To update the hostname for a primary private IP, you
  * use {@link #updateVnic(UpdateVnicRequest) updateVnic}.
  *
- * <p>{@code PrivateIp} objects that are created for use with the Oracle Cloud VMware Solution are
- * assigned to a VLAN and not a VNIC in a subnet. See the descriptions of the relevant attributes in
- * the {@code PrivateIp} object. Also see {@link Vlan}.
- *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
@@ -60,7 +56,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         "id",
         "ipAddress",
         "isPrimary",
-        "vlanId",
         "subnetId",
         "timeCreated",
         "vnicId"
@@ -75,7 +70,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             String id,
             String ipAddress,
             Boolean isPrimary,
-            String vlanId,
             String subnetId,
             java.util.Date timeCreated,
             String vnicId) {
@@ -89,7 +83,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         this.id = id;
         this.ipAddress = ipAddress;
         this.isPrimary = isPrimary;
-        this.vlanId = vlanId;
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.vnicId = vnicId;
@@ -98,8 +91,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The private IP's availability domain. This attribute will be null if this is a
-         * *secondary* private IP assigned to a VNIC that is in a *regional* subnet.
+         * The private IP's availability domain.
          *
          * <p>Example: {@code Uocm:PHX-AD-1}
          */
@@ -107,8 +99,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         private String availabilityDomain;
 
         /**
-         * The private IP's availability domain. This attribute will be null if this is a
-         * *secondary* private IP assigned to a VNIC that is in a *regional* subnet.
+         * The private IP's availability domain.
          *
          * <p>Example: {@code Uocm:PHX-AD-1}
          *
@@ -255,10 +246,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
          * The private IP address of the {@code privateIp} object. The address is within the CIDR of
          * the VNIC's subnet.
          *
-         * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the
-         * Oracle Cloud VMware Solution, the address is from the range specified by the {@code
-         * cidrBlock} attribute for the VLAN. See {@link Vlan}.
-         *
          * <p>Example: {@code 10.0.3.3}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -267,10 +254,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         /**
          * The private IP address of the {@code privateIp} object. The address is within the CIDR of
          * the VNIC's subnet.
-         *
-         * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the
-         * Oracle Cloud VMware Solution, the address is from the range specified by the {@code
-         * cidrBlock} attribute for the VLAN. See {@link Vlan}.
          *
          * <p>Example: {@code 10.0.3.3}
          *
@@ -306,34 +289,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of the
-         * Oracle Cloud VMware Solution. The {@code vlanId} is the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VLAN. See {@link Vlan}.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
-        private String vlanId;
-
-        /**
-         * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of the
-         * Oracle Cloud VMware Solution. The {@code vlanId} is the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VLAN. See {@link Vlan}.
-         *
-         * @param vlanId the value to set
-         * @return this builder
-         */
-        public Builder vlanId(String vlanId) {
-            this.vlanId = vlanId;
-            this.__explicitlySet__.add("vlanId");
-            return this;
-        }
-        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet the VNIC is in.
-         *
-         * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the
-         * Oracle Cloud VMware Solution, the {@code subnetId} is null.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
@@ -341,9 +298,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet the VNIC is in.
-         *
-         * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the
-         * Oracle Cloud VMware Solution, the {@code subnetId} is null.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -379,8 +333,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet.
-         * However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
-         * Cloud VMware Solution, the {@code vnicId} is null.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
@@ -388,8 +340,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet.
-         * However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
-         * Cloud VMware Solution, the {@code vnicId} is null.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -415,7 +365,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                             this.id,
                             this.ipAddress,
                             this.isPrimary,
-                            this.vlanId,
                             this.subnetId,
                             this.timeCreated,
                             this.vnicId);
@@ -454,9 +403,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             if (model.wasPropertyExplicitlySet("isPrimary")) {
                 this.isPrimary(model.getIsPrimary());
             }
-            if (model.wasPropertyExplicitlySet("vlanId")) {
-                this.vlanId(model.getVlanId());
-            }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
@@ -480,8 +426,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The private IP's availability domain. This attribute will be null if this is a *secondary*
-     * private IP assigned to a VNIC that is in a *regional* subnet.
+     * The private IP's availability domain.
      *
      * <p>Example: {@code Uocm:PHX-AD-1}
      */
@@ -489,8 +434,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     private final String availabilityDomain;
 
     /**
-     * The private IP's availability domain. This attribute will be null if this is a *secondary*
-     * private IP assigned to a VNIC that is in a *regional* subnet.
+     * The private IP's availability domain.
      *
      * <p>Example: {@code Uocm:PHX-AD-1}
      *
@@ -622,10 +566,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
      * The private IP address of the {@code privateIp} object. The address is within the CIDR of the
      * VNIC's subnet.
      *
-     * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
-     * Cloud VMware Solution, the address is from the range specified by the {@code cidrBlock}
-     * attribute for the VLAN. See {@link Vlan}.
-     *
      * <p>Example: {@code 10.0.3.3}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -634,10 +574,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     /**
      * The private IP address of the {@code privateIp} object. The address is within the CIDR of the
      * VNIC's subnet.
-     *
-     * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
-     * Cloud VMware Solution, the address is from the range specified by the {@code cidrBlock}
-     * attribute for the VLAN. See {@link Vlan}.
      *
      * <p>Example: {@code 10.0.3.3}
      *
@@ -669,32 +605,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of the
-     * Oracle Cloud VMware Solution. The {@code vlanId} is the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
-     * See {@link Vlan}.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
-    private final String vlanId;
-
-    /**
-     * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of the
-     * Oracle Cloud VMware Solution. The {@code vlanId} is the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
-     * See {@link Vlan}.
-     *
-     * @return the value
-     */
-    public String getVlanId() {
-        return vlanId;
-    }
-
-    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the VNIC is in.
-     *
-     * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
-     * Cloud VMware Solution, the {@code subnetId} is null.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
@@ -702,9 +614,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the VNIC is in.
-     *
-     * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
-     * Cloud VMware Solution, the {@code subnetId} is null.
      *
      * @return the value
      */
@@ -735,18 +644,14 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
-     * the private IP is assigned to. The VNIC and private IP must be in the same subnet. However,
-     * if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle Cloud VMware
-     * Solution, the {@code vnicId} is null.
+     * the private IP is assigned to. The VNIC and private IP must be in the same subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
-     * the private IP is assigned to. The VNIC and private IP must be in the same subnet. However,
-     * if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle Cloud VMware
-     * Solution, the {@code vnicId} is null.
+     * the private IP is assigned to. The VNIC and private IP must be in the same subnet.
      *
      * @return the value
      */
@@ -778,7 +683,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
-        sb.append(", vlanId=").append(String.valueOf(this.vlanId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
@@ -805,7 +709,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
-                && java.util.Objects.equals(this.vlanId, other.vlanId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
@@ -833,7 +736,6 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
-        result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());

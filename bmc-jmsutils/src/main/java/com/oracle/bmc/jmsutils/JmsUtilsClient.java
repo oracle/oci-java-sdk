@@ -130,7 +130,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("JmsUtils", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20250521")
@@ -154,7 +157,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, DeleteJavaMigrationAnalysisResponse::builder)
                 .logger(LOG, "deleteJavaMigrationAnalysis")
-                .serviceDetails("JmsUtils", "DeleteJavaMigrationAnalysis", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "DeleteJavaMigrationAnalysis",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/DeleteJavaMigrationAnalysis")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaMigrationAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -179,7 +185,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, DeletePerformanceTuningAnalysisResponse::builder)
                 .logger(LOG, "deletePerformanceTuningAnalysis")
-                .serviceDetails("JmsUtils", "DeletePerformanceTuningAnalysis", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "DeletePerformanceTuningAnalysis",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/DeletePerformanceTuningAnalysis")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePerformanceTuningAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -201,7 +210,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetAnalyzeApplicationsConfigurationResponse::builder)
                 .logger(LOG, "getAnalyzeApplicationsConfiguration")
-                .serviceDetails("JmsUtils", "GetAnalyzeApplicationsConfiguration", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "GetAnalyzeApplicationsConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/AnalyzeApplicationsConfiguration/GetAnalyzeApplicationsConfiguration")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAnalyzeApplicationsConfigurationRequest::builder)
                 .basePath("/20250521")
@@ -231,7 +243,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetJavaMigrationAnalysisResponse::builder)
                 .logger(LOG, "getJavaMigrationAnalysis")
-                .serviceDetails("JmsUtils", "GetJavaMigrationAnalysis", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "GetJavaMigrationAnalysis",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/GetJavaMigrationAnalysis")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaMigrationAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -259,7 +274,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetPerformanceTuningAnalysisResponse::builder)
                 .logger(LOG, "getPerformanceTuningAnalysis")
-                .serviceDetails("JmsUtils", "GetPerformanceTuningAnalysis", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "GetPerformanceTuningAnalysis",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/GetPerformanceTuningAnalysis")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPerformanceTuningAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -286,7 +304,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetSubscriptionAcknowledgmentConfigurationResponse::builder)
                 .logger(LOG, "getSubscriptionAcknowledgmentConfiguration")
-                .serviceDetails("JmsUtils", "GetSubscriptionAcknowledgmentConfiguration", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "GetSubscriptionAcknowledgmentConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/SubscriptionAcknowledgmentConfiguration/GetSubscriptionAcknowledgmentConfiguration")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSubscriptionAcknowledgmentConfigurationRequest::builder)
                 .basePath("/20250521")
@@ -314,7 +335,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("JmsUtils", "GetWorkRequest", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20250521")
@@ -340,7 +364,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListJavaMigrationAnalysisResponse::builder)
                 .logger(LOG, "listJavaMigrationAnalysis")
-                .serviceDetails("JmsUtils", "ListJavaMigrationAnalysis", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "ListJavaMigrationAnalysis",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/ListJavaMigrationAnalysis")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaMigrationAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -371,7 +398,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListPerformanceTuningAnalysisResponse::builder)
                 .logger(LOG, "listPerformanceTuningAnalysis")
-                .serviceDetails("JmsUtils", "ListPerformanceTuningAnalysis", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "ListPerformanceTuningAnalysis",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/ListPerformanceTuningAnalysis")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPerformanceTuningAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -408,7 +438,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListWorkItemsResponse::builder)
                 .logger(LOG, "listWorkItems")
-                .serviceDetails("JmsUtils", "ListWorkItems", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "ListWorkItems",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkItemSummary/ListWorkItems")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkItemsRequest::builder)
                 .basePath("/20250521")
@@ -438,7 +471,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("JmsUtils", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20250521")
@@ -469,7 +505,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("JmsUtils", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20250521")
@@ -498,7 +537,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("JmsUtils", "ListWorkRequests", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20250521")
@@ -533,7 +575,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, RequestJavaMigrationAnalysisResponse::builder)
                 .logger(LOG, "requestJavaMigrationAnalysis")
-                .serviceDetails("JmsUtils", "RequestJavaMigrationAnalysis", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "RequestJavaMigrationAnalysis",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/RequestJavaMigrationAnalysis")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestJavaMigrationAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -563,7 +608,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, RequestPerformanceTuningAnalysisResponse::builder)
                 .logger(LOG, "requestPerformanceTuningAnalysis")
-                .serviceDetails("JmsUtils", "RequestPerformanceTuningAnalysis", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "RequestPerformanceTuningAnalysis",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/RequestPerformanceTuningAnalysis")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestPerformanceTuningAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -593,7 +641,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, UpdateAnalyzeApplicationsConfigurationResponse::builder)
                 .logger(LOG, "updateAnalyzeApplicationsConfiguration")
-                .serviceDetails("JmsUtils", "UpdateAnalyzeApplicationsConfiguration", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "UpdateAnalyzeApplicationsConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/AnalyzeApplicationsConfiguration/UpdateAnalyzeApplicationsConfiguration")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateAnalyzeApplicationsConfigurationRequest::builder)
                 .basePath("/20250521")
@@ -626,7 +677,10 @@ public class JmsUtilsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, UpdateSubscriptionAcknowledgmentConfigurationResponse::builder)
                 .logger(LOG, "updateSubscriptionAcknowledgmentConfiguration")
-                .serviceDetails("JmsUtils", "UpdateSubscriptionAcknowledgmentConfiguration", "")
+                .serviceDetails(
+                        "JmsUtils",
+                        "UpdateSubscriptionAcknowledgmentConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/SubscriptionAcknowledgmentConfiguration/UpdateSubscriptionAcknowledgmentConfiguration")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSubscriptionAcknowledgmentConfigurationRequest::builder)
                 .basePath("/20250521")

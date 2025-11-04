@@ -236,6 +236,46 @@ public class DistributedAutonomousDbServiceClient
     }
 
     @Override
+    public ChangeDistributedAutonomousDbBackupConfigResponse
+            changeDistributedAutonomousDbBackupConfig(
+                    ChangeDistributedAutonomousDbBackupConfigRequest request) {
+
+        Validate.notBlank(
+                request.getDistributedAutonomousDatabaseId(),
+                "distributedAutonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDistributedAutonomousDbBackupConfigDetails(),
+                "changeDistributedAutonomousDbBackupConfigDetails is required");
+
+        return clientCall(request, ChangeDistributedAutonomousDbBackupConfigResponse::builder)
+                .logger(LOG, "changeDistributedAutonomousDbBackupConfig")
+                .serviceDetails(
+                        "DistributedAutonomousDbService",
+                        "ChangeDistributedAutonomousDbBackupConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDbBackupConfig")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDistributedAutonomousDbBackupConfigRequest::builder)
+                .basePath("/20250101")
+                .appendPathParam("distributedAutonomousDatabases")
+                .appendPathParam(request.getDistributedAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeDbBackupConfig")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDistributedAutonomousDbBackupConfigResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDistributedAutonomousDbBackupConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ConfigureDistributedAutonomousDatabaseGsmsResponse
             configureDistributedAutonomousDatabaseGsms(
                     ConfigureDistributedAutonomousDatabaseGsmsRequest request) {

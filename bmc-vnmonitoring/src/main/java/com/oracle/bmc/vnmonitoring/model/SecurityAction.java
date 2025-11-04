@@ -26,8 +26,29 @@ package com.oracle.bmc.vnmonitoring.model;
             value = AllowedSecurityAction.class,
             name = "ALLOWED"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ZprMissingPolicySecurityAction.class,
+            name = "ZPR_MISSING_POLICY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ZprDeniedSecurityAction.class,
+            name = "ZPR_DENIED"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ZprPolicyNotEvaluatedMissingRouteSecurityAction.class,
+            name = "ZPR_POLICY_NOT_EVALUATED_MISSING_ROUTE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ZprNsgUnsupportedSecurityAction.class,
+            name = "ZPR_NSG_UNSUPPORTED"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ZprAllowedSecurityAction.class,
+            name = "ZPR_ALLOWED"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DeniedSecurityAction.class,
-            name = "DENIED")
+            name = "DENIED"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ZprCidrUnsupportedSecurityAction.class,
+            name = "ZPR_CIDR_UNSUPPORTED"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ZprPolicyNotEvaluatedSlNsgDeniedSecurityAction.class,
+            name = "ZPR_POLICY_NOT_EVALUATED_SL_NSG_DENIED")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -144,6 +165,13 @@ public class SecurityAction extends com.oracle.bmc.http.client.internal.Explicit
     public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Allowed("ALLOWED"),
         Denied("DENIED"),
+        ZprDenied("ZPR_DENIED"),
+        ZprAllowed("ZPR_ALLOWED"),
+        ZprCidrUnsupported("ZPR_CIDR_UNSUPPORTED"),
+        ZprNsgUnsupported("ZPR_NSG_UNSUPPORTED"),
+        ZprPolicyNotEvaluatedMissingRoute("ZPR_POLICY_NOT_EVALUATED_MISSING_ROUTE"),
+        ZprPolicyNotEvaluatedSlNsgDenied("ZPR_POLICY_NOT_EVALUATED_SL_NSG_DENIED"),
+        ZprMissingPolicy("ZPR_MISSING_POLICY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

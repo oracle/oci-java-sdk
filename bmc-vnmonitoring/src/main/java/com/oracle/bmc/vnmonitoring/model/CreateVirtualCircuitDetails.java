@@ -27,69 +27,45 @@ public final class CreateVirtualCircuitDetails
         "bandwidthShapeName",
         "compartmentId",
         "crossConnectMappings",
-        "routingPolicy",
-        "bgpAdminState",
-        "isBfdEnabled",
         "isTransportMode",
         "customerBgpAsn",
-        "customerAsn",
-        "definedTags",
         "displayName",
-        "freeformTags",
         "gatewayId",
         "providerName",
         "providerServiceId",
-        "providerServiceKeyName",
         "providerServiceName",
         "publicPrefixes",
         "region",
-        "type",
-        "ipMtu"
+        "type"
     })
     public CreateVirtualCircuitDetails(
             String bandwidthShapeName,
             String compartmentId,
             java.util.List<CrossConnectMapping> crossConnectMappings,
-            java.util.List<RoutingPolicy> routingPolicy,
-            BgpAdminState bgpAdminState,
-            Boolean isBfdEnabled,
             Boolean isTransportMode,
             Integer customerBgpAsn,
-            Long customerAsn,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
-            java.util.Map<String, String> freeformTags,
             String gatewayId,
             String providerName,
             String providerServiceId,
-            String providerServiceKeyName,
             String providerServiceName,
             java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes,
             String region,
-            Type type,
-            VirtualCircuitIpMtu ipMtu) {
+            Type type) {
         super();
         this.bandwidthShapeName = bandwidthShapeName;
         this.compartmentId = compartmentId;
         this.crossConnectMappings = crossConnectMappings;
-        this.routingPolicy = routingPolicy;
-        this.bgpAdminState = bgpAdminState;
-        this.isBfdEnabled = isBfdEnabled;
         this.isTransportMode = isTransportMode;
         this.customerBgpAsn = customerBgpAsn;
-        this.customerAsn = customerAsn;
-        this.definedTags = definedTags;
         this.displayName = displayName;
-        this.freeformTags = freeformTags;
         this.gatewayId = gatewayId;
         this.providerName = providerName;
         this.providerServiceId = providerServiceId;
-        this.providerServiceKeyName = providerServiceKeyName;
         this.providerServiceName = providerServiceName;
         this.publicPrefixes = publicPrefixes;
         this.region = region;
         this.type = type;
-        this.ipMtu = ipMtu;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -161,69 +137,6 @@ public final class CreateVirtualCircuitDetails
             return this;
         }
         /**
-         * The routing policy sets how routing information about the Oracle cloud is shared over a
-         * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
-         * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-         * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
-         * for details. By default, routing information is shared for all routes in the same market.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
-        private java.util.List<RoutingPolicy> routingPolicy;
-
-        /**
-         * The routing policy sets how routing information about the Oracle cloud is shared over a
-         * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
-         * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-         * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
-         * for details. By default, routing information is shared for all routes in the same market.
-         *
-         * @param routingPolicy the value to set
-         * @return this builder
-         */
-        public Builder routingPolicy(java.util.List<RoutingPolicy> routingPolicy) {
-            this.routingPolicy = routingPolicy;
-            this.__explicitlySet__.add("routingPolicy");
-            return this;
-        }
-        /**
-         * Set to {@code ENABLED} (the default) to activate the BGP session of the virtual circuit,
-         * set to {@code DISABLED} to deactivate the virtual circuit.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("bgpAdminState")
-        private BgpAdminState bgpAdminState;
-
-        /**
-         * Set to {@code ENABLED} (the default) to activate the BGP session of the virtual circuit,
-         * set to {@code DISABLED} to deactivate the virtual circuit.
-         *
-         * @param bgpAdminState the value to set
-         * @return this builder
-         */
-        public Builder bgpAdminState(BgpAdminState bgpAdminState) {
-            this.bgpAdminState = bgpAdminState;
-            this.__explicitlySet__.add("bgpAdminState");
-            return this;
-        }
-        /**
-         * Set to {@code true} to enable BFD for IPv4 BGP peering, or set to {@code false} to
-         * disable BFD. If this is not set, the default is {@code false}.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("isBfdEnabled")
-        private Boolean isBfdEnabled;
-
-        /**
-         * Set to {@code true} to enable BFD for IPv4 BGP peering, or set to {@code false} to
-         * disable BFD. If this is not set, the default is {@code false}.
-         *
-         * @param isBfdEnabled the value to set
-         * @return this builder
-         */
-        public Builder isBfdEnabled(Boolean isBfdEnabled) {
-            this.isBfdEnabled = isBfdEnabled;
-            this.__explicitlySet__.add("isBfdEnabled");
-            return this;
-        }
-        /**
          * Set to {@code true} for the virtual circuit to carry only encrypted traffic, or set to
          * {@code false} for the virtual circuit to carry unencrypted traffic. If this is not set,
          * the default is {@code false}.
@@ -245,15 +158,15 @@ public final class CreateVirtualCircuitDetails
             return this;
         }
         /**
-         * Deprecated. Instead use {@code customerAsn}. If you specify values for both, the request
-         * will be rejected.
+         * Your BGP ASN (either public or private). Provide this value only if there's a BGP session
+         * that goes from your edge router to Oracle. Otherwise, leave this empty or null.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
         private Integer customerBgpAsn;
 
         /**
-         * Deprecated. Instead use {@code customerAsn}. If you specify values for both, the request
-         * will be rejected.
+         * Your BGP ASN (either public or private). Provide this value only if there's a BGP session
+         * that goes from your edge router to Oracle. Otherwise, leave this empty or null.
          *
          * @param customerBgpAsn the value to set
          * @return this builder
@@ -261,51 +174,6 @@ public final class CreateVirtualCircuitDetails
         public Builder customerBgpAsn(Integer customerBgpAsn) {
             this.customerBgpAsn = customerBgpAsn;
             this.__explicitlySet__.add("customerBgpAsn");
-            return this;
-        }
-        /**
-         * Your BGP ASN (either public or private). Provide this value only if there's a BGP session
-         * that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a
-         * 2-byte or 4-byte ASN. Uses "asplain" format.
-         *
-         * <p>Example: {@code 12345} (2-byte) or {@code 1587232876} (4-byte)
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("customerAsn")
-        private Long customerAsn;
-
-        /**
-         * Your BGP ASN (either public or private). Provide this value only if there's a BGP session
-         * that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a
-         * 2-byte or 4-byte ASN. Uses "asplain" format.
-         *
-         * <p>Example: {@code 12345} (2-byte) or {@code 1587232876} (4-byte)
-         *
-         * @param customerAsn the value to set
-         * @return this builder
-         */
-        public Builder customerAsn(Long customerAsn) {
-            this.customerAsn = customerAsn;
-            this.__explicitlySet__.add("customerAsn");
-            return this;
-        }
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         * @param definedTags the value to set
-         * @return this builder
-         */
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
             return this;
         }
         /**
@@ -325,25 +193,6 @@ public final class CreateVirtualCircuitDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
-            return this;
-        }
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         *
-         * @param freeformTags the value to set
-         * @return this builder
-         */
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
@@ -411,25 +260,6 @@ public final class CreateVirtualCircuitDetails
         public Builder providerServiceId(String providerServiceId) {
             this.providerServiceId = providerServiceId;
             this.__explicitlySet__.add("providerServiceId");
-            return this;
-        }
-        /**
-         * The service key name offered by the provider (if the customer is connecting via a
-         * provider).
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
-        private String providerServiceKeyName;
-
-        /**
-         * The service key name offered by the provider (if the customer is connecting via a
-         * provider).
-         *
-         * @param providerServiceKeyName the value to set
-         * @return this builder
-         */
-        public Builder providerServiceKeyName(String providerServiceKeyName) {
-            this.providerServiceKeyName = providerServiceKeyName;
-            this.__explicitlySet__.add("providerServiceKeyName");
             return this;
         }
         /**
@@ -513,21 +343,6 @@ public final class CreateVirtualCircuitDetails
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The layer 3 IP MTU to use with this virtual circuit. */
-        @com.fasterxml.jackson.annotation.JsonProperty("ipMtu")
-        private VirtualCircuitIpMtu ipMtu;
-
-        /**
-         * The layer 3 IP MTU to use with this virtual circuit.
-         *
-         * @param ipMtu the value to set
-         * @return this builder
-         */
-        public Builder ipMtu(VirtualCircuitIpMtu ipMtu) {
-            this.ipMtu = ipMtu;
-            this.__explicitlySet__.add("ipMtu");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -538,24 +353,16 @@ public final class CreateVirtualCircuitDetails
                             this.bandwidthShapeName,
                             this.compartmentId,
                             this.crossConnectMappings,
-                            this.routingPolicy,
-                            this.bgpAdminState,
-                            this.isBfdEnabled,
                             this.isTransportMode,
                             this.customerBgpAsn,
-                            this.customerAsn,
-                            this.definedTags,
                             this.displayName,
-                            this.freeformTags,
                             this.gatewayId,
                             this.providerName,
                             this.providerServiceId,
-                            this.providerServiceKeyName,
                             this.providerServiceName,
                             this.publicPrefixes,
                             this.region,
-                            this.type,
-                            this.ipMtu);
+                            this.type);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -573,32 +380,14 @@ public final class CreateVirtualCircuitDetails
             if (model.wasPropertyExplicitlySet("crossConnectMappings")) {
                 this.crossConnectMappings(model.getCrossConnectMappings());
             }
-            if (model.wasPropertyExplicitlySet("routingPolicy")) {
-                this.routingPolicy(model.getRoutingPolicy());
-            }
-            if (model.wasPropertyExplicitlySet("bgpAdminState")) {
-                this.bgpAdminState(model.getBgpAdminState());
-            }
-            if (model.wasPropertyExplicitlySet("isBfdEnabled")) {
-                this.isBfdEnabled(model.getIsBfdEnabled());
-            }
             if (model.wasPropertyExplicitlySet("isTransportMode")) {
                 this.isTransportMode(model.getIsTransportMode());
             }
             if (model.wasPropertyExplicitlySet("customerBgpAsn")) {
                 this.customerBgpAsn(model.getCustomerBgpAsn());
             }
-            if (model.wasPropertyExplicitlySet("customerAsn")) {
-                this.customerAsn(model.getCustomerAsn());
-            }
-            if (model.wasPropertyExplicitlySet("definedTags")) {
-                this.definedTags(model.getDefinedTags());
-            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
-            }
-            if (model.wasPropertyExplicitlySet("freeformTags")) {
-                this.freeformTags(model.getFreeformTags());
             }
             if (model.wasPropertyExplicitlySet("gatewayId")) {
                 this.gatewayId(model.getGatewayId());
@@ -608,9 +397,6 @@ public final class CreateVirtualCircuitDetails
             }
             if (model.wasPropertyExplicitlySet("providerServiceId")) {
                 this.providerServiceId(model.getProviderServiceId());
-            }
-            if (model.wasPropertyExplicitlySet("providerServiceKeyName")) {
-                this.providerServiceKeyName(model.getProviderServiceKeyName());
             }
             if (model.wasPropertyExplicitlySet("providerServiceName")) {
                 this.providerServiceName(model.getProviderServiceName());
@@ -623,9 +409,6 @@ public final class CreateVirtualCircuitDetails
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
-            }
-            if (model.wasPropertyExplicitlySet("ipMtu")) {
-                this.ipMtu(model.getIpMtu());
             }
             return this;
         }
@@ -699,134 +482,6 @@ public final class CreateVirtualCircuitDetails
         return crossConnectMappings;
     }
 
-    /** */
-    public enum RoutingPolicy implements com.oracle.bmc.http.internal.BmcEnum {
-        OracleServiceNetwork("ORACLE_SERVICE_NETWORK"),
-        Regional("REGIONAL"),
-        MarketLevel("MARKET_LEVEL"),
-        Global("GLOBAL"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, RoutingPolicy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (RoutingPolicy v : RoutingPolicy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        RoutingPolicy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static RoutingPolicy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid RoutingPolicy: " + key);
-        }
-    };
-    /**
-     * The routing policy sets how routing information about the Oracle cloud is shared over a
-     * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
-     * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-     * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
-     * for details. By default, routing information is shared for all routes in the same market.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
-    private final java.util.List<RoutingPolicy> routingPolicy;
-
-    /**
-     * The routing policy sets how routing information about the Oracle cloud is shared over a
-     * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
-     * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-     * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
-     * for details. By default, routing information is shared for all routes in the same market.
-     *
-     * @return the value
-     */
-    public java.util.List<RoutingPolicy> getRoutingPolicy() {
-        return routingPolicy;
-    }
-
-    /**
-     * Set to {@code ENABLED} (the default) to activate the BGP session of the virtual circuit, set
-     * to {@code DISABLED} to deactivate the virtual circuit.
-     */
-    public enum BgpAdminState implements com.oracle.bmc.http.internal.BmcEnum {
-        Enabled("ENABLED"),
-        Disabled("DISABLED"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, BgpAdminState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (BgpAdminState v : BgpAdminState.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        BgpAdminState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static BgpAdminState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid BgpAdminState: " + key);
-        }
-    };
-    /**
-     * Set to {@code ENABLED} (the default) to activate the BGP session of the virtual circuit, set
-     * to {@code DISABLED} to deactivate the virtual circuit.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("bgpAdminState")
-    private final BgpAdminState bgpAdminState;
-
-    /**
-     * Set to {@code ENABLED} (the default) to activate the BGP session of the virtual circuit, set
-     * to {@code DISABLED} to deactivate the virtual circuit.
-     *
-     * @return the value
-     */
-    public BgpAdminState getBgpAdminState() {
-        return bgpAdminState;
-    }
-
-    /**
-     * Set to {@code true} to enable BFD for IPv4 BGP peering, or set to {@code false} to disable
-     * BFD. If this is not set, the default is {@code false}.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("isBfdEnabled")
-    private final Boolean isBfdEnabled;
-
-    /**
-     * Set to {@code true} to enable BFD for IPv4 BGP peering, or set to {@code false} to disable
-     * BFD. If this is not set, the default is {@code false}.
-     *
-     * @return the value
-     */
-    public Boolean getIsBfdEnabled() {
-        return isBfdEnabled;
-    }
-
     /**
      * Set to {@code true} for the virtual circuit to carry only encrypted traffic, or set to {@code
      * false} for the virtual circuit to carry unencrypted traffic. If this is not set, the default
@@ -847,60 +502,20 @@ public final class CreateVirtualCircuitDetails
     }
 
     /**
-     * Deprecated. Instead use {@code customerAsn}. If you specify values for both, the request will
-     * be rejected.
+     * Your BGP ASN (either public or private). Provide this value only if there's a BGP session
+     * that goes from your edge router to Oracle. Otherwise, leave this empty or null.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
     private final Integer customerBgpAsn;
 
     /**
-     * Deprecated. Instead use {@code customerAsn}. If you specify values for both, the request will
-     * be rejected.
+     * Your BGP ASN (either public or private). Provide this value only if there's a BGP session
+     * that goes from your edge router to Oracle. Otherwise, leave this empty or null.
      *
      * @return the value
      */
     public Integer getCustomerBgpAsn() {
         return customerBgpAsn;
-    }
-
-    /**
-     * Your BGP ASN (either public or private). Provide this value only if there's a BGP session
-     * that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a
-     * 2-byte or 4-byte ASN. Uses "asplain" format.
-     *
-     * <p>Example: {@code 12345} (2-byte) or {@code 1587232876} (4-byte)
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("customerAsn")
-    private final Long customerAsn;
-
-    /**
-     * Your BGP ASN (either public or private). Provide this value only if there's a BGP session
-     * that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a
-     * 2-byte or 4-byte ASN. Uses "asplain" format.
-     *
-     * <p>Example: {@code 12345} (2-byte) or {@code 1587232876} (4-byte)
-     *
-     * @return the value
-     */
-    public Long getCustomerAsn() {
-        return customerAsn;
-    }
-
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     * @return the value
-     */
-    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
-        return definedTags;
     }
 
     /**
@@ -918,23 +533,6 @@ public final class CreateVirtualCircuitDetails
      */
     public String getDisplayName() {
         return displayName;
-    }
-
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    private final java.util.Map<String, String> freeformTags;
-
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     *
-     * @return the value
-     */
-    public java.util.Map<String, String> getFreeformTags() {
-        return freeformTags;
     }
 
     /**
@@ -996,21 +594,6 @@ public final class CreateVirtualCircuitDetails
      */
     public String getProviderServiceId() {
         return providerServiceId;
-    }
-
-    /**
-     * The service key name offered by the provider (if the customer is connecting via a provider).
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
-    private final String providerServiceKeyName;
-
-    /**
-     * The service key name offered by the provider (if the customer is connecting via a provider).
-     *
-     * @return the value
-     */
-    public String getProviderServiceKeyName() {
-        return providerServiceKeyName;
     }
 
     /**
@@ -1119,19 +702,6 @@ public final class CreateVirtualCircuitDetails
         return type;
     }
 
-    /** The layer 3 IP MTU to use with this virtual circuit. */
-    @com.fasterxml.jackson.annotation.JsonProperty("ipMtu")
-    private final VirtualCircuitIpMtu ipMtu;
-
-    /**
-     * The layer 3 IP MTU to use with this virtual circuit.
-     *
-     * @return the value
-     */
-    public VirtualCircuitIpMtu getIpMtu() {
-        return ipMtu;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -1150,24 +720,16 @@ public final class CreateVirtualCircuitDetails
         sb.append("bandwidthShapeName=").append(String.valueOf(this.bandwidthShapeName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", crossConnectMappings=").append(String.valueOf(this.crossConnectMappings));
-        sb.append(", routingPolicy=").append(String.valueOf(this.routingPolicy));
-        sb.append(", bgpAdminState=").append(String.valueOf(this.bgpAdminState));
-        sb.append(", isBfdEnabled=").append(String.valueOf(this.isBfdEnabled));
         sb.append(", isTransportMode=").append(String.valueOf(this.isTransportMode));
         sb.append(", customerBgpAsn=").append(String.valueOf(this.customerBgpAsn));
-        sb.append(", customerAsn=").append(String.valueOf(this.customerAsn));
-        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
-        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", gatewayId=").append(String.valueOf(this.gatewayId));
         sb.append(", providerName=").append(String.valueOf(this.providerName));
         sb.append(", providerServiceId=").append(String.valueOf(this.providerServiceId));
-        sb.append(", providerServiceKeyName=").append(String.valueOf(this.providerServiceKeyName));
         sb.append(", providerServiceName=").append(String.valueOf(this.providerServiceName));
         sb.append(", publicPrefixes=").append(String.valueOf(this.publicPrefixes));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", type=").append(String.valueOf(this.type));
-        sb.append(", ipMtu=").append(String.valueOf(this.ipMtu));
         sb.append(")");
         return sb.toString();
     }
@@ -1185,25 +747,16 @@ public final class CreateVirtualCircuitDetails
         return java.util.Objects.equals(this.bandwidthShapeName, other.bandwidthShapeName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.crossConnectMappings, other.crossConnectMappings)
-                && java.util.Objects.equals(this.routingPolicy, other.routingPolicy)
-                && java.util.Objects.equals(this.bgpAdminState, other.bgpAdminState)
-                && java.util.Objects.equals(this.isBfdEnabled, other.isBfdEnabled)
                 && java.util.Objects.equals(this.isTransportMode, other.isTransportMode)
                 && java.util.Objects.equals(this.customerBgpAsn, other.customerBgpAsn)
-                && java.util.Objects.equals(this.customerAsn, other.customerAsn)
-                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.gatewayId, other.gatewayId)
                 && java.util.Objects.equals(this.providerName, other.providerName)
                 && java.util.Objects.equals(this.providerServiceId, other.providerServiceId)
-                && java.util.Objects.equals(
-                        this.providerServiceKeyName, other.providerServiceKeyName)
                 && java.util.Objects.equals(this.providerServiceName, other.providerServiceName)
                 && java.util.Objects.equals(this.publicPrefixes, other.publicPrefixes)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.type, other.type)
-                && java.util.Objects.equals(this.ipMtu, other.ipMtu)
                 && super.equals(other);
     }
 
@@ -1226,31 +779,16 @@ public final class CreateVirtualCircuitDetails
                                 : this.crossConnectMappings.hashCode());
         result =
                 (result * PRIME)
-                        + (this.routingPolicy == null ? 43 : this.routingPolicy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.bgpAdminState == null ? 43 : this.bgpAdminState.hashCode());
-        result = (result * PRIME) + (this.isBfdEnabled == null ? 43 : this.isBfdEnabled.hashCode());
-        result =
-                (result * PRIME)
                         + (this.isTransportMode == null ? 43 : this.isTransportMode.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerBgpAsn == null ? 43 : this.customerBgpAsn.hashCode());
-        result = (result * PRIME) + (this.customerAsn == null ? 43 : this.customerAsn.hashCode());
-        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.gatewayId == null ? 43 : this.gatewayId.hashCode());
         result = (result * PRIME) + (this.providerName == null ? 43 : this.providerName.hashCode());
         result =
                 (result * PRIME)
                         + (this.providerServiceId == null ? 43 : this.providerServiceId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.providerServiceKeyName == null
-                                ? 43
-                                : this.providerServiceKeyName.hashCode());
         result =
                 (result * PRIME)
                         + (this.providerServiceName == null
@@ -1261,7 +799,6 @@ public final class CreateVirtualCircuitDetails
                         + (this.publicPrefixes == null ? 43 : this.publicPrefixes.hashCode());
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
-        result = (result * PRIME) + (this.ipMtu == null ? 43 : this.ipMtu.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

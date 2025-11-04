@@ -6,9 +6,11 @@ package com.oracle.bmc;
 
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpProvider;
+import com.oracle.bmc.http.client.HttpProviderCapability;
 import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.StandardClientProperties;
+import com.oracle.bmc.http.client.StandardHttpProviderCapability;
 import com.oracle.bmc.http.internal.SyncFutureWaiter;
 import com.oracle.bmc.internal.Alloy;
 import com.oracle.bmc.internal.EndpointBuilder;
@@ -21,9 +23,9 @@ import com.oracle.bmc.util.internal.NameUtils;
 import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
 import com.oracle.bmc.waiter.WaiterConfiguration;
+import jakarta.annotation.Nonnull;
 import org.slf4j.Logger;
 
-import jakarta.annotation.Nonnull;
 import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
@@ -35,14 +37,15 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
-import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.AUTHORIZATION_HEADER_VALUE;
@@ -147,6 +150,8 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region AP_DELHI_1 = register("ap-delhi-1", Realm.OC1, "onm");
     public static final Region AP_BATAM_1 = register("ap-batam-1", Realm.OC1, "hsg");
     public static final Region EU_MADRID_3 = register("eu-madrid-3", Realm.OC1, "orf");
+    public static final Region AP_CHENNAI_1 = register("ap-chennai-1", Realm.OC1, "des");
+    public static final Region US_COLUMBUS_1 = register("us-columbus-1", Realm.OC1, "vkz");
 
     // OC2
     public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");
@@ -223,6 +228,8 @@ public final class Region implements Serializable, Comparable<Region> {
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
+    private static final Map<String, Map<Region, String>>
+            SERVICE_TO_REGION_UNPARAMETERIZED_ENDPOINTS = new HashMap<>();
 
     private static final Set<String> OCI_SDK_ENABLED_SERVICES_SET = new HashSet<>();
 
@@ -299,13 +306,35 @@ public final class Region implements Serializable, Comparable<Region> {
      * @return The endpoint for the given service, or empty if the service endpoint is not known.
      */
     public Optional<String> getEndpoint(Service service) {
+        return getEndpoint(service, c -> false);
+    }
+
+    /**
+     * Resolves a service name to its endpoint in the region, if available.
+     *
+     * @param service The service.
+     * @param httpProviderCapabilityPredicate a predicate that checks whether the HTTP provider has
+     *     a certain capability
+     * @return The endpoint for the given service, or empty if the service endpoint is not known.
+     */
+    public Optional<String> getEndpoint(
+            Service service, Predicate<HttpProviderCapability> httpProviderCapabilityPredicate) {
         writeLock.lock();
         try {
-            if (!SERVICE_TO_REGION_ENDPOINTS.containsKey(service.getServiceName())) {
-                HashMap<Region, String> endpoints = new HashMap<>();
-                endpoints.put(this, formatDefaultRegionEndpoint(service, this));
+            Map<String, Map<Region, String>> serviceToRegionEndpoints =
+                    httpProviderCapabilityPredicate.test(
+                                    StandardHttpProviderCapability.PARAMETERIZED_ENDPOINTS)
+                            ? SERVICE_TO_REGION_ENDPOINTS
+                            : SERVICE_TO_REGION_UNPARAMETERIZED_ENDPOINTS;
 
-                SERVICE_TO_REGION_ENDPOINTS.put(service.getServiceName(), endpoints);
+            if (!serviceToRegionEndpoints.containsKey(service.getServiceName())) {
+                HashMap<Region, String> endpoints = new HashMap<>();
+                endpoints.put(
+                        this,
+                        formatDefaultRegionEndpoint(
+                                service, this, httpProviderCapabilityPredicate));
+
+                serviceToRegionEndpoints.put(service.getServiceName(), endpoints);
                 LOG.info(
                         "Loaded service '{}' endpoint mappings: {}",
                         service.getServiceName(),
@@ -313,16 +342,19 @@ public final class Region implements Serializable, Comparable<Region> {
             }
 
             final Map<Region, String> endpoints =
-                    SERVICE_TO_REGION_ENDPOINTS.get(service.getServiceName());
+                    serviceToRegionEndpoints.get(service.getServiceName());
             if (!endpoints.containsKey(this)) {
-                endpoints.put(this, formatDefaultRegionEndpoint(service, this));
+                endpoints.put(
+                        this,
+                        formatDefaultRegionEndpoint(
+                                service, this, httpProviderCapabilityPredicate));
                 LOG.info(
                         "Loaded service '{}' endpoint mappings: {}",
                         service.getServiceName(),
                         endpoints);
             }
 
-            String endpoint = SERVICE_TO_REGION_ENDPOINTS.get(service.getServiceName()).get(this);
+            String endpoint = serviceToRegionEndpoints.get(service.getServiceName()).get(this);
             return Optional.ofNullable(endpoint);
         } finally {
             writeLock.unlock();
@@ -415,7 +447,26 @@ public final class Region implements Serializable, Comparable<Region> {
      * @return The endpoint.
      */
     public static String formatDefaultRegionEndpoint(Service service, Region region) {
-        return EndpointBuilder.createEndpoint(service, region);
+        return formatDefaultRegionEndpoint(service, region, c -> false);
+    }
+
+    /**
+     * Creates a default endpoint URL for the given service in the given region.
+     *
+     * <p>Note, the regionId is not validated against known regions, this just creates a URL that
+     * follows the default format.
+     *
+     * @param service The service.
+     * @param region The region.
+     * @param httpProviderCapabilityPredicate a predicate that checks whether the HTTP provider has
+     *     a certain capability
+     * @return The endpoint.
+     */
+    public static String formatDefaultRegionEndpoint(
+            Service service,
+            Region region,
+            Predicate<HttpProviderCapability> httpProviderCapabilityPredicate) {
+        return EndpointBuilder.createEndpoint(service, region, httpProviderCapabilityPredicate);
     }
 
     /**

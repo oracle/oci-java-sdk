@@ -134,10 +134,9 @@ final class Jersey3HttpRequest implements HttpRequest {
         InputStream limitedStream = new LengthLimitedInputStream(body, contentLength);
         if (client.isApacheNonBufferingClient && contentLength > 0) {
             // Customization for providing Apache HTTP Entity instead of InputStream. This is
-            // required to avoid
-            // buffering all the data in memory by Jersey Apache Connector. Create the HTTP entity
-            // only when a
-            // content length value can be retrieved from the request.
+            // required to avoid buffering all the data in memory by Jersey Apache Connector.
+            // Create the HTTP entity only when a content length value can be retrieved from
+            // the request.
             if (body instanceof DuplicatableInputStream) {
                 processedBody =
                         new ApacheDuplicatableInputStreamEntity(

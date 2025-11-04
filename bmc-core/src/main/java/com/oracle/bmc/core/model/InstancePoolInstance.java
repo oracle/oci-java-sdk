@@ -430,6 +430,8 @@ public final class InstancePoolInstance
         Attaching("ATTACHING"),
         Active("ACTIVE"),
         Detaching("DETACHING"),
+        TerminationAwait("TERMINATION_AWAIT"),
+        TerminationProceed("TERMINATION_PROCEED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

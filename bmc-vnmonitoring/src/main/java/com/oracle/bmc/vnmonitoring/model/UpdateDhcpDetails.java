@@ -23,25 +23,17 @@ package com.oracle.bmc.vnmonitoring.model;
 public final class UpdateDhcpDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({
-        "definedTags",
-        "displayName",
-        "freeformTags",
-        "options",
-        "domainNameType"
-    })
+    @java.beans.ConstructorProperties({"definedTags", "displayName", "freeformTags", "options"})
     public UpdateDhcpDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
-            java.util.List<DhcpOption> options,
-            DomainNameType domainNameType) {
+            java.util.List<DhcpOption> options) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.options = options;
-        this.domainNameType = domainNameType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -113,21 +105,6 @@ public final class UpdateDhcpDetails
             this.__explicitlySet__.add("options");
             return this;
         }
-        /** The search domain name type of DHCP options */
-        @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
-        private DomainNameType domainNameType;
-
-        /**
-         * The search domain name type of DHCP options
-         *
-         * @param domainNameType the value to set
-         * @return this builder
-         */
-        public Builder domainNameType(DomainNameType domainNameType) {
-            this.domainNameType = domainNameType;
-            this.__explicitlySet__.add("domainNameType");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -135,11 +112,7 @@ public final class UpdateDhcpDetails
         public UpdateDhcpDetails build() {
             UpdateDhcpDetails model =
                     new UpdateDhcpDetails(
-                            this.definedTags,
-                            this.displayName,
-                            this.freeformTags,
-                            this.options,
-                            this.domainNameType);
+                            this.definedTags, this.displayName, this.freeformTags, this.options);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -159,9 +132,6 @@ public final class UpdateDhcpDetails
             }
             if (model.wasPropertyExplicitlySet("options")) {
                 this.options(model.getOptions());
-            }
-            if (model.wasPropertyExplicitlySet("domainNameType")) {
-                this.domainNameType(model.getDomainNameType());
             }
             return this;
         }
@@ -234,53 +204,6 @@ public final class UpdateDhcpDetails
         return options;
     }
 
-    /** The search domain name type of DHCP options */
-    public enum DomainNameType implements com.oracle.bmc.http.internal.BmcEnum {
-        SubnetDomain("SUBNET_DOMAIN"),
-        VcnDomain("VCN_DOMAIN"),
-        CustomDomain("CUSTOM_DOMAIN"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, DomainNameType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (DomainNameType v : DomainNameType.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        DomainNameType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static DomainNameType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid DomainNameType: " + key);
-        }
-    };
-    /** The search domain name type of DHCP options */
-    @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
-    private final DomainNameType domainNameType;
-
-    /**
-     * The search domain name type of DHCP options
-     *
-     * @return the value
-     */
-    public DomainNameType getDomainNameType() {
-        return domainNameType;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -300,7 +223,6 @@ public final class UpdateDhcpDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", options=").append(String.valueOf(this.options));
-        sb.append(", domainNameType=").append(String.valueOf(this.domainNameType));
         sb.append(")");
         return sb.toString();
     }
@@ -319,7 +241,6 @@ public final class UpdateDhcpDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.options, other.options)
-                && java.util.Objects.equals(this.domainNameType, other.domainNameType)
                 && super.equals(other);
     }
 
@@ -331,9 +252,6 @@ public final class UpdateDhcpDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.domainNameType == null ? 43 : this.domainNameType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

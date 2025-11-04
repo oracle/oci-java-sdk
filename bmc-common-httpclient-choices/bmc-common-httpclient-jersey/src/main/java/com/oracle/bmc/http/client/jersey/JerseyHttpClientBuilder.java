@@ -393,16 +393,16 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
                     collectedProperties);
         }
 
-        WebTarget baseTarget;
+        String baseUriString;
         if (baseUri != null) {
-            baseTarget = client.target(baseUri);
+            baseUriString = baseUri.toString();
         } else {
-            baseTarget = client.target(baseUriString);
+            baseUriString = this.baseUriString;
         }
 
         return new JerseyHttpClient(
                 client,
-                baseTarget,
+                baseUriString,
                 requestInterceptors.stream()
                         .sorted(Comparator.comparingInt(p -> p.priority))
                         .map(p -> p.value)

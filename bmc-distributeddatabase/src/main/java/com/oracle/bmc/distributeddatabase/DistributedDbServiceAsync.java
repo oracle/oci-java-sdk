@@ -302,7 +302,8 @@ public interface DistributedDbServiceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Rotate passwords for different components of the Globally distributed database.
+     * Rotate the gsmuser and gsmcatuser passwords for shards and catalog of the Globally
+     * distributed database. This operation will also remove GdsCtlNodes if present.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

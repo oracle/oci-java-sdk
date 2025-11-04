@@ -6,7 +6,9 @@ package com.oracle.bmc.http.client.jersey;
 
 import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.HttpProvider;
+import com.oracle.bmc.http.client.HttpProviderCapability;
 import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.http.client.StandardHttpProviderCapability;
 import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 
 import javax.ws.rs.client.Client;
@@ -82,5 +84,10 @@ public class JerseyHttpProvider implements HttpProvider {
                             + "; the OCI SDK needs to set this property to true. Failing...");
         }
         System.setProperty(SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS, "true");
+    }
+
+    @Override
+    public boolean hasCapability(HttpProviderCapability capability) {
+        return capability == StandardHttpProviderCapability.PARAMETERIZED_ENDPOINTS;
     }
 }

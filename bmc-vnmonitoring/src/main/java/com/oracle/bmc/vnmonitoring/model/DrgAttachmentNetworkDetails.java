@@ -26,6 +26,9 @@ package com.oracle.bmc.vnmonitoring.model;
             value = VcnDrgAttachmentNetworkDetails.class,
             name = "VCN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = InternetDrgAttachmentNetworkDetails.class,
+            name = "INTERNET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = LoopBackDrgAttachmentNetworkDetails.class,
             name = "LOOPBACK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -34,6 +37,9 @@ package com.oracle.bmc.vnmonitoring.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VirtualCircuitDrgAttachmentNetworkDetails.class,
             name = "VIRTUAL_CIRCUIT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = FlexTunnelDrgAttachmentNetworkDetails.class,
+            name = "FLEX_TUNNEL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = RemotePeeringConnectionDrgAttachmentNetworkDetails.class,
             name = "REMOTE_PEERING_CONNECTION")
@@ -114,6 +120,9 @@ public class DrgAttachmentNetworkDetails
         IpsecTunnel("IPSEC_TUNNEL"),
         VirtualCircuit("VIRTUAL_CIRCUIT"),
         RemotePeeringConnection("REMOTE_PEERING_CONNECTION"),
+        FlexTunnel("FLEX_TUNNEL"),
+        Loopback("LOOPBACK"),
+        Internet("INTERNET"),
         ;
 
         private final String value;

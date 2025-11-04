@@ -193,6 +193,47 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public AddDbnodeSnapshotsForExadbVmClusterResponse addDbnodeSnapshotsForExadbVmCluster(
+            AddDbnodeSnapshotsForExadbVmClusterRequest request) {
+        Objects.requireNonNull(
+                request.getAddDbnodeSnapshotsForExadbVmClusterDetails(),
+                "addDbnodeSnapshotsForExadbVmClusterDetails is required");
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, AddDbnodeSnapshotsForExadbVmClusterResponse::builder)
+                .logger(LOG, "addDbnodeSnapshotsForExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "AddDbnodeSnapshotsForExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/AddDbnodeSnapshotsForExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDbnodeSnapshotsForExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("addDbNodeSnapshots")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.DbnodeSnapshots.class,
+                        AddDbnodeSnapshotsForExadbVmClusterResponse.Builder::dbnodeSnapshots)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddDbnodeSnapshotsForExadbVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddDbnodeSnapshotsForExadbVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddDbnodeSnapshotsForExadbVmClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public AddStandbyAutonomousContainerDatabaseResponse addStandbyAutonomousContainerDatabase(
             AddStandbyAutonomousContainerDatabaseRequest request) {
         Objects.requireNonNull(
@@ -4055,6 +4096,33 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeleteDbnodeSnapshotResponse deleteDbnodeSnapshot(DeleteDbnodeSnapshotRequest request) {
+
+        Validate.notBlank(request.getDbnodeSnapshotId(), "dbnodeSnapshotId must not be blank");
+
+        return clientCall(request, DeleteDbnodeSnapshotResponse::builder)
+                .logger(LOG, "deleteDbnodeSnapshot")
+                .serviceDetails(
+                        "Database",
+                        "DeleteDbnodeSnapshot",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbnodeSnapshot/DeleteDbnodeSnapshot")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDbnodeSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbnodeSnapshots")
+                .appendPathParam(request.getDbnodeSnapshotId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteDbnodeSnapshotResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDbnodeSnapshotResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteExadataInfrastructureResponse deleteExadataInfrastructure(
             DeleteExadataInfrastructureRequest request) {
 
@@ -7368,6 +7436,33 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetDbnodeSnapshotResponse getDbnodeSnapshot(GetDbnodeSnapshotRequest request) {
+
+        Validate.notBlank(request.getDbnodeSnapshotId(), "dbnodeSnapshotId must not be blank");
+
+        return clientCall(request, GetDbnodeSnapshotResponse::builder)
+                .logger(LOG, "getDbnodeSnapshot")
+                .serviceDetails(
+                        "Database",
+                        "GetDbnodeSnapshot",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbnodeSnapshot/GetDbnodeSnapshot")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDbnodeSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbnodeSnapshots")
+                .appendPathParam(request.getDbnodeSnapshotId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.DbnodeSnapshot.class,
+                        GetDbnodeSnapshotResponse.Builder::dbnodeSnapshot)
+                .handleResponseHeaderString("etag", GetDbnodeSnapshotResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDbnodeSnapshotResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetExadataInfrastructureResponse getExadataInfrastructure(
             GetExadataInfrastructureRequest request) {
 
@@ -10172,6 +10267,41 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListDbnodeSnapshotsResponse listDbnodeSnapshots(ListDbnodeSnapshotsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDbnodeSnapshotsResponse::builder)
+                .logger(LOG, "listDbnodeSnapshots")
+                .serviceDetails(
+                        "Database",
+                        "ListDbnodeSnapshots",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbnodeSnapshot/ListDbnodeSnapshots")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDbnodeSnapshotsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbnodeSnapshots")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("clusterId", request.getClusterId())
+                .appendQueryParam("sourceDbnodeId", request.getSourceDbnodeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.DbnodeSnapshotSummary.class,
+                        ListDbnodeSnapshotsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDbnodeSnapshotsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDbnodeSnapshotsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListExadataInfrastructuresResponse listExadataInfrastructures(
             ListExadataInfrastructuresRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -11753,6 +11883,43 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ModifyPluggableDatabaseManagementResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public MountDbnodeSnapshotResponse mountDbnodeSnapshot(MountDbnodeSnapshotRequest request) {
+        Objects.requireNonNull(
+                request.getMountDbnodeSnapshotDetails(), "mountDbnodeSnapshotDetails is required");
+
+        Validate.notBlank(request.getDbnodeSnapshotId(), "dbnodeSnapshotId must not be blank");
+
+        return clientCall(request, MountDbnodeSnapshotResponse::builder)
+                .logger(LOG, "mountDbnodeSnapshot")
+                .serviceDetails(
+                        "Database",
+                        "MountDbnodeSnapshot",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbnodeSnapshot/MountDbnodeSnapshot")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(MountDbnodeSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbnodeSnapshots")
+                .appendPathParam(request.getDbnodeSnapshotId())
+                .appendPathParam("actions")
+                .appendPathParam("mount")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.DbnodeSnapshot.class,
+                        MountDbnodeSnapshotResponse.Builder::dbnodeSnapshot)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        MountDbnodeSnapshotResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", MountDbnodeSnapshotResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", MountDbnodeSnapshotResponse.Builder::etag)
                 .callSync();
     }
 
@@ -13521,6 +13688,45 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-work-request-id", TerminateDbSystemResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", TerminateDbSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UnmountDbnodeSnapshotResponse unmountDbnodeSnapshot(
+            UnmountDbnodeSnapshotRequest request) {
+        Objects.requireNonNull(
+                request.getUnmountDbnodeSnapshotDetails(),
+                "unmountDbnodeSnapshotDetails is required");
+
+        Validate.notBlank(request.getDbnodeSnapshotId(), "dbnodeSnapshotId must not be blank");
+
+        return clientCall(request, UnmountDbnodeSnapshotResponse::builder)
+                .logger(LOG, "unmountDbnodeSnapshot")
+                .serviceDetails(
+                        "Database",
+                        "UnmountDbnodeSnapshot",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbnodeSnapshot/UnmountDbnodeSnapshot")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UnmountDbnodeSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbnodeSnapshots")
+                .appendPathParam(request.getDbnodeSnapshotId())
+                .appendPathParam("actions")
+                .appendPathParam("unmount")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.DbnodeSnapshot.class,
+                        UnmountDbnodeSnapshotResponse.Builder::dbnodeSnapshot)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UnmountDbnodeSnapshotResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UnmountDbnodeSnapshotResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UnmountDbnodeSnapshotResponse.Builder::etag)
                 .callSync();
     }
 
