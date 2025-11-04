@@ -35,6 +35,9 @@ package com.oracle.bmc.vnmonitoring.model;
             value = OnPremEndpoint.class,
             name = "ON_PREM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PrivateServiceAccessEndpoint.class,
+            name = "PRIVATE_SERVICE_ACCESS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = LoadBalancerEndpoint.class,
             name = "LOAD_BALANCER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VnicEndpoint.class, name = "VNIC"),
@@ -110,6 +113,7 @@ public class Endpoint extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         NetworkLoadBalancerListener("NETWORK_LOAD_BALANCER_LISTENER"),
         Vlan("VLAN"),
         OnPrem("ON_PREM"),
+        PrivateServiceAccess("PRIVATE_SERVICE_ACCESS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -36,7 +36,8 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         "timeCreated",
         "loadBalancers",
         "instanceDisplayNameFormatter",
-        "instanceHostnameFormatter"
+        "instanceHostnameFormatter",
+        "lifecycleManagement"
     })
     public InstancePool(
             String id,
@@ -51,7 +52,8 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             java.util.Date timeCreated,
             java.util.List<InstancePoolLoadBalancerAttachment> loadBalancers,
             String instanceDisplayNameFormatter,
-            String instanceHostnameFormatter) {
+            String instanceHostnameFormatter,
+            InstancePoolLifecycleManagementDetails lifecycleManagement) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -66,6 +68,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         this.loadBalancers = loadBalancers;
         this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = instanceHostnameFormatter;
+        this.lifecycleManagement = lifecycleManagement;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -321,6 +324,16 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleManagement")
+        private InstancePoolLifecycleManagementDetails lifecycleManagement;
+
+        public Builder lifecycleManagement(
+                InstancePoolLifecycleManagementDetails lifecycleManagement) {
+            this.lifecycleManagement = lifecycleManagement;
+            this.__explicitlySet__.add("lifecycleManagement");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -339,7 +352,8 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                             this.timeCreated,
                             this.loadBalancers,
                             this.instanceDisplayNameFormatter,
-                            this.instanceHostnameFormatter);
+                            this.instanceHostnameFormatter,
+                            this.lifecycleManagement);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -386,6 +400,9 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("instanceHostnameFormatter")) {
                 this.instanceHostnameFormatter(model.getInstanceHostnameFormatter());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleManagement")) {
+                this.lifecycleManagement(model.getLifecycleManagement());
             }
             return this;
         }
@@ -673,6 +690,13 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         return instanceHostnameFormatter;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleManagement")
+    private final InstancePoolLifecycleManagementDetails lifecycleManagement;
+
+    public InstancePoolLifecycleManagementDetails getLifecycleManagement() {
+        return lifecycleManagement;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -705,6 +729,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                 .append(String.valueOf(this.instanceDisplayNameFormatter));
         sb.append(", instanceHostnameFormatter=")
                 .append(String.valueOf(this.instanceHostnameFormatter));
+        sb.append(", lifecycleManagement=").append(String.valueOf(this.lifecycleManagement));
         sb.append(")");
         return sb.toString();
     }
@@ -736,6 +761,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                         this.instanceDisplayNameFormatter, other.instanceDisplayNameFormatter)
                 && java.util.Objects.equals(
                         this.instanceHostnameFormatter, other.instanceHostnameFormatter)
+                && java.util.Objects.equals(this.lifecycleManagement, other.lifecycleManagement)
                 && super.equals(other);
     }
 
@@ -778,6 +804,11 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                         + (this.instanceHostnameFormatter == null
                                 ? 43
                                 : this.instanceHostnameFormatter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleManagement == null
+                                ? 43
+                                : this.lifecycleManagement.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

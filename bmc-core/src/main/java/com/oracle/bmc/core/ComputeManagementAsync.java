@@ -630,6 +630,24 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Marks an instance in an instance pool to be ready for termination.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<TerminationProceedInstancePoolInstanceResponse>
+            terminationProceedInstancePoolInstance(
+                    TerminationProceedInstancePoolInstanceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    TerminationProceedInstancePoolInstanceRequest,
+                                    TerminationProceedInstancePoolInstanceResponse>
+                            handler);
+
+    /**
      * Updates a [cluster network with instance
      * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm). The
      * OCID of the cluster network remains the same.

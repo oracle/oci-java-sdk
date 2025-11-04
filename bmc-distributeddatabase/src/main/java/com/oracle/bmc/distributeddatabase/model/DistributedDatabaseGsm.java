@@ -147,12 +147,12 @@ public final class DistributedDatabaseGsm
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Status of the gsm for the Globally ditributed database. */
+        /** Status of the gsm. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Status of the gsm for the Globally ditributed database.
+         * Status of the gsm.
          *
          * @param status the value to set
          * @return this builder
@@ -355,7 +355,7 @@ public final class DistributedDatabaseGsm
         return timeUpdated;
     }
 
-    /** Status of the gsm for the Globally ditributed database. */
+    /** Status of the gsm. */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Failed("FAILED"),
         Deleting("DELETING"),
@@ -407,12 +407,12 @@ public final class DistributedDatabaseGsm
             return UnknownEnumValue;
         }
     };
-    /** Status of the gsm for the Globally ditributed database. */
+    /** Status of the gsm. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Status of the gsm for the Globally ditributed database.
+     * Status of the gsm.
      *
      * @return the value
      */

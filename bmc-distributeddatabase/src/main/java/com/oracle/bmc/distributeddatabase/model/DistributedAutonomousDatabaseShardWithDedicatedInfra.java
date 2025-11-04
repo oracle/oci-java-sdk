@@ -133,18 +133,12 @@ public final class DistributedAutonomousDatabaseShardWithDedicatedInfra
             this.__explicitlySet__.add("cloudAutonomousVmClusterId");
             return this;
         }
-        /**
-         * The collection of
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-         * cloudAutonomousVmClusters.
-         */
+        /** This field is deprecated. For shard peer details please refer peerDetails attribute. */
         @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterIds")
         private java.util.List<String> peerCloudAutonomousVmClusterIds;
 
         /**
-         * The collection of
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-         * cloudAutonomousVmClusters.
+         * This field is deprecated. For shard peer details please refer peerDetails attribute.
          *
          * @param peerCloudAutonomousVmClusterIds the value to set
          * @return this builder
@@ -517,18 +511,12 @@ public final class DistributedAutonomousDatabaseShardWithDedicatedInfra
         return cloudAutonomousVmClusterId;
     }
 
-    /**
-     * The collection of
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * cloudAutonomousVmClusters.
-     */
+    /** This field is deprecated. For shard peer details please refer peerDetails attribute. */
     @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterIds")
     private final java.util.List<String> peerCloudAutonomousVmClusterIds;
 
     /**
-     * The collection of
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * cloudAutonomousVmClusters.
+     * This field is deprecated. For shard peer details please refer peerDetails attribute.
      *
      * @return the value
      */

@@ -105,7 +105,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("KafkaCluster", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20240901")
@@ -135,7 +138,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ChangeKafkaClusterCompartmentResponse::builder)
                 .logger(LOG, "changeKafkaClusterCompartment")
-                .serviceDetails("KafkaCluster", "ChangeKafkaClusterCompartment", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ChangeKafkaClusterCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/ChangeKafkaClusterCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeKafkaClusterCompartmentRequest::builder)
                 .basePath("/20240901")
@@ -173,7 +179,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ChangeKafkaClusterConfigCompartmentResponse::builder)
                 .logger(LOG, "changeKafkaClusterConfigCompartment")
-                .serviceDetails("KafkaCluster", "ChangeKafkaClusterConfigCompartment", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ChangeKafkaClusterConfigCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/ChangeKafkaClusterConfigCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeKafkaClusterConfigCompartmentRequest::builder)
                 .basePath("/20240901")
@@ -202,7 +211,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, CreateKafkaClusterResponse::builder)
                 .logger(LOG, "createKafkaCluster")
-                .serviceDetails("KafkaCluster", "CreateKafkaCluster", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "CreateKafkaCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/CreateKafkaCluster")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateKafkaClusterRequest::builder)
                 .basePath("/20240901")
@@ -238,7 +250,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, CreateKafkaClusterConfigResponse::builder)
                 .logger(LOG, "createKafkaClusterConfig")
-                .serviceDetails("KafkaCluster", "CreateKafkaClusterConfig", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "CreateKafkaClusterConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/CreateKafkaClusterConfig")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateKafkaClusterConfigRequest::builder)
                 .basePath("/20240901")
@@ -272,7 +287,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DeleteKafkaClusterResponse::builder)
                 .logger(LOG, "deleteKafkaCluster")
-                .serviceDetails("KafkaCluster", "DeleteKafkaCluster", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "DeleteKafkaCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/DeleteKafkaCluster")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteKafkaClusterRequest::builder)
                 .basePath("/20240901")
@@ -300,7 +318,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DeleteKafkaClusterConfigResponse::builder)
                 .logger(LOG, "deleteKafkaClusterConfig")
-                .serviceDetails("KafkaCluster", "DeleteKafkaClusterConfig", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "DeleteKafkaClusterConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/DeleteKafkaClusterConfig")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteKafkaClusterConfigRequest::builder)
                 .basePath("/20240901")
@@ -328,7 +349,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DeleteKafkaClusterConfigVersionResponse::builder)
                 .logger(LOG, "deleteKafkaClusterConfigVersion")
-                .serviceDetails("KafkaCluster", "DeleteKafkaClusterConfigVersion", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "DeleteKafkaClusterConfigVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfigVersion/DeleteKafkaClusterConfigVersion")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteKafkaClusterConfigVersionRequest::builder)
                 .basePath("/20240901")
@@ -356,7 +380,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DisableSuperuserResponse::builder)
                 .logger(LOG, "disableSuperuser")
-                .serviceDetails("KafkaCluster", "DisableSuperuser", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "DisableSuperuser",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/DisableSuperuser")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableSuperuserRequest::builder)
                 .basePath("/20240901")
@@ -388,7 +415,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, EnableSuperuserResponse::builder)
                 .logger(LOG, "enableSuperuser")
-                .serviceDetails("KafkaCluster", "EnableSuperuser", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "EnableSuperuser",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/EnableSuperuser")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableSuperuserRequest::builder)
                 .basePath("/20240901")
@@ -419,7 +449,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetKafkaClusterResponse::builder)
                 .logger(LOG, "getKafkaCluster")
-                .serviceDetails("KafkaCluster", "GetKafkaCluster", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "GetKafkaCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/GetKafkaCluster")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetKafkaClusterRequest::builder)
                 .basePath("/20240901")
@@ -448,7 +481,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetKafkaClusterConfigResponse::builder)
                 .logger(LOG, "getKafkaClusterConfig")
-                .serviceDetails("KafkaCluster", "GetKafkaClusterConfig", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "GetKafkaClusterConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/GetKafkaClusterConfig")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetKafkaClusterConfigRequest::builder)
                 .basePath("/20240901")
@@ -479,7 +515,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetKafkaClusterConfigVersionResponse::builder)
                 .logger(LOG, "getKafkaClusterConfigVersion")
-                .serviceDetails("KafkaCluster", "GetKafkaClusterConfigVersion", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "GetKafkaClusterConfigVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfigVersion/GetKafkaClusterConfigVersion")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetKafkaClusterConfigVersionRequest::builder)
                 .basePath("/20240901")
@@ -511,7 +550,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("KafkaCluster", "GetWorkRequest", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20240901")
@@ -544,7 +586,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListKafkaClusterConfigVersionsResponse::builder)
                 .logger(LOG, "listKafkaClusterConfigVersions")
-                .serviceDetails("KafkaCluster", "ListKafkaClusterConfigVersions", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ListKafkaClusterConfigVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfigVersionCollection/ListKafkaClusterConfigVersions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListKafkaClusterConfigVersionsRequest::builder)
                 .basePath("/20240901")
@@ -579,7 +624,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListKafkaClusterConfigsResponse::builder)
                 .logger(LOG, "listKafkaClusterConfigs")
-                .serviceDetails("KafkaCluster", "ListKafkaClusterConfigs", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ListKafkaClusterConfigs",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/ListKafkaClusterConfigs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListKafkaClusterConfigsRequest::builder)
                 .basePath("/20240901")
@@ -613,7 +661,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListKafkaClustersResponse::builder)
                 .logger(LOG, "listKafkaClusters")
-                .serviceDetails("KafkaCluster", "ListKafkaClusters", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ListKafkaClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/ListKafkaClusters")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListKafkaClustersRequest::builder)
                 .basePath("/20240901")
@@ -649,7 +700,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("KafkaCluster", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20240901")
@@ -683,7 +737,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("KafkaCluster", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20240901")
@@ -715,7 +772,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("KafkaCluster", "ListWorkRequests", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20240901")
@@ -753,7 +813,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, UpdateKafkaClusterResponse::builder)
                 .logger(LOG, "updateKafkaCluster")
-                .serviceDetails("KafkaCluster", "UpdateKafkaCluster", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "UpdateKafkaCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/UpdateKafkaCluster")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateKafkaClusterRequest::builder)
                 .basePath("/20240901")
@@ -789,7 +852,10 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, UpdateKafkaClusterConfigResponse::builder)
                 .logger(LOG, "updateKafkaClusterConfig")
-                .serviceDetails("KafkaCluster", "UpdateKafkaClusterConfig", "")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "UpdateKafkaClusterConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/UpdateKafkaClusterConfig")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateKafkaClusterConfigRequest::builder)
                 .basePath("/20240901")

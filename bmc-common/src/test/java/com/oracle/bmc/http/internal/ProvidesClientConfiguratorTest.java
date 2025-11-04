@@ -197,6 +197,8 @@ public class ProvidesClientConfiguratorTest {
 
         // Mock static methods in InternalBuilderAccess class
         PowerMockito.mockStatic(InternalBuilderAccess.class);
+        PowerMockito.when(InternalBuilderAccess.getService(any()))
+                .thenReturn(TestBaseClient.SERVICE);
         PowerMockito.when(InternalBuilderAccess.getRequestSignerFactory(any()))
                 .thenReturn(mockRequestSignerFactory);
 
@@ -247,7 +249,7 @@ public class ProvidesClientConfiguratorTest {
 
     @Test
     public void
-            testCustomConfiguratorCustomizeClientIsGettingCalledWhenPassedAsPrefferedConfigurator() {
+            testCustomConfiguratorCustomizeClientIsGettingCalledWhenPassedAsPreferredConfigurator() {
         // Arrange
         AbstractAuthenticationDetailsProvider authenticationDetailsProvider =
                 mock(BasicAuthenticationDetailsProvider.class);
@@ -271,6 +273,8 @@ public class ProvidesClientConfiguratorTest {
         when(mockHttpProvider.newBuilder()).thenReturn(mockHttpClientBuilder);
 
         PowerMockito.mockStatic(InternalBuilderAccess.class);
+        PowerMockito.when(InternalBuilderAccess.getService(any()))
+                .thenReturn(TestBaseClient.SERVICE);
         PowerMockito.when(InternalBuilderAccess.getRequestSignerFactory(any()))
                 .thenReturn(mockRequestSignerFactory);
 
@@ -335,6 +339,8 @@ public class ProvidesClientConfiguratorTest {
 
         // Mock static methods in InternalBuilderAccess class
         PowerMockito.mockStatic(InternalBuilderAccess.class);
+        PowerMockito.when(InternalBuilderAccess.getService(any()))
+                .thenReturn(TestBaseClient.SERVICE);
         PowerMockito.when(InternalBuilderAccess.getRequestSignerFactory(any()))
                 .thenReturn(mockRequestSignerFactory);
 

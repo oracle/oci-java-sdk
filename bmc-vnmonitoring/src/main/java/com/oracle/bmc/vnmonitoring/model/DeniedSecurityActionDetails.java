@@ -62,7 +62,7 @@ public final class DeniedSecurityActionDetails
         /**
          * The list of
          * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * evaluated security lists associcated with the OCI resource's subnet.
+         * evaluated security lists associated with the OCI resource's subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("evaluatedSecurityListIds")
         private java.util.List<String> evaluatedSecurityListIds;
@@ -70,7 +70,7 @@ public final class DeniedSecurityActionDetails
         /**
          * The list of
          * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * evaluated security lists associcated with the OCI resource's subnet.
+         * evaluated security lists associated with the OCI resource's subnet.
          *
          * @param evaluatedSecurityListIds the value to set
          * @return this builder
@@ -156,14 +156,14 @@ public final class DeniedSecurityActionDetails
 
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * evaluated security lists associcated with the OCI resource's subnet.
+     * evaluated security lists associated with the OCI resource's subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("evaluatedSecurityListIds")
     private final java.util.List<String> evaluatedSecurityListIds;
 
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * evaluated security lists associcated with the OCI resource's subnet.
+     * evaluated security lists associated with the OCI resource's subnet.
      *
      * @return the value
      */

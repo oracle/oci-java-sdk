@@ -30,8 +30,7 @@ public final class EgressSecurityRule
         "isStateless",
         "protocol",
         "tcpOptions",
-        "udpOptions",
-        "description"
+        "udpOptions"
     })
     public EgressSecurityRule(
             String destination,
@@ -40,8 +39,7 @@ public final class EgressSecurityRule
             Boolean isStateless,
             String protocol,
             TcpOptions tcpOptions,
-            UdpOptions udpOptions,
-            String description) {
+            UdpOptions udpOptions) {
         super();
         this.destination = destination;
         this.destinationType = destinationType;
@@ -50,7 +48,6 @@ public final class EgressSecurityRule
         this.protocol = protocol;
         this.tcpOptions = tcpOptions;
         this.udpOptions = udpOptions;
-        this.description = description;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -206,21 +203,6 @@ public final class EgressSecurityRule
             this.__explicitlySet__.add("udpOptions");
             return this;
         }
-        /** An optional description of your choice for the rule. */
-        @com.fasterxml.jackson.annotation.JsonProperty("description")
-        private String description;
-
-        /**
-         * An optional description of your choice for the rule.
-         *
-         * @param description the value to set
-         * @return this builder
-         */
-        public Builder description(String description) {
-            this.description = description;
-            this.__explicitlySet__.add("description");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -234,8 +216,7 @@ public final class EgressSecurityRule
                             this.isStateless,
                             this.protocol,
                             this.tcpOptions,
-                            this.udpOptions,
-                            this.description);
+                            this.udpOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -264,9 +245,6 @@ public final class EgressSecurityRule
             }
             if (model.wasPropertyExplicitlySet("udpOptions")) {
                 this.udpOptions(model.getUdpOptions());
-            }
-            if (model.wasPropertyExplicitlySet("description")) {
-                this.description(model.getDescription());
             }
             return this;
         }
@@ -473,19 +451,6 @@ public final class EgressSecurityRule
         return udpOptions;
     }
 
-    /** An optional description of your choice for the rule. */
-    @com.fasterxml.jackson.annotation.JsonProperty("description")
-    private final String description;
-
-    /**
-     * An optional description of your choice for the rule.
-     *
-     * @return the value
-     */
-    public String getDescription() {
-        return description;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -508,7 +473,6 @@ public final class EgressSecurityRule
         sb.append(", protocol=").append(String.valueOf(this.protocol));
         sb.append(", tcpOptions=").append(String.valueOf(this.tcpOptions));
         sb.append(", udpOptions=").append(String.valueOf(this.udpOptions));
-        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
     }
@@ -530,7 +494,6 @@ public final class EgressSecurityRule
                 && java.util.Objects.equals(this.protocol, other.protocol)
                 && java.util.Objects.equals(this.tcpOptions, other.tcpOptions)
                 && java.util.Objects.equals(this.udpOptions, other.udpOptions)
-                && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
     }
 
@@ -547,7 +510,6 @@ public final class EgressSecurityRule
         result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
         result = (result * PRIME) + (this.tcpOptions == null ? 43 : this.tcpOptions.hashCode());
         result = (result * PRIME) + (this.udpOptions == null ? 43 : this.udpOptions.hashCode());
-        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

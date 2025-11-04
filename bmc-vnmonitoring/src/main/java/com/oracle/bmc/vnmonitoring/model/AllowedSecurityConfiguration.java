@@ -26,8 +26,14 @@ package com.oracle.bmc.vnmonitoring.model;
             value = StatefulEgressSecurityListConfiguration.class,
             name = "STATEFUL_EGRESS_SECURITY_LIST"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = StatefulZprConfiguration.class,
+            name = "STATEFUL_ZPR"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = NsgConfiguration.class,
             name = "NSG"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ZprConfiguration.class,
+            name = "ZPR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = IngressSecurityListConfiguration.class,
             name = "INGRESS_SECURITY_LIST"),
@@ -99,6 +105,8 @@ public class AllowedSecurityConfiguration
         StatefulIngressSecurityList("STATEFUL_INGRESS_SECURITY_LIST"),
         EgressSecurityList("EGRESS_SECURITY_LIST"),
         StatefulEgressSecurityList("STATEFUL_EGRESS_SECURITY_LIST"),
+        Zpr("ZPR"),
+        StatefulZpr("STATEFUL_ZPR"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

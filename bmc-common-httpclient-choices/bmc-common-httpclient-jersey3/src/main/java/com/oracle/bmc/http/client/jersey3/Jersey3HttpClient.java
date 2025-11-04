@@ -5,50 +5,51 @@
 package com.oracle.bmc.http.client.jersey3;
 
 import com.oracle.bmc.http.client.HttpClient;
+import com.oracle.bmc.http.client.HttpProviderCapability;
 import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.RequestInterceptor;
-
+import com.oracle.bmc.http.client.internal.parameterizedendpoints.ParameterizedEndpointUtil;
 import com.oracle.bmc.http.client.jersey3.internal.IdleConnectionMonitor;
 import jakarta.ws.rs.ProcessingException;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.WebTarget;
 import org.apache.http.conn.HttpClientConnectionManager;
 
+import java.util.Collections;
 import java.util.List;
-import java.util.function.Supplier;
+import java.util.Map;
 
 final class Jersey3HttpClient implements HttpClient {
     final List<RequestInterceptor> requestInterceptors;
 
-    private volatile Supplier<WebTarget> baseTargetSupplier;
+    final String baseUriString;
     final Client client;
     final boolean isApacheNonBufferingClient;
     final HttpClientConnectionManager httpClientConnectionManager;
 
     Jersey3HttpClient(
             Client client,
-            WebTarget baseTarget,
+            String baseUriString,
             List<RequestInterceptor> requestInterceptors,
             boolean isApacheNonBufferingClient) {
-        this(client, baseTarget, requestInterceptors, isApacheNonBufferingClient, null);
+        this(client, baseUriString, requestInterceptors, isApacheNonBufferingClient, null);
     }
 
     Jersey3HttpClient(
             Client client,
-            WebTarget baseTarget,
+            String baseUriString,
             List<RequestInterceptor> requestInterceptors,
             boolean isApacheNonBufferingClient,
             HttpClientConnectionManager httpClientConnectionManager) {
         if (client == null) {
             throw new IllegalArgumentException("Client must be non-null");
         }
-        if (baseTarget == null) {
-            throw new IllegalArgumentException("Endpoint must be non-null");
+        if (baseUriString == null) {
+            throw new IllegalArgumentException("baseUriString must be non-null");
         }
         this.client = client;
-        // start out with one endpoint for all threads
-        this.baseTargetSupplier = () -> baseTarget;
+        this.baseUriString = baseUriString;
         this.requestInterceptors = requestInterceptors;
         this.isApacheNonBufferingClient = isApacheNonBufferingClient;
         this.httpClientConnectionManager = httpClientConnectionManager;
@@ -56,7 +57,19 @@ final class Jersey3HttpClient implements HttpClient {
 
     @Override
     public HttpRequest createRequest(Method method) {
-        return new Jersey3HttpRequest(this, method, this.baseTargetSupplier.get());
+        return createRequest(method, Collections.emptyMap(), Collections.emptyMap());
+    }
+
+    @Override
+    public HttpRequest createRequest(
+            Method method,
+            Map<String, Object> requiredParametersMap,
+            Map<String, Boolean> optionsMap) {
+        String resolvedEndpoint =
+                ParameterizedEndpointUtil.INSTANCE.getEndpointWithPopulatedServiceParameters(
+                        baseUriString, requiredParametersMap, optionsMap);
+        WebTarget webTarget = client.target(resolvedEndpoint);
+        return new Jersey3HttpRequest(this, method, webTarget);
     }
 
     @Override
@@ -73,29 +86,7 @@ final class Jersey3HttpClient implements HttpClient {
     }
 
     @Override
-    public synchronized void updateEndpoint(String baseTarget) {
-        if (!(this.baseTargetSupplier instanceof ThreadLocalWebTargetSupplier)) {
-            // switch to each thread has its own endpoint, so they can be updated safely
-            this.baseTargetSupplier = new ThreadLocalWebTargetSupplier(this.baseTargetSupplier);
-        }
-        ThreadLocalWebTargetSupplier supplier =
-                (ThreadLocalWebTargetSupplier) this.baseTargetSupplier;
-        supplier.set(this.client.target(baseTarget));
-    }
-
-    static final class ThreadLocalWebTargetSupplier implements Supplier<WebTarget> {
-        private final ThreadLocal<WebTarget> threadLocal;
-
-        public ThreadLocalWebTargetSupplier(Supplier<WebTarget> initial) {
-            threadLocal = ThreadLocal.withInitial(initial);
-        }
-
-        public WebTarget get() {
-            return threadLocal.get();
-        }
-
-        public void set(WebTarget updated) {
-            threadLocal.set(updated);
-        }
+    public boolean hasCapability(HttpProviderCapability capability) {
+        return Jersey3HttpProvider.getInstance().hasCapability(capability);
     }
 }

@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons</artifactId>
-        <version>3.75.0</version>
+        <version>3.76.0</version>
     </parent>
 
     <artifactId>oci-java-sdk-addons-adk</artifactId>

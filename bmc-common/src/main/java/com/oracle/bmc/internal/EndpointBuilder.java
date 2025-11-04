@@ -4,17 +4,20 @@
  */
 package com.oracle.bmc.internal;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
-
+import com.oracle.bmc.http.client.HttpProviderCapability;
 import com.oracle.bmc.http.client.Options;
+import com.oracle.bmc.http.client.StandardHttpProviderCapability;
 import com.oracle.bmc.util.internal.StringUtils;
 import jakarta.annotation.Nonnull;
+
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Predicate;
 
 /**
  * EndpointBuilder provides a wrapper to construct the appropriate endpoint for a service. The
@@ -37,10 +40,15 @@ public class EndpointBuilder {
      * @param service The service
      * @param regionId The regionId
      * @param realm The realm this region belongs to.
+     * @param httpProviderCapabilityPredicate a predicate that checks whether the HTTP provider has
+     *     a certain capability
      * @return The endpoint (protocol + FQDN) for this service.
      */
     public static String createEndpoint(
-            @Nonnull Service service, @Nonnull String regionId, @Nonnull Realm realm) {
+            @Nonnull Service service,
+            @Nonnull String regionId,
+            @Nonnull Realm realm,
+            @Nonnull Predicate<HttpProviderCapability> httpProviderCapabilityPredicate) {
         if (service == null) {
             throw new java.lang.NullPointerException("service is marked non-null but is null");
         }
@@ -102,23 +110,43 @@ public class EndpointBuilder {
             return endpoint;
         }
 
-        boolean useOfRealmSpecificEndpointTemplateEnabled =
-                Options.getUseOfRealmSpecificEndpointTemplateByDefault();
-        boolean realmSpecificEndpointTemplateDefined =
-                service.getServiceEndpointTemplateForRealmMap() != null
-                        && service.getServiceEndpointTemplateForRealmMap()
-                                .containsKey(realm.getRealmId().toLowerCase(Locale.ROOT));
+        if (httpProviderCapabilityPredicate.test(
+                StandardHttpProviderCapability.PARAMETERIZED_ENDPOINTS)) {
+            boolean useOfRealmSpecificEndpointTemplateEnabled =
+                    Options.getUseOfRealmSpecificEndpointTemplateByDefault();
+            boolean realmSpecificEndpointTemplateDefined =
+                    service.getServiceEndpointTemplateForRealmMap() != null
+                            && service.getServiceEndpointTemplateForRealmMap()
+                                    .containsKey(realm.getRealmId().toLowerCase(Locale.ROOT));
 
-        if (useOfRealmSpecificEndpointTemplateEnabled) {
-            if (realmSpecificEndpointTemplateDefined) {
-                return getRealmSpecificEndpointTemplate(regionIdToUse, service, realm);
-            } else {
-                LOG.debug(
-                        "Realm-specific endpoint template not defined for realm {}, using non-realm-specific endpoint template instead.",
-                        realm.getRealmId());
+            if (useOfRealmSpecificEndpointTemplateEnabled) {
+                if (realmSpecificEndpointTemplateDefined) {
+                    return getRealmSpecificEndpointTemplate(regionIdToUse, service, realm);
+                } else {
+                    LOG.debug(
+                            "Realm-specific endpoint template not defined for realm {}, using non-realm-specific endpoint template instead.",
+                            realm.getRealmId());
+                }
             }
+        } else {
+            LOG.debug(
+                    "Realm-specific endpoint template not defined for realm {}, using non-realm-specific endpoint template instead.",
+                    realm.getRealmId());
         }
         return getServiceEndpointTemplateToUse(regionIdToUse, service, realm);
+    }
+
+    /**
+     * Creates the service endpoint using the {@link DefaultEndpointConfiguration} method.
+     *
+     * @param service The service
+     * @param regionId The regionId
+     * @param realm The realm this region belongs to.
+     * @return The endpoint (protocol + FQDN) for this service.
+     */
+    public static String createEndpoint(
+            @Nonnull Service service, @Nonnull String regionId, @Nonnull Realm realm) {
+        return createEndpoint(service, regionId, realm, c -> false);
     }
 
     public static String getRealmSpecificEndpointTemplate(
@@ -180,15 +208,31 @@ public class EndpointBuilder {
      * @param service The service
      * @param region The region
      * @return The endpoint (protocol + FQDN) for this service.
+     * @deprecated Please use {@link #createEndpoint(Service, Region, Predicate)}
      */
+    @Deprecated
     public static String createEndpoint(@Nonnull Service service, @Nonnull Region region) {
-        if (service == null) {
-            throw new java.lang.NullPointerException("service is marked non-null but is null");
-        }
-        if (region == null) {
-            throw new java.lang.NullPointerException("region is marked non-null but is null");
-        }
-        return createEndpoint(service, region.getRegionId(), region.getRealm());
+        return createEndpoint(service, region, c -> false);
+    }
+
+    /**
+     * Creates the service endpoint using the {@link DefaultEndpointConfiguration} method.
+     *
+     * @param service The service
+     * @param region The region
+     * @param httpProviderCapabilityPredicate a predicate that checks whether the HTTP provider has
+     *     a certain capability
+     * @return The endpoint (protocol + FQDN) for this service.
+     */
+    public static String createEndpoint(
+            @Nonnull Service service,
+            @Nonnull Region region,
+            @Nonnull Predicate<HttpProviderCapability> httpProviderCapabilityPredicate) {
+        Objects.requireNonNull(service, "service");
+        Objects.requireNonNull(region, "region");
+        Objects.requireNonNull(httpProviderCapabilityPredicate, "httpProviderCapabilityPredicate");
+        return createEndpoint(
+                service, region.getRegionId(), region.getRealm(), httpProviderCapabilityPredicate);
     }
 
     /**

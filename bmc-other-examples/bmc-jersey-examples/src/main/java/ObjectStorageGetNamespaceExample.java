@@ -6,8 +6,19 @@ import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
+import com.oracle.bmc.http.client.jersey.JerseyClientProperty;
+import com.oracle.bmc.http.client.jersey.JerseyHttpProvider;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
 import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
+import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
+import com.oracle.bmc.objectstorage.responses.PutObjectResponse;
+import org.glassfish.jersey.logging.LoggingFeature;
+
+import java.io.ByteArrayInputStream;
+import java.util.logging.Level;
+
+import static org.glassfish.jersey.logging.LoggingFeature.LOGGING_FEATURE_LOGGER_LEVEL_CLIENT;
+import static org.glassfish.jersey.logging.LoggingFeature.LOGGING_FEATURE_VERBOSITY_CLIENT;
 
 /**
  * This class provides a basic example of how to get Object Storage namespace of a tenancy that is not their own. This
@@ -50,31 +61,49 @@ public class ObjectStorageGetNamespaceExample {
         // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
-        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+        final ConfigFileReader.ConfigFile configFile;
+        if (args.length < 1) {
+            configFile = ConfigFileReader.parseDefault();
+        } else {
+            configFile = ConfigFileReader.parse(args[0], "DEFAULT");
+        }
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         String compartmentId = provider.getTenantId();
-        if (args.length > 1) {
+        if (args.length > 2) {
             throw new IllegalArgumentException(
-                    "Unexpected number of arguments received. Consult the script header comments for expected arguments");
-        } else if (args.length == 1) {
-            compartmentId = args[0];
+                    "Unexpected number of arguments received. Syntax: [<ociConfigFile> [<compartmentId>]]");
+        } else if (args.length == 2) {
+            compartmentId = args[1];
         }
 
-        ObjectStorageClient objectStorageClient = new ObjectStorageClient(provider);
-        objectStorageClient.setRegion(Region.US_PHOENIX_1);
+        ObjectStorageClient objectStorageClient = ObjectStorageClient.builder()
+                .region(Region.US_PHOENIX_1)
+                .clientConfigurator(builder -> {
+                    builder.property(JerseyClientProperty.create(LOGGING_FEATURE_VERBOSITY_CLIENT), LoggingFeature.Verbosity.PAYLOAD_ANY);
+                    builder.property(JerseyClientProperty.create(LOGGING_FEATURE_LOGGER_LEVEL_CLIENT), Level.INFO.getName());})
+                .build(provider);
 
         // Construct GetNamespaceRequest with the given compartmentId.
-        GetNamespaceRequest getNamespaceRequest =
-                GetNamespaceRequest.builder().compartmentId(compartmentId).build();
-        String namespace = objectStorageClient.getNamespace(getNamespaceRequest).getValue();
+        GetNamespaceRequest getNamespaceRequest = GetNamespaceRequest.builder()
+                        .compartmentId(compartmentId).build();
+        String namespaceName = objectStorageClient.getNamespace(getNamespaceRequest).getValue();
 
         System.out.println(
                 String.format(
                         "Object Storage namespace for compartment [%s] is [%s]",
                         compartmentId,
-                        namespace));
+                        namespaceName));
+
+        PutObjectRequest putObjectRequest = PutObjectRequest.builder()
+                .namespaceName(namespaceName)
+                .bucketName("dex-22927")
+                .objectName("test.txt")
+                .putObjectBody(new ByteArrayInputStream("Hello world!".getBytes()))
+                .build();
+        PutObjectResponse putObjectResponse = objectStorageClient.putObject(putObjectRequest);
+        System.out.println(putObjectResponse.get__httpStatusCode__());
     }
 }

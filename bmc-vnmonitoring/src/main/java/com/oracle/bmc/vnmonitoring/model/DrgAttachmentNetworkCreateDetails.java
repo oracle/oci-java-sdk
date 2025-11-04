@@ -23,8 +23,26 @@ package com.oracle.bmc.vnmonitoring.model;
         defaultImpl = DrgAttachmentNetworkCreateDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = IpsecTunnelDrgAttachmentNetworkCreateDetails.class,
+            name = "IPSEC_TUNNEL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = LoopBackDrgAttachmentNetworkCreateDetails.class,
+            name = "LOOPBACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = VirtualCircuitDrgAttachmentNetworkCreateDetails.class,
+            name = "VIRTUAL_CIRCUIT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = RemotePeeringConnectionDrgAttachmentNetworkCreateDetails.class,
+            name = "REMOTE_PEERING_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = InternetDrgAttachmentNetworkCreateDetails.class,
+            name = "INTERNET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VcnDrgAttachmentNetworkCreateDetails.class,
-            name = "VCN")
+            name = "VCN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = FlexTunnelDrgAttachmentNetworkCreateDetails.class,
+            name = "FLEX_TUNNEL")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -99,6 +117,12 @@ public class DrgAttachmentNetworkCreateDetails
     /** */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Vcn("VCN"),
+        VirtualCircuit("VIRTUAL_CIRCUIT"),
+        RemotePeeringConnection("REMOTE_PEERING_CONNECTION"),
+        IpsecTunnel("IPSEC_TUNNEL"),
+        Loopback("LOOPBACK"),
+        FlexTunnel("FLEX_TUNNEL"),
+        Internet("INTERNET"),
         ;
 
         private final String value;

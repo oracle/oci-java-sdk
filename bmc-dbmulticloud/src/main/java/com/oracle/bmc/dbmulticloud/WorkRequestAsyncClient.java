@@ -106,7 +106,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("WorkRequest", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20240501")
@@ -131,7 +134,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("WorkRequest", "GetWorkRequest", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20240501")
@@ -161,7 +167,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("WorkRequest", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20240501")
@@ -195,7 +204,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("WorkRequest", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20240501")
@@ -228,7 +240,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("WorkRequest", "ListWorkRequests", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20240501")

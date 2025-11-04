@@ -49,6 +49,8 @@ public class BaseClientTest {
                 .thenReturn(mockRequestSigner);
 
         PowerMockito.mockStatic(InternalBuilderAccess.class);
+        PowerMockito.when(InternalBuilderAccess.getService(any()))
+                .thenReturn(TestBaseClient.SERVICE);
         PowerMockito.when(InternalBuilderAccess.getRequestSignerFactory(any()))
                 .thenReturn(mockRequestSignerFactory);
         Map<SigningStrategy, RequestSignerFactory> factories = new HashMap<>();
@@ -63,28 +65,6 @@ public class BaseClientTest {
     public void testCloseWithoutEndpoint() {
         TestBaseClient client = TestBaseClient.builder().build(mockAuthProvider);
         client.close();
-    }
-
-    @Test
-    public void testEmptyUpdateBaseEndpoint() {
-        try {
-            TestBaseClient client = TestBaseClient.builder().build(mockAuthProvider);
-            client.updateBaseEndpoint("");
-        } catch (Exception e) {
-            assertTrue(e instanceof IllegalArgumentException);
-            assertEquals("Cannot update the endpoint since it is null or blank.", e.getMessage());
-        }
-    }
-
-    @Test
-    public void testNullUpdateBaseEndpoint() {
-        try {
-            TestBaseClient client = TestBaseClient.builder().build(mockAuthProvider);
-            client.updateBaseEndpoint(null);
-        } catch (Exception e) {
-            assertTrue(e instanceof NullPointerException);
-            assertEquals("Cannot update the endpoint since it is null or blank.", e.getMessage());
-        }
     }
 
     private static class TestBaseClient extends BaseClient {

@@ -63,17 +63,15 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsDetails
             return this;
         }
         /**
-         * The collection of
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-         * VmClusterIds.
+         * This field is deprecated. This should not be used while creation of new distributed
+         * database. To set the peers on catalog of distributed database please use peerDetails.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerVmClusterIds")
         private java.util.List<String> peerVmClusterIds;
 
         /**
-         * The collection of
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-         * VmClusterIds.
+         * This field is deprecated. This should not be used while creation of new distributed
+         * database. To set the peers on catalog of distributed database please use peerDetails.
          *
          * @param peerVmClusterIds the value to set
          * @return this builder
@@ -81,6 +79,26 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsDetails
         public Builder peerVmClusterIds(java.util.List<String> peerVmClusterIds) {
             this.peerVmClusterIds = peerVmClusterIds;
             this.__explicitlySet__.add("peerVmClusterIds");
+            return this;
+        }
+        /**
+         * The details required for creation of the peer for the ExadbXs infrastructure based
+         * catalog.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
+        private java.util.List<CreateCatalogPeerWithExadbXsDetails> peerDetails;
+
+        /**
+         * The details required for creation of the peer for the ExadbXs infrastructure based
+         * catalog.
+         *
+         * @param peerDetails the value to set
+         * @return this builder
+         */
+        public Builder peerDetails(
+                java.util.List<CreateCatalogPeerWithExadbXsDetails> peerDetails) {
+            this.peerDetails = peerDetails;
+            this.__explicitlySet__.add("peerDetails");
             return this;
         }
         /**
@@ -175,6 +193,7 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsDetails
                             this.vmClusterId,
                             this.adminPassword,
                             this.peerVmClusterIds,
+                            this.peerDetails,
                             this.shardSpace,
                             this.vaultId,
                             this.kmsKeyId,
@@ -195,6 +214,9 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsDetails
             }
             if (model.wasPropertyExplicitlySet("peerVmClusterIds")) {
                 this.peerVmClusterIds(model.getPeerVmClusterIds());
+            }
+            if (model.wasPropertyExplicitlySet("peerDetails")) {
+                this.peerDetails(model.getPeerDetails());
             }
             if (model.wasPropertyExplicitlySet("shardSpace")) {
                 this.shardSpace(model.getShardSpace());
@@ -226,6 +248,7 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsDetails
             String vmClusterId,
             String adminPassword,
             java.util.List<String> peerVmClusterIds,
+            java.util.List<CreateCatalogPeerWithExadbXsDetails> peerDetails,
             String shardSpace,
             String vaultId,
             String kmsKeyId,
@@ -234,6 +257,7 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsDetails
         this.vmClusterId = vmClusterId;
         this.adminPassword = adminPassword;
         this.peerVmClusterIds = peerVmClusterIds;
+        this.peerDetails = peerDetails;
         this.shardSpace = shardSpace;
         this.vaultId = vaultId;
         this.kmsKeyId = kmsKeyId;
@@ -271,22 +295,35 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsDetails
     }
 
     /**
-     * The collection of
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * VmClusterIds.
+     * This field is deprecated. This should not be used while creation of new distributed database.
+     * To set the peers on catalog of distributed database please use peerDetails.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerVmClusterIds")
     private final java.util.List<String> peerVmClusterIds;
 
     /**
-     * The collection of
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * VmClusterIds.
+     * This field is deprecated. This should not be used while creation of new distributed database.
+     * To set the peers on catalog of distributed database please use peerDetails.
      *
      * @return the value
      */
     public java.util.List<String> getPeerVmClusterIds() {
         return peerVmClusterIds;
+    }
+
+    /**
+     * The details required for creation of the peer for the ExadbXs infrastructure based catalog.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
+    private final java.util.List<CreateCatalogPeerWithExadbXsDetails> peerDetails;
+
+    /**
+     * The details required for creation of the peer for the ExadbXs infrastructure based catalog.
+     *
+     * @return the value
+     */
+    public java.util.List<CreateCatalogPeerWithExadbXsDetails> getPeerDetails() {
+        return peerDetails;
     }
 
     /**
@@ -381,6 +418,7 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsDetails
         sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
         sb.append(", peerVmClusterIds=").append(String.valueOf(this.peerVmClusterIds));
+        sb.append(", peerDetails=").append(String.valueOf(this.peerDetails));
         sb.append(", shardSpace=").append(String.valueOf(this.shardSpace));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
@@ -403,6 +441,7 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsDetails
         return java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.peerVmClusterIds, other.peerVmClusterIds)
+                && java.util.Objects.equals(this.peerDetails, other.peerDetails)
                 && java.util.Objects.equals(this.shardSpace, other.shardSpace)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
@@ -421,6 +460,7 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsDetails
         result =
                 (result * PRIME)
                         + (this.peerVmClusterIds == null ? 43 : this.peerVmClusterIds.hashCode());
+        result = (result * PRIME) + (this.peerDetails == null ? 43 : this.peerDetails.hashCode());
         result = (result * PRIME) + (this.shardSpace == null ? 43 : this.shardSpace.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());

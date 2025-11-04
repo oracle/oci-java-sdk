@@ -149,7 +149,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("objectName", request.getObjectName());
         requiredParametersMap.put("uploadId", request.getUploadId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, AbortMultipartUploadResponse::builder)
                 .logger(LOG, "abortMultipartUpload")
@@ -157,6 +156,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "AbortMultipartUpload",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/AbortMultipartUpload")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(AbortMultipartUploadRequest::builder)
                 .basePath("/")
@@ -188,7 +188,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
@@ -196,6 +195,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "CancelWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/CancelWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/")
@@ -234,7 +234,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("objectName", request.getObjectName());
         requiredParametersMap.put("uploadId", request.getUploadId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CommitMultipartUploadResponse::builder)
                 .logger(LOG, "commitMultipartUpload")
@@ -242,6 +241,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "CommitMultipartUpload",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/CommitMultipartUpload")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CommitMultipartUploadRequest::builder)
                 .basePath("/")
@@ -298,7 +298,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CopyObjectResponse::builder)
                 .logger(LOG, "copyObject")
@@ -306,6 +305,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "CopyObject",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/CopyObject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CopyObjectRequest::builder)
                 .basePath("/")
@@ -349,7 +349,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateBucketResponse::builder)
                 .logger(LOG, "createBucket")
@@ -357,6 +356,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "CreateBucket",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/CreateBucket")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateBucketRequest::builder)
                 .basePath("/")
@@ -398,7 +398,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateMultipartUploadResponse::builder)
                 .logger(LOG, "createMultipartUpload")
@@ -406,6 +405,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "CreateMultipartUpload",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/CreateMultipartUpload")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMultipartUploadRequest::builder)
                 .basePath("/")
@@ -456,7 +456,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreatePreauthenticatedRequestResponse::builder)
                 .logger(LOG, "createPreauthenticatedRequest")
@@ -464,6 +463,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "CreatePreauthenticatedRequest",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/CreatePreauthenticatedRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePreauthenticatedRequestRequest::builder)
                 .basePath("/")
@@ -501,7 +501,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreatePrivateEndpointResponse::builder)
                 .logger(LOG, "createPrivateEndpoint")
@@ -509,6 +508,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "CreatePrivateEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/CreatePrivateEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePrivateEndpointRequest::builder)
                 .basePath("/")
@@ -546,7 +546,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateReplicationPolicyResponse::builder)
                 .logger(LOG, "createReplicationPolicy")
@@ -554,6 +553,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "CreateReplicationPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/CreateReplicationPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateReplicationPolicyRequest::builder)
                 .basePath("/")
@@ -592,7 +592,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateRetentionRuleResponse::builder)
                 .logger(LOG, "createRetentionRule")
@@ -600,6 +599,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "CreateRetentionRule",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/CreateRetentionRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateRetentionRuleRequest::builder)
                 .basePath("/")
@@ -636,7 +636,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeleteBucketResponse::builder)
                 .logger(LOG, "deleteBucket")
@@ -644,6 +643,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "DeleteBucket",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/DeleteBucket")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteBucketRequest::builder)
                 .basePath("/")
@@ -677,7 +677,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("objectName", request.getObjectName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeleteObjectResponse::builder)
                 .logger(LOG, "deleteObject")
@@ -685,6 +684,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "DeleteObject",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/DeleteObject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteObjectRequest::builder)
                 .basePath("/")
@@ -726,7 +726,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeleteObjectLifecyclePolicyResponse::builder)
                 .logger(LOG, "deleteObjectLifecyclePolicy")
@@ -734,6 +733,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "DeleteObjectLifecyclePolicy",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/DeleteObjectLifecyclePolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteObjectLifecyclePolicyRequest::builder)
                 .basePath("/")
@@ -772,7 +772,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("parId", request.getParId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeletePreauthenticatedRequestResponse::builder)
                 .logger(LOG, "deletePreauthenticatedRequest")
@@ -780,6 +779,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "DeletePreauthenticatedRequest",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/DeletePreauthenticatedRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePreauthenticatedRequestRequest::builder)
                 .basePath("/")
@@ -814,7 +814,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("peName", request.getPeName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeletePrivateEndpointResponse::builder)
                 .logger(LOG, "deletePrivateEndpoint")
@@ -822,6 +821,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "DeletePrivateEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/DeletePrivateEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePrivateEndpointRequest::builder)
                 .basePath("/")
@@ -860,7 +860,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("replicationId", request.getReplicationId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeleteReplicationPolicyResponse::builder)
                 .logger(LOG, "deleteReplicationPolicy")
@@ -868,6 +867,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "DeleteReplicationPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/DeleteReplicationPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteReplicationPolicyRequest::builder)
                 .basePath("/")
@@ -904,7 +904,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("retentionRuleId", request.getRetentionRuleId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeleteRetentionRuleResponse::builder)
                 .logger(LOG, "deleteRetentionRule")
@@ -912,6 +911,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "DeleteRetentionRule",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/DeleteRetentionRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteRetentionRuleRequest::builder)
                 .basePath("/")
@@ -945,7 +945,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetBucketResponse::builder)
                 .logger(LOG, "getBucket")
@@ -953,6 +952,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "GetBucket",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/GetBucket")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetBucketRequest::builder)
                 .basePath("/")
@@ -986,7 +986,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                     handler) {
 
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetNamespaceResponse::builder)
                 .logger(LOG, "getNamespace")
@@ -994,6 +993,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "GetNamespace",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/GetNamespace")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNamespaceRequest::builder)
                 .basePath("/")
@@ -1016,7 +1016,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetNamespaceMetadataResponse::builder)
                 .logger(LOG, "getNamespaceMetadata")
@@ -1024,6 +1023,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "GetNamespaceMetadata",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/GetNamespaceMetadata")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNamespaceMetadataRequest::builder)
                 .basePath("/")
@@ -1058,7 +1058,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("objectName", request.getObjectName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetObjectResponse::builder)
                 .logger(LOG, "getObject")
@@ -1066,6 +1065,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "GetObject",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/GetObject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetObjectRequest::builder)
                 .interceptResponse(
@@ -1159,7 +1159,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetObjectLifecyclePolicyResponse::builder)
                 .logger(LOG, "getObjectLifecyclePolicy")
@@ -1167,6 +1166,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "GetObjectLifecyclePolicy",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/GetObjectLifecyclePolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetObjectLifecyclePolicyRequest::builder)
                 .basePath("/")
@@ -1208,7 +1208,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("parId", request.getParId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetPreauthenticatedRequestResponse::builder)
                 .logger(LOG, "getPreauthenticatedRequest")
@@ -1216,6 +1215,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "GetPreauthenticatedRequest",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/GetPreauthenticatedRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPreauthenticatedRequestRequest::builder)
                 .basePath("/")
@@ -1252,7 +1252,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("peName", request.getPeName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetPrivateEndpointResponse::builder)
                 .logger(LOG, "getPrivateEndpoint")
@@ -1260,6 +1259,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "GetPrivateEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/GetPrivateEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPrivateEndpointRequest::builder)
                 .basePath("/")
@@ -1300,7 +1300,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("replicationId", request.getReplicationId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetReplicationPolicyResponse::builder)
                 .logger(LOG, "getReplicationPolicy")
@@ -1308,6 +1307,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "GetReplicationPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/GetReplicationPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetReplicationPolicyRequest::builder)
                 .basePath("/")
@@ -1347,7 +1347,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("retentionRuleId", request.getRetentionRuleId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetRetentionRuleResponse::builder)
                 .logger(LOG, "getRetentionRule")
@@ -1355,6 +1354,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "GetRetentionRule",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/GetRetentionRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRetentionRuleRequest::builder)
                 .basePath("/")
@@ -1391,7 +1391,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
@@ -1399,6 +1398,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "GetWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/GetWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/")
@@ -1431,7 +1431,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, HeadBucketResponse::builder)
                 .logger(LOG, "headBucket")
@@ -1439,6 +1438,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "HeadBucket",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/HeadBucket")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.HEAD)
                 .requestBuilder(HeadBucketRequest::builder)
                 .basePath("/")
@@ -1474,7 +1474,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("objectName", request.getObjectName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, HeadObjectResponse::builder)
                 .logger(LOG, "headObject")
@@ -1482,6 +1481,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "HeadObject",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/HeadObject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.HEAD)
                 .requestBuilder(HeadObjectRequest::builder)
                 .interceptResponse(
@@ -1559,7 +1559,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("compartmentId", request.getCompartmentId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListBucketsResponse::builder)
                 .logger(LOG, "listBuckets")
@@ -1567,6 +1566,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListBuckets",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/ListBuckets")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBucketsRequest::builder)
                 .basePath("/")
@@ -1613,7 +1613,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("objectName", request.getObjectName());
         requiredParametersMap.put("uploadId", request.getUploadId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListMultipartUploadPartsResponse::builder)
                 .logger(LOG, "listMultipartUploadParts")
@@ -1621,6 +1620,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListMultipartUploadParts",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/ListMultipartUploadParts")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMultipartUploadPartsRequest::builder)
                 .basePath("/")
@@ -1662,7 +1662,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListMultipartUploadsResponse::builder)
                 .logger(LOG, "listMultipartUploads")
@@ -1670,6 +1669,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListMultipartUploads",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/ListMultipartUploads")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMultipartUploadsRequest::builder)
                 .basePath("/")
@@ -1709,7 +1709,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListObjectVersionsResponse::builder)
                 .logger(LOG, "listObjectVersions")
@@ -1717,6 +1716,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListObjectVersions",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ListObjectVersions")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListObjectVersionsRequest::builder)
                 .basePath("/")
@@ -1761,7 +1761,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListObjectsResponse::builder)
                 .logger(LOG, "listObjects")
@@ -1769,6 +1768,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListObjects",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ListObjects")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListObjectsRequest::builder)
                 .basePath("/")
@@ -1812,7 +1812,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListPreauthenticatedRequestsResponse::builder)
                 .logger(LOG, "listPreauthenticatedRequests")
@@ -1820,6 +1819,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListPreauthenticatedRequests",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/ListPreauthenticatedRequests")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPreauthenticatedRequestsRequest::builder)
                 .basePath("/")
@@ -1860,7 +1860,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("compartmentId", request.getCompartmentId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListPrivateEndpointsResponse::builder)
                 .logger(LOG, "listPrivateEndpoints")
@@ -1868,6 +1867,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListPrivateEndpoints",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpointSummary/ListPrivateEndpoints")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPrivateEndpointsRequest::builder)
                 .basePath("/")
@@ -1911,7 +1911,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListReplicationPoliciesResponse::builder)
                 .logger(LOG, "listReplicationPolicies")
@@ -1919,6 +1918,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListReplicationPolicies",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/ListReplicationPolicies")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListReplicationPoliciesRequest::builder)
                 .basePath("/")
@@ -1958,7 +1958,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListReplicationSourcesResponse::builder)
                 .logger(LOG, "listReplicationSources")
@@ -1966,6 +1965,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListReplicationSources",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/ListReplicationSources")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListReplicationSourcesRequest::builder)
                 .basePath("/")
@@ -2005,7 +2005,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListRetentionRulesResponse::builder)
                 .logger(LOG, "listRetentionRules")
@@ -2013,6 +2012,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListRetentionRules",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/ListRetentionRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRetentionRulesRequest::builder)
                 .basePath("/")
@@ -2047,7 +2047,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
@@ -2055,6 +2054,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListWorkRequestErrors",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequestError/ListWorkRequestErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/")
@@ -2089,7 +2089,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
@@ -2097,6 +2096,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListWorkRequestLogs",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequestLogEntry/ListWorkRequestLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/")
@@ -2130,7 +2130,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("compartmentId", request.getCompartmentId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
@@ -2138,6 +2137,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ListWorkRequests",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/ListWorkRequests")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/")
@@ -2175,7 +2175,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, MakeBucketWritableResponse::builder)
                 .logger(LOG, "makeBucketWritable")
@@ -2183,6 +2182,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "MakeBucketWritable",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/MakeBucketWritable")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(MakeBucketWritableRequest::builder)
                 .basePath("/")
@@ -2222,7 +2222,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("objectName", request.getObjectName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, PutObjectResponse::builder)
                 .logger(LOG, "putObject")
@@ -2230,6 +2229,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "PutObject",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/PutObject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutObjectRequest::builder)
                 .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
@@ -2299,7 +2299,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, PutObjectLifecyclePolicyResponse::builder)
                 .logger(LOG, "putObjectLifecyclePolicy")
@@ -2307,6 +2306,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "PutObjectLifecyclePolicy",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutObjectLifecyclePolicyRequest::builder)
                 .basePath("/")
@@ -2346,7 +2346,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ReencryptBucketResponse::builder)
                 .logger(LOG, "reencryptBucket")
@@ -2354,6 +2353,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ReencryptBucket",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/ReencryptBucket")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ReencryptBucketRequest::builder)
                 .basePath("/")
@@ -2394,7 +2394,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("objectName", request.getObjectName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ReencryptObjectResponse::builder)
                 .logger(LOG, "reencryptObject")
@@ -2402,6 +2401,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "ReencryptObject",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ReencryptObject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ReencryptObjectRequest::builder)
                 .basePath("/")
@@ -2438,7 +2438,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, RenameObjectResponse::builder)
                 .logger(LOG, "renameObject")
@@ -2446,6 +2445,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "RenameObject",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/RenameObject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RenameObjectRequest::builder)
                 .basePath("/")
@@ -2485,7 +2485,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, RestoreObjectsResponse::builder)
                 .logger(LOG, "restoreObjects")
@@ -2493,6 +2492,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "RestoreObjects",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/RestoreObjects")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestoreObjectsRequest::builder)
                 .basePath("/")
@@ -2526,7 +2526,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateBucketResponse::builder)
                 .logger(LOG, "updateBucket")
@@ -2534,6 +2533,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "UpdateBucket",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/UpdateBucket")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdateBucketRequest::builder)
                 .basePath("/")
@@ -2570,7 +2570,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateNamespaceMetadataResponse::builder)
                 .logger(LOG, "updateNamespaceMetadata")
@@ -2578,6 +2577,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "UpdateNamespaceMetadata",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/UpdateNamespaceMetadata")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateNamespaceMetadataRequest::builder)
                 .basePath("/")
@@ -2614,7 +2614,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateObjectStorageTierResponse::builder)
                 .logger(LOG, "updateObjectStorageTier")
@@ -2622,6 +2621,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "UpdateObjectStorageTier",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/UpdateObjectStorageTier")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdateObjectStorageTierRequest::builder)
                 .basePath("/")
@@ -2659,7 +2659,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("peName", request.getPeName());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdatePrivateEndpointResponse::builder)
                 .logger(LOG, "updatePrivateEndpoint")
@@ -2667,6 +2666,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "UpdatePrivateEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/UpdatePrivateEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdatePrivateEndpointRequest::builder)
                 .basePath("/")
@@ -2708,7 +2708,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("namespaceName", request.getNamespaceName());
         requiredParametersMap.put("bucketName", request.getBucketName());
         requiredParametersMap.put("retentionRuleId", request.getRetentionRuleId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateRetentionRuleResponse::builder)
                 .logger(LOG, "updateRetentionRule")
@@ -2716,6 +2715,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "UpdateRetentionRule",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/UpdateRetentionRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateRetentionRuleRequest::builder)
                 .basePath("/")
@@ -2764,7 +2764,6 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         requiredParametersMap.put("objectName", request.getObjectName());
         requiredParametersMap.put("uploadId", request.getUploadId());
         requiredParametersMap.put("uploadPartNum", request.getUploadPartNum());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UploadPartResponse::builder)
                 .logger(LOG, "uploadPart")
@@ -2772,6 +2771,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "ObjectStorage",
                         "UploadPart",
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/UploadPart")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UploadPartRequest::builder)
                 .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)

@@ -139,7 +139,9 @@ public class OracleDBAzureConnectorClient extends com.oracle.bmc.http.internal.B
         return clientCall(request, ChangeOracleDbAzureConnectorCompartmentResponse::builder)
                 .logger(LOG, "changeOracleDbAzureConnectorCompartment")
                 .serviceDetails(
-                        "OracleDBAzureConnector", "ChangeOracleDbAzureConnectorCompartment", "")
+                        "OracleDBAzureConnector",
+                        "ChangeOracleDbAzureConnectorCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/ChangeOracleDbAzureConnectorCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOracleDbAzureConnectorCompartmentRequest::builder)
                 .basePath("/20240501")
@@ -171,7 +173,10 @@ public class OracleDBAzureConnectorClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, CreateOracleDbAzureConnectorResponse::builder)
                 .logger(LOG, "createOracleDbAzureConnector")
-                .serviceDetails("OracleDBAzureConnector", "CreateOracleDbAzureConnector", "")
+                .serviceDetails(
+                        "OracleDBAzureConnector",
+                        "CreateOracleDbAzureConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/CreateOracleDbAzureConnector")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOracleDbAzureConnectorRequest::builder)
                 .basePath("/20240501")
@@ -210,7 +215,10 @@ public class OracleDBAzureConnectorClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, DeleteOracleDbAzureConnectorResponse::builder)
                 .logger(LOG, "deleteOracleDbAzureConnector")
-                .serviceDetails("OracleDBAzureConnector", "DeleteOracleDbAzureConnector", "")
+                .serviceDetails(
+                        "OracleDBAzureConnector",
+                        "DeleteOracleDbAzureConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/DeleteOracleDbAzureConnector")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOracleDbAzureConnectorRequest::builder)
                 .basePath("/20240501")
@@ -239,7 +247,10 @@ public class OracleDBAzureConnectorClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, GetOracleDbAzureConnectorResponse::builder)
                 .logger(LOG, "getOracleDbAzureConnector")
-                .serviceDetails("OracleDBAzureConnector", "GetOracleDbAzureConnector", "")
+                .serviceDetails(
+                        "OracleDBAzureConnector",
+                        "GetOracleDbAzureConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/GetOracleDbAzureConnector")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOracleDbAzureConnectorRequest::builder)
                 .basePath("/20240501")
@@ -267,7 +278,10 @@ public class OracleDBAzureConnectorClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ListOracleDbAzureConnectorsResponse::builder)
                 .logger(LOG, "listOracleDbAzureConnectors")
-                .serviceDetails("OracleDBAzureConnector", "ListOracleDbAzureConnectors", "")
+                .serviceDetails(
+                        "OracleDBAzureConnector",
+                        "ListOracleDbAzureConnectors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/ListOracleDbAzureConnectors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOracleDbAzureConnectorsRequest::builder)
                 .basePath("/20240501")
@@ -309,7 +323,10 @@ public class OracleDBAzureConnectorClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, PatchOracleDbAzureConnectorResponse::builder)
                 .logger(LOG, "patchOracleDbAzureConnector")
-                .serviceDetails("OracleDBAzureConnector", "PatchOracleDbAzureConnector", "")
+                .serviceDetails(
+                        "OracleDBAzureConnector",
+                        "PatchOracleDbAzureConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/PatchOracleDbAzureConnector")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchOracleDbAzureConnectorRequest::builder)
                 .basePath("/20240501")
@@ -338,7 +355,10 @@ public class OracleDBAzureConnectorClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, RefreshOracleDbAzureConnectorResponse::builder)
                 .logger(LOG, "refreshOracleDbAzureConnector")
-                .serviceDetails("OracleDBAzureConnector", "RefreshOracleDbAzureConnector", "")
+                .serviceDetails(
+                        "OracleDBAzureConnector",
+                        "RefreshOracleDbAzureConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/RefreshOracleDbAzureConnector")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RefreshOracleDbAzureConnectorRequest::builder)
                 .basePath("/20240501")
@@ -373,7 +393,10 @@ public class OracleDBAzureConnectorClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, UpdateOracleDbAzureConnectorResponse::builder)
                 .logger(LOG, "updateOracleDbAzureConnector")
-                .serviceDetails("OracleDBAzureConnector", "UpdateOracleDbAzureConnector", "")
+                .serviceDetails(
+                        "OracleDBAzureConnector",
+                        "UpdateOracleDbAzureConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/UpdateOracleDbAzureConnector")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOracleDbAzureConnectorRequest::builder)
                 .basePath("/20240501")

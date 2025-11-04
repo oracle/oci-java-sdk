@@ -464,15 +464,17 @@ public final class DistributedDatabaseSummary
             return this;
         }
         /**
-         * For RAFT replication based Globally distributed database, the value should be atleast
-         * twice the number of shards.
+         * The replication unit count for RAFT based distributed database. For RAFT replication
+         * based Globally distributed database, the value should be at least twice the number of
+         * shards.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
         private Integer replicationUnit;
 
         /**
-         * For RAFT replication based Globally distributed database, the value should be atleast
-         * twice the number of shards.
+         * The replication unit count for RAFT based distributed database. For RAFT replication
+         * based Globally distributed database, the value should be at least twice the number of
+         * shards.
          *
          * @param replicationUnit the value to set
          * @return this builder
@@ -1004,15 +1006,15 @@ public final class DistributedDatabaseSummary
     }
 
     /**
-     * For RAFT replication based Globally distributed database, the value should be atleast twice
-     * the number of shards.
+     * The replication unit count for RAFT based distributed database. For RAFT replication based
+     * Globally distributed database, the value should be at least twice the number of shards.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
     private final Integer replicationUnit;
 
     /**
-     * For RAFT replication based Globally distributed database, the value should be atleast twice
-     * the number of shards.
+     * The replication unit count for RAFT based distributed database. For RAFT replication based
+     * Globally distributed database, the value should be at least twice the number of shards.
      *
      * @return the value
      */

@@ -61,8 +61,8 @@ public final class UpdateDrgRouteRuleDetails
         /**
          * The range of IP addresses used for matching when routing traffic.
          *
-         * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR.
-         * For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
+         * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 CIDR block or
+         * IPv6 prefix. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
@@ -70,8 +70,8 @@ public final class UpdateDrgRouteRuleDetails
         /**
          * The range of IP addresses used for matching when routing traffic.
          *
-         * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR.
-         * For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
+         * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 CIDR block or
+         * IPv6 prefix. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
          *
          * @param destination the value to set
          * @return this builder
@@ -181,8 +181,8 @@ public final class UpdateDrgRouteRuleDetails
     /**
      * The range of IP addresses used for matching when routing traffic.
      *
-     * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For
-     * example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
+     * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6
+     * prefix. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     private final String destination;
@@ -190,8 +190,8 @@ public final class UpdateDrgRouteRuleDetails
     /**
      * The range of IP addresses used for matching when routing traffic.
      *
-     * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For
-     * example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
+     * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6
+     * prefix. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
      *
      * @return the value
      */

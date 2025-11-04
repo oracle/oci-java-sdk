@@ -83,6 +83,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Add a database node snapshots to the Exadb VM cluster..
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDbnodeSnapshotsForExadbVmClusterResponse>
+            addDbnodeSnapshotsForExadbVmCluster(
+                    AddDbnodeSnapshotsForExadbVmClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddDbnodeSnapshotsForExadbVmClusterRequest,
+                                    AddDbnodeSnapshotsForExadbVmClusterResponse>
+                            handler);
+
+    /**
      * Add a standby Autonomous Container Database. For more information about Autonomous Data
      * Guard,see [Protect Critical Databases from Failures and Disasters Using Autonomous Data
      * Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
@@ -2122,6 +2140,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified Exadata Database Node Snapshot.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDbnodeSnapshotResponse> deleteDbnodeSnapshot(
+            DeleteDbnodeSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDbnodeSnapshotRequest, DeleteDbnodeSnapshotResponse>
+                    handler);
+
+    /**
      * Deletes the Exadata Cloud@Customer infrastructure.
      *
      * @param request The request object containing the details to send
@@ -3853,6 +3887,23 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets information about the specified Exadata Database Node Snapshot in the specified
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDbnodeSnapshotResponse> getDbnodeSnapshot(
+            GetDbnodeSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDbnodeSnapshotRequest, GetDbnodeSnapshotResponse>
+                    handler);
+
+    /**
      * Gets information about the specified Exadata infrastructure. Applies to Exadata
      * Cloud@Customer instances only. To get information on an Exadata Cloud Service infrastructure
      * resource, use the {@link #getCloudExadataInfrastructure(GetCloudExadataInfrastructureRequest,
@@ -5368,6 +5419,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of the Exadata Database Node Snapshots in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDbnodeSnapshotsResponse> listDbnodeSnapshots(
+            ListDbnodeSnapshotsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDbnodeSnapshotsRequest, ListDbnodeSnapshotsResponse>
+                    handler);
+
+    /**
      * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata
      * Cloud@Customer instances only. To list the Exadata Cloud Service infrastructure resources in
      * a compartment, use the {@link
@@ -6116,6 +6183,22 @@ public interface DatabaseAsync extends AutoCloseable {
                                     ModifyPluggableDatabaseManagementRequest,
                                     ModifyPluggableDatabaseManagementResponse>
                             handler);
+
+    /**
+     * Mounts the snapshot for the provided dbNode.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<MountDbnodeSnapshotResponse> mountDbnodeSnapshot(
+            MountDbnodeSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            MountDbnodeSnapshotRequest, MountDbnodeSnapshotResponse>
+                    handler);
 
     /**
      * Moves an execution action member to this execution action resource from another.
@@ -6991,6 +7074,22 @@ public interface DatabaseAsync extends AutoCloseable {
             TerminateDbSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             TerminateDbSystemRequest, TerminateDbSystemResponse>
+                    handler);
+
+    /**
+     * Unmounts the snapshot for the provided dbNode.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UnmountDbnodeSnapshotResponse> unmountDbnodeSnapshot(
+            UnmountDbnodeSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UnmountDbnodeSnapshotRequest, UnmountDbnodeSnapshotResponse>
                     handler);
 
     /**

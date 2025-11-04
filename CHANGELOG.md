@@ -3,6 +3,234 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.76.0 - 2025-11-04
+### Added
+- Support for Data Intelligence Foundation service
+- Support for Private Service Access (PSA) service
+- Support for pluggable database snapshots for exadata databases in the Database service
+- Support for backup configurations for globally distributed databases in the Database service
+- Support for fine grained configurations for data guards in globally distributed databases in the Database service
+- Support for Zero trust Packet Routing (ZPR) policy analysis in the Network Monitoring service
+- Support for instance pool pre-termination action in the Compute service
+ 
+### Breaking Changes
+- Class `com.oracle.bmc.vnmonitoring.model.AddPublicIpPoolCapacityDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.AddSubnetIpv6CidrDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.AddVcnCidrDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.AddVcnIpv6CidrDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.AllowedIkeIPSecParameters` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.AllowedPhaseOneParameters` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.AllowedPhaseTwoParameters` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.BgpSessionInfo` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.BgpSessionInfo$BgpIpv6State` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.BgpSessionInfo$BgpState` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ByoipAllocatedRangeCollection` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ByoipAllocatedRangeSummary` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ByoipRange` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ByoipRange$LifecycleDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ByoipRange$LifecycleState` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ByoipRangeCollection` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ByoipRangeSummary` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ByoipRangeVcnIpv6AllocationSummary` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.Byoipv6CidrDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CaptureFilter` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CaptureFilter$FilterType` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CaptureFilter$LifecycleState` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeByoipRangeCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeCaptureFilterCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeCpeCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeCrossConnectCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeCrossConnectGroupCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeDhcpOptionsCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeDrgCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeIPSecConnectionCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeInternetGatewayCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeLocalPeeringGatewayCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeNatGatewayCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeNetworkSecurityGroupCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangePublicIpCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangePublicIpPoolCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeRemotePeeringConnectionCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeRouteTableCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeSecurityListCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeServiceGatewayCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeSubnetCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeVcnCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeVirtualCircuitCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeVlanCompartmentDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ChangeVtapCompartmentDetails` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getCpeDeviceShapeId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Cpe` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CpeDeviceConfigAnswer` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CpeDeviceConfigQuestion` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CpeDeviceInfo` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CpeDeviceShapeDetail` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CpeDeviceShapeSummary` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateByoipRangeDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateCaptureFilterDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateCaptureFilterDetails$FilterType` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getCpeDeviceShapeId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateCpeDetails` in the Network Monitoring service 
+- Method `public java.lang.String getCustomerReferenceName()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateCrossConnectDetails` in the Network Monitoring service 
+- Method `public java.util.Map getDefinedTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateCrossConnectDetails` in the Network Monitoring service 
+- Method `public java.util.Map getFreeformTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateCrossConnectDetails` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.CreateMacsecProperties getMacsecProperties()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateCrossConnectDetails` in the Network Monitoring service 
+- Method `public java.lang.String getCustomerReferenceName()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateCrossConnectGroupDetails` in the Network Monitoring service 
+- Method `public java.util.Map getDefinedTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateCrossConnectGroupDetails` in the Network Monitoring service 
+- Method `public java.util.Map getFreeformTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateCrossConnectGroupDetails` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.CreateMacsecProperties getMacsecProperties()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateCrossConnectGroupDetails` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.CreateDhcpDetails$DomainNameType getDomainNameType()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateDhcpDetails` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateDhcpDetails$DomainNameType` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getRouteTableId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateDrgAttachmentDetails` in the Network Monitoring service 
+- Method `public java.lang.String getCpeLocalIdentifier()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionDetails` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionDetails$CpeLocalIdentifierType getCpeLocalIdentifierType()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionDetails` in the Network Monitoring service 
+- Method `public java.util.List getTunnelConfiguration()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionDetails` in the Network Monitoring service 
+- Method `public java.lang.Integer getTunnelCount()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionDetails` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionDetails$CpeLocalIdentifierType` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionTunnelDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionTunnelDetails$IkeVersion` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionTunnelDetails$NatTranslationEnabled` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionTunnelDetails$OracleInitiation` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateIPSecConnectionTunnelDetails$Routing` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateIPSecTunnelBgpSessionDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateIPSecTunnelEncryptionDomainDetails` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getRouteTableId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateInternetGatewayDetails` in the Network Monitoring service 
+- Method `public java.lang.String getIpv6SubnetCidr()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateIpv6Details` in the Network Monitoring service 
+- Method `public java.lang.String getRouteTableId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateLocalPeeringGatewayDetails` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateMacsecKey` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateMacsecProperties` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateNatGatewayDetails` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getVlanId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreatePrivateIpDetails` in the Network Monitoring service 
+- Method `public java.lang.String getPublicIpPoolId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreatePublicIpDetails` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreatePublicIpPoolDetails` has been removed from the Network Monitoring service 
+- Method `public java.util.Map getDefinedTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateRemotePeeringConnectionDetails` in the Network Monitoring service 
+- Method `public java.util.Map getFreeformTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateRemotePeeringConnectionDetails` in the Network Monitoring service 
+- Method `public java.lang.String getRouteTableId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateServiceGatewayDetails` in the Network Monitoring service 
+- Method `public java.util.List getIpv6CidrBlocks()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateSubnetDetails` in the Network Monitoring service 
+- Method `public java.lang.Boolean getProhibitInternetIngress()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateSubnetDetails` in the Network Monitoring service 
+- Method `public java.util.List getByoipv6CidrDetails()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVcnDetails` in the Network Monitoring service 
+- Method `public java.util.List getCidrBlocks()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVcnDetails` in the Network Monitoring service 
+- Method `public java.util.List getIpv6PrivateCidrBlocks()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVcnDetails` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.VirtualCircuit$BgpAdminState getBgpAdminState()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.VirtualCircuit` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.VirtualCircuit$BgpIpv6SessionState getBgpIpv6SessionState()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.VirtualCircuit` in the Network Monitoring service 
+- Method `public java.lang.Long getCustomerAsn()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.VirtualCircuit` in the Network Monitoring service 
+- Method `public java.util.Map getDefinedTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.VirtualCircuit` in the Network Monitoring service 
+- Method `public java.util.Map getFreeformTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.VirtualCircuit` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.VirtualCircuitIpMtu getIpMtu()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.VirtualCircuit` in the Network Monitoring service 
+- Method `public java.lang.Boolean getIsBfdEnabled()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.VirtualCircuit` in the Network Monitoring service 
+- Method `public java.lang.String getProviderServiceKeyName()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.VirtualCircuit` in the Network Monitoring service 
+- Method `public java.util.List getRoutingPolicy()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.VirtualCircuit` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.VirtualCircuit$BgpAdminState` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.VirtualCircuit$BgpIpv6SessionState` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.VirtualCircuit$RoutingPolicy` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.VirtualCircuitIpMtu` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.Vlan` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.Vlan$LifecycleState` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getVlanId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Vnic` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.Vtap` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.Vtap$EncapsulationProtocol` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.Vtap$LifecycleState` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.Vtap$LifecycleStateDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.Vtap$SourceType` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.Vtap$TargetType` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.Vtap$TrafficMode` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.VtapCaptureFilterRuleDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.VtapCaptureFilterRuleDetails$RuleAction` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.VtapCaptureFilterRuleDetails$TrafficDirection` has been removed from the Network Monitoring service 
+- Method `public java.lang.Boolean getIsOracleGuaAllocationEnabled()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVcnDetails` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails$BgpAdminState getBgpAdminState()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails` in the Network Monitoring service 
+- Method `public java.lang.Long getCustomerAsn()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails` in the Network Monitoring service 
+- Method `public java.util.Map getDefinedTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails` in the Network Monitoring service 
+- Method `public java.util.Map getFreeformTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.VirtualCircuitIpMtu getIpMtu()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails` in the Network Monitoring service 
+- Method `public java.lang.Boolean getIsBfdEnabled()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails` in the Network Monitoring service 
+- Method `public java.lang.String getProviderServiceKeyName()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails` in the Network Monitoring service 
+- Method `public java.util.List getRoutingPolicy()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails$BgpAdminState` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateVirtualCircuitDetails$RoutingPolicy` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateVlanDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateVnicDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateVtapDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateVtapDetails$EncapsulationProtocol` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateVtapDetails$SourceType` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateVtapDetails$TargetType` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CreateVtapDetails$TrafficMode` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getCustomerReferenceName()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnect` in the Network Monitoring service 
+- Method `public java.util.Map getDefinedTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnect` in the Network Monitoring service 
+- Method `public java.util.Map getFreeformTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnect` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.MacsecProperties getMacsecProperties()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnect` in the Network Monitoring service 
+- Method `public java.lang.String getOciLogicalDeviceName()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnect` in the Network Monitoring service 
+- Method `public java.lang.String getOciPhysicalDeviceName()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnect` in the Network Monitoring service 
+- Method `public java.lang.String getCustomerReferenceName()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnectGroup` in the Network Monitoring service 
+- Method `public java.util.Map getDefinedTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnectGroup` in the Network Monitoring service 
+- Method `public java.util.Map getFreeformTags()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnectGroup` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.MacsecProperties getMacsecProperties()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnectGroup` in the Network Monitoring service 
+- Method `public java.lang.String getOciLogicalDeviceName()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnectGroup` in the Network Monitoring service 
+- Method `public java.lang.String getOciPhysicalDeviceName()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnectGroup` in the Network Monitoring service 
+- Method `public java.lang.String getCustomerBgpPeeringIpv6()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnectMapping` in the Network Monitoring service 
+- Method `public java.lang.String getOracleBgpPeeringIpv6()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnectMapping` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CrossConnectMappingDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CrossConnectMappingDetails$Ipv4BgpStatus` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CrossConnectMappingDetails$Ipv6BgpStatus` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CrossConnectMappingDetailsCollection` has been removed from the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.CrossConnectStatus$EncryptionStatus getEncryptionStatus()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnectStatus` in the Network Monitoring service 
+- Method `public java.util.List getLightLevelsInDBm()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.CrossConnectStatus` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.CrossConnectStatus$EncryptionStatus` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.DefaultPhaseOneParameters` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.DefaultPhaseTwoParameters` has been removed from the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.DhcpOptions$DomainNameType getDomainNameType()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.DhcpOptions` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.DhcpOptions$DomainNameType` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.DpdConfig` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.DpdConfig$DpdMode` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getRouteTableId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.DrgAttachment` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.DrgRedundancyStatus` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.DrgRedundancyStatus$Status` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.DrgRedundancyStatus$Status` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getDescription()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.EgressSecurityRule` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.EncryptionDomainConfig` has been removed from the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.FastConnectProviderService$BandwithShapeManagement getBandwithShapeManagement()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.FastConnectProviderService` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.FastConnectProviderService$CustomerAsnManagement getCustomerAsnManagement()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.FastConnectProviderService` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.FastConnectProviderService$ProviderServiceKeyManagement getProviderServiceKeyManagement()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.FastConnectProviderService` in the Network Monitoring service 
+- Method `public java.lang.Integer getRequiredTotalCrossConnects()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.FastConnectProviderService` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.FastConnectProviderService$BandwithShapeManagement` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.FastConnectProviderService$CustomerAsnManagement` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.FastConnectProviderService$ProviderServiceKeyManagement` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.FastConnectProviderServiceKey` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.FlowLogCaptureFilterRuleDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.FlowLogCaptureFilterRuleDetails$FlowLogType` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.FlowLogCaptureFilterRuleDetails$RuleAction` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getCpeLocalIdentifier()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.IPSecConnection` in the Network Monitoring service 
+- Method `public com.oracle.bmc.vnmonitoring.model.IPSecConnection$CpeLocalIdentifierType getCpeLocalIdentifierType()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.IPSecConnection` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnection$CpeLocalIdentifierType` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnectionTunnel` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnectionTunnel$DpdMode` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnectionTunnel$IkeVersion` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnectionTunnel$LifecycleState` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnectionTunnel$NatTranslationEnabled` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnectionTunnel$OracleCanInitiate` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnectionTunnel$Routing` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnectionTunnel$Status` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnectionTunnelErrorDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.IPSecConnectionTunnelSharedSecret` has been removed from the Network Monitoring service 
+- Method `public java.lang.String getDescription()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.IngressSecurityRule` in the Network Monitoring service 
+- Method `public java.lang.String getRouteTableId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.InternetGateway` in the Network Monitoring service 
+- Method `public java.util.List getPeerAdvertisedCidrDetails()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.LocalPeeringGateway` in the Network Monitoring service 
+- Method `public java.lang.String getPeerId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.LocalPeeringGateway` in the Network Monitoring service 
+- Method `public java.lang.String getRouteTableId()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.LocalPeeringGateway` in the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.MacsecEncryptionCipher` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.MacsecKey` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.MacsecProperties` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.MacsecState` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.ModifyVcnCidrDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.NatGateway` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.NatGateway$LifecycleState` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.PhaseOneConfigDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.PhaseOneConfigDetails$AuthenticationAlgorithm` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.PhaseOneConfigDetails$DiffieHelmanGroup` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.PhaseOneConfigDetails$EncryptionAlgorithm` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.PhaseTwoConfigDetails` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.PhaseTwoConfigDetails$AuthenticationAlgorithm` has been removed from the Network Monitoring service 
+- Class `com.oracle.bmc.vnmonitoring.model.PhaseTwoConfigDetails$EncryptionAlgorithm` has been removed from the Network Monitoring service
+
 ## 3.75.0 - 2025-10-28
 ### Added 
 - Support for calling Oracle Cloud Infrastructure services in the eu-madrid-3 region 

@@ -16,6 +16,7 @@ import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.http.client.StandardHttpProviderCapability;
 import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.model.Range;
@@ -30,6 +31,7 @@ import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.retrier.TokenRefreshRetrier;
 import com.oracle.bmc.util.internal.CollectionFormatType;
 import com.oracle.bmc.util.internal.StringUtils;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
 import com.oracle.bmc.waiter.WaiterScheduler;
@@ -113,7 +115,13 @@ public final class ClientCall<
     private ResponseErrorRuntimeExceptionFactory responseErrorExceptionFactory =
             ResponseErrorBmcExceptionFactory.INSTANCE;
 
+    private Map<String, Object> requiredParametersMap = null;
+    private Map<String, Boolean> optionsMap = Collections.emptyMap();
+
     private ClientCall(HttpClient httpClient) {
+        Validate.notNull(
+                httpClient,
+                "httpClient must not be null; this likely means that no region or endpoint has been set");
         this.httpClient = httpClient;
     }
 
@@ -173,15 +181,26 @@ public final class ClientCall<
             return ServiceDetails.UNKNOWN_SERVICE_DETAILS;
         }
 
+        String requestEndpoint = ServiceDetails.UNKNOWN_SERVICE_DETAILS.getRequestEndpoint();
+        try {
+            requestEndpoint = httpRequest.uri().toString();
+        } catch (RuntimeException e) {
+            logger.debug("Failed to get request endpoint for service details", e);
+        }
         return new ServiceDetails(
                 serviceDetailsServiceName,
                 serviceDetailsOperationName,
-                httpRequest.uri().toString(),
+                requestEndpoint,
                 serviceDetailsApiReferenceLink);
     }
 
     public ClientCall<REQ, RESP, RESP_BUILDER> method(Method method) {
-        this.httpRequest = httpClient.createRequest(method);
+        if (httpClient.hasCapability(StandardHttpProviderCapability.PARAMETERIZED_ENDPOINTS)) {
+            this.httpRequest = httpClient.createRequest(method, requiredParametersMap, optionsMap);
+        } else {
+            // HTTP client does not support parameterized endpoints
+            this.httpRequest = httpClient.createRequest(method);
+        }
         return this;
     }
 
@@ -902,7 +921,6 @@ public final class ClientCall<
     private CompletionStage<RESP> callAsync0(AsyncHandler<REQ, RESP> handler) {
         CompletionStage<RESP> stage;
         boolean discardImmediately = true;
-
         if (httpRequest != null && httpRequest.uri() != null && httpRequest.method() != null) {
             logger.debug(
                     "HTTP request method and URI: {} {}", httpRequest.method(), httpRequest.uri());
@@ -1182,5 +1200,43 @@ public final class ClientCall<
         } else {
             return stage.thenComposeAsync(fn, offloadExecutor);
         }
+    }
+
+    /**
+     * Sets the required parameters map for the HTTP request.
+     *
+     * <p>The required parameters map is used when the underlying HTTP client supports parameterized
+     * endpoints (i.e., has the {@link StandardHttpProviderCapability#PARAMETERIZED_ENDPOINTS}
+     * capability). In such cases, the map is passed to the {@link HttpClient#createRequest(Method,
+     * Map)} method to create the HTTP request.
+     *
+     * <p>This must be called before {@link #method(Method)}.
+     *
+     * @param requiredParametersMap a map of required parameter names to their values
+     * @return this ClientCall instance for method chaining
+     */
+    public ClientCall<REQ, RESP, RESP_BUILDER> requiredParametersMap(
+            Map<String, Object> requiredParametersMap) {
+        this.requiredParametersMap =
+                Collections.unmodifiableMap(new HashMap<>(requiredParametersMap));
+        return this;
+    }
+
+    /**
+     * Sets the options map for the HTTP request.
+     *
+     * <p>The options map is used when the underlying HTTP client supports parameterized endpoints
+     * (i.e., has the {@link StandardHttpProviderCapability#PARAMETERIZED_ENDPOINTS} capability). In
+     * such cases, the map is passed to the {@link HttpClient#createRequest(Method, Map, Map)}
+     * method to create the HTTP request.
+     *
+     * <p>This must be called before {@link #method(Method)}.
+     *
+     * @param optionsMap a map of options to their Boolean values
+     * @return this ClientCall instance for method chaining
+     */
+    public ClientCall<REQ, RESP, RESP_BUILDER> optionsMap(Map<String, Boolean> optionsMap) {
+        this.optionsMap = Collections.unmodifiableMap(new HashMap<>(optionsMap));
+        return this;
     }
 }

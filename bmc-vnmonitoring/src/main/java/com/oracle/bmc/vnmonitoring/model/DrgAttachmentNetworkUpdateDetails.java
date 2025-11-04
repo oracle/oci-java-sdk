@@ -23,6 +23,15 @@ package com.oracle.bmc.vnmonitoring.model;
         defaultImpl = DrgAttachmentNetworkUpdateDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = InternetDrgAttachmentNetworkUpdateDetails.class,
+            name = "INTERNET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = VirtualCircuitDrgAttachmentNetworkUpdateDetails.class,
+            name = "VIRTUAL_CIRCUIT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = LoopbackDrgAttachmentNetworkUpdateDetails.class,
+            name = "LOOPBACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VcnDrgAttachmentNetworkUpdateDetails.class,
             name = "VCN")
 })
@@ -79,6 +88,9 @@ public class DrgAttachmentNetworkUpdateDetails
     /** */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Vcn("VCN"),
+        VirtualCircuit("VIRTUAL_CIRCUIT"),
+        Loopback("LOOPBACK"),
+        Internet("INTERNET"),
         ;
 
         private final String value;

@@ -239,15 +239,19 @@ public final class CreateDistributedDatabaseDetails
             return this;
         }
         /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be greater
-         * than 2 times the size of the largest shardgroup in any shardspace.
+         * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the
+         * size of the largest shardgroup in any shardspace. Chunks is required to be provided for
+         * distributed databases being created with SYSTEM shardingMethod. For USER shardingMethod,
+         * chunks should not be set in create payload.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("chunks")
         private Integer chunks;
 
         /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be greater
-         * than 2 times the size of the largest shardgroup in any shardspace.
+         * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the
+         * size of the largest shardgroup in any shardspace. Chunks is required to be provided for
+         * distributed databases being created with SYSTEM shardingMethod. For USER shardingMethod,
+         * chunks should not be set in create payload.
          *
          * @param chunks the value to set
          * @return this builder
@@ -257,12 +261,18 @@ public final class CreateDistributedDatabaseDetails
             this.__explicitlySet__.add("chunks");
             return this;
         }
-        /** The listener port number for the Globally distributed database. */
+        /**
+         * The listener port number for the Globally distributed database. The listener port number
+         * has to be unique for a customer tenancy across all distributed databases. Same port
+         * number should not be re-used for any other distributed database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
         private Integer listenerPort;
 
         /**
-         * The listener port number for the Globally distributed database.
+         * The listener port number for the Globally distributed database. The listener port number
+         * has to be unique for a customer tenancy across all distributed databases. Same port
+         * number should not be re-used for any other distributed database.
          *
          * @param listenerPort the value to set
          * @return this builder
@@ -272,12 +282,22 @@ public final class CreateDistributedDatabaseDetails
             this.__explicitlySet__.add("listenerPort");
             return this;
         }
-        /** The TLS listener port number for Globally distributed database. */
+        /**
+         * The TLS listener port number for the Globally distributed database. The TLS listener port
+         * number has to be unique for a customer tenancy across all distributed databases. Same
+         * port number should not be re-used for any other distributed database. For BASE_DB and
+         * EXADB_XS based distributed databases, tls is not supported hence the listenerPortTls is
+         * not needed to be provided in create payload.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("listenerPortTls")
         private Integer listenerPortTls;
 
         /**
-         * The TLS listener port number for Globally distributed database.
+         * The TLS listener port number for the Globally distributed database. The TLS listener port
+         * number has to be unique for a customer tenancy across all distributed databases. Same
+         * port number should not be re-used for any other distributed database. For BASE_DB and
+         * EXADB_XS based distributed databases, tls is not supported hence the listenerPortTls is
+         * not needed to be provided in create payload.
          *
          * @param listenerPortTls the value to set
          * @return this builder
@@ -287,12 +307,18 @@ public final class CreateDistributedDatabaseDetails
             this.__explicitlySet__.add("listenerPortTls");
             return this;
         }
-        /** Ons local port number. */
+        /**
+         * The ons local port number for the Globally distributed database. The onsPortLocal has to
+         * be unique for a customer tenancy across all distributed databases. Same port number
+         * should not be re-used for any other distributed database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("onsPortLocal")
         private Integer onsPortLocal;
 
         /**
-         * Ons local port number.
+         * The ons local port number for the Globally distributed database. The onsPortLocal has to
+         * be unique for a customer tenancy across all distributed databases. Same port number
+         * should not be re-used for any other distributed database.
          *
          * @param onsPortLocal the value to set
          * @return this builder
@@ -302,12 +328,18 @@ public final class CreateDistributedDatabaseDetails
             this.__explicitlySet__.add("onsPortLocal");
             return this;
         }
-        /** Ons remote port number. */
+        /**
+         * The ons remote port number for the Globally distributed database. The onsPortRemote has
+         * to be unique for a customer tenancy across all distributed databases. Same port number
+         * should not be re-used for any other distributed database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("onsPortRemote")
         private Integer onsPortRemote;
 
         /**
-         * Ons remote port number.
+         * The ons remote port number for the Globally distributed database. The onsPortRemote has
+         * to be unique for a customer tenancy across all distributed databases. Same port number
+         * should not be re-used for any other distributed database.
          *
          * @param onsPortRemote the value to set
          * @return this builder
@@ -318,15 +350,21 @@ public final class CreateDistributedDatabaseDetails
             return this;
         }
         /**
-         * The Replication method for Globally distributed database. Use RAFT for Raft replication,
-         * and DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
+         * The Replication method for Globally distributed database. Use RAFT for Raft based
+         * replication. With RAFT replication, shards cannot have peers details set on them. In case
+         * shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT
+         * replication cases (with or without peers), please set replicationMethod as DG or do not
+         * set any value for replicationMethod.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
         private ReplicationMethod replicationMethod;
 
         /**
-         * The Replication method for Globally distributed database. Use RAFT for Raft replication,
-         * and DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
+         * The Replication method for Globally distributed database. Use RAFT for Raft based
+         * replication. With RAFT replication, shards cannot have peers details set on them. In case
+         * shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT
+         * replication cases (with or without peers), please set replicationMethod as DG or do not
+         * set any value for replicationMethod.
          *
          * @param replicationMethod the value to set
          * @return this builder
@@ -356,15 +394,17 @@ public final class CreateDistributedDatabaseDetails
             return this;
         }
         /**
-         * For RAFT replication based Globally distributed database, the value should be atleast
-         * twice the number of shards.
+         * The replication unit count for RAFT based distributed database. For RAFT replication
+         * based Globally distributed database, the value should be at least twice the number of
+         * shards.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
         private Integer replicationUnit;
 
         /**
-         * For RAFT replication based Globally distributed database, the value should be atleast
-         * twice the number of shards.
+         * The replication unit count for RAFT based distributed database. For RAFT replication
+         * based Globally distributed database, the value should be at least twice the number of
+         * shards.
          *
          * @param replicationUnit the value to set
          * @return this builder
@@ -756,15 +796,19 @@ public final class CreateDistributedDatabaseDetails
     }
 
     /**
-     * The default number of unique chunks in a shardspace. The value of chunks must be greater than
-     * 2 times the size of the largest shardgroup in any shardspace.
+     * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size
+     * of the largest shardgroup in any shardspace. Chunks is required to be provided for
+     * distributed databases being created with SYSTEM shardingMethod. For USER shardingMethod,
+     * chunks should not be set in create payload.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("chunks")
     private final Integer chunks;
 
     /**
-     * The default number of unique chunks in a shardspace. The value of chunks must be greater than
-     * 2 times the size of the largest shardgroup in any shardspace.
+     * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size
+     * of the largest shardgroup in any shardspace. Chunks is required to be provided for
+     * distributed databases being created with SYSTEM shardingMethod. For USER shardingMethod,
+     * chunks should not be set in create payload.
      *
      * @return the value
      */
@@ -772,12 +816,18 @@ public final class CreateDistributedDatabaseDetails
         return chunks;
     }
 
-    /** The listener port number for the Globally distributed database. */
+    /**
+     * The listener port number for the Globally distributed database. The listener port number has
+     * to be unique for a customer tenancy across all distributed databases. Same port number should
+     * not be re-used for any other distributed database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
     private final Integer listenerPort;
 
     /**
-     * The listener port number for the Globally distributed database.
+     * The listener port number for the Globally distributed database. The listener port number has
+     * to be unique for a customer tenancy across all distributed databases. Same port number should
+     * not be re-used for any other distributed database.
      *
      * @return the value
      */
@@ -785,12 +835,22 @@ public final class CreateDistributedDatabaseDetails
         return listenerPort;
     }
 
-    /** The TLS listener port number for Globally distributed database. */
+    /**
+     * The TLS listener port number for the Globally distributed database. The TLS listener port
+     * number has to be unique for a customer tenancy across all distributed databases. Same port
+     * number should not be re-used for any other distributed database. For BASE_DB and EXADB_XS
+     * based distributed databases, tls is not supported hence the listenerPortTls is not needed to
+     * be provided in create payload.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPortTls")
     private final Integer listenerPortTls;
 
     /**
-     * The TLS listener port number for Globally distributed database.
+     * The TLS listener port number for the Globally distributed database. The TLS listener port
+     * number has to be unique for a customer tenancy across all distributed databases. Same port
+     * number should not be re-used for any other distributed database. For BASE_DB and EXADB_XS
+     * based distributed databases, tls is not supported hence the listenerPortTls is not needed to
+     * be provided in create payload.
      *
      * @return the value
      */
@@ -798,12 +858,18 @@ public final class CreateDistributedDatabaseDetails
         return listenerPortTls;
     }
 
-    /** Ons local port number. */
+    /**
+     * The ons local port number for the Globally distributed database. The onsPortLocal has to be
+     * unique for a customer tenancy across all distributed databases. Same port number should not
+     * be re-used for any other distributed database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("onsPortLocal")
     private final Integer onsPortLocal;
 
     /**
-     * Ons local port number.
+     * The ons local port number for the Globally distributed database. The onsPortLocal has to be
+     * unique for a customer tenancy across all distributed databases. Same port number should not
+     * be re-used for any other distributed database.
      *
      * @return the value
      */
@@ -811,12 +877,18 @@ public final class CreateDistributedDatabaseDetails
         return onsPortLocal;
     }
 
-    /** Ons remote port number. */
+    /**
+     * The ons remote port number for the Globally distributed database. The onsPortRemote has to be
+     * unique for a customer tenancy across all distributed databases. Same port number should not
+     * be re-used for any other distributed database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("onsPortRemote")
     private final Integer onsPortRemote;
 
     /**
-     * Ons remote port number.
+     * The ons remote port number for the Globally distributed database. The onsPortRemote has to be
+     * unique for a customer tenancy across all distributed databases. Same port number should not
+     * be re-used for any other distributed database.
      *
      * @return the value
      */
@@ -825,8 +897,11 @@ public final class CreateDistributedDatabaseDetails
     }
 
     /**
-     * The Replication method for Globally distributed database. Use RAFT for Raft replication, and
-     * DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * The Replication method for Globally distributed database. Use RAFT for Raft based
+     * replication. With RAFT replication, shards cannot have peers details set on them. In case
+     * shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT
+     * replication cases (with or without peers), please set replicationMethod as DG or do not set
+     * any value for replicationMethod.
      */
     public enum ReplicationMethod implements com.oracle.bmc.http.internal.BmcEnum {
         Raft("RAFT"),
@@ -861,15 +936,21 @@ public final class CreateDistributedDatabaseDetails
         }
     };
     /**
-     * The Replication method for Globally distributed database. Use RAFT for Raft replication, and
-     * DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * The Replication method for Globally distributed database. Use RAFT for Raft based
+     * replication. With RAFT replication, shards cannot have peers details set on them. In case
+     * shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT
+     * replication cases (with or without peers), please set replicationMethod as DG or do not set
+     * any value for replicationMethod.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
     private final ReplicationMethod replicationMethod;
 
     /**
-     * The Replication method for Globally distributed database. Use RAFT for Raft replication, and
-     * DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * The Replication method for Globally distributed database. Use RAFT for Raft based
+     * replication. With RAFT replication, shards cannot have peers details set on them. In case
+     * shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT
+     * replication cases (with or without peers), please set replicationMethod as DG or do not set
+     * any value for replicationMethod.
      *
      * @return the value
      */
@@ -895,15 +976,15 @@ public final class CreateDistributedDatabaseDetails
     }
 
     /**
-     * For RAFT replication based Globally distributed database, the value should be atleast twice
-     * the number of shards.
+     * The replication unit count for RAFT based distributed database. For RAFT replication based
+     * Globally distributed database, the value should be at least twice the number of shards.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
     private final Integer replicationUnit;
 
     /**
-     * For RAFT replication based Globally distributed database, the value should be atleast twice
-     * the number of shards.
+     * The replication unit count for RAFT based distributed database. For RAFT replication based
+     * Globally distributed database, the value should be at least twice the number of shards.
      *
      * @return the value
      */

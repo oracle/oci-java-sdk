@@ -142,7 +142,7 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
                 .serviceDetails(
                         "DbMulticloudGCPProvider",
                         "ChangeOracleDbGcpIdentityConnectorCompartment",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/ChangeOracleDbGcpIdentityConnectorCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOracleDbGcpIdentityConnectorCompartmentRequest::builder)
                 .basePath("/20240501")
@@ -179,7 +179,9 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
         return clientCall(request, ChangeOracleDbGcpKeyRingCompartmentResponse::builder)
                 .logger(LOG, "changeOracleDbGcpKeyRingCompartment")
                 .serviceDetails(
-                        "DbMulticloudGCPProvider", "ChangeOracleDbGcpKeyRingCompartment", "")
+                        "DbMulticloudGCPProvider",
+                        "ChangeOracleDbGcpKeyRingCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/ChangeOracleDbGcpKeyRingCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOracleDbGcpKeyRingCompartmentRequest::builder)
                 .basePath("/20240501")
@@ -211,7 +213,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, CreateOracleDbGcpIdentityConnectorResponse::builder)
                 .logger(LOG, "createOracleDbGcpIdentityConnector")
-                .serviceDetails("DbMulticloudGCPProvider", "CreateOracleDbGcpIdentityConnector", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "CreateOracleDbGcpIdentityConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/CreateOracleDbGcpIdentityConnector")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOracleDbGcpIdentityConnectorRequest::builder)
                 .basePath("/20240501")
@@ -250,7 +255,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, CreateOracleDbGcpKeyRingResponse::builder)
                 .logger(LOG, "createOracleDbGcpKeyRing")
-                .serviceDetails("DbMulticloudGCPProvider", "CreateOracleDbGcpKeyRing", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "CreateOracleDbGcpKeyRing",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/CreateOracleDbGcpKeyRing")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOracleDbGcpKeyRingRequest::builder)
                 .basePath("/20240501")
@@ -288,7 +296,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, DeleteOracleDbGcpIdentityConnectorResponse::builder)
                 .logger(LOG, "deleteOracleDbGcpIdentityConnector")
-                .serviceDetails("DbMulticloudGCPProvider", "DeleteOracleDbGcpIdentityConnector", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "DeleteOracleDbGcpIdentityConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/DeleteOracleDbGcpIdentityConnector")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOracleDbGcpIdentityConnectorRequest::builder)
                 .basePath("/20240501")
@@ -316,7 +327,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, DeleteOracleDbGcpKeyRingResponse::builder)
                 .logger(LOG, "deleteOracleDbGcpKeyRing")
-                .serviceDetails("DbMulticloudGCPProvider", "DeleteOracleDbGcpKeyRing", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "DeleteOracleDbGcpKeyRing",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/DeleteOracleDbGcpKeyRing")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOracleDbGcpKeyRingRequest::builder)
                 .basePath("/20240501")
@@ -344,7 +358,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, GetOracleDbGcpIdentityConnectorResponse::builder)
                 .logger(LOG, "getOracleDbGcpIdentityConnector")
-                .serviceDetails("DbMulticloudGCPProvider", "GetOracleDbGcpIdentityConnector", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "GetOracleDbGcpIdentityConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/GetOracleDbGcpIdentityConnector")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOracleDbGcpIdentityConnectorRequest::builder)
                 .basePath("/20240501")
@@ -372,7 +389,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, GetOracleDbGcpKeyResponse::builder)
                 .logger(LOG, "getOracleDbGcpKey")
-                .serviceDetails("DbMulticloudGCPProvider", "GetOracleDbGcpKey", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "GetOracleDbGcpKey",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKey/GetOracleDbGcpKey")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOracleDbGcpKeyRequest::builder)
                 .basePath("/20240501")
@@ -399,7 +419,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, GetOracleDbGcpKeyRingResponse::builder)
                 .logger(LOG, "getOracleDbGcpKeyRing")
-                .serviceDetails("DbMulticloudGCPProvider", "GetOracleDbGcpKeyRing", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "GetOracleDbGcpKeyRing",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/GetOracleDbGcpKeyRing")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOracleDbGcpKeyRingRequest::builder)
                 .basePath("/20240501")
@@ -427,7 +450,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOracleDbGcpIdentityConnectorsResponse::builder)
                 .logger(LOG, "listOracleDbGcpIdentityConnectors")
-                .serviceDetails("DbMulticloudGCPProvider", "ListOracleDbGcpIdentityConnectors", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "ListOracleDbGcpIdentityConnectors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/ListOracleDbGcpIdentityConnectors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOracleDbGcpIdentityConnectorsRequest::builder)
                 .basePath("/20240501")
@@ -464,7 +490,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOracleDbGcpKeyRingsResponse::builder)
                 .logger(LOG, "listOracleDbGcpKeyRings")
-                .serviceDetails("DbMulticloudGCPProvider", "ListOracleDbGcpKeyRings", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "ListOracleDbGcpKeyRings",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/ListOracleDbGcpKeyRings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOracleDbGcpKeyRingsRequest::builder)
                 .basePath("/20240501")
@@ -498,7 +527,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOracleDbGcpKeysResponse::builder)
                 .logger(LOG, "listOracleDbGcpKeys")
-                .serviceDetails("DbMulticloudGCPProvider", "ListOracleDbGcpKeys", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "ListOracleDbGcpKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKey/ListOracleDbGcpKeys")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOracleDbGcpKeysRequest::builder)
                 .basePath("/20240501")
@@ -536,7 +568,9 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
         return clientCall(request, RefreshOracleDbGcpIdentityConnectorResponse::builder)
                 .logger(LOG, "refreshOracleDbGcpIdentityConnector")
                 .serviceDetails(
-                        "DbMulticloudGCPProvider", "RefreshOracleDbGcpIdentityConnector", "")
+                        "DbMulticloudGCPProvider",
+                        "RefreshOracleDbGcpIdentityConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/RefreshOracleDbGcpIdentityConnector")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RefreshOracleDbGcpIdentityConnectorRequest::builder)
                 .basePath("/20240501")
@@ -570,7 +604,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, RefreshOracleDbGcpKeyRingResponse::builder)
                 .logger(LOG, "refreshOracleDbGcpKeyRing")
-                .serviceDetails("DbMulticloudGCPProvider", "RefreshOracleDbGcpKeyRing", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "RefreshOracleDbGcpKeyRing",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/RefreshOracleDbGcpKeyRing")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RefreshOracleDbGcpKeyRingRequest::builder)
                 .basePath("/20240501")
@@ -605,7 +642,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, UpdateOracleDbGcpIdentityConnectorResponse::builder)
                 .logger(LOG, "updateOracleDbGcpIdentityConnector")
-                .serviceDetails("DbMulticloudGCPProvider", "UpdateOracleDbGcpIdentityConnector", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "UpdateOracleDbGcpIdentityConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/UpdateOracleDbGcpIdentityConnector")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOracleDbGcpIdentityConnectorRequest::builder)
                 .basePath("/20240501")
@@ -637,7 +677,10 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, UpdateOracleDbGcpKeyRingResponse::builder)
                 .logger(LOG, "updateOracleDbGcpKeyRing")
-                .serviceDetails("DbMulticloudGCPProvider", "UpdateOracleDbGcpKeyRing", "")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "UpdateOracleDbGcpKeyRing",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/UpdateOracleDbGcpKeyRing")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOracleDbGcpKeyRingRequest::builder)
                 .basePath("/20240501")

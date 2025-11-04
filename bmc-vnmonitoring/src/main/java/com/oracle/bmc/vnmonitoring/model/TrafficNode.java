@@ -38,18 +38,24 @@ public class TrafficNode extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "egressTraffic",
         "nextHopRoutingAction",
         "egressSecurityAction",
-        "ingressSecurityAction"
+        "ingressSecurityAction",
+        "zprEgressSecurityAction",
+        "zprIngressSecurityAction"
     })
     protected TrafficNode(
             EgressTrafficSpec egressTraffic,
             RoutingAction nextHopRoutingAction,
             SecurityAction egressSecurityAction,
-            SecurityAction ingressSecurityAction) {
+            SecurityAction ingressSecurityAction,
+            SecurityAction zprEgressSecurityAction,
+            SecurityAction zprIngressSecurityAction) {
         super();
         this.egressTraffic = egressTraffic;
         this.nextHopRoutingAction = nextHopRoutingAction;
         this.egressSecurityAction = egressSecurityAction;
         this.ingressSecurityAction = ingressSecurityAction;
+        this.zprEgressSecurityAction = zprEgressSecurityAction;
+        this.zprIngressSecurityAction = zprIngressSecurityAction;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("egressTraffic")
@@ -80,6 +86,20 @@ public class TrafficNode extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return ingressSecurityAction;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("zprEgressSecurityAction")
+    private final SecurityAction zprEgressSecurityAction;
+
+    public SecurityAction getZprEgressSecurityAction() {
+        return zprEgressSecurityAction;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("zprIngressSecurityAction")
+    private final SecurityAction zprIngressSecurityAction;
+
+    public SecurityAction getZprIngressSecurityAction() {
+        return zprIngressSecurityAction;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -99,6 +119,10 @@ public class TrafficNode extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", nextHopRoutingAction=").append(String.valueOf(this.nextHopRoutingAction));
         sb.append(", egressSecurityAction=").append(String.valueOf(this.egressSecurityAction));
         sb.append(", ingressSecurityAction=").append(String.valueOf(this.ingressSecurityAction));
+        sb.append(", zprEgressSecurityAction=")
+                .append(String.valueOf(this.zprEgressSecurityAction));
+        sb.append(", zprIngressSecurityAction=")
+                .append(String.valueOf(this.zprIngressSecurityAction));
         sb.append(")");
         return sb.toString();
     }
@@ -117,6 +141,10 @@ public class TrafficNode extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.nextHopRoutingAction, other.nextHopRoutingAction)
                 && java.util.Objects.equals(this.egressSecurityAction, other.egressSecurityAction)
                 && java.util.Objects.equals(this.ingressSecurityAction, other.ingressSecurityAction)
+                && java.util.Objects.equals(
+                        this.zprEgressSecurityAction, other.zprEgressSecurityAction)
+                && java.util.Objects.equals(
+                        this.zprIngressSecurityAction, other.zprIngressSecurityAction)
                 && super.equals(other);
     }
 
@@ -142,6 +170,16 @@ public class TrafficNode extends com.oracle.bmc.http.client.internal.ExplicitlyS
                         + (this.ingressSecurityAction == null
                                 ? 43
                                 : this.ingressSecurityAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.zprEgressSecurityAction == null
+                                ? 43
+                                : this.zprEgressSecurityAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.zprIngressSecurityAction == null
+                                ? 43
+                                : this.zprIngressSecurityAction.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

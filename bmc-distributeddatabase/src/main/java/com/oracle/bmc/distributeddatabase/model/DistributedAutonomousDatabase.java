@@ -52,6 +52,7 @@ public final class DistributedAutonomousDatabase
         "shardDetails",
         "catalogDetails",
         "gsmDetails",
+        "dbBackupConfig",
         "metadata",
         "freeformTags",
         "definedTags",
@@ -86,6 +87,7 @@ public final class DistributedAutonomousDatabase
             java.util.List<DistributedAutonomousDatabaseShard> shardDetails,
             java.util.List<DistributedAutonomousDatabaseCatalog> catalogDetails,
             java.util.List<DistributedAutonomousDatabaseGsm> gsmDetails,
+            DistributedAutonomousDbBackupConfig dbBackupConfig,
             DistributedAutonomousDbMetadata metadata,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -119,6 +121,7 @@ public final class DistributedAutonomousDatabase
         this.shardDetails = shardDetails;
         this.catalogDetails = catalogDetails;
         this.gsmDetails = gsmDetails;
+        this.dbBackupConfig = dbBackupConfig;
         this.metadata = metadata;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -334,12 +337,12 @@ public final class DistributedAutonomousDatabase
             this.__explicitlySet__.add("shardingMethod");
             return this;
         }
-        /** Possible workload types. */
+        /** Possible workload types. Currently only OLTP workload type is supported. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
 
         /**
-         * Possible workload types.
+         * Possible workload types. Currently only OLTP workload type is supported.
          *
          * @param dbWorkload the value to set
          * @return this builder
@@ -499,15 +502,17 @@ public final class DistributedAutonomousDatabase
             return this;
         }
         /**
-         * For RAFT replication based Globally distributed autonomous database, the value should be
-         * atleast twice the number of shards.
+         * The replication unit count for RAFT based distributed autonomous database. For RAFT
+         * replication based Globally distributed autonomous database, the value should be at least
+         * twice the number of shards.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
         private Integer replicationUnit;
 
         /**
-         * For RAFT replication based Globally distributed autonomous database, the value should be
-         * atleast twice the number of shards.
+         * The replication unit count for RAFT based distributed autonomous database. For RAFT
+         * replication based Globally distributed autonomous database, the value should be at least
+         * twice the number of shards.
          *
          * @param replicationUnit the value to set
          * @return this builder
@@ -586,6 +591,15 @@ public final class DistributedAutonomousDatabase
         public Builder gsmDetails(java.util.List<DistributedAutonomousDatabaseGsm> gsmDetails) {
             this.gsmDetails = gsmDetails;
             this.__explicitlySet__.add("gsmDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+        private DistributedAutonomousDbBackupConfig dbBackupConfig;
+
+        public Builder dbBackupConfig(DistributedAutonomousDbBackupConfig dbBackupConfig) {
+            this.dbBackupConfig = dbBackupConfig;
+            this.__explicitlySet__.add("dbBackupConfig");
             return this;
         }
 
@@ -690,6 +704,7 @@ public final class DistributedAutonomousDatabase
                             this.shardDetails,
                             this.catalogDetails,
                             this.gsmDetails,
+                            this.dbBackupConfig,
                             this.metadata,
                             this.freeformTags,
                             this.definedTags,
@@ -785,6 +800,9 @@ public final class DistributedAutonomousDatabase
             }
             if (model.wasPropertyExplicitlySet("gsmDetails")) {
                 this.gsmDetails(model.getGsmDetails());
+            }
+            if (model.wasPropertyExplicitlySet("dbBackupConfig")) {
+                this.dbBackupConfig(model.getDbBackupConfig());
             }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
@@ -1091,7 +1109,7 @@ public final class DistributedAutonomousDatabase
         return shardingMethod;
     }
 
-    /** Possible workload types. */
+    /** Possible workload types. Currently only OLTP workload type is supported. */
     public enum DbWorkload implements com.oracle.bmc.http.internal.BmcEnum {
         Oltp("OLTP"),
         Dw("DW"),
@@ -1137,12 +1155,12 @@ public final class DistributedAutonomousDatabase
             return UnknownEnumValue;
         }
     };
-    /** Possible workload types. */
+    /** Possible workload types. Currently only OLTP workload type is supported. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     private final DbWorkload dbWorkload;
 
     /**
-     * Possible workload types.
+     * Possible workload types. Currently only OLTP workload type is supported.
      *
      * @return the value
      */
@@ -1329,15 +1347,17 @@ public final class DistributedAutonomousDatabase
     }
 
     /**
-     * For RAFT replication based Globally distributed autonomous database, the value should be
-     * atleast twice the number of shards.
+     * The replication unit count for RAFT based distributed autonomous database. For RAFT
+     * replication based Globally distributed autonomous database, the value should be at least
+     * twice the number of shards.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
     private final Integer replicationUnit;
 
     /**
-     * For RAFT replication based Globally distributed autonomous database, the value should be
-     * atleast twice the number of shards.
+     * The replication unit count for RAFT based distributed autonomous database. For RAFT
+     * replication based Globally distributed autonomous database, the value should be at least
+     * twice the number of shards.
      *
      * @return the value
      */
@@ -1449,6 +1469,13 @@ public final class DistributedAutonomousDatabase
         return gsmDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+    private final DistributedAutonomousDbBackupConfig dbBackupConfig;
+
+    public DistributedAutonomousDbBackupConfig getDbBackupConfig() {
+        return dbBackupConfig;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final DistributedAutonomousDbMetadata metadata;
 
@@ -1550,6 +1577,7 @@ public final class DistributedAutonomousDatabase
         sb.append(", shardDetails=").append(String.valueOf(this.shardDetails));
         sb.append(", catalogDetails=").append(String.valueOf(this.catalogDetails));
         sb.append(", gsmDetails=").append(String.valueOf(this.gsmDetails));
+        sb.append(", dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1596,6 +1624,7 @@ public final class DistributedAutonomousDatabase
                 && java.util.Objects.equals(this.shardDetails, other.shardDetails)
                 && java.util.Objects.equals(this.catalogDetails, other.catalogDetails)
                 && java.util.Objects.equals(this.gsmDetails, other.gsmDetails)
+                && java.util.Objects.equals(this.dbBackupConfig, other.dbBackupConfig)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1669,6 +1698,9 @@ public final class DistributedAutonomousDatabase
                 (result * PRIME)
                         + (this.catalogDetails == null ? 43 : this.catalogDetails.hashCode());
         result = (result * PRIME) + (this.gsmDetails == null ? 43 : this.gsmDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbBackupConfig == null ? 43 : this.dbBackupConfig.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

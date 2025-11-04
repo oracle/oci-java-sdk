@@ -188,12 +188,12 @@ public final class DistributedDatabaseShardWithExadbXs extends DistributedDataba
             this.__explicitlySet__.add("kmsKeyVersionId");
             return this;
         }
-        /** Status of shard based on exadbxs for the Globally ditributed database. */
+        /** Status of EXADB_XS based shard. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Status of shard based on exadbxs for the Globally ditributed database.
+         * Status of EXADB_XS based shard.
          *
          * @param status the value to set
          * @return this builder
@@ -498,7 +498,7 @@ public final class DistributedDatabaseShardWithExadbXs extends DistributedDataba
         return kmsKeyVersionId;
     }
 
-    /** Status of shard based on exadbxs for the Globally ditributed database. */
+    /** Status of EXADB_XS based shard. */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Failed("FAILED"),
         Deleting("DELETING"),
@@ -550,12 +550,12 @@ public final class DistributedDatabaseShardWithExadbXs extends DistributedDataba
             return UnknownEnumValue;
         }
     };
-    /** Status of shard based on exadbxs for the Globally ditributed database. */
+    /** Status of EXADB_XS based shard. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Status of shard based on exadbxs for the Globally ditributed database.
+     * Status of EXADB_XS based shard.
      *
      * @return the value
      */

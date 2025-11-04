@@ -4,15 +4,20 @@
  */
 package com.oracle.bmc;
 
+import com.oracle.bmc.http.client.HttpProviderCapability;
 import com.oracle.bmc.http.client.Options;
+import com.oracle.bmc.http.client.StandardHttpProviderCapability;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Optional;
+import java.util.function.Predicate;
 
 import static org.junit.Assert.assertEquals;
 
 public class ServicesTest {
+    private final Predicate<HttpProviderCapability> WITH_PARAMETERIZED_ENDPOINTS_SUPPORT =
+            capability -> StandardHttpProviderCapability.PARAMETERIZED_ENDPOINTS == capability;
 
     @BeforeClass
     public static void setup() {
@@ -64,28 +69,74 @@ public class ServicesTest {
                     Services.serviceBuilder()
                             .serviceName("REALM_SPECIFIC1")
                             .serviceEndpointPrefix("realm-specific1")
-                            .serviceEndpointTemplate("{region}.realm-specific1.oci.oraclecloud.com")
+                            .serviceEndpointTemplate(
+                                    "{region}.not-realm-specific1.oci.oraclecloud.com")
                             .addServiceEndpointTemplateForRealm(
                                     "oc1", "realm-specific1.{region}.oci.customer-oci.com")
                             .build();
 
-            Optional<String> endpoint1 = Region.US_PHOENIX_1.getEndpoint(s1);
+            Optional<String> endpoint1 =
+                    Region.US_PHOENIX_1.getEndpoint(s1, WITH_PARAMETERIZED_ENDPOINTS_SUPPORT);
             assertEquals("realm-specific1.us-phoenix-1.oci.customer-oci.com", endpoint1.get());
 
             Service s2 =
                     Services.serviceBuilder()
                             .serviceName("REALM_SPECIFIC2")
                             .serviceEndpointPrefix("realm-specific2")
-                            .serviceEndpointTemplate("{region}.realm-specific2.oci.oraclecloud.com")
+                            .serviceEndpointTemplate(
+                                    "{region}.not-realm-specific2.oci.oraclecloud.com")
                             .addServiceEndpointTemplateForRealm(
                                     "oc1", "realm-specific2.{region}.oci.customer-oci.com")
                             .build();
 
-            Optional<String> endpoint2 = Region.US_PHOENIX_1.getEndpoint(s2);
+            Optional<String> endpoint2 =
+                    Region.US_PHOENIX_1.getEndpoint(s2, WITH_PARAMETERIZED_ENDPOINTS_SUPPORT);
             assertEquals("realm-specific2.us-phoenix-1.oci.customer-oci.com", endpoint2.get());
 
-            Optional<String> endpoint3 = Region.US_ASHBURN_1.getEndpoint(s1);
+            Optional<String> endpoint3 =
+                    Region.US_ASHBURN_1.getEndpoint(s1, WITH_PARAMETERIZED_ENDPOINTS_SUPPORT);
             assertEquals("realm-specific1.us-ashburn-1.oci.customer-oci.com", endpoint3.get());
+        } finally {
+            Options.setUseOfRealmSpecificEndpointTemplateEnabledProgrammatically(
+                    useOfRealmSpecificEndpointTemplateEnabledProgrammatically);
+        }
+    }
+
+    @Test
+    public void multipleServicesWithRealmSpecificEndpoints_withoutProgrammaticEndpointCapability() {
+        Boolean useOfRealmSpecificEndpointTemplateEnabledProgrammatically =
+                Options.getUseOfRealmSpecificEndpointTemplateEnabledProgrammatically();
+        try {
+            Options.setUseOfRealmSpecificEndpointTemplateEnabledProgrammatically(true);
+
+            Service s1 =
+                    Services.serviceBuilder()
+                            .serviceName("REALM_SPECIFIC1")
+                            .serviceEndpointPrefix("realm-specific1")
+                            .serviceEndpointTemplate(
+                                    "{region}.not-realm-specific1.oci.oraclecloud.com")
+                            .addServiceEndpointTemplateForRealm(
+                                    "oc1", "realm-specific1.{region}.oci.customer-oci.com")
+                            .build();
+
+            Optional<String> endpoint1 = Region.US_PHOENIX_1.getEndpoint(s1, c -> false);
+            assertEquals("us-phoenix-1.not-realm-specific1.oci.oraclecloud.com", endpoint1.get());
+
+            Service s2 =
+                    Services.serviceBuilder()
+                            .serviceName("REALM_SPECIFIC2")
+                            .serviceEndpointPrefix("realm-specific2")
+                            .serviceEndpointTemplate(
+                                    "{region}.not-realm-specific2.oci.oraclecloud.com")
+                            .addServiceEndpointTemplateForRealm(
+                                    "oc1", "realm-specific2.{region}.oci.customer-oci.com")
+                            .build();
+
+            Optional<String> endpoint2 = Region.US_PHOENIX_1.getEndpoint(s2, c -> false);
+            assertEquals("us-phoenix-1.not-realm-specific2.oci.oraclecloud.com", endpoint2.get());
+
+            Optional<String> endpoint3 = Region.US_ASHBURN_1.getEndpoint(s1, c -> false);
+            assertEquals("us-ashburn-1.not-realm-specific1.oci.oraclecloud.com", endpoint3.get());
         } finally {
             Options.setUseOfRealmSpecificEndpointTemplateEnabledProgrammatically(
                     useOfRealmSpecificEndpointTemplateEnabledProgrammatically);

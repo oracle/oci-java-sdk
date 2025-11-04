@@ -28,10 +28,7 @@ package com.oracle.bmc.vnmonitoring.model;
 public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
-        "byoipv6CidrBlocks",
-        "ipv6PrivateCidrBlocks",
         "cidrBlock",
-        "cidrBlocks",
         "compartmentId",
         "defaultDhcpOptionsId",
         "defaultRouteTableId",
@@ -41,16 +38,14 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "dnsLabel",
         "freeformTags",
         "id",
-        "ipv6CidrBlocks",
+        "ipv6CidrBlock",
+        "ipv6PublicCidrBlock",
         "lifecycleState",
         "timeCreated",
         "vcnDomainName"
     })
     public Vcn(
-            java.util.List<String> byoipv6CidrBlocks,
-            java.util.List<String> ipv6PrivateCidrBlocks,
             String cidrBlock,
-            java.util.List<String> cidrBlocks,
             String compartmentId,
             String defaultDhcpOptionsId,
             String defaultRouteTableId,
@@ -60,15 +55,13 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             String dnsLabel,
             java.util.Map<String, String> freeformTags,
             String id,
-            java.util.List<String> ipv6CidrBlocks,
+            String ipv6CidrBlock,
+            String ipv6PublicCidrBlock,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             String vcnDomainName) {
         super();
-        this.byoipv6CidrBlocks = byoipv6CidrBlocks;
-        this.ipv6PrivateCidrBlocks = ipv6PrivateCidrBlocks;
         this.cidrBlock = cidrBlock;
-        this.cidrBlocks = cidrBlocks;
         this.compartmentId = compartmentId;
         this.defaultDhcpOptionsId = defaultDhcpOptionsId;
         this.defaultRouteTableId = defaultRouteTableId;
@@ -78,7 +71,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.dnsLabel = dnsLabel;
         this.freeformTags = freeformTags;
         this.id = id;
-        this.ipv6CidrBlocks = ipv6CidrBlocks;
+        this.ipv6CidrBlock = ipv6CidrBlock;
+        this.ipv6PublicCidrBlock = ipv6PublicCidrBlock;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.vcnDomainName = vcnDomainName;
@@ -86,42 +80,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges. */
-        @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrBlocks")
-        private java.util.List<String> byoipv6CidrBlocks;
-
         /**
-         * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
-         *
-         * @param byoipv6CidrBlocks the value to set
-         * @return this builder
-         */
-        public Builder byoipv6CidrBlocks(java.util.List<String> byoipv6CidrBlocks) {
-            this.byoipv6CidrBlocks = byoipv6CidrBlocks;
-            this.__explicitlySet__.add("byoipv6CidrBlocks");
-            return this;
-        }
-        /**
-         * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP
-         * address space.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
-        private java.util.List<String> ipv6PrivateCidrBlocks;
-
-        /**
-         * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP
-         * address space.
-         *
-         * @param ipv6PrivateCidrBlocks the value to set
-         * @return this builder
-         */
-        public Builder ipv6PrivateCidrBlocks(java.util.List<String> ipv6PrivateCidrBlocks) {
-            this.ipv6PrivateCidrBlocks = ipv6PrivateCidrBlocks;
-            this.__explicitlySet__.add("ipv6PrivateCidrBlocks");
-            return this;
-        }
-        /**
-         * Deprecated. The first CIDR IP address from cidrBlocks.
+         * The CIDR block IP address of the VCN.
          *
          * <p>Example: {@code 172.16.0.0/16}
          */
@@ -129,7 +89,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         private String cidrBlock;
 
         /**
-         * Deprecated. The first CIDR IP address from cidrBlocks.
+         * The CIDR block IP address of the VCN.
          *
          * <p>Example: {@code 172.16.0.0/16}
          *
@@ -139,21 +99,6 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
-            return this;
-        }
-        /** The list of IPv4 CIDR blocks the VCN will use. */
-        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
-        private java.util.List<String> cidrBlocks;
-
-        /**
-         * The list of IPv4 CIDR blocks the VCN will use.
-         *
-         * @param cidrBlocks the value to set
-         * @return this builder
-         */
-        public Builder cidrBlocks(java.util.List<String> cidrBlocks) {
-            this.cidrBlocks = cidrBlocks;
-            this.__explicitlySet__.add("cidrBlocks");
             return this;
         }
         /**
@@ -349,22 +294,59 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address
-         * space. The CIDRs are provided by Oracle and the sizes are always /56.
+         * For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's private IP address space.
+         * The VCN size is always /56. Oracle provides the IPv6 prefix to use as the *same* CIDR for
+         * the {@code ipv6PublicCidrBlock}. When creating a subnet, specify the last 8 bits, 00 to
+         * FF. See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Example: {@code 2001:0db8:0123::/56}
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
-        private java.util.List<String> ipv6CidrBlocks;
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+        private String ipv6CidrBlock;
 
         /**
-         * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address
-         * space. The CIDRs are provided by Oracle and the sizes are always /56.
+         * For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's private IP address space.
+         * The VCN size is always /56. Oracle provides the IPv6 prefix to use as the *same* CIDR for
+         * the {@code ipv6PublicCidrBlock}. When creating a subnet, specify the last 8 bits, 00 to
+         * FF. See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Example: {@code 2001:0db8:0123::/56}
          *
-         * @param ipv6CidrBlocks the value to set
+         * @param ipv6CidrBlock the value to set
          * @return this builder
          */
-        public Builder ipv6CidrBlocks(java.util.List<String> ipv6CidrBlocks) {
-            this.ipv6CidrBlocks = ipv6CidrBlocks;
-            this.__explicitlySet__.add("ipv6CidrBlocks");
+        public Builder ipv6CidrBlock(String ipv6CidrBlock) {
+            this.ipv6CidrBlock = ipv6CidrBlock;
+            this.__explicitlySet__.add("ipv6CidrBlock");
+            return this;
+        }
+        /**
+         * For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's public IP address space.
+         * The VCN size is always /56. This prefix is always provided by Oracle. If you don't
+         * provide a custom prefix for the {@code ipv6CidrBlock} when creating the VCN, Oracle
+         * assigns that value and also uses it for {@code ipv6PublicCidrBlock}. Oracle uses
+         * addresses from this block for the {@code publicIpAddress} attribute of an {@link Ipv6}
+         * that has internet access allowed.
+         *
+         * <p>Example: {@code 2001:0db8:0123::/48}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
+        private String ipv6PublicCidrBlock;
+
+        /**
+         * For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's public IP address space.
+         * The VCN size is always /56. This prefix is always provided by Oracle. If you don't
+         * provide a custom prefix for the {@code ipv6CidrBlock} when creating the VCN, Oracle
+         * assigns that value and also uses it for {@code ipv6PublicCidrBlock}. Oracle uses
+         * addresses from this block for the {@code publicIpAddress} attribute of an {@link Ipv6}
+         * that has internet access allowed.
+         *
+         * <p>Example: {@code 2001:0db8:0123::/48}
+         *
+         * @param ipv6PublicCidrBlock the value to set
+         * @return this builder
+         */
+        public Builder ipv6PublicCidrBlock(String ipv6PublicCidrBlock) {
+            this.ipv6PublicCidrBlock = ipv6PublicCidrBlock;
+            this.__explicitlySet__.add("ipv6PublicCidrBlock");
             return this;
         }
         /** The VCN's current state. */
@@ -441,10 +423,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         public Vcn build() {
             Vcn model =
                     new Vcn(
-                            this.byoipv6CidrBlocks,
-                            this.ipv6PrivateCidrBlocks,
                             this.cidrBlock,
-                            this.cidrBlocks,
                             this.compartmentId,
                             this.defaultDhcpOptionsId,
                             this.defaultRouteTableId,
@@ -454,7 +433,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.dnsLabel,
                             this.freeformTags,
                             this.id,
-                            this.ipv6CidrBlocks,
+                            this.ipv6CidrBlock,
+                            this.ipv6PublicCidrBlock,
                             this.lifecycleState,
                             this.timeCreated,
                             this.vcnDomainName);
@@ -466,17 +446,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Vcn model) {
-            if (model.wasPropertyExplicitlySet("byoipv6CidrBlocks")) {
-                this.byoipv6CidrBlocks(model.getByoipv6CidrBlocks());
-            }
-            if (model.wasPropertyExplicitlySet("ipv6PrivateCidrBlocks")) {
-                this.ipv6PrivateCidrBlocks(model.getIpv6PrivateCidrBlocks());
-            }
             if (model.wasPropertyExplicitlySet("cidrBlock")) {
                 this.cidrBlock(model.getCidrBlock());
-            }
-            if (model.wasPropertyExplicitlySet("cidrBlocks")) {
-                this.cidrBlocks(model.getCidrBlocks());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -505,8 +476,11 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
-            if (model.wasPropertyExplicitlySet("ipv6CidrBlocks")) {
-                this.ipv6CidrBlocks(model.getIpv6CidrBlocks());
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
+                this.ipv6CidrBlock(model.getIpv6CidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6PublicCidrBlock")) {
+                this.ipv6PublicCidrBlock(model.getIpv6PublicCidrBlock());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -530,38 +504,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /** The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges. */
-    @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrBlocks")
-    private final java.util.List<String> byoipv6CidrBlocks;
-
     /**
-     * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getByoipv6CidrBlocks() {
-        return byoipv6CidrBlocks;
-    }
-
-    /**
-     * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP
-     * address space.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
-    private final java.util.List<String> ipv6PrivateCidrBlocks;
-
-    /**
-     * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP
-     * address space.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getIpv6PrivateCidrBlocks() {
-        return ipv6PrivateCidrBlocks;
-    }
-
-    /**
-     * Deprecated. The first CIDR IP address from cidrBlocks.
+     * The CIDR block IP address of the VCN.
      *
      * <p>Example: {@code 172.16.0.0/16}
      */
@@ -569,7 +513,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     private final String cidrBlock;
 
     /**
-     * Deprecated. The first CIDR IP address from cidrBlocks.
+     * The CIDR block IP address of the VCN.
      *
      * <p>Example: {@code 172.16.0.0/16}
      *
@@ -577,19 +521,6 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
      */
     public String getCidrBlock() {
         return cidrBlock;
-    }
-
-    /** The list of IPv4 CIDR blocks the VCN will use. */
-    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
-    private final java.util.List<String> cidrBlocks;
-
-    /**
-     * The list of IPv4 CIDR blocks the VCN will use.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getCidrBlocks() {
-        return cidrBlocks;
     }
 
     /**
@@ -766,20 +697,53 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space.
-     * The CIDRs are provided by Oracle and the sizes are always /56.
+     * For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's private IP address space. The
+     * VCN size is always /56. Oracle provides the IPv6 prefix to use as the *same* CIDR for the
+     * {@code ipv6PublicCidrBlock}. When creating a subnet, specify the last 8 bits, 00 to FF. See
+     * [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). Example:
+     * {@code 2001:0db8:0123::/56}
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
-    private final java.util.List<String> ipv6CidrBlocks;
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+    private final String ipv6CidrBlock;
 
     /**
-     * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space.
-     * The CIDRs are provided by Oracle and the sizes are always /56.
+     * For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's private IP address space. The
+     * VCN size is always /56. Oracle provides the IPv6 prefix to use as the *same* CIDR for the
+     * {@code ipv6PublicCidrBlock}. When creating a subnet, specify the last 8 bits, 00 to FF. See
+     * [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). Example:
+     * {@code 2001:0db8:0123::/56}
      *
      * @return the value
      */
-    public java.util.List<String> getIpv6CidrBlocks() {
-        return ipv6CidrBlocks;
+    public String getIpv6CidrBlock() {
+        return ipv6CidrBlock;
+    }
+
+    /**
+     * For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's public IP address space. The
+     * VCN size is always /56. This prefix is always provided by Oracle. If you don't provide a
+     * custom prefix for the {@code ipv6CidrBlock} when creating the VCN, Oracle assigns that value
+     * and also uses it for {@code ipv6PublicCidrBlock}. Oracle uses addresses from this block for
+     * the {@code publicIpAddress} attribute of an {@link Ipv6} that has internet access allowed.
+     *
+     * <p>Example: {@code 2001:0db8:0123::/48}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
+    private final String ipv6PublicCidrBlock;
+
+    /**
+     * For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's public IP address space. The
+     * VCN size is always /56. This prefix is always provided by Oracle. If you don't provide a
+     * custom prefix for the {@code ipv6CidrBlock} when creating the VCN, Oracle assigns that value
+     * and also uses it for {@code ipv6PublicCidrBlock}. Oracle uses addresses from this block for
+     * the {@code publicIpAddress} attribute of an {@link Ipv6} that has internet access allowed.
+     *
+     * <p>Example: {@code 2001:0db8:0123::/48}
+     *
+     * @return the value
+     */
+    public String getIpv6PublicCidrBlock() {
+        return ipv6PublicCidrBlock;
     }
 
     /** The VCN's current state. */
@@ -788,7 +752,6 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
-        Updating("UPDATING"),
         ;
 
         private final String value;
@@ -894,10 +857,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Vcn(");
         sb.append("super=").append(super.toString());
-        sb.append("byoipv6CidrBlocks=").append(String.valueOf(this.byoipv6CidrBlocks));
-        sb.append(", ipv6PrivateCidrBlocks=").append(String.valueOf(this.ipv6PrivateCidrBlocks));
-        sb.append(", cidrBlock=").append(String.valueOf(this.cidrBlock));
-        sb.append(", cidrBlocks=").append(String.valueOf(this.cidrBlocks));
+        sb.append("cidrBlock=").append(String.valueOf(this.cidrBlock));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", defaultDhcpOptionsId=").append(String.valueOf(this.defaultDhcpOptionsId));
         sb.append(", defaultRouteTableId=").append(String.valueOf(this.defaultRouteTableId));
@@ -907,7 +867,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", dnsLabel=").append(String.valueOf(this.dnsLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
-        sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
+        sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
+        sb.append(", ipv6PublicCidrBlock=").append(String.valueOf(this.ipv6PublicCidrBlock));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnDomainName=").append(String.valueOf(this.vcnDomainName));
@@ -925,10 +886,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
 
         Vcn other = (Vcn) o;
-        return java.util.Objects.equals(this.byoipv6CidrBlocks, other.byoipv6CidrBlocks)
-                && java.util.Objects.equals(this.ipv6PrivateCidrBlocks, other.ipv6PrivateCidrBlocks)
-                && java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
-                && java.util.Objects.equals(this.cidrBlocks, other.cidrBlocks)
+        return java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.defaultDhcpOptionsId, other.defaultDhcpOptionsId)
                 && java.util.Objects.equals(this.defaultRouteTableId, other.defaultRouteTableId)
@@ -938,7 +896,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 && java.util.Objects.equals(this.dnsLabel, other.dnsLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
+                && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
+                && java.util.Objects.equals(this.ipv6PublicCidrBlock, other.ipv6PublicCidrBlock)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnDomainName, other.vcnDomainName)
@@ -949,16 +908,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result =
-                (result * PRIME)
-                        + (this.byoipv6CidrBlocks == null ? 43 : this.byoipv6CidrBlocks.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.ipv6PrivateCidrBlocks == null
-                                ? 43
-                                : this.ipv6PrivateCidrBlocks.hashCode());
         result = (result * PRIME) + (this.cidrBlock == null ? 43 : this.cidrBlock.hashCode());
-        result = (result * PRIME) + (this.cidrBlocks == null ? 43 : this.cidrBlocks.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
@@ -984,7 +934,12 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)
-                        + (this.ipv6CidrBlocks == null ? 43 : this.ipv6CidrBlocks.hashCode());
+                        + (this.ipv6CidrBlock == null ? 43 : this.ipv6CidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6PublicCidrBlock == null
+                                ? 43
+                                : this.ipv6PublicCidrBlock.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

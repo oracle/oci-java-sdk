@@ -108,7 +108,10 @@ public class ResourceAnalyticsInstanceAsyncClient
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("ResourceAnalyticsInstance", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "ResourceAnalyticsInstance",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20241031")
@@ -143,7 +146,7 @@ public class ResourceAnalyticsInstanceAsyncClient
                 .serviceDetails(
                         "ResourceAnalyticsInstance",
                         "ChangeResourceAnalyticsInstanceCompartment",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/ChangeResourceAnalyticsInstanceCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeResourceAnalyticsInstanceCompartmentRequest::builder)
                 .basePath("/20241031")
@@ -179,7 +182,10 @@ public class ResourceAnalyticsInstanceAsyncClient
 
         return clientCall(request, CreateResourceAnalyticsInstanceResponse::builder)
                 .logger(LOG, "createResourceAnalyticsInstance")
-                .serviceDetails("ResourceAnalyticsInstance", "CreateResourceAnalyticsInstance", "")
+                .serviceDetails(
+                        "ResourceAnalyticsInstance",
+                        "CreateResourceAnalyticsInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/CreateResourceAnalyticsInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateResourceAnalyticsInstanceRequest::builder)
                 .basePath("/20241031")
@@ -222,7 +228,10 @@ public class ResourceAnalyticsInstanceAsyncClient
 
         return clientCall(request, DeleteResourceAnalyticsInstanceResponse::builder)
                 .logger(LOG, "deleteResourceAnalyticsInstance")
-                .serviceDetails("ResourceAnalyticsInstance", "DeleteResourceAnalyticsInstance", "")
+                .serviceDetails(
+                        "ResourceAnalyticsInstance",
+                        "DeleteResourceAnalyticsInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/DeleteResourceAnalyticsInstance")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteResourceAnalyticsInstanceRequest::builder)
                 .basePath("/20241031")
@@ -255,7 +264,10 @@ public class ResourceAnalyticsInstanceAsyncClient
 
         return clientCall(request, GetResourceAnalyticsInstanceResponse::builder)
                 .logger(LOG, "getResourceAnalyticsInstance")
-                .serviceDetails("ResourceAnalyticsInstance", "GetResourceAnalyticsInstance", "")
+                .serviceDetails(
+                        "ResourceAnalyticsInstance",
+                        "GetResourceAnalyticsInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/GetResourceAnalyticsInstance")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetResourceAnalyticsInstanceRequest::builder)
                 .basePath("/20241031")
@@ -285,7 +297,10 @@ public class ResourceAnalyticsInstanceAsyncClient
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("ResourceAnalyticsInstance", "GetWorkRequest", "")
+                .serviceDetails(
+                        "ResourceAnalyticsInstance",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20241031")
@@ -315,7 +330,10 @@ public class ResourceAnalyticsInstanceAsyncClient
 
         return clientCall(request, ListResourceAnalyticsInstancesResponse::builder)
                 .logger(LOG, "listResourceAnalyticsInstances")
-                .serviceDetails("ResourceAnalyticsInstance", "ListResourceAnalyticsInstances", "")
+                .serviceDetails(
+                        "ResourceAnalyticsInstance",
+                        "ListResourceAnalyticsInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstanceCollection/ListResourceAnalyticsInstances")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListResourceAnalyticsInstancesRequest::builder)
                 .basePath("/20241031")
@@ -355,7 +373,10 @@ public class ResourceAnalyticsInstanceAsyncClient
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("ResourceAnalyticsInstance", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "ResourceAnalyticsInstance",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20241031")
@@ -389,7 +410,10 @@ public class ResourceAnalyticsInstanceAsyncClient
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("ResourceAnalyticsInstance", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "ResourceAnalyticsInstance",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20241031")
@@ -421,7 +445,10 @@ public class ResourceAnalyticsInstanceAsyncClient
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("ResourceAnalyticsInstance", "ListWorkRequests", "")
+                .serviceDetails(
+                        "ResourceAnalyticsInstance",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20241031")
@@ -462,7 +489,9 @@ public class ResourceAnalyticsInstanceAsyncClient
         return clientCall(request, ResourceAnalyticsInstanceDisableOacResponse::builder)
                 .logger(LOG, "resourceAnalyticsInstanceDisableOac")
                 .serviceDetails(
-                        "ResourceAnalyticsInstance", "ResourceAnalyticsInstanceDisableOac", "")
+                        "ResourceAnalyticsInstance",
+                        "ResourceAnalyticsInstanceDisableOac",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/ResourceAnalyticsInstanceDisableOac")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ResourceAnalyticsInstanceDisableOacRequest::builder)
                 .basePath("/20241031")
@@ -501,7 +530,9 @@ public class ResourceAnalyticsInstanceAsyncClient
         return clientCall(request, ResourceAnalyticsInstanceEnableOacResponse::builder)
                 .logger(LOG, "resourceAnalyticsInstanceEnableOac")
                 .serviceDetails(
-                        "ResourceAnalyticsInstance", "ResourceAnalyticsInstanceEnableOac", "")
+                        "ResourceAnalyticsInstance",
+                        "ResourceAnalyticsInstanceEnableOac",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/ResourceAnalyticsInstanceEnableOac")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ResourceAnalyticsInstanceEnableOacRequest::builder)
                 .basePath("/20241031")
@@ -540,7 +571,10 @@ public class ResourceAnalyticsInstanceAsyncClient
 
         return clientCall(request, UpdateResourceAnalyticsInstanceResponse::builder)
                 .logger(LOG, "updateResourceAnalyticsInstance")
-                .serviceDetails("ResourceAnalyticsInstance", "UpdateResourceAnalyticsInstance", "")
+                .serviceDetails(
+                        "ResourceAnalyticsInstance",
+                        "UpdateResourceAnalyticsInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/UpdateResourceAnalyticsInstance")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateResourceAnalyticsInstanceRequest::builder)
                 .basePath("/20241031")

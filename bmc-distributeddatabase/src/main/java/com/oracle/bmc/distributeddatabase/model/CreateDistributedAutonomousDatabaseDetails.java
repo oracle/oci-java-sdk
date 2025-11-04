@@ -44,6 +44,7 @@ public final class CreateDistributedAutonomousDatabaseDetails
         "dbDeploymentType",
         "shardDetails",
         "catalogDetails",
+        "dbBackupConfig",
         "freeformTags",
         "definedTags"
     })
@@ -68,6 +69,7 @@ public final class CreateDistributedAutonomousDatabaseDetails
             DbDeploymentType dbDeploymentType,
             java.util.List<CreateDistributedAutonomousDatabaseShardDetails> shardDetails,
             java.util.List<CreateDistributedAutonomousDatabaseCatalogDetails> catalogDetails,
+            DistributedAutonomousDbBackupConfig dbBackupConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -91,6 +93,7 @@ public final class CreateDistributedAutonomousDatabaseDetails
         this.dbDeploymentType = dbDeploymentType;
         this.shardDetails = shardDetails;
         this.catalogDetails = catalogDetails;
+        this.dbBackupConfig = dbBackupConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -207,12 +210,12 @@ public final class CreateDistributedAutonomousDatabaseDetails
             this.__explicitlySet__.add("shardingMethod");
             return this;
         }
-        /** Possible workload types. */
+        /** Possible workload types. Currently only OLTP workload type is supported. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
 
         /**
-         * Possible workload types.
+         * Possible workload types. Currently only OLTP workload type is supported.
          *
          * @param dbWorkload the value to set
          * @return this builder
@@ -253,15 +256,19 @@ public final class CreateDistributedAutonomousDatabaseDetails
             return this;
         }
         /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be greater
-         * than 2 times the size of the largest shardgroup in any shardspace.
+         * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the
+         * size of the largest shardgroup in any shardspace. Chunks is required to be provided for
+         * distributed autonomous databases being created with SYSTEM shardingMethod. For USER
+         * shardingMethod, chunks should not be set in create payload.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("chunks")
         private Integer chunks;
 
         /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be greater
-         * than 2 times the size of the largest shardgroup in any shardspace.
+         * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the
+         * size of the largest shardgroup in any shardspace. Chunks is required to be provided for
+         * distributed autonomous databases being created with SYSTEM shardingMethod. For USER
+         * shardingMethod, chunks should not be set in create payload.
          *
          * @param chunks the value to set
          * @return this builder
@@ -271,12 +278,20 @@ public final class CreateDistributedAutonomousDatabaseDetails
             this.__explicitlySet__.add("chunks");
             return this;
         }
-        /** The listener port number for the Globally distributed autonomous database. */
+        /**
+         * The listener port number for the Globally distributed autonomous database. The listener
+         * port number has to be unique for a customer tenancy across all distributed autonomous
+         * databases. Same port number should not be re-used for any other distributed autonomous
+         * database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
         private Integer listenerPort;
 
         /**
-         * The listener port number for the Globally distributed autonomous database.
+         * The listener port number for the Globally distributed autonomous database. The listener
+         * port number has to be unique for a customer tenancy across all distributed autonomous
+         * databases. Same port number should not be re-used for any other distributed autonomous
+         * database.
          *
          * @param listenerPort the value to set
          * @return this builder
@@ -286,12 +301,22 @@ public final class CreateDistributedAutonomousDatabaseDetails
             this.__explicitlySet__.add("listenerPort");
             return this;
         }
-        /** The TLS listener port number for Globally distributed autonomous database. */
+        /**
+         * The TLS listener port number for Globally distributed autonomous database. The TLS
+         * listener port number has to be unique for a customer tenancy across all distributed
+         * autonomous databases. Same port number should not be re-used for any other distributed
+         * autonomous database. The listenerPortTls is mandatory for dedicated infrastructure based
+         * distributed autonomous databases.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("listenerPortTls")
         private Integer listenerPortTls;
 
         /**
-         * The TLS listener port number for Globally distributed autonomous database.
+         * The TLS listener port number for Globally distributed autonomous database. The TLS
+         * listener port number has to be unique for a customer tenancy across all distributed
+         * autonomous databases. Same port number should not be re-used for any other distributed
+         * autonomous database. The listenerPortTls is mandatory for dedicated infrastructure based
+         * distributed autonomous databases.
          *
          * @param listenerPortTls the value to set
          * @return this builder
@@ -301,12 +326,18 @@ public final class CreateDistributedAutonomousDatabaseDetails
             this.__explicitlySet__.add("listenerPortTls");
             return this;
         }
-        /** Ons local port number. */
+        /**
+         * Ons local port number for Globally distributed autonomous database. The onsPortLocal has
+         * to be unique for a customer tenancy across all distributed autonomous databases. Same
+         * port number should not be re-used for any other distributed autonomous database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("onsPortLocal")
         private Integer onsPortLocal;
 
         /**
-         * Ons local port number.
+         * Ons local port number for Globally distributed autonomous database. The onsPortLocal has
+         * to be unique for a customer tenancy across all distributed autonomous databases. Same
+         * port number should not be re-used for any other distributed autonomous database.
          *
          * @param onsPortLocal the value to set
          * @return this builder
@@ -316,12 +347,18 @@ public final class CreateDistributedAutonomousDatabaseDetails
             this.__explicitlySet__.add("onsPortLocal");
             return this;
         }
-        /** Ons remote port number. */
+        /**
+         * Ons remote port number for Globally distributed autonomous database. The onsPortRemote
+         * has to be unique for a customer tenancy across all distributed autonomous databases. Same
+         * port number should not be re-used for any other distributed autonomous database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("onsPortRemote")
         private Integer onsPortRemote;
 
         /**
-         * Ons remote port number.
+         * Ons remote port number for Globally distributed autonomous database. The onsPortRemote
+         * has to be unique for a customer tenancy across all distributed autonomous databases. Same
+         * port number should not be re-used for any other distributed autonomous database.
          *
          * @param onsPortRemote the value to set
          * @return this builder
@@ -333,16 +370,20 @@ public final class CreateDistributedAutonomousDatabaseDetails
         }
         /**
          * The Replication method for Globally distributed autonomous database. Use RAFT for Raft
-         * replication, and DG for DataGuard. If replicationMethod is not provided, it defaults to
-         * DG.
+         * based replication. With RAFT replication, shards cannot have peers details set on them.
+         * In case shards need to have peers, please do not set RAFT replicationMethod. For all non
+         * RAFT replication cases (with or without peers), please set replicationMethod as DG or do
+         * not set any value for replicationMethod.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
         private ReplicationMethod replicationMethod;
 
         /**
          * The Replication method for Globally distributed autonomous database. Use RAFT for Raft
-         * replication, and DG for DataGuard. If replicationMethod is not provided, it defaults to
-         * DG.
+         * based replication. With RAFT replication, shards cannot have peers details set on them.
+         * In case shards need to have peers, please do not set RAFT replicationMethod. For all non
+         * RAFT replication cases (with or without peers), please set replicationMethod as DG or do
+         * not set any value for replicationMethod.
          *
          * @param replicationMethod the value to set
          * @return this builder
@@ -372,15 +413,17 @@ public final class CreateDistributedAutonomousDatabaseDetails
             return this;
         }
         /**
-         * For RAFT replication based Globally distributed autonomous database, the value should be
-         * atleast twice the number of shards.
+         * The replication unit count for RAFT based distributed autonomous database. For RAFT
+         * replication based Globally distributed autonomous database, the value should be at least
+         * twice the number of shards.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
         private Integer replicationUnit;
 
         /**
-         * For RAFT replication based Globally distributed autonomous database, the value should be
-         * atleast twice the number of shards.
+         * The replication unit count for RAFT based distributed autonomous database. For RAFT
+         * replication based Globally distributed autonomous database, the value should be at least
+         * twice the number of shards.
          *
          * @param replicationUnit the value to set
          * @return this builder
@@ -435,6 +478,15 @@ public final class CreateDistributedAutonomousDatabaseDetails
                 java.util.List<CreateDistributedAutonomousDatabaseCatalogDetails> catalogDetails) {
             this.catalogDetails = catalogDetails;
             this.__explicitlySet__.add("catalogDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+        private DistributedAutonomousDbBackupConfig dbBackupConfig;
+
+        public Builder dbBackupConfig(DistributedAutonomousDbBackupConfig dbBackupConfig) {
+            this.dbBackupConfig = dbBackupConfig;
+            this.__explicitlySet__.add("dbBackupConfig");
             return this;
         }
         /**
@@ -503,6 +555,7 @@ public final class CreateDistributedAutonomousDatabaseDetails
                             this.dbDeploymentType,
                             this.shardDetails,
                             this.catalogDetails,
+                            this.dbBackupConfig,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -572,6 +625,9 @@ public final class CreateDistributedAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("catalogDetails")) {
                 this.catalogDetails(model.getCatalogDetails());
+            }
+            if (model.wasPropertyExplicitlySet("dbBackupConfig")) {
+                this.dbBackupConfig(model.getDbBackupConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -723,7 +779,7 @@ public final class CreateDistributedAutonomousDatabaseDetails
         return shardingMethod;
     }
 
-    /** Possible workload types. */
+    /** Possible workload types. Currently only OLTP workload type is supported. */
     public enum DbWorkload implements com.oracle.bmc.http.internal.BmcEnum {
         Oltp("OLTP"),
         Dw("DW"),
@@ -756,12 +812,12 @@ public final class CreateDistributedAutonomousDatabaseDetails
             throw new IllegalArgumentException("Invalid DbWorkload: " + key);
         }
     };
-    /** Possible workload types. */
+    /** Possible workload types. Currently only OLTP workload type is supported. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     private final DbWorkload dbWorkload;
 
     /**
-     * Possible workload types.
+     * Possible workload types. Currently only OLTP workload type is supported.
      *
      * @return the value
      */
@@ -796,15 +852,19 @@ public final class CreateDistributedAutonomousDatabaseDetails
     }
 
     /**
-     * The default number of unique chunks in a shardspace. The value of chunks must be greater than
-     * 2 times the size of the largest shardgroup in any shardspace.
+     * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size
+     * of the largest shardgroup in any shardspace. Chunks is required to be provided for
+     * distributed autonomous databases being created with SYSTEM shardingMethod. For USER
+     * shardingMethod, chunks should not be set in create payload.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("chunks")
     private final Integer chunks;
 
     /**
-     * The default number of unique chunks in a shardspace. The value of chunks must be greater than
-     * 2 times the size of the largest shardgroup in any shardspace.
+     * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size
+     * of the largest shardgroup in any shardspace. Chunks is required to be provided for
+     * distributed autonomous databases being created with SYSTEM shardingMethod. For USER
+     * shardingMethod, chunks should not be set in create payload.
      *
      * @return the value
      */
@@ -812,12 +872,18 @@ public final class CreateDistributedAutonomousDatabaseDetails
         return chunks;
     }
 
-    /** The listener port number for the Globally distributed autonomous database. */
+    /**
+     * The listener port number for the Globally distributed autonomous database. The listener port
+     * number has to be unique for a customer tenancy across all distributed autonomous databases.
+     * Same port number should not be re-used for any other distributed autonomous database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
     private final Integer listenerPort;
 
     /**
-     * The listener port number for the Globally distributed autonomous database.
+     * The listener port number for the Globally distributed autonomous database. The listener port
+     * number has to be unique for a customer tenancy across all distributed autonomous databases.
+     * Same port number should not be re-used for any other distributed autonomous database.
      *
      * @return the value
      */
@@ -825,12 +891,22 @@ public final class CreateDistributedAutonomousDatabaseDetails
         return listenerPort;
     }
 
-    /** The TLS listener port number for Globally distributed autonomous database. */
+    /**
+     * The TLS listener port number for Globally distributed autonomous database. The TLS listener
+     * port number has to be unique for a customer tenancy across all distributed autonomous
+     * databases. Same port number should not be re-used for any other distributed autonomous
+     * database. The listenerPortTls is mandatory for dedicated infrastructure based distributed
+     * autonomous databases.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPortTls")
     private final Integer listenerPortTls;
 
     /**
-     * The TLS listener port number for Globally distributed autonomous database.
+     * The TLS listener port number for Globally distributed autonomous database. The TLS listener
+     * port number has to be unique for a customer tenancy across all distributed autonomous
+     * databases. Same port number should not be re-used for any other distributed autonomous
+     * database. The listenerPortTls is mandatory for dedicated infrastructure based distributed
+     * autonomous databases.
      *
      * @return the value
      */
@@ -838,12 +914,18 @@ public final class CreateDistributedAutonomousDatabaseDetails
         return listenerPortTls;
     }
 
-    /** Ons local port number. */
+    /**
+     * Ons local port number for Globally distributed autonomous database. The onsPortLocal has to
+     * be unique for a customer tenancy across all distributed autonomous databases. Same port
+     * number should not be re-used for any other distributed autonomous database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("onsPortLocal")
     private final Integer onsPortLocal;
 
     /**
-     * Ons local port number.
+     * Ons local port number for Globally distributed autonomous database. The onsPortLocal has to
+     * be unique for a customer tenancy across all distributed autonomous databases. Same port
+     * number should not be re-used for any other distributed autonomous database.
      *
      * @return the value
      */
@@ -851,12 +933,18 @@ public final class CreateDistributedAutonomousDatabaseDetails
         return onsPortLocal;
     }
 
-    /** Ons remote port number. */
+    /**
+     * Ons remote port number for Globally distributed autonomous database. The onsPortRemote has to
+     * be unique for a customer tenancy across all distributed autonomous databases. Same port
+     * number should not be re-used for any other distributed autonomous database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("onsPortRemote")
     private final Integer onsPortRemote;
 
     /**
-     * Ons remote port number.
+     * Ons remote port number for Globally distributed autonomous database. The onsPortRemote has to
+     * be unique for a customer tenancy across all distributed autonomous databases. Same port
+     * number should not be re-used for any other distributed autonomous database.
      *
      * @return the value
      */
@@ -865,8 +953,11 @@ public final class CreateDistributedAutonomousDatabaseDetails
     }
 
     /**
-     * The Replication method for Globally distributed autonomous database. Use RAFT for Raft
-     * replication, and DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * The Replication method for Globally distributed autonomous database. Use RAFT for Raft based
+     * replication. With RAFT replication, shards cannot have peers details set on them. In case
+     * shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT
+     * replication cases (with or without peers), please set replicationMethod as DG or do not set
+     * any value for replicationMethod.
      */
     public enum ReplicationMethod implements com.oracle.bmc.http.internal.BmcEnum {
         Raft("RAFT"),
@@ -901,15 +992,21 @@ public final class CreateDistributedAutonomousDatabaseDetails
         }
     };
     /**
-     * The Replication method for Globally distributed autonomous database. Use RAFT for Raft
-     * replication, and DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * The Replication method for Globally distributed autonomous database. Use RAFT for Raft based
+     * replication. With RAFT replication, shards cannot have peers details set on them. In case
+     * shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT
+     * replication cases (with or without peers), please set replicationMethod as DG or do not set
+     * any value for replicationMethod.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
     private final ReplicationMethod replicationMethod;
 
     /**
-     * The Replication method for Globally distributed autonomous database. Use RAFT for Raft
-     * replication, and DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * The Replication method for Globally distributed autonomous database. Use RAFT for Raft based
+     * replication. With RAFT replication, shards cannot have peers details set on them. In case
+     * shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT
+     * replication cases (with or without peers), please set replicationMethod as DG or do not set
+     * any value for replicationMethod.
      *
      * @return the value
      */
@@ -935,15 +1032,17 @@ public final class CreateDistributedAutonomousDatabaseDetails
     }
 
     /**
-     * For RAFT replication based Globally distributed autonomous database, the value should be
-     * atleast twice the number of shards.
+     * The replication unit count for RAFT based distributed autonomous database. For RAFT
+     * replication based Globally distributed autonomous database, the value should be at least
+     * twice the number of shards.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
     private final Integer replicationUnit;
 
     /**
-     * For RAFT replication based Globally distributed autonomous database, the value should be
-     * atleast twice the number of shards.
+     * The replication unit count for RAFT based distributed autonomous database. For RAFT
+     * replication based Globally distributed autonomous database, the value should be at least
+     * twice the number of shards.
      *
      * @return the value
      */
@@ -1022,6 +1121,13 @@ public final class CreateDistributedAutonomousDatabaseDetails
         return catalogDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+    private final DistributedAutonomousDbBackupConfig dbBackupConfig;
+
+    public DistributedAutonomousDbBackupConfig getDbBackupConfig() {
+        return dbBackupConfig;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -1091,6 +1197,7 @@ public final class CreateDistributedAutonomousDatabaseDetails
         sb.append(", dbDeploymentType=").append(String.valueOf(this.dbDeploymentType));
         sb.append(", shardDetails=").append(String.valueOf(this.shardDetails));
         sb.append(", catalogDetails=").append(String.valueOf(this.catalogDetails));
+        sb.append(", dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1128,6 +1235,7 @@ public final class CreateDistributedAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.dbDeploymentType, other.dbDeploymentType)
                 && java.util.Objects.equals(this.shardDetails, other.shardDetails)
                 && java.util.Objects.equals(this.catalogDetails, other.catalogDetails)
+                && java.util.Objects.equals(this.dbBackupConfig, other.dbBackupConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1183,6 +1291,9 @@ public final class CreateDistributedAutonomousDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.catalogDetails == null ? 43 : this.catalogDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbBackupConfig == null ? 43 : this.dbBackupConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
