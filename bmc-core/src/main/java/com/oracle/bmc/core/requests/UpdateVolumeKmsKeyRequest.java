@@ -46,6 +46,17 @@ public class UpdateVolumeKmsKeyRequest
     public String getIfMatch() {
         return ifMatch;
     }
+    /**
+     * The endpoint that will be used to get the resource principal token of the parent resource.
+     */
+    private String opcParentResourcePrincipalTokenUrl;
+
+    /**
+     * The endpoint that will be used to get the resource principal token of the parent resource.
+     */
+    public String getOpcParentResourcePrincipalTokenUrl() {
+        return opcParentResourcePrincipalTokenUrl;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -118,6 +129,25 @@ public class UpdateVolumeKmsKeyRequest
         }
 
         /**
+         * The endpoint that will be used to get the resource principal token of the parent
+         * resource.
+         */
+        private String opcParentResourcePrincipalTokenUrl = null;
+
+        /**
+         * The endpoint that will be used to get the resource principal token of the parent
+         * resource.
+         *
+         * @param opcParentResourcePrincipalTokenUrl the value to set
+         * @return this builder instance
+         */
+        public Builder opcParentResourcePrincipalTokenUrl(
+                String opcParentResourcePrincipalTokenUrl) {
+            this.opcParentResourcePrincipalTokenUrl = opcParentResourcePrincipalTokenUrl;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -150,6 +180,7 @@ public class UpdateVolumeKmsKeyRequest
             volumeId(o.getVolumeId());
             updateVolumeKmsKeyDetails(o.getUpdateVolumeKmsKeyDetails());
             ifMatch(o.getIfMatch());
+            opcParentResourcePrincipalTokenUrl(o.getOpcParentResourcePrincipalTokenUrl());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -199,8 +230,10 @@ public class UpdateVolumeKmsKeyRequest
             request.volumeId = volumeId;
             request.updateVolumeKmsKeyDetails = updateVolumeKmsKeyDetails;
             request.ifMatch = ifMatch;
+            request.opcParentResourcePrincipalTokenUrl = opcParentResourcePrincipalTokenUrl;
             return request;
-            // new UpdateVolumeKmsKeyRequest(volumeId, updateVolumeKmsKeyDetails, ifMatch);
+            // new UpdateVolumeKmsKeyRequest(volumeId, updateVolumeKmsKeyDetails, ifMatch,
+            // opcParentResourcePrincipalTokenUrl);
         }
     }
 
@@ -213,7 +246,8 @@ public class UpdateVolumeKmsKeyRequest
         return new Builder()
                 .volumeId(volumeId)
                 .updateVolumeKmsKeyDetails(updateVolumeKmsKeyDetails)
-                .ifMatch(ifMatch);
+                .ifMatch(ifMatch)
+                .opcParentResourcePrincipalTokenUrl(opcParentResourcePrincipalTokenUrl);
     }
 
     /**
@@ -234,6 +268,8 @@ public class UpdateVolumeKmsKeyRequest
         sb.append(",updateVolumeKmsKeyDetails=")
                 .append(String.valueOf(this.updateVolumeKmsKeyDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcParentResourcePrincipalTokenUrl=")
+                .append(String.valueOf(this.opcParentResourcePrincipalTokenUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -252,7 +288,10 @@ public class UpdateVolumeKmsKeyRequest
                 && java.util.Objects.equals(this.volumeId, other.volumeId)
                 && java.util.Objects.equals(
                         this.updateVolumeKmsKeyDetails, other.updateVolumeKmsKeyDetails)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(
+                        this.opcParentResourcePrincipalTokenUrl,
+                        other.opcParentResourcePrincipalTokenUrl);
     }
 
     @Override
@@ -266,6 +305,11 @@ public class UpdateVolumeKmsKeyRequest
                                 ? 43
                                 : this.updateVolumeKmsKeyDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcParentResourcePrincipalTokenUrl == null
+                                ? 43
+                                : this.opcParentResourcePrincipalTokenUrl.hashCode());
         return result;
     }
 }

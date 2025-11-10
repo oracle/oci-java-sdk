@@ -137,6 +137,25 @@ public interface GenerativeAi extends AutoCloseable {
                     ChangeGenerativeAiPrivateEndpointCompartmentRequest request);
 
     /**
+     * Moves an imported model into a different compartment. For information about moving resources
+     * between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ChangeImportedModelCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeImportedModelCompartment API.
+     */
+    ChangeImportedModelCompartmentResponse changeImportedModelCompartment(
+            ChangeImportedModelCompartmentRequest request);
+
+    /**
      * Moves a custom model into a different compartment. For information about moving resources
      * between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -205,6 +224,25 @@ public interface GenerativeAi extends AutoCloseable {
      */
     CreateGenerativeAiPrivateEndpointResponse createGenerativeAiPrivateEndpoint(
             CreateGenerativeAiPrivateEndpointRequest request);
+
+    /**
+     * Import a model from ModelDataSource.
+     *
+     * <p>The header contains an opc-work-request-id, which is the id for the WorkRequest that
+     * tracks the importedModel creation progress.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateImportedModelExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateImportedModel
+     *     API.
+     */
+    CreateImportedModelResponse createImportedModel(CreateImportedModelRequest request);
 
     /**
      * Creates a custom model by fine-tuning a base model with your own dataset. You can create a
@@ -280,6 +318,23 @@ public interface GenerativeAi extends AutoCloseable {
             DeleteGenerativeAiPrivateEndpointRequest request);
 
     /**
+     * Deletes an imported model. An imported model shouldn't be deleted if there's one or more
+     * active endpoints associated with that imported model.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteImportedModelExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteImportedModel
+     *     API.
+     */
+    DeleteImportedModelResponse deleteImportedModel(DeleteImportedModelRequest request);
+
+    /**
      * Deletes a custom model. A model shouldn't be deleted if there's one or more active endpoints
      * associated with that model.
      *
@@ -342,6 +397,22 @@ public interface GenerativeAi extends AutoCloseable {
      */
     GetGenerativeAiPrivateEndpointResponse getGenerativeAiPrivateEndpoint(
             GetGenerativeAiPrivateEndpointRequest request);
+
+    /**
+     * Gets information about an imported model.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetImportedModelExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetImportedModel
+     *     API.
+     */
+    GetImportedModelResponse getImportedModel(GetImportedModelRequest request);
 
     /**
      * Gets information about a custom model.
@@ -420,6 +491,22 @@ public interface GenerativeAi extends AutoCloseable {
      */
     ListGenerativeAiPrivateEndpointsResponse listGenerativeAiPrivateEndpoints(
             ListGenerativeAiPrivateEndpointsRequest request);
+
+    /**
+     * Lists imported models in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListImportedModelsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImportedModels
+     *     API.
+     */
+    ListImportedModelsResponse listImportedModels(ListImportedModelsRequest request);
 
     /**
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned
@@ -533,6 +620,23 @@ public interface GenerativeAi extends AutoCloseable {
      */
     UpdateGenerativeAiPrivateEndpointResponse updateGenerativeAiPrivateEndpoint(
             UpdateGenerativeAiPrivateEndpointRequest request);
+
+    /**
+     * Updates the properties of an imported model such as name, description, freeform tags, and
+     * defined tags.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateImportedModelExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateImportedModel
+     *     API.
+     */
+    UpdateImportedModelResponse updateImportedModel(UpdateImportedModelRequest request);
 
     /**
      * Updates the properties of a custom model such as name, description, version, freeform tags,

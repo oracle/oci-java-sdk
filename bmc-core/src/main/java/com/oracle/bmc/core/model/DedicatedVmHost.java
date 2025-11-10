@@ -33,6 +33,8 @@ public final class DedicatedVmHost
         "freeformTags",
         "placementConstraintDetails",
         "id",
+        "capacityConfig",
+        "isMemoryEncryptionEnabled",
         "lifecycleState",
         "timeCreated",
         "totalOcpus",
@@ -52,6 +54,8 @@ public final class DedicatedVmHost
             java.util.Map<String, String> freeformTags,
             PlacementConstraintDetails placementConstraintDetails,
             String id,
+            String capacityConfig,
+            Boolean isMemoryEncryptionEnabled,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             Float totalOcpus,
@@ -70,6 +74,8 @@ public final class DedicatedVmHost
         this.freeformTags = freeformTags;
         this.placementConstraintDetails = placementConstraintDetails;
         this.id = id;
+        this.capacityConfig = capacityConfig;
+        this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.totalOcpus = totalOcpus;
@@ -277,6 +283,48 @@ public final class DedicatedVmHost
             this.__explicitlySet__.add("id");
             return this;
         }
+        /**
+         * The capacity configuration selected to be configured for the Dedicated Virtual Machine
+         * host. Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest)
+         * listDedicatedVmHostShapes} API to see details of this capacity configuration.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityConfig")
+        private String capacityConfig;
+
+        /**
+         * The capacity configuration selected to be configured for the Dedicated Virtual Machine
+         * host. Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest)
+         * listDedicatedVmHostShapes} API to see details of this capacity configuration.
+         *
+         * @param capacityConfig the value to set
+         * @return this builder
+         */
+        public Builder capacityConfig(String capacityConfig) {
+            this.capacityConfig = capacityConfig;
+            this.__explicitlySet__.add("capacityConfig");
+            return this;
+        }
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only
+         * Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code
+         * false}, Confidential VMs cannot be launched.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+        private Boolean isMemoryEncryptionEnabled;
+
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only
+         * Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code
+         * false}, Confidential VMs cannot be launched.
+         *
+         * @param isMemoryEncryptionEnabled the value to set
+         * @return this builder
+         */
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            this.__explicitlySet__.add("isMemoryEncryptionEnabled");
+            return this;
+        }
         /** The current state of the dedicated VM host. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -375,12 +423,12 @@ public final class DedicatedVmHost
             this.__explicitlySet__.add("remainingMemoryInGBs");
             return this;
         }
-        /** A list of total and remaining CPU & memory per capacity bucket. */
+        /** A list of total and remaining CPU and memory per capacity bucket. */
         @com.fasterxml.jackson.annotation.JsonProperty("capacityBins")
         private java.util.List<CapacityBin> capacityBins;
 
         /**
-         * A list of total and remaining CPU & memory per capacity bucket.
+         * A list of total and remaining CPU and memory per capacity bucket.
          *
          * @param capacityBins the value to set
          * @return this builder
@@ -421,6 +469,8 @@ public final class DedicatedVmHost
                             this.freeformTags,
                             this.placementConstraintDetails,
                             this.id,
+                            this.capacityConfig,
+                            this.isMemoryEncryptionEnabled,
                             this.lifecycleState,
                             this.timeCreated,
                             this.totalOcpus,
@@ -463,6 +513,12 @@ public final class DedicatedVmHost
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("capacityConfig")) {
+                this.capacityConfig(model.getCapacityConfig());
+            }
+            if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
+                this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -676,6 +732,44 @@ public final class DedicatedVmHost
         return id;
     }
 
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+     * Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest)
+     * listDedicatedVmHostShapes} API to see details of this capacity configuration.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityConfig")
+    private final String capacityConfig;
+
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+     * Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest)
+     * listDedicatedVmHostShapes} API to see details of this capacity configuration.
+     *
+     * @return the value
+     */
+    public String getCapacityConfig() {
+        return capacityConfig;
+    }
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only
+     * Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code false},
+     * Confidential VMs cannot be launched.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+    private final Boolean isMemoryEncryptionEnabled;
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only
+     * Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code false},
+     * Confidential VMs cannot be launched.
+     *
+     * @return the value
+     */
+    public Boolean getIsMemoryEncryptionEnabled() {
+        return isMemoryEncryptionEnabled;
+    }
+
     /** The current state of the dedicated VM host. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
@@ -812,12 +906,12 @@ public final class DedicatedVmHost
         return remainingMemoryInGBs;
     }
 
-    /** A list of total and remaining CPU & memory per capacity bucket. */
+    /** A list of total and remaining CPU and memory per capacity bucket. */
     @com.fasterxml.jackson.annotation.JsonProperty("capacityBins")
     private final java.util.List<CapacityBin> capacityBins;
 
     /**
-     * A list of total and remaining CPU & memory per capacity bucket.
+     * A list of total and remaining CPU and memory per capacity bucket.
      *
      * @return the value
      */
@@ -863,6 +957,9 @@ public final class DedicatedVmHost
         sb.append(", placementConstraintDetails=")
                 .append(String.valueOf(this.placementConstraintDetails));
         sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", capacityConfig=").append(String.valueOf(this.capacityConfig));
+        sb.append(", isMemoryEncryptionEnabled=")
+                .append(String.valueOf(this.isMemoryEncryptionEnabled));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", totalOcpus=").append(String.valueOf(this.totalOcpus));
@@ -895,6 +992,9 @@ public final class DedicatedVmHost
                 && java.util.Objects.equals(
                         this.placementConstraintDetails, other.placementConstraintDetails)
                 && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.capacityConfig, other.capacityConfig)
+                && java.util.Objects.equals(
+                        this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.totalOcpus, other.totalOcpus)
@@ -934,6 +1034,14 @@ public final class DedicatedVmHost
                                 ? 43
                                 : this.placementConstraintDetails.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityConfig == null ? 43 : this.capacityConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMemoryEncryptionEnabled == null
+                                ? 43
+                                : this.isMemoryEncryptionEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

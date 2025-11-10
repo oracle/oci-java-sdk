@@ -109,6 +109,21 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
             this.__explicitlySet__.add("isExecutableContent");
             return this;
         }
+        /** The list of system variables. */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVariables")
+        private java.util.List<String> systemVariables;
+
+        /**
+         * The list of system variables.
+         *
+         * @param systemVariables the value to set
+         * @return this builder
+         */
+        public Builder systemVariables(java.util.List<String> systemVariables) {
+            this.systemVariables = systemVariables;
+            this.__explicitlySet__.add("systemVariables");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -121,7 +136,8 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
                             this.command,
                             this.credentials,
                             this.isLocked,
-                            this.isExecutableContent);
+                            this.isExecutableContent,
+                            this.systemVariables);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -148,6 +164,9 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
             if (model.wasPropertyExplicitlySet("isExecutableContent")) {
                 this.isExecutableContent(model.getIsExecutableContent());
             }
+            if (model.wasPropertyExplicitlySet("systemVariables")) {
+                this.systemVariables(model.getSystemVariables());
+            }
             return this;
         }
     }
@@ -168,7 +187,8 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
             String command,
             java.util.List<ConfigAssociationDetails> credentials,
             Boolean isLocked,
-            Boolean isExecutableContent) {
+            Boolean isExecutableContent,
+            java.util.List<String> systemVariables) {
         super();
         this.variables = variables;
         this.content = content;
@@ -176,6 +196,7 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         this.credentials = credentials;
         this.isLocked = isLocked;
         this.isExecutableContent = isExecutableContent;
+        this.systemVariables = systemVariables;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
@@ -248,6 +269,19 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         return isExecutableContent;
     }
 
+    /** The list of system variables. */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVariables")
+    private final java.util.List<String> systemVariables;
+
+    /**
+     * The list of system variables.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getSystemVariables() {
+        return systemVariables;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -269,6 +303,7 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         sb.append(", credentials=").append(String.valueOf(this.credentials));
         sb.append(", isLocked=").append(String.valueOf(this.isLocked));
         sb.append(", isExecutableContent=").append(String.valueOf(this.isExecutableContent));
+        sb.append(", systemVariables=").append(String.valueOf(this.systemVariables));
         sb.append(")");
         return sb.toString();
     }
@@ -289,6 +324,7 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
                 && java.util.Objects.equals(this.credentials, other.credentials)
                 && java.util.Objects.equals(this.isLocked, other.isLocked)
                 && java.util.Objects.equals(this.isExecutableContent, other.isExecutableContent)
+                && java.util.Objects.equals(this.systemVariables, other.systemVariables)
                 && super.equals(other);
     }
 
@@ -306,6 +342,9 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
                         + (this.isExecutableContent == null
                                 ? 43
                                 : this.isExecutableContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVariables == null ? 43 : this.systemVariables.hashCode());
         return result;
     }
 }

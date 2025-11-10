@@ -48,6 +48,7 @@ public final class CatalogItem extends com.oracle.bmc.http.client.internal.Expli
         "timeReleased",
         "timeBackfillLastChecked",
         "timeLastChecked",
+        "isItemLocked",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -73,6 +74,7 @@ public final class CatalogItem extends com.oracle.bmc.http.client.internal.Expli
             java.util.Date timeReleased,
             java.util.Date timeBackfillLastChecked,
             java.util.Date timeLastChecked,
+            Boolean isItemLocked,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -97,6 +99,7 @@ public final class CatalogItem extends com.oracle.bmc.http.client.internal.Expli
         this.timeReleased = timeReleased;
         this.timeBackfillLastChecked = timeBackfillLastChecked;
         this.timeLastChecked = timeLastChecked;
+        this.isItemLocked = isItemLocked;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -434,6 +437,21 @@ public final class CatalogItem extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("timeLastChecked");
             return this;
         }
+        /** Indicates if the CatalogItem is immutable or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isItemLocked")
+        private Boolean isItemLocked;
+
+        /**
+         * Indicates if the CatalogItem is immutable or not.
+         *
+         * @param isItemLocked the value to set
+         * @return this builder
+         */
+        public Builder isItemLocked(Boolean isItemLocked) {
+            this.isItemLocked = isItemLocked;
+            this.__explicitlySet__.add("isItemLocked");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -519,6 +537,7 @@ public final class CatalogItem extends com.oracle.bmc.http.client.internal.Expli
                             this.timeReleased,
                             this.timeBackfillLastChecked,
                             this.timeLastChecked,
+                            this.isItemLocked,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -589,6 +608,9 @@ public final class CatalogItem extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("timeLastChecked")) {
                 this.timeLastChecked(model.getTimeLastChecked());
+            }
+            if (model.wasPropertyExplicitlySet("isItemLocked")) {
+                this.isItemLocked(model.getIsItemLocked());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1048,6 +1070,19 @@ public final class CatalogItem extends com.oracle.bmc.http.client.internal.Expli
         return timeLastChecked;
     }
 
+    /** Indicates if the CatalogItem is immutable or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isItemLocked")
+    private final Boolean isItemLocked;
+
+    /**
+     * Indicates if the CatalogItem is immutable or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsItemLocked() {
+        return isItemLocked;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -1135,6 +1170,7 @@ public final class CatalogItem extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", timeBackfillLastChecked=")
                 .append(String.valueOf(this.timeBackfillLastChecked));
         sb.append(", timeLastChecked=").append(String.valueOf(this.timeLastChecked));
+        sb.append(", isItemLocked=").append(String.valueOf(this.isItemLocked));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1173,6 +1209,7 @@ public final class CatalogItem extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(
                         this.timeBackfillLastChecked, other.timeBackfillLastChecked)
                 && java.util.Objects.equals(this.timeLastChecked, other.timeLastChecked)
+                && java.util.Objects.equals(this.isItemLocked, other.isItemLocked)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1237,6 +1274,7 @@ public final class CatalogItem extends com.oracle.bmc.http.client.internal.Expli
         result =
                 (result * PRIME)
                         + (this.timeLastChecked == null ? 43 : this.timeLastChecked.hashCode());
+        result = (result * PRIME) + (this.isItemLocked == null ? 43 : this.isItemLocked.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

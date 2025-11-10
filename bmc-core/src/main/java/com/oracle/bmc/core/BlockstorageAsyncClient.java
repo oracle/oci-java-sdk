@@ -2041,6 +2041,9 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam("kmsKey")
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader(
+                        "opc-parent-resource-principal-token-url",
+                        request.getOpcParentResourcePrincipalTokenUrl())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.VolumeKmsKey.class,

@@ -23,12 +23,19 @@ package com.oracle.bmc.core.model;
 public final class DedicatedVmHostInstanceShapeSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"availabilityDomain", "instanceShapeName"})
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "instanceShapeName",
+        "supportedCapabilities"
+    })
     public DedicatedVmHostInstanceShapeSummary(
-            String availabilityDomain, String instanceShapeName) {
+            String availabilityDomain,
+            String instanceShapeName,
+            SupportedCapabilities supportedCapabilities) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.instanceShapeName = instanceShapeName;
+        this.supportedCapabilities = supportedCapabilities;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -68,13 +75,24 @@ public final class DedicatedVmHostInstanceShapeSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedCapabilities")
+        private SupportedCapabilities supportedCapabilities;
+
+        public Builder supportedCapabilities(SupportedCapabilities supportedCapabilities) {
+            this.supportedCapabilities = supportedCapabilities;
+            this.__explicitlySet__.add("supportedCapabilities");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DedicatedVmHostInstanceShapeSummary build() {
             DedicatedVmHostInstanceShapeSummary model =
                     new DedicatedVmHostInstanceShapeSummary(
-                            this.availabilityDomain, this.instanceShapeName);
+                            this.availabilityDomain,
+                            this.instanceShapeName,
+                            this.supportedCapabilities);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -88,6 +106,9 @@ public final class DedicatedVmHostInstanceShapeSummary
             }
             if (model.wasPropertyExplicitlySet("instanceShapeName")) {
                 this.instanceShapeName(model.getInstanceShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("supportedCapabilities")) {
+                this.supportedCapabilities(model.getSupportedCapabilities());
             }
             return this;
         }
@@ -130,6 +151,13 @@ public final class DedicatedVmHostInstanceShapeSummary
         return instanceShapeName;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedCapabilities")
+    private final SupportedCapabilities supportedCapabilities;
+
+    public SupportedCapabilities getSupportedCapabilities() {
+        return supportedCapabilities;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -147,6 +175,7 @@ public final class DedicatedVmHostInstanceShapeSummary
         sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", instanceShapeName=").append(String.valueOf(this.instanceShapeName));
+        sb.append(", supportedCapabilities=").append(String.valueOf(this.supportedCapabilities));
         sb.append(")");
         return sb.toString();
     }
@@ -163,6 +192,7 @@ public final class DedicatedVmHostInstanceShapeSummary
         DedicatedVmHostInstanceShapeSummary other = (DedicatedVmHostInstanceShapeSummary) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.instanceShapeName, other.instanceShapeName)
+                && java.util.Objects.equals(this.supportedCapabilities, other.supportedCapabilities)
                 && super.equals(other);
     }
 
@@ -178,6 +208,11 @@ public final class DedicatedVmHostInstanceShapeSummary
         result =
                 (result * PRIME)
                         + (this.instanceShapeName == null ? 43 : this.instanceShapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedCapabilities == null
+                                ? 43
+                                : this.supportedCapabilities.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -95,6 +95,13 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** A filter to return fleets whose lifecycleState matches the given lifecycleState. */
+    private com.oracle.bmc.fleetappsmanagement.model.FleetTarget.LifecycleState lifecycleState;
+
+    /** A filter to return fleets whose lifecycleState matches the given lifecycleState. */
+    public com.oracle.bmc.fleetappsmanagement.model.FleetTarget.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -250,6 +257,23 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** A filter to return fleets whose lifecycleState matches the given lifecycleState. */
+        private com.oracle.bmc.fleetappsmanagement.model.FleetTarget.LifecycleState lifecycleState =
+                null;
+
+        /**
+         * A filter to return fleets whose lifecycleState matches the given lifecycleState.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.fleetappsmanagement.model.FleetTarget.LifecycleState
+                        lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -290,6 +314,7 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            lifecycleState(o.getLifecycleState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -334,9 +359,10 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.lifecycleState = lifecycleState;
             return request;
             // new ListFleetTargetsRequest(fleetId, displayName, product, resourceId,
-            // resourceDisplayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // resourceDisplayName, limit, page, sortOrder, sortBy, opcRequestId, lifecycleState);
         }
     }
 
@@ -356,7 +382,8 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .lifecycleState(lifecycleState);
     }
 
     /**
@@ -383,6 +410,7 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
     }
@@ -407,7 +435,8 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
     }
 
     @Override
@@ -428,6 +457,9 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         return result;
     }
 }

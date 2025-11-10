@@ -145,7 +145,15 @@ public final class CreateDedicatedAiClusterDetails
          * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2
          * - SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
          * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
-         * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1
+         * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 - A10_X2 - A10_X4 -
+         * A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 - A100_80G_X2 -
+         * A100_80G_X4 - A100_80G_X8 - H100_X1 - H100_X2 - H100_X4 - H100_X8 - H200_X1 - H200_X2 -
+         * H200_X4 - H200_X8
+         *
+         * <p>The following shapes can only be used to deploy imported models: - A10_X1, A10_X2,
+         * A10_X4 - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8 - A100_80G_X1, A100_80G_X2,
+         * A100_80G_X4, A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H200_X1, H200_X2,
+         * H200_X4, H200_X8
          */
         @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
         private DedicatedAiCluster.UnitShape unitShape;
@@ -157,7 +165,15 @@ public final class CreateDedicatedAiClusterDetails
          * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2
          * - SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
          * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
-         * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1
+         * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 - A10_X2 - A10_X4 -
+         * A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 - A100_80G_X2 -
+         * A100_80G_X4 - A100_80G_X8 - H100_X1 - H100_X2 - H100_X4 - H100_X8 - H200_X1 - H200_X2 -
+         * H200_X4 - H200_X8
+         *
+         * <p>The following shapes can only be used to deploy imported models: - A10_X1, A10_X2,
+         * A10_X4 - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8 - A100_80G_X1, A100_80G_X2,
+         * A100_80G_X4, A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H200_X1, H200_X2,
+         * H200_X4, H200_X8
          *
          * @param unitShape the value to set
          * @return this builder
@@ -358,7 +374,14 @@ public final class CreateDedicatedAiClusterDetails
      * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2 -
      * SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
      * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
-     * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1
+     * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 - A10_X2 - A10_X4 -
+     * A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 - A100_80G_X2 -
+     * A100_80G_X4 - A100_80G_X8 - H100_X1 - H100_X2 - H100_X4 - H100_X8 - H200_X1 - H200_X2 -
+     * H200_X4 - H200_X8
+     *
+     * <p>The following shapes can only be used to deploy imported models: - A10_X1, A10_X2, A10_X4
+     * - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8 - A100_80G_X1, A100_80G_X2, A100_80G_X4,
+     * A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H200_X1, H200_X2, H200_X4, H200_X8
      */
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
     private final DedicatedAiCluster.UnitShape unitShape;
@@ -370,7 +393,14 @@ public final class CreateDedicatedAiClusterDetails
      * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2 -
      * SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
      * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
-     * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1
+     * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 - A10_X2 - A10_X4 -
+     * A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 - A100_80G_X2 -
+     * A100_80G_X4 - A100_80G_X8 - H100_X1 - H100_X2 - H100_X4 - H100_X8 - H200_X1 - H200_X2 -
+     * H200_X4 - H200_X8
+     *
+     * <p>The following shapes can only be used to deploy imported models: - A10_X1, A10_X2, A10_X4
+     * - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8 - A100_80G_X1, A100_80G_X2, A100_80G_X4,
+     * A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H200_X1, H200_X2, H200_X4, H200_X8
      *
      * @return the value
      */

@@ -530,6 +530,37 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public java.util.concurrent.Future<GetComplianceResponse> getCompliance(
+            GetComplianceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetComplianceRequest, GetComplianceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, GetComplianceResponse::builder)
+                .logger(LOG, "getCompliance")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "GetCompliance",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Compliance/GetCompliance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComplianceRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("compliance")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.Compliance.class,
+                        GetComplianceResponse.Builder::compliance)
+                .handleResponseHeaderString("etag", GetComplianceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComplianceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetComplianceReportResponse> getComplianceReport(
             GetComplianceReportRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -930,6 +961,7 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -1064,6 +1096,7 @@ public class FleetAppsManagementAsyncClient extends com.oracle.bmc.http.internal
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("isConfirmedTargets", request.getIsConfirmedTargets())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

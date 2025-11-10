@@ -212,12 +212,16 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Products associated with the Fleet. */
+        /**
+         * Products associated with the Fleet. PlatformConfiguration Ids corresponding to the
+         * Products.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<String> products;
 
         /**
-         * Products associated with the Fleet.
+         * Products associated with the Fleet. PlatformConfiguration Ids corresponding to the
+         * Products.
          *
          * @param products the value to set
          * @return this builder
@@ -670,12 +674,14 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return timeUpdated;
     }
 
-    /** Products associated with the Fleet. */
+    /**
+     * Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<String> products;
 
     /**
-     * Products associated with the Fleet.
+     * Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
      *
      * @return the value
      */

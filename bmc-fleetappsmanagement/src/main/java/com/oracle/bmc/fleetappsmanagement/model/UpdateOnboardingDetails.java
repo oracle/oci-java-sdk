@@ -23,11 +23,22 @@ package com.oracle.bmc.fleetappsmanagement.model;
 public final class UpdateOnboardingDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"isFamsTagEnabled", "isCostTrackingTagEnabled"})
-    public UpdateOnboardingDetails(Boolean isFamsTagEnabled, Boolean isCostTrackingTagEnabled) {
+    @java.beans.ConstructorProperties({
+        "isFamsTagEnabled",
+        "isCostTrackingTagEnabled",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateOnboardingDetails(
+            Boolean isFamsTagEnabled,
+            Boolean isCostTrackingTagEnabled,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.isFamsTagEnabled = isFamsTagEnabled;
         this.isCostTrackingTagEnabled = isCostTrackingTagEnabled;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -62,6 +73,45 @@ public final class UpdateOnboardingDetails
             this.__explicitlySet__.add("isCostTrackingTagEnabled");
             return this;
         }
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -69,7 +119,10 @@ public final class UpdateOnboardingDetails
         public UpdateOnboardingDetails build() {
             UpdateOnboardingDetails model =
                     new UpdateOnboardingDetails(
-                            this.isFamsTagEnabled, this.isCostTrackingTagEnabled);
+                            this.isFamsTagEnabled,
+                            this.isCostTrackingTagEnabled,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -83,6 +136,12 @@ public final class UpdateOnboardingDetails
             }
             if (model.wasPropertyExplicitlySet("isCostTrackingTagEnabled")) {
                 this.isCostTrackingTagEnabled(model.getIsCostTrackingTagEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
             }
             return this;
         }
@@ -123,6 +182,40 @@ public final class UpdateOnboardingDetails
         return isCostTrackingTagEnabled;
     }
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -141,6 +234,8 @@ public final class UpdateOnboardingDetails
         sb.append("isFamsTagEnabled=").append(String.valueOf(this.isFamsTagEnabled));
         sb.append(", isCostTrackingTagEnabled=")
                 .append(String.valueOf(this.isCostTrackingTagEnabled));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -158,6 +253,8 @@ public final class UpdateOnboardingDetails
         return java.util.Objects.equals(this.isFamsTagEnabled, other.isFamsTagEnabled)
                 && java.util.Objects.equals(
                         this.isCostTrackingTagEnabled, other.isCostTrackingTagEnabled)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -173,6 +270,8 @@ public final class UpdateOnboardingDetails
                         + (this.isCostTrackingTagEnabled == null
                                 ? 43
                                 : this.isCostTrackingTagEnabled.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

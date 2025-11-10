@@ -41,6 +41,7 @@ public final class CatalogItemSummary
         "versionDescription",
         "shortDescription",
         "timeReleased",
+        "isItemLocked",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -63,6 +64,7 @@ public final class CatalogItemSummary
             String versionDescription,
             String shortDescription,
             java.util.Date timeReleased,
+            Boolean isItemLocked,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -84,6 +86,7 @@ public final class CatalogItemSummary
         this.versionDescription = versionDescription;
         this.shortDescription = shortDescription;
         this.timeReleased = timeReleased;
+        this.isItemLocked = isItemLocked;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -362,6 +365,21 @@ public final class CatalogItemSummary
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
+        /** Indicates if the CatalogItem is immutable or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isItemLocked")
+        private Boolean isItemLocked;
+
+        /**
+         * Indicates if the CatalogItem is immutable or not.
+         *
+         * @param isItemLocked the value to set
+         * @return this builder
+         */
+        public Builder isItemLocked(Boolean isItemLocked) {
+            this.isItemLocked = isItemLocked;
+            this.__explicitlySet__.add("isItemLocked");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -444,6 +462,7 @@ public final class CatalogItemSummary
                             this.versionDescription,
                             this.shortDescription,
                             this.timeReleased,
+                            this.isItemLocked,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -505,6 +524,9 @@ public final class CatalogItemSummary
             }
             if (model.wasPropertyExplicitlySet("timeReleased")) {
                 this.timeReleased(model.getTimeReleased());
+            }
+            if (model.wasPropertyExplicitlySet("isItemLocked")) {
+                this.isItemLocked(model.getIsItemLocked());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -765,6 +787,19 @@ public final class CatalogItemSummary
         return timeReleased;
     }
 
+    /** Indicates if the CatalogItem is immutable or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isItemLocked")
+    private final Boolean isItemLocked;
+
+    /**
+     * Indicates if the CatalogItem is immutable or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsItemLocked() {
+        return isItemLocked;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -848,6 +883,7 @@ public final class CatalogItemSummary
         sb.append(", versionDescription=").append(String.valueOf(this.versionDescription));
         sb.append(", shortDescription=").append(String.valueOf(this.shortDescription));
         sb.append(", timeReleased=").append(String.valueOf(this.timeReleased));
+        sb.append(", isItemLocked=").append(String.valueOf(this.isItemLocked));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -882,6 +918,7 @@ public final class CatalogItemSummary
                 && java.util.Objects.equals(this.versionDescription, other.versionDescription)
                 && java.util.Objects.equals(this.shortDescription, other.shortDescription)
                 && java.util.Objects.equals(this.timeReleased, other.timeReleased)
+                && java.util.Objects.equals(this.isItemLocked, other.isItemLocked)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -933,6 +970,7 @@ public final class CatalogItemSummary
                 (result * PRIME)
                         + (this.shortDescription == null ? 43 : this.shortDescription.hashCode());
         result = (result * PRIME) + (this.timeReleased == null ? 43 : this.timeReleased.hashCode());
+        result = (result * PRIME) + (this.isItemLocked == null ? 43 : this.isItemLocked.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

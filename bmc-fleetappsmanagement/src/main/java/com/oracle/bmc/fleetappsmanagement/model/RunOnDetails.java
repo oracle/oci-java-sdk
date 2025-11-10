@@ -30,7 +30,10 @@ package com.oracle.bmc.fleetappsmanagement.model;
             name = "SCHEDULE_INSTANCES"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PreviousTaskInstanceRunOnDetails.class,
-            name = "PREVIOUS_TASK_INSTANCES")
+            name = "PREVIOUS_TASK_INSTANCES"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ScheduleInstanceTargetRunOnDetails.class,
+            name = "SCHEDULE_INSTANCE_TARGETS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -86,6 +89,7 @@ public class RunOnDetails extends com.oracle.bmc.http.client.internal.Explicitly
         ScheduledInstances("SCHEDULED_INSTANCES"),
         SelfHostedInstances("SELF_HOSTED_INSTANCES"),
         PreviousTaskInstances("PREVIOUS_TASK_INSTANCES"),
+        ScheduleInstanceTargets("SCHEDULE_INSTANCE_TARGETS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

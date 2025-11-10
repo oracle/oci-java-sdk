@@ -289,6 +289,23 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     ListExecutionsResponse listExecutions(ListExecutionsRequest request);
 
     /**
+     * Gets a list of installed patches. CompartmentId should be the compartmentId of
+     * resource(Containing the target).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListInstalledPatchesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListInstalledPatches API.
+     */
+    ListInstalledPatchesResponse listInstalledPatches(ListInstalledPatchesRequest request);
+
+    /**
      * Gets a list of inventoryDetails.
      *
      * @param request The request object containing the details to send
@@ -319,6 +336,38 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatches API.
      */
     ListPatchesResponse listPatches(ListPatchesRequest request);
+
+    /**
+     * Gets a list of recommended patches.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListRecommendedPatchesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListRecommendedPatches API.
+     */
+    ListRecommendedPatchesResponse listRecommendedPatches(ListRecommendedPatchesRequest request);
+
+    /**
+     * Returns a list of all the report metadata.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListReportMetadataExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReportMetadata
+     *     API.
+     */
+    ListReportMetadataResponse listReportMetadata(ListReportMetadataRequest request);
 
     /**
      * Returns a list of resources for an Activity Execution.
@@ -370,7 +419,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             ListSchedulerDefinitionsRequest request);
 
     /**
-     * Returns a list of all Fleets that are scheduled.
+     * Returns a list of all executions that are scheduled.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -418,6 +467,38 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     ListStepsResponse listSteps(ListStepsRequest request);
 
     /**
+     * Gets a list of target component.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTargetComponentsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListTargetComponents API.
+     */
+    ListTargetComponentsResponse listTargetComponents(ListTargetComponentsRequest request);
+
+    /**
+     * Gets a list of target properties.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTargetPropertiesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListTargetProperties API.
+     */
+    ListTargetPropertiesResponse listTargetProperties(ListTargetPropertiesRequest request);
+
+    /**
      * Manage execution actions for a Job like retrying or pausing a task.
      *
      * @param request The request object containing the details to send
@@ -432,6 +513,21 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     API.
      */
     ManageJobExecutionResponse manageJobExecution(ManageJobExecutionRequest request);
+
+    /**
+     * Report
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Report API.
+     */
+    ReportResponse report(ReportRequest request);
 
     /**
      * Retrieve aggregated summary information of ComplianceRecords within a Compartment.

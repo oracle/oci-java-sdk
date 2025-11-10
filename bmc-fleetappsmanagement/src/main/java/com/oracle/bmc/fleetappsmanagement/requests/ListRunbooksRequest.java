@@ -104,16 +104,12 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
-     *
-     * <p>
      */
     private com.oracle.bmc.fleetappsmanagement.model.RunbookSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
-     *
-     * <p>
      */
     public com.oracle.bmc.fleetappsmanagement.model.RunbookSortBy getSortBy() {
         return sortBy;
@@ -291,16 +287,12 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for displayName is ascending.
-         *
-         * <p>
          */
         private com.oracle.bmc.fleetappsmanagement.model.RunbookSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for displayName is ascending.
-         *
-         * <p>
          *
          * @param sortBy the value to set
          * @return this builder instance

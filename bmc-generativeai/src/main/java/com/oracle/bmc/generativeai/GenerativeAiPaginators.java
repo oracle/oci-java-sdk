@@ -412,6 +412,125 @@ public class GenerativeAiPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listImportedModels operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListImportedModelsResponse> listImportedModelsResponseIterator(
+            final ListImportedModelsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListImportedModelsRequest.Builder,
+                ListImportedModelsRequest,
+                ListImportedModelsResponse>(
+                new java.util.function.Supplier<ListImportedModelsRequest.Builder>() {
+                    @Override
+                    public ListImportedModelsRequest.Builder get() {
+                        return ListImportedModelsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListImportedModelsResponse, String>() {
+                    @Override
+                    public String apply(ListImportedModelsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListImportedModelsRequest.Builder>,
+                        ListImportedModelsRequest>() {
+                    @Override
+                    public ListImportedModelsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListImportedModelsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListImportedModelsRequest, ListImportedModelsResponse>() {
+                    @Override
+                    public ListImportedModelsResponse apply(ListImportedModelsRequest request) {
+                        return client.listImportedModels(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.ImportedModelSummary} objects contained in responses from
+     * the listImportedModels operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.ImportedModelSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.ImportedModelSummary>
+            listImportedModelsRecordIterator(final ListImportedModelsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListImportedModelsRequest.Builder,
+                ListImportedModelsRequest,
+                ListImportedModelsResponse,
+                com.oracle.bmc.generativeai.model.ImportedModelSummary>(
+                new java.util.function.Supplier<ListImportedModelsRequest.Builder>() {
+                    @Override
+                    public ListImportedModelsRequest.Builder get() {
+                        return ListImportedModelsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListImportedModelsResponse, String>() {
+                    @Override
+                    public String apply(ListImportedModelsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListImportedModelsRequest.Builder>,
+                        ListImportedModelsRequest>() {
+                    @Override
+                    public ListImportedModelsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListImportedModelsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListImportedModelsRequest, ListImportedModelsResponse>() {
+                    @Override
+                    public ListImportedModelsResponse apply(ListImportedModelsRequest request) {
+                        return client.listImportedModels(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListImportedModelsResponse,
+                        java.util.List<com.oracle.bmc.generativeai.model.ImportedModelSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.generativeai.model.ImportedModelSummary>
+                            apply(ListImportedModelsResponse response) {
+                        return response.getImportedModelCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listModels
      * operation. This iterable will fetch more data from the server as needed.
      *

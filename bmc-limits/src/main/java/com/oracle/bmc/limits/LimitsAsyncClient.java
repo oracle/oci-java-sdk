@@ -124,6 +124,7 @@ public class LimitsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())
+                .appendQueryParam("externalLocation", request.getExternalLocation())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -196,6 +197,7 @@ public class LimitsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .appendPathParam("limitValues")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())
+                .appendQueryParam("externalLocation", request.getExternalLocation())
                 .appendQueryParam("serviceName", request.getServiceName())
                 .appendEnumQueryParam("scopeType", request.getScopeType())
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())

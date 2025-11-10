@@ -33,6 +33,13 @@ public class GetClusterOptionsRequest extends com.oracle.bmc.requests.BmcRequest
     public String getCompartmentId() {
         return compartmentId;
     }
+    /** Option to show all kubernetes patch versions */
+    private Boolean shouldListAllPatchVersions;
+
+    /** Option to show all kubernetes patch versions */
+    public Boolean getShouldListAllPatchVersions() {
+        return shouldListAllPatchVersions;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -82,6 +89,20 @@ public class GetClusterOptionsRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /** Option to show all kubernetes patch versions */
+        private Boolean shouldListAllPatchVersions = null;
+
+        /**
+         * Option to show all kubernetes patch versions
+         *
+         * @param shouldListAllPatchVersions the value to set
+         * @return this builder instance
+         */
+        public Builder shouldListAllPatchVersions(Boolean shouldListAllPatchVersions) {
+            this.shouldListAllPatchVersions = shouldListAllPatchVersions;
             return this;
         }
 
@@ -135,6 +156,7 @@ public class GetClusterOptionsRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(GetClusterOptionsRequest o) {
             clusterOptionId(o.getClusterOptionId());
             compartmentId(o.getCompartmentId());
+            shouldListAllPatchVersions(o.getShouldListAllPatchVersions());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -172,9 +194,11 @@ public class GetClusterOptionsRequest extends com.oracle.bmc.requests.BmcRequest
             GetClusterOptionsRequest request = new GetClusterOptionsRequest();
             request.clusterOptionId = clusterOptionId;
             request.compartmentId = compartmentId;
+            request.shouldListAllPatchVersions = shouldListAllPatchVersions;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetClusterOptionsRequest(clusterOptionId, compartmentId, opcRequestId);
+            // new GetClusterOptionsRequest(clusterOptionId, compartmentId,
+            // shouldListAllPatchVersions, opcRequestId);
         }
     }
 
@@ -187,6 +211,7 @@ public class GetClusterOptionsRequest extends com.oracle.bmc.requests.BmcRequest
         return new Builder()
                 .clusterOptionId(clusterOptionId)
                 .compartmentId(compartmentId)
+                .shouldListAllPatchVersions(shouldListAllPatchVersions)
                 .opcRequestId(opcRequestId);
     }
 
@@ -206,6 +231,8 @@ public class GetClusterOptionsRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append("super=").append(super.toString());
         sb.append(",clusterOptionId=").append(String.valueOf(this.clusterOptionId));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",shouldListAllPatchVersions=")
+                .append(String.valueOf(this.shouldListAllPatchVersions));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -224,6 +251,8 @@ public class GetClusterOptionsRequest extends com.oracle.bmc.requests.BmcRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.clusterOptionId, other.clusterOptionId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.shouldListAllPatchVersions, other.shouldListAllPatchVersions)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -237,6 +266,11 @@ public class GetClusterOptionsRequest extends com.oracle.bmc.requests.BmcRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldListAllPatchVersions == null
+                                ? 43
+                                : this.shouldListAllPatchVersions.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

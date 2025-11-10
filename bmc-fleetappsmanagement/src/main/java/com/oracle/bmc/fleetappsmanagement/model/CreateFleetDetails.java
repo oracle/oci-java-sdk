@@ -142,12 +142,16 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("details");
             return this;
         }
-        /** Products associated with the Fleet. */
+        /**
+         * Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to
+         * all the Products that need to be managed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<String> products;
 
         /**
-         * Products associated with the Fleet.
+         * Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to
+         * all the Products that need to be managed.
          *
          * @param products the value to set
          * @return this builder
@@ -465,12 +469,16 @@ public final class CreateFleetDetails
         return details;
     }
 
-    /** Products associated with the Fleet. */
+    /**
+     * Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all
+     * the Products that need to be managed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<String> products;
 
     /**
-     * Products associated with the Fleet.
+     * Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all
+     * the Products that need to be managed.
      *
      * @return the value
      */

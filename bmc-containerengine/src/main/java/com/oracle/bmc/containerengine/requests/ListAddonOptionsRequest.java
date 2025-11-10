@@ -120,10 +120,22 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** Whether to show all add-on versions */
+    /**
+     * Specifies whether all add-on versions should be displayed. The default value is false. If set
+     * to true, the API will return all available add-on versions, including deprecated versions and
+     * detailed build numbers. Please note that the use of deprecated versions, as well as the
+     * specification of a particular build of a supported version, is not recommended for standard
+     * operations.
+     */
     private Boolean shouldShowAllVersions;
 
-    /** Whether to show all add-on versions */
+    /**
+     * Specifies whether all add-on versions should be displayed. The default value is false. If set
+     * to true, the API will return all available add-on versions, including deprecated versions and
+     * detailed build numbers. Please note that the use of deprecated versions, as well as the
+     * specification of a particular build of a supported version, is not recommended for standard
+     * operations.
+     */
     public Boolean getShouldShowAllVersions() {
         return shouldShowAllVersions;
     }
@@ -250,11 +262,21 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** Whether to show all add-on versions */
+        /**
+         * Specifies whether all add-on versions should be displayed. The default value is false. If
+         * set to true, the API will return all available add-on versions, including deprecated
+         * versions and detailed build numbers. Please note that the use of deprecated versions, as
+         * well as the specification of a particular build of a supported version, is not
+         * recommended for standard operations.
+         */
         private Boolean shouldShowAllVersions = null;
 
         /**
-         * Whether to show all add-on versions
+         * Specifies whether all add-on versions should be displayed. The default value is false. If
+         * set to true, the API will return all available add-on versions, including deprecated
+         * versions and detailed build numbers. Please note that the use of deprecated versions, as
+         * well as the specification of a particular build of a supported version, is not
+         * recommended for standard operations.
          *
          * @param shouldShowAllVersions the value to set
          * @return this builder instance

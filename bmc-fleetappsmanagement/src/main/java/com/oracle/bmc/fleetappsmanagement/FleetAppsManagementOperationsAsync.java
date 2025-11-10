@@ -280,6 +280,23 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of installed patches. CompartmentId should be the compartmentId of
+     * resource(Containing the target).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListInstalledPatchesResponse> listInstalledPatches(
+            ListInstalledPatchesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListInstalledPatchesRequest, ListInstalledPatchesResponse>
+                    handler);
+
+    /**
      * Gets a list of inventoryDetails.
      *
      * @param request The request object containing the details to send
@@ -309,6 +326,38 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
     java.util.concurrent.Future<ListPatchesResponse> listPatches(
             ListPatchesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse> handler);
+
+    /**
+     * Gets a list of recommended patches.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRecommendedPatchesResponse> listRecommendedPatches(
+            ListRecommendedPatchesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRecommendedPatchesRequest, ListRecommendedPatchesResponse>
+                    handler);
+
+    /**
+     * Returns a list of all the report metadata.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListReportMetadataResponse> listReportMetadata(
+            ListReportMetadataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListReportMetadataRequest, ListReportMetadataResponse>
+                    handler);
 
     /**
      * Returns a list of resources for an Activity Execution.
@@ -359,7 +408,7 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all Fleets that are scheduled.
+     * Returns a list of all executions that are scheduled.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -406,6 +455,38 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListStepsRequest, ListStepsResponse> handler);
 
     /**
+     * Gets a list of target component.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTargetComponentsResponse> listTargetComponents(
+            ListTargetComponentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTargetComponentsRequest, ListTargetComponentsResponse>
+                    handler);
+
+    /**
+     * Gets a list of target properties.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTargetPropertiesResponse> listTargetProperties(
+            ListTargetPropertiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTargetPropertiesRequest, ListTargetPropertiesResponse>
+                    handler);
+
+    /**
      * Manage execution actions for a Job like retrying or pausing a task.
      *
      * @param request The request object containing the details to send
@@ -420,6 +501,20 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ManageJobExecutionRequest, ManageJobExecutionResponse>
                     handler);
+
+    /**
+     * Report
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReportResponse> report(
+            ReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ReportRequest, ReportResponse> handler);
 
     /**
      * Retrieve aggregated summary information of ComplianceRecords within a Compartment.

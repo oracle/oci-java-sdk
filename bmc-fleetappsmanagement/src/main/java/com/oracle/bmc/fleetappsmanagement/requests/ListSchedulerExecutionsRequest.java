@@ -97,6 +97,34 @@ public class ListSchedulerExecutionsRequest
     public String getSubstate() {
         return substate;
     }
+    /**
+     * A filter to return only resources their lifecycleOperation matches the given
+     * lifecycleOperation.
+     */
+    private String lifecycleOperation;
+
+    /**
+     * A filter to return only resources their lifecycleOperation matches the given
+     * lifecycleOperation.
+     */
+    public String getLifecycleOperation() {
+        return lifecycleOperation;
+    }
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all
+     * compartments which descend from it. Which resources are returned and their field contents
+     * depends on the value of accessLevel.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all
+     * compartments which descend from it. Which resources are returned and their field contents
+     * depends on the value of accessLevel.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
     /** The maximum number of items to return. */
     private Integer limit;
 
@@ -337,6 +365,44 @@ public class ListSchedulerExecutionsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources their lifecycleOperation matches the given
+         * lifecycleOperation.
+         */
+        private String lifecycleOperation = null;
+
+        /**
+         * A filter to return only resources their lifecycleOperation matches the given
+         * lifecycleOperation.
+         *
+         * @param lifecycleOperation the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleOperation(String lifecycleOperation) {
+            this.lifecycleOperation = lifecycleOperation;
+            return this;
+        }
+
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all
+         * compartments which descend from it. Which resources are returned and their field contents
+         * depends on the value of accessLevel.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all
+         * compartments which descend from it. Which resources are returned and their field contents
+         * depends on the value of accessLevel.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
         /** The maximum number of items to return. */
         private Integer limit = null;
 
@@ -455,6 +521,8 @@ public class ListSchedulerExecutionsRequest
             runbookId(o.getRunbookId());
             runbookVersionName(o.getRunbookVersionName());
             substate(o.getSubstate());
+            lifecycleOperation(o.getLifecycleOperation());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -504,6 +572,8 @@ public class ListSchedulerExecutionsRequest
             request.runbookId = runbookId;
             request.runbookVersionName = runbookVersionName;
             request.substate = substate;
+            request.lifecycleOperation = lifecycleOperation;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -512,8 +582,9 @@ public class ListSchedulerExecutionsRequest
             return request;
             // new ListSchedulerExecutionsRequest(compartmentId, displayName,
             // timeScheduledGreaterThanOrEqualTo, timeScheduledLessThan, schedulerDefintionId,
-            // schedulerJobId, resourceId, runbookId, runbookVersionName, substate, limit, page,
-            // sortOrder, sortBy, opcRequestId);
+            // schedulerJobId, resourceId, runbookId, runbookVersionName, substate,
+            // lifecycleOperation, compartmentIdInSubtree, limit, page, sortOrder, sortBy,
+            // opcRequestId);
         }
     }
 
@@ -534,6 +605,8 @@ public class ListSchedulerExecutionsRequest
                 .runbookId(runbookId)
                 .runbookVersionName(runbookVersionName)
                 .substate(substate)
+                .lifecycleOperation(lifecycleOperation)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -566,6 +639,8 @@ public class ListSchedulerExecutionsRequest
         sb.append(",runbookId=").append(String.valueOf(this.runbookId));
         sb.append(",runbookVersionName=").append(String.valueOf(this.runbookVersionName));
         sb.append(",substate=").append(String.valueOf(this.substate));
+        sb.append(",lifecycleOperation=").append(String.valueOf(this.lifecycleOperation));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -598,6 +673,9 @@ public class ListSchedulerExecutionsRequest
                 && java.util.Objects.equals(this.runbookId, other.runbookId)
                 && java.util.Objects.equals(this.runbookVersionName, other.runbookVersionName)
                 && java.util.Objects.equals(this.substate, other.substate)
+                && java.util.Objects.equals(this.lifecycleOperation, other.lifecycleOperation)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -639,6 +717,16 @@ public class ListSchedulerExecutionsRequest
                                 ? 43
                                 : this.runbookVersionName.hashCode());
         result = (result * PRIME) + (this.substate == null ? 43 : this.substate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleOperation == null
+                                ? 43
+                                : this.lifecycleOperation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

@@ -5,7 +5,9 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Version for the runbook. <br>
+ * Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning
+ * unique identifiers or version numbers to different iterations of the runbook to track changes,
+ * improvements, and updates over time. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

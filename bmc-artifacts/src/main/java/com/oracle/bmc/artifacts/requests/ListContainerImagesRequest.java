@@ -111,6 +111,21 @@ public class ListContainerImagesRequest extends com.oracle.bmc.requests.BmcReque
         return lifecycleState;
     }
     /**
+     * The digest of the container image.
+     *
+     * <p>Example: {@code sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa}
+     */
+    private String imageDigest;
+
+    /**
+     * The digest of the container image.
+     *
+     * <p>Example: {@code sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa}
+     */
+    public String getImageDigest() {
+        return imageDigest;
+    }
+    /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
      * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -439,6 +454,28 @@ public class ListContainerImagesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * The digest of the container image.
+         *
+         * <p>Example: {@code
+         * sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa}
+         */
+        private String imageDigest = null;
+
+        /**
+         * The digest of the container image.
+         *
+         * <p>Example: {@code
+         * sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa}
+         *
+         * @param imageDigest the value to set
+         * @return this builder instance
+         */
+        public Builder imageDigest(String imageDigest) {
+            this.imageDigest = imageDigest;
+            return this;
+        }
+
+        /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
          * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -589,6 +626,7 @@ public class ListContainerImagesRequest extends com.oracle.bmc.requests.BmcReque
             repositoryName(o.getRepositoryName());
             version(o.getVersion());
             lifecycleState(o.getLifecycleState());
+            imageDigest(o.getImageDigest());
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
@@ -637,6 +675,7 @@ public class ListContainerImagesRequest extends com.oracle.bmc.requests.BmcReque
             request.repositoryName = repositoryName;
             request.version = version;
             request.lifecycleState = lifecycleState;
+            request.imageDigest = imageDigest;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
@@ -644,8 +683,8 @@ public class ListContainerImagesRequest extends com.oracle.bmc.requests.BmcReque
             request.sortOrder = sortOrder;
             return request;
             // new ListContainerImagesRequest(compartmentId, compartmentIdInSubtree, displayName,
-            // imageId, isVersioned, repositoryId, repositoryName, version, lifecycleState, limit,
-            // page, opcRequestId, sortBy, sortOrder);
+            // imageId, isVersioned, repositoryId, repositoryName, version, lifecycleState,
+            // imageDigest, limit, page, opcRequestId, sortBy, sortOrder);
         }
     }
 
@@ -665,6 +704,7 @@ public class ListContainerImagesRequest extends com.oracle.bmc.requests.BmcReque
                 .repositoryName(repositoryName)
                 .version(version)
                 .lifecycleState(lifecycleState)
+                .imageDigest(imageDigest)
                 .limit(limit)
                 .page(page)
                 .opcRequestId(opcRequestId)
@@ -695,6 +735,7 @@ public class ListContainerImagesRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",repositoryName=").append(String.valueOf(this.repositoryName));
         sb.append(",version=").append(String.valueOf(this.version));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",imageDigest=").append(String.valueOf(this.imageDigest));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -725,6 +766,7 @@ public class ListContainerImagesRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.repositoryName, other.repositoryName)
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.imageDigest, other.imageDigest)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
@@ -755,6 +797,7 @@ public class ListContainerImagesRequest extends com.oracle.bmc.requests.BmcReque
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.imageDigest == null ? 43 : this.imageDigest.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

@@ -64,15 +64,15 @@ public final class ServiceSummary
             return this;
         }
         /**
-         * An array of subscription types supported by the service. e,g The type of subscription,
-         * such as 'SAAS', 'ERP', 'CRM'.
+         * An array of subscription types supported by the service. For example, the type of
+         * subscription, such as SAAS, ERP, or CRM.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
         private java.util.List<String> supportedSubscriptions;
 
         /**
-         * An array of subscription types supported by the service. e,g The type of subscription,
-         * such as 'SAAS', 'ERP', 'CRM'.
+         * An array of subscription types supported by the service. For example, the type of
+         * subscription, such as SAAS, ERP, or CRM.
          *
          * @param supportedSubscriptions the value to set
          * @return this builder
@@ -146,15 +146,15 @@ public final class ServiceSummary
     }
 
     /**
-     * An array of subscription types supported by the service. e,g The type of subscription, such
-     * as 'SAAS', 'ERP', 'CRM'.
+     * An array of subscription types supported by the service. For example, the type of
+     * subscription, such as SAAS, ERP, or CRM.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
     private final java.util.List<String> supportedSubscriptions;
 
     /**
-     * An array of subscription types supported by the service. e,g The type of subscription, such
-     * as 'SAAS', 'ERP', 'CRM'.
+     * An array of subscription types supported by the service. For example, the type of
+     * subscription, such as SAAS, ERP, or CRM.
      *
      * @return the value
      */

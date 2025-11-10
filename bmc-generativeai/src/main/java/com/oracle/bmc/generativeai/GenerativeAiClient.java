@@ -233,6 +233,40 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ChangeImportedModelCompartmentResponse changeImportedModelCompartment(
+            ChangeImportedModelCompartmentRequest request) {
+
+        Validate.notBlank(request.getImportedModelId(), "importedModelId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeImportedModelCompartmentDetails(),
+                "changeImportedModelCompartmentDetails is required");
+
+        return clientCall(request, ChangeImportedModelCompartmentResponse::builder)
+                .logger(LOG, "changeImportedModelCompartment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeImportedModelCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModel/ChangeImportedModelCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeImportedModelCompartmentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("importedModels")
+                .appendPathParam(request.getImportedModelId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeImportedModelCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeModelCompartmentResponse changeModelCompartment(
             ChangeModelCompartmentRequest request) {
 
@@ -371,6 +405,38 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public CreateImportedModelResponse createImportedModel(CreateImportedModelRequest request) {
+        Objects.requireNonNull(
+                request.getCreateImportedModelDetails(), "createImportedModelDetails is required");
+
+        return clientCall(request, CreateImportedModelResponse::builder)
+                .logger(LOG, "createImportedModel")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateImportedModel",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModel/CreateImportedModel")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateImportedModelRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("importedModels")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ImportedModel.class,
+                        CreateImportedModelResponse.Builder::importedModel)
+                .handleResponseHeaderString("etag", CreateImportedModelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateImportedModelResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateImportedModelResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateModelResponse createModel(CreateModelRequest request) {
         Objects.requireNonNull(request.getCreateModelDetails(), "createModelDetails is required");
 
@@ -492,6 +558,34 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DeleteImportedModelResponse deleteImportedModel(DeleteImportedModelRequest request) {
+
+        Validate.notBlank(request.getImportedModelId(), "importedModelId must not be blank");
+
+        return clientCall(request, DeleteImportedModelResponse::builder)
+                .logger(LOG, "deleteImportedModel")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteImportedModel",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModel/DeleteImportedModel")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteImportedModelRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("importedModels")
+                .appendPathParam(request.getImportedModelId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteImportedModelResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteImportedModelResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteModelResponse deleteModel(DeleteModelRequest request) {
 
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
@@ -606,6 +700,34 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetGenerativeAiPrivateEndpointResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetImportedModelResponse getImportedModel(GetImportedModelRequest request) {
+
+        Validate.notBlank(request.getImportedModelId(), "importedModelId must not be blank");
+
+        return clientCall(request, GetImportedModelResponse::builder)
+                .logger(LOG, "getImportedModel")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetImportedModel",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModel/GetImportedModel")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetImportedModelRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("importedModels")
+                .appendPathParam(request.getImportedModelId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ImportedModel.class,
+                        GetImportedModelResponse.Builder::importedModel)
+                .handleResponseHeaderString("etag", GetImportedModelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetImportedModelResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -777,6 +899,46 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListGenerativeAiPrivateEndpointsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListImportedModelsResponse listImportedModels(ListImportedModelsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListImportedModelsResponse::builder)
+                .logger(LOG, "listImportedModels")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListImportedModels",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModelCollection/ListImportedModels")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListImportedModelsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("importedModels")
+                .appendQueryParam("vendor", request.getVendor())
+                .appendListQueryParam(
+                        "capability",
+                        request.getCapability(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ImportedModelCollection.class,
+                        ListImportedModelsResponse.Builder::importedModelCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListImportedModelsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListImportedModelsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1035,6 +1197,41 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         UpdateGenerativeAiPrivateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateGenerativeAiPrivateEndpointResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateImportedModelResponse updateImportedModel(UpdateImportedModelRequest request) {
+
+        Validate.notBlank(request.getImportedModelId(), "importedModelId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateImportedModelDetails(), "updateImportedModelDetails is required");
+
+        return clientCall(request, UpdateImportedModelResponse::builder)
+                .logger(LOG, "updateImportedModel")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateImportedModel",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModel/UpdateImportedModel")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateImportedModelRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("importedModels")
+                .appendPathParam(request.getImportedModelId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ImportedModel.class,
+                        UpdateImportedModelResponse.Builder::importedModel)
+                .handleResponseHeaderString("etag", UpdateImportedModelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateImportedModelResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateImportedModelResponse.Builder::opcRequestId)
                 .callSync();
     }
 

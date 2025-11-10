@@ -134,6 +134,26 @@ public interface GenerativeAiAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves an imported model into a different compartment. For information about moving resources
+     * between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeImportedModelCompartmentResponse>
+            changeImportedModelCompartment(
+                    ChangeImportedModelCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeImportedModelCompartmentRequest,
+                                    ChangeImportedModelCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a custom model into a different compartment. For information about moving resources
      * between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -202,6 +222,25 @@ public interface GenerativeAiAsync extends AutoCloseable {
                                     CreateGenerativeAiPrivateEndpointRequest,
                                     CreateGenerativeAiPrivateEndpointResponse>
                             handler);
+
+    /**
+     * Import a model from ModelDataSource.
+     *
+     * <p>The header contains an opc-work-request-id, which is the id for the WorkRequest that
+     * tracks the importedModel creation progress.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateImportedModelResponse> createImportedModel(
+            CreateImportedModelRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateImportedModelRequest, CreateImportedModelResponse>
+                    handler);
 
     /**
      * Creates a custom model by fine-tuning a base model with your own dataset. You can create a
@@ -276,6 +315,23 @@ public interface GenerativeAiAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes an imported model. An imported model shouldn't be deleted if there's one or more
+     * active endpoints associated with that imported model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteImportedModelResponse> deleteImportedModel(
+            DeleteImportedModelRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteImportedModelRequest, DeleteImportedModelResponse>
+                    handler);
+
+    /**
      * Deletes a custom model. A model shouldn't be deleted if there's one or more active endpoints
      * associated with that model.
      *
@@ -337,6 +393,21 @@ public interface GenerativeAiAsync extends AutoCloseable {
                                     GetGenerativeAiPrivateEndpointRequest,
                                     GetGenerativeAiPrivateEndpointResponse>
                             handler);
+
+    /**
+     * Gets information about an imported model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetImportedModelResponse> getImportedModel(
+            GetImportedModelRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetImportedModelRequest, GetImportedModelResponse>
+                    handler);
 
     /**
      * Gets information about a custom model.
@@ -415,6 +486,22 @@ public interface GenerativeAiAsync extends AutoCloseable {
                                     ListGenerativeAiPrivateEndpointsRequest,
                                     ListGenerativeAiPrivateEndpointsResponse>
                             handler);
+
+    /**
+     * Lists imported models in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListImportedModelsResponse> listImportedModels(
+            ListImportedModelsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListImportedModelsRequest, ListImportedModelsResponse>
+                    handler);
 
     /**
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned
@@ -526,6 +613,23 @@ public interface GenerativeAiAsync extends AutoCloseable {
                                     UpdateGenerativeAiPrivateEndpointRequest,
                                     UpdateGenerativeAiPrivateEndpointResponse>
                             handler);
+
+    /**
+     * Updates the properties of an imported model such as name, description, freeform tags, and
+     * defined tags.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateImportedModelResponse> updateImportedModel(
+            UpdateImportedModelRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateImportedModelRequest, UpdateImportedModelResponse>
+                    handler);
 
     /**
      * Updates the properties of a custom model such as name, description, version, freeform tags,

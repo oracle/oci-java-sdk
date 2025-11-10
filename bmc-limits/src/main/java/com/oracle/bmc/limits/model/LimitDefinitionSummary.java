@@ -33,6 +33,7 @@ public final class LimitDefinitionSummary
         "isDeprecated",
         "isEligibleForLimitIncrease",
         "isDynamic",
+        "externalLocationSupportedSubscriptions",
         "supportedSubscriptions",
         "supportedQuotaFamilies"
     })
@@ -46,6 +47,7 @@ public final class LimitDefinitionSummary
             Boolean isDeprecated,
             Boolean isEligibleForLimitIncrease,
             Boolean isDynamic,
+            java.util.List<String> externalLocationSupportedSubscriptions,
             java.util.List<String> supportedSubscriptions,
             java.util.List<String> supportedQuotaFamilies) {
         super();
@@ -58,6 +60,7 @@ public final class LimitDefinitionSummary
         this.isDeprecated = isDeprecated;
         this.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
         this.isDynamic = isDynamic;
+        this.externalLocationSupportedSubscriptions = externalLocationSupportedSubscriptions;
         this.supportedSubscriptions = supportedSubscriptions;
         this.supportedQuotaFamilies = supportedQuotaFamilies;
     }
@@ -215,16 +218,32 @@ public final class LimitDefinitionSummary
             this.__explicitlySet__.add("isDynamic");
             return this;
         }
+        /** An array of subscription types that support ExternalLocations. */
+        @com.fasterxml.jackson.annotation.JsonProperty("externalLocationSupportedSubscriptions")
+        private java.util.List<String> externalLocationSupportedSubscriptions;
+
         /**
-         * An array of subscription types supported by the limit. e,g The type of subscription, such
-         * as 'SAAS', 'ERP', 'CRM'.
+         * An array of subscription types that support ExternalLocations.
+         *
+         * @param externalLocationSupportedSubscriptions the value to set
+         * @return this builder
+         */
+        public Builder externalLocationSupportedSubscriptions(
+                java.util.List<String> externalLocationSupportedSubscriptions) {
+            this.externalLocationSupportedSubscriptions = externalLocationSupportedSubscriptions;
+            this.__explicitlySet__.add("externalLocationSupportedSubscriptions");
+            return this;
+        }
+        /**
+         * An array of subscription types supported by the limit. For example, the type of
+         * subscription, such as SAAS, ERP, or CRM.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
         private java.util.List<String> supportedSubscriptions;
 
         /**
-         * An array of subscription types supported by the limit. e,g The type of subscription, such
-         * as 'SAAS', 'ERP', 'CRM'.
+         * An array of subscription types supported by the limit. For example, the type of
+         * subscription, such as SAAS, ERP, or CRM.
          *
          * @param supportedSubscriptions the value to set
          * @return this builder
@@ -265,6 +284,7 @@ public final class LimitDefinitionSummary
                             this.isDeprecated,
                             this.isEligibleForLimitIncrease,
                             this.isDynamic,
+                            this.externalLocationSupportedSubscriptions,
                             this.supportedSubscriptions,
                             this.supportedQuotaFamilies);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -301,6 +321,10 @@ public final class LimitDefinitionSummary
             }
             if (model.wasPropertyExplicitlySet("isDynamic")) {
                 this.isDynamic(model.getIsDynamic());
+            }
+            if (model.wasPropertyExplicitlySet("externalLocationSupportedSubscriptions")) {
+                this.externalLocationSupportedSubscriptions(
+                        model.getExternalLocationSupportedSubscriptions());
             }
             if (model.wasPropertyExplicitlySet("supportedSubscriptions")) {
                 this.supportedSubscriptions(model.getSupportedSubscriptions());
@@ -504,16 +528,29 @@ public final class LimitDefinitionSummary
         return isDynamic;
     }
 
+    /** An array of subscription types that support ExternalLocations. */
+    @com.fasterxml.jackson.annotation.JsonProperty("externalLocationSupportedSubscriptions")
+    private final java.util.List<String> externalLocationSupportedSubscriptions;
+
     /**
-     * An array of subscription types supported by the limit. e,g The type of subscription, such as
-     * 'SAAS', 'ERP', 'CRM'.
+     * An array of subscription types that support ExternalLocations.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getExternalLocationSupportedSubscriptions() {
+        return externalLocationSupportedSubscriptions;
+    }
+
+    /**
+     * An array of subscription types supported by the limit. For example, the type of subscription,
+     * such as SAAS, ERP, or CRM.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
     private final java.util.List<String> supportedSubscriptions;
 
     /**
-     * An array of subscription types supported by the limit. e,g The type of subscription, such as
-     * 'SAAS', 'ERP', 'CRM'.
+     * An array of subscription types supported by the limit. For example, the type of subscription,
+     * such as SAAS, ERP, or CRM.
      *
      * @return the value
      */
@@ -560,6 +597,8 @@ public final class LimitDefinitionSummary
         sb.append(", isEligibleForLimitIncrease=")
                 .append(String.valueOf(this.isEligibleForLimitIncrease));
         sb.append(", isDynamic=").append(String.valueOf(this.isDynamic));
+        sb.append(", externalLocationSupportedSubscriptions=")
+                .append(String.valueOf(this.externalLocationSupportedSubscriptions));
         sb.append(", supportedSubscriptions=").append(String.valueOf(this.supportedSubscriptions));
         sb.append(", supportedQuotaFamilies=").append(String.valueOf(this.supportedQuotaFamilies));
         sb.append(")");
@@ -587,6 +626,9 @@ public final class LimitDefinitionSummary
                 && java.util.Objects.equals(
                         this.isEligibleForLimitIncrease, other.isEligibleForLimitIncrease)
                 && java.util.Objects.equals(this.isDynamic, other.isDynamic)
+                && java.util.Objects.equals(
+                        this.externalLocationSupportedSubscriptions,
+                        other.externalLocationSupportedSubscriptions)
                 && java.util.Objects.equals(
                         this.supportedSubscriptions, other.supportedSubscriptions)
                 && java.util.Objects.equals(
@@ -619,6 +661,11 @@ public final class LimitDefinitionSummary
                                 ? 43
                                 : this.isEligibleForLimitIncrease.hashCode());
         result = (result * PRIME) + (this.isDynamic == null ? 43 : this.isDynamic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalLocationSupportedSubscriptions == null
+                                ? 43
+                                : this.externalLocationSupportedSubscriptions.hashCode());
         result =
                 (result * PRIME)
                         + (this.supportedSubscriptions == null
