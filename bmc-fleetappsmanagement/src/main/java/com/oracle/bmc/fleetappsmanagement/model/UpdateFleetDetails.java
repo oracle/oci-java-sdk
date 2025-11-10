@@ -31,7 +31,8 @@ public final class UpdateFleetDetails
         "resourceSelection",
         "products",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "environmentType"
     })
     public UpdateFleetDetails(
             String displayName,
@@ -41,7 +42,8 @@ public final class UpdateFleetDetails
             ResourceSelection resourceSelection,
             java.util.List<String> products,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String environmentType) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -51,6 +53,7 @@ public final class UpdateFleetDetails
         this.products = products;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.environmentType = environmentType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -145,12 +148,16 @@ public final class UpdateFleetDetails
             this.__explicitlySet__.add("resourceSelection");
             return this;
         }
-        /** Products associated with the Fleet. */
+        /**
+         * Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to
+         * all the Products that need to be managed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<String> products;
 
         /**
-         * Products associated with the Fleet.
+         * Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to
+         * all the Products that need to be managed.
          *
          * @param products the value to set
          * @return this builder
@@ -199,6 +206,21 @@ public final class UpdateFleetDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private String environmentType;
+
+        /**
+         * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+         *
+         * @param environmentType the value to set
+         * @return this builder
+         */
+        public Builder environmentType(String environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -213,7 +235,8 @@ public final class UpdateFleetDetails
                             this.resourceSelection,
                             this.products,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.environmentType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -245,6 +268,9 @@ public final class UpdateFleetDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
             }
             return this;
         }
@@ -338,12 +364,16 @@ public final class UpdateFleetDetails
         return resourceSelection;
     }
 
-    /** Products associated with the Fleet. */
+    /**
+     * Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all
+     * the Products that need to be managed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<String> products;
 
     /**
-     * Products associated with the Fleet.
+     * Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all
+     * the Products that need to be managed.
      *
      * @return the value
      */
@@ -385,6 +415,19 @@ public final class UpdateFleetDetails
         return definedTags;
     }
 
+    /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final String environmentType;
+
+    /**
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+     *
+     * @return the value
+     */
+    public String getEnvironmentType() {
+        return environmentType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -409,6 +452,7 @@ public final class UpdateFleetDetails
         sb.append(", products=").append(String.valueOf(this.products));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(")");
         return sb.toString();
     }
@@ -432,6 +476,7 @@ public final class UpdateFleetDetails
                 && java.util.Objects.equals(this.products, other.products)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && super.equals(other);
     }
 
@@ -457,6 +502,9 @@ public final class UpdateFleetDetails
         result = (result * PRIME) + (this.products == null ? 43 : this.products.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

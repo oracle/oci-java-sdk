@@ -3591,6 +3591,8 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendPathParam("instances")
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam(
+                        "isMemoryEncryptionEnabled", request.getIsMemoryEncryptionEnabled())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
@@ -3676,6 +3678,8 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendQueryParam(
                         "remainingOcpusGreaterThanOrEqualTo",
                         request.getRemainingOcpusGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "isMemoryEncryptionEnabled", request.getIsMemoryEncryptionEnabled())
                 .accept("application/json, application/x-json-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

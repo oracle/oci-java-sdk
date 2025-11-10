@@ -262,12 +262,12 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("estimatedTime");
             return this;
         }
-        /** Latest runbook version */
+        /** Latest runbook version. */
         @com.fasterxml.jackson.annotation.JsonProperty("latestVersion")
         private String latestVersion;
 
         /**
-         * Latest runbook version
+         * Latest runbook version.
          *
          * @param latestVersion the value to set
          * @return this builder
@@ -760,12 +760,12 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
         return estimatedTime;
     }
 
-    /** Latest runbook version */
+    /** Latest runbook version. */
     @com.fasterxml.jackson.annotation.JsonProperty("latestVersion")
     private final String latestVersion;
 
     /**
-     * Latest runbook version
+     * Latest runbook version.
      *
      * @return the value
      */

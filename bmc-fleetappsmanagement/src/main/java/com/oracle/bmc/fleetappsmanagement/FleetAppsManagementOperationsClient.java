@@ -429,6 +429,7 @@ public class FleetAppsManagementOperationsClient extends com.oracle.bmc.http.int
                 .appendPathParam(request.getSchedulerJobId())
                 .appendPathParam("jobActivities")
                 .appendPathParam(request.getJobActivityId())
+                .appendQueryParam("isDetailsRequired", request.getIsDetailsRequired())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -614,6 +615,43 @@ public class FleetAppsManagementOperationsClient extends com.oracle.bmc.http.int
     }
 
     @Override
+    public ListInstalledPatchesResponse listInstalledPatches(ListInstalledPatchesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListInstalledPatchesResponse::builder)
+                .logger(LOG, "listInstalledPatches")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListInstalledPatches",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/InstalledPatchCollection/ListInstalledPatches")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInstalledPatchesRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("installedPatches")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("targetName", request.getTargetName())
+                .appendEnumQueryParam("severity", request.getSeverity())
+                .appendQueryParam("patchLevel", request.getPatchLevel())
+                .appendQueryParam("patchType", request.getPatchType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.InstalledPatchCollection.class,
+                        ListInstalledPatchesResponse.Builder::installedPatchCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInstalledPatchesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInstalledPatchesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListInventoryRecordsResponse listInventoryRecords(ListInventoryRecordsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -634,6 +672,7 @@ public class FleetAppsManagementOperationsClient extends com.oracle.bmc.http.int
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("isDetailsRequired", request.getIsDetailsRequired())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -690,6 +729,79 @@ public class FleetAppsManagementOperationsClient extends com.oracle.bmc.http.int
                         "opc-request-id", ListPatchesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPatchesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListRecommendedPatchesResponse listRecommendedPatches(
+            ListRecommendedPatchesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListRecommendedPatchesResponse::builder)
+                .logger(LOG, "listRecommendedPatches")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListRecommendedPatches",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RecommendedPatchCollection/ListRecommendedPatches")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRecommendedPatchesRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("recommendedPatches")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("targetName", request.getTargetName())
+                .appendEnumQueryParam("patchLevel", request.getPatchLevel())
+                .appendEnumQueryParam("severity", request.getSeverity())
+                .appendQueryParam("patchType", request.getPatchType())
+                .appendQueryParam("patchId", request.getPatchId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.RecommendedPatchCollection.class,
+                        ListRecommendedPatchesResponse.Builder::recommendedPatchCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRecommendedPatchesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRecommendedPatchesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListReportMetadataResponse listReportMetadata(ListReportMetadataRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListReportMetadataResponse::builder)
+                .logger(LOG, "listReportMetadata")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListReportMetadata",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ReportMetadataCollection/ListReportMetadata")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListReportMetadataRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("reports")
+                .appendPathParam("metadata")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("reportName", request.getReportName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.ReportMetadataCollection.class,
+                        ListReportMetadataResponse.Builder::reportMetadataCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListReportMetadataResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListReportMetadataResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -844,6 +956,8 @@ public class FleetAppsManagementOperationsClient extends com.oracle.bmc.http.int
                 .appendQueryParam("runbookId", request.getRunbookId())
                 .appendQueryParam("runbookVersionName", request.getRunbookVersionName())
                 .appendQueryParam("substate", request.getSubstate())
+                .appendQueryParam("lifecycleOperation", request.getLifecycleOperation())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -946,6 +1060,77 @@ public class FleetAppsManagementOperationsClient extends com.oracle.bmc.http.int
     }
 
     @Override
+    public ListTargetComponentsResponse listTargetComponents(ListTargetComponentsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListTargetComponentsResponse::builder)
+                .logger(LOG, "listTargetComponents")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListTargetComponents",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TargetComponentCollection/ListTargetComponents")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTargetComponentsRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("targetComponents")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("targetName", request.getTargetName())
+                .appendEnumQueryParam("severity", request.getSeverity())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.TargetComponentCollection.class,
+                        ListTargetComponentsResponse.Builder::targetComponentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTargetComponentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTargetComponentsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListTargetPropertiesResponse listTargetProperties(ListTargetPropertiesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListTargetPropertiesResponse::builder)
+                .logger(LOG, "listTargetProperties")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListTargetProperties",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TargetPropertyCollection/ListTargetProperties")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTargetPropertiesRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("targetProperties")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("targetName", request.getTargetName())
+                .appendEnumQueryParam("severity", request.getSeverity())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.TargetPropertyCollection.class,
+                        ListTargetPropertiesResponse.Builder::targetPropertyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTargetPropertiesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTargetPropertiesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ManageJobExecutionResponse manageJobExecution(ManageJobExecutionRequest request) {
         Objects.requireNonNull(
                 request.getManageJobExecutionDetails(), "manageJobExecutionDetails is required");
@@ -975,6 +1160,44 @@ public class FleetAppsManagementOperationsClient extends com.oracle.bmc.http.int
                         "opc-work-request-id", ManageJobExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ManageJobExecutionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ReportResponse report(ReportRequest request) {
+        Objects.requireNonNull(request.getReportDetails(), "reportDetails is required");
+
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ReportResponse::builder)
+                .logger(LOG, "report")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "Report",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ReportCollection/Report")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReportRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("reports")
+                .appendPathParam("actions")
+                .appendPathParam("summarize")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.ReportCollection.class,
+                        ReportResponse.Builder::reportCollection)
+                .handleResponseHeaderString("opc-request-id", ReportResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("opc-next-page", ReportResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ReportResponse.Builder::opcTotalItems)
                 .callSync();
     }
 

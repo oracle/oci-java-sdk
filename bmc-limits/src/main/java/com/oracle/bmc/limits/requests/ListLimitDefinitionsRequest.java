@@ -27,10 +27,10 @@ public class ListLimitDefinitionsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The OCID of the subscription assigned to tenant */
+    /** The subscription OCID assigned to the tenant. */
     private String subscriptionId;
 
-    /** The OCID of the subscription assigned to tenant */
+    /** The subscription OCID assigned to the tenant. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -182,11 +182,11 @@ public class ListLimitDefinitionsRequest
             return this;
         }
 
-        /** The OCID of the subscription assigned to tenant */
+        /** The subscription OCID assigned to the tenant. */
         private String subscriptionId = null;
 
         /**
-         * The OCID of the subscription assigned to tenant
+         * The subscription OCID assigned to the tenant.
          *
          * @param subscriptionId the value to set
          * @return this builder instance

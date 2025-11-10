@@ -33,6 +33,103 @@ public class GetNodePoolOptionsRequest extends com.oracle.bmc.requests.BmcReques
     public String getCompartmentId() {
         return compartmentId;
     }
+    /** Option to show all kubernetes patch versions */
+    private Boolean shouldListAllPatchVersions;
+
+    /** Option to show all kubernetes patch versions */
+    public Boolean getShouldListAllPatchVersions() {
+        return shouldListAllPatchVersions;
+    }
+    /** Filter node pool options by OS type. */
+    private NodePoolOsType nodePoolOsType;
+
+    /** Filter node pool options by OS type. */
+    public enum NodePoolOsType implements com.oracle.bmc.http.internal.BmcEnum {
+        Ol7("OL7"),
+        Ol8("OL8"),
+        Ubuntu("UBUNTU"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, NodePoolOsType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NodePoolOsType v : NodePoolOsType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        NodePoolOsType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NodePoolOsType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid NodePoolOsType: " + key);
+        }
+    };
+
+    /** Filter node pool options by OS type. */
+    public NodePoolOsType getNodePoolOsType() {
+        return nodePoolOsType;
+    }
+    /** Filter node pool options by OS architecture. */
+    private NodePoolOsArch nodePoolOsArch;
+
+    /** Filter node pool options by OS architecture. */
+    public enum NodePoolOsArch implements com.oracle.bmc.http.internal.BmcEnum {
+        X8664("X86_64"),
+        Aarch64("AARCH64"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, NodePoolOsArch> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NodePoolOsArch v : NodePoolOsArch.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        NodePoolOsArch(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NodePoolOsArch create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid NodePoolOsArch: " + key);
+        }
+    };
+
+    /** Filter node pool options by OS architecture. */
+    public NodePoolOsArch getNodePoolOsArch() {
+        return nodePoolOsArch;
+    }
+    /** Filter node pool options by Kubernetes version. */
+    private String nodePoolK8sVersion;
+
+    /** Filter node pool options by Kubernetes version. */
+    public String getNodePoolK8sVersion() {
+        return nodePoolK8sVersion;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -82,6 +179,62 @@ public class GetNodePoolOptionsRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /** Option to show all kubernetes patch versions */
+        private Boolean shouldListAllPatchVersions = null;
+
+        /**
+         * Option to show all kubernetes patch versions
+         *
+         * @param shouldListAllPatchVersions the value to set
+         * @return this builder instance
+         */
+        public Builder shouldListAllPatchVersions(Boolean shouldListAllPatchVersions) {
+            this.shouldListAllPatchVersions = shouldListAllPatchVersions;
+            return this;
+        }
+
+        /** Filter node pool options by OS type. */
+        private NodePoolOsType nodePoolOsType = null;
+
+        /**
+         * Filter node pool options by OS type.
+         *
+         * @param nodePoolOsType the value to set
+         * @return this builder instance
+         */
+        public Builder nodePoolOsType(NodePoolOsType nodePoolOsType) {
+            this.nodePoolOsType = nodePoolOsType;
+            return this;
+        }
+
+        /** Filter node pool options by OS architecture. */
+        private NodePoolOsArch nodePoolOsArch = null;
+
+        /**
+         * Filter node pool options by OS architecture.
+         *
+         * @param nodePoolOsArch the value to set
+         * @return this builder instance
+         */
+        public Builder nodePoolOsArch(NodePoolOsArch nodePoolOsArch) {
+            this.nodePoolOsArch = nodePoolOsArch;
+            return this;
+        }
+
+        /** Filter node pool options by Kubernetes version. */
+        private String nodePoolK8sVersion = null;
+
+        /**
+         * Filter node pool options by Kubernetes version.
+         *
+         * @param nodePoolK8sVersion the value to set
+         * @return this builder instance
+         */
+        public Builder nodePoolK8sVersion(String nodePoolK8sVersion) {
+            this.nodePoolK8sVersion = nodePoolK8sVersion;
             return this;
         }
 
@@ -135,6 +288,10 @@ public class GetNodePoolOptionsRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(GetNodePoolOptionsRequest o) {
             nodePoolOptionId(o.getNodePoolOptionId());
             compartmentId(o.getCompartmentId());
+            shouldListAllPatchVersions(o.getShouldListAllPatchVersions());
+            nodePoolOsType(o.getNodePoolOsType());
+            nodePoolOsArch(o.getNodePoolOsArch());
+            nodePoolK8sVersion(o.getNodePoolK8sVersion());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -172,9 +329,15 @@ public class GetNodePoolOptionsRequest extends com.oracle.bmc.requests.BmcReques
             GetNodePoolOptionsRequest request = new GetNodePoolOptionsRequest();
             request.nodePoolOptionId = nodePoolOptionId;
             request.compartmentId = compartmentId;
+            request.shouldListAllPatchVersions = shouldListAllPatchVersions;
+            request.nodePoolOsType = nodePoolOsType;
+            request.nodePoolOsArch = nodePoolOsArch;
+            request.nodePoolK8sVersion = nodePoolK8sVersion;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetNodePoolOptionsRequest(nodePoolOptionId, compartmentId, opcRequestId);
+            // new GetNodePoolOptionsRequest(nodePoolOptionId, compartmentId,
+            // shouldListAllPatchVersions, nodePoolOsType, nodePoolOsArch, nodePoolK8sVersion,
+            // opcRequestId);
         }
     }
 
@@ -187,6 +350,10 @@ public class GetNodePoolOptionsRequest extends com.oracle.bmc.requests.BmcReques
         return new Builder()
                 .nodePoolOptionId(nodePoolOptionId)
                 .compartmentId(compartmentId)
+                .shouldListAllPatchVersions(shouldListAllPatchVersions)
+                .nodePoolOsType(nodePoolOsType)
+                .nodePoolOsArch(nodePoolOsArch)
+                .nodePoolK8sVersion(nodePoolK8sVersion)
                 .opcRequestId(opcRequestId);
     }
 
@@ -206,6 +373,11 @@ public class GetNodePoolOptionsRequest extends com.oracle.bmc.requests.BmcReques
         sb.append("super=").append(super.toString());
         sb.append(",nodePoolOptionId=").append(String.valueOf(this.nodePoolOptionId));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",shouldListAllPatchVersions=")
+                .append(String.valueOf(this.shouldListAllPatchVersions));
+        sb.append(",nodePoolOsType=").append(String.valueOf(this.nodePoolOsType));
+        sb.append(",nodePoolOsArch=").append(String.valueOf(this.nodePoolOsArch));
+        sb.append(",nodePoolK8sVersion=").append(String.valueOf(this.nodePoolK8sVersion));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -224,6 +396,11 @@ public class GetNodePoolOptionsRequest extends com.oracle.bmc.requests.BmcReques
         return super.equals(o)
                 && java.util.Objects.equals(this.nodePoolOptionId, other.nodePoolOptionId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.shouldListAllPatchVersions, other.shouldListAllPatchVersions)
+                && java.util.Objects.equals(this.nodePoolOsType, other.nodePoolOsType)
+                && java.util.Objects.equals(this.nodePoolOsArch, other.nodePoolOsArch)
+                && java.util.Objects.equals(this.nodePoolK8sVersion, other.nodePoolK8sVersion)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -237,6 +414,22 @@ public class GetNodePoolOptionsRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldListAllPatchVersions == null
+                                ? 43
+                                : this.shouldListAllPatchVersions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodePoolOsType == null ? 43 : this.nodePoolOsType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodePoolOsArch == null ? 43 : this.nodePoolOsArch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodePoolK8sVersion == null
+                                ? 43
+                                : this.nodePoolK8sVersion.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

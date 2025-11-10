@@ -34,6 +34,7 @@ public final class RunbookSummary
         "estimatedTime",
         "latestVersion",
         "hasDraftVersion",
+        "originalVersion",
         "lifecycleState",
         "lifecycleDetails",
         "timeCreated",
@@ -56,6 +57,7 @@ public final class RunbookSummary
             String estimatedTime,
             String latestVersion,
             Boolean hasDraftVersion,
+            String originalVersion,
             Runbook.LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeCreated,
@@ -77,6 +79,7 @@ public final class RunbookSummary
         this.estimatedTime = estimatedTime;
         this.latestVersion = latestVersion;
         this.hasDraftVersion = hasDraftVersion;
+        this.originalVersion = originalVersion;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
@@ -271,6 +274,25 @@ public final class RunbookSummary
             this.__explicitlySet__.add("hasDraftVersion");
             return this;
         }
+        /**
+         * Original runbook version. This version belongs to original runbook using which new
+         * runbook was exported.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("originalVersion")
+        private String originalVersion;
+
+        /**
+         * Original runbook version. This version belongs to original runbook using which new
+         * runbook was exported.
+         *
+         * @param originalVersion the value to set
+         * @return this builder
+         */
+        public Builder originalVersion(String originalVersion) {
+            this.originalVersion = originalVersion;
+            this.__explicitlySet__.add("originalVersion");
+            return this;
+        }
         /** The current state of the Runbook. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Runbook.LifecycleState lifecycleState;
@@ -441,6 +463,7 @@ public final class RunbookSummary
                             this.estimatedTime,
                             this.latestVersion,
                             this.hasDraftVersion,
+                            this.originalVersion,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeCreated,
@@ -490,6 +513,9 @@ public final class RunbookSummary
             }
             if (model.wasPropertyExplicitlySet("hasDraftVersion")) {
                 this.hasDraftVersion(model.getHasDraftVersion());
+            }
+            if (model.wasPropertyExplicitlySet("originalVersion")) {
+                this.originalVersion(model.getOriginalVersion());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -690,6 +716,23 @@ public final class RunbookSummary
         return hasDraftVersion;
     }
 
+    /**
+     * Original runbook version. This version belongs to original runbook using which new runbook
+     * was exported.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("originalVersion")
+    private final String originalVersion;
+
+    /**
+     * Original runbook version. This version belongs to original runbook using which new runbook
+     * was exported.
+     *
+     * @return the value
+     */
+    public String getOriginalVersion() {
+        return originalVersion;
+    }
+
     /** The current state of the Runbook. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Runbook.LifecycleState lifecycleState;
@@ -849,6 +892,7 @@ public final class RunbookSummary
         sb.append(", estimatedTime=").append(String.valueOf(this.estimatedTime));
         sb.append(", latestVersion=").append(String.valueOf(this.latestVersion));
         sb.append(", hasDraftVersion=").append(String.valueOf(this.hasDraftVersion));
+        sb.append(", originalVersion=").append(String.valueOf(this.originalVersion));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -883,6 +927,7 @@ public final class RunbookSummary
                 && java.util.Objects.equals(this.estimatedTime, other.estimatedTime)
                 && java.util.Objects.equals(this.latestVersion, other.latestVersion)
                 && java.util.Objects.equals(this.hasDraftVersion, other.hasDraftVersion)
+                && java.util.Objects.equals(this.originalVersion, other.originalVersion)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -916,6 +961,9 @@ public final class RunbookSummary
         result =
                 (result * PRIME)
                         + (this.hasDraftVersion == null ? 43 : this.hasDraftVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originalVersion == null ? 43 : this.originalVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

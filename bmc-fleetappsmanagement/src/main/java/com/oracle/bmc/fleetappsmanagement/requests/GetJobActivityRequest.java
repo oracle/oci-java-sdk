@@ -27,6 +27,13 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getJobActivityId() {
         return jobActivityId;
     }
+    /** If set to true, inventory details will be returned. */
+    private Boolean isDetailsRequired;
+
+    /** If set to true, inventory details will be returned. */
+    public Boolean getIsDetailsRequired() {
+        return isDetailsRequired;
+    }
     /** The client request ID for tracing. */
     private String opcRequestId;
 
@@ -66,6 +73,20 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
          */
         public Builder jobActivityId(String jobActivityId) {
             this.jobActivityId = jobActivityId;
+            return this;
+        }
+
+        /** If set to true, inventory details will be returned. */
+        private Boolean isDetailsRequired = null;
+
+        /**
+         * If set to true, inventory details will be returned.
+         *
+         * @param isDetailsRequired the value to set
+         * @return this builder instance
+         */
+        public Builder isDetailsRequired(Boolean isDetailsRequired) {
+            this.isDetailsRequired = isDetailsRequired;
             return this;
         }
 
@@ -115,6 +136,7 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         public Builder copy(GetJobActivityRequest o) {
             schedulerJobId(o.getSchedulerJobId());
             jobActivityId(o.getJobActivityId());
+            isDetailsRequired(o.getIsDetailsRequired());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -152,9 +174,11 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
             GetJobActivityRequest request = new GetJobActivityRequest();
             request.schedulerJobId = schedulerJobId;
             request.jobActivityId = jobActivityId;
+            request.isDetailsRequired = isDetailsRequired;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetJobActivityRequest(schedulerJobId, jobActivityId, opcRequestId);
+            // new GetJobActivityRequest(schedulerJobId, jobActivityId, isDetailsRequired,
+            // opcRequestId);
         }
     }
 
@@ -167,6 +191,7 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return new Builder()
                 .schedulerJobId(schedulerJobId)
                 .jobActivityId(jobActivityId)
+                .isDetailsRequired(isDetailsRequired)
                 .opcRequestId(opcRequestId);
     }
 
@@ -186,6 +211,7 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append("super=").append(super.toString());
         sb.append(",schedulerJobId=").append(String.valueOf(this.schedulerJobId));
         sb.append(",jobActivityId=").append(String.valueOf(this.jobActivityId));
+        sb.append(",isDetailsRequired=").append(String.valueOf(this.isDetailsRequired));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -204,6 +230,7 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return super.equals(o)
                 && java.util.Objects.equals(this.schedulerJobId, other.schedulerJobId)
                 && java.util.Objects.equals(this.jobActivityId, other.jobActivityId)
+                && java.util.Objects.equals(this.isDetailsRequired, other.isDetailsRequired)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -217,6 +244,9 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         result =
                 (result * PRIME)
                         + (this.jobActivityId == null ? 43 : this.jobActivityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDetailsRequired == null ? 43 : this.isDetailsRequired.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

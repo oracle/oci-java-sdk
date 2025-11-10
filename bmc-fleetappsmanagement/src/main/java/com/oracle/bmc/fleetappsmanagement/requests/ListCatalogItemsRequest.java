@@ -129,6 +129,19 @@ public class ListCatalogItemsRequest extends com.oracle.bmc.requests.BmcRequest<
         return catalogListingVersionCriteria;
     }
     /**
+     * A filter to return only resources that match the given package type. The state value is
+     * case-insensitive.
+     */
+    private com.oracle.bmc.fleetappsmanagement.model.CatalogItem.PackageType packageType;
+
+    /**
+     * A filter to return only resources that match the given package type. The state value is
+     * case-insensitive.
+     */
+    public com.oracle.bmc.fleetappsmanagement.model.CatalogItem.PackageType getPackageType() {
+        return packageType;
+    }
+    /**
      * The indicator to append Public Items from the root compartment to any query, when set to
      * TRUE.
      */
@@ -337,6 +350,25 @@ public class ListCatalogItemsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * A filter to return only resources that match the given package type. The state value is
+         * case-insensitive.
+         */
+        private com.oracle.bmc.fleetappsmanagement.model.CatalogItem.PackageType packageType = null;
+
+        /**
+         * A filter to return only resources that match the given package type. The state value is
+         * case-insensitive.
+         *
+         * @param packageType the value to set
+         * @return this builder instance
+         */
+        public Builder packageType(
+                com.oracle.bmc.fleetappsmanagement.model.CatalogItem.PackageType packageType) {
+            this.packageType = packageType;
+            return this;
+        }
+
+        /**
          * The indicator to append Public Items from the root compartment to any query, when set to
          * TRUE.
          */
@@ -395,6 +427,7 @@ public class ListCatalogItemsRequest extends com.oracle.bmc.requests.BmcRequest<
             opcRequestId(o.getOpcRequestId());
             catalogListingId(o.getCatalogListingId());
             catalogListingVersionCriteria(o.getCatalogListingVersionCriteria());
+            packageType(o.getPackageType());
             shouldListPublicItems(o.getShouldListPublicItems());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -441,11 +474,12 @@ public class ListCatalogItemsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.opcRequestId = opcRequestId;
             request.catalogListingId = catalogListingId;
             request.catalogListingVersionCriteria = catalogListingVersionCriteria;
+            request.packageType = packageType;
             request.shouldListPublicItems = shouldListPublicItems;
             return request;
             // new ListCatalogItemsRequest(compartmentId, configSourceType, lifecycleState,
             // sortOrder, sortBy, displayName, limit, page, opcRequestId, catalogListingId,
-            // catalogListingVersionCriteria, shouldListPublicItems);
+            // catalogListingVersionCriteria, packageType, shouldListPublicItems);
         }
     }
 
@@ -467,6 +501,7 @@ public class ListCatalogItemsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .opcRequestId(opcRequestId)
                 .catalogListingId(catalogListingId)
                 .catalogListingVersionCriteria(catalogListingVersionCriteria)
+                .packageType(packageType)
                 .shouldListPublicItems(shouldListPublicItems);
     }
 
@@ -496,6 +531,7 @@ public class ListCatalogItemsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",catalogListingId=").append(String.valueOf(this.catalogListingId));
         sb.append(",catalogListingVersionCriteria=")
                 .append(String.valueOf(this.catalogListingVersionCriteria));
+        sb.append(",packageType=").append(String.valueOf(this.packageType));
         sb.append(",shouldListPublicItems=").append(String.valueOf(this.shouldListPublicItems));
         sb.append(")");
         return sb.toString();
@@ -524,6 +560,7 @@ public class ListCatalogItemsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.catalogListingId, other.catalogListingId)
                 && java.util.Objects.equals(
                         this.catalogListingVersionCriteria, other.catalogListingVersionCriteria)
+                && java.util.Objects.equals(this.packageType, other.packageType)
                 && java.util.Objects.equals(
                         this.shouldListPublicItems, other.shouldListPublicItems);
     }
@@ -555,6 +592,7 @@ public class ListCatalogItemsRequest extends com.oracle.bmc.requests.BmcRequest<
                         + (this.catalogListingVersionCriteria == null
                                 ? 43
                                 : this.catalogListingVersionCriteria.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
         result =
                 (result * PRIME)
                         + (this.shouldListPublicItems == null

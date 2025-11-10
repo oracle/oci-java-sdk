@@ -696,6 +696,8 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam("clusterOptions")
                 .appendPathParam(request.getClusterOptionId())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam(
+                        "shouldListAllPatchVersions", request.getShouldListAllPatchVersions())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -783,6 +785,11 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam("nodePoolOptions")
                 .appendPathParam(request.getNodePoolOptionId())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam(
+                        "shouldListAllPatchVersions", request.getShouldListAllPatchVersions())
+                .appendEnumQueryParam("nodePoolOsType", request.getNodePoolOsType())
+                .appendEnumQueryParam("nodePoolOsArch", request.getNodePoolOsArch())
+                .appendQueryParam("nodePoolK8sVersion", request.getNodePoolK8sVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

@@ -27,6 +27,7 @@ public final class DedicatedVmHostInstanceSummary
         "availabilityDomain",
         "compartmentId",
         "instanceId",
+        "isMemoryEncryptionEnabled",
         "shape",
         "timeCreated"
     })
@@ -34,12 +35,14 @@ public final class DedicatedVmHostInstanceSummary
             String availabilityDomain,
             String compartmentId,
             String instanceId,
+            Boolean isMemoryEncryptionEnabled,
             String shape,
             java.util.Date timeCreated) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
         this.instanceId = instanceId;
+        this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
         this.shape = shape;
         this.timeCreated = timeCreated;
     }
@@ -97,6 +100,21 @@ public final class DedicatedVmHostInstanceSummary
             this.__explicitlySet__.add("instanceId");
             return this;
         }
+        /** Specifies whether the VM instance is confidential. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+        private Boolean isMemoryEncryptionEnabled;
+
+        /**
+         * Specifies whether the VM instance is confidential.
+         *
+         * @param isMemoryEncryptionEnabled the value to set
+         * @return this builder
+         */
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            this.__explicitlySet__.add("isMemoryEncryptionEnabled");
+            return this;
+        }
         /** The shape of the VM instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
@@ -145,6 +163,7 @@ public final class DedicatedVmHostInstanceSummary
                             this.availabilityDomain,
                             this.compartmentId,
                             this.instanceId,
+                            this.isMemoryEncryptionEnabled,
                             this.shape,
                             this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -163,6 +182,9 @@ public final class DedicatedVmHostInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("instanceId")) {
                 this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
+                this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
             }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
@@ -228,6 +250,19 @@ public final class DedicatedVmHostInstanceSummary
         return instanceId;
     }
 
+    /** Specifies whether the VM instance is confidential. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+    private final Boolean isMemoryEncryptionEnabled;
+
+    /**
+     * Specifies whether the VM instance is confidential.
+     *
+     * @return the value
+     */
+    public Boolean getIsMemoryEncryptionEnabled() {
+        return isMemoryEncryptionEnabled;
+    }
+
     /** The shape of the VM instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
@@ -280,6 +315,8 @@ public final class DedicatedVmHostInstanceSummary
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", isMemoryEncryptionEnabled=")
+                .append(String.valueOf(this.isMemoryEncryptionEnabled));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(")");
@@ -299,6 +336,8 @@ public final class DedicatedVmHostInstanceSummary
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(
+                        this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && super.equals(other);
@@ -317,6 +356,11 @@ public final class DedicatedVmHostInstanceSummary
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMemoryEncryptionEnabled == null
+                                ? 43
+                                : this.isMemoryEncryptionEnabled.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + super.hashCode();

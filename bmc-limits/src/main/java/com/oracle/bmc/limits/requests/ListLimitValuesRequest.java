@@ -33,12 +33,19 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
     public String getServiceName() {
         return serviceName;
     }
-    /** The OCID of the subscription assigned to tenant */
+    /** The subscription OCID assigned to the tenant. */
     private String subscriptionId;
 
-    /** The OCID of the subscription assigned to tenant */
+    /** The subscription OCID assigned to the tenant. */
     public String getSubscriptionId() {
         return subscriptionId;
+    }
+    /** External cloud provider location */
+    private String externalLocation;
+
+    /** External cloud provider location */
+    public String getExternalLocation() {
+        return externalLocation;
     }
     /** Filter entries by scope type. */
     private ScopeType scopeType;
@@ -258,17 +265,31 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The OCID of the subscription assigned to tenant */
+        /** The subscription OCID assigned to the tenant. */
         private String subscriptionId = null;
 
         /**
-         * The OCID of the subscription assigned to tenant
+         * The subscription OCID assigned to the tenant.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
          */
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /** External cloud provider location */
+        private String externalLocation = null;
+
+        /**
+         * External cloud provider location
+         *
+         * @param externalLocation the value to set
+         * @return this builder instance
+         */
+        public Builder externalLocation(String externalLocation) {
+            this.externalLocation = externalLocation;
             return this;
         }
 
@@ -429,6 +450,7 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             compartmentId(o.getCompartmentId());
             serviceName(o.getServiceName());
             subscriptionId(o.getSubscriptionId());
+            externalLocation(o.getExternalLocation());
             scopeType(o.getScopeType());
             availabilityDomain(o.getAvailabilityDomain());
             name(o.getName());
@@ -474,6 +496,7 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.compartmentId = compartmentId;
             request.serviceName = serviceName;
             request.subscriptionId = subscriptionId;
+            request.externalLocation = externalLocation;
             request.scopeType = scopeType;
             request.availabilityDomain = availabilityDomain;
             request.name = name;
@@ -483,8 +506,9 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListLimitValuesRequest(compartmentId, serviceName, subscriptionId, scopeType,
-            // availabilityDomain, name, sortBy, sortOrder, limit, page, opcRequestId);
+            // new ListLimitValuesRequest(compartmentId, serviceName, subscriptionId,
+            // externalLocation, scopeType, availabilityDomain, name, sortBy, sortOrder, limit,
+            // page, opcRequestId);
         }
     }
 
@@ -498,6 +522,7 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .compartmentId(compartmentId)
                 .serviceName(serviceName)
                 .subscriptionId(subscriptionId)
+                .externalLocation(externalLocation)
                 .scopeType(scopeType)
                 .availabilityDomain(availabilityDomain)
                 .name(name)
@@ -525,6 +550,7 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",serviceName=").append(String.valueOf(this.serviceName));
         sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(",externalLocation=").append(String.valueOf(this.externalLocation));
         sb.append(",scopeType=").append(String.valueOf(this.scopeType));
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(",name=").append(String.valueOf(this.name));
@@ -551,6 +577,7 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.externalLocation, other.externalLocation)
                 && java.util.Objects.equals(this.scopeType, other.scopeType)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.name, other.name)
@@ -572,6 +599,9 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalLocation == null ? 43 : this.externalLocation.hashCode());
         result = (result * PRIME) + (this.scopeType == null ? 43 : this.scopeType.hashCode());
         result =
                 (result * PRIME)

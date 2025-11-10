@@ -115,7 +115,7 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Add RunbookVersion in\u00A0Fleet Application Management.
+     * Add RunbookVersion in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -192,6 +192,69 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Export the specified version of the runbook.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ExportRunbookResponse> exportRunbook(
+            ExportRunbookRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ExportRunbookRequest, ExportRunbookResponse>
+                    handler);
+
+    /**
+     * Export the specified version of the runbook.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ExportRunbookVersionResponse> exportRunbookVersion(
+            ExportRunbookVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ExportRunbookVersionRequest, ExportRunbookVersionResponse>
+                    handler);
+
+    /**
+     * Find runbook export Dependencies
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<FindRunbookExportDependencyResponse> findRunbookExportDependency(
+            FindRunbookExportDependencyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            FindRunbookExportDependencyRequest, FindRunbookExportDependencyResponse>
+                    handler);
+
+    /**
+     * Find runbook import Dependencies
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<FindRunbookImportDependencyResponse> findRunbookImportDependency(
+            FindRunbookImportDependencyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            FindRunbookImportDependencyRequest, FindRunbookImportDependencyResponse>
+                    handler);
+
+    /**
      * Get the details of a runbook in Fleet Application Management.
      *
      * @param request The request object containing the details to send
@@ -204,6 +267,36 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
     java.util.concurrent.Future<GetRunbookResponse> getRunbook(
             GetRunbookRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetRunbookRequest, GetRunbookResponse> handler);
+
+    /**
+     * Get the runbook export status for provided runbook and exportId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRunbookExportResponse> getRunbookExport(
+            GetRunbookExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetRunbookExportRequest, GetRunbookExportResponse>
+                    handler);
+
+    /**
+     * Get the runbook import status for provided runbook and importId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRunbookImportResponse> getRunbookImport(
+            GetRunbookImportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetRunbookImportRequest, GetRunbookImportResponse>
+                    handler);
 
     /**
      * Gets a Runbook Version by identifier.
@@ -234,6 +327,87 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
     java.util.concurrent.Future<GetTaskRecordResponse> getTaskRecord(
             GetTaskRecordRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetTaskRecordRequest, GetTaskRecordResponse>
+                    handler);
+
+    /**
+     * Import the specified version of the runbook.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ImportRunbookResponse> importRunbook(
+            ImportRunbookRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ImportRunbookRequest, ImportRunbookResponse>
+                    handler);
+
+    /**
+     * Precheck for import runbook.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ImportRunbookPrecheckResponse> importRunbookPrecheck(
+            ImportRunbookPrecheckRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ImportRunbookPrecheckRequest, ImportRunbookPrecheckResponse>
+                    handler);
+
+    /**
+     * Export the specified version of the runbook.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ImportRunbookVersionResponse> importRunbookVersion(
+            ImportRunbookVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ImportRunbookVersionRequest, ImportRunbookVersionResponse>
+                    handler);
+
+    /**
+     * Returns a list of all the Runbook export status in the specified compartment. The query
+     * parameter `compartmentId` is required.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRunbookExportStatusesResponse> listRunbookExportStatuses(
+            ListRunbookExportStatusesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRunbookExportStatusesRequest, ListRunbookExportStatusesResponse>
+                    handler);
+
+    /**
+     * Returns a list of all the Runbook import status in the specified compartment. The query
+     * parameter `compartmentId` is required.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRunbookImportStatusesResponse> listRunbookImportStatuses(
+            ListRunbookImportStatusesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRunbookImportStatusesRequest, ListRunbookImportStatusesResponse>
                     handler);
 
     /**

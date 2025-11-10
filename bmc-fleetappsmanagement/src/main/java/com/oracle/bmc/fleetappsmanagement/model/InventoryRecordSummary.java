@@ -79,12 +79,12 @@ public final class InventoryRecordSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the Inventory target. */
+        /** The id of the Inventory target. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The OCID of the Inventory target.
+         * The id of the Inventory target.
          *
          * @param targetId the value to set
          * @return this builder
@@ -412,12 +412,12 @@ public final class InventoryRecordSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the Inventory target. */
+    /** The id of the Inventory target. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The OCID of the Inventory target.
+     * The id of the Inventory target.
      *
      * @return the value
      */

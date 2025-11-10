@@ -29,7 +29,11 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         "onTaskFailure",
         "onTaskSuccess",
         "onResourceNonCompliance",
-        "onRunbookNewerVersion"
+        "onRunbookNewerVersion",
+        "onJobSuccess",
+        "onJobStart",
+        "onJobCanceled",
+        "onJobScheduleChange"
     })
     public Preferences(
             UpcomingSchedule upcomingSchedule,
@@ -39,7 +43,11 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
             Boolean onTaskFailure,
             Boolean onTaskSuccess,
             Boolean onResourceNonCompliance,
-            Boolean onRunbookNewerVersion) {
+            Boolean onRunbookNewerVersion,
+            Boolean onJobSuccess,
+            Boolean onJobStart,
+            Boolean onJobCanceled,
+            Boolean onJobScheduleChange) {
         super();
         this.upcomingSchedule = upcomingSchedule;
         this.onJobFailure = onJobFailure;
@@ -49,6 +57,10 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         this.onTaskSuccess = onTaskSuccess;
         this.onResourceNonCompliance = onResourceNonCompliance;
         this.onRunbookNewerVersion = onRunbookNewerVersion;
+        this.onJobSuccess = onJobSuccess;
+        this.onJobStart = onJobStart;
+        this.onJobCanceled = onJobCanceled;
+        this.onJobScheduleChange = onJobScheduleChange;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -171,6 +183,66 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("onRunbookNewerVersion");
             return this;
         }
+        /** Enables or disables notification on job success. */
+        @com.fasterxml.jackson.annotation.JsonProperty("onJobSuccess")
+        private Boolean onJobSuccess;
+
+        /**
+         * Enables or disables notification on job success.
+         *
+         * @param onJobSuccess the value to set
+         * @return this builder
+         */
+        public Builder onJobSuccess(Boolean onJobSuccess) {
+            this.onJobSuccess = onJobSuccess;
+            this.__explicitlySet__.add("onJobSuccess");
+            return this;
+        }
+        /** Enables or disables notification on job start. */
+        @com.fasterxml.jackson.annotation.JsonProperty("onJobStart")
+        private Boolean onJobStart;
+
+        /**
+         * Enables or disables notification on job start.
+         *
+         * @param onJobStart the value to set
+         * @return this builder
+         */
+        public Builder onJobStart(Boolean onJobStart) {
+            this.onJobStart = onJobStart;
+            this.__explicitlySet__.add("onJobStart");
+            return this;
+        }
+        /** Enables or disables notification on job canceled. */
+        @com.fasterxml.jackson.annotation.JsonProperty("onJobCanceled")
+        private Boolean onJobCanceled;
+
+        /**
+         * Enables or disables notification on job canceled.
+         *
+         * @param onJobCanceled the value to set
+         * @return this builder
+         */
+        public Builder onJobCanceled(Boolean onJobCanceled) {
+            this.onJobCanceled = onJobCanceled;
+            this.__explicitlySet__.add("onJobCanceled");
+            return this;
+        }
+        /** Enables or disables notification on job schedule change. */
+        @com.fasterxml.jackson.annotation.JsonProperty("onJobScheduleChange")
+        private Boolean onJobScheduleChange;
+
+        /**
+         * Enables or disables notification on job schedule change.
+         *
+         * @param onJobScheduleChange the value to set
+         * @return this builder
+         */
+        public Builder onJobScheduleChange(Boolean onJobScheduleChange) {
+            this.onJobScheduleChange = onJobScheduleChange;
+            this.__explicitlySet__.add("onJobScheduleChange");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -185,7 +257,11 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
                             this.onTaskFailure,
                             this.onTaskSuccess,
                             this.onResourceNonCompliance,
-                            this.onRunbookNewerVersion);
+                            this.onRunbookNewerVersion,
+                            this.onJobSuccess,
+                            this.onJobStart,
+                            this.onJobCanceled,
+                            this.onJobScheduleChange);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -217,6 +293,18 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("onRunbookNewerVersion")) {
                 this.onRunbookNewerVersion(model.getOnRunbookNewerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("onJobSuccess")) {
+                this.onJobSuccess(model.getOnJobSuccess());
+            }
+            if (model.wasPropertyExplicitlySet("onJobStart")) {
+                this.onJobStart(model.getOnJobStart());
+            }
+            if (model.wasPropertyExplicitlySet("onJobCanceled")) {
+                this.onJobCanceled(model.getOnJobCanceled());
+            }
+            if (model.wasPropertyExplicitlySet("onJobScheduleChange")) {
+                this.onJobScheduleChange(model.getOnJobScheduleChange());
             }
             return this;
         }
@@ -333,6 +421,58 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         return onRunbookNewerVersion;
     }
 
+    /** Enables or disables notification on job success. */
+    @com.fasterxml.jackson.annotation.JsonProperty("onJobSuccess")
+    private final Boolean onJobSuccess;
+
+    /**
+     * Enables or disables notification on job success.
+     *
+     * @return the value
+     */
+    public Boolean getOnJobSuccess() {
+        return onJobSuccess;
+    }
+
+    /** Enables or disables notification on job start. */
+    @com.fasterxml.jackson.annotation.JsonProperty("onJobStart")
+    private final Boolean onJobStart;
+
+    /**
+     * Enables or disables notification on job start.
+     *
+     * @return the value
+     */
+    public Boolean getOnJobStart() {
+        return onJobStart;
+    }
+
+    /** Enables or disables notification on job canceled. */
+    @com.fasterxml.jackson.annotation.JsonProperty("onJobCanceled")
+    private final Boolean onJobCanceled;
+
+    /**
+     * Enables or disables notification on job canceled.
+     *
+     * @return the value
+     */
+    public Boolean getOnJobCanceled() {
+        return onJobCanceled;
+    }
+
+    /** Enables or disables notification on job schedule change. */
+    @com.fasterxml.jackson.annotation.JsonProperty("onJobScheduleChange")
+    private final Boolean onJobScheduleChange;
+
+    /**
+     * Enables or disables notification on job schedule change.
+     *
+     * @return the value
+     */
+    public Boolean getOnJobScheduleChange() {
+        return onJobScheduleChange;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -357,6 +497,10 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", onResourceNonCompliance=")
                 .append(String.valueOf(this.onResourceNonCompliance));
         sb.append(", onRunbookNewerVersion=").append(String.valueOf(this.onRunbookNewerVersion));
+        sb.append(", onJobSuccess=").append(String.valueOf(this.onJobSuccess));
+        sb.append(", onJobStart=").append(String.valueOf(this.onJobStart));
+        sb.append(", onJobCanceled=").append(String.valueOf(this.onJobCanceled));
+        sb.append(", onJobScheduleChange=").append(String.valueOf(this.onJobScheduleChange));
         sb.append(")");
         return sb.toString();
     }
@@ -381,6 +525,10 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(
                         this.onResourceNonCompliance, other.onResourceNonCompliance)
                 && java.util.Objects.equals(this.onRunbookNewerVersion, other.onRunbookNewerVersion)
+                && java.util.Objects.equals(this.onJobSuccess, other.onJobSuccess)
+                && java.util.Objects.equals(this.onJobStart, other.onJobStart)
+                && java.util.Objects.equals(this.onJobCanceled, other.onJobCanceled)
+                && java.util.Objects.equals(this.onJobScheduleChange, other.onJobScheduleChange)
                 && super.equals(other);
     }
 
@@ -414,6 +562,16 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
                         + (this.onRunbookNewerVersion == null
                                 ? 43
                                 : this.onRunbookNewerVersion.hashCode());
+        result = (result * PRIME) + (this.onJobSuccess == null ? 43 : this.onJobSuccess.hashCode());
+        result = (result * PRIME) + (this.onJobStart == null ? 43 : this.onJobStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onJobCanceled == null ? 43 : this.onJobCanceled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onJobScheduleChange == null
+                                ? 43
+                                : this.onJobScheduleChange.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

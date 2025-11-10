@@ -135,10 +135,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The OCID of the subscription assigned to tenant */
+    /** The subscription OCID assigned to the tenant. */
     private String subscriptionId;
 
-    /** The OCID of the subscription assigned to tenant */
+    /** The subscription OCID assigned to the tenant. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -241,11 +241,11 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The OCID of the subscription assigned to tenant */
+        /** The subscription OCID assigned to the tenant. */
         private String subscriptionId = null;
 
         /**
-         * The OCID of the subscription assigned to tenant
+         * The subscription OCID assigned to the tenant.
          *
          * @param subscriptionId the value to set
          * @return this builder instance

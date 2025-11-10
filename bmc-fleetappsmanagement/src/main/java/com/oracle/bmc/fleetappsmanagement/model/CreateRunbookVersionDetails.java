@@ -5,7 +5,9 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The information about new Runbook. <br>
+ * The information about new runbook version. Versioning runbooks in Fleet Application Management
+ * involve assigning unique identifiers or version numbers to different iterations of the runbook to
+ * track changes, improvements, and updates over time. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -82,12 +84,12 @@ public final class CreateRunbookVersionDetails
             this.__explicitlySet__.add("tasks");
             return this;
         }
-        /** The groups of the runbook. */
+        /** The groups of the runbook version. */
         @com.fasterxml.jackson.annotation.JsonProperty("groups")
         private java.util.List<Group> groups;
 
         /**
-         * The groups of the runbook.
+         * The groups of the runbook version.
          *
          * @param groups the value to set
          * @return this builder
@@ -236,12 +238,12 @@ public final class CreateRunbookVersionDetails
         return tasks;
     }
 
-    /** The groups of the runbook. */
+    /** The groups of the runbook version. */
     @com.fasterxml.jackson.annotation.JsonProperty("groups")
     private final java.util.List<Group> groups;
 
     /**
-     * The groups of the runbook.
+     * The groups of the runbook version.
      *
      * @return the value
      */

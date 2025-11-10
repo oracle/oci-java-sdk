@@ -120,7 +120,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
     CreateRunbookResponse createRunbook(CreateRunbookRequest request);
 
     /**
-     * Add RunbookVersion in\u00A0Fleet Application Management.
+     * Add RunbookVersion in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -199,6 +199,71 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
     DeleteTaskRecordResponse deleteTaskRecord(DeleteTaskRecordRequest request);
 
     /**
+     * Export the specified version of the runbook.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ExportRunbookExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportRunbook API.
+     */
+    ExportRunbookResponse exportRunbook(ExportRunbookRequest request);
+
+    /**
+     * Export the specified version of the runbook.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ExportRunbookVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ExportRunbookVersion API.
+     */
+    ExportRunbookVersionResponse exportRunbookVersion(ExportRunbookVersionRequest request);
+
+    /**
+     * Find runbook export Dependencies
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/FindRunbookExportDependencyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     FindRunbookExportDependency API.
+     */
+    FindRunbookExportDependencyResponse findRunbookExportDependency(
+            FindRunbookExportDependencyRequest request);
+
+    /**
+     * Find runbook import Dependencies
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/FindRunbookImportDependencyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     FindRunbookImportDependency API.
+     */
+    FindRunbookImportDependencyResponse findRunbookImportDependency(
+            FindRunbookImportDependencyRequest request);
+
+    /**
      * Get the details of a runbook in Fleet Application Management.
      *
      * @param request The request object containing the details to send
@@ -212,6 +277,38 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRunbook API.
      */
     GetRunbookResponse getRunbook(GetRunbookRequest request);
+
+    /**
+     * Get the runbook export status for provided runbook and exportId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetRunbookExportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRunbookExport
+     *     API.
+     */
+    GetRunbookExportResponse getRunbookExport(GetRunbookExportRequest request);
+
+    /**
+     * Get the runbook import status for provided runbook and importId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetRunbookImportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRunbookImport
+     *     API.
+     */
+    GetRunbookImportResponse getRunbookImport(GetRunbookImportRequest request);
 
     /**
      * Gets a Runbook Version by identifier.
@@ -243,6 +340,89 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskRecord API.
      */
     GetTaskRecordResponse getTaskRecord(GetTaskRecordRequest request);
+
+    /**
+     * Import the specified version of the runbook.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ImportRunbookExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportRunbook API.
+     */
+    ImportRunbookResponse importRunbook(ImportRunbookRequest request);
+
+    /**
+     * Precheck for import runbook.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ImportRunbookPrecheckExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ImportRunbookPrecheck API.
+     */
+    ImportRunbookPrecheckResponse importRunbookPrecheck(ImportRunbookPrecheckRequest request);
+
+    /**
+     * Export the specified version of the runbook.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ImportRunbookVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ImportRunbookVersion API.
+     */
+    ImportRunbookVersionResponse importRunbookVersion(ImportRunbookVersionRequest request);
+
+    /**
+     * Returns a list of all the Runbook export status in the specified compartment. The query
+     * parameter `compartmentId` is required.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListRunbookExportStatusesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListRunbookExportStatuses API.
+     */
+    ListRunbookExportStatusesResponse listRunbookExportStatuses(
+            ListRunbookExportStatusesRequest request);
+
+    /**
+     * Returns a list of all the Runbook import status in the specified compartment. The query
+     * parameter `compartmentId` is required.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListRunbookImportStatusesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListRunbookImportStatuses API.
+     */
+    ListRunbookImportStatusesResponse listRunbookImportStatuses(
+            ListRunbookImportStatusesRequest request);
 
     /**
      * List versions for a runbook in Fleet Application Management.

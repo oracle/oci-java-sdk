@@ -28,20 +28,26 @@ public final class InventoryRecordPatchDetails
         "patchName",
         "patchDescription",
         "timeApplied",
-        "patchType"
+        "patchType",
+        "timeReleased",
+        "patchLevel"
     })
     public InventoryRecordPatchDetails(
             String patchId,
             String patchName,
             String patchDescription,
             java.util.Date timeApplied,
-            String patchType) {
+            String patchType,
+            java.util.Date timeReleased,
+            String patchLevel) {
         super();
         this.patchId = patchId;
         this.patchName = patchName;
         this.patchDescription = patchDescription;
         this.timeApplied = timeApplied;
         this.patchType = patchType;
+        this.timeReleased = timeReleased;
+        this.patchLevel = patchLevel;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -121,6 +127,36 @@ public final class InventoryRecordPatchDetails
             this.__explicitlySet__.add("patchType");
             return this;
         }
+        /** The date on which patch was released. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
+        private java.util.Date timeReleased;
+
+        /**
+         * The date on which patch was released.
+         *
+         * @param timeReleased the value to set
+         * @return this builder
+         */
+        public Builder timeReleased(java.util.Date timeReleased) {
+            this.timeReleased = timeReleased;
+            this.__explicitlySet__.add("timeReleased");
+            return this;
+        }
+        /** Patch Level. */
+        @com.fasterxml.jackson.annotation.JsonProperty("patchLevel")
+        private String patchLevel;
+
+        /**
+         * Patch Level.
+         *
+         * @param patchLevel the value to set
+         * @return this builder
+         */
+        public Builder patchLevel(String patchLevel) {
+            this.patchLevel = patchLevel;
+            this.__explicitlySet__.add("patchLevel");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -132,7 +168,9 @@ public final class InventoryRecordPatchDetails
                             this.patchName,
                             this.patchDescription,
                             this.timeApplied,
-                            this.patchType);
+                            this.patchType,
+                            this.timeReleased,
+                            this.patchLevel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -155,6 +193,12 @@ public final class InventoryRecordPatchDetails
             }
             if (model.wasPropertyExplicitlySet("patchType")) {
                 this.patchType(model.getPatchType());
+            }
+            if (model.wasPropertyExplicitlySet("timeReleased")) {
+                this.timeReleased(model.getTimeReleased());
+            }
+            if (model.wasPropertyExplicitlySet("patchLevel")) {
+                this.patchLevel(model.getPatchLevel());
             }
             return this;
         }
@@ -234,6 +278,32 @@ public final class InventoryRecordPatchDetails
         return patchType;
     }
 
+    /** The date on which patch was released. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
+    private final java.util.Date timeReleased;
+
+    /**
+     * The date on which patch was released.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeReleased() {
+        return timeReleased;
+    }
+
+    /** Patch Level. */
+    @com.fasterxml.jackson.annotation.JsonProperty("patchLevel")
+    private final String patchLevel;
+
+    /**
+     * Patch Level.
+     *
+     * @return the value
+     */
+    public String getPatchLevel() {
+        return patchLevel;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -254,6 +324,8 @@ public final class InventoryRecordPatchDetails
         sb.append(", patchDescription=").append(String.valueOf(this.patchDescription));
         sb.append(", timeApplied=").append(String.valueOf(this.timeApplied));
         sb.append(", patchType=").append(String.valueOf(this.patchType));
+        sb.append(", timeReleased=").append(String.valueOf(this.timeReleased));
+        sb.append(", patchLevel=").append(String.valueOf(this.patchLevel));
         sb.append(")");
         return sb.toString();
     }
@@ -273,6 +345,8 @@ public final class InventoryRecordPatchDetails
                 && java.util.Objects.equals(this.patchDescription, other.patchDescription)
                 && java.util.Objects.equals(this.timeApplied, other.timeApplied)
                 && java.util.Objects.equals(this.patchType, other.patchType)
+                && java.util.Objects.equals(this.timeReleased, other.timeReleased)
+                && java.util.Objects.equals(this.patchLevel, other.patchLevel)
                 && super.equals(other);
     }
 
@@ -287,6 +361,8 @@ public final class InventoryRecordPatchDetails
                         + (this.patchDescription == null ? 43 : this.patchDescription.hashCode());
         result = (result * PRIME) + (this.timeApplied == null ? 43 : this.timeApplied.hashCode());
         result = (result * PRIME) + (this.patchType == null ? 43 : this.patchType.hashCode());
+        result = (result * PRIME) + (this.timeReleased == null ? 43 : this.timeReleased.hashCode());
+        result = (result * PRIME) + (this.patchLevel == null ? 43 : this.patchLevel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

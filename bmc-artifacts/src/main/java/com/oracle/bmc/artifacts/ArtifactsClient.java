@@ -736,6 +736,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("repositoryName", request.getRepositoryName())
                 .appendQueryParam("version", request.getVersion())
                 .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("imageDigest", request.getImageDigest())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
@@ -867,6 +868,39 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListRepositoriesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListRepositoriesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public LookupContainerImageByUriResponse lookupContainerImageByUri(
+            LookupContainerImageByUriRequest request) {
+        Objects.requireNonNull(
+                request.getLookupContainerImageByUriDetails(),
+                "lookupContainerImageByUriDetails is required");
+
+        return clientCall(request, LookupContainerImageByUriResponse::builder)
+                .logger(LOG, "lookupContainerImageByUri")
+                .serviceDetails(
+                        "Artifacts",
+                        "LookupContainerImageByUri",
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/LookupContainerImageByUri")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(LookupContainerImageByUriRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("images")
+                .appendPathParam("actions")
+                .appendPathParam("lookupImageByUri")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerImage.class,
+                        LookupContainerImageByUriResponse.Builder::containerImage)
+                .handleResponseHeaderString("etag", LookupContainerImageByUriResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", LookupContainerImageByUriResponse.Builder::opcRequestId)
                 .callSync();
     }
 

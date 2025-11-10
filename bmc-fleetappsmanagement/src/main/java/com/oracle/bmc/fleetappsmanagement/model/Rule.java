@@ -25,18 +25,24 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "basis",
         "compartmentId",
         "resourceCompartmentId",
-        "conditions"
+        "conditions",
+        "matchCondition",
+        "compartmentIdInSubtree"
     })
     public Rule(
             String basis,
             String compartmentId,
             String resourceCompartmentId,
-            java.util.List<Condition> conditions) {
+            java.util.List<Condition> conditions,
+            MatchCondition matchCondition,
+            Boolean compartmentIdInSubtree) {
         super();
         this.basis = basis;
         this.compartmentId = compartmentId;
         this.resourceCompartmentId = resourceCompartmentId;
         this.conditions = conditions;
+        this.matchCondition = matchCondition;
+        this.compartmentIdInSubtree = compartmentIdInSubtree;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -111,6 +117,48 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("conditions");
             return this;
         }
+        /**
+         * Match condition for the rule selection. Include resources that match all rules or any of
+         * the rules. Default value for {@code matchCondition} is ANY
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("matchCondition")
+        private MatchCondition matchCondition;
+
+        /**
+         * Match condition for the rule selection. Include resources that match all rules or any of
+         * the rules. Default value for {@code matchCondition} is ANY
+         *
+         * @param matchCondition the value to set
+         * @return this builder
+         */
+        public Builder matchCondition(MatchCondition matchCondition) {
+            this.matchCondition = matchCondition;
+            this.__explicitlySet__.add("matchCondition");
+            return this;
+        }
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all
+         * compartments which descend from it. Which resources are returned and their field contents
+         * depends on the value of accessLevel. Default value for {@code compartmentIdInSubtree} is
+         * false
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
+        private Boolean compartmentIdInSubtree;
+
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all
+         * compartments which descend from it. Which resources are returned and their field contents
+         * depends on the value of accessLevel. Default value for {@code compartmentIdInSubtree} is
+         * false
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            this.__explicitlySet__.add("compartmentIdInSubtree");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -121,7 +169,9 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.basis,
                             this.compartmentId,
                             this.resourceCompartmentId,
-                            this.conditions);
+                            this.conditions,
+                            this.matchCondition,
+                            this.compartmentIdInSubtree);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -141,6 +191,12 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("conditions")) {
                 this.conditions(model.getConditions());
+            }
+            if (model.wasPropertyExplicitlySet("matchCondition")) {
+                this.matchCondition(model.getMatchCondition());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentIdInSubtree")) {
+                this.compartmentIdInSubtree(model.getCompartmentIdInSubtree());
             }
             return this;
         }
@@ -217,6 +273,93 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return conditions;
     }
 
+    /**
+     * Match condition for the rule selection. Include resources that match all rules or any of the
+     * rules. Default value for {@code matchCondition} is ANY
+     */
+    public enum MatchCondition implements com.oracle.bmc.http.internal.BmcEnum {
+        MatchAll("MATCH_ALL"),
+        Any("ANY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MatchCondition.class);
+
+        private final String value;
+        private static java.util.Map<String, MatchCondition> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MatchCondition v : MatchCondition.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        MatchCondition(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MatchCondition create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'MatchCondition', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Match condition for the rule selection. Include resources that match all rules or any of the
+     * rules. Default value for {@code matchCondition} is ANY
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("matchCondition")
+    private final MatchCondition matchCondition;
+
+    /**
+     * Match condition for the rule selection. Include resources that match all rules or any of the
+     * rules. Default value for {@code matchCondition} is ANY
+     *
+     * @return the value
+     */
+    public MatchCondition getMatchCondition() {
+        return matchCondition;
+    }
+
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all
+     * compartments which descend from it. Which resources are returned and their field contents
+     * depends on the value of accessLevel. Default value for {@code compartmentIdInSubtree} is
+     * false
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
+    private final Boolean compartmentIdInSubtree;
+
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all
+     * compartments which descend from it. Which resources are returned and their field contents
+     * depends on the value of accessLevel. Default value for {@code compartmentIdInSubtree} is
+     * false
+     *
+     * @return the value
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -236,6 +379,8 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resourceCompartmentId=").append(String.valueOf(this.resourceCompartmentId));
         sb.append(", conditions=").append(String.valueOf(this.conditions));
+        sb.append(", matchCondition=").append(String.valueOf(this.matchCondition));
+        sb.append(", compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(")");
         return sb.toString();
     }
@@ -254,6 +399,9 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.resourceCompartmentId, other.resourceCompartmentId)
                 && java.util.Objects.equals(this.conditions, other.conditions)
+                && java.util.Objects.equals(this.matchCondition, other.matchCondition)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && super.equals(other);
     }
 
@@ -271,6 +419,14 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
                                 ? 43
                                 : this.resourceCompartmentId.hashCode());
         result = (result * PRIME) + (this.conditions == null ? 43 : this.conditions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.matchCondition == null ? 43 : this.matchCondition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -84,6 +84,13 @@ public class ListInventoryRecordsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** If set to true, inventory details will be returned. */
+    private Boolean isDetailsRequired;
+
+    /** If set to true, inventory details will be returned. */
+    public Boolean getIsDetailsRequired() {
+        return isDetailsRequired;
+    }
     /** The field to sort by. Only one sort order may be provided. */
     private SortBy sortBy;
 
@@ -257,6 +264,20 @@ public class ListInventoryRecordsRequest
             return this;
         }
 
+        /** If set to true, inventory details will be returned. */
+        private Boolean isDetailsRequired = null;
+
+        /**
+         * If set to true, inventory details will be returned.
+         *
+         * @param isDetailsRequired the value to set
+         * @return this builder instance
+         */
+        public Builder isDetailsRequired(Boolean isDetailsRequired) {
+            this.isDetailsRequired = isDetailsRequired;
+            return this;
+        }
+
         /** The field to sort by. Only one sort order may be provided. */
         private SortBy sortBy = null;
 
@@ -309,6 +330,7 @@ public class ListInventoryRecordsRequest
             page(o.getPage());
             sortOrder(o.getSortOrder());
             opcRequestId(o.getOpcRequestId());
+            isDetailsRequired(o.getIsDetailsRequired());
             sortBy(o.getSortBy());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -352,10 +374,11 @@ public class ListInventoryRecordsRequest
             request.page = page;
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
+            request.isDetailsRequired = isDetailsRequired;
             request.sortBy = sortBy;
             return request;
             // new ListInventoryRecordsRequest(compartmentId, compartmentIdInSubtree, fleetId,
-            // resourceId, limit, page, sortOrder, opcRequestId, sortBy);
+            // resourceId, limit, page, sortOrder, opcRequestId, isDetailsRequired, sortBy);
         }
     }
 
@@ -374,6 +397,7 @@ public class ListInventoryRecordsRequest
                 .page(page)
                 .sortOrder(sortOrder)
                 .opcRequestId(opcRequestId)
+                .isDetailsRequired(isDetailsRequired)
                 .sortBy(sortBy);
     }
 
@@ -399,6 +423,7 @@ public class ListInventoryRecordsRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isDetailsRequired=").append(String.valueOf(this.isDetailsRequired));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(")");
         return sb.toString();
@@ -424,6 +449,7 @@ public class ListInventoryRecordsRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isDetailsRequired, other.isDetailsRequired)
                 && java.util.Objects.equals(this.sortBy, other.sortBy);
     }
 
@@ -445,6 +471,9 @@ public class ListInventoryRecordsRequest
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDetailsRequired == null ? 43 : this.isDetailsRequired.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         return result;
     }

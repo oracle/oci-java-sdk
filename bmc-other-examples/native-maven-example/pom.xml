@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk-examples-native</artifactId>
-  <version>3.76.0</version>
+  <version>3.76.1</version>
   <name>Oracle Cloud Infrastructure SDK - Native Example</name>
   <description>This project contains an example on how to use the SDK used for Oracle Cloud Infrastructure in a native executable</description>
   <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
@@ -98,14 +98,14 @@
             <dependency>
                 <groupId>com.oracle.oci.sdk</groupId>
                 <artifactId>oci-java-sdk-bom</artifactId>
-                <version>3.76.0</version>
+                <version>3.76.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.oracle.oci.sdk</groupId>
                 <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-                <version>3.76.0</version>
+                <version>3.76.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

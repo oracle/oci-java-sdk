@@ -87,6 +87,21 @@ public final class TerraformBasedExecutionDetails extends ExecutionDetails {
             this.__explicitlySet__.add("isReadOutputVariableEnabled");
             return this;
         }
+        /** The list of system variables. */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVariables")
+        private java.util.List<String> systemVariables;
+
+        /**
+         * The list of system variables.
+         *
+         * @param systemVariables the value to set
+         * @return this builder
+         */
+        public Builder systemVariables(java.util.List<String> systemVariables) {
+            this.systemVariables = systemVariables;
+            this.__explicitlySet__.add("systemVariables");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -97,7 +112,8 @@ public final class TerraformBasedExecutionDetails extends ExecutionDetails {
                             this.catalogId,
                             this.configFile,
                             this.targetCompartmentId,
-                            this.isReadOutputVariableEnabled);
+                            this.isReadOutputVariableEnabled,
+                            this.systemVariables);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -118,6 +134,9 @@ public final class TerraformBasedExecutionDetails extends ExecutionDetails {
             if (model.wasPropertyExplicitlySet("isReadOutputVariableEnabled")) {
                 this.isReadOutputVariableEnabled(model.getIsReadOutputVariableEnabled());
             }
+            if (model.wasPropertyExplicitlySet("systemVariables")) {
+                this.systemVariables(model.getSystemVariables());
+            }
             return this;
         }
     }
@@ -136,12 +155,14 @@ public final class TerraformBasedExecutionDetails extends ExecutionDetails {
             String catalogId,
             String configFile,
             String targetCompartmentId,
-            Boolean isReadOutputVariableEnabled) {
+            Boolean isReadOutputVariableEnabled,
+            java.util.List<String> systemVariables) {
         super();
         this.catalogId = catalogId;
         this.configFile = configFile;
         this.targetCompartmentId = targetCompartmentId;
         this.isReadOutputVariableEnabled = isReadOutputVariableEnabled;
+        this.systemVariables = systemVariables;
     }
 
     /** Catalog Id having terraform package. */
@@ -196,6 +217,19 @@ public final class TerraformBasedExecutionDetails extends ExecutionDetails {
         return isReadOutputVariableEnabled;
     }
 
+    /** The list of system variables. */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVariables")
+    private final java.util.List<String> systemVariables;
+
+    /**
+     * The list of system variables.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getSystemVariables() {
+        return systemVariables;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -216,6 +250,7 @@ public final class TerraformBasedExecutionDetails extends ExecutionDetails {
         sb.append(", targetCompartmentId=").append(String.valueOf(this.targetCompartmentId));
         sb.append(", isReadOutputVariableEnabled=")
                 .append(String.valueOf(this.isReadOutputVariableEnabled));
+        sb.append(", systemVariables=").append(String.valueOf(this.systemVariables));
         sb.append(")");
         return sb.toString();
     }
@@ -235,6 +270,7 @@ public final class TerraformBasedExecutionDetails extends ExecutionDetails {
                 && java.util.Objects.equals(this.targetCompartmentId, other.targetCompartmentId)
                 && java.util.Objects.equals(
                         this.isReadOutputVariableEnabled, other.isReadOutputVariableEnabled)
+                && java.util.Objects.equals(this.systemVariables, other.systemVariables)
                 && super.equals(other);
     }
 
@@ -254,6 +290,9 @@ public final class TerraformBasedExecutionDetails extends ExecutionDetails {
                         + (this.isReadOutputVariableEnabled == null
                                 ? 43
                                 : this.isReadOutputVariableEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVariables == null ? 43 : this.systemVariables.hashCode());
         return result;
     }
 }

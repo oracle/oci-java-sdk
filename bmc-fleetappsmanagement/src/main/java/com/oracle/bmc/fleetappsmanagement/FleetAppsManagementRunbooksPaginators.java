@@ -43,6 +43,260 @@ public class FleetAppsManagementRunbooksPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listRunbookExportStatuses operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListRunbookExportStatusesResponse> listRunbookExportStatusesResponseIterator(
+            final ListRunbookExportStatusesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRunbookExportStatusesRequest.Builder,
+                ListRunbookExportStatusesRequest,
+                ListRunbookExportStatusesResponse>(
+                new java.util.function.Supplier<ListRunbookExportStatusesRequest.Builder>() {
+                    @Override
+                    public ListRunbookExportStatusesRequest.Builder get() {
+                        return ListRunbookExportStatusesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRunbookExportStatusesResponse, String>() {
+                    @Override
+                    public String apply(ListRunbookExportStatusesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRunbookExportStatusesRequest.Builder>,
+                        ListRunbookExportStatusesRequest>() {
+                    @Override
+                    public ListRunbookExportStatusesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRunbookExportStatusesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRunbookExportStatusesRequest, ListRunbookExportStatusesResponse>() {
+                    @Override
+                    public ListRunbookExportStatusesResponse apply(
+                            ListRunbookExportStatusesRequest request) {
+                        return client.listRunbookExportStatuses(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.fleetappsmanagement.model.RunbookExportStatusSummary} objects contained in
+     * responses from the listRunbookExportStatuses operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.fleetappsmanagement.model.RunbookExportStatusSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.fleetappsmanagement.model.RunbookExportStatusSummary>
+            listRunbookExportStatusesRecordIterator(
+                    final ListRunbookExportStatusesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRunbookExportStatusesRequest.Builder,
+                ListRunbookExportStatusesRequest,
+                ListRunbookExportStatusesResponse,
+                com.oracle.bmc.fleetappsmanagement.model.RunbookExportStatusSummary>(
+                new java.util.function.Supplier<ListRunbookExportStatusesRequest.Builder>() {
+                    @Override
+                    public ListRunbookExportStatusesRequest.Builder get() {
+                        return ListRunbookExportStatusesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRunbookExportStatusesResponse, String>() {
+                    @Override
+                    public String apply(ListRunbookExportStatusesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRunbookExportStatusesRequest.Builder>,
+                        ListRunbookExportStatusesRequest>() {
+                    @Override
+                    public ListRunbookExportStatusesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRunbookExportStatusesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRunbookExportStatusesRequest, ListRunbookExportStatusesResponse>() {
+                    @Override
+                    public ListRunbookExportStatusesResponse apply(
+                            ListRunbookExportStatusesRequest request) {
+                        return client.listRunbookExportStatuses(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRunbookExportStatusesResponse,
+                        java.util.List<
+                                com.oracle.bmc.fleetappsmanagement.model
+                                        .RunbookExportStatusSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.fleetappsmanagement.model
+                                            .RunbookExportStatusSummary>
+                            apply(ListRunbookExportStatusesResponse response) {
+                        return response.getRunbookExportStatusCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listRunbookImportStatuses operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListRunbookImportStatusesResponse> listRunbookImportStatusesResponseIterator(
+            final ListRunbookImportStatusesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRunbookImportStatusesRequest.Builder,
+                ListRunbookImportStatusesRequest,
+                ListRunbookImportStatusesResponse>(
+                new java.util.function.Supplier<ListRunbookImportStatusesRequest.Builder>() {
+                    @Override
+                    public ListRunbookImportStatusesRequest.Builder get() {
+                        return ListRunbookImportStatusesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRunbookImportStatusesResponse, String>() {
+                    @Override
+                    public String apply(ListRunbookImportStatusesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRunbookImportStatusesRequest.Builder>,
+                        ListRunbookImportStatusesRequest>() {
+                    @Override
+                    public ListRunbookImportStatusesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRunbookImportStatusesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRunbookImportStatusesRequest, ListRunbookImportStatusesResponse>() {
+                    @Override
+                    public ListRunbookImportStatusesResponse apply(
+                            ListRunbookImportStatusesRequest request) {
+                        return client.listRunbookImportStatuses(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.fleetappsmanagement.model.RunbookImportStatusSummary} objects contained in
+     * responses from the listRunbookImportStatuses operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.fleetappsmanagement.model.RunbookImportStatusSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.fleetappsmanagement.model.RunbookImportStatusSummary>
+            listRunbookImportStatusesRecordIterator(
+                    final ListRunbookImportStatusesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRunbookImportStatusesRequest.Builder,
+                ListRunbookImportStatusesRequest,
+                ListRunbookImportStatusesResponse,
+                com.oracle.bmc.fleetappsmanagement.model.RunbookImportStatusSummary>(
+                new java.util.function.Supplier<ListRunbookImportStatusesRequest.Builder>() {
+                    @Override
+                    public ListRunbookImportStatusesRequest.Builder get() {
+                        return ListRunbookImportStatusesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRunbookImportStatusesResponse, String>() {
+                    @Override
+                    public String apply(ListRunbookImportStatusesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRunbookImportStatusesRequest.Builder>,
+                        ListRunbookImportStatusesRequest>() {
+                    @Override
+                    public ListRunbookImportStatusesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRunbookImportStatusesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRunbookImportStatusesRequest, ListRunbookImportStatusesResponse>() {
+                    @Override
+                    public ListRunbookImportStatusesResponse apply(
+                            ListRunbookImportStatusesRequest request) {
+                        return client.listRunbookImportStatuses(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRunbookImportStatusesResponse,
+                        java.util.List<
+                                com.oracle.bmc.fleetappsmanagement.model
+                                        .RunbookImportStatusSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.fleetappsmanagement.model
+                                            .RunbookImportStatusSummary>
+                            apply(ListRunbookImportStatusesResponse response) {
+                        return response.getRunbookImportStatusCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listRunbookVersions operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

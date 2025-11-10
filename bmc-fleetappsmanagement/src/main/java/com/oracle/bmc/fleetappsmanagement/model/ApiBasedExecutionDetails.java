@@ -42,12 +42,28 @@ public final class ApiBasedExecutionDetails extends ExecutionDetails {
             this.__explicitlySet__.add("endpoint");
             return this;
         }
+        /** The list of system variables. */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVariables")
+        private java.util.List<String> systemVariables;
+
+        /**
+         * The list of system variables.
+         *
+         * @param systemVariables the value to set
+         * @return this builder
+         */
+        public Builder systemVariables(java.util.List<String> systemVariables) {
+            this.systemVariables = systemVariables;
+            this.__explicitlySet__.add("systemVariables");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiBasedExecutionDetails build() {
-            ApiBasedExecutionDetails model = new ApiBasedExecutionDetails(this.endpoint);
+            ApiBasedExecutionDetails model =
+                    new ApiBasedExecutionDetails(this.endpoint, this.systemVariables);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -58,6 +74,9 @@ public final class ApiBasedExecutionDetails extends ExecutionDetails {
         public Builder copy(ApiBasedExecutionDetails model) {
             if (model.wasPropertyExplicitlySet("endpoint")) {
                 this.endpoint(model.getEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("systemVariables")) {
+                this.systemVariables(model.getSystemVariables());
             }
             return this;
         }
@@ -73,9 +92,10 @@ public final class ApiBasedExecutionDetails extends ExecutionDetails {
     }
 
     @Deprecated
-    public ApiBasedExecutionDetails(String endpoint) {
+    public ApiBasedExecutionDetails(String endpoint, java.util.List<String> systemVariables) {
         super();
         this.endpoint = endpoint;
+        this.systemVariables = systemVariables;
     }
 
     /** Endpoint to be invoked. */
@@ -89,6 +109,19 @@ public final class ApiBasedExecutionDetails extends ExecutionDetails {
      */
     public String getEndpoint() {
         return endpoint;
+    }
+
+    /** The list of system variables. */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVariables")
+    private final java.util.List<String> systemVariables;
+
+    /**
+     * The list of system variables.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getSystemVariables() {
+        return systemVariables;
     }
 
     @Override
@@ -107,6 +140,7 @@ public final class ApiBasedExecutionDetails extends ExecutionDetails {
         sb.append("ApiBasedExecutionDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", systemVariables=").append(String.valueOf(this.systemVariables));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +155,9 @@ public final class ApiBasedExecutionDetails extends ExecutionDetails {
         }
 
         ApiBasedExecutionDetails other = (ApiBasedExecutionDetails) o;
-        return java.util.Objects.equals(this.endpoint, other.endpoint) && super.equals(other);
+        return java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.systemVariables, other.systemVariables)
+                && super.equals(other);
     }
 
     @Override
@@ -129,6 +165,9 @@ public final class ApiBasedExecutionDetails extends ExecutionDetails {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVariables == null ? 43 : this.systemVariables.hashCode());
         return result;
     }
 }

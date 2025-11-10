@@ -104,6 +104,22 @@ public interface FleetAppsManagementCatalog extends AutoCloseable {
     CloneCatalogItemResponse cloneCatalogItem(CloneCatalogItemRequest request);
 
     /**
+     * Configures a CatalogItem. Creating new Catalog Item.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ConfigureCatalogItemExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ConfigureCatalogItem API.
+     */
+    ConfigureCatalogItemResponse configureCatalogItem(ConfigureCatalogItemRequest request);
+
+    /**
      * Creates a CatalogItem.
      *
      * @param request The request object containing the details to send
@@ -149,6 +165,23 @@ public interface FleetAppsManagementCatalog extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCatalogItem API.
      */
     GetCatalogItemResponse getCatalogItem(GetCatalogItemRequest request);
+
+    /**
+     * Gets information about a CatalogItem Variables.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetCatalogItemVariablesDefinitionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetCatalogItemVariablesDefinition API.
+     */
+    GetCatalogItemVariablesDefinitionResponse getCatalogItemVariablesDefinition(
+            GetCatalogItemVariablesDefinitionRequest request);
 
     /**
      * Gets a list of Catalog Items in a compartment.

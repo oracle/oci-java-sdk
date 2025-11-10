@@ -27,6 +27,7 @@ public final class SchedulerExecutionSummary
         "id",
         "displayName",
         "compartmentId",
+        "compartmentName",
         "timeCreated",
         "timeUpdated",
         "timeScheduled",
@@ -51,6 +52,7 @@ public final class SchedulerExecutionSummary
             String id,
             String displayName,
             String compartmentId,
+            String compartmentName,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeScheduled,
@@ -74,6 +76,7 @@ public final class SchedulerExecutionSummary
         this.id = id;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
+        this.compartmentName = compartmentName;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeScheduled = timeScheduled;
@@ -150,6 +153,21 @@ public final class SchedulerExecutionSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
+        /** Name of the compartment in which resource exist. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
+        private String compartmentName;
+
+        /**
+         * Name of the compartment in which resource exist.
+         *
+         * @param compartmentName the value to set
+         * @return this builder
+         */
+        public Builder compartmentName(String compartmentName) {
+            this.compartmentName = compartmentName;
+            this.__explicitlySet__.add("compartmentName");
+            return this;
+        }
         /** The time this resource was created. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
@@ -210,12 +228,12 @@ public final class SchedulerExecutionSummary
             this.__explicitlySet__.add("activityId");
             return this;
         }
-        /** ResourceId associated with the Schedule. */
+        /** FleetId associated with the Schedule. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * ResourceId associated with the Schedule.
+         * FleetId associated with the Schedule.
          *
          * @param resourceId the value to set
          * @return this builder
@@ -225,12 +243,12 @@ public final class SchedulerExecutionSummary
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** jobId associated with the Schedule. */
+        /** SchedulerJobId associated with the Schedule. */
         @com.fasterxml.jackson.annotation.JsonProperty("schedulerJobId")
         private String schedulerJobId;
 
         /**
-         * jobId associated with the Schedule.
+         * SchedulerJobId associated with the Schedule.
          *
          * @param schedulerJobId the value to set
          * @return this builder
@@ -240,12 +258,12 @@ public final class SchedulerExecutionSummary
             this.__explicitlySet__.add("schedulerJobId");
             return this;
         }
-        /** Resource DsiplayName associated with the Schedule. */
+        /** Display Name of the Fleet associated with the Schedule. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
         private String resourceDisplayName;
 
         /**
-         * Resource DsiplayName associated with the Schedule.
+         * Display Name of the Fleet associated with the Schedule.
          *
          * @param resourceDisplayName the value to set
          * @return this builder
@@ -285,12 +303,12 @@ public final class SchedulerExecutionSummary
             this.__explicitlySet__.add("runbookVersionName");
             return this;
         }
-        /** DsiplayName of Runbook associated with the Schedule. */
+        /** Display name of Runbook associated with the Schedule. */
         @com.fasterxml.jackson.annotation.JsonProperty("runbookDisplayName")
         private String runbookDisplayName;
 
         /**
-         * DsiplayName of Runbook associated with the Schedule.
+         * Display name of Runbook associated with the Schedule.
          *
          * @param runbookDisplayName the value to set
          * @return this builder
@@ -456,6 +474,7 @@ public final class SchedulerExecutionSummary
                             this.id,
                             this.displayName,
                             this.compartmentId,
+                            this.compartmentName,
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeScheduled,
@@ -491,6 +510,9 @@ public final class SchedulerExecutionSummary
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentName")) {
+                this.compartmentName(model.getCompartmentName());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -609,6 +631,19 @@ public final class SchedulerExecutionSummary
         return compartmentId;
     }
 
+    /** Name of the compartment in which resource exist. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
+    private final String compartmentName;
+
+    /**
+     * Name of the compartment in which resource exist.
+     *
+     * @return the value
+     */
+    public String getCompartmentName() {
+        return compartmentName;
+    }
+
     /** The time this resource was created. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
@@ -661,12 +696,12 @@ public final class SchedulerExecutionSummary
         return activityId;
     }
 
-    /** ResourceId associated with the Schedule. */
+    /** FleetId associated with the Schedule. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * ResourceId associated with the Schedule.
+     * FleetId associated with the Schedule.
      *
      * @return the value
      */
@@ -674,12 +709,12 @@ public final class SchedulerExecutionSummary
         return resourceId;
     }
 
-    /** jobId associated with the Schedule. */
+    /** SchedulerJobId associated with the Schedule. */
     @com.fasterxml.jackson.annotation.JsonProperty("schedulerJobId")
     private final String schedulerJobId;
 
     /**
-     * jobId associated with the Schedule.
+     * SchedulerJobId associated with the Schedule.
      *
      * @return the value
      */
@@ -687,12 +722,12 @@ public final class SchedulerExecutionSummary
         return schedulerJobId;
     }
 
-    /** Resource DsiplayName associated with the Schedule. */
+    /** Display Name of the Fleet associated with the Schedule. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
     private final String resourceDisplayName;
 
     /**
-     * Resource DsiplayName associated with the Schedule.
+     * Display Name of the Fleet associated with the Schedule.
      *
      * @return the value
      */
@@ -726,12 +761,12 @@ public final class SchedulerExecutionSummary
         return runbookVersionName;
     }
 
-    /** DsiplayName of Runbook associated with the Schedule. */
+    /** Display name of Runbook associated with the Schedule. */
     @com.fasterxml.jackson.annotation.JsonProperty("runbookDisplayName")
     private final String runbookDisplayName;
 
     /**
-     * DsiplayName of Runbook associated with the Schedule.
+     * Display name of Runbook associated with the Schedule.
      *
      * @return the value
      */
@@ -932,6 +967,7 @@ public final class SchedulerExecutionSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", compartmentName=").append(String.valueOf(this.compartmentName));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
@@ -969,6 +1005,7 @@ public final class SchedulerExecutionSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.compartmentName, other.compartmentName)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeScheduled, other.timeScheduled)
@@ -1001,6 +1038,9 @@ public final class SchedulerExecutionSummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentName == null ? 43 : this.compartmentName.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

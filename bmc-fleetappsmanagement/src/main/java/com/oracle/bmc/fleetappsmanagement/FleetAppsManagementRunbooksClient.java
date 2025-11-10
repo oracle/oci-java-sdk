@@ -379,6 +379,154 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
     }
 
     @Override
+    public ExportRunbookResponse exportRunbook(ExportRunbookRequest request) {
+        Objects.requireNonNull(
+                request.getExportRunbookDetails(), "exportRunbookDetails is required");
+
+        Validate.notBlank(request.getRunbookId(), "runbookId must not be blank");
+
+        return clientCall(request, ExportRunbookResponse::builder)
+                .logger(LOG, "exportRunbook")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ExportRunbook",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/ExportRunbook")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportRunbookRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbooks")
+                .appendPathParam(request.getRunbookId())
+                .appendPathParam("actions")
+                .appendPathParam("export")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ExportRunbookResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportRunbookResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ExportRunbookVersionResponse exportRunbookVersion(ExportRunbookVersionRequest request) {
+        Objects.requireNonNull(
+                request.getExportRunbookVersionDetails(),
+                "exportRunbookVersionDetails is required");
+
+        Validate.notBlank(request.getRunbookVersionId(), "runbookVersionId must not be blank");
+
+        return clientCall(request, ExportRunbookVersionResponse::builder)
+                .logger(LOG, "exportRunbookVersion")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ExportRunbookVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/ExportRunbookVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportRunbookVersionRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbookVersions")
+                .appendPathParam(request.getRunbookVersionId())
+                .appendPathParam("actions")
+                .appendPathParam("export")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ExportRunbookVersionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportRunbookVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public FindRunbookExportDependencyResponse findRunbookExportDependency(
+            FindRunbookExportDependencyRequest request) {
+        Objects.requireNonNull(
+                request.getFindRunbookExportDependencyDetails(),
+                "findRunbookExportDependencyDetails is required");
+
+        return clientCall(request, FindRunbookExportDependencyResponse::builder)
+                .logger(LOG, "findRunbookExportDependency")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "FindRunbookExportDependency",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookExportDependencyCollection/FindRunbookExportDependency")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(FindRunbookExportDependencyRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbooks")
+                .appendPathParam("actions")
+                .appendPathParam("findExportDependencies")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.RunbookExportDependencyCollection
+                                .class,
+                        FindRunbookExportDependencyResponse.Builder
+                                ::runbookExportDependencyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", FindRunbookExportDependencyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", FindRunbookExportDependencyResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        FindRunbookExportDependencyResponse.Builder::opcTotalItems)
+                .callSync();
+    }
+
+    @Override
+    public FindRunbookImportDependencyResponse findRunbookImportDependency(
+            FindRunbookImportDependencyRequest request) {
+        Objects.requireNonNull(
+                request.getFindRunbookImportDependencyDetails(),
+                "findRunbookImportDependencyDetails is required");
+
+        return clientCall(request, FindRunbookImportDependencyResponse::builder)
+                .logger(LOG, "findRunbookImportDependency")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "FindRunbookImportDependency",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookImportDependencyCollection/FindRunbookImportDependency")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(FindRunbookImportDependencyRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbooks")
+                .appendPathParam("actions")
+                .appendPathParam("findImportDependencies")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.RunbookImportDependencyCollection
+                                .class,
+                        FindRunbookImportDependencyResponse.Builder
+                                ::runbookImportDependencyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", FindRunbookImportDependencyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", FindRunbookImportDependencyResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        FindRunbookImportDependencyResponse.Builder::opcTotalItems)
+                .callSync();
+    }
+
+    @Override
     public GetRunbookResponse getRunbook(GetRunbookRequest request) {
 
         Validate.notBlank(request.getRunbookId(), "runbookId must not be blank");
@@ -403,6 +551,70 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .handleResponseHeaderString("etag", GetRunbookResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRunbookResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetRunbookExportResponse getRunbookExport(GetRunbookExportRequest request) {
+
+        Validate.notBlank(request.getRunbookId(), "runbookId must not be blank");
+
+        Validate.notBlank(request.getExportId(), "exportId must not be blank");
+
+        return clientCall(request, GetRunbookExportResponse::builder)
+                .logger(LOG, "getRunbookExport")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "GetRunbookExport",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookExport/GetRunbookExport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRunbookExportRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbooks")
+                .appendPathParam(request.getRunbookId())
+                .appendPathParam("exports")
+                .appendPathParam(request.getExportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.RunbookExport.class,
+                        GetRunbookExportResponse.Builder::runbookExport)
+                .handleResponseHeaderString("etag", GetRunbookExportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRunbookExportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetRunbookImportResponse getRunbookImport(GetRunbookImportRequest request) {
+
+        Validate.notBlank(request.getRunbookId(), "runbookId must not be blank");
+
+        Validate.notBlank(request.getImportId(), "importId must not be blank");
+
+        return clientCall(request, GetRunbookImportResponse::builder)
+                .logger(LOG, "getRunbookImport")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "GetRunbookImport",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookImport/GetRunbookImport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRunbookImportRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbooks")
+                .appendPathParam(request.getRunbookId())
+                .appendPathParam("imports")
+                .appendPathParam(request.getImportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.RunbookImport.class,
+                        GetRunbookImportResponse.Builder::runbookImport)
+                .handleResponseHeaderString("etag", GetRunbookImportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRunbookImportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -459,6 +671,173 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .handleResponseHeaderString("etag", GetTaskRecordResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTaskRecordResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ImportRunbookResponse importRunbook(ImportRunbookRequest request) {
+        Objects.requireNonNull(
+                request.getImportRunbookDetails(), "importRunbookDetails is required");
+
+        return clientCall(request, ImportRunbookResponse::builder)
+                .logger(LOG, "importRunbook")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ImportRunbook",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ImportRunbookDetails/ImportRunbook")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportRunbookRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbooks")
+                .appendPathParam("actions")
+                .appendPathParam("import")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ImportRunbookResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportRunbookResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ImportRunbookPrecheckResponse importRunbookPrecheck(
+            ImportRunbookPrecheckRequest request) {
+        Objects.requireNonNull(
+                request.getImportRunbookPrecheckDetails(),
+                "importRunbookPrecheckDetails is required");
+
+        return clientCall(request, ImportRunbookPrecheckResponse::builder)
+                .logger(LOG, "importRunbookPrecheck")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ImportRunbookPrecheck",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ImportRunbookPrecheckDetails/ImportRunbookPrecheck")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportRunbookPrecheckRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbooks")
+                .appendPathParam("actions")
+                .appendPathParam("importPrecheck")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ImportRunbookPrecheckResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportRunbookPrecheckResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ImportRunbookVersionResponse importRunbookVersion(ImportRunbookVersionRequest request) {
+        Objects.requireNonNull(
+                request.getImportRunbookVersionDetails(),
+                "importRunbookVersionDetails is required");
+
+        return clientCall(request, ImportRunbookVersionResponse::builder)
+                .logger(LOG, "importRunbookVersion")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ImportRunbookVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ImportRunbookVersionDetails/ImportRunbookVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportRunbookVersionRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbookVersions")
+                .appendPathParam("actions")
+                .appendPathParam("import")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ImportRunbookVersionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportRunbookVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListRunbookExportStatusesResponse listRunbookExportStatuses(
+            ListRunbookExportStatusesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListRunbookExportStatusesResponse::builder)
+                .logger(LOG, "listRunbookExportStatuses")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ListRunbookExportStatuses",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookExportStatusCollection/ListRunbookExportStatuses")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRunbookExportStatusesRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbooks")
+                .appendPathParam("exportStatus")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.RunbookExportStatusCollection
+                                .class,
+                        ListRunbookExportStatusesResponse.Builder::runbookExportStatusCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRunbookExportStatusesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRunbookExportStatusesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListRunbookImportStatusesResponse listRunbookImportStatuses(
+            ListRunbookImportStatusesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListRunbookImportStatusesResponse::builder)
+                .logger(LOG, "listRunbookImportStatuses")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ListRunbookImportStatuses",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookImportStatusCollection/ListRunbookImportStatuses")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRunbookImportStatusesRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbooks")
+                .appendPathParam("importStatus")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.RunbookImportStatusCollection
+                                .class,
+                        ListRunbookImportStatusesResponse.Builder::runbookImportStatusCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRunbookImportStatusesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRunbookImportStatusesResponse.Builder::opcNextPage)
                 .callSync();
     }
 

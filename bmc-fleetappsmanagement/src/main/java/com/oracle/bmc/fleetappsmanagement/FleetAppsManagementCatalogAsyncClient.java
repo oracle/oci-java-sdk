@@ -181,6 +181,52 @@ public class FleetAppsManagementCatalogAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ConfigureCatalogItemResponse> configureCatalogItem(
+            ConfigureCatalogItemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConfigureCatalogItemRequest, ConfigureCatalogItemResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCatalogItemId(), "catalogItemId must not be blank");
+        Objects.requireNonNull(
+                request.getConfigureCatalogItemDetails(),
+                "configureCatalogItemDetails is required");
+
+        return clientCall(request, ConfigureCatalogItemResponse::builder)
+                .logger(LOG, "configureCatalogItem")
+                .serviceDetails(
+                        "FleetAppsManagementCatalog",
+                        "ConfigureCatalogItem",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CatalogItem/ConfigureCatalogItem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfigureCatalogItemRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("catalogItems")
+                .appendPathParam(request.getCatalogItemId())
+                .appendPathParam("actions")
+                .appendPathParam("configure")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.CatalogItem.class,
+                        ConfigureCatalogItemResponse.Builder::catalogItem)
+                .handleResponseHeaderString(
+                        "location", ConfigureCatalogItemResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", ConfigureCatalogItemResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", ConfigureCatalogItemResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConfigureCatalogItemResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConfigureCatalogItemResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCatalogItemResponse> createCatalogItem(
             CreateCatalogItemRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -279,6 +325,44 @@ public class FleetAppsManagementCatalogAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<GetCatalogItemVariablesDefinitionResponse>
+            getCatalogItemVariablesDefinition(
+                    GetCatalogItemVariablesDefinitionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCatalogItemVariablesDefinitionRequest,
+                                    GetCatalogItemVariablesDefinitionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getCatalogItemId(), "catalogItemId must not be blank");
+
+        return clientCall(request, GetCatalogItemVariablesDefinitionResponse::builder)
+                .logger(LOG, "getCatalogItemVariablesDefinition")
+                .serviceDetails(
+                        "FleetAppsManagementCatalog",
+                        "GetCatalogItemVariablesDefinition",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CatalogItemVariablesDefinition/GetCatalogItemVariablesDefinition")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCatalogItemVariablesDefinitionRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("catalogItems")
+                .appendPathParam(request.getCatalogItemId())
+                .appendPathParam("variablesDefinitions")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.CatalogItemVariablesDefinition
+                                .class,
+                        GetCatalogItemVariablesDefinitionResponse.Builder
+                                ::catalogItemVariablesDefinition)
+                .handleResponseHeaderString(
+                        "etag", GetCatalogItemVariablesDefinitionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetCatalogItemVariablesDefinitionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCatalogItemsResponse> listCatalogItems(
             ListCatalogItemsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -307,6 +391,7 @@ public class FleetAppsManagementCatalogAsyncClient
                 .appendQueryParam("catalogListingId", request.getCatalogListingId())
                 .appendEnumQueryParam(
                         "catalogListingVersionCriteria", request.getCatalogListingVersionCriteria())
+                .appendEnumQueryParam("packageType", request.getPackageType())
                 .appendQueryParam("shouldListPublicItems", request.getShouldListPublicItems())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())

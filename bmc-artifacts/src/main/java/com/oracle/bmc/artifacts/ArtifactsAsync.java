@@ -8,9 +8,18 @@ import com.oracle.bmc.artifacts.requests.*;
 import com.oracle.bmc.artifacts.responses.*;
 
 /**
- * API covering the Artifacts and
- * [Registry](https://docs.oracle.com/iaas/Content/Registry/Concepts/registryoverview.htm) services.
- * Use this API to manage resources such as generic artifacts and container images.
+ * Use the Artifacts and Container Images API to manage container images and non-container generic
+ * artifacts.
+ *
+ * <p>- For container images such as Docker images, use the {@link ContainerImage} resource. Save
+ * the images in a {@link ContainerRepository}.
+ *
+ * <p>- For non-container generic artifacts or blobs, use the {@link GenericArtifact} resource. Save
+ * the artifacts in an {@link Repository}. - To upload and download non-container generic artifacts,
+ * instead of the Artifacts and Container Images API, use the Generic Artifacts Content API. For
+ * more information, see the user guides for [Container
+ * Registry](https://docs.oracle.com/iaas/Content/Registry/home.htm) and [Artifact
+ * Registry](https://docs.oracle.com/iaas/Content/artifacts/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface ArtifactsAsync extends AutoCloseable {
@@ -439,6 +448,22 @@ public interface ArtifactsAsync extends AutoCloseable {
     java.util.concurrent.Future<ListRepositoriesResponse> listRepositories(
             ListRepositoriesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResponse>
+                    handler);
+
+    /**
+     * Get container image metadata by URI.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<LookupContainerImageByUriResponse> lookupContainerImageByUri(
+            LookupContainerImageByUriRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            LookupContainerImageByUriRequest, LookupContainerImageByUriResponse>
                     handler);
 
     /**

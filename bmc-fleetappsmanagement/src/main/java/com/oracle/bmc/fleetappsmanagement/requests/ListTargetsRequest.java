@@ -74,6 +74,13 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** If set to true, confirmed targets will be returned. */
+    private Boolean isConfirmedTargets;
+
+    /** If set to true, confirmed targets will be returned. */
+    public Boolean getIsConfirmedTargets() {
+        return isConfirmedTargets;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -187,6 +194,20 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** If set to true, confirmed targets will be returned. */
+        private Boolean isConfirmedTargets = null;
+
+        /**
+         * If set to true, confirmed targets will be returned.
+         *
+         * @param isConfirmedTargets the value to set
+         * @return this builder instance
+         */
+        public Builder isConfirmedTargets(Boolean isConfirmedTargets) {
+            this.isConfirmedTargets = isConfirmedTargets;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -224,6 +245,7 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            isConfirmedTargets(o.getIsConfirmedTargets());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -265,9 +287,10 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.isConfirmedTargets = isConfirmedTargets;
             return request;
             // new ListTargetsRequest(fleetId, displayName, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // opcRequestId, isConfirmedTargets);
         }
     }
 
@@ -284,7 +307,8 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isConfirmedTargets(isConfirmedTargets);
     }
 
     /**
@@ -308,6 +332,7 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isConfirmedTargets=").append(String.valueOf(this.isConfirmedTargets));
         sb.append(")");
         return sb.toString();
     }
@@ -329,7 +354,8 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isConfirmedTargets, other.isConfirmedTargets);
     }
 
     @Override
@@ -343,6 +369,11 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isConfirmedTargets == null
+                                ? 43
+                                : this.isConfirmedTargets.hashCode());
         return result;
     }
 }

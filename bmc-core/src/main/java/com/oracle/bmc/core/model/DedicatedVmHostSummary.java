@@ -31,6 +31,7 @@ public final class DedicatedVmHostSummary
         "displayName",
         "faultDomain",
         "id",
+        "isMemoryEncryptionEnabled",
         "lifecycleState",
         "timeCreated",
         "remainingOcpus",
@@ -45,6 +46,7 @@ public final class DedicatedVmHostSummary
             String displayName,
             String faultDomain,
             String id,
+            Boolean isMemoryEncryptionEnabled,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             Float remainingOcpus,
@@ -58,6 +60,7 @@ public final class DedicatedVmHostSummary
         this.displayName = displayName;
         this.faultDomain = faultDomain;
         this.id = id;
+        this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.remainingOcpus = remainingOcpus;
@@ -198,6 +201,27 @@ public final class DedicatedVmHostSummary
             this.__explicitlySet__.add("id");
             return this;
         }
+        /**
+         * Specifies if the Dedicated Virtual Machine Host is restricted to running only
+         * Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code
+         * false}, Confidential VMs cannot be launched.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+        private Boolean isMemoryEncryptionEnabled;
+
+        /**
+         * Specifies if the Dedicated Virtual Machine Host is restricted to running only
+         * Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code
+         * false}, Confidential VMs cannot be launched.
+         *
+         * @param isMemoryEncryptionEnabled the value to set
+         * @return this builder
+         */
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            this.__explicitlySet__.add("isMemoryEncryptionEnabled");
+            return this;
+        }
         /** The current state of the dedicated VM host. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -309,6 +333,7 @@ public final class DedicatedVmHostSummary
                             this.displayName,
                             this.faultDomain,
                             this.id,
+                            this.isMemoryEncryptionEnabled,
                             this.lifecycleState,
                             this.timeCreated,
                             this.remainingOcpus,
@@ -340,6 +365,9 @@ public final class DedicatedVmHostSummary
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
+                this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -488,6 +516,25 @@ public final class DedicatedVmHostSummary
      */
     public String getId() {
         return id;
+    }
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host is restricted to running only Confidential
+     * VMs. If {@code true}, only Confidential VMs can be launched. If {@code false}, Confidential
+     * VMs cannot be launched.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+    private final Boolean isMemoryEncryptionEnabled;
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host is restricted to running only Confidential
+     * VMs. If {@code true}, only Confidential VMs can be launched. If {@code false}, Confidential
+     * VMs cannot be launched.
+     *
+     * @return the value
+     */
+    public Boolean getIsMemoryEncryptionEnabled() {
+        return isMemoryEncryptionEnabled;
     }
 
     /** The current state of the dedicated VM host. */
@@ -647,6 +694,8 @@ public final class DedicatedVmHostSummary
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", isMemoryEncryptionEnabled=")
+                .append(String.valueOf(this.isMemoryEncryptionEnabled));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", remainingOcpus=").append(String.valueOf(this.remainingOcpus));
@@ -673,6 +722,8 @@ public final class DedicatedVmHostSummary
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(
+                        this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.remainingOcpus, other.remainingOcpus)
@@ -702,6 +753,11 @@ public final class DedicatedVmHostSummary
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMemoryEncryptionEnabled == null
+                                ? 43
+                                : this.isMemoryEncryptionEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

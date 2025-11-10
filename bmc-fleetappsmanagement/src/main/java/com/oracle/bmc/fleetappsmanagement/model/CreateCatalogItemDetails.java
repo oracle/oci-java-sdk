@@ -35,6 +35,7 @@ public final class CreateCatalogItemDetails
         "listingId",
         "listingVersion",
         "packageType",
+        "isItemLocked",
         "freeformTags",
         "definedTags"
     })
@@ -50,6 +51,7 @@ public final class CreateCatalogItemDetails
             String listingId,
             String listingVersion,
             CatalogItem.PackageType packageType,
+            Boolean isItemLocked,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -64,6 +66,7 @@ public final class CreateCatalogItemDetails
         this.listingId = listingId;
         this.listingVersion = listingVersion;
         this.packageType = packageType;
+        this.isItemLocked = isItemLocked;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -241,6 +244,21 @@ public final class CreateCatalogItemDetails
             this.__explicitlySet__.add("packageType");
             return this;
         }
+        /** Indicates if the CatalogItem is immutable or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isItemLocked")
+        private Boolean isItemLocked;
+
+        /**
+         * Indicates if the CatalogItem is immutable or not.
+         *
+         * @param isItemLocked the value to set
+         * @return this builder
+         */
+        public Builder isItemLocked(Boolean isItemLocked) {
+            this.isItemLocked = isItemLocked;
+            this.__explicitlySet__.add("isItemLocked");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -298,6 +316,7 @@ public final class CreateCatalogItemDetails
                             this.listingId,
                             this.listingVersion,
                             this.packageType,
+                            this.isItemLocked,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -340,6 +359,9 @@ public final class CreateCatalogItemDetails
             }
             if (model.wasPropertyExplicitlySet("packageType")) {
                 this.packageType(model.getPackageType());
+            }
+            if (model.wasPropertyExplicitlySet("isItemLocked")) {
+                this.isItemLocked(model.getIsItemLocked());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -509,6 +531,19 @@ public final class CreateCatalogItemDetails
         return packageType;
     }
 
+    /** Indicates if the CatalogItem is immutable or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isItemLocked")
+    private final Boolean isItemLocked;
+
+    /**
+     * Indicates if the CatalogItem is immutable or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsItemLocked() {
+        return isItemLocked;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -569,6 +604,7 @@ public final class CreateCatalogItemDetails
         sb.append(", listingId=").append(String.valueOf(this.listingId));
         sb.append(", listingVersion=").append(String.valueOf(this.listingVersion));
         sb.append(", packageType=").append(String.valueOf(this.packageType));
+        sb.append(", isItemLocked=").append(String.valueOf(this.isItemLocked));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -596,6 +632,7 @@ public final class CreateCatalogItemDetails
                 && java.util.Objects.equals(this.listingId, other.listingId)
                 && java.util.Objects.equals(this.listingVersion, other.listingVersion)
                 && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(this.isItemLocked, other.isItemLocked)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -632,6 +669,7 @@ public final class CreateCatalogItemDetails
                 (result * PRIME)
                         + (this.listingVersion == null ? 43 : this.listingVersion.hashCode());
         result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result = (result * PRIME) + (this.isItemLocked == null ? 43 : this.isItemLocked.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
