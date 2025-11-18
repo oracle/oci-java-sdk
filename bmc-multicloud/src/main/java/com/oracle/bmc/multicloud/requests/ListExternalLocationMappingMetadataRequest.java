@@ -15,37 +15,41 @@ import com.oracle.bmc.multicloud.model.*;
 public class ListExternalLocationMappingMetadataRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The subscription type values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS] */
+    /** The subscription type of the Cloud Service Provider. */
     private java.util.List<com.oracle.bmc.multicloud.model.SubscriptionType>
             subscriptionServiceName;
 
-    /** The subscription type values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS] */
+    /** The subscription type of the Cloud Service Provider. */
     public java.util.List<com.oracle.bmc.multicloud.model.SubscriptionType>
             getSubscriptionServiceName() {
         return subscriptionServiceName;
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * Multicloud base compartment in which to list resources. A Multicloud base compartment is an
+     * OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS,
+     * or Google Cloud).
      */
     private String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * Multicloud base compartment in which to list resources. A Multicloud base compartment is an
+     * OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS,
+     * or Google Cloud).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
+     * Multicloud subscription in which to list resources.
      */
     private String subscriptionId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
+     * Multicloud subscription in which to list resources.
      */
     public String getSubscriptionId() {
         return subscriptionId;
@@ -159,12 +163,12 @@ public class ListExternalLocationMappingMetadataRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The subscription type values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS] */
+        /** The subscription type of the Cloud Service Provider. */
         private java.util.List<com.oracle.bmc.multicloud.model.SubscriptionType>
                 subscriptionServiceName = null;
 
         /**
-         * The subscription type values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+         * The subscription type of the Cloud Service Provider.
          *
          * @param subscriptionServiceName the value to set
          * @return this builder instance
@@ -177,8 +181,7 @@ public class ListExternalLocationMappingMetadataRequest
         }
 
         /**
-         * Singular setter. The subscription type values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
+         * Singular setter. The subscription type of the Cloud Service Provider.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -189,13 +192,17 @@ public class ListExternalLocationMappingMetadataRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * Multicloud base compartment in which to list resources. A Multicloud base compartment is
+         * an OCI compartment that maps to a subscription in a Cloud Service Provider (such as
+         * Azure, AWS, or Google Cloud).
          */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * Multicloud base compartment in which to list resources. A Multicloud base compartment is
+         * an OCI compartment that maps to a subscription in a Cloud Service Provider (such as
+         * Azure, AWS, or Google Cloud).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -207,13 +214,13 @@ public class ListExternalLocationMappingMetadataRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
+         * Multicloud subscription in which to list resources.
          */
         private String subscriptionId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
+         * Multicloud subscription in which to list resources.
          *
          * @param subscriptionId the value to set
          * @return this builder instance

@@ -13356,6 +13356,49 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<RefreshDataGuardHealthStatusResponse>
+            refreshDataGuardHealthStatus(
+                    RefreshDataGuardHealthStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshDataGuardHealthStatusRequest,
+                                    RefreshDataGuardHealthStatusResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+
+        return clientCall(request, RefreshDataGuardHealthStatusResponse::builder)
+                .logger(LOG, "refreshDataGuardHealthStatus")
+                .serviceDetails(
+                        "Database",
+                        "RefreshDataGuardHealthStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RefreshDataGuardHealthStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshDataGuardHealthStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        RefreshDataGuardHealthStatusResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshDataGuardHealthStatusResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", RefreshDataGuardHealthStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshDataGuardHealthStatusResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RefreshPluggableDatabaseResponse> refreshPluggableDatabase(
             RefreshPluggableDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

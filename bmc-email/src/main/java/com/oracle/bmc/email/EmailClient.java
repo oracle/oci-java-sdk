@@ -154,6 +154,70 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     }
 
     @Override
+    public AddEmailIpPoolLockResponse addEmailIpPoolLock(AddEmailIpPoolLockRequest request) {
+
+        Validate.notBlank(request.getEmailIpPoolId(), "emailIpPoolId must not be blank");
+        Objects.requireNonNull(request.getAddLockDetails(), "addLockDetails is required");
+
+        return clientCall(request, AddEmailIpPoolLockResponse::builder)
+                .logger(LOG, "addEmailIpPoolLock")
+                .serviceDetails(
+                        "Email",
+                        "AddEmailIpPoolLock",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/AddEmailIpPoolLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddEmailIpPoolLockRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailIpPools")
+                .appendPathParam(request.getEmailIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailIpPool.class,
+                        AddEmailIpPoolLockResponse.Builder::emailIpPool)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddEmailIpPoolLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddEmailIpPoolLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public AddEmailOutboundIpResponse addEmailOutboundIp(AddEmailOutboundIpRequest request) {
+        Objects.requireNonNull(
+                request.getAddEmailOutboundIpDetails(), "addEmailOutboundIpDetails is required");
+
+        Validate.notBlank(request.getEmailIpPoolId(), "emailIpPoolId must not be blank");
+
+        return clientCall(request, AddEmailOutboundIpResponse::builder)
+                .logger(LOG, "addEmailOutboundIp")
+                .serviceDetails(
+                        "Email",
+                        "AddEmailOutboundIp",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/AddEmailOutboundIp")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddEmailOutboundIpRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailIpPools")
+                .appendPathParam(request.getEmailIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("addEmailOutboundIp")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddEmailOutboundIpResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddEmailOutboundIpResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public AddReturnPathLockResponse addReturnPathLock(AddReturnPathLockRequest request) {
 
         Validate.notBlank(request.getEmailReturnPathId(), "emailReturnPathId must not be blank");
@@ -255,6 +319,43 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     }
 
     @Override
+    public ChangeEmailIpPoolCompartmentResponse changeEmailIpPoolCompartment(
+            ChangeEmailIpPoolCompartmentRequest request) {
+
+        Validate.notBlank(request.getEmailIpPoolId(), "emailIpPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeEmailIpPoolCompartmentDetails(),
+                "changeEmailIpPoolCompartmentDetails is required");
+
+        return clientCall(request, ChangeEmailIpPoolCompartmentResponse::builder)
+                .logger(LOG, "changeEmailIpPoolCompartment")
+                .serviceDetails(
+                        "Email",
+                        "ChangeEmailIpPoolCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/ChangeEmailIpPoolCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeEmailIpPoolCompartmentRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailIpPools")
+                .appendPathParam(request.getEmailIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeEmailIpPoolCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeEmailIpPoolCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeSenderCompartmentResponse changeSenderCompartment(
             ChangeSenderCompartmentRequest request) {
 
@@ -346,6 +447,39 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-request-id", CreateEmailDomainResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateEmailDomainResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateEmailIpPoolResponse createEmailIpPool(CreateEmailIpPoolRequest request) {
+        Objects.requireNonNull(
+                request.getCreateEmailIpPoolDetails(), "createEmailIpPoolDetails is required");
+
+        return clientCall(request, CreateEmailIpPoolResponse::builder)
+                .logger(LOG, "createEmailIpPool")
+                .serviceDetails(
+                        "Email",
+                        "CreateEmailIpPool",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/CreateEmailIpPool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateEmailIpPoolRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailIpPools")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailIpPool.class,
+                        CreateEmailIpPoolResponse.Builder::emailIpPool)
+                .handleResponseHeaderString(
+                        "Content-Location", CreateEmailIpPoolResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateEmailIpPoolResponse.Builder::etag)
+                .handleResponseHeaderString("Location", CreateEmailIpPoolResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateEmailIpPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateEmailIpPoolResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -488,6 +622,33 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-work-request-id", DeleteEmailDomainResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteEmailDomainResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteEmailIpPoolResponse deleteEmailIpPool(DeleteEmailIpPoolRequest request) {
+
+        Validate.notBlank(request.getEmailIpPoolId(), "emailIpPoolId must not be blank");
+
+        return clientCall(request, DeleteEmailIpPoolResponse::builder)
+                .logger(LOG, "deleteEmailIpPool")
+                .serviceDetails(
+                        "Email",
+                        "DeleteEmailIpPool",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/DeleteEmailIpPool")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteEmailIpPoolRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailIpPools")
+                .appendPathParam(request.getEmailIpPoolId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteEmailIpPoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteEmailIpPoolResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -642,6 +803,33 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .handleResponseHeaderString("etag", GetEmailDomainResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetEmailDomainResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetEmailIpPoolResponse getEmailIpPool(GetEmailIpPoolRequest request) {
+
+        Validate.notBlank(request.getEmailIpPoolId(), "emailIpPoolId must not be blank");
+
+        return clientCall(request, GetEmailIpPoolResponse::builder)
+                .logger(LOG, "getEmailIpPool")
+                .serviceDetails(
+                        "Email",
+                        "GetEmailIpPool",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/GetEmailIpPool")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetEmailIpPoolRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailIpPools")
+                .appendPathParam(request.getEmailIpPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailIpPool.class,
+                        GetEmailIpPoolResponse.Builder::emailIpPool)
+                .handleResponseHeaderString("etag", GetEmailIpPoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetEmailIpPoolResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -820,6 +1008,74 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     }
 
     @Override
+    public ListEmailIpPoolsResponse listEmailIpPools(ListEmailIpPoolsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListEmailIpPoolsResponse::builder)
+                .logger(LOG, "listEmailIpPools")
+                .serviceDetails(
+                        "Email",
+                        "ListEmailIpPools",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPoolCollection/ListEmailIpPools")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEmailIpPoolsRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailIpPools")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailIpPoolCollection.class,
+                        ListEmailIpPoolsResponse.Builder::emailIpPoolCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEmailIpPoolsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListEmailIpPoolsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListEmailOutboundIpsResponse listEmailOutboundIps(ListEmailOutboundIpsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListEmailOutboundIpsResponse::builder)
+                .logger(LOG, "listEmailOutboundIps")
+                .serviceDetails(
+                        "Email",
+                        "ListEmailOutboundIps",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailOutboundIpCollection/ListEmailOutboundIps")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEmailOutboundIpsRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailOutboundIps")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("outboundIp", request.getOutboundIp())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("assignmentState", request.getAssignmentState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailOutboundIpCollection.class,
+                        ListEmailOutboundIpsResponse.Builder::emailOutboundIpCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEmailOutboundIpsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListEmailOutboundIpsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListEmailReturnPathsResponse listEmailReturnPaths(ListEmailReturnPathsRequest request) {
 
         return clientCall(request, ListEmailReturnPathsResponse::builder)
@@ -871,6 +1127,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("domain", request.getDomain())
                 .appendQueryParam("emailAddress", request.getEmailAddress())
+                .appendQueryParam("emailIpPoolId", request.getEmailIpPoolId())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
@@ -1056,6 +1313,74 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     }
 
     @Override
+    public RemoveEmailIpPoolLockResponse removeEmailIpPoolLock(
+            RemoveEmailIpPoolLockRequest request) {
+
+        Validate.notBlank(request.getEmailIpPoolId(), "emailIpPoolId must not be blank");
+        Objects.requireNonNull(request.getRemoveLockDetails(), "removeLockDetails is required");
+
+        return clientCall(request, RemoveEmailIpPoolLockResponse::builder)
+                .logger(LOG, "removeEmailIpPoolLock")
+                .serviceDetails(
+                        "Email",
+                        "RemoveEmailIpPoolLock",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/RemoveEmailIpPoolLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveEmailIpPoolLockRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailIpPools")
+                .appendPathParam(request.getEmailIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailIpPool.class,
+                        RemoveEmailIpPoolLockResponse.Builder::emailIpPool)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveEmailIpPoolLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveEmailIpPoolLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public RemoveEmailOutboundIpResponse removeEmailOutboundIp(
+            RemoveEmailOutboundIpRequest request) {
+        Objects.requireNonNull(
+                request.getRemoveEmailOutboundIpDetails(),
+                "removeEmailOutboundIpDetails is required");
+
+        Validate.notBlank(request.getEmailIpPoolId(), "emailIpPoolId must not be blank");
+
+        return clientCall(request, RemoveEmailOutboundIpResponse::builder)
+                .logger(LOG, "removeEmailOutboundIp")
+                .serviceDetails(
+                        "Email",
+                        "RemoveEmailOutboundIp",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/RemoveEmailOutboundIp")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveEmailOutboundIpRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailIpPools")
+                .appendPathParam(request.getEmailIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("removeEmailOutboundIp")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveEmailOutboundIpResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveEmailOutboundIpResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public RemoveReturnPathLockResponse removeReturnPathLock(RemoveReturnPathLockRequest request) {
 
         Validate.notBlank(request.getEmailReturnPathId(), "emailReturnPathId must not be blank");
@@ -1174,6 +1499,36 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-work-request-id", UpdateEmailDomainResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateEmailDomainResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateEmailIpPoolResponse updateEmailIpPool(UpdateEmailIpPoolRequest request) {
+
+        Validate.notBlank(request.getEmailIpPoolId(), "emailIpPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateEmailIpPoolDetails(), "updateEmailIpPoolDetails is required");
+
+        return clientCall(request, UpdateEmailIpPoolResponse::builder)
+                .logger(LOG, "updateEmailIpPool")
+                .serviceDetails(
+                        "Email",
+                        "UpdateEmailIpPool",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/UpdateEmailIpPool")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateEmailIpPoolRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailIpPools")
+                .appendPathParam(request.getEmailIpPoolId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateEmailIpPoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateEmailIpPoolResponse.Builder::opcRequestId)
                 .callSync();
     }
 

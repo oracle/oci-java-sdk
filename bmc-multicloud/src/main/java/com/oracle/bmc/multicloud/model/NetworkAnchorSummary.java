@@ -29,14 +29,20 @@ public final class NetworkAnchorSummary
         "compartmentId",
         "resourceAnchorId",
         "vcnId",
+        "vcnName",
+        "networkAnchorConnectionStatus",
         "clusterPlacementGroupId",
         "timeCreated",
         "timeUpdated",
-        "lifecycleState",
+        "cspAdditionalProperties",
+        "cspNetworkAnchorId",
+        "networkAnchorUri",
+        "networkAnchorLifecycleState",
         "lifecycleDetails",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "subscriptionType"
     })
     public NetworkAnchorSummary(
             String id,
@@ -44,28 +50,40 @@ public final class NetworkAnchorSummary
             String compartmentId,
             String resourceAnchorId,
             String vcnId,
+            String vcnName,
+            NetworkAnchorConnectionStatus networkAnchorConnectionStatus,
             String clusterPlacementGroupId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            NetworkAnchor.LifecycleState lifecycleState,
+            java.util.Map<String, String> cspAdditionalProperties,
+            String cspNetworkAnchorId,
+            String networkAnchorUri,
+            NetworkAnchor.NetworkAnchorLifecycleState networkAnchorLifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            SubscriptionType subscriptionType) {
         super();
         this.id = id;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.resourceAnchorId = resourceAnchorId;
         this.vcnId = vcnId;
+        this.vcnName = vcnName;
+        this.networkAnchorConnectionStatus = networkAnchorConnectionStatus;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
-        this.lifecycleState = lifecycleState;
+        this.cspAdditionalProperties = cspAdditionalProperties;
+        this.cspNetworkAnchorId = cspNetworkAnchorId;
+        this.networkAnchorUri = networkAnchorUri;
+        this.networkAnchorLifecycleState = networkAnchorLifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.subscriptionType = subscriptionType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -153,6 +171,37 @@ public final class NetworkAnchorSummary
             this.__explicitlySet__.add("vcnId");
             return this;
         }
+        /** Name of the VCN associated to the Network Anchor. */
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnName")
+        private String vcnName;
+
+        /**
+         * Name of the VCN associated to the Network Anchor.
+         *
+         * @param vcnName the value to set
+         * @return this builder
+         */
+        public Builder vcnName(String vcnName) {
+            this.vcnName = vcnName;
+            this.__explicitlySet__.add("vcnName");
+            return this;
+        }
+        /** Defines status of the Network Anchor. */
+        @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorConnectionStatus")
+        private NetworkAnchorConnectionStatus networkAnchorConnectionStatus;
+
+        /**
+         * Defines status of the Network Anchor.
+         *
+         * @param networkAnchorConnectionStatus the value to set
+         * @return this builder
+         */
+        public Builder networkAnchorConnectionStatus(
+                NetworkAnchorConnectionStatus networkAnchorConnectionStatus) {
+            this.networkAnchorConnectionStatus = networkAnchorConnectionStatus;
+            this.__explicitlySet__.add("networkAnchorConnectionStatus");
+            return this;
+        }
         /** The CPG ID in which Network Anchor will be created. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
         private String clusterPlacementGroupId;
@@ -214,19 +263,66 @@ public final class NetworkAnchorSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** CSP Specific Additional Properties, AzureSubnetId for Azure */
+        @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
+        private java.util.Map<String, String> cspAdditionalProperties;
+
+        /**
+         * CSP Specific Additional Properties, AzureSubnetId for Azure
+         *
+         * @param cspAdditionalProperties the value to set
+         * @return this builder
+         */
+        public Builder cspAdditionalProperties(
+                java.util.Map<String, String> cspAdditionalProperties) {
+            this.cspAdditionalProperties = cspAdditionalProperties;
+            this.__explicitlySet__.add("cspAdditionalProperties");
+            return this;
+        }
+        /** Network Anchor Id in the Cloud Service Provider. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cspNetworkAnchorId")
+        private String cspNetworkAnchorId;
+
+        /**
+         * Network Anchor Id in the Cloud Service Provider.
+         *
+         * @param cspNetworkAnchorId the value to set
+         * @return this builder
+         */
+        public Builder cspNetworkAnchorId(String cspNetworkAnchorId) {
+            this.cspNetworkAnchorId = cspNetworkAnchorId;
+            this.__explicitlySet__.add("cspNetworkAnchorId");
+            return this;
+        }
+        /** CSP network anchor Uri */
+        @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorUri")
+        private String networkAnchorUri;
+
+        /**
+         * CSP network anchor Uri
+         *
+         * @param networkAnchorUri the value to set
+         * @return this builder
+         */
+        public Builder networkAnchorUri(String networkAnchorUri) {
+            this.networkAnchorUri = networkAnchorUri;
+            this.__explicitlySet__.add("networkAnchorUri");
+            return this;
+        }
         /** The current state of the NetworkAnchor. */
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private NetworkAnchor.LifecycleState lifecycleState;
+        @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorLifecycleState")
+        private NetworkAnchor.NetworkAnchorLifecycleState networkAnchorLifecycleState;
 
         /**
          * The current state of the NetworkAnchor.
          *
-         * @param lifecycleState the value to set
+         * @param networkAnchorLifecycleState the value to set
          * @return this builder
          */
-        public Builder lifecycleState(NetworkAnchor.LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
+        public Builder networkAnchorLifecycleState(
+                NetworkAnchor.NetworkAnchorLifecycleState networkAnchorLifecycleState) {
+            this.networkAnchorLifecycleState = networkAnchorLifecycleState;
+            this.__explicitlySet__.add("networkAnchorLifecycleState");
             return this;
         }
         /**
@@ -322,6 +418,21 @@ public final class NetworkAnchorSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /** Oracle Cloud Infrastructure Subscription Type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionType")
+        private SubscriptionType subscriptionType;
+
+        /**
+         * Oracle Cloud Infrastructure Subscription Type.
+         *
+         * @param subscriptionType the value to set
+         * @return this builder
+         */
+        public Builder subscriptionType(SubscriptionType subscriptionType) {
+            this.subscriptionType = subscriptionType;
+            this.__explicitlySet__.add("subscriptionType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -334,14 +445,20 @@ public final class NetworkAnchorSummary
                             this.compartmentId,
                             this.resourceAnchorId,
                             this.vcnId,
+                            this.vcnName,
+                            this.networkAnchorConnectionStatus,
                             this.clusterPlacementGroupId,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.lifecycleState,
+                            this.cspAdditionalProperties,
+                            this.cspNetworkAnchorId,
+                            this.networkAnchorUri,
+                            this.networkAnchorLifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.subscriptionType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -365,6 +482,12 @@ public final class NetworkAnchorSummary
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
             }
+            if (model.wasPropertyExplicitlySet("vcnName")) {
+                this.vcnName(model.getVcnName());
+            }
+            if (model.wasPropertyExplicitlySet("networkAnchorConnectionStatus")) {
+                this.networkAnchorConnectionStatus(model.getNetworkAnchorConnectionStatus());
+            }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
@@ -374,8 +497,17 @@ public final class NetworkAnchorSummary
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
-            if (model.wasPropertyExplicitlySet("lifecycleState")) {
-                this.lifecycleState(model.getLifecycleState());
+            if (model.wasPropertyExplicitlySet("cspAdditionalProperties")) {
+                this.cspAdditionalProperties(model.getCspAdditionalProperties());
+            }
+            if (model.wasPropertyExplicitlySet("cspNetworkAnchorId")) {
+                this.cspNetworkAnchorId(model.getCspNetworkAnchorId());
+            }
+            if (model.wasPropertyExplicitlySet("networkAnchorUri")) {
+                this.networkAnchorUri(model.getNetworkAnchorUri());
+            }
+            if (model.wasPropertyExplicitlySet("networkAnchorLifecycleState")) {
+                this.networkAnchorLifecycleState(model.getNetworkAnchorLifecycleState());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -388,6 +520,9 @@ public final class NetworkAnchorSummary
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionType")) {
+                this.subscriptionType(model.getSubscriptionType());
             }
             return this;
         }
@@ -475,6 +610,32 @@ public final class NetworkAnchorSummary
         return vcnId;
     }
 
+    /** Name of the VCN associated to the Network Anchor. */
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnName")
+    private final String vcnName;
+
+    /**
+     * Name of the VCN associated to the Network Anchor.
+     *
+     * @return the value
+     */
+    public String getVcnName() {
+        return vcnName;
+    }
+
+    /** Defines status of the Network Anchor. */
+    @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorConnectionStatus")
+    private final NetworkAnchorConnectionStatus networkAnchorConnectionStatus;
+
+    /**
+     * Defines status of the Network Anchor.
+     *
+     * @return the value
+     */
+    public NetworkAnchorConnectionStatus getNetworkAnchorConnectionStatus() {
+        return networkAnchorConnectionStatus;
+    }
+
     /** The CPG ID in which Network Anchor will be created. */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
     private final String clusterPlacementGroupId;
@@ -530,17 +691,56 @@ public final class NetworkAnchorSummary
         return timeUpdated;
     }
 
+    /** CSP Specific Additional Properties, AzureSubnetId for Azure */
+    @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
+    private final java.util.Map<String, String> cspAdditionalProperties;
+
+    /**
+     * CSP Specific Additional Properties, AzureSubnetId for Azure
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getCspAdditionalProperties() {
+        return cspAdditionalProperties;
+    }
+
+    /** Network Anchor Id in the Cloud Service Provider. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cspNetworkAnchorId")
+    private final String cspNetworkAnchorId;
+
+    /**
+     * Network Anchor Id in the Cloud Service Provider.
+     *
+     * @return the value
+     */
+    public String getCspNetworkAnchorId() {
+        return cspNetworkAnchorId;
+    }
+
+    /** CSP network anchor Uri */
+    @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorUri")
+    private final String networkAnchorUri;
+
+    /**
+     * CSP network anchor Uri
+     *
+     * @return the value
+     */
+    public String getNetworkAnchorUri() {
+        return networkAnchorUri;
+    }
+
     /** The current state of the NetworkAnchor. */
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final NetworkAnchor.LifecycleState lifecycleState;
+    @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorLifecycleState")
+    private final NetworkAnchor.NetworkAnchorLifecycleState networkAnchorLifecycleState;
 
     /**
      * The current state of the NetworkAnchor.
      *
      * @return the value
      */
-    public NetworkAnchor.LifecycleState getLifecycleState() {
-        return lifecycleState;
+    public NetworkAnchor.NetworkAnchorLifecycleState getNetworkAnchorLifecycleState() {
+        return networkAnchorLifecycleState;
     }
 
     /**
@@ -625,6 +825,19 @@ public final class NetworkAnchorSummary
         return systemTags;
     }
 
+    /** Oracle Cloud Infrastructure Subscription Type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionType")
+    private final SubscriptionType subscriptionType;
+
+    /**
+     * Oracle Cloud Infrastructure Subscription Type.
+     *
+     * @return the value
+     */
+    public SubscriptionType getSubscriptionType() {
+        return subscriptionType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -645,15 +858,24 @@ public final class NetworkAnchorSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resourceAnchorId=").append(String.valueOf(this.resourceAnchorId));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", vcnName=").append(String.valueOf(this.vcnName));
+        sb.append(", networkAnchorConnectionStatus=")
+                .append(String.valueOf(this.networkAnchorConnectionStatus));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", cspAdditionalProperties=")
+                .append(String.valueOf(this.cspAdditionalProperties));
+        sb.append(", cspNetworkAnchorId=").append(String.valueOf(this.cspNetworkAnchorId));
+        sb.append(", networkAnchorUri=").append(String.valueOf(this.networkAnchorUri));
+        sb.append(", networkAnchorLifecycleState=")
+                .append(String.valueOf(this.networkAnchorLifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", subscriptionType=").append(String.valueOf(this.subscriptionType));
         sb.append(")");
         return sb.toString();
     }
@@ -673,15 +895,24 @@ public final class NetworkAnchorSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.resourceAnchorId, other.resourceAnchorId)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.vcnName, other.vcnName)
+                && java.util.Objects.equals(
+                        this.networkAnchorConnectionStatus, other.networkAnchorConnectionStatus)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.cspAdditionalProperties, other.cspAdditionalProperties)
+                && java.util.Objects.equals(this.cspNetworkAnchorId, other.cspNetworkAnchorId)
+                && java.util.Objects.equals(this.networkAnchorUri, other.networkAnchorUri)
+                && java.util.Objects.equals(
+                        this.networkAnchorLifecycleState, other.networkAnchorLifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.subscriptionType, other.subscriptionType)
                 && super.equals(other);
     }
 
@@ -698,6 +929,12 @@ public final class NetworkAnchorSummary
                 (result * PRIME)
                         + (this.resourceAnchorId == null ? 43 : this.resourceAnchorId.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result = (result * PRIME) + (this.vcnName == null ? 43 : this.vcnName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkAnchorConnectionStatus == null
+                                ? 43
+                                : this.networkAnchorConnectionStatus.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterPlacementGroupId == null
@@ -707,13 +944,31 @@ public final class NetworkAnchorSummary
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
                 (result * PRIME)
-                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+                        + (this.cspAdditionalProperties == null
+                                ? 43
+                                : this.cspAdditionalProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cspNetworkAnchorId == null
+                                ? 43
+                                : this.cspNetworkAnchorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkAnchorUri == null ? 43 : this.networkAnchorUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkAnchorLifecycleState == null
+                                ? 43
+                                : this.networkAnchorLifecycleState.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionType == null ? 43 : this.subscriptionType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -484,12 +484,12 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("vcnDomainName");
             return this;
         }
-        /** Indicates whether Zpr Only Mode is enforced. */
+        /** Indicates whether ZPR Only mode is enforced. */
         @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
         private Boolean isZprOnly;
 
         /**
-         * Indicates whether Zpr Only Mode is enforced.
+         * Indicates whether ZPR Only mode is enforced.
          *
          * @param isZprOnly the value to set
          * @return this builder
@@ -1006,12 +1006,12 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return vcnDomainName;
     }
 
-    /** Indicates whether Zpr Only Mode is enforced. */
+    /** Indicates whether ZPR Only mode is enforced. */
     @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
     private final Boolean isZprOnly;
 
     /**
-     * Indicates whether Zpr Only Mode is enforced.
+     * Indicates whether ZPR Only mode is enforced.
      *
      * @return the value
      */

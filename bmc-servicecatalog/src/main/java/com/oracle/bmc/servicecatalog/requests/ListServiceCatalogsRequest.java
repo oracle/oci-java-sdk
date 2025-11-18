@@ -27,6 +27,13 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
     public String getServiceCatalogId() {
         return serviceCatalogId;
     }
+    /** Status of the service catalog, use as a filter to filter out all active catalogs. */
+    private com.oracle.bmc.servicecatalog.model.ServiceCatalogStatusEnum status;
+
+    /** Status of the service catalog, use as a filter to filter out all active catalogs. */
+    public com.oracle.bmc.servicecatalog.model.ServiceCatalogStatusEnum getStatus() {
+        return status;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -183,6 +190,20 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /** Status of the service catalog, use as a filter to filter out all active catalogs. */
+        private com.oracle.bmc.servicecatalog.model.ServiceCatalogStatusEnum status = null;
+
+        /**
+         * Status of the service catalog, use as a filter to filter out all active catalogs.
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(com.oracle.bmc.servicecatalog.model.ServiceCatalogStatusEnum status) {
+            this.status = status;
+            return this;
+        }
+
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
@@ -307,6 +328,7 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
         public Builder copy(ListServiceCatalogsRequest o) {
             compartmentId(o.getCompartmentId());
             serviceCatalogId(o.getServiceCatalogId());
+            status(o.getStatus());
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
@@ -349,6 +371,7 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
             ListServiceCatalogsRequest request = new ListServiceCatalogsRequest();
             request.compartmentId = compartmentId;
             request.serviceCatalogId = serviceCatalogId;
+            request.status = status;
             request.opcRequestId = opcRequestId;
             request.limit = limit;
             request.page = page;
@@ -356,8 +379,8 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
             request.sortOrder = sortOrder;
             request.displayName = displayName;
             return request;
-            // new ListServiceCatalogsRequest(compartmentId, serviceCatalogId, opcRequestId, limit,
-            // page, sortBy, sortOrder, displayName);
+            // new ListServiceCatalogsRequest(compartmentId, serviceCatalogId, status, opcRequestId,
+            // limit, page, sortBy, sortOrder, displayName);
         }
     }
 
@@ -370,6 +393,7 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
         return new Builder()
                 .compartmentId(compartmentId)
                 .serviceCatalogId(serviceCatalogId)
+                .status(status)
                 .opcRequestId(opcRequestId)
                 .limit(limit)
                 .page(page)
@@ -394,6 +418,7 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",serviceCatalogId=").append(String.valueOf(this.serviceCatalogId));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -417,6 +442,7 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.serviceCatalogId, other.serviceCatalogId)
+                && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -435,6 +461,7 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
         result =
                 (result * PRIME)
                         + (this.serviceCatalogId == null ? 43 : this.serviceCatalogId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

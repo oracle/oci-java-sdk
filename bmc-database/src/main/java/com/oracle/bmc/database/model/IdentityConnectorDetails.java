@@ -113,6 +113,7 @@ public final class IdentityConnectorDetails
     public enum CloudProvider implements com.oracle.bmc.http.internal.BmcEnum {
         Azure("AZURE"),
         Gcp("GCP"),
+        Aws("AWS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

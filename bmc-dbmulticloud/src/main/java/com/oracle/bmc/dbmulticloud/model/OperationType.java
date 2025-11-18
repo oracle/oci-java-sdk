@@ -35,6 +35,7 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     MoveAzureVaultAssociation("MOVE_AZURE_VAULT_ASSOCIATION"),
     PatchDbResource("PATCH_DB_RESOURCE"),
     CreateGcpIdentityConfiguration("CREATE_GCP_IDENTITY_CONFIGURATION"),
+    DeleteGcpIdentityConfiguration("DELETE_GCP_IDENTITY_CONFIGURATION"),
     CreateGcpConnector("CREATE_GCP_CONNECTOR"),
     DeleteGcpConnector("DELETE_GCP_CONNECTOR"),
     UpdateGcpConnector("UPDATE_GCP_CONNECTOR"),
@@ -46,6 +47,16 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UpdateGcpKeyRing("UPDATE_GCP_KEY_RING"),
     MoveGcpKeyRing("MOVE_GCP_KEY_RING"),
     RefreshGcpKeyRing("REFRESH_GCP_KEY_RING"),
+    CreateAwsConnector("CREATE_AWS_CONNECTOR"),
+    DeleteAwsConnector("DELETE_AWS_CONNECTOR"),
+    UpdateAwsConnector("UPDATE_AWS_CONNECTOR"),
+    MoveAwsConnector("MOVE_AWS_CONNECTOR"),
+    RefreshAwsConnector("REFRESH_AWS_CONNECTOR"),
+    CreateAwsKey("CREATE_AWS_KEY"),
+    DeleteAwsKey("DELETE_AWS_KEY"),
+    UpdateAwsKey("UPDATE_AWS_KEY"),
+    MoveAwsKey("MOVE_AWS_KEY"),
+    RefreshAwsKey("REFRESH_AWS_KEY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

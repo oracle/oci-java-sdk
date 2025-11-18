@@ -104,8 +104,6 @@ public class MetadataAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                             handler) {
         Objects.requireNonNull(request.getSubscriptionId(), "subscriptionId is required");
 
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
         Objects.requireNonNull(
                 request.getSubscriptionServiceName(), "subscriptionServiceName is required");
 
@@ -125,6 +123,9 @@ public class MetadataAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("linkedCompartmentId", request.getLinkedCompartmentId())
                 .appendEnumQueryParam(
                         "subscriptionServiceName", request.getSubscriptionServiceName())
+                .appendQueryParam("externalLocation", request.getExternalLocation())
+                .appendQueryParam("logicalZone", request.getLogicalZone())
+                .appendQueryParam("clusterPlacementGroupId", request.getClusterPlacementGroupId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())

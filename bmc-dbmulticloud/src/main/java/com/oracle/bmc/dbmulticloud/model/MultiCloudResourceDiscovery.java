@@ -559,6 +559,7 @@ public final class MultiCloudResourceDiscovery
         Vaults("VAULTS"),
         Storage("STORAGE"),
         GcpKeyRings("GCP_KEY_RINGS"),
+        AwsKeys("AWS_KEYS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

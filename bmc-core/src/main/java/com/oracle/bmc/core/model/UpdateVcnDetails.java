@@ -147,12 +147,12 @@ public final class UpdateVcnDetails
             this.__explicitlySet__.add("securityAttributes");
             return this;
         }
-        /** Indicates whether Zpr Only Mode is enforced. */
+        /** Indicates whether ZPR Only mode is enforced. */
         @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
         private Boolean isZprOnly;
 
         /**
-         * Indicates whether Zpr Only Mode is enforced.
+         * Indicates whether ZPR Only mode is enforced.
          *
          * @param isZprOnly the value to set
          * @return this builder
@@ -302,12 +302,12 @@ public final class UpdateVcnDetails
         return securityAttributes;
     }
 
-    /** Indicates whether Zpr Only Mode is enforced. */
+    /** Indicates whether ZPR Only mode is enforced. */
     @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
     private final Boolean isZprOnly;
 
     /**
-     * Indicates whether Zpr Only Mode is enforced.
+     * Indicates whether ZPR Only mode is enforced.
      *
      * @return the value
      */

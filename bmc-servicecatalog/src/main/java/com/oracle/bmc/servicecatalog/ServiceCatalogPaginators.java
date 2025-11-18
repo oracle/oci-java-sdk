@@ -43,6 +43,125 @@ public class ServiceCatalogPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAllApplications operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAllApplicationsResponse> listAllApplicationsResponseIterator(
+            final ListAllApplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAllApplicationsRequest.Builder,
+                ListAllApplicationsRequest,
+                ListAllApplicationsResponse>(
+                new java.util.function.Supplier<ListAllApplicationsRequest.Builder>() {
+                    @Override
+                    public ListAllApplicationsRequest.Builder get() {
+                        return ListAllApplicationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAllApplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListAllApplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAllApplicationsRequest.Builder>,
+                        ListAllApplicationsRequest>() {
+                    @Override
+                    public ListAllApplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAllApplicationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAllApplicationsRequest, ListAllApplicationsResponse>() {
+                    @Override
+                    public ListAllApplicationsResponse apply(ListAllApplicationsRequest request) {
+                        return client.listAllApplications(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.servicecatalog.model.ApplicationSummary} objects contained in responses from
+     * the listAllApplications operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.servicecatalog.model.ApplicationSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.servicecatalog.model.ApplicationSummary>
+            listAllApplicationsRecordIterator(final ListAllApplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAllApplicationsRequest.Builder,
+                ListAllApplicationsRequest,
+                ListAllApplicationsResponse,
+                com.oracle.bmc.servicecatalog.model.ApplicationSummary>(
+                new java.util.function.Supplier<ListAllApplicationsRequest.Builder>() {
+                    @Override
+                    public ListAllApplicationsRequest.Builder get() {
+                        return ListAllApplicationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAllApplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListAllApplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAllApplicationsRequest.Builder>,
+                        ListAllApplicationsRequest>() {
+                    @Override
+                    public ListAllApplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAllApplicationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAllApplicationsRequest, ListAllApplicationsResponse>() {
+                    @Override
+                    public ListAllApplicationsResponse apply(ListAllApplicationsRequest request) {
+                        return client.listAllApplications(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAllApplicationsResponse,
+                        java.util.List<com.oracle.bmc.servicecatalog.model.ApplicationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.servicecatalog.model.ApplicationSummary>
+                            apply(ListAllApplicationsResponse response) {
+                        return response.getApplicationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listApplications operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

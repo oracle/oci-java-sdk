@@ -25,31 +25,26 @@ public class InvokeRawCommandResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /** URL where the status of command invocation could be retrieved */
-    private String contentLocation;
+    private String location;
 
     /**
      * URL where the status of command invocation could be retrieved
      *
      * @return the value
      */
-    public String getContentLocation() {
-        return contentLocation;
+    public String getLocation() {
+        return location;
     }
 
-    @java.beans.ConstructorProperties({
-        "__httpStatusCode__",
-        "headers",
-        "opcRequestId",
-        "contentLocation"
-    })
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "location"})
     private InvokeRawCommandResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
-            String contentLocation) {
+            String location) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
-        this.contentLocation = contentLocation;
+        this.location = location;
     }
 
     public static class Builder
@@ -89,16 +84,16 @@ public class InvokeRawCommandResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /** URL where the status of command invocation could be retrieved */
-        private String contentLocation;
+        private String location;
 
         /**
          * URL where the status of command invocation could be retrieved
          *
-         * @param contentLocation the value to set
+         * @param location the value to set
          * @return this builder
          */
-        public Builder contentLocation(String contentLocation) {
-            this.contentLocation = contentLocation;
+        public Builder location(String location) {
+            this.location = location;
             return this;
         }
 
@@ -112,7 +107,7 @@ public class InvokeRawCommandResponse extends com.oracle.bmc.responses.BmcRespon
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
-            contentLocation(o.getContentLocation());
+            location(o.getLocation());
 
             return this;
         }
@@ -125,7 +120,7 @@ public class InvokeRawCommandResponse extends com.oracle.bmc.responses.BmcRespon
         @Override
         public InvokeRawCommandResponse build() {
             return new InvokeRawCommandResponse(
-                    __httpStatusCode__, headers, opcRequestId, contentLocation);
+                    __httpStatusCode__, headers, opcRequestId, location);
         }
     }
 
@@ -144,7 +139,7 @@ public class InvokeRawCommandResponse extends com.oracle.bmc.responses.BmcRespon
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",contentLocation=").append(String.valueOf(contentLocation));
+        sb.append(",location=").append(String.valueOf(location));
         sb.append(")");
         return sb.toString();
     }
@@ -161,7 +156,7 @@ public class InvokeRawCommandResponse extends com.oracle.bmc.responses.BmcRespon
         InvokeRawCommandResponse other = (InvokeRawCommandResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.contentLocation, other.contentLocation);
+                && java.util.Objects.equals(this.location, other.location);
     }
 
     @Override
@@ -169,9 +164,7 @@ public class InvokeRawCommandResponse extends com.oracle.bmc.responses.BmcRespon
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.contentLocation == null ? 43 : this.contentLocation.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
         return result;
     }
 }

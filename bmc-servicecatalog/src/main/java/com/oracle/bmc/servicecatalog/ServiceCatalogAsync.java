@@ -7,7 +7,11 @@ package com.oracle.bmc.servicecatalog;
 import com.oracle.bmc.servicecatalog.requests.*;
 import com.oracle.bmc.servicecatalog.responses.*;
 
-/** Manage solutions in Oracle Cloud Infrastructure Service Catalog. */
+/**
+ * Use the Service Catalog API to manage solutions in Oracle Cloud Infrastructure Service Catalog.
+ * For more information, see [Overview of Service
+ * Catalog](https://docs.oracle.com/iaas/Content/service-catalog/overview_of_service_catalog.htm).
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public interface ServiceCatalogAsync extends AutoCloseable {
 
@@ -214,6 +218,21 @@ public interface ServiceCatalogAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Get the detail of whether the tenancy is in service catalog mode or not.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConfigurationResponse> getConfiguration(
+            GetConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetConfigurationRequest, GetConfigurationResponse>
+                    handler);
+
+    /**
      * Gets the details of the specified private application.
      *
      * @param request The request object containing the details to send
@@ -328,6 +347,23 @@ public interface ServiceCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Lists all the available listings and private applications in a compartment. A new API for
+     * catalog manager use when creating/updating a service catalog.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAllApplicationsResponse> listAllApplications(
+            ListAllApplicationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAllApplicationsRequest, ListAllApplicationsResponse>
                     handler);
 
     /**

@@ -28,20 +28,23 @@ public final class ServiceCatalogAssociationSummary
         "serviceCatalogId",
         "entityId",
         "entityType",
-        "timeCreated"
+        "timeCreated",
+        "systemTags"
     })
     public ServiceCatalogAssociationSummary(
             String id,
             String serviceCatalogId,
             String entityId,
             String entityType,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.serviceCatalogId = serviceCatalogId;
         this.entityId = entityId;
         this.entityType = entityType;
         this.timeCreated = timeCreated;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -121,6 +124,25 @@ public final class ServiceCatalogAssociationSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -132,7 +154,8 @@ public final class ServiceCatalogAssociationSummary
                             this.serviceCatalogId,
                             this.entityId,
                             this.entityType,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -155,6 +178,9 @@ public final class ServiceCatalogAssociationSummary
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -234,6 +260,23 @@ public final class ServiceCatalogAssociationSummary
         return timeCreated;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -254,6 +297,7 @@ public final class ServiceCatalogAssociationSummary
         sb.append(", entityId=").append(String.valueOf(this.entityId));
         sb.append(", entityType=").append(String.valueOf(this.entityType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -273,6 +317,7 @@ public final class ServiceCatalogAssociationSummary
                 && java.util.Objects.equals(this.entityId, other.entityId)
                 && java.util.Objects.equals(this.entityType, other.entityType)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -287,6 +332,7 @@ public final class ServiceCatalogAssociationSummary
         result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

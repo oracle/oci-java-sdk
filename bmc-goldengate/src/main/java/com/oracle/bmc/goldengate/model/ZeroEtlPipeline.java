@@ -199,6 +199,24 @@ public final class ZeroEtlPipeline extends Pipeline {
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
+        private java.util.List<IngressIpDetails> ingressIps;
+
+        public Builder ingressIps(java.util.List<IngressIpDetails> ingressIps) {
+            this.ingressIps = ingressIps;
+            this.__explicitlySet__.add("ingressIps");
+            return this;
+        }
         /** Mapping for source/target schema/tables for the pipeline data replication. */
         @com.fasterxml.jackson.annotation.JsonProperty("mappingRules")
         private java.util.List<MappingRule> mappingRules;
@@ -270,6 +288,8 @@ public final class ZeroEtlPipeline extends Pipeline {
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.subnetId,
+                            this.ingressIps,
                             this.mappingRules,
                             this.processOptions,
                             this.timeLastRecorded);
@@ -338,6 +358,12 @@ public final class ZeroEtlPipeline extends Pipeline {
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("ingressIps")) {
+                this.ingressIps(model.getIngressIps());
+            }
             if (model.wasPropertyExplicitlySet("mappingRules")) {
                 this.mappingRules(model.getMappingRules());
             }
@@ -381,6 +407,8 @@ public final class ZeroEtlPipeline extends Pipeline {
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String subnetId,
+            java.util.List<IngressIpDetails> ingressIps,
             java.util.List<MappingRule> mappingRules,
             ProcessOptions processOptions,
             java.util.Date timeLastRecorded) {
@@ -403,7 +431,9 @@ public final class ZeroEtlPipeline extends Pipeline {
                 lifecycleSubState,
                 lifecycleDetails,
                 timeCreated,
-                timeUpdated);
+                timeUpdated,
+                subnetId,
+                ingressIps);
         this.mappingRules = mappingRules;
         this.processOptions = processOptions;
         this.timeLastRecorded = timeLastRecorded;

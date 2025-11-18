@@ -34,7 +34,10 @@ public final class CreateGatewayDetails
         "locks",
         "freeformTags",
         "definedTags",
-        "caBundles"
+        "caBundles",
+        "ipMode",
+        "ipv6AddressConfiguration",
+        "ipv4AddressConfiguration"
     })
     public CreateGatewayDetails(
             String displayName,
@@ -47,7 +50,10 @@ public final class CreateGatewayDetails
             java.util.List<AddResourceLockDetails> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.List<CaBundle> caBundles) {
+            java.util.List<CaBundle> caBundles,
+            Gateway.IpMode ipMode,
+            Ipv6AddressConfiguration ipv6AddressConfiguration,
+            Ipv4AddressConfiguration ipv4AddressConfiguration) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -60,6 +66,9 @@ public final class CreateGatewayDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.caBundles = caBundles;
+        this.ipMode = ipMode;
+        this.ipv6AddressConfiguration = ipv6AddressConfiguration;
+        this.ipv4AddressConfiguration = ipv4AddressConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -272,6 +281,49 @@ public final class CreateGatewayDetails
             this.__explicitlySet__.add("caBundles");
             return this;
         }
+        /**
+         * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+         * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code
+         * IPV6} means the gateway will only have an {@code IPv6} address assigned to it. {@code
+         * DUAL_STACK} means the gateway will have both an IPv4 and IPv6 address assigned to it.
+         * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+        private Gateway.IpMode ipMode;
+
+        /**
+         * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+         * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code
+         * IPV6} means the gateway will only have an {@code IPv6} address assigned to it. {@code
+         * DUAL_STACK} means the gateway will have both an IPv4 and IPv6 address assigned to it.
+         * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+         *
+         * @param ipMode the value to set
+         * @return this builder
+         */
+        public Builder ipMode(Gateway.IpMode ipMode) {
+            this.ipMode = ipMode;
+            this.__explicitlySet__.add("ipMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressConfiguration")
+        private Ipv6AddressConfiguration ipv6AddressConfiguration;
+
+        public Builder ipv6AddressConfiguration(Ipv6AddressConfiguration ipv6AddressConfiguration) {
+            this.ipv6AddressConfiguration = ipv6AddressConfiguration;
+            this.__explicitlySet__.add("ipv6AddressConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv4AddressConfiguration")
+        private Ipv4AddressConfiguration ipv4AddressConfiguration;
+
+        public Builder ipv4AddressConfiguration(Ipv4AddressConfiguration ipv4AddressConfiguration) {
+            this.ipv4AddressConfiguration = ipv4AddressConfiguration;
+            this.__explicitlySet__.add("ipv4AddressConfiguration");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -289,7 +341,10 @@ public final class CreateGatewayDetails
                             this.locks,
                             this.freeformTags,
                             this.definedTags,
-                            this.caBundles);
+                            this.caBundles,
+                            this.ipMode,
+                            this.ipv6AddressConfiguration,
+                            this.ipv4AddressConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -330,6 +385,15 @@ public final class CreateGatewayDetails
             }
             if (model.wasPropertyExplicitlySet("caBundles")) {
                 this.caBundles(model.getCaBundles());
+            }
+            if (model.wasPropertyExplicitlySet("ipMode")) {
+                this.ipMode(model.getIpMode());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6AddressConfiguration")) {
+                this.ipv6AddressConfiguration(model.getIpv6AddressConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("ipv4AddressConfiguration")) {
+                this.ipv4AddressConfiguration(model.getIpv4AddressConfiguration());
             }
             return this;
         }
@@ -529,6 +593,43 @@ public final class CreateGatewayDetails
         return caBundles;
     }
 
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. {@code
+     * IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means
+     * the gateway will only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means
+     * the gateway will have both an IPv4 and IPv6 address assigned to it. Example: {@code IPV4} or
+     * {@code IPV6} or {@code DUAL_STACK}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+    private final Gateway.IpMode ipMode;
+
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. {@code
+     * IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means
+     * the gateway will only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means
+     * the gateway will have both an IPv4 and IPv6 address assigned to it. Example: {@code IPV4} or
+     * {@code IPV6} or {@code DUAL_STACK}
+     *
+     * @return the value
+     */
+    public Gateway.IpMode getIpMode() {
+        return ipMode;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressConfiguration")
+    private final Ipv6AddressConfiguration ipv6AddressConfiguration;
+
+    public Ipv6AddressConfiguration getIpv6AddressConfiguration() {
+        return ipv6AddressConfiguration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv4AddressConfiguration")
+    private final Ipv4AddressConfiguration ipv4AddressConfiguration;
+
+    public Ipv4AddressConfiguration getIpv4AddressConfiguration() {
+        return ipv4AddressConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -556,6 +657,11 @@ public final class CreateGatewayDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", caBundles=").append(String.valueOf(this.caBundles));
+        sb.append(", ipMode=").append(String.valueOf(this.ipMode));
+        sb.append(", ipv6AddressConfiguration=")
+                .append(String.valueOf(this.ipv6AddressConfiguration));
+        sb.append(", ipv4AddressConfiguration=")
+                .append(String.valueOf(this.ipv4AddressConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -582,6 +688,11 @@ public final class CreateGatewayDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.caBundles, other.caBundles)
+                && java.util.Objects.equals(this.ipMode, other.ipMode)
+                && java.util.Objects.equals(
+                        this.ipv6AddressConfiguration, other.ipv6AddressConfiguration)
+                && java.util.Objects.equals(
+                        this.ipv4AddressConfiguration, other.ipv4AddressConfiguration)
                 && super.equals(other);
     }
 
@@ -612,6 +723,17 @@ public final class CreateGatewayDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.caBundles == null ? 43 : this.caBundles.hashCode());
+        result = (result * PRIME) + (this.ipMode == null ? 43 : this.ipMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6AddressConfiguration == null
+                                ? 43
+                                : this.ipv6AddressConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv4AddressConfiguration == null
+                                ? 43
+                                : this.ipv4AddressConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

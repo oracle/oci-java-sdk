@@ -22,14 +22,22 @@ package com.oracle.bmc.multicloud.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class OciVcn extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"vcnId", "cidrBlocks", "backupCidrBlocks", "dnsLabel"})
+    @java.beans.ConstructorProperties({
+        "vcnId",
+        "vcnName",
+        "cidrBlocks",
+        "backupCidrBlocks",
+        "dnsLabel"
+    })
     public OciVcn(
             String vcnId,
+            String vcnName,
             java.util.List<String> cidrBlocks,
             java.util.List<String> backupCidrBlocks,
             String dnsLabel) {
         super();
         this.vcnId = vcnId;
+        this.vcnName = vcnName;
         this.cidrBlocks = cidrBlocks;
         this.backupCidrBlocks = backupCidrBlocks;
         this.dnsLabel = dnsLabel;
@@ -50,6 +58,21 @@ public final class OciVcn extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
+            return this;
+        }
+        /** Name of the VCN associated to the Network Anchor. */
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnName")
+        private String vcnName;
+
+        /**
+         * Name of the VCN associated to the Network Anchor.
+         *
+         * @param vcnName the value to set
+         * @return this builder
+         */
+        public Builder vcnName(String vcnName) {
+            this.vcnName = vcnName;
+            this.__explicitlySet__.add("vcnName");
             return this;
         }
         /**
@@ -119,7 +142,12 @@ public final class OciVcn extends com.oracle.bmc.http.client.internal.Explicitly
 
         public OciVcn build() {
             OciVcn model =
-                    new OciVcn(this.vcnId, this.cidrBlocks, this.backupCidrBlocks, this.dnsLabel);
+                    new OciVcn(
+                            this.vcnId,
+                            this.vcnName,
+                            this.cidrBlocks,
+                            this.backupCidrBlocks,
+                            this.dnsLabel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -130,6 +158,9 @@ public final class OciVcn extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder copy(OciVcn model) {
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("vcnName")) {
+                this.vcnName(model.getVcnName());
             }
             if (model.wasPropertyExplicitlySet("cidrBlocks")) {
                 this.cidrBlocks(model.getCidrBlocks());
@@ -164,6 +195,19 @@ public final class OciVcn extends com.oracle.bmc.http.client.internal.Explicitly
      */
     public String getVcnId() {
         return vcnId;
+    }
+
+    /** Name of the VCN associated to the Network Anchor. */
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnName")
+    private final String vcnName;
+
+    /**
+     * Name of the VCN associated to the Network Anchor.
+     *
+     * @return the value
+     */
+    public String getVcnName() {
+        return vcnName;
     }
 
     /**
@@ -237,6 +281,7 @@ public final class OciVcn extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append("OciVcn(");
         sb.append("super=").append(super.toString());
         sb.append("vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", vcnName=").append(String.valueOf(this.vcnName));
         sb.append(", cidrBlocks=").append(String.valueOf(this.cidrBlocks));
         sb.append(", backupCidrBlocks=").append(String.valueOf(this.backupCidrBlocks));
         sb.append(", dnsLabel=").append(String.valueOf(this.dnsLabel));
@@ -255,6 +300,7 @@ public final class OciVcn extends com.oracle.bmc.http.client.internal.Explicitly
 
         OciVcn other = (OciVcn) o;
         return java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.vcnName, other.vcnName)
                 && java.util.Objects.equals(this.cidrBlocks, other.cidrBlocks)
                 && java.util.Objects.equals(this.backupCidrBlocks, other.backupCidrBlocks)
                 && java.util.Objects.equals(this.dnsLabel, other.dnsLabel)
@@ -266,6 +312,7 @@ public final class OciVcn extends com.oracle.bmc.http.client.internal.Explicitly
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result = (result * PRIME) + (this.vcnName == null ? 43 : this.vcnName.hashCode());
         result = (result * PRIME) + (this.cidrBlocks == null ? 43 : this.cidrBlocks.hashCode());
         result =
                 (result * PRIME)

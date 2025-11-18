@@ -2450,6 +2450,40 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public PausePipelineResponse pausePipeline(PausePipelineRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(
+                request.getPausePipelineDetails(), "pausePipelineDetails is required");
+
+        return clientCall(request, PausePipelineResponse::builder)
+                .logger(LOG, "pausePipeline")
+                .serviceDetails(
+                        "GoldenGate",
+                        "PausePipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/PausePipeline")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PausePipelineRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("actions")
+                .appendPathParam("pause")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", PausePipelineResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PausePipelineResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public RefreshConnectionResponse refreshConnection(RefreshConnectionRequest request) {
 
         Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");

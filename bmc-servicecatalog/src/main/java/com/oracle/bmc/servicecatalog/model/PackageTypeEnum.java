@@ -8,6 +8,7 @@ package com.oracle.bmc.servicecatalog.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public enum PackageTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
     Stack("STACK"),
+    Image("IMAGE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

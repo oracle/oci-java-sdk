@@ -720,6 +720,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.generativeaiinference.model.GenericChatRequest$ServiceTier",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.generativeaiinference.model.GenericChatResponse",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

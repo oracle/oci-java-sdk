@@ -66,13 +66,29 @@ public final class GenericChatResponse extends BaseChatResponse {
             this.__explicitlySet__.add("usage");
             return this;
         }
+        /** Specifies the processing type used for serving the request. */
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceTier")
+        private String serviceTier;
+
+        /**
+         * Specifies the processing type used for serving the request.
+         *
+         * @param serviceTier the value to set
+         * @return this builder
+         */
+        public Builder serviceTier(String serviceTier) {
+            this.serviceTier = serviceTier;
+            this.__explicitlySet__.add("serviceTier");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenericChatResponse build() {
             GenericChatResponse model =
-                    new GenericChatResponse(this.timeCreated, this.choices, this.usage);
+                    new GenericChatResponse(
+                            this.timeCreated, this.choices, this.usage, this.serviceTier);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -90,6 +106,9 @@ public final class GenericChatResponse extends BaseChatResponse {
             if (model.wasPropertyExplicitlySet("usage")) {
                 this.usage(model.getUsage());
             }
+            if (model.wasPropertyExplicitlySet("serviceTier")) {
+                this.serviceTier(model.getServiceTier());
+            }
             return this;
         }
     }
@@ -105,11 +124,15 @@ public final class GenericChatResponse extends BaseChatResponse {
 
     @Deprecated
     public GenericChatResponse(
-            java.util.Date timeCreated, java.util.List<ChatChoice> choices, Usage usage) {
+            java.util.Date timeCreated,
+            java.util.List<ChatChoice> choices,
+            Usage usage,
+            String serviceTier) {
         super();
         this.timeCreated = timeCreated;
         this.choices = choices;
         this.usage = usage;
+        this.serviceTier = serviceTier;
     }
 
     /** The Unix timestamp (in seconds) of when the response text was generated. */
@@ -145,6 +168,19 @@ public final class GenericChatResponse extends BaseChatResponse {
         return usage;
     }
 
+    /** Specifies the processing type used for serving the request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceTier")
+    private final String serviceTier;
+
+    /**
+     * Specifies the processing type used for serving the request.
+     *
+     * @return the value
+     */
+    public String getServiceTier() {
+        return serviceTier;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -163,6 +199,7 @@ public final class GenericChatResponse extends BaseChatResponse {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", choices=").append(String.valueOf(this.choices));
         sb.append(", usage=").append(String.valueOf(this.usage));
+        sb.append(", serviceTier=").append(String.valueOf(this.serviceTier));
         sb.append(")");
         return sb.toString();
     }
@@ -180,6 +217,7 @@ public final class GenericChatResponse extends BaseChatResponse {
         return java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.choices, other.choices)
                 && java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.serviceTier, other.serviceTier)
                 && super.equals(other);
     }
 
@@ -190,6 +228,7 @@ public final class GenericChatResponse extends BaseChatResponse {
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.choices == null ? 43 : this.choices.hashCode());
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result = (result * PRIME) + (this.serviceTier == null ? 43 : this.serviceTier.hashCode());
         return result;
     }
 }

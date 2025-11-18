@@ -43,7 +43,10 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         "freeformTags",
         "definedTags",
         "systemTags",
-        "caBundles"
+        "caBundles",
+        "ipMode",
+        "ipv6AddressConfiguration",
+        "ipv4AddressConfiguration"
     })
     public Gateway(
             String id,
@@ -64,7 +67,10 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            java.util.List<CaBundle> caBundles) {
+            java.util.List<CaBundle> caBundles,
+            IpMode ipMode,
+            Ipv6AddressConfiguration ipv6AddressConfiguration,
+            Ipv4AddressConfiguration ipv4AddressConfiguration) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -85,6 +91,9 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.caBundles = caBundles;
+        this.ipMode = ipMode;
+        this.ipv6AddressConfiguration = ipv6AddressConfiguration;
+        this.ipv4AddressConfiguration = ipv4AddressConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -429,6 +438,49 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("caBundles");
             return this;
         }
+        /**
+         * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+         * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code
+         * IPV6} means the gateway will only have an {@code IPv6} address assigned to it. {@code
+         * DUAL_STACK} means the gateway will have both an IPv4 and IPv6 address assigned to it.
+         * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+        private IpMode ipMode;
+
+        /**
+         * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+         * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code
+         * IPV6} means the gateway will only have an {@code IPv6} address assigned to it. {@code
+         * DUAL_STACK} means the gateway will have both an IPv4 and IPv6 address assigned to it.
+         * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+         *
+         * @param ipMode the value to set
+         * @return this builder
+         */
+        public Builder ipMode(IpMode ipMode) {
+            this.ipMode = ipMode;
+            this.__explicitlySet__.add("ipMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressConfiguration")
+        private Ipv6AddressConfiguration ipv6AddressConfiguration;
+
+        public Builder ipv6AddressConfiguration(Ipv6AddressConfiguration ipv6AddressConfiguration) {
+            this.ipv6AddressConfiguration = ipv6AddressConfiguration;
+            this.__explicitlySet__.add("ipv6AddressConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv4AddressConfiguration")
+        private Ipv4AddressConfiguration ipv4AddressConfiguration;
+
+        public Builder ipv4AddressConfiguration(Ipv4AddressConfiguration ipv4AddressConfiguration) {
+            this.ipv4AddressConfiguration = ipv4AddressConfiguration;
+            this.__explicitlySet__.add("ipv4AddressConfiguration");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -454,7 +506,10 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.caBundles);
+                            this.caBundles,
+                            this.ipMode,
+                            this.ipv6AddressConfiguration,
+                            this.ipv4AddressConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -519,6 +574,15 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("caBundles")) {
                 this.caBundles(model.getCaBundles());
+            }
+            if (model.wasPropertyExplicitlySet("ipMode")) {
+                this.ipMode(model.getIpMode());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6AddressConfiguration")) {
+                this.ipv6AddressConfiguration(model.getIpv6AddressConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("ipv4AddressConfiguration")) {
+                this.ipv4AddressConfiguration(model.getIpv4AddressConfiguration());
             }
             return this;
         }
@@ -935,6 +999,95 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         return caBundles;
     }
 
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. {@code
+     * IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means
+     * the gateway will only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means
+     * the gateway will have both an IPv4 and IPv6 address assigned to it. Example: {@code IPV4} or
+     * {@code IPV6} or {@code DUAL_STACK}
+     */
+    public enum IpMode implements com.oracle.bmc.http.internal.BmcEnum {
+        Ipv4("IPV4"),
+        Ipv6("IPV6"),
+        DualStack("DUAL_STACK"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(IpMode.class);
+
+        private final String value;
+        private static java.util.Map<String, IpMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpMode v : IpMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IpMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IpMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. {@code
+     * IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means
+     * the gateway will only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means
+     * the gateway will have both an IPv4 and IPv6 address assigned to it. Example: {@code IPV4} or
+     * {@code IPV6} or {@code DUAL_STACK}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+    private final IpMode ipMode;
+
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. {@code
+     * IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means
+     * the gateway will only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means
+     * the gateway will have both an IPv4 and IPv6 address assigned to it. Example: {@code IPV4} or
+     * {@code IPV6} or {@code DUAL_STACK}
+     *
+     * @return the value
+     */
+    public IpMode getIpMode() {
+        return ipMode;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressConfiguration")
+    private final Ipv6AddressConfiguration ipv6AddressConfiguration;
+
+    public Ipv6AddressConfiguration getIpv6AddressConfiguration() {
+        return ipv6AddressConfiguration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv4AddressConfiguration")
+    private final Ipv4AddressConfiguration ipv4AddressConfiguration;
+
+    public Ipv4AddressConfiguration getIpv4AddressConfiguration() {
+        return ipv4AddressConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -970,6 +1123,11 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", caBundles=").append(String.valueOf(this.caBundles));
+        sb.append(", ipMode=").append(String.valueOf(this.ipMode));
+        sb.append(", ipv6AddressConfiguration=")
+                .append(String.valueOf(this.ipv6AddressConfiguration));
+        sb.append(", ipv4AddressConfiguration=")
+                .append(String.valueOf(this.ipv4AddressConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -1004,6 +1162,11 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.caBundles, other.caBundles)
+                && java.util.Objects.equals(this.ipMode, other.ipMode)
+                && java.util.Objects.equals(
+                        this.ipv6AddressConfiguration, other.ipv6AddressConfiguration)
+                && java.util.Objects.equals(
+                        this.ipv4AddressConfiguration, other.ipv4AddressConfiguration)
                 && super.equals(other);
     }
 
@@ -1046,6 +1209,17 @@ public final class Gateway extends com.oracle.bmc.http.client.internal.Explicitl
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.caBundles == null ? 43 : this.caBundles.hashCode());
+        result = (result * PRIME) + (this.ipMode == null ? 43 : this.ipMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6AddressConfiguration == null
+                                ? 43
+                                : this.ipv6AddressConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv4AddressConfiguration == null
+                                ? 43
+                                : this.ipv4AddressConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

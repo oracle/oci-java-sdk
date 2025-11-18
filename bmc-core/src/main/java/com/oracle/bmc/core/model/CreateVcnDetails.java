@@ -375,12 +375,12 @@ public final class CreateVcnDetails
             this.__explicitlySet__.add("isIpv6Enabled");
             return this;
         }
-        /** Indicates whether Zpr Only Mode is enforced. */
+        /** Indicates whether ZPR Only mode is enforced. */
         @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
         private Boolean isZprOnly;
 
         /**
-         * Indicates whether Zpr Only Mode is enforced.
+         * Indicates whether ZPR Only mode is enforced.
          *
          * @param isZprOnly the value to set
          * @return this builder
@@ -748,12 +748,12 @@ public final class CreateVcnDetails
         return isIpv6Enabled;
     }
 
-    /** Indicates whether Zpr Only Mode is enforced. */
+    /** Indicates whether ZPR Only mode is enforced. */
     @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
     private final Boolean isZprOnly;
 
     /**
-     * Indicates whether Zpr Only Mode is enforced.
+     * Indicates whether ZPR Only mode is enforced.
      *
      * @return the value
      */

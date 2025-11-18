@@ -6,7 +6,7 @@ import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
-import com.oracle.bmc.http.ResteasyClientConfigurator;
+import com.oracle.bmc.addons.resteasy.ResteasyClientConfigurator;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.ObjectStorageAsyncClient;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;

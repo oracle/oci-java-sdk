@@ -27,6 +27,11 @@ public final class ResourceAnchorSummary
         "id",
         "displayName",
         "compartmentId",
+        "compartmentName",
+        "partnerCloudAccountIdentifier",
+        "cspResourceAnchorId",
+        "cspResourceAnchorName",
+        "cspAdditionalProperties",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -34,12 +39,19 @@ public final class ResourceAnchorSummary
         "freeformTags",
         "definedTags",
         "subscriptionId",
-        "systemTags"
+        "systemTags",
+        "linkedCompartmentId",
+        "linkedCompartmentName"
     })
     public ResourceAnchorSummary(
             String id,
             String displayName,
             String compartmentId,
+            String compartmentName,
+            String partnerCloudAccountIdentifier,
+            String cspResourceAnchorId,
+            String cspResourceAnchorName,
+            java.util.Map<String, String> cspAdditionalProperties,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             ResourceAnchor.LifecycleState lifecycleState,
@@ -47,11 +59,18 @@ public final class ResourceAnchorSummary
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String subscriptionId,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String linkedCompartmentId,
+            String linkedCompartmentName) {
         super();
         this.id = id;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
+        this.compartmentName = compartmentName;
+        this.partnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
+        this.cspResourceAnchorId = cspResourceAnchorId;
+        this.cspResourceAnchorName = cspResourceAnchorName;
+        this.cspAdditionalProperties = cspAdditionalProperties;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -60,6 +79,8 @@ public final class ResourceAnchorSummary
         this.definedTags = definedTags;
         this.subscriptionId = subscriptionId;
         this.systemTags = systemTags;
+        this.linkedCompartmentId = linkedCompartmentId;
+        this.linkedCompartmentName = linkedCompartmentName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -115,6 +136,82 @@ public final class ResourceAnchorSummary
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /** The name assigned to the compartment during creation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
+        private String compartmentName;
+
+        /**
+         * The name assigned to the compartment during creation.
+         *
+         * @param compartmentName the value to set
+         * @return this builder
+         */
+        public Builder compartmentName(String compartmentName) {
+            this.compartmentName = compartmentName;
+            this.__explicitlySet__.add("compartmentName");
+            return this;
+        }
+        /** Partner Cloud Account Identifier of the Cloud Service Provider. */
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountIdentifier")
+        private String partnerCloudAccountIdentifier;
+
+        /**
+         * Partner Cloud Account Identifier of the Cloud Service Provider.
+         *
+         * @param partnerCloudAccountIdentifier the value to set
+         * @return this builder
+         */
+        public Builder partnerCloudAccountIdentifier(String partnerCloudAccountIdentifier) {
+            this.partnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
+            this.__explicitlySet__.add("partnerCloudAccountIdentifier");
+            return this;
+        }
+        /** Resource Anchor Id in the Cloud Service Provider. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorId")
+        private String cspResourceAnchorId;
+
+        /**
+         * Resource Anchor Id in the Cloud Service Provider.
+         *
+         * @param cspResourceAnchorId the value to set
+         * @return this builder
+         */
+        public Builder cspResourceAnchorId(String cspResourceAnchorId) {
+            this.cspResourceAnchorId = cspResourceAnchorId;
+            this.__explicitlySet__.add("cspResourceAnchorId");
+            return this;
+        }
+        /** Resource Anchor Name in the Cloud Service Provider. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorName")
+        private String cspResourceAnchorName;
+
+        /**
+         * Resource Anchor Name in the Cloud Service Provider.
+         *
+         * @param cspResourceAnchorName the value to set
+         * @return this builder
+         */
+        public Builder cspResourceAnchorName(String cspResourceAnchorName) {
+            this.cspResourceAnchorName = cspResourceAnchorName;
+            this.__explicitlySet__.add("cspResourceAnchorName");
+            return this;
+        }
+        /** CSP Specific Additional Properties, AzureSubnetId for Azure */
+        @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
+        private java.util.Map<String, String> cspAdditionalProperties;
+
+        /**
+         * CSP Specific Additional Properties, AzureSubnetId for Azure
+         *
+         * @param cspAdditionalProperties the value to set
+         * @return this builder
+         */
+        public Builder cspAdditionalProperties(
+                java.util.Map<String, String> cspAdditionalProperties) {
+            this.cspAdditionalProperties = cspAdditionalProperties;
+            this.__explicitlySet__.add("cspAdditionalProperties");
             return this;
         }
         /**
@@ -286,6 +383,46 @@ public final class ResourceAnchorSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked
+         * by customer with resource anchor. This compartmentId is different from where resource
+         * Anchor live.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("linkedCompartmentId")
+        private String linkedCompartmentId;
+
+        /**
+         * Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked
+         * by customer with resource anchor. This compartmentId is different from where resource
+         * Anchor live.
+         *
+         * @param linkedCompartmentId the value to set
+         * @return this builder
+         */
+        public Builder linkedCompartmentId(String linkedCompartmentId) {
+            this.linkedCompartmentId = linkedCompartmentId;
+            this.__explicitlySet__.add("linkedCompartmentId");
+            return this;
+        }
+        /**
+         * The name assigned to the compartment which was created or linked by customer with
+         * resource anchor. This compartment is different from where resource Anchor live.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("linkedCompartmentName")
+        private String linkedCompartmentName;
+
+        /**
+         * The name assigned to the compartment which was created or linked by customer with
+         * resource anchor. This compartment is different from where resource Anchor live.
+         *
+         * @param linkedCompartmentName the value to set
+         * @return this builder
+         */
+        public Builder linkedCompartmentName(String linkedCompartmentName) {
+            this.linkedCompartmentName = linkedCompartmentName;
+            this.__explicitlySet__.add("linkedCompartmentName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -296,6 +433,11 @@ public final class ResourceAnchorSummary
                             this.id,
                             this.displayName,
                             this.compartmentId,
+                            this.compartmentName,
+                            this.partnerCloudAccountIdentifier,
+                            this.cspResourceAnchorId,
+                            this.cspResourceAnchorName,
+                            this.cspAdditionalProperties,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -303,7 +445,9 @@ public final class ResourceAnchorSummary
                             this.freeformTags,
                             this.definedTags,
                             this.subscriptionId,
-                            this.systemTags);
+                            this.systemTags,
+                            this.linkedCompartmentId,
+                            this.linkedCompartmentName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -320,6 +464,21 @@ public final class ResourceAnchorSummary
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentName")) {
+                this.compartmentName(model.getCompartmentName());
+            }
+            if (model.wasPropertyExplicitlySet("partnerCloudAccountIdentifier")) {
+                this.partnerCloudAccountIdentifier(model.getPartnerCloudAccountIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("cspResourceAnchorId")) {
+                this.cspResourceAnchorId(model.getCspResourceAnchorId());
+            }
+            if (model.wasPropertyExplicitlySet("cspResourceAnchorName")) {
+                this.cspResourceAnchorName(model.getCspResourceAnchorName());
+            }
+            if (model.wasPropertyExplicitlySet("cspAdditionalProperties")) {
+                this.cspAdditionalProperties(model.getCspAdditionalProperties());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -344,6 +503,12 @@ public final class ResourceAnchorSummary
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("linkedCompartmentId")) {
+                this.linkedCompartmentId(model.getLinkedCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("linkedCompartmentName")) {
+                this.linkedCompartmentName(model.getLinkedCompartmentName());
             }
             return this;
         }
@@ -403,6 +568,71 @@ public final class ResourceAnchorSummary
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /** The name assigned to the compartment during creation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
+    private final String compartmentName;
+
+    /**
+     * The name assigned to the compartment during creation.
+     *
+     * @return the value
+     */
+    public String getCompartmentName() {
+        return compartmentName;
+    }
+
+    /** Partner Cloud Account Identifier of the Cloud Service Provider. */
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountIdentifier")
+    private final String partnerCloudAccountIdentifier;
+
+    /**
+     * Partner Cloud Account Identifier of the Cloud Service Provider.
+     *
+     * @return the value
+     */
+    public String getPartnerCloudAccountIdentifier() {
+        return partnerCloudAccountIdentifier;
+    }
+
+    /** Resource Anchor Id in the Cloud Service Provider. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorId")
+    private final String cspResourceAnchorId;
+
+    /**
+     * Resource Anchor Id in the Cloud Service Provider.
+     *
+     * @return the value
+     */
+    public String getCspResourceAnchorId() {
+        return cspResourceAnchorId;
+    }
+
+    /** Resource Anchor Name in the Cloud Service Provider. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorName")
+    private final String cspResourceAnchorName;
+
+    /**
+     * Resource Anchor Name in the Cloud Service Provider.
+     *
+     * @return the value
+     */
+    public String getCspResourceAnchorName() {
+        return cspResourceAnchorName;
+    }
+
+    /** CSP Specific Additional Properties, AzureSubnetId for Azure */
+    @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
+    private final java.util.Map<String, String> cspAdditionalProperties;
+
+    /**
+     * CSP Specific Additional Properties, AzureSubnetId for Azure
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getCspAdditionalProperties() {
+        return cspAdditionalProperties;
     }
 
     /**
@@ -555,6 +785,42 @@ public final class ResourceAnchorSummary
         return systemTags;
     }
 
+    /**
+     * Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by
+     * customer with resource anchor. This compartmentId is different from where resource Anchor
+     * live.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("linkedCompartmentId")
+    private final String linkedCompartmentId;
+
+    /**
+     * Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by
+     * customer with resource anchor. This compartmentId is different from where resource Anchor
+     * live.
+     *
+     * @return the value
+     */
+    public String getLinkedCompartmentId() {
+        return linkedCompartmentId;
+    }
+
+    /**
+     * The name assigned to the compartment which was created or linked by customer with resource
+     * anchor. This compartment is different from where resource Anchor live.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("linkedCompartmentName")
+    private final String linkedCompartmentName;
+
+    /**
+     * The name assigned to the compartment which was created or linked by customer with resource
+     * anchor. This compartment is different from where resource Anchor live.
+     *
+     * @return the value
+     */
+    public String getLinkedCompartmentName() {
+        return linkedCompartmentName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -573,6 +839,13 @@ public final class ResourceAnchorSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", compartmentName=").append(String.valueOf(this.compartmentName));
+        sb.append(", partnerCloudAccountIdentifier=")
+                .append(String.valueOf(this.partnerCloudAccountIdentifier));
+        sb.append(", cspResourceAnchorId=").append(String.valueOf(this.cspResourceAnchorId));
+        sb.append(", cspResourceAnchorName=").append(String.valueOf(this.cspResourceAnchorName));
+        sb.append(", cspAdditionalProperties=")
+                .append(String.valueOf(this.cspAdditionalProperties));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -581,6 +854,8 @@ public final class ResourceAnchorSummary
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", linkedCompartmentId=").append(String.valueOf(this.linkedCompartmentId));
+        sb.append(", linkedCompartmentName=").append(String.valueOf(this.linkedCompartmentName));
         sb.append(")");
         return sb.toString();
     }
@@ -598,6 +873,13 @@ public final class ResourceAnchorSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.compartmentName, other.compartmentName)
+                && java.util.Objects.equals(
+                        this.partnerCloudAccountIdentifier, other.partnerCloudAccountIdentifier)
+                && java.util.Objects.equals(this.cspResourceAnchorId, other.cspResourceAnchorId)
+                && java.util.Objects.equals(this.cspResourceAnchorName, other.cspResourceAnchorName)
+                && java.util.Objects.equals(
+                        this.cspAdditionalProperties, other.cspAdditionalProperties)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -606,6 +888,8 @@ public final class ResourceAnchorSummary
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.linkedCompartmentId, other.linkedCompartmentId)
+                && java.util.Objects.equals(this.linkedCompartmentName, other.linkedCompartmentName)
                 && super.equals(other);
     }
 
@@ -618,6 +902,29 @@ public final class ResourceAnchorSummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentName == null ? 43 : this.compartmentName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerCloudAccountIdentifier == null
+                                ? 43
+                                : this.partnerCloudAccountIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cspResourceAnchorId == null
+                                ? 43
+                                : this.cspResourceAnchorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cspResourceAnchorName == null
+                                ? 43
+                                : this.cspResourceAnchorName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cspAdditionalProperties == null
+                                ? 43
+                                : this.cspAdditionalProperties.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
@@ -632,6 +939,16 @@ public final class ResourceAnchorSummary
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.linkedCompartmentId == null
+                                ? 43
+                                : this.linkedCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.linkedCompartmentName == null
+                                ? 43
+                                : this.linkedCompartmentName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

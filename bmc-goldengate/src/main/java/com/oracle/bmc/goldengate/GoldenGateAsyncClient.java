@@ -2616,6 +2616,42 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<PausePipelineResponse> pausePipeline(
+            PausePipelineRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PausePipelineRequest, PausePipelineResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(
+                request.getPausePipelineDetails(), "pausePipelineDetails is required");
+
+        return clientCall(request, PausePipelineResponse::builder)
+                .logger(LOG, "pausePipeline")
+                .serviceDetails(
+                        "GoldenGate",
+                        "PausePipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/PausePipeline")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PausePipelineRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("actions")
+                .appendPathParam("pause")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", PausePipelineResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PausePipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RefreshConnectionResponse> refreshConnection(
             RefreshConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

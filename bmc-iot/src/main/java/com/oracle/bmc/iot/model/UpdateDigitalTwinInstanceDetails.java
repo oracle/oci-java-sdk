@@ -29,6 +29,8 @@ public final class UpdateDigitalTwinInstanceDetails
         "displayName",
         "description",
         "digitalTwinAdapterId",
+        "digitalTwinModelId",
+        "digitalTwinModelSpecUri",
         "freeformTags",
         "definedTags"
     })
@@ -38,6 +40,8 @@ public final class UpdateDigitalTwinInstanceDetails
             String displayName,
             String description,
             String digitalTwinAdapterId,
+            String digitalTwinModelId,
+            String digitalTwinModelSpecUri,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -46,6 +50,8 @@ public final class UpdateDigitalTwinInstanceDetails
         this.displayName = displayName;
         this.description = description;
         this.digitalTwinAdapterId = digitalTwinAdapterId;
+        this.digitalTwinModelId = digitalTwinModelId;
+        this.digitalTwinModelSpecUri = digitalTwinModelSpecUri;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -150,6 +156,40 @@ public final class UpdateDigitalTwinInstanceDetails
             return this;
         }
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * digital twin model.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("digitalTwinModelId")
+        private String digitalTwinModelId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * digital twin model.
+         *
+         * @param digitalTwinModelId the value to set
+         * @return this builder
+         */
+        public Builder digitalTwinModelId(String digitalTwinModelId) {
+            this.digitalTwinModelId = digitalTwinModelId;
+            this.__explicitlySet__.add("digitalTwinModelId");
+            return this;
+        }
+        /** The URI of the digital twin model specification. */
+        @com.fasterxml.jackson.annotation.JsonProperty("digitalTwinModelSpecUri")
+        private String digitalTwinModelSpecUri;
+
+        /**
+         * The URI of the digital twin model specification.
+         *
+         * @param digitalTwinModelSpecUri the value to set
+         * @return this builder
+         */
+        public Builder digitalTwinModelSpecUri(String digitalTwinModelSpecUri) {
+            this.digitalTwinModelSpecUri = digitalTwinModelSpecUri;
+            this.__explicitlySet__.add("digitalTwinModelSpecUri");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -212,6 +252,8 @@ public final class UpdateDigitalTwinInstanceDetails
                             this.displayName,
                             this.description,
                             this.digitalTwinAdapterId,
+                            this.digitalTwinModelId,
+                            this.digitalTwinModelSpecUri,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -236,6 +278,12 @@ public final class UpdateDigitalTwinInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("digitalTwinAdapterId")) {
                 this.digitalTwinAdapterId(model.getDigitalTwinAdapterId());
+            }
+            if (model.wasPropertyExplicitlySet("digitalTwinModelId")) {
+                this.digitalTwinModelId(model.getDigitalTwinModelId());
+            }
+            if (model.wasPropertyExplicitlySet("digitalTwinModelSpecUri")) {
+                this.digitalTwinModelSpecUri(model.getDigitalTwinModelSpecUri());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -344,6 +392,36 @@ public final class UpdateDigitalTwinInstanceDetails
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * digital twin model.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("digitalTwinModelId")
+    private final String digitalTwinModelId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * digital twin model.
+     *
+     * @return the value
+     */
+    public String getDigitalTwinModelId() {
+        return digitalTwinModelId;
+    }
+
+    /** The URI of the digital twin model specification. */
+    @com.fasterxml.jackson.annotation.JsonProperty("digitalTwinModelSpecUri")
+    private final String digitalTwinModelSpecUri;
+
+    /**
+     * The URI of the digital twin model specification.
+     *
+     * @return the value
+     */
+    public String getDigitalTwinModelSpecUri() {
+        return digitalTwinModelSpecUri;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -409,6 +487,9 @@ public final class UpdateDigitalTwinInstanceDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", digitalTwinAdapterId=").append(String.valueOf(this.digitalTwinAdapterId));
+        sb.append(", digitalTwinModelId=").append(String.valueOf(this.digitalTwinModelId));
+        sb.append(", digitalTwinModelSpecUri=")
+                .append(String.valueOf(this.digitalTwinModelSpecUri));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -430,6 +511,9 @@ public final class UpdateDigitalTwinInstanceDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.digitalTwinAdapterId, other.digitalTwinAdapterId)
+                && java.util.Objects.equals(this.digitalTwinModelId, other.digitalTwinModelId)
+                && java.util.Objects.equals(
+                        this.digitalTwinModelSpecUri, other.digitalTwinModelSpecUri)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -448,6 +532,16 @@ public final class UpdateDigitalTwinInstanceDetails
                         + (this.digitalTwinAdapterId == null
                                 ? 43
                                 : this.digitalTwinAdapterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.digitalTwinModelId == null
+                                ? 43
+                                : this.digitalTwinModelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.digitalTwinModelSpecUri == null
+                                ? 43
+                                : this.digitalTwinModelSpecUri.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

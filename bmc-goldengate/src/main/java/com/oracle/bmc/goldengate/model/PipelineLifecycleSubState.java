@@ -12,6 +12,11 @@ public enum PipelineLifecycleSubState implements com.oracle.bmc.http.internal.Bm
     Stopped("STOPPED"),
     Moving("MOVING"),
     Running("RUNNING"),
+    Pausing("PAUSING"),
+    Paused("PAUSED"),
+    StartFailed("START_FAILED"),
+    StopFailed("STOP_FAILED"),
+    PauseFailed("PAUSE_FAILED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

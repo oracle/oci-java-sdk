@@ -111,6 +111,15 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("processOptions")
         private ProcessOptions processOptions;
 
@@ -135,6 +144,7 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
                             this.locks,
                             this.sourceConnectionDetails,
                             this.targetConnectionDetails,
+                            this.subnetId,
                             this.processOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -171,6 +181,9 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
             if (model.wasPropertyExplicitlySet("targetConnectionDetails")) {
                 this.targetConnectionDetails(model.getTargetConnectionDetails());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
             if (model.wasPropertyExplicitlySet("processOptions")) {
                 this.processOptions(model.getProcessOptions());
             }
@@ -198,6 +211,7 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
             java.util.List<ResourceLock> locks,
             SourcePipelineConnectionDetails sourceConnectionDetails,
             TargetPipelineConnectionDetails targetConnectionDetails,
+            String subnetId,
             ProcessOptions processOptions) {
         super(
                 displayName,
@@ -208,7 +222,8 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
                 definedTags,
                 locks,
                 sourceConnectionDetails,
-                targetConnectionDetails);
+                targetConnectionDetails,
+                subnetId);
         this.processOptions = processOptions;
     }
 

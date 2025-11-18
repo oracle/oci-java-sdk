@@ -97,13 +97,6 @@ public interface OmhubNetworkAnchor extends AutoCloseable {
     ListNetworkAnchorsResponse listNetworkAnchors(ListNetworkAnchorsRequest request);
 
     /**
-     * Gets the pre-configured waiters available for resources for this service.
-     *
-     * @return The service waiters.
-     */
-    OmhubNetworkAnchorWaiters getWaiters();
-
-    /**
      * Gets the pre-configured paginators available for list operations in this service which may
      * return multiple pages of data. These paginators provide an {@link java.lang.Iterable}
      * interface so that service responses, or resources/records, can be iterated through without

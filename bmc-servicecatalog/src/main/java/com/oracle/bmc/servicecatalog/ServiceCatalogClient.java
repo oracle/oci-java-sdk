@@ -175,6 +175,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -208,6 +209,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -243,6 +245,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -270,6 +273,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.PrivateApplication.class,
@@ -302,6 +306,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.ServiceCatalog.class,
@@ -332,6 +337,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.ServiceCatalogAssociation.class,
@@ -365,6 +371,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeletePrivateApplicationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
@@ -392,6 +399,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteServiceCatalogResponse.Builder::opcRequestId)
                 .callSync();
@@ -419,9 +427,36 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteServiceCatalogAssociationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetConfigurationResponse getConfiguration(GetConfigurationRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetConfigurationResponse::builder)
+                .logger(LOG, "getConfiguration")
+                .serviceDetails(
+                        "ServiceCatalog",
+                        "GetConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/Configuration/GetConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConfigurationRequest::builder)
+                .basePath("/20210527")
+                .appendPathParam("configuration")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.servicecatalog.model.Configuration.class,
+                        GetConfigurationResponse.Builder::configuration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConfigurationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -445,6 +480,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getPrivateApplicationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.PrivateApplication.class,
                         GetPrivateApplicationResponse.Builder::privateApplication)
@@ -476,6 +512,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("downloadLogo")
                 .accept("image/bmp", "image/gif", "image/jpeg", "image/png", "image/tiff")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetPrivateApplicationActionDownloadLogoResponse.Builder::inputStream)
@@ -506,6 +543,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getPrivateApplicationPackageId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.PrivateApplicationPackage.class,
                         GetPrivateApplicationPackageResponse.Builder::privateApplicationPackage)
@@ -542,6 +580,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("downloadConfig")
                 .accept("application/zip")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetPrivateApplicationPackageActionDownloadConfigResponse.Builder
@@ -571,6 +610,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getServiceCatalogId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.ServiceCatalog.class,
                         GetServiceCatalogResponse.Builder::serviceCatalog)
@@ -601,6 +641,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getServiceCatalogAssociationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.ServiceCatalogAssociation.class,
                         GetServiceCatalogAssociationResponse.Builder::serviceCatalogAssociation)
@@ -630,6 +671,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -638,6 +680,52 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public ListAllApplicationsResponse listAllApplications(ListAllApplicationsRequest request) {
+
+        return clientCall(request, ListAllApplicationsResponse::builder)
+                .logger(LOG, "listAllApplications")
+                .serviceDetails(
+                        "ServiceCatalog",
+                        "ListAllApplications",
+                        "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ApplicationSummary/ListAllApplications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAllApplicationsRequest::builder)
+                .basePath("/20210527")
+                .appendPathParam("allApplications")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("entityType", request.getEntityType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("entityId", request.getEntityId())
+                .appendListQueryParam(
+                        "publisherId",
+                        request.getPublisherId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "packageType",
+                        request.getPackageType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "pricing",
+                        request.getPricing(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isFeatured", request.getIsFeatured())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.servicecatalog.model.ApplicationCollection.class,
+                        ListAllApplicationsResponse.Builder::applicationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAllApplicationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAllApplicationsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -677,6 +765,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.ApplicationCollection.class,
                         ListApplicationsResponse.Builder::applicationCollection)
@@ -717,6 +806,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.PrivateApplicationPackageCollection
                                 .class,
@@ -755,6 +845,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.PrivateApplicationCollection.class,
                         ListPrivateApplicationsResponse.Builder::privateApplicationCollection)
@@ -790,6 +881,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.ServiceCatalogAssociationCollection
                                 .class,
@@ -820,6 +912,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("serviceCatalogs")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("serviceCatalogId", request.getServiceCatalogId())
+                .appendEnumQueryParam("status", request.getStatus())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
@@ -827,6 +920,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.ServiceCatalogCollection.class,
                         ListServiceCatalogsResponse.Builder::serviceCatalogCollection)
@@ -861,6 +955,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -894,6 +989,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -927,6 +1023,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -961,6 +1058,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.PrivateApplication.class,
@@ -996,6 +1094,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicecatalog.model.ServiceCatalog.class,

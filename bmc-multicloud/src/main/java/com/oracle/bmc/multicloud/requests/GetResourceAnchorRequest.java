@@ -26,26 +26,22 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
     public String getResourceAnchorId() {
         return resourceAnchorId;
     }
-    /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-     */
+    /** The subscription service name of the Cloud Service Provider. */
     private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
 
-    /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-     */
+    /** The subscription service name of the Cloud Service Provider. */
     public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
         return subscriptionServiceName;
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
+     * Multicloud subscription in which to list resources.
      */
     private String subscriptionId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
+     * Multicloud subscription in which to list resources.
      */
     public String getSubscriptionId() {
         return subscriptionId;
@@ -64,6 +60,19 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Whether to fetch and include the compartment name, setting this field to yes may introduce
+     * additional latency.
+     */
+    private Boolean shouldFetchCompartmentName;
+
+    /**
+     * Whether to fetch and include the compartment name, setting this field to yes may introduce
+     * additional latency.
+     */
+    public Boolean getShouldFetchCompartmentName() {
+        return shouldFetchCompartmentName;
     }
 
     public static class Builder
@@ -90,15 +99,11 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
-         */
+        /** The subscription service name of the Cloud Service Provider. */
         private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
 
         /**
-         * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
+         * The subscription service name of the Cloud Service Provider.
          *
          * @param subscriptionServiceName the value to set
          * @return this builder instance
@@ -111,13 +116,13 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
+         * Multicloud subscription in which to list resources.
          */
         private String subscriptionId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
+         * Multicloud subscription in which to list resources.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -144,6 +149,24 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Whether to fetch and include the compartment name, setting this field to yes may
+         * introduce additional latency.
+         */
+        private Boolean shouldFetchCompartmentName = null;
+
+        /**
+         * Whether to fetch and include the compartment name, setting this field to yes may
+         * introduce additional latency.
+         *
+         * @param shouldFetchCompartmentName the value to set
+         * @return this builder instance
+         */
+        public Builder shouldFetchCompartmentName(Boolean shouldFetchCompartmentName) {
+            this.shouldFetchCompartmentName = shouldFetchCompartmentName;
             return this;
         }
 
@@ -181,6 +204,7 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
             subscriptionServiceName(o.getSubscriptionServiceName());
             subscriptionId(o.getSubscriptionId());
             opcRequestId(o.getOpcRequestId());
+            shouldFetchCompartmentName(o.getShouldFetchCompartmentName());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -219,9 +243,10 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
             request.subscriptionServiceName = subscriptionServiceName;
             request.subscriptionId = subscriptionId;
             request.opcRequestId = opcRequestId;
+            request.shouldFetchCompartmentName = shouldFetchCompartmentName;
             return request;
             // new GetResourceAnchorRequest(resourceAnchorId, subscriptionServiceName,
-            // subscriptionId, opcRequestId);
+            // subscriptionId, opcRequestId, shouldFetchCompartmentName);
         }
     }
 
@@ -235,7 +260,8 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
                 .resourceAnchorId(resourceAnchorId)
                 .subscriptionServiceName(subscriptionServiceName)
                 .subscriptionId(subscriptionId)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .shouldFetchCompartmentName(shouldFetchCompartmentName);
     }
 
     /**
@@ -256,6 +282,8 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",subscriptionServiceName=").append(String.valueOf(this.subscriptionServiceName));
         sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",shouldFetchCompartmentName=")
+                .append(String.valueOf(this.shouldFetchCompartmentName));
         sb.append(")");
         return sb.toString();
     }
@@ -275,7 +303,9 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(
                         this.subscriptionServiceName, other.subscriptionServiceName)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.shouldFetchCompartmentName, other.shouldFetchCompartmentName);
     }
 
     @Override
@@ -294,6 +324,11 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldFetchCompartmentName == null
+                                ? 43
+                                : this.shouldFetchCompartmentName.hashCode());
         return result;
     }
 }

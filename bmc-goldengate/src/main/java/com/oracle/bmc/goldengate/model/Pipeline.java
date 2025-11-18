@@ -49,7 +49,9 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         "lifecycleSubState",
         "lifecycleDetails",
         "timeCreated",
-        "timeUpdated"
+        "timeUpdated",
+        "subnetId",
+        "ingressIps"
     })
     protected Pipeline(
             String id,
@@ -70,7 +72,9 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
             PipelineLifecycleSubState lifecycleSubState,
             String lifecycleDetails,
             java.util.Date timeCreated,
-            java.util.Date timeUpdated) {
+            java.util.Date timeUpdated,
+            String subnetId,
+            java.util.List<IngressIpDetails> ingressIps) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -91,6 +95,8 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.subnetId = subnetId;
+        this.ingressIps = ingressIps;
     }
 
     /**
@@ -300,6 +306,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Inactive("INACTIVE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -419,6 +426,42 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         return timeUpdated;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+     *
+     * @return the value
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this
+     * connection's privateIp. Customers may optionally set up ingress security rules to restrict
+     * traffic from these IP addresses.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
+    private final java.util.List<IngressIpDetails> ingressIps;
+
+    /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this
+     * connection's privateIp. Customers may optionally set up ingress security rules to restrict
+     * traffic from these IP addresses.
+     *
+     * @return the value
+     */
+    public java.util.List<IngressIpDetails> getIngressIps() {
+        return ingressIps;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -455,6 +498,8 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", ingressIps=").append(String.valueOf(this.ingressIps));
         sb.append(")");
         return sb.toString();
     }
@@ -491,6 +536,8 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.ingressIps, other.ingressIps)
                 && super.equals(other);
     }
 
@@ -541,6 +588,8 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.ingressIps == null ? 43 : this.ingressIps.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

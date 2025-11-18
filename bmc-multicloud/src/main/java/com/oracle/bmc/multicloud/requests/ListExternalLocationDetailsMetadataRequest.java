@@ -17,38 +17,21 @@ public class ListExternalLocationDetailsMetadataRequest
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
+     * Multicloud subscription in which to list resources.
      */
     private String subscriptionId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
+     * Multicloud subscription in which to list resources.
      */
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
-     */
-    private String compartmentId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
-     */
-    public String getCompartmentId() {
-        return compartmentId;
-    }
-    /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-     */
+    /** The subscription service name of the Cloud Service Provider. */
     private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
 
-    /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-     */
+    /** The subscription service name of the Cloud Service Provider. */
     public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
         return subscriptionServiceName;
     }
@@ -94,16 +77,60 @@ public class ListExternalLocationDetailsMetadataRequest
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which linked to Resource.
+     * Multicloud base compartment in which to list resources. A Multicloud base compartment is an
+     * OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS,
+     * or Google Cloud).
+     */
+    private String compartmentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Multicloud base compartment in which to list resources. A Multicloud base compartment is an
+     * OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS,
+     * or Google Cloud).
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment linked to the resource.
      */
     private String linkedCompartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which linked to Resource.
+     * compartment linked to the resource.
      */
     public String getLinkedCompartmentId() {
         return linkedCompartmentId;
+    }
+    /** The Cloud Service Provider region. */
+    private String externalLocation;
+
+    /** The Cloud Service Provider region. */
+    public String getExternalLocation() {
+        return externalLocation;
+    }
+    /** OCI Logical AD to filter the response. */
+    private String logicalZone;
+
+    /** OCI Logical AD to filter the response. */
+    public String getLogicalZone() {
+        return logicalZone;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Cluster Placement Group.
+     */
+    private String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Cluster Placement Group.
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
@@ -216,13 +243,13 @@ public class ListExternalLocationDetailsMetadataRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
+         * Multicloud subscription in which to list resources.
          */
         private String subscriptionId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
+         * Multicloud subscription in which to list resources.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -232,33 +259,11 @@ public class ListExternalLocationDetailsMetadataRequest
             return this;
         }
 
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
-         */
-        private String compartmentId = null;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
-         *
-         * @param compartmentId the value to set
-         * @return this builder instance
-         */
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            return this;
-        }
-
-        /**
-         * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
-         */
+        /** The subscription service name of the Cloud Service Provider. */
         private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
 
         /**
-         * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
+         * The subscription service name of the Cloud Service Provider.
          *
          * @param subscriptionServiceName the value to set
          * @return this builder instance
@@ -285,19 +290,87 @@ public class ListExternalLocationDetailsMetadataRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which linked to Resource.
+         * Multicloud base compartment in which to list resources. A Multicloud base compartment is
+         * an OCI compartment that maps to a subscription in a Cloud Service Provider (such as
+         * Azure, AWS, or Google Cloud).
+         */
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Multicloud base compartment in which to list resources. A Multicloud base compartment is
+         * an OCI compartment that maps to a subscription in a Cloud Service Provider (such as
+         * Azure, AWS, or Google Cloud).
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment linked to the resource.
          */
         private String linkedCompartmentId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which linked to Resource.
+         * compartment linked to the resource.
          *
          * @param linkedCompartmentId the value to set
          * @return this builder instance
          */
         public Builder linkedCompartmentId(String linkedCompartmentId) {
             this.linkedCompartmentId = linkedCompartmentId;
+            return this;
+        }
+
+        /** The Cloud Service Provider region. */
+        private String externalLocation = null;
+
+        /**
+         * The Cloud Service Provider region.
+         *
+         * @param externalLocation the value to set
+         * @return this builder instance
+         */
+        public Builder externalLocation(String externalLocation) {
+            this.externalLocation = externalLocation;
+            return this;
+        }
+
+        /** OCI Logical AD to filter the response. */
+        private String logicalZone = null;
+
+        /**
+         * OCI Logical AD to filter the response.
+         *
+         * @param logicalZone the value to set
+         * @return this builder instance
+         */
+        public Builder logicalZone(String logicalZone) {
+            this.logicalZone = logicalZone;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Cluster Placement Group.
+         */
+        private String clusterPlacementGroupId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Cluster Placement Group.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
 
@@ -424,10 +497,13 @@ public class ListExternalLocationDetailsMetadataRequest
          */
         public Builder copy(ListExternalLocationDetailsMetadataRequest o) {
             subscriptionId(o.getSubscriptionId());
-            compartmentId(o.getCompartmentId());
             subscriptionServiceName(o.getSubscriptionServiceName());
             entityType(o.getEntityType());
+            compartmentId(o.getCompartmentId());
             linkedCompartmentId(o.getLinkedCompartmentId());
+            externalLocation(o.getExternalLocation());
+            logicalZone(o.getLogicalZone());
+            clusterPlacementGroupId(o.getClusterPlacementGroupId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -471,18 +547,22 @@ public class ListExternalLocationDetailsMetadataRequest
             ListExternalLocationDetailsMetadataRequest request =
                     new ListExternalLocationDetailsMetadataRequest();
             request.subscriptionId = subscriptionId;
-            request.compartmentId = compartmentId;
             request.subscriptionServiceName = subscriptionServiceName;
             request.entityType = entityType;
+            request.compartmentId = compartmentId;
             request.linkedCompartmentId = linkedCompartmentId;
+            request.externalLocation = externalLocation;
+            request.logicalZone = logicalZone;
+            request.clusterPlacementGroupId = clusterPlacementGroupId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListExternalLocationDetailsMetadataRequest(subscriptionId, compartmentId,
-            // subscriptionServiceName, entityType, linkedCompartmentId, limit, page, sortOrder,
+            // new ListExternalLocationDetailsMetadataRequest(subscriptionId,
+            // subscriptionServiceName, entityType, compartmentId, linkedCompartmentId,
+            // externalLocation, logicalZone, clusterPlacementGroupId, limit, page, sortOrder,
             // sortBy, opcRequestId);
         }
     }
@@ -495,10 +575,13 @@ public class ListExternalLocationDetailsMetadataRequest
     public Builder toBuilder() {
         return new Builder()
                 .subscriptionId(subscriptionId)
-                .compartmentId(compartmentId)
                 .subscriptionServiceName(subscriptionServiceName)
                 .entityType(entityType)
+                .compartmentId(compartmentId)
                 .linkedCompartmentId(linkedCompartmentId)
+                .externalLocation(externalLocation)
+                .logicalZone(logicalZone)
+                .clusterPlacementGroupId(clusterPlacementGroupId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -521,10 +604,13 @@ public class ListExternalLocationDetailsMetadataRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
-        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",subscriptionServiceName=").append(String.valueOf(this.subscriptionServiceName));
         sb.append(",entityType=").append(String.valueOf(this.entityType));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",linkedCompartmentId=").append(String.valueOf(this.linkedCompartmentId));
+        sb.append(",externalLocation=").append(String.valueOf(this.externalLocation));
+        sb.append(",logicalZone=").append(String.valueOf(this.logicalZone));
+        sb.append(",clusterPlacementGroupId=").append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -547,11 +633,15 @@ public class ListExternalLocationDetailsMetadataRequest
                 (ListExternalLocationDetailsMetadataRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.subscriptionServiceName, other.subscriptionServiceName)
                 && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.linkedCompartmentId, other.linkedCompartmentId)
+                && java.util.Objects.equals(this.externalLocation, other.externalLocation)
+                && java.util.Objects.equals(this.logicalZone, other.logicalZone)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -568,18 +658,27 @@ public class ListExternalLocationDetailsMetadataRequest
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result =
-                (result * PRIME)
                         + (this.subscriptionServiceName == null
                                 ? 43
                                 : this.subscriptionServiceName.hashCode());
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
         result =
                 (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.linkedCompartmentId == null
                                 ? 43
                                 : this.linkedCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalLocation == null ? 43 : this.externalLocation.hashCode());
+        result = (result * PRIME) + (this.logicalZone == null ? 43 : this.logicalZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

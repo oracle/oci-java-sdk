@@ -26,26 +26,22 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getNetworkAnchorId() {
         return networkAnchorId;
     }
-    /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-     */
+    /** The subscription service name of the Cloud Service Provider. */
     private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
 
-    /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-     */
+    /** The subscription service name of the Cloud Service Provider. */
     public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
         return subscriptionServiceName;
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
+     * Multicloud subscription in which to list resources.
      */
     private String subscriptionId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
+     * Multicloud subscription in which to list resources.
      */
     public String getSubscriptionId() {
         return subscriptionId;
@@ -65,12 +61,23 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** OMHub Control Plane must know underlying CSP CP Region External Location Name. */
+    /** The Cloud Service Provider region. */
     private String externalLocation;
 
-    /** OMHub Control Plane must know underlying CSP CP Region External Location Name. */
+    /** The Cloud Service Provider region. */
     public String getExternalLocation() {
         return externalLocation;
+    }
+    /**
+     * Whether to fetch and include the vcn display name, which may introduce additional latency.
+     */
+    private Boolean shouldFetchVcnName;
+
+    /**
+     * Whether to fetch and include the vcn display name, which may introduce additional latency.
+     */
+    public Boolean getShouldFetchVcnName() {
+        return shouldFetchVcnName;
     }
 
     public static class Builder
@@ -97,15 +104,11 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
-         */
+        /** The subscription service name of the Cloud Service Provider. */
         private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
 
         /**
-         * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
+         * The subscription service name of the Cloud Service Provider.
          *
          * @param subscriptionServiceName the value to set
          * @return this builder instance
@@ -118,13 +121,13 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
+         * Multicloud subscription in which to list resources.
          */
         private String subscriptionId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
+         * Multicloud subscription in which to list resources.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -154,17 +157,35 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** OMHub Control Plane must know underlying CSP CP Region External Location Name. */
+        /** The Cloud Service Provider region. */
         private String externalLocation = null;
 
         /**
-         * OMHub Control Plane must know underlying CSP CP Region External Location Name.
+         * The Cloud Service Provider region.
          *
          * @param externalLocation the value to set
          * @return this builder instance
          */
         public Builder externalLocation(String externalLocation) {
             this.externalLocation = externalLocation;
+            return this;
+        }
+
+        /**
+         * Whether to fetch and include the vcn display name, which may introduce additional
+         * latency.
+         */
+        private Boolean shouldFetchVcnName = null;
+
+        /**
+         * Whether to fetch and include the vcn display name, which may introduce additional
+         * latency.
+         *
+         * @param shouldFetchVcnName the value to set
+         * @return this builder instance
+         */
+        public Builder shouldFetchVcnName(Boolean shouldFetchVcnName) {
+            this.shouldFetchVcnName = shouldFetchVcnName;
             return this;
         }
 
@@ -203,6 +224,7 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
             subscriptionId(o.getSubscriptionId());
             opcRequestId(o.getOpcRequestId());
             externalLocation(o.getExternalLocation());
+            shouldFetchVcnName(o.getShouldFetchVcnName());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -242,9 +264,10 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
             request.subscriptionId = subscriptionId;
             request.opcRequestId = opcRequestId;
             request.externalLocation = externalLocation;
+            request.shouldFetchVcnName = shouldFetchVcnName;
             return request;
             // new GetNetworkAnchorRequest(networkAnchorId, subscriptionServiceName, subscriptionId,
-            // opcRequestId, externalLocation);
+            // opcRequestId, externalLocation, shouldFetchVcnName);
         }
     }
 
@@ -259,7 +282,8 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
                 .subscriptionServiceName(subscriptionServiceName)
                 .subscriptionId(subscriptionId)
                 .opcRequestId(opcRequestId)
-                .externalLocation(externalLocation);
+                .externalLocation(externalLocation)
+                .shouldFetchVcnName(shouldFetchVcnName);
     }
 
     /**
@@ -281,6 +305,7 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",externalLocation=").append(String.valueOf(this.externalLocation));
+        sb.append(",shouldFetchVcnName=").append(String.valueOf(this.shouldFetchVcnName));
         sb.append(")");
         return sb.toString();
     }
@@ -301,7 +326,8 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
                         this.subscriptionServiceName, other.subscriptionServiceName)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.externalLocation, other.externalLocation);
+                && java.util.Objects.equals(this.externalLocation, other.externalLocation)
+                && java.util.Objects.equals(this.shouldFetchVcnName, other.shouldFetchVcnName);
     }
 
     @Override
@@ -323,6 +349,11 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
         result =
                 (result * PRIME)
                         + (this.externalLocation == null ? 43 : this.externalLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldFetchVcnName == null
+                                ? 43
+                                : this.shouldFetchVcnName.hashCode());
         return result;
     }
 }
