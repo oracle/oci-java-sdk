@@ -42,13 +42,13 @@ public class ListOracleDbGcpIdentityConnectorsRequest
         return displayName;
     }
     /**
-     * A filter to return Oracle DB GCP Identity Connector resource that match the given resource
+     * A filter to return Oracle DB Identity Connector resource that match the given resource
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String resourceId;
 
     /**
-     * A filter to return Oracle DB GCP Identity Connector resource that match the given resource
+     * A filter to return Oracle DB Identity Connector resource that match the given resource
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getResourceId() {
@@ -200,14 +200,14 @@ public class ListOracleDbGcpIdentityConnectorsRequest
         }
 
         /**
-         * A filter to return Oracle DB GCP Identity Connector resource that match the given
-         * resource [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * A filter to return Oracle DB Identity Connector resource that match the given resource
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String resourceId = null;
 
         /**
-         * A filter to return Oracle DB GCP Identity Connector resource that match the given
-         * resource [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * A filter to return Oracle DB Identity Connector resource that match the given resource
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param resourceId the value to set
          * @return this builder instance

@@ -31,7 +31,11 @@ public final class ExternalLocationsMetadatumSummary
         "ociPhysicalAd",
         "ociLogicalAd",
         "ociRegion",
-        "cpgId"
+        "cpgId",
+        "clusterPlacementGroupId",
+        "partnerCloudName",
+        "partnerCloudAccountName",
+        "partnerCloudAccountUrl"
     })
     public ExternalLocationsMetadatumSummary(
             java.util.Map<String, String> freeformTags,
@@ -41,7 +45,11 @@ public final class ExternalLocationsMetadatumSummary
             String ociPhysicalAd,
             String ociLogicalAd,
             String ociRegion,
-            String cpgId) {
+            String cpgId,
+            String clusterPlacementGroupId,
+            String partnerCloudName,
+            String partnerCloudAccountName,
+            String partnerCloudAccountUrl) {
         super();
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -51,6 +59,10 @@ public final class ExternalLocationsMetadatumSummary
         this.ociLogicalAd = ociLogicalAd;
         this.ociRegion = ociRegion;
         this.cpgId = cpgId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.partnerCloudName = partnerCloudName;
+        this.partnerCloudAccountName = partnerCloudAccountName;
+        this.partnerCloudAccountUrl = partnerCloudAccountUrl;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -185,12 +197,12 @@ public final class ExternalLocationsMetadatumSummary
             this.__explicitlySet__.add("ociRegion");
             return this;
         }
-        /** Cluster Placement Group OCID */
+        /** Cluster Placement Group OCID (deprecated representation) */
         @com.fasterxml.jackson.annotation.JsonProperty("cpgId")
         private String cpgId;
 
         /**
-         * Cluster Placement Group OCID
+         * Cluster Placement Group OCID (deprecated representation)
          *
          * @param cpgId the value to set
          * @return this builder
@@ -198,6 +210,66 @@ public final class ExternalLocationsMetadatumSummary
         public Builder cpgId(String cpgId) {
             this.cpgId = cpgId;
             this.__explicitlySet__.add("cpgId");
+            return this;
+        }
+        /** Cluster Placement Group OCID */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * Cluster Placement Group OCID
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /** Partner Cloud Name based on service name */
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudName")
+        private String partnerCloudName;
+
+        /**
+         * Partner Cloud Name based on service name
+         *
+         * @param partnerCloudName the value to set
+         * @return this builder
+         */
+        public Builder partnerCloudName(String partnerCloudName) {
+            this.partnerCloudName = partnerCloudName;
+            this.__explicitlySet__.add("partnerCloudName");
+            return this;
+        }
+        /** User friendly name of account name for customer's subscription */
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountName")
+        private String partnerCloudAccountName;
+
+        /**
+         * User friendly name of account name for customer's subscription
+         *
+         * @param partnerCloudAccountName the value to set
+         * @return this builder
+         */
+        public Builder partnerCloudAccountName(String partnerCloudAccountName) {
+            this.partnerCloudAccountName = partnerCloudAccountName;
+            this.__explicitlySet__.add("partnerCloudAccountName");
+            return this;
+        }
+        /** Direct URL to partner cloud for customer's account */
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountUrl")
+        private String partnerCloudAccountUrl;
+
+        /**
+         * Direct URL to partner cloud for customer's account
+         *
+         * @param partnerCloudAccountUrl the value to set
+         * @return this builder
+         */
+        public Builder partnerCloudAccountUrl(String partnerCloudAccountUrl) {
+            this.partnerCloudAccountUrl = partnerCloudAccountUrl;
+            this.__explicitlySet__.add("partnerCloudAccountUrl");
             return this;
         }
 
@@ -214,7 +286,11 @@ public final class ExternalLocationsMetadatumSummary
                             this.ociPhysicalAd,
                             this.ociLogicalAd,
                             this.ociRegion,
-                            this.cpgId);
+                            this.cpgId,
+                            this.clusterPlacementGroupId,
+                            this.partnerCloudName,
+                            this.partnerCloudAccountName,
+                            this.partnerCloudAccountUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -246,6 +322,18 @@ public final class ExternalLocationsMetadatumSummary
             }
             if (model.wasPropertyExplicitlySet("cpgId")) {
                 this.cpgId(model.getCpgId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("partnerCloudName")) {
+                this.partnerCloudName(model.getPartnerCloudName());
+            }
+            if (model.wasPropertyExplicitlySet("partnerCloudAccountName")) {
+                this.partnerCloudAccountName(model.getPartnerCloudAccountName());
+            }
+            if (model.wasPropertyExplicitlySet("partnerCloudAccountUrl")) {
+                this.partnerCloudAccountUrl(model.getPartnerCloudAccountUrl());
             }
             return this;
         }
@@ -373,17 +461,69 @@ public final class ExternalLocationsMetadatumSummary
         return ociRegion;
     }
 
-    /** Cluster Placement Group OCID */
+    /** Cluster Placement Group OCID (deprecated representation) */
     @com.fasterxml.jackson.annotation.JsonProperty("cpgId")
     private final String cpgId;
+
+    /**
+     * Cluster Placement Group OCID (deprecated representation)
+     *
+     * @return the value
+     */
+    public String getCpgId() {
+        return cpgId;
+    }
+
+    /** Cluster Placement Group OCID */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
 
     /**
      * Cluster Placement Group OCID
      *
      * @return the value
      */
-    public String getCpgId() {
-        return cpgId;
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /** Partner Cloud Name based on service name */
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudName")
+    private final String partnerCloudName;
+
+    /**
+     * Partner Cloud Name based on service name
+     *
+     * @return the value
+     */
+    public String getPartnerCloudName() {
+        return partnerCloudName;
+    }
+
+    /** User friendly name of account name for customer's subscription */
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountName")
+    private final String partnerCloudAccountName;
+
+    /**
+     * User friendly name of account name for customer's subscription
+     *
+     * @return the value
+     */
+    public String getPartnerCloudAccountName() {
+        return partnerCloudAccountName;
+    }
+
+    /** Direct URL to partner cloud for customer's account */
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountUrl")
+    private final String partnerCloudAccountUrl;
+
+    /**
+     * Direct URL to partner cloud for customer's account
+     *
+     * @return the value
+     */
+    public String getPartnerCloudAccountUrl() {
+        return partnerCloudAccountUrl;
     }
 
     @Override
@@ -409,6 +549,12 @@ public final class ExternalLocationsMetadatumSummary
         sb.append(", ociLogicalAd=").append(String.valueOf(this.ociLogicalAd));
         sb.append(", ociRegion=").append(String.valueOf(this.ociRegion));
         sb.append(", cpgId=").append(String.valueOf(this.cpgId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", partnerCloudName=").append(String.valueOf(this.partnerCloudName));
+        sb.append(", partnerCloudAccountName=")
+                .append(String.valueOf(this.partnerCloudAccountName));
+        sb.append(", partnerCloudAccountUrl=").append(String.valueOf(this.partnerCloudAccountUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -431,6 +577,13 @@ public final class ExternalLocationsMetadatumSummary
                 && java.util.Objects.equals(this.ociLogicalAd, other.ociLogicalAd)
                 && java.util.Objects.equals(this.ociRegion, other.ociRegion)
                 && java.util.Objects.equals(this.cpgId, other.cpgId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.partnerCloudName, other.partnerCloudName)
+                && java.util.Objects.equals(
+                        this.partnerCloudAccountName, other.partnerCloudAccountName)
+                && java.util.Objects.equals(
+                        this.partnerCloudAccountUrl, other.partnerCloudAccountUrl)
                 && super.equals(other);
     }
 
@@ -450,6 +603,24 @@ public final class ExternalLocationsMetadatumSummary
         result = (result * PRIME) + (this.ociLogicalAd == null ? 43 : this.ociLogicalAd.hashCode());
         result = (result * PRIME) + (this.ociRegion == null ? 43 : this.ociRegion.hashCode());
         result = (result * PRIME) + (this.cpgId == null ? 43 : this.cpgId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerCloudName == null ? 43 : this.partnerCloudName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerCloudAccountName == null
+                                ? 43
+                                : this.partnerCloudAccountName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerCloudAccountUrl == null
+                                ? 43
+                                : this.partnerCloudAccountUrl.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

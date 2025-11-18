@@ -28,6 +28,7 @@ public final class ExternalLocationDetail
         "cspRegionDisplayName",
         "cspPhysicalAz",
         "cspPhysicalAzDisplayName",
+        "cspLogicalAzDisplayName",
         "cspZoneKeyReferenceId",
         "cspLogicalAz",
         "serviceName"
@@ -37,6 +38,7 @@ public final class ExternalLocationDetail
             String cspRegionDisplayName,
             String cspPhysicalAz,
             String cspPhysicalAzDisplayName,
+            String cspLogicalAzDisplayName,
             CspZoneKeyReferenceId cspZoneKeyReferenceId,
             String cspLogicalAz,
             SubscriptionType serviceName) {
@@ -45,6 +47,7 @@ public final class ExternalLocationDetail
         this.cspRegionDisplayName = cspRegionDisplayName;
         this.cspPhysicalAz = cspPhysicalAz;
         this.cspPhysicalAzDisplayName = cspPhysicalAzDisplayName;
+        this.cspLogicalAzDisplayName = cspLogicalAzDisplayName;
         this.cspZoneKeyReferenceId = cspZoneKeyReferenceId;
         this.cspLogicalAz = cspLogicalAz;
         this.serviceName = serviceName;
@@ -112,6 +115,21 @@ public final class ExternalLocationDetail
             this.__explicitlySet__.add("cspPhysicalAzDisplayName");
             return this;
         }
+        /** User friendly display name for cspLogicalAZ */
+        @com.fasterxml.jackson.annotation.JsonProperty("cspLogicalAzDisplayName")
+        private String cspLogicalAzDisplayName;
+
+        /**
+         * User friendly display name for cspLogicalAZ
+         *
+         * @param cspLogicalAzDisplayName the value to set
+         * @return this builder
+         */
+        public Builder cspLogicalAzDisplayName(String cspLogicalAzDisplayName) {
+            this.cspLogicalAzDisplayName = cspLogicalAzDisplayName;
+            this.__explicitlySet__.add("cspLogicalAzDisplayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("cspZoneKeyReferenceId")
         private CspZoneKeyReferenceId cspZoneKeyReferenceId;
@@ -162,6 +180,7 @@ public final class ExternalLocationDetail
                             this.cspRegionDisplayName,
                             this.cspPhysicalAz,
                             this.cspPhysicalAzDisplayName,
+                            this.cspLogicalAzDisplayName,
                             this.cspZoneKeyReferenceId,
                             this.cspLogicalAz,
                             this.serviceName);
@@ -184,6 +203,9 @@ public final class ExternalLocationDetail
             }
             if (model.wasPropertyExplicitlySet("cspPhysicalAzDisplayName")) {
                 this.cspPhysicalAzDisplayName(model.getCspPhysicalAzDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("cspLogicalAzDisplayName")) {
+                this.cspLogicalAzDisplayName(model.getCspLogicalAzDisplayName());
             }
             if (model.wasPropertyExplicitlySet("cspZoneKeyReferenceId")) {
                 this.cspZoneKeyReferenceId(model.getCspZoneKeyReferenceId());
@@ -259,6 +281,19 @@ public final class ExternalLocationDetail
         return cspPhysicalAzDisplayName;
     }
 
+    /** User friendly display name for cspLogicalAZ */
+    @com.fasterxml.jackson.annotation.JsonProperty("cspLogicalAzDisplayName")
+    private final String cspLogicalAzDisplayName;
+
+    /**
+     * User friendly display name for cspLogicalAZ
+     *
+     * @return the value
+     */
+    public String getCspLogicalAzDisplayName() {
+        return cspLogicalAzDisplayName;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("cspZoneKeyReferenceId")
     private final CspZoneKeyReferenceId cspZoneKeyReferenceId;
 
@@ -312,6 +347,8 @@ public final class ExternalLocationDetail
         sb.append(", cspPhysicalAz=").append(String.valueOf(this.cspPhysicalAz));
         sb.append(", cspPhysicalAzDisplayName=")
                 .append(String.valueOf(this.cspPhysicalAzDisplayName));
+        sb.append(", cspLogicalAzDisplayName=")
+                .append(String.valueOf(this.cspLogicalAzDisplayName));
         sb.append(", cspZoneKeyReferenceId=").append(String.valueOf(this.cspZoneKeyReferenceId));
         sb.append(", cspLogicalAz=").append(String.valueOf(this.cspLogicalAz));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
@@ -334,6 +371,8 @@ public final class ExternalLocationDetail
                 && java.util.Objects.equals(this.cspPhysicalAz, other.cspPhysicalAz)
                 && java.util.Objects.equals(
                         this.cspPhysicalAzDisplayName, other.cspPhysicalAzDisplayName)
+                && java.util.Objects.equals(
+                        this.cspLogicalAzDisplayName, other.cspLogicalAzDisplayName)
                 && java.util.Objects.equals(this.cspZoneKeyReferenceId, other.cspZoneKeyReferenceId)
                 && java.util.Objects.equals(this.cspLogicalAz, other.cspLogicalAz)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
@@ -358,6 +397,11 @@ public final class ExternalLocationDetail
                         + (this.cspPhysicalAzDisplayName == null
                                 ? 43
                                 : this.cspPhysicalAzDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cspLogicalAzDisplayName == null
+                                ? 43
+                                : this.cspLogicalAzDisplayName.hashCode());
         result =
                 (result * PRIME)
                         + (this.cspZoneKeyReferenceId == null

@@ -559,7 +559,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         }
     }
 
-    static class FederationResponseWrapper extends BmcResponse {
+    public static class FederationResponseWrapper extends BmcResponse {
         final SecurityToken token;
 
         FederationResponseWrapper(int status, SecurityToken token) {
@@ -567,12 +567,16 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
             this.token = token;
         }
 
-        static class Builder implements BmcResponse.Builder<FederationResponseWrapper> {
+        public SecurityToken getToken() {
+            return token;
+        }
+
+        public static class Builder implements BmcResponse.Builder<FederationResponseWrapper> {
             private int status;
             private Map<String, List<String>> headers;
             SecurityToken token;
 
-            Builder() {}
+            public Builder() {}
 
             private Builder(FederationResponseWrapper b) {
                 this.status = b.get__httpStatusCode__();
@@ -602,6 +606,14 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
             @Override
             public FederationResponseWrapper build() {
                 return new FederationResponseWrapper(status, token);
+            }
+
+            public SecurityToken getToken() {
+                return token;
+            }
+
+            public void setToken(SecurityToken token) {
+                this.token = token;
             }
         }
     }

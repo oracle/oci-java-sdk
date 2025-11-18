@@ -14,51 +14,31 @@ import com.oracle.bmc.multicloud.model.*;
 public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-     */
-    private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
-
-    /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-     */
-    public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
-        return subscriptionServiceName;
-    }
-    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
-     */
-    private String subscriptionId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
-     */
-    public String getSubscriptionId() {
-        return subscriptionId;
-    }
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base
+     * compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider
+     * (such as Azure, AWS, or Google Cloud).
      */
     private String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base
+     * compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider
+     * (such as Azure, AWS, or Google Cloud).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which linked to Resource.
+     * compartment linked to the resource.
      */
     private String linkedCompartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which linked to Resource.
+     * compartment linked to the resource.
      */
     public String getLinkedCompartmentId() {
         return linkedCompartmentId;
@@ -191,6 +171,39 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         return isCompartmentIdInSubtree;
     }
     /**
+     * Whether to fetch and include the compartment name, setting this field to yes may introduce
+     * additional latency.
+     */
+    private Boolean shouldFetchCompartmentName;
+
+    /**
+     * Whether to fetch and include the compartment name, setting this field to yes may introduce
+     * additional latency.
+     */
+    public Boolean getShouldFetchCompartmentName() {
+        return shouldFetchCompartmentName;
+    }
+    /** The subscription service name of the Cloud Service Provider. */
+    private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
+
+    /** The subscription service name of the Cloud Service Provider. */
+    public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
+        return subscriptionServiceName;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Multicloud subscription in which to list resources.
+     */
+    private String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Multicloud subscription in which to list resources.
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID. The only valid characters for request IDs
      * are letters, numbers, underscore, and dash.
@@ -213,51 +226,18 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
-         */
-        private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
-
-        /**
-         * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
-         *
-         * @param subscriptionServiceName the value to set
-         * @return this builder instance
-         */
-        public Builder subscriptionServiceName(
-                com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName) {
-            this.subscriptionServiceName = subscriptionServiceName;
-            return this;
-        }
-
-        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
-         */
-        private String subscriptionId = null;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
-         *
-         * @param subscriptionId the value to set
-         * @return this builder instance
-         */
-        public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = subscriptionId;
-            return this;
-        }
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * Multicloud base compartment or sub-compartment in which to list resources. A Multicloud
+         * base compartment is an OCI compartment that maps to a subscription in a Cloud Service
+         * Provider (such as Azure, AWS, or Google Cloud).
          */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * Multicloud base compartment or sub-compartment in which to list resources. A Multicloud
+         * base compartment is an OCI compartment that maps to a subscription in a Cloud Service
+         * Provider (such as Azure, AWS, or Google Cloud).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -269,13 +249,13 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which linked to Resource.
+         * compartment linked to the resource.
          */
         private String linkedCompartmentId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which linked to Resource.
+         * compartment linked to the resource.
          *
          * @param linkedCompartmentId the value to set
          * @return this builder instance
@@ -423,6 +403,57 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * Whether to fetch and include the compartment name, setting this field to yes may
+         * introduce additional latency.
+         */
+        private Boolean shouldFetchCompartmentName = null;
+
+        /**
+         * Whether to fetch and include the compartment name, setting this field to yes may
+         * introduce additional latency.
+         *
+         * @param shouldFetchCompartmentName the value to set
+         * @return this builder instance
+         */
+        public Builder shouldFetchCompartmentName(Boolean shouldFetchCompartmentName) {
+            this.shouldFetchCompartmentName = shouldFetchCompartmentName;
+            return this;
+        }
+
+        /** The subscription service name of the Cloud Service Provider. */
+        private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
+
+        /**
+         * The subscription service name of the Cloud Service Provider.
+         *
+         * @param subscriptionServiceName the value to set
+         * @return this builder instance
+         */
+        public Builder subscriptionServiceName(
+                com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName) {
+            this.subscriptionServiceName = subscriptionServiceName;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Multicloud subscription in which to list resources.
+         */
+        private String subscriptionId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Multicloud subscription in which to list resources.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID. The only valid characters for request
          * IDs are letters, numbers, underscore, and dash.
@@ -472,8 +503,6 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
          * @return this builder instance
          */
         public Builder copy(ListResourceAnchorsRequest o) {
-            subscriptionServiceName(o.getSubscriptionServiceName());
-            subscriptionId(o.getSubscriptionId());
             compartmentId(o.getCompartmentId());
             linkedCompartmentId(o.getLinkedCompartmentId());
             lifecycleState(o.getLifecycleState());
@@ -484,6 +513,9 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             isCompartmentIdInSubtree(o.getIsCompartmentIdInSubtree());
+            shouldFetchCompartmentName(o.getShouldFetchCompartmentName());
+            subscriptionServiceName(o.getSubscriptionServiceName());
+            subscriptionId(o.getSubscriptionId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -519,8 +551,6 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
          */
         public ListResourceAnchorsRequest buildWithoutInvocationCallback() {
             ListResourceAnchorsRequest request = new ListResourceAnchorsRequest();
-            request.subscriptionServiceName = subscriptionServiceName;
-            request.subscriptionId = subscriptionId;
             request.compartmentId = compartmentId;
             request.linkedCompartmentId = linkedCompartmentId;
             request.lifecycleState = lifecycleState;
@@ -531,11 +561,14 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            request.shouldFetchCompartmentName = shouldFetchCompartmentName;
+            request.subscriptionServiceName = subscriptionServiceName;
+            request.subscriptionId = subscriptionId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListResourceAnchorsRequest(subscriptionServiceName, subscriptionId,
-            // compartmentId, linkedCompartmentId, lifecycleState, displayName, id, limit, page,
-            // sortOrder, sortBy, isCompartmentIdInSubtree, opcRequestId);
+            // new ListResourceAnchorsRequest(compartmentId, linkedCompartmentId, lifecycleState,
+            // displayName, id, limit, page, sortOrder, sortBy, isCompartmentIdInSubtree,
+            // shouldFetchCompartmentName, subscriptionServiceName, subscriptionId, opcRequestId);
         }
     }
 
@@ -546,8 +579,6 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
      */
     public Builder toBuilder() {
         return new Builder()
-                .subscriptionServiceName(subscriptionServiceName)
-                .subscriptionId(subscriptionId)
                 .compartmentId(compartmentId)
                 .linkedCompartmentId(linkedCompartmentId)
                 .lifecycleState(lifecycleState)
@@ -558,6 +589,9 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .isCompartmentIdInSubtree(isCompartmentIdInSubtree)
+                .shouldFetchCompartmentName(shouldFetchCompartmentName)
+                .subscriptionServiceName(subscriptionServiceName)
+                .subscriptionId(subscriptionId)
                 .opcRequestId(opcRequestId);
     }
 
@@ -575,8 +609,6 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",subscriptionServiceName=").append(String.valueOf(this.subscriptionServiceName));
-        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",linkedCompartmentId=").append(String.valueOf(this.linkedCompartmentId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -588,6 +620,10 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",isCompartmentIdInSubtree=")
                 .append(String.valueOf(this.isCompartmentIdInSubtree));
+        sb.append(",shouldFetchCompartmentName=")
+                .append(String.valueOf(this.shouldFetchCompartmentName));
+        sb.append(",subscriptionServiceName=").append(String.valueOf(this.subscriptionServiceName));
+        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -604,9 +640,6 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
 
         ListResourceAnchorsRequest other = (ListResourceAnchorsRequest) o;
         return super.equals(o)
-                && java.util.Objects.equals(
-                        this.subscriptionServiceName, other.subscriptionServiceName)
-                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.linkedCompartmentId, other.linkedCompartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -618,6 +651,11 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(
                         this.isCompartmentIdInSubtree, other.isCompartmentIdInSubtree)
+                && java.util.Objects.equals(
+                        this.shouldFetchCompartmentName, other.shouldFetchCompartmentName)
+                && java.util.Objects.equals(
+                        this.subscriptionServiceName, other.subscriptionServiceName)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -625,14 +663,6 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.subscriptionServiceName == null
-                                ? 43
-                                : this.subscriptionServiceName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
@@ -655,6 +685,19 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
                         + (this.isCompartmentIdInSubtree == null
                                 ? 43
                                 : this.isCompartmentIdInSubtree.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldFetchCompartmentName == null
+                                ? 43
+                                : this.shouldFetchCompartmentName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionServiceName == null
+                                ? 43
+                                : this.subscriptionServiceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

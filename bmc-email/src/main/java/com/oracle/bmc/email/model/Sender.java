@@ -29,6 +29,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         "lifecycleState",
         "timeCreated",
         "emailDomainId",
+        "emailIpPoolId",
         "freeformTags",
         "definedTags",
         "systemTags",
@@ -42,6 +43,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             String emailDomainId,
+            String emailIpPoolId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -54,6 +56,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.emailDomainId = emailDomainId;
+        this.emailIpPoolId = emailIpPoolId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -176,6 +179,25 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
+         * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * used to submit an email by Email Delivery when sent from this sender.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("emailIpPoolId")
+        private String emailIpPoolId;
+
+        /**
+         * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * used to submit an email by Email Delivery when sent from this sender.
+         *
+         * @param emailIpPoolId the value to set
+         * @return this builder
+         */
+        public Builder emailIpPoolId(String emailIpPoolId) {
+            this.emailIpPoolId = emailIpPoolId;
+            this.__explicitlySet__.add("emailIpPoolId");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -274,6 +296,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
                             this.lifecycleState,
                             this.timeCreated,
                             this.emailDomainId,
+                            this.emailIpPoolId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -306,6 +329,9 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("emailDomainId")) {
                 this.emailDomainId(model.getEmailDomainId());
+            }
+            if (model.wasPropertyExplicitlySet("emailIpPoolId")) {
+                this.emailIpPoolId(model.getEmailIpPoolId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -397,6 +423,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         Failed("FAILED"),
         Deleting("DELETING"),
         Deleted("DELETED"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -480,6 +507,23 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
      */
     public String getEmailDomainId() {
         return emailDomainId;
+    }
+
+    /**
+     * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used
+     * to submit an email by Email Delivery when sent from this sender.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("emailIpPoolId")
+    private final String emailIpPoolId;
+
+    /**
+     * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used
+     * to submit an email by Email Delivery when sent from this sender.
+     *
+     * @return the value
+     */
+    public String getEmailIpPoolId() {
+        return emailIpPoolId;
     }
 
     /**
@@ -580,6 +624,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", emailDomainId=").append(String.valueOf(this.emailDomainId));
+        sb.append(", emailIpPoolId=").append(String.valueOf(this.emailIpPoolId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -605,6 +650,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.emailDomainId, other.emailDomainId)
+                && java.util.Objects.equals(this.emailIpPoolId, other.emailIpPoolId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -629,6 +675,9 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.emailDomainId == null ? 43 : this.emailDomainId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.emailIpPoolId == null ? 43 : this.emailIpPoolId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

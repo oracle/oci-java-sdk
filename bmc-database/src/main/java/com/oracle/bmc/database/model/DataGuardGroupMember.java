@@ -33,7 +33,13 @@ public final class DataGuardGroupMember
         "transportLag",
         "transportLagRefresh",
         "transportType",
-        "isActiveDataGuardEnabled"
+        "isActiveDataGuardEnabled",
+        "switchoverReadiness",
+        "switchoverReadinessMessage",
+        "failoverReadiness",
+        "failoverReadinessMessage",
+        "dataLossExposure",
+        "timeUpdated"
     })
     public DataGuardGroupMember(
             String dbSystemId,
@@ -44,7 +50,13 @@ public final class DataGuardGroupMember
             String transportLag,
             String transportLagRefresh,
             TransportType transportType,
-            Boolean isActiveDataGuardEnabled) {
+            Boolean isActiveDataGuardEnabled,
+            SwitchoverReadiness switchoverReadiness,
+            String switchoverReadinessMessage,
+            FailoverReadiness failoverReadiness,
+            String failoverReadinessMessage,
+            String dataLossExposure,
+            java.util.Date timeUpdated) {
         super();
         this.dbSystemId = dbSystemId;
         this.databaseId = databaseId;
@@ -55,6 +67,12 @@ public final class DataGuardGroupMember
         this.transportLagRefresh = transportLagRefresh;
         this.transportType = transportType;
         this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+        this.switchoverReadiness = switchoverReadiness;
+        this.switchoverReadinessMessage = switchoverReadinessMessage;
+        this.failoverReadiness = failoverReadiness;
+        this.failoverReadinessMessage = failoverReadinessMessage;
+        this.dataLossExposure = dataLossExposure;
+        this.timeUpdated = timeUpdated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -246,6 +264,112 @@ public final class DataGuardGroupMember
             this.__explicitlySet__.add("isActiveDataGuardEnabled");
             return this;
         }
+        /** The switchover readiness status of the Data Guard member. */
+        @com.fasterxml.jackson.annotation.JsonProperty("switchoverReadiness")
+        private SwitchoverReadiness switchoverReadiness;
+
+        /**
+         * The switchover readiness status of the Data Guard member.
+         *
+         * @param switchoverReadiness the value to set
+         * @return this builder
+         */
+        public Builder switchoverReadiness(SwitchoverReadiness switchoverReadiness) {
+            this.switchoverReadiness = switchoverReadiness;
+            this.__explicitlySet__.add("switchoverReadiness");
+            return this;
+        }
+        /**
+         * The message explaining switchover readiness status. Example: {@code Address failed checks
+         * to avoid extended downtime.}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("switchoverReadinessMessage")
+        private String switchoverReadinessMessage;
+
+        /**
+         * The message explaining switchover readiness status. Example: {@code Address failed checks
+         * to avoid extended downtime.}
+         *
+         * @param switchoverReadinessMessage the value to set
+         * @return this builder
+         */
+        public Builder switchoverReadinessMessage(String switchoverReadinessMessage) {
+            this.switchoverReadinessMessage = switchoverReadinessMessage;
+            this.__explicitlySet__.add("switchoverReadinessMessage");
+            return this;
+        }
+        /** The failover readiness status of the Data Guard member. */
+        @com.fasterxml.jackson.annotation.JsonProperty("failoverReadiness")
+        private FailoverReadiness failoverReadiness;
+
+        /**
+         * The failover readiness status of the Data Guard member.
+         *
+         * @param failoverReadiness the value to set
+         * @return this builder
+         */
+        public Builder failoverReadiness(FailoverReadiness failoverReadiness) {
+            this.failoverReadiness = failoverReadiness;
+            this.__explicitlySet__.add("failoverReadiness");
+            return this;
+        }
+        /**
+         * The message explaining failover readiness status. Example: {@code This standby database
+         * is not failover ready.}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("failoverReadinessMessage")
+        private String failoverReadinessMessage;
+
+        /**
+         * The message explaining failover readiness status. Example: {@code This standby database
+         * is not failover ready.}
+         *
+         * @param failoverReadinessMessage the value to set
+         * @return this builder
+         */
+        public Builder failoverReadinessMessage(String failoverReadinessMessage) {
+            this.failoverReadinessMessage = failoverReadinessMessage;
+            this.__explicitlySet__.add("failoverReadinessMessage");
+            return this;
+        }
+        /**
+         * The Data loss exposure is the redo transport lag between the primary and standby
+         * databases.
+         *
+         * <p>Example: {@code 2 seconds}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataLossExposure")
+        private String dataLossExposure;
+
+        /**
+         * The Data loss exposure is the redo transport lag between the primary and standby
+         * databases.
+         *
+         * <p>Example: {@code 2 seconds}
+         *
+         * @param dataLossExposure the value to set
+         * @return this builder
+         */
+        public Builder dataLossExposure(String dataLossExposure) {
+            this.dataLossExposure = dataLossExposure;
+            this.__explicitlySet__.add("dataLossExposure");
+            return this;
+        }
+        /** The date and time when the last successful Data Guard refresh occurred. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time when the last successful Data Guard refresh occurred.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -261,7 +385,13 @@ public final class DataGuardGroupMember
                             this.transportLag,
                             this.transportLagRefresh,
                             this.transportType,
-                            this.isActiveDataGuardEnabled);
+                            this.isActiveDataGuardEnabled,
+                            this.switchoverReadiness,
+                            this.switchoverReadinessMessage,
+                            this.failoverReadiness,
+                            this.failoverReadinessMessage,
+                            this.dataLossExposure,
+                            this.timeUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -296,6 +426,24 @@ public final class DataGuardGroupMember
             }
             if (model.wasPropertyExplicitlySet("isActiveDataGuardEnabled")) {
                 this.isActiveDataGuardEnabled(model.getIsActiveDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("switchoverReadiness")) {
+                this.switchoverReadiness(model.getSwitchoverReadiness());
+            }
+            if (model.wasPropertyExplicitlySet("switchoverReadinessMessage")) {
+                this.switchoverReadinessMessage(model.getSwitchoverReadinessMessage());
+            }
+            if (model.wasPropertyExplicitlySet("failoverReadiness")) {
+                this.failoverReadiness(model.getFailoverReadiness());
+            }
+            if (model.wasPropertyExplicitlySet("failoverReadinessMessage")) {
+                this.failoverReadinessMessage(model.getFailoverReadinessMessage());
+            }
+            if (model.wasPropertyExplicitlySet("dataLossExposure")) {
+                this.dataLossExposure(model.getDataLossExposure());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
             }
             return this;
         }
@@ -585,6 +733,192 @@ public final class DataGuardGroupMember
         return isActiveDataGuardEnabled;
     }
 
+    /** The switchover readiness status of the Data Guard member. */
+    public enum SwitchoverReadiness implements com.oracle.bmc.http.internal.BmcEnum {
+        Healthy("HEALTHY"),
+        Warning("WARNING"),
+        Critical("CRITICAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SwitchoverReadiness.class);
+
+        private final String value;
+        private static java.util.Map<String, SwitchoverReadiness> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SwitchoverReadiness v : SwitchoverReadiness.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SwitchoverReadiness(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SwitchoverReadiness create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SwitchoverReadiness', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The switchover readiness status of the Data Guard member. */
+    @com.fasterxml.jackson.annotation.JsonProperty("switchoverReadiness")
+    private final SwitchoverReadiness switchoverReadiness;
+
+    /**
+     * The switchover readiness status of the Data Guard member.
+     *
+     * @return the value
+     */
+    public SwitchoverReadiness getSwitchoverReadiness() {
+        return switchoverReadiness;
+    }
+
+    /**
+     * The message explaining switchover readiness status. Example: {@code Address failed checks to
+     * avoid extended downtime.}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("switchoverReadinessMessage")
+    private final String switchoverReadinessMessage;
+
+    /**
+     * The message explaining switchover readiness status. Example: {@code Address failed checks to
+     * avoid extended downtime.}
+     *
+     * @return the value
+     */
+    public String getSwitchoverReadinessMessage() {
+        return switchoverReadinessMessage;
+    }
+
+    /** The failover readiness status of the Data Guard member. */
+    public enum FailoverReadiness implements com.oracle.bmc.http.internal.BmcEnum {
+        Healthy("HEALTHY"),
+        Warning("WARNING"),
+        Critical("CRITICAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FailoverReadiness.class);
+
+        private final String value;
+        private static java.util.Map<String, FailoverReadiness> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (FailoverReadiness v : FailoverReadiness.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        FailoverReadiness(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static FailoverReadiness create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'FailoverReadiness', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The failover readiness status of the Data Guard member. */
+    @com.fasterxml.jackson.annotation.JsonProperty("failoverReadiness")
+    private final FailoverReadiness failoverReadiness;
+
+    /**
+     * The failover readiness status of the Data Guard member.
+     *
+     * @return the value
+     */
+    public FailoverReadiness getFailoverReadiness() {
+        return failoverReadiness;
+    }
+
+    /**
+     * The message explaining failover readiness status. Example: {@code This standby database is
+     * not failover ready.}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("failoverReadinessMessage")
+    private final String failoverReadinessMessage;
+
+    /**
+     * The message explaining failover readiness status. Example: {@code This standby database is
+     * not failover ready.}
+     *
+     * @return the value
+     */
+    public String getFailoverReadinessMessage() {
+        return failoverReadinessMessage;
+    }
+
+    /**
+     * The Data loss exposure is the redo transport lag between the primary and standby databases.
+     *
+     * <p>Example: {@code 2 seconds}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataLossExposure")
+    private final String dataLossExposure;
+
+    /**
+     * The Data loss exposure is the redo transport lag between the primary and standby databases.
+     *
+     * <p>Example: {@code 2 seconds}
+     *
+     * @return the value
+     */
+    public String getDataLossExposure() {
+        return dataLossExposure;
+    }
+
+    /** The date and time when the last successful Data Guard refresh occurred. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time when the last successful Data Guard refresh occurred.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -610,6 +944,14 @@ public final class DataGuardGroupMember
         sb.append(", transportType=").append(String.valueOf(this.transportType));
         sb.append(", isActiveDataGuardEnabled=")
                 .append(String.valueOf(this.isActiveDataGuardEnabled));
+        sb.append(", switchoverReadiness=").append(String.valueOf(this.switchoverReadiness));
+        sb.append(", switchoverReadinessMessage=")
+                .append(String.valueOf(this.switchoverReadinessMessage));
+        sb.append(", failoverReadiness=").append(String.valueOf(this.failoverReadiness));
+        sb.append(", failoverReadinessMessage=")
+                .append(String.valueOf(this.failoverReadinessMessage));
+        sb.append(", dataLossExposure=").append(String.valueOf(this.dataLossExposure));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(")");
         return sb.toString();
     }
@@ -634,6 +976,14 @@ public final class DataGuardGroupMember
                 && java.util.Objects.equals(this.transportType, other.transportType)
                 && java.util.Objects.equals(
                         this.isActiveDataGuardEnabled, other.isActiveDataGuardEnabled)
+                && java.util.Objects.equals(this.switchoverReadiness, other.switchoverReadiness)
+                && java.util.Objects.equals(
+                        this.switchoverReadinessMessage, other.switchoverReadinessMessage)
+                && java.util.Objects.equals(this.failoverReadiness, other.failoverReadiness)
+                && java.util.Objects.equals(
+                        this.failoverReadinessMessage, other.failoverReadinessMessage)
+                && java.util.Objects.equals(this.dataLossExposure, other.dataLossExposure)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && super.equals(other);
     }
 
@@ -660,6 +1010,28 @@ public final class DataGuardGroupMember
                         + (this.isActiveDataGuardEnabled == null
                                 ? 43
                                 : this.isActiveDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.switchoverReadiness == null
+                                ? 43
+                                : this.switchoverReadiness.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.switchoverReadinessMessage == null
+                                ? 43
+                                : this.switchoverReadinessMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failoverReadiness == null ? 43 : this.failoverReadiness.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failoverReadinessMessage == null
+                                ? 43
+                                : this.failoverReadinessMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataLossExposure == null ? 43 : this.dataLossExposure.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

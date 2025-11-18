@@ -30,6 +30,7 @@ public final class CloudServiceProviderNetworkMetadataItem
         "odbNetworkId",
         "cidrBlocks",
         "networkAnchorUri",
+        "cspAdditionalProperties",
         "dnsForwardingConfig"
     })
     public CloudServiceProviderNetworkMetadataItem(
@@ -37,12 +38,14 @@ public final class CloudServiceProviderNetworkMetadataItem
             String odbNetworkId,
             java.util.List<String> cidrBlocks,
             String networkAnchorUri,
+            java.util.Map<String, String> cspAdditionalProperties,
             java.util.List<java.util.Map<String, String>> dnsForwardingConfig) {
         super();
         this.region = region;
         this.odbNetworkId = odbNetworkId;
         this.cidrBlocks = cidrBlocks;
         this.networkAnchorUri = networkAnchorUri;
+        this.cspAdditionalProperties = cspAdditionalProperties;
         this.dnsForwardingConfig = dnsForwardingConfig;
     }
 
@@ -108,6 +111,22 @@ public final class CloudServiceProviderNetworkMetadataItem
             this.__explicitlySet__.add("networkAnchorUri");
             return this;
         }
+        /** CSP Specific Additional Properties, AzureSubnetId for Azure */
+        @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
+        private java.util.Map<String, String> cspAdditionalProperties;
+
+        /**
+         * CSP Specific Additional Properties, AzureSubnetId for Azure
+         *
+         * @param cspAdditionalProperties the value to set
+         * @return this builder
+         */
+        public Builder cspAdditionalProperties(
+                java.util.Map<String, String> cspAdditionalProperties) {
+            this.cspAdditionalProperties = cspAdditionalProperties;
+            this.__explicitlySet__.add("cspAdditionalProperties");
+            return this;
+        }
         /** DNS domain ip mapping forwarding configuration */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsForwardingConfig")
         private java.util.List<java.util.Map<String, String>> dnsForwardingConfig;
@@ -135,6 +154,7 @@ public final class CloudServiceProviderNetworkMetadataItem
                             this.odbNetworkId,
                             this.cidrBlocks,
                             this.networkAnchorUri,
+                            this.cspAdditionalProperties,
                             this.dnsForwardingConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -155,6 +175,9 @@ public final class CloudServiceProviderNetworkMetadataItem
             }
             if (model.wasPropertyExplicitlySet("networkAnchorUri")) {
                 this.networkAnchorUri(model.getNetworkAnchorUri());
+            }
+            if (model.wasPropertyExplicitlySet("cspAdditionalProperties")) {
+                this.cspAdditionalProperties(model.getCspAdditionalProperties());
             }
             if (model.wasPropertyExplicitlySet("dnsForwardingConfig")) {
                 this.dnsForwardingConfig(model.getDnsForwardingConfig());
@@ -224,6 +247,19 @@ public final class CloudServiceProviderNetworkMetadataItem
         return networkAnchorUri;
     }
 
+    /** CSP Specific Additional Properties, AzureSubnetId for Azure */
+    @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
+    private final java.util.Map<String, String> cspAdditionalProperties;
+
+    /**
+     * CSP Specific Additional Properties, AzureSubnetId for Azure
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getCspAdditionalProperties() {
+        return cspAdditionalProperties;
+    }
+
     /** DNS domain ip mapping forwarding configuration */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsForwardingConfig")
     private final java.util.List<java.util.Map<String, String>> dnsForwardingConfig;
@@ -256,6 +292,8 @@ public final class CloudServiceProviderNetworkMetadataItem
         sb.append(", odbNetworkId=").append(String.valueOf(this.odbNetworkId));
         sb.append(", cidrBlocks=").append(String.valueOf(this.cidrBlocks));
         sb.append(", networkAnchorUri=").append(String.valueOf(this.networkAnchorUri));
+        sb.append(", cspAdditionalProperties=")
+                .append(String.valueOf(this.cspAdditionalProperties));
         sb.append(", dnsForwardingConfig=").append(String.valueOf(this.dnsForwardingConfig));
         sb.append(")");
         return sb.toString();
@@ -275,6 +313,8 @@ public final class CloudServiceProviderNetworkMetadataItem
                 && java.util.Objects.equals(this.odbNetworkId, other.odbNetworkId)
                 && java.util.Objects.equals(this.cidrBlocks, other.cidrBlocks)
                 && java.util.Objects.equals(this.networkAnchorUri, other.networkAnchorUri)
+                && java.util.Objects.equals(
+                        this.cspAdditionalProperties, other.cspAdditionalProperties)
                 && java.util.Objects.equals(this.dnsForwardingConfig, other.dnsForwardingConfig)
                 && super.equals(other);
     }
@@ -289,6 +329,11 @@ public final class CloudServiceProviderNetworkMetadataItem
         result =
                 (result * PRIME)
                         + (this.networkAnchorUri == null ? 43 : this.networkAnchorUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cspAdditionalProperties == null
+                                ? 43
+                                : this.cspAdditionalProperties.hashCode());
         result =
                 (result * PRIME)
                         + (this.dnsForwardingConfig == null

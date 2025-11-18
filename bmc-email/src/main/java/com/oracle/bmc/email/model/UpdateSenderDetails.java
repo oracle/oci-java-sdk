@@ -23,17 +23,38 @@ package com.oracle.bmc.email.model;
 public final class UpdateSenderDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({"emailIpPoolId", "freeformTags", "definedTags"})
     public UpdateSenderDetails(
+            String emailIpPoolId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.emailIpPoolId = emailIpPoolId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * used to submit an email by Email Delivery when sent from this sender.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("emailIpPoolId")
+        private String emailIpPoolId;
+
+        /**
+         * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * used to submit an email by Email Delivery when sent from this sender.
+         *
+         * @param emailIpPoolId the value to set
+         * @return this builder
+         */
+        public Builder emailIpPoolId(String emailIpPoolId) {
+            this.emailIpPoolId = emailIpPoolId;
+            this.__explicitlySet__.add("emailIpPoolId");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -91,7 +112,8 @@ public final class UpdateSenderDetails
 
         public UpdateSenderDetails build() {
             UpdateSenderDetails model =
-                    new UpdateSenderDetails(this.freeformTags, this.definedTags);
+                    new UpdateSenderDetails(
+                            this.emailIpPoolId, this.freeformTags, this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -100,6 +122,9 @@ public final class UpdateSenderDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateSenderDetails model) {
+            if (model.wasPropertyExplicitlySet("emailIpPoolId")) {
+                this.emailIpPoolId(model.getEmailIpPoolId());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -117,6 +142,23 @@ public final class UpdateSenderDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used
+     * to submit an email by Email Delivery when sent from this sender.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("emailIpPoolId")
+    private final String emailIpPoolId;
+
+    /**
+     * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used
+     * to submit an email by Email Delivery when sent from this sender.
+     *
+     * @return the value
+     */
+    public String getEmailIpPoolId() {
+        return emailIpPoolId;
     }
 
     /**
@@ -180,7 +222,8 @@ public final class UpdateSenderDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateSenderDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append("emailIpPoolId=").append(String.valueOf(this.emailIpPoolId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
@@ -196,7 +239,8 @@ public final class UpdateSenderDetails
         }
 
         UpdateSenderDetails other = (UpdateSenderDetails) o;
-        return java.util.Objects.equals(this.freeformTags, other.freeformTags)
+        return java.util.Objects.equals(this.emailIpPoolId, other.emailIpPoolId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
@@ -205,6 +249,9 @@ public final class UpdateSenderDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.emailIpPoolId == null ? 43 : this.emailIpPoolId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

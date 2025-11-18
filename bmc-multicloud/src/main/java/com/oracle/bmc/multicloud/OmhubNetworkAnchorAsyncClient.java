@@ -123,6 +123,7 @@ public class OmhubNetworkAnchorAsyncClient extends com.oracle.bmc.http.internal.
                         "subscriptionServiceName", request.getSubscriptionServiceName())
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())
                 .appendQueryParam("externalLocation", request.getExternalLocation())
+                .appendQueryParam("shouldFetchVcnName", request.getShouldFetchVcnName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -140,12 +141,6 @@ public class OmhubNetworkAnchorAsyncClient extends com.oracle.bmc.http.internal.
             final com.oracle.bmc.responses.AsyncHandler<
                             ListNetworkAnchorsRequest, ListNetworkAnchorsResponse>
                     handler) {
-        Objects.requireNonNull(request.getSubscriptionId(), "subscriptionId is required");
-
-        Objects.requireNonNull(
-                request.getSubscriptionServiceName(), "subscriptionServiceName is required");
-
-        Objects.requireNonNull(request.getExternalLocation(), "externalLocation is required");
 
         return clientCall(request, ListNetworkAnchorsResponse::builder)
                 .logger(LOG, "listNetworkAnchors")
@@ -161,14 +156,17 @@ public class OmhubNetworkAnchorAsyncClient extends com.oracle.bmc.http.internal.
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())
                 .appendEnumQueryParam(
                         "subscriptionServiceName", request.getSubscriptionServiceName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam(
+                        "networkAnchorLifecycleState", request.getNetworkAnchorLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("externalLocation", request.getExternalLocation())
                 .appendQueryParam("networkAnchorOciSubnetId", request.getNetworkAnchorOciSubnetId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("networkAnchorOciVcnId", request.getNetworkAnchorOciVcnId())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("shouldFetchVcnName", request.getShouldFetchVcnName())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")

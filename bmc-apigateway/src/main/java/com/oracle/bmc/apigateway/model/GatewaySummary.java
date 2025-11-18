@@ -38,7 +38,8 @@ public final class GatewaySummary
         "certificateId",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "ipMode"
     })
     public GatewaySummary(
             String id,
@@ -56,7 +57,8 @@ public final class GatewaySummary
             String certificateId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            Gateway.IpMode ipMode) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -74,6 +76,7 @@ public final class GatewaySummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.ipMode = ipMode;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -379,6 +382,31 @@ public final class GatewaySummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+         * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code
+         * IPV6} means the gateway will only have an {@code IPv6} address assigned to it. {@code
+         * DUAL_STACK} means the gateway will have both an IPv4 and IPv6 address assigned to it.
+         * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+        private Gateway.IpMode ipMode;
+
+        /**
+         * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+         * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code
+         * IPV6} means the gateway will only have an {@code IPv6} address assigned to it. {@code
+         * DUAL_STACK} means the gateway will have both an IPv4 and IPv6 address assigned to it.
+         * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+         *
+         * @param ipMode the value to set
+         * @return this builder
+         */
+        public Builder ipMode(Gateway.IpMode ipMode) {
+            this.ipMode = ipMode;
+            this.__explicitlySet__.add("ipMode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -401,7 +429,8 @@ public final class GatewaySummary
                             this.certificateId,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.ipMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -457,6 +486,9 @@ public final class GatewaySummary
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("ipMode")) {
+                this.ipMode(model.getIpMode());
             }
             return this;
         }
@@ -739,6 +771,29 @@ public final class GatewaySummary
         return systemTags;
     }
 
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. {@code
+     * IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means
+     * the gateway will only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means
+     * the gateway will have both an IPv4 and IPv6 address assigned to it. Example: {@code IPV4} or
+     * {@code IPV6} or {@code DUAL_STACK}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+    private final Gateway.IpMode ipMode;
+
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. {@code
+     * IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means
+     * the gateway will only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means
+     * the gateway will have both an IPv4 and IPv6 address assigned to it. Example: {@code IPV4} or
+     * {@code IPV6} or {@code DUAL_STACK}
+     *
+     * @return the value
+     */
+    public Gateway.IpMode getIpMode() {
+        return ipMode;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -771,6 +826,7 @@ public final class GatewaySummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", ipMode=").append(String.valueOf(this.ipMode));
         sb.append(")");
         return sb.toString();
     }
@@ -802,6 +858,7 @@ public final class GatewaySummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.ipMode, other.ipMode)
                 && super.equals(other);
     }
 
@@ -837,6 +894,7 @@ public final class GatewaySummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.ipMode == null ? 43 : this.ipMode.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

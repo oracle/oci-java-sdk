@@ -85,6 +85,22 @@ public interface ObjectStorage extends AutoCloseable {
     AbortMultipartUploadResponse abortMultipartUpload(AbortMultipartUploadRequest request);
 
     /**
+     * Deletes a batch of objects.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/BatchDeleteObjectsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use BatchDeleteObjects
+     *     API.
+     */
+    BatchDeleteObjectsResponse batchDeleteObjects(BatchDeleteObjectsRequest request);
+
+    /**
      * Cancels a work request.
      *
      * @param request The request object containing the details to send

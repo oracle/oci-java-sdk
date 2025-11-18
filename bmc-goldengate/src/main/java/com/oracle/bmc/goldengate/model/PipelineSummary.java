@@ -48,7 +48,8 @@ public class PipelineSummary extends com.oracle.bmc.http.client.internal.Explici
         "lifecycleSubState",
         "lifecycleDetails",
         "timeCreated",
-        "timeUpdated"
+        "timeUpdated",
+        "subnetId"
     })
     protected PipelineSummary(
             String id,
@@ -68,7 +69,8 @@ public class PipelineSummary extends com.oracle.bmc.http.client.internal.Explici
             PipelineLifecycleSubState lifecycleSubState,
             String lifecycleDetails,
             java.util.Date timeCreated,
-            java.util.Date timeUpdated) {
+            java.util.Date timeUpdated,
+            String subnetId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -88,6 +90,7 @@ public class PipelineSummary extends com.oracle.bmc.http.client.internal.Explici
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.subnetId = subnetId;
     }
 
     /**
@@ -358,6 +361,23 @@ public class PipelineSummary extends com.oracle.bmc.http.client.internal.Explici
         return timeUpdated;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+     *
+     * @return the value
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -393,6 +413,7 @@ public class PipelineSummary extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(")");
         return sb.toString();
     }
@@ -427,6 +448,7 @@ public class PipelineSummary extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && super.equals(other);
     }
 
@@ -472,6 +494,7 @@ public class PipelineSummary extends com.oracle.bmc.http.client.internal.Explici
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

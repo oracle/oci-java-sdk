@@ -25,6 +25,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         "compartmentId",
         "emailAddress",
         "id",
+        "emailIpPoolId",
         "lifecycleState",
         "timeCreated",
         "freeformTags",
@@ -36,6 +37,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
             String compartmentId,
             String emailAddress,
             String id,
+            String emailIpPoolId,
             Sender.LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Map<String, String> freeformTags,
@@ -46,6 +48,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         this.compartmentId = compartmentId;
         this.emailAddress = emailAddress;
         this.id = id;
+        this.emailIpPoolId = emailIpPoolId;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.freeformTags = freeformTags;
@@ -99,6 +102,25 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
+            return this;
+        }
+        /**
+         * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * used to submit an email by Email Delivery when sent from this sender.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("emailIpPoolId")
+        private String emailIpPoolId;
+
+        /**
+         * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * used to submit an email by Email Delivery when sent from this sender.
+         *
+         * @param emailIpPoolId the value to set
+         * @return this builder
+         */
+        public Builder emailIpPoolId(String emailIpPoolId) {
+            this.emailIpPoolId = emailIpPoolId;
+            this.__explicitlySet__.add("emailIpPoolId");
             return this;
         }
         /** The current status of the approved sender. */
@@ -230,6 +252,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.compartmentId,
                             this.emailAddress,
                             this.id,
+                            this.emailIpPoolId,
                             this.lifecycleState,
                             this.timeCreated,
                             this.freeformTags,
@@ -252,6 +275,9 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("emailIpPoolId")) {
+                this.emailIpPoolId(model.getEmailIpPoolId());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -321,6 +347,23 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
      */
     public String getId() {
         return id;
+    }
+
+    /**
+     * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used
+     * to submit an email by Email Delivery when sent from this sender.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("emailIpPoolId")
+    private final String emailIpPoolId;
+
+    /**
+     * The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used
+     * to submit an email by Email Delivery when sent from this sender.
+     *
+     * @return the value
+     */
+    public String getEmailIpPoolId() {
+        return emailIpPoolId;
     }
 
     /** The current status of the approved sender. */
@@ -447,6 +490,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
         sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", emailIpPoolId=").append(String.valueOf(this.emailIpPoolId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -470,6 +514,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.emailAddress, other.emailAddress)
                 && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.emailIpPoolId, other.emailIpPoolId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -488,6 +533,9 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.emailAddress == null ? 43 : this.emailAddress.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.emailIpPoolId == null ? 43 : this.emailIpPoolId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

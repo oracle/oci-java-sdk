@@ -192,6 +192,15 @@ public final class ZeroEtlPipelineSummary extends PipelineSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("processOptions")
         private ProcessOptions processOptions;
 
@@ -246,6 +255,7 @@ public final class ZeroEtlPipelineSummary extends PipelineSummary {
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.subnetId,
                             this.processOptions,
                             this.timeLastRecorded);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -310,6 +320,9 @@ public final class ZeroEtlPipelineSummary extends PipelineSummary {
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
             if (model.wasPropertyExplicitlySet("processOptions")) {
                 this.processOptions(model.getProcessOptions());
             }
@@ -349,6 +362,7 @@ public final class ZeroEtlPipelineSummary extends PipelineSummary {
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String subnetId,
             ProcessOptions processOptions,
             java.util.Date timeLastRecorded) {
         super(
@@ -369,7 +383,8 @@ public final class ZeroEtlPipelineSummary extends PipelineSummary {
                 lifecycleSubState,
                 lifecycleDetails,
                 timeCreated,
-                timeUpdated);
+                timeUpdated,
+                subnetId);
         this.processOptions = processOptions;
         this.timeLastRecorded = timeLastRecorded;
     }

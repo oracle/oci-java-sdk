@@ -77,12 +77,12 @@ public final class InvokeRawJsonCommandDetails extends InvokeRawCommandDetails {
             this.__explicitlySet__.add("requestDataContentType");
             return this;
         }
-        /** request data */
+        /** request data, maximum 256k */
         @com.fasterxml.jackson.annotation.JsonProperty("requestData")
         private java.util.Map<String, Object> requestData;
 
         /**
-         * request data
+         * request data, maximum 256k
          *
          * @param requestData the value to set
          * @return this builder
@@ -170,12 +170,12 @@ public final class InvokeRawJsonCommandDetails extends InvokeRawCommandDetails {
         return requestDataContentType;
     }
 
-    /** request data */
+    /** request data, maximum 256k */
     @com.fasterxml.jackson.annotation.JsonProperty("requestData")
     private final java.util.Map<String, Object> requestData;
 
     /**
-     * request data
+     * request data, maximum 256k
      *
      * @return the value
      */

@@ -202,6 +202,50 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public BatchDeleteObjectsResponse batchDeleteObjects(BatchDeleteObjectsRequest request) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
+        Objects.requireNonNull(
+                request.getBatchDeleteObjectsDetails(), "batchDeleteObjectsDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+
+        return clientCall(request, BatchDeleteObjectsResponse::builder)
+                .logger(LOG, "batchDeleteObjects")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "BatchDeleteObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/BatchDeleteObjects")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BatchDeleteObjectsRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("b")
+                .appendPathParam(request.getBucketName())
+                .appendPathParam("actions")
+                .appendPathParam("batchDeleteObjects")
+                .accept("application/json")
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.objectstorage.model.BatchDeleteObjectsResult.class,
+                        BatchDeleteObjectsResponse.Builder::batchDeleteObjectsResult)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        BatchDeleteObjectsResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", BatchDeleteObjectsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");

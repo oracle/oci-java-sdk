@@ -97,6 +97,38 @@ public interface Email extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/AddEmailIpPoolLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddEmailIpPoolLock
+     *     API.
+     */
+    AddEmailIpPoolLockResponse addEmailIpPoolLock(AddEmailIpPoolLockRequest request);
+
+    /**
+     * Add OutboundIps to EmailIpPool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/AddEmailOutboundIpExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddEmailOutboundIp
+     *     API.
+     */
+    AddEmailOutboundIpResponse addEmailOutboundIp(AddEmailOutboundIpRequest request);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
      *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/AddReturnPathLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddReturnPathLock
      *     API.
@@ -140,6 +172,24 @@ public interface Email extends AutoCloseable {
      */
     ChangeEmailDomainCompartmentResponse changeEmailDomainCompartment(
             ChangeEmailDomainCompartmentRequest request);
+
+    /**
+     * Moves a resource into a different compartment. When provided, If-Match is checked against
+     * ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeEmailIpPoolCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeEmailIpPoolCompartment API.
+     */
+    ChangeEmailIpPoolCompartmentResponse changeEmailIpPoolCompartment(
+            ChangeEmailIpPoolCompartmentRequest request);
 
     /**
      * Moves a sender into a different compartment. When provided, If-Match is checked against ETag
@@ -191,6 +241,22 @@ public interface Email extends AutoCloseable {
      *     API.
      */
     CreateEmailDomainResponse createEmailDomain(CreateEmailDomainRequest request);
+
+    /**
+     * Creates a new EmailIpPool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateEmailIpPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailIpPool
+     *     API.
+     */
+    CreateEmailIpPoolResponse createEmailIpPool(CreateEmailIpPoolRequest request);
 
     /**
      * Creates a new email return path. Avoid entering confidential information.
@@ -275,6 +341,22 @@ public interface Email extends AutoCloseable {
      *     API.
      */
     DeleteEmailDomainResponse deleteEmailDomain(DeleteEmailDomainRequest request);
+
+    /**
+     * Deletes an EmailIpPool resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteEmailIpPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailIpPool
+     *     API.
+     */
+    DeleteEmailIpPoolResponse deleteEmailIpPool(DeleteEmailIpPoolRequest request);
 
     /**
      * Deletes an email return path.
@@ -371,6 +453,21 @@ public interface Email extends AutoCloseable {
     GetEmailDomainResponse getEmailDomain(GetEmailDomainRequest request);
 
     /**
+     * Retrieves the specified IpPool by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailIpPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailIpPool API.
+     */
+    GetEmailIpPoolResponse getEmailIpPool(GetEmailIpPoolRequest request);
+
+    /**
      * Retrieves the specified email return path.
      *
      * @param request The request object containing the details to send
@@ -462,6 +559,38 @@ public interface Email extends AutoCloseable {
      *     API.
      */
     ListEmailDomainsResponse listEmailDomains(ListEmailDomainsRequest request);
+
+    /**
+     * Returns a list of EmailIpPools.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailIpPoolsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailIpPools
+     *     API.
+     */
+    ListEmailIpPoolsResponse listEmailIpPools(ListEmailIpPoolsRequest request);
+
+    /**
+     * Returns a list of all Outbound Public IPs assigned for a given tenant.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailOutboundIpsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListEmailOutboundIps API.
+     */
+    ListEmailOutboundIpsResponse listEmailOutboundIps(ListEmailOutboundIpsRequest request);
 
     /**
      * Lists email return paths in the specified compartment or emaildomain.
@@ -586,6 +715,38 @@ public interface Email extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/RemoveEmailIpPoolLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveEmailIpPoolLock API.
+     */
+    RemoveEmailIpPoolLockResponse removeEmailIpPoolLock(RemoveEmailIpPoolLockRequest request);
+
+    /**
+     * Remove OutboundIps from EmailIpPool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/RemoveEmailOutboundIpExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveEmailOutboundIp API.
+     */
+    RemoveEmailOutboundIpResponse removeEmailOutboundIp(RemoveEmailOutboundIpRequest request);
+
+    /**
+     * Remove a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
      *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/RemoveReturnPathLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RemoveReturnPathLock API.
@@ -638,6 +799,22 @@ public interface Email extends AutoCloseable {
      *     API.
      */
     UpdateEmailDomainResponse updateEmailDomain(UpdateEmailDomainRequest request);
+
+    /**
+     * Updates the EmailIpPool
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailIpPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailIpPool
+     *     API.
+     */
+    UpdateEmailIpPoolResponse updateEmailIpPool(UpdateEmailIpPoolRequest request);
 
     /**
      * Modifies an email return path.

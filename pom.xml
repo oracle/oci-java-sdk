@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.76.1</version>
+  <version>3.77.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -63,7 +63,7 @@
     <exec.skip>true</exec.skip>
     <exec.mainClass>com.acme.Undefined</exec.mainClass>
     <com.nimbus.version>10.5</com.nimbus.version>
-    <oci.codegen.version>2.145</oci.codegen.version>
+    <oci.codegen.version>2.146</oci.codegen.version>
   </properties>
   <profiles>
     <profile>

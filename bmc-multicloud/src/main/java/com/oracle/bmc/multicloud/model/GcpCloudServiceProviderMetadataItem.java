@@ -45,12 +45,40 @@ public final class GcpCloudServiceProviderMetadataItem extends CloudServiceProvi
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorId")
+        private String cspResourceAnchorId;
+
+        public Builder cspResourceAnchorId(String cspResourceAnchorId) {
+            this.cspResourceAnchorId = cspResourceAnchorId;
+            this.__explicitlySet__.add("cspResourceAnchorId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorName")
+        private String cspResourceAnchorName;
+
+        public Builder cspResourceAnchorName(String cspResourceAnchorName) {
+            this.cspResourceAnchorName = cspResourceAnchorName;
+            this.__explicitlySet__.add("cspResourceAnchorName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("resourceAnchorUri")
         private String resourceAnchorUri;
 
         public Builder resourceAnchorUri(String resourceAnchorUri) {
             this.resourceAnchorUri = resourceAnchorUri;
             this.__explicitlySet__.add("resourceAnchorUri");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
+        private java.util.Map<String, String> cspAdditionalProperties;
+
+        public Builder cspAdditionalProperties(
+                java.util.Map<String, String> cspAdditionalProperties) {
+            this.cspAdditionalProperties = cspAdditionalProperties;
+            this.__explicitlySet__.add("cspAdditionalProperties");
             return this;
         }
         /** GCP project number that was used for creating this resource anchor resource. */
@@ -77,7 +105,10 @@ public final class GcpCloudServiceProviderMetadataItem extends CloudServiceProvi
                     new GcpCloudServiceProviderMetadataItem(
                             this.region,
                             this.resourceAnchorName,
+                            this.cspResourceAnchorId,
+                            this.cspResourceAnchorName,
                             this.resourceAnchorUri,
+                            this.cspAdditionalProperties,
                             this.projectNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -93,8 +124,17 @@ public final class GcpCloudServiceProviderMetadataItem extends CloudServiceProvi
             if (model.wasPropertyExplicitlySet("resourceAnchorName")) {
                 this.resourceAnchorName(model.getResourceAnchorName());
             }
+            if (model.wasPropertyExplicitlySet("cspResourceAnchorId")) {
+                this.cspResourceAnchorId(model.getCspResourceAnchorId());
+            }
+            if (model.wasPropertyExplicitlySet("cspResourceAnchorName")) {
+                this.cspResourceAnchorName(model.getCspResourceAnchorName());
+            }
             if (model.wasPropertyExplicitlySet("resourceAnchorUri")) {
                 this.resourceAnchorUri(model.getResourceAnchorUri());
+            }
+            if (model.wasPropertyExplicitlySet("cspAdditionalProperties")) {
+                this.cspAdditionalProperties(model.getCspAdditionalProperties());
             }
             if (model.wasPropertyExplicitlySet("projectNumber")) {
                 this.projectNumber(model.getProjectNumber());
@@ -116,9 +156,18 @@ public final class GcpCloudServiceProviderMetadataItem extends CloudServiceProvi
     public GcpCloudServiceProviderMetadataItem(
             String region,
             String resourceAnchorName,
+            String cspResourceAnchorId,
+            String cspResourceAnchorName,
             String resourceAnchorUri,
+            java.util.Map<String, String> cspAdditionalProperties,
             String projectNumber) {
-        super(region, resourceAnchorName, resourceAnchorUri);
+        super(
+                region,
+                resourceAnchorName,
+                cspResourceAnchorId,
+                cspResourceAnchorName,
+                resourceAnchorUri,
+                cspAdditionalProperties);
         this.projectNumber = projectNumber;
     }
 

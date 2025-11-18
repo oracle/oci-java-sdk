@@ -30,7 +30,10 @@ package com.oracle.bmc.database.model;
             name = "GCP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AzureEncryptionKeyDetails.class,
-            name = "AZURE")
+            name = "AZURE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AwsEncryptionKeyDetails.class,
+            name = "AWS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -85,12 +88,14 @@ public class EncryptionKeyLocationDetails
     /**
      * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM.
      * Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'GCP' for
-     * creating a new database or migrating a database key to Google Cloud Provider.
+     * creating a new database or migrating a database key to Google Cloud Provider. Use 'AWS' for
+     * creating a new database or migrating a database key to Aws.
      */
     public enum ProviderType implements com.oracle.bmc.http.internal.BmcEnum {
         External("EXTERNAL"),
         Azure("AZURE"),
         Gcp("GCP"),
+        Aws("AWS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

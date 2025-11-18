@@ -54,6 +54,14 @@ import com.oracle.bmc.dbmulticloud.responses.*;
  *
  * <p><b>Google Key Resource:</b>&nbsp;&nbsp;The Google Key Resource is used to register and manage
  * a Google Cloud Key within Oracle Cloud Infrastructure (OCI) under an associated Google Key Ring.
+ * <br>
+ * <b>AWS</b>:<br>
+ * <b>Oracle AWS Connector Resource:</b>&nbsp;&nbsp;The Oracle AWS Connector Resource is used to
+ * install the AWS Identity Connector on an Exadata VM cluster in Oracle Exadata Database Service on
+ * Dedicated Infrastructure (ExaDB-D).
+ *
+ * <p><b>Google AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and
+ * manage a AWS Key within Oracle Cloud Infrastructure (OCI).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240501")
 public interface OracleDBAzureBlobMountAsync extends AutoCloseable {

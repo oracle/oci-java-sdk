@@ -26,30 +26,36 @@ public final class ServiceCatalog
         "id",
         "compartmentId",
         "displayName",
+        "status",
         "lifecycleState",
         "timeCreated",
         "timeUpdated",
         "definedTags",
-        "freeformTags"
+        "freeformTags",
+        "systemTags"
     })
     public ServiceCatalog(
             String id,
             String compartmentId,
             String displayName,
+            ServiceCatalogStatusEnum status,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
+        this.status = status;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -97,6 +103,21 @@ public final class ServiceCatalog
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** The status of a service catalog. */
+        @com.fasterxml.jackson.annotation.JsonProperty("status")
+        private ServiceCatalogStatusEnum status;
+
+        /**
+         * The status of a service catalog.
+         *
+         * @param status the value to set
+         * @return this builder
+         */
+        public Builder status(ServiceCatalogStatusEnum status) {
+            this.status = status;
+            this.__explicitlySet__.add("status");
             return this;
         }
         /** The lifecycle state of the service catalog. */
@@ -199,6 +220,25 @@ public final class ServiceCatalog
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -209,11 +249,13 @@ public final class ServiceCatalog
                             this.id,
                             this.compartmentId,
                             this.displayName,
+                            this.status,
                             this.lifecycleState,
                             this.timeCreated,
                             this.timeUpdated,
                             this.definedTags,
-                            this.freeformTags);
+                            this.freeformTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -231,6 +273,9 @@ public final class ServiceCatalog
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
@@ -245,6 +290,9 @@ public final class ServiceCatalog
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -296,6 +344,19 @@ public final class ServiceCatalog
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /** The status of a service catalog. */
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
+    private final ServiceCatalogStatusEnum status;
+
+    /**
+     * The status of a service catalog.
+     *
+     * @return the value
+     */
+    public ServiceCatalogStatusEnum getStatus() {
+        return status;
     }
 
     /** The lifecycle state of the service catalog. */
@@ -433,6 +494,23 @@ public final class ServiceCatalog
         return freeformTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -451,11 +529,13 @@ public final class ServiceCatalog
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -473,11 +553,13 @@ public final class ServiceCatalog
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -490,6 +572,7 @@ public final class ServiceCatalog
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
@@ -497,6 +580,7 @@ public final class ServiceCatalog
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

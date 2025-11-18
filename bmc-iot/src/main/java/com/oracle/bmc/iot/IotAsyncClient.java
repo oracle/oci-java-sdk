@@ -1017,8 +1017,7 @@ public class IotAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", InvokeRawCommandResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "Content-Location", InvokeRawCommandResponse.Builder::contentLocation)
+                .handleResponseHeaderString("Location", InvokeRawCommandResponse.Builder::location)
                 .callAsync(handler);
     }
 

@@ -512,6 +512,21 @@ public final class GenericChatRequest extends BaseChatRequest {
             this.__explicitlySet__.add("webSearchOptions");
             return this;
         }
+        /** Specifies the processing type used for serving the request. */
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceTier")
+        private ServiceTier serviceTier;
+
+        /**
+         * Specifies the processing type used for serving the request.
+         *
+         * @param serviceTier the value to set
+         * @return this builder
+         */
+        public Builder serviceTier(ServiceTier serviceTier) {
+            this.serviceTier = serviceTier;
+            this.__explicitlySet__.add("serviceTier");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -543,7 +558,8 @@ public final class GenericChatRequest extends BaseChatRequest {
                             this.toolChoice,
                             this.isParallelToolCalls,
                             this.tools,
-                            this.webSearchOptions);
+                            this.webSearchOptions,
+                            this.serviceTier);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -627,6 +643,9 @@ public final class GenericChatRequest extends BaseChatRequest {
             if (model.wasPropertyExplicitlySet("webSearchOptions")) {
                 this.webSearchOptions(model.getWebSearchOptions());
             }
+            if (model.wasPropertyExplicitlySet("serviceTier")) {
+                this.serviceTier(model.getServiceTier());
+            }
             return this;
         }
     }
@@ -666,7 +685,8 @@ public final class GenericChatRequest extends BaseChatRequest {
             ToolChoice toolChoice,
             Boolean isParallelToolCalls,
             java.util.List<ToolDefinition> tools,
-            WebSearchOptions webSearchOptions) {
+            WebSearchOptions webSearchOptions,
+            ServiceTier serviceTier) {
         super();
         this.messages = messages;
         this.reasoningEffort = reasoningEffort;
@@ -693,6 +713,7 @@ public final class GenericChatRequest extends BaseChatRequest {
         this.isParallelToolCalls = isParallelToolCalls;
         this.tools = tools;
         this.webSearchOptions = webSearchOptions;
+        this.serviceTier = serviceTier;
     }
 
     /**
@@ -1202,6 +1223,53 @@ public final class GenericChatRequest extends BaseChatRequest {
         return webSearchOptions;
     }
 
+    /** Specifies the processing type used for serving the request. */
+    public enum ServiceTier implements com.oracle.bmc.http.internal.BmcEnum {
+        Auto("AUTO"),
+        Default("DEFAULT"),
+        Priority("PRIORITY"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ServiceTier> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ServiceTier v : ServiceTier.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ServiceTier(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ServiceTier create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ServiceTier: " + key);
+        }
+    };
+    /** Specifies the processing type used for serving the request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceTier")
+    private final ServiceTier serviceTier;
+
+    /**
+     * Specifies the processing type used for serving the request.
+     *
+     * @return the value
+     */
+    public ServiceTier getServiceTier() {
+        return serviceTier;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1242,6 +1310,7 @@ public final class GenericChatRequest extends BaseChatRequest {
         sb.append(", isParallelToolCalls=").append(String.valueOf(this.isParallelToolCalls));
         sb.append(", tools=").append(String.valueOf(this.tools));
         sb.append(", webSearchOptions=").append(String.valueOf(this.webSearchOptions));
+        sb.append(", serviceTier=").append(String.valueOf(this.serviceTier));
         sb.append(")");
         return sb.toString();
     }
@@ -1281,6 +1350,7 @@ public final class GenericChatRequest extends BaseChatRequest {
                 && java.util.Objects.equals(this.isParallelToolCalls, other.isParallelToolCalls)
                 && java.util.Objects.equals(this.tools, other.tools)
                 && java.util.Objects.equals(this.webSearchOptions, other.webSearchOptions)
+                && java.util.Objects.equals(this.serviceTier, other.serviceTier)
                 && super.equals(other);
     }
 
@@ -1335,6 +1405,7 @@ public final class GenericChatRequest extends BaseChatRequest {
         result =
                 (result * PRIME)
                         + (this.webSearchOptions == null ? 43 : this.webSearchOptions.hashCode());
+        result = (result * PRIME) + (this.serviceTier == null ? 43 : this.serviceTier.hashCode());
         return result;
     }
 }

@@ -272,6 +272,240 @@ public class EmailPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listEmailIpPools operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListEmailIpPoolsResponse> listEmailIpPoolsResponseIterator(
+            final ListEmailIpPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListEmailIpPoolsRequest.Builder, ListEmailIpPoolsRequest, ListEmailIpPoolsResponse>(
+                new java.util.function.Supplier<ListEmailIpPoolsRequest.Builder>() {
+                    @Override
+                    public ListEmailIpPoolsRequest.Builder get() {
+                        return ListEmailIpPoolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailIpPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailIpPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailIpPoolsRequest.Builder>,
+                        ListEmailIpPoolsRequest>() {
+                    @Override
+                    public ListEmailIpPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailIpPoolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailIpPoolsRequest, ListEmailIpPoolsResponse>() {
+                    @Override
+                    public ListEmailIpPoolsResponse apply(ListEmailIpPoolsRequest request) {
+                        return client.listEmailIpPools(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.email.model.EmailIpPoolSummary} objects contained in responses from the
+     * listEmailIpPools operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.email.model.EmailIpPoolSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.email.model.EmailIpPoolSummary> listEmailIpPoolsRecordIterator(
+            final ListEmailIpPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListEmailIpPoolsRequest.Builder,
+                ListEmailIpPoolsRequest,
+                ListEmailIpPoolsResponse,
+                com.oracle.bmc.email.model.EmailIpPoolSummary>(
+                new java.util.function.Supplier<ListEmailIpPoolsRequest.Builder>() {
+                    @Override
+                    public ListEmailIpPoolsRequest.Builder get() {
+                        return ListEmailIpPoolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailIpPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailIpPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailIpPoolsRequest.Builder>,
+                        ListEmailIpPoolsRequest>() {
+                    @Override
+                    public ListEmailIpPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailIpPoolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailIpPoolsRequest, ListEmailIpPoolsResponse>() {
+                    @Override
+                    public ListEmailIpPoolsResponse apply(ListEmailIpPoolsRequest request) {
+                        return client.listEmailIpPools(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailIpPoolsResponse,
+                        java.util.List<com.oracle.bmc.email.model.EmailIpPoolSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.email.model.EmailIpPoolSummary> apply(
+                            ListEmailIpPoolsResponse response) {
+                        return response.getEmailIpPoolCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listEmailOutboundIps operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListEmailOutboundIpsResponse> listEmailOutboundIpsResponseIterator(
+            final ListEmailOutboundIpsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListEmailOutboundIpsRequest.Builder,
+                ListEmailOutboundIpsRequest,
+                ListEmailOutboundIpsResponse>(
+                new java.util.function.Supplier<ListEmailOutboundIpsRequest.Builder>() {
+                    @Override
+                    public ListEmailOutboundIpsRequest.Builder get() {
+                        return ListEmailOutboundIpsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailOutboundIpsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailOutboundIpsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailOutboundIpsRequest.Builder>,
+                        ListEmailOutboundIpsRequest>() {
+                    @Override
+                    public ListEmailOutboundIpsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailOutboundIpsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailOutboundIpsRequest, ListEmailOutboundIpsResponse>() {
+                    @Override
+                    public ListEmailOutboundIpsResponse apply(ListEmailOutboundIpsRequest request) {
+                        return client.listEmailOutboundIps(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.email.model.EmailOutboundIpSummary} objects contained in responses from the
+     * listEmailOutboundIps operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.email.model.EmailOutboundIpSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.email.model.EmailOutboundIpSummary>
+            listEmailOutboundIpsRecordIterator(final ListEmailOutboundIpsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListEmailOutboundIpsRequest.Builder,
+                ListEmailOutboundIpsRequest,
+                ListEmailOutboundIpsResponse,
+                com.oracle.bmc.email.model.EmailOutboundIpSummary>(
+                new java.util.function.Supplier<ListEmailOutboundIpsRequest.Builder>() {
+                    @Override
+                    public ListEmailOutboundIpsRequest.Builder get() {
+                        return ListEmailOutboundIpsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailOutboundIpsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailOutboundIpsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailOutboundIpsRequest.Builder>,
+                        ListEmailOutboundIpsRequest>() {
+                    @Override
+                    public ListEmailOutboundIpsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailOutboundIpsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailOutboundIpsRequest, ListEmailOutboundIpsResponse>() {
+                    @Override
+                    public ListEmailOutboundIpsResponse apply(ListEmailOutboundIpsRequest request) {
+                        return client.listEmailOutboundIps(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailOutboundIpsResponse,
+                        java.util.List<com.oracle.bmc.email.model.EmailOutboundIpSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.email.model.EmailOutboundIpSummary> apply(
+                            ListEmailOutboundIpsResponse response) {
+                        return response.getEmailOutboundIpCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listEmailReturnPaths operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

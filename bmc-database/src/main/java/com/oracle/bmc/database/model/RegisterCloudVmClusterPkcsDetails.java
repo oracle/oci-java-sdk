@@ -82,6 +82,7 @@ public final class RegisterCloudVmClusterPkcsDetails
         Azure("AZURE"),
         Oci("OCI"),
         Gcp("GCP"),
+        Aws("AWS"),
         ;
 
         private final String value;

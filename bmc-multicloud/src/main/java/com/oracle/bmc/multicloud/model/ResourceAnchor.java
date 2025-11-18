@@ -33,6 +33,7 @@ public final class ResourceAnchor
         "displayName",
         "region",
         "compartmentId",
+        "compartmentName",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -42,6 +43,7 @@ public final class ResourceAnchor
         "systemTags",
         "setupMode",
         "linkedCompartmentId",
+        "linkedCompartmentName",
         "subscriptionType",
         "subscriptionId",
         "cloudServiceProviderMetadataItem"
@@ -51,6 +53,7 @@ public final class ResourceAnchor
             String displayName,
             String region,
             String compartmentId,
+            String compartmentName,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -60,6 +63,7 @@ public final class ResourceAnchor
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             SetupMode setupMode,
             String linkedCompartmentId,
+            String linkedCompartmentName,
             SubscriptionType subscriptionType,
             String subscriptionId,
             CloudServiceProviderMetadataItem cloudServiceProviderMetadataItem) {
@@ -68,6 +72,7 @@ public final class ResourceAnchor
         this.displayName = displayName;
         this.region = region;
         this.compartmentId = compartmentId;
+        this.compartmentName = compartmentName;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -77,6 +82,7 @@ public final class ResourceAnchor
         this.systemTags = systemTags;
         this.setupMode = setupMode;
         this.linkedCompartmentId = linkedCompartmentId;
+        this.linkedCompartmentName = linkedCompartmentName;
         this.subscriptionType = subscriptionType;
         this.subscriptionId = subscriptionId;
         this.cloudServiceProviderMetadataItem = cloudServiceProviderMetadataItem;
@@ -150,6 +156,21 @@ public final class ResourceAnchor
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /** The name assigned to the compartment during creation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
+        private String compartmentName;
+
+        /**
+         * The name assigned to the compartment during creation.
+         *
+         * @param compartmentName the value to set
+         * @return this builder
+         */
+        public Builder compartmentName(String compartmentName) {
+            this.compartmentName = compartmentName;
+            this.__explicitlySet__.add("compartmentName");
             return this;
         }
         /**
@@ -348,6 +369,25 @@ public final class ResourceAnchor
             this.__explicitlySet__.add("linkedCompartmentId");
             return this;
         }
+        /**
+         * The name assigned to the compartment which was created or linked by customer with
+         * resource anchor. This compartment is different from where resource Anchor live.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("linkedCompartmentName")
+        private String linkedCompartmentName;
+
+        /**
+         * The name assigned to the compartment which was created or linked by customer with
+         * resource anchor. This compartment is different from where resource Anchor live.
+         *
+         * @param linkedCompartmentName the value to set
+         * @return this builder
+         */
+        public Builder linkedCompartmentName(String linkedCompartmentName) {
+            this.linkedCompartmentName = linkedCompartmentName;
+            this.__explicitlySet__.add("linkedCompartmentName");
+            return this;
+        }
         /** subscription type */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionType")
         private SubscriptionType subscriptionType;
@@ -399,6 +439,7 @@ public final class ResourceAnchor
                             this.displayName,
                             this.region,
                             this.compartmentId,
+                            this.compartmentName,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -408,6 +449,7 @@ public final class ResourceAnchor
                             this.systemTags,
                             this.setupMode,
                             this.linkedCompartmentId,
+                            this.linkedCompartmentName,
                             this.subscriptionType,
                             this.subscriptionId,
                             this.cloudServiceProviderMetadataItem);
@@ -430,6 +472,9 @@ public final class ResourceAnchor
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentName")) {
+                this.compartmentName(model.getCompartmentName());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -457,6 +502,9 @@ public final class ResourceAnchor
             }
             if (model.wasPropertyExplicitlySet("linkedCompartmentId")) {
                 this.linkedCompartmentId(model.getLinkedCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("linkedCompartmentName")) {
+                this.linkedCompartmentName(model.getLinkedCompartmentName());
             }
             if (model.wasPropertyExplicitlySet("subscriptionType")) {
                 this.subscriptionType(model.getSubscriptionType());
@@ -538,6 +586,19 @@ public final class ResourceAnchor
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /** The name assigned to the compartment during creation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
+    private final String compartmentName;
+
+    /**
+     * The name assigned to the compartment during creation.
+     *
+     * @return the value
+     */
+    public String getCompartmentName() {
+        return compartmentName;
     }
 
     /**
@@ -815,6 +876,23 @@ public final class ResourceAnchor
         return linkedCompartmentId;
     }
 
+    /**
+     * The name assigned to the compartment which was created or linked by customer with resource
+     * anchor. This compartment is different from where resource Anchor live.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("linkedCompartmentName")
+    private final String linkedCompartmentName;
+
+    /**
+     * The name assigned to the compartment which was created or linked by customer with resource
+     * anchor. This compartment is different from where resource Anchor live.
+     *
+     * @return the value
+     */
+    public String getLinkedCompartmentName() {
+        return linkedCompartmentName;
+    }
+
     /** subscription type */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionType")
     private final SubscriptionType subscriptionType;
@@ -867,6 +945,7 @@ public final class ResourceAnchor
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", compartmentName=").append(String.valueOf(this.compartmentName));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -876,6 +955,7 @@ public final class ResourceAnchor
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", setupMode=").append(String.valueOf(this.setupMode));
         sb.append(", linkedCompartmentId=").append(String.valueOf(this.linkedCompartmentId));
+        sb.append(", linkedCompartmentName=").append(String.valueOf(this.linkedCompartmentName));
         sb.append(", subscriptionType=").append(String.valueOf(this.subscriptionType));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", cloudServiceProviderMetadataItem=")
@@ -898,6 +978,7 @@ public final class ResourceAnchor
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.compartmentName, other.compartmentName)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -907,6 +988,7 @@ public final class ResourceAnchor
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.setupMode, other.setupMode)
                 && java.util.Objects.equals(this.linkedCompartmentId, other.linkedCompartmentId)
+                && java.util.Objects.equals(this.linkedCompartmentName, other.linkedCompartmentName)
                 && java.util.Objects.equals(this.subscriptionType, other.subscriptionType)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(
@@ -925,6 +1007,9 @@ public final class ResourceAnchor
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentName == null ? 43 : this.compartmentName.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
@@ -942,6 +1027,11 @@ public final class ResourceAnchor
                         + (this.linkedCompartmentId == null
                                 ? 43
                                 : this.linkedCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.linkedCompartmentName == null
+                                ? 43
+                                : this.linkedCompartmentName.hashCode());
         result =
                 (result * PRIME)
                         + (this.subscriptionType == null ? 43 : this.subscriptionType.hashCode());

@@ -439,6 +439,35 @@ public class ServiceCatalogAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<GetConfigurationResponse> getConfiguration(
+            GetConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetConfigurationRequest, GetConfigurationResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetConfigurationResponse::builder)
+                .logger(LOG, "getConfiguration")
+                .serviceDetails(
+                        "ServiceCatalog",
+                        "GetConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/Configuration/GetConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConfigurationRequest::builder)
+                .basePath("/20210527")
+                .appendPathParam("configuration")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicecatalog.model.Configuration.class,
+                        GetConfigurationResponse.Builder::configuration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConfigurationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPrivateApplicationResponse> getPrivateApplication(
             GetPrivateApplicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -685,6 +714,55 @@ public class ServiceCatalogAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<ListAllApplicationsResponse> listAllApplications(
+            ListAllApplicationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAllApplicationsRequest, ListAllApplicationsResponse>
+                    handler) {
+
+        return clientCall(request, ListAllApplicationsResponse::builder)
+                .logger(LOG, "listAllApplications")
+                .serviceDetails(
+                        "ServiceCatalog",
+                        "ListAllApplications",
+                        "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ApplicationSummary/ListAllApplications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAllApplicationsRequest::builder)
+                .basePath("/20210527")
+                .appendPathParam("allApplications")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("entityType", request.getEntityType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("entityId", request.getEntityId())
+                .appendListQueryParam(
+                        "publisherId",
+                        request.getPublisherId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "packageType",
+                        request.getPackageType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "pricing",
+                        request.getPricing(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isFeatured", request.getIsFeatured())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicecatalog.model.ApplicationCollection.class,
+                        ListAllApplicationsResponse.Builder::applicationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAllApplicationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAllApplicationsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationsResponse> listApplications(
             ListApplicationsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -884,6 +962,7 @@ public class ServiceCatalogAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam("serviceCatalogs")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("serviceCatalogId", request.getServiceCatalogId())
+                .appendEnumQueryParam("status", request.getStatus())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortBy", request.getSortBy())

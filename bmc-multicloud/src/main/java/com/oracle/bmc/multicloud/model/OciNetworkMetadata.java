@@ -52,28 +52,12 @@ public final class OciNetworkMetadata
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned
-         * and MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is
-         * assigned. CONNECTING - Oracle Cloud Infrastructure information is assigned and the
-         * control plane is provisioning resources. ACTIVE - Network anchor is connected and
-         * resources (VNICs) exist within a subnet. ERROR - DRG attach fails during connection.
-         * FAILED - Network anchor creation failed NEEDS_ATTENTION - Network anchor is in temporary
-         * bad state UPDATING - Network anchor is getting updated. DELETING - Network anchor is
-         * getting deleted DELETED - A connected network anchor is deleted.
-         */
+        /** Defines status of the Network Anchor. */
         @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorConnectionStatus")
         private NetworkAnchorConnectionStatus networkAnchorConnectionStatus;
 
         /**
-         * This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned
-         * and MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is
-         * assigned. CONNECTING - Oracle Cloud Infrastructure information is assigned and the
-         * control plane is provisioning resources. ACTIVE - Network anchor is connected and
-         * resources (VNICs) exist within a subnet. ERROR - DRG attach fails during connection.
-         * FAILED - Network anchor creation failed NEEDS_ATTENTION - Network anchor is in temporary
-         * bad state UPDATING - Network anchor is getting updated. DELETING - Network anchor is
-         * getting deleted DELETED - A connected network anchor is deleted.
+         * Defines status of the Network Anchor.
          *
          * @param networkAnchorConnectionStatus the value to set
          * @return this builder
@@ -219,91 +203,12 @@ public final class OciNetworkMetadata
         return new Builder().copy(this);
     }
 
-    /**
-     * This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and
-     * MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned.
-     * CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is
-     * provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist
-     * within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation
-     * failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor
-     * is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected
-     * network anchor is deleted.
-     */
-    public enum NetworkAnchorConnectionStatus implements com.oracle.bmc.http.internal.BmcEnum {
-        Connected("CONNECTED"),
-        Disconnected("DISCONNECTED"),
-        Connecting("CONNECTING"),
-        Active("ACTIVE"),
-        Error("ERROR"),
-        Updating("UPDATING"),
-        NeedsAttention("NEEDS_ATTENTION"),
-        Failed("FAILED"),
-        Deleting("DELETING"),
-        Deleted("DELETED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(NetworkAnchorConnectionStatus.class);
-
-        private final String value;
-        private static java.util.Map<String, NetworkAnchorConnectionStatus> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (NetworkAnchorConnectionStatus v : NetworkAnchorConnectionStatus.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        NetworkAnchorConnectionStatus(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static NetworkAnchorConnectionStatus create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'NetworkAnchorConnectionStatus', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and
-     * MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned.
-     * CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is
-     * provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist
-     * within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation
-     * failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor
-     * is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected
-     * network anchor is deleted.
-     */
+    /** Defines status of the Network Anchor. */
     @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorConnectionStatus")
     private final NetworkAnchorConnectionStatus networkAnchorConnectionStatus;
 
     /**
-     * This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and
-     * MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned.
-     * CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is
-     * provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist
-     * within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation
-     * failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor
-     * is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected
-     * network anchor is deleted.
+     * Defines status of the Network Anchor.
      *
      * @return the value
      */

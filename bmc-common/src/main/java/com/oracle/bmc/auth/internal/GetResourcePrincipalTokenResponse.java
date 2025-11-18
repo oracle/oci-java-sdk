@@ -35,8 +35,12 @@ public class GetResourcePrincipalTokenResponse {
         this.servicePrincipalSessionToken = servicePrincipalSessionToken;
     }
 
-    static class ResponseWrapper extends BmcResponse {
+    public static class ResponseWrapper extends BmcResponse {
         final GetResourcePrincipalTokenResponse body;
+
+        public GetResourcePrincipalTokenResponse getBody() {
+            return body;
+        }
 
         private ResponseWrapper(Builder builder) {
             super(builder.__httpStatusCode__, builder.headers);

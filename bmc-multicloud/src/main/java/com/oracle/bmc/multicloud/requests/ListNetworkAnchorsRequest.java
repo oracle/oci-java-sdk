@@ -15,60 +15,55 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
-     */
-    private String subscriptionId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription in which to list resources.
-     */
-    public String getSubscriptionId() {
-        return subscriptionId;
-    }
-    /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-     */
-    private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
-
-    /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-     */
-    public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
-        return subscriptionServiceName;
-    }
-    /** OMHub Control Plane must know underlying CSP CP Region External Location Name. */
-    private String externalLocation;
-
-    /** OMHub Control Plane must know underlying CSP CP Region External Location Name. */
-    public String getExternalLocation() {
-        return externalLocation;
-    }
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base
+     * compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider
+     * (such as Azure, AWS, or Google Cloud).
      */
     private String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base
+     * compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider
+     * (such as Azure, AWS, or Google Cloud).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Multicloud subscription in which to list resources.
+     */
+    private String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Multicloud subscription in which to list resources.
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+    /** The subscription service name of the Cloud Service Provider. */
+    private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
+
+    /** The subscription service name of the Cloud Service Provider. */
+    public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
+        return subscriptionServiceName;
+    }
+    /**
      * A filter to return only resources that match the given lifecycle state. The state value is
      * case-insensitive.
      */
-    private com.oracle.bmc.multicloud.model.NetworkAnchor.LifecycleState lifecycleState;
+    private com.oracle.bmc.multicloud.model.NetworkAnchor.NetworkAnchorLifecycleState
+            networkAnchorLifecycleState;
 
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is
      * case-insensitive.
      */
-    public com.oracle.bmc.multicloud.model.NetworkAnchor.LifecycleState getLifecycleState() {
-        return lifecycleState;
+    public com.oracle.bmc.multicloud.model.NetworkAnchor.NetworkAnchorLifecycleState
+            getNetworkAnchorLifecycleState() {
+        return networkAnchorLifecycleState;
     }
     /** A filter to return only resources that match the given display name exactly. */
     private String displayName;
@@ -77,12 +72,32 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
     public String getDisplayName() {
         return displayName;
     }
+    /** The Cloud Service Provider region. */
+    private String externalLocation;
+
+    /** The Cloud Service Provider region. */
+    public String getExternalLocation() {
+        return externalLocation;
+    }
     /** A filter to return only NetworkAnchor resources that match the given OCI subnet Id. */
     private String networkAnchorOciSubnetId;
 
     /** A filter to return only NetworkAnchor resources that match the given OCI subnet Id. */
     public String getNetworkAnchorOciSubnetId() {
         return networkAnchorOciSubnetId;
+    }
+    /**
+     * If set to true, a list operation will return NetworkAnchors from all child compartments in
+     * the provided compartmentId parameter.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * If set to true, a list operation will return NetworkAnchors from all child compartments in
+     * the provided compartmentId parameter.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
     }
     /** A filter to return only NetworkAnchor resources that match the given OCI Vcn Id. */
     private String networkAnchorOciVcnId;
@@ -133,6 +148,17 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
      */
     public String getPage() {
         return page;
+    }
+    /**
+     * Whether to fetch and include the vcn display name, which may introduce additional latency.
+     */
+    private Boolean shouldFetchVcnName;
+
+    /**
+     * Whether to fetch and include the vcn display name, which may introduce additional latency.
+     */
+    public Boolean getShouldFetchVcnName() {
+        return shouldFetchVcnName;
     }
     /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private com.oracle.bmc.multicloud.model.SortOrder sortOrder;
@@ -215,64 +241,17 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
-         */
-        private String subscriptionId = null;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription in which to list resources.
-         *
-         * @param subscriptionId the value to set
-         * @return this builder instance
-         */
-        public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = subscriptionId;
-            return this;
-        }
-
-        /**
-         * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
-         */
-        private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
-
-        /**
-         * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE,
-         * ORACLEDBATAWS]
-         *
-         * @param subscriptionServiceName the value to set
-         * @return this builder instance
-         */
-        public Builder subscriptionServiceName(
-                com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName) {
-            this.subscriptionServiceName = subscriptionServiceName;
-            return this;
-        }
-
-        /** OMHub Control Plane must know underlying CSP CP Region External Location Name. */
-        private String externalLocation = null;
-
-        /**
-         * OMHub Control Plane must know underlying CSP CP Region External Location Name.
-         *
-         * @param externalLocation the value to set
-         * @return this builder instance
-         */
-        public Builder externalLocation(String externalLocation) {
-            this.externalLocation = externalLocation;
-            return this;
-        }
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * Multicloud base compartment or sub-compartment in which to list resources. A Multicloud
+         * base compartment is an OCI compartment that maps to a subscription in a Cloud Service
+         * Provider (such as Azure, AWS, or Google Cloud).
          */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * Multicloud base compartment or sub-compartment in which to list resources. A Multicloud
+         * base compartment is an OCI compartment that maps to a subscription in a Cloud Service
+         * Provider (such as Azure, AWS, or Google Cloud).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -283,21 +262,56 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Multicloud subscription in which to list resources.
+         */
+        private String subscriptionId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Multicloud subscription in which to list resources.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /** The subscription service name of the Cloud Service Provider. */
+        private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
+
+        /**
+         * The subscription service name of the Cloud Service Provider.
+         *
+         * @param subscriptionServiceName the value to set
+         * @return this builder instance
+         */
+        public Builder subscriptionServiceName(
+                com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName) {
+            this.subscriptionServiceName = subscriptionServiceName;
+            return this;
+        }
+
+        /**
          * A filter to return only resources that match the given lifecycle state. The state value
          * is case-insensitive.
          */
-        private com.oracle.bmc.multicloud.model.NetworkAnchor.LifecycleState lifecycleState = null;
+        private com.oracle.bmc.multicloud.model.NetworkAnchor.NetworkAnchorLifecycleState
+                networkAnchorLifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state. The state value
          * is case-insensitive.
          *
-         * @param lifecycleState the value to set
+         * @param networkAnchorLifecycleState the value to set
          * @return this builder instance
          */
-        public Builder lifecycleState(
-                com.oracle.bmc.multicloud.model.NetworkAnchor.LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
+        public Builder networkAnchorLifecycleState(
+                com.oracle.bmc.multicloud.model.NetworkAnchor.NetworkAnchorLifecycleState
+                        networkAnchorLifecycleState) {
+            this.networkAnchorLifecycleState = networkAnchorLifecycleState;
             return this;
         }
 
@@ -315,6 +329,20 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /** The Cloud Service Provider region. */
+        private String externalLocation = null;
+
+        /**
+         * The Cloud Service Provider region.
+         *
+         * @param externalLocation the value to set
+         * @return this builder instance
+         */
+        public Builder externalLocation(String externalLocation) {
+            this.externalLocation = externalLocation;
+            return this;
+        }
+
         /** A filter to return only NetworkAnchor resources that match the given OCI subnet Id. */
         private String networkAnchorOciSubnetId = null;
 
@@ -326,6 +354,24 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder networkAnchorOciSubnetId(String networkAnchorOciSubnetId) {
             this.networkAnchorOciSubnetId = networkAnchorOciSubnetId;
+            return this;
+        }
+
+        /**
+         * If set to true, a list operation will return NetworkAnchors from all child compartments
+         * in the provided compartmentId parameter.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * If set to true, a list operation will return NetworkAnchors from all child compartments
+         * in the provided compartmentId parameter.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
 
@@ -398,6 +444,24 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder page(String page) {
             this.page = page;
+            return this;
+        }
+
+        /**
+         * Whether to fetch and include the vcn display name, which may introduce additional
+         * latency.
+         */
+        private Boolean shouldFetchVcnName = null;
+
+        /**
+         * Whether to fetch and include the vcn display name, which may introduce additional
+         * latency.
+         *
+         * @param shouldFetchVcnName the value to set
+         * @return this builder instance
+         */
+        public Builder shouldFetchVcnName(Boolean shouldFetchVcnName) {
+            this.shouldFetchVcnName = shouldFetchVcnName;
             return this;
         }
 
@@ -483,17 +547,19 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
          * @return this builder instance
          */
         public Builder copy(ListNetworkAnchorsRequest o) {
+            compartmentId(o.getCompartmentId());
             subscriptionId(o.getSubscriptionId());
             subscriptionServiceName(o.getSubscriptionServiceName());
-            externalLocation(o.getExternalLocation());
-            compartmentId(o.getCompartmentId());
-            lifecycleState(o.getLifecycleState());
+            networkAnchorLifecycleState(o.getNetworkAnchorLifecycleState());
             displayName(o.getDisplayName());
+            externalLocation(o.getExternalLocation());
             networkAnchorOciSubnetId(o.getNetworkAnchorOciSubnetId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             networkAnchorOciVcnId(o.getNetworkAnchorOciVcnId());
             id(o.getId());
             limit(o.getLimit());
             page(o.getPage());
+            shouldFetchVcnName(o.getShouldFetchVcnName());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
@@ -531,25 +597,27 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
          */
         public ListNetworkAnchorsRequest buildWithoutInvocationCallback() {
             ListNetworkAnchorsRequest request = new ListNetworkAnchorsRequest();
+            request.compartmentId = compartmentId;
             request.subscriptionId = subscriptionId;
             request.subscriptionServiceName = subscriptionServiceName;
-            request.externalLocation = externalLocation;
-            request.compartmentId = compartmentId;
-            request.lifecycleState = lifecycleState;
+            request.networkAnchorLifecycleState = networkAnchorLifecycleState;
             request.displayName = displayName;
+            request.externalLocation = externalLocation;
             request.networkAnchorOciSubnetId = networkAnchorOciSubnetId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.networkAnchorOciVcnId = networkAnchorOciVcnId;
             request.id = id;
             request.limit = limit;
             request.page = page;
+            request.shouldFetchVcnName = shouldFetchVcnName;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListNetworkAnchorsRequest(subscriptionId, subscriptionServiceName,
-            // externalLocation, compartmentId, lifecycleState, displayName,
-            // networkAnchorOciSubnetId, networkAnchorOciVcnId, id, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // new ListNetworkAnchorsRequest(compartmentId, subscriptionId, subscriptionServiceName,
+            // networkAnchorLifecycleState, displayName, externalLocation, networkAnchorOciSubnetId,
+            // compartmentIdInSubtree, networkAnchorOciVcnId, id, limit, page, shouldFetchVcnName,
+            // sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -560,17 +628,19 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
      */
     public Builder toBuilder() {
         return new Builder()
+                .compartmentId(compartmentId)
                 .subscriptionId(subscriptionId)
                 .subscriptionServiceName(subscriptionServiceName)
-                .externalLocation(externalLocation)
-                .compartmentId(compartmentId)
-                .lifecycleState(lifecycleState)
+                .networkAnchorLifecycleState(networkAnchorLifecycleState)
                 .displayName(displayName)
+                .externalLocation(externalLocation)
                 .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .networkAnchorOciVcnId(networkAnchorOciVcnId)
                 .id(id)
                 .limit(limit)
                 .page(page)
+                .shouldFetchVcnName(shouldFetchVcnName)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId);
@@ -590,18 +660,21 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(",subscriptionServiceName=").append(String.valueOf(this.subscriptionServiceName));
-        sb.append(",externalLocation=").append(String.valueOf(this.externalLocation));
-        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",networkAnchorLifecycleState=")
+                .append(String.valueOf(this.networkAnchorLifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",externalLocation=").append(String.valueOf(this.externalLocation));
         sb.append(",networkAnchorOciSubnetId=")
                 .append(String.valueOf(this.networkAnchorOciSubnetId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",networkAnchorOciVcnId=").append(String.valueOf(this.networkAnchorOciVcnId));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",shouldFetchVcnName=").append(String.valueOf(this.shouldFetchVcnName));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -620,19 +693,23 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
 
         ListNetworkAnchorsRequest other = (ListNetworkAnchorsRequest) o;
         return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(
                         this.subscriptionServiceName, other.subscriptionServiceName)
-                && java.util.Objects.equals(this.externalLocation, other.externalLocation)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.networkAnchorLifecycleState, other.networkAnchorLifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.externalLocation, other.externalLocation)
                 && java.util.Objects.equals(
                         this.networkAnchorOciSubnetId, other.networkAnchorOciSubnetId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.networkAnchorOciVcnId, other.networkAnchorOciVcnId)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.shouldFetchVcnName, other.shouldFetchVcnName)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -644,6 +721,9 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
         int result = super.hashCode();
         result =
                 (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
@@ -652,19 +732,23 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
                                 : this.subscriptionServiceName.hashCode());
         result =
                 (result * PRIME)
-                        + (this.externalLocation == null ? 43 : this.externalLocation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+                        + (this.networkAnchorLifecycleState == null
+                                ? 43
+                                : this.networkAnchorLifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalLocation == null ? 43 : this.externalLocation.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkAnchorOciSubnetId == null
                                 ? 43
                                 : this.networkAnchorOciSubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkAnchorOciVcnId == null
@@ -673,6 +757,11 @@ public class ListNetworkAnchorsRequest extends com.oracle.bmc.requests.BmcReques
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldFetchVcnName == null
+                                ? 43
+                                : this.shouldFetchVcnName.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

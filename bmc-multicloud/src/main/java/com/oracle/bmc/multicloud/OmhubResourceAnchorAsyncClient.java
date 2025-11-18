@@ -122,6 +122,8 @@ public class OmhubResourceAnchorAsyncClient extends com.oracle.bmc.http.internal
                 .appendEnumQueryParam(
                         "subscriptionServiceName", request.getSubscriptionServiceName())
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())
+                .appendQueryParam(
+                        "shouldFetchCompartmentName", request.getShouldFetchCompartmentName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -139,10 +141,6 @@ public class OmhubResourceAnchorAsyncClient extends com.oracle.bmc.http.internal
             final com.oracle.bmc.responses.AsyncHandler<
                             ListResourceAnchorsRequest, ListResourceAnchorsResponse>
                     handler) {
-        Objects.requireNonNull(
-                request.getSubscriptionServiceName(), "subscriptionServiceName is required");
-
-        Objects.requireNonNull(request.getSubscriptionId(), "subscriptionId is required");
 
         return clientCall(request, ListResourceAnchorsResponse::builder)
                 .logger(LOG, "listResourceAnchors")
@@ -164,6 +162,8 @@ public class OmhubResourceAnchorAsyncClient extends com.oracle.bmc.http.internal
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("isCompartmentIdInSubtree", request.getIsCompartmentIdInSubtree())
+                .appendQueryParam(
+                        "shouldFetchCompartmentName", request.getShouldFetchCompartmentName())
                 .appendEnumQueryParam(
                         "subscriptionServiceName", request.getSubscriptionServiceName())
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())

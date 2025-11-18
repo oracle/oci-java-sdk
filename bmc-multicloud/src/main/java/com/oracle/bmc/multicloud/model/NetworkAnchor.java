@@ -34,7 +34,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         "resourceAnchorId",
         "timeCreated",
         "timeUpdated",
-        "lifecycleState",
+        "networkAnchorLifecycleState",
         "lifecycleDetails",
         "freeformTags",
         "definedTags",
@@ -42,7 +42,8 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         "setupMode",
         "clusterPlacementGroupId",
         "ociMetadataItem",
-        "cloudServiceProviderMetadataItem"
+        "cloudServiceProviderMetadataItem",
+        "subscriptionType"
     })
     public NetworkAnchor(
             String id,
@@ -51,7 +52,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
             String resourceAnchorId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            LifecycleState lifecycleState,
+            NetworkAnchorLifecycleState networkAnchorLifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -59,7 +60,8 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
             SetupMode setupMode,
             String clusterPlacementGroupId,
             OciNetworkMetadata ociMetadataItem,
-            CloudServiceProviderNetworkMetadataItem cloudServiceProviderMetadataItem) {
+            CloudServiceProviderNetworkMetadataItem cloudServiceProviderMetadataItem,
+            SubscriptionType subscriptionType) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -67,7 +69,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         this.resourceAnchorId = resourceAnchorId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
-        this.lifecycleState = lifecycleState;
+        this.networkAnchorLifecycleState = networkAnchorLifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -76,6 +78,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.ociMetadataItem = ociMetadataItem;
         this.cloudServiceProviderMetadataItem = cloudServiceProviderMetadataItem;
+        this.subscriptionType = subscriptionType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -195,18 +198,19 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /** The current state of the NetworkAnchor. */
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorLifecycleState")
+        private NetworkAnchorLifecycleState networkAnchorLifecycleState;
 
         /**
          * The current state of the NetworkAnchor.
          *
-         * @param lifecycleState the value to set
+         * @param networkAnchorLifecycleState the value to set
          * @return this builder
          */
-        public Builder lifecycleState(LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
+        public Builder networkAnchorLifecycleState(
+                NetworkAnchorLifecycleState networkAnchorLifecycleState) {
+            this.networkAnchorLifecycleState = networkAnchorLifecycleState;
+            this.__explicitlySet__.add("networkAnchorLifecycleState");
             return this;
         }
         /**
@@ -357,6 +361,21 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("cloudServiceProviderMetadataItem");
             return this;
         }
+        /** Oracle Cloud Infrastructure Subscription Type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionType")
+        private SubscriptionType subscriptionType;
+
+        /**
+         * Oracle Cloud Infrastructure Subscription Type.
+         *
+         * @param subscriptionType the value to set
+         * @return this builder
+         */
+        public Builder subscriptionType(SubscriptionType subscriptionType) {
+            this.subscriptionType = subscriptionType;
+            this.__explicitlySet__.add("subscriptionType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -370,7 +389,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
                             this.resourceAnchorId,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.lifecycleState,
+                            this.networkAnchorLifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
@@ -378,7 +397,8 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
                             this.setupMode,
                             this.clusterPlacementGroupId,
                             this.ociMetadataItem,
-                            this.cloudServiceProviderMetadataItem);
+                            this.cloudServiceProviderMetadataItem,
+                            this.subscriptionType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -405,8 +425,8 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
-            if (model.wasPropertyExplicitlySet("lifecycleState")) {
-                this.lifecycleState(model.getLifecycleState());
+            if (model.wasPropertyExplicitlySet("networkAnchorLifecycleState")) {
+                this.networkAnchorLifecycleState(model.getNetworkAnchorLifecycleState());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -431,6 +451,9 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("cloudServiceProviderMetadataItem")) {
                 this.cloudServiceProviderMetadataItem(model.getCloudServiceProviderMetadataItem());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionType")) {
+                this.subscriptionType(model.getSubscriptionType());
             }
             return this;
         }
@@ -548,7 +571,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /** The current state of the NetworkAnchor. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    public enum NetworkAnchorLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -563,21 +586,21 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         UnknownEnumValue(null);
 
         private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+                org.slf4j.LoggerFactory.getLogger(NetworkAnchorLifecycleState.class);
 
         private final String value;
-        private static java.util.Map<String, LifecycleState> map;
+        private static java.util.Map<String, NetworkAnchorLifecycleState> map;
 
         static {
             map = new java.util.HashMap<>();
-            for (LifecycleState v : LifecycleState.values()) {
+            for (NetworkAnchorLifecycleState v : NetworkAnchorLifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
                 }
             }
         }
 
-        LifecycleState(String value) {
+        NetworkAnchorLifecycleState(String value) {
             this.value = value;
         }
 
@@ -587,27 +610,27 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         }
 
         @com.fasterxml.jackson.annotation.JsonCreator
-        public static LifecycleState create(String key) {
+        public static NetworkAnchorLifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
             LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    "Received unknown value '{}' for enum 'NetworkAnchorLifecycleState', returning UnknownEnumValue",
                     key);
             return UnknownEnumValue;
         }
     };
     /** The current state of the NetworkAnchor. */
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final LifecycleState lifecycleState;
+    @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorLifecycleState")
+    private final NetworkAnchorLifecycleState networkAnchorLifecycleState;
 
     /**
      * The current state of the NetworkAnchor.
      *
      * @return the value
      */
-    public LifecycleState getLifecycleState() {
-        return lifecycleState;
+    public NetworkAnchorLifecycleState getNetworkAnchorLifecycleState() {
+        return networkAnchorLifecycleState;
     }
 
     /**
@@ -788,6 +811,19 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         return cloudServiceProviderMetadataItem;
     }
 
+    /** Oracle Cloud Infrastructure Subscription Type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionType")
+    private final SubscriptionType subscriptionType;
+
+    /**
+     * Oracle Cloud Infrastructure Subscription Type.
+     *
+     * @return the value
+     */
+    public SubscriptionType getSubscriptionType() {
+        return subscriptionType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -809,7 +845,8 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", resourceAnchorId=").append(String.valueOf(this.resourceAnchorId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", networkAnchorLifecycleState=")
+                .append(String.valueOf(this.networkAnchorLifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -820,6 +857,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", ociMetadataItem=").append(String.valueOf(this.ociMetadataItem));
         sb.append(", cloudServiceProviderMetadataItem=")
                 .append(String.valueOf(this.cloudServiceProviderMetadataItem));
+        sb.append(", subscriptionType=").append(String.valueOf(this.subscriptionType));
         sb.append(")");
         return sb.toString();
     }
@@ -840,7 +878,8 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.resourceAnchorId, other.resourceAnchorId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.networkAnchorLifecycleState, other.networkAnchorLifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -852,6 +891,7 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(
                         this.cloudServiceProviderMetadataItem,
                         other.cloudServiceProviderMetadataItem)
+                && java.util.Objects.equals(this.subscriptionType, other.subscriptionType)
                 && super.equals(other);
     }
 
@@ -871,7 +911,9 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
                 (result * PRIME)
-                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+                        + (this.networkAnchorLifecycleState == null
+                                ? 43
+                                : this.networkAnchorLifecycleState.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
@@ -892,6 +934,9 @@ public final class NetworkAnchor extends com.oracle.bmc.http.client.internal.Exp
                         + (this.cloudServiceProviderMetadataItem == null
                                 ? 43
                                 : this.cloudServiceProviderMetadataItem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionType == null ? 43 : this.subscriptionType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

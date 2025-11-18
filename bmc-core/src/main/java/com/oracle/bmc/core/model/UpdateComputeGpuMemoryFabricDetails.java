@@ -23,15 +23,22 @@ package com.oracle.bmc.core.model;
 public final class UpdateComputeGpuMemoryFabricDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"definedTags", "freeformTags", "displayName"})
+    @java.beans.ConstructorProperties({
+        "definedTags",
+        "freeformTags",
+        "displayName",
+        "memoryFabricPreferences"
+    })
     public UpdateComputeGpuMemoryFabricDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
-            String displayName) {
+            String displayName,
+            MemoryFabricPreferencesDescriptor memoryFabricPreferences) {
         super();
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
         this.displayName = displayName;
+        this.memoryFabricPreferences = memoryFabricPreferences;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -107,13 +114,26 @@ public final class UpdateComputeGpuMemoryFabricDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryFabricPreferences")
+        private MemoryFabricPreferencesDescriptor memoryFabricPreferences;
+
+        public Builder memoryFabricPreferences(
+                MemoryFabricPreferencesDescriptor memoryFabricPreferences) {
+            this.memoryFabricPreferences = memoryFabricPreferences;
+            this.__explicitlySet__.add("memoryFabricPreferences");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateComputeGpuMemoryFabricDetails build() {
             UpdateComputeGpuMemoryFabricDetails model =
                     new UpdateComputeGpuMemoryFabricDetails(
-                            this.definedTags, this.freeformTags, this.displayName);
+                            this.definedTags,
+                            this.freeformTags,
+                            this.displayName,
+                            this.memoryFabricPreferences);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -130,6 +150,9 @@ public final class UpdateComputeGpuMemoryFabricDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("memoryFabricPreferences")) {
+                this.memoryFabricPreferences(model.getMemoryFabricPreferences());
             }
             return this;
         }
@@ -207,6 +230,13 @@ public final class UpdateComputeGpuMemoryFabricDetails
         return displayName;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryFabricPreferences")
+    private final MemoryFabricPreferencesDescriptor memoryFabricPreferences;
+
+    public MemoryFabricPreferencesDescriptor getMemoryFabricPreferences() {
+        return memoryFabricPreferences;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -225,6 +255,8 @@ public final class UpdateComputeGpuMemoryFabricDetails
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", memoryFabricPreferences=")
+                .append(String.valueOf(this.memoryFabricPreferences));
         sb.append(")");
         return sb.toString();
     }
@@ -242,6 +274,8 @@ public final class UpdateComputeGpuMemoryFabricDetails
         return java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.memoryFabricPreferences, other.memoryFabricPreferences)
                 && super.equals(other);
     }
 
@@ -252,6 +286,11 @@ public final class UpdateComputeGpuMemoryFabricDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryFabricPreferences == null
+                                ? 43
+                                : this.memoryFabricPreferences.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -40,7 +40,8 @@ public class CreatePipelineDetails
         "definedTags",
         "locks",
         "sourceConnectionDetails",
-        "targetConnectionDetails"
+        "targetConnectionDetails",
+        "subnetId"
     })
     protected CreatePipelineDetails(
             String displayName,
@@ -51,7 +52,8 @@ public class CreatePipelineDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<ResourceLock> locks,
             SourcePipelineConnectionDetails sourceConnectionDetails,
-            TargetPipelineConnectionDetails targetConnectionDetails) {
+            TargetPipelineConnectionDetails targetConnectionDetails,
+            String subnetId) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -62,6 +64,7 @@ public class CreatePipelineDetails
         this.locks = locks;
         this.sourceConnectionDetails = sourceConnectionDetails;
         this.targetConnectionDetails = targetConnectionDetails;
+        this.subnetId = subnetId;
     }
 
     /** An object's Display Name. */
@@ -187,6 +190,23 @@ public class CreatePipelineDetails
         return targetConnectionDetails;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+     *
+     * @return the value
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -213,6 +233,7 @@ public class CreatePipelineDetails
                 .append(String.valueOf(this.sourceConnectionDetails));
         sb.append(", targetConnectionDetails=")
                 .append(String.valueOf(this.targetConnectionDetails));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(")");
         return sb.toString();
     }
@@ -238,6 +259,7 @@ public class CreatePipelineDetails
                         this.sourceConnectionDetails, other.sourceConnectionDetails)
                 && java.util.Objects.equals(
                         this.targetConnectionDetails, other.targetConnectionDetails)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && super.equals(other);
     }
 
@@ -264,6 +286,7 @@ public class CreatePipelineDetails
                         + (this.targetConnectionDetails == null
                                 ? 43
                                 : this.targetConnectionDetails.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

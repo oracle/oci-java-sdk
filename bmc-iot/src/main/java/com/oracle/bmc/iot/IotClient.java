@@ -963,8 +963,7 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", InvokeRawCommandResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "Content-Location", InvokeRawCommandResponse.Builder::contentLocation)
+                .handleResponseHeaderString("Location", InvokeRawCommandResponse.Builder::location)
                 .callSync();
     }
 

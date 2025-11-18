@@ -39,13 +39,28 @@ package com.oracle.bmc.multicloud.model;
 public class CloudServiceProviderMetadataItem
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"region", "resourceAnchorName", "resourceAnchorUri"})
+    @java.beans.ConstructorProperties({
+        "region",
+        "resourceAnchorName",
+        "cspResourceAnchorId",
+        "cspResourceAnchorName",
+        "resourceAnchorUri",
+        "cspAdditionalProperties"
+    })
     protected CloudServiceProviderMetadataItem(
-            String region, String resourceAnchorName, String resourceAnchorUri) {
+            String region,
+            String resourceAnchorName,
+            String cspResourceAnchorId,
+            String cspResourceAnchorName,
+            String resourceAnchorUri,
+            java.util.Map<String, String> cspAdditionalProperties) {
         super();
         this.region = region;
         this.resourceAnchorName = resourceAnchorName;
+        this.cspResourceAnchorId = cspResourceAnchorId;
+        this.cspResourceAnchorName = cspResourceAnchorName;
         this.resourceAnchorUri = resourceAnchorUri;
+        this.cspAdditionalProperties = cspAdditionalProperties;
     }
 
     /** The Azure, AWS or GCP region. */
@@ -61,17 +76,43 @@ public class CloudServiceProviderMetadataItem
         return region;
     }
 
-    /** CSP resource anchor ID or name. */
+    /** OCI resource anchor name. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAnchorName")
     private final String resourceAnchorName;
 
     /**
-     * CSP resource anchor ID or name.
+     * OCI resource anchor name.
      *
      * @return the value
      */
     public String getResourceAnchorName() {
         return resourceAnchorName;
+    }
+
+    /** CSP resource anchor ID. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorId")
+    private final String cspResourceAnchorId;
+
+    /**
+     * CSP resource anchor ID.
+     *
+     * @return the value
+     */
+    public String getCspResourceAnchorId() {
+        return cspResourceAnchorId;
+    }
+
+    /** CSP resource anchor name. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorName")
+    private final String cspResourceAnchorName;
+
+    /**
+     * CSP resource anchor name.
+     *
+     * @return the value
+     */
+    public String getCspResourceAnchorName() {
+        return cspResourceAnchorName;
     }
 
     /** CSP resource anchor Uri. */
@@ -85,6 +126,19 @@ public class CloudServiceProviderMetadataItem
      */
     public String getResourceAnchorUri() {
         return resourceAnchorUri;
+    }
+
+    /** CSP Specific Additional Properties, AzureSubnetId for Azure */
+    @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
+    private final java.util.Map<String, String> cspAdditionalProperties;
+
+    /**
+     * CSP Specific Additional Properties, AzureSubnetId for Azure
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getCspAdditionalProperties() {
+        return cspAdditionalProperties;
     }
 
     @Override
@@ -104,7 +158,11 @@ public class CloudServiceProviderMetadataItem
         sb.append("super=").append(super.toString());
         sb.append("region=").append(String.valueOf(this.region));
         sb.append(", resourceAnchorName=").append(String.valueOf(this.resourceAnchorName));
+        sb.append(", cspResourceAnchorId=").append(String.valueOf(this.cspResourceAnchorId));
+        sb.append(", cspResourceAnchorName=").append(String.valueOf(this.cspResourceAnchorName));
         sb.append(", resourceAnchorUri=").append(String.valueOf(this.resourceAnchorUri));
+        sb.append(", cspAdditionalProperties=")
+                .append(String.valueOf(this.cspAdditionalProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +179,11 @@ public class CloudServiceProviderMetadataItem
         CloudServiceProviderMetadataItem other = (CloudServiceProviderMetadataItem) o;
         return java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.resourceAnchorName, other.resourceAnchorName)
+                && java.util.Objects.equals(this.cspResourceAnchorId, other.cspResourceAnchorId)
+                && java.util.Objects.equals(this.cspResourceAnchorName, other.cspResourceAnchorName)
                 && java.util.Objects.equals(this.resourceAnchorUri, other.resourceAnchorUri)
+                && java.util.Objects.equals(
+                        this.cspAdditionalProperties, other.cspAdditionalProperties)
                 && super.equals(other);
     }
 
@@ -137,7 +199,22 @@ public class CloudServiceProviderMetadataItem
                                 : this.resourceAnchorName.hashCode());
         result =
                 (result * PRIME)
+                        + (this.cspResourceAnchorId == null
+                                ? 43
+                                : this.cspResourceAnchorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cspResourceAnchorName == null
+                                ? 43
+                                : this.cspResourceAnchorName.hashCode());
+        result =
+                (result * PRIME)
                         + (this.resourceAnchorUri == null ? 43 : this.resourceAnchorUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cspAdditionalProperties == null
+                                ? 43
+                                : this.cspAdditionalProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
