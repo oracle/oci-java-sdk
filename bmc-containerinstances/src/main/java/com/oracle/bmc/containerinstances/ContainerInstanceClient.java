@@ -18,7 +18,7 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
     /** Service instance for ContainerInstance. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CONTAINERINSTANCE")
+                    .serviceName(ContainerInstanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://compute-containers.{region}.oci.{secondLevelDomain}")

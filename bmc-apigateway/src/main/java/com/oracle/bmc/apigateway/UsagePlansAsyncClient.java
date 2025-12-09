@@ -31,7 +31,7 @@ public class UsagePlansAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     /** Service instance for UsagePlans. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("USAGEPLANS")
+                    .serviceName(UsagePlansClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apigateway.{region}.oci.{secondLevelDomain}")
                     .build();

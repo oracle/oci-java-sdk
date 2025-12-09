@@ -31,7 +31,7 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
     /** Service instance for AIServiceDocument. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("AISERVICEDOCUMENT")
+                    .serviceName(AIServiceDocumentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://document.aiservice.{region}.oci.{secondLevelDomain}")

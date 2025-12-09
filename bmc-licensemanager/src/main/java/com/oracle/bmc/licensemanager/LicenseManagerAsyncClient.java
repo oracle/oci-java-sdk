@@ -31,7 +31,7 @@ public class LicenseManagerAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for LicenseManager. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("LICENSEMANAGER")
+                    .serviceName(LicenseManagerClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://licensemanager.{region}.oci.{secondLevelDomain}")

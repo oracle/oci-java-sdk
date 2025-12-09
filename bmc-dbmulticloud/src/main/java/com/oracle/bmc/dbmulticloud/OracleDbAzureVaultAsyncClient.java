@@ -31,7 +31,7 @@ public class OracleDbAzureVaultAsyncClient extends com.oracle.bmc.http.internal.
     /** Service instance for OracleDbAzureVault. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ORACLEDBAZUREVAULT")
+                    .serviceName(OracleDbAzureVaultClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://dbmulticloud.{region}.oci.{secondLevelDomain}")

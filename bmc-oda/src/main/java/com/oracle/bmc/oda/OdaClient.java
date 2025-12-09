@@ -17,7 +17,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     /** Service instance for Oda. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ODA")
+                    .serviceName(OdaClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://digitalassistant-api.{region}.oci.{secondLevelDomain}")

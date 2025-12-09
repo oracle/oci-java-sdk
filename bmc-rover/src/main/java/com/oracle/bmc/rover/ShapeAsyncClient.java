@@ -31,7 +31,7 @@ public class ShapeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     /** Service instance for Shape. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SHAPE")
+                    .serviceName(ShapeClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://rover.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class EsxiHostAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     /** Service instance for EsxiHost. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ESXIHOST")
+                    .serviceName(EsxiHostClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://ocvps.{region}.oci.{secondLevelDomain}")
                     .build();

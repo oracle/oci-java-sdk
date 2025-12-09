@@ -31,7 +31,7 @@ public class ModelDeploymentAsyncClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for ModelDeployment. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MODELDEPLOYMENT")
+                    .serviceName(ModelDeploymentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://md.datascience.{region}.oci.{secondLevelDomain}")

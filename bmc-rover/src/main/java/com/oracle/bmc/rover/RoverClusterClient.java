@@ -18,7 +18,7 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for RoverCluster. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ROVERCLUSTER")
+                    .serviceName(RoverClusterClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://rover.{region}.oci.{secondLevelDomain}")
                     .build();

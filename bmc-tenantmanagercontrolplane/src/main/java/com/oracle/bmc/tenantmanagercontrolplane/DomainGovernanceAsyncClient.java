@@ -31,7 +31,7 @@ public class DomainGovernanceAsyncClient extends com.oracle.bmc.http.internal.Ba
     /** Service instance for DomainGovernance. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DOMAINGOVERNANCE")
+                    .serviceName(DomainGovernanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://organizations.{region}.oci.{secondLevelDomain}")

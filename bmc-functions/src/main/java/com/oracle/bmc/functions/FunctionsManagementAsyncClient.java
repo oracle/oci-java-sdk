@@ -31,7 +31,7 @@ public class FunctionsManagementAsyncClient extends com.oracle.bmc.http.internal
     /** Service instance for FunctionsManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FUNCTIONSMANAGEMENT")
+                    .serviceName(FunctionsManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://functions.{region}.oci.{secondLevelDomain}")
                     .build();

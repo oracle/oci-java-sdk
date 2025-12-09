@@ -18,7 +18,7 @@ public class OmhubResourceAnchorClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for OmhubResourceAnchor. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OMHUBRESOURCEANCHOR")
+                    .serviceName(OmhubResourceAnchorClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://multicloud.{region}.oci.{secondLevelDomain}")
                     .build();

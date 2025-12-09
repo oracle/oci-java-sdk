@@ -32,7 +32,7 @@ public class OperatorControlAssignmentAsyncClient
     /** Service instance for OperatorControlAssignment. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OPERATORCONTROLASSIGNMENT")
+                    .serviceName(OperatorControlAssignmentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://operator-access-control.{region}.oci.{secondLevelDomain}")

@@ -31,7 +31,7 @@ public class DesktopServiceAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for DesktopService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DESKTOPSERVICE")
+                    .serviceName(DesktopServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://api.desktops.{region}.oci.{secondLevelDomain}")

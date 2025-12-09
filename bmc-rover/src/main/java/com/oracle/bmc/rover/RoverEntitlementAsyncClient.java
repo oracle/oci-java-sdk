@@ -31,7 +31,7 @@ public class RoverEntitlementAsyncClient extends com.oracle.bmc.http.internal.Ba
     /** Service instance for RoverEntitlement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ROVERENTITLEMENT")
+                    .serviceName(RoverEntitlementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://rover.{region}.oci.{secondLevelDomain}")
                     .build();

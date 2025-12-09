@@ -32,7 +32,7 @@ public class OracleDBAzureBlobContainerAsyncClient
     /** Service instance for OracleDBAzureBlobContainer. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ORACLEDBAZUREBLOBCONTAINER")
+                    .serviceName(OracleDBAzureBlobContainerClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://dbmulticloud.{region}.oci.{secondLevelDomain}")

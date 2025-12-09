@@ -31,7 +31,7 @@ public class SubscribedServiceAsyncClient extends com.oracle.bmc.http.internal.B
     /** Service instance for SubscribedService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SUBSCRIBEDSERVICE")
+                    .serviceName(SubscribedServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
                     .build();

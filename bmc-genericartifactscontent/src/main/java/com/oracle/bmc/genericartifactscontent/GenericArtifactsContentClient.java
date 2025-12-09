@@ -18,7 +18,7 @@ public class GenericArtifactsContentClient extends com.oracle.bmc.http.internal.
     /** Service instance for GenericArtifactsContent. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("GENERICARTIFACTSCONTENT")
+                    .serviceName(GenericArtifactsContentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://generic.artifacts.{region}.oci.{secondLevelDomain}")

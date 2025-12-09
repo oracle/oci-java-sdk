@@ -18,7 +18,7 @@ public class GovernanceRuleClient extends com.oracle.bmc.http.internal.BaseSyncC
     /** Service instance for GovernanceRule. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("GOVERNANCERULE")
+                    .serviceName(GovernanceRuleClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://governance-rules.organizations.{region}.oci.{secondLevelDomain}")

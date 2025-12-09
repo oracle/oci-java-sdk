@@ -18,7 +18,7 @@ public class LoggingManagementClient extends com.oracle.bmc.http.internal.BaseSy
     /** Service instance for LoggingManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("LOGGINGMANAGEMENT")
+                    .serviceName(LoggingManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://logging.{region}.oci.{secondLevelDomain}")
                     .build();

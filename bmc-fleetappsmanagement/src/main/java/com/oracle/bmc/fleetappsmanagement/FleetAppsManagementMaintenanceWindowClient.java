@@ -19,7 +19,7 @@ public class FleetAppsManagementMaintenanceWindowClient
     /** Service instance for FleetAppsManagementMaintenanceWindow. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FLEETAPPSMANAGEMENTMAINTENANCEWINDOW")
+                    .serviceName(FleetAppsManagementMaintenanceWindowClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fams.{region}.oci.{secondLevelDomain}")
                     .build();

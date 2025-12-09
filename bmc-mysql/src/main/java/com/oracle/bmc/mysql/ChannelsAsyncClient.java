@@ -31,7 +31,7 @@ public class ChannelsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     /** Service instance for Channels. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CHANNELS")
+                    .serviceName(ChannelsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://mysql.{region}.ocp.{secondLevelDomain}")
                     .build();

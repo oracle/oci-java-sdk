@@ -18,7 +18,7 @@ public class BillingScheduleClient extends com.oracle.bmc.http.internal.BaseSync
     /** Service instance for BillingSchedule. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("BILLINGSCHEDULE")
+                    .serviceName(BillingScheduleClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -18,7 +18,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
     /** Service instance for ManagedInstance. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MANAGEDINSTANCE")
+                    .serviceName(ManagedInstanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://osmh.{region}.oci.{secondLevelDomain}")
                     .build();

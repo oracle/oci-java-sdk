@@ -31,7 +31,7 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     /** Service instance for JmsUtils. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("JMSUTILS")
+                    .serviceName(JmsUtilsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://javamanagement-utils.{region}.oci.{secondLevelDomain}")

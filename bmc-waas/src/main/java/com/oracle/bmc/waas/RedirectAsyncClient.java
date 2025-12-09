@@ -31,7 +31,7 @@ public class RedirectAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     /** Service instance for Redirect. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("REDIRECT")
+                    .serviceName(RedirectClient.class.getName())
                     .serviceEndpointPrefix("waas")
                     .serviceEndpointTemplate("https://waas.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -17,7 +17,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     /** Service instance for Nosql. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("NOSQL")
+                    .serviceName(NosqlClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://nosql.{region}.oci.{secondLevelDomain}")
                     .build();

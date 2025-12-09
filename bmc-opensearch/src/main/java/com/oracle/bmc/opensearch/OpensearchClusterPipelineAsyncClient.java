@@ -32,7 +32,7 @@ public class OpensearchClusterPipelineAsyncClient
     /** Service instance for OpensearchClusterPipeline. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OPENSEARCHCLUSTERPIPELINE")
+                    .serviceName(OpensearchClusterPipelineClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://search-indexing.{region}.oci.{secondLevelDomain}")

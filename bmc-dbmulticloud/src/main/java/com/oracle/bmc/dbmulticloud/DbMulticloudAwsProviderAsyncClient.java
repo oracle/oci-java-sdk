@@ -31,7 +31,7 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
     /** Service instance for DbMulticloudAwsProvider. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DBMULTICLOUDAWSPROVIDER")
+                    .serviceName(DbMulticloudAwsProviderClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://dbmulticloud.{region}.oci.{secondLevelDomain}")

@@ -17,7 +17,7 @@ public class PerfhubClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     /** Service instance for Perfhub. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("PERFHUB")
+                    .serviceName(PerfhubClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbmgmt.{region}.oci.{secondLevelDomain}")
                     .build();

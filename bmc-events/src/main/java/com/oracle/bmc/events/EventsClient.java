@@ -17,7 +17,7 @@ public class EventsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     /** Service instance for Events. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("EVENTS")
+                    .serviceName(EventsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://events.{region}.oci.{secondLevelDomain}")
                     .build();

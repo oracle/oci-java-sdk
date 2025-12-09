@@ -31,7 +31,7 @@ public class OciCacheConfigSetAsyncClient extends com.oracle.bmc.http.internal.B
     /** Service instance for OciCacheConfigSet. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OCICACHECONFIGSET")
+                    .serviceName(OciCacheConfigSetClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://redis.{region}.oci.{secondLevelDomain}")
                     .build();

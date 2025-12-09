@@ -18,7 +18,7 @@ public class OciCacheUserClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for OciCacheUser. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OCICACHEUSER")
+                    .serviceName(OciCacheUserClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://redis.{region}.oci.{secondLevelDomain}")
                     .build();

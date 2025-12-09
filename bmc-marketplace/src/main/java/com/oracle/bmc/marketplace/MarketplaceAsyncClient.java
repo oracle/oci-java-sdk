@@ -31,7 +31,7 @@ public class MarketplaceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     /** Service instance for Marketplace. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MARKETPLACE")
+                    .serviceName(MarketplaceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://marketplace.{region}.oci.{secondLevelDomain}")
                     .build();

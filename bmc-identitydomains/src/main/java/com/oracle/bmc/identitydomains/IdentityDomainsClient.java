@@ -18,7 +18,7 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     /** Service instance for IdentityDomains. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("IDENTITYDOMAINS")
+                    .serviceName(IdentityDomainsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://idcs-guid.identity.oraclecloud.com")
                     .build();

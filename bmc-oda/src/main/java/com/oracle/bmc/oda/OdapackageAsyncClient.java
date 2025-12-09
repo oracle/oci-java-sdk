@@ -31,7 +31,7 @@ public class OdapackageAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     /** Service instance for Odapackage. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ODAPACKAGE")
+                    .serviceName(OdapackageClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://digitalassistant-api.{region}.oci.{secondLevelDomain}")

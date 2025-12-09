@@ -31,7 +31,7 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
     /** Service instance for CapacityManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CAPACITYMANAGEMENT")
+                    .serviceName(CapacityManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://control-center-cp.{region}.oci.{secondLevelDomain}")

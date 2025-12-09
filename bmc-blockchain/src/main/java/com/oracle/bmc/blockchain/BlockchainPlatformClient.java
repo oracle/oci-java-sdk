@@ -18,7 +18,7 @@ public class BlockchainPlatformClient extends com.oracle.bmc.http.internal.BaseS
     /** Service instance for BlockchainPlatform. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("BLOCKCHAINPLATFORM")
+                    .serviceName(BlockchainPlatformClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://blockchain.{region}.oci.{secondLevelDomain}")
                     .build();

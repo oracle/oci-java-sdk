@@ -31,7 +31,7 @@ public class MigrationAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     /** Service instance for Migration. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MIGRATION")
+                    .serviceName(MigrationClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://cloudmigration.{region}.oci.{secondLevelDomain}")

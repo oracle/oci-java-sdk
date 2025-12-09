@@ -18,7 +18,7 @@ public class AnnouncementSubscriptionClient extends com.oracle.bmc.http.internal
     /** Service instance for AnnouncementSubscription. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ANNOUNCEMENTSUBSCRIPTION")
+                    .serviceName(AnnouncementSubscriptionClient.class.getName())
                     .serviceEndpointPrefix("announcements")
                     .serviceEndpointTemplate("https://announcements.{region}.{secondLevelDomain}")
                     .build();

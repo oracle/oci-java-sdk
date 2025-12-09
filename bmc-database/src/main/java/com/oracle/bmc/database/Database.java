@@ -5372,6 +5372,22 @@ public interface Database extends AutoCloseable {
     ListDbnodeSnapshotsResponse listDbnodeSnapshots(ListDbnodeSnapshotsRequest request);
 
     /**
+     * Gets the estimate cost savings of the Autonomous AI Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListEstimateCostSavingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListEstimateCostSavings API.
+     */
+    ListEstimateCostSavingsResponse listEstimateCostSavings(ListEstimateCostSavingsRequest request);
+
+    /**
      * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata
      * Cloud@Customer instances only. To list the Exadata Cloud Service infrastructure resources in
      * a compartment, use the {@link

@@ -32,7 +32,7 @@ public class AnnouncementsPreferencesAsyncClient
     /** Service instance for AnnouncementsPreferences. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ANNOUNCEMENTSPREFERENCES")
+                    .serviceName(AnnouncementsPreferencesClient.class.getName())
                     .serviceEndpointPrefix("announcements")
                     .serviceEndpointTemplate("https://announcements.{region}.{secondLevelDomain}")
                     .build();

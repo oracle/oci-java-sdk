@@ -31,7 +31,7 @@ public class WorkRequestsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     /** Service instance for WorkRequests. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("WORKREQUESTS")
+                    .serviceName(WorkRequestsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apigateway.{region}.oci.{secondLevelDomain}")
                     .build();

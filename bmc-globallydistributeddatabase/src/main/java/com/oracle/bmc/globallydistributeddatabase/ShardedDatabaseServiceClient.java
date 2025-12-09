@@ -18,7 +18,7 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
     /** Service instance for ShardedDatabaseService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SHARDEDDATABASESERVICE")
+                    .serviceName(ShardedDatabaseServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://globaldb.{region}.oci.{secondLevelDomain}")
                     .build();

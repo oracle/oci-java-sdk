@@ -31,7 +31,7 @@ public class MultiCloudsMetadataAsyncClient extends com.oracle.bmc.http.internal
     /** Service instance for MultiCloudsMetadata. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MULTICLOUDSMETADATA")
+                    .serviceName(MultiCloudsMetadataClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://multicloud.{region}.oci.{secondLevelDomain}")
                     .build();

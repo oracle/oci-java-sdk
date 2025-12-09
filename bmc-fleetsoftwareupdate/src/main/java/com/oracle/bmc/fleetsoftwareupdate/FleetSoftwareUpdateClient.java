@@ -18,7 +18,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for FleetSoftwareUpdate. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FLEETSOFTWAREUPDATE")
+                    .serviceName(FleetSoftwareUpdateClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://fleet-software-update.{region}.oci.{secondLevelDomain}")

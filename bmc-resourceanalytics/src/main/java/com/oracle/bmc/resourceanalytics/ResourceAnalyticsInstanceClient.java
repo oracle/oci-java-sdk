@@ -18,7 +18,7 @@ public class ResourceAnalyticsInstanceClient extends com.oracle.bmc.http.interna
     /** Service instance for ResourceAnalyticsInstance. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("RESOURCEANALYTICSINSTANCE")
+                    .serviceName(ResourceAnalyticsInstanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://resource-analytics.{region}.ocp.{secondLevelDomain}")

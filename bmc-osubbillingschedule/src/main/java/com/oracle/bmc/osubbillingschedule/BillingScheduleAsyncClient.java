@@ -31,7 +31,7 @@ public class BillingScheduleAsyncClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for BillingSchedule. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("BILLINGSCHEDULE")
+                    .serviceName(BillingScheduleClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://csaap-e.oracle.com")
                     .build();

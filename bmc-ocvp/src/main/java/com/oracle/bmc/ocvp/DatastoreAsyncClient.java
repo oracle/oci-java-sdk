@@ -31,7 +31,7 @@ public class DatastoreAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     /** Service instance for Datastore. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATASTORE")
+                    .serviceName(DatastoreClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://ocvps.{region}.oci.{secondLevelDomain}")
                     .build();

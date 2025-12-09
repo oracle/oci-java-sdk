@@ -31,7 +31,7 @@ public class AccountAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     /** Service instance for Account. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ACCOUNT")
+                    .serviceName(AccountClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://marketplace.{region}.oci.{secondLevelDomain}")
                     .build();

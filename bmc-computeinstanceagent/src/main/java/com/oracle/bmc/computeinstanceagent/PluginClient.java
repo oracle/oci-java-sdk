@@ -17,7 +17,7 @@ public class PluginClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     /** Service instance for Plugin. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("PLUGIN")
+                    .serviceName(PluginClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();

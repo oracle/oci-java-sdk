@@ -153,7 +153,8 @@ public final class CreateDedicatedAiClusterDetails
          * <p>The following shapes can only be used to deploy imported models: - A10_X1, A10_X2,
          * A10_X4 - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8 - A100_80G_X1, A100_80G_X2,
          * A100_80G_X4, A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H200_X1, H200_X2,
-         * H200_X4, H200_X8
+         * H200_X4, H200_X8 - OAI_A10_X2 - OAI_H100_X1 - OAI_H100_X2 - OAI_H200_X1 - OAI_A100_80G_X1
+         * - OAI_A100_80G_X2 - OAI_A100_40G_X1 - OAI_A100_40G_X4
          */
         @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
         private DedicatedAiCluster.UnitShape unitShape;
@@ -173,7 +174,8 @@ public final class CreateDedicatedAiClusterDetails
          * <p>The following shapes can only be used to deploy imported models: - A10_X1, A10_X2,
          * A10_X4 - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8 - A100_80G_X1, A100_80G_X2,
          * A100_80G_X4, A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H200_X1, H200_X2,
-         * H200_X4, H200_X8
+         * H200_X4, H200_X8 - OAI_A10_X2 - OAI_H100_X1 - OAI_H100_X2 - OAI_H200_X1 - OAI_A100_80G_X1
+         * - OAI_A100_80G_X2 - OAI_A100_40G_X1 - OAI_A100_40G_X4
          *
          * @param unitShape the value to set
          * @return this builder
@@ -381,7 +383,9 @@ public final class CreateDedicatedAiClusterDetails
      *
      * <p>The following shapes can only be used to deploy imported models: - A10_X1, A10_X2, A10_X4
      * - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8 - A100_80G_X1, A100_80G_X2, A100_80G_X4,
-     * A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H200_X1, H200_X2, H200_X4, H200_X8
+     * A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H200_X1, H200_X2, H200_X4, H200_X8 -
+     * OAI_A10_X2 - OAI_H100_X1 - OAI_H100_X2 - OAI_H200_X1 - OAI_A100_80G_X1 - OAI_A100_80G_X2 -
+     * OAI_A100_40G_X1 - OAI_A100_40G_X4
      */
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
     private final DedicatedAiCluster.UnitShape unitShape;
@@ -400,7 +404,9 @@ public final class CreateDedicatedAiClusterDetails
      *
      * <p>The following shapes can only be used to deploy imported models: - A10_X1, A10_X2, A10_X4
      * - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8 - A100_80G_X1, A100_80G_X2, A100_80G_X4,
-     * A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H200_X1, H200_X2, H200_X4, H200_X8
+     * A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H200_X1, H200_X2, H200_X4, H200_X8 -
+     * OAI_A10_X2 - OAI_H100_X1 - OAI_H100_X2 - OAI_H200_X1 - OAI_A100_80G_X1 - OAI_A100_80G_X2 -
+     * OAI_A100_40G_X1 - OAI_A100_40G_X4
      *
      * @return the value
      */

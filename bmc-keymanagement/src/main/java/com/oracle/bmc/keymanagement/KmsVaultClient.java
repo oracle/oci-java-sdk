@@ -18,7 +18,7 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for KmsVault. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("KMSVAULT")
+                    .serviceName(KmsVaultClient.class.getName())
                     .serviceEndpointPrefix("kms")
                     .serviceEndpointTemplate("https://kms.{region}.{secondLevelDomain}")
                     .build();

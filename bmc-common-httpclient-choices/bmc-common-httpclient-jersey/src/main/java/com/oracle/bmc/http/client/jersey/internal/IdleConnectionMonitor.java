@@ -64,6 +64,7 @@ public class IdleConnectionMonitor extends Thread {
                 if (instance == null) {
                     instance = new IdleConnectionMonitor(waitTimeInSeconds);
                     instance.start();
+                    registerShutdownHook();
                 }
             }
         } else {
@@ -110,8 +111,10 @@ public class IdleConnectionMonitor extends Thread {
                 TimeUnit.SECONDS.sleep(waitTimeInSeconds);
             } catch (InterruptedException ex) {
                 // terminate
+                clearIdleConnectionMonitorThread();
                 Thread.currentThread().interrupt();
                 LOG.debug("IdleConnectionMonitorThread was interrupted, terminating", ex);
+                break;
             }
         }
     }
@@ -146,6 +149,20 @@ public class IdleConnectionMonitor extends Thread {
         }
     }
 
+    /**
+     * Registers a shutdown hook with the Java Runtime to ensure that the IdleConnectionMonitor is
+     * properly shut down when the JVM exits. The shutdown hook will invoke the {@link #shutdown()}
+     * method to stop the IdleConnectionMonitor thread and clear its connection managers.
+     */
+    protected static void registerShutdownHook() {
+        LOG.debug("Registering IdleConnectionMonitor shutdown hook");
+        Runtime.getRuntime()
+                .addShutdownHook(
+                        new Thread(
+                                IdleConnectionMonitor::shutdown,
+                                "idle-connection-monitor-shutdown-hook"));
+    }
+
     /** Remove stale references that have been garbage-collected already. */
     // @VisibleForTesting
     public static void cleanStaleReferences() {
@@ -164,15 +181,21 @@ public class IdleConnectionMonitor extends Thread {
      */
     public static synchronized boolean shutdown() {
         if (instance != null) {
-            LOG.info("Shutting down IdleConnectionMonitor");
-            instance.markShuttingDown();
             instance.interrupt();
-            connectionManagers.clear();
-            cleanStaleReferences();
-            instance = null;
+            clearIdleConnectionMonitorThread();
             return true;
         }
         return false;
+    }
+
+    private static synchronized void clearIdleConnectionMonitorThread() {
+        if (instance != null) {
+            LOG.info("Shutting down IdleConnectionMonitor");
+            instance.markShuttingDown();
+            connectionManagers.clear();
+            cleanStaleReferences();
+            instance = null;
+        }
     }
 
     private void markShuttingDown() {

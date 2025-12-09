@@ -31,7 +31,7 @@ public class InternalDemandSignalAsyncClient extends com.oracle.bmc.http.interna
     /** Service instance for InternalDemandSignal. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("INTERNALDEMANDSIGNAL")
+                    .serviceName(InternalDemandSignalClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://control-center-cp.{region}.oci.{secondLevelDomain}")

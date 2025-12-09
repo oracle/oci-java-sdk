@@ -18,7 +18,7 @@ public class NotificationControlPlaneClient extends com.oracle.bmc.http.internal
     /** Service instance for NotificationControlPlane. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("NOTIFICATIONCONTROLPLANE")
+                    .serviceName(NotificationControlPlaneClient.class.getName())
                     .serviceEndpointPrefix("notification")
                     .serviceEndpointTemplate("https://notification.{region}.{secondLevelDomain}")
                     .build();

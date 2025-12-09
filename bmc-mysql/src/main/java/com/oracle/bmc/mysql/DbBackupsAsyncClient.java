@@ -31,7 +31,7 @@ public class DbBackupsAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     /** Service instance for DbBackups. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DBBACKUPS")
+                    .serviceName(DbBackupsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://mysql.{region}.ocp.{secondLevelDomain}")
                     .build();

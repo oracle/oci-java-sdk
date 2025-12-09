@@ -31,7 +31,7 @@ public class ConfigAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     /** Service instance for Config. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CONFIG")
+                    .serviceName(ConfigClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apm-config.{region}.oci.{secondLevelDomain}")
                     .build();

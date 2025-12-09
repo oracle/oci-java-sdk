@@ -31,7 +31,7 @@ public class DashboardGroupAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for DashboardGroup. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DASHBOARDGROUP")
+                    .serviceName(DashboardGroupClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dashboard.{region}.oci.{secondLevelDomain}")
                     .build();

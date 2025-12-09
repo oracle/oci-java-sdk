@@ -31,7 +31,7 @@ public class MulticloudResourcesAsyncClient extends com.oracle.bmc.http.internal
     /** Service instance for MulticloudResources. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MULTICLOUDRESOURCES")
+                    .serviceName(MulticloudResourcesClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://multicloud.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class SubscribersAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     /** Service instance for Subscribers. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SUBSCRIBERS")
+                    .serviceName(SubscribersClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apigateway.{region}.oci.{secondLevelDomain}")
                     .build();

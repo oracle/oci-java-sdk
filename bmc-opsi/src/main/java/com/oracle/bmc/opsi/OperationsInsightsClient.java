@@ -18,7 +18,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     /** Service instance for OperationsInsights. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OPERATIONSINSIGHTS")
+                    .serviceName(OperationsInsightsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://operationsinsights.{region}.oci.{secondLevelDomain}")

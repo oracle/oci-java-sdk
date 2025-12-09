@@ -31,7 +31,7 @@ public class DatabaseMigrationAsyncClient extends com.oracle.bmc.http.internal.B
     /** Service instance for DatabaseMigration. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATABASEMIGRATION")
+                    .serviceName(DatabaseMigrationClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://odms.{region}.oci.{secondLevelDomain}")
                     .build();

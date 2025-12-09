@@ -18,7 +18,7 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
     /** Service instance for GenerativeAiAgent. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("GENERATIVEAIAGENT")
+                    .serviceName(GenerativeAiAgentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://agent.generativeai.{region}.oci.{secondLevelDomain}")

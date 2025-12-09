@@ -18,7 +18,7 @@ public class LustreFileStorageClient extends com.oracle.bmc.http.internal.BaseSy
     /** Service instance for LustreFileStorage. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("LUSTREFILESTORAGE")
+                    .serviceName(LustreFileStorageClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://lustre-file-storage.{region}.oci.{secondLevelDomain}")

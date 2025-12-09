@@ -31,7 +31,7 @@ public class OceInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     /** Service instance for OceInstance. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OCEINSTANCE")
+                    .serviceName(OceInstanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://cp.oce.{region}.ocp.{secondLevelDomain}")
                     .build();

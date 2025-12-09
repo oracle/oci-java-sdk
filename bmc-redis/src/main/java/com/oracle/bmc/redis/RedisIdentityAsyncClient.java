@@ -31,7 +31,7 @@ public class RedisIdentityAsyncClient extends com.oracle.bmc.http.internal.BaseA
     /** Service instance for RedisIdentity. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("REDISIDENTITY")
+                    .serviceName(RedisIdentityClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://redis.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for VirtualNetwork. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("VIRTUALNETWORK")
+                    .serviceName(VirtualNetworkClient.class.getName())
                     .serviceEndpointPrefix("iaas")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();

@@ -19,7 +19,7 @@ public class WeblogicManagementServiceConfigurationClient
     /** Service instance for WeblogicManagementServiceConfiguration. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("WEBLOGICMANAGEMENTSERVICECONFIGURATION")
+                    .serviceName(WeblogicManagementServiceConfigurationClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://api.weblogicmanagement.{region}.oci.{secondLevelDomain}")

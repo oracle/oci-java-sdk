@@ -31,7 +31,7 @@ public class LogSearchAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     /** Service instance for LogSearch. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("LOGSEARCH")
+                    .serviceName(LogSearchClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://logging.{region}.oci.{secondLevelDomain}")
                     .build();

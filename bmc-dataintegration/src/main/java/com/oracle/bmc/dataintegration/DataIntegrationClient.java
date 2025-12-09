@@ -18,7 +18,7 @@ public class DataIntegrationClient extends com.oracle.bmc.http.internal.BaseSync
     /** Service instance for DataIntegration. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATAINTEGRATION")
+                    .serviceName(DataIntegrationClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://dataintegration.{region}.oci.{secondLevelDomain}")

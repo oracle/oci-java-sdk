@@ -31,7 +31,7 @@ public class MediaStreamAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     /** Service instance for MediaStream. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MEDIASTREAM")
+                    .serviceName(MediaStreamClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://mediaservices.{region}.oci.{secondLevelDomain}")

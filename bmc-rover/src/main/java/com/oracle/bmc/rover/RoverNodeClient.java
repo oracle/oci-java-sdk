@@ -18,7 +18,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for RoverNode. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ROVERNODE")
+                    .serviceName(RoverNodeClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://rover.{region}.oci.{secondLevelDomain}")
                     .build();

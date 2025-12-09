@@ -18,7 +18,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     /** Service instance for FileStorage. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FILESTORAGE")
+                    .serviceName(FileStorageClient.class.getName())
                     .serviceEndpointPrefix("filestorage")
                     .serviceEndpointTemplate("https://filestorage.{region}.{secondLevelDomain}")
                     .endpointServiceName("filestorage")

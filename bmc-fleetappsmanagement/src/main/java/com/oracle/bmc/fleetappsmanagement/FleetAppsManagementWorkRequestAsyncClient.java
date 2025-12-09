@@ -32,7 +32,7 @@ public class FleetAppsManagementWorkRequestAsyncClient
     /** Service instance for FleetAppsManagementWorkRequest. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FLEETAPPSMANAGEMENTWORKREQUEST")
+                    .serviceName(FleetAppsManagementWorkRequestClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fams.{region}.oci.{secondLevelDomain}")
                     .build();

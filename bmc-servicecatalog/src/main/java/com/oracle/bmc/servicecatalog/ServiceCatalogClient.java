@@ -18,7 +18,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
     /** Service instance for ServiceCatalog. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SERVICECATALOG")
+                    .serviceName(ServiceCatalogClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://service-catalog.{region}.oci.{secondLevelDomain}")

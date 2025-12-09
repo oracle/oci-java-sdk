@@ -31,7 +31,7 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     /** Service instance for DataSafe. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATASAFE")
+                    .serviceName(DataSafeClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://datasafe.{region}.oci.{secondLevelDomain}")
                     .build();

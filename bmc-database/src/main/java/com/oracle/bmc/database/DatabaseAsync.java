@@ -5435,6 +5435,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the estimate cost savings of the Autonomous AI Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListEstimateCostSavingsResponse> listEstimateCostSavings(
+            ListEstimateCostSavingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListEstimateCostSavingsRequest, ListEstimateCostSavingsResponse>
+                    handler);
+
+    /**
      * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata
      * Cloud@Customer instances only. To list the Exadata Cloud Service infrastructure resources in
      * a compartment, use the {@link

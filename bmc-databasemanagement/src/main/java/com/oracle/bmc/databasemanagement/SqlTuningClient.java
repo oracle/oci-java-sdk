@@ -18,7 +18,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for SqlTuning. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SQLTUNING")
+                    .serviceName(SqlTuningClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbmgmt.{region}.oci.{secondLevelDomain}")
                     .build();

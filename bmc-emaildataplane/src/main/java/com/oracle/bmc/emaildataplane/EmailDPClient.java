@@ -17,7 +17,7 @@ public class EmailDPClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     /** Service instance for EmailDP. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("EMAILDP")
+                    .serviceName(EmailDPClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://cell0.submit.email.{region}.oci.{secondLevelDomain}")

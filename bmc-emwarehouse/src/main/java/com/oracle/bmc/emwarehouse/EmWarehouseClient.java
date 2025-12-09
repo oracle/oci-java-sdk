@@ -18,7 +18,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
     /** Service instance for EmWarehouse. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("EMWAREHOUSE")
+                    .serviceName(EmWarehouseClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://operationsinsights.{region}.oci.{secondLevelDomain}")

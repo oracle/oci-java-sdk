@@ -17,7 +17,7 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     /** Service instance for Queue. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("QUEUE")
+                    .serviceName(QueueClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://messaging.{region}.oci.{secondLevelDomain}")
                     .build();

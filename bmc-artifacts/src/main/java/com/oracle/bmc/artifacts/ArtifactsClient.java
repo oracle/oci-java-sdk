@@ -18,7 +18,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for Artifacts. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ARTIFACTS")
+                    .serviceName(ArtifactsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://artifacts.{region}.oci.{secondLevelDomain}")
                     .build();

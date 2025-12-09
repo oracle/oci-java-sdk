@@ -31,7 +31,7 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     /** Service instance for WorkRequest. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("WORKREQUEST")
+                    .serviceName(WorkRequestClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://delegate-access-control.{region}.oci.{secondLevelDomain}")

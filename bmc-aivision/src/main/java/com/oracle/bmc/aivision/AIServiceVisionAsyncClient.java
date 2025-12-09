@@ -31,7 +31,7 @@ public class AIServiceVisionAsyncClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for AIServiceVision. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("AISERVICEVISION")
+                    .serviceName(AIServiceVisionClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://vision.aiservice.{region}.oci.{secondLevelDomain}")

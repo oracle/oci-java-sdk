@@ -31,7 +31,7 @@ public class CommonAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     /** Service instance for Common. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("COMMON")
+                    .serviceName(CommonClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://cloudbridge.{region}.oci.{secondLevelDomain}")
                     .build();

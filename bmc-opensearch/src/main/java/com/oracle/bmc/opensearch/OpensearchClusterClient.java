@@ -18,7 +18,7 @@ public class OpensearchClusterClient extends com.oracle.bmc.http.internal.BaseSy
     /** Service instance for OpensearchCluster. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OPENSEARCHCLUSTER")
+                    .serviceName(OpensearchClusterClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://search-indexing.{region}.oci.{secondLevelDomain}")

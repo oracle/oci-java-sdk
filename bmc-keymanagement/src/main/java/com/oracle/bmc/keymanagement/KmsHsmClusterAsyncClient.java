@@ -31,7 +31,7 @@ public class KmsHsmClusterAsyncClient extends com.oracle.bmc.http.internal.BaseA
     /** Service instance for KmsHsmCluster. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("KMSHSMCLUSTER")
+                    .serviceName(KmsHsmClusterClient.class.getName())
                     .serviceEndpointPrefix("kms")
                     .serviceEndpointTemplate("https://kms.{region}.{secondLevelDomain}")
                     .build();

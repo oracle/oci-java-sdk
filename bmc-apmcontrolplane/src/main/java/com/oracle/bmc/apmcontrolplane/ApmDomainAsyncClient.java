@@ -31,7 +31,7 @@ public class ApmDomainAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     /** Service instance for ApmDomain. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("APMDOMAIN")
+                    .serviceName(ApmDomainClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apm-cp.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class InvoiceSummaryAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for InvoiceSummary. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("INVOICESUMMARY")
+                    .serviceName(InvoiceSummaryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
                     .build();

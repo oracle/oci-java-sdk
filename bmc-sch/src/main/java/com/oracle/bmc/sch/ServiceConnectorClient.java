@@ -18,7 +18,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
     /** Service instance for ServiceConnector. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SERVICECONNECTOR")
+                    .serviceName(ServiceConnectorClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://service-connector-hub.{region}.oci.{secondLevelDomain}")

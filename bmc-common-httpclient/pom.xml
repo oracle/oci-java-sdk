@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.77.0</version>
+    <version>3.77.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -26,7 +26,7 @@
       --add-opens=java.base/sun.security.x509=ALL-UNNAMED
     </maven-surefire-plugin.argLine>
   </properties>
-  
+
   <profiles>
     <profile>
       <id>jdk-8-only</id>

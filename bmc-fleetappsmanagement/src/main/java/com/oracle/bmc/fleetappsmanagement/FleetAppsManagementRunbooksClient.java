@@ -18,7 +18,7 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
     /** Service instance for FleetAppsManagementRunbooks. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FLEETAPPSMANAGEMENTRUNBOOKS")
+                    .serviceName(FleetAppsManagementRunbooksClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fams.{region}.oci.{secondLevelDomain}")
                     .build();

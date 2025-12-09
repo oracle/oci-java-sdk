@@ -31,7 +31,7 @@ public class ConnectorPluginsAsyncClient extends com.oracle.bmc.http.internal.Ba
     /** Service instance for ConnectorPlugins. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CONNECTORPLUGINS")
+                    .serviceName(ConnectorPluginsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://service-connector-hub.{region}.oci.{secondLevelDomain}")

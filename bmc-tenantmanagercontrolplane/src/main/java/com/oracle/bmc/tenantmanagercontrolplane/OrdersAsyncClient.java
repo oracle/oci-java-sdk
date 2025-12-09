@@ -31,7 +31,7 @@ public class OrdersAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     /** Service instance for Orders. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ORDERS")
+                    .serviceName(OrdersClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://organizations.{region}.oci.{secondLevelDomain}")

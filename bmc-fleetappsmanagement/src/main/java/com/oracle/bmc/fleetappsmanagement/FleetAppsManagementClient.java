@@ -18,7 +18,7 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for FleetAppsManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FLEETAPPSMANAGEMENT")
+                    .serviceName(FleetAppsManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fams.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class StreamAdminAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     /** Service instance for StreamAdmin. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("STREAMADMIN")
+                    .serviceName(StreamAdminClient.class.getName())
                     .serviceEndpointPrefix("streams")
                     .serviceEndpointTemplate("https://streaming.{region}.oci.{secondLevelDomain}")
                     .build();

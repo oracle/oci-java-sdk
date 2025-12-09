@@ -31,7 +31,7 @@ public class TenancyAttachmentAsyncClient extends com.oracle.bmc.http.internal.B
     /** Service instance for TenancyAttachment. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("TENANCYATTACHMENT")
+                    .serviceName(TenancyAttachmentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://resource-analytics.{region}.ocp.{secondLevelDomain}")

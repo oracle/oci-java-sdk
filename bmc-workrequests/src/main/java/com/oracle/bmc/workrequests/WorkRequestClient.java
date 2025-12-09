@@ -18,7 +18,7 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
     /** Service instance for WorkRequest. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("WORKREQUEST")
+                    .serviceName(WorkRequestClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();

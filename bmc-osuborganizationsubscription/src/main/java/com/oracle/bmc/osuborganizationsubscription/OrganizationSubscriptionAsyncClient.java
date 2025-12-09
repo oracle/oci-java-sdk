@@ -32,7 +32,7 @@ public class OrganizationSubscriptionAsyncClient
     /** Service instance for OrganizationSubscription. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ORGANIZATIONSUBSCRIPTION")
+                    .serviceName(OrganizationSubscriptionClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://csaap-e.oracle.com")
                     .build();

@@ -19,7 +19,7 @@ public class DistributedDbPrivateEndpointServiceClient
     /** Service instance for DistributedDbPrivateEndpointService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DISTRIBUTEDDBPRIVATEENDPOINTSERVICE")
+                    .serviceName(DistributedDbPrivateEndpointServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://globaldb.{region}.oci.{secondLevelDomain}")
                     .build();

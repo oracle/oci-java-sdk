@@ -31,7 +31,7 @@ public class MonitoringAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     /** Service instance for Monitoring. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MONITORING")
+                    .serviceName(MonitoringClient.class.getName())
                     .serviceEndpointPrefix("telemetry")
                     .serviceEndpointTemplate("https://telemetry.{region}.{secondLevelDomain}")
                     .build();

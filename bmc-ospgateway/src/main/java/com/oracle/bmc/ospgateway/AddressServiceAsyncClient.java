@@ -31,7 +31,7 @@ public class AddressServiceAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for AddressService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ADDRESSSERVICE")
+                    .serviceName(AddressServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://osp-oci-integ.osp.{region}.oci.{secondLevelDomain}")

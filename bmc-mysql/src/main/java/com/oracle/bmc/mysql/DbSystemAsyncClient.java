@@ -31,7 +31,7 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     /** Service instance for DbSystem. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DBSYSTEM")
+                    .serviceName(DbSystemClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://mysql.{region}.ocp.{secondLevelDomain}")
                     .build();

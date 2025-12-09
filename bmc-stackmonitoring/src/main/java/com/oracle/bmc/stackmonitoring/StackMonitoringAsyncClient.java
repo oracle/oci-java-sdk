@@ -31,7 +31,7 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for StackMonitoring. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("STACKMONITORING")
+                    .serviceName(StackMonitoringClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://stack-monitoring.{region}.oci.{secondLevelDomain}")

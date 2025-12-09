@@ -18,7 +18,7 @@ public class PrivilegedApiWorkRequestClient extends com.oracle.bmc.http.internal
     /** Service instance for PrivilegedApiWorkRequest. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("PRIVILEGEDAPIWORKREQUEST")
+                    .serviceName(PrivilegedApiWorkRequestClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://pactl.{region}.oci.{secondLevelDomain}")
                     .build();

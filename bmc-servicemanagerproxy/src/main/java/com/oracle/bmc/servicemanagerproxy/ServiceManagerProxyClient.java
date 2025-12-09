@@ -18,7 +18,7 @@ public class ServiceManagerProxyClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for ServiceManagerProxy. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SERVICEMANAGERPROXY")
+                    .serviceName(ServiceManagerProxyClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://smproxy.{region}.ocs.{secondLevelDomain}")
                     .build();

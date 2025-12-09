@@ -18,7 +18,7 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
     /** Service instance for ReportingManagedInstance. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("REPORTINGMANAGEDINSTANCE")
+                    .serviceName(ReportingManagedInstanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://osmh.{region}.oci.{secondLevelDomain}")
                     .build();

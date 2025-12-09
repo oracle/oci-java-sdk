@@ -31,7 +31,7 @@ public class AIServiceLanguageAsyncClient extends com.oracle.bmc.http.internal.B
     /** Service instance for AIServiceLanguage. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("AISERVICELANGUAGE")
+                    .serviceName(AIServiceLanguageClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://language.aiservice.{region}.oci.{secondLevelDomain}")

@@ -31,7 +31,7 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     /** Service instance for KafkaCluster. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("KAFKACLUSTER")
+                    .serviceName(KafkaClusterClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://kafka.{region}.oci.{secondLevelDomain}")
                     .build();

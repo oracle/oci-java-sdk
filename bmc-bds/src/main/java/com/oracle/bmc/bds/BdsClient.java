@@ -17,7 +17,7 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     /** Service instance for Bds. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("BDS")
+                    .serviceName(BdsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://bigdataservice.{region}.oci.{secondLevelDomain}")

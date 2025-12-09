@@ -18,7 +18,7 @@ public class OciCacheDefaultConfigSetClient extends com.oracle.bmc.http.internal
     /** Service instance for OciCacheDefaultConfigSet. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OCICACHEDEFAULTCONFIGSET")
+                    .serviceName(OciCacheDefaultConfigSetClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://redis.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class OccDemandSignalAsyncClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for OccDemandSignal. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OCCDEMANDSIGNAL")
+                    .serviceName(OccDemandSignalClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://control-center-ds.{region}.oci.{secondLevelDomain}")

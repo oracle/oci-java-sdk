@@ -18,7 +18,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for Database. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATABASE")
+                    .serviceName(DatabaseClient.class.getName())
                     .serviceEndpointPrefix("database")
                     .serviceEndpointTemplate("https://database.{region}.{secondLevelDomain}")
                     .build();
@@ -10298,6 +10298,42 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListDbnodeSnapshotsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDbnodeSnapshotsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListEstimateCostSavingsResponse listEstimateCostSavings(
+            ListEstimateCostSavingsRequest request) {
+        Objects.requireNonNull(request.getIsCpuAutoscale(), "isCpuAutoscale is required");
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, ListEstimateCostSavingsResponse::builder)
+                .logger(LOG, "listEstimateCostSavings")
+                .serviceDetails(
+                        "Database",
+                        "ListEstimateCostSavings",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListEstimateCostSavings")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEstimateCostSavingsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("estimateCostSavings")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("isCpuAutoscale", request.getIsCpuAutoscale())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.EstimateCostSavingsSummaryCollection.class,
+                        ListEstimateCostSavingsResponse.Builder
+                                ::estimateCostSavingsSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEstimateCostSavingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListEstimateCostSavingsResponse.Builder::opcNextPage)
                 .callSync();
     }
 

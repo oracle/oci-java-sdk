@@ -31,7 +31,7 @@ public class FunctionsInvokeAsyncClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for FunctionsInvoke. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FUNCTIONSINVOKE")
+                    .serviceName(FunctionsInvokeClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://functions.{region}.oci.{secondLevelDomain}")
                     .build();

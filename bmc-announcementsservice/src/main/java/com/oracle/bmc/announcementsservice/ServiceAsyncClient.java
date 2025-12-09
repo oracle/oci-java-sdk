@@ -31,7 +31,7 @@ public class ServiceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     /** Service instance for Service. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SERVICE")
+                    .serviceName(ServiceClient.class.getName())
                     .serviceEndpointPrefix("announcements")
                     .serviceEndpointTemplate("https://announcements.{region}.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
     /** Service instance for DistributedDbService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DISTRIBUTEDDBSERVICE")
+                    .serviceName(DistributedDbServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://globaldb.{region}.oci.{secondLevelDomain}")
                     .build();

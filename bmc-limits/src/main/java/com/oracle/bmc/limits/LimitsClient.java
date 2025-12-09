@@ -17,7 +17,7 @@ public class LimitsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     /** Service instance for Limits. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("LIMITS")
+                    .serviceName(LimitsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://limits.{region}.oci.{secondLevelDomain}")
                     .build();

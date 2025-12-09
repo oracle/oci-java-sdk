@@ -18,7 +18,7 @@ public class LoadBalancerClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for LoadBalancer. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("LOADBALANCER")
+                    .serviceName(LoadBalancerClient.class.getName())
                     .serviceEndpointPrefix("iaas")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();

@@ -18,7 +18,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for LogAnalytics. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("LOGANALYTICS")
+                    .serviceName(LogAnalyticsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://loganalytics.{region}.oci.{secondLevelDomain}")

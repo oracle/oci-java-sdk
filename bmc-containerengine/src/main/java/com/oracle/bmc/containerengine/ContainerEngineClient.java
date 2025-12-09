@@ -18,7 +18,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
     /** Service instance for ContainerEngine. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CONTAINERENGINE")
+                    .serviceName(ContainerEngineClient.class.getName())
                     .serviceEndpointPrefix("containerengine")
                     .serviceEndpointTemplate(
                             "https://containerengine.{region}.oci.{secondLevelDomain}")

@@ -31,7 +31,7 @@ public class OfferAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     /** Service instance for Offer. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OFFER")
+                    .serviceName(OfferClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://private-offer.{region}.oci.{secondLevelDomain}")

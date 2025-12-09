@@ -17,7 +17,7 @@ public class AuditClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     /** Service instance for Audit. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("AUDIT")
+                    .serviceName(AuditClient.class.getName())
                     .serviceEndpointPrefix("audit")
                     .serviceEndpointTemplate("https://audit.{region}.{secondLevelDomain}")
                     .build();

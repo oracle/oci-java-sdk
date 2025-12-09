@@ -18,7 +18,7 @@ public class HealthChecksClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for HealthChecks. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("HEALTHCHECKS")
+                    .serviceName(HealthChecksClient.class.getName())
                     .serviceEndpointPrefix("healthchecks")
                     .serviceEndpointTemplate(
                             "https://healthchecks.{region}.oci.{secondLevelDomain}")

@@ -18,7 +18,7 @@ public class DemandSignalClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for DemandSignal. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DEMANDSIGNAL")
+                    .serviceName(DemandSignalClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://control-center-cp.{region}.oci.{secondLevelDomain}")

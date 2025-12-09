@@ -17,7 +17,7 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     /** Service instance for Iot. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("IOT")
+                    .serviceName(IotClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://iot.{region}.oci.{secondLevelDomain}")
                     .build();

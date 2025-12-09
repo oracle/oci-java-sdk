@@ -31,7 +31,7 @@ public class TraceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     /** Service instance for Trace. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("TRACE")
+                    .serviceName(TraceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apm-trace.{region}.oci.{secondLevelDomain}")
                     .build();

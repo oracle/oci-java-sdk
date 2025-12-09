@@ -31,7 +31,7 @@ public class DataplaneAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     /** Service instance for Dataplane. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATAPLANE")
+                    .serviceName(DataplaneClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://auth.{region}.{secondLevelDomain}")
                     .build();

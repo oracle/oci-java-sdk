@@ -5825,6 +5825,128 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listEstimateCostSavings operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListEstimateCostSavingsResponse> listEstimateCostSavingsResponseIterator(
+            final ListEstimateCostSavingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListEstimateCostSavingsRequest.Builder,
+                ListEstimateCostSavingsRequest,
+                ListEstimateCostSavingsResponse>(
+                new java.util.function.Supplier<ListEstimateCostSavingsRequest.Builder>() {
+                    @Override
+                    public ListEstimateCostSavingsRequest.Builder get() {
+                        return ListEstimateCostSavingsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEstimateCostSavingsResponse, String>() {
+                    @Override
+                    public String apply(ListEstimateCostSavingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEstimateCostSavingsRequest.Builder>,
+                        ListEstimateCostSavingsRequest>() {
+                    @Override
+                    public ListEstimateCostSavingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEstimateCostSavingsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEstimateCostSavingsRequest, ListEstimateCostSavingsResponse>() {
+                    @Override
+                    public ListEstimateCostSavingsResponse apply(
+                            ListEstimateCostSavingsRequest request) {
+                        return client.listEstimateCostSavings(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.EstimateCostSavingSummary} objects contained in responses from
+     * the listEstimateCostSavings operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.EstimateCostSavingSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.EstimateCostSavingSummary>
+            listEstimateCostSavingsRecordIterator(final ListEstimateCostSavingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListEstimateCostSavingsRequest.Builder,
+                ListEstimateCostSavingsRequest,
+                ListEstimateCostSavingsResponse,
+                com.oracle.bmc.database.model.EstimateCostSavingSummary>(
+                new java.util.function.Supplier<ListEstimateCostSavingsRequest.Builder>() {
+                    @Override
+                    public ListEstimateCostSavingsRequest.Builder get() {
+                        return ListEstimateCostSavingsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEstimateCostSavingsResponse, String>() {
+                    @Override
+                    public String apply(ListEstimateCostSavingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEstimateCostSavingsRequest.Builder>,
+                        ListEstimateCostSavingsRequest>() {
+                    @Override
+                    public ListEstimateCostSavingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEstimateCostSavingsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEstimateCostSavingsRequest, ListEstimateCostSavingsResponse>() {
+                    @Override
+                    public ListEstimateCostSavingsResponse apply(
+                            ListEstimateCostSavingsRequest request) {
+                        return client.listEstimateCostSavings(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListEstimateCostSavingsResponse,
+                        java.util.List<com.oracle.bmc.database.model.EstimateCostSavingSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.EstimateCostSavingSummary>
+                            apply(ListEstimateCostSavingsResponse response) {
+                        return response.getEstimateCostSavingsSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listExadataInfrastructures operation. This iterable will fetch more data from the server as
      * needed.
      *

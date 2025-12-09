@@ -31,7 +31,7 @@ public class SecurityAttributeAsyncClient extends com.oracle.bmc.http.internal.B
     /** Service instance for SecurityAttribute. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SECURITYATTRIBUTE")
+                    .serviceName(SecurityAttributeClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://security-attribute.{region}.oci.{secondLevelDomain}")

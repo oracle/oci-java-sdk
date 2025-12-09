@@ -18,7 +18,7 @@ public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSync
     /** Service instance for ResourceManager. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("RESOURCEMANAGER")
+                    .serviceName(ResourceManagerClient.class.getName())
                     .serviceEndpointPrefix("resourcemanager")
                     .serviceEndpointTemplate("https://resourcemanager.{region}.{secondLevelDomain}")
                     .build();

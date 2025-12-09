@@ -32,7 +32,7 @@ public class OracleDbAzureVaultAssociationAsyncClient
     /** Service instance for OracleDbAzureVaultAssociation. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ORACLEDBAZUREVAULTASSOCIATION")
+                    .serviceName(OracleDbAzureVaultAssociationClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://dbmulticloud.{region}.oci.{secondLevelDomain}")
