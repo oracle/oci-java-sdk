@@ -31,7 +31,7 @@ public class RewardsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     /** Service instance for Rewards. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("REWARDS")
+                    .serviceName(RewardsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
                     .build();

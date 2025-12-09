@@ -31,7 +31,7 @@ public class OperatorActionsAsyncClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for OperatorActions. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OPERATORACTIONS")
+                    .serviceName(OperatorActionsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://operator-access-control.{region}.oci.{secondLevelDomain}")

@@ -31,7 +31,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     /** Service instance for DbManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DBMANAGEMENT")
+                    .serviceName(DbManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbmgmt.{region}.oci.{secondLevelDomain}")
                     .build();

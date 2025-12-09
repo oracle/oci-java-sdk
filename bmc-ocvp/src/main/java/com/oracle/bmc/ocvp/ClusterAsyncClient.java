@@ -31,7 +31,7 @@ public class ClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     /** Service instance for Cluster. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CLUSTER")
+                    .serviceName(ClusterClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://ocvps.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -18,7 +18,7 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
     /** Service instance for DataLabelingManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATALABELINGMANAGEMENT")
+                    .serviceName(DataLabelingManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://datalabeling-cp.{region}.oci.{secondLevelDomain}")

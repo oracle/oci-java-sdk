@@ -17,7 +17,7 @@ public class GatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     /** Service instance for Gateway. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("GATEWAY")
+                    .serviceName(GatewayClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apigateway.{region}.oci.{secondLevelDomain}")
                     .build();

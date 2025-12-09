@@ -31,7 +31,7 @@ public class ManagedMySqlDatabasesAsyncClient extends com.oracle.bmc.http.intern
     /** Service instance for ManagedMySqlDatabases. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MANAGEDMYSQLDATABASES")
+                    .serviceName(ManagedMySqlDatabasesClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbmgmt.{region}.oci.{secondLevelDomain}")
                     .build();

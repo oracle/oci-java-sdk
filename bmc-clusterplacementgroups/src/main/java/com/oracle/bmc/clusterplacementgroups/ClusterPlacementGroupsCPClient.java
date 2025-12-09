@@ -18,7 +18,7 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
     /** Service instance for ClusterPlacementGroupsCP. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CLUSTERPLACEMENTGROUPSCP")
+                    .serviceName(ClusterPlacementGroupsCPClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://clusterPlacementGroups.{region}.oci.{secondLevelDomain}")

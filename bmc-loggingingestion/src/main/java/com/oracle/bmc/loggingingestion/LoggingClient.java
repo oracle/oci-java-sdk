@@ -17,7 +17,7 @@ public class LoggingClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     /** Service instance for Logging. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("LOGGING")
+                    .serviceName(LoggingClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://ingestion.logging.{region}.oci.{secondLevelDomain}")

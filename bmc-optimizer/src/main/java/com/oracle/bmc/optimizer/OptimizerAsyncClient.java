@@ -31,7 +31,7 @@ public class OptimizerAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     /** Service instance for Optimizer. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OPTIMIZER")
+                    .serviceName(OptimizerClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://optimizer.{region}.oci.{secondLevelDomain}")
                     .build();

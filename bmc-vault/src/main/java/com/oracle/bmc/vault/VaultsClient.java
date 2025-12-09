@@ -17,7 +17,7 @@ public class VaultsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     /** Service instance for Vaults. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("VAULTS")
+                    .serviceName(VaultsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://vaults.{region}.oci.{secondLevelDomain}")
                     .build();

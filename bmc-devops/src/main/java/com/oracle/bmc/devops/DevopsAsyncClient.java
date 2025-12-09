@@ -31,7 +31,7 @@ public class DevopsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     /** Service instance for Devops. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DEVOPS")
+                    .serviceName(DevopsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://devops.{region}.oci.{secondLevelDomain}")
                     .build();

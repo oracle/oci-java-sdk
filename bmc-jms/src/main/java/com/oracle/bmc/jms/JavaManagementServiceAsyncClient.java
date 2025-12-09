@@ -31,7 +31,7 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
     /** Service instance for JavaManagementService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("JAVAMANAGEMENTSERVICE")
+                    .serviceName(JavaManagementServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://javamanagement.{region}.oci.{secondLevelDomain}")

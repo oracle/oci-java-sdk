@@ -18,7 +18,7 @@ public class OccDemandSignalClient extends com.oracle.bmc.http.internal.BaseSync
     /** Service instance for OccDemandSignal. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OCCDEMANDSIGNAL")
+                    .serviceName(OccDemandSignalClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://control-center-ds.{region}.oci.{secondLevelDomain}")

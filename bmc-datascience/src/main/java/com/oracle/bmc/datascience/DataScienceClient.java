@@ -18,7 +18,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     /** Service instance for DataScience. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATASCIENCE")
+                    .serviceName(DataScienceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://datascience.{region}.oci.{secondLevelDomain}")
                     .build();

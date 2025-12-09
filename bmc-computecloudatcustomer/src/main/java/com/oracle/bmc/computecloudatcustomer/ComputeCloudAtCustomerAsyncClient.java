@@ -31,7 +31,7 @@ public class ComputeCloudAtCustomerAsyncClient extends com.oracle.bmc.http.inter
     /** Service instance for ComputeCloudAtCustomer. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("COMPUTECLOUDATCUSTOMER")
+                    .serviceName(ComputeCloudAtCustomerClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://ccc.{region}.oci.{secondLevelDomain}")
                     .build();

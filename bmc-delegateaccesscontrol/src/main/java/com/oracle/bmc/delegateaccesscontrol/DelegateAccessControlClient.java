@@ -18,7 +18,7 @@ public class DelegateAccessControlClient extends com.oracle.bmc.http.internal.Ba
     /** Service instance for DelegateAccessControl. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DELEGATEACCESSCONTROL")
+                    .serviceName(DelegateAccessControlClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://delegate-access-control.{region}.oci.{secondLevelDomain}")

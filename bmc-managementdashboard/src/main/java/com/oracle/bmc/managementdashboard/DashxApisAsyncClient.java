@@ -31,7 +31,7 @@ public class DashxApisAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     /** Service instance for DashxApis. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DASHXAPIS")
+                    .serviceName(DashxApisClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://managementdashboard.{region}.oci.{secondLevelDomain}")

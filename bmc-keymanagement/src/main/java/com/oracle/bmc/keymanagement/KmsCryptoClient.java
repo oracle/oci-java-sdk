@@ -18,7 +18,7 @@ public class KmsCryptoClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for KmsCrypto. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("KMSCRYPTO")
+                    .serviceName(KmsCryptoClient.class.getName())
                     .serviceEndpointPrefix("kms")
                     .serviceEndpointTemplate("https://kms.{region}.{secondLevelDomain}")
                     .build();

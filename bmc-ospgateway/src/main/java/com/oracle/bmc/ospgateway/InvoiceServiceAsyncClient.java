@@ -31,7 +31,7 @@ public class InvoiceServiceAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for InvoiceService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("INVOICESERVICE")
+                    .serviceName(InvoiceServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://osp-oci-integ.osp.{region}.oci.{secondLevelDomain}")

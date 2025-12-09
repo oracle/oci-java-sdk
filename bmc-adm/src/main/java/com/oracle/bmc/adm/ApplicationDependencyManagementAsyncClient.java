@@ -32,7 +32,7 @@ public class ApplicationDependencyManagementAsyncClient
     /** Service instance for ApplicationDependencyManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("APPLICATIONDEPENDENCYMANAGEMENT")
+                    .serviceName(ApplicationDependencyManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://adm.{region}.oci.{secondLevelDomain}")
                     .build();

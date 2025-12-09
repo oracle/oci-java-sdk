@@ -18,7 +18,7 @@ public class UsagelimitsClient extends com.oracle.bmc.http.internal.BaseSyncClie
     /** Service instance for Usagelimits. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("USAGELIMITS")
+                    .serviceName(UsagelimitsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
                     .build();

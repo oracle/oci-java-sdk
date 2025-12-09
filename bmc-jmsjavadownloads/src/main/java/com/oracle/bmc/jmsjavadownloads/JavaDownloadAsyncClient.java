@@ -31,7 +31,7 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     /** Service instance for JavaDownload. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("JAVADOWNLOAD")
+                    .serviceName(JavaDownloadClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://javamanagementservice-download.{region}.oci.{secondLevelDomain}")

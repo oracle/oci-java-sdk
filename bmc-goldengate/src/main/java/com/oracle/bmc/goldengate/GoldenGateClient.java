@@ -18,7 +18,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     /** Service instance for GoldenGate. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("GOLDENGATE")
+                    .serviceName(GoldenGateClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://goldengate.{region}.oci.{secondLevelDomain}")
                     .build();

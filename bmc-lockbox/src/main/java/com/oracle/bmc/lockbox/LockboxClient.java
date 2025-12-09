@@ -17,7 +17,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     /** Service instance for Lockbox. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("LOCKBOX")
+                    .serviceName(LockboxClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://managed-access.{region}.oci.{secondLevelDomain}")

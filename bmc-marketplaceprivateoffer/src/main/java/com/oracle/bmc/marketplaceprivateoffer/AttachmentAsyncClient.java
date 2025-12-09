@@ -31,7 +31,7 @@ public class AttachmentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     /** Service instance for Attachment. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ATTACHMENT")
+                    .serviceName(AttachmentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://private-offer.{region}.oci.{secondLevelDomain}")

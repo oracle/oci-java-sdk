@@ -18,7 +18,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for Inventory. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("INVENTORY")
+                    .serviceName(InventoryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://cloudbridge.{region}.oci.{secondLevelDomain}")
                     .build();

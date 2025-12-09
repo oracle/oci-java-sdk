@@ -17,7 +17,7 @@ public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
     /** Service instance for Link. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("LINK")
+                    .serviceName(LinkClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://organizations.{region}.oci.{secondLevelDomain}")

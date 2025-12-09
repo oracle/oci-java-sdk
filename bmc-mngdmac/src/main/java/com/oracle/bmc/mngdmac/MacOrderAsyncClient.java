@@ -31,7 +31,7 @@ public class MacOrderAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     /** Service instance for MacOrder. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MACORDER")
+                    .serviceName(MacOrderClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://mngdmac.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class SubscriptionServiceAsyncClient extends com.oracle.bmc.http.internal
     /** Service instance for SubscriptionService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SUBSCRIPTIONSERVICE")
+                    .serviceName(SubscriptionServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://osp-oci-integ.osp.{region}.oci.{secondLevelDomain}")

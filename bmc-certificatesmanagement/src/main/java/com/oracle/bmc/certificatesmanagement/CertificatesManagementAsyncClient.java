@@ -31,7 +31,7 @@ public class CertificatesManagementAsyncClient extends com.oracle.bmc.http.inter
     /** Service instance for CertificatesManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CERTIFICATESMANAGEMENT")
+                    .serviceName(CertificatesManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://certificatesmanagement.{region}.oci.{secondLevelDomain}")

@@ -31,7 +31,7 @@ public class SenderInvitationAsyncClient extends com.oracle.bmc.http.internal.Ba
     /** Service instance for SenderInvitation. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SENDERINVITATION")
+                    .serviceName(SenderInvitationClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://organizations.{region}.oci.{secondLevelDomain}")

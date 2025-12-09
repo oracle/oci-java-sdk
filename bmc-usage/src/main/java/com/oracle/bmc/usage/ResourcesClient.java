@@ -18,7 +18,7 @@ public class ResourcesClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for Resources. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("RESOURCES")
+                    .serviceName(ResourcesClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
                     .build();

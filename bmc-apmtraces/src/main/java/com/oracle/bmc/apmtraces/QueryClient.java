@@ -17,7 +17,7 @@ public class QueryClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     /** Service instance for Query. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("QUERY")
+                    .serviceName(QueryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apm-trace.{region}.oci.{secondLevelDomain}")
                     .build();

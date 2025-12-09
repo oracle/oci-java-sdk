@@ -18,7 +18,7 @@ public class PrivateServiceAccessClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for PrivateServiceAccess. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("PRIVATESERVICEACCESS")
+                    .serviceName(PrivateServiceAccessClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://psasvc.{region}.oci.{secondLevelDomain}")
                     .endpointServiceName("psasvc")

@@ -31,7 +31,7 @@ public class ResourceSearchAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for ResourceSearch. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("RESOURCESEARCH")
+                    .serviceName(ResourceSearchClient.class.getName())
                     .serviceEndpointPrefix("query")
                     .serviceEndpointTemplate("https://query.{region}.oci.{secondLevelDomain}")
                     .build();

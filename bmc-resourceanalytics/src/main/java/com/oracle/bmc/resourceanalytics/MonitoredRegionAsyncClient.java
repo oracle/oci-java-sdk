@@ -31,7 +31,7 @@ public class MonitoredRegionAsyncClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for MonitoredRegion. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MONITOREDREGION")
+                    .serviceName(MonitoredRegionClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://resource-analytics.{region}.ocp.{secondLevelDomain}")

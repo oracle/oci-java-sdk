@@ -18,7 +18,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
     /** Service instance for AutoScaling. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("AUTOSCALING")
+                    .serviceName(AutoScalingClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://autoscaling.{region}.oci.{secondLevelDomain}")
                     .build();

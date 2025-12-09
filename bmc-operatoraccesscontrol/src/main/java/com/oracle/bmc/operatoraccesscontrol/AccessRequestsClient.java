@@ -18,7 +18,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
     /** Service instance for AccessRequests. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ACCESSREQUESTS")
+                    .serviceName(AccessRequestsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://operator-access-control.{region}.oci.{secondLevelDomain}")

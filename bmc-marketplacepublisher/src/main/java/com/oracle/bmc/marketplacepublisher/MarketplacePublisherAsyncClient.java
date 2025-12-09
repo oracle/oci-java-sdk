@@ -31,7 +31,7 @@ public class MarketplacePublisherAsyncClient extends com.oracle.bmc.http.interna
     /** Service instance for MarketplacePublisher. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MARKETPLACEPUBLISHER")
+                    .serviceName(MarketplacePublisherClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://marketplace-publisher.{region}.oci.{secondLevelDomain}")

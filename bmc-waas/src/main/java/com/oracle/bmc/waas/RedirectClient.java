@@ -18,7 +18,7 @@ public class RedirectClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for Redirect. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("REDIRECT")
+                    .serviceName(RedirectClient.class.getName())
                     .serviceEndpointPrefix("waas")
                     .serviceEndpointTemplate("https://waas.{region}.oci.{secondLevelDomain}")
                     .build();

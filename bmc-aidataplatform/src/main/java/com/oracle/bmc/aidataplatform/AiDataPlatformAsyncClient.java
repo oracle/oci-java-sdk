@@ -31,7 +31,7 @@ public class AiDataPlatformAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for AiDataPlatform. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("AIDATAPLATFORM")
+                    .serviceName(AiDataPlatformClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://datalake.{region}.oci.{secondLevelDomain}")
                     .build();

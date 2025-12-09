@@ -31,7 +31,7 @@ public class ScheduledQueryAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for ScheduledQuery. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SCHEDULEDQUERY")
+                    .serviceName(ScheduledQueryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apm-trace.{region}.oci.{secondLevelDomain}")
                     .build();

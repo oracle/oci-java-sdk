@@ -31,7 +31,7 @@ public class SoftwareSourceAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for SoftwareSource. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SOFTWARESOURCE")
+                    .serviceName(SoftwareSourceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://osmh.{region}.oci.{secondLevelDomain}")
                     .build();

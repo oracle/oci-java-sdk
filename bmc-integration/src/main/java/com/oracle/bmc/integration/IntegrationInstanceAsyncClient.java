@@ -31,7 +31,7 @@ public class IntegrationInstanceAsyncClient extends com.oracle.bmc.http.internal
     /** Service instance for IntegrationInstance. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("INTEGRATIONINSTANCE")
+                    .serviceName(IntegrationInstanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://integration.{region}.ocp.{secondLevelDomain}")
                     .build();

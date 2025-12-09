@@ -18,7 +18,7 @@ public class MysqlaasClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for Mysqlaas. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MYSQLAAS")
+                    .serviceName(MysqlaasClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://mysql.{region}.ocp.{secondLevelDomain}")
                     .build();

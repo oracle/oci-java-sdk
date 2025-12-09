@@ -18,7 +18,7 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
     /** Service instance for Onboarding. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ONBOARDING")
+                    .serviceName(OnboardingClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://osmh.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -735,6 +735,14 @@ public final class DedicatedAiCluster
         H200X2("H200_X2"),
         H200X4("H200_X4"),
         H200X8("H200_X8"),
+        OaiA10X2("OAI_A10_X2"),
+        OaiH100X1("OAI_H100_X1"),
+        OaiH100X2("OAI_H100_X2"),
+        OaiH200X1("OAI_H200_X1"),
+        OaiA10080GX1("OAI_A100_80G_X1"),
+        OaiA10080GX2("OAI_A100_80G_X2"),
+        OaiA10040GX1("OAI_A100_40G_X1"),
+        OaiA10040GX4("OAI_A100_40G_X4"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

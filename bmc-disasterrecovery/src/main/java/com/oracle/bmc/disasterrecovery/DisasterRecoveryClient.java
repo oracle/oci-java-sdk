@@ -18,7 +18,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
     /** Service instance for DisasterRecovery. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DISASTERRECOVERY")
+                    .serviceName(DisasterRecoveryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://disaster-recovery.{region}.oci.{secondLevelDomain}")

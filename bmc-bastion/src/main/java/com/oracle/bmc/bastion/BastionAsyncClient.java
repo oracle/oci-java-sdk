@@ -31,7 +31,7 @@ public class BastionAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     /** Service instance for Bastion. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("BASTION")
+                    .serviceName(BastionClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://bastion.{region}.oci.{secondLevelDomain}")
                     .build();

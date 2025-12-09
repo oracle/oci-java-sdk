@@ -31,7 +31,7 @@ public class IdentityAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     /** Service instance for Identity. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("IDENTITY")
+                    .serviceName(IdentityClient.class.getName())
                     .serviceEndpointPrefix("identity")
                     .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class OpensearchClusterBackupAsyncClient extends com.oracle.bmc.http.inte
     /** Service instance for OpensearchClusterBackup. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OPENSEARCHCLUSTERBACKUP")
+                    .serviceName(OpensearchClusterBackupClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://search-indexing.{region}.oci.{secondLevelDomain}")

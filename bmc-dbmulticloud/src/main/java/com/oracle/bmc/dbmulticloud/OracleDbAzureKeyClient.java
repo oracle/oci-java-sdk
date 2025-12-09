@@ -18,7 +18,7 @@ public class OracleDbAzureKeyClient extends com.oracle.bmc.http.internal.BaseSyn
     /** Service instance for OracleDbAzureKey. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ORACLEDBAZUREKEY")
+                    .serviceName(OracleDbAzureKeyClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://dbmulticloud.{region}.oci.{secondLevelDomain}")

@@ -18,7 +18,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     /** Service instance for JavaManagementService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("JAVAMANAGEMENTSERVICE")
+                    .serviceName(JavaManagementServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://javamanagement.{region}.oci.{secondLevelDomain}")

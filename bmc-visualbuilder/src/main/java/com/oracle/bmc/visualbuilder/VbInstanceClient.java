@@ -18,7 +18,7 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
     /** Service instance for VbInstance. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("VBINSTANCE")
+                    .serviceName(VbInstanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://visualbuilder.{region}.ocp.{secondLevelDomain}")

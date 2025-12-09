@@ -18,7 +18,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     /** Service instance for OpaInstance. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OPAINSTANCE")
+                    .serviceName(OpaInstanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://process.{region}.oci.{secondLevelDomain}")
                     .build();

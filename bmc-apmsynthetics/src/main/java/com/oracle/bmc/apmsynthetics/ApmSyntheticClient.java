@@ -18,7 +18,7 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for ApmSynthetic. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("APMSYNTHETIC")
+                    .serviceName(ApmSyntheticClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://apm-synthetic.{region}.oci.{secondLevelDomain}")

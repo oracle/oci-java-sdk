@@ -31,7 +31,7 @@ public class DbLifeCycleManagementAsyncClient extends com.oracle.bmc.http.intern
     /** Service instance for DbLifeCycleManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DBLIFECYCLEMANAGEMENT")
+                    .serviceName(DbLifeCycleManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbmgmt.{region}.oci.{secondLevelDomain}")
                     .build();

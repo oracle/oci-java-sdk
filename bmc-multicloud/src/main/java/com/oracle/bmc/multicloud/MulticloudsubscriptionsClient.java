@@ -18,7 +18,7 @@ public class MulticloudsubscriptionsClient extends com.oracle.bmc.http.internal.
     /** Service instance for Multicloudsubscriptions. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MULTICLOUDSUBSCRIPTIONS")
+                    .serviceName(MulticloudsubscriptionsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://multicloud.{region}.oci.{secondLevelDomain}")
                     .build();

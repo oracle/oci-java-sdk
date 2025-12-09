@@ -31,7 +31,7 @@ public class CommitmentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     /** Service instance for Commitment. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("COMMITMENT")
+                    .serviceName(CommitmentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://csaap-e.oracle.com")
                     .build();

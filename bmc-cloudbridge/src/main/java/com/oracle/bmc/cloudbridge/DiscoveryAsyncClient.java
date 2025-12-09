@@ -31,7 +31,7 @@ public class DiscoveryAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     /** Service instance for Discovery. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DISCOVERY")
+                    .serviceName(DiscoveryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://cloudbridge.{region}.oci.{secondLevelDomain}")
                     .build();

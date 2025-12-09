@@ -18,7 +18,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     /** Service instance for DatabaseTools. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATABASETOOLS")
+                    .serviceName(DatabaseToolsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbtools.{region}.oci.{secondLevelDomain}")
                     .build();

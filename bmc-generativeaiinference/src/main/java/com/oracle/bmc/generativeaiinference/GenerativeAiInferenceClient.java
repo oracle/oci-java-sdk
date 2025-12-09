@@ -18,7 +18,7 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
     /** Service instance for GenerativeAiInference. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("GENERATIVEAIINFERENCE")
+                    .serviceName(GenerativeAiInferenceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://inference.generativeai.{region}.oci.{secondLevelDomain}")

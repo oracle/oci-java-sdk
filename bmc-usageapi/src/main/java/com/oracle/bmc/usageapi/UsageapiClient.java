@@ -18,7 +18,7 @@ public class UsageapiClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for Usageapi. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("USAGEAPI")
+                    .serviceName(UsageapiClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://usageapi.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -17,7 +17,7 @@ public class QuotasClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     /** Service instance for Quotas. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("QUOTAS")
+                    .serviceName(QuotasClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://limits.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     /** Service instance for DataCatalog. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATACATALOG")
+                    .serviceName(DataCatalogClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://datacatalog.{region}.oci.{secondLevelDomain}")
                     .build();

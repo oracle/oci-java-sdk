@@ -18,7 +18,7 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for Schedule. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SCHEDULE")
+                    .serviceName(ScheduleClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://resource-scheduler.{region}.oci.{secondLevelDomain}")

@@ -31,7 +31,7 @@ public class VbsInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     /** Service instance for VbsInstance. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("VBSINSTANCE")
+                    .serviceName(VbsInstanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://vbstudio.{region}.ocp.{secondLevelDomain}")
                     .build();

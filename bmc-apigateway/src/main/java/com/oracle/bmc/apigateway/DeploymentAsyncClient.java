@@ -31,7 +31,7 @@ public class DeploymentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     /** Service instance for Deployment. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DEPLOYMENT")
+                    .serviceName(DeploymentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apigateway.{region}.oci.{secondLevelDomain}")
                     .build();

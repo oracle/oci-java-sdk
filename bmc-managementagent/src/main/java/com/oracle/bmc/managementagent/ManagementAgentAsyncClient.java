@@ -31,7 +31,7 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for ManagementAgent. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MANAGEMENTAGENT")
+                    .serviceName(ManagementAgentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://management-agent.{region}.oci.{secondLevelDomain}")

@@ -18,7 +18,7 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for EsxiHost. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ESXIHOST")
+                    .serviceName(EsxiHostClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://ocvps.{region}.oci.{secondLevelDomain}")
                     .build();

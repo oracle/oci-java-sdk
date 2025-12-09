@@ -31,7 +31,7 @@ public class AppmgmtControlAsyncClient extends com.oracle.bmc.http.internal.Base
     /** Service instance for AppmgmtControl. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("APPMGMTCONTROL")
+                    .serviceName(AppmgmtControlClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://cp.appmgmt.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -32,7 +32,7 @@ public class FleetAppsManagementAdminAsyncClient
     /** Service instance for FleetAppsManagementAdmin. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FLEETAPPSMANAGEMENTADMIN")
+                    .serviceName(FleetAppsManagementAdminClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fams.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -18,7 +18,7 @@ public class AttributesClient extends com.oracle.bmc.http.internal.BaseSyncClien
     /** Service instance for Attributes. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ATTRIBUTES")
+                    .serviceName(AttributesClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apm-trace.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -18,7 +18,7 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
     /** Service instance for KmsManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("KMSMANAGEMENT")
+                    .serviceName(KmsManagementClient.class.getName())
                     .serviceEndpointPrefix("kms")
                     .serviceEndpointTemplate("https://kms.{region}.{secondLevelDomain}")
                     .build();

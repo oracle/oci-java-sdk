@@ -18,7 +18,7 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for ScheduledJob. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SCHEDULEDJOB")
+                    .serviceName(ScheduledJobClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://osmh.{region}.oci.{secondLevelDomain}")
                     .build();

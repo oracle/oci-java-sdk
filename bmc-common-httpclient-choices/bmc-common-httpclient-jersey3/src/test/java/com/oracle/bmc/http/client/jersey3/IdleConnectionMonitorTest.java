@@ -196,6 +196,54 @@ public class IdleConnectionMonitorTest {
                 DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS, waitTimeInSeconds);
     }
 
+    @Test
+    public void testThreadInterruptAndCleanup() throws InterruptedException {
+        HttpClientConnectionManager connectionManager = new BasicHttpClientConnectionManager();
+
+        // Register connectionManager to IdleConnectionMonitor
+        assertTrue(IdleConnectionMonitor.registerConnectionManager(connectionManager, 2, 10));
+        assertEquals(1, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+
+        // Manually interrupt the thread
+        IdleConnectionMonitor.getInstance().interrupt();
+        assertEquals(1, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+        assertFalse(IdleConnectionMonitor.getInstance().isIdleMonitorThreadShutdown());
+
+        garbageCollect(3, 0);
+
+        // Loop should be terminated with thread size 0 and instance set to null
+        assertEquals(0, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+        assertNull(IdleConnectionMonitor.getInstance());
+
+        // Ensuring shutdown is idempotent
+        assertFalse(IdleConnectionMonitor.shutdown());
+    }
+
+    @Test
+    public void testThreadInterruptAndRestart() throws InterruptedException {
+        HttpClientConnectionManager connectionManager = new BasicHttpClientConnectionManager();
+
+        // Register connectionManager to IdleConnectionMonitor
+        assertTrue(IdleConnectionMonitor.registerConnectionManager(connectionManager, 2, 10));
+        assertEquals(1, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+
+        // Manually interrupt the thread
+        IdleConnectionMonitor.getInstance().interrupt();
+
+        garbageCollect(3, 0);
+
+        // Loop should be terminated with thread size 0 and instance set to null
+        assertEquals(0, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+        assertNull(IdleConnectionMonitor.getInstance());
+
+        // Restart IdleConnectionMonitor thread with new connectionManager
+        HttpClientConnectionManager connectionManager2 = new BasicHttpClientConnectionManager();
+        assertTrue(IdleConnectionMonitor.registerConnectionManager(connectionManager2, 2, 10));
+        assertEquals(1, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+
+        IdleConnectionMonitor.shutdown();
+    }
+
     private static void garbageCollect(int maxAttempts, int expectedConnectionMonitorThreadSize)
             throws InterruptedException {
         int numAttempts = maxAttempts;

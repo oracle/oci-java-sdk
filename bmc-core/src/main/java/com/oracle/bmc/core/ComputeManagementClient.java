@@ -18,7 +18,7 @@ public class ComputeManagementClient extends com.oracle.bmc.http.internal.BaseSy
     /** Service instance for ComputeManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("COMPUTEMANAGEMENT")
+                    .serviceName(ComputeManagementClient.class.getName())
                     .serviceEndpointPrefix("iaas")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();

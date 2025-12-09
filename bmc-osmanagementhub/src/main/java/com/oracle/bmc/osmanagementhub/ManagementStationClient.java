@@ -18,7 +18,7 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
     /** Service instance for ManagementStation. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MANAGEMENTSTATION")
+                    .serviceName(ManagementStationClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://osmh.{region}.oci.{secondLevelDomain}")
                     .build();

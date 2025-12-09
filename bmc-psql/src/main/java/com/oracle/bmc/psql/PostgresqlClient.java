@@ -18,7 +18,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
     /** Service instance for Postgresql. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("POSTGRESQL")
+                    .serviceName(PostgresqlClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://postgresql.{region}.oci.{secondLevelDomain}")
                     .build();

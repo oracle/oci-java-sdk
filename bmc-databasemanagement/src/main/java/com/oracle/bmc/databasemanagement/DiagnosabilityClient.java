@@ -18,7 +18,7 @@ public class DiagnosabilityClient extends com.oracle.bmc.http.internal.BaseSyncC
     /** Service instance for Diagnosability. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DIAGNOSABILITY")
+                    .serviceName(DiagnosabilityClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbmgmt.{region}.oci.{secondLevelDomain}")
                     .build();

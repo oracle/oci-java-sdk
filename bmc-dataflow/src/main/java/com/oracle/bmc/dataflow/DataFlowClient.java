@@ -18,7 +18,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for DataFlow. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATAFLOW")
+                    .serviceName(DataFlowClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dataflow.{region}.oci.{secondLevelDomain}")
                     .build();

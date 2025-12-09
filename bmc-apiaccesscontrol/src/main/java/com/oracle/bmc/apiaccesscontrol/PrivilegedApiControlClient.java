@@ -18,7 +18,7 @@ public class PrivilegedApiControlClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for PrivilegedApiControl. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("PRIVILEGEDAPICONTROL")
+                    .serviceName(PrivilegedApiControlClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://pactl.{region}.oci.{secondLevelDomain}")
                     .build();

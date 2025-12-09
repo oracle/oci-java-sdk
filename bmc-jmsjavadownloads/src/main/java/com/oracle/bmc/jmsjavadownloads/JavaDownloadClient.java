@@ -18,7 +18,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for JavaDownload. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("JAVADOWNLOAD")
+                    .serviceName(JavaDownloadClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://javamanagementservice-download.{region}.oci.{secondLevelDomain}")

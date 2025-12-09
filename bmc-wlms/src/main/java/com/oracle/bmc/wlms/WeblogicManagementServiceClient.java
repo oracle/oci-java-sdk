@@ -18,7 +18,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
     /** Service instance for WeblogicManagementService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("WEBLOGICMANAGEMENTSERVICE")
+                    .serviceName(WeblogicManagementServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://api.weblogicmanagement.{region}.oci.{secondLevelDomain}")

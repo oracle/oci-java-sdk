@@ -18,7 +18,7 @@ public class AnnouncementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for Announcement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ANNOUNCEMENT")
+                    .serviceName(AnnouncementClient.class.getName())
                     .serviceEndpointPrefix("announcements")
                     .serviceEndpointTemplate("https://announcements.{region}.{secondLevelDomain}")
                     .build();

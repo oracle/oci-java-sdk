@@ -18,7 +18,7 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
     /** Service instance for AIServiceVision. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("AISERVICEVISION")
+                    .serviceName(AIServiceVisionClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://vision.aiservice.{region}.oci.{secondLevelDomain}")

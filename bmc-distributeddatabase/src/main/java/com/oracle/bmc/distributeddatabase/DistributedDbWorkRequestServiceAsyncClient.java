@@ -32,7 +32,7 @@ public class DistributedDbWorkRequestServiceAsyncClient
     /** Service instance for DistributedDbWorkRequestService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DISTRIBUTEDDBWORKREQUESTSERVICE")
+                    .serviceName(DistributedDbWorkRequestServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://globaldb.{region}.oci.{secondLevelDomain}")
                     .build();

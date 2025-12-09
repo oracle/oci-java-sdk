@@ -31,7 +31,7 @@ public class ReplicasAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     /** Service instance for Replicas. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("REPLICAS")
+                    .serviceName(ReplicasClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://mysql.{region}.ocp.{secondLevelDomain}")
                     .build();

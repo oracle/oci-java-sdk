@@ -31,7 +31,7 @@ public class DataLabelingAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     /** Service instance for DataLabeling. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATALABELING")
+                    .serviceName(DataLabelingClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://datalabeling-dp.{region}.oci.{secondLevelDomain}")

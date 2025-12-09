@@ -31,7 +31,7 @@ public class FusionApplicationsAsyncClient extends com.oracle.bmc.http.internal.
     /** Service instance for FusionApplications. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FUSIONAPPLICATIONS")
+                    .serviceName(FusionApplicationsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fusionapps.{region}.oci.{secondLevelDomain}")
                     .build();

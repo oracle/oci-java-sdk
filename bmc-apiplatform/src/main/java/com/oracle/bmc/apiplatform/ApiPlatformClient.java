@@ -18,7 +18,7 @@ public class ApiPlatformClient extends com.oracle.bmc.http.internal.BaseSyncClie
     /** Service instance for ApiPlatform. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("APIPLATFORM")
+                    .serviceName(ApiPlatformClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apip.{region}.ocp.{secondLevelDomain}")
                     .build();

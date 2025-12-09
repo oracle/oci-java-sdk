@@ -31,7 +31,7 @@ public class WaasAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
     /** Service instance for Waas. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("WAAS")
+                    .serviceName(WaasClient.class.getName())
                     .serviceEndpointPrefix("waas")
                     .serviceEndpointTemplate("https://waas.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class BudgetAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     /** Service instance for Budget. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("BUDGET")
+                    .serviceName(BudgetClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://usage.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -32,7 +32,7 @@ public class DistributedAutonomousDbServiceAsyncClient
     /** Service instance for DistributedAutonomousDbService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DISTRIBUTEDAUTONOMOUSDBSERVICE")
+                    .serviceName(DistributedAutonomousDbServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://globaldb.{region}.oci.{secondLevelDomain}")
                     .build();

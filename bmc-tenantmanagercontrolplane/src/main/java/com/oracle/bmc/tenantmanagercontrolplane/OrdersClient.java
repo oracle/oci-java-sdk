@@ -17,7 +17,7 @@ public class OrdersClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     /** Service instance for Orders. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ORDERS")
+                    .serviceName(OrdersClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://organizations.{region}.oci.{secondLevelDomain}")

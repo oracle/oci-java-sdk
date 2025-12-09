@@ -31,7 +31,7 @@ public class QueryAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     /** Service instance for Query. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("QUERY")
+                    .serviceName(QueryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apm-trace.{region}.oci.{secondLevelDomain}")
                     .build();

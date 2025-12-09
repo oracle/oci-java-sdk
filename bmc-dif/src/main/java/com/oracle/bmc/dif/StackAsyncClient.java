@@ -31,7 +31,7 @@ public class StackAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     /** Service instance for Stack. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("STACK")
+                    .serviceName(StackClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://dataintelligencefoundation.{region}.oci.{secondLevelDomain}")

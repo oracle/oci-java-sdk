@@ -31,7 +31,7 @@ public class StreamAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     /** Service instance for Stream. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("STREAM")
+                    .serviceName(StreamClient.class.getName())
                     .serviceEndpointPrefix("streams")
                     .serviceEndpointTemplate("https://streaming.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -17,7 +17,7 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     /** Service instance for Zpr. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ZPR")
+                    .serviceName(ZprClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://zpr.{region}.oci.{secondLevelDomain}")
                     .build();

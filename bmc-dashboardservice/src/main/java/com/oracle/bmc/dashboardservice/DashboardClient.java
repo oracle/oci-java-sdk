@@ -18,7 +18,7 @@ public class DashboardClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for Dashboard. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DASHBOARD")
+                    .serviceName(DashboardClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dashboard.{region}.oci.{secondLevelDomain}")
                     .build();

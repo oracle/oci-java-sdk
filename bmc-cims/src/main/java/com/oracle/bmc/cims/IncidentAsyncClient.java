@@ -31,7 +31,7 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     /** Service instance for Incident. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("INCIDENT")
+                    .serviceName(IncidentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://incidentmanagement.{region}.oci.{secondLevelDomain}")

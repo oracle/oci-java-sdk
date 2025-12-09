@@ -18,7 +18,7 @@ public class ComputedUsageClient extends com.oracle.bmc.http.internal.BaseSyncCl
     /** Service instance for ComputedUsage. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("COMPUTEDUSAGE")
+                    .serviceName(ComputedUsageClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -18,7 +18,7 @@ public class RatecardClient extends com.oracle.bmc.http.internal.BaseSyncClient
     /** Service instance for Ratecard. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("RATECARD")
+                    .serviceName(RatecardClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
                     .build();

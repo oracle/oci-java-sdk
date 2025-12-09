@@ -31,7 +31,7 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
     /** Service instance for DatabaseRecovery. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATABASERECOVERY")
+                    .serviceName(DatabaseRecoveryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://recovery.{region}.oci.{secondLevelDomain}")
                     .build();

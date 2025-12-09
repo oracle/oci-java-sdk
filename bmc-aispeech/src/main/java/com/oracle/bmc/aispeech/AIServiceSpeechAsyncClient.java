@@ -31,7 +31,7 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
     /** Service instance for AIServiceSpeech. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("AISERVICESPEECH")
+                    .serviceName(AIServiceSpeechClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://speech.aiservice.{region}.oci.{secondLevelDomain}")

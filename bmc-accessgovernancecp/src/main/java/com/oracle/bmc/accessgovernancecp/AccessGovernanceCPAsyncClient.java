@@ -31,7 +31,7 @@ public class AccessGovernanceCPAsyncClient extends com.oracle.bmc.http.internal.
     /** Service instance for AccessGovernanceCP. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ACCESSGOVERNANCECP")
+                    .serviceName(AccessGovernanceCPClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://cp-prod.access-governance.{region}.oci.{secondLevelDomain}")

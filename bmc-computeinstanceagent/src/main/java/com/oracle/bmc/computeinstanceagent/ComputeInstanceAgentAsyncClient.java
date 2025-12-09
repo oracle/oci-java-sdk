@@ -31,7 +31,7 @@ public class ComputeInstanceAgentAsyncClient extends com.oracle.bmc.http.interna
     /** Service instance for ComputeInstanceAgent. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("COMPUTEINSTANCEAGENT")
+                    .serviceName(ComputeInstanceAgentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();

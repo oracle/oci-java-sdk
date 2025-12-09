@@ -17,7 +17,7 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
     /** Service instance for Sddc. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("SDDC")
+                    .serviceName(SddcClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://ocvps.{region}.oci.{secondLevelDomain}")
                     .build();

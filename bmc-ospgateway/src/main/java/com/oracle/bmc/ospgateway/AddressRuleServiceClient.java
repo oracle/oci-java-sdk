@@ -18,7 +18,7 @@ public class AddressRuleServiceClient extends com.oracle.bmc.http.internal.BaseS
     /** Service instance for AddressRuleService. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ADDRESSRULESERVICE")
+                    .serviceName(AddressRuleServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://osp-oci-integ.osp.{region}.oci.{secondLevelDomain}")

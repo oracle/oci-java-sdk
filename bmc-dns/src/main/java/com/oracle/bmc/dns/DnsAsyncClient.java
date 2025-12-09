@@ -31,7 +31,7 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     /** Service instance for Dns. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DNS")
+                    .serviceName(DnsClient.class.getName())
                     .serviceEndpointPrefix("dns")
                     .serviceEndpointTemplate("https://dns.{region}.oci.{secondLevelDomain}")
                     .build();

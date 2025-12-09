@@ -31,7 +31,7 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     /** Service instance for Compute. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("COMPUTE")
+                    .serviceName(ComputeClient.class.getName())
                     .serviceEndpointPrefix("iaas")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();

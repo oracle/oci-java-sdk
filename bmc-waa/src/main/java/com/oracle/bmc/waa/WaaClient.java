@@ -17,7 +17,7 @@ public class WaaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     /** Service instance for Waa. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("WAA")
+                    .serviceName(WaaClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://waa.{region}.oci.{secondLevelDomain}")
                     .build();

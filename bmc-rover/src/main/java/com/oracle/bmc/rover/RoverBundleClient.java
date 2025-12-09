@@ -18,7 +18,7 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
     /** Service instance for RoverBundle. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("ROVERBUNDLE")
+                    .serviceName(RoverBundleClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://rover.{region}.oci.{secondLevelDomain}")
                     .build();

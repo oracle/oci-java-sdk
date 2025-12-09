@@ -18,7 +18,7 @@ public class MultiCloudResourceDiscoveryClient extends com.oracle.bmc.http.inter
     /** Service instance for MultiCloudResourceDiscovery. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MULTICLOUDRESOURCEDISCOVERY")
+                    .serviceName(MultiCloudResourceDiscoveryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://dbmulticloud.{region}.oci.{secondLevelDomain}")

@@ -31,7 +31,7 @@ public class DomainAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     /** Service instance for Domain. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DOMAIN")
+                    .serviceName(DomainClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://organizations.{region}.oci.{secondLevelDomain}")

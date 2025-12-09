@@ -17,7 +17,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     /** Service instance for Waf. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("WAF")
+                    .serviceName(WafClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://waf.{region}.oci.{secondLevelDomain}")
                     .build();

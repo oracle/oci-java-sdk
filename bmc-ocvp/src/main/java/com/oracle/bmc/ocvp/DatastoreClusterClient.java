@@ -18,7 +18,7 @@ public class DatastoreClusterClient extends com.oracle.bmc.http.internal.BaseSyn
     /** Service instance for DatastoreCluster. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATASTORECLUSTER")
+                    .serviceName(DatastoreClusterClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://ocvps.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -31,7 +31,7 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     /** Service instance for Blockstorage. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("BLOCKSTORAGE")
+                    .serviceName(BlockstorageClient.class.getName())
                     .serviceEndpointPrefix("iaas")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();

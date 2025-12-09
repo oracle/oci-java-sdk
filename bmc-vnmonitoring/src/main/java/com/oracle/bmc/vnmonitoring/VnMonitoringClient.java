@@ -18,7 +18,7 @@ public class VnMonitoringClient extends com.oracle.bmc.http.internal.BaseSyncCli
     /** Service instance for VnMonitoring. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("VNMONITORING")
+                    .serviceName(VnMonitoringClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://vnca-api.{region}.oci.{secondLevelDomain}")
                     .build();

@@ -18,7 +18,7 @@ public class CommitmentClient extends com.oracle.bmc.http.internal.BaseSyncClien
     /** Service instance for Commitment. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("COMMITMENT")
+                    .serviceName(CommitmentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
                     .build();
