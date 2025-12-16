@@ -31,9 +31,23 @@ package com.oracle.bmc.datascience.model;
 public class ModelDeploymentSystemData
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected ModelDeploymentSystemData() {
+    @java.beans.ConstructorProperties({"modelType"})
+    protected ModelDeploymentSystemData(ModelDeploymentModelType modelType) {
         super();
+        this.modelType = modelType;
+    }
+
+    /** The type of the deployed model. */
+    @com.fasterxml.jackson.annotation.JsonProperty("modelType")
+    private final ModelDeploymentModelType modelType;
+
+    /**
+     * The type of the deployed model.
+     *
+     * @return the value
+     */
+    public ModelDeploymentModelType getModelType() {
+        return modelType;
     }
 
     @Override
@@ -51,6 +65,7 @@ public class ModelDeploymentSystemData
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModelDeploymentSystemData(");
         sb.append("super=").append(super.toString());
+        sb.append("modelType=").append(String.valueOf(this.modelType));
         sb.append(")");
         return sb.toString();
     }
@@ -65,13 +80,14 @@ public class ModelDeploymentSystemData
         }
 
         ModelDeploymentSystemData other = (ModelDeploymentSystemData) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.modelType, other.modelType) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

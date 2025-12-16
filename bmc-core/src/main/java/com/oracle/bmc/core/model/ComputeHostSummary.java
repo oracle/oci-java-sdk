@@ -36,6 +36,7 @@ public final class ComputeHostSummary
         "gpuMemoryFabricId",
         "instanceId",
         "shape",
+        "platform",
         "health",
         "lifecycleState",
         "capacityReservationId",
@@ -59,6 +60,7 @@ public final class ComputeHostSummary
             String gpuMemoryFabricId,
             String instanceId,
             String shape,
+            String platform,
             ComputeHost.Health health,
             ComputeHost.LifecycleState lifecycleState,
             String capacityReservationId,
@@ -81,6 +83,7 @@ public final class ComputeHostSummary
         this.gpuMemoryFabricId = gpuMemoryFabricId;
         this.instanceId = instanceId;
         this.shape = shape;
+        this.platform = platform;
         this.health = health;
         this.lifecycleState = lifecycleState;
         this.capacityReservationId = capacityReservationId;
@@ -320,6 +323,21 @@ public final class ComputeHostSummary
             this.__explicitlySet__.add("shape");
             return this;
         }
+        /** The platform of the host */
+        @com.fasterxml.jackson.annotation.JsonProperty("platform")
+        private String platform;
+
+        /**
+         * The platform of the host
+         *
+         * @param platform the value to set
+         * @return this builder
+         */
+        public Builder platform(String platform) {
+            this.platform = platform;
+            this.__explicitlySet__.add("platform");
+            return this;
+        }
         /** The heathy state of the host */
         @com.fasterxml.jackson.annotation.JsonProperty("health")
         private ComputeHost.Health health;
@@ -523,6 +541,7 @@ public final class ComputeHostSummary
                             this.gpuMemoryFabricId,
                             this.instanceId,
                             this.shape,
+                            this.platform,
                             this.health,
                             this.lifecycleState,
                             this.capacityReservationId,
@@ -575,6 +594,9 @@ public final class ComputeHostSummary
             }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("platform")) {
+                this.platform(model.getPlatform());
             }
             if (model.wasPropertyExplicitlySet("health")) {
                 this.health(model.getHealth());
@@ -818,6 +840,19 @@ public final class ComputeHostSummary
         return shape;
     }
 
+    /** The platform of the host */
+    @com.fasterxml.jackson.annotation.JsonProperty("platform")
+    private final String platform;
+
+    /**
+     * The platform of the host
+     *
+     * @return the value
+     */
+    public String getPlatform() {
+        return platform;
+    }
+
     /** The heathy state of the host */
     @com.fasterxml.jackson.annotation.JsonProperty("health")
     private final ComputeHost.Health health;
@@ -1010,6 +1045,7 @@ public final class ComputeHostSummary
         sb.append(", gpuMemoryFabricId=").append(String.valueOf(this.gpuMemoryFabricId));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", platform=").append(String.valueOf(this.platform));
         sb.append(", health=").append(String.valueOf(this.health));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
@@ -1045,6 +1081,7 @@ public final class ComputeHostSummary
                 && java.util.Objects.equals(this.gpuMemoryFabricId, other.gpuMemoryFabricId)
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.platform, other.platform)
                 && java.util.Objects.equals(this.health, other.health)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
@@ -1089,6 +1126,7 @@ public final class ComputeHostSummary
                         + (this.gpuMemoryFabricId == null ? 43 : this.gpuMemoryFabricId.hashCode());
         result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.platform == null ? 43 : this.platform.hashCode());
         result = (result * PRIME) + (this.health == null ? 43 : this.health.hashCode());
         result =
                 (result * PRIME)

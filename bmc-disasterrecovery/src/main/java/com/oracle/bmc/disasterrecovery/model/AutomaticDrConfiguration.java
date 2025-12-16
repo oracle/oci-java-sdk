@@ -34,6 +34,7 @@ public final class AutomaticDrConfiguration
         "defaultSwitchoverDrPlanId",
         "defaultFailoverDrPlanId",
         "lifecycleState",
+        "lifecycleSubState",
         "lifecycleDetails",
         "lastAutomaticDrExecutionSubmitStatus",
         "lastAutomaticDrExecutionSubmitDetails",
@@ -53,6 +54,7 @@ public final class AutomaticDrConfiguration
             String defaultSwitchoverDrPlanId,
             String defaultFailoverDrPlanId,
             AutomaticDrConfigurationLifecycleState lifecycleState,
+            AutomaticDrConfigurationLifecycleSubState lifecycleSubState,
             String lifecycleDetails,
             AutomaticDrPlanExecutionSubmissionStatus lastAutomaticDrExecutionSubmitStatus,
             String lastAutomaticDrExecutionSubmitDetails,
@@ -71,6 +73,7 @@ public final class AutomaticDrConfiguration
         this.defaultSwitchoverDrPlanId = defaultSwitchoverDrPlanId;
         this.defaultFailoverDrPlanId = defaultFailoverDrPlanId;
         this.lifecycleState = lifecycleState;
+        this.lifecycleSubState = lifecycleSubState;
         this.lifecycleDetails = lifecycleDetails;
         this.lastAutomaticDrExecutionSubmitStatus = lastAutomaticDrExecutionSubmitStatus;
         this.lastAutomaticDrExecutionSubmitDetails = lastAutomaticDrExecutionSubmitDetails;
@@ -278,6 +281,22 @@ public final class AutomaticDrConfiguration
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** The current sub-state of the Automatic DR configuration. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
+        private AutomaticDrConfigurationLifecycleSubState lifecycleSubState;
+
+        /**
+         * The current sub-state of the Automatic DR configuration.
+         *
+         * @param lifecycleSubState the value to set
+         * @return this builder
+         */
+        public Builder lifecycleSubState(
+                AutomaticDrConfigurationLifecycleSubState lifecycleSubState) {
+            this.lifecycleSubState = lifecycleSubState;
+            this.__explicitlySet__.add("lifecycleSubState");
+            return this;
+        }
         /** A message describing the Automatic DR configuration's current state in more detail. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
@@ -437,6 +456,7 @@ public final class AutomaticDrConfiguration
                             this.defaultSwitchoverDrPlanId,
                             this.defaultFailoverDrPlanId,
                             this.lifecycleState,
+                            this.lifecycleSubState,
                             this.lifecycleDetails,
                             this.lastAutomaticDrExecutionSubmitStatus,
                             this.lastAutomaticDrExecutionSubmitDetails,
@@ -481,6 +501,9 @@ public final class AutomaticDrConfiguration
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleSubState")) {
+                this.lifecycleSubState(model.getLifecycleSubState());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -695,6 +718,19 @@ public final class AutomaticDrConfiguration
         return lifecycleState;
     }
 
+    /** The current sub-state of the Automatic DR configuration. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
+    private final AutomaticDrConfigurationLifecycleSubState lifecycleSubState;
+
+    /**
+     * The current sub-state of the Automatic DR configuration.
+     *
+     * @return the value
+     */
+    public AutomaticDrConfigurationLifecycleSubState getLifecycleSubState() {
+        return lifecycleSubState;
+    }
+
     /** A message describing the Automatic DR configuration's current state in more detail. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
@@ -845,6 +881,7 @@ public final class AutomaticDrConfiguration
         sb.append(", defaultFailoverDrPlanId=")
                 .append(String.valueOf(this.defaultFailoverDrPlanId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleSubState=").append(String.valueOf(this.lifecycleSubState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lastAutomaticDrExecutionSubmitStatus=")
                 .append(String.valueOf(this.lastAutomaticDrExecutionSubmitStatus));
@@ -881,6 +918,7 @@ public final class AutomaticDrConfiguration
                 && java.util.Objects.equals(
                         this.defaultFailoverDrPlanId, other.defaultFailoverDrPlanId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleSubState, other.lifecycleSubState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(
                         this.lastAutomaticDrExecutionSubmitStatus,
@@ -927,6 +965,9 @@ public final class AutomaticDrConfiguration
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleSubState == null ? 43 : this.lifecycleSubState.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());

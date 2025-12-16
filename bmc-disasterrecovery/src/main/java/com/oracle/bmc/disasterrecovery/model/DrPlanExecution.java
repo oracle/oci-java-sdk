@@ -39,6 +39,7 @@ public final class DrPlanExecution
         "timeEnded",
         "executionDurationInSec",
         "groupExecutions",
+        "stepStatusCounts",
         "lifecycleState",
         "lifeCycleDetails",
         "isAutomatic",
@@ -64,6 +65,7 @@ public final class DrPlanExecution
             java.util.Date timeEnded,
             Integer executionDurationInSec,
             java.util.List<DrPlanGroupExecution> groupExecutions,
+            DrPlanExecutionStepStatusCounts stepStatusCounts,
             DrPlanExecutionLifecycleState lifecycleState,
             String lifeCycleDetails,
             Boolean isAutomatic,
@@ -88,6 +90,7 @@ public final class DrPlanExecution
         this.timeEnded = timeEnded;
         this.executionDurationInSec = executionDurationInSec;
         this.groupExecutions = groupExecutions;
+        this.stepStatusCounts = stepStatusCounts;
         this.lifecycleState = lifecycleState;
         this.lifeCycleDetails = lifeCycleDetails;
         this.isAutomatic = isAutomatic;
@@ -405,6 +408,15 @@ public final class DrPlanExecution
             this.__explicitlySet__.add("groupExecutions");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("stepStatusCounts")
+        private DrPlanExecutionStepStatusCounts stepStatusCounts;
+
+        public Builder stepStatusCounts(DrPlanExecutionStepStatusCounts stepStatusCounts) {
+            this.stepStatusCounts = stepStatusCounts;
+            this.__explicitlySet__.add("stepStatusCounts");
+            return this;
+        }
         /** The current state of the DR plan execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DrPlanExecutionLifecycleState lifecycleState;
@@ -557,6 +569,7 @@ public final class DrPlanExecution
                             this.timeEnded,
                             this.executionDurationInSec,
                             this.groupExecutions,
+                            this.stepStatusCounts,
                             this.lifecycleState,
                             this.lifeCycleDetails,
                             this.isAutomatic,
@@ -619,6 +632,9 @@ public final class DrPlanExecution
             }
             if (model.wasPropertyExplicitlySet("groupExecutions")) {
                 this.groupExecutions(model.getGroupExecutions());
+            }
+            if (model.wasPropertyExplicitlySet("stepStatusCounts")) {
+                this.stepStatusCounts(model.getStepStatusCounts());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -926,6 +942,13 @@ public final class DrPlanExecution
         return groupExecutions;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("stepStatusCounts")
+    private final DrPlanExecutionStepStatusCounts stepStatusCounts;
+
+    public DrPlanExecutionStepStatusCounts getStepStatusCounts() {
+        return stepStatusCounts;
+    }
+
     /** The current state of the DR plan execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DrPlanExecutionLifecycleState lifecycleState;
@@ -1071,6 +1094,7 @@ public final class DrPlanExecution
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
         sb.append(", executionDurationInSec=").append(String.valueOf(this.executionDurationInSec));
         sb.append(", groupExecutions=").append(String.valueOf(this.groupExecutions));
+        sb.append(", stepStatusCounts=").append(String.valueOf(this.stepStatusCounts));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifeCycleDetails=").append(String.valueOf(this.lifeCycleDetails));
         sb.append(", isAutomatic=").append(String.valueOf(this.isAutomatic));
@@ -1111,6 +1135,7 @@ public final class DrPlanExecution
                 && java.util.Objects.equals(
                         this.executionDurationInSec, other.executionDurationInSec)
                 && java.util.Objects.equals(this.groupExecutions, other.groupExecutions)
+                && java.util.Objects.equals(this.stepStatusCounts, other.stepStatusCounts)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifeCycleDetails, other.lifeCycleDetails)
                 && java.util.Objects.equals(this.isAutomatic, other.isAutomatic)
@@ -1162,6 +1187,9 @@ public final class DrPlanExecution
         result =
                 (result * PRIME)
                         + (this.groupExecutions == null ? 43 : this.groupExecutions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stepStatusCounts == null ? 43 : this.stepStatusCounts.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

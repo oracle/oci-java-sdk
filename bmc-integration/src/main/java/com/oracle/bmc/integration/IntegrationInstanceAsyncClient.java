@@ -96,6 +96,45 @@ public class IntegrationInstanceAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public java.util.concurrent.Future<AddLogAnalyticsLogGroupResponse> addLogAnalyticsLogGroup(
+            AddLogAnalyticsLogGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddLogAnalyticsLogGroupRequest, AddLogAnalyticsLogGroupResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getAddLogAnalyticsLogGroupDetails(),
+                "addLogAnalyticsLogGroupDetails is required");
+
+        return clientCall(request, AddLogAnalyticsLogGroupResponse::builder)
+                .logger(LOG, "addLogAnalyticsLogGroup")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "AddLogAnalyticsLogGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/AddLogAnalyticsLogGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddLogAnalyticsLogGroupRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("addLogAnalyticsLogGroup")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddLogAnalyticsLogGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddLogAnalyticsLogGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<AddOracleManagedCustomEndpointResponse>
             addOracleManagedCustomEndpoint(
                     AddOracleManagedCustomEndpointRequest request,
@@ -264,6 +303,43 @@ public class IntegrationInstanceAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public java.util.concurrent.Future<ConvertInstanceResponse> convertInstance(
+            ConvertInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConvertInstanceRequest, ConvertInstanceResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getConvertInstanceDetails(), "convertInstanceDetails is required");
+
+        return clientCall(request, ConvertInstanceResponse::builder)
+                .logger(LOG, "convertInstance")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "ConvertInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ConvertInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertInstanceRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("convertInstance")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ConvertInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConvertInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIntegrationInstanceResponse> createIntegrationInstance(
             CreateIntegrationInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -324,6 +400,41 @@ public class IntegrationInstanceAsyncClient extends com.oracle.bmc.http.internal
                         DeleteIntegrationInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteIntegrationInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableProcessAutomationResponse> disableProcessAutomation(
+            DisableProcessAutomationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisableProcessAutomationRequest, DisableProcessAutomationResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, DisableProcessAutomationResponse::builder)
+                .logger(LOG, "disableProcessAutomation")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "DisableProcessAutomation",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/DisableProcessAutomation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableProcessAutomationRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("disableProcessAutomation")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableProcessAutomationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableProcessAutomationResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -651,6 +762,43 @@ public class IntegrationInstanceAsyncClient extends com.oracle.bmc.http.internal
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-previous-page", ListWorkRequestsResponse.Builder::opcPreviousPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveLogAnalyticsLogGroupResponse>
+            removeLogAnalyticsLogGroup(
+                    RemoveLogAnalyticsLogGroupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveLogAnalyticsLogGroupRequest,
+                                    RemoveLogAnalyticsLogGroupResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, RemoveLogAnalyticsLogGroupResponse::builder)
+                .logger(LOG, "removeLogAnalyticsLogGroup")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "RemoveLogAnalyticsLogGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/RemoveLogAnalyticsLogGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveLogAnalyticsLogGroupRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLogAnalyticsLogGroup")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveLogAnalyticsLogGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveLogAnalyticsLogGroupResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

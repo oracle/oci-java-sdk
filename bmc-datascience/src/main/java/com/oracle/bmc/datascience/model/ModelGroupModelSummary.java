@@ -26,6 +26,7 @@ public final class ModelGroupModelSummary
     @java.beans.ConstructorProperties({
         "id",
         "modelId",
+        "inferenceKey",
         "compartmentId",
         "projectId",
         "displayName",
@@ -43,6 +44,7 @@ public final class ModelGroupModelSummary
     public ModelGroupModelSummary(
             String id,
             String modelId,
+            String inferenceKey,
             String compartmentId,
             String projectId,
             String displayName,
@@ -59,6 +61,7 @@ public final class ModelGroupModelSummary
         super();
         this.id = id;
         this.modelId = modelId;
+        this.inferenceKey = inferenceKey;
         this.compartmentId = compartmentId;
         this.projectId = projectId;
         this.displayName = displayName;
@@ -112,6 +115,21 @@ public final class ModelGroupModelSummary
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
+            return this;
+        }
+        /** SaaS friendly name of the model. */
+        @com.fasterxml.jackson.annotation.JsonProperty("inferenceKey")
+        private String inferenceKey;
+
+        /**
+         * SaaS friendly name of the model.
+         *
+         * @param inferenceKey the value to set
+         * @return this builder
+         */
+        public Builder inferenceKey(String inferenceKey) {
+            this.inferenceKey = inferenceKey;
+            this.__explicitlySet__.add("inferenceKey");
             return this;
         }
         /**
@@ -361,6 +379,7 @@ public final class ModelGroupModelSummary
                     new ModelGroupModelSummary(
                             this.id,
                             this.modelId,
+                            this.inferenceKey,
                             this.compartmentId,
                             this.projectId,
                             this.displayName,
@@ -387,6 +406,9 @@ public final class ModelGroupModelSummary
             }
             if (model.wasPropertyExplicitlySet("modelId")) {
                 this.modelId(model.getModelId());
+            }
+            if (model.wasPropertyExplicitlySet("inferenceKey")) {
+                this.inferenceKey(model.getInferenceKey());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -472,6 +494,19 @@ public final class ModelGroupModelSummary
      */
     public String getModelId() {
         return modelId;
+    }
+
+    /** SaaS friendly name of the model. */
+    @com.fasterxml.jackson.annotation.JsonProperty("inferenceKey")
+    private final String inferenceKey;
+
+    /**
+     * SaaS friendly name of the model.
+     *
+     * @return the value
+     */
+    public String getInferenceKey() {
+        return inferenceKey;
     }
 
     /**
@@ -702,6 +737,7 @@ public final class ModelGroupModelSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", modelId=").append(String.valueOf(this.modelId));
+        sb.append(", inferenceKey=").append(String.valueOf(this.inferenceKey));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", projectId=").append(String.valueOf(this.projectId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -731,6 +767,7 @@ public final class ModelGroupModelSummary
         ModelGroupModelSummary other = (ModelGroupModelSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.modelId, other.modelId)
+                && java.util.Objects.equals(this.inferenceKey, other.inferenceKey)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -753,6 +790,7 @@ public final class ModelGroupModelSummary
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
+        result = (result * PRIME) + (this.inferenceKey == null ? 43 : this.inferenceKey.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

@@ -7,11 +7,12 @@ package com.oracle.bmc.disasterrecovery.model;
 /**
  * The execution statuses for a DR plan step. - QUEUED - DR plan step execution has been queued. -
  * DISABLED - DR plan step execution has been disabled. - IN_PROGRESS - DR plan step execution is in
- * progress. - SUCCEEDED - DR plan step execution has succeeded. - FAILED - DR plan step execution
- * has failed. - FAILED_IGNORED - DR plan step execution has failed, but was ignored. - TIMED_OUT -
- * DR plan step execution has timed out. - TIMED_OUT_IGNORED - DR plan step execution has timed out,
- * but was ignored. - PAUSED - DR plan step execution has paused. - CANCELED - DR plan step
- * execution has been canceled.
+ * progress. - SUCCEEDED - DR plan step execution has succeeded. - SUCCEEDED_WITH_WARNING - DR plan
+ * step execution has succeeded, but with warnings. - FAILED - DR plan step execution has failed. -
+ * FAILED_IGNORED - DR plan step execution has failed, but was ignored. - TIMED_OUT - DR plan step
+ * execution has timed out. - TIMED_OUT_IGNORED - DR plan step execution has timed out, but was
+ * ignored. - PAUSED - DR plan step execution has paused. - CANCELED - DR plan step execution has
+ * been canceled.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanStepExecutionStatus implements com.oracle.bmc.http.internal.BmcEnum {
@@ -19,6 +20,7 @@ public enum DrPlanStepExecutionStatus implements com.oracle.bmc.http.internal.Bm
     Disabled("DISABLED"),
     InProgress("IN_PROGRESS"),
     Succeeded("SUCCEEDED"),
+    SucceededWithWarning("SUCCEEDED_WITH_WARNING"),
     Failed("FAILED"),
     FailedIgnored("FAILED_IGNORED"),
     TimedOut("TIMED_OUT"),

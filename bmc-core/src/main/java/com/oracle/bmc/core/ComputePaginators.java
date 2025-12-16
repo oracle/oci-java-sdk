@@ -3254,6 +3254,124 @@ public class ComputePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listFirmwareBundles operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListFirmwareBundlesResponse> listFirmwareBundlesResponseIterator(
+            final ListFirmwareBundlesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListFirmwareBundlesRequest.Builder,
+                ListFirmwareBundlesRequest,
+                ListFirmwareBundlesResponse>(
+                new java.util.function.Supplier<ListFirmwareBundlesRequest.Builder>() {
+                    @Override
+                    public ListFirmwareBundlesRequest.Builder get() {
+                        return ListFirmwareBundlesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListFirmwareBundlesResponse, String>() {
+                    @Override
+                    public String apply(ListFirmwareBundlesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFirmwareBundlesRequest.Builder>,
+                        ListFirmwareBundlesRequest>() {
+                    @Override
+                    public ListFirmwareBundlesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFirmwareBundlesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListFirmwareBundlesRequest, ListFirmwareBundlesResponse>() {
+                    @Override
+                    public ListFirmwareBundlesResponse apply(ListFirmwareBundlesRequest request) {
+                        return client.listFirmwareBundles(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.core.model.FirmwareBundleSummary} objects contained in responses from the
+     * listFirmwareBundles operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.core.model.FirmwareBundleSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.FirmwareBundleSummary>
+            listFirmwareBundlesRecordIterator(final ListFirmwareBundlesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListFirmwareBundlesRequest.Builder,
+                ListFirmwareBundlesRequest,
+                ListFirmwareBundlesResponse,
+                com.oracle.bmc.core.model.FirmwareBundleSummary>(
+                new java.util.function.Supplier<ListFirmwareBundlesRequest.Builder>() {
+                    @Override
+                    public ListFirmwareBundlesRequest.Builder get() {
+                        return ListFirmwareBundlesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListFirmwareBundlesResponse, String>() {
+                    @Override
+                    public String apply(ListFirmwareBundlesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFirmwareBundlesRequest.Builder>,
+                        ListFirmwareBundlesRequest>() {
+                    @Override
+                    public ListFirmwareBundlesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFirmwareBundlesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListFirmwareBundlesRequest, ListFirmwareBundlesResponse>() {
+                    @Override
+                    public ListFirmwareBundlesResponse apply(ListFirmwareBundlesRequest request) {
+                        return client.listFirmwareBundles(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListFirmwareBundlesResponse,
+                        java.util.List<com.oracle.bmc.core.model.FirmwareBundleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.FirmwareBundleSummary> apply(
+                            ListFirmwareBundlesResponse response) {
+                        return response.getFirmwareBundlesCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listImageShapeCompatibilityEntries operation. This iterable will fetch more data from the
      * server as needed.
      *

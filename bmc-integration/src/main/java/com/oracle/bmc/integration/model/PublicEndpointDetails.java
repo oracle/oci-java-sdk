@@ -62,6 +62,24 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
             this.__explicitlySet__.add("allowlistedHttpVcns");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("runtime")
+        private ComponentAllowListDetails runtime;
+
+        public Builder runtime(ComponentAllowListDetails runtime) {
+            this.runtime = runtime;
+            this.__explicitlySet__.add("runtime");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("designTime")
+        private ComponentAllowListDetails designTime;
+
+        public Builder designTime(ComponentAllowListDetails designTime) {
+            this.designTime = designTime;
+            this.__explicitlySet__.add("designTime");
+            return this;
+        }
         /**
          * The Integration service's VCN is allow-listed to allow integrations to call back into
          * other integrations
@@ -90,6 +108,8 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
                     new PublicEndpointDetails(
                             this.allowlistedHttpIps,
                             this.allowlistedHttpVcns,
+                            this.runtime,
+                            this.designTime,
                             this.isIntegrationVcnAllowlisted);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -104,6 +124,12 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
             }
             if (model.wasPropertyExplicitlySet("allowlistedHttpVcns")) {
                 this.allowlistedHttpVcns(model.getAllowlistedHttpVcns());
+            }
+            if (model.wasPropertyExplicitlySet("runtime")) {
+                this.runtime(model.getRuntime());
+            }
+            if (model.wasPropertyExplicitlySet("designTime")) {
+                this.designTime(model.getDesignTime());
             }
             if (model.wasPropertyExplicitlySet("isIntegrationVcnAllowlisted")) {
                 this.isIntegrationVcnAllowlisted(model.getIsIntegrationVcnAllowlisted());
@@ -125,10 +151,14 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     public PublicEndpointDetails(
             java.util.List<String> allowlistedHttpIps,
             java.util.List<VirtualCloudNetwork> allowlistedHttpVcns,
+            ComponentAllowListDetails runtime,
+            ComponentAllowListDetails designTime,
             Boolean isIntegrationVcnAllowlisted) {
         super();
         this.allowlistedHttpIps = allowlistedHttpIps;
         this.allowlistedHttpVcns = allowlistedHttpVcns;
+        this.runtime = runtime;
+        this.designTime = designTime;
         this.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
     }
 
@@ -160,6 +190,20 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
      */
     public java.util.List<VirtualCloudNetwork> getAllowlistedHttpVcns() {
         return allowlistedHttpVcns;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("runtime")
+    private final ComponentAllowListDetails runtime;
+
+    public ComponentAllowListDetails getRuntime() {
+        return runtime;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("designTime")
+    private final ComponentAllowListDetails designTime;
+
+    public ComponentAllowListDetails getDesignTime() {
+        return designTime;
     }
 
     /**
@@ -196,6 +240,8 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", allowlistedHttpIps=").append(String.valueOf(this.allowlistedHttpIps));
         sb.append(", allowlistedHttpVcns=").append(String.valueOf(this.allowlistedHttpVcns));
+        sb.append(", runtime=").append(String.valueOf(this.runtime));
+        sb.append(", designTime=").append(String.valueOf(this.designTime));
         sb.append(", isIntegrationVcnAllowlisted=")
                 .append(String.valueOf(this.isIntegrationVcnAllowlisted));
         sb.append(")");
@@ -214,6 +260,8 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         PublicEndpointDetails other = (PublicEndpointDetails) o;
         return java.util.Objects.equals(this.allowlistedHttpIps, other.allowlistedHttpIps)
                 && java.util.Objects.equals(this.allowlistedHttpVcns, other.allowlistedHttpVcns)
+                && java.util.Objects.equals(this.runtime, other.runtime)
+                && java.util.Objects.equals(this.designTime, other.designTime)
                 && java.util.Objects.equals(
                         this.isIntegrationVcnAllowlisted, other.isIntegrationVcnAllowlisted)
                 && super.equals(other);
@@ -233,6 +281,8 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
                         + (this.allowlistedHttpVcns == null
                                 ? 43
                                 : this.allowlistedHttpVcns.hashCode());
+        result = (result * PRIME) + (this.runtime == null ? 43 : this.runtime.hashCode());
+        result = (result * PRIME) + (this.designTime == null ? 43 : this.designTime.hashCode());
         result =
                 (result * PRIME)
                         + (this.isIntegrationVcnAllowlisted == null

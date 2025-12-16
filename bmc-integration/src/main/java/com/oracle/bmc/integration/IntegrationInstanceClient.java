@@ -125,6 +125,43 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public AddLogAnalyticsLogGroupResponse addLogAnalyticsLogGroup(
+            AddLogAnalyticsLogGroupRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getAddLogAnalyticsLogGroupDetails(),
+                "addLogAnalyticsLogGroupDetails is required");
+
+        return clientCall(request, AddLogAnalyticsLogGroupResponse::builder)
+                .logger(LOG, "addLogAnalyticsLogGroup")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "AddLogAnalyticsLogGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/AddLogAnalyticsLogGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddLogAnalyticsLogGroupRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("addLogAnalyticsLogGroup")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddLogAnalyticsLogGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddLogAnalyticsLogGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public AddOracleManagedCustomEndpointResponse addOracleManagedCustomEndpoint(
             AddOracleManagedCustomEndpointRequest request) {
         Objects.requireNonNull(
@@ -275,6 +312,40 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public ConvertInstanceResponse convertInstance(ConvertInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getConvertInstanceDetails(), "convertInstanceDetails is required");
+
+        return clientCall(request, ConvertInstanceResponse::builder)
+                .logger(LOG, "convertInstance")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "ConvertInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ConvertInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertInstanceRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("convertInstance")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ConvertInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConvertInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateIntegrationInstanceResponse createIntegrationInstance(
             CreateIntegrationInstanceRequest request) {
         Objects.requireNonNull(
@@ -330,6 +401,39 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
                         DeleteIntegrationInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteIntegrationInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableProcessAutomationResponse disableProcessAutomation(
+            DisableProcessAutomationRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, DisableProcessAutomationResponse::builder)
+                .logger(LOG, "disableProcessAutomation")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "DisableProcessAutomation",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/DisableProcessAutomation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableProcessAutomationRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("disableProcessAutomation")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableProcessAutomationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableProcessAutomationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -628,6 +732,39 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-previous-page", ListWorkRequestsResponse.Builder::opcPreviousPage)
+                .callSync();
+    }
+
+    @Override
+    public RemoveLogAnalyticsLogGroupResponse removeLogAnalyticsLogGroup(
+            RemoveLogAnalyticsLogGroupRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, RemoveLogAnalyticsLogGroupResponse::builder)
+                .logger(LOG, "removeLogAnalyticsLogGroup")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "RemoveLogAnalyticsLogGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/RemoveLogAnalyticsLogGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveLogAnalyticsLogGroupRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLogAnalyticsLogGroup")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveLogAnalyticsLogGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveLogAnalyticsLogGroupResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -106,6 +106,22 @@ public interface Compute extends AutoCloseable {
             AddImageShapeCompatibilityEntryRequest request);
 
     /**
+     * Triggers the asynchronous process that applies the host's target configuration
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ApplyHostConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ApplyHostConfiguration API.
+     */
+    ApplyHostConfigurationResponse applyHostConfiguration(ApplyHostConfigurationRequest request);
+
+    /**
      * Attaches the specified boot volume to the specified instance.
      *
      * @param request The request object containing the details to send
@@ -412,6 +428,22 @@ public interface Compute extends AutoCloseable {
      */
     ChangeInstanceCompartmentResponse changeInstanceCompartment(
             ChangeInstanceCompartmentRequest request);
+
+    /**
+     * Marks the host to be checked for conformance to its target configuration
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CheckHostConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CheckHostConfiguration API.
+     */
+    CheckHostConfigurationResponse checkHostConfiguration(CheckHostConfigurationRequest request);
 
     /**
      * Create a subscription for listing resource version for a compartment. It will take some time
@@ -1246,6 +1278,22 @@ public interface Compute extends AutoCloseable {
     GetDedicatedVmHostResponse getDedicatedVmHost(GetDedicatedVmHostRequest request);
 
     /**
+     * Returns the Firmware Bundle matching the provided firmwareBundleId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFirmwareBundleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFirmwareBundle
+     *     API.
+     */
+    GetFirmwareBundleResponse getFirmwareBundle(GetFirmwareBundleRequest request);
+
+    /**
      * Gets the specified image.
      *
      * @param request The request object containing the details to send
@@ -1981,6 +2029,23 @@ public interface Compute extends AutoCloseable {
      *     ListDedicatedVmHosts API.
      */
     ListDedicatedVmHostsResponse listDedicatedVmHosts(ListDedicatedVmHostsRequest request);
+
+    /**
+     * Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter
+     * results to include only the default (recommended) Firmware Bundle for the given platform.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListFirmwareBundlesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFirmwareBundles
+     *     API.
+     */
+    ListFirmwareBundlesResponse listFirmwareBundles(ListFirmwareBundlesRequest request);
 
     /**
      * Lists the compatible shapes for the specified image.

@@ -60,6 +60,23 @@ public interface IntegrationInstanceAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Add LogGroup with specified ocid for Integration Instance to enable sending OIC Activity
+     * Stream to OCI Logging Analytics.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddLogAnalyticsLogGroupResponse> addLogAnalyticsLogGroup(
+            AddLogAnalyticsLogGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddLogAnalyticsLogGroupRequest, AddLogAnalyticsLogGroupResponse>
+                    handler);
+
+    /**
      * Enable Oracle Managed Custom Endpoint for given integration instance.
      *
      * @param request The request object containing the details to send
@@ -134,6 +151,23 @@ public interface IntegrationInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Integration instance identified by ID will be migrated to a new Disaster Recovery enabled
+     * integration instance. If a given Integration instance has certain features enabled which are
+     * not supported for conversion/migration it will not be accepted for conversion.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConvertInstanceResponse> convertInstance(
+            ConvertInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ConvertInstanceRequest, ConvertInstanceResponse>
+                    handler);
+
+    /**
      * Creates a new Integration Instance.
      *
      * @param request The request object containing the details to send
@@ -163,6 +197,22 @@ public interface IntegrationInstanceAsync extends AutoCloseable {
             DeleteIntegrationInstanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteIntegrationInstanceRequest, DeleteIntegrationInstanceResponse>
+                    handler);
+
+    /**
+     * Disable Process Automation for given Integration Instance
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableProcessAutomationResponse> disableProcessAutomation(
+            DisableProcessAutomationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DisableProcessAutomationRequest, DisableProcessAutomationResponse>
                     handler);
 
     /**
@@ -308,6 +358,24 @@ public interface IntegrationInstanceAsync extends AutoCloseable {
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Removes Log Analytics logGroup, if enabled for given integrationInstance. Since only single
+     * LogGroup can be enabled for integration instance, no additional details are required to be
+     * includes in the request.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveLogAnalyticsLogGroupResponse> removeLogAnalyticsLogGroup(
+            RemoveLogAnalyticsLogGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveLogAnalyticsLogGroupRequest, RemoveLogAnalyticsLogGroupResponse>
                     handler);
 
     /**

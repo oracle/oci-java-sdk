@@ -3943,6 +3943,46 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetMappedAttributeResponse> getMappedAttribute(
+            GetMappedAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMappedAttributeRequest, GetMappedAttributeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMappedAttributeId(), "mappedAttributeId must not be blank");
+
+        return clientCall(request, GetMappedAttributeResponse::builder)
+                .logger(LOG, "getMappedAttribute")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMappedAttribute",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MappedAttribute/GetMappedAttribute")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMappedAttributeRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MappedAttributes")
+                .appendPathParam(request.getMappedAttributeId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MappedAttribute.class,
+                        GetMappedAttributeResponse.Builder::mappedAttribute)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMappedAttributeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMeResponse> getMe(
             GetMeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetMeRequest, GetMeResponse> handler) {
@@ -6212,6 +6252,52 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListKmsiSettingsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListKmsiSettingsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMappedAttributesResponse> listMappedAttributes(
+            ListMappedAttributesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMappedAttributesRequest, ListMappedAttributesResponse>
+                    handler) {
+
+        return clientCall(request, ListMappedAttributesResponse::builder)
+                .logger(LOG, "listMappedAttributes")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMappedAttributes",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MappedAttribute/ListMappedAttributes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMappedAttributesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MappedAttributes")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MappedAttributes.class,
+                        ListMappedAttributesResponse.Builder::mappedAttributes)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMappedAttributesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMappedAttributesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -8575,6 +8661,49 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<PatchMappedAttributeResponse> patchMappedAttribute(
+            PatchMappedAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PatchMappedAttributeRequest, PatchMappedAttributeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMappedAttributeId(), "mappedAttributeId must not be blank");
+
+        return clientCall(request, PatchMappedAttributeResponse::builder)
+                .logger(LOG, "patchMappedAttribute")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchMappedAttribute",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MappedAttribute/PatchMappedAttribute")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchMappedAttributeRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MappedAttributes")
+                .appendPathParam(request.getMappedAttributeId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MappedAttribute.class,
+                        PatchMappedAttributeResponse.Builder::mappedAttribute)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchMappedAttributeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchMappedAttributeResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PatchMeResponse> patchMe(
             PatchMeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<PatchMeRequest, PatchMeResponse> handler) {
@@ -10196,6 +10325,49 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<PutMappedAttributeResponse> putMappedAttribute(
+            PutMappedAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutMappedAttributeRequest, PutMappedAttributeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMappedAttributeId(), "mappedAttributeId must not be blank");
+
+        return clientCall(request, PutMappedAttributeResponse::builder)
+                .logger(LOG, "putMappedAttribute")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutMappedAttribute",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MappedAttribute/PutMappedAttribute")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutMappedAttributeRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MappedAttributes")
+                .appendPathParam(request.getMappedAttributeId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MappedAttribute.class,
+                        PutMappedAttributeResponse.Builder::mappedAttribute)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutMappedAttributeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutMappedAttributeResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PutMeResponse> putMe(
             PutMeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<PutMeRequest, PutMeResponse> handler) {
@@ -11544,6 +11716,44 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", SearchKmsiSettingsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SearchKmsiSettingsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchMappedAttributesResponse> searchMappedAttributes(
+            SearchMappedAttributesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SearchMappedAttributesRequest, SearchMappedAttributesResponse>
+                    handler) {
+
+        return clientCall(request, SearchMappedAttributesResponse::builder)
+                .logger(LOG, "searchMappedAttributes")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchMappedAttributes",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MappedAttribute/SearchMappedAttributes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchMappedAttributesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MappedAttributes")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MappedAttributes.class,
+                        SearchMappedAttributesResponse.Builder::mappedAttributes)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchMappedAttributesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchMappedAttributesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

@@ -32,6 +32,8 @@ public final class ComputeHost extends com.oracle.bmc.http.client.internal.Expli
         "timeConfigurationCheck",
         "configurationData",
         "recycleDetails",
+        "firmwareBundleId",
+        "platform",
         "networkBlockId",
         "localBlockId",
         "gpuMemoryFabricId",
@@ -60,6 +62,8 @@ public final class ComputeHost extends com.oracle.bmc.http.client.internal.Expli
             java.util.Date timeConfigurationCheck,
             ComputeHostConfigurationData configurationData,
             RecycleDetails recycleDetails,
+            String firmwareBundleId,
+            String platform,
             String networkBlockId,
             String localBlockId,
             String gpuMemoryFabricId,
@@ -87,6 +91,8 @@ public final class ComputeHost extends com.oracle.bmc.http.client.internal.Expli
         this.timeConfigurationCheck = timeConfigurationCheck;
         this.configurationData = configurationData;
         this.recycleDetails = recycleDetails;
+        this.firmwareBundleId = firmwareBundleId;
+        this.platform = platform;
         this.networkBlockId = networkBlockId;
         this.localBlockId = localBlockId;
         this.gpuMemoryFabricId = gpuMemoryFabricId;
@@ -287,6 +293,40 @@ public final class ComputeHost extends com.oracle.bmc.http.client.internal.Expli
         public Builder recycleDetails(RecycleDetails recycleDetails) {
             this.recycleDetails = recycleDetails;
             this.__explicitlySet__.add("recycleDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Customer-unique firmware bundle associated with the Host.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("firmwareBundleId")
+        private String firmwareBundleId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Customer-unique firmware bundle associated with the Host.
+         *
+         * @param firmwareBundleId the value to set
+         * @return this builder
+         */
+        public Builder firmwareBundleId(String firmwareBundleId) {
+            this.firmwareBundleId = firmwareBundleId;
+            this.__explicitlySet__.add("firmwareBundleId");
+            return this;
+        }
+        /** The platform of the host */
+        @com.fasterxml.jackson.annotation.JsonProperty("platform")
+        private String platform;
+
+        /**
+         * The platform of the host
+         *
+         * @param platform the value to set
+         * @return this builder
+         */
+        public Builder platform(String platform) {
+            this.platform = platform;
+            this.__explicitlySet__.add("platform");
             return this;
         }
         /**
@@ -618,6 +658,8 @@ public final class ComputeHost extends com.oracle.bmc.http.client.internal.Expli
                             this.timeConfigurationCheck,
                             this.configurationData,
                             this.recycleDetails,
+                            this.firmwareBundleId,
+                            this.platform,
                             this.networkBlockId,
                             this.localBlockId,
                             this.gpuMemoryFabricId,
@@ -671,6 +713,12 @@ public final class ComputeHost extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("recycleDetails")) {
                 this.recycleDetails(model.getRecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("firmwareBundleId")) {
+                this.firmwareBundleId(model.getFirmwareBundleId());
+            }
+            if (model.wasPropertyExplicitlySet("platform")) {
+                this.platform(model.getPlatform());
             }
             if (model.wasPropertyExplicitlySet("networkBlockId")) {
                 this.networkBlockId(model.getNetworkBlockId());
@@ -893,6 +941,36 @@ public final class ComputeHost extends com.oracle.bmc.http.client.internal.Expli
 
     public RecycleDetails getRecycleDetails() {
         return recycleDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Customer-unique firmware bundle associated with the Host.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("firmwareBundleId")
+    private final String firmwareBundleId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Customer-unique firmware bundle associated with the Host.
+     *
+     * @return the value
+     */
+    public String getFirmwareBundleId() {
+        return firmwareBundleId;
+    }
+
+    /** The platform of the host */
+    @com.fasterxml.jackson.annotation.JsonProperty("platform")
+    private final String platform;
+
+    /**
+     * The platform of the host
+     *
+     * @return the value
+     */
+    public String getPlatform() {
+        return platform;
     }
 
     /**
@@ -1292,6 +1370,8 @@ public final class ComputeHost extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", timeConfigurationCheck=").append(String.valueOf(this.timeConfigurationCheck));
         sb.append(", configurationData=").append(String.valueOf(this.configurationData));
         sb.append(", recycleDetails=").append(String.valueOf(this.recycleDetails));
+        sb.append(", firmwareBundleId=").append(String.valueOf(this.firmwareBundleId));
+        sb.append(", platform=").append(String.valueOf(this.platform));
         sb.append(", networkBlockId=").append(String.valueOf(this.networkBlockId));
         sb.append(", localBlockId=").append(String.valueOf(this.localBlockId));
         sb.append(", gpuMemoryFabricId=").append(String.valueOf(this.gpuMemoryFabricId));
@@ -1334,6 +1414,8 @@ public final class ComputeHost extends com.oracle.bmc.http.client.internal.Expli
                         this.timeConfigurationCheck, other.timeConfigurationCheck)
                 && java.util.Objects.equals(this.configurationData, other.configurationData)
                 && java.util.Objects.equals(this.recycleDetails, other.recycleDetails)
+                && java.util.Objects.equals(this.firmwareBundleId, other.firmwareBundleId)
+                && java.util.Objects.equals(this.platform, other.platform)
                 && java.util.Objects.equals(this.networkBlockId, other.networkBlockId)
                 && java.util.Objects.equals(this.localBlockId, other.localBlockId)
                 && java.util.Objects.equals(this.gpuMemoryFabricId, other.gpuMemoryFabricId)
@@ -1390,6 +1472,10 @@ public final class ComputeHost extends com.oracle.bmc.http.client.internal.Expli
         result =
                 (result * PRIME)
                         + (this.recycleDetails == null ? 43 : this.recycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.firmwareBundleId == null ? 43 : this.firmwareBundleId.hashCode());
+        result = (result * PRIME) + (this.platform == null ? 43 : this.platform.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkBlockId == null ? 43 : this.networkBlockId.hashCode());

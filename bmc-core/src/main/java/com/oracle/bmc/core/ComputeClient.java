@@ -183,6 +183,44 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public ApplyHostConfigurationResponse applyHostConfiguration(
+            ApplyHostConfigurationRequest request) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+
+        return clientCall(request, ApplyHostConfigurationResponse::builder)
+                .logger(LOG, "applyHostConfiguration")
+                .serviceDetails(
+                        "Compute",
+                        "ApplyHostConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/ApplyHostConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ApplyHostConfigurationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .appendPathParam("actions")
+                .appendPathParam("applyConfiguration")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHost.class,
+                        ApplyHostConfigurationResponse.Builder::computeHost)
+                .handleResponseHeaderString(
+                        "opc-request-id", ApplyHostConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ApplyHostConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", ApplyHostConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", ApplyHostConfigurationResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
     public AttachBootVolumeResponse attachBootVolume(AttachBootVolumeRequest request) {
         Objects.requireNonNull(
                 request.getAttachBootVolumeDetails(), "attachBootVolumeDetails is required");
@@ -734,6 +772,41 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeInstanceCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CheckHostConfigurationResponse checkHostConfiguration(
+            CheckHostConfigurationRequest request) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+
+        return clientCall(request, CheckHostConfigurationResponse::builder)
+                .logger(LOG, "checkHostConfiguration")
+                .serviceDetails(
+                        "Compute",
+                        "CheckHostConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/CheckHostConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CheckHostConfigurationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .appendPathParam("actions")
+                .appendPathParam("checkConfiguration")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHost.class,
+                        CheckHostConfigurationResponse.Builder::computeHost)
+                .handleResponseHeaderString(
+                        "opc-request-id", CheckHostConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CheckHostConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CheckHostConfigurationResponse.Builder::location)
                 .callSync();
     }
 
@@ -2056,6 +2129,32 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public GetFirmwareBundleResponse getFirmwareBundle(GetFirmwareBundleRequest request) {
+
+        Validate.notBlank(request.getFirmwareBundleId(), "firmwareBundleId must not be blank");
+
+        return clientCall(request, GetFirmwareBundleResponse::builder)
+                .logger(LOG, "getFirmwareBundle")
+                .serviceDetails(
+                        "Compute",
+                        "GetFirmwareBundle",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FirmwareBundle/GetFirmwareBundle")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFirmwareBundleRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("firmwareBundles")
+                .appendPathParam(request.getFirmwareBundleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.FirmwareBundle.class,
+                        GetFirmwareBundleResponse.Builder::firmwareBundle)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFirmwareBundleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetImageResponse getImage(GetImageRequest request) {
 
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
@@ -3347,6 +3446,38 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public ListFirmwareBundlesResponse listFirmwareBundles(ListFirmwareBundlesRequest request) {
+        Objects.requireNonNull(request.getPlatform(), "platform is required");
+
+        return clientCall(request, ListFirmwareBundlesResponse::builder)
+                .logger(LOG, "listFirmwareBundles")
+                .serviceDetails(
+                        "Compute",
+                        "ListFirmwareBundles",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FirmwareBundlesCollection/ListFirmwareBundles")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFirmwareBundlesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("firmwareBundles")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("platform", request.getPlatform())
+                .appendQueryParam("isDefaultBundle", request.getIsDefaultBundle())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.FirmwareBundlesCollection.class,
+                        ListFirmwareBundlesResponse.Builder::firmwareBundlesCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFirmwareBundlesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListFirmwareBundlesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListImageShapeCompatibilityEntriesResponse listImageShapeCompatibilityEntries(
             ListImageShapeCompatibilityEntriesRequest request) {
 
@@ -3580,6 +3711,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("imageId", request.getImageId())
+                .appendQueryParam("shape", request.getShape())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.core.model.Shape.class, ListShapesResponse.Builder::items)

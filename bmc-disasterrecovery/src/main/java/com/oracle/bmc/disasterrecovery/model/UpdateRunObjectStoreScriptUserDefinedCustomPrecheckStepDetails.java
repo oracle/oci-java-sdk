@@ -71,6 +71,48 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
             this.__explicitlySet__.add("objectStorageScriptLocation");
             return this;
         }
+        /**
+         * The entire path and arguments for the script that is stored in object store, or inside a
+         * compressed archive in object store. Example: {@code /usr/bin/python3.7
+         * scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level
+         * "INFO"}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("scriptCommand")
+        private String scriptCommand;
+
+        /**
+         * The entire path and arguments for the script that is stored in object store, or inside a
+         * compressed archive in object store. Example: {@code /usr/bin/python3.7
+         * scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level
+         * "INFO"}
+         *
+         * @param scriptCommand the value to set
+         * @return this builder
+         */
+        public Builder scriptCommand(String scriptCommand) {
+            this.scriptCommand = scriptCommand;
+            this.__explicitlySet__.add("scriptCommand");
+            return this;
+        }
+        /**
+         * The user ID on the instance that will be used to execute the script specified in
+         * 'scriptCommand'. Example: {@code opc}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("runAsUser")
+        private String runAsUser;
+
+        /**
+         * The user ID on the instance that will be used to execute the script specified in
+         * 'scriptCommand'. Example: {@code opc}
+         *
+         * @param runAsUser the value to set
+         * @return this builder
+         */
+        public Builder runAsUser(String runAsUser) {
+            this.runAsUser = runAsUser;
+            this.__explicitlySet__.add("runAsUser");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -78,7 +120,10 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
         public UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails build() {
             UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails model =
                     new UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails(
-                            this.runOnInstanceId, this.objectStorageScriptLocation);
+                            this.runOnInstanceId,
+                            this.objectStorageScriptLocation,
+                            this.scriptCommand,
+                            this.runAsUser);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -92,6 +137,12 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
             }
             if (model.wasPropertyExplicitlySet("objectStorageScriptLocation")) {
                 this.objectStorageScriptLocation(model.getObjectStorageScriptLocation());
+            }
+            if (model.wasPropertyExplicitlySet("scriptCommand")) {
+                this.scriptCommand(model.getScriptCommand());
+            }
+            if (model.wasPropertyExplicitlySet("runAsUser")) {
+                this.runAsUser(model.getRunAsUser());
             }
             return this;
         }
@@ -109,10 +160,14 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
     @Deprecated
     public UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails(
             String runOnInstanceId,
-            UpdateObjectStorageScriptLocationDetails objectStorageScriptLocation) {
+            UpdateObjectStorageScriptLocationDetails objectStorageScriptLocation,
+            String scriptCommand,
+            String runAsUser) {
         super();
         this.runOnInstanceId = runOnInstanceId;
         this.objectStorageScriptLocation = objectStorageScriptLocation;
+        this.scriptCommand = scriptCommand;
+        this.runAsUser = runAsUser;
     }
 
     /**
@@ -153,6 +208,44 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
         return objectStorageScriptLocation;
     }
 
+    /**
+     * The entire path and arguments for the script that is stored in object store, or inside a
+     * compressed archive in object store. Example: {@code /usr/bin/python3.7
+     * scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level
+     * "INFO"}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("scriptCommand")
+    private final String scriptCommand;
+
+    /**
+     * The entire path and arguments for the script that is stored in object store, or inside a
+     * compressed archive in object store. Example: {@code /usr/bin/python3.7
+     * scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level
+     * "INFO"}
+     *
+     * @return the value
+     */
+    public String getScriptCommand() {
+        return scriptCommand;
+    }
+
+    /**
+     * The user ID on the instance that will be used to execute the script specified in
+     * 'scriptCommand'. Example: {@code opc}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("runAsUser")
+    private final String runAsUser;
+
+    /**
+     * The user ID on the instance that will be used to execute the script specified in
+     * 'scriptCommand'. Example: {@code opc}
+     *
+     * @return the value
+     */
+    public String getRunAsUser() {
+        return runAsUser;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -171,6 +264,8 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
         sb.append(", runOnInstanceId=").append(String.valueOf(this.runOnInstanceId));
         sb.append(", objectStorageScriptLocation=")
                 .append(String.valueOf(this.objectStorageScriptLocation));
+        sb.append(", scriptCommand=").append(String.valueOf(this.scriptCommand));
+        sb.append(", runAsUser=").append(String.valueOf(this.runAsUser));
         sb.append(")");
         return sb.toString();
     }
@@ -189,6 +284,8 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
         return java.util.Objects.equals(this.runOnInstanceId, other.runOnInstanceId)
                 && java.util.Objects.equals(
                         this.objectStorageScriptLocation, other.objectStorageScriptLocation)
+                && java.util.Objects.equals(this.scriptCommand, other.scriptCommand)
+                && java.util.Objects.equals(this.runAsUser, other.runAsUser)
                 && super.equals(other);
     }
 
@@ -204,6 +301,10 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
                         + (this.objectStorageScriptLocation == null
                                 ? 43
                                 : this.objectStorageScriptLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scriptCommand == null ? 43 : this.scriptCommand.hashCode());
+        result = (result * PRIME) + (this.runAsUser == null ? 43 : this.runAsUser.hashCode());
         return result;
     }
 }

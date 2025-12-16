@@ -23,6 +23,9 @@ package com.oracle.bmc.disasterrecovery.model;
         defaultImpl = CreateDrProtectionGroupMemberDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberIntegrationInstanceDetails.class,
+            name = "INTEGRATION_INSTANCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDrProtectionGroupMemberDatabaseDetails.class,
             name = "DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
