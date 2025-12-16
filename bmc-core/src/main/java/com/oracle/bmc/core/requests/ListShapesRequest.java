@@ -88,6 +88,13 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getImageId() {
         return imageId;
     }
+    /** Shape name. */
+    private String shape;
+
+    /** Shape name. */
+    public String getShape() {
+        return shape;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -195,6 +202,20 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /** Shape name. */
+        private String shape = null;
+
+        /**
+         * Shape name.
+         *
+         * @param shape the value to set
+         * @return this builder instance
+         */
+        public Builder shape(String shape) {
+            this.shape = shape;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -230,6 +251,7 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             limit(o.getLimit());
             page(o.getPage());
             imageId(o.getImageId());
+            shape(o.getShape());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -269,8 +291,10 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.limit = limit;
             request.page = page;
             request.imageId = imageId;
+            request.shape = shape;
             return request;
-            // new ListShapesRequest(compartmentId, availabilityDomain, limit, page, imageId);
+            // new ListShapesRequest(compartmentId, availabilityDomain, limit, page, imageId,
+            // shape);
         }
     }
 
@@ -285,7 +309,8 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .availabilityDomain(availabilityDomain)
                 .limit(limit)
                 .page(page)
-                .imageId(imageId);
+                .imageId(imageId)
+                .shape(shape);
     }
 
     /**
@@ -307,6 +332,7 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",imageId=").append(String.valueOf(this.imageId));
+        sb.append(",shape=").append(String.valueOf(this.shape));
         sb.append(")");
         return sb.toString();
     }
@@ -326,7 +352,8 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.imageId, other.imageId);
+                && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.shape, other.shape);
     }
 
     @Override
@@ -344,6 +371,7 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         return result;
     }
 }

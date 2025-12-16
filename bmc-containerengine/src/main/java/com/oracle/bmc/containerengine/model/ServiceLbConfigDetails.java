@@ -23,13 +23,15 @@ package com.oracle.bmc.containerengine.model;
 public final class ServiceLbConfigDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({"freeformTags", "definedTags", "backendNsgIds"})
     public ServiceLbConfigDetails(
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<String> backendNsgIds) {
         super();
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.backendNsgIds = backendNsgIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -81,13 +83,37 @@ public final class ServiceLbConfigDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs
+         * (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be
+         * added when rule management mode is set to NSG via annotations. see {@link
+         * NetworkSecurityGroup}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("backendNsgIds")
+        private java.util.List<String> backendNsgIds;
+
+        /**
+         * A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs
+         * (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be
+         * added when rule management mode is set to NSG via annotations. see {@link
+         * NetworkSecurityGroup}.
+         *
+         * @param backendNsgIds the value to set
+         * @return this builder
+         */
+        public Builder backendNsgIds(java.util.List<String> backendNsgIds) {
+            this.backendNsgIds = backendNsgIds;
+            this.__explicitlySet__.add("backendNsgIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ServiceLbConfigDetails build() {
             ServiceLbConfigDetails model =
-                    new ServiceLbConfigDetails(this.freeformTags, this.definedTags);
+                    new ServiceLbConfigDetails(
+                            this.freeformTags, this.definedTags, this.backendNsgIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -101,6 +127,9 @@ public final class ServiceLbConfigDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("backendNsgIds")) {
+                this.backendNsgIds(model.getBackendNsgIds());
             }
             return this;
         }
@@ -157,6 +186,27 @@ public final class ServiceLbConfigDetails
         return definedTags;
     }
 
+    /**
+     * A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs
+     * (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be
+     * added when rule management mode is set to NSG via annotations. see {@link
+     * NetworkSecurityGroup}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("backendNsgIds")
+    private final java.util.List<String> backendNsgIds;
+
+    /**
+     * A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs
+     * (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be
+     * added when rule management mode is set to NSG via annotations. see {@link
+     * NetworkSecurityGroup}.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getBackendNsgIds() {
+        return backendNsgIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -174,6 +224,7 @@ public final class ServiceLbConfigDetails
         sb.append("super=").append(super.toString());
         sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", backendNsgIds=").append(String.valueOf(this.backendNsgIds));
         sb.append(")");
         return sb.toString();
     }
@@ -190,6 +241,7 @@ public final class ServiceLbConfigDetails
         ServiceLbConfigDetails other = (ServiceLbConfigDetails) o;
         return java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.backendNsgIds, other.backendNsgIds)
                 && super.equals(other);
     }
 
@@ -199,6 +251,9 @@ public final class ServiceLbConfigDetails
         int result = 1;
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendNsgIds == null ? 43 : this.backendNsgIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

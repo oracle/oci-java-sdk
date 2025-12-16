@@ -30,7 +30,8 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
     public static class Builder {
         /**
          * The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a
-         * canonical format. Acceptable format: {@code <region>.ocir.io/<registry>/<image>:<tag>}
+         * canonical format. The container image is optional while using service managed open source
+         * foundation model. Acceptable format: {@code <region>.ocir.io/<registry>/<image>:<tag>}
          * {@code <region>.ocir.io/<registry>/<image>:<tag>@digest}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("image")
@@ -38,7 +39,8 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
 
         /**
          * The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a
-         * canonical format. Acceptable format: {@code <region>.ocir.io/<registry>/<image>:<tag>}
+         * canonical format. The container image is optional while using service managed open source
+         * foundation model. Acceptable format: {@code <region>.ocir.io/<registry>/<image>:<tag>}
          * {@code <region>.ocir.io/<registry>/<image>:<tag>@digest}
          *
          * @param image the value to set
@@ -191,6 +193,26 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
             this.__explicitlySet__.add("environmentVariables");
             return this;
         }
+        /**
+         * Service injected Environment variables set for the web server container and can not be
+         * set or modified by user.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("defaultEnvironmentVariables")
+        private java.util.Map<String, String> defaultEnvironmentVariables;
+
+        /**
+         * Service injected Environment variables set for the web server container and can not be
+         * set or modified by user.
+         *
+         * @param defaultEnvironmentVariables the value to set
+         * @return this builder
+         */
+        public Builder defaultEnvironmentVariables(
+                java.util.Map<String, String> defaultEnvironmentVariables) {
+            this.defaultEnvironmentVariables = defaultEnvironmentVariables;
+            this.__explicitlySet__.add("defaultEnvironmentVariables");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -204,7 +226,8 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
                             this.entrypoint,
                             this.serverPort,
                             this.healthCheckPort,
-                            this.environmentVariables);
+                            this.environmentVariables,
+                            this.defaultEnvironmentVariables);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -234,6 +257,9 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
             if (model.wasPropertyExplicitlySet("environmentVariables")) {
                 this.environmentVariables(model.getEnvironmentVariables());
             }
+            if (model.wasPropertyExplicitlySet("defaultEnvironmentVariables")) {
+                this.defaultEnvironmentVariables(model.getDefaultEnvironmentVariables());
+            }
             return this;
         }
     }
@@ -255,7 +281,8 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
             java.util.List<String> entrypoint,
             Integer serverPort,
             Integer healthCheckPort,
-            java.util.Map<String, String> environmentVariables) {
+            java.util.Map<String, String> environmentVariables,
+            java.util.Map<String, String> defaultEnvironmentVariables) {
         super();
         this.image = image;
         this.imageDigest = imageDigest;
@@ -264,11 +291,13 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
         this.serverPort = serverPort;
         this.healthCheckPort = healthCheckPort;
         this.environmentVariables = environmentVariables;
+        this.defaultEnvironmentVariables = defaultEnvironmentVariables;
     }
 
     /**
      * The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a
-     * canonical format. Acceptable format: {@code <region>.ocir.io/<registry>/<image>:<tag>} {@code
+     * canonical format. The container image is optional while using service managed open source
+     * foundation model. Acceptable format: {@code <region>.ocir.io/<registry>/<image>:<tag>} {@code
      * <region>.ocir.io/<registry>/<image>:<tag>@digest}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("image")
@@ -276,7 +305,8 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
 
     /**
      * The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a
-     * canonical format. Acceptable format: {@code <region>.ocir.io/<registry>/<image>:<tag>} {@code
+     * canonical format. The container image is optional while using service managed open source
+     * foundation model. Acceptable format: {@code <region>.ocir.io/<registry>/<image>:<tag>} {@code
      * <region>.ocir.io/<registry>/<image>:<tag>@digest}
      *
      * @return the value
@@ -413,6 +443,23 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
         return environmentVariables;
     }
 
+    /**
+     * Service injected Environment variables set for the web server container and can not be set or
+     * modified by user.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultEnvironmentVariables")
+    private final java.util.Map<String, String> defaultEnvironmentVariables;
+
+    /**
+     * Service injected Environment variables set for the web server container and can not be set or
+     * modified by user.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getDefaultEnvironmentVariables() {
+        return defaultEnvironmentVariables;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -435,6 +482,8 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
         sb.append(", serverPort=").append(String.valueOf(this.serverPort));
         sb.append(", healthCheckPort=").append(String.valueOf(this.healthCheckPort));
         sb.append(", environmentVariables=").append(String.valueOf(this.environmentVariables));
+        sb.append(", defaultEnvironmentVariables=")
+                .append(String.valueOf(this.defaultEnvironmentVariables));
         sb.append(")");
         return sb.toString();
     }
@@ -457,6 +506,8 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
                 && java.util.Objects.equals(this.serverPort, other.serverPort)
                 && java.util.Objects.equals(this.healthCheckPort, other.healthCheckPort)
                 && java.util.Objects.equals(this.environmentVariables, other.environmentVariables)
+                && java.util.Objects.equals(
+                        this.defaultEnvironmentVariables, other.defaultEnvironmentVariables)
                 && super.equals(other);
     }
 
@@ -477,6 +528,11 @@ public final class OcirModelDeploymentEnvironmentConfigurationDetails
                         + (this.environmentVariables == null
                                 ? 43
                                 : this.environmentVariables.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultEnvironmentVariables == null
+                                ? 43
+                                : this.defaultEnvironmentVariables.hashCode());
         return result;
     }
 }

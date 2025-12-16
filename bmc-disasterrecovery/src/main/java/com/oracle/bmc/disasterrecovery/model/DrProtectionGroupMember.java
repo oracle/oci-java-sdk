@@ -50,6 +50,9 @@ package com.oracle.bmc.disasterrecovery.model;
             value = DrProtectionGroupMemberObjectStorageBucket.class,
             name = "OBJECT_STORAGE_BUCKET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrProtectionGroupMemberIntegrationInstance.class,
+            name = "INTEGRATION_INSTANCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberComputeInstanceMovable.class,
             name = "COMPUTE_INSTANCE_MOVABLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

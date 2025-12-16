@@ -23,13 +23,14 @@ package com.oracle.bmc.core.model;
 public final class HostGroupConfiguration
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"target", "firmwareBundleId", "recycleLevel"})
+    @java.beans.ConstructorProperties({"target", "firmwareBundleId", "recycleLevel", "state"})
     public HostGroupConfiguration(
-            String target, String firmwareBundleId, RecycleLevel recycleLevel) {
+            String target, String firmwareBundleId, RecycleLevel recycleLevel, State state) {
         super();
         this.target = target;
         this.firmwareBundleId = firmwareBundleId;
         this.recycleLevel = recycleLevel;
+        this.state = state;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -85,6 +86,21 @@ public final class HostGroupConfiguration
             this.__explicitlySet__.add("recycleLevel");
             return this;
         }
+        /** The state of the host group configuration. */
+        @com.fasterxml.jackson.annotation.JsonProperty("state")
+        private State state;
+
+        /**
+         * The state of the host group configuration.
+         *
+         * @param state the value to set
+         * @return this builder
+         */
+        public Builder state(State state) {
+            this.state = state;
+            this.__explicitlySet__.add("state");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -92,7 +108,7 @@ public final class HostGroupConfiguration
         public HostGroupConfiguration build() {
             HostGroupConfiguration model =
                     new HostGroupConfiguration(
-                            this.target, this.firmwareBundleId, this.recycleLevel);
+                            this.target, this.firmwareBundleId, this.recycleLevel, this.state);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -109,6 +125,9 @@ public final class HostGroupConfiguration
             }
             if (model.wasPropertyExplicitlySet("recycleLevel")) {
                 this.recycleLevel(model.getRecycleLevel());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
             }
             return this;
         }
@@ -218,6 +237,64 @@ public final class HostGroupConfiguration
         return recycleLevel;
     }
 
+    /** The state of the host group configuration. */
+    public enum State implements com.oracle.bmc.http.internal.BmcEnum {
+        Valid("VALID"),
+        Invalid("INVALID"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(State.class);
+
+        private final String value;
+        private static java.util.Map<String, State> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (State v : State.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        State(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static State create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'State', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The state of the host group configuration. */
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
+    private final State state;
+
+    /**
+     * The state of the host group configuration.
+     *
+     * @return the value
+     */
+    public State getState() {
+        return state;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -236,6 +313,7 @@ public final class HostGroupConfiguration
         sb.append("target=").append(String.valueOf(this.target));
         sb.append(", firmwareBundleId=").append(String.valueOf(this.firmwareBundleId));
         sb.append(", recycleLevel=").append(String.valueOf(this.recycleLevel));
+        sb.append(", state=").append(String.valueOf(this.state));
         sb.append(")");
         return sb.toString();
     }
@@ -253,6 +331,7 @@ public final class HostGroupConfiguration
         return java.util.Objects.equals(this.target, other.target)
                 && java.util.Objects.equals(this.firmwareBundleId, other.firmwareBundleId)
                 && java.util.Objects.equals(this.recycleLevel, other.recycleLevel)
+                && java.util.Objects.equals(this.state, other.state)
                 && super.equals(other);
     }
 
@@ -265,6 +344,7 @@ public final class HostGroupConfiguration
                 (result * PRIME)
                         + (this.firmwareBundleId == null ? 43 : this.firmwareBundleId.hashCode());
         result = (result * PRIME) + (this.recycleLevel == null ? 43 : this.recycleLevel.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

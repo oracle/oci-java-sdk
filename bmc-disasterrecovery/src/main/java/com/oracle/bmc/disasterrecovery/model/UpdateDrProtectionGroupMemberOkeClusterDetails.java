@@ -208,6 +208,28 @@ public final class UpdateDrProtectionGroupMemberOkeClusterDetails
             this.__explicitlySet__.add("virtualNodePoolConfigs");
             return this;
         }
+        /**
+         * The list of config maps along with their corresponding namespaces. This property applies
+         * to the OKE cluster member in primary region.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceModifierMappings")
+        private java.util.List<UpdateOkeClusterResourceModifierMappingDetails>
+                resourceModifierMappings;
+
+        /**
+         * The list of config maps along with their corresponding namespaces. This property applies
+         * to the OKE cluster member in primary region.
+         *
+         * @param resourceModifierMappings the value to set
+         * @return this builder
+         */
+        public Builder resourceModifierMappings(
+                java.util.List<UpdateOkeClusterResourceModifierMappingDetails>
+                        resourceModifierMappings) {
+            this.resourceModifierMappings = resourceModifierMappings;
+            this.__explicitlySet__.add("resourceModifierMappings");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -224,7 +246,8 @@ public final class UpdateDrProtectionGroupMemberOkeClusterDetails
                             this.networkLoadBalancerMappings,
                             this.vaultMappings,
                             this.managedNodePoolConfigs,
-                            this.virtualNodePoolConfigs);
+                            this.virtualNodePoolConfigs,
+                            this.resourceModifierMappings);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -263,6 +286,9 @@ public final class UpdateDrProtectionGroupMemberOkeClusterDetails
             if (model.wasPropertyExplicitlySet("virtualNodePoolConfigs")) {
                 this.virtualNodePoolConfigs(model.getVirtualNodePoolConfigs());
             }
+            if (model.wasPropertyExplicitlySet("resourceModifierMappings")) {
+                this.resourceModifierMappings(model.getResourceModifierMappings());
+            }
             return this;
         }
     }
@@ -290,7 +316,9 @@ public final class UpdateDrProtectionGroupMemberOkeClusterDetails
             java.util.List<UpdateOkeClusterManagedNodePoolConfigurationDetails>
                     managedNodePoolConfigs,
             java.util.List<UpdateOkeClusterVirtualNodePoolConfigurationDetails>
-                    virtualNodePoolConfigs) {
+                    virtualNodePoolConfigs,
+            java.util.List<UpdateOkeClusterResourceModifierMappingDetails>
+                    resourceModifierMappings) {
         super(memberId);
         this.peerClusterId = peerClusterId;
         this.jumpHostId = jumpHostId;
@@ -301,6 +329,7 @@ public final class UpdateDrProtectionGroupMemberOkeClusterDetails
         this.vaultMappings = vaultMappings;
         this.managedNodePoolConfigs = managedNodePoolConfigs;
         this.virtualNodePoolConfigs = virtualNodePoolConfigs;
+        this.resourceModifierMappings = resourceModifierMappings;
     }
 
     /**
@@ -452,6 +481,25 @@ public final class UpdateDrProtectionGroupMemberOkeClusterDetails
         return virtualNodePoolConfigs;
     }
 
+    /**
+     * The list of config maps along with their corresponding namespaces. This property applies to
+     * the OKE cluster member in primary region.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceModifierMappings")
+    private final java.util.List<UpdateOkeClusterResourceModifierMappingDetails>
+            resourceModifierMappings;
+
+    /**
+     * The list of config maps along with their corresponding namespaces. This property applies to
+     * the OKE cluster member in primary region.
+     *
+     * @return the value
+     */
+    public java.util.List<UpdateOkeClusterResourceModifierMappingDetails>
+            getResourceModifierMappings() {
+        return resourceModifierMappings;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -477,6 +525,8 @@ public final class UpdateDrProtectionGroupMemberOkeClusterDetails
         sb.append(", vaultMappings=").append(String.valueOf(this.vaultMappings));
         sb.append(", managedNodePoolConfigs=").append(String.valueOf(this.managedNodePoolConfigs));
         sb.append(", virtualNodePoolConfigs=").append(String.valueOf(this.virtualNodePoolConfigs));
+        sb.append(", resourceModifierMappings=")
+                .append(String.valueOf(this.resourceModifierMappings));
         sb.append(")");
         return sb.toString();
     }
@@ -504,6 +554,8 @@ public final class UpdateDrProtectionGroupMemberOkeClusterDetails
                         this.managedNodePoolConfigs, other.managedNodePoolConfigs)
                 && java.util.Objects.equals(
                         this.virtualNodePoolConfigs, other.virtualNodePoolConfigs)
+                && java.util.Objects.equals(
+                        this.resourceModifierMappings, other.resourceModifierMappings)
                 && super.equals(other);
     }
 
@@ -542,6 +594,11 @@ public final class UpdateDrProtectionGroupMemberOkeClusterDetails
                         + (this.virtualNodePoolConfigs == null
                                 ? 43
                                 : this.virtualNodePoolConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceModifierMappings == null
+                                ? 43
+                                : this.resourceModifierMappings.hashCode());
         return result;
     }
 }

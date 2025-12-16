@@ -4048,6 +4048,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("mlApplicationId", request.getMlApplicationId())
                 .appendQueryParam(
                         "mlApplicationImplementationId", request.getMlApplicationImplementationId())
+                .appendQueryParam("mlApplicationInstanceId", request.getMlApplicationInstanceId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())

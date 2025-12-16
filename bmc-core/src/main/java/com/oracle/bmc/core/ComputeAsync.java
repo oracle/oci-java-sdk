@@ -105,6 +105,22 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Triggers the asynchronous process that applies the host's target configuration
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ApplyHostConfigurationResponse> applyHostConfiguration(
+            ApplyHostConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ApplyHostConfigurationRequest, ApplyHostConfigurationResponse>
+                    handler);
+
+    /**
      * Attaches the specified boot volume to the specified instance.
      *
      * @param request The request object containing the details to send
@@ -413,6 +429,22 @@ public interface ComputeAsync extends AutoCloseable {
             ChangeInstanceCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeInstanceCompartmentRequest, ChangeInstanceCompartmentResponse>
+                    handler);
+
+    /**
+     * Marks the host to be checked for conformance to its target configuration
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CheckHostConfigurationResponse> checkHostConfiguration(
+            CheckHostConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CheckHostConfigurationRequest, CheckHostConfigurationResponse>
                     handler);
 
     /**
@@ -1256,6 +1288,22 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the Firmware Bundle matching the provided firmwareBundleId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetFirmwareBundleResponse> getFirmwareBundle(
+            GetFirmwareBundleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetFirmwareBundleRequest, GetFirmwareBundleResponse>
+                    handler);
+
+    /**
      * Gets the specified image.
      *
      * @param request The request object containing the details to send
@@ -1992,6 +2040,23 @@ public interface ComputeAsync extends AutoCloseable {
             ListDedicatedVmHostsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDedicatedVmHostsRequest, ListDedicatedVmHostsResponse>
+                    handler);
+
+    /**
+     * Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter
+     * results to include only the default (recommended) Firmware Bundle for the given platform.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFirmwareBundlesResponse> listFirmwareBundles(
+            ListFirmwareBundlesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListFirmwareBundlesRequest, ListFirmwareBundlesResponse>
                     handler);
 
     /**

@@ -53,7 +53,8 @@ public final class IntegrationInstance
         "privateEndpointOutboundConnection",
         "isDisasterRecoveryEnabled",
         "disasterRecoveryDetails",
-        "dataRetentionPeriod"
+        "dataRetentionPeriod",
+        "logGroupId"
     })
     public IntegrationInstance(
             String id,
@@ -85,7 +86,8 @@ public final class IntegrationInstance
             OutboundConnection privateEndpointOutboundConnection,
             Boolean isDisasterRecoveryEnabled,
             DisasterRecoveryDetails disasterRecoveryDetails,
-            DataRetentionPeriod dataRetentionPeriod) {
+            DataRetentionPeriod dataRetentionPeriod,
+            String logGroupId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -117,6 +119,7 @@ public final class IntegrationInstance
         this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
         this.disasterRecoveryDetails = disasterRecoveryDetails;
         this.dataRetentionPeriod = dataRetentionPeriod;
+        this.logGroupId = logGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -579,6 +582,21 @@ public final class IntegrationInstance
             this.__explicitlySet__.add("dataRetentionPeriod");
             return this;
         }
+        /** OCID of LogAnalytics LogGroup, enabled for given integration instance */
+        @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+        private String logGroupId;
+
+        /**
+         * OCID of LogAnalytics LogGroup, enabled for given integration instance
+         *
+         * @param logGroupId the value to set
+         * @return this builder
+         */
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            this.__explicitlySet__.add("logGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -615,7 +633,8 @@ public final class IntegrationInstance
                             this.privateEndpointOutboundConnection,
                             this.isDisasterRecoveryEnabled,
                             this.disasterRecoveryDetails,
-                            this.dataRetentionPeriod);
+                            this.dataRetentionPeriod,
+                            this.logGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -714,6 +733,9 @@ public final class IntegrationInstance
             }
             if (model.wasPropertyExplicitlySet("dataRetentionPeriod")) {
                 this.dataRetentionPeriod(model.getDataRetentionPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
             }
             return this;
         }
@@ -1360,6 +1382,19 @@ public final class IntegrationInstance
         return dataRetentionPeriod;
     }
 
+    /** OCID of LogAnalytics LogGroup, enabled for given integration instance */
+    @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+    private final String logGroupId;
+
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     *
+     * @return the value
+     */
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1410,6 +1445,7 @@ public final class IntegrationInstance
         sb.append(", disasterRecoveryDetails=")
                 .append(String.valueOf(this.disasterRecoveryDetails));
         sb.append(", dataRetentionPeriod=").append(String.valueOf(this.dataRetentionPeriod));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -1462,6 +1498,7 @@ public final class IntegrationInstance
                 && java.util.Objects.equals(
                         this.disasterRecoveryDetails, other.disasterRecoveryDetails)
                 && java.util.Objects.equals(this.dataRetentionPeriod, other.dataRetentionPeriod)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && super.equals(other);
     }
 
@@ -1553,6 +1590,7 @@ public final class IntegrationInstance
                         + (this.dataRetentionPeriod == null
                                 ? 43
                                 : this.dataRetentionPeriod.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

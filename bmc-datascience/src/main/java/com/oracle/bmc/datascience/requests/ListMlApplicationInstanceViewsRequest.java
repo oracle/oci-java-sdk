@@ -51,6 +51,13 @@ public class ListMlApplicationInstanceViewsRequest
     public String getMlApplicationImplementationId() {
         return mlApplicationImplementationId;
     }
+    /** unique MlApplicationInstance identifier */
+    private String mlApplicationInstanceId;
+
+    /** unique MlApplicationInstance identifier */
+    public String getMlApplicationInstanceId() {
+        return mlApplicationInstanceId;
+    }
     /** A filter to return only resources matching the given lifecycleState. */
     private com.oracle.bmc.datascience.model.MlApplicationInstanceView.LifecycleState
             lifecycleState;
@@ -271,6 +278,20 @@ public class ListMlApplicationInstanceViewsRequest
             return this;
         }
 
+        /** unique MlApplicationInstance identifier */
+        private String mlApplicationInstanceId = null;
+
+        /**
+         * unique MlApplicationInstance identifier
+         *
+         * @param mlApplicationInstanceId the value to set
+         * @return this builder instance
+         */
+        public Builder mlApplicationInstanceId(String mlApplicationInstanceId) {
+            this.mlApplicationInstanceId = mlApplicationInstanceId;
+            return this;
+        }
+
         /** A filter to return only resources matching the given lifecycleState. */
         private com.oracle.bmc.datascience.model.MlApplicationInstanceView.LifecycleState
                 lifecycleState = null;
@@ -422,6 +443,7 @@ public class ListMlApplicationInstanceViewsRequest
             displayName(o.getDisplayName());
             mlApplicationId(o.getMlApplicationId());
             mlApplicationImplementationId(o.getMlApplicationImplementationId());
+            mlApplicationInstanceId(o.getMlApplicationInstanceId());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
             page(o.getPage());
@@ -467,6 +489,7 @@ public class ListMlApplicationInstanceViewsRequest
             request.displayName = displayName;
             request.mlApplicationId = mlApplicationId;
             request.mlApplicationImplementationId = mlApplicationImplementationId;
+            request.mlApplicationInstanceId = mlApplicationInstanceId;
             request.lifecycleState = lifecycleState;
             request.limit = limit;
             request.page = page;
@@ -475,8 +498,8 @@ public class ListMlApplicationInstanceViewsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListMlApplicationInstanceViewsRequest(compartmentId, displayName,
-            // mlApplicationId, mlApplicationImplementationId, lifecycleState, limit, page,
-            // sortOrder, sortBy, opcRequestId);
+            // mlApplicationId, mlApplicationImplementationId, mlApplicationInstanceId,
+            // lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -491,6 +514,7 @@ public class ListMlApplicationInstanceViewsRequest
                 .displayName(displayName)
                 .mlApplicationId(mlApplicationId)
                 .mlApplicationImplementationId(mlApplicationImplementationId)
+                .mlApplicationInstanceId(mlApplicationInstanceId)
                 .lifecycleState(lifecycleState)
                 .limit(limit)
                 .page(page)
@@ -518,6 +542,7 @@ public class ListMlApplicationInstanceViewsRequest
         sb.append(",mlApplicationId=").append(String.valueOf(this.mlApplicationId));
         sb.append(",mlApplicationImplementationId=")
                 .append(String.valueOf(this.mlApplicationImplementationId));
+        sb.append(",mlApplicationInstanceId=").append(String.valueOf(this.mlApplicationInstanceId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -544,6 +569,8 @@ public class ListMlApplicationInstanceViewsRequest
                 && java.util.Objects.equals(this.mlApplicationId, other.mlApplicationId)
                 && java.util.Objects.equals(
                         this.mlApplicationImplementationId, other.mlApplicationImplementationId)
+                && java.util.Objects.equals(
+                        this.mlApplicationInstanceId, other.mlApplicationInstanceId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -568,6 +595,11 @@ public class ListMlApplicationInstanceViewsRequest
                         + (this.mlApplicationImplementationId == null
                                 ? 43
                                 : this.mlApplicationImplementationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlApplicationInstanceId == null
+                                ? 43
+                                : this.mlApplicationInstanceId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

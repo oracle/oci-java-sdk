@@ -1721,6 +1721,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get Attribute Mappings for a Mapped Attribute
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMappedAttributeResponse> getMappedAttribute(
+            GetMappedAttributeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMappedAttributeRequest, GetMappedAttributeResponse>
+                    handler);
+
+    /**
      * Get a user's own information.
      *
      * @param request The request object containing the details to send
@@ -2580,6 +2596,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Search Mapped Attributes
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMappedAttributesResponse> listMappedAttributes(
+            ListMappedAttributesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMappedAttributesRequest, ListMappedAttributesResponse>
+                    handler);
+
+    /**
      * Search for a user's own API key.
      *
      * @param request The request object containing the details to send
@@ -3427,6 +3459,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update a Mapped Attribute
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchMappedAttributeResponse> patchMappedAttribute(
+            PatchMappedAttributeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchMappedAttributeRequest, PatchMappedAttributeResponse>
+                    handler);
+
+    /**
      * Update a user's own information.
      *
      * @param request The request object containing the details to send
@@ -4019,6 +4067,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Replace a Mapped Attribute
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutMappedAttributeResponse> putMappedAttribute(
+            PutMappedAttributeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutMappedAttributeRequest, PutMappedAttributeResponse>
+                    handler);
+
+    /**
      * Replace a user's own information.
      *
      * @param request The request object containing the details to send
@@ -4541,6 +4605,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             SearchKmsiSettingsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             SearchKmsiSettingsRequest, SearchKmsiSettingsResponse>
+                    handler);
+
+    /**
+     * Search Mapped Attributes Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchMappedAttributesResponse> searchMappedAttributes(
+            SearchMappedAttributesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SearchMappedAttributesRequest, SearchMappedAttributesResponse>
                     handler);
 
     /**

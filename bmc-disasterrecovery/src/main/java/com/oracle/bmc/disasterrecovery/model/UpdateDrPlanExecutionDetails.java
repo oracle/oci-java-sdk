@@ -37,7 +37,7 @@ public final class UpdateDrPlanExecutionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The display name of the DR plan execution to update.
+         * The display name of the DR protection group to update.
          *
          * <p>Example: {@code EBS IAD Group}
          */
@@ -45,7 +45,7 @@ public final class UpdateDrPlanExecutionDetails
         private String displayName;
 
         /**
-         * The display name of the DR plan execution to update.
+         * The display name of the DR protection group to update.
          *
          * <p>Example: {@code EBS IAD Group}
          *
@@ -141,7 +141,7 @@ public final class UpdateDrPlanExecutionDetails
     }
 
     /**
-     * The display name of the DR plan execution to update.
+     * The display name of the DR protection group to update.
      *
      * <p>Example: {@code EBS IAD Group}
      */
@@ -149,7 +149,7 @@ public final class UpdateDrPlanExecutionDetails
     private final String displayName;
 
     /**
-     * The display name of the DR plan execution to update.
+     * The display name of the DR protection group to update.
      *
      * <p>Example: {@code EBS IAD Group}
      *

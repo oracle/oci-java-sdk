@@ -1739,6 +1739,22 @@ public interface IdentityDomains extends AutoCloseable {
     GetKmsiSettingResponse getKmsiSetting(GetKmsiSettingRequest request);
 
     /**
+     * Get Attribute Mappings for a Mapped Attribute
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetMappedAttributeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMappedAttribute
+     *     API.
+     */
+    GetMappedAttributeResponse getMappedAttribute(GetMappedAttributeRequest request);
+
+    /**
      * Get a user's own information.
      *
      * @param request The request object containing the details to send
@@ -2618,6 +2634,22 @@ public interface IdentityDomains extends AutoCloseable {
     ListKmsiSettingsResponse listKmsiSettings(ListKmsiSettingsRequest request);
 
     /**
+     * Search Mapped Attributes
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListMappedAttributesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMappedAttributes API.
+     */
+    ListMappedAttributesResponse listMappedAttributes(ListMappedAttributesRequest request);
+
+    /**
      * Search for a user's own API key.
      *
      * @param request The request object containing the details to send
@@ -3481,6 +3513,22 @@ public interface IdentityDomains extends AutoCloseable {
     PatchKmsiSettingResponse patchKmsiSetting(PatchKmsiSettingRequest request);
 
     /**
+     * Update a Mapped Attribute
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchMappedAttributeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchMappedAttribute API.
+     */
+    PatchMappedAttributeResponse patchMappedAttribute(PatchMappedAttributeRequest request);
+
+    /**
      * Update a user's own information.
      *
      * @param request The request object containing the details to send
@@ -4085,6 +4133,22 @@ public interface IdentityDomains extends AutoCloseable {
     PutKmsiSettingResponse putKmsiSetting(PutKmsiSettingRequest request);
 
     /**
+     * Replace a Mapped Attribute
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutMappedAttributeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutMappedAttribute
+     *     API.
+     */
+    PutMappedAttributeResponse putMappedAttribute(PutMappedAttributeRequest request);
+
+    /**
      * Replace a user's own information.
      *
      * @param request The request object containing the details to send
@@ -4623,6 +4687,22 @@ public interface IdentityDomains extends AutoCloseable {
      *     API.
      */
     SearchKmsiSettingsResponse searchKmsiSettings(SearchKmsiSettingsRequest request);
+
+    /**
+     * Search Mapped Attributes Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchMappedAttributesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SearchMappedAttributes API.
+     */
+    SearchMappedAttributesResponse searchMappedAttributes(SearchMappedAttributesRequest request);
 
     /**
      * Search My Apps Using POST

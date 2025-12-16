@@ -35,6 +35,9 @@ package com.oracle.bmc.disasterrecovery.model;
             value = UpdateDrProtectionGroupMemberAutonomousDatabaseDetails.class,
             name = "AUTONOMOUS_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDrProtectionGroupMemberIntegrationInstanceDetails.class,
+            name = "INTEGRATION_INSTANCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateDrProtectionGroupMemberFileSystemDetails.class,
             name = "FILE_SYSTEM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

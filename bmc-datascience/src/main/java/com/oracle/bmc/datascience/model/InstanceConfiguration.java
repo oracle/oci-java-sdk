@@ -43,12 +43,18 @@ public final class InstanceConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The shape used to launch the model deployment instances. */
+        /**
+         * The shape used to launch the model deployment instances. When using service managed open
+         * source foundation model, the supported shapes can be retrieved using get model api
+         * /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShapeName")
         private String instanceShapeName;
 
         /**
-         * The shape used to launch the model deployment instances.
+         * The shape used to launch the model deployment instances. When using service managed open
+         * source foundation model, the supported shapes can be retrieved using get model api
+         * /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          *
          * @param instanceShapeName the value to set
          * @return this builder
@@ -153,12 +159,18 @@ public final class InstanceConfiguration
         return new Builder().copy(this);
     }
 
-    /** The shape used to launch the model deployment instances. */
+    /**
+     * The shape used to launch the model deployment instances. When using service managed open
+     * source foundation model, the supported shapes can be retrieved using get model api
+     * /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShapeName")
     private final String instanceShapeName;
 
     /**
-     * The shape used to launch the model deployment instances.
+     * The shape used to launch the model deployment instances. When using service managed open
+     * source foundation model, the supported shapes can be retrieved using get model api
+     * /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      *
      * @return the value
      */
