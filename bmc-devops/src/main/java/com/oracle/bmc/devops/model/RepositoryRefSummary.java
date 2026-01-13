@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -38,6 +38,8 @@ public class RepositoryRefSummary
         "refName",
         "fullRefName",
         "repositoryId",
+        "timeCreated",
+        "timeUpdated",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -46,6 +48,8 @@ public class RepositoryRefSummary
             String refName,
             String fullRefName,
             String repositoryId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -53,6 +57,8 @@ public class RepositoryRefSummary
         this.refName = refName;
         this.fullRefName = fullRefName;
         this.repositoryId = repositoryId;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -95,6 +101,40 @@ public class RepositoryRefSummary
      */
     public String getRepositoryId() {
         return repositoryId;
+    }
+
+    /**
+     * Creation timestamp. Format defined by
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    private final java.util.Date timeCreated;
+
+    /**
+     * Creation timestamp. Format defined by
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    /**
+     * The time the ref was updated. Format defined by
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The time the ref was updated. Format defined by
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
     }
 
     /**
@@ -174,6 +214,8 @@ public class RepositoryRefSummary
         sb.append("refName=").append(String.valueOf(this.refName));
         sb.append(", fullRefName=").append(String.valueOf(this.fullRefName));
         sb.append(", repositoryId=").append(String.valueOf(this.repositoryId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -194,6 +236,8 @@ public class RepositoryRefSummary
         return java.util.Objects.equals(this.refName, other.refName)
                 && java.util.Objects.equals(this.fullRefName, other.fullRefName)
                 && java.util.Objects.equals(this.repositoryId, other.repositoryId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -207,6 +251,8 @@ public class RepositoryRefSummary
         result = (result * PRIME) + (this.refName == null ? 43 : this.refName.hashCode());
         result = (result * PRIME) + (this.fullRefName == null ? 43 : this.fullRefName.hashCode());
         result = (result * PRIME) + (this.repositoryId == null ? 43 : this.repositoryId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

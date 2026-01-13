@@ -25,9 +25,13 @@ For basic set up, see [Getting Started](https://docs.oracle.com/iaas/Content/API
 For details on compatibility, advanced configurations, and add-ons, see [Configuration](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdkconfig.htm).
 
 - *Circuit Breaker*: By default, circuit breaker feature is enabled, if it is not expected, please explicitly set the environment variable:
-```
-export OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED=FALSE
-```
+    ```
+    export OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED=FALSE
+    ```
+- *Token Refresh Retries*: By default, the token refresh retires are enabled for 401s and processing exceptions. You have the flexibility to disable these retries if needed. This can be achieved by setting the system property
+    ```
+    System.setProperty("oci.javasdk.token.refresh.enabled", "false");
+    ``` 
 
 ## Changes Introduced In OCI Java SDK `3.x.y`
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -447,6 +447,16 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+        private AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+        public Builder autonomousDatabaseMaintenanceWindow(
+                AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow) {
+            this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+            this.__explicitlySet__.add("autonomousDatabaseMaintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
         private java.util.List<ScheduledOperationDetails> scheduledOperations;
 
@@ -710,6 +720,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                             this.resourcePoolLeaderId,
                             this.resourcePoolSummary,
                             this.autonomousMaintenanceScheduleType,
+                            this.autonomousDatabaseMaintenanceWindow,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
@@ -872,6 +883,10 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                 this.autonomousMaintenanceScheduleType(
                         model.getAutonomousMaintenanceScheduleType());
             }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseMaintenanceWindow")) {
+                this.autonomousDatabaseMaintenanceWindow(
+                        model.getAutonomousDatabaseMaintenanceWindow());
+            }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
             }
@@ -975,6 +990,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
@@ -1036,6 +1052,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                 resourcePoolLeaderId,
                 resourcePoolSummary,
                 autonomousMaintenanceScheduleType,
+                autonomousDatabaseMaintenanceWindow,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
                 databaseEdition,

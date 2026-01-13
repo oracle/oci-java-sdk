@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.budget.requests;
@@ -51,13 +51,13 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * The field to sort by. If not specified, the default is timeCreated. The default sort order
      * for timeCreated is DESC. The default sort order for displayName is ASC in alphanumeric order.
      */
-    private com.oracle.bmc.budget.model.SortBy sortBy;
+    private com.oracle.bmc.budget.model.SortByForBudget sortBy;
 
     /**
      * The field to sort by. If not specified, the default is timeCreated. The default sort order
      * for timeCreated is DESC. The default sort order for displayName is ASC in alphanumeric order.
      */
-    public com.oracle.bmc.budget.model.SortBy getSortBy() {
+    public com.oracle.bmc.budget.model.SortByForBudget getSortBy() {
         return sortBy;
     }
     /** The current state of the resource to filter by. */
@@ -212,7 +212,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * order for timeCreated is DESC. The default sort order for displayName is ASC in
          * alphanumeric order.
          */
-        private com.oracle.bmc.budget.model.SortBy sortBy = null;
+        private com.oracle.bmc.budget.model.SortByForBudget sortBy = null;
 
         /**
          * The field to sort by. If not specified, the default is timeCreated. The default sort
@@ -222,7 +222,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(com.oracle.bmc.budget.model.SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.budget.model.SortByForBudget sortBy) {
             this.sortBy = sortBy;
             return this;
         }

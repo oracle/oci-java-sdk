@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -57,7 +57,8 @@ public class Deployment extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "deploymentExecutionProgress",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "cmUrl"
     })
     protected Deployment(
             DeployPipelineArtifactCollection deployPipelineArtifacts,
@@ -77,7 +78,8 @@ public class Deployment extends com.oracle.bmc.http.client.internal.ExplicitlySe
             DeploymentExecutionProgress deploymentExecutionProgress,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String cmUrl) {
         super();
         this.deployPipelineArtifacts = deployPipelineArtifacts;
         this.deployPipelineEnvironments = deployPipelineEnvironments;
@@ -97,6 +99,7 @@ public class Deployment extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.cmUrl = cmUrl;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deployPipelineArtifacts")
@@ -383,6 +386,19 @@ public class Deployment extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return systemTags;
     }
 
+    /** Internal-only URL to change management ticket for annotation on dashboards. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cmUrl")
+    private final String cmUrl;
+
+    /**
+     * Internal-only URL to change management ticket for annotation on dashboards.
+     *
+     * @return the value
+     */
+    public String getCmUrl() {
+        return cmUrl;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -420,6 +436,7 @@ public class Deployment extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", cmUrl=").append(String.valueOf(this.cmUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -456,6 +473,7 @@ public class Deployment extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.cmUrl, other.cmUrl)
                 && super.equals(other);
     }
 
@@ -513,6 +531,7 @@ public class Deployment extends com.oracle.bmc.http.client.internal.ExplicitlySe
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.cmUrl == null ? 43 : this.cmUrl.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
