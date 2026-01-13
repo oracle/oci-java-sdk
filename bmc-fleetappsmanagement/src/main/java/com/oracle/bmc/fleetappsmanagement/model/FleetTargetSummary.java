@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -35,6 +35,7 @@ public final class FleetTargetSummary
         "timeOfLastDiscoveryAttempt",
         "isLastDiscoveryAttemptSuccessful",
         "lifecycleState",
+        "parentTargetName",
         "systemTags"
     })
     public FleetTargetSummary(
@@ -49,6 +50,7 @@ public final class FleetTargetSummary
             java.util.Date timeOfLastDiscoveryAttempt,
             Boolean isLastDiscoveryAttemptSuccessful,
             FleetTarget.LifecycleState lifecycleState,
+            String parentTargetName,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
@@ -62,6 +64,7 @@ public final class FleetTargetSummary
         this.timeOfLastDiscoveryAttempt = timeOfLastDiscoveryAttempt;
         this.isLastDiscoveryAttemptSuccessful = isLastDiscoveryAttemptSuccessful;
         this.lifecycleState = lifecycleState;
+        this.parentTargetName = parentTargetName;
         this.systemTags = systemTags;
     }
 
@@ -234,6 +237,21 @@ public final class FleetTargetSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** Name of the parent target. */
+        @com.fasterxml.jackson.annotation.JsonProperty("parentTargetName")
+        private String parentTargetName;
+
+        /**
+         * Name of the parent target.
+         *
+         * @param parentTargetName the value to set
+         * @return this builder
+         */
+        public Builder parentTargetName(String parentTargetName) {
+            this.parentTargetName = parentTargetName;
+            this.__explicitlySet__.add("parentTargetName");
+            return this;
+        }
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
          * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -271,6 +289,7 @@ public final class FleetTargetSummary
                             this.timeOfLastDiscoveryAttempt,
                             this.isLastDiscoveryAttemptSuccessful,
                             this.lifecycleState,
+                            this.parentTargetName,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -312,6 +331,9 @@ public final class FleetTargetSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("parentTargetName")) {
+                this.parentTargetName(model.getParentTargetName());
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
@@ -474,6 +496,19 @@ public final class FleetTargetSummary
         return lifecycleState;
     }
 
+    /** Name of the parent target. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parentTargetName")
+    private final String parentTargetName;
+
+    /**
+     * Name of the parent target.
+     *
+     * @return the value
+     */
+    public String getParentTargetName() {
+        return parentTargetName;
+    }
+
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -520,6 +555,7 @@ public final class FleetTargetSummary
         sb.append(", isLastDiscoveryAttemptSuccessful=")
                 .append(String.valueOf(this.isLastDiscoveryAttemptSuccessful));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", parentTargetName=").append(String.valueOf(this.parentTargetName));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
@@ -550,6 +586,7 @@ public final class FleetTargetSummary
                         this.isLastDiscoveryAttemptSuccessful,
                         other.isLastDiscoveryAttemptSuccessful)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.parentTargetName, other.parentTargetName)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
@@ -587,6 +624,9 @@ public final class FleetTargetSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTargetName == null ? 43 : this.parentTargetName.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

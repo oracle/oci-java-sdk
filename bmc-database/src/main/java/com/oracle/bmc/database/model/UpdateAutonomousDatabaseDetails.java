@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -78,6 +78,8 @@ public final class UpdateAutonomousDatabaseDetails
         "resourcePoolLeaderId",
         "resourcePoolSummary",
         "autonomousMaintenanceScheduleType",
+        "autonomousDatabaseMaintenanceWindow",
+        "timeMaintenancePauseUntil",
         "isBackupRetentionLocked",
         "timeScheduledDbVersionUpgrade",
         "isDisableDbVersionUpgradeSchedule",
@@ -90,7 +92,8 @@ public final class UpdateAutonomousDatabaseDetails
         "secretId",
         "secretVersionNumber",
         "encryptionKey",
-        "isDisconnectPeer"
+        "isDisconnectPeer",
+        "localAdgResourcePoolLeaderId"
     })
     public UpdateAutonomousDatabaseDetails(
             Integer backupRetentionPeriodInDays,
@@ -139,6 +142,8 @@ public final class UpdateAutonomousDatabaseDetails
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
+            java.util.Date timeMaintenancePauseUntil,
             Boolean isBackupRetentionLocked,
             java.util.Date timeScheduledDbVersionUpgrade,
             Boolean isDisableDbVersionUpgradeSchedule,
@@ -151,7 +156,8 @@ public final class UpdateAutonomousDatabaseDetails
             String secretId,
             Integer secretVersionNumber,
             AutonomousDatabaseEncryptionKeyDetails encryptionKey,
-            Boolean isDisconnectPeer) {
+            Boolean isDisconnectPeer,
+            String localAdgResourcePoolLeaderId) {
         super();
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.computeModel = computeModel;
@@ -199,6 +205,8 @@ public final class UpdateAutonomousDatabaseDetails
         this.resourcePoolLeaderId = resourcePoolLeaderId;
         this.resourcePoolSummary = resourcePoolSummary;
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+        this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+        this.timeMaintenancePauseUntil = timeMaintenancePauseUntil;
         this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
         this.isDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
@@ -212,6 +220,7 @@ public final class UpdateAutonomousDatabaseDetails
         this.secretVersionNumber = secretVersionNumber;
         this.encryptionKey = encryptionKey;
         this.isDisconnectPeer = isDisconnectPeer;
+        this.localAdgResourcePoolLeaderId = localAdgResourcePoolLeaderId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1623,6 +1632,31 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+        private AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+        public Builder autonomousDatabaseMaintenanceWindow(
+                AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow) {
+            this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+            this.__explicitlySet__.add("autonomousDatabaseMaintenanceWindow");
+            return this;
+        }
+        /** The date until which maintenance of Autonomous AI Database is temporarily paused. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenancePauseUntil")
+        private java.util.Date timeMaintenancePauseUntil;
+
+        /**
+         * The date until which maintenance of Autonomous AI Database is temporarily paused.
+         *
+         * @param timeMaintenancePauseUntil the value to set
+         * @return this builder
+         */
+        public Builder timeMaintenancePauseUntil(java.util.Date timeMaintenancePauseUntil) {
+            this.timeMaintenancePauseUntil = timeMaintenancePauseUntil;
+            this.__explicitlySet__.add("timeMaintenancePauseUntil");
+            return this;
+        }
         /** True if the Autonomous AI Database is backup retention locked. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
         private Boolean isBackupRetentionLocked;
@@ -1875,6 +1909,35 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("isDisconnectPeer");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * dedicated resource pool leader Autonomous AI Database in the same region, that is
+         * required when local Autonomous Data Guard is enabled for a dedicated resource pool member
+         * using the parameter {@code isLocalDataGuardEnabled}. This field applies only to dedicated
+         * resource pool members, and the specified leader must be different from the primary\u2019s
+         * leader. Local Autonomous Data Guard can be enabled only if more than one dedicated
+         * resource pool exists in the region.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("localAdgResourcePoolLeaderId")
+        private String localAdgResourcePoolLeaderId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * dedicated resource pool leader Autonomous AI Database in the same region, that is
+         * required when local Autonomous Data Guard is enabled for a dedicated resource pool member
+         * using the parameter {@code isLocalDataGuardEnabled}. This field applies only to dedicated
+         * resource pool members, and the specified leader must be different from the primary\u2019s
+         * leader. Local Autonomous Data Guard can be enabled only if more than one dedicated
+         * resource pool exists in the region.
+         *
+         * @param localAdgResourcePoolLeaderId the value to set
+         * @return this builder
+         */
+        public Builder localAdgResourcePoolLeaderId(String localAdgResourcePoolLeaderId) {
+            this.localAdgResourcePoolLeaderId = localAdgResourcePoolLeaderId;
+            this.__explicitlySet__.add("localAdgResourcePoolLeaderId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1928,6 +1991,8 @@ public final class UpdateAutonomousDatabaseDetails
                             this.resourcePoolLeaderId,
                             this.resourcePoolSummary,
                             this.autonomousMaintenanceScheduleType,
+                            this.autonomousDatabaseMaintenanceWindow,
+                            this.timeMaintenancePauseUntil,
                             this.isBackupRetentionLocked,
                             this.timeScheduledDbVersionUpgrade,
                             this.isDisableDbVersionUpgradeSchedule,
@@ -1940,7 +2005,8 @@ public final class UpdateAutonomousDatabaseDetails
                             this.secretId,
                             this.secretVersionNumber,
                             this.encryptionKey,
-                            this.isDisconnectPeer);
+                            this.isDisconnectPeer,
+                            this.localAdgResourcePoolLeaderId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -2089,6 +2155,13 @@ public final class UpdateAutonomousDatabaseDetails
                 this.autonomousMaintenanceScheduleType(
                         model.getAutonomousMaintenanceScheduleType());
             }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseMaintenanceWindow")) {
+                this.autonomousDatabaseMaintenanceWindow(
+                        model.getAutonomousDatabaseMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaintenancePauseUntil")) {
+                this.timeMaintenancePauseUntil(model.getTimeMaintenancePauseUntil());
+            }
             if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
                 this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
             }
@@ -2129,6 +2202,9 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("isDisconnectPeer")) {
                 this.isDisconnectPeer(model.getIsDisconnectPeer());
+            }
+            if (model.wasPropertyExplicitlySet("localAdgResourcePoolLeaderId")) {
+                this.localAdgResourcePoolLeaderId(model.getLocalAdgResourcePoolLeaderId());
             }
             return this;
         }
@@ -3703,6 +3779,26 @@ public final class UpdateAutonomousDatabaseDetails
         return autonomousMaintenanceScheduleType;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+    private final AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+    public AutonomousDatabaseMaintenanceWindowSummary getAutonomousDatabaseMaintenanceWindow() {
+        return autonomousDatabaseMaintenanceWindow;
+    }
+
+    /** The date until which maintenance of Autonomous AI Database is temporarily paused. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenancePauseUntil")
+    private final java.util.Date timeMaintenancePauseUntil;
+
+    /**
+     * The date until which maintenance of Autonomous AI Database is temporarily paused.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeMaintenancePauseUntil() {
+        return timeMaintenancePauseUntil;
+    }
+
     /** True if the Autonomous AI Database is backup retention locked. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
     private final Boolean isBackupRetentionLocked;
@@ -3922,6 +4018,33 @@ public final class UpdateAutonomousDatabaseDetails
         return isDisconnectPeer;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * dedicated resource pool leader Autonomous AI Database in the same region, that is required
+     * when local Autonomous Data Guard is enabled for a dedicated resource pool member using the
+     * parameter {@code isLocalDataGuardEnabled}. This field applies only to dedicated resource pool
+     * members, and the specified leader must be different from the primary\u2019s leader. Local
+     * Autonomous Data Guard can be enabled only if more than one dedicated resource pool exists in
+     * the region.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("localAdgResourcePoolLeaderId")
+    private final String localAdgResourcePoolLeaderId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * dedicated resource pool leader Autonomous AI Database in the same region, that is required
+     * when local Autonomous Data Guard is enabled for a dedicated resource pool member using the
+     * parameter {@code isLocalDataGuardEnabled}. This field applies only to dedicated resource pool
+     * members, and the specified leader must be different from the primary\u2019s leader. Local
+     * Autonomous Data Guard can be enabled only if more than one dedicated resource pool exists in
+     * the region.
+     *
+     * @return the value
+     */
+    public String getLocalAdgResourcePoolLeaderId() {
+        return localAdgResourcePoolLeaderId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -3991,6 +4114,10 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append(", resourcePoolSummary=").append(String.valueOf(this.resourcePoolSummary));
         sb.append(", autonomousMaintenanceScheduleType=")
                 .append(String.valueOf(this.autonomousMaintenanceScheduleType));
+        sb.append(", autonomousDatabaseMaintenanceWindow=")
+                .append(String.valueOf(this.autonomousDatabaseMaintenanceWindow));
+        sb.append(", timeMaintenancePauseUntil=")
+                .append(String.valueOf(this.timeMaintenancePauseUntil));
         sb.append(", isBackupRetentionLocked=")
                 .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", timeScheduledDbVersionUpgrade=")
@@ -4009,6 +4136,8 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append(", secretVersionNumber=").append(String.valueOf(this.secretVersionNumber));
         sb.append(", encryptionKey=").append(String.valueOf(this.encryptionKey));
         sb.append(", isDisconnectPeer=").append(String.valueOf(this.isDisconnectPeer));
+        sb.append(", localAdgResourcePoolLeaderId=")
+                .append(String.valueOf(this.localAdgResourcePoolLeaderId));
         sb.append(")");
         return sb.toString();
     }
@@ -4083,6 +4212,11 @@ public final class UpdateAutonomousDatabaseDetails
                         this.autonomousMaintenanceScheduleType,
                         other.autonomousMaintenanceScheduleType)
                 && java.util.Objects.equals(
+                        this.autonomousDatabaseMaintenanceWindow,
+                        other.autonomousDatabaseMaintenanceWindow)
+                && java.util.Objects.equals(
+                        this.timeMaintenancePauseUntil, other.timeMaintenancePauseUntil)
+                && java.util.Objects.equals(
                         this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(
                         this.timeScheduledDbVersionUpgrade, other.timeScheduledDbVersionUpgrade)
@@ -4102,6 +4236,8 @@ public final class UpdateAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.secretVersionNumber, other.secretVersionNumber)
                 && java.util.Objects.equals(this.encryptionKey, other.encryptionKey)
                 && java.util.Objects.equals(this.isDisconnectPeer, other.isDisconnectPeer)
+                && java.util.Objects.equals(
+                        this.localAdgResourcePoolLeaderId, other.localAdgResourcePoolLeaderId)
                 && super.equals(other);
     }
 
@@ -4261,6 +4397,16 @@ public final class UpdateAutonomousDatabaseDetails
                                 : this.autonomousMaintenanceScheduleType.hashCode());
         result =
                 (result * PRIME)
+                        + (this.autonomousDatabaseMaintenanceWindow == null
+                                ? 43
+                                : this.autonomousDatabaseMaintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaintenancePauseUntil == null
+                                ? 43
+                                : this.timeMaintenancePauseUntil.hashCode());
+        result =
+                (result * PRIME)
                         + (this.isBackupRetentionLocked == null
                                 ? 43
                                 : this.isBackupRetentionLocked.hashCode());
@@ -4310,6 +4456,11 @@ public final class UpdateAutonomousDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.isDisconnectPeer == null ? 43 : this.isDisconnectPeer.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localAdgResourcePoolLeaderId == null
+                                ? 43
+                                : this.localAdgResourcePoolLeaderId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

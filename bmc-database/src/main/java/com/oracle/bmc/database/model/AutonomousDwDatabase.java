@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -141,6 +141,8 @@ public final class AutonomousDwDatabase
         "isReconnectCloneEnabled",
         "timeUntilReconnectCloneEnabled",
         "autonomousMaintenanceScheduleType",
+        "autonomousDatabaseMaintenanceWindow",
+        "timeMaintenancePauseUntil",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
         "allocatedStorageSizeInTBs",
@@ -157,7 +159,8 @@ public final class AutonomousDwDatabase
         "clusterPlacementGroupId",
         "cloneTableSpaceList",
         "cloneType",
-        "additionalAttributes"
+        "additionalAttributes",
+        "localAdgResourcePoolLeaderId"
     })
     public AutonomousDwDatabase(
             String id,
@@ -277,6 +280,8 @@ public final class AutonomousDwDatabase
             Boolean isReconnectCloneEnabled,
             java.util.Date timeUntilReconnectCloneEnabled,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
+            java.util.Date timeMaintenancePauseUntil,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             Double allocatedStorageSizeInTBs,
@@ -293,7 +298,8 @@ public final class AutonomousDwDatabase
             String clusterPlacementGroupId,
             java.util.List<Integer> cloneTableSpaceList,
             CloneType cloneType,
-            java.util.Map<String, String> additionalAttributes) {
+            java.util.Map<String, String> additionalAttributes,
+            String localAdgResourcePoolLeaderId) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -412,6 +418,8 @@ public final class AutonomousDwDatabase
         this.isReconnectCloneEnabled = isReconnectCloneEnabled;
         this.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+        this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+        this.timeMaintenancePauseUntil = timeMaintenancePauseUntil;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.allocatedStorageSizeInTBs = allocatedStorageSizeInTBs;
@@ -429,6 +437,7 @@ public final class AutonomousDwDatabase
         this.cloneTableSpaceList = cloneTableSpaceList;
         this.cloneType = cloneType;
         this.additionalAttributes = additionalAttributes;
+        this.localAdgResourcePoolLeaderId = localAdgResourcePoolLeaderId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -2930,6 +2939,31 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+        private AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+        public Builder autonomousDatabaseMaintenanceWindow(
+                AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow) {
+            this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+            this.__explicitlySet__.add("autonomousDatabaseMaintenanceWindow");
+            return this;
+        }
+        /** The date until which maintenance of Autonomous AI Database is temporarily paused. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenancePauseUntil")
+        private java.util.Date timeMaintenancePauseUntil;
+
+        /**
+         * The date until which maintenance of Autonomous AI Database is temporarily paused.
+         *
+         * @param timeMaintenancePauseUntil the value to set
+         * @return this builder
+         */
+        public Builder timeMaintenancePauseUntil(java.util.Date timeMaintenancePauseUntil) {
+            this.timeMaintenancePauseUntil = timeMaintenancePauseUntil;
+            this.__explicitlySet__.add("timeMaintenancePauseUntil");
+            return this;
+        }
         /**
          * The list of scheduled operations. Consists of values such as dayOfWeek,
          * scheduledStartTime, scheduledStopTime.
@@ -3270,6 +3304,27 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("additionalAttributes");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dedicated resource pool leader Autonomous AI Database in the same region, associated with
+         * local Autonomous Data Guard for a dedicated resource pool member.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("localAdgResourcePoolLeaderId")
+        private String localAdgResourcePoolLeaderId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dedicated resource pool leader Autonomous AI Database in the same region, associated with
+         * local Autonomous Data Guard for a dedicated resource pool member.
+         *
+         * @param localAdgResourcePoolLeaderId the value to set
+         * @return this builder
+         */
+        public Builder localAdgResourcePoolLeaderId(String localAdgResourcePoolLeaderId) {
+            this.localAdgResourcePoolLeaderId = localAdgResourcePoolLeaderId;
+            this.__explicitlySet__.add("localAdgResourcePoolLeaderId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -3394,6 +3449,8 @@ public final class AutonomousDwDatabase
                             this.isReconnectCloneEnabled,
                             this.timeUntilReconnectCloneEnabled,
                             this.autonomousMaintenanceScheduleType,
+                            this.autonomousDatabaseMaintenanceWindow,
+                            this.timeMaintenancePauseUntil,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.allocatedStorageSizeInTBs,
@@ -3410,7 +3467,8 @@ public final class AutonomousDwDatabase
                             this.clusterPlacementGroupId,
                             this.cloneTableSpaceList,
                             this.cloneType,
-                            this.additionalAttributes);
+                            this.additionalAttributes,
+                            this.localAdgResourcePoolLeaderId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -3776,6 +3834,13 @@ public final class AutonomousDwDatabase
                 this.autonomousMaintenanceScheduleType(
                         model.getAutonomousMaintenanceScheduleType());
             }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseMaintenanceWindow")) {
+                this.autonomousDatabaseMaintenanceWindow(
+                        model.getAutonomousDatabaseMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaintenancePauseUntil")) {
+                this.timeMaintenancePauseUntil(model.getTimeMaintenancePauseUntil());
+            }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
             }
@@ -3827,6 +3892,9 @@ public final class AutonomousDwDatabase
             }
             if (model.wasPropertyExplicitlySet("additionalAttributes")) {
                 this.additionalAttributes(model.getAdditionalAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("localAdgResourcePoolLeaderId")) {
+                this.localAdgResourcePoolLeaderId(model.getLocalAdgResourcePoolLeaderId());
             }
             return this;
         }
@@ -6652,6 +6720,26 @@ public final class AutonomousDwDatabase
         return autonomousMaintenanceScheduleType;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+    private final AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+    public AutonomousDatabaseMaintenanceWindowSummary getAutonomousDatabaseMaintenanceWindow() {
+        return autonomousDatabaseMaintenanceWindow;
+    }
+
+    /** The date until which maintenance of Autonomous AI Database is temporarily paused. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenancePauseUntil")
+    private final java.util.Date timeMaintenancePauseUntil;
+
+    /**
+     * The date until which maintenance of Autonomous AI Database is temporarily paused.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeMaintenancePauseUntil() {
+        return timeMaintenancePauseUntil;
+    }
+
     /**
      * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime,
      * scheduledStopTime.
@@ -7091,6 +7179,25 @@ public final class AutonomousDwDatabase
         return additionalAttributes;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dedicated resource pool leader Autonomous AI Database in the same region, associated with
+     * local Autonomous Data Guard for a dedicated resource pool member.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("localAdgResourcePoolLeaderId")
+    private final String localAdgResourcePoolLeaderId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dedicated resource pool leader Autonomous AI Database in the same region, associated with
+     * local Autonomous Data Guard for a dedicated resource pool member.
+     *
+     * @return the value
+     */
+    public String getLocalAdgResourcePoolLeaderId() {
+        return localAdgResourcePoolLeaderId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -7257,6 +7364,10 @@ public final class AutonomousDwDatabase
                 .append(String.valueOf(this.timeUntilReconnectCloneEnabled));
         sb.append(", autonomousMaintenanceScheduleType=")
                 .append(String.valueOf(this.autonomousMaintenanceScheduleType));
+        sb.append(", autonomousDatabaseMaintenanceWindow=")
+                .append(String.valueOf(this.autonomousDatabaseMaintenanceWindow));
+        sb.append(", timeMaintenancePauseUntil=")
+                .append(String.valueOf(this.timeMaintenancePauseUntil));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
         sb.append(", isAutoScalingForStorageEnabled=")
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
@@ -7283,6 +7394,8 @@ public final class AutonomousDwDatabase
         sb.append(", cloneTableSpaceList=").append(String.valueOf(this.cloneTableSpaceList));
         sb.append(", cloneType=").append(String.valueOf(this.cloneType));
         sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
+        sb.append(", localAdgResourcePoolLeaderId=")
+                .append(String.valueOf(this.localAdgResourcePoolLeaderId));
         sb.append(")");
         return sb.toString();
     }
@@ -7459,6 +7572,11 @@ public final class AutonomousDwDatabase
                 && java.util.Objects.equals(
                         this.autonomousMaintenanceScheduleType,
                         other.autonomousMaintenanceScheduleType)
+                && java.util.Objects.equals(
+                        this.autonomousDatabaseMaintenanceWindow,
+                        other.autonomousDatabaseMaintenanceWindow)
+                && java.util.Objects.equals(
+                        this.timeMaintenancePauseUntil, other.timeMaintenancePauseUntil)
                 && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
                 && java.util.Objects.equals(
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
@@ -7486,6 +7604,8 @@ public final class AutonomousDwDatabase
                 && java.util.Objects.equals(this.cloneTableSpaceList, other.cloneTableSpaceList)
                 && java.util.Objects.equals(this.cloneType, other.cloneType)
                 && java.util.Objects.equals(this.additionalAttributes, other.additionalAttributes)
+                && java.util.Objects.equals(
+                        this.localAdgResourcePoolLeaderId, other.localAdgResourcePoolLeaderId)
                 && super.equals(other);
     }
 
@@ -7904,6 +8024,16 @@ public final class AutonomousDwDatabase
                                 : this.autonomousMaintenanceScheduleType.hashCode());
         result =
                 (result * PRIME)
+                        + (this.autonomousDatabaseMaintenanceWindow == null
+                                ? 43
+                                : this.autonomousDatabaseMaintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaintenancePauseUntil == null
+                                ? 43
+                                : this.timeMaintenancePauseUntil.hashCode());
+        result =
+                (result * PRIME)
                         + (this.scheduledOperations == null
                                 ? 43
                                 : this.scheduledOperations.hashCode());
@@ -7977,6 +8107,11 @@ public final class AutonomousDwDatabase
                         + (this.additionalAttributes == null
                                 ? 43
                                 : this.additionalAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localAdgResourcePoolLeaderId == null
+                                ? 43
+                                : this.localAdgResourcePoolLeaderId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

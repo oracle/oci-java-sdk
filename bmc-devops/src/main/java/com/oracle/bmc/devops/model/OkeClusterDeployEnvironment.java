@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -135,6 +135,16 @@ public final class OkeClusterDeployEnvironment extends DeployEnvironment {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** The OCID of the Kubernetes cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
         private String clusterId;
@@ -178,6 +188,7 @@ public final class OkeClusterDeployEnvironment extends DeployEnvironment {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.securityAttributes,
                             this.clusterId,
                             this.networkChannel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -224,6 +235,9 @@ public final class OkeClusterDeployEnvironment extends DeployEnvironment {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("clusterId")) {
                 this.clusterId(model.getClusterId());
             }
@@ -257,6 +271,7 @@ public final class OkeClusterDeployEnvironment extends DeployEnvironment {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String clusterId,
             NetworkChannel networkChannel) {
         super(
@@ -271,7 +286,8 @@ public final class OkeClusterDeployEnvironment extends DeployEnvironment {
                 lifecycleDetails,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                securityAttributes);
         this.clusterId = clusterId;
         this.networkChannel = networkChannel;
     }

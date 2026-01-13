@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -111,6 +111,7 @@ public class CreateAutonomousDatabaseBase
         "resourcePoolLeaderId",
         "resourcePoolSummary",
         "autonomousMaintenanceScheduleType",
+        "autonomousDatabaseMaintenanceWindow",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
         "databaseEdition",
@@ -166,6 +167,7 @@ public class CreateAutonomousDatabaseBase
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
@@ -220,6 +222,7 @@ public class CreateAutonomousDatabaseBase
         this.resourcePoolLeaderId = resourcePoolLeaderId;
         this.resourcePoolSummary = resourcePoolSummary;
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+        this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.databaseEdition = databaseEdition;
@@ -1571,6 +1574,13 @@ public class CreateAutonomousDatabaseBase
         return autonomousMaintenanceScheduleType;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+    private final AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+    public AutonomousDatabaseMaintenanceWindowSummary getAutonomousDatabaseMaintenanceWindow() {
+        return autonomousDatabaseMaintenanceWindow;
+    }
+
     /**
      * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime,
      * scheduledStopTime.
@@ -1772,6 +1782,8 @@ public class CreateAutonomousDatabaseBase
         sb.append(", resourcePoolSummary=").append(String.valueOf(this.resourcePoolSummary));
         sb.append(", autonomousMaintenanceScheduleType=")
                 .append(String.valueOf(this.autonomousMaintenanceScheduleType));
+        sb.append(", autonomousDatabaseMaintenanceWindow=")
+                .append(String.valueOf(this.autonomousDatabaseMaintenanceWindow));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
         sb.append(", isAutoScalingForStorageEnabled=")
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
@@ -1851,6 +1863,9 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(
                         this.autonomousMaintenanceScheduleType,
                         other.autonomousMaintenanceScheduleType)
+                && java.util.Objects.equals(
+                        this.autonomousDatabaseMaintenanceWindow,
+                        other.autonomousDatabaseMaintenanceWindow)
                 && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
                 && java.util.Objects.equals(
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
@@ -2005,6 +2020,11 @@ public class CreateAutonomousDatabaseBase
                         + (this.autonomousMaintenanceScheduleType == null
                                 ? 43
                                 : this.autonomousMaintenanceScheduleType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDatabaseMaintenanceWindow == null
+                                ? 43
+                                : this.autonomousDatabaseMaintenanceWindow.hashCode());
         result =
                 (result * PRIME)
                         + (this.scheduledOperations == null

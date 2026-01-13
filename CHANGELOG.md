@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.78.0 - 2026-01-12
+### Added 
+- Support for Point-In-Time Recovery (PITR) as iRestore using timestamps in the Database service 
+- Support for selecting a maintenance window when enabling dedicated storage on a Resource Pool leader in the Database service 
+- Support for pausing and resuming maintenance patching in the Database service 
+- Support for providing the OCID of the standby local Autonomous Data Guard (ADG) Resource Pool leader when enabling local ADG on a Resource Pool with dedicated storage in the Database service 
+- Support for Security Attributes in the DevOps Deploy service 
+- Support for platform configuration soft links with new optional parameters in the Fleet Application Management service 
+- Support for Database Console operations in the MySQL HeatWave service   
+
+### Breaking Changes 
+- The enum `SortByEnum` was removed from the Budget service 
+- The models `GetPullRequestChangeSummaryMetricsRequest`, `ListPullRequestCommitsRequest`, `ListPullRequestFileChangesRequest`, `PullRequestChangeSummaryMetrics`, `PullRequestFileChangeSummary`, and `ResolvePullRequestCommentRequest` were removed from the Devops Deploy service
+
 ## 3.77.2 - 2025-12-16
 ### Added 
 - Support for Batch service 

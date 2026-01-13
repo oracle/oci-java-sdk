@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -72,6 +72,16 @@ public final class CreateFunctionDeployEnvironmentDetails extends CreateDeployEn
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** The OCID of the Function. */
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
@@ -99,6 +109,7 @@ public final class CreateFunctionDeployEnvironmentDetails extends CreateDeployEn
                             this.projectId,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.functionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -123,6 +134,9 @@ public final class CreateFunctionDeployEnvironmentDetails extends CreateDeployEn
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("functionId")) {
                 this.functionId(model.getFunctionId());
             }
@@ -146,8 +160,9 @@ public final class CreateFunctionDeployEnvironmentDetails extends CreateDeployEn
             String projectId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String functionId) {
-        super(description, displayName, projectId, freeformTags, definedTags);
+        super(description, displayName, projectId, freeformTags, definedTags, securityAttributes);
         this.functionId = functionId;
     }
 
