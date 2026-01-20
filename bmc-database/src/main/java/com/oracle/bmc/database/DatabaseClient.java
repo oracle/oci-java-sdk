@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database;
@@ -73,7 +73,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DatabaseClient",
-                            "downloadExadataInfrastructureConfigFile,downloadValidationReport,downloadVmClusterNetworkConfigFile,generateAutonomousDatabaseWallet,getConsoleHistoryContent"));
+                            "downloadDbConnectionBundle,downloadExadataInfrastructureConfigFile,downloadValidationReport,downloadVmClusterNetworkConfigFile,generateAutonomousDatabaseWallet,getConsoleHistoryContent"));
         }
     }
 
@@ -5162,6 +5162,53 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DownloadDbConnectionBundleResponse downloadDbConnectionBundle(
+            DownloadDbConnectionBundleRequest request) {
+
+        Validate.notBlank(
+                request.getDbConnectionBundleId(), "dbConnectionBundleId must not be blank");
+        Objects.requireNonNull(
+                request.getDownloadDbConnectionBundleDetails(),
+                "downloadDbConnectionBundleDetails is required");
+
+        return clientCall(request, DownloadDbConnectionBundleResponse::builder)
+                .logger(LOG, "downloadDbConnectionBundle")
+                .serviceDetails(
+                        "Database",
+                        "DownloadDbConnectionBundle",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbConnectionBundle/DownloadDbConnectionBundle")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DownloadDbConnectionBundleRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbConnectionBundles")
+                .appendPathParam(request.getDbConnectionBundleId())
+                .appendPathParam("actions")
+                .appendPathParam("download")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class,
+                        DownloadDbConnectionBundleResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "etag", DownloadDbConnectionBundleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", DownloadDbConnectionBundleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "content-type", DownloadDbConnectionBundleResponse.Builder::contentType)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        DownloadDbConnectionBundleResponse.Builder::contentDisposition)
+                .handleResponseHeaderLong(
+                        "content-length", DownloadDbConnectionBundleResponse.Builder::contentLength)
+                .handleResponseHeaderDate(
+                        "last-modified", DownloadDbConnectionBundleResponse.Builder::lastModified)
+                .callSync();
+    }
+
+    @Override
     public DownloadExadataInfrastructureConfigFileResponse downloadExadataInfrastructureConfigFile(
             DownloadExadataInfrastructureConfigFileRequest request) {
 
@@ -7170,6 +7217,35 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetDbConnectionBundleResponse getDbConnectionBundle(
+            GetDbConnectionBundleRequest request) {
+
+        Validate.notBlank(
+                request.getDbConnectionBundleId(), "dbConnectionBundleId must not be blank");
+
+        return clientCall(request, GetDbConnectionBundleResponse::builder)
+                .logger(LOG, "getDbConnectionBundle")
+                .serviceDetails(
+                        "Database",
+                        "GetDbConnectionBundle",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbConnectionBundle/GetDbConnectionBundle")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDbConnectionBundleRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbConnectionBundles")
+                .appendPathParam(request.getDbConnectionBundleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.DbConnectionBundle.class,
+                        GetDbConnectionBundleResponse.Builder::dbConnectionBundle)
+                .handleResponseHeaderString("etag", GetDbConnectionBundleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDbConnectionBundleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetDbHomeResponse getDbHome(GetDbHomeRequest request) {
 
         Validate.notBlank(request.getDbHomeId(), "dbHomeId must not be blank");
@@ -8455,6 +8531,49 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetVmClusterUpdateHistoryEntryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ImportTransportableTablespaceResponse importTransportableTablespace(
+            ImportTransportableTablespaceRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getImportTransportableTablespaceDetails(),
+                "importTransportableTablespaceDetails is required");
+
+        return clientCall(request, ImportTransportableTablespaceResponse::builder)
+                .logger(LOG, "importTransportableTablespace")
+                .serviceDetails(
+                        "Database",
+                        "ImportTransportableTablespace",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ImportTransportableTablespace")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportTransportableTablespaceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("importTransportableTablespace")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabase.class,
+                        ImportTransportableTablespaceResponse.Builder::autonomousDatabase)
+                .handleResponseHeaderString(
+                        "etag", ImportTransportableTablespaceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ImportTransportableTablespaceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ImportTransportableTablespaceResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -9801,6 +9920,42 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDatabasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListDbConnectionBundlesResponse listDbConnectionBundles(
+            ListDbConnectionBundlesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDbConnectionBundlesResponse::builder)
+                .logger(LOG, "listDbConnectionBundles")
+                .serviceDetails(
+                        "Database",
+                        "ListDbConnectionBundles",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbConnectionBundle/ListDbConnectionBundles")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDbConnectionBundlesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbConnectionBundles")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("dbConnectionBundleType", request.getDbConnectionBundleType())
+                .appendQueryParam("associatedResourceId", request.getAssociatedResourceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.DbConnectionBundleSummary.class,
+                        ListDbConnectionBundlesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDbConnectionBundlesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDbConnectionBundlesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -12106,6 +12261,44 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public RegisterCloudAutonomousVmClusterPkcsResponse registerCloudAutonomousVmClusterPkcs(
+            RegisterCloudAutonomousVmClusterPkcsRequest request) {
+
+        Validate.notBlank(
+                request.getCloudAutonomousVmClusterId(),
+                "cloudAutonomousVmClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getRegisterCloudAutonomousVmClusterPkcsDetails(),
+                "registerCloudAutonomousVmClusterPkcsDetails is required");
+
+        return clientCall(request, RegisterCloudAutonomousVmClusterPkcsResponse::builder)
+                .logger(LOG, "registerCloudAutonomousVmClusterPkcs")
+                .serviceDetails(
+                        "Database",
+                        "RegisterCloudAutonomousVmClusterPkcs",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RegisterCloudAutonomousVmClusterPkcs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RegisterCloudAutonomousVmClusterPkcsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudAutonomousVmClusters")
+                .appendPathParam(request.getCloudAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("registerPkcs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RegisterCloudAutonomousVmClusterPkcsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RegisterCloudAutonomousVmClusterPkcsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public RegisterCloudVmClusterPkcsResponse registerCloudVmClusterPkcs(
             RegisterCloudVmClusterPkcsRequest request) {
 
@@ -13140,6 +13333,40 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public RunDataPatchResponse runDataPatch(RunDataPatchRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+
+        return clientCall(request, RunDataPatchResponse::builder)
+                .logger(LOG, "runDataPatch")
+                .serviceDetails(
+                        "Database",
+                        "RunDataPatch",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RunDataPatch")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RunDataPatchRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("runDatapatch")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        RunDataPatchResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RunDataPatchResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", RunDataPatchResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RunDataPatchResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public SaasAdminUserStatusResponse saasAdminUserStatus(SaasAdminUserStatusRequest request) {
 
         Validate.notBlank(
@@ -13801,6 +14028,44 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UnmountDbnodeSnapshotResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UnmountDbnodeSnapshotResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UnregisterCloudAutonomousVmClusterPkcsResponse unregisterCloudAutonomousVmClusterPkcs(
+            UnregisterCloudAutonomousVmClusterPkcsRequest request) {
+
+        Validate.notBlank(
+                request.getCloudAutonomousVmClusterId(),
+                "cloudAutonomousVmClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUnregisterCloudAutonomousVmClusterPkcsDetails(),
+                "unregisterCloudAutonomousVmClusterPkcsDetails is required");
+
+        return clientCall(request, UnregisterCloudAutonomousVmClusterPkcsResponse::builder)
+                .logger(LOG, "unregisterCloudAutonomousVmClusterPkcs")
+                .serviceDetails(
+                        "Database",
+                        "UnregisterCloudAutonomousVmClusterPkcs",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/UnregisterCloudAutonomousVmClusterPkcs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UnregisterCloudAutonomousVmClusterPkcsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudAutonomousVmClusters")
+                .appendPathParam(request.getCloudAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("unregisterPkcs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UnregisterCloudAutonomousVmClusterPkcsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UnregisterCloudAutonomousVmClusterPkcsResponse.Builder::opcRequestId)
                 .callSync();
     }
 

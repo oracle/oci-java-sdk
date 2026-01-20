@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai;
@@ -78,6 +78,24 @@ public interface GenerativeAi extends AutoCloseable {
      *     template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Moves an API key into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ChangeApiKeyCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeApiKeyCompartment API.
+     */
+    ChangeApiKeyCompartmentResponse changeApiKeyCompartment(ChangeApiKeyCompartmentRequest request);
 
     /**
      * Moves a dedicated AI cluster into a different compartment within the same tenancy. For
@@ -174,6 +192,21 @@ public interface GenerativeAi extends AutoCloseable {
     ChangeModelCompartmentResponse changeModelCompartment(ChangeModelCompartmentRequest request);
 
     /**
+     * Creates a new API key in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateApiKeyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApiKey API.
+     */
+    CreateApiKeyResponse createApiKey(CreateApiKeyRequest request);
+
+    /**
      * Creates a dedicated AI cluster.
      *
      * @param request The request object containing the details to send
@@ -264,6 +297,21 @@ public interface GenerativeAi extends AutoCloseable {
     CreateModelResponse createModel(CreateModelRequest request);
 
     /**
+     * Deletes an API key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteApiKeyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApiKey API.
+     */
+    DeleteApiKeyResponse deleteApiKey(DeleteApiKeyRequest request);
+
+    /**
      * Deletes a dedicated AI cluster.
      *
      * <p>You can only delete clusters without attached resources. Before you delete a hosting
@@ -349,6 +397,21 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteModel API.
      */
     DeleteModelResponse deleteModel(DeleteModelRequest request);
+
+    /**
+     * Gets information about an API key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetApiKeyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApiKey API.
+     */
+    GetApiKeyResponse getApiKey(GetApiKeyRequest request);
 
     /**
      * Gets information about a dedicated AI cluster.
@@ -443,6 +506,21 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Lists the ApiKeys of a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListApiKeysExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApiKeys API.
+     */
+    ListApiKeysResponse listApiKeys(ListApiKeysRequest request);
 
     /**
      * Lists the dedicated AI clusters in a specific compartment.
@@ -571,6 +649,51 @@ public interface GenerativeAi extends AutoCloseable {
      *     API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Renew the primary or secondary key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/RenewApiKeyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RenewApiKey API.
+     */
+    RenewApiKeyResponse renewApiKey(RenewApiKeyRequest request);
+
+    /**
+     * Set state of the key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/SetApiKeyStateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetApiKeyState API.
+     */
+    SetApiKeyStateResponse setApiKeyState(SetApiKeyStateRequest request);
+
+    /**
+     * Updates the properties of an apiKey.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateApiKeyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApiKey API.
+     */
+    UpdateApiKeyResponse updateApiKey(UpdateApiKeyRequest request);
 
     /**
      * Updates a dedicated AI cluster.

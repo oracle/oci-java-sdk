@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -448,6 +448,16 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+        private AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+        public Builder autonomousDatabaseMaintenanceWindow(
+                AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow) {
+            this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+            this.__explicitlySet__.add("autonomousDatabaseMaintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
         private java.util.List<ScheduledOperationDetails> scheduledOperations;
 
@@ -509,6 +519,16 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
         public Builder secretVersionNumber(Integer secretVersionNumber) {
             this.secretVersionNumber = secretVersionNumber;
             this.__explicitlySet__.add("secretVersionNumber");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("transportableTablespace")
+        private ImportTransportableTablespaceDetails transportableTablespace;
+
+        public Builder transportableTablespace(
+                ImportTransportableTablespaceDetails transportableTablespace) {
+            this.transportableTablespace = transportableTablespace;
+            this.__explicitlySet__.add("transportableTablespace");
             return this;
         }
         /**
@@ -652,6 +672,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                             this.resourcePoolLeaderId,
                             this.resourcePoolSummary,
                             this.autonomousMaintenanceScheduleType,
+                            this.autonomousDatabaseMaintenanceWindow,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
@@ -659,6 +680,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                             this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber,
+                            this.transportableTablespace,
                             this.autonomousDatabaseId,
                             this.timestamp,
                             this.cloneType,
@@ -812,6 +834,10 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                 this.autonomousMaintenanceScheduleType(
                         model.getAutonomousMaintenanceScheduleType());
             }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseMaintenanceWindow")) {
+                this.autonomousDatabaseMaintenanceWindow(
+                        model.getAutonomousDatabaseMaintenanceWindow());
+            }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
             }
@@ -832,6 +858,9 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             }
             if (model.wasPropertyExplicitlySet("secretVersionNumber")) {
                 this.secretVersionNumber(model.getSecretVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("transportableTablespace")) {
+                this.transportableTablespace(model.getTransportableTablespace());
             }
             if (model.wasPropertyExplicitlySet("autonomousDatabaseId")) {
                 this.autonomousDatabaseId(model.getAutonomousDatabaseId());
@@ -910,6 +939,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
@@ -917,6 +947,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber,
+            ImportTransportableTablespaceDetails transportableTablespace,
             String autonomousDatabaseId,
             java.util.Date timestamp,
             CloneType cloneType,
@@ -969,13 +1000,15 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                 resourcePoolLeaderId,
                 resourcePoolSummary,
                 autonomousMaintenanceScheduleType,
+                autonomousDatabaseMaintenanceWindow,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
                 databaseEdition,
                 dbToolsDetails,
                 isBackupRetentionLocked,
                 secretId,
-                secretVersionNumber);
+                secretVersionNumber,
+                transportableTablespace);
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;
         this.cloneType = cloneType;

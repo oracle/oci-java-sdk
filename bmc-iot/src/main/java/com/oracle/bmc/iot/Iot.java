@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.iot;
@@ -386,7 +386,9 @@ public interface Iot extends AutoCloseable {
     GetDigitalTwinInstanceResponse getDigitalTwinInstance(GetDigitalTwinInstanceRequest request);
 
     /**
-     * Retrieves the latest snapshot data of digital twin instance identified by the specified OCID.
+     * Retrieves the content associated with a digital twin instance identified by the specified
+     * OCID. The content can be retrieved only when a model is associated with the digital twin
+     * instance.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

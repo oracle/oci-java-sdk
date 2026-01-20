@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -36,7 +36,6 @@ public final class PullRequest extends com.oracle.bmc.http.client.internal.Expli
         "lifecycleState",
         "lifecycleDetails",
         "reviewers",
-        "mergedCommitId",
         "mergeChecks",
         "createdBy",
         "mergedBy",
@@ -62,7 +61,6 @@ public final class PullRequest extends com.oracle.bmc.http.client.internal.Expli
             LifecycleState lifecycleState,
             LifecycleDetails lifecycleDetails,
             java.util.List<Reviewer> reviewers,
-            String mergedCommitId,
             MergeCheckCollection mergeChecks,
             PrincipalDetails createdBy,
             PrincipalDetails mergedBy,
@@ -87,7 +85,6 @@ public final class PullRequest extends com.oracle.bmc.http.client.internal.Expli
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.reviewers = reviewers;
-        this.mergedCommitId = mergedCommitId;
         this.mergeChecks = mergeChecks;
         this.createdBy = createdBy;
         this.mergedBy = mergedBy;
@@ -321,21 +318,6 @@ public final class PullRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("reviewers");
             return this;
         }
-        /** The commit ID when the Pull Request was merged. */
-        @com.fasterxml.jackson.annotation.JsonProperty("mergedCommitId")
-        private String mergedCommitId;
-
-        /**
-         * The commit ID when the Pull Request was merged.
-         *
-         * @param mergedCommitId the value to set
-         * @return this builder
-         */
-        public Builder mergedCommitId(String mergedCommitId) {
-            this.mergedCommitId = mergedCommitId;
-            this.__explicitlySet__.add("mergedCommitId");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("mergeChecks")
         private MergeCheckCollection mergeChecks;
@@ -499,7 +481,6 @@ public final class PullRequest extends com.oracle.bmc.http.client.internal.Expli
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.reviewers,
-                            this.mergedCommitId,
                             this.mergeChecks,
                             this.createdBy,
                             this.mergedBy,
@@ -558,9 +539,6 @@ public final class PullRequest extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("reviewers")) {
                 this.reviewers(model.getReviewers());
-            }
-            if (model.wasPropertyExplicitlySet("mergedCommitId")) {
-                this.mergedCommitId(model.getMergedCommitId());
             }
             if (model.wasPropertyExplicitlySet("mergeChecks")) {
                 this.mergeChecks(model.getMergeChecks());
@@ -887,19 +865,6 @@ public final class PullRequest extends com.oracle.bmc.http.client.internal.Expli
         return reviewers;
     }
 
-    /** The commit ID when the Pull Request was merged. */
-    @com.fasterxml.jackson.annotation.JsonProperty("mergedCommitId")
-    private final String mergedCommitId;
-
-    /**
-     * The commit ID when the Pull Request was merged.
-     *
-     * @return the value
-     */
-    public String getMergedCommitId() {
-        return mergedCommitId;
-    }
-
     @com.fasterxml.jackson.annotation.JsonProperty("mergeChecks")
     private final MergeCheckCollection mergeChecks;
 
@@ -1054,7 +1019,6 @@ public final class PullRequest extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", reviewers=").append(String.valueOf(this.reviewers));
-        sb.append(", mergedCommitId=").append(String.valueOf(this.mergedCommitId));
         sb.append(", mergeChecks=").append(String.valueOf(this.mergeChecks));
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", mergedBy=").append(String.valueOf(this.mergedBy));
@@ -1094,7 +1058,6 @@ public final class PullRequest extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.reviewers, other.reviewers)
-                && java.util.Objects.equals(this.mergedCommitId, other.mergedCommitId)
                 && java.util.Objects.equals(this.mergeChecks, other.mergeChecks)
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
                 && java.util.Objects.equals(this.mergedBy, other.mergedBy)
@@ -1141,9 +1104,6 @@ public final class PullRequest extends com.oracle.bmc.http.client.internal.Expli
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.reviewers == null ? 43 : this.reviewers.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.mergedCommitId == null ? 43 : this.mergedCommitId.hashCode());
         result = (result * PRIME) + (this.mergeChecks == null ? 43 : this.mergeChecks.hashCode());
         result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
         result = (result * PRIME) + (this.mergedBy == null ? 43 : this.mergedBy.hashCode());

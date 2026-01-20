@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.client;
@@ -15,6 +15,29 @@ public enum Options {
 
     private static final String OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED_ENV_VAR =
             "OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED";
+
+    /** The system property key for token refresh enablement. */
+    private static final String JAVASDK_TOKEN_REFRESH_ENABLED_SYSTEM_PROPERTY =
+            "oci.javasdk.token.refresh.enabled";
+
+    /**
+     * Flag indicating whether token refresh retries are enabled. By default, the token refresh
+     * retries are enabled for 401s and processing exceptions. You have the flexibility to disable
+     * these retries if needed. This can be achieved by setting the system property.
+     *
+     * <pre>
+     * System.setProperty("oci.javasdk.token.refresh.enabled", "false");
+     * </pre>
+     */
+    private static volatile boolean TOKEN_REFRESH_RETRY_ENABLED;
+
+    static {
+        /**
+         * Initializes token refresher. Token refresh can be managed by system property {@value
+         * #JAVASDK_TOKEN_REFRESH_ENABLED_SYSTEM_PROPERTY}. The default is true.
+         */
+        initializeTokenRefreshRetryEnabled();
+    }
 
     /**
      * Sets the boolean value to indicate if the SDK should auto-close the InputStream stream
@@ -82,5 +105,22 @@ public enum Options {
             Boolean useOfRealmSpecificEndpointTemplateEnabledProgrammatically) {
         USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY =
                 useOfRealmSpecificEndpointTemplateEnabledProgrammatically;
+    }
+
+    /** Initializes the token refresh retry enablement based on system property. */
+    private static void initializeTokenRefreshRetryEnabled() {
+        TOKEN_REFRESH_RETRY_ENABLED =
+                Boolean.parseBoolean(
+                        System.getProperty(JAVASDK_TOKEN_REFRESH_ENABLED_SYSTEM_PROPERTY, "true"));
+        LOG.debug("Setting token refresh retry to {}", TOKEN_REFRESH_RETRY_ENABLED);
+    }
+
+    /**
+     * Returns the current status of token refresh retry enablement.
+     *
+     * @return true if token refresh retries are enabled; false otherwise.
+     */
+    public static boolean isTokenRefreshRetrierEnabled() {
+        return TOKEN_REFRESH_RETRY_ENABLED;
     }
 }

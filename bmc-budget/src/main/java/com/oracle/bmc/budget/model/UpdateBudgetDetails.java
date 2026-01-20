@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.budget.model;
@@ -33,7 +33,8 @@ public final class UpdateBudgetDetails
         "endDate",
         "resetPeriod",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public UpdateBudgetDetails(
             String displayName,
@@ -45,7 +46,8 @@ public final class UpdateBudgetDetails
             java.util.Date endDate,
             ResetPeriod resetPeriod,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -57,6 +59,7 @@ public final class UpdateBudgetDetails
         this.resetPeriod = resetPeriod;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -154,17 +157,17 @@ public final class UpdateBudgetDetails
             return this;
         }
         /**
-         * The date when the one-time budget begins. For example, {@code 2023-03-23}. The date-time
-         * format conforms to RFC 3339, and will be truncated to the starting point of the date
-         * provided after being converted to UTC time.
+         * The date when the one-time budget begins. For example, {@code
+         * 2023-07-12T16:01:19.847222+05:30}. The date-time format conforms to RFC 3339, and will be
+         * truncated to the starting point of the date provided after being converted to UTC time.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("startDate")
         private java.util.Date startDate;
 
         /**
-         * The date when the one-time budget begins. For example, {@code 2023-03-23}. The date-time
-         * format conforms to RFC 3339, and will be truncated to the starting point of the date
-         * provided after being converted to UTC time.
+         * The date when the one-time budget begins. For example, {@code
+         * 2023-07-12T16:01:19.847222+05:30}. The date-time format conforms to RFC 3339, and will be
+         * truncated to the starting point of the date provided after being converted to UTC time.
          *
          * @param startDate the value to set
          * @return this builder
@@ -175,17 +178,17 @@ public final class UpdateBudgetDetails
             return this;
         }
         /**
-         * The time when the one-time budget concludes. For example, {@code 2023-03-23}. The
-         * date-time format conforms to RFC 3339, and will be truncated to the starting point of the
-         * date provided after being converted to UTC time.
+         * The time when the one-time budget concludes. For example, {@code
+         * 2023-08-12T16:01:19.847222+05:30}. The date-time format conforms to RFC 3339, and will be
+         * truncated to the starting point of the date provided after being converted to UTC time.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("endDate")
         private java.util.Date endDate;
 
         /**
-         * The time when the one-time budget concludes. For example, {@code 2023-03-23}. The
-         * date-time format conforms to RFC 3339, and will be truncated to the starting point of the
-         * date provided after being converted to UTC time.
+         * The time when the one-time budget concludes. For example, {@code
+         * 2023-08-12T16:01:19.847222+05:30}. The date-time format conforms to RFC 3339, and will be
+         * truncated to the starting point of the date provided after being converted to UTC time.
          *
          * @param endDate the value to set
          * @return this builder
@@ -261,6 +264,25 @@ public final class UpdateBudgetDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -277,7 +299,8 @@ public final class UpdateBudgetDetails
                             this.endDate,
                             this.resetPeriod,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -316,6 +339,9 @@ public final class UpdateBudgetDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -410,17 +436,17 @@ public final class UpdateBudgetDetails
     }
 
     /**
-     * The date when the one-time budget begins. For example, {@code 2023-03-23}. The date-time
-     * format conforms to RFC 3339, and will be truncated to the starting point of the date provided
-     * after being converted to UTC time.
+     * The date when the one-time budget begins. For example, {@code
+     * 2023-07-12T16:01:19.847222+05:30}. The date-time format conforms to RFC 3339, and will be
+     * truncated to the starting point of the date provided after being converted to UTC time.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
     private final java.util.Date startDate;
 
     /**
-     * The date when the one-time budget begins. For example, {@code 2023-03-23}. The date-time
-     * format conforms to RFC 3339, and will be truncated to the starting point of the date provided
-     * after being converted to UTC time.
+     * The date when the one-time budget begins. For example, {@code
+     * 2023-07-12T16:01:19.847222+05:30}. The date-time format conforms to RFC 3339, and will be
+     * truncated to the starting point of the date provided after being converted to UTC time.
      *
      * @return the value
      */
@@ -429,17 +455,17 @@ public final class UpdateBudgetDetails
     }
 
     /**
-     * The time when the one-time budget concludes. For example, {@code 2023-03-23}. The date-time
-     * format conforms to RFC 3339, and will be truncated to the starting point of the date provided
-     * after being converted to UTC time.
+     * The time when the one-time budget concludes. For example, {@code
+     * 2023-08-12T16:01:19.847222+05:30}. The date-time format conforms to RFC 3339, and will be
+     * truncated to the starting point of the date provided after being converted to UTC time.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("endDate")
     private final java.util.Date endDate;
 
     /**
-     * The time when the one-time budget concludes. For example, {@code 2023-03-23}. The date-time
-     * format conforms to RFC 3339, and will be truncated to the starting point of the date provided
-     * after being converted to UTC time.
+     * The time when the one-time budget concludes. For example, {@code
+     * 2023-08-12T16:01:19.847222+05:30}. The date-time format conforms to RFC 3339, and will be
+     * truncated to the starting point of the date provided after being converted to UTC time.
      *
      * @return the value
      */
@@ -506,6 +532,23 @@ public final class UpdateBudgetDetails
         return definedTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -532,6 +575,7 @@ public final class UpdateBudgetDetails
         sb.append(", resetPeriod=").append(String.valueOf(this.resetPeriod));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -558,6 +602,7 @@ public final class UpdateBudgetDetails
                 && java.util.Objects.equals(this.resetPeriod, other.resetPeriod)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -583,6 +628,7 @@ public final class UpdateBudgetDetails
         result = (result * PRIME) + (this.resetPeriod == null ? 43 : this.resetPeriod.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

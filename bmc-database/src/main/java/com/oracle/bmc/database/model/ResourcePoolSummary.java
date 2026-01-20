@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -25,17 +25,23 @@ public final class ResourcePoolSummary
     @Deprecated
     @java.beans.ConstructorProperties({
         "poolSize",
+        "poolStorageSizeInTBs",
+        "availableStorageCapacityInTBs",
         "totalComputeCapacity",
         "availableComputeCapacity",
         "isDisabled"
     })
     public ResourcePoolSummary(
             Integer poolSize,
+            Integer poolStorageSizeInTBs,
+            Double availableStorageCapacityInTBs,
             Integer totalComputeCapacity,
             Integer availableComputeCapacity,
             Boolean isDisabled) {
         super();
         this.poolSize = poolSize;
+        this.poolStorageSizeInTBs = poolStorageSizeInTBs;
+        this.availableStorageCapacityInTBs = availableStorageCapacityInTBs;
         this.totalComputeCapacity = totalComputeCapacity;
         this.availableComputeCapacity = availableComputeCapacity;
         this.isDisabled = isDisabled;
@@ -56,6 +62,40 @@ public final class ResourcePoolSummary
         public Builder poolSize(Integer poolSize) {
             this.poolSize = poolSize;
             this.__explicitlySet__.add("poolSize");
+            return this;
+        }
+        /** Resource pool storage size in TBs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("poolStorageSizeInTBs")
+        private Integer poolStorageSizeInTBs;
+
+        /**
+         * Resource pool storage size in TBs.
+         *
+         * @param poolStorageSizeInTBs the value to set
+         * @return this builder
+         */
+        public Builder poolStorageSizeInTBs(Integer poolStorageSizeInTBs) {
+            this.poolStorageSizeInTBs = poolStorageSizeInTBs;
+            this.__explicitlySet__.add("poolStorageSizeInTBs");
+            return this;
+        }
+        /**
+         * Available storage capacity (in TB) that can be used for adding new members or scaling
+         * existing members in a dedicated elastic pool.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("availableStorageCapacityInTBs")
+        private Double availableStorageCapacityInTBs;
+
+        /**
+         * Available storage capacity (in TB) that can be used for adding new members or scaling
+         * existing members in a dedicated elastic pool.
+         *
+         * @param availableStorageCapacityInTBs the value to set
+         * @return this builder
+         */
+        public Builder availableStorageCapacityInTBs(Double availableStorageCapacityInTBs) {
+            this.availableStorageCapacityInTBs = availableStorageCapacityInTBs;
+            this.__explicitlySet__.add("availableStorageCapacityInTBs");
             return this;
         }
         /** Resource Pool total capacity, it's currently 4x of pool size */
@@ -111,6 +151,8 @@ public final class ResourcePoolSummary
             ResourcePoolSummary model =
                     new ResourcePoolSummary(
                             this.poolSize,
+                            this.poolStorageSizeInTBs,
+                            this.availableStorageCapacityInTBs,
                             this.totalComputeCapacity,
                             this.availableComputeCapacity,
                             this.isDisabled);
@@ -124,6 +166,12 @@ public final class ResourcePoolSummary
         public Builder copy(ResourcePoolSummary model) {
             if (model.wasPropertyExplicitlySet("poolSize")) {
                 this.poolSize(model.getPoolSize());
+            }
+            if (model.wasPropertyExplicitlySet("poolStorageSizeInTBs")) {
+                this.poolStorageSizeInTBs(model.getPoolStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("availableStorageCapacityInTBs")) {
+                this.availableStorageCapacityInTBs(model.getAvailableStorageCapacityInTBs());
             }
             if (model.wasPropertyExplicitlySet("totalComputeCapacity")) {
                 this.totalComputeCapacity(model.getTotalComputeCapacity());
@@ -158,6 +206,36 @@ public final class ResourcePoolSummary
      */
     public Integer getPoolSize() {
         return poolSize;
+    }
+
+    /** Resource pool storage size in TBs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("poolStorageSizeInTBs")
+    private final Integer poolStorageSizeInTBs;
+
+    /**
+     * Resource pool storage size in TBs.
+     *
+     * @return the value
+     */
+    public Integer getPoolStorageSizeInTBs() {
+        return poolStorageSizeInTBs;
+    }
+
+    /**
+     * Available storage capacity (in TB) that can be used for adding new members or scaling
+     * existing members in a dedicated elastic pool.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("availableStorageCapacityInTBs")
+    private final Double availableStorageCapacityInTBs;
+
+    /**
+     * Available storage capacity (in TB) that can be used for adding new members or scaling
+     * existing members in a dedicated elastic pool.
+     *
+     * @return the value
+     */
+    public Double getAvailableStorageCapacityInTBs() {
+        return availableStorageCapacityInTBs;
     }
 
     /** Resource Pool total capacity, it's currently 4x of pool size */
@@ -215,6 +293,9 @@ public final class ResourcePoolSummary
         sb.append("ResourcePoolSummary(");
         sb.append("super=").append(super.toString());
         sb.append("poolSize=").append(String.valueOf(this.poolSize));
+        sb.append(", poolStorageSizeInTBs=").append(String.valueOf(this.poolStorageSizeInTBs));
+        sb.append(", availableStorageCapacityInTBs=")
+                .append(String.valueOf(this.availableStorageCapacityInTBs));
         sb.append(", totalComputeCapacity=").append(String.valueOf(this.totalComputeCapacity));
         sb.append(", availableComputeCapacity=")
                 .append(String.valueOf(this.availableComputeCapacity));
@@ -234,6 +315,9 @@ public final class ResourcePoolSummary
 
         ResourcePoolSummary other = (ResourcePoolSummary) o;
         return java.util.Objects.equals(this.poolSize, other.poolSize)
+                && java.util.Objects.equals(this.poolStorageSizeInTBs, other.poolStorageSizeInTBs)
+                && java.util.Objects.equals(
+                        this.availableStorageCapacityInTBs, other.availableStorageCapacityInTBs)
                 && java.util.Objects.equals(this.totalComputeCapacity, other.totalComputeCapacity)
                 && java.util.Objects.equals(
                         this.availableComputeCapacity, other.availableComputeCapacity)
@@ -246,6 +330,16 @@ public final class ResourcePoolSummary
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.poolSize == null ? 43 : this.poolSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.poolStorageSizeInTBs == null
+                                ? 43
+                                : this.poolStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableStorageCapacityInTBs == null
+                                ? 43
+                                : this.availableStorageCapacityInTBs.hashCode());
         result =
                 (result * PRIME)
                         + (this.totalComputeCapacity == null

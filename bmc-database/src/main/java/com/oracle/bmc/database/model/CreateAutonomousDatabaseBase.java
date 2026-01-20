@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -111,13 +111,15 @@ public class CreateAutonomousDatabaseBase
         "resourcePoolLeaderId",
         "resourcePoolSummary",
         "autonomousMaintenanceScheduleType",
+        "autonomousDatabaseMaintenanceWindow",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
         "databaseEdition",
         "dbToolsDetails",
         "isBackupRetentionLocked",
         "secretId",
-        "secretVersionNumber"
+        "secretVersionNumber",
+        "transportableTablespace"
     })
     protected CreateAutonomousDatabaseBase(
             String subscriptionId,
@@ -166,13 +168,15 @@ public class CreateAutonomousDatabaseBase
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
             Boolean isBackupRetentionLocked,
             String secretId,
-            Integer secretVersionNumber) {
+            Integer secretVersionNumber,
+            ImportTransportableTablespaceDetails transportableTablespace) {
         super();
         this.subscriptionId = subscriptionId;
         this.compartmentId = compartmentId;
@@ -220,6 +224,7 @@ public class CreateAutonomousDatabaseBase
         this.resourcePoolLeaderId = resourcePoolLeaderId;
         this.resourcePoolSummary = resourcePoolSummary;
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+        this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.databaseEdition = databaseEdition;
@@ -227,6 +232,7 @@ public class CreateAutonomousDatabaseBase
         this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.secretId = secretId;
         this.secretVersionNumber = secretVersionNumber;
+        this.transportableTablespace = transportableTablespace;
     }
 
     /**
@@ -1414,12 +1420,20 @@ public class CreateAutonomousDatabaseBase
         return privateEndpointIp;
     }
 
-    /** A valid Oracle AI Database version for Autonomous AI Database. */
+    /**
+     * A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for
+     * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+     * When you specify 26ai for dbversion, the system will provision and display a 26ai database as
+     * expected. For new databases, it is recommended to use either 19c or 26ai.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * A valid Oracle AI Database version for Autonomous AI Database.
+     * A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for
+     * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+     * When you specify 26ai for dbversion, the system will provision and display a 26ai database as
+     * expected. For new databases, it is recommended to use either 19c or 26ai.
      *
      * @return the value
      */
@@ -1571,6 +1585,13 @@ public class CreateAutonomousDatabaseBase
         return autonomousMaintenanceScheduleType;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+    private final AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+    public AutonomousDatabaseMaintenanceWindowSummary getAutonomousDatabaseMaintenanceWindow() {
+        return autonomousDatabaseMaintenanceWindow;
+    }
+
     /**
      * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime,
      * scheduledStopTime.
@@ -1704,6 +1725,13 @@ public class CreateAutonomousDatabaseBase
         return secretVersionNumber;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("transportableTablespace")
+    private final ImportTransportableTablespaceDetails transportableTablespace;
+
+    public ImportTransportableTablespaceDetails getTransportableTablespace() {
+        return transportableTablespace;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1772,6 +1800,8 @@ public class CreateAutonomousDatabaseBase
         sb.append(", resourcePoolSummary=").append(String.valueOf(this.resourcePoolSummary));
         sb.append(", autonomousMaintenanceScheduleType=")
                 .append(String.valueOf(this.autonomousMaintenanceScheduleType));
+        sb.append(", autonomousDatabaseMaintenanceWindow=")
+                .append(String.valueOf(this.autonomousDatabaseMaintenanceWindow));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
         sb.append(", isAutoScalingForStorageEnabled=")
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
@@ -1781,6 +1811,8 @@ public class CreateAutonomousDatabaseBase
                 .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", secretVersionNumber=").append(String.valueOf(this.secretVersionNumber));
+        sb.append(", transportableTablespace=")
+                .append(String.valueOf(this.transportableTablespace));
         sb.append(")");
         return sb.toString();
     }
@@ -1851,6 +1883,9 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(
                         this.autonomousMaintenanceScheduleType,
                         other.autonomousMaintenanceScheduleType)
+                && java.util.Objects.equals(
+                        this.autonomousDatabaseMaintenanceWindow,
+                        other.autonomousDatabaseMaintenanceWindow)
                 && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
                 && java.util.Objects.equals(
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
@@ -1860,6 +1895,8 @@ public class CreateAutonomousDatabaseBase
                         this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.secretVersionNumber, other.secretVersionNumber)
+                && java.util.Objects.equals(
+                        this.transportableTablespace, other.transportableTablespace)
                 && super.equals(other);
     }
 
@@ -2007,6 +2044,11 @@ public class CreateAutonomousDatabaseBase
                                 : this.autonomousMaintenanceScheduleType.hashCode());
         result =
                 (result * PRIME)
+                        + (this.autonomousDatabaseMaintenanceWindow == null
+                                ? 43
+                                : this.autonomousDatabaseMaintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
                         + (this.scheduledOperations == null
                                 ? 43
                                 : this.scheduledOperations.hashCode());
@@ -2032,6 +2074,11 @@ public class CreateAutonomousDatabaseBase
                         + (this.secretVersionNumber == null
                                 ? 43
                                 : this.secretVersionNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transportableTablespace == null
+                                ? 43
+                                : this.transportableTablespace.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

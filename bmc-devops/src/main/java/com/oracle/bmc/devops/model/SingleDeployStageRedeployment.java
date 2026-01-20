@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -194,6 +194,15 @@ public final class SingleDeployStageRedeployment extends Deployment {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cmUrl")
+        private String cmUrl;
+
+        public Builder cmUrl(String cmUrl) {
+            this.cmUrl = cmUrl;
+            this.__explicitlySet__.add("cmUrl");
+            return this;
+        }
         /** Specifies the OCID of the previous deployment to be redeployed. */
         @com.fasterxml.jackson.annotation.JsonProperty("previousDeploymentId")
         private String previousDeploymentId;
@@ -249,6 +258,7 @@ public final class SingleDeployStageRedeployment extends Deployment {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.cmUrl,
                             this.previousDeploymentId,
                             this.deployStageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -313,6 +323,9 @@ public final class SingleDeployStageRedeployment extends Deployment {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("cmUrl")) {
+                this.cmUrl(model.getCmUrl());
+            }
             if (model.wasPropertyExplicitlySet("previousDeploymentId")) {
                 this.previousDeploymentId(model.getPreviousDeploymentId());
             }
@@ -352,6 +365,7 @@ public final class SingleDeployStageRedeployment extends Deployment {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String cmUrl,
             String previousDeploymentId,
             String deployStageId) {
         super(
@@ -372,7 +386,8 @@ public final class SingleDeployStageRedeployment extends Deployment {
                 deploymentExecutionProgress,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                cmUrl);
         this.previousDeploymentId = previousDeploymentId;
         this.deployStageId = deployStageId;
     }

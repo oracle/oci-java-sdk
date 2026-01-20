@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -22,6 +22,9 @@ package com.oracle.bmc.generativeaiinference.model;
         property = "apiFormat",
         defaultImpl = BaseChatRequest.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CohereChatRequestV2.class,
+            name = "COHEREV2"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GenericChatRequest.class,
             name = "GENERIC"),
@@ -85,6 +88,7 @@ public class BaseChatRequest extends com.oracle.bmc.http.client.internal.Explici
      */
     public enum ApiFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Cohere("COHERE"),
+        Coherev2("COHEREV2"),
         Generic("GENERIC"),
         ;
 

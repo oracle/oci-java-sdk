@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai.model;
@@ -42,6 +42,8 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         "lifecycleState",
         "lifecycleDetails",
         "contentModerationConfig",
+        "promptInjectionConfig",
+        "piiDetectionConfig",
         "previousState",
         "freeformTags",
         "definedTags",
@@ -60,6 +62,8 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             LifecycleState lifecycleState,
             String lifecycleDetails,
             ContentModerationConfig contentModerationConfig,
+            PromptInjectionConfig promptInjectionConfig,
+            PiiDetectionConfig piiDetectionConfig,
             Endpoint previousState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -77,6 +81,8 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.contentModerationConfig = contentModerationConfig;
+        this.promptInjectionConfig = promptInjectionConfig;
+        this.piiDetectionConfig = piiDetectionConfig;
         this.previousState = previousState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -272,6 +278,24 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("promptInjectionConfig")
+        private PromptInjectionConfig promptInjectionConfig;
+
+        public Builder promptInjectionConfig(PromptInjectionConfig promptInjectionConfig) {
+            this.promptInjectionConfig = promptInjectionConfig;
+            this.__explicitlySet__.add("promptInjectionConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("piiDetectionConfig")
+        private PiiDetectionConfig piiDetectionConfig;
+
+        public Builder piiDetectionConfig(PiiDetectionConfig piiDetectionConfig) {
+            this.piiDetectionConfig = piiDetectionConfig;
+            this.__explicitlySet__.add("piiDetectionConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("previousState")
         private Endpoint previousState;
 
@@ -371,6 +395,8 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.contentModerationConfig,
+                            this.promptInjectionConfig,
+                            this.piiDetectionConfig,
                             this.previousState,
                             this.freeformTags,
                             this.definedTags,
@@ -418,6 +444,12 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("contentModerationConfig")) {
                 this.contentModerationConfig(model.getContentModerationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("promptInjectionConfig")) {
+                this.promptInjectionConfig(model.getPromptInjectionConfig());
+            }
+            if (model.wasPropertyExplicitlySet("piiDetectionConfig")) {
+                this.piiDetectionConfig(model.getPiiDetectionConfig());
             }
             if (model.wasPropertyExplicitlySet("previousState")) {
                 this.previousState(model.getPreviousState());
@@ -652,6 +684,20 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         return contentModerationConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("promptInjectionConfig")
+    private final PromptInjectionConfig promptInjectionConfig;
+
+    public PromptInjectionConfig getPromptInjectionConfig() {
+        return promptInjectionConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("piiDetectionConfig")
+    private final PiiDetectionConfig piiDetectionConfig;
+
+    public PiiDetectionConfig getPiiDetectionConfig() {
+        return piiDetectionConfig;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("previousState")
     private final Endpoint previousState;
 
@@ -753,6 +799,8 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", contentModerationConfig=")
                 .append(String.valueOf(this.contentModerationConfig));
+        sb.append(", promptInjectionConfig=").append(String.valueOf(this.promptInjectionConfig));
+        sb.append(", piiDetectionConfig=").append(String.valueOf(this.piiDetectionConfig));
         sb.append(", previousState=").append(String.valueOf(this.previousState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -785,6 +833,8 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(
                         this.contentModerationConfig, other.contentModerationConfig)
+                && java.util.Objects.equals(this.promptInjectionConfig, other.promptInjectionConfig)
+                && java.util.Objects.equals(this.piiDetectionConfig, other.piiDetectionConfig)
                 && java.util.Objects.equals(this.previousState, other.previousState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -826,6 +876,16 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.contentModerationConfig == null
                                 ? 43
                                 : this.contentModerationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.promptInjectionConfig == null
+                                ? 43
+                                : this.promptInjectionConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.piiDetectionConfig == null
+                                ? 43
+                                : this.piiDetectionConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.previousState == null ? 43 : this.previousState.hashCode());

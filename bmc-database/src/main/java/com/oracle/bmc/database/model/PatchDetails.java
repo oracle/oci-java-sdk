@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -23,12 +23,22 @@ package com.oracle.bmc.database.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class PatchDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"patchId", "databaseSoftwareImageId", "action"})
-    public PatchDetails(String patchId, String databaseSoftwareImageId, Action action) {
+    @java.beans.ConstructorProperties({
+        "patchId",
+        "databaseSoftwareImageId",
+        "action",
+        "patchOptions"
+    })
+    public PatchDetails(
+            String patchId,
+            String databaseSoftwareImageId,
+            Action action,
+            PatchOptions patchOptions) {
         super();
         this.patchId = patchId;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
         this.action = action;
+        this.patchOptions = patchOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -87,12 +97,25 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patchOptions")
+        private PatchOptions patchOptions;
+
+        public Builder patchOptions(PatchOptions patchOptions) {
+            this.patchOptions = patchOptions;
+            this.__explicitlySet__.add("patchOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatchDetails build() {
             PatchDetails model =
-                    new PatchDetails(this.patchId, this.databaseSoftwareImageId, this.action);
+                    new PatchDetails(
+                            this.patchId,
+                            this.databaseSoftwareImageId,
+                            this.action,
+                            this.patchOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -109,6 +132,9 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("action")) {
                 this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("patchOptions")) {
+                this.patchOptions(model.getPatchOptions());
             }
             return this;
         }
@@ -203,6 +229,13 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
         return action;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("patchOptions")
+    private final PatchOptions patchOptions;
+
+    public PatchOptions getPatchOptions() {
+        return patchOptions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -222,6 +255,7 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", patchOptions=").append(String.valueOf(this.patchOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -240,6 +274,7 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.patchOptions, other.patchOptions)
                 && super.equals(other);
     }
 
@@ -254,6 +289,7 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
                                 ? 43
                                 : this.databaseSoftwareImageId.hashCode());
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.patchOptions == null ? 43 : this.patchOptions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

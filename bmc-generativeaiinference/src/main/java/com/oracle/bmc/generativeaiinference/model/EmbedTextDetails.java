@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -27,6 +27,8 @@ public final class EmbedTextDetails
         "servingMode",
         "compartmentId",
         "isEcho",
+        "embeddingTypes",
+        "outputDimensions",
         "truncate",
         "inputType"
     })
@@ -35,6 +37,8 @@ public final class EmbedTextDetails
             ServingMode servingMode,
             String compartmentId,
             Boolean isEcho,
+            java.util.List<EmbeddingTypes> embeddingTypes,
+            Integer outputDimensions,
             Truncate truncate,
             InputType inputType) {
         super();
@@ -42,6 +46,8 @@ public final class EmbedTextDetails
         this.servingMode = servingMode;
         this.compartmentId = compartmentId;
         this.isEcho = isEcho;
+        this.embeddingTypes = embeddingTypes;
+        this.outputDimensions = outputDimensions;
         this.truncate = truncate;
         this.inputType = inputType;
     }
@@ -115,6 +121,46 @@ public final class EmbedTextDetails
             return this;
         }
         /**
+         * Specifies the types of embeddings you want to get back. Supports list of enums. Supported
+         * values :float, int8, uint8, binary, ubinary, base64. If nothing is passed default will be
+         * considered as float.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("embeddingTypes")
+        private java.util.List<EmbeddingTypes> embeddingTypes;
+
+        /**
+         * Specifies the types of embeddings you want to get back. Supports list of enums. Supported
+         * values :float, int8, uint8, binary, ubinary, base64. If nothing is passed default will be
+         * considered as float.
+         *
+         * @param embeddingTypes the value to set
+         * @return this builder
+         */
+        public Builder embeddingTypes(java.util.List<EmbeddingTypes> embeddingTypes) {
+            this.embeddingTypes = embeddingTypes;
+            this.__explicitlySet__.add("embeddingTypes");
+            return this;
+        }
+        /**
+         * The number of dimensions of the output embedding. This is only available for embed-v4 and
+         * newer models. Possible values are 256, 512, 1024, and 1536.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("outputDimensions")
+        private Integer outputDimensions;
+
+        /**
+         * The number of dimensions of the output embedding. This is only available for embed-v4 and
+         * newer models. Possible values are 256, 512, 1024, and 1536.
+         *
+         * @param outputDimensions the value to set
+         * @return this builder
+         */
+        public Builder outputDimensions(Integer outputDimensions) {
+            this.outputDimensions = outputDimensions;
+            this.__explicitlySet__.add("outputDimensions");
+            return this;
+        }
+        /**
          * For an input that's longer than the maximum token length, specifies which part of the
          * input text will be truncated.
          */
@@ -159,6 +205,8 @@ public final class EmbedTextDetails
                             this.servingMode,
                             this.compartmentId,
                             this.isEcho,
+                            this.embeddingTypes,
+                            this.outputDimensions,
                             this.truncate,
                             this.inputType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -180,6 +228,12 @@ public final class EmbedTextDetails
             }
             if (model.wasPropertyExplicitlySet("isEcho")) {
                 this.isEcho(model.getIsEcho());
+            }
+            if (model.wasPropertyExplicitlySet("embeddingTypes")) {
+                this.embeddingTypes(model.getEmbeddingTypes());
+            }
+            if (model.wasPropertyExplicitlySet("outputDimensions")) {
+                this.outputDimensions(model.getOutputDimensions());
             }
             if (model.wasPropertyExplicitlySet("truncate")) {
                 this.truncate(model.getTruncate());
@@ -252,6 +306,79 @@ public final class EmbedTextDetails
      */
     public Boolean getIsEcho() {
         return isEcho;
+    }
+
+    /** */
+    public enum EmbeddingTypes implements com.oracle.bmc.http.internal.BmcEnum {
+        Float("float"),
+        Int8("int8"),
+        Uint8("uint8"),
+        Binary("binary"),
+        Ubinary("ubinary"),
+        Base64("base64"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, EmbeddingTypes> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (EmbeddingTypes v : EmbeddingTypes.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        EmbeddingTypes(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static EmbeddingTypes create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid EmbeddingTypes: " + key);
+        }
+    };
+    /**
+     * Specifies the types of embeddings you want to get back. Supports list of enums. Supported
+     * values :float, int8, uint8, binary, ubinary, base64. If nothing is passed default will be
+     * considered as float.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("embeddingTypes")
+    private final java.util.List<EmbeddingTypes> embeddingTypes;
+
+    /**
+     * Specifies the types of embeddings you want to get back. Supports list of enums. Supported
+     * values :float, int8, uint8, binary, ubinary, base64. If nothing is passed default will be
+     * considered as float.
+     *
+     * @return the value
+     */
+    public java.util.List<EmbeddingTypes> getEmbeddingTypes() {
+        return embeddingTypes;
+    }
+
+    /**
+     * The number of dimensions of the output embedding. This is only available for embed-v4 and
+     * newer models. Possible values are 256, 512, 1024, and 1536.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("outputDimensions")
+    private final Integer outputDimensions;
+
+    /**
+     * The number of dimensions of the output embedding. This is only available for embed-v4 and
+     * newer models. Possible values are 256, 512, 1024, and 1536.
+     *
+     * @return the value
+     */
+    public Integer getOutputDimensions() {
+        return outputDimensions;
     }
 
     /**
@@ -376,6 +503,8 @@ public final class EmbedTextDetails
         sb.append(", servingMode=").append(String.valueOf(this.servingMode));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", isEcho=").append(String.valueOf(this.isEcho));
+        sb.append(", embeddingTypes=").append(String.valueOf(this.embeddingTypes));
+        sb.append(", outputDimensions=").append(String.valueOf(this.outputDimensions));
         sb.append(", truncate=").append(String.valueOf(this.truncate));
         sb.append(", inputType=").append(String.valueOf(this.inputType));
         sb.append(")");
@@ -396,6 +525,8 @@ public final class EmbedTextDetails
                 && java.util.Objects.equals(this.servingMode, other.servingMode)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.isEcho, other.isEcho)
+                && java.util.Objects.equals(this.embeddingTypes, other.embeddingTypes)
+                && java.util.Objects.equals(this.outputDimensions, other.outputDimensions)
                 && java.util.Objects.equals(this.truncate, other.truncate)
                 && java.util.Objects.equals(this.inputType, other.inputType)
                 && super.equals(other);
@@ -411,6 +542,12 @@ public final class EmbedTextDetails
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.isEcho == null ? 43 : this.isEcho.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.embeddingTypes == null ? 43 : this.embeddingTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outputDimensions == null ? 43 : this.outputDimensions.hashCode());
         result = (result * PRIME) + (this.truncate == null ? 43 : this.truncate.hashCode());
         result = (result * PRIME) + (this.inputType == null ? 43 : this.inputType.hashCode());
         result = (result * PRIME) + super.hashCode();

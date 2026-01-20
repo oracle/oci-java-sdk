@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -69,6 +69,7 @@ public class CreateAutonomousContainerDatabaseBase
         "kmsKeyVersionId",
         "vaultId",
         "keyStoreId",
+        "encryptionKeyLocationDetails",
         "dbSplitThreshold",
         "vmFailoverReservation",
         "distributionAffinity",
@@ -109,6 +110,7 @@ public class CreateAutonomousContainerDatabaseBase
             String kmsKeyVersionId,
             String vaultId,
             String keyStoreId,
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails,
             Integer dbSplitThreshold,
             Integer vmFailoverReservation,
             DistributionAffinity distributionAffinity,
@@ -151,6 +153,7 @@ public class CreateAutonomousContainerDatabaseBase
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.vaultId = vaultId;
         this.keyStoreId = keyStoreId;
+        this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
         this.dbSplitThreshold = dbSplitThreshold;
         this.vmFailoverReservation = vmFailoverReservation;
         this.distributionAffinity = distributionAffinity;
@@ -850,6 +853,13 @@ public class CreateAutonomousContainerDatabaseBase
         return keyStoreId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getEncryptionKeyLocationDetails() {
+        return encryptionKeyLocationDetails;
+    }
+
     /**
      * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes.
      * The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
@@ -1053,6 +1063,8 @@ public class CreateAutonomousContainerDatabaseBase
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
+        sb.append(", encryptionKeyLocationDetails=")
+                .append(String.valueOf(this.encryptionKeyLocationDetails));
         sb.append(", dbSplitThreshold=").append(String.valueOf(this.dbSplitThreshold));
         sb.append(", vmFailoverReservation=").append(String.valueOf(this.vmFailoverReservation));
         sb.append(", distributionAffinity=").append(String.valueOf(this.distributionAffinity));
@@ -1127,6 +1139,8 @@ public class CreateAutonomousContainerDatabaseBase
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
+                && java.util.Objects.equals(
+                        this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
                 && java.util.Objects.equals(this.dbSplitThreshold, other.dbSplitThreshold)
                 && java.util.Objects.equals(this.vmFailoverReservation, other.vmFailoverReservation)
                 && java.util.Objects.equals(this.distributionAffinity, other.distributionAffinity)
@@ -1253,6 +1267,11 @@ public class CreateAutonomousContainerDatabaseBase
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKeyLocationDetails == null
+                                ? 43
+                                : this.encryptionKeyLocationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.dbSplitThreshold == null ? 43 : this.dbSplitThreshold.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai.model;
@@ -31,6 +31,8 @@ public final class CreateEndpointDetails
         "dedicatedAiClusterId",
         "generativeAiPrivateEndpointId",
         "contentModerationConfig",
+        "promptInjectionConfig",
+        "piiDetectionConfig",
         "freeformTags",
         "definedTags"
     })
@@ -42,6 +44,8 @@ public final class CreateEndpointDetails
             String dedicatedAiClusterId,
             String generativeAiPrivateEndpointId,
             ContentModerationConfig contentModerationConfig,
+            PromptInjectionConfig promptInjectionConfig,
+            PiiDetectionConfig piiDetectionConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -52,6 +56,8 @@ public final class CreateEndpointDetails
         this.dedicatedAiClusterId = dedicatedAiClusterId;
         this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
         this.contentModerationConfig = contentModerationConfig;
+        this.promptInjectionConfig = promptInjectionConfig;
+        this.piiDetectionConfig = piiDetectionConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -157,6 +163,24 @@ public final class CreateEndpointDetails
             this.__explicitlySet__.add("contentModerationConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("promptInjectionConfig")
+        private PromptInjectionConfig promptInjectionConfig;
+
+        public Builder promptInjectionConfig(PromptInjectionConfig promptInjectionConfig) {
+            this.promptInjectionConfig = promptInjectionConfig;
+            this.__explicitlySet__.add("promptInjectionConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("piiDetectionConfig")
+        private PiiDetectionConfig piiDetectionConfig;
+
+        public Builder piiDetectionConfig(PiiDetectionConfig piiDetectionConfig) {
+            this.piiDetectionConfig = piiDetectionConfig;
+            this.__explicitlySet__.add("piiDetectionConfig");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -222,6 +246,8 @@ public final class CreateEndpointDetails
                             this.dedicatedAiClusterId,
                             this.generativeAiPrivateEndpointId,
                             this.contentModerationConfig,
+                            this.promptInjectionConfig,
+                            this.piiDetectionConfig,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -252,6 +278,12 @@ public final class CreateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("contentModerationConfig")) {
                 this.contentModerationConfig(model.getContentModerationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("promptInjectionConfig")) {
+                this.promptInjectionConfig(model.getPromptInjectionConfig());
+            }
+            if (model.wasPropertyExplicitlySet("piiDetectionConfig")) {
+                this.piiDetectionConfig(model.getPiiDetectionConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -357,6 +389,20 @@ public final class CreateEndpointDetails
         return contentModerationConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("promptInjectionConfig")
+    private final PromptInjectionConfig promptInjectionConfig;
+
+    public PromptInjectionConfig getPromptInjectionConfig() {
+        return promptInjectionConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("piiDetectionConfig")
+    private final PiiDetectionConfig piiDetectionConfig;
+
+    public PiiDetectionConfig getPiiDetectionConfig() {
+        return piiDetectionConfig;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -427,6 +473,8 @@ public final class CreateEndpointDetails
                 .append(String.valueOf(this.generativeAiPrivateEndpointId));
         sb.append(", contentModerationConfig=")
                 .append(String.valueOf(this.contentModerationConfig));
+        sb.append(", promptInjectionConfig=").append(String.valueOf(this.promptInjectionConfig));
+        sb.append(", piiDetectionConfig=").append(String.valueOf(this.piiDetectionConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -452,6 +500,8 @@ public final class CreateEndpointDetails
                         this.generativeAiPrivateEndpointId, other.generativeAiPrivateEndpointId)
                 && java.util.Objects.equals(
                         this.contentModerationConfig, other.contentModerationConfig)
+                && java.util.Objects.equals(this.promptInjectionConfig, other.promptInjectionConfig)
+                && java.util.Objects.equals(this.piiDetectionConfig, other.piiDetectionConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -482,6 +532,16 @@ public final class CreateEndpointDetails
                         + (this.contentModerationConfig == null
                                 ? 43
                                 : this.contentModerationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.promptInjectionConfig == null
+                                ? 43
+                                : this.promptInjectionConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.piiDetectionConfig == null
+                                ? 43
+                                : this.piiDetectionConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

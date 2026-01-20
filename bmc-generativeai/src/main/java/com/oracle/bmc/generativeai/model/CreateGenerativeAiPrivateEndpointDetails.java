@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai.model;
@@ -30,6 +30,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
         "displayName",
         "dnsPrefix",
         "nsgIds",
+        "isAllowOnDemand",
         "freeformTags",
         "definedTags"
     })
@@ -40,6 +41,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
             String displayName,
             String dnsPrefix,
             java.util.List<String> nsgIds,
+            Boolean isAllowOnDemand,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -49,6 +51,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
         this.displayName = displayName;
         this.dnsPrefix = dnsPrefix;
         this.nsgIds = nsgIds;
+        this.isAllowOnDemand = isAllowOnDemand;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -153,6 +156,21 @@ public final class CreateGenerativeAiPrivateEndpointDetails
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+        /** Flag that allows access to on-demand models using this private endpoint. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAllowOnDemand")
+        private Boolean isAllowOnDemand;
+
+        /**
+         * Flag that allows access to on-demand models using this private endpoint.
+         *
+         * @param isAllowOnDemand the value to set
+         * @return this builder
+         */
+        public Builder isAllowOnDemand(Boolean isAllowOnDemand) {
+            this.isAllowOnDemand = isAllowOnDemand;
+            this.__explicitlySet__.add("isAllowOnDemand");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -217,6 +235,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
                             this.displayName,
                             this.dnsPrefix,
                             this.nsgIds,
+                            this.isAllowOnDemand,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -244,6 +263,9 @@ public final class CreateGenerativeAiPrivateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("isAllowOnDemand")) {
+                this.isAllowOnDemand(model.getIsAllowOnDemand());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -348,6 +370,19 @@ public final class CreateGenerativeAiPrivateEndpointDetails
         return nsgIds;
     }
 
+    /** Flag that allows access to on-demand models using this private endpoint. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAllowOnDemand")
+    private final Boolean isAllowOnDemand;
+
+    /**
+     * Flag that allows access to on-demand models using this private endpoint.
+     *
+     * @return the value
+     */
+    public Boolean getIsAllowOnDemand() {
+        return isAllowOnDemand;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -415,6 +450,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", dnsPrefix=").append(String.valueOf(this.dnsPrefix));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", isAllowOnDemand=").append(String.valueOf(this.isAllowOnDemand));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -438,6 +474,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.dnsPrefix, other.dnsPrefix)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.isAllowOnDemand, other.isAllowOnDemand)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -455,6 +492,9 @@ public final class CreateGenerativeAiPrivateEndpointDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.dnsPrefix == null ? 43 : this.dnsPrefix.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAllowOnDemand == null ? 43 : this.isAllowOnDemand.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

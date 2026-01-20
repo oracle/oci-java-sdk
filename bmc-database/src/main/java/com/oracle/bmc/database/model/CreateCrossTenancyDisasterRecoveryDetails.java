@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -458,6 +458,16 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+        private AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+        public Builder autonomousDatabaseMaintenanceWindow(
+                AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow) {
+            this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+            this.__explicitlySet__.add("autonomousDatabaseMaintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
         private java.util.List<ScheduledOperationDetails> scheduledOperations;
 
@@ -519,6 +529,16 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
         public Builder secretVersionNumber(Integer secretVersionNumber) {
             this.secretVersionNumber = secretVersionNumber;
             this.__explicitlySet__.add("secretVersionNumber");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("transportableTablespace")
+        private ImportTransportableTablespaceDetails transportableTablespace;
+
+        public Builder transportableTablespace(
+                ImportTransportableTablespaceDetails transportableTablespace) {
+            this.transportableTablespace = transportableTablespace;
+            this.__explicitlySet__.add("transportableTablespace");
             return this;
         }
         /**
@@ -640,6 +660,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
                             this.resourcePoolLeaderId,
                             this.resourcePoolSummary,
                             this.autonomousMaintenanceScheduleType,
+                            this.autonomousDatabaseMaintenanceWindow,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
@@ -647,6 +668,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
                             this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber,
+                            this.transportableTablespace,
                             this.sourceId,
                             this.disasterRecoveryType,
                             this.isReplicateAutomaticBackups);
@@ -798,6 +820,10 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
                 this.autonomousMaintenanceScheduleType(
                         model.getAutonomousMaintenanceScheduleType());
             }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseMaintenanceWindow")) {
+                this.autonomousDatabaseMaintenanceWindow(
+                        model.getAutonomousDatabaseMaintenanceWindow());
+            }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
             }
@@ -818,6 +844,9 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             }
             if (model.wasPropertyExplicitlySet("secretVersionNumber")) {
                 this.secretVersionNumber(model.getSecretVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("transportableTablespace")) {
+                this.transportableTablespace(model.getTransportableTablespace());
             }
             if (model.wasPropertyExplicitlySet("sourceId")) {
                 this.sourceId(model.getSourceId());
@@ -889,6 +918,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
@@ -896,6 +926,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber,
+            ImportTransportableTablespaceDetails transportableTablespace,
             String sourceId,
             DisasterRecoveryConfiguration.DisasterRecoveryType disasterRecoveryType,
             Boolean isReplicateAutomaticBackups) {
@@ -946,13 +977,15 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
                 resourcePoolLeaderId,
                 resourcePoolSummary,
                 autonomousMaintenanceScheduleType,
+                autonomousDatabaseMaintenanceWindow,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
                 databaseEdition,
                 dbToolsDetails,
                 isBackupRetentionLocked,
                 secretId,
-                secretVersionNumber);
+                secretVersionNumber,
+                transportableTablespace);
         this.sourceId = sourceId;
         this.disasterRecoveryType = disasterRecoveryType;
         this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;

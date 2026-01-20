@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -56,7 +56,8 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         "keyStoreWalletName",
         "dataGuardGroup",
         "encryptionKeyLocationDetails",
-        "storageSizeDetails"
+        "storageSizeDetails",
+        "patchVersion"
     })
     public Database(
             String id,
@@ -93,7 +94,8 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
             String keyStoreWalletName,
             DataGuardGroup dataGuardGroup,
             EncryptionKeyLocationDetails encryptionKeyLocationDetails,
-            DatabaseStorageSizeResponseDetails storageSizeDetails) {
+            DatabaseStorageSizeResponseDetails storageSizeDetails,
+            String patchVersion) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -131,6 +133,7 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         this.dataGuardGroup = dataGuardGroup;
         this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
         this.storageSizeDetails = storageSizeDetails;
+        this.patchVersion = patchVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -737,6 +740,21 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("storageSizeDetails");
             return this;
         }
+        /** The patch version of the database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("patchVersion")
+        private String patchVersion;
+
+        /**
+         * The patch version of the database.
+         *
+         * @param patchVersion the value to set
+         * @return this builder
+         */
+        public Builder patchVersion(String patchVersion) {
+            this.patchVersion = patchVersion;
+            this.__explicitlySet__.add("patchVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -778,7 +796,8 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
                             this.keyStoreWalletName,
                             this.dataGuardGroup,
                             this.encryptionKeyLocationDetails,
-                            this.storageSizeDetails);
+                            this.storageSizeDetails,
+                            this.patchVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -892,6 +911,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("storageSizeDetails")) {
                 this.storageSizeDetails(model.getStorageSizeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("patchVersion")) {
+                this.patchVersion(model.getPatchVersion());
             }
             return this;
         }
@@ -1487,6 +1509,19 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         return storageSizeDetails;
     }
 
+    /** The patch version of the database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("patchVersion")
+    private final String patchVersion;
+
+    /**
+     * The patch version of the database.
+     *
+     * @return the value
+     */
+    public String getPatchVersion() {
+        return patchVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1543,6 +1578,7 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", encryptionKeyLocationDetails=")
                 .append(String.valueOf(this.encryptionKeyLocationDetails));
         sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
+        sb.append(", patchVersion=").append(String.valueOf(this.patchVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -1599,6 +1635,7 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(
                         this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
                 && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
+                && java.util.Objects.equals(this.patchVersion, other.patchVersion)
                 && super.equals(other);
     }
 
@@ -1693,6 +1730,7 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.storageSizeDetails == null
                                 ? 43
                                 : this.storageSizeDetails.hashCode());
+        result = (result * PRIME) + (this.patchVersion == null ? 43 : this.patchVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

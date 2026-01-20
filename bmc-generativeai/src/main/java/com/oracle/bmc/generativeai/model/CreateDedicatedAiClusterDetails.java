@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai.model;
@@ -144,11 +144,11 @@ public final class CreateDedicatedAiClusterDetails
          *
          * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2
          * - SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
-         * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
-         * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 - A10_X2 - A10_X4 -
-         * A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 - A100_80G_X2 -
-         * A100_80G_X4 - A100_80G_X8 - H100_X1 - H100_X2 - H100_X4 - H100_X8 - H200_X1 - H200_X2 -
-         * H200_X4 - H200_X8
+         * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_GENERIC_V3 - LARGE_COHERE_V3
+         * - RERANK_COHERE - SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 -
+         * A10_X2 - A10_X4 - A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 -
+         * A100_80G_X2 - A100_80G_X4 - A100_80G_X8 - H100_X1 - H100_X2 - H100_X4 - H100_X8 - H200_X1
+         * - H200_X2 - H200_X4 - H200_X8
          *
          * <p>The following shapes can only be used to deploy imported models: - A10_X1, A10_X2,
          * A10_X4 - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8 - A100_80G_X1, A100_80G_X2,
@@ -165,11 +165,11 @@ public final class CreateDedicatedAiClusterDetails
          *
          * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2
          * - SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
-         * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
-         * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 - A10_X2 - A10_X4 -
-         * A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 - A100_80G_X2 -
-         * A100_80G_X4 - A100_80G_X8 - H100_X1 - H100_X2 - H100_X4 - H100_X8 - H200_X1 - H200_X2 -
-         * H200_X4 - H200_X8
+         * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_GENERIC_V3 - LARGE_COHERE_V3
+         * - RERANK_COHERE - SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 -
+         * A10_X2 - A10_X4 - A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 -
+         * A100_80G_X2 - A100_80G_X4 - A100_80G_X8 - H100_X1 - H100_X2 - H100_X4 - H100_X8 - H200_X1
+         * - H200_X2 - H200_X4 - H200_X8
          *
          * <p>The following shapes can only be used to deploy imported models: - A10_X1, A10_X2,
          * A10_X4 - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8 - A100_80G_X1, A100_80G_X2,
@@ -375,9 +375,9 @@ public final class CreateDedicatedAiClusterDetails
      *
      * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2 -
      * SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
-     * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
-     * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 - A10_X2 - A10_X4 -
-     * A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 - A100_80G_X2 -
+     * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_GENERIC_V3 - LARGE_COHERE_V3 -
+     * RERANK_COHERE - SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 - A10_X2 -
+     * A10_X4 - A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 - A100_80G_X2 -
      * A100_80G_X4 - A100_80G_X8 - H100_X1 - H100_X2 - H100_X4 - H100_X8 - H200_X1 - H200_X2 -
      * H200_X4 - H200_X8
      *
@@ -396,9 +396,9 @@ public final class CreateDedicatedAiClusterDetails
      *
      * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2 -
      * SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
-     * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_COHERE_V3 - RERANK_COHERE -
-     * SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 - A10_X2 - A10_X4 -
-     * A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 - A100_80G_X2 -
+     * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2 - LARGE_GENERIC_V3 - LARGE_COHERE_V3 -
+     * RERANK_COHERE - SMALL_GENERIC_V1 - MEDIUM_GENERIC_V1 - LARGE_GENERIC_V1 - A10_X1 - A10_X2 -
+     * A10_X4 - A100_40G_X1 - A100_40G_X2 - A100_40G_X4 - A100_40G_X8 - A100_80G_X1 - A100_80G_X2 -
      * A100_80G_X4 - A100_80G_X8 - H100_X1 - H100_X2 - H100_X4 - H100_X8 - H200_X1 - H200_X2 -
      * H200_X4 - H200_X8
      *

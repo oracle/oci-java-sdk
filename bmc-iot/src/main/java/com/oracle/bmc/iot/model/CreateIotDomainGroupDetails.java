@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.iot.model;
@@ -25,6 +25,7 @@ public final class CreateIotDomainGroupDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
+        "type",
         "displayName",
         "description",
         "freeformTags",
@@ -32,12 +33,14 @@ public final class CreateIotDomainGroupDetails
     })
     public CreateIotDomainGroupDetails(
             String compartmentId,
+            Type type,
             String displayName,
             String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.compartmentId = compartmentId;
+        this.type = type;
         this.displayName = displayName;
         this.description = description;
         this.freeformTags = freeformTags;
@@ -63,6 +66,27 @@ public final class CreateIotDomainGroupDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time
+         * Objective (RTO), making it suitable for development and testing. STANDARD is recommended
+         * for production.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private Type type;
+
+        /**
+         * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time
+         * Objective (RTO), making it suitable for development and testing. STANDARD is recommended
+         * for production.
+         *
+         * @param type the value to set
+         * @return this builder
+         */
+        public Builder type(Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
             return this;
         }
         /**
@@ -158,6 +182,7 @@ public final class CreateIotDomainGroupDetails
             CreateIotDomainGroupDetails model =
                     new CreateIotDomainGroupDetails(
                             this.compartmentId,
+                            this.type,
                             this.displayName,
                             this.description,
                             this.freeformTags,
@@ -172,6 +197,9 @@ public final class CreateIotDomainGroupDetails
         public Builder copy(CreateIotDomainGroupDetails model) {
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -213,6 +241,62 @@ public final class CreateIotDomainGroupDetails
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time
+     * Objective (RTO), making it suitable for development and testing. STANDARD is recommended for
+     * production.
+     */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+        Standard("STANDARD"),
+        Lightweight("LIGHTWEIGHT"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Type> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Type v : Type.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Type(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Type create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Type: " + key);
+        }
+    };
+    /**
+     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time
+     * Objective (RTO), making it suitable for development and testing. STANDARD is recommended for
+     * production.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final Type type;
+
+    /**
+     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time
+     * Objective (RTO), making it suitable for development and testing. STANDARD is recommended for
+     * production.
+     *
+     * @return the value
+     */
+    public Type getType() {
+        return type;
     }
 
     /**
@@ -307,6 +391,7 @@ public final class CreateIotDomainGroupDetails
         sb.append("CreateIotDomainGroupDetails(");
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -326,6 +411,7 @@ public final class CreateIotDomainGroupDetails
 
         CreateIotDomainGroupDetails other = (CreateIotDomainGroupDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -340,6 +426,7 @@ public final class CreateIotDomainGroupDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

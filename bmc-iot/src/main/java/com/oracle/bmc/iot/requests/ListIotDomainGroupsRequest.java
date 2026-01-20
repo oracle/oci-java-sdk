@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.iot.requests;
@@ -54,6 +54,13 @@ public class ListIotDomainGroupsRequest extends com.oracle.bmc.requests.BmcReque
     /** Filter resources whose lifecycleState matches the specified value. */
     public com.oracle.bmc.iot.model.IotDomainGroup.LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+    /** Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD. */
+    private com.oracle.bmc.iot.model.IotDomainGroup.Type type;
+
+    /** Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD. */
+    public com.oracle.bmc.iot.model.IotDomainGroup.Type getType() {
+        return type;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
@@ -263,6 +270,20 @@ public class ListIotDomainGroupsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /** Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD. */
+        private com.oracle.bmc.iot.model.IotDomainGroup.Type type = null;
+
+        /**
+         * Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+         *
+         * @param type the value to set
+         * @return this builder instance
+         */
+        public Builder type(com.oracle.bmc.iot.model.IotDomainGroup.Type type) {
+            this.type = type;
+            return this;
+        }
+
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
@@ -387,6 +408,7 @@ public class ListIotDomainGroupsRequest extends com.oracle.bmc.requests.BmcReque
             id(o.getId());
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());
+            type(o.getType());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -430,14 +452,15 @@ public class ListIotDomainGroupsRequest extends com.oracle.bmc.requests.BmcReque
             request.id = id;
             request.displayName = displayName;
             request.lifecycleState = lifecycleState;
+            request.type = type;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListIotDomainGroupsRequest(compartmentId, id, displayName, lifecycleState, limit,
-            // page, sortOrder, sortBy, opcRequestId);
+            // new ListIotDomainGroupsRequest(compartmentId, id, displayName, lifecycleState, type,
+            // limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -452,6 +475,7 @@ public class ListIotDomainGroupsRequest extends com.oracle.bmc.requests.BmcReque
                 .id(id)
                 .displayName(displayName)
                 .lifecycleState(lifecycleState)
+                .type(type)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -477,6 +501,7 @@ public class ListIotDomainGroupsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",type=").append(String.valueOf(this.type));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -501,6 +526,7 @@ public class ListIotDomainGroupsRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -520,6 +546,7 @@ public class ListIotDomainGroupsRequest extends com.oracle.bmc.requests.BmcReque
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -29,7 +29,6 @@ public final class RepositoryCommit
         "authorEmail",
         "committerName",
         "committerEmail",
-        "mergedPullRequestId",
         "parentCommitIds",
         "timeCreated",
         "treeId"
@@ -41,7 +40,6 @@ public final class RepositoryCommit
             String authorEmail,
             String committerName,
             String committerEmail,
-            String mergedPullRequestId,
             java.util.List<String> parentCommitIds,
             java.util.Date timeCreated,
             String treeId) {
@@ -52,7 +50,6 @@ public final class RepositoryCommit
         this.authorEmail = authorEmail;
         this.committerName = committerName;
         this.committerEmail = committerEmail;
-        this.mergedPullRequestId = mergedPullRequestId;
         this.parentCommitIds = parentCommitIds;
         this.timeCreated = timeCreated;
         this.treeId = treeId;
@@ -150,21 +147,6 @@ public final class RepositoryCommit
             this.__explicitlySet__.add("committerEmail");
             return this;
         }
-        /** Id of the PullRequest that this commit was merged with. */
-        @com.fasterxml.jackson.annotation.JsonProperty("mergedPullRequestId")
-        private String mergedPullRequestId;
-
-        /**
-         * Id of the PullRequest that this commit was merged with.
-         *
-         * @param mergedPullRequestId the value to set
-         * @return this builder
-         */
-        public Builder mergedPullRequestId(String mergedPullRequestId) {
-            this.mergedPullRequestId = mergedPullRequestId;
-            this.__explicitlySet__.add("mergedPullRequestId");
-            return this;
-        }
         /** An array of parent commit IDs of created commit. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentCommitIds")
         private java.util.List<String> parentCommitIds;
@@ -223,7 +205,6 @@ public final class RepositoryCommit
                             this.authorEmail,
                             this.committerName,
                             this.committerEmail,
-                            this.mergedPullRequestId,
                             this.parentCommitIds,
                             this.timeCreated,
                             this.treeId);
@@ -252,9 +233,6 @@ public final class RepositoryCommit
             }
             if (model.wasPropertyExplicitlySet("committerEmail")) {
                 this.committerEmail(model.getCommitterEmail());
-            }
-            if (model.wasPropertyExplicitlySet("mergedPullRequestId")) {
-                this.mergedPullRequestId(model.getMergedPullRequestId());
             }
             if (model.wasPropertyExplicitlySet("parentCommitIds")) {
                 this.parentCommitIds(model.getParentCommitIds());
@@ -356,19 +334,6 @@ public final class RepositoryCommit
         return committerEmail;
     }
 
-    /** Id of the PullRequest that this commit was merged with. */
-    @com.fasterxml.jackson.annotation.JsonProperty("mergedPullRequestId")
-    private final String mergedPullRequestId;
-
-    /**
-     * Id of the PullRequest that this commit was merged with.
-     *
-     * @return the value
-     */
-    public String getMergedPullRequestId() {
-        return mergedPullRequestId;
-    }
-
     /** An array of parent commit IDs of created commit. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentCommitIds")
     private final java.util.List<String> parentCommitIds;
@@ -429,7 +394,6 @@ public final class RepositoryCommit
         sb.append(", authorEmail=").append(String.valueOf(this.authorEmail));
         sb.append(", committerName=").append(String.valueOf(this.committerName));
         sb.append(", committerEmail=").append(String.valueOf(this.committerEmail));
-        sb.append(", mergedPullRequestId=").append(String.valueOf(this.mergedPullRequestId));
         sb.append(", parentCommitIds=").append(String.valueOf(this.parentCommitIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", treeId=").append(String.valueOf(this.treeId));
@@ -453,7 +417,6 @@ public final class RepositoryCommit
                 && java.util.Objects.equals(this.authorEmail, other.authorEmail)
                 && java.util.Objects.equals(this.committerName, other.committerName)
                 && java.util.Objects.equals(this.committerEmail, other.committerEmail)
-                && java.util.Objects.equals(this.mergedPullRequestId, other.mergedPullRequestId)
                 && java.util.Objects.equals(this.parentCommitIds, other.parentCommitIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.treeId, other.treeId)
@@ -476,11 +439,6 @@ public final class RepositoryCommit
         result =
                 (result * PRIME)
                         + (this.committerEmail == null ? 43 : this.committerEmail.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.mergedPullRequestId == null
-                                ? 43
-                                : this.mergedPullRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.parentCommitIds == null ? 43 : this.parentCommitIds.hashCode());

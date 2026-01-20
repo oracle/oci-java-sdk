@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -348,6 +348,16 @@ public final class CreateAutonomousContainerDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+        public Builder encryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            this.__explicitlySet__.add("encryptionKeyLocationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
         private Integer dbSplitThreshold;
 
@@ -424,6 +434,7 @@ public final class CreateAutonomousContainerDatabaseDetails
                             this.kmsKeyVersionId,
                             this.vaultId,
                             this.keyStoreId,
+                            this.encryptionKeyLocationDetails,
                             this.dbSplitThreshold,
                             this.vmFailoverReservation,
                             this.distributionAffinity,
@@ -544,6 +555,9 @@ public final class CreateAutonomousContainerDatabaseDetails
             if (model.wasPropertyExplicitlySet("keyStoreId")) {
                 this.keyStoreId(model.getKeyStoreId());
             }
+            if (model.wasPropertyExplicitlySet("encryptionKeyLocationDetails")) {
+                this.encryptionKeyLocationDetails(model.getEncryptionKeyLocationDetails());
+            }
             if (model.wasPropertyExplicitlySet("dbSplitThreshold")) {
                 this.dbSplitThreshold(model.getDbSplitThreshold());
             }
@@ -605,6 +619,7 @@ public final class CreateAutonomousContainerDatabaseDetails
             String kmsKeyVersionId,
             String vaultId,
             String keyStoreId,
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails,
             Integer dbSplitThreshold,
             Integer vmFailoverReservation,
             DistributionAffinity distributionAffinity,
@@ -644,6 +659,7 @@ public final class CreateAutonomousContainerDatabaseDetails
                 kmsKeyVersionId,
                 vaultId,
                 keyStoreId,
+                encryptionKeyLocationDetails,
                 dbSplitThreshold,
                 vmFailoverReservation,
                 distributionAffinity,

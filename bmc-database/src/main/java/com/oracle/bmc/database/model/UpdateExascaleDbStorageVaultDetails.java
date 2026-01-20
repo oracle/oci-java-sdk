@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -181,15 +181,15 @@ public final class UpdateExascaleDbStorageVaultDetails
             return this;
         }
         /**
-         * Maximum limit storage size in gigabytes, that is applicable for the Database Storage
-         * Vault.
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale
+         * when auto scaling is enabled for the Database Storage Vault
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autoscaleLimitInGBs")
         private Integer autoscaleLimitInGBs;
 
         /**
-         * Maximum limit storage size in gigabytes, that is applicable for the Database Storage
-         * Vault.
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale
+         * when auto scaling is enabled for the Database Storage Vault
          *
          * @param autoscaleLimitInGBs the value to set
          * @return this builder
@@ -369,13 +369,15 @@ public final class UpdateExascaleDbStorageVaultDetails
     }
 
     /**
-     * Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when
+     * auto scaling is enabled for the Database Storage Vault
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autoscaleLimitInGBs")
     private final Integer autoscaleLimitInGBs;
 
     /**
-     * Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when
+     * auto scaling is enabled for the Database Storage Vault
      *
      * @return the value
      */

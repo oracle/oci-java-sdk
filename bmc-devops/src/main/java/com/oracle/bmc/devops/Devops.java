@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops;
@@ -1096,23 +1096,6 @@ public interface Devops extends AutoCloseable {
             GetPullRequestAttachmentContentRequest request);
 
     /**
-     * Get pull request diff summary metric
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestChangeSummaryMetricsExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     GetPullRequestChangeSummaryMetrics API.
-     */
-    GetPullRequestChangeSummaryMetricsResponse getPullRequestChangeSummaryMetrics(
-            GetPullRequestChangeSummaryMetricsRequest request);
-
-    /**
      * Get PullRequest comment by identifier
      *
      * @param request The request object containing the details to send
@@ -1694,39 +1677,6 @@ public interface Devops extends AutoCloseable {
     ListPullRequestCommentsResponse listPullRequestComments(ListPullRequestCommentsRequest request);
 
     /**
-     * List pull request commits
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestCommitsExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     ListPullRequestCommits API.
-     */
-    ListPullRequestCommitsResponse listPullRequestCommits(ListPullRequestCommitsRequest request);
-
-    /**
-     * List pull request file changes
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestFileChangesExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     ListPullRequestFileChanges API.
-     */
-    ListPullRequestFileChangesResponse listPullRequestFileChanges(
-            ListPullRequestFileChangesRequest request);
-
-    /**
      * Returns a list of PullRequests.
      *
      * @param request The request object containing the details to send
@@ -1934,40 +1884,6 @@ public interface Devops extends AutoCloseable {
      *     API.
      */
     ReopenPullRequestResponse reopenPullRequest(ReopenPullRequestRequest request);
-
-    /**
-     * Reopen a PullRequest Comment
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ReopenPullRequestCommentExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     ReopenPullRequestComment API.
-     */
-    ReopenPullRequestCommentResponse reopenPullRequestComment(
-            ReopenPullRequestCommentRequest request);
-
-    /**
-     * Resolve a PullRequest Comment
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ResolvePullRequestCommentExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     ResolvePullRequestComment API.
-     */
-    ResolvePullRequestCommentResponse resolvePullRequestComment(
-            ResolvePullRequestCommentRequest request);
 
     /**
      * Review a PullRequest
