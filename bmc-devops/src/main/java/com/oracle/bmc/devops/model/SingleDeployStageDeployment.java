@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -194,6 +194,15 @@ public final class SingleDeployStageDeployment extends Deployment {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cmUrl")
+        private String cmUrl;
+
+        public Builder cmUrl(String cmUrl) {
+            this.cmUrl = cmUrl;
+            this.__explicitlySet__.add("cmUrl");
+            return this;
+        }
         /** Specifies the OCID of the stage to be deployed. */
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
         private String deployStageId;
@@ -234,6 +243,7 @@ public final class SingleDeployStageDeployment extends Deployment {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.cmUrl,
                             this.deployStageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -297,6 +307,9 @@ public final class SingleDeployStageDeployment extends Deployment {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("cmUrl")) {
+                this.cmUrl(model.getCmUrl());
+            }
             if (model.wasPropertyExplicitlySet("deployStageId")) {
                 this.deployStageId(model.getDeployStageId());
             }
@@ -333,6 +346,7 @@ public final class SingleDeployStageDeployment extends Deployment {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String cmUrl,
             String deployStageId) {
         super(
                 deployPipelineArtifacts,
@@ -352,7 +366,8 @@ public final class SingleDeployStageDeployment extends Deployment {
                 deploymentExecutionProgress,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                cmUrl);
         this.deployStageId = deployStageId;
     }
 

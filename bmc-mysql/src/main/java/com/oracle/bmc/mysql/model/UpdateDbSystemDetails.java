@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -32,6 +32,7 @@ public final class UpdateDbSystemDetails
         "databaseMode",
         "accessMode",
         "rest",
+        "databaseConsole",
         "isHighlyAvailable",
         "availabilityDomain",
         "faultDomain",
@@ -67,6 +68,7 @@ public final class UpdateDbSystemDetails
             DbSystem.DatabaseMode databaseMode,
             DbSystem.AccessMode accessMode,
             UpdateRestDetails rest,
+            UpdateDatabaseConsoleDetails databaseConsole,
             Boolean isHighlyAvailable,
             String availabilityDomain,
             String faultDomain,
@@ -101,6 +103,7 @@ public final class UpdateDbSystemDetails
         this.databaseMode = databaseMode;
         this.accessMode = accessMode;
         this.rest = rest;
+        this.databaseConsole = databaseConsole;
         this.isHighlyAvailable = isHighlyAvailable;
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
@@ -273,6 +276,15 @@ public final class UpdateDbSystemDetails
         public Builder rest(UpdateRestDetails rest) {
             this.rest = rest;
             this.__explicitlySet__.add("rest");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+        private UpdateDatabaseConsoleDetails databaseConsole;
+
+        public Builder databaseConsole(UpdateDatabaseConsoleDetails databaseConsole) {
+            this.databaseConsole = databaseConsole;
+            this.__explicitlySet__.add("databaseConsole");
             return this;
         }
         /**
@@ -752,6 +764,7 @@ public final class UpdateDbSystemDetails
                             this.databaseMode,
                             this.accessMode,
                             this.rest,
+                            this.databaseConsole,
                             this.isHighlyAvailable,
                             this.availabilityDomain,
                             this.faultDomain,
@@ -808,6 +821,9 @@ public final class UpdateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("rest")) {
                 this.rest(model.getRest());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConsole")) {
+                this.databaseConsole(model.getDatabaseConsole());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -1023,6 +1039,13 @@ public final class UpdateDbSystemDetails
 
     public UpdateRestDetails getRest() {
         return rest;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+    private final UpdateDatabaseConsoleDetails databaseConsole;
+
+    public UpdateDatabaseConsoleDetails getDatabaseConsole() {
+        return databaseConsole;
     }
 
     /**
@@ -1459,6 +1482,7 @@ public final class UpdateDbSystemDetails
         sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
         sb.append(", accessMode=").append(String.valueOf(this.accessMode));
         sb.append(", rest=").append(String.valueOf(this.rest));
+        sb.append(", databaseConsole=").append(String.valueOf(this.databaseConsole));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
@@ -1506,6 +1530,7 @@ public final class UpdateDbSystemDetails
                 && java.util.Objects.equals(this.databaseMode, other.databaseMode)
                 && java.util.Objects.equals(this.accessMode, other.accessMode)
                 && java.util.Objects.equals(this.rest, other.rest)
+                && java.util.Objects.equals(this.databaseConsole, other.databaseConsole)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
@@ -1550,6 +1575,9 @@ public final class UpdateDbSystemDetails
         result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
         result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
         result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseConsole == null ? 43 : this.databaseConsole.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());

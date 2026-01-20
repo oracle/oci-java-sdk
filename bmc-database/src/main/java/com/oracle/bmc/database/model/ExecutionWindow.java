@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -25,6 +25,7 @@ public final class ExecutionWindow
     @java.beans.ConstructorProperties({
         "id",
         "executionResourceId",
+        "deferredExecutionWindowId",
         "compartmentId",
         "displayName",
         "description",
@@ -48,6 +49,7 @@ public final class ExecutionWindow
     public ExecutionWindow(
             String id,
             String executionResourceId,
+            String deferredExecutionWindowId,
             String compartmentId,
             String displayName,
             String description,
@@ -70,6 +72,7 @@ public final class ExecutionWindow
         super();
         this.id = id;
         this.executionResourceId = executionResourceId;
+        this.deferredExecutionWindowId = deferredExecutionWindowId;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.description = description;
@@ -129,6 +132,25 @@ public final class ExecutionWindow
         public Builder executionResourceId(String executionResourceId) {
             this.executionResourceId = executionResourceId;
             this.__explicitlySet__.add("executionResourceId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * new execution window created as part of reschedule for the execution window failure.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("deferredExecutionWindowId")
+        private String deferredExecutionWindowId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * new execution window created as part of reschedule for the execution window failure.
+         *
+         * @param deferredExecutionWindowId the value to set
+         * @return this builder
+         */
+        public Builder deferredExecutionWindowId(String deferredExecutionWindowId) {
+            this.deferredExecutionWindowId = deferredExecutionWindowId;
+            this.__explicitlySet__.add("deferredExecutionWindowId");
             return this;
         }
         /**
@@ -468,6 +490,7 @@ public final class ExecutionWindow
                     new ExecutionWindow(
                             this.id,
                             this.executionResourceId,
+                            this.deferredExecutionWindowId,
                             this.compartmentId,
                             this.displayName,
                             this.description,
@@ -500,6 +523,9 @@ public final class ExecutionWindow
             }
             if (model.wasPropertyExplicitlySet("executionResourceId")) {
                 this.executionResourceId(model.getExecutionResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("deferredExecutionWindowId")) {
+                this.deferredExecutionWindowId(model.getDeferredExecutionWindowId());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -603,6 +629,23 @@ public final class ExecutionWindow
      */
     public String getExecutionResourceId() {
         return executionResourceId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the new
+     * execution window created as part of reschedule for the execution window failure.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("deferredExecutionWindowId")
+    private final String deferredExecutionWindowId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the new
+     * execution window created as part of reschedule for the execution window failure.
+     *
+     * @return the value
+     */
+    public String getDeferredExecutionWindowId() {
+        return deferredExecutionWindowId;
     }
 
     /**
@@ -732,6 +775,7 @@ public final class ExecutionWindow
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
         Waiting("WAITING"),
         Rescheduled("RESCHEDULED"),
+        CanceledByOps("CANCELED_BY_OPS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1066,6 +1110,8 @@ public final class ExecutionWindow
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", executionResourceId=").append(String.valueOf(this.executionResourceId));
+        sb.append(", deferredExecutionWindowId=")
+                .append(String.valueOf(this.deferredExecutionWindowId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -1101,6 +1147,8 @@ public final class ExecutionWindow
         ExecutionWindow other = (ExecutionWindow) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.executionResourceId, other.executionResourceId)
+                && java.util.Objects.equals(
+                        this.deferredExecutionWindowId, other.deferredExecutionWindowId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
@@ -1133,6 +1181,11 @@ public final class ExecutionWindow
                         + (this.executionResourceId == null
                                 ? 43
                                 : this.executionResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deferredExecutionWindowId == null
+                                ? 43
+                                : this.deferredExecutionWindowId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -28,6 +28,7 @@ public final class CreateDbSystemDetails
         "description",
         "compartmentId",
         "rest",
+        "databaseConsole",
         "isHighlyAvailable",
         "availabilityDomain",
         "faultDomain",
@@ -65,6 +66,7 @@ public final class CreateDbSystemDetails
             String description,
             String compartmentId,
             CreateRestDetails rest,
+            CreateDatabaseConsoleDetails databaseConsole,
             Boolean isHighlyAvailable,
             String availabilityDomain,
             String faultDomain,
@@ -101,6 +103,7 @@ public final class CreateDbSystemDetails
         this.description = description;
         this.compartmentId = compartmentId;
         this.rest = rest;
+        this.databaseConsole = databaseConsole;
         this.isHighlyAvailable = isHighlyAvailable;
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
@@ -188,6 +191,15 @@ public final class CreateDbSystemDetails
         public Builder rest(CreateRestDetails rest) {
             this.rest = rest;
             this.__explicitlySet__.add("rest");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+        private CreateDatabaseConsoleDetails databaseConsole;
+
+        public Builder databaseConsole(CreateDatabaseConsoleDetails databaseConsole) {
+            this.databaseConsole = databaseConsole;
+            this.__explicitlySet__.add("databaseConsole");
             return this;
         }
         /**
@@ -768,6 +780,7 @@ public final class CreateDbSystemDetails
                             this.description,
                             this.compartmentId,
                             this.rest,
+                            this.databaseConsole,
                             this.isHighlyAvailable,
                             this.availabilityDomain,
                             this.faultDomain,
@@ -818,6 +831,9 @@ public final class CreateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("rest")) {
                 this.rest(model.getRest());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConsole")) {
+                this.databaseConsole(model.getDatabaseConsole());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -969,6 +985,13 @@ public final class CreateDbSystemDetails
 
     public CreateRestDetails getRest() {
         return rest;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+    private final CreateDatabaseConsoleDetails databaseConsole;
+
+    public CreateDatabaseConsoleDetails getDatabaseConsole() {
+        return databaseConsole;
     }
 
     /**
@@ -1487,6 +1510,7 @@ public final class CreateDbSystemDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", rest=").append(String.valueOf(this.rest));
+        sb.append(", databaseConsole=").append(String.valueOf(this.databaseConsole));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
@@ -1536,6 +1560,7 @@ public final class CreateDbSystemDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.rest, other.rest)
+                && java.util.Objects.equals(this.databaseConsole, other.databaseConsole)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
@@ -1580,6 +1605,9 @@ public final class CreateDbSystemDetails
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseConsole == null ? 43 : this.databaseConsole.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());

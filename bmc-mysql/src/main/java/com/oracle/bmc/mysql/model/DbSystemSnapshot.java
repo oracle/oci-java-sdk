@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -44,6 +44,7 @@ public final class DbSystemSnapshot
         "port",
         "portX",
         "rest",
+        "databaseConsole",
         "isHighlyAvailable",
         "endpoints",
         "maintenance",
@@ -79,6 +80,7 @@ public final class DbSystemSnapshot
             Integer port,
             Integer portX,
             RestDetails rest,
+            DatabaseConsoleDetails databaseConsole,
             Boolean isHighlyAvailable,
             java.util.List<DbSystemEndpoint> endpoints,
             MaintenanceDetails maintenance,
@@ -113,6 +115,7 @@ public final class DbSystemSnapshot
         this.port = port;
         this.portX = portX;
         this.rest = rest;
+        this.databaseConsole = databaseConsole;
         this.isHighlyAvailable = isHighlyAvailable;
         this.endpoints = endpoints;
         this.maintenance = maintenance;
@@ -465,6 +468,15 @@ public final class DbSystemSnapshot
             this.__explicitlySet__.add("rest");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+        private DatabaseConsoleDetails databaseConsole;
+
+        public Builder databaseConsole(DatabaseConsoleDetails databaseConsole) {
+            this.databaseConsole = databaseConsole;
+            this.__explicitlySet__.add("databaseConsole");
+            return this;
+        }
         /** Specifies if the DB System is highly available. */
         @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
         private Boolean isHighlyAvailable;
@@ -662,6 +674,7 @@ public final class DbSystemSnapshot
                             this.port,
                             this.portX,
                             this.rest,
+                            this.databaseConsole,
                             this.isHighlyAvailable,
                             this.endpoints,
                             this.maintenance,
@@ -744,6 +757,9 @@ public final class DbSystemSnapshot
             }
             if (model.wasPropertyExplicitlySet("rest")) {
                 this.rest(model.getRest());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConsole")) {
+                this.databaseConsole(model.getDatabaseConsole());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -1087,6 +1103,13 @@ public final class DbSystemSnapshot
         return rest;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+    private final DatabaseConsoleDetails databaseConsole;
+
+    public DatabaseConsoleDetails getDatabaseConsole() {
+        return databaseConsole;
+    }
+
     /** Specifies if the DB System is highly available. */
     @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
     private final Boolean isHighlyAvailable;
@@ -1267,6 +1290,7 @@ public final class DbSystemSnapshot
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", portX=").append(String.valueOf(this.portX));
         sb.append(", rest=").append(String.valueOf(this.rest));
+        sb.append(", databaseConsole=").append(String.valueOf(this.databaseConsole));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", endpoints=").append(String.valueOf(this.endpoints));
         sb.append(", maintenance=").append(String.valueOf(this.maintenance));
@@ -1314,6 +1338,7 @@ public final class DbSystemSnapshot
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.portX, other.portX)
                 && java.util.Objects.equals(this.rest, other.rest)
+                && java.util.Objects.equals(this.databaseConsole, other.databaseConsole)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.endpoints, other.endpoints)
                 && java.util.Objects.equals(this.maintenance, other.maintenance)
@@ -1374,6 +1399,9 @@ public final class DbSystemSnapshot
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.portX == null ? 43 : this.portX.hashCode());
         result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseConsole == null ? 43 : this.databaseConsole.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());

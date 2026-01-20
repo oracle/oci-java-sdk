@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -206,12 +206,16 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** Time to wait for execution of a helm stage. Defaults to 300 seconds. */
+        /**
+         * Time to wait for execution of a helm stage. Defaults to 300 seconds. Maximum allowed is
+         * 10800 seconds (3 hours).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
         private Integer timeoutInSeconds;
 
         /**
-         * Time to wait for execution of a helm stage. Defaults to 300 seconds.
+         * Time to wait for execution of a helm stage. Defaults to 300 seconds. Maximum allowed is
+         * 10800 seconds (3 hours).
          *
          * @param timeoutInSeconds the value to set
          * @return this builder
@@ -764,12 +768,16 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
         return namespace;
     }
 
-    /** Time to wait for execution of a helm stage. Defaults to 300 seconds. */
+    /**
+     * Time to wait for execution of a helm stage. Defaults to 300 seconds. Maximum allowed is 10800
+     * seconds (3 hours).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     private final Integer timeoutInSeconds;
 
     /**
-     * Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * Time to wait for execution of a helm stage. Defaults to 300 seconds. Maximum allowed is 10800
+     * seconds (3 hours).
      *
      * @return the value
      */

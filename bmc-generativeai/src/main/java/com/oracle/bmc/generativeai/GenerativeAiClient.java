@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai;
@@ -121,6 +121,39 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     @Override
     public void setRegion(String regionId) {
         super.setRegion(regionId);
+    }
+
+    @Override
+    public ChangeApiKeyCompartmentResponse changeApiKeyCompartment(
+            ChangeApiKeyCompartmentRequest request) {
+
+        Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeApiKeyCompartmentDetails(),
+                "changeApiKeyCompartmentDetails is required");
+
+        return clientCall(request, ChangeApiKeyCompartmentResponse::builder)
+                .logger(LOG, "changeApiKeyCompartment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeApiKeyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/ChangeApiKeyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeApiKeyCompartmentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("apikeys")
+                .appendPathParam(request.getApiKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeApiKeyCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
@@ -300,6 +333,34 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public CreateApiKeyResponse createApiKey(CreateApiKeyRequest request) {
+        Objects.requireNonNull(request.getCreateApiKeyDetails(), "createApiKeyDetails is required");
+
+        return clientCall(request, CreateApiKeyResponse::builder)
+                .logger(LOG, "createApiKey")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/CreateApiKey")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateApiKeyRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("apikeys")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ApiKey.class,
+                        CreateApiKeyResponse.Builder::apiKey)
+                .handleResponseHeaderString("etag", CreateApiKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateApiKeyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateDedicatedAiClusterResponse createDedicatedAiCluster(
             CreateDedicatedAiClusterRequest request) {
         Objects.requireNonNull(
@@ -469,6 +530,31 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DeleteApiKeyResponse deleteApiKey(DeleteApiKeyRequest request) {
+
+        Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
+
+        return clientCall(request, DeleteApiKeyResponse::builder)
+                .logger(LOG, "deleteApiKey")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/DeleteApiKey")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteApiKeyRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("apikeys")
+                .appendPathParam(request.getApiKeyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteApiKeyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteDedicatedAiClusterResponse deleteDedicatedAiCluster(
             DeleteDedicatedAiClusterRequest request) {
 
@@ -609,6 +695,34 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id", DeleteModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetApiKeyResponse getApiKey(GetApiKeyRequest request) {
+
+        Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
+
+        return clientCall(request, GetApiKeyResponse::builder)
+                .logger(LOG, "getApiKey")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/GetApiKey")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetApiKeyRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("apikeys")
+                .appendPathParam(request.getApiKeyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ApiKey.class,
+                        GetApiKeyResponse.Builder::apiKey)
+                .handleResponseHeaderString("etag", GetApiKeyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetApiKeyResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -786,6 +900,41 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public ListApiKeysResponse listApiKeys(ListApiKeysRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListApiKeysResponse::builder)
+                .logger(LOG, "listApiKeys")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListApiKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKeyCollection/ListApiKeys")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApiKeysRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("apikeys")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ApiKeyCollection.class,
+                        ListApiKeysResponse.Builder::apiKeyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListApiKeysResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListApiKeysResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1083,6 +1232,106 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public RenewApiKeyResponse renewApiKey(RenewApiKeyRequest request) {
+
+        Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
+        Objects.requireNonNull(request.getRenewApiKeyDetails(), "renewApiKeyDetails is required");
+
+        return clientCall(request, RenewApiKeyResponse::builder)
+                .logger(LOG, "renewApiKey")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "RenewApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/RenewApiKey")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RenewApiKeyRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("apikeys")
+                .appendPathParam(request.getApiKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("renew")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ApiKey.class,
+                        RenewApiKeyResponse.Builder::apiKey)
+                .handleResponseHeaderString(
+                        "opc-request-id", RenewApiKeyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RenewApiKeyResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public SetApiKeyStateResponse setApiKeyState(SetApiKeyStateRequest request) {
+
+        Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
+        Objects.requireNonNull(
+                request.getSetApiKeyStateDetails(), "setApiKeyStateDetails is required");
+
+        return clientCall(request, SetApiKeyStateResponse::builder)
+                .logger(LOG, "setApiKeyState")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "SetApiKeyState",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/SetApiKeyState")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SetApiKeyStateRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("apikeys")
+                .appendPathParam(request.getApiKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("setstate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ApiKey.class,
+                        SetApiKeyStateResponse.Builder::apiKey)
+                .handleResponseHeaderString(
+                        "opc-request-id", SetApiKeyStateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", SetApiKeyStateResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateApiKeyResponse updateApiKey(UpdateApiKeyRequest request) {
+
+        Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
+        Objects.requireNonNull(request.getUpdateApiKeyDetails(), "updateApiKeyDetails is required");
+
+        return clientCall(request, UpdateApiKeyResponse::builder)
+                .logger(LOG, "updateApiKey")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/UpdateApiKey")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateApiKeyRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("apikeys")
+                .appendPathParam(request.getApiKeyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ApiKey.class,
+                        UpdateApiKeyResponse.Builder::apiKey)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateApiKeyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateApiKeyResponse.Builder::etag)
                 .callSync();
     }
 

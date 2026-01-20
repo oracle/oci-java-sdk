@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -39,7 +39,8 @@ public final class InventoryRecordSummary
         "installedPatches",
         "timeCreated",
         "timeUpdated",
-        "lifecycleState"
+        "lifecycleState",
+        "parentTargetName"
     })
     public InventoryRecordSummary(
             String targetId,
@@ -57,7 +58,8 @@ public final class InventoryRecordSummary
             java.util.List<InventoryRecordPatchDetails> installedPatches,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            InventoryRecord.LifecycleState lifecycleState) {
+            InventoryRecord.LifecycleState lifecycleState,
+            String parentTargetName) {
         super();
         this.targetId = targetId;
         this.targetName = targetName;
@@ -75,6 +77,7 @@ public final class InventoryRecordSummary
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.parentTargetName = parentTargetName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -320,6 +323,21 @@ public final class InventoryRecordSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** Name of the parent target. */
+        @com.fasterxml.jackson.annotation.JsonProperty("parentTargetName")
+        private String parentTargetName;
+
+        /**
+         * Name of the parent target.
+         *
+         * @param parentTargetName the value to set
+         * @return this builder
+         */
+        public Builder parentTargetName(String parentTargetName) {
+            this.parentTargetName = parentTargetName;
+            this.__explicitlySet__.add("parentTargetName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -342,7 +360,8 @@ public final class InventoryRecordSummary
                             this.installedPatches,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.lifecycleState);
+                            this.lifecycleState,
+                            this.parentTargetName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -398,6 +417,9 @@ public final class InventoryRecordSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("parentTargetName")) {
+                this.parentTargetName(model.getParentTargetName());
             }
             return this;
         }
@@ -620,6 +642,19 @@ public final class InventoryRecordSummary
         return lifecycleState;
     }
 
+    /** Name of the parent target. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parentTargetName")
+    private final String parentTargetName;
+
+    /**
+     * Name of the parent target.
+     *
+     * @return the value
+     */
+    public String getParentTargetName() {
+        return parentTargetName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -651,6 +686,7 @@ public final class InventoryRecordSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", parentTargetName=").append(String.valueOf(this.parentTargetName));
         sb.append(")");
         return sb.toString();
     }
@@ -681,6 +717,7 @@ public final class InventoryRecordSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.parentTargetName, other.parentTargetName)
                 && super.equals(other);
     }
 
@@ -720,6 +757,9 @@ public final class InventoryRecordSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTargetName == null ? 43 : this.parentTargetName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

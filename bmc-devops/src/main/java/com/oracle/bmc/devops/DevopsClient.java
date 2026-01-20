@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops;
@@ -2123,37 +2123,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
-    public GetPullRequestChangeSummaryMetricsResponse getPullRequestChangeSummaryMetrics(
-            GetPullRequestChangeSummaryMetricsRequest request) {
-
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, GetPullRequestChangeSummaryMetricsResponse::builder)
-                .logger(LOG, "getPullRequestChangeSummaryMetrics")
-                .serviceDetails(
-                        "Devops",
-                        "GetPullRequestChangeSummaryMetrics",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequestChangeSummaryMetrics")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPullRequestChangeSummaryMetricsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("changeSummaryMetrics")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestChangeSummaryMetrics.class,
-                        GetPullRequestChangeSummaryMetricsResponse.Builder
-                                ::pullRequestChangeSummaryMetrics)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetPullRequestChangeSummaryMetricsResponse.Builder::opcRequestId)
-                .callSync();
-    }
-
-    @Override
     public GetPullRequestCommentResponse getPullRequestComment(
             GetPullRequestCommentRequest request) {
 
@@ -3432,73 +3401,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
-    public ListPullRequestCommitsResponse listPullRequestCommits(
-            ListPullRequestCommitsRequest request) {
-
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, ListPullRequestCommitsResponse::builder)
-                .logger(LOG, "listPullRequestCommits")
-                .serviceDetails(
-                        "Devops",
-                        "ListPullRequestCommits",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestCommits")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPullRequestCommitsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("commits")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryCommitCollection.class,
-                        ListPullRequestCommitsResponse.Builder::repositoryCommitCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPullRequestCommitsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPullRequestCommitsResponse.Builder::opcNextPage)
-                .callSync();
-    }
-
-    @Override
-    public ListPullRequestFileChangesResponse listPullRequestFileChanges(
-            ListPullRequestFileChangesRequest request) {
-
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, ListPullRequestFileChangesResponse::builder)
-                .logger(LOG, "listPullRequestFileChanges")
-                .serviceDetails(
-                        "Devops",
-                        "ListPullRequestFileChanges",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestFileChanges")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPullRequestFileChangesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("fileChanges")
-                .appendQueryParam("filePath", request.getFilePath())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestFileChangeCollection.class,
-                        ListPullRequestFileChangesResponse.Builder::pullRequestFileChangeCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPullRequestFileChangesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPullRequestFileChangesResponse.Builder::opcNextPage)
-                .callSync();
-    }
-
-    @Override
     public ListPullRequestsResponse listPullRequests(ListPullRequestsRequest request) {
 
         return clientCall(request, ListPullRequestsResponse::builder)
@@ -3962,78 +3864,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", ReopenPullRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", ReopenPullRequestResponse.Builder::etag)
-                .callSync();
-    }
-
-    @Override
-    public ReopenPullRequestCommentResponse reopenPullRequestComment(
-            ReopenPullRequestCommentRequest request) {
-
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getCommentId(), "commentId must not be blank");
-
-        return clientCall(request, ReopenPullRequestCommentResponse::builder)
-                .logger(LOG, "reopenPullRequestComment")
-                .serviceDetails(
-                        "Devops",
-                        "ReopenPullRequestComment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ReopenPullRequestComment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ReopenPullRequestCommentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("comments")
-                .appendPathParam(request.getCommentId())
-                .appendPathParam("actions")
-                .appendPathParam("reopen")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestComment.class,
-                        ReopenPullRequestCommentResponse.Builder::pullRequestComment)
-                .handleResponseHeaderString(
-                        "opc-request-id", ReopenPullRequestCommentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", ReopenPullRequestCommentResponse.Builder::etag)
-                .callSync();
-    }
-
-    @Override
-    public ResolvePullRequestCommentResponse resolvePullRequestComment(
-            ResolvePullRequestCommentRequest request) {
-
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getCommentId(), "commentId must not be blank");
-
-        return clientCall(request, ResolvePullRequestCommentResponse::builder)
-                .logger(LOG, "resolvePullRequestComment")
-                .serviceDetails(
-                        "Devops",
-                        "ResolvePullRequestComment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ResolvePullRequestComment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ResolvePullRequestCommentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("comments")
-                .appendPathParam(request.getCommentId())
-                .appendPathParam("actions")
-                .appendPathParam("resolve")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestComment.class,
-                        ResolvePullRequestCommentResponse.Builder::pullRequestComment)
-                .handleResponseHeaderString(
-                        "opc-request-id", ResolvePullRequestCommentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", ResolvePullRequestCommentResponse.Builder::etag)
                 .callSync();
     }
 

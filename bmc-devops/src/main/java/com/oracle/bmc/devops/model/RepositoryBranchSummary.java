@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -54,6 +54,24 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -96,6 +114,52 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
             this.__explicitlySet__.add("commitId");
             return this;
         }
+        /** The author of latest commit */
+        @com.fasterxml.jackson.annotation.JsonProperty("latestCommitAuthorName")
+        private String latestCommitAuthorName;
+
+        /**
+         * The author of latest commit
+         *
+         * @param latestCommitAuthorName the value to set
+         * @return this builder
+         */
+        public Builder latestCommitAuthorName(String latestCommitAuthorName) {
+            this.latestCommitAuthorName = latestCommitAuthorName;
+            this.__explicitlySet__.add("latestCommitAuthorName");
+            return this;
+        }
+        /** Up to 5 pull requests associated with this branch. */
+        @com.fasterxml.jackson.annotation.JsonProperty("topNPullRequests")
+        private java.util.List<PullRequestSummary> topNPullRequests;
+
+        /**
+         * Up to 5 pull requests associated with this branch.
+         *
+         * @param topNPullRequests the value to set
+         * @return this builder
+         */
+        public Builder topNPullRequests(java.util.List<PullRequestSummary> topNPullRequests) {
+            this.topNPullRequests = topNPullRequests;
+            this.__explicitlySet__.add("topNPullRequests");
+            return this;
+        }
+        /** Counts of pull requests for this branch grouped by their state. */
+        @com.fasterxml.jackson.annotation.JsonProperty("pullRequestStateCounts")
+        private java.util.Map<String, Integer> pullRequestStateCounts;
+
+        /**
+         * Counts of pull requests for this branch grouped by their state.
+         *
+         * @param pullRequestStateCounts the value to set
+         * @return this builder
+         */
+        public Builder pullRequestStateCounts(
+                java.util.Map<String, Integer> pullRequestStateCounts) {
+            this.pullRequestStateCounts = pullRequestStateCounts;
+            this.__explicitlySet__.add("pullRequestStateCounts");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -106,10 +170,15 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
                             this.refName,
                             this.fullRefName,
                             this.repositoryId,
+                            this.timeCreated,
+                            this.timeUpdated,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.commitId);
+                            this.commitId,
+                            this.latestCommitAuthorName,
+                            this.topNPullRequests,
+                            this.pullRequestStateCounts);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -127,6 +196,12 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
             if (model.wasPropertyExplicitlySet("repositoryId")) {
                 this.repositoryId(model.getRepositoryId());
             }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -138,6 +213,15 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
             }
             if (model.wasPropertyExplicitlySet("commitId")) {
                 this.commitId(model.getCommitId());
+            }
+            if (model.wasPropertyExplicitlySet("latestCommitAuthorName")) {
+                this.latestCommitAuthorName(model.getLatestCommitAuthorName());
+            }
+            if (model.wasPropertyExplicitlySet("topNPullRequests")) {
+                this.topNPullRequests(model.getTopNPullRequests());
+            }
+            if (model.wasPropertyExplicitlySet("pullRequestStateCounts")) {
+                this.pullRequestStateCounts(model.getPullRequestStateCounts());
             }
             return this;
         }
@@ -157,12 +241,28 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
             String refName,
             String fullRefName,
             String repositoryId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            String commitId) {
-        super(refName, fullRefName, repositoryId, freeformTags, definedTags, systemTags);
+            String commitId,
+            String latestCommitAuthorName,
+            java.util.List<PullRequestSummary> topNPullRequests,
+            java.util.Map<String, Integer> pullRequestStateCounts) {
+        super(
+                refName,
+                fullRefName,
+                repositoryId,
+                timeCreated,
+                timeUpdated,
+                freeformTags,
+                definedTags,
+                systemTags);
         this.commitId = commitId;
+        this.latestCommitAuthorName = latestCommitAuthorName;
+        this.topNPullRequests = topNPullRequests;
+        this.pullRequestStateCounts = pullRequestStateCounts;
     }
 
     /** Commit ID pointed to by the new branch. */
@@ -176,6 +276,45 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
      */
     public String getCommitId() {
         return commitId;
+    }
+
+    /** The author of latest commit */
+    @com.fasterxml.jackson.annotation.JsonProperty("latestCommitAuthorName")
+    private final String latestCommitAuthorName;
+
+    /**
+     * The author of latest commit
+     *
+     * @return the value
+     */
+    public String getLatestCommitAuthorName() {
+        return latestCommitAuthorName;
+    }
+
+    /** Up to 5 pull requests associated with this branch. */
+    @com.fasterxml.jackson.annotation.JsonProperty("topNPullRequests")
+    private final java.util.List<PullRequestSummary> topNPullRequests;
+
+    /**
+     * Up to 5 pull requests associated with this branch.
+     *
+     * @return the value
+     */
+    public java.util.List<PullRequestSummary> getTopNPullRequests() {
+        return topNPullRequests;
+    }
+
+    /** Counts of pull requests for this branch grouped by their state. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pullRequestStateCounts")
+    private final java.util.Map<String, Integer> pullRequestStateCounts;
+
+    /**
+     * Counts of pull requests for this branch grouped by their state.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, Integer> getPullRequestStateCounts() {
+        return pullRequestStateCounts;
     }
 
     @Override
@@ -194,6 +333,9 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
         sb.append("RepositoryBranchSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", commitId=").append(String.valueOf(this.commitId));
+        sb.append(", latestCommitAuthorName=").append(String.valueOf(this.latestCommitAuthorName));
+        sb.append(", topNPullRequests=").append(String.valueOf(this.topNPullRequests));
+        sb.append(", pullRequestStateCounts=").append(String.valueOf(this.pullRequestStateCounts));
         sb.append(")");
         return sb.toString();
     }
@@ -208,7 +350,13 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
         }
 
         RepositoryBranchSummary other = (RepositoryBranchSummary) o;
-        return java.util.Objects.equals(this.commitId, other.commitId) && super.equals(other);
+        return java.util.Objects.equals(this.commitId, other.commitId)
+                && java.util.Objects.equals(
+                        this.latestCommitAuthorName, other.latestCommitAuthorName)
+                && java.util.Objects.equals(this.topNPullRequests, other.topNPullRequests)
+                && java.util.Objects.equals(
+                        this.pullRequestStateCounts, other.pullRequestStateCounts)
+                && super.equals(other);
     }
 
     @Override
@@ -216,6 +364,19 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.commitId == null ? 43 : this.commitId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.latestCommitAuthorName == null
+                                ? 43
+                                : this.latestCommitAuthorName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.topNPullRequests == null ? 43 : this.topNPullRequests.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pullRequestStateCounts == null
+                                ? 43
+                                : this.pullRequestStateCounts.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -49,7 +49,8 @@ public final class PluggableDatabaseSummary
         "kmsKeyId",
         "kmsKeyVersionId",
         "refreshableCloneConfig",
-        "pdbNodeLevelDetails"
+        "pdbNodeLevelDetails",
+        "patchVersion"
     })
     public PluggableDatabaseSummary(
             String id,
@@ -69,7 +70,8 @@ public final class PluggableDatabaseSummary
             String kmsKeyId,
             String kmsKeyVersionId,
             PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig,
-            java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails) {
+            java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails,
+            String patchVersion) {
         super();
         this.id = id;
         this.containerDatabaseId = containerDatabaseId;
@@ -89,6 +91,7 @@ public final class PluggableDatabaseSummary
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.refreshableCloneConfig = refreshableCloneConfig;
         this.pdbNodeLevelDetails = pdbNodeLevelDetails;
+        this.patchVersion = patchVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -425,6 +428,21 @@ public final class PluggableDatabaseSummary
             this.__explicitlySet__.add("pdbNodeLevelDetails");
             return this;
         }
+        /** The patch version of the pluggable database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("patchVersion")
+        private String patchVersion;
+
+        /**
+         * The patch version of the pluggable database.
+         *
+         * @param patchVersion the value to set
+         * @return this builder
+         */
+        public Builder patchVersion(String patchVersion) {
+            this.patchVersion = patchVersion;
+            this.__explicitlySet__.add("patchVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -449,7 +467,8 @@ public final class PluggableDatabaseSummary
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
                             this.refreshableCloneConfig,
-                            this.pdbNodeLevelDetails);
+                            this.pdbNodeLevelDetails,
+                            this.patchVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -512,6 +531,9 @@ public final class PluggableDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("pdbNodeLevelDetails")) {
                 this.pdbNodeLevelDetails(model.getPdbNodeLevelDetails());
+            }
+            if (model.wasPropertyExplicitlySet("patchVersion")) {
+                this.patchVersion(model.getPatchVersion());
             }
             return this;
         }
@@ -927,6 +949,19 @@ public final class PluggableDatabaseSummary
         return pdbNodeLevelDetails;
     }
 
+    /** The patch version of the pluggable database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("patchVersion")
+    private final String patchVersion;
+
+    /**
+     * The patch version of the pluggable database.
+     *
+     * @return the value
+     */
+    public String getPatchVersion() {
+        return patchVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -961,6 +996,7 @@ public final class PluggableDatabaseSummary
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", refreshableCloneConfig=").append(String.valueOf(this.refreshableCloneConfig));
         sb.append(", pdbNodeLevelDetails=").append(String.valueOf(this.pdbNodeLevelDetails));
+        sb.append(", patchVersion=").append(String.valueOf(this.patchVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -996,6 +1032,7 @@ public final class PluggableDatabaseSummary
                 && java.util.Objects.equals(
                         this.refreshableCloneConfig, other.refreshableCloneConfig)
                 && java.util.Objects.equals(this.pdbNodeLevelDetails, other.pdbNodeLevelDetails)
+                && java.util.Objects.equals(this.patchVersion, other.patchVersion)
                 && super.equals(other);
     }
 
@@ -1047,6 +1084,7 @@ public final class PluggableDatabaseSummary
                         + (this.pdbNodeLevelDetails == null
                                 ? 43
                                 : this.pdbNodeLevelDetails.hashCode());
+        result = (result * PRIME) + (this.patchVersion == null ? 43 : this.patchVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

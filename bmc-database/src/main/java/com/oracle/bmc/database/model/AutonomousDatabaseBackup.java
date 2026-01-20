@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -433,12 +433,20 @@ public final class AutonomousDatabaseBackup
             this.__explicitlySet__.add("timeAvailableTill");
             return this;
         }
-        /** A valid Oracle AI Database version for Autonomous AI Database. */
+        /**
+         * A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for
+         * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+         * When you specify 26ai for dbversion, the system will provision and display a 26ai
+         * database as expected. For new databases, it is recommended to use either 19c or 26ai.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * A valid Oracle AI Database version for Autonomous AI Database.
+         * A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for
+         * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+         * When you specify 26ai for dbversion, the system will provision and display a 26ai
+         * database as expected. For new databases, it is recommended to use either 19c or 26ai.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -1024,12 +1032,20 @@ public final class AutonomousDatabaseBackup
         return timeAvailableTill;
     }
 
-    /** A valid Oracle AI Database version for Autonomous AI Database. */
+    /**
+     * A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for
+     * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+     * When you specify 26ai for dbversion, the system will provision and display a 26ai database as
+     * expected. For new databases, it is recommended to use either 19c or 26ai.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * A valid Oracle AI Database version for Autonomous AI Database.
+     * A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for
+     * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+     * When you specify 26ai for dbversion, the system will provision and display a 26ai database as
+     * expected. For new databases, it is recommended to use either 19c or 26ai.
      *
      * @return the value
      */

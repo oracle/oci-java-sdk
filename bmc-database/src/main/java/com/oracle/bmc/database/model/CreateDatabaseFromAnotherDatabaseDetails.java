@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -30,7 +30,13 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         "dbUniqueName",
         "dbName",
         "timeStampForPointInTimeRecovery",
-        "pluggableDatabases"
+        "pluggableDatabases",
+        "freeformTags",
+        "definedTags",
+        "sidPrefix",
+        "sourceEncryptionKeyLocationDetails",
+        "storageSizeDetails",
+        "vmClusterId"
     })
     public CreateDatabaseFromAnotherDatabaseDetails(
             String databaseId,
@@ -39,7 +45,13 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             String dbUniqueName,
             String dbName,
             java.util.Date timeStampForPointInTimeRecovery,
-            java.util.List<String> pluggableDatabases) {
+            java.util.List<String> pluggableDatabases,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String sidPrefix,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
+            DatabaseStorageSizeDetails storageSizeDetails,
+            String vmClusterId) {
         super();
         this.databaseId = databaseId;
         this.backupTDEPassword = backupTDEPassword;
@@ -48,6 +60,12 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         this.dbName = dbName;
         this.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
         this.pluggableDatabases = pluggableDatabases;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.sidPrefix = sidPrefix;
+        this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+        this.storageSizeDetails = storageSizeDetails;
+        this.vmClusterId = vmClusterId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -178,6 +196,106 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             this.__explicitlySet__.add("pluggableDatabases");
             return this;
         }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /** Specifies a prefix for the {@code Oracle SID} of the database to be created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
+        private String sidPrefix;
+
+        /**
+         * Specifies a prefix for the {@code Oracle SID} of the database to be created.
+         *
+         * @param sidPrefix the value to set
+         * @return this builder
+         */
+        public Builder sidPrefix(String sidPrefix) {
+            this.sidPrefix = sidPrefix;
+            this.__explicitlySet__.add("sidPrefix");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceEncryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+
+        public Builder sourceEncryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails) {
+            this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            this.__explicitlySet__.add("sourceEncryptionKeyLocationDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("storageSizeDetails")
+        private DatabaseStorageSizeDetails storageSizeDetails;
+
+        public Builder storageSizeDetails(DatabaseStorageSizeDetails storageSizeDetails) {
+            this.storageSizeDetails = storageSizeDetails;
+            this.__explicitlySet__.add("storageSizeDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VM cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+        private String vmClusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VM cluster.
+         *
+         * @param vmClusterId the value to set
+         * @return this builder
+         */
+        public Builder vmClusterId(String vmClusterId) {
+            this.vmClusterId = vmClusterId;
+            this.__explicitlySet__.add("vmClusterId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -191,7 +309,13 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                             this.dbUniqueName,
                             this.dbName,
                             this.timeStampForPointInTimeRecovery,
-                            this.pluggableDatabases);
+                            this.pluggableDatabases,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.sidPrefix,
+                            this.sourceEncryptionKeyLocationDetails,
+                            this.storageSizeDetails,
+                            this.vmClusterId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -220,6 +344,25 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("pluggableDatabases")) {
                 this.pluggableDatabases(model.getPluggableDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("sidPrefix")) {
+                this.sidPrefix(model.getSidPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("sourceEncryptionKeyLocationDetails")) {
+                this.sourceEncryptionKeyLocationDetails(
+                        model.getSourceEncryptionKeyLocationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("storageSizeDetails")) {
+                this.storageSizeDetails(model.getStorageSizeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterId")) {
+                this.vmClusterId(model.getVmClusterId());
             }
             return this;
         }
@@ -343,6 +486,92 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         return pluggableDatabases;
     }
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    /** Specifies a prefix for the {@code Oracle SID} of the database to be created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
+    private final String sidPrefix;
+
+    /**
+     * Specifies a prefix for the {@code Oracle SID} of the database to be created.
+     *
+     * @return the value
+     */
+    public String getSidPrefix() {
+        return sidPrefix;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceEncryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getSourceEncryptionKeyLocationDetails() {
+        return sourceEncryptionKeyLocationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("storageSizeDetails")
+    private final DatabaseStorageSizeDetails storageSizeDetails;
+
+    public DatabaseStorageSizeDetails getStorageSizeDetails() {
+        return storageSizeDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
+     * cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+    private final String vmClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
+     * cluster.
+     *
+     * @return the value
+     */
+    public String getVmClusterId() {
+        return vmClusterId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -366,6 +595,13 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         sb.append(", timeStampForPointInTimeRecovery=")
                 .append(String.valueOf(this.timeStampForPointInTimeRecovery));
         sb.append(", pluggableDatabases=").append(String.valueOf(this.pluggableDatabases));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
+        sb.append(", sourceEncryptionKeyLocationDetails=")
+                .append(String.valueOf(this.sourceEncryptionKeyLocationDetails));
+        sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
+        sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(")");
         return sb.toString();
     }
@@ -389,6 +625,14 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                 && java.util.Objects.equals(
                         this.timeStampForPointInTimeRecovery, other.timeStampForPointInTimeRecovery)
                 && java.util.Objects.equals(this.pluggableDatabases, other.pluggableDatabases)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
+                && java.util.Objects.equals(
+                        this.sourceEncryptionKeyLocationDetails,
+                        other.sourceEncryptionKeyLocationDetails)
+                && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
+                && java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
                 && super.equals(other);
     }
 
@@ -415,6 +659,20 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                         + (this.pluggableDatabases == null
                                 ? 43
                                 : this.pluggableDatabases.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.sidPrefix == null ? 43 : this.sidPrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceEncryptionKeyLocationDetails == null
+                                ? 43
+                                : this.sourceEncryptionKeyLocationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSizeDetails == null
+                                ? 43
+                                : this.storageSizeDetails.hashCode());
+        result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

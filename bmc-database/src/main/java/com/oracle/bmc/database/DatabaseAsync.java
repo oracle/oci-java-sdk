@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database;
@@ -1851,7 +1851,8 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Performs one of the following power actions on the specified DB node: - start - power on -
-     * stop - power off - softreset - ACPI shutdown and power on - reset - power off and power on
+     * stop - power off gracefully - softreset - ACPI shutdown and power on - reset - power off and
+     * power on
      *
      * <p>*Note:** Stopping a node affects billing differently, depending on the type of DB system:
      * *Bare metal and Exadata systems* - The _stop_ state has no effect on the resources you
@@ -2715,6 +2716,23 @@ public interface DatabaseAsync extends AutoCloseable {
                                     DisablePluggableDatabaseManagementRequest,
                                     DisablePluggableDatabaseManagementResponse>
                             handler);
+
+    /**
+     * Downloads the specified database connection bundle content. The bundle is returned as a
+     * binary file containing the connection details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadDbConnectionBundleResponse> downloadDbConnectionBundle(
+            DownloadDbConnectionBundleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DownloadDbConnectionBundleRequest, DownloadDbConnectionBundleResponse>
+                    handler);
 
     /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
@@ -3740,6 +3758,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets information about the specified database connection bundle.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDbConnectionBundleResponse> getDbConnectionBundle(
+            GetDbConnectionBundleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDbConnectionBundleRequest, GetDbConnectionBundleResponse>
+                    handler);
+
+    /**
      * Gets information about the specified Database Home.
      *
      * @param request The request object containing the details to send
@@ -4487,6 +4521,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Imports transportable tablespace for the specified Autonomous AI Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ImportTransportableTablespaceResponse>
+            importTransportableTablespace(
+                    ImportTransportableTablespaceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ImportTransportableTablespaceRequest,
+                                    ImportTransportableTablespaceResponse>
+                            handler);
+
+    /**
      * **Deprecated** To create a new Autonomous AI Database system on dedicated Exadata
      * Infrastructure, use the {@link
      * #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest, Consumer,
@@ -5172,6 +5224,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<ListDatabasesResponse> listDatabases(
             ListDatabasesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListDatabasesRequest, ListDatabasesResponse>
+                    handler);
+
+    /**
+     * Lists all database connection bundles that match the query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDbConnectionBundlesResponse> listDbConnectionBundles(
+            ListDbConnectionBundlesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDbConnectionBundlesRequest, ListDbConnectionBundlesResponse>
                     handler);
 
     /**
@@ -6294,6 +6362,24 @@ public interface DatabaseAsync extends AutoCloseable {
      *     java.io.InputStream) may not be able to be read in both places as the underlying stream
      *     may only be consumed once.
      */
+    java.util.concurrent.Future<RegisterCloudAutonomousVmClusterPkcsResponse>
+            registerCloudAutonomousVmClusterPkcs(
+                    RegisterCloudAutonomousVmClusterPkcsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RegisterCloudAutonomousVmClusterPkcsRequest,
+                                    RegisterCloudAutonomousVmClusterPkcsResponse>
+                            handler);
+
+    /**
+     * Install the PKCS11 driver for given keystore type
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
     java.util.concurrent.Future<RegisterCloudVmClusterPkcsResponse> registerCloudVmClusterPkcs(
             RegisterCloudVmClusterPkcsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
@@ -6772,6 +6858,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Run datapatch on the specified Oracle Database and optionally on the specified Pluggable
+     * databases.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RunDataPatchResponse> runDataPatch(
+            RunDataPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RunDataPatchRequest, RunDataPatchResponse>
+                    handler);
+
+    /**
      * This operation gets SaaS administrative user status of the Autonomous AI Database.
      *
      * @param request The request object containing the details to send
@@ -7125,6 +7227,24 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UnmountDbnodeSnapshotRequest, UnmountDbnodeSnapshotResponse>
                     handler);
+
+    /**
+     * Uninstall the PKCS11 driver for given keystore type
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UnregisterCloudAutonomousVmClusterPkcsResponse>
+            unregisterCloudAutonomousVmClusterPkcs(
+                    UnregisterCloudAutonomousVmClusterPkcsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UnregisterCloudAutonomousVmClusterPkcsRequest,
+                                    UnregisterCloudAutonomousVmClusterPkcsResponse>
+                            handler);
 
     /**
      * Uninstall the PKCS11 driver for given keystore type

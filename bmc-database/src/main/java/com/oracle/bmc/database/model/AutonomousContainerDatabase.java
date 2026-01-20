@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -40,6 +40,7 @@ public final class AutonomousContainerDatabase
         "vaultId",
         "kmsKeyVersionId",
         "keyHistoryEntry",
+        "encryptionKeyLocationDetails",
         "lifecycleState",
         "lifecycleDetails",
         "timeCreated",
@@ -103,6 +104,7 @@ public final class AutonomousContainerDatabase
             String vaultId,
             String kmsKeyVersionId,
             java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry,
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails,
             LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeCreated,
@@ -166,6 +168,7 @@ public final class AutonomousContainerDatabase
         this.vaultId = vaultId;
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.keyHistoryEntry = keyHistoryEntry;
+        this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
@@ -498,6 +501,16 @@ public final class AutonomousContainerDatabase
                 java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry) {
             this.keyHistoryEntry = keyHistoryEntry;
             this.__explicitlySet__.add("keyHistoryEntry");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+        public Builder encryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            this.__explicitlySet__.add("encryptionKeyLocationDetails");
             return this;
         }
         /** The current state of the Autonomous Container Database. */
@@ -1329,6 +1342,7 @@ public final class AutonomousContainerDatabase
                             this.vaultId,
                             this.kmsKeyVersionId,
                             this.keyHistoryEntry,
+                            this.encryptionKeyLocationDetails,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeCreated,
@@ -1430,6 +1444,9 @@ public final class AutonomousContainerDatabase
             }
             if (model.wasPropertyExplicitlySet("keyHistoryEntry")) {
                 this.keyHistoryEntry(model.getKeyHistoryEntry());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionKeyLocationDetails")) {
+                this.encryptionKeyLocationDetails(model.getEncryptionKeyLocationDetails());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -1922,6 +1939,13 @@ public final class AutonomousContainerDatabase
      */
     public java.util.List<AutonomousDatabaseKeyHistoryEntry> getKeyHistoryEntry() {
         return keyHistoryEntry;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getEncryptionKeyLocationDetails() {
+        return encryptionKeyLocationDetails;
     }
 
     /** The current state of the Autonomous Container Database. */
@@ -3013,6 +3037,8 @@ public final class AutonomousContainerDatabase
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", keyHistoryEntry=").append(String.valueOf(this.keyHistoryEntry));
+        sb.append(", encryptionKeyLocationDetails=")
+                .append(String.valueOf(this.encryptionKeyLocationDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -3101,6 +3127,8 @@ public final class AutonomousContainerDatabase
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.keyHistoryEntry, other.keyHistoryEntry)
+                && java.util.Objects.equals(
+                        this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -3213,6 +3241,11 @@ public final class AutonomousContainerDatabase
         result =
                 (result * PRIME)
                         + (this.keyHistoryEntry == null ? 43 : this.keyHistoryEntry.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKeyLocationDetails == null
+                                ? 43
+                                : this.encryptionKeyLocationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

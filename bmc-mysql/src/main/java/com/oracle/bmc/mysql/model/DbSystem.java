@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -30,6 +30,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "nsgIds",
         "securityAttributes",
         "rest",
+        "databaseConsole",
         "isHighlyAvailable",
         "currentPlacement",
         "isHeatWaveClusterAttached",
@@ -77,6 +78,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             java.util.List<String> nsgIds,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             RestDetails rest,
+            DatabaseConsoleDetails databaseConsole,
             Boolean isHighlyAvailable,
             DbSystemPlacement currentPlacement,
             Boolean isHeatWaveClusterAttached,
@@ -123,6 +125,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.nsgIds = nsgIds;
         this.securityAttributes = securityAttributes;
         this.rest = rest;
+        this.databaseConsole = databaseConsole;
         this.isHighlyAvailable = isHighlyAvailable;
         this.currentPlacement = currentPlacement;
         this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
@@ -285,6 +288,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         public Builder rest(RestDetails rest) {
             this.rest = rest;
             this.__explicitlySet__.add("rest");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+        private DatabaseConsoleDetails databaseConsole;
+
+        public Builder databaseConsole(DatabaseConsoleDetails databaseConsole) {
+            this.databaseConsole = databaseConsole;
+            this.__explicitlySet__.add("databaseConsole");
             return this;
         }
         /** Specifies if the DB System is highly available. */
@@ -909,6 +921,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.nsgIds,
                             this.securityAttributes,
                             this.rest,
+                            this.databaseConsole,
                             this.isHighlyAvailable,
                             this.currentPlacement,
                             this.isHeatWaveClusterAttached,
@@ -977,6 +990,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("rest")) {
                 this.rest(model.getRest());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConsole")) {
+                this.databaseConsole(model.getDatabaseConsole());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -1206,6 +1222,13 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
 
     public RestDetails getRest() {
         return rest;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+    private final DatabaseConsoleDetails databaseConsole;
+
+    public DatabaseConsoleDetails getDatabaseConsole() {
+        return databaseConsole;
     }
 
     /** Specifies if the DB System is highly available. */
@@ -1916,6 +1939,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", rest=").append(String.valueOf(this.rest));
+        sb.append(", databaseConsole=").append(String.valueOf(this.databaseConsole));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", currentPlacement=").append(String.valueOf(this.currentPlacement));
         sb.append(", isHeatWaveClusterAttached=")
@@ -1977,6 +2001,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.rest, other.rest)
+                && java.util.Objects.equals(this.databaseConsole, other.databaseConsole)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.currentPlacement, other.currentPlacement)
                 && java.util.Objects.equals(
@@ -2037,6 +2062,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                                 ? 43
                                 : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseConsole == null ? 43 : this.databaseConsole.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -84,7 +84,9 @@ public final class CloudAutonomousVmCluster
         "ocpusLowestScaledValue",
         "maxAcdsLowestScaledValue",
         "systemTags",
-        "subscriptionId"
+        "subscriptionId",
+        "multiCloudIdentityConnectorConfigs",
+        "tdeKeyStoreType"
     })
     public CloudAutonomousVmCluster(
             String id,
@@ -147,7 +149,9 @@ public final class CloudAutonomousVmCluster
             Integer ocpusLowestScaledValue,
             Integer maxAcdsLowestScaledValue,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            String subscriptionId) {
+            String subscriptionId,
+            java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs,
+            TdeKeyStoreType tdeKeyStoreType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -211,6 +215,8 @@ public final class CloudAutonomousVmCluster
         this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
         this.systemTags = systemTags;
         this.subscriptionId = subscriptionId;
+        this.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
+        this.tdeKeyStoreType = tdeKeyStoreType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1319,6 +1325,37 @@ public final class CloudAutonomousVmCluster
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
+        /** Details of the multi cloud identity connectors of the VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("multiCloudIdentityConnectorConfigs")
+        private java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs;
+
+        /**
+         * Details of the multi cloud identity connectors of the VM cluster.
+         *
+         * @param multiCloudIdentityConnectorConfigs the value to set
+         * @return this builder
+         */
+        public Builder multiCloudIdentityConnectorConfigs(
+                java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs) {
+            this.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
+            this.__explicitlySet__.add("multiCloudIdentityConnectorConfigs");
+            return this;
+        }
+        /** TDE keystore type */
+        @com.fasterxml.jackson.annotation.JsonProperty("tdeKeyStoreType")
+        private TdeKeyStoreType tdeKeyStoreType;
+
+        /**
+         * TDE keystore type
+         *
+         * @param tdeKeyStoreType the value to set
+         * @return this builder
+         */
+        public Builder tdeKeyStoreType(TdeKeyStoreType tdeKeyStoreType) {
+            this.tdeKeyStoreType = tdeKeyStoreType;
+            this.__explicitlySet__.add("tdeKeyStoreType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1386,7 +1423,9 @@ public final class CloudAutonomousVmCluster
                             this.ocpusLowestScaledValue,
                             this.maxAcdsLowestScaledValue,
                             this.systemTags,
-                            this.subscriptionId);
+                            this.subscriptionId,
+                            this.multiCloudIdentityConnectorConfigs,
+                            this.tdeKeyStoreType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1583,6 +1622,13 @@ public final class CloudAutonomousVmCluster
             }
             if (model.wasPropertyExplicitlySet("subscriptionId")) {
                 this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("multiCloudIdentityConnectorConfigs")) {
+                this.multiCloudIdentityConnectorConfigs(
+                        model.getMultiCloudIdentityConnectorConfigs());
+            }
+            if (model.wasPropertyExplicitlySet("tdeKeyStoreType")) {
+                this.tdeKeyStoreType(model.getTdeKeyStoreType());
             }
             return this;
         }
@@ -2722,6 +2768,80 @@ public final class CloudAutonomousVmCluster
         return subscriptionId;
     }
 
+    /** Details of the multi cloud identity connectors of the VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("multiCloudIdentityConnectorConfigs")
+    private final java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs;
+
+    /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<IdentityConnectorDetails> getMultiCloudIdentityConnectorConfigs() {
+        return multiCloudIdentityConnectorConfigs;
+    }
+
+    /** TDE keystore type */
+    public enum TdeKeyStoreType implements com.oracle.bmc.http.internal.BmcEnum {
+        Azure("AZURE"),
+        Oci("OCI"),
+        Gcp("GCP"),
+        Aws("AWS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TdeKeyStoreType.class);
+
+        private final String value;
+        private static java.util.Map<String, TdeKeyStoreType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TdeKeyStoreType v : TdeKeyStoreType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        TdeKeyStoreType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TdeKeyStoreType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TdeKeyStoreType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** TDE keystore type */
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeKeyStoreType")
+    private final TdeKeyStoreType tdeKeyStoreType;
+
+    /**
+     * TDE keystore type
+     *
+     * @return the value
+     */
+    public TdeKeyStoreType getTdeKeyStoreType() {
+        return tdeKeyStoreType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2815,6 +2935,9 @@ public final class CloudAutonomousVmCluster
                 .append(String.valueOf(this.maxAcdsLowestScaledValue));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", multiCloudIdentityConnectorConfigs=")
+                .append(String.valueOf(this.multiCloudIdentityConnectorConfigs));
+        sb.append(", tdeKeyStoreType=").append(String.valueOf(this.tdeKeyStoreType));
         sb.append(")");
         return sb.toString();
     }
@@ -2917,6 +3040,10 @@ public final class CloudAutonomousVmCluster
                         this.maxAcdsLowestScaledValue, other.maxAcdsLowestScaledValue)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(
+                        this.multiCloudIdentityConnectorConfigs,
+                        other.multiCloudIdentityConnectorConfigs)
+                && java.util.Objects.equals(this.tdeKeyStoreType, other.tdeKeyStoreType)
                 && super.equals(other);
     }
 
@@ -3123,6 +3250,14 @@ public final class CloudAutonomousVmCluster
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multiCloudIdentityConnectorConfigs == null
+                                ? 43
+                                : this.multiCloudIdentityConnectorConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tdeKeyStoreType == null ? 43 : this.tdeKeyStoreType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -105,6 +105,21 @@ public final class AssistantMessage extends Message {
             this.__explicitlySet__.add("annotations");
             return this;
         }
+        /** Internal reasoning trace generated during response computation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("reasoningContent")
+        private String reasoningContent;
+
+        /**
+         * Internal reasoning trace generated during response computation.
+         *
+         * @param reasoningContent the value to set
+         * @return this builder
+         */
+        public Builder reasoningContent(String reasoningContent) {
+            this.reasoningContent = reasoningContent;
+            this.__explicitlySet__.add("reasoningContent");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -116,7 +131,8 @@ public final class AssistantMessage extends Message {
                             this.name,
                             this.refusal,
                             this.toolCalls,
-                            this.annotations);
+                            this.annotations,
+                            this.reasoningContent);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -140,6 +156,9 @@ public final class AssistantMessage extends Message {
             if (model.wasPropertyExplicitlySet("annotations")) {
                 this.annotations(model.getAnnotations());
             }
+            if (model.wasPropertyExplicitlySet("reasoningContent")) {
+                this.reasoningContent(model.getReasoningContent());
+            }
             return this;
         }
     }
@@ -159,12 +178,14 @@ public final class AssistantMessage extends Message {
             String name,
             String refusal,
             java.util.List<ToolCall> toolCalls,
-            java.util.List<Annotation> annotations) {
+            java.util.List<Annotation> annotations,
+            String reasoningContent) {
         super(content);
         this.name = name;
         this.refusal = refusal;
         this.toolCalls = toolCalls;
         this.annotations = annotations;
+        this.reasoningContent = reasoningContent;
     }
 
     /**
@@ -227,6 +248,19 @@ public final class AssistantMessage extends Message {
         return annotations;
     }
 
+    /** Internal reasoning trace generated during response computation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("reasoningContent")
+    private final String reasoningContent;
+
+    /**
+     * Internal reasoning trace generated during response computation.
+     *
+     * @return the value
+     */
+    public String getReasoningContent() {
+        return reasoningContent;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -246,6 +280,7 @@ public final class AssistantMessage extends Message {
         sb.append(", refusal=").append(String.valueOf(this.refusal));
         sb.append(", toolCalls=").append(String.valueOf(this.toolCalls));
         sb.append(", annotations=").append(String.valueOf(this.annotations));
+        sb.append(", reasoningContent=").append(String.valueOf(this.reasoningContent));
         sb.append(")");
         return sb.toString();
     }
@@ -264,6 +299,7 @@ public final class AssistantMessage extends Message {
                 && java.util.Objects.equals(this.refusal, other.refusal)
                 && java.util.Objects.equals(this.toolCalls, other.toolCalls)
                 && java.util.Objects.equals(this.annotations, other.annotations)
+                && java.util.Objects.equals(this.reasoningContent, other.reasoningContent)
                 && super.equals(other);
     }
 
@@ -275,6 +311,9 @@ public final class AssistantMessage extends Message {
         result = (result * PRIME) + (this.refusal == null ? 43 : this.refusal.hashCode());
         result = (result * PRIME) + (this.toolCalls == null ? 43 : this.toolCalls.hashCode());
         result = (result * PRIME) + (this.annotations == null ? 43 : this.annotations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reasoningContent == null ? 43 : this.reasoningContent.hashCode());
         return result;
     }
 }

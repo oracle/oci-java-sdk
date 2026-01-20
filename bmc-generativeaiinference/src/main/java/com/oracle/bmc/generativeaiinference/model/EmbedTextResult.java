@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -26,6 +26,7 @@ public final class EmbedTextResult
         "id",
         "inputs",
         "embeddings",
+        "embeddingsByType",
         "modelId",
         "modelVersion",
         "usage"
@@ -34,6 +35,7 @@ public final class EmbedTextResult
             String id,
             java.util.List<String> inputs,
             java.util.List<java.util.List<Float>> embeddings,
+            Object embeddingsByType,
             String modelId,
             String modelVersion,
             Usage usage) {
@@ -41,6 +43,7 @@ public final class EmbedTextResult
         this.id = id;
         this.inputs = inputs;
         this.embeddings = embeddings;
+        this.embeddingsByType = embeddingsByType;
         this.modelId = modelId;
         this.modelVersion = modelVersion;
         this.usage = usage;
@@ -78,12 +81,12 @@ public final class EmbedTextResult
             this.__explicitlySet__.add("inputs");
             return this;
         }
-        /** The embeddings corresponding to inputs. */
+        /** The embeddings corresponding to float. */
         @com.fasterxml.jackson.annotation.JsonProperty("embeddings")
         private java.util.List<java.util.List<Float>> embeddings;
 
         /**
-         * The embeddings corresponding to inputs.
+         * The embeddings corresponding to float.
          *
          * @param embeddings the value to set
          * @return this builder
@@ -91,6 +94,21 @@ public final class EmbedTextResult
         public Builder embeddings(java.util.List<java.util.List<Float>> embeddings) {
             this.embeddings = embeddings;
             this.__explicitlySet__.add("embeddings");
+            return this;
+        }
+        /** The embeddings corresponding to embedding types input. */
+        @com.fasterxml.jackson.annotation.JsonProperty("embeddingsByType")
+        private Object embeddingsByType;
+
+        /**
+         * The embeddings corresponding to embedding types input.
+         *
+         * @param embeddingsByType the value to set
+         * @return this builder
+         */
+        public Builder embeddingsByType(Object embeddingsByType) {
+            this.embeddingsByType = embeddingsByType;
+            this.__explicitlySet__.add("embeddingsByType");
             return this;
         }
         /** The OCID of the model used in this inference request. */
@@ -142,6 +160,7 @@ public final class EmbedTextResult
                             this.id,
                             this.inputs,
                             this.embeddings,
+                            this.embeddingsByType,
                             this.modelId,
                             this.modelVersion,
                             this.usage);
@@ -161,6 +180,9 @@ public final class EmbedTextResult
             }
             if (model.wasPropertyExplicitlySet("embeddings")) {
                 this.embeddings(model.getEmbeddings());
+            }
+            if (model.wasPropertyExplicitlySet("embeddingsByType")) {
+                this.embeddingsByType(model.getEmbeddingsByType());
             }
             if (model.wasPropertyExplicitlySet("modelId")) {
                 this.modelId(model.getModelId());
@@ -210,17 +232,30 @@ public final class EmbedTextResult
         return inputs;
     }
 
-    /** The embeddings corresponding to inputs. */
+    /** The embeddings corresponding to float. */
     @com.fasterxml.jackson.annotation.JsonProperty("embeddings")
     private final java.util.List<java.util.List<Float>> embeddings;
 
     /**
-     * The embeddings corresponding to inputs.
+     * The embeddings corresponding to float.
      *
      * @return the value
      */
     public java.util.List<java.util.List<Float>> getEmbeddings() {
         return embeddings;
+    }
+
+    /** The embeddings corresponding to embedding types input. */
+    @com.fasterxml.jackson.annotation.JsonProperty("embeddingsByType")
+    private final Object embeddingsByType;
+
+    /**
+     * The embeddings corresponding to embedding types input.
+     *
+     * @return the value
+     */
+    public Object getEmbeddingsByType() {
+        return embeddingsByType;
     }
 
     /** The OCID of the model used in this inference request. */
@@ -274,6 +309,7 @@ public final class EmbedTextResult
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", inputs=").append(String.valueOf(this.inputs));
         sb.append(", embeddings=").append(String.valueOf(this.embeddings));
+        sb.append(", embeddingsByType=").append(String.valueOf(this.embeddingsByType));
         sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", usage=").append(String.valueOf(this.usage));
@@ -294,6 +330,7 @@ public final class EmbedTextResult
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.inputs, other.inputs)
                 && java.util.Objects.equals(this.embeddings, other.embeddings)
+                && java.util.Objects.equals(this.embeddingsByType, other.embeddingsByType)
                 && java.util.Objects.equals(this.modelId, other.modelId)
                 && java.util.Objects.equals(this.modelVersion, other.modelVersion)
                 && java.util.Objects.equals(this.usage, other.usage)
@@ -307,6 +344,9 @@ public final class EmbedTextResult
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.inputs == null ? 43 : this.inputs.hashCode());
         result = (result * PRIME) + (this.embeddings == null ? 43 : this.embeddings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.embeddingsByType == null ? 43 : this.embeddingsByType.hashCode());
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
         result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());

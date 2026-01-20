@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai;
@@ -75,6 +75,24 @@ public interface GenerativeAiAsync extends AutoCloseable {
      *     template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Moves an API key into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeApiKeyCompartmentResponse> changeApiKeyCompartment(
+            ChangeApiKeyCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeApiKeyCompartmentRequest, ChangeApiKeyCompartmentResponse>
+                    handler);
 
     /**
      * Moves a dedicated AI cluster into a different compartment within the same tenancy. For
@@ -172,6 +190,21 @@ public interface GenerativeAiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new API key in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateApiKeyResponse> createApiKey(
+            CreateApiKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateApiKeyRequest, CreateApiKeyResponse>
+                    handler);
+
+    /**
      * Creates a dedicated AI cluster.
      *
      * @param request The request object containing the details to send
@@ -261,6 +294,21 @@ public interface GenerativeAiAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse> handler);
 
     /**
+     * Deletes an API key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteApiKeyResponse> deleteApiKey(
+            DeleteApiKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResponse>
+                    handler);
+
+    /**
      * Deletes a dedicated AI cluster.
      *
      * <p>You can only delete clusters without attached resources. Before you delete a hosting
@@ -345,6 +393,20 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteModelResponse> deleteModel(
             DeleteModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse> handler);
+
+    /**
+     * Gets information about an API key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetApiKeyResponse> getApiKey(
+            GetApiKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetApiKeyRequest, GetApiKeyResponse> handler);
 
     /**
      * Gets information about a dedicated AI cluster.
@@ -437,6 +499,20 @@ public interface GenerativeAiAsync extends AutoCloseable {
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                     handler);
+
+    /**
+     * Lists the ApiKeys of a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListApiKeysResponse> listApiKeys(
+            ListApiKeysRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListApiKeysRequest, ListApiKeysResponse> handler);
 
     /**
      * Lists the dedicated AI clusters in a specific compartment.
@@ -563,6 +639,50 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Renew the primary or secondary key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RenewApiKeyResponse> renewApiKey(
+            RenewApiKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RenewApiKeyRequest, RenewApiKeyResponse> handler);
+
+    /**
+     * Set state of the key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SetApiKeyStateResponse> setApiKeyState(
+            SetApiKeyStateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SetApiKeyStateRequest, SetApiKeyStateResponse>
+                    handler);
+
+    /**
+     * Updates the properties of an apiKey.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateApiKeyResponse> updateApiKey(
+            UpdateApiKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateApiKeyRequest, UpdateApiKeyResponse>
                     handler);
 
     /**

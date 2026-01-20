@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database;
@@ -1820,7 +1820,8 @@ public interface Database extends AutoCloseable {
 
     /**
      * Performs one of the following power actions on the specified DB node: - start - power on -
-     * stop - power off - softreset - ACPI shutdown and power on - reset - power off and power on
+     * stop - power off gracefully - softreset - ACPI shutdown and power on - reset - power off and
+     * power on
      *
      * <p>*Note:** Stopping a node affects billing differently, depending on the type of DB system:
      * *Bare metal and Exadata systems* - The _stop_ state has no effect on the resources you
@@ -2674,6 +2675,24 @@ public interface Database extends AutoCloseable {
      */
     DisablePluggableDatabaseManagementResponse disablePluggableDatabaseManagement(
             DisablePluggableDatabaseManagementRequest request);
+
+    /**
+     * Downloads the specified database connection bundle content. The bundle is returned as a
+     * binary file containing the connection details.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadDbConnectionBundleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DownloadDbConnectionBundle API.
+     */
+    DownloadDbConnectionBundleResponse downloadDbConnectionBundle(
+            DownloadDbConnectionBundleRequest request);
 
     /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
@@ -3690,6 +3709,22 @@ public interface Database extends AutoCloseable {
             GetDatabaseUpgradeHistoryEntryRequest request);
 
     /**
+     * Gets information about the specified database connection bundle.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbConnectionBundleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDbConnectionBundle API.
+     */
+    GetDbConnectionBundleResponse getDbConnectionBundle(GetDbConnectionBundleRequest request);
+
+    /**
      * Gets information about the specified Database Home.
      *
      * @param request The request object containing the details to send
@@ -4440,6 +4475,23 @@ public interface Database extends AutoCloseable {
             GetVmClusterUpdateHistoryEntryRequest request);
 
     /**
+     * Imports transportable tablespace for the specified Autonomous AI Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ImportTransportableTablespaceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ImportTransportableTablespace API.
+     */
+    ImportTransportableTablespaceResponse importTransportableTablespace(
+            ImportTransportableTablespaceRequest request);
+
+    /**
      * **Deprecated** To create a new Autonomous AI Database system on dedicated Exadata
      * Infrastructure, use the {@link
      * #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest)
@@ -5113,6 +5165,22 @@ public interface Database extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabases API.
      */
     ListDatabasesResponse listDatabases(ListDatabasesRequest request);
+
+    /**
+     * Lists all database connection bundles that match the query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbConnectionBundlesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDbConnectionBundles API.
+     */
+    ListDbConnectionBundlesResponse listDbConnectionBundles(ListDbConnectionBundlesRequest request);
 
     /**
      * Lists the history of patch operations on the specified Database Home.
@@ -6225,6 +6293,23 @@ public interface Database extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RegisterCloudAutonomousVmClusterPkcsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RegisterCloudAutonomousVmClusterPkcs API.
+     */
+    RegisterCloudAutonomousVmClusterPkcsResponse registerCloudAutonomousVmClusterPkcs(
+            RegisterCloudAutonomousVmClusterPkcsRequest request);
+
+    /**
+     * Install the PKCS11 driver for given keystore type
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
      *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RegisterCloudVmClusterPkcsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RegisterCloudVmClusterPkcs API.
@@ -6697,6 +6782,22 @@ public interface Database extends AutoCloseable {
     RotateVaultKeyResponse rotateVaultKey(RotateVaultKeyRequest request);
 
     /**
+     * Run datapatch on the specified Oracle Database and optionally on the specified Pluggable
+     * databases.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RunDataPatchExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RunDataPatch API.
+     */
+    RunDataPatchResponse runDataPatch(RunDataPatchRequest request);
+
+    /**
      * This operation gets SaaS administrative user status of the Autonomous AI Database.
      *
      * @param request The request object containing the details to send
@@ -7050,6 +7151,23 @@ public interface Database extends AutoCloseable {
      *     UnmountDbnodeSnapshot API.
      */
     UnmountDbnodeSnapshotResponse unmountDbnodeSnapshot(UnmountDbnodeSnapshotRequest request);
+
+    /**
+     * Uninstall the PKCS11 driver for given keystore type
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UnregisterCloudAutonomousVmClusterPkcsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UnregisterCloudAutonomousVmClusterPkcs API.
+     */
+    UnregisterCloudAutonomousVmClusterPkcsResponse unregisterCloudAutonomousVmClusterPkcs(
+            UnregisterCloudAutonomousVmClusterPkcsRequest request);
 
     /**
      * Uninstall the PKCS11 driver for given keystore type

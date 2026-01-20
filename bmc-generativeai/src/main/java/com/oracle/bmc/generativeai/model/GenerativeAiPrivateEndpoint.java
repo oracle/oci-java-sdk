@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai.model;
@@ -33,6 +33,7 @@ public final class GenerativeAiPrivateEndpoint
         "lifecycleDetails",
         "nsgIds",
         "fqdn",
+        "isAllowOnDemand",
         "privateEndpointIp",
         "timeCreated",
         "timeUpdated",
@@ -51,6 +52,7 @@ public final class GenerativeAiPrivateEndpoint
             String lifecycleDetails,
             java.util.List<String> nsgIds,
             String fqdn,
+            Boolean isAllowOnDemand,
             String privateEndpointIp,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -68,6 +70,7 @@ public final class GenerativeAiPrivateEndpoint
         this.lifecycleDetails = lifecycleDetails;
         this.nsgIds = nsgIds;
         this.fqdn = fqdn;
+        this.isAllowOnDemand = isAllowOnDemand;
         this.privateEndpointIp = privateEndpointIp;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -224,6 +227,21 @@ public final class GenerativeAiPrivateEndpoint
         public Builder fqdn(String fqdn) {
             this.fqdn = fqdn;
             this.__explicitlySet__.add("fqdn");
+            return this;
+        }
+        /** Flag that allows access to on-demand models using this private endpoint. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAllowOnDemand")
+        private Boolean isAllowOnDemand;
+
+        /**
+         * Flag that allows access to on-demand models using this private endpoint.
+         *
+         * @param isAllowOnDemand the value to set
+         * @return this builder
+         */
+        public Builder isAllowOnDemand(Boolean isAllowOnDemand) {
+            this.isAllowOnDemand = isAllowOnDemand;
+            this.__explicitlySet__.add("isAllowOnDemand");
             return this;
         }
         /**
@@ -384,6 +402,7 @@ public final class GenerativeAiPrivateEndpoint
                             this.lifecycleDetails,
                             this.nsgIds,
                             this.fqdn,
+                            this.isAllowOnDemand,
                             this.privateEndpointIp,
                             this.timeCreated,
                             this.timeUpdated,
@@ -425,6 +444,9 @@ public final class GenerativeAiPrivateEndpoint
             }
             if (model.wasPropertyExplicitlySet("fqdn")) {
                 this.fqdn(model.getFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("isAllowOnDemand")) {
+                this.isAllowOnDemand(model.getIsAllowOnDemand());
             }
             if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
                 this.privateEndpointIp(model.getPrivateEndpointIp());
@@ -635,6 +657,19 @@ public final class GenerativeAiPrivateEndpoint
         return fqdn;
     }
 
+    /** Flag that allows access to on-demand models using this private endpoint. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAllowOnDemand")
+    private final Boolean isAllowOnDemand;
+
+    /**
+     * Flag that allows access to on-demand models using this private endpoint.
+     *
+     * @return the value
+     */
+    public Boolean getIsAllowOnDemand() {
+        return isAllowOnDemand;
+    }
+
     /**
      * The private IP address (in the customer's VCN) that represents the access point for the
      * associated endpoint service.
@@ -786,6 +821,7 @@ public final class GenerativeAiPrivateEndpoint
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
+        sb.append(", isAllowOnDemand=").append(String.valueOf(this.isAllowOnDemand));
         sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -816,6 +852,7 @@ public final class GenerativeAiPrivateEndpoint
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
+                && java.util.Objects.equals(this.isAllowOnDemand, other.isAllowOnDemand)
                 && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -845,6 +882,9 @@ public final class GenerativeAiPrivateEndpoint
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAllowOnDemand == null ? 43 : this.isAllowOnDemand.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());

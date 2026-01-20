@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -24,6 +24,9 @@ package com.oracle.bmc.generativeaiinference.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VideoContent.class, name = "VIDEO"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ImageContent.class, name = "IMAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DocumentContent.class,
+            name = "DOCUMENT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AudioContent.class, name = "AUDIO"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = TextContent.class, name = "TEXT")
 })
