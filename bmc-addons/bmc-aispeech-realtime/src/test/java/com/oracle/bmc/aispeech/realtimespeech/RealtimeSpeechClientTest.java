@@ -5,6 +5,8 @@
 package com.oracle.bmc.aispeech.realtimespeech;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.aispeech.model.CustomizationInference;
 import com.oracle.bmc.aispeech.model.RealtimeParameters;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
@@ -136,7 +138,10 @@ public class RealtimeSpeechClientTest {
 
         String credentialString =
                 "{\"authenticationType\":\"CREDENTIALS\",\"compartmentId\":\"COMPARTMENT_ID\",\"headers\":{\"testKey\":\"testValue\",\"uri\":\"wss://test-endpoint.com/ws/transcribe/stream\"}}";
-        Assert.assertEquals(credentialString, stringArgumentCaptor.getValue());
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode expected = mapper.readTree(credentialString);
+        JsonNode actual = mapper.readTree(stringArgumentCaptor.getValue());
+        Assert.assertEquals(expected, actual);
 
         // Test onClose along with this
         realtimeSpeechClientSpy.close();
