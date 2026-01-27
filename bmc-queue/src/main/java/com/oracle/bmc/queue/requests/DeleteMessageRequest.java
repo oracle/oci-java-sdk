@@ -40,6 +40,13 @@ public class DeleteMessageRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Optional parameter to specify a consumer group. */
+    private String consumerGroupId;
+
+    /** Optional parameter to specify a consumer group. */
+    public String getConsumerGroupId() {
+        return consumerGroupId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -93,6 +100,20 @@ public class DeleteMessageRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /** Optional parameter to specify a consumer group. */
+        private String consumerGroupId = null;
+
+        /**
+         * Optional parameter to specify a consumer group.
+         *
+         * @param consumerGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder consumerGroupId(String consumerGroupId) {
+            this.consumerGroupId = consumerGroupId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -126,6 +147,7 @@ public class DeleteMessageRequest extends com.oracle.bmc.requests.BmcRequest<jav
             queueId(o.getQueueId());
             messageReceipt(o.getMessageReceipt());
             opcRequestId(o.getOpcRequestId());
+            consumerGroupId(o.getConsumerGroupId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -163,8 +185,9 @@ public class DeleteMessageRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.queueId = queueId;
             request.messageReceipt = messageReceipt;
             request.opcRequestId = opcRequestId;
+            request.consumerGroupId = consumerGroupId;
             return request;
-            // new DeleteMessageRequest(queueId, messageReceipt, opcRequestId);
+            // new DeleteMessageRequest(queueId, messageReceipt, opcRequestId, consumerGroupId);
         }
     }
 
@@ -177,7 +200,8 @@ public class DeleteMessageRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return new Builder()
                 .queueId(queueId)
                 .messageReceipt(messageReceipt)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .consumerGroupId(consumerGroupId);
     }
 
     /**
@@ -197,6 +221,7 @@ public class DeleteMessageRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",queueId=").append(String.valueOf(this.queueId));
         sb.append(",messageReceipt=").append(String.valueOf(this.messageReceipt));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",consumerGroupId=").append(String.valueOf(this.consumerGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -214,7 +239,8 @@ public class DeleteMessageRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return super.equals(o)
                 && java.util.Objects.equals(this.queueId, other.queueId)
                 && java.util.Objects.equals(this.messageReceipt, other.messageReceipt)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.consumerGroupId, other.consumerGroupId);
     }
 
     @Override
@@ -226,6 +252,9 @@ public class DeleteMessageRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 (result * PRIME)
                         + (this.messageReceipt == null ? 43 : this.messageReceipt.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumerGroupId == null ? 43 : this.consumerGroupId.hashCode());
         return result;
     }
 }

@@ -158,6 +158,34 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public CreateConsumerGroupResponse createConsumerGroup(CreateConsumerGroupRequest request) {
+        Objects.requireNonNull(
+                request.getCreateConsumerGroupDetails(), "createConsumerGroupDetails is required");
+
+        return clientCall(request, CreateConsumerGroupResponse::builder)
+                .logger(LOG, "createConsumerGroup")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "CreateConsumerGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/ConsumerGroup/CreateConsumerGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConsumerGroupRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("consumerGroups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateConsumerGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConsumerGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateQueueResponse createQueue(CreateQueueRequest request) {
         Objects.requireNonNull(request.getCreateQueueDetails(), "createQueueDetails is required");
 
@@ -180,6 +208,34 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-work-request-id", CreateQueueResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateQueueResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteConsumerGroupResponse deleteConsumerGroup(DeleteConsumerGroupRequest request) {
+
+        Validate.notBlank(request.getConsumerGroupId(), "consumerGroupId must not be blank");
+
+        return clientCall(request, DeleteConsumerGroupResponse::builder)
+                .logger(LOG, "deleteConsumerGroup")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "DeleteConsumerGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/ConsumerGroup/DeleteConsumerGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConsumerGroupRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("consumerGroups")
+                .appendPathParam(request.getConsumerGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteConsumerGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConsumerGroupResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -207,6 +263,34 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-work-request-id", DeleteQueueResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteQueueResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetConsumerGroupResponse getConsumerGroup(GetConsumerGroupRequest request) {
+
+        Validate.notBlank(request.getConsumerGroupId(), "consumerGroupId must not be blank");
+
+        return clientCall(request, GetConsumerGroupResponse::builder)
+                .logger(LOG, "getConsumerGroup")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "GetConsumerGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/ConsumerGroup/GetConsumerGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConsumerGroupRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("consumerGroups")
+                .appendPathParam(request.getConsumerGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.queue.model.ConsumerGroup.class,
+                        GetConsumerGroupResponse.Builder::consumerGroup)
+                .handleResponseHeaderString("etag", GetConsumerGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConsumerGroupResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -262,6 +346,40 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public ListConsumerGroupsResponse listConsumerGroups(ListConsumerGroupsRequest request) {
+
+        return clientCall(request, ListConsumerGroupsResponse::builder)
+                .logger(LOG, "listConsumerGroups")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "ListConsumerGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/ConsumerGroupCollection/ListConsumerGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConsumerGroupsRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("consumerGroups")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("queueId", request.getQueueId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.queue.model.ConsumerGroupCollection.class,
+                        ListConsumerGroupsResponse.Builder::consumerGroupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConsumerGroupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConsumerGroupsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -422,6 +540,37 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-work-request-id", PurgeQueueResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PurgeQueueResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateConsumerGroupResponse updateConsumerGroup(UpdateConsumerGroupRequest request) {
+
+        Validate.notBlank(request.getConsumerGroupId(), "consumerGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateConsumerGroupDetails(), "updateConsumerGroupDetails is required");
+
+        return clientCall(request, UpdateConsumerGroupResponse::builder)
+                .logger(LOG, "updateConsumerGroup")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "UpdateConsumerGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/ConsumerGroup/UpdateConsumerGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateConsumerGroupRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("consumerGroups")
+                .appendPathParam(request.getConsumerGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateConsumerGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateConsumerGroupResponse.Builder::opcRequestId)
                 .callSync();
     }
 

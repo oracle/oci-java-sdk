@@ -19,6 +19,7 @@ import com.oracle.bmc.auth.SuppliedServiceAccountTokenProvider;
 import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.okeworkloadidentity.internal.OkeTenancyOnlyAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.okeworkloadidentity.internal.OkeWorkloadIdentityResourcePrincipalsFederationClient;
+import com.oracle.bmc.auth.okeworkloadidentity.internal.SettableSessionKeySupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.client.StandardClientProperties;
@@ -143,6 +144,9 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
 
         private ServiceAccountTokenSupplier serviceAccountTokenSupplier;
 
+        /** Flag to enable new Service Account level token caching */
+        private boolean isTokenCachingEnabled = false;
+
         public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder() {
             this.serviceAccountTokenSupplier = new DefaultServiceAccountTokenProvider();
         }
@@ -203,6 +207,13 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
                     prov.federationClient, prov.sessionKeySupplier, this.region);
         }
 
+        /** Sets value for the isTokenCachingEnabled flag */
+        public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder isTokenCachingEnabled(
+                boolean isTokenCachingEnabled) {
+            this.isTokenCachingEnabled = isTokenCachingEnabled;
+            return this;
+        }
+
         /**
          * Build a new OkeWorkloadIdentityAuthenticationDetailsProvider.
          *
@@ -211,10 +222,15 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         public OkeWorkloadIdentityAuthenticationDetailsProvider build() {
             // autodetect region
             autoDetectEndpointUsingMetadataUrl();
-
+            // if customer has enabled new SA level token caching then use custom implementation of
+            // SessionKeySupplier else it will fall back to non-caching SDK behaviour.
+            if (this.isTokenCachingEnabled) {
+                this.sessionKeySupplier = new SettableSessionKeySupplier();
+            }
             return super.build();
         }
 
+        // This method is called by AbstractRequestingAuthenticationDetailsProvider.build()
         @Override
         protected FederationClient createFederationClient(SessionKeySupplier sessionKeySupplier) {
             OkeTenancyOnlyAuthenticationDetailsProvider provider =

@@ -47,12 +47,12 @@ public final class GenAiDetail extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Id for the GGCS instance to be provisioned. */
+        /** Id for the GenAi instance to be provisioned. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
-         * Id for the GGCS instance to be provisioned.
+         * Id for the GenAi instance to be provisioned.
          *
          * @param instanceId the value to set
          * @return this builder
@@ -189,12 +189,12 @@ public final class GenAiDetail extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Id for the GGCS instance to be provisioned. */
+    /** Id for the GenAi instance to be provisioned. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
-     * Id for the GGCS instance to be provisioned.
+     * Id for the GenAi instance to be provisioned.
      *
      * @return the value
      */

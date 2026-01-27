@@ -2,22 +2,26 @@
  * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.core.responses;
+package com.oracle.bmc.ocvp.responses;
 
-import com.oracle.bmc.core.model.*;
+import com.oracle.bmc.ocvp.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class UpdateComputeHostResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
-    private String etag;
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+public class DeleteManagementApplianceResponse extends com.oracle.bmc.responses.BmcResponse {
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
+     */
+    private String opcWorkRequestId;
 
     /**
-     * For optimistic concurrency control. See {@code if-match}.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
-    public String getEtag() {
-        return etag;
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
     }
 
     /**
@@ -36,47 +40,25 @@ public class UpdateComputeHostResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
-     * with this ID to track the status of the request.
-     */
-    private String opcWorkRequestId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
-     * with this ID to track the status of the request.
-     *
-     * @return the value
-     */
-    public String getOpcWorkRequestId() {
-        return opcWorkRequestId;
-    }
-
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
-        "etag",
-        "opcRequestId",
-        "opcWorkRequestId"
+        "opcWorkRequestId",
+        "opcRequestId"
     })
-    private UpdateComputeHostResponse(
+    private DeleteManagementApplianceResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
-            String etag,
-            String opcRequestId,
-            String opcWorkRequestId) {
+            String opcWorkRequestId,
+            String opcRequestId) {
         super(__httpStatusCode__, headers);
-        this.etag = etag;
-        this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
+        this.opcRequestId = opcRequestId;
     }
 
     public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateComputeHostResponse> {
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    DeleteManagementApplianceResponse> {
         private int __httpStatusCode__;
 
         @Override
@@ -93,17 +75,21 @@ public class UpdateComputeHostResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
-        private String etag;
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         */
+        private String opcWorkRequestId;
 
         /**
-         * For optimistic concurrency control. See {@code if-match}.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
-         * @param etag the value to set
+         * @param opcWorkRequestId the value to set
          * @return this builder
          */
-        public Builder etag(String etag) {
-            this.etag = etag;
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -126,39 +112,16 @@ public class UpdateComputeHostResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
-         * with this ID to track the status of the request.
-         */
-        private String opcWorkRequestId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
-         * with this ID to track the status of the request.
-         *
-         * @param opcWorkRequestId the value to set
-         * @return this builder
-         */
-        public Builder opcWorkRequestId(String opcWorkRequestId) {
-            this.opcWorkRequestId = opcWorkRequestId;
-            return this;
-        }
-
-        /**
          * Copy method to populate the builder with values from the given instance.
          *
          * @return this builder instance
          */
         @Override
-        public Builder copy(UpdateComputeHostResponse o) {
+        public Builder copy(DeleteManagementApplianceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
-            etag(o.getEtag());
-            opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
+            opcRequestId(o.getOpcRequestId());
 
             return this;
         }
@@ -169,9 +132,9 @@ public class UpdateComputeHostResponse extends com.oracle.bmc.responses.BmcRespo
          * @return the response object
          */
         @Override
-        public UpdateComputeHostResponse build() {
-            return new UpdateComputeHostResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, opcWorkRequestId);
+        public DeleteManagementApplianceResponse build() {
+            return new DeleteManagementApplianceResponse(
+                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
         }
     }
 
@@ -189,9 +152,8 @@ public class UpdateComputeHostResponse extends com.oracle.bmc.responses.BmcRespo
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",etag=").append(String.valueOf(etag));
-        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -201,26 +163,24 @@ public class UpdateComputeHostResponse extends com.oracle.bmc.responses.BmcRespo
         if (this == o) {
             return true;
         }
-        if (!(o instanceof UpdateComputeHostResponse)) {
+        if (!(o instanceof DeleteManagementApplianceResponse)) {
             return false;
         }
 
-        UpdateComputeHostResponse other = (UpdateComputeHostResponse) o;
+        DeleteManagementApplianceResponse other = (DeleteManagementApplianceResponse) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.etag, other.etag)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId);
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
-        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }
 }

@@ -5,14 +5,37 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The manner in which the certificate authority (CA) was created, whether it is a root CA generated
- * internally by the service or a subordinate CA issued by another CA that was itself generated
- * internally by the service.
+ * The manner in which the root or subordinate certificate authority (CA) is generated and managed.
+ * CA configuration types include the following: - Root CA generated internally by the service
+ * (ROOT_CA_GENERATED_INTERNALLY). You provide the details required to generate a certificate,
+ * including the Oracle Cloud Infrastructure (OCI) Key Management service (KMS) hardware-protected,
+ * asymmetric encryption key. Using this information, the Certificates service creates the root CA
+ * certificate which is then signed by the OCI KMS private key. - Subordinate CA issued by a CA that
+ * was generated internally by the service (SUBORDINATE_CA_ISSUED_BY_INTERNAL_CA). You provide the
+ * details required to generate a certificate, including the OCI KMS hardware-protected, asymmetric
+ * encryption key. Using this information, the Certificates service creates the subordinate CA
+ * certificate which is then signed by the OCI KMS private key you specified and the OCI KMS private
+ * key of the issuer CA. - Root CA imported to the service (ROOT_CA_MANAGED_EXTERNALLY). You import
+ * the root CA certificate in PEM format without the certificate's private key. Private keys are
+ * managed externally by OCI KMS Dedicated KMS (DKMS), an on-premises key management solution, or a
+ * third-party cloud provider. This type of CA can't directly issue certificates or subordinate CAs.
+ * Instead, for any certificates or subordinate CAs you want to issue, the service generates a CSR
+ * that you must sign externally and then import. - Subordinate CA issued by a CA that was generated
+ * externally, but where you manage keys in OCI
+ * (SUBORDINATE_CA_MANAGED_INTERNALLY_ISSUED_BY_EXTERNAL_CA). You import the key of the subordinate
+ * CA certificate to OCI KMS. You then provide the details required to generate a CSR that you must
+ * sign externally by using the private key of the external parent CA. During this time, the CA
+ * remains in a {@code PENDING_ACTIVATION} lifecycle state. To complete activation, import the
+ * signed certificate. This type of subordinate CA can issue certificates and subordinate CAs of its
+ * own.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public enum CertificateAuthorityConfigType implements com.oracle.bmc.http.internal.BmcEnum {
     RootCaGeneratedInternally("ROOT_CA_GENERATED_INTERNALLY"),
     SubordinateCaIssuedByInternalCa("SUBORDINATE_CA_ISSUED_BY_INTERNAL_CA"),
+    RootCaManagedExternally("ROOT_CA_MANAGED_EXTERNALLY"),
+    SubordinateCaManagedInternallyIssuedByExternalCa(
+            "SUBORDINATE_CA_MANAGED_INTERNALLY_ISSUED_BY_EXTERNAL_CA"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

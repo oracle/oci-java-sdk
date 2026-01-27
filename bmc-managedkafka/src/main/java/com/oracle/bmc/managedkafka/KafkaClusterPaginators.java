@@ -415,6 +415,120 @@ public class KafkaClusterPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listNodeShapes
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListNodeShapesResponse> listNodeShapesResponseIterator(
+            final ListNodeShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNodeShapesRequest.Builder, ListNodeShapesRequest, ListNodeShapesResponse>(
+                new java.util.function.Supplier<ListNodeShapesRequest.Builder>() {
+                    @Override
+                    public ListNodeShapesRequest.Builder get() {
+                        return ListNodeShapesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNodeShapesResponse, String>() {
+                    @Override
+                    public String apply(ListNodeShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNodeShapesRequest.Builder>,
+                        ListNodeShapesRequest>() {
+                    @Override
+                    public ListNodeShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNodeShapesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListNodeShapesRequest, ListNodeShapesResponse>() {
+                    @Override
+                    public ListNodeShapesResponse apply(ListNodeShapesRequest request) {
+                        return client.listNodeShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.managedkafka.model.NodeShapeSummary} objects contained in responses from the
+     * listNodeShapes operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.managedkafka.model.NodeShapeSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.managedkafka.model.NodeShapeSummary>
+            listNodeShapesRecordIterator(final ListNodeShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNodeShapesRequest.Builder,
+                ListNodeShapesRequest,
+                ListNodeShapesResponse,
+                com.oracle.bmc.managedkafka.model.NodeShapeSummary>(
+                new java.util.function.Supplier<ListNodeShapesRequest.Builder>() {
+                    @Override
+                    public ListNodeShapesRequest.Builder get() {
+                        return ListNodeShapesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNodeShapesResponse, String>() {
+                    @Override
+                    public String apply(ListNodeShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNodeShapesRequest.Builder>,
+                        ListNodeShapesRequest>() {
+                    @Override
+                    public ListNodeShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNodeShapesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListNodeShapesRequest, ListNodeShapesResponse>() {
+                    @Override
+                    public ListNodeShapesResponse apply(ListNodeShapesRequest request) {
+                        return client.listNodeShapes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListNodeShapesResponse,
+                        java.util.List<com.oracle.bmc.managedkafka.model.NodeShapeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.managedkafka.model.NodeShapeSummary> apply(
+                            ListNodeShapesResponse response) {
+                        return response.getNodeShapeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.

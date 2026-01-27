@@ -25,7 +25,10 @@ package com.oracle.bmc.certificatesmanagement.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CertificateAuthorityIssuanceExpiryRule.class,
-            name = "CERTIFICATE_AUTHORITY_ISSUANCE_EXPIRY_RULE")
+            name = "CERTIFICATE_AUTHORITY_ISSUANCE_EXPIRY_RULE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CertificateAuthorityIssuanceRule.class,
+            name = "CERTIFICATE_AUTHORITY_ISSUANCE_RULE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -85,6 +88,7 @@ public class CertificateAuthorityRule
      */
     public enum RuleType implements com.oracle.bmc.http.internal.BmcEnum {
         CertificateAuthorityIssuanceExpiryRule("CERTIFICATE_AUTHORITY_ISSUANCE_EXPIRY_RULE"),
+        CertificateAuthorityIssuanceRule("CERTIFICATE_AUTHORITY_ISSUANCE_RULE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -30,6 +30,7 @@ public final class UpdateQueueDetails
         "channelConsumptionLimit",
         "deadLetterQueueDeliveryCount",
         "customEncryptionKeyId",
+        "capabilities",
         "freeformTags",
         "definedTags"
     })
@@ -40,6 +41,7 @@ public final class UpdateQueueDetails
             Integer channelConsumptionLimit,
             Integer deadLetterQueueDeliveryCount,
             String customEncryptionKeyId,
+            java.util.List<CapabilityDetails> capabilities,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -49,6 +51,7 @@ public final class UpdateQueueDetails
         this.channelConsumptionLimit = channelConsumptionLimit;
         this.deadLetterQueueDeliveryCount = deadLetterQueueDeliveryCount;
         this.customEncryptionKeyId = customEncryptionKeyId;
+        this.capabilities = capabilities;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -173,6 +176,21 @@ public final class UpdateQueueDetails
             this.__explicitlySet__.add("customEncryptionKeyId");
             return this;
         }
+        /** The list of capabilities enabled on the queue */
+        @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
+        private java.util.List<CapabilityDetails> capabilities;
+
+        /**
+         * The list of capabilities enabled on the queue
+         *
+         * @param capabilities the value to set
+         * @return this builder
+         */
+        public Builder capabilities(java.util.List<CapabilityDetails> capabilities) {
+            this.capabilities = capabilities;
+            this.__explicitlySet__.add("capabilities");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -225,6 +243,7 @@ public final class UpdateQueueDetails
                             this.channelConsumptionLimit,
                             this.deadLetterQueueDeliveryCount,
                             this.customEncryptionKeyId,
+                            this.capabilities,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -252,6 +271,9 @@ public final class UpdateQueueDetails
             }
             if (model.wasPropertyExplicitlySet("customEncryptionKeyId")) {
                 this.customEncryptionKeyId(model.getCustomEncryptionKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("capabilities")) {
+                this.capabilities(model.getCapabilities());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -374,6 +396,19 @@ public final class UpdateQueueDetails
         return customEncryptionKeyId;
     }
 
+    /** The list of capabilities enabled on the queue */
+    @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
+    private final java.util.List<CapabilityDetails> capabilities;
+
+    /**
+     * The list of capabilities enabled on the queue
+     *
+     * @return the value
+     */
+    public java.util.List<CapabilityDetails> getCapabilities() {
+        return capabilities;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -431,6 +466,7 @@ public final class UpdateQueueDetails
         sb.append(", deadLetterQueueDeliveryCount=")
                 .append(String.valueOf(this.deadLetterQueueDeliveryCount));
         sb.append(", customEncryptionKeyId=").append(String.valueOf(this.customEncryptionKeyId));
+        sb.append(", capabilities=").append(String.valueOf(this.capabilities));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -455,6 +491,7 @@ public final class UpdateQueueDetails
                 && java.util.Objects.equals(
                         this.deadLetterQueueDeliveryCount, other.deadLetterQueueDeliveryCount)
                 && java.util.Objects.equals(this.customEncryptionKeyId, other.customEncryptionKeyId)
+                && java.util.Objects.equals(this.capabilities, other.capabilities)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -488,6 +525,7 @@ public final class UpdateQueueDetails
                         + (this.customEncryptionKeyId == null
                                 ? 43
                                 : this.customEncryptionKeyId.hashCode());
+        result = (result * PRIME) + (this.capabilities == null ? 43 : this.capabilities.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

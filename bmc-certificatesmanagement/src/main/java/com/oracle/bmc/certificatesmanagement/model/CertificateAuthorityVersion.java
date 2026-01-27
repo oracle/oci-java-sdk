@@ -35,7 +35,8 @@ public final class CertificateAuthorityVersion
         "timeOfDeletion",
         "validity",
         "stages",
-        "revocationStatus"
+        "revocationStatus",
+        "csrPem"
     })
     public CertificateAuthorityVersion(
             String certificateAuthorityId,
@@ -48,7 +49,8 @@ public final class CertificateAuthorityVersion
             java.util.Date timeOfDeletion,
             Validity validity,
             java.util.List<VersionStage> stages,
-            RevocationStatus revocationStatus) {
+            RevocationStatus revocationStatus,
+            String csrPem) {
         super();
         this.certificateAuthorityId = certificateAuthorityId;
         this.serialNumber = serialNumber;
@@ -61,6 +63,7 @@ public final class CertificateAuthorityVersion
         this.validity = validity;
         this.stages = stages;
         this.revocationStatus = revocationStatus;
+        this.csrPem = csrPem;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -245,6 +248,21 @@ public final class CertificateAuthorityVersion
             this.__explicitlySet__.add("revocationStatus");
             return this;
         }
+        /** The certificate signing request (in PEM format). */
+        @com.fasterxml.jackson.annotation.JsonProperty("csrPem")
+        private String csrPem;
+
+        /**
+         * The certificate signing request (in PEM format).
+         *
+         * @param csrPem the value to set
+         * @return this builder
+         */
+        public Builder csrPem(String csrPem) {
+            this.csrPem = csrPem;
+            this.__explicitlySet__.add("csrPem");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -262,7 +280,8 @@ public final class CertificateAuthorityVersion
                             this.timeOfDeletion,
                             this.validity,
                             this.stages,
-                            this.revocationStatus);
+                            this.revocationStatus,
+                            this.csrPem);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -303,6 +322,9 @@ public final class CertificateAuthorityVersion
             }
             if (model.wasPropertyExplicitlySet("revocationStatus")) {
                 this.revocationStatus(model.getRevocationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("csrPem")) {
+                this.csrPem(model.getCsrPem());
             }
             return this;
         }
@@ -472,6 +494,19 @@ public final class CertificateAuthorityVersion
         return revocationStatus;
     }
 
+    /** The certificate signing request (in PEM format). */
+    @com.fasterxml.jackson.annotation.JsonProperty("csrPem")
+    private final String csrPem;
+
+    /**
+     * The certificate signing request (in PEM format).
+     *
+     * @return the value
+     */
+    public String getCsrPem() {
+        return csrPem;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -499,6 +534,7 @@ public final class CertificateAuthorityVersion
         sb.append(", validity=").append(String.valueOf(this.validity));
         sb.append(", stages=").append(String.valueOf(this.stages));
         sb.append(", revocationStatus=").append(String.valueOf(this.revocationStatus));
+        sb.append(", csrPem=").append(String.valueOf(this.csrPem));
         sb.append(")");
         return sb.toString();
     }
@@ -525,6 +561,7 @@ public final class CertificateAuthorityVersion
                 && java.util.Objects.equals(this.validity, other.validity)
                 && java.util.Objects.equals(this.stages, other.stages)
                 && java.util.Objects.equals(this.revocationStatus, other.revocationStatus)
+                && java.util.Objects.equals(this.csrPem, other.csrPem)
                 && super.equals(other);
     }
 
@@ -561,6 +598,7 @@ public final class CertificateAuthorityVersion
         result =
                 (result * PRIME)
                         + (this.revocationStatus == null ? 43 : this.revocationStatus.hashCode());
+        result = (result * PRIME) + (this.csrPem == null ? 43 : this.csrPem.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

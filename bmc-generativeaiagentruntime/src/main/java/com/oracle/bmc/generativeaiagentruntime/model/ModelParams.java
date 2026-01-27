@@ -27,7 +27,10 @@ public final class ModelParams extends com.oracle.bmc.http.client.internal.Expli
         "topP",
         "topK",
         "frequencyPenalty",
-        "presencePenalty"
+        "presencePenalty",
+        "seed",
+        "reasoningEffort",
+        "verbosity"
     })
     public ModelParams(
             Integer maxTokens,
@@ -35,7 +38,10 @@ public final class ModelParams extends com.oracle.bmc.http.client.internal.Expli
             Float topP,
             Integer topK,
             Float frequencyPenalty,
-            Float presencePenalty) {
+            Float presencePenalty,
+            Integer seed,
+            String reasoningEffort,
+            String verbosity) {
         super();
         this.maxTokens = maxTokens;
         this.temperature = temperature;
@@ -43,6 +49,9 @@ public final class ModelParams extends com.oracle.bmc.http.client.internal.Expli
         this.topK = topK;
         this.frequencyPenalty = frequencyPenalty;
         this.presencePenalty = presencePenalty;
+        this.seed = seed;
+        this.reasoningEffort = reasoningEffort;
+        this.verbosity = verbosity;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -137,6 +146,51 @@ public final class ModelParams extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("presencePenalty");
             return this;
         }
+        /** Seed makes best effort to sample tokens deterministically. */
+        @com.fasterxml.jackson.annotation.JsonProperty("seed")
+        private Integer seed;
+
+        /**
+         * Seed makes best effort to sample tokens deterministically.
+         *
+         * @param seed the value to set
+         * @return this builder
+         */
+        public Builder seed(Integer seed) {
+            this.seed = seed;
+            this.__explicitlySet__.add("seed");
+            return this;
+        }
+        /** Constrains effort on reasoning for reasoning models. */
+        @com.fasterxml.jackson.annotation.JsonProperty("reasoningEffort")
+        private String reasoningEffort;
+
+        /**
+         * Constrains effort on reasoning for reasoning models.
+         *
+         * @param reasoningEffort the value to set
+         * @return this builder
+         */
+        public Builder reasoningEffort(String reasoningEffort) {
+            this.reasoningEffort = reasoningEffort;
+            this.__explicitlySet__.add("reasoningEffort");
+            return this;
+        }
+        /** Constrains the verbosity of the model's response. */
+        @com.fasterxml.jackson.annotation.JsonProperty("verbosity")
+        private String verbosity;
+
+        /**
+         * Constrains the verbosity of the model's response.
+         *
+         * @param verbosity the value to set
+         * @return this builder
+         */
+        public Builder verbosity(String verbosity) {
+            this.verbosity = verbosity;
+            this.__explicitlySet__.add("verbosity");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -149,7 +203,10 @@ public final class ModelParams extends com.oracle.bmc.http.client.internal.Expli
                             this.topP,
                             this.topK,
                             this.frequencyPenalty,
-                            this.presencePenalty);
+                            this.presencePenalty,
+                            this.seed,
+                            this.reasoningEffort,
+                            this.verbosity);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -175,6 +232,15 @@ public final class ModelParams extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("presencePenalty")) {
                 this.presencePenalty(model.getPresencePenalty());
+            }
+            if (model.wasPropertyExplicitlySet("seed")) {
+                this.seed(model.getSeed());
+            }
+            if (model.wasPropertyExplicitlySet("reasoningEffort")) {
+                this.reasoningEffort(model.getReasoningEffort());
+            }
+            if (model.wasPropertyExplicitlySet("verbosity")) {
+                this.verbosity(model.getVerbosity());
             }
             return this;
         }
@@ -267,6 +333,45 @@ public final class ModelParams extends com.oracle.bmc.http.client.internal.Expli
         return presencePenalty;
     }
 
+    /** Seed makes best effort to sample tokens deterministically. */
+    @com.fasterxml.jackson.annotation.JsonProperty("seed")
+    private final Integer seed;
+
+    /**
+     * Seed makes best effort to sample tokens deterministically.
+     *
+     * @return the value
+     */
+    public Integer getSeed() {
+        return seed;
+    }
+
+    /** Constrains effort on reasoning for reasoning models. */
+    @com.fasterxml.jackson.annotation.JsonProperty("reasoningEffort")
+    private final String reasoningEffort;
+
+    /**
+     * Constrains effort on reasoning for reasoning models.
+     *
+     * @return the value
+     */
+    public String getReasoningEffort() {
+        return reasoningEffort;
+    }
+
+    /** Constrains the verbosity of the model's response. */
+    @com.fasterxml.jackson.annotation.JsonProperty("verbosity")
+    private final String verbosity;
+
+    /**
+     * Constrains the verbosity of the model's response.
+     *
+     * @return the value
+     */
+    public String getVerbosity() {
+        return verbosity;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -288,6 +393,9 @@ public final class ModelParams extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", topK=").append(String.valueOf(this.topK));
         sb.append(", frequencyPenalty=").append(String.valueOf(this.frequencyPenalty));
         sb.append(", presencePenalty=").append(String.valueOf(this.presencePenalty));
+        sb.append(", seed=").append(String.valueOf(this.seed));
+        sb.append(", reasoningEffort=").append(String.valueOf(this.reasoningEffort));
+        sb.append(", verbosity=").append(String.valueOf(this.verbosity));
         sb.append(")");
         return sb.toString();
     }
@@ -308,6 +416,9 @@ public final class ModelParams extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.topK, other.topK)
                 && java.util.Objects.equals(this.frequencyPenalty, other.frequencyPenalty)
                 && java.util.Objects.equals(this.presencePenalty, other.presencePenalty)
+                && java.util.Objects.equals(this.seed, other.seed)
+                && java.util.Objects.equals(this.reasoningEffort, other.reasoningEffort)
+                && java.util.Objects.equals(this.verbosity, other.verbosity)
                 && super.equals(other);
     }
 
@@ -325,6 +436,11 @@ public final class ModelParams extends com.oracle.bmc.http.client.internal.Expli
         result =
                 (result * PRIME)
                         + (this.presencePenalty == null ? 43 : this.presencePenalty.hashCode());
+        result = (result * PRIME) + (this.seed == null ? 43 : this.seed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reasoningEffort == null ? 43 : this.reasoningEffort.hashCode());
+        result = (result * PRIME) + (this.verbosity == null ? 43 : this.verbosity.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

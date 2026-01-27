@@ -55,6 +55,7 @@ public class ListCertificateAuthoritiesRequest
         PendingDeletion("PENDING_DELETION"),
         CancellingDeletion("CANCELLING_DELETION"),
         Failed("FAILED"),
+        PendingActivation("PENDING_ACTIVATION"),
         ;
 
         private final String value;

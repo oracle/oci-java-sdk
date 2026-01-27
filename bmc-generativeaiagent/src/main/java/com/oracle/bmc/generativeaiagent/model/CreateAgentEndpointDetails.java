@@ -38,6 +38,7 @@ public final class CreateAgentEndpointDetails
         "shouldEnableMultiLanguage",
         "sessionConfig",
         "compartmentId",
+        "provisionedCapacityConfig",
         "freeformTags",
         "definedTags"
     })
@@ -56,6 +57,7 @@ public final class CreateAgentEndpointDetails
             Boolean shouldEnableMultiLanguage,
             SessionConfig sessionConfig,
             String compartmentId,
+            ProvisionedCapacityConfig provisionedCapacityConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -73,6 +75,7 @@ public final class CreateAgentEndpointDetails
         this.shouldEnableMultiLanguage = shouldEnableMultiLanguage;
         this.sessionConfig = sessionConfig;
         this.compartmentId = compartmentId;
+        this.provisionedCapacityConfig = provisionedCapacityConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -267,6 +270,16 @@ public final class CreateAgentEndpointDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedCapacityConfig")
+        private ProvisionedCapacityConfig provisionedCapacityConfig;
+
+        public Builder provisionedCapacityConfig(
+                ProvisionedCapacityConfig provisionedCapacityConfig) {
+            this.provisionedCapacityConfig = provisionedCapacityConfig;
+            this.__explicitlySet__.add("provisionedCapacityConfig");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -339,6 +352,7 @@ public final class CreateAgentEndpointDetails
                             this.shouldEnableMultiLanguage,
                             this.sessionConfig,
                             this.compartmentId,
+                            this.provisionedCapacityConfig,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -390,6 +404,9 @@ public final class CreateAgentEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("provisionedCapacityConfig")) {
+                this.provisionedCapacityConfig(model.getProvisionedCapacityConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -570,6 +587,13 @@ public final class CreateAgentEndpointDetails
         return compartmentId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedCapacityConfig")
+    private final ProvisionedCapacityConfig provisionedCapacityConfig;
+
+    public ProvisionedCapacityConfig getProvisionedCapacityConfig() {
+        return provisionedCapacityConfig;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -647,6 +671,8 @@ public final class CreateAgentEndpointDetails
                 .append(String.valueOf(this.shouldEnableMultiLanguage));
         sb.append(", sessionConfig=").append(String.valueOf(this.sessionConfig));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", provisionedCapacityConfig=")
+                .append(String.valueOf(this.provisionedCapacityConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -679,6 +705,8 @@ public final class CreateAgentEndpointDetails
                         this.shouldEnableMultiLanguage, other.shouldEnableMultiLanguage)
                 && java.util.Objects.equals(this.sessionConfig, other.sessionConfig)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.provisionedCapacityConfig, other.provisionedCapacityConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -728,6 +756,11 @@ public final class CreateAgentEndpointDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionedCapacityConfig == null
+                                ? 43
+                                : this.provisionedCapacityConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

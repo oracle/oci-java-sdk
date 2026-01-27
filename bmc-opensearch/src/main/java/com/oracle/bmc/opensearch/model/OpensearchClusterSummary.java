@@ -40,7 +40,8 @@ public final class OpensearchClusterSummary
         "availabilityDomains",
         "securityMode",
         "backupPolicy",
-        "outboundClusterConfig"
+        "outboundClusterConfig",
+        "loadBalancerConfig"
     })
     public OpensearchClusterSummary(
             String id,
@@ -59,7 +60,8 @@ public final class OpensearchClusterSummary
             java.util.List<String> availabilityDomains,
             SecurityMode securityMode,
             BackupPolicy backupPolicy,
-            OutboundClusterConfig outboundClusterConfig) {
+            OutboundClusterConfig outboundClusterConfig,
+            LoadBalancerConfig loadBalancerConfig) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -78,6 +80,7 @@ public final class OpensearchClusterSummary
         this.securityMode = securityMode;
         this.backupPolicy = backupPolicy;
         this.outboundClusterConfig = outboundClusterConfig;
+        this.loadBalancerConfig = loadBalancerConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -360,6 +363,15 @@ public final class OpensearchClusterSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerConfig")
+        private LoadBalancerConfig loadBalancerConfig;
+
+        public Builder loadBalancerConfig(LoadBalancerConfig loadBalancerConfig) {
+            this.loadBalancerConfig = loadBalancerConfig;
+            this.__explicitlySet__.add("loadBalancerConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -382,7 +394,8 @@ public final class OpensearchClusterSummary
                             this.availabilityDomains,
                             this.securityMode,
                             this.backupPolicy,
-                            this.outboundClusterConfig);
+                            this.outboundClusterConfig,
+                            this.loadBalancerConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -441,6 +454,9 @@ public final class OpensearchClusterSummary
             }
             if (model.wasPropertyExplicitlySet("outboundClusterConfig")) {
                 this.outboundClusterConfig(model.getOutboundClusterConfig());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerConfig")) {
+                this.loadBalancerConfig(model.getLoadBalancerConfig());
             }
             return this;
         }
@@ -694,6 +710,13 @@ public final class OpensearchClusterSummary
         return outboundClusterConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerConfig")
+    private final LoadBalancerConfig loadBalancerConfig;
+
+    public LoadBalancerConfig getLoadBalancerConfig() {
+        return loadBalancerConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -726,6 +749,7 @@ public final class OpensearchClusterSummary
         sb.append(", securityMode=").append(String.valueOf(this.securityMode));
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
         sb.append(", outboundClusterConfig=").append(String.valueOf(this.outboundClusterConfig));
+        sb.append(", loadBalancerConfig=").append(String.valueOf(this.loadBalancerConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -757,6 +781,7 @@ public final class OpensearchClusterSummary
                 && java.util.Objects.equals(this.securityMode, other.securityMode)
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
                 && java.util.Objects.equals(this.outboundClusterConfig, other.outboundClusterConfig)
+                && java.util.Objects.equals(this.loadBalancerConfig, other.loadBalancerConfig)
                 && super.equals(other);
     }
 
@@ -803,6 +828,11 @@ public final class OpensearchClusterSummary
                         + (this.outboundClusterConfig == null
                                 ? 43
                                 : this.outboundClusterConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerConfig == null
+                                ? 43
+                                : this.loadBalancerConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

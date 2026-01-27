@@ -30,7 +30,10 @@ public final class AddServiceDetails
         "ggcs",
         "dataflow",
         "objectstorage",
-        "genai"
+        "genai",
+        "aidataplatform",
+        "omk",
+        "oke"
     })
     public AddServiceDetails(
             java.util.List<StackTemplate> stackTemplates,
@@ -39,7 +42,10 @@ public final class AddServiceDetails
             java.util.List<GgcsDetail> ggcs,
             java.util.List<DataflowDetail> dataflow,
             java.util.List<ObjectStorageDetail> objectstorage,
-            java.util.List<GenAiDetail> genai) {
+            java.util.List<GenAiDetail> genai,
+            java.util.List<AiDataPlatformDetail> aidataplatform,
+            java.util.List<OmkDetail> omk,
+            java.util.List<OkeDetail> oke) {
         super();
         this.stackTemplates = stackTemplates;
         this.services = services;
@@ -48,6 +54,9 @@ public final class AddServiceDetails
         this.dataflow = dataflow;
         this.objectstorage = objectstorage;
         this.genai = genai;
+        this.aidataplatform = aidataplatform;
+        this.omk = omk;
+        this.oke = oke;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -157,6 +166,51 @@ public final class AddServiceDetails
             this.__explicitlySet__.add("genai");
             return this;
         }
+        /** AI Data Platform Details if aidataplatform is included in services to be added. */
+        @com.fasterxml.jackson.annotation.JsonProperty("aidataplatform")
+        private java.util.List<AiDataPlatformDetail> aidataplatform;
+
+        /**
+         * AI Data Platform Details if aidataplatform is included in services to be added.
+         *
+         * @param aidataplatform the value to set
+         * @return this builder
+         */
+        public Builder aidataplatform(java.util.List<AiDataPlatformDetail> aidataplatform) {
+            this.aidataplatform = aidataplatform;
+            this.__explicitlySet__.add("aidataplatform");
+            return this;
+        }
+        /** OMK Details if omk is included in services to be added. */
+        @com.fasterxml.jackson.annotation.JsonProperty("omk")
+        private java.util.List<OmkDetail> omk;
+
+        /**
+         * OMK Details if omk is included in services to be added.
+         *
+         * @param omk the value to set
+         * @return this builder
+         */
+        public Builder omk(java.util.List<OmkDetail> omk) {
+            this.omk = omk;
+            this.__explicitlySet__.add("omk");
+            return this;
+        }
+        /** OKE Details if oke is included in services to be added. */
+        @com.fasterxml.jackson.annotation.JsonProperty("oke")
+        private java.util.List<OkeDetail> oke;
+
+        /**
+         * OKE Details if oke is included in services to be added.
+         *
+         * @param oke the value to set
+         * @return this builder
+         */
+        public Builder oke(java.util.List<OkeDetail> oke) {
+            this.oke = oke;
+            this.__explicitlySet__.add("oke");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -170,7 +224,10 @@ public final class AddServiceDetails
                             this.ggcs,
                             this.dataflow,
                             this.objectstorage,
-                            this.genai);
+                            this.genai,
+                            this.aidataplatform,
+                            this.omk,
+                            this.oke);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -199,6 +256,15 @@ public final class AddServiceDetails
             }
             if (model.wasPropertyExplicitlySet("genai")) {
                 this.genai(model.getGenai());
+            }
+            if (model.wasPropertyExplicitlySet("aidataplatform")) {
+                this.aidataplatform(model.getAidataplatform());
+            }
+            if (model.wasPropertyExplicitlySet("omk")) {
+                this.omk(model.getOmk());
+            }
+            if (model.wasPropertyExplicitlySet("oke")) {
+                this.oke(model.getOke());
             }
             return this;
         }
@@ -304,6 +370,45 @@ public final class AddServiceDetails
         return genai;
     }
 
+    /** AI Data Platform Details if aidataplatform is included in services to be added. */
+    @com.fasterxml.jackson.annotation.JsonProperty("aidataplatform")
+    private final java.util.List<AiDataPlatformDetail> aidataplatform;
+
+    /**
+     * AI Data Platform Details if aidataplatform is included in services to be added.
+     *
+     * @return the value
+     */
+    public java.util.List<AiDataPlatformDetail> getAidataplatform() {
+        return aidataplatform;
+    }
+
+    /** OMK Details if omk is included in services to be added. */
+    @com.fasterxml.jackson.annotation.JsonProperty("omk")
+    private final java.util.List<OmkDetail> omk;
+
+    /**
+     * OMK Details if omk is included in services to be added.
+     *
+     * @return the value
+     */
+    public java.util.List<OmkDetail> getOmk() {
+        return omk;
+    }
+
+    /** OKE Details if oke is included in services to be added. */
+    @com.fasterxml.jackson.annotation.JsonProperty("oke")
+    private final java.util.List<OkeDetail> oke;
+
+    /**
+     * OKE Details if oke is included in services to be added.
+     *
+     * @return the value
+     */
+    public java.util.List<OkeDetail> getOke() {
+        return oke;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -326,6 +431,9 @@ public final class AddServiceDetails
         sb.append(", dataflow=").append(String.valueOf(this.dataflow));
         sb.append(", objectstorage=").append(String.valueOf(this.objectstorage));
         sb.append(", genai=").append(String.valueOf(this.genai));
+        sb.append(", aidataplatform=").append(String.valueOf(this.aidataplatform));
+        sb.append(", omk=").append(String.valueOf(this.omk));
+        sb.append(", oke=").append(String.valueOf(this.oke));
         sb.append(")");
         return sb.toString();
     }
@@ -347,6 +455,9 @@ public final class AddServiceDetails
                 && java.util.Objects.equals(this.dataflow, other.dataflow)
                 && java.util.Objects.equals(this.objectstorage, other.objectstorage)
                 && java.util.Objects.equals(this.genai, other.genai)
+                && java.util.Objects.equals(this.aidataplatform, other.aidataplatform)
+                && java.util.Objects.equals(this.omk, other.omk)
+                && java.util.Objects.equals(this.oke, other.oke)
                 && super.equals(other);
     }
 
@@ -365,6 +476,11 @@ public final class AddServiceDetails
                 (result * PRIME)
                         + (this.objectstorage == null ? 43 : this.objectstorage.hashCode());
         result = (result * PRIME) + (this.genai == null ? 43 : this.genai.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aidataplatform == null ? 43 : this.aidataplatform.hashCode());
+        result = (result * PRIME) + (this.omk == null ? 43 : this.omk.hashCode());
+        result = (result * PRIME) + (this.oke == null ? 43 : this.oke.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

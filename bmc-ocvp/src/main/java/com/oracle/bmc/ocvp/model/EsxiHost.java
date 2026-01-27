@@ -60,7 +60,8 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         "definedTags",
         "systemTags",
         "datastoreClusterIds",
-        "datastoreAttachments"
+        "datastoreAttachments",
+        "primaryVnicMacAddress"
     })
     public EsxiHost(
             String id,
@@ -94,7 +95,8 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<String> datastoreClusterIds,
-            java.util.List<DatastoreAttachment> datastoreAttachments) {
+            java.util.List<DatastoreAttachment> datastoreAttachments,
+            String primaryVnicMacAddress) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -128,6 +130,7 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         this.systemTags = systemTags;
         this.datastoreClusterIds = datastoreClusterIds;
         this.datastoreAttachments = datastoreAttachments;
+        this.primaryVnicMacAddress = primaryVnicMacAddress;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -742,6 +745,21 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("datastoreAttachments");
             return this;
         }
+        /** MAC address of ESXi host's compute instance primary VNIC. */
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryVnicMacAddress")
+        private String primaryVnicMacAddress;
+
+        /**
+         * MAC address of ESXi host's compute instance primary VNIC.
+         *
+         * @param primaryVnicMacAddress the value to set
+         * @return this builder
+         */
+        public Builder primaryVnicMacAddress(String primaryVnicMacAddress) {
+            this.primaryVnicMacAddress = primaryVnicMacAddress;
+            this.__explicitlySet__.add("primaryVnicMacAddress");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -780,7 +798,8 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                             this.definedTags,
                             this.systemTags,
                             this.datastoreClusterIds,
-                            this.datastoreAttachments);
+                            this.datastoreAttachments,
+                            this.primaryVnicMacAddress);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -884,6 +903,9 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("datastoreAttachments")) {
                 this.datastoreAttachments(model.getDatastoreAttachments());
+            }
+            if (model.wasPropertyExplicitlySet("primaryVnicMacAddress")) {
+                this.primaryVnicMacAddress(model.getPrimaryVnicMacAddress());
             }
             return this;
         }
@@ -1438,6 +1460,19 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         return datastoreAttachments;
     }
 
+    /** MAC address of ESXi host's compute instance primary VNIC. */
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryVnicMacAddress")
+    private final String primaryVnicMacAddress;
+
+    /**
+     * MAC address of ESXi host's compute instance primary VNIC.
+     *
+     * @return the value
+     */
+    public String getPrimaryVnicMacAddress() {
+        return primaryVnicMacAddress;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1489,6 +1524,7 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", datastoreClusterIds=").append(String.valueOf(this.datastoreClusterIds));
         sb.append(", datastoreAttachments=").append(String.valueOf(this.datastoreAttachments));
+        sb.append(", primaryVnicMacAddress=").append(String.valueOf(this.primaryVnicMacAddress));
         sb.append(")");
         return sb.toString();
     }
@@ -1540,6 +1576,7 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.datastoreClusterIds, other.datastoreClusterIds)
                 && java.util.Objects.equals(this.datastoreAttachments, other.datastoreAttachments)
+                && java.util.Objects.equals(this.primaryVnicMacAddress, other.primaryVnicMacAddress)
                 && super.equals(other);
     }
 
@@ -1653,6 +1690,11 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.datastoreAttachments == null
                                 ? 43
                                 : this.datastoreAttachments.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primaryVnicMacAddress == null
+                                ? 43
+                                : this.primaryVnicMacAddress.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

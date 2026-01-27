@@ -5,10 +5,6 @@
 package com.oracle.bmc.auth.okeworkloadidentity.internal;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.oracle.bmc.responses.BmcResponse;
-
-import java.util.List;
-import java.util.Map;
 
 public class OkeResourcePrincipalSessionToken {
     @JsonProperty("token")

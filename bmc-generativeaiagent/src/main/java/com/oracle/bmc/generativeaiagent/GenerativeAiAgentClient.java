@@ -285,6 +285,44 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public ChangeProvisionedCapacityCompartmentResponse changeProvisionedCapacityCompartment(
+            ChangeProvisionedCapacityCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getProvisionedCapacityId(), "provisionedCapacityId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProvisionedCapacityCompartmentDetails(),
+                "changeProvisionedCapacityCompartmentDetails is required");
+
+        return clientCall(request, ChangeProvisionedCapacityCompartmentResponse::builder)
+                .logger(LOG, "changeProvisionedCapacityCompartment")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "ChangeProvisionedCapacityCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/ChangeProvisionedCapacityCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProvisionedCapacityCompartmentRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("provisionedCapacities")
+                .appendPathParam(request.getProvisionedCapacityId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeProvisionedCapacityCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeProvisionedCapacityCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateAgentResponse createAgent(CreateAgentRequest request) {
         Objects.requireNonNull(request.getCreateAgentDetails(), "createAgentDetails is required");
 
@@ -462,6 +500,45 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public CreateProvisionedCapacityResponse createProvisionedCapacity(
+            CreateProvisionedCapacityRequest request) {
+        Objects.requireNonNull(
+                request.getCreateProvisionedCapacityDetails(),
+                "createProvisionedCapacityDetails is required");
+
+        return clientCall(request, CreateProvisionedCapacityResponse::builder)
+                .logger(LOG, "createProvisionedCapacity")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "CreateProvisionedCapacity",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/CreateProvisionedCapacity")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateProvisionedCapacityRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("provisionedCapacities")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeaiagent.model.ProvisionedCapacity.class,
+                        CreateProvisionedCapacityResponse.Builder::provisionedCapacity)
+                .handleResponseHeaderString(
+                        "location", CreateProvisionedCapacityResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateProvisionedCapacityResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateProvisionedCapacityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateProvisionedCapacityResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateProvisionedCapacityResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateToolResponse createTool(CreateToolRequest request) {
         Objects.requireNonNull(request.getCreateToolDetails(), "createToolDetails is required");
 
@@ -630,6 +707,36 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
                         DeleteKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteKnowledgeBaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteProvisionedCapacityResponse deleteProvisionedCapacity(
+            DeleteProvisionedCapacityRequest request) {
+
+        Validate.notBlank(
+                request.getProvisionedCapacityId(), "provisionedCapacityId must not be blank");
+
+        return clientCall(request, DeleteProvisionedCapacityResponse::builder)
+                .logger(LOG, "deleteProvisionedCapacity")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "DeleteProvisionedCapacity",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/DeleteProvisionedCapacity")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteProvisionedCapacityRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("provisionedCapacities")
+                .appendPathParam(request.getProvisionedCapacityId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteProvisionedCapacityResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteProvisionedCapacityResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -828,6 +935,36 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString("etag", GetKnowledgeBaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetKnowledgeBaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetProvisionedCapacityResponse getProvisionedCapacity(
+            GetProvisionedCapacityRequest request) {
+
+        Validate.notBlank(
+                request.getProvisionedCapacityId(), "provisionedCapacityId must not be blank");
+
+        return clientCall(request, GetProvisionedCapacityResponse::builder)
+                .logger(LOG, "getProvisionedCapacity")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "GetProvisionedCapacity",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/GetProvisionedCapacity")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProvisionedCapacityRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("provisionedCapacities")
+                .appendPathParam(request.getProvisionedCapacityId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeaiagent.model.ProvisionedCapacity.class,
+                        GetProvisionedCapacityResponse.Builder::provisionedCapacity)
+                .handleResponseHeaderString("etag", GetProvisionedCapacityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProvisionedCapacityResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1054,6 +1191,41 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListKnowledgeBasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListKnowledgeBasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListProvisionedCapacitiesResponse listProvisionedCapacities(
+            ListProvisionedCapacitiesRequest request) {
+
+        return clientCall(request, ListProvisionedCapacitiesResponse::builder)
+                .logger(LOG, "listProvisionedCapacities")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "ListProvisionedCapacities",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/ListProvisionedCapacities")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProvisionedCapacitiesRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("provisionedCapacities")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("provisionedCapacityId", request.getProvisionedCapacityId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeaiagent.model.ProvisionedCapacityCollection.class,
+                        ListProvisionedCapacitiesResponse.Builder::provisionedCapacityCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProvisionedCapacitiesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProvisionedCapacitiesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1311,6 +1483,40 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
                         UpdateKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateKnowledgeBaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateProvisionedCapacityResponse updateProvisionedCapacity(
+            UpdateProvisionedCapacityRequest request) {
+
+        Validate.notBlank(
+                request.getProvisionedCapacityId(), "provisionedCapacityId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateProvisionedCapacityDetails(),
+                "updateProvisionedCapacityDetails is required");
+
+        return clientCall(request, UpdateProvisionedCapacityResponse::builder)
+                .logger(LOG, "updateProvisionedCapacity")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "UpdateProvisionedCapacity",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/UpdateProvisionedCapacity")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateProvisionedCapacityRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("provisionedCapacities")
+                .appendPathParam(request.getProvisionedCapacityId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateProvisionedCapacityResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateProvisionedCapacityResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -666,6 +666,38 @@ public class KafkaClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ListNodeShapesResponse listNodeShapes(ListNodeShapesRequest request) {
+
+        return clientCall(request, ListNodeShapesResponse::builder)
+                .logger(LOG, "listNodeShapes")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ListNodeShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/ListNodeShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNodeShapesRequest::builder)
+                .basePath("/20240901")
+                .appendPathParam("nodeShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.managedkafka.model.NodeShapeCollection.class,
+                        ListNodeShapesResponse.Builder::nodeShapeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNodeShapesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNodeShapesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
 

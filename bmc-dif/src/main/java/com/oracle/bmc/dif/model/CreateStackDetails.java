@@ -34,6 +34,9 @@ public final class CreateStackDetails
         "dataflow",
         "objectstorage",
         "genai",
+        "aidataplatform",
+        "omk",
+        "oke",
         "freeformTags",
         "definedTags"
     })
@@ -48,6 +51,9 @@ public final class CreateStackDetails
             java.util.List<DataflowDetail> dataflow,
             java.util.List<ObjectStorageDetail> objectstorage,
             java.util.List<GenAiDetail> genai,
+            java.util.List<AiDataPlatformDetail> aidataplatform,
+            java.util.List<OmkDetail> omk,
+            java.util.List<OkeDetail> oke,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -61,6 +67,9 @@ public final class CreateStackDetails
         this.dataflow = dataflow;
         this.objectstorage = objectstorage;
         this.genai = genai;
+        this.aidataplatform = aidataplatform;
+        this.omk = omk;
+        this.oke = oke;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -225,6 +234,51 @@ public final class CreateStackDetails
             this.__explicitlySet__.add("genai");
             return this;
         }
+        /** AI Data Platform Details if aidataplatform is included in services. */
+        @com.fasterxml.jackson.annotation.JsonProperty("aidataplatform")
+        private java.util.List<AiDataPlatformDetail> aidataplatform;
+
+        /**
+         * AI Data Platform Details if aidataplatform is included in services.
+         *
+         * @param aidataplatform the value to set
+         * @return this builder
+         */
+        public Builder aidataplatform(java.util.List<AiDataPlatformDetail> aidataplatform) {
+            this.aidataplatform = aidataplatform;
+            this.__explicitlySet__.add("aidataplatform");
+            return this;
+        }
+        /** OMK Details if omk is included in services. */
+        @com.fasterxml.jackson.annotation.JsonProperty("omk")
+        private java.util.List<OmkDetail> omk;
+
+        /**
+         * OMK Details if omk is included in services.
+         *
+         * @param omk the value to set
+         * @return this builder
+         */
+        public Builder omk(java.util.List<OmkDetail> omk) {
+            this.omk = omk;
+            this.__explicitlySet__.add("omk");
+            return this;
+        }
+        /** OKE Details if oke is included in services. */
+        @com.fasterxml.jackson.annotation.JsonProperty("oke")
+        private java.util.List<OkeDetail> oke;
+
+        /**
+         * OKE Details if oke is included in services.
+         *
+         * @param oke the value to set
+         * @return this builder
+         */
+        public Builder oke(java.util.List<OkeDetail> oke) {
+            this.oke = oke;
+            this.__explicitlySet__.add("oke");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -293,6 +347,9 @@ public final class CreateStackDetails
                             this.dataflow,
                             this.objectstorage,
                             this.genai,
+                            this.aidataplatform,
+                            this.omk,
+                            this.oke,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -332,6 +389,15 @@ public final class CreateStackDetails
             }
             if (model.wasPropertyExplicitlySet("genai")) {
                 this.genai(model.getGenai());
+            }
+            if (model.wasPropertyExplicitlySet("aidataplatform")) {
+                this.aidataplatform(model.getAidataplatform());
+            }
+            if (model.wasPropertyExplicitlySet("omk")) {
+                this.omk(model.getOmk());
+            }
+            if (model.wasPropertyExplicitlySet("oke")) {
+                this.oke(model.getOke());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -490,6 +556,45 @@ public final class CreateStackDetails
         return genai;
     }
 
+    /** AI Data Platform Details if aidataplatform is included in services. */
+    @com.fasterxml.jackson.annotation.JsonProperty("aidataplatform")
+    private final java.util.List<AiDataPlatformDetail> aidataplatform;
+
+    /**
+     * AI Data Platform Details if aidataplatform is included in services.
+     *
+     * @return the value
+     */
+    public java.util.List<AiDataPlatformDetail> getAidataplatform() {
+        return aidataplatform;
+    }
+
+    /** OMK Details if omk is included in services. */
+    @com.fasterxml.jackson.annotation.JsonProperty("omk")
+    private final java.util.List<OmkDetail> omk;
+
+    /**
+     * OMK Details if omk is included in services.
+     *
+     * @return the value
+     */
+    public java.util.List<OmkDetail> getOmk() {
+        return omk;
+    }
+
+    /** OKE Details if oke is included in services. */
+    @com.fasterxml.jackson.annotation.JsonProperty("oke")
+    private final java.util.List<OkeDetail> oke;
+
+    /**
+     * OKE Details if oke is included in services.
+     *
+     * @return the value
+     */
+    public java.util.List<OkeDetail> getOke() {
+        return oke;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -561,6 +666,9 @@ public final class CreateStackDetails
         sb.append(", dataflow=").append(String.valueOf(this.dataflow));
         sb.append(", objectstorage=").append(String.valueOf(this.objectstorage));
         sb.append(", genai=").append(String.valueOf(this.genai));
+        sb.append(", aidataplatform=").append(String.valueOf(this.aidataplatform));
+        sb.append(", omk=").append(String.valueOf(this.omk));
+        sb.append(", oke=").append(String.valueOf(this.oke));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -587,6 +695,9 @@ public final class CreateStackDetails
                 && java.util.Objects.equals(this.dataflow, other.dataflow)
                 && java.util.Objects.equals(this.objectstorage, other.objectstorage)
                 && java.util.Objects.equals(this.genai, other.genai)
+                && java.util.Objects.equals(this.aidataplatform, other.aidataplatform)
+                && java.util.Objects.equals(this.omk, other.omk)
+                && java.util.Objects.equals(this.oke, other.oke)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -614,6 +725,11 @@ public final class CreateStackDetails
                 (result * PRIME)
                         + (this.objectstorage == null ? 43 : this.objectstorage.hashCode());
         result = (result * PRIME) + (this.genai == null ? 43 : this.genai.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aidataplatform == null ? 43 : this.aidataplatform.hashCode());
+        result = (result * PRIME) + (this.omk == null ? 43 : this.omk.hashCode());
+        result = (result * PRIME) + (this.oke == null ? 43 : this.oke.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

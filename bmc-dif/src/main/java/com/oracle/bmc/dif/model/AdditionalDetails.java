@@ -29,7 +29,9 @@ public final class AdditionalDetails
         "modelVersion",
         "ociRegion",
         "endpointDetails",
-        "privateEndpointId"
+        "privateEndpointId",
+        "clusterId",
+        "namespaceName"
     })
     public AdditionalDetails(
             java.util.List<AssignedConnectionDetails> assignedConnections,
@@ -37,7 +39,9 @@ public final class AdditionalDetails
             String modelVersion,
             String ociRegion,
             java.util.List<EndpointAdditional> endpointDetails,
-            String privateEndpointId) {
+            String privateEndpointId,
+            String clusterId,
+            String namespaceName) {
         super();
         this.assignedConnections = assignedConnections;
         this.modelId = modelId;
@@ -45,6 +49,8 @@ public final class AdditionalDetails
         this.ociRegion = ociRegion;
         this.endpointDetails = endpointDetails;
         this.privateEndpointId = privateEndpointId;
+        this.clusterId = clusterId;
+        this.namespaceName = namespaceName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -140,6 +146,36 @@ public final class AdditionalDetails
             this.__explicitlySet__.add("privateEndpointId");
             return this;
         }
+        /** OCID of cluster assigned to OMK cluster-namespace. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
+        private String clusterId;
+
+        /**
+         * OCID of cluster assigned to OMK cluster-namespace.
+         *
+         * @param clusterId the value to set
+         * @return this builder
+         */
+        public Builder clusterId(String clusterId) {
+            this.clusterId = clusterId;
+            this.__explicitlySet__.add("clusterId");
+            return this;
+        }
+        /** Kubernetes namespace-name of omk cluster-namespace. */
+        @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
+        private String namespaceName;
+
+        /**
+         * Kubernetes namespace-name of omk cluster-namespace.
+         *
+         * @param namespaceName the value to set
+         * @return this builder
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            this.__explicitlySet__.add("namespaceName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -152,7 +188,9 @@ public final class AdditionalDetails
                             this.modelVersion,
                             this.ociRegion,
                             this.endpointDetails,
-                            this.privateEndpointId);
+                            this.privateEndpointId,
+                            this.clusterId,
+                            this.namespaceName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -178,6 +216,12 @@ public final class AdditionalDetails
             }
             if (model.wasPropertyExplicitlySet("privateEndpointId")) {
                 this.privateEndpointId(model.getPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterId")) {
+                this.clusterId(model.getClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("namespaceName")) {
+                this.namespaceName(model.getNamespaceName());
             }
             return this;
         }
@@ -270,6 +314,32 @@ public final class AdditionalDetails
         return privateEndpointId;
     }
 
+    /** OCID of cluster assigned to OMK cluster-namespace. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
+    private final String clusterId;
+
+    /**
+     * OCID of cluster assigned to OMK cluster-namespace.
+     *
+     * @return the value
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    /** Kubernetes namespace-name of omk cluster-namespace. */
+    @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
+    private final String namespaceName;
+
+    /**
+     * Kubernetes namespace-name of omk cluster-namespace.
+     *
+     * @return the value
+     */
+    public String getNamespaceName() {
+        return namespaceName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -291,6 +361,8 @@ public final class AdditionalDetails
         sb.append(", ociRegion=").append(String.valueOf(this.ociRegion));
         sb.append(", endpointDetails=").append(String.valueOf(this.endpointDetails));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
+        sb.append(", clusterId=").append(String.valueOf(this.clusterId));
+        sb.append(", namespaceName=").append(String.valueOf(this.namespaceName));
         sb.append(")");
         return sb.toString();
     }
@@ -311,6 +383,8 @@ public final class AdditionalDetails
                 && java.util.Objects.equals(this.ociRegion, other.ociRegion)
                 && java.util.Objects.equals(this.endpointDetails, other.endpointDetails)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
+                && java.util.Objects.equals(this.clusterId, other.clusterId)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
                 && super.equals(other);
     }
 
@@ -332,6 +406,10 @@ public final class AdditionalDetails
         result =
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
+        result = (result * PRIME) + (this.clusterId == null ? 43 : this.clusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

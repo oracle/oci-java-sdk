@@ -99,6 +99,13 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getChannelFilter() {
         return channelFilter;
     }
+    /** Optional parameter to specify a consumer group. */
+    private String consumerGroupId;
+
+    /** Optional parameter to specify a consumer group. */
+    public String getConsumerGroupId() {
+        return consumerGroupId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -230,6 +237,20 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** Optional parameter to specify a consumer group. */
+        private String consumerGroupId = null;
+
+        /**
+         * Optional parameter to specify a consumer group.
+         *
+         * @param consumerGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder consumerGroupId(String consumerGroupId) {
+            this.consumerGroupId = consumerGroupId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -266,6 +287,7 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             limit(o.getLimit());
             opcRequestId(o.getOpcRequestId());
             channelFilter(o.getChannelFilter());
+            consumerGroupId(o.getConsumerGroupId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -306,9 +328,10 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.limit = limit;
             request.opcRequestId = opcRequestId;
             request.channelFilter = channelFilter;
+            request.consumerGroupId = consumerGroupId;
             return request;
             // new GetMessagesRequest(queueId, visibilityInSeconds, timeoutInSeconds, limit,
-            // opcRequestId, channelFilter);
+            // opcRequestId, channelFilter, consumerGroupId);
         }
     }
 
@@ -324,7 +347,8 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .timeoutInSeconds(timeoutInSeconds)
                 .limit(limit)
                 .opcRequestId(opcRequestId)
-                .channelFilter(channelFilter);
+                .channelFilter(channelFilter)
+                .consumerGroupId(consumerGroupId);
     }
 
     /**
@@ -347,6 +371,7 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",channelFilter=").append(String.valueOf(this.channelFilter));
+        sb.append(",consumerGroupId=").append(String.valueOf(this.consumerGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -367,7 +392,8 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.channelFilter, other.channelFilter);
+                && java.util.Objects.equals(this.channelFilter, other.channelFilter)
+                && java.util.Objects.equals(this.consumerGroupId, other.consumerGroupId);
     }
 
     @Override
@@ -388,6 +414,9 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result =
                 (result * PRIME)
                         + (this.channelFilter == null ? 43 : this.channelFilter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumerGroupId == null ? 43 : this.consumerGroupId.hashCode());
         return result;
     }
 }

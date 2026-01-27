@@ -2140,37 +2140,6 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
-    public java.util.concurrent.Future<GetComputeHostResponse> getComputeHost(
-            GetComputeHostRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetComputeHostRequest, GetComputeHostResponse>
-                    handler) {
-
-        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
-
-        return clientCall(request, GetComputeHostResponse::builder)
-                .logger(LOG, "getComputeHost")
-                .serviceDetails(
-                        "Compute",
-                        "GetComputeHost",
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHost")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetComputeHostRequest::builder)
-                .basePath("/20160918")
-                .appendPathParam("computeHosts")
-                .appendPathParam(request.getComputeHostId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.core.model.ComputeHost.class,
-                        GetComputeHostResponse.Builder::computeHost)
-                .handleResponseHeaderString("etag", GetComputeHostResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetComputeHostResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<GetComputeHostGroupResponse> getComputeHostGroup(
             GetComputeHostGroupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2198,6 +2167,37 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString("etag", GetComputeHostGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetComputeHostGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeHostsResponse> getComputeHosts(
+            GetComputeHostsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeHostsRequest, GetComputeHostsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+
+        return clientCall(request, GetComputeHostsResponse::builder)
+                .logger(LOG, "getComputeHosts")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeHosts",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHosts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeHostsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHost.class,
+                        GetComputeHostsResponse.Builder::computeHost)
+                .handleResponseHeaderString("etag", GetComputeHostsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeHostsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -4444,41 +4444,6 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateComputeHostResponse> updateComputeHost(
-            UpdateComputeHostRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateComputeHostRequest, UpdateComputeHostResponse>
-                    handler) {
-
-        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateComputeHostDetails(), "updateComputeHostDetails is required");
-
-        return clientCall(request, UpdateComputeHostResponse::builder)
-                .logger(LOG, "updateComputeHost")
-                .serviceDetails(
-                        "Compute",
-                        "UpdateComputeHost",
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHost")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateComputeHostRequest::builder)
-                .basePath("/20160918")
-                .appendPathParam("computeHosts")
-                .appendPathParam(request.getComputeHostId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString("etag", UpdateComputeHostResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateComputeHostResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateComputeHostResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<UpdateComputeHostGroupResponse> updateComputeHostGroup(
             UpdateComputeHostGroupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4517,6 +4482,41 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateComputeHostGroupResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeHostsResponse> updateComputeHosts(
+            UpdateComputeHostsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeHostsRequest, UpdateComputeHostsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeHostsDetails(), "updateComputeHostsDetails is required");
+
+        return clientCall(request, UpdateComputeHostsResponse::builder)
+                .logger(LOG, "updateComputeHosts")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeHosts",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHosts")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeHostsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", UpdateComputeHostsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateComputeHostsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateComputeHostsResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

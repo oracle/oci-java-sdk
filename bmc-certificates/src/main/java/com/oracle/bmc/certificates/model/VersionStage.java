@@ -14,12 +14,16 @@ package com.oracle.bmc.certificates.model;
  * version that was most recently marked {@code CURRENT}, before the last certificate version
  * rotation. A certificate version marked {@code DEPRECATED} is neither current, pending, nor the
  * previous one in use. Only certificate versions marked {@code DEPRECATED} can be scheduled for
- * deletion.
+ * deletion. A certificate version marked {@code PENDING_ACTIVATION} applies to certificates issued
+ * by an externally managed CA and stays in that rotation state until you successfully sign the
+ * certificate signing request (CSR) externally and then import the signed certificate to the
+ * Certificates service.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public enum VersionStage implements com.oracle.bmc.http.internal.BmcEnum {
     Current("CURRENT"),
     Pending("PENDING"),
+    PendingActivation("PENDING_ACTIVATION"),
     Latest("LATEST"),
     Previous("PREVIOUS"),
     Deprecated("DEPRECATED"),

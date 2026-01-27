@@ -38,7 +38,8 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "freeformTags",
         "definedTags",
         "systemTags",
-        "channelConsumptionLimit"
+        "channelConsumptionLimit",
+        "capabilities"
     })
     public Queue(
             String id,
@@ -57,7 +58,8 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            Integer channelConsumptionLimit) {
+            Integer channelConsumptionLimit,
+            java.util.List<CapabilityDetails> capabilities) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -76,6 +78,7 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.channelConsumptionLimit = channelConsumptionLimit;
+        this.capabilities = capabilities;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -390,6 +393,21 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("channelConsumptionLimit");
             return this;
         }
+        /** The list of capabilities enabled on the queue */
+        @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
+        private java.util.List<CapabilityDetails> capabilities;
+
+        /**
+         * The list of capabilities enabled on the queue
+         *
+         * @param capabilities the value to set
+         * @return this builder
+         */
+        public Builder capabilities(java.util.List<CapabilityDetails> capabilities) {
+            this.capabilities = capabilities;
+            this.__explicitlySet__.add("capabilities");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -413,7 +431,8 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.channelConsumptionLimit);
+                            this.channelConsumptionLimit,
+                            this.capabilities);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -472,6 +491,9 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("channelConsumptionLimit")) {
                 this.channelConsumptionLimit(model.getChannelConsumptionLimit());
+            }
+            if (model.wasPropertyExplicitlySet("capabilities")) {
+                this.capabilities(model.getCapabilities());
             }
             return this;
         }
@@ -810,6 +832,19 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return channelConsumptionLimit;
     }
 
+    /** The list of capabilities enabled on the queue */
+    @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
+    private final java.util.List<CapabilityDetails> capabilities;
+
+    /**
+     * The list of capabilities enabled on the queue
+     *
+     * @return the value
+     */
+    public java.util.List<CapabilityDetails> getCapabilities() {
+        return capabilities;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -844,6 +879,7 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", channelConsumptionLimit=")
                 .append(String.valueOf(this.channelConsumptionLimit));
+        sb.append(", capabilities=").append(String.valueOf(this.capabilities));
         sb.append(")");
         return sb.toString();
     }
@@ -877,6 +913,7 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.channelConsumptionLimit, other.channelConsumptionLimit)
+                && java.util.Objects.equals(this.capabilities, other.capabilities)
                 && super.equals(other);
     }
 
@@ -931,6 +968,7 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
                         + (this.channelConsumptionLimit == null
                                 ? 43
                                 : this.channelConsumptionLimit.hashCode());
+        result = (result * PRIME) + (this.capabilities == null ? 43 : this.capabilities.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -29,6 +29,7 @@ public final class CertificateAuthority
         "issuerCertificateAuthorityId",
         "name",
         "description",
+        "externalKeyDescription",
         "timeCreated",
         "timeOfDeletion",
         "kmsKeyId",
@@ -49,6 +50,7 @@ public final class CertificateAuthority
             String issuerCertificateAuthorityId,
             String name,
             String description,
+            String externalKeyDescription,
             java.util.Date timeCreated,
             java.util.Date timeOfDeletion,
             String kmsKeyId,
@@ -68,6 +70,7 @@ public final class CertificateAuthority
         this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
         this.name = name;
         this.description = description;
+        this.externalKeyDescription = externalKeyDescription;
         this.timeCreated = timeCreated;
         this.timeOfDeletion = timeOfDeletion;
         this.kmsKeyId = kmsKeyId;
@@ -154,6 +157,25 @@ public final class CertificateAuthority
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * For externally managed CAs, a description of the externally managed key. Avoid entering
+         * confidential information.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyDescription")
+        private String externalKeyDescription;
+
+        /**
+         * For externally managed CAs, a description of the externally managed key. Avoid entering
+         * confidential information.
+         *
+         * @param externalKeyDescription the value to set
+         * @return this builder
+         */
+        public Builder externalKeyDescription(String externalKeyDescription) {
+            this.externalKeyDescription = externalKeyDescription;
+            this.__explicitlySet__.add("externalKeyDescription");
             return this;
         }
         /**
@@ -382,6 +404,7 @@ public final class CertificateAuthority
                             this.issuerCertificateAuthorityId,
                             this.name,
                             this.description,
+                            this.externalKeyDescription,
                             this.timeCreated,
                             this.timeOfDeletion,
                             this.kmsKeyId,
@@ -415,6 +438,9 @@ public final class CertificateAuthority
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyDescription")) {
+                this.externalKeyDescription(model.getExternalKeyDescription());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -531,6 +557,23 @@ public final class CertificateAuthority
      */
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * For externally managed CAs, a description of the externally managed key. Avoid entering
+     * confidential information.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyDescription")
+    private final String externalKeyDescription;
+
+    /**
+     * For externally managed CAs, a description of the externally managed key. Avoid entering
+     * confidential information.
+     *
+     * @return the value
+     */
+    public String getExternalKeyDescription() {
+        return externalKeyDescription;
     }
 
     /**
@@ -737,6 +780,7 @@ public final class CertificateAuthority
                 .append(String.valueOf(this.issuerCertificateAuthorityId));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", externalKeyDescription=").append(String.valueOf(this.externalKeyDescription));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
@@ -772,6 +816,8 @@ public final class CertificateAuthority
                         this.issuerCertificateAuthorityId, other.issuerCertificateAuthorityId)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(
+                        this.externalKeyDescription, other.externalKeyDescription)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
@@ -804,6 +850,11 @@ public final class CertificateAuthority
                                 : this.issuerCertificateAuthorityId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyDescription == null
+                                ? 43
+                                : this.externalKeyDescription.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)

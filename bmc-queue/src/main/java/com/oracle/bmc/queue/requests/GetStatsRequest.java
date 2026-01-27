@@ -40,6 +40,13 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     public String getChannelId() {
         return channelId;
     }
+    /** Optional parameter to specify a consumer group. */
+    private String consumerGroupId;
+
+    /** Optional parameter to specify a consumer group. */
+    public String getConsumerGroupId() {
+        return consumerGroupId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetStatsRequest, java.lang.Void> {
@@ -92,6 +99,20 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /** Optional parameter to specify a consumer group. */
+        private String consumerGroupId = null;
+
+        /**
+         * Optional parameter to specify a consumer group.
+         *
+         * @param consumerGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder consumerGroupId(String consumerGroupId) {
+            this.consumerGroupId = consumerGroupId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -125,6 +146,7 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             queueId(o.getQueueId());
             opcRequestId(o.getOpcRequestId());
             channelId(o.getChannelId());
+            consumerGroupId(o.getConsumerGroupId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -162,8 +184,9 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.queueId = queueId;
             request.opcRequestId = opcRequestId;
             request.channelId = channelId;
+            request.consumerGroupId = consumerGroupId;
             return request;
-            // new GetStatsRequest(queueId, opcRequestId, channelId);
+            // new GetStatsRequest(queueId, opcRequestId, channelId, consumerGroupId);
         }
     }
 
@@ -173,7 +196,11 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().queueId(queueId).opcRequestId(opcRequestId).channelId(channelId);
+        return new Builder()
+                .queueId(queueId)
+                .opcRequestId(opcRequestId)
+                .channelId(channelId)
+                .consumerGroupId(consumerGroupId);
     }
 
     /**
@@ -193,6 +220,7 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         sb.append(",queueId=").append(String.valueOf(this.queueId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",channelId=").append(String.valueOf(this.channelId));
+        sb.append(",consumerGroupId=").append(String.valueOf(this.consumerGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -210,7 +238,8 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         return super.equals(o)
                 && java.util.Objects.equals(this.queueId, other.queueId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.channelId, other.channelId);
+                && java.util.Objects.equals(this.channelId, other.channelId)
+                && java.util.Objects.equals(this.consumerGroupId, other.consumerGroupId);
     }
 
     @Override
@@ -220,6 +249,9 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         result = (result * PRIME) + (this.queueId == null ? 43 : this.queueId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.channelId == null ? 43 : this.channelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumerGroupId == null ? 43 : this.consumerGroupId.hashCode());
         return result;
     }
 }
