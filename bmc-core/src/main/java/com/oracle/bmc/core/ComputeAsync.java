@@ -1187,21 +1187,6 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified compute host
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<GetComputeHostResponse> getComputeHost(
-            GetComputeHostRequest request,
-            com.oracle.bmc.responses.AsyncHandler<GetComputeHostRequest, GetComputeHostResponse>
-                    handler);
-
-    /**
      * Gets information about the specified compute host group
      *
      * @param request The request object containing the details to send
@@ -1215,6 +1200,21 @@ public interface ComputeAsync extends AutoCloseable {
             GetComputeHostGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetComputeHostGroupRequest, GetComputeHostGroupResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified compute host
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeHostsResponse> getComputeHosts(
+            GetComputeHostsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetComputeHostsRequest, GetComputeHostsResponse>
                     handler);
 
     /**
@@ -2383,22 +2383,6 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Customer can update the some fields for ComputeHost record
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<UpdateComputeHostResponse> updateComputeHost(
-            UpdateComputeHostRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            UpdateComputeHostRequest, UpdateComputeHostResponse>
-                    handler);
-
-    /**
      * Updates the specified compute host group details.
      *
      * @param request The request object containing the details to send
@@ -2412,6 +2396,22 @@ public interface ComputeAsync extends AutoCloseable {
             UpdateComputeHostGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateComputeHostGroupRequest, UpdateComputeHostGroupResponse>
+                    handler);
+
+    /**
+     * Customer can update the some fields for ComputeHost record
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeHostsResponse> updateComputeHosts(
+            UpdateComputeHostsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeHostsRequest, UpdateComputeHostsResponse>
                     handler);
 
     /**

@@ -7,7 +7,7 @@ package com.oracle.bmc.core.responses;
 import com.oracle.bmc.core.model.*;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class GetComputeHostResponse extends com.oracle.bmc.responses.BmcResponse {
+public class UpdateComputeHostsResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
@@ -36,16 +36,24 @@ public class GetComputeHostResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned {@code ComputeHost} instance. */
-    private com.oracle.bmc.core.model.ComputeHost computeHost;
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request. Use
+     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
+     */
+    private String opcWorkRequestId;
 
     /**
-     * The returned {@code ComputeHost} instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request. Use
+     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
      *
      * @return the value
      */
-    public com.oracle.bmc.core.model.ComputeHost getComputeHost() {
-        return computeHost;
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
     }
 
     @java.beans.ConstructorProperties({
@@ -53,22 +61,22 @@ public class GetComputeHostResponse extends com.oracle.bmc.responses.BmcResponse
         "headers",
         "etag",
         "opcRequestId",
-        "computeHost"
+        "opcWorkRequestId"
     })
-    private GetComputeHostResponse(
+    private UpdateComputeHostsResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
-            com.oracle.bmc.core.model.ComputeHost computeHost) {
+            String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
-        this.computeHost = computeHost;
+        this.opcWorkRequestId = opcWorkRequestId;
     }
 
     public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetComputeHostResponse> {
+            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateComputeHostsResponse> {
         private int __httpStatusCode__;
 
         @Override
@@ -117,17 +125,25 @@ public class GetComputeHostResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned {@code ComputeHost} instance. */
-        private com.oracle.bmc.core.model.ComputeHost computeHost;
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request. Use
+         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * with this ID to track the status of the request.
+         */
+        private String opcWorkRequestId;
 
         /**
-         * The returned {@code ComputeHost} instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request. Use
+         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * with this ID to track the status of the request.
          *
-         * @param computeHost the value to set
+         * @param opcWorkRequestId the value to set
          * @return this builder
          */
-        public Builder computeHost(com.oracle.bmc.core.model.ComputeHost computeHost) {
-            this.computeHost = computeHost;
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -137,12 +153,12 @@ public class GetComputeHostResponse extends com.oracle.bmc.responses.BmcResponse
          * @return this builder instance
          */
         @Override
-        public Builder copy(GetComputeHostResponse o) {
+        public Builder copy(UpdateComputeHostsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
-            computeHost(o.getComputeHost());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }
@@ -153,9 +169,9 @@ public class GetComputeHostResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         @Override
-        public GetComputeHostResponse build() {
-            return new GetComputeHostResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, computeHost);
+        public UpdateComputeHostsResponse build() {
+            return new UpdateComputeHostsResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, opcWorkRequestId);
         }
     }
 
@@ -175,7 +191,7 @@ public class GetComputeHostResponse extends com.oracle.bmc.responses.BmcResponse
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",computeHost=").append(String.valueOf(computeHost));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -185,15 +201,15 @@ public class GetComputeHostResponse extends com.oracle.bmc.responses.BmcResponse
         if (this == o) {
             return true;
         }
-        if (!(o instanceof GetComputeHostResponse)) {
+        if (!(o instanceof UpdateComputeHostsResponse)) {
             return false;
         }
 
-        GetComputeHostResponse other = (GetComputeHostResponse) o;
+        UpdateComputeHostsResponse other = (UpdateComputeHostsResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.computeHost, other.computeHost);
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId);
     }
 
     @Override
@@ -202,7 +218,9 @@ public class GetComputeHostResponse extends com.oracle.bmc.responses.BmcResponse
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.computeHost == null ? 43 : this.computeHost.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         return result;
     }
 }

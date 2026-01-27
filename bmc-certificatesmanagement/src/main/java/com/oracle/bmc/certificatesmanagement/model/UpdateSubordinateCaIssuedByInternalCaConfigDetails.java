@@ -5,8 +5,9 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The details for updating a private subordinate certificate authority (CA) which is issued by a
- * private CA. Note: This operation automatically rotates the private key. <br>
+ * The configuration details for updating a private subordinate certificate authority (CA) which is
+ * issued by a private, internal CA. Note: This operation automatically rotates the private key.
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

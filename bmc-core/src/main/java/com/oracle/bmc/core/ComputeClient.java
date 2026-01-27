@@ -1952,34 +1952,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
-    public GetComputeHostResponse getComputeHost(GetComputeHostRequest request) {
-
-        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
-
-        return clientCall(request, GetComputeHostResponse::builder)
-                .logger(LOG, "getComputeHost")
-                .serviceDetails(
-                        "Compute",
-                        "GetComputeHost",
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHost")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetComputeHostRequest::builder)
-                .basePath("/20160918")
-                .appendPathParam("computeHosts")
-                .appendPathParam(request.getComputeHostId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.core.model.ComputeHost.class,
-                        GetComputeHostResponse.Builder::computeHost)
-                .handleResponseHeaderString("etag", GetComputeHostResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetComputeHostResponse.Builder::opcRequestId)
-                .callSync();
-    }
-
-    @Override
     public GetComputeHostGroupResponse getComputeHostGroup(GetComputeHostGroupRequest request) {
 
         Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
@@ -2004,6 +1976,34 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString("etag", GetComputeHostGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetComputeHostGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetComputeHostsResponse getComputeHosts(GetComputeHostsRequest request) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+
+        return clientCall(request, GetComputeHostsResponse::builder)
+                .logger(LOG, "getComputeHosts")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeHosts",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHosts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeHostsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHost.class,
+                        GetComputeHostsResponse.Builder::computeHost)
+                .handleResponseHeaderString("etag", GetComputeHostsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeHostsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -4023,38 +4023,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
-    public UpdateComputeHostResponse updateComputeHost(UpdateComputeHostRequest request) {
-
-        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateComputeHostDetails(), "updateComputeHostDetails is required");
-
-        return clientCall(request, UpdateComputeHostResponse::builder)
-                .logger(LOG, "updateComputeHost")
-                .serviceDetails(
-                        "Compute",
-                        "UpdateComputeHost",
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHost")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateComputeHostRequest::builder)
-                .basePath("/20160918")
-                .appendPathParam("computeHosts")
-                .appendPathParam(request.getComputeHostId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString("etag", UpdateComputeHostResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateComputeHostResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateComputeHostResponse.Builder::opcWorkRequestId)
-                .callSync();
-    }
-
-    @Override
     public UpdateComputeHostGroupResponse updateComputeHostGroup(
             UpdateComputeHostGroupRequest request) {
 
@@ -4091,6 +4059,38 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateComputeHostGroupResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateComputeHostsResponse updateComputeHosts(UpdateComputeHostsRequest request) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeHostsDetails(), "updateComputeHostsDetails is required");
+
+        return clientCall(request, UpdateComputeHostsResponse::builder)
+                .logger(LOG, "updateComputeHosts")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeHosts",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHosts")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeHostsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString("etag", UpdateComputeHostsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateComputeHostsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateComputeHostsResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

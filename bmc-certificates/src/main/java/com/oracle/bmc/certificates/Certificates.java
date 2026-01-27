@@ -64,7 +64,7 @@ public interface Certificates extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Gets a ca-bundle bundle.
+     * Gets the bundle for the specified CA bundle.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -79,9 +79,9 @@ public interface Certificates extends AutoCloseable {
     GetCaBundleResponse getCaBundle(GetCaBundleRequest request);
 
     /**
-     * Gets a certificate authority bundle that matches either the specified `stage`, `name`, or
-     * `versionNumber` parameter. If none of these parameters are provided, the bundle for the
-     * certificate authority version marked as `CURRENT` will be returned.
+     * Gets a bundle for a certificate authority (CA) that matches either the specified `stage`,
+     * `name`, or `versionNumber` parameter. If none of these parameters are provided, the bundle
+     * for the CA version marked as `CURRENT` is returned.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -100,11 +100,12 @@ public interface Certificates extends AutoCloseable {
     /**
      * Gets a certificate bundle that matches either the specified `stage`, `versionName`, or
      * `versionNumber` parameter. If none of these parameters are provided, the bundle for the
-     * certificate version marked as `CURRENT` will be returned.
+     * certificate version marked as `CURRENT` is returned.
      *
-     * <p>By default, the private key is not included in the query result, and a
-     * CertificateBundlePublicOnly is returned. If the private key is needed, use the
-     * CertificateBundleTypeQueryParam parameter to get a CertificateBundleWithPrivateKey response.
+     * <p>By default, the private key is not included in the query result, and only the certificate
+     * bundle is returned. If you also need the private key, you can use the parameter
+     * `CertificateBundleTypeQueryParam` to indicate that you want a certificate bundle along with
+     * its private key as a response to your request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -120,7 +121,7 @@ public interface Certificates extends AutoCloseable {
     GetCertificateBundleResponse getCertificateBundle(GetCertificateBundleRequest request);
 
     /**
-     * Lists all certificate authority bundle versions for the specified certificate authority.
+     * Lists all versions of bundles for a given certificate authority (CA).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

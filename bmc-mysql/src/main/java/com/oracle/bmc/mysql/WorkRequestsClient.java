@@ -123,6 +123,31 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, CancelWorkRequestResponse::builder)
+                .logger(LOG, "cancelWorkRequest")
+                .serviceDetails(
+                        "WorkRequests",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/WorkRequest/CancelWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(CancelWorkRequestRequest::builder)
+                .basePath("/20190415")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");

@@ -9236,20 +9236,6 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.core.model.UpdateComputeHostDetails",
-    "allDeclaredFields": true,
-    "allDeclaredMethods": true,
-    "queryAllDeclaredConstructors": true
-  },
-  {
-    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.core.model.UpdateComputeHostDetails$Builder",
-    "allDeclaredFields": true,
-    "allDeclaredMethods": true,
-    "allDeclaredConstructors": true
-  },
-  {
-    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.core.model.UpdateComputeHostGroupDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -9258,6 +9244,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.core.model.UpdateComputeHostGroupDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.core.model.UpdateComputeHostsDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.core.model.UpdateComputeHostsDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true

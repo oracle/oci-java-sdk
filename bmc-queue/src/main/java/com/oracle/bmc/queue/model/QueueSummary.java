@@ -32,7 +32,8 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         "messagesEndpoint",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "capabilities"
     })
     public QueueSummary(
             String id,
@@ -45,7 +46,8 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
             String messagesEndpoint,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<QueueCapability> capabilities) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -58,6 +60,7 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.capabilities = capabilities;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -264,6 +267,21 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /** The list of capabilities enabled on the queue */
+        @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
+        private java.util.List<QueueCapability> capabilities;
+
+        /**
+         * The list of capabilities enabled on the queue
+         *
+         * @param capabilities the value to set
+         * @return this builder
+         */
+        public Builder capabilities(java.util.List<QueueCapability> capabilities) {
+            this.capabilities = capabilities;
+            this.__explicitlySet__.add("capabilities");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -281,7 +299,8 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.messagesEndpoint,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.capabilities);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -322,6 +341,9 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("capabilities")) {
+                this.capabilities(model.getCapabilities());
             }
             return this;
         }
@@ -515,6 +537,19 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         return systemTags;
     }
 
+    /** The list of capabilities enabled on the queue */
+    @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
+    private final java.util.List<QueueCapability> capabilities;
+
+    /**
+     * The list of capabilities enabled on the queue
+     *
+     * @return the value
+     */
+    public java.util.List<QueueCapability> getCapabilities() {
+        return capabilities;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -541,6 +576,7 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", capabilities=").append(String.valueOf(this.capabilities));
         sb.append(")");
         return sb.toString();
     }
@@ -566,6 +602,7 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.capabilities, other.capabilities)
                 && super.equals(other);
     }
 
@@ -592,6 +629,7 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.capabilities == null ? 43 : this.capabilities.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

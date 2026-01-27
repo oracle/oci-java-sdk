@@ -21,10 +21,11 @@ package com.oracle.bmc.generativeaiagent.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class LlmConfig extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"routingLlmCustomization"})
-    public LlmConfig(LlmCustomization routingLlmCustomization) {
+    @java.beans.ConstructorProperties({"routingLlmCustomization", "runtimeVersion"})
+    public LlmConfig(LlmCustomization routingLlmCustomization, String runtimeVersion) {
         super();
         this.routingLlmCustomization = routingLlmCustomization;
+        this.runtimeVersion = runtimeVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -38,12 +39,27 @@ public final class LlmConfig extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("routingLlmCustomization");
             return this;
         }
+        /** The runtimeVersion of the system prompt. */
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeVersion")
+        private String runtimeVersion;
+
+        /**
+         * The runtimeVersion of the system prompt.
+         *
+         * @param runtimeVersion the value to set
+         * @return this builder
+         */
+        public Builder runtimeVersion(String runtimeVersion) {
+            this.runtimeVersion = runtimeVersion;
+            this.__explicitlySet__.add("runtimeVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LlmConfig build() {
-            LlmConfig model = new LlmConfig(this.routingLlmCustomization);
+            LlmConfig model = new LlmConfig(this.routingLlmCustomization, this.runtimeVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -54,6 +70,9 @@ public final class LlmConfig extends com.oracle.bmc.http.client.internal.Explici
         public Builder copy(LlmConfig model) {
             if (model.wasPropertyExplicitlySet("routingLlmCustomization")) {
                 this.routingLlmCustomization(model.getRoutingLlmCustomization());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeVersion")) {
+                this.runtimeVersion(model.getRuntimeVersion());
             }
             return this;
         }
@@ -75,6 +94,19 @@ public final class LlmConfig extends com.oracle.bmc.http.client.internal.Explici
         return routingLlmCustomization;
     }
 
+    /** The runtimeVersion of the system prompt. */
+    @com.fasterxml.jackson.annotation.JsonProperty("runtimeVersion")
+    private final String runtimeVersion;
+
+    /**
+     * The runtimeVersion of the system prompt.
+     *
+     * @return the value
+     */
+    public String getRuntimeVersion() {
+        return runtimeVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -91,6 +123,7 @@ public final class LlmConfig extends com.oracle.bmc.http.client.internal.Explici
         sb.append("LlmConfig(");
         sb.append("super=").append(super.toString());
         sb.append("routingLlmCustomization=").append(String.valueOf(this.routingLlmCustomization));
+        sb.append(", runtimeVersion=").append(String.valueOf(this.runtimeVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -106,6 +139,7 @@ public final class LlmConfig extends com.oracle.bmc.http.client.internal.Explici
 
         LlmConfig other = (LlmConfig) o;
         return java.util.Objects.equals(this.routingLlmCustomization, other.routingLlmCustomization)
+                && java.util.Objects.equals(this.runtimeVersion, other.runtimeVersion)
                 && super.equals(other);
     }
 
@@ -118,6 +152,9 @@ public final class LlmConfig extends com.oracle.bmc.http.client.internal.Explici
                         + (this.routingLlmCustomization == null
                                 ? 43
                                 : this.routingLlmCustomization.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runtimeVersion == null ? 43 : this.runtimeVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

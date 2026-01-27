@@ -29,7 +29,9 @@ public final class DeployArtifactsDetails
         "subnetId",
         "adb",
         "ggcs",
-        "dataflow"
+        "dataflow",
+        "omk",
+        "oke"
     })
     public DeployArtifactsDetails(
             java.util.List<StackTemplate> stackTemplates,
@@ -37,7 +39,9 @@ public final class DeployArtifactsDetails
             String subnetId,
             java.util.List<AdbArtifactsDetail> adb,
             java.util.List<GgcsArtifactsDetail> ggcs,
-            java.util.List<DataflowArtifactsDetail> dataflow) {
+            java.util.List<DataflowArtifactsDetail> dataflow,
+            java.util.List<OmkArtifactsDetail> omk,
+            java.util.List<OkeArtifactsDetail> oke) {
         super();
         this.stackTemplates = stackTemplates;
         this.services = services;
@@ -45,6 +49,8 @@ public final class DeployArtifactsDetails
         this.adb = adb;
         this.ggcs = ggcs;
         this.dataflow = dataflow;
+        this.omk = omk;
+        this.oke = oke;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -139,6 +145,36 @@ public final class DeployArtifactsDetails
             this.__explicitlySet__.add("dataflow");
             return this;
         }
+        /** Omk artifact details if omk is included in the services. */
+        @com.fasterxml.jackson.annotation.JsonProperty("omk")
+        private java.util.List<OmkArtifactsDetail> omk;
+
+        /**
+         * Omk artifact details if omk is included in the services.
+         *
+         * @param omk the value to set
+         * @return this builder
+         */
+        public Builder omk(java.util.List<OmkArtifactsDetail> omk) {
+            this.omk = omk;
+            this.__explicitlySet__.add("omk");
+            return this;
+        }
+        /** Oke artifact details if oke is included in the services. */
+        @com.fasterxml.jackson.annotation.JsonProperty("oke")
+        private java.util.List<OkeArtifactsDetail> oke;
+
+        /**
+         * Oke artifact details if oke is included in the services.
+         *
+         * @param oke the value to set
+         * @return this builder
+         */
+        public Builder oke(java.util.List<OkeArtifactsDetail> oke) {
+            this.oke = oke;
+            this.__explicitlySet__.add("oke");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -151,7 +187,9 @@ public final class DeployArtifactsDetails
                             this.subnetId,
                             this.adb,
                             this.ggcs,
-                            this.dataflow);
+                            this.dataflow,
+                            this.omk,
+                            this.oke);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -177,6 +215,12 @@ public final class DeployArtifactsDetails
             }
             if (model.wasPropertyExplicitlySet("dataflow")) {
                 this.dataflow(model.getDataflow());
+            }
+            if (model.wasPropertyExplicitlySet("omk")) {
+                this.omk(model.getOmk());
+            }
+            if (model.wasPropertyExplicitlySet("oke")) {
+                this.oke(model.getOke());
             }
             return this;
         }
@@ -269,6 +313,32 @@ public final class DeployArtifactsDetails
         return dataflow;
     }
 
+    /** Omk artifact details if omk is included in the services. */
+    @com.fasterxml.jackson.annotation.JsonProperty("omk")
+    private final java.util.List<OmkArtifactsDetail> omk;
+
+    /**
+     * Omk artifact details if omk is included in the services.
+     *
+     * @return the value
+     */
+    public java.util.List<OmkArtifactsDetail> getOmk() {
+        return omk;
+    }
+
+    /** Oke artifact details if oke is included in the services. */
+    @com.fasterxml.jackson.annotation.JsonProperty("oke")
+    private final java.util.List<OkeArtifactsDetail> oke;
+
+    /**
+     * Oke artifact details if oke is included in the services.
+     *
+     * @return the value
+     */
+    public java.util.List<OkeArtifactsDetail> getOke() {
+        return oke;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -290,6 +360,8 @@ public final class DeployArtifactsDetails
         sb.append(", adb=").append(String.valueOf(this.adb));
         sb.append(", ggcs=").append(String.valueOf(this.ggcs));
         sb.append(", dataflow=").append(String.valueOf(this.dataflow));
+        sb.append(", omk=").append(String.valueOf(this.omk));
+        sb.append(", oke=").append(String.valueOf(this.oke));
         sb.append(")");
         return sb.toString();
     }
@@ -310,6 +382,8 @@ public final class DeployArtifactsDetails
                 && java.util.Objects.equals(this.adb, other.adb)
                 && java.util.Objects.equals(this.ggcs, other.ggcs)
                 && java.util.Objects.equals(this.dataflow, other.dataflow)
+                && java.util.Objects.equals(this.omk, other.omk)
+                && java.util.Objects.equals(this.oke, other.oke)
                 && super.equals(other);
     }
 
@@ -325,6 +399,8 @@ public final class DeployArtifactsDetails
         result = (result * PRIME) + (this.adb == null ? 43 : this.adb.hashCode());
         result = (result * PRIME) + (this.ggcs == null ? 43 : this.ggcs.hashCode());
         result = (result * PRIME) + (this.dataflow == null ? 43 : this.dataflow.hashCode());
+        result = (result * PRIME) + (this.omk == null ? 43 : this.omk.hashCode());
+        result = (result * PRIME) + (this.oke == null ? 43 : this.oke.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

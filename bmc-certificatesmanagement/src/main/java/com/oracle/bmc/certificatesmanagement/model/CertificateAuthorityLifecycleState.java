@@ -16,6 +16,7 @@ public enum CertificateAuthorityLifecycleState implements com.oracle.bmc.http.in
     PendingDeletion("PENDING_DELETION"),
     CancellingDeletion("CANCELLING_DELETION"),
     Failed("FAILED"),
+    PendingActivation("PENDING_ACTIVATION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

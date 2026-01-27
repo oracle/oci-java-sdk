@@ -43,6 +43,13 @@ public class RestartAutonomousDatabaseRequest
     public String getIfMatch() {
         return ifMatch;
     }
+    /** If provided, an online restart will be triggered. */
+    private Boolean isOnlineRestart;
+
+    /** If provided, an online restart will be triggered. */
+    public Boolean getIsOnlineRestart() {
+        return isOnlineRestart;
+    }
     /**
      * Indicates that the request is a dry run, if set to "true". A dry run request does not
      * actually creating or updating a resource and is used only to perform validation on the
@@ -105,6 +112,20 @@ public class RestartAutonomousDatabaseRequest
             return this;
         }
 
+        /** If provided, an online restart will be triggered. */
+        private Boolean isOnlineRestart = null;
+
+        /**
+         * If provided, an online restart will be triggered.
+         *
+         * @param isOnlineRestart the value to set
+         * @return this builder instance
+         */
+        public Builder isOnlineRestart(Boolean isOnlineRestart) {
+            this.isOnlineRestart = isOnlineRestart;
+            return this;
+        }
+
         /**
          * Indicates that the request is a dry run, if set to "true". A dry run request does not
          * actually creating or updating a resource and is used only to perform validation on the
@@ -157,6 +178,7 @@ public class RestartAutonomousDatabaseRequest
         public Builder copy(RestartAutonomousDatabaseRequest o) {
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             ifMatch(o.getIfMatch());
+            isOnlineRestart(o.getIsOnlineRestart());
             opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -194,9 +216,11 @@ public class RestartAutonomousDatabaseRequest
             RestartAutonomousDatabaseRequest request = new RestartAutonomousDatabaseRequest();
             request.autonomousDatabaseId = autonomousDatabaseId;
             request.ifMatch = ifMatch;
+            request.isOnlineRestart = isOnlineRestart;
             request.opcDryRun = opcDryRun;
             return request;
-            // new RestartAutonomousDatabaseRequest(autonomousDatabaseId, ifMatch, opcDryRun);
+            // new RestartAutonomousDatabaseRequest(autonomousDatabaseId, ifMatch, isOnlineRestart,
+            // opcDryRun);
         }
     }
 
@@ -209,6 +233,7 @@ public class RestartAutonomousDatabaseRequest
         return new Builder()
                 .autonomousDatabaseId(autonomousDatabaseId)
                 .ifMatch(ifMatch)
+                .isOnlineRestart(isOnlineRestart)
                 .opcDryRun(opcDryRun);
     }
 
@@ -228,6 +253,7 @@ public class RestartAutonomousDatabaseRequest
         sb.append("super=").append(super.toString());
         sb.append(",autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",isOnlineRestart=").append(String.valueOf(this.isOnlineRestart));
         sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
@@ -246,6 +272,7 @@ public class RestartAutonomousDatabaseRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.isOnlineRestart, other.isOnlineRestart)
                 && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
@@ -259,6 +286,9 @@ public class RestartAutonomousDatabaseRequest
                                 ? 43
                                 : this.autonomousDatabaseId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOnlineRestart == null ? 43 : this.isOnlineRestart.hashCode());
         result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }

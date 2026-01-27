@@ -645,6 +645,7 @@ public class ComputeManagementClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam("launch")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-compute-cluster-id", request.getOpcComputeClusterId())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.Instance.class,

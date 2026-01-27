@@ -10,6 +10,8 @@ import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyPair;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.interfaces.RSAPublicKey;
 import java.time.Duration;
 import java.util.Base64;
@@ -23,6 +25,9 @@ import com.oracle.bmc.auth.internal.AbstractFederationClient;
 import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.auth.internal.SecurityTokenAdapter;
 import com.oracle.bmc.auth.internal.X509FederationClient;
+import com.oracle.bmc.auth.okeworkloadidentity.internal.contract.GetOkeResourcePrincipalSessionTokenAndKeysDetails;
+import com.oracle.bmc.auth.okeworkloadidentity.internal.contract.GetOkeResourcePrincipalSessionTokenAndKeysRequest;
+import com.oracle.bmc.auth.okeworkloadidentity.internal.contract.OkeResourcePrincipalSessionTokenAndKeys;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.Priorities;
@@ -31,6 +36,7 @@ import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.HttpProvider;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.http.client.pki.Pem;
 import com.oracle.bmc.http.internal.AuthnClientFilter;
 import com.oracle.bmc.http.internal.ClientCall;
 import com.oracle.bmc.http.internal.ClientIdFilter;
@@ -108,7 +114,13 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
             Duration time = Duration.ZERO;
             if (securityTokenAdapter.isValid()) {
                 if (securityTokenAdapter.getTokenValidDuration() != null) {
-                    time = securityTokenAdapter.getTokenValidDuration().dividedBy(2);
+                    // Calculate the half of the token's total valid duration
+                    Duration halfDuration =
+                            securityTokenAdapter.getTokenValidDuration().dividedBy(2);
+                    // Generate Jitter Factor: a random value between 0.95 and 1.05 (i.e., ±5%)
+                    double jitterFactor = 1.0 + (Math.random() * 0.1 - 0.05);
+                    // Apply the jitter factor
+                    time = halfDuration.multipliedBy((long) (jitterFactor * 1000)).dividedBy(1000);
                 }
             }
             String token = refreshAndGetSecurityTokenIfExpiringWithin(time);
@@ -193,8 +205,28 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
     protected SecurityTokenAdapter getSecurityTokenFromServer() {
         LOG.info("Getting security token from the proxymux server");
         // Get service account token.
-        String token = serviceAccountTokenSupplier.getServiceAccountToken();
+        String serviceAccountToken = serviceAccountTokenSupplier.getServiceAccountToken();
 
+        // generating a full 3 part opc-request-id for rpst call
+        String opcRequestId = ClientCall.generateRequestId();
+        LOG.debug("Request id for resourcePrincipalSessionTokens request: '{}'", opcRequestId);
+
+        /* If the SettableSessionKeySupplier is configured as sessionKeySupplier then prefer new ServiceAccount
+         * level token caching which involves calling new caching enabled endpoint of proxymux else
+         * fallback to old endpoint
+         */
+        if (sessionKeySupplier instanceof SettableSessionKeySupplier) {
+            LOG.info(
+                    "Since the sessionKeySupplier implements SettableSessionKeySupplier, the client is configured for ServiceAccount level caching (i.e. isTokenCachingEnabled == true)");
+            return getSecurityTokenFromServerV2(serviceAccountToken, opcRequestId);
+        } else {
+            LOG.info(
+                    "Since the sessionKeySupplier does not implement SettableSessionKeySupplier, the client is not configured for ServiceAccount level caching which is default behaviour");
+            return getSecurityTokenFromServerV1(serviceAccountToken, opcRequestId);
+        }
+    }
+
+    private SecurityTokenAdapter getSecurityTokenFromServerV1(String token, String opcRequestId) {
         // Generate private/public key pair.
         KeyPair keyPair = sessionKeySupplier.getKeyPair();
         if (keyPair == null) {
@@ -204,9 +236,6 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
         if (publicKey == null) {
             throw new IllegalArgumentException("Public key is not present");
         }
-        // generating a full 3 part opc-request-id for rpst call
-        String opcRequestId = ClientCall.generateRequestId();
-        LOG.debug("Request id for resourcePrincipalSessionTokens request: '{}'", opcRequestId);
 
         GetOkeResourcePrincipalSessionTokenDetails getOkeResourcePrincipalSessionTokenDetails =
                 GetOkeResourcePrincipalSessionTokenDetails.builder()
@@ -247,7 +276,8 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
         try {
             // Decode the response and get rpst token.
             String payload = okeResourcePrincipalSessionToken.getToken();
-            String jsonString = new String(Base64.getDecoder().decode(payload), "UTF-8");
+            String jsonString =
+                    new String(Base64.getDecoder().decode(payload), StandardCharsets.UTF_8);
 
             Serializer serializer = Serializer.getDefault();
             OkeResourcePrincipalSessionToken decoded =
@@ -255,7 +285,6 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
 
             // Remove duplicated "ST$" for the token.
             String jwtToken = decoded.getToken().substring(3);
-
             return new SecurityTokenAdapter(jwtToken, sessionKeySupplier);
         } catch (UnsupportedEncodingException e) {
             throw new IllegalArgumentException(
@@ -265,6 +294,76 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
             throw new IllegalArgumentException(
                     "RPST cannot be parsed correctly. Please contact OKE Foundation team for help.",
                     e);
+        }
+    }
+
+    private SecurityTokenAdapter getSecurityTokenFromServerV2(String token, String opcRequestId) {
+        GetOkeResourcePrincipalSessionTokenAndKeysDetails getTokenRequestDetails =
+                GetOkeResourcePrincipalSessionTokenAndKeysDetails.builder().build();
+
+        GetOkeResourcePrincipalSessionTokenAndKeysRequest getTokenRequest =
+                GetOkeResourcePrincipalSessionTokenAndKeysRequest.builder()
+                        .getOkeResourcePrincipalSessionTokenDetails(getTokenRequestDetails)
+                        .build();
+
+        OkeResourcePrincipalSessionToken okeResourcePrincipalSessionToken =
+                ClientCall.builder(
+                                resourcePrincipalTokenClient,
+                                getTokenRequest,
+                                GetOkeResourcePrincipalSessionTokenResponse.Builder::new)
+                        .logger(LOG, "OkeWorkloadIdentityResourcePrincipalsTokenClientWithCaching")
+                        .serviceDetails(
+                                "OkeWorkloadIdentity",
+                                "resourcePrincipalSessionTokensWithCaching",
+                                "Unknown API reference link")
+                        .method(Method.POST)
+                        .requestBuilder(GetOkeResourcePrincipalSessionTokenAndKeysRequest::builder)
+                        .appendPathPart("resourcePrincipalSessionTokensWithCaching")
+                        .accept("application/json")
+                        .appendHeader(AUTHORIZATION_HEADER, String.format(JWT_FORMAT, token))
+                        .appendHeader(OPC_REQUEST_ID_HEADER, opcRequestId)
+                        .hasBody()
+                        .handleBody(
+                                OkeResourcePrincipalSessionToken.class,
+                                GetOkeResourcePrincipalSessionTokenResponse.Builder::body)
+                        .clientConfigurator(clientConfigurator)
+                        .circuitBreaker(circuitBreaker)
+                        .callSync()
+                        .body;
+        try {
+            // Decode the response and get rpst token + key pair.
+            String payload = okeResourcePrincipalSessionToken.getToken();
+            String jsonString =
+                    new String(Base64.getDecoder().decode(payload), StandardCharsets.UTF_8);
+
+            Serializer serializer = Serializer.getDefault();
+            OkeResourcePrincipalSessionTokenAndKeys response =
+                    serializer.readValue(jsonString, OkeResourcePrincipalSessionTokenAndKeys.class);
+
+            // Remove duplicated "ST$" for the token.
+            String jwtToken = response.getToken().substring(3);
+
+            String publicKeyPem =
+                    new String(
+                            Base64.getDecoder().decode(response.getPublicKey()),
+                            StandardCharsets.UTF_8);
+            // Decode a public key from the PEM encoded public key
+            final PublicKey publicKey = Pem.decoder().decodePublicKey(publicKeyPem);
+
+            // Decode a private key from the PEM encoded private key as UTF-8 encoded bytes
+            final PrivateKey privateKey =
+                    Pem.decoder()
+                            .decodePrivateKey(Base64.getDecoder().decode(response.getPrivateKey()));
+
+            if (this.sessionKeySupplier instanceof SettableSessionKeySupplier) {
+                SettableSessionKeySupplier sessionKeySupplier =
+                        (SettableSessionKeySupplier) this.sessionKeySupplier;
+                sessionKeySupplier.setKeyPair(new KeyPair(publicKey, privateKey));
+            }
+            return new SecurityTokenAdapter(jwtToken, sessionKeySupplier);
+        } catch (Exception e) {
+            throw new IllegalArgumentException(
+                    "Error generating token or key pair from encoded strings", e);
         }
     }
 }

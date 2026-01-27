@@ -7,11 +7,11 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeHostExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetComputeHostRequest.
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeHostsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetComputeHostsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class GetComputeHostRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+public class GetComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
@@ -42,7 +42,7 @@ public class GetComputeHostRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    GetComputeHostRequest, java.lang.Void> {
+                    GetComputeHostsRequest, java.lang.Void> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
@@ -111,7 +111,7 @@ public class GetComputeHostRequest extends com.oracle.bmc.requests.BmcRequest<ja
          *
          * @return this builder instance
          */
-        public Builder copy(GetComputeHostRequest o) {
+        public Builder copy(GetComputeHostsRequest o) {
             computeHostId(o.getComputeHostId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -120,7 +120,7 @@ public class GetComputeHostRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Build the instance of GetComputeHostRequest as configured by this builder
+         * Build the instance of GetComputeHostsRequest as configured by this builder
          *
          * <p>Note that this method takes calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
@@ -128,30 +128,30 @@ public class GetComputeHostRequest extends com.oracle.bmc.requests.BmcRequest<ja
          *
          * <p>This is the preferred method to build an instance.
          *
-         * @return instance of GetComputeHostRequest
+         * @return instance of GetComputeHostsRequest
          */
-        public GetComputeHostRequest build() {
-            GetComputeHostRequest request = buildWithoutInvocationCallback();
+        public GetComputeHostsRequest build() {
+            GetComputeHostsRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
 
         /**
-         * Build the instance of GetComputeHostRequest as configured by this builder
+         * Build the instance of GetComputeHostsRequest as configured by this builder
          *
          * <p>Note that this method does not take calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
-         * @return instance of GetComputeHostRequest
+         * @return instance of GetComputeHostsRequest
          */
-        public GetComputeHostRequest buildWithoutInvocationCallback() {
-            GetComputeHostRequest request = new GetComputeHostRequest();
+        public GetComputeHostsRequest buildWithoutInvocationCallback() {
+            GetComputeHostsRequest request = new GetComputeHostsRequest();
             request.computeHostId = computeHostId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetComputeHostRequest(computeHostId, opcRequestId);
+            // new GetComputeHostsRequest(computeHostId, opcRequestId);
         }
     }
 
@@ -189,11 +189,11 @@ public class GetComputeHostRequest extends com.oracle.bmc.requests.BmcRequest<ja
         if (this == o) {
             return true;
         }
-        if (!(o instanceof GetComputeHostRequest)) {
+        if (!(o instanceof GetComputeHostsRequest)) {
             return false;
         }
 
-        GetComputeHostRequest other = (GetComputeHostRequest) o;
+        GetComputeHostsRequest other = (GetComputeHostsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.computeHostId, other.computeHostId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);

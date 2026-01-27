@@ -690,6 +690,41 @@ public class KafkaClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListNodeShapesResponse> listNodeShapes(
+            ListNodeShapesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListNodeShapesRequest, ListNodeShapesResponse>
+                    handler) {
+
+        return clientCall(request, ListNodeShapesResponse::builder)
+                .logger(LOG, "listNodeShapes")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ListNodeShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/ListNodeShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNodeShapesRequest::builder)
+                .basePath("/20240901")
+                .appendPathParam("nodeShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.managedkafka.model.NodeShapeCollection.class,
+                        ListNodeShapesResponse.Builder::nodeShapeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNodeShapesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNodeShapesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

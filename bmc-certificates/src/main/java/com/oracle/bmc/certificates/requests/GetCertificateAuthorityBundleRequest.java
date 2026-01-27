@@ -64,6 +64,7 @@ public class GetCertificateAuthorityBundleRequest
     public enum Stage implements com.oracle.bmc.http.internal.BmcEnum {
         Current("CURRENT"),
         Pending("PENDING"),
+        PendingActivation("PENDING_ACTIVATION"),
         Latest("LATEST"),
         Previous("PREVIOUS"),
         Deprecated("DEPRECATED"),

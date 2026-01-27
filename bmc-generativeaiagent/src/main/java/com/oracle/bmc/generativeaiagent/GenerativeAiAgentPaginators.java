@@ -637,6 +637,133 @@ public class GenerativeAiAgentPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listProvisionedCapacities operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListProvisionedCapacitiesResponse> listProvisionedCapacitiesResponseIterator(
+            final ListProvisionedCapacitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProvisionedCapacitiesRequest.Builder,
+                ListProvisionedCapacitiesRequest,
+                ListProvisionedCapacitiesResponse>(
+                new java.util.function.Supplier<ListProvisionedCapacitiesRequest.Builder>() {
+                    @Override
+                    public ListProvisionedCapacitiesRequest.Builder get() {
+                        return ListProvisionedCapacitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProvisionedCapacitiesResponse, String>() {
+                    @Override
+                    public String apply(ListProvisionedCapacitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProvisionedCapacitiesRequest.Builder>,
+                        ListProvisionedCapacitiesRequest>() {
+                    @Override
+                    public ListProvisionedCapacitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProvisionedCapacitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListProvisionedCapacitiesRequest, ListProvisionedCapacitiesResponse>() {
+                    @Override
+                    public ListProvisionedCapacitiesResponse apply(
+                            ListProvisionedCapacitiesRequest request) {
+                        return client.listProvisionedCapacities(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeaiagent.model.ProvisionedCapacitySummary} objects contained in
+     * responses from the listProvisionedCapacities operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeaiagent.model.ProvisionedCapacitySummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeaiagent.model.ProvisionedCapacitySummary>
+            listProvisionedCapacitiesRecordIterator(
+                    final ListProvisionedCapacitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProvisionedCapacitiesRequest.Builder,
+                ListProvisionedCapacitiesRequest,
+                ListProvisionedCapacitiesResponse,
+                com.oracle.bmc.generativeaiagent.model.ProvisionedCapacitySummary>(
+                new java.util.function.Supplier<ListProvisionedCapacitiesRequest.Builder>() {
+                    @Override
+                    public ListProvisionedCapacitiesRequest.Builder get() {
+                        return ListProvisionedCapacitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProvisionedCapacitiesResponse, String>() {
+                    @Override
+                    public String apply(ListProvisionedCapacitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProvisionedCapacitiesRequest.Builder>,
+                        ListProvisionedCapacitiesRequest>() {
+                    @Override
+                    public ListProvisionedCapacitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProvisionedCapacitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListProvisionedCapacitiesRequest, ListProvisionedCapacitiesResponse>() {
+                    @Override
+                    public ListProvisionedCapacitiesResponse apply(
+                            ListProvisionedCapacitiesRequest request) {
+                        return client.listProvisionedCapacities(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListProvisionedCapacitiesResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeaiagent.model
+                                        .ProvisionedCapacitySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.generativeaiagent.model
+                                            .ProvisionedCapacitySummary>
+                            apply(ListProvisionedCapacitiesResponse response) {
+                        return response.getProvisionedCapacityCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listTools
      * operation. This iterable will fetch more data from the server as needed.
      *

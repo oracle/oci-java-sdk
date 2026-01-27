@@ -3,6 +3,35 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.79.0 - 2026-01-27
+### Added 
+- Support for message fanout with filtering using Consumer Groups in the Queue service 
+- Support for model selection on Agent and RAG/SQL Tool in the OCI Generative AI Agent service 
+- Support for new rolling restart option for autonomous databases in the Database service 
+- Support for importing external Certificate Authority hierarchies with two new Certificate Authority types in the Certificates service 
+- Support for specifying Certificate Authority name and path constraints with new Issuance Rules in the Certificates service 
+- Support for Management Appliance in the Oracle Cloud VMware Provisioning service 
+- Support for creating and updating load balancer configuration for a cluster in the OpenSearch service  
+- Support for more processor families when selecting clusters in the OCI Streaming with Apache Kafka service 
+- Support for compute cluster in instance pool and instance configuration in the Compute Service 
+- Support for AI Data Platform, Oracle Managed Kubernetes, and Oracle Kubernetes Engine in the Data Intelligence Foundation service 
+- Support for exporting backup images to customer Object Storage buckets and for canceling ongoing export operations in the MySQL HeatWave service 
+- Support for enhanced token caching behavior in the OKE Workload Identity Authentication Provider   
+
+### Breaking Changes 
+- Method `public com.oracle.bmc.core.responses.GetComputeHostResponse getComputeHost(com.oracle.bmc.core.requests.GetComputeHostRequest)` has been removed from the model `com.oracle.bmc.core.Compute` in the Compute service 
+- Method `public com.oracle.bmc.core.responses.UpdateComputeHostResponse updateComputeHost(com.oracle.bmc.core.requests.UpdateComputeHostRequest)` has been removed from the model `com.oracle.bmc.core.Compute` in the Compute service 
+- Method `public com.oracle.bmc.waiter.Waiter forComputeHost(com.oracle.bmc.core.requests.GetComputeHostRequest, com.oracle.bmc.core.model.ComputeHost$LifecycleState[])` has been removed from the model `com.oracle.bmc.core.ComputeWaiters` in the Compute service 
+- Method `public com.oracle.bmc.waiter.Waiter forComputeHost(com.oracle.bmc.core.requests.GetComputeHostRequest, com.oracle.bmc.core.model.ComputeHost$LifecycleState, com.oracle.bmc.waiter.TerminationStrategy, com.oracle.bmc.waiter.DelayStrategy)` has been removed from the model `com.oracle.bmc.core.ComputeWaiters` in the Compute service 
+- Method `public com.oracle.bmc.waiter.Waiter forComputeHost(com.oracle.bmc.core.requests.GetComputeHostRequest, com.oracle.bmc.waiter.TerminationStrategy, com.oracle.bmc.waiter.DelayStrategy, com.oracle.bmc.core.model.ComputeHost$LifecycleState[])` has been removed from the model `com.oracle.bmc.core.ComputeWaiters` in the Compute service 
+- Method `public com.oracle.bmc.waiter.Waiter forUpdateComputeHost(com.oracle.bmc.core.requests.UpdateComputeHostRequest)` has been removed from the model `com.oracle.bmc.core.ComputeWaiters` in the Compute service 
+- Method `public com.oracle.bmc.waiter.Waiter forUpdateComputeHost(com.oracle.bmc.core.requests.UpdateComputeHostRequest, com.oracle.bmc.waiter.TerminationStrategy, com.oracle.bmc.waiter.DelayStrategy)` has been removed from the model `com.oracle.bmc.core.ComputeWaiters` in the Compute service 
+- Class `com.oracle.bmc.core.model.UpdateComputeHostDetails` has been removed from the Compute service 
+- Class `com.oracle.bmc.core.requests.GetComputeHostRequest` has been removed from the Compute service 
+- Class `com.oracle.bmc.core.requests.UpdateComputeHostRequest` has been removed from the Compute service 
+- Class `com.oracle.bmc.core.responses.GetComputeHostResponse` has been removed from the Compute service 
+- Class `com.oracle.bmc.core.responses.UpdateComputeHostResponse` has been removed from the Compute service
+
 ## 3.78.1 - 2026-01-20
 ### Added 
 - Support for the Private Service Access (PSA) service 

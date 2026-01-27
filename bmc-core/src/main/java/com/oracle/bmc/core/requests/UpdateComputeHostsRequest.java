@@ -7,13 +7,13 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeHostExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateComputeHostRequest.
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeHostsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateComputeHostsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class UpdateComputeHostRequest
+public class UpdateComputeHostsRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                com.oracle.bmc.core.model.UpdateComputeHostDetails> {
+                com.oracle.bmc.core.model.UpdateComputeHostsDetails> {
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
@@ -29,11 +29,11 @@ public class UpdateComputeHostRequest
         return computeHostId;
     }
     /** Update compute capacity topology details. */
-    private com.oracle.bmc.core.model.UpdateComputeHostDetails updateComputeHostDetails;
+    private com.oracle.bmc.core.model.UpdateComputeHostsDetails updateComputeHostsDetails;
 
     /** Update compute capacity topology details. */
-    public com.oracle.bmc.core.model.UpdateComputeHostDetails getUpdateComputeHostDetails() {
-        return updateComputeHostDetails;
+    public com.oracle.bmc.core.model.UpdateComputeHostsDetails getUpdateComputeHostsDetails() {
+        return updateComputeHostsDetails;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
@@ -92,13 +92,14 @@ public class UpdateComputeHostRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public com.oracle.bmc.core.model.UpdateComputeHostDetails getBody$() {
-        return updateComputeHostDetails;
+    public com.oracle.bmc.core.model.UpdateComputeHostsDetails getBody$() {
+        return updateComputeHostsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateComputeHostRequest, com.oracle.bmc.core.model.UpdateComputeHostDetails> {
+                    UpdateComputeHostsRequest,
+                    com.oracle.bmc.core.model.UpdateComputeHostsDetails> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
@@ -121,17 +122,18 @@ public class UpdateComputeHostRequest
         }
 
         /** Update compute capacity topology details. */
-        private com.oracle.bmc.core.model.UpdateComputeHostDetails updateComputeHostDetails = null;
+        private com.oracle.bmc.core.model.UpdateComputeHostsDetails updateComputeHostsDetails =
+                null;
 
         /**
          * Update compute capacity topology details.
          *
-         * @param updateComputeHostDetails the value to set
+         * @param updateComputeHostsDetails the value to set
          * @return this builder instance
          */
-        public Builder updateComputeHostDetails(
-                com.oracle.bmc.core.model.UpdateComputeHostDetails updateComputeHostDetails) {
-            this.updateComputeHostDetails = updateComputeHostDetails;
+        public Builder updateComputeHostsDetails(
+                com.oracle.bmc.core.model.UpdateComputeHostsDetails updateComputeHostsDetails) {
+            this.updateComputeHostsDetails = updateComputeHostsDetails;
             return this;
         }
 
@@ -228,9 +230,9 @@ public class UpdateComputeHostRequest
          *
          * @return this builder instance
          */
-        public Builder copy(UpdateComputeHostRequest o) {
+        public Builder copy(UpdateComputeHostsRequest o) {
             computeHostId(o.getComputeHostId());
-            updateComputeHostDetails(o.getUpdateComputeHostDetails());
+            updateComputeHostsDetails(o.getUpdateComputeHostsDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
@@ -240,7 +242,7 @@ public class UpdateComputeHostRequest
         }
 
         /**
-         * Build the instance of UpdateComputeHostRequest as configured by this builder
+         * Build the instance of UpdateComputeHostsRequest as configured by this builder
          *
          * <p>Note that this method takes calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
@@ -248,10 +250,10 @@ public class UpdateComputeHostRequest
          *
          * <p>This is the preferred method to build an instance.
          *
-         * @return instance of UpdateComputeHostRequest
+         * @return instance of UpdateComputeHostsRequest
          */
-        public UpdateComputeHostRequest build() {
-            UpdateComputeHostRequest request = buildWithoutInvocationCallback();
+        public UpdateComputeHostsRequest build() {
+            UpdateComputeHostsRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
@@ -264,29 +266,29 @@ public class UpdateComputeHostRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(com.oracle.bmc.core.model.UpdateComputeHostDetails body) {
-            updateComputeHostDetails(body);
+        public Builder body$(com.oracle.bmc.core.model.UpdateComputeHostsDetails body) {
+            updateComputeHostsDetails(body);
             return this;
         }
 
         /**
-         * Build the instance of UpdateComputeHostRequest as configured by this builder
+         * Build the instance of UpdateComputeHostsRequest as configured by this builder
          *
          * <p>Note that this method does not take calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
-         * @return instance of UpdateComputeHostRequest
+         * @return instance of UpdateComputeHostsRequest
          */
-        public UpdateComputeHostRequest buildWithoutInvocationCallback() {
-            UpdateComputeHostRequest request = new UpdateComputeHostRequest();
+        public UpdateComputeHostsRequest buildWithoutInvocationCallback() {
+            UpdateComputeHostsRequest request = new UpdateComputeHostsRequest();
             request.computeHostId = computeHostId;
-            request.updateComputeHostDetails = updateComputeHostDetails;
+            request.updateComputeHostsDetails = updateComputeHostsDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new UpdateComputeHostRequest(computeHostId, updateComputeHostDetails, ifMatch,
+            // new UpdateComputeHostsRequest(computeHostId, updateComputeHostsDetails, ifMatch,
             // opcRequestId, opcRetryToken);
         }
     }
@@ -299,7 +301,7 @@ public class UpdateComputeHostRequest
     public Builder toBuilder() {
         return new Builder()
                 .computeHostId(computeHostId)
-                .updateComputeHostDetails(updateComputeHostDetails)
+                .updateComputeHostsDetails(updateComputeHostsDetails)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
                 .opcRetryToken(opcRetryToken);
@@ -320,8 +322,8 @@ public class UpdateComputeHostRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",computeHostId=").append(String.valueOf(this.computeHostId));
-        sb.append(",updateComputeHostDetails=")
-                .append(String.valueOf(this.updateComputeHostDetails));
+        sb.append(",updateComputeHostsDetails=")
+                .append(String.valueOf(this.updateComputeHostsDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
@@ -334,15 +336,15 @@ public class UpdateComputeHostRequest
         if (this == o) {
             return true;
         }
-        if (!(o instanceof UpdateComputeHostRequest)) {
+        if (!(o instanceof UpdateComputeHostsRequest)) {
             return false;
         }
 
-        UpdateComputeHostRequest other = (UpdateComputeHostRequest) o;
+        UpdateComputeHostsRequest other = (UpdateComputeHostsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.computeHostId, other.computeHostId)
                 && java.util.Objects.equals(
-                        this.updateComputeHostDetails, other.updateComputeHostDetails)
+                        this.updateComputeHostsDetails, other.updateComputeHostsDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
@@ -357,9 +359,9 @@ public class UpdateComputeHostRequest
                         + (this.computeHostId == null ? 43 : this.computeHostId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.updateComputeHostDetails == null
+                        + (this.updateComputeHostsDetails == null
                                 ? 43
-                                : this.updateComputeHostDetails.hashCode());
+                                : this.updateComputeHostsDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =

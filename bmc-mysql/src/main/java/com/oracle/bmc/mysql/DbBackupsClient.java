@@ -278,6 +278,37 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ExportBackupResponse exportBackup(ExportBackupRequest request) {
+
+        Validate.notBlank(request.getBackupId(), "backupId must not be blank");
+        Objects.requireNonNull(request.getExportBackupDetails(), "exportBackupDetails is required");
+
+        return clientCall(request, ExportBackupResponse::builder)
+                .logger(LOG, "exportBackup")
+                .serviceDetails(
+                        "DbBackups",
+                        "ExportBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/ExportBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportBackupRequest::builder)
+                .basePath("/20190415")
+                .appendPathParam("backups")
+                .appendPathParam(request.getBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("export")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ExportBackupResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetBackupResponse getBackup(GetBackupRequest request) {
 
         Validate.notBlank(request.getBackupId(), "backupId must not be blank");

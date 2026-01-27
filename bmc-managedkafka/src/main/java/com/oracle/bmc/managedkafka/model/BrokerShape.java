@@ -21,12 +21,14 @@ package com.oracle.bmc.managedkafka.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class BrokerShape extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"nodeCount", "ocpuCount", "storageSizeInGbs"})
-    public BrokerShape(Integer nodeCount, Integer ocpuCount, Integer storageSizeInGbs) {
+    @java.beans.ConstructorProperties({"nodeCount", "ocpuCount", "storageSizeInGbs", "nodeShape"})
+    public BrokerShape(
+            Integer nodeCount, Integer ocpuCount, Integer storageSizeInGbs, String nodeShape) {
         super();
         this.nodeCount = nodeCount;
         this.ocpuCount = ocpuCount;
         this.storageSizeInGbs = storageSizeInGbs;
+        this.nodeShape = nodeShape;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -76,13 +78,33 @@ public final class BrokerShape extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("storageSizeInGbs");
             return this;
         }
+        /**
+         * Node shape for broker is passed as part of cluster creation, similar to
+         * VM.Standard.A1.Flex
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
+        private String nodeShape;
+
+        /**
+         * Node shape for broker is passed as part of cluster creation, similar to
+         * VM.Standard.A1.Flex
+         *
+         * @param nodeShape the value to set
+         * @return this builder
+         */
+        public Builder nodeShape(String nodeShape) {
+            this.nodeShape = nodeShape;
+            this.__explicitlySet__.add("nodeShape");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BrokerShape build() {
             BrokerShape model =
-                    new BrokerShape(this.nodeCount, this.ocpuCount, this.storageSizeInGbs);
+                    new BrokerShape(
+                            this.nodeCount, this.ocpuCount, this.storageSizeInGbs, this.nodeShape);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -99,6 +121,9 @@ public final class BrokerShape extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("storageSizeInGbs")) {
                 this.storageSizeInGbs(model.getStorageSizeInGbs());
+            }
+            if (model.wasPropertyExplicitlySet("nodeShape")) {
+                this.nodeShape(model.getNodeShape());
             }
             return this;
         }
@@ -152,6 +177,21 @@ public final class BrokerShape extends com.oracle.bmc.http.client.internal.Expli
         return storageSizeInGbs;
     }
 
+    /**
+     * Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
+    private final String nodeShape;
+
+    /**
+     * Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+     *
+     * @return the value
+     */
+    public String getNodeShape() {
+        return nodeShape;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -170,6 +210,7 @@ public final class BrokerShape extends com.oracle.bmc.http.client.internal.Expli
         sb.append("nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", storageSizeInGbs=").append(String.valueOf(this.storageSizeInGbs));
+        sb.append(", nodeShape=").append(String.valueOf(this.nodeShape));
         sb.append(")");
         return sb.toString();
     }
@@ -187,6 +228,7 @@ public final class BrokerShape extends com.oracle.bmc.http.client.internal.Expli
         return java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
                 && java.util.Objects.equals(this.storageSizeInGbs, other.storageSizeInGbs)
+                && java.util.Objects.equals(this.nodeShape, other.nodeShape)
                 && super.equals(other);
     }
 
@@ -199,6 +241,7 @@ public final class BrokerShape extends com.oracle.bmc.http.client.internal.Expli
         result =
                 (result * PRIME)
                         + (this.storageSizeInGbs == null ? 43 : this.storageSizeInGbs.hashCode());
+        result = (result * PRIME) + (this.nodeShape == null ? 43 : this.nodeShape.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

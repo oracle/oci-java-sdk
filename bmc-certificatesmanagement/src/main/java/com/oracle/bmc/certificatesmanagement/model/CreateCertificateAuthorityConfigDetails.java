@@ -27,7 +27,13 @@ package com.oracle.bmc.certificatesmanagement.model;
             name = "ROOT_CA_GENERATED_INTERNALLY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateSubordinateCaIssuedByInternalCaConfigDetails.class,
-            name = "SUBORDINATE_CA_ISSUED_BY_INTERNAL_CA")
+            name = "SUBORDINATE_CA_ISSUED_BY_INTERNAL_CA"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateRootCaManagedExternallyConfigDetails.class,
+            name = "ROOT_CA_MANAGED_EXTERNALLY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateSubordinateCaManagedInternallyIssuedByExternalCaConfigDetails.class,
+            name = "SUBORDINATE_CA_MANAGED_INTERNALLY_ISSUED_BY_EXTERNAL_CA")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

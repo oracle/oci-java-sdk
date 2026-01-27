@@ -178,6 +178,7 @@ public final class CreateInstancePoolDetails
          *
          * <p>To use the instance pool with a regional subnet, provide a placement configuration for
          * each availability domain, and include the regional subnet in each placement
+         * configuration. To use compute cluster with instance pool, provide a single placement
          * configuration.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("placementConfigurations")
@@ -190,6 +191,7 @@ public final class CreateInstancePoolDetails
          *
          * <p>To use the instance pool with a regional subnet, provide a placement configuration for
          * each availability domain, and include the regional subnet in each placement
+         * configuration. To use compute cluster with instance pool, provide a single placement
          * configuration.
          *
          * @param placementConfigurations the value to set
@@ -458,7 +460,8 @@ public final class CreateInstancePoolDetails
      * each availability domain.
      *
      * <p>To use the instance pool with a regional subnet, provide a placement configuration for
-     * each availability domain, and include the regional subnet in each placement configuration.
+     * each availability domain, and include the regional subnet in each placement configuration. To
+     * use compute cluster with instance pool, provide a single placement configuration.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("placementConfigurations")
     private final java.util.List<CreateInstancePoolPlacementConfigurationDetails>
@@ -469,7 +472,8 @@ public final class CreateInstancePoolDetails
      * each availability domain.
      *
      * <p>To use the instance pool with a regional subnet, provide a placement configuration for
-     * each availability domain, and include the regional subnet in each placement configuration.
+     * each availability domain, and include the regional subnet in each placement configuration. To
+     * use compute cluster with instance pool, provide a single placement configuration.
      *
      * @return the value
      */

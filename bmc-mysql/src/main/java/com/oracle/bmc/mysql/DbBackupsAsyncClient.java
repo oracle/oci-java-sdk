@@ -262,6 +262,39 @@ public class DbBackupsAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     }
 
     @Override
+    public java.util.concurrent.Future<ExportBackupResponse> exportBackup(
+            ExportBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ExportBackupRequest, ExportBackupResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBackupId(), "backupId must not be blank");
+        Objects.requireNonNull(request.getExportBackupDetails(), "exportBackupDetails is required");
+
+        return clientCall(request, ExportBackupResponse::builder)
+                .logger(LOG, "exportBackup")
+                .serviceDetails(
+                        "DbBackups",
+                        "ExportBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/ExportBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportBackupRequest::builder)
+                .basePath("/20190415")
+                .appendPathParam("backups")
+                .appendPathParam(request.getBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("export")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ExportBackupResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBackupResponse> getBackup(
             GetBackupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetBackupRequest, GetBackupResponse>

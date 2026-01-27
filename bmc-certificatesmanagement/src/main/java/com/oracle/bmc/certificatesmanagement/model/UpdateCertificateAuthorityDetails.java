@@ -28,6 +28,7 @@ public final class UpdateCertificateAuthorityDetails
         "currentVersionNumber",
         "certificateAuthorityConfig",
         "certificateRevocationListDetails",
+        "externalKeyDescription",
         "freeformTags",
         "definedTags",
         "certificateAuthorityRules"
@@ -37,6 +38,7 @@ public final class UpdateCertificateAuthorityDetails
             Long currentVersionNumber,
             UpdateCertificateAuthorityConfigDetails certificateAuthorityConfig,
             CertificateRevocationListDetails certificateRevocationListDetails,
+            String externalKeyDescription,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<CertificateAuthorityRule> certificateAuthorityRules) {
@@ -45,6 +47,7 @@ public final class UpdateCertificateAuthorityDetails
         this.currentVersionNumber = currentVersionNumber;
         this.certificateAuthorityConfig = certificateAuthorityConfig;
         this.certificateRevocationListDetails = certificateRevocationListDetails;
+        this.externalKeyDescription = externalKeyDescription;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.certificateAuthorityRules = certificateAuthorityRules;
@@ -52,12 +55,12 @@ public final class UpdateCertificateAuthorityDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A brief description of the CA. */
+        /** A brief description of the CA. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A brief description of the CA.
+         * A brief description of the CA. Avoid entering confidential information.
          *
          * @param description the value to set
          * @return this builder
@@ -68,14 +71,14 @@ public final class UpdateCertificateAuthorityDetails
             return this;
         }
         /**
-         * Makes this version the current version. This property cannot be updated in combination
+         * Makes this version the current version. This property can't be updated in combination
          * with any other properties.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("currentVersionNumber")
         private Long currentVersionNumber;
 
         /**
-         * Makes this version the current version. This property cannot be updated in combination
+         * Makes this version the current version. This property can't be updated in combination
          * with any other properties.
          *
          * @param currentVersionNumber the value to set
@@ -104,6 +107,25 @@ public final class UpdateCertificateAuthorityDetails
                 CertificateRevocationListDetails certificateRevocationListDetails) {
             this.certificateRevocationListDetails = certificateRevocationListDetails;
             this.__explicitlySet__.add("certificateRevocationListDetails");
+            return this;
+        }
+        /**
+         * For externally managed CAs, a description of the externally managed key. Avoid entering
+         * confidential information.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyDescription")
+        private String externalKeyDescription;
+
+        /**
+         * For externally managed CAs, a description of the externally managed key. Avoid entering
+         * confidential information.
+         *
+         * @param externalKeyDescription the value to set
+         * @return this builder
+         */
+        public Builder externalKeyDescription(String externalKeyDescription) {
+            this.externalKeyDescription = externalKeyDescription;
+            this.__explicitlySet__.add("externalKeyDescription");
             return this;
         }
         /**
@@ -172,6 +194,7 @@ public final class UpdateCertificateAuthorityDetails
                             this.currentVersionNumber,
                             this.certificateAuthorityConfig,
                             this.certificateRevocationListDetails,
+                            this.externalKeyDescription,
                             this.freeformTags,
                             this.definedTags,
                             this.certificateAuthorityRules);
@@ -195,6 +218,9 @@ public final class UpdateCertificateAuthorityDetails
             if (model.wasPropertyExplicitlySet("certificateRevocationListDetails")) {
                 this.certificateRevocationListDetails(model.getCertificateRevocationListDetails());
             }
+            if (model.wasPropertyExplicitlySet("externalKeyDescription")) {
+                this.externalKeyDescription(model.getExternalKeyDescription());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -217,12 +243,12 @@ public final class UpdateCertificateAuthorityDetails
         return new Builder().copy(this);
     }
 
-    /** A brief description of the CA. */
+    /** A brief description of the CA. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A brief description of the CA.
+     * A brief description of the CA. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -231,14 +257,14 @@ public final class UpdateCertificateAuthorityDetails
     }
 
     /**
-     * Makes this version the current version. This property cannot be updated in combination with
+     * Makes this version the current version. This property can't be updated in combination with
      * any other properties.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("currentVersionNumber")
     private final Long currentVersionNumber;
 
     /**
-     * Makes this version the current version. This property cannot be updated in combination with
+     * Makes this version the current version. This property can't be updated in combination with
      * any other properties.
      *
      * @return the value
@@ -259,6 +285,23 @@ public final class UpdateCertificateAuthorityDetails
 
     public CertificateRevocationListDetails getCertificateRevocationListDetails() {
         return certificateRevocationListDetails;
+    }
+
+    /**
+     * For externally managed CAs, a description of the externally managed key. Avoid entering
+     * confidential information.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyDescription")
+    private final String externalKeyDescription;
+
+    /**
+     * For externally managed CAs, a description of the externally managed key. Avoid entering
+     * confidential information.
+     *
+     * @return the value
+     */
+    public String getExternalKeyDescription() {
+        return externalKeyDescription;
     }
 
     /**
@@ -329,6 +372,7 @@ public final class UpdateCertificateAuthorityDetails
                 .append(String.valueOf(this.certificateAuthorityConfig));
         sb.append(", certificateRevocationListDetails=")
                 .append(String.valueOf(this.certificateRevocationListDetails));
+        sb.append(", externalKeyDescription=").append(String.valueOf(this.externalKeyDescription));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", certificateAuthorityRules=")
@@ -354,6 +398,8 @@ public final class UpdateCertificateAuthorityDetails
                 && java.util.Objects.equals(
                         this.certificateRevocationListDetails,
                         other.certificateRevocationListDetails)
+                && java.util.Objects.equals(
+                        this.externalKeyDescription, other.externalKeyDescription)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(
@@ -381,6 +427,11 @@ public final class UpdateCertificateAuthorityDetails
                         + (this.certificateRevocationListDetails == null
                                 ? 43
                                 : this.certificateRevocationListDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyDescription == null
+                                ? 43
+                                : this.externalKeyDescription.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

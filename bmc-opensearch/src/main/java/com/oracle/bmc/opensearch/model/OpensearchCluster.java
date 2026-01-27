@@ -86,6 +86,7 @@ public final class OpensearchCluster
         "outboundClusterConfig",
         "inboundClusterIds",
         "maintenanceDetails",
+        "loadBalancerConfig",
         "certificateConfig"
     })
     public OpensearchCluster(
@@ -147,6 +148,7 @@ public final class OpensearchCluster
             OutboundClusterConfig outboundClusterConfig,
             java.util.List<String> inboundClusterIds,
             MaintenanceDetails maintenanceDetails,
+            LoadBalancerConfig loadBalancerConfig,
             CertificateConfig certificateConfig) {
         super();
         this.id = id;
@@ -207,6 +209,7 @@ public final class OpensearchCluster
         this.outboundClusterConfig = outboundClusterConfig;
         this.inboundClusterIds = inboundClusterIds;
         this.maintenanceDetails = maintenanceDetails;
+        this.loadBalancerConfig = loadBalancerConfig;
         this.certificateConfig = certificateConfig;
     }
 
@@ -1091,6 +1094,15 @@ public final class OpensearchCluster
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerConfig")
+        private LoadBalancerConfig loadBalancerConfig;
+
+        public Builder loadBalancerConfig(LoadBalancerConfig loadBalancerConfig) {
+            this.loadBalancerConfig = loadBalancerConfig;
+            this.__explicitlySet__.add("loadBalancerConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("certificateConfig")
         private CertificateConfig certificateConfig;
 
@@ -1164,6 +1176,7 @@ public final class OpensearchCluster
                             this.outboundClusterConfig,
                             this.inboundClusterIds,
                             this.maintenanceDetails,
+                            this.loadBalancerConfig,
                             this.certificateConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -1347,6 +1360,9 @@ public final class OpensearchCluster
             }
             if (model.wasPropertyExplicitlySet("maintenanceDetails")) {
                 this.maintenanceDetails(model.getMaintenanceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerConfig")) {
+                this.loadBalancerConfig(model.getLoadBalancerConfig());
             }
             if (model.wasPropertyExplicitlySet("certificateConfig")) {
                 this.certificateConfig(model.getCertificateConfig());
@@ -2168,6 +2184,13 @@ public final class OpensearchCluster
         return maintenanceDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerConfig")
+    private final LoadBalancerConfig loadBalancerConfig;
+
+    public LoadBalancerConfig getLoadBalancerConfig() {
+        return loadBalancerConfig;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("certificateConfig")
     private final CertificateConfig certificateConfig;
 
@@ -2258,6 +2281,7 @@ public final class OpensearchCluster
         sb.append(", outboundClusterConfig=").append(String.valueOf(this.outboundClusterConfig));
         sb.append(", inboundClusterIds=").append(String.valueOf(this.inboundClusterIds));
         sb.append(", maintenanceDetails=").append(String.valueOf(this.maintenanceDetails));
+        sb.append(", loadBalancerConfig=").append(String.valueOf(this.loadBalancerConfig));
         sb.append(", certificateConfig=").append(String.valueOf(this.certificateConfig));
         sb.append(")");
         return sb.toString();
@@ -2347,6 +2371,7 @@ public final class OpensearchCluster
                 && java.util.Objects.equals(this.outboundClusterConfig, other.outboundClusterConfig)
                 && java.util.Objects.equals(this.inboundClusterIds, other.inboundClusterIds)
                 && java.util.Objects.equals(this.maintenanceDetails, other.maintenanceDetails)
+                && java.util.Objects.equals(this.loadBalancerConfig, other.loadBalancerConfig)
                 && java.util.Objects.equals(this.certificateConfig, other.certificateConfig)
                 && super.equals(other);
     }
@@ -2559,6 +2584,11 @@ public final class OpensearchCluster
                         + (this.maintenanceDetails == null
                                 ? 43
                                 : this.maintenanceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerConfig == null
+                                ? 43
+                                : this.loadBalancerConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.certificateConfig == null ? 43 : this.certificateConfig.hashCode());

@@ -12888,6 +12888,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getAutonomousDatabaseId())
                 .appendPathParam("actions")
                 .appendPathParam("restart")
+                .appendQueryParam("isOnlineRestart", request.getIsOnlineRestart())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-dry-run", request.getOpcDryRun())

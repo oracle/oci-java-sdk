@@ -82,6 +82,22 @@ public interface QueueAdmin extends AutoCloseable {
     ChangeQueueCompartmentResponse changeQueueCompartment(ChangeQueueCompartmentRequest request);
 
     /**
+     * Creates a new consumer group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/CreateConsumerGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConsumerGroup
+     *     API.
+     */
+    CreateConsumerGroupResponse createConsumerGroup(CreateConsumerGroupRequest request);
+
+    /**
      * Creates a new queue.
      *
      * @param request The request object containing the details to send
@@ -97,6 +113,22 @@ public interface QueueAdmin extends AutoCloseable {
     CreateQueueResponse createQueue(CreateQueueRequest request);
 
     /**
+     * Deletes a consumer group resource by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/DeleteConsumerGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConsumerGroup
+     *     API.
+     */
+    DeleteConsumerGroupResponse deleteConsumerGroup(DeleteConsumerGroupRequest request);
+
+    /**
      * Deletes a queue resource by identifier.
      *
      * @param request The request object containing the details to send
@@ -110,6 +142,22 @@ public interface QueueAdmin extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteQueue API.
      */
     DeleteQueueResponse deleteQueue(DeleteQueueRequest request);
+
+    /**
+     * Gets a consumer group by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/GetConsumerGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsumerGroup
+     *     API.
+     */
+    GetConsumerGroupResponse getConsumerGroup(GetConsumerGroupRequest request);
 
     /**
      * Gets a queue by identifier.
@@ -140,6 +188,22 @@ public interface QueueAdmin extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Returns a list of consumer groups.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/ListConsumerGroupsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConsumerGroups
+     *     API.
+     */
+    ListConsumerGroupsResponse listConsumerGroups(ListConsumerGroupsRequest request);
 
     /**
      * Returns a list of queues.
@@ -205,11 +269,14 @@ public interface QueueAdmin extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Deletes all messages present in the queue, or deletes all the messages in the specific
-     * channel at the time of invocation. Only one concurrent purge operation is supported for any
-     * given queue. However multiple concurrent purge operations are supported for different queues.
-     * Purge request without specification of target channels will clean up all messages in the
-     * queue and in the child channels.
+     * Deletes all messages present in the queue or in the specified consumer group, or deletes all
+     * the messages in the specific channel at the time of invocation. Only one concurrent purge
+     * operation is supported for any given queue. However multiple concurrent purge operations are
+     * supported for different queues. Purge request without specification of target channels will
+     * clean up all messages in the queue and in the child channels. Purge request without
+     * specification of consumer group will either clean up all messages in the queue or in the
+     * primary consumer group, depending on the presence of the CONSUMER_GROUPS capability on the
+     * queue. To purge all consumer groups, the special value 'all' can be used.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -222,6 +289,22 @@ public interface QueueAdmin extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PurgeQueue API.
      */
     PurgeQueueResponse purgeQueue(PurgeQueueRequest request);
+
+    /**
+     * Updates the specified consumer group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/UpdateConsumerGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConsumerGroup
+     *     API.
+     */
+    UpdateConsumerGroupResponse updateConsumerGroup(UpdateConsumerGroupRequest request);
 
     /**
      * Updates the specified queue.

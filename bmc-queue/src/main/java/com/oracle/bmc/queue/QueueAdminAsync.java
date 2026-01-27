@@ -80,6 +80,22 @@ public interface QueueAdminAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new consumer group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateConsumerGroupResponse> createConsumerGroup(
+            CreateConsumerGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateConsumerGroupRequest, CreateConsumerGroupResponse>
+                    handler);
+
+    /**
      * Creates a new queue.
      *
      * @param request The request object containing the details to send
@@ -94,6 +110,22 @@ public interface QueueAdminAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateQueueRequest, CreateQueueResponse> handler);
 
     /**
+     * Deletes a consumer group resource by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteConsumerGroupResponse> deleteConsumerGroup(
+            DeleteConsumerGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteConsumerGroupRequest, DeleteConsumerGroupResponse>
+                    handler);
+
+    /**
      * Deletes a queue resource by identifier.
      *
      * @param request The request object containing the details to send
@@ -106,6 +138,21 @@ public interface QueueAdminAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteQueueResponse> deleteQueue(
             DeleteQueueRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteQueueRequest, DeleteQueueResponse> handler);
+
+    /**
+     * Gets a consumer group by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConsumerGroupResponse> getConsumerGroup(
+            GetConsumerGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetConsumerGroupRequest, GetConsumerGroupResponse>
+                    handler);
 
     /**
      * Gets a queue by identifier.
@@ -134,6 +181,22 @@ public interface QueueAdminAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Returns a list of consumer groups.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListConsumerGroupsResponse> listConsumerGroups(
+            ListConsumerGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListConsumerGroupsRequest, ListConsumerGroupsResponse>
                     handler);
 
     /**
@@ -198,11 +261,14 @@ public interface QueueAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes all messages present in the queue, or deletes all the messages in the specific
-     * channel at the time of invocation. Only one concurrent purge operation is supported for any
-     * given queue. However multiple concurrent purge operations are supported for different queues.
-     * Purge request without specification of target channels will clean up all messages in the
-     * queue and in the child channels.
+     * Deletes all messages present in the queue or in the specified consumer group, or deletes all
+     * the messages in the specific channel at the time of invocation. Only one concurrent purge
+     * operation is supported for any given queue. However multiple concurrent purge operations are
+     * supported for different queues. Purge request without specification of target channels will
+     * clean up all messages in the queue and in the child channels. Purge request without
+     * specification of consumer group will either clean up all messages in the queue or in the
+     * primary consumer group, depending on the presence of the CONSUMER_GROUPS capability on the
+     * queue. To purge all consumer groups, the special value 'all' can be used.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -214,6 +280,22 @@ public interface QueueAdminAsync extends AutoCloseable {
     java.util.concurrent.Future<PurgeQueueResponse> purgeQueue(
             PurgeQueueRequest request,
             com.oracle.bmc.responses.AsyncHandler<PurgeQueueRequest, PurgeQueueResponse> handler);
+
+    /**
+     * Updates the specified consumer group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateConsumerGroupResponse> updateConsumerGroup(
+            UpdateConsumerGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConsumerGroupRequest, UpdateConsumerGroupResponse>
+                    handler);
 
     /**
      * Updates the specified queue.
