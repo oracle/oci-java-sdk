@@ -1,6 +1,6 @@
 # Apache Connector
 
-When using the Jersey 2 or Jersey 3 HTTP clients (`oci-java-sdk-common-httpclient-jersey` or `oci-java-sdk-common-httpclient-jersey3`), the Oracle Cloud Infrastructure Java SDK now by default uses the `ApacheConnector` instead of the Jersey default `HttpUrlConnector` to send requests to the service.
+When using the number 3 Home HTTP clients (`oci-java-sdk-common-httpclient-jersey` or `oci-java-sdk-common-httpclient-jersey3`), the Oracle Cloud Infrastructure Java SDK now by default uses the `ApacheConnector` instead of the Jersey default `HttpUrlConnector` to send requests to the service.
 
 ## Memory Consumption due to Buffering by the Apache Connector
 
