@@ -34,6 +34,9 @@ public final class UpdateClusterSpecsDetails
         "searchNodeHostShape",
         "searchNodeHostOcpuCount",
         "searchNodeHostMemoryGB",
+        "mlNodeHostShape",
+        "mlNodeHostOcpuCount",
+        "mlNodeHostMemoryGB",
         "softwareVersion",
         "dashboardSoftwareVersion",
         "opendashboardNodeHostShape",
@@ -50,6 +53,9 @@ public final class UpdateClusterSpecsDetails
             String searchNodeHostShape,
             Integer searchNodeHostOcpuCount,
             Integer searchNodeHostMemoryGB,
+            String mlNodeHostShape,
+            Integer mlNodeHostOcpuCount,
+            Integer mlNodeHostMemoryGB,
             String softwareVersion,
             String dashboardSoftwareVersion,
             String opendashboardNodeHostShape,
@@ -65,6 +71,9 @@ public final class UpdateClusterSpecsDetails
         this.searchNodeHostShape = searchNodeHostShape;
         this.searchNodeHostOcpuCount = searchNodeHostOcpuCount;
         this.searchNodeHostMemoryGB = searchNodeHostMemoryGB;
+        this.mlNodeHostShape = mlNodeHostShape;
+        this.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+        this.mlNodeHostMemoryGB = mlNodeHostMemoryGB;
         this.softwareVersion = softwareVersion;
         this.dashboardSoftwareVersion = dashboardSoftwareVersion;
         this.opendashboardNodeHostShape = opendashboardNodeHostShape;
@@ -223,6 +232,51 @@ public final class UpdateClusterSpecsDetails
             this.__explicitlySet__.add("searchNodeHostMemoryGB");
             return this;
         }
+        /** The node shape for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostShape")
+        private String mlNodeHostShape;
+
+        /**
+         * The node shape for the cluster's ML nodes.
+         *
+         * @param mlNodeHostShape the value to set
+         * @return this builder
+         */
+        public Builder mlNodeHostShape(String mlNodeHostShape) {
+            this.mlNodeHostShape = mlNodeHostShape;
+            this.__explicitlySet__.add("mlNodeHostShape");
+            return this;
+        }
+        /** The number of OCPUs configured for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostOcpuCount")
+        private Integer mlNodeHostOcpuCount;
+
+        /**
+         * The number of OCPUs configured for the cluster's ML nodes.
+         *
+         * @param mlNodeHostOcpuCount the value to set
+         * @return this builder
+         */
+        public Builder mlNodeHostOcpuCount(Integer mlNodeHostOcpuCount) {
+            this.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+            this.__explicitlySet__.add("mlNodeHostOcpuCount");
+            return this;
+        }
+        /** The amount of memory in GB, for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostMemoryGB")
+        private Integer mlNodeHostMemoryGB;
+
+        /**
+         * The amount of memory in GB, for the cluster's ML nodes.
+         *
+         * @param mlNodeHostMemoryGB the value to set
+         * @return this builder
+         */
+        public Builder mlNodeHostMemoryGB(Integer mlNodeHostMemoryGB) {
+            this.mlNodeHostMemoryGB = mlNodeHostMemoryGB;
+            this.__explicitlySet__.add("mlNodeHostMemoryGB");
+            return this;
+        }
         /** Updated version of the software the cluster is currently running. */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
         private String softwareVersion;
@@ -300,6 +354,9 @@ public final class UpdateClusterSpecsDetails
                             this.searchNodeHostShape,
                             this.searchNodeHostOcpuCount,
                             this.searchNodeHostMemoryGB,
+                            this.mlNodeHostShape,
+                            this.mlNodeHostOcpuCount,
+                            this.mlNodeHostMemoryGB,
                             this.softwareVersion,
                             this.dashboardSoftwareVersion,
                             this.opendashboardNodeHostShape,
@@ -341,6 +398,15 @@ public final class UpdateClusterSpecsDetails
             }
             if (model.wasPropertyExplicitlySet("searchNodeHostMemoryGB")) {
                 this.searchNodeHostMemoryGB(model.getSearchNodeHostMemoryGB());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostShape")) {
+                this.mlNodeHostShape(model.getMlNodeHostShape());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostOcpuCount")) {
+                this.mlNodeHostOcpuCount(model.getMlNodeHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostMemoryGB")) {
+                this.mlNodeHostMemoryGB(model.getMlNodeHostMemoryGB());
             }
             if (model.wasPropertyExplicitlySet("softwareVersion")) {
                 this.softwareVersion(model.getSoftwareVersion());
@@ -497,6 +563,45 @@ public final class UpdateClusterSpecsDetails
         return searchNodeHostMemoryGB;
     }
 
+    /** The node shape for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostShape")
+    private final String mlNodeHostShape;
+
+    /**
+     * The node shape for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public String getMlNodeHostShape() {
+        return mlNodeHostShape;
+    }
+
+    /** The number of OCPUs configured for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostOcpuCount")
+    private final Integer mlNodeHostOcpuCount;
+
+    /**
+     * The number of OCPUs configured for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public Integer getMlNodeHostOcpuCount() {
+        return mlNodeHostOcpuCount;
+    }
+
+    /** The amount of memory in GB, for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostMemoryGB")
+    private final Integer mlNodeHostMemoryGB;
+
+    /**
+     * The amount of memory in GB, for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public Integer getMlNodeHostMemoryGB() {
+        return mlNodeHostMemoryGB;
+    }
+
     /** Updated version of the software the cluster is currently running. */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
     private final String softwareVersion;
@@ -576,6 +681,9 @@ public final class UpdateClusterSpecsDetails
         sb.append(", searchNodeHostOcpuCount=")
                 .append(String.valueOf(this.searchNodeHostOcpuCount));
         sb.append(", searchNodeHostMemoryGB=").append(String.valueOf(this.searchNodeHostMemoryGB));
+        sb.append(", mlNodeHostShape=").append(String.valueOf(this.mlNodeHostShape));
+        sb.append(", mlNodeHostOcpuCount=").append(String.valueOf(this.mlNodeHostOcpuCount));
+        sb.append(", mlNodeHostMemoryGB=").append(String.valueOf(this.mlNodeHostMemoryGB));
         sb.append(", softwareVersion=").append(String.valueOf(this.softwareVersion));
         sb.append(", dashboardSoftwareVersion=")
                 .append(String.valueOf(this.dashboardSoftwareVersion));
@@ -610,6 +718,9 @@ public final class UpdateClusterSpecsDetails
                         this.searchNodeHostOcpuCount, other.searchNodeHostOcpuCount)
                 && java.util.Objects.equals(
                         this.searchNodeHostMemoryGB, other.searchNodeHostMemoryGB)
+                && java.util.Objects.equals(this.mlNodeHostShape, other.mlNodeHostShape)
+                && java.util.Objects.equals(this.mlNodeHostOcpuCount, other.mlNodeHostOcpuCount)
+                && java.util.Objects.equals(this.mlNodeHostMemoryGB, other.mlNodeHostMemoryGB)
                 && java.util.Objects.equals(this.softwareVersion, other.softwareVersion)
                 && java.util.Objects.equals(
                         this.dashboardSoftwareVersion, other.dashboardSoftwareVersion)
@@ -668,6 +779,19 @@ public final class UpdateClusterSpecsDetails
                         + (this.searchNodeHostMemoryGB == null
                                 ? 43
                                 : this.searchNodeHostMemoryGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostShape == null ? 43 : this.mlNodeHostShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostOcpuCount == null
+                                ? 43
+                                : this.mlNodeHostOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostMemoryGB == null
+                                ? 43
+                                : this.mlNodeHostMemoryGB.hashCode());
         result =
                 (result * PRIME)
                         + (this.softwareVersion == null ? 43 : this.softwareVersion.hashCode());

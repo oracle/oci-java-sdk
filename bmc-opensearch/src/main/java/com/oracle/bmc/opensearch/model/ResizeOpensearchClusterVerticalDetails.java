@@ -40,6 +40,10 @@ public final class ResizeOpensearchClusterVerticalDetails
         "searchNodeHostOcpuCount",
         "searchNodeHostMemoryGB",
         "searchNodeStorageGB",
+        "mlNodeHostShape",
+        "mlNodeHostOcpuCount",
+        "mlNodeHostMemoryGB",
+        "mlNodeStorageGB",
         "freeformTags",
         "definedTags"
     })
@@ -58,6 +62,10 @@ public final class ResizeOpensearchClusterVerticalDetails
             Integer searchNodeHostOcpuCount,
             Integer searchNodeHostMemoryGB,
             Integer searchNodeStorageGB,
+            String mlNodeHostShape,
+            Integer mlNodeHostOcpuCount,
+            Integer mlNodeHostMemoryGB,
+            Integer mlNodeStorageGB,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -75,6 +83,10 @@ public final class ResizeOpensearchClusterVerticalDetails
         this.searchNodeHostOcpuCount = searchNodeHostOcpuCount;
         this.searchNodeHostMemoryGB = searchNodeHostMemoryGB;
         this.searchNodeStorageGB = searchNodeStorageGB;
+        this.mlNodeHostShape = mlNodeHostShape;
+        this.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+        this.mlNodeHostMemoryGB = mlNodeHostMemoryGB;
+        this.mlNodeStorageGB = mlNodeStorageGB;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -293,6 +305,66 @@ public final class ResizeOpensearchClusterVerticalDetails
             this.__explicitlySet__.add("searchNodeStorageGB");
             return this;
         }
+        /** The node shape for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostShape")
+        private String mlNodeHostShape;
+
+        /**
+         * The node shape for the cluster's ML nodes.
+         *
+         * @param mlNodeHostShape the value to set
+         * @return this builder
+         */
+        public Builder mlNodeHostShape(String mlNodeHostShape) {
+            this.mlNodeHostShape = mlNodeHostShape;
+            this.__explicitlySet__.add("mlNodeHostShape");
+            return this;
+        }
+        /** The number of OCPUs configured for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostOcpuCount")
+        private Integer mlNodeHostOcpuCount;
+
+        /**
+         * The number of OCPUs configured for the cluster's ML nodes.
+         *
+         * @param mlNodeHostOcpuCount the value to set
+         * @return this builder
+         */
+        public Builder mlNodeHostOcpuCount(Integer mlNodeHostOcpuCount) {
+            this.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+            this.__explicitlySet__.add("mlNodeHostOcpuCount");
+            return this;
+        }
+        /** The amount of memory in GB, for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostMemoryGB")
+        private Integer mlNodeHostMemoryGB;
+
+        /**
+         * The amount of memory in GB, for the cluster's ML nodes.
+         *
+         * @param mlNodeHostMemoryGB the value to set
+         * @return this builder
+         */
+        public Builder mlNodeHostMemoryGB(Integer mlNodeHostMemoryGB) {
+            this.mlNodeHostMemoryGB = mlNodeHostMemoryGB;
+            this.__explicitlySet__.add("mlNodeHostMemoryGB");
+            return this;
+        }
+        /** The amount of storage in GB, to configure per node for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeStorageGB")
+        private Integer mlNodeStorageGB;
+
+        /**
+         * The amount of storage in GB, to configure per node for the cluster's ML nodes.
+         *
+         * @param mlNodeStorageGB the value to set
+         * @return this builder
+         */
+        public Builder mlNodeStorageGB(Integer mlNodeStorageGB) {
+            this.mlNodeStorageGB = mlNodeStorageGB;
+            this.__explicitlySet__.add("mlNodeStorageGB");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -353,6 +425,10 @@ public final class ResizeOpensearchClusterVerticalDetails
                             this.searchNodeHostOcpuCount,
                             this.searchNodeHostMemoryGB,
                             this.searchNodeStorageGB,
+                            this.mlNodeHostShape,
+                            this.mlNodeHostOcpuCount,
+                            this.mlNodeHostMemoryGB,
+                            this.mlNodeStorageGB,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -404,6 +480,18 @@ public final class ResizeOpensearchClusterVerticalDetails
             }
             if (model.wasPropertyExplicitlySet("searchNodeStorageGB")) {
                 this.searchNodeStorageGB(model.getSearchNodeStorageGB());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostShape")) {
+                this.mlNodeHostShape(model.getMlNodeHostShape());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostOcpuCount")) {
+                this.mlNodeHostOcpuCount(model.getMlNodeHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostMemoryGB")) {
+                this.mlNodeHostMemoryGB(model.getMlNodeHostMemoryGB());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeStorageGB")) {
+                this.mlNodeStorageGB(model.getMlNodeStorageGB());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -606,6 +694,58 @@ public final class ResizeOpensearchClusterVerticalDetails
         return searchNodeStorageGB;
     }
 
+    /** The node shape for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostShape")
+    private final String mlNodeHostShape;
+
+    /**
+     * The node shape for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public String getMlNodeHostShape() {
+        return mlNodeHostShape;
+    }
+
+    /** The number of OCPUs configured for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostOcpuCount")
+    private final Integer mlNodeHostOcpuCount;
+
+    /**
+     * The number of OCPUs configured for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public Integer getMlNodeHostOcpuCount() {
+        return mlNodeHostOcpuCount;
+    }
+
+    /** The amount of memory in GB, for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostMemoryGB")
+    private final Integer mlNodeHostMemoryGB;
+
+    /**
+     * The amount of memory in GB, for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public Integer getMlNodeHostMemoryGB() {
+        return mlNodeHostMemoryGB;
+    }
+
+    /** The amount of storage in GB, to configure per node for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeStorageGB")
+    private final Integer mlNodeStorageGB;
+
+    /**
+     * The amount of storage in GB, to configure per node for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public Integer getMlNodeStorageGB() {
+        return mlNodeStorageGB;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -673,6 +813,10 @@ public final class ResizeOpensearchClusterVerticalDetails
                 .append(String.valueOf(this.searchNodeHostOcpuCount));
         sb.append(", searchNodeHostMemoryGB=").append(String.valueOf(this.searchNodeHostMemoryGB));
         sb.append(", searchNodeStorageGB=").append(String.valueOf(this.searchNodeStorageGB));
+        sb.append(", mlNodeHostShape=").append(String.valueOf(this.mlNodeHostShape));
+        sb.append(", mlNodeHostOcpuCount=").append(String.valueOf(this.mlNodeHostOcpuCount));
+        sb.append(", mlNodeHostMemoryGB=").append(String.valueOf(this.mlNodeHostMemoryGB));
+        sb.append(", mlNodeStorageGB=").append(String.valueOf(this.mlNodeStorageGB));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -709,6 +853,10 @@ public final class ResizeOpensearchClusterVerticalDetails
                 && java.util.Objects.equals(
                         this.searchNodeHostMemoryGB, other.searchNodeHostMemoryGB)
                 && java.util.Objects.equals(this.searchNodeStorageGB, other.searchNodeStorageGB)
+                && java.util.Objects.equals(this.mlNodeHostShape, other.mlNodeHostShape)
+                && java.util.Objects.equals(this.mlNodeHostOcpuCount, other.mlNodeHostOcpuCount)
+                && java.util.Objects.equals(this.mlNodeHostMemoryGB, other.mlNodeHostMemoryGB)
+                && java.util.Objects.equals(this.mlNodeStorageGB, other.mlNodeStorageGB)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -784,6 +932,22 @@ public final class ResizeOpensearchClusterVerticalDetails
                         + (this.searchNodeStorageGB == null
                                 ? 43
                                 : this.searchNodeStorageGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostShape == null ? 43 : this.mlNodeHostShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostOcpuCount == null
+                                ? 43
+                                : this.mlNodeHostOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostMemoryGB == null
+                                ? 43
+                                : this.mlNodeHostMemoryGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeStorageGB == null ? 43 : this.mlNodeStorageGB.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
