@@ -50,6 +50,12 @@ public final class CreateOpensearchClusterDetails
         "searchNodeHostOcpuCount",
         "searchNodeHostMemoryGB",
         "searchNodeStorageGB",
+        "mlNodeCount",
+        "mlNodeHostType",
+        "mlNodeHostShape",
+        "mlNodeHostOcpuCount",
+        "mlNodeHostMemoryGB",
+        "mlNodeStorageGB",
         "vcnId",
         "subnetId",
         "vcnCompartmentId",
@@ -98,6 +104,12 @@ public final class CreateOpensearchClusterDetails
             Integer searchNodeHostOcpuCount,
             Integer searchNodeHostMemoryGB,
             Integer searchNodeStorageGB,
+            Integer mlNodeCount,
+            MlNodeHostType mlNodeHostType,
+            String mlNodeHostShape,
+            Integer mlNodeHostOcpuCount,
+            Integer mlNodeHostMemoryGB,
+            Integer mlNodeStorageGB,
             String vcnId,
             String subnetId,
             String vcnCompartmentId,
@@ -145,6 +157,12 @@ public final class CreateOpensearchClusterDetails
         this.searchNodeHostOcpuCount = searchNodeHostOcpuCount;
         this.searchNodeHostMemoryGB = searchNodeHostMemoryGB;
         this.searchNodeStorageGB = searchNodeStorageGB;
+        this.mlNodeCount = mlNodeCount;
+        this.mlNodeHostType = mlNodeHostType;
+        this.mlNodeHostShape = mlNodeHostShape;
+        this.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+        this.mlNodeHostMemoryGB = mlNodeHostMemoryGB;
+        this.mlNodeStorageGB = mlNodeStorageGB;
         this.vcnId = vcnId;
         this.subnetId = subnetId;
         this.vcnCompartmentId = vcnCompartmentId;
@@ -561,6 +579,96 @@ public final class CreateOpensearchClusterDetails
             this.__explicitlySet__.add("searchNodeStorageGB");
             return this;
         }
+        /** The number of ML nodes configured for the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeCount")
+        private Integer mlNodeCount;
+
+        /**
+         * The number of ML nodes configured for the cluster.
+         *
+         * @param mlNodeCount the value to set
+         * @return this builder
+         */
+        public Builder mlNodeCount(Integer mlNodeCount) {
+            this.mlNodeCount = mlNodeCount;
+            this.__explicitlySet__.add("mlNodeCount");
+            return this;
+        }
+        /** The instance type for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostType")
+        private MlNodeHostType mlNodeHostType;
+
+        /**
+         * The instance type for the cluster's ML nodes.
+         *
+         * @param mlNodeHostType the value to set
+         * @return this builder
+         */
+        public Builder mlNodeHostType(MlNodeHostType mlNodeHostType) {
+            this.mlNodeHostType = mlNodeHostType;
+            this.__explicitlySet__.add("mlNodeHostType");
+            return this;
+        }
+        /** The node shape for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostShape")
+        private String mlNodeHostShape;
+
+        /**
+         * The node shape for the cluster's ML nodes.
+         *
+         * @param mlNodeHostShape the value to set
+         * @return this builder
+         */
+        public Builder mlNodeHostShape(String mlNodeHostShape) {
+            this.mlNodeHostShape = mlNodeHostShape;
+            this.__explicitlySet__.add("mlNodeHostShape");
+            return this;
+        }
+        /** The number of OCPUs configured for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostOcpuCount")
+        private Integer mlNodeHostOcpuCount;
+
+        /**
+         * The number of OCPUs configured for the cluster's ML nodes.
+         *
+         * @param mlNodeHostOcpuCount the value to set
+         * @return this builder
+         */
+        public Builder mlNodeHostOcpuCount(Integer mlNodeHostOcpuCount) {
+            this.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+            this.__explicitlySet__.add("mlNodeHostOcpuCount");
+            return this;
+        }
+        /** The amount of memory in GB, for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostMemoryGB")
+        private Integer mlNodeHostMemoryGB;
+
+        /**
+         * The amount of memory in GB, for the cluster's ML nodes.
+         *
+         * @param mlNodeHostMemoryGB the value to set
+         * @return this builder
+         */
+        public Builder mlNodeHostMemoryGB(Integer mlNodeHostMemoryGB) {
+            this.mlNodeHostMemoryGB = mlNodeHostMemoryGB;
+            this.__explicitlySet__.add("mlNodeHostMemoryGB");
+            return this;
+        }
+        /** The amount of storage in GB, to configure per node for the cluster's ML nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeStorageGB")
+        private Integer mlNodeStorageGB;
+
+        /**
+         * The amount of storage in GB, to configure per node for the cluster's ML nodes.
+         *
+         * @param mlNodeStorageGB the value to set
+         * @return this builder
+         */
+        public Builder mlNodeStorageGB(Integer mlNodeStorageGB) {
+            this.mlNodeStorageGB = mlNodeStorageGB;
+            this.__explicitlySet__.add("mlNodeStorageGB");
+            return this;
+        }
         /** The OCID of the cluster's VCN. */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
@@ -885,6 +993,12 @@ public final class CreateOpensearchClusterDetails
                             this.searchNodeHostOcpuCount,
                             this.searchNodeHostMemoryGB,
                             this.searchNodeStorageGB,
+                            this.mlNodeCount,
+                            this.mlNodeHostType,
+                            this.mlNodeHostShape,
+                            this.mlNodeHostOcpuCount,
+                            this.mlNodeHostMemoryGB,
+                            this.mlNodeStorageGB,
                             this.vcnId,
                             this.subnetId,
                             this.vcnCompartmentId,
@@ -990,6 +1104,24 @@ public final class CreateOpensearchClusterDetails
             }
             if (model.wasPropertyExplicitlySet("searchNodeStorageGB")) {
                 this.searchNodeStorageGB(model.getSearchNodeStorageGB());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeCount")) {
+                this.mlNodeCount(model.getMlNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostType")) {
+                this.mlNodeHostType(model.getMlNodeHostType());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostShape")) {
+                this.mlNodeHostShape(model.getMlNodeHostShape());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostOcpuCount")) {
+                this.mlNodeHostOcpuCount(model.getMlNodeHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostMemoryGB")) {
+                this.mlNodeHostMemoryGB(model.getMlNodeHostMemoryGB());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeStorageGB")) {
+                this.mlNodeStorageGB(model.getMlNodeStorageGB());
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
@@ -1403,6 +1535,84 @@ public final class CreateOpensearchClusterDetails
         return searchNodeStorageGB;
     }
 
+    /** The number of ML nodes configured for the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeCount")
+    private final Integer mlNodeCount;
+
+    /**
+     * The number of ML nodes configured for the cluster.
+     *
+     * @return the value
+     */
+    public Integer getMlNodeCount() {
+        return mlNodeCount;
+    }
+
+    /** The instance type for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostType")
+    private final MlNodeHostType mlNodeHostType;
+
+    /**
+     * The instance type for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public MlNodeHostType getMlNodeHostType() {
+        return mlNodeHostType;
+    }
+
+    /** The node shape for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostShape")
+    private final String mlNodeHostShape;
+
+    /**
+     * The node shape for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public String getMlNodeHostShape() {
+        return mlNodeHostShape;
+    }
+
+    /** The number of OCPUs configured for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostOcpuCount")
+    private final Integer mlNodeHostOcpuCount;
+
+    /**
+     * The number of OCPUs configured for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public Integer getMlNodeHostOcpuCount() {
+        return mlNodeHostOcpuCount;
+    }
+
+    /** The amount of memory in GB, for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostMemoryGB")
+    private final Integer mlNodeHostMemoryGB;
+
+    /**
+     * The amount of memory in GB, for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public Integer getMlNodeHostMemoryGB() {
+        return mlNodeHostMemoryGB;
+    }
+
+    /** The amount of storage in GB, to configure per node for the cluster's ML nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeStorageGB")
+    private final Integer mlNodeStorageGB;
+
+    /**
+     * The amount of storage in GB, to configure per node for the cluster's ML nodes.
+     *
+     * @return the value
+     */
+    public Integer getMlNodeStorageGB() {
+        return mlNodeStorageGB;
+    }
+
     /** The OCID of the cluster's VCN. */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
@@ -1697,6 +1907,12 @@ public final class CreateOpensearchClusterDetails
                 .append(String.valueOf(this.searchNodeHostOcpuCount));
         sb.append(", searchNodeHostMemoryGB=").append(String.valueOf(this.searchNodeHostMemoryGB));
         sb.append(", searchNodeStorageGB=").append(String.valueOf(this.searchNodeStorageGB));
+        sb.append(", mlNodeCount=").append(String.valueOf(this.mlNodeCount));
+        sb.append(", mlNodeHostType=").append(String.valueOf(this.mlNodeHostType));
+        sb.append(", mlNodeHostShape=").append(String.valueOf(this.mlNodeHostShape));
+        sb.append(", mlNodeHostOcpuCount=").append(String.valueOf(this.mlNodeHostOcpuCount));
+        sb.append(", mlNodeHostMemoryGB=").append(String.valueOf(this.mlNodeHostMemoryGB));
+        sb.append(", mlNodeStorageGB=").append(String.valueOf(this.mlNodeStorageGB));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", vcnCompartmentId=").append(String.valueOf(this.vcnCompartmentId));
@@ -1769,6 +1985,12 @@ public final class CreateOpensearchClusterDetails
                 && java.util.Objects.equals(
                         this.searchNodeHostMemoryGB, other.searchNodeHostMemoryGB)
                 && java.util.Objects.equals(this.searchNodeStorageGB, other.searchNodeStorageGB)
+                && java.util.Objects.equals(this.mlNodeCount, other.mlNodeCount)
+                && java.util.Objects.equals(this.mlNodeHostType, other.mlNodeHostType)
+                && java.util.Objects.equals(this.mlNodeHostShape, other.mlNodeHostShape)
+                && java.util.Objects.equals(this.mlNodeHostOcpuCount, other.mlNodeHostOcpuCount)
+                && java.util.Objects.equals(this.mlNodeHostMemoryGB, other.mlNodeHostMemoryGB)
+                && java.util.Objects.equals(this.mlNodeStorageGB, other.mlNodeStorageGB)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.vcnCompartmentId, other.vcnCompartmentId)
@@ -1910,6 +2132,26 @@ public final class CreateOpensearchClusterDetails
                         + (this.searchNodeStorageGB == null
                                 ? 43
                                 : this.searchNodeStorageGB.hashCode());
+        result = (result * PRIME) + (this.mlNodeCount == null ? 43 : this.mlNodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostType == null ? 43 : this.mlNodeHostType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostShape == null ? 43 : this.mlNodeHostShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostOcpuCount == null
+                                ? 43
+                                : this.mlNodeHostOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostMemoryGB == null
+                                ? 43
+                                : this.mlNodeHostMemoryGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeStorageGB == null ? 43 : this.mlNodeStorageGB.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =
