@@ -38,6 +38,7 @@ public final class GenerativeAiPrivateEndpoint
         "timeCreated",
         "timeUpdated",
         "previousState",
+        "resourceType",
         "freeformTags",
         "definedTags",
         "systemTags",
@@ -58,6 +59,7 @@ public final class GenerativeAiPrivateEndpoint
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             GenerativeAiPrivateEndpoint previousState,
+            ResourceType resourceType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -77,6 +79,7 @@ public final class GenerativeAiPrivateEndpoint
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.previousState = previousState;
+        this.resourceType = resourceType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -317,6 +320,21 @@ public final class GenerativeAiPrivateEndpoint
             this.__explicitlySet__.add("previousState");
             return this;
         }
+        /** The resource type that Generative AI private endpoint can be used for. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private ResourceType resourceType;
+
+        /**
+         * The resource type that Generative AI private endpoint can be used for.
+         *
+         * @param resourceType the value to set
+         * @return this builder
+         */
+        public Builder resourceType(ResourceType resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -434,6 +452,7 @@ public final class GenerativeAiPrivateEndpoint
                             this.timeCreated,
                             this.timeUpdated,
                             this.previousState,
+                            this.resourceType,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -487,6 +506,9 @@ public final class GenerativeAiPrivateEndpoint
             }
             if (model.wasPropertyExplicitlySet("previousState")) {
                 this.previousState(model.getPreviousState());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -763,6 +785,65 @@ public final class GenerativeAiPrivateEndpoint
         return previousState;
     }
 
+    /** The resource type that Generative AI private endpoint can be used for. */
+    public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+        Application("APPLICATION"),
+        Endpoint("ENDPOINT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResourceType.class);
+
+        private final String value;
+        private static java.util.Map<String, ResourceType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ResourceType v : ResourceType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ResourceType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ResourceType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ResourceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The resource type that Generative AI private endpoint can be used for. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    private final ResourceType resourceType;
+
+    /**
+     * The resource type that Generative AI private endpoint can be used for.
+     *
+     * @return the value
+     */
+    public ResourceType getResourceType() {
+        return resourceType;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -878,6 +959,7 @@ public final class GenerativeAiPrivateEndpoint
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", previousState=").append(String.valueOf(this.previousState));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -910,6 +992,7 @@ public final class GenerativeAiPrivateEndpoint
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.previousState, other.previousState)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -947,6 +1030,7 @@ public final class GenerativeAiPrivateEndpoint
         result =
                 (result * PRIME)
                         + (this.previousState == null ? 43 : this.previousState.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

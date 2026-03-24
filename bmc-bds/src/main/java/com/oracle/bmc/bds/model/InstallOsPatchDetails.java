@@ -26,17 +26,20 @@ public final class InstallOsPatchDetails
     @java.beans.ConstructorProperties({
         "osPatchVersion",
         "clusterAdminPassword",
+        "secretId",
         "patchingConfigs",
         "isDryRun"
     })
     public InstallOsPatchDetails(
             String osPatchVersion,
             String clusterAdminPassword,
+            String secretId,
             PatchingConfigs patchingConfigs,
             Boolean isDryRun) {
         super();
         this.osPatchVersion = osPatchVersion;
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.patchingConfigs = patchingConfigs;
         this.isDryRun = isDryRun;
     }
@@ -73,6 +76,21 @@ public final class InstallOsPatchDetails
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
+        /** The secretId for the clusterAdminPassword. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("patchingConfigs")
         private PatchingConfigs patchingConfigs;
@@ -106,6 +124,7 @@ public final class InstallOsPatchDetails
                     new InstallOsPatchDetails(
                             this.osPatchVersion,
                             this.clusterAdminPassword,
+                            this.secretId,
                             this.patchingConfigs,
                             this.isDryRun);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -121,6 +140,9 @@ public final class InstallOsPatchDetails
             }
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("patchingConfigs")) {
                 this.patchingConfigs(model.getPatchingConfigs());
@@ -167,6 +189,19 @@ public final class InstallOsPatchDetails
         return clusterAdminPassword;
     }
 
+    /** The secretId for the clusterAdminPassword. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("patchingConfigs")
     private final PatchingConfigs patchingConfigs;
 
@@ -204,6 +239,7 @@ public final class InstallOsPatchDetails
         sb.append("super=").append(super.toString());
         sb.append("osPatchVersion=").append(String.valueOf(this.osPatchVersion));
         sb.append(", clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", patchingConfigs=").append(String.valueOf(this.patchingConfigs));
         sb.append(", isDryRun=").append(String.valueOf(this.isDryRun));
         sb.append(")");
@@ -222,6 +258,7 @@ public final class InstallOsPatchDetails
         InstallOsPatchDetails other = (InstallOsPatchDetails) o;
         return java.util.Objects.equals(this.osPatchVersion, other.osPatchVersion)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.patchingConfigs, other.patchingConfigs)
                 && java.util.Objects.equals(this.isDryRun, other.isDryRun)
                 && super.equals(other);
@@ -239,6 +276,7 @@ public final class InstallOsPatchDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.patchingConfigs == null ? 43 : this.patchingConfigs.hashCode());

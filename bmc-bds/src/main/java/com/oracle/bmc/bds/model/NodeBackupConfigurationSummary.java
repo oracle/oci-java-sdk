@@ -52,12 +52,12 @@ public final class NodeBackupConfigurationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The id of the NodeBackupConfiguration. */
+        /** The id of the NodeBackupConfiguration defined under BDS resources, not OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The id of the NodeBackupConfiguration.
+         * The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
          *
          * @param id the value to set
          * @return this builder
@@ -221,12 +221,12 @@ public final class NodeBackupConfigurationSummary
         return new Builder().copy(this);
     }
 
-    /** The id of the NodeBackupConfiguration. */
+    /** The id of the NodeBackupConfiguration defined under BDS resources, not OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The id of the NodeBackupConfiguration.
+     * The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
      *
      * @return the value
      */

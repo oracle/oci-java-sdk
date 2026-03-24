@@ -284,6 +284,136 @@ public class BdsPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listBdsCertificateConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListBdsCertificateConfigurationsResponse>
+            listBdsCertificateConfigurationsResponseIterator(
+                    final ListBdsCertificateConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBdsCertificateConfigurationsRequest.Builder,
+                ListBdsCertificateConfigurationsRequest,
+                ListBdsCertificateConfigurationsResponse>(
+                new java.util.function.Supplier<ListBdsCertificateConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsRequest.Builder get() {
+                        return ListBdsCertificateConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCertificateConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsCertificateConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsCertificateConfigurationsRequest.Builder>,
+                        ListBdsCertificateConfigurationsRequest>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsCertificateConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCertificateConfigurationsRequest,
+                        ListBdsCertificateConfigurationsResponse>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsResponse apply(
+                            ListBdsCertificateConfigurationsRequest request) {
+                        return client.listBdsCertificateConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary} objects contained in responses
+     * from the listBdsCertificateConfigurations operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary>
+            listBdsCertificateConfigurationsRecordIterator(
+                    final ListBdsCertificateConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBdsCertificateConfigurationsRequest.Builder,
+                ListBdsCertificateConfigurationsRequest,
+                ListBdsCertificateConfigurationsResponse,
+                com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary>(
+                new java.util.function.Supplier<ListBdsCertificateConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsRequest.Builder get() {
+                        return ListBdsCertificateConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCertificateConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsCertificateConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsCertificateConfigurationsRequest.Builder>,
+                        ListBdsCertificateConfigurationsRequest>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsCertificateConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCertificateConfigurationsRequest,
+                        ListBdsCertificateConfigurationsResponse>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsResponse apply(
+                            ListBdsCertificateConfigurationsRequest request) {
+                        return client.listBdsCertificateConfigurations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCertificateConfigurationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary>
+                            apply(ListBdsCertificateConfigurationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listBdsClusterVersions operation. This iterable will fetch more data from the server as
      * needed.
      *

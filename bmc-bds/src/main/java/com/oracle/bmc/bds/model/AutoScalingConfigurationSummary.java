@@ -55,12 +55,12 @@ public final class AutoScalingConfigurationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the autoscale configuration. */
+        /** The ID of the autoscale configuration defined under BDS resources, not OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the autoscale configuration.
+         * The ID of the autoscale configuration defined under BDS resources, not OCID.
          *
          * @param id the value to set
          * @return this builder
@@ -235,12 +235,12 @@ public final class AutoScalingConfigurationSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the autoscale configuration. */
+    /** The ID of the autoscale configuration defined under BDS resources, not OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the autoscale configuration.
+     * The ID of the autoscale configuration defined under BDS resources, not OCID.
      *
      * @return the value
      */

@@ -26,6 +26,7 @@ public final class IdentityConfiguration
     @java.beans.ConstructorProperties({
         "id",
         "displayName",
+        "secretId",
         "identityDomainId",
         "confidentialApplicationId",
         "lifecycleState",
@@ -37,6 +38,7 @@ public final class IdentityConfiguration
     public IdentityConfiguration(
             String id,
             String displayName,
+            String secretId,
             String identityDomainId,
             String confidentialApplicationId,
             LifecycleState lifecycleState,
@@ -47,6 +49,7 @@ public final class IdentityConfiguration
         super();
         this.id = id;
         this.displayName = displayName;
+        this.secretId = secretId;
         this.identityDomainId = identityDomainId;
         this.confidentialApplicationId = confidentialApplicationId;
         this.lifecycleState = lifecycleState;
@@ -86,6 +89,21 @@ public final class IdentityConfiguration
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** The secretId for the clusterAdminPassword. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
             return this;
         }
         /** Identity domain to use for identity config */
@@ -198,6 +216,7 @@ public final class IdentityConfiguration
                     new IdentityConfiguration(
                             this.id,
                             this.displayName,
+                            this.secretId,
                             this.identityDomainId,
                             this.confidentialApplicationId,
                             this.lifecycleState,
@@ -218,6 +237,9 @@ public final class IdentityConfiguration
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("identityDomainId")) {
                 this.identityDomainId(model.getIdentityDomainId());
@@ -277,6 +299,19 @@ public final class IdentityConfiguration
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /** The secretId for the clusterAdminPassword. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
     }
 
     /** Identity domain to use for identity config */
@@ -429,6 +464,7 @@ public final class IdentityConfiguration
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", identityDomainId=").append(String.valueOf(this.identityDomainId));
         sb.append(", confidentialApplicationId=")
                 .append(String.valueOf(this.confidentialApplicationId));
@@ -454,6 +490,7 @@ public final class IdentityConfiguration
         IdentityConfiguration other = (IdentityConfiguration) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.identityDomainId, other.identityDomainId)
                 && java.util.Objects.equals(
                         this.confidentialApplicationId, other.confidentialApplicationId)
@@ -472,6 +509,7 @@ public final class IdentityConfiguration
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.identityDomainId == null ? 43 : this.identityDomainId.hashCode());

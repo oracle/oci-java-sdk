@@ -77,6 +77,38 @@ public interface GenerativeAiAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * add image with isAutoDeploy flag.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddArtifactResponse> addArtifact(
+            AddArtifactRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddArtifactRequest, AddArtifactResponse> handler);
+
+    /**
+     * Cancels a vectorStoreConnectorFileSync.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelVectorStoreConnectorFileSyncResponse>
+            cancelVectorStoreConnectorFileSync(
+                    CancelVectorStoreConnectorFileSyncRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CancelVectorStoreConnectorFileSyncRequest,
+                                    CancelVectorStoreConnectorFileSyncResponse>
+                            handler);
+
+    /**
      * Moves an API key into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -152,6 +184,66 @@ public interface GenerativeAiAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a generativeAiProject into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeGenerativeAiProjectCompartmentResponse>
+            changeGenerativeAiProjectCompartment(
+                    ChangeGenerativeAiProjectCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeGenerativeAiProjectCompartmentRequest,
+                                    ChangeGenerativeAiProjectCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a hosted application into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeHostedApplicationCompartmentResponse>
+            changeHostedApplicationCompartment(
+                    ChangeHostedApplicationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeHostedApplicationCompartmentRequest,
+                                    ChangeHostedApplicationCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a hosted application storage into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeHostedApplicationStorageCompartmentResponse>
+            changeHostedApplicationStorageCompartment(
+                    ChangeHostedApplicationStorageCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeHostedApplicationStorageCompartmentRequest,
+                                    ChangeHostedApplicationStorageCompartmentResponse>
+                            handler);
+
+    /**
      * Moves an imported model into a different compartment. For information about moving resources
      * between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -188,6 +280,26 @@ public interface GenerativeAiAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>
                     handler);
+
+    /**
+     * Moves a SemanticStore into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSemanticStoreCompartmentResponse>
+            changeSemanticStoreCompartment(
+                    ChangeSemanticStoreCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSemanticStoreCompartmentRequest,
+                                    ChangeSemanticStoreCompartmentResponse>
+                            handler);
 
     /**
      * Creates a new API key in the specified compartment.
@@ -257,6 +369,73 @@ public interface GenerativeAiAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a GenerativeAiProject. The header contains an opc-work-request-id, which is the id
+     * for the WorkRequest that tracks the generativeAiProject creation progress.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateGenerativeAiProjectResponse> createGenerativeAiProject(
+            CreateGenerativeAiProjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateGenerativeAiProjectRequest, CreateGenerativeAiProjectResponse>
+                    handler);
+
+    /**
+     * Creates a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateHostedApplicationResponse> createHostedApplication(
+            CreateHostedApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateHostedApplicationRequest, CreateHostedApplicationResponse>
+                    handler);
+
+    /**
+     * Creates a hosted application storage.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateHostedApplicationStorageResponse>
+            createHostedApplicationStorage(
+                    CreateHostedApplicationStorageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateHostedApplicationStorageRequest,
+                                    CreateHostedApplicationStorageResponse>
+                            handler);
+
+    /**
+     * Creates a hosted deployment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateHostedDeploymentResponse> createHostedDeployment(
+            CreateHostedDeploymentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateHostedDeploymentRequest, CreateHostedDeploymentResponse>
+                    handler);
+
+    /**
      * Import a model from ModelDataSource.
      *
      * <p>The header contains an opc-work-request-id, which is the id for the WorkRequest that
@@ -292,6 +471,59 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateModelResponse> createModel(
             CreateModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse> handler);
+
+    /**
+     * Creates a SemanticStore.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSemanticStoreResponse> createSemanticStore(
+            CreateSemanticStoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSemanticStoreRequest, CreateSemanticStoreResponse>
+                    handler);
+
+    /**
+     * Creates a VectorStoreConnector. The header contains an opc-work-request-id, which is the id
+     * for the WorkRequest that tracks the vectorStoreConnector creation progress.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateVectorStoreConnectorResponse> createVectorStoreConnector(
+            CreateVectorStoreConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateVectorStoreConnectorRequest, CreateVectorStoreConnectorResponse>
+                    handler);
+
+    /**
+     * Creates a File Sync operation for a VectorStoreConnector. The header contains an
+     * opc-work-request-id, which is the id for the WorkRequest that tracks the
+     * vectorStoreConnectorFileSync creation progress.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateVectorStoreConnectorFileSyncResponse>
+            createVectorStoreConnectorFileSync(
+                    CreateVectorStoreConnectorFileSyncRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateVectorStoreConnectorFileSyncRequest,
+                                    CreateVectorStoreConnectorFileSyncResponse>
+                            handler);
 
     /**
      * Deletes an API key.
@@ -363,6 +595,102 @@ public interface GenerativeAiAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes a generativeAiProject.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteGenerativeAiProjectResponse> deleteGenerativeAiProject(
+            DeleteGenerativeAiProjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteGenerativeAiProjectRequest, DeleteGenerativeAiProjectResponse>
+                    handler);
+
+    /**
+     * Deletes a hosted application. You can only delete hosted application without attached
+     * resources. Before you delete a hosting hosted application, you must delete the endpoints
+     * associated to that application. Before you delete a fine-tuning hosted application, you must
+     * delete the custom model on that application. The delete action permanently deletes the
+     * cluster. This action can't be undone.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteHostedApplicationResponse> deleteHostedApplication(
+            DeleteHostedApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteHostedApplicationRequest, DeleteHostedApplicationResponse>
+                    handler);
+
+    /**
+     * Deletes a hosted application. You can only delete hosted application without attached
+     * resources. Before you delete a hosting hosted application, you must delete the endpoints
+     * associated to that application. Before you delete a fine-tuning hosted application, you must
+     * delete the custom model on that application. The delete action permanently deletes the
+     * cluster. This action can't be undone.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteHostedApplicationStorageResponse>
+            deleteHostedApplicationStorage(
+                    DeleteHostedApplicationStorageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteHostedApplicationStorageRequest,
+                                    DeleteHostedApplicationStorageResponse>
+                            handler);
+
+    /**
+     * Deletes a hosted deployment. You can only delete hosted deployment without attached
+     * resources. Before you delete a hosting hosted deployment, you must delete the endpoints
+     * associated to that deployment. Before you delete a fine-tuning hosted deployment, you must
+     * delete the custom model on that deployment. The delete action permanently deletes the
+     * cluster. This action can't be undone.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteHostedDeploymentResponse> deleteHostedDeployment(
+            DeleteHostedDeploymentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteHostedDeploymentRequest, DeleteHostedDeploymentResponse>
+                    handler);
+
+    /**
+     * delete artifact.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteHostedDeploymentArtifactResponse>
+            deleteHostedDeploymentArtifact(
+                    DeleteHostedDeploymentArtifactRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteHostedDeploymentArtifactRequest,
+                                    DeleteHostedDeploymentArtifactResponse>
+                            handler);
+
+    /**
      * Deletes an imported model. An imported model shouldn't be deleted if there's one or more
      * active endpoints associated with that imported model.
      *
@@ -393,6 +721,38 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteModelResponse> deleteModel(
             DeleteModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse> handler);
+
+    /**
+     * Deletes a semanticStore.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSemanticStoreResponse> deleteSemanticStore(
+            DeleteSemanticStoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSemanticStoreRequest, DeleteSemanticStoreResponse>
+                    handler);
+
+    /**
+     * Deletes a vectorStoreConnector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteVectorStoreConnectorResponse> deleteVectorStoreConnector(
+            DeleteVectorStoreConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVectorStoreConnectorRequest, DeleteVectorStoreConnectorResponse>
+                    handler);
 
     /**
      * Gets information about an API key.
@@ -457,6 +817,70 @@ public interface GenerativeAiAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets information about a generativeAiProject.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetGenerativeAiProjectResponse> getGenerativeAiProject(
+            GetGenerativeAiProjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetGenerativeAiProjectRequest, GetGenerativeAiProjectResponse>
+                    handler);
+
+    /**
+     * Gets information about a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetHostedApplicationResponse> getHostedApplication(
+            GetHostedApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetHostedApplicationRequest, GetHostedApplicationResponse>
+                    handler);
+
+    /**
+     * Gets information about a hosted application storage.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetHostedApplicationStorageResponse> getHostedApplicationStorage(
+            GetHostedApplicationStorageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetHostedApplicationStorageRequest, GetHostedApplicationStorageResponse>
+                    handler);
+
+    /**
+     * Gets information about a hosted deployment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetHostedDeploymentResponse> getHostedDeployment(
+            GetHostedDeploymentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetHostedDeploymentRequest, GetHostedDeploymentResponse>
+                    handler);
+
+    /**
      * Gets information about an imported model.
      *
      * @param request The request object containing the details to send
@@ -484,6 +908,72 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<GetModelResponse> getModel(
             GetModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse> handler);
+
+    /**
+     * Gets information about a semanticStore.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSemanticStoreResponse> getSemanticStore(
+            GetSemanticStoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSemanticStoreRequest, GetSemanticStoreResponse>
+                    handler);
+
+    /**
+     * Gets information about a vectorStoreConnector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVectorStoreConnectorResponse> getVectorStoreConnector(
+            GetVectorStoreConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVectorStoreConnectorRequest, GetVectorStoreConnectorResponse>
+                    handler);
+
+    /**
+     * Gets information about a vectorStoreConnectorFileSync.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVectorStoreConnectorFileSyncResponse>
+            getVectorStoreConnectorFileSync(
+                    GetVectorStoreConnectorFileSyncRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetVectorStoreConnectorFileSyncRequest,
+                                    GetVectorStoreConnectorFileSyncResponse>
+                            handler);
+
+    /**
+     * Gets Sync statistics from a vectorStoreConnector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVectorStoreConnectorStatsResponse> getVectorStoreConnectorStats(
+            GetVectorStoreConnectorStatsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVectorStoreConnectorStatsRequest,
+                            GetVectorStoreConnectorStatsResponse>
+                    handler);
 
     /**
      * Gets the details of a work request.
@@ -564,6 +1054,72 @@ public interface GenerativeAiAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists the generativeAiProjects of a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListGenerativeAiProjectsResponse> listGenerativeAiProjects(
+            ListGenerativeAiProjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListGenerativeAiProjectsRequest, ListGenerativeAiProjectsResponse>
+                    handler);
+
+    /**
+     * Lists the hosted application storage in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListHostedApplicationStoragesResponse>
+            listHostedApplicationStorages(
+                    ListHostedApplicationStoragesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListHostedApplicationStoragesRequest,
+                                    ListHostedApplicationStoragesResponse>
+                            handler);
+
+    /**
+     * Lists the hosted applications in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListHostedApplicationsResponse> listHostedApplications(
+            ListHostedApplicationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListHostedApplicationsRequest, ListHostedApplicationsResponse>
+                    handler);
+
+    /**
+     * Lists the hosted applications in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListHostedDeploymentsResponse> listHostedDeployments(
+            ListHostedDeploymentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListHostedDeploymentsRequest, ListHostedDeploymentsResponse>
+                    handler);
+
+    /**
      * Lists imported models in a specific compartment.
      *
      * @param request The request object containing the details to send
@@ -593,6 +1149,92 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<ListModelsResponse> listModels(
             ListModelsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse> handler);
+
+    /**
+     * Lists the SemanticStores given specific filter.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSemanticStoresResponse> listSemanticStores(
+            ListSemanticStoresRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSemanticStoresRequest, ListSemanticStoresResponse>
+                    handler);
+
+    /**
+     * Gets Ingestion logs for a vectorStoreConnectorFileSync operation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVectorStoreConnectorFileSyncIngestionLogsResponse>
+            listVectorStoreConnectorFileSyncIngestionLogs(
+                    ListVectorStoreConnectorFileSyncIngestionLogsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListVectorStoreConnectorFileSyncIngestionLogsRequest,
+                                    ListVectorStoreConnectorFileSyncIngestionLogsResponse>
+                            handler);
+
+    /**
+     * Lists the vectorStoreConnectorFileSyncs of a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVectorStoreConnectorFileSyncsResponse>
+            listVectorStoreConnectorFileSyncs(
+                    ListVectorStoreConnectorFileSyncsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListVectorStoreConnectorFileSyncsRequest,
+                                    ListVectorStoreConnectorFileSyncsResponse>
+                            handler);
+
+    /**
+     * Gets Ingestion logs for a vectorStoreConnector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVectorStoreConnectorIngestionLogsResponse>
+            listVectorStoreConnectorIngestionLogs(
+                    ListVectorStoreConnectorIngestionLogsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListVectorStoreConnectorIngestionLogsRequest,
+                                    ListVectorStoreConnectorIngestionLogsResponse>
+                            handler);
+
+    /**
+     * Lists the vectorStoreConnectors of a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVectorStoreConnectorsResponse> listVectorStoreConnectors(
+            ListVectorStoreConnectorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVectorStoreConnectorsRequest, ListVectorStoreConnectorsResponse>
+                    handler);
 
     /**
      * Lists the errors for a work request.
@@ -735,6 +1377,54 @@ public interface GenerativeAiAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Updates the properties of a generativeAiProject.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateGenerativeAiProjectResponse> updateGenerativeAiProject(
+            UpdateGenerativeAiProjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateGenerativeAiProjectRequest, UpdateGenerativeAiProjectResponse>
+                    handler);
+
+    /**
+     * Updates a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateHostedApplicationResponse> updateHostedApplication(
+            UpdateHostedApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateHostedApplicationRequest, UpdateHostedApplicationResponse>
+                    handler);
+
+    /**
+     * Updates a hosted deployment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateHostedDeploymentResponse> updateHostedDeployment(
+            UpdateHostedDeploymentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateHostedDeploymentRequest, UpdateHostedDeploymentResponse>
+                    handler);
+
+    /**
      * Updates the properties of an imported model such as name, description, freeform tags, and
      * defined tags.
      *
@@ -765,4 +1455,36 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateModelResponse> updateModel(
             UpdateModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse> handler);
+
+    /**
+     * Updates the properties of a SemanticStore.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSemanticStoreResponse> updateSemanticStore(
+            UpdateSemanticStoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSemanticStoreRequest, UpdateSemanticStoreResponse>
+                    handler);
+
+    /**
+     * Updates the properties of a vectorStoreConnector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateVectorStoreConnectorResponse> updateVectorStoreConnector(
+            UpdateVectorStoreConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVectorStoreConnectorRequest, UpdateVectorStoreConnectorResponse>
+                    handler);
 }

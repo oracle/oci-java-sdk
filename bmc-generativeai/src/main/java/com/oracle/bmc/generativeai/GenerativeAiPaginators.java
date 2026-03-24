@@ -527,6 +527,507 @@ public class GenerativeAiPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listGenerativeAiProjects operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListGenerativeAiProjectsResponse> listGenerativeAiProjectsResponseIterator(
+            final ListGenerativeAiProjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListGenerativeAiProjectsRequest.Builder,
+                ListGenerativeAiProjectsRequest,
+                ListGenerativeAiProjectsResponse>(
+                new java.util.function.Supplier<ListGenerativeAiProjectsRequest.Builder>() {
+                    @Override
+                    public ListGenerativeAiProjectsRequest.Builder get() {
+                        return ListGenerativeAiProjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListGenerativeAiProjectsResponse, String>() {
+                    @Override
+                    public String apply(ListGenerativeAiProjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGenerativeAiProjectsRequest.Builder>,
+                        ListGenerativeAiProjectsRequest>() {
+                    @Override
+                    public ListGenerativeAiProjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGenerativeAiProjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListGenerativeAiProjectsRequest, ListGenerativeAiProjectsResponse>() {
+                    @Override
+                    public ListGenerativeAiProjectsResponse apply(
+                            ListGenerativeAiProjectsRequest request) {
+                        return client.listGenerativeAiProjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.GenerativeAiProjectSummary} objects contained in responses
+     * from the listGenerativeAiProjects operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.GenerativeAiProjectSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.GenerativeAiProjectSummary>
+            listGenerativeAiProjectsRecordIterator(final ListGenerativeAiProjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListGenerativeAiProjectsRequest.Builder,
+                ListGenerativeAiProjectsRequest,
+                ListGenerativeAiProjectsResponse,
+                com.oracle.bmc.generativeai.model.GenerativeAiProjectSummary>(
+                new java.util.function.Supplier<ListGenerativeAiProjectsRequest.Builder>() {
+                    @Override
+                    public ListGenerativeAiProjectsRequest.Builder get() {
+                        return ListGenerativeAiProjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListGenerativeAiProjectsResponse, String>() {
+                    @Override
+                    public String apply(ListGenerativeAiProjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGenerativeAiProjectsRequest.Builder>,
+                        ListGenerativeAiProjectsRequest>() {
+                    @Override
+                    public ListGenerativeAiProjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGenerativeAiProjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListGenerativeAiProjectsRequest, ListGenerativeAiProjectsResponse>() {
+                    @Override
+                    public ListGenerativeAiProjectsResponse apply(
+                            ListGenerativeAiProjectsRequest request) {
+                        return client.listGenerativeAiProjects(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListGenerativeAiProjectsResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeai.model.GenerativeAiProjectSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.generativeai.model.GenerativeAiProjectSummary>
+                            apply(ListGenerativeAiProjectsResponse response) {
+                        return response.getGenerativeAiProjectCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listHostedApplicationStorages operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListHostedApplicationStoragesResponse>
+            listHostedApplicationStoragesResponseIterator(
+                    final ListHostedApplicationStoragesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListHostedApplicationStoragesRequest.Builder,
+                ListHostedApplicationStoragesRequest,
+                ListHostedApplicationStoragesResponse>(
+                new java.util.function.Supplier<ListHostedApplicationStoragesRequest.Builder>() {
+                    @Override
+                    public ListHostedApplicationStoragesRequest.Builder get() {
+                        return ListHostedApplicationStoragesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListHostedApplicationStoragesResponse, String>() {
+                    @Override
+                    public String apply(ListHostedApplicationStoragesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHostedApplicationStoragesRequest.Builder>,
+                        ListHostedApplicationStoragesRequest>() {
+                    @Override
+                    public ListHostedApplicationStoragesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHostedApplicationStoragesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedApplicationStoragesRequest,
+                        ListHostedApplicationStoragesResponse>() {
+                    @Override
+                    public ListHostedApplicationStoragesResponse apply(
+                            ListHostedApplicationStoragesRequest request) {
+                        return client.listHostedApplicationStorages(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.HostedApplicationStorageSummary} objects contained in
+     * responses from the listHostedApplicationStorages operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.HostedApplicationStorageSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.HostedApplicationStorageSummary>
+            listHostedApplicationStoragesRecordIterator(
+                    final ListHostedApplicationStoragesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListHostedApplicationStoragesRequest.Builder,
+                ListHostedApplicationStoragesRequest,
+                ListHostedApplicationStoragesResponse,
+                com.oracle.bmc.generativeai.model.HostedApplicationStorageSummary>(
+                new java.util.function.Supplier<ListHostedApplicationStoragesRequest.Builder>() {
+                    @Override
+                    public ListHostedApplicationStoragesRequest.Builder get() {
+                        return ListHostedApplicationStoragesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListHostedApplicationStoragesResponse, String>() {
+                    @Override
+                    public String apply(ListHostedApplicationStoragesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHostedApplicationStoragesRequest.Builder>,
+                        ListHostedApplicationStoragesRequest>() {
+                    @Override
+                    public ListHostedApplicationStoragesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHostedApplicationStoragesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedApplicationStoragesRequest,
+                        ListHostedApplicationStoragesResponse>() {
+                    @Override
+                    public ListHostedApplicationStoragesResponse apply(
+                            ListHostedApplicationStoragesRequest request) {
+                        return client.listHostedApplicationStorages(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedApplicationStoragesResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeai.model
+                                        .HostedApplicationStorageSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.generativeai.model
+                                            .HostedApplicationStorageSummary>
+                            apply(ListHostedApplicationStoragesResponse response) {
+                        return response.getHostedApplicationStorageCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listHostedApplications operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListHostedApplicationsResponse> listHostedApplicationsResponseIterator(
+            final ListHostedApplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListHostedApplicationsRequest.Builder,
+                ListHostedApplicationsRequest,
+                ListHostedApplicationsResponse>(
+                new java.util.function.Supplier<ListHostedApplicationsRequest.Builder>() {
+                    @Override
+                    public ListHostedApplicationsRequest.Builder get() {
+                        return ListHostedApplicationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListHostedApplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListHostedApplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHostedApplicationsRequest.Builder>,
+                        ListHostedApplicationsRequest>() {
+                    @Override
+                    public ListHostedApplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHostedApplicationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedApplicationsRequest, ListHostedApplicationsResponse>() {
+                    @Override
+                    public ListHostedApplicationsResponse apply(
+                            ListHostedApplicationsRequest request) {
+                        return client.listHostedApplications(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.HostedApplicationSummary} objects contained in responses
+     * from the listHostedApplications operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.HostedApplicationSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.HostedApplicationSummary>
+            listHostedApplicationsRecordIterator(final ListHostedApplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListHostedApplicationsRequest.Builder,
+                ListHostedApplicationsRequest,
+                ListHostedApplicationsResponse,
+                com.oracle.bmc.generativeai.model.HostedApplicationSummary>(
+                new java.util.function.Supplier<ListHostedApplicationsRequest.Builder>() {
+                    @Override
+                    public ListHostedApplicationsRequest.Builder get() {
+                        return ListHostedApplicationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListHostedApplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListHostedApplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHostedApplicationsRequest.Builder>,
+                        ListHostedApplicationsRequest>() {
+                    @Override
+                    public ListHostedApplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHostedApplicationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedApplicationsRequest, ListHostedApplicationsResponse>() {
+                    @Override
+                    public ListHostedApplicationsResponse apply(
+                            ListHostedApplicationsRequest request) {
+                        return client.listHostedApplications(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedApplicationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeai.model.HostedApplicationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.generativeai.model.HostedApplicationSummary>
+                            apply(ListHostedApplicationsResponse response) {
+                        return response.getHostedApplicationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listHostedDeployments operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListHostedDeploymentsResponse> listHostedDeploymentsResponseIterator(
+            final ListHostedDeploymentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListHostedDeploymentsRequest.Builder,
+                ListHostedDeploymentsRequest,
+                ListHostedDeploymentsResponse>(
+                new java.util.function.Supplier<ListHostedDeploymentsRequest.Builder>() {
+                    @Override
+                    public ListHostedDeploymentsRequest.Builder get() {
+                        return ListHostedDeploymentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListHostedDeploymentsResponse, String>() {
+                    @Override
+                    public String apply(ListHostedDeploymentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHostedDeploymentsRequest.Builder>,
+                        ListHostedDeploymentsRequest>() {
+                    @Override
+                    public ListHostedDeploymentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHostedDeploymentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedDeploymentsRequest, ListHostedDeploymentsResponse>() {
+                    @Override
+                    public ListHostedDeploymentsResponse apply(
+                            ListHostedDeploymentsRequest request) {
+                        return client.listHostedDeployments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.HostedDeploymentSummary} objects contained in responses
+     * from the listHostedDeployments operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.HostedDeploymentSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.HostedDeploymentSummary>
+            listHostedDeploymentsRecordIterator(final ListHostedDeploymentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListHostedDeploymentsRequest.Builder,
+                ListHostedDeploymentsRequest,
+                ListHostedDeploymentsResponse,
+                com.oracle.bmc.generativeai.model.HostedDeploymentSummary>(
+                new java.util.function.Supplier<ListHostedDeploymentsRequest.Builder>() {
+                    @Override
+                    public ListHostedDeploymentsRequest.Builder get() {
+                        return ListHostedDeploymentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListHostedDeploymentsResponse, String>() {
+                    @Override
+                    public String apply(ListHostedDeploymentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHostedDeploymentsRequest.Builder>,
+                        ListHostedDeploymentsRequest>() {
+                    @Override
+                    public ListHostedDeploymentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHostedDeploymentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedDeploymentsRequest, ListHostedDeploymentsResponse>() {
+                    @Override
+                    public ListHostedDeploymentsResponse apply(
+                            ListHostedDeploymentsRequest request) {
+                        return client.listHostedDeployments(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedDeploymentsResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeai.model.HostedDeploymentSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.generativeai.model.HostedDeploymentSummary>
+                            apply(ListHostedDeploymentsResponse response) {
+                        return response.getHostedDeploymentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listImportedModels operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
@@ -754,6 +1255,654 @@ public class GenerativeAiPaginators {
                     public java.util.List<com.oracle.bmc.generativeai.model.ModelSummary> apply(
                             ListModelsResponse response) {
                         return response.getModelCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSemanticStores operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSemanticStoresResponse> listSemanticStoresResponseIterator(
+            final ListSemanticStoresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSemanticStoresRequest.Builder,
+                ListSemanticStoresRequest,
+                ListSemanticStoresResponse>(
+                new java.util.function.Supplier<ListSemanticStoresRequest.Builder>() {
+                    @Override
+                    public ListSemanticStoresRequest.Builder get() {
+                        return ListSemanticStoresRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSemanticStoresResponse, String>() {
+                    @Override
+                    public String apply(ListSemanticStoresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSemanticStoresRequest.Builder>,
+                        ListSemanticStoresRequest>() {
+                    @Override
+                    public ListSemanticStoresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSemanticStoresRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSemanticStoresRequest, ListSemanticStoresResponse>() {
+                    @Override
+                    public ListSemanticStoresResponse apply(ListSemanticStoresRequest request) {
+                        return client.listSemanticStores(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.SemanticStoreSummary} objects contained in responses from
+     * the listSemanticStores operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.SemanticStoreSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.SemanticStoreSummary>
+            listSemanticStoresRecordIterator(final ListSemanticStoresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSemanticStoresRequest.Builder,
+                ListSemanticStoresRequest,
+                ListSemanticStoresResponse,
+                com.oracle.bmc.generativeai.model.SemanticStoreSummary>(
+                new java.util.function.Supplier<ListSemanticStoresRequest.Builder>() {
+                    @Override
+                    public ListSemanticStoresRequest.Builder get() {
+                        return ListSemanticStoresRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSemanticStoresResponse, String>() {
+                    @Override
+                    public String apply(ListSemanticStoresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSemanticStoresRequest.Builder>,
+                        ListSemanticStoresRequest>() {
+                    @Override
+                    public ListSemanticStoresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSemanticStoresRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSemanticStoresRequest, ListSemanticStoresResponse>() {
+                    @Override
+                    public ListSemanticStoresResponse apply(ListSemanticStoresRequest request) {
+                        return client.listSemanticStores(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSemanticStoresResponse,
+                        java.util.List<com.oracle.bmc.generativeai.model.SemanticStoreSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.generativeai.model.SemanticStoreSummary>
+                            apply(ListSemanticStoresResponse response) {
+                        return response.getSemanticStoreCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listVectorStoreConnectorFileSyncIngestionLogs operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListVectorStoreConnectorFileSyncIngestionLogsResponse>
+            listVectorStoreConnectorFileSyncIngestionLogsResponseIterator(
+                    final ListVectorStoreConnectorFileSyncIngestionLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVectorStoreConnectorFileSyncIngestionLogsRequest.Builder,
+                ListVectorStoreConnectorFileSyncIngestionLogsRequest,
+                ListVectorStoreConnectorFileSyncIngestionLogsResponse>(
+                new java.util.function.Supplier<
+                        ListVectorStoreConnectorFileSyncIngestionLogsRequest.Builder>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncIngestionLogsRequest.Builder get() {
+                        return ListVectorStoreConnectorFileSyncIngestionLogsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorFileSyncIngestionLogsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListVectorStoreConnectorFileSyncIngestionLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVectorStoreConnectorFileSyncIngestionLogsRequest.Builder>,
+                        ListVectorStoreConnectorFileSyncIngestionLogsRequest>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncIngestionLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVectorStoreConnectorFileSyncIngestionLogsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorFileSyncIngestionLogsRequest,
+                        ListVectorStoreConnectorFileSyncIngestionLogsResponse>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncIngestionLogsResponse apply(
+                            ListVectorStoreConnectorFileSyncIngestionLogsRequest request) {
+                        return client.listVectorStoreConnectorFileSyncIngestionLogs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.FileSyncIngestionLogs} objects contained in responses from
+     * the listVectorStoreConnectorFileSyncIngestionLogs operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.FileSyncIngestionLogs} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.FileSyncIngestionLogs>
+            listVectorStoreConnectorFileSyncIngestionLogsRecordIterator(
+                    final ListVectorStoreConnectorFileSyncIngestionLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVectorStoreConnectorFileSyncIngestionLogsRequest.Builder,
+                ListVectorStoreConnectorFileSyncIngestionLogsRequest,
+                ListVectorStoreConnectorFileSyncIngestionLogsResponse,
+                com.oracle.bmc.generativeai.model.FileSyncIngestionLogs>(
+                new java.util.function.Supplier<
+                        ListVectorStoreConnectorFileSyncIngestionLogsRequest.Builder>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncIngestionLogsRequest.Builder get() {
+                        return ListVectorStoreConnectorFileSyncIngestionLogsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorFileSyncIngestionLogsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListVectorStoreConnectorFileSyncIngestionLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVectorStoreConnectorFileSyncIngestionLogsRequest.Builder>,
+                        ListVectorStoreConnectorFileSyncIngestionLogsRequest>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncIngestionLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVectorStoreConnectorFileSyncIngestionLogsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorFileSyncIngestionLogsRequest,
+                        ListVectorStoreConnectorFileSyncIngestionLogsResponse>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncIngestionLogsResponse apply(
+                            ListVectorStoreConnectorFileSyncIngestionLogsRequest request) {
+                        return client.listVectorStoreConnectorFileSyncIngestionLogs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorFileSyncIngestionLogsResponse,
+                        java.util.List<com.oracle.bmc.generativeai.model.FileSyncIngestionLogs>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.generativeai.model.FileSyncIngestionLogs>
+                            apply(ListVectorStoreConnectorFileSyncIngestionLogsResponse response) {
+                        return response.getFileSyncIngestionLogsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listVectorStoreConnectorFileSyncs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListVectorStoreConnectorFileSyncsResponse>
+            listVectorStoreConnectorFileSyncsResponseIterator(
+                    final ListVectorStoreConnectorFileSyncsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVectorStoreConnectorFileSyncsRequest.Builder,
+                ListVectorStoreConnectorFileSyncsRequest,
+                ListVectorStoreConnectorFileSyncsResponse>(
+                new java.util.function.Supplier<
+                        ListVectorStoreConnectorFileSyncsRequest.Builder>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncsRequest.Builder get() {
+                        return ListVectorStoreConnectorFileSyncsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorFileSyncsResponse, String>() {
+                    @Override
+                    public String apply(ListVectorStoreConnectorFileSyncsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVectorStoreConnectorFileSyncsRequest.Builder>,
+                        ListVectorStoreConnectorFileSyncsRequest>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVectorStoreConnectorFileSyncsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorFileSyncsRequest,
+                        ListVectorStoreConnectorFileSyncsResponse>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncsResponse apply(
+                            ListVectorStoreConnectorFileSyncsRequest request) {
+                        return client.listVectorStoreConnectorFileSyncs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSyncSummary} objects contained in
+     * responses from the listVectorStoreConnectorFileSyncs operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSyncSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSyncSummary>
+            listVectorStoreConnectorFileSyncsRecordIterator(
+                    final ListVectorStoreConnectorFileSyncsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVectorStoreConnectorFileSyncsRequest.Builder,
+                ListVectorStoreConnectorFileSyncsRequest,
+                ListVectorStoreConnectorFileSyncsResponse,
+                com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSyncSummary>(
+                new java.util.function.Supplier<
+                        ListVectorStoreConnectorFileSyncsRequest.Builder>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncsRequest.Builder get() {
+                        return ListVectorStoreConnectorFileSyncsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorFileSyncsResponse, String>() {
+                    @Override
+                    public String apply(ListVectorStoreConnectorFileSyncsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVectorStoreConnectorFileSyncsRequest.Builder>,
+                        ListVectorStoreConnectorFileSyncsRequest>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVectorStoreConnectorFileSyncsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorFileSyncsRequest,
+                        ListVectorStoreConnectorFileSyncsResponse>() {
+                    @Override
+                    public ListVectorStoreConnectorFileSyncsResponse apply(
+                            ListVectorStoreConnectorFileSyncsRequest request) {
+                        return client.listVectorStoreConnectorFileSyncs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorFileSyncsResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeai.model
+                                        .VectorStoreConnectorFileSyncSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.generativeai.model
+                                            .VectorStoreConnectorFileSyncSummary>
+                            apply(ListVectorStoreConnectorFileSyncsResponse response) {
+                        return response.getVectorStoreConnectorFileSyncCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listVectorStoreConnectorIngestionLogs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListVectorStoreConnectorIngestionLogsResponse>
+            listVectorStoreConnectorIngestionLogsResponseIterator(
+                    final ListVectorStoreConnectorIngestionLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVectorStoreConnectorIngestionLogsRequest.Builder,
+                ListVectorStoreConnectorIngestionLogsRequest,
+                ListVectorStoreConnectorIngestionLogsResponse>(
+                new java.util.function.Supplier<
+                        ListVectorStoreConnectorIngestionLogsRequest.Builder>() {
+                    @Override
+                    public ListVectorStoreConnectorIngestionLogsRequest.Builder get() {
+                        return ListVectorStoreConnectorIngestionLogsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorIngestionLogsResponse, String>() {
+                    @Override
+                    public String apply(ListVectorStoreConnectorIngestionLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVectorStoreConnectorIngestionLogsRequest.Builder>,
+                        ListVectorStoreConnectorIngestionLogsRequest>() {
+                    @Override
+                    public ListVectorStoreConnectorIngestionLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVectorStoreConnectorIngestionLogsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorIngestionLogsRequest,
+                        ListVectorStoreConnectorIngestionLogsResponse>() {
+                    @Override
+                    public ListVectorStoreConnectorIngestionLogsResponse apply(
+                            ListVectorStoreConnectorIngestionLogsRequest request) {
+                        return client.listVectorStoreConnectorIngestionLogs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.VectorStoreConnectorIngestionLogs} objects contained in
+     * responses from the listVectorStoreConnectorIngestionLogs operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.VectorStoreConnectorIngestionLogs} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.VectorStoreConnectorIngestionLogs>
+            listVectorStoreConnectorIngestionLogsRecordIterator(
+                    final ListVectorStoreConnectorIngestionLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVectorStoreConnectorIngestionLogsRequest.Builder,
+                ListVectorStoreConnectorIngestionLogsRequest,
+                ListVectorStoreConnectorIngestionLogsResponse,
+                com.oracle.bmc.generativeai.model.VectorStoreConnectorIngestionLogs>(
+                new java.util.function.Supplier<
+                        ListVectorStoreConnectorIngestionLogsRequest.Builder>() {
+                    @Override
+                    public ListVectorStoreConnectorIngestionLogsRequest.Builder get() {
+                        return ListVectorStoreConnectorIngestionLogsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorIngestionLogsResponse, String>() {
+                    @Override
+                    public String apply(ListVectorStoreConnectorIngestionLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVectorStoreConnectorIngestionLogsRequest.Builder>,
+                        ListVectorStoreConnectorIngestionLogsRequest>() {
+                    @Override
+                    public ListVectorStoreConnectorIngestionLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVectorStoreConnectorIngestionLogsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorIngestionLogsRequest,
+                        ListVectorStoreConnectorIngestionLogsResponse>() {
+                    @Override
+                    public ListVectorStoreConnectorIngestionLogsResponse apply(
+                            ListVectorStoreConnectorIngestionLogsRequest request) {
+                        return client.listVectorStoreConnectorIngestionLogs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorIngestionLogsResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeai.model
+                                        .VectorStoreConnectorIngestionLogs>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.generativeai.model
+                                            .VectorStoreConnectorIngestionLogs>
+                            apply(ListVectorStoreConnectorIngestionLogsResponse response) {
+                        return response.getVectorStoreConnectorIngestionLogsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listVectorStoreConnectors operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListVectorStoreConnectorsResponse> listVectorStoreConnectorsResponseIterator(
+            final ListVectorStoreConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVectorStoreConnectorsRequest.Builder,
+                ListVectorStoreConnectorsRequest,
+                ListVectorStoreConnectorsResponse>(
+                new java.util.function.Supplier<ListVectorStoreConnectorsRequest.Builder>() {
+                    @Override
+                    public ListVectorStoreConnectorsRequest.Builder get() {
+                        return ListVectorStoreConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVectorStoreConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListVectorStoreConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVectorStoreConnectorsRequest.Builder>,
+                        ListVectorStoreConnectorsRequest>() {
+                    @Override
+                    public ListVectorStoreConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVectorStoreConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorsRequest, ListVectorStoreConnectorsResponse>() {
+                    @Override
+                    public ListVectorStoreConnectorsResponse apply(
+                            ListVectorStoreConnectorsRequest request) {
+                        return client.listVectorStoreConnectors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.VectorStoreConnectorSummary} objects contained in responses
+     * from the listVectorStoreConnectors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.VectorStoreConnectorSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.VectorStoreConnectorSummary>
+            listVectorStoreConnectorsRecordIterator(
+                    final ListVectorStoreConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVectorStoreConnectorsRequest.Builder,
+                ListVectorStoreConnectorsRequest,
+                ListVectorStoreConnectorsResponse,
+                com.oracle.bmc.generativeai.model.VectorStoreConnectorSummary>(
+                new java.util.function.Supplier<ListVectorStoreConnectorsRequest.Builder>() {
+                    @Override
+                    public ListVectorStoreConnectorsRequest.Builder get() {
+                        return ListVectorStoreConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVectorStoreConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListVectorStoreConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVectorStoreConnectorsRequest.Builder>,
+                        ListVectorStoreConnectorsRequest>() {
+                    @Override
+                    public ListVectorStoreConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVectorStoreConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorsRequest, ListVectorStoreConnectorsResponse>() {
+                    @Override
+                    public ListVectorStoreConnectorsResponse apply(
+                            ListVectorStoreConnectorsRequest request) {
+                        return client.listVectorStoreConnectors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVectorStoreConnectorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeai.model.VectorStoreConnectorSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.generativeai.model.VectorStoreConnectorSummary>
+                            apply(ListVectorStoreConnectorsResponse response) {
+                        return response.getVectorStoreConnectorCollection().getItems();
                     }
                 });
     }

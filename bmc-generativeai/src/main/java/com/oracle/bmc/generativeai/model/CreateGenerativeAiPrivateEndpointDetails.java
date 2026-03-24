@@ -31,6 +31,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
         "dnsPrefix",
         "nsgIds",
         "isAllowOnDemand",
+        "resourceType",
         "freeformTags",
         "definedTags",
         "securityAttributes"
@@ -43,6 +44,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
             String dnsPrefix,
             java.util.List<String> nsgIds,
             Boolean isAllowOnDemand,
+            GenerativeAiPrivateEndpoint.ResourceType resourceType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
@@ -54,6 +56,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
         this.dnsPrefix = dnsPrefix;
         this.nsgIds = nsgIds;
         this.isAllowOnDemand = isAllowOnDemand;
+        this.resourceType = resourceType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.securityAttributes = securityAttributes;
@@ -174,6 +177,21 @@ public final class CreateGenerativeAiPrivateEndpointDetails
             this.__explicitlySet__.add("isAllowOnDemand");
             return this;
         }
+        /** The resource type that Generative AI private endpoint can be used for. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private GenerativeAiPrivateEndpoint.ResourceType resourceType;
+
+        /**
+         * The resource type that Generative AI private endpoint can be used for.
+         *
+         * @param resourceType the value to set
+         * @return this builder
+         */
+        public Builder resourceType(GenerativeAiPrivateEndpoint.ResourceType resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -263,6 +281,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
                             this.dnsPrefix,
                             this.nsgIds,
                             this.isAllowOnDemand,
+                            this.resourceType,
                             this.freeformTags,
                             this.definedTags,
                             this.securityAttributes);
@@ -294,6 +313,9 @@ public final class CreateGenerativeAiPrivateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("isAllowOnDemand")) {
                 this.isAllowOnDemand(model.getIsAllowOnDemand());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -414,6 +436,19 @@ public final class CreateGenerativeAiPrivateEndpointDetails
         return isAllowOnDemand;
     }
 
+    /** The resource type that Generative AI private endpoint can be used for. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    private final GenerativeAiPrivateEndpoint.ResourceType resourceType;
+
+    /**
+     * The resource type that Generative AI private endpoint can be used for.
+     *
+     * @return the value
+     */
+    public GenerativeAiPrivateEndpoint.ResourceType getResourceType() {
+        return resourceType;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -503,6 +538,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
         sb.append(", dnsPrefix=").append(String.valueOf(this.dnsPrefix));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", isAllowOnDemand=").append(String.valueOf(this.isAllowOnDemand));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
@@ -528,6 +564,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
                 && java.util.Objects.equals(this.dnsPrefix, other.dnsPrefix)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.isAllowOnDemand, other.isAllowOnDemand)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
@@ -549,6 +586,7 @@ public final class CreateGenerativeAiPrivateEndpointDetails
         result =
                 (result * PRIME)
                         + (this.isAllowOnDemand == null ? 43 : this.isAllowOnDemand.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

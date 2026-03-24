@@ -24,6 +24,7 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     CreateAutoscaleConfig("CREATE_AUTOSCALE_CONFIG"),
     UpdateAutoscaleConfig("UPDATE_AUTOSCALE_CONFIG"),
     DeleteAutoscaleConfig("DELETE_AUTOSCALE_CONFIG"),
+    RemoveNodes("REMOVE_NODES"),
     AutoscaleConfig("AUTOSCALE_CONFIG"),
     AutoscaleRun("AUTOSCALE_RUN"),
     CreateApiKey("CREATE_API_KEY"),
@@ -66,6 +67,12 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     ActivateIamUserSyncConfig("ACTIVATE_IAM_USER_SYNC_CONFIG"),
     DeactivateIamUserSyncConfig("DEACTIVATE_IAM_USER_SYNC_CONFIG"),
     InstallSoftwareUpdates("INSTALL_SOFTWARE_UPDATES"),
+    ResetPassword("RESET_PASSWORD"),
+    GenerateCertificate("GENERATE_CERTIFICATE"),
+    RenewCertificate("RENEW_CERTIFICATE"),
+    CreateCertConfig("CREATE_CERT_CONFIG"),
+    SetDefaultCertConfig("SET_DEFAULT_CERT_CONFIG"),
+    DeleteCertConfig("DELETE_CERT_CONFIG"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

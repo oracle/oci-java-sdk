@@ -26,6 +26,7 @@ public final class AutoScalingConfiguration
     @java.beans.ConstructorProperties({
         "id",
         "displayName",
+        "secretId",
         "nodeType",
         "lifecycleState",
         "timeCreated",
@@ -36,6 +37,7 @@ public final class AutoScalingConfiguration
     public AutoScalingConfiguration(
             String id,
             String displayName,
+            String secretId,
             Node.NodeType nodeType,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
@@ -45,6 +47,7 @@ public final class AutoScalingConfiguration
         super();
         this.id = id;
         this.displayName = displayName;
+        this.secretId = secretId;
         this.nodeType = nodeType;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
@@ -87,6 +90,21 @@ public final class AutoScalingConfiguration
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** The secretId for the clusterAdminPassword. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
             return this;
         }
         /**
@@ -184,6 +202,7 @@ public final class AutoScalingConfiguration
                     new AutoScalingConfiguration(
                             this.id,
                             this.displayName,
+                            this.secretId,
                             this.nodeType,
                             this.lifecycleState,
                             this.timeCreated,
@@ -203,6 +222,9 @@ public final class AutoScalingConfiguration
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("nodeType")) {
                 this.nodeType(model.getNodeType());
@@ -263,6 +285,19 @@ public final class AutoScalingConfiguration
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /** The secretId for the clusterAdminPassword. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
     }
 
     /**
@@ -407,6 +442,7 @@ public final class AutoScalingConfiguration
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", nodeType=").append(String.valueOf(this.nodeType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -429,6 +465,7 @@ public final class AutoScalingConfiguration
         AutoScalingConfiguration other = (AutoScalingConfiguration) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.nodeType, other.nodeType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -444,6 +481,7 @@ public final class AutoScalingConfiguration
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.nodeType == null ? 43 : this.nodeType.hashCode());
         result =
                 (result * PRIME)
