@@ -23,13 +23,25 @@ package com.oracle.bmc.bds.model;
 public final class AddBlockStorageDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"clusterAdminPassword", "blockVolumeSizeInGBs", "nodeType"})
+    @java.beans.ConstructorProperties({
+        "clusterAdminPassword",
+        "secretId",
+        "blockVolumeSizeInGBs",
+        "nodeType",
+        "nodeIds"
+    })
     public AddBlockStorageDetails(
-            String clusterAdminPassword, Long blockVolumeSizeInGBs, NodeType nodeType) {
+            String clusterAdminPassword,
+            String secretId,
+            Long blockVolumeSizeInGBs,
+            NodeType nodeType,
+            java.util.List<String> nodeIds) {
         super();
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
         this.nodeType = nodeType;
+        this.nodeIds = nodeIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -49,16 +61,35 @@ public final class AddBlockStorageDetails
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
+        /** The secretId for the clusterAdminPassword. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
         /**
-         * The size of block volume in GB to be added to each worker node. All the details needed
-         * for attaching the block volume are managed by service itself.
+         * The secretId for the clusterAdminPassword.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+        /**
+         * The size of block volume in GB to be added. For WORKER, COMPUTE_ONLY_WORKER, and
+         * KAFKA_BROKER nodes, the same size will be added to all nodes of that type. For EDGE
+         * nodes, this size can be different per node when nodeId is specified. All the details
+         * needed for attaching the block volume are managed by service itself.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
         private Long blockVolumeSizeInGBs;
 
         /**
-         * The size of block volume in GB to be added to each worker node. All the details needed
-         * for attaching the block volume are managed by service itself.
+         * The size of block volume in GB to be added. For WORKER, COMPUTE_ONLY_WORKER, and
+         * KAFKA_BROKER nodes, the same size will be added to all nodes of that type. For EDGE
+         * nodes, this size can be different per node when nodeId is specified. All the details
+         * needed for attaching the block volume are managed by service itself.
          *
          * @param blockVolumeSizeInGBs the value to set
          * @return this builder
@@ -83,6 +114,25 @@ public final class AddBlockStorageDetails
             this.__explicitlySet__.add("nodeType");
             return this;
         }
+        /**
+         * Optional. List of OCIDs of specific nodes to add storage to. Only supported for EDGE
+         * nodes. When omitted, storage is added to all nodes of the specified type.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeIds")
+        private java.util.List<String> nodeIds;
+
+        /**
+         * Optional. List of OCIDs of specific nodes to add storage to. Only supported for EDGE
+         * nodes. When omitted, storage is added to all nodes of the specified type.
+         *
+         * @param nodeIds the value to set
+         * @return this builder
+         */
+        public Builder nodeIds(java.util.List<String> nodeIds) {
+            this.nodeIds = nodeIds;
+            this.__explicitlySet__.add("nodeIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -90,7 +140,11 @@ public final class AddBlockStorageDetails
         public AddBlockStorageDetails build() {
             AddBlockStorageDetails model =
                     new AddBlockStorageDetails(
-                            this.clusterAdminPassword, this.blockVolumeSizeInGBs, this.nodeType);
+                            this.clusterAdminPassword,
+                            this.secretId,
+                            this.blockVolumeSizeInGBs,
+                            this.nodeType,
+                            this.nodeIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,11 +156,17 @@ public final class AddBlockStorageDetails
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
             }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
             if (model.wasPropertyExplicitlySet("blockVolumeSizeInGBs")) {
                 this.blockVolumeSizeInGBs(model.getBlockVolumeSizeInGBs());
             }
             if (model.wasPropertyExplicitlySet("nodeType")) {
                 this.nodeType(model.getNodeType());
+            }
+            if (model.wasPropertyExplicitlySet("nodeIds")) {
+                this.nodeIds(model.getNodeIds());
             }
             return this;
         }
@@ -134,16 +194,33 @@ public final class AddBlockStorageDetails
         return clusterAdminPassword;
     }
 
+    /** The secretId for the clusterAdminPassword. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
     /**
-     * The size of block volume in GB to be added to each worker node. All the details needed for
-     * attaching the block volume are managed by service itself.
+     * The secretId for the clusterAdminPassword.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
+    }
+
+    /**
+     * The size of block volume in GB to be added. For WORKER, COMPUTE_ONLY_WORKER, and KAFKA_BROKER
+     * nodes, the same size will be added to all nodes of that type. For EDGE nodes, this size can
+     * be different per node when nodeId is specified. All the details needed for attaching the
+     * block volume are managed by service itself.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     private final Long blockVolumeSizeInGBs;
 
     /**
-     * The size of block volume in GB to be added to each worker node. All the details needed for
-     * attaching the block volume are managed by service itself.
+     * The size of block volume in GB to be added. For WORKER, COMPUTE_ONLY_WORKER, and KAFKA_BROKER
+     * nodes, the same size will be added to all nodes of that type. For EDGE nodes, this size can
+     * be different per node when nodeId is specified. All the details needed for attaching the
+     * block volume are managed by service itself.
      *
      * @return the value
      */
@@ -156,6 +233,7 @@ public final class AddBlockStorageDetails
         Worker("WORKER"),
         ComputeOnlyWorker("COMPUTE_ONLY_WORKER"),
         KafkaBroker("KAFKA_BROKER"),
+        Edge("EDGE"),
         ;
 
         private final String value;
@@ -198,6 +276,23 @@ public final class AddBlockStorageDetails
         return nodeType;
     }
 
+    /**
+     * Optional. List of OCIDs of specific nodes to add storage to. Only supported for EDGE nodes.
+     * When omitted, storage is added to all nodes of the specified type.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeIds")
+    private final java.util.List<String> nodeIds;
+
+    /**
+     * Optional. List of OCIDs of specific nodes to add storage to. Only supported for EDGE nodes.
+     * When omitted, storage is added to all nodes of the specified type.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNodeIds() {
+        return nodeIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -214,8 +309,10 @@ public final class AddBlockStorageDetails
         sb.append("AddBlockStorageDetails(");
         sb.append("super=").append(super.toString());
         sb.append("clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", blockVolumeSizeInGBs=").append(String.valueOf(this.blockVolumeSizeInGBs));
         sb.append(", nodeType=").append(String.valueOf(this.nodeType));
+        sb.append(", nodeIds=").append(String.valueOf(this.nodeIds));
         sb.append(")");
         return sb.toString();
     }
@@ -231,8 +328,10 @@ public final class AddBlockStorageDetails
 
         AddBlockStorageDetails other = (AddBlockStorageDetails) o;
         return java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.blockVolumeSizeInGBs, other.blockVolumeSizeInGBs)
                 && java.util.Objects.equals(this.nodeType, other.nodeType)
+                && java.util.Objects.equals(this.nodeIds, other.nodeIds)
                 && super.equals(other);
     }
 
@@ -245,12 +344,14 @@ public final class AddBlockStorageDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.blockVolumeSizeInGBs == null
                                 ? 43
                                 : this.blockVolumeSizeInGBs.hashCode());
         result = (result * PRIME) + (this.nodeType == null ? 43 : this.nodeType.hashCode());
+        result = (result * PRIME) + (this.nodeIds == null ? 43 : this.nodeIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

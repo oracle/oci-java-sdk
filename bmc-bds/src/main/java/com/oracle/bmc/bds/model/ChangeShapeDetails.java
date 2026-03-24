@@ -23,10 +23,12 @@ package com.oracle.bmc.bds.model;
 public final class ChangeShapeDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"clusterAdminPassword", "nodes"})
-    public ChangeShapeDetails(String clusterAdminPassword, ChangeShapeNodes nodes) {
+    @java.beans.ConstructorProperties({"clusterAdminPassword", "secretId", "nodes"})
+    public ChangeShapeDetails(
+            String clusterAdminPassword, String secretId, ChangeShapeNodes nodes) {
         super();
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.nodes = nodes;
     }
 
@@ -47,6 +49,21 @@ public final class ChangeShapeDetails
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
+        /** The secretId for the clusterAdminPassword. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("nodes")
         private ChangeShapeNodes nodes;
@@ -62,7 +79,7 @@ public final class ChangeShapeDetails
 
         public ChangeShapeDetails build() {
             ChangeShapeDetails model =
-                    new ChangeShapeDetails(this.clusterAdminPassword, this.nodes);
+                    new ChangeShapeDetails(this.clusterAdminPassword, this.secretId, this.nodes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -73,6 +90,9 @@ public final class ChangeShapeDetails
         public Builder copy(ChangeShapeDetails model) {
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("nodes")) {
                 this.nodes(model.getNodes());
@@ -103,6 +123,19 @@ public final class ChangeShapeDetails
         return clusterAdminPassword;
     }
 
+    /** The secretId for the clusterAdminPassword. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
     private final ChangeShapeNodes nodes;
 
@@ -126,6 +159,7 @@ public final class ChangeShapeDetails
         sb.append("ChangeShapeDetails(");
         sb.append("super=").append(super.toString());
         sb.append("clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", nodes=").append(String.valueOf(this.nodes));
         sb.append(")");
         return sb.toString();
@@ -142,6 +176,7 @@ public final class ChangeShapeDetails
 
         ChangeShapeDetails other = (ChangeShapeDetails) o;
         return java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.nodes, other.nodes)
                 && super.equals(other);
     }
@@ -155,6 +190,7 @@ public final class ChangeShapeDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.nodes == null ? 43 : this.nodes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

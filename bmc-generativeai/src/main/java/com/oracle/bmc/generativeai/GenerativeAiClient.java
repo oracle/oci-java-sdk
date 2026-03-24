@@ -124,6 +124,69 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public AddArtifactResponse addArtifact(AddArtifactRequest request) {
+        Objects.requireNonNull(request.getAddArtifactDetails(), "addArtifactDetails is required");
+
+        Validate.notBlank(request.getHostedDeploymentId(), "hostedDeploymentId must not be blank");
+
+        return clientCall(request, AddArtifactResponse::builder)
+                .logger(LOG, "addArtifact")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "AddArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/AddArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddArtifactRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedDeployments")
+                .appendPathParam(request.getHostedDeploymentId())
+                .appendPathParam("artifacts")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddArtifactResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddArtifactResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CancelVectorStoreConnectorFileSyncResponse cancelVectorStoreConnectorFileSync(
+            CancelVectorStoreConnectorFileSyncRequest request) {
+
+        Validate.notBlank(
+                request.getVectorStoreConnectorFileSyncId(),
+                "vectorStoreConnectorFileSyncId must not be blank");
+
+        return clientCall(request, CancelVectorStoreConnectorFileSyncResponse::builder)
+                .logger(LOG, "cancelVectorStoreConnectorFileSync")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CancelVectorStoreConnectorFileSync",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorFileSync/CancelVectorStoreConnectorFileSync")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(CancelVectorStoreConnectorFileSyncRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectorFileSyncs")
+                .appendPathParam(request.getVectorStoreConnectorFileSyncId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CancelVectorStoreConnectorFileSyncResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CancelVectorStoreConnectorFileSyncResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeApiKeyCompartmentResponse changeApiKeyCompartment(
             ChangeApiKeyCompartmentRequest request) {
 
@@ -266,6 +329,113 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ChangeGenerativeAiProjectCompartmentResponse changeGenerativeAiProjectCompartment(
+            ChangeGenerativeAiProjectCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getGenerativeAiProjectId(), "generativeAiProjectId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeGenerativeAiProjectCompartmentDetails(),
+                "changeGenerativeAiProjectCompartmentDetails is required");
+
+        return clientCall(request, ChangeGenerativeAiProjectCompartmentResponse::builder)
+                .logger(LOG, "changeGenerativeAiProjectCompartment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeGenerativeAiProjectCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProject/ChangeGenerativeAiProjectCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeGenerativeAiProjectCompartmentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .appendPathParam(request.getGenerativeAiProjectId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeGenerativeAiProjectCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeHostedApplicationCompartmentResponse changeHostedApplicationCompartment(
+            ChangeHostedApplicationCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationId(), "hostedApplicationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeHostedApplicationCompartmentDetails(),
+                "changeHostedApplicationCompartmentDetails is required");
+
+        return clientCall(request, ChangeHostedApplicationCompartmentResponse::builder)
+                .logger(LOG, "changeHostedApplicationCompartment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeHostedApplicationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplication/ChangeHostedApplicationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeHostedApplicationCompartmentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplications")
+                .appendPathParam(request.getHostedApplicationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeHostedApplicationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeHostedApplicationStorageCompartmentResponse
+            changeHostedApplicationStorageCompartment(
+                    ChangeHostedApplicationStorageCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationStorageId(),
+                "hostedApplicationStorageId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeHostedApplicationStorageCompartmentDetails(),
+                "changeHostedApplicationStorageCompartmentDetails is required");
+
+        return clientCall(request, ChangeHostedApplicationStorageCompartmentResponse::builder)
+                .logger(LOG, "changeHostedApplicationStorageCompartment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeHostedApplicationStorageCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationStorage/ChangeHostedApplicationStorageCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeHostedApplicationStorageCompartmentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationStorages")
+                .appendPathParam(request.getHostedApplicationStorageId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeHostedApplicationStorageCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeImportedModelCompartmentResponse changeImportedModelCompartment(
             ChangeImportedModelCompartmentRequest request) {
 
@@ -329,6 +499,43 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeModelCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeSemanticStoreCompartmentResponse changeSemanticStoreCompartment(
+            ChangeSemanticStoreCompartmentRequest request) {
+
+        Validate.notBlank(request.getSemanticStoreId(), "semanticStoreId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSemanticStoreCompartmentDetails(),
+                "changeSemanticStoreCompartmentDetails is required");
+
+        return clientCall(request, ChangeSemanticStoreCompartmentResponse::builder)
+                .logger(LOG, "changeSemanticStoreCompartment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeSemanticStoreCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStore/ChangeSemanticStoreCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSemanticStoreCompartmentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("semanticStores")
+                .appendPathParam(request.getSemanticStoreId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSemanticStoreCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSemanticStoreCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -466,6 +673,144 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public CreateGenerativeAiProjectResponse createGenerativeAiProject(
+            CreateGenerativeAiProjectRequest request) {
+        Objects.requireNonNull(
+                request.getCreateGenerativeAiProjectDetails(),
+                "createGenerativeAiProjectDetails is required");
+
+        return clientCall(request, CreateGenerativeAiProjectResponse::builder)
+                .logger(LOG, "createGenerativeAiProject")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateGenerativeAiProject",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProject/CreateGenerativeAiProject")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateGenerativeAiProjectRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.GenerativeAiProject.class,
+                        CreateGenerativeAiProjectResponse.Builder::generativeAiProject)
+                .handleResponseHeaderString("etag", CreateGenerativeAiProjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateGenerativeAiProjectResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateGenerativeAiProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateHostedApplicationResponse createHostedApplication(
+            CreateHostedApplicationRequest request) {
+        Objects.requireNonNull(
+                request.getCreateHostedApplicationDetails(),
+                "createHostedApplicationDetails is required");
+
+        return clientCall(request, CreateHostedApplicationResponse::builder)
+                .logger(LOG, "createHostedApplication")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateHostedApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplication/CreateHostedApplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateHostedApplicationRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplications")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedApplication.class,
+                        CreateHostedApplicationResponse.Builder::hostedApplication)
+                .handleResponseHeaderString("etag", CreateHostedApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateHostedApplicationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateHostedApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateHostedApplicationStorageResponse createHostedApplicationStorage(
+            CreateHostedApplicationStorageRequest request) {
+        Objects.requireNonNull(
+                request.getCreateHostedApplicationStorageDetails(),
+                "createHostedApplicationStorageDetails is required");
+
+        return clientCall(request, CreateHostedApplicationStorageResponse::builder)
+                .logger(LOG, "createHostedApplicationStorage")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateHostedApplicationStorage",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationStorage/CreateHostedApplicationStorage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateHostedApplicationStorageRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationStorages")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedApplicationStorage.class,
+                        CreateHostedApplicationStorageResponse.Builder::hostedApplicationStorage)
+                .handleResponseHeaderString(
+                        "etag", CreateHostedApplicationStorageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateHostedApplicationStorageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateHostedApplicationStorageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateHostedDeploymentResponse createHostedDeployment(
+            CreateHostedDeploymentRequest request) {
+        Objects.requireNonNull(
+                request.getCreateHostedDeploymentDetails(),
+                "createHostedDeploymentDetails is required");
+
+        return clientCall(request, CreateHostedDeploymentResponse::builder)
+                .logger(LOG, "createHostedDeployment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateHostedDeployment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/CreateHostedDeployment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateHostedDeploymentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedDeployments")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedDeployment.class,
+                        CreateHostedDeploymentResponse.Builder::hostedDeployment)
+                .handleResponseHeaderString("etag", CreateHostedDeploymentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateHostedDeploymentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateHostedDeploymentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateImportedModelResponse createImportedModel(CreateImportedModelRequest request) {
         Objects.requireNonNull(
                 request.getCreateImportedModelDetails(), "createImportedModelDetails is required");
@@ -526,6 +871,110 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", CreateModelResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "model-deprecation-info", CreateModelResponse.Builder::modelDeprecationInfo)
+                .callSync();
+    }
+
+    @Override
+    public CreateSemanticStoreResponse createSemanticStore(CreateSemanticStoreRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSemanticStoreDetails(), "createSemanticStoreDetails is required");
+
+        return clientCall(request, CreateSemanticStoreResponse::builder)
+                .logger(LOG, "createSemanticStore")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateSemanticStore",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStore/CreateSemanticStore")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSemanticStoreRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("semanticStores")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.SemanticStore.class,
+                        CreateSemanticStoreResponse.Builder::semanticStore)
+                .handleResponseHeaderString("etag", CreateSemanticStoreResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSemanticStoreResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSemanticStoreResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateVectorStoreConnectorResponse createVectorStoreConnector(
+            CreateVectorStoreConnectorRequest request) {
+        Objects.requireNonNull(
+                request.getCreateVectorStoreConnectorDetails(),
+                "createVectorStoreConnectorDetails is required");
+
+        return clientCall(request, CreateVectorStoreConnectorResponse::builder)
+                .logger(LOG, "createVectorStoreConnector")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateVectorStoreConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnector/CreateVectorStoreConnector")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVectorStoreConnectorRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectors")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.VectorStoreConnector.class,
+                        CreateVectorStoreConnectorResponse.Builder::vectorStoreConnector)
+                .handleResponseHeaderString(
+                        "etag", CreateVectorStoreConnectorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateVectorStoreConnectorResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVectorStoreConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateVectorStoreConnectorFileSyncResponse createVectorStoreConnectorFileSync(
+            CreateVectorStoreConnectorFileSyncRequest request) {
+        Objects.requireNonNull(
+                request.getCreateVectorStoreConnectorFileSyncDetails(),
+                "createVectorStoreConnectorFileSyncDetails is required");
+
+        return clientCall(request, CreateVectorStoreConnectorFileSyncResponse::builder)
+                .logger(LOG, "createVectorStoreConnectorFileSync")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateVectorStoreConnectorFileSync",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorFileSync/CreateVectorStoreConnectorFileSync")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVectorStoreConnectorFileSyncRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectorFileSyncs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSync.class,
+                        CreateVectorStoreConnectorFileSyncResponse.Builder
+                                ::vectorStoreConnectorFileSync)
+                .handleResponseHeaderString(
+                        "etag", CreateVectorStoreConnectorFileSyncResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateVectorStoreConnectorFileSyncResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateVectorStoreConnectorFileSyncResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -644,6 +1093,161 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DeleteGenerativeAiProjectResponse deleteGenerativeAiProject(
+            DeleteGenerativeAiProjectRequest request) {
+
+        Validate.notBlank(
+                request.getGenerativeAiProjectId(), "generativeAiProjectId must not be blank");
+
+        return clientCall(request, DeleteGenerativeAiProjectResponse::builder)
+                .logger(LOG, "deleteGenerativeAiProject")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteGenerativeAiProject",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProject/DeleteGenerativeAiProject")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteGenerativeAiProjectRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .appendPathParam(request.getGenerativeAiProjectId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteGenerativeAiProjectResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteGenerativeAiProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteHostedApplicationResponse deleteHostedApplication(
+            DeleteHostedApplicationRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationId(), "hostedApplicationId must not be blank");
+
+        return clientCall(request, DeleteHostedApplicationResponse::builder)
+                .logger(LOG, "deleteHostedApplication")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteHostedApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplication/DeleteHostedApplication")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteHostedApplicationRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplications")
+                .appendPathParam(request.getHostedApplicationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteHostedApplicationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteHostedApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteHostedApplicationStorageResponse deleteHostedApplicationStorage(
+            DeleteHostedApplicationStorageRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationStorageId(),
+                "hostedApplicationStorageId must not be blank");
+
+        return clientCall(request, DeleteHostedApplicationStorageResponse::builder)
+                .logger(LOG, "deleteHostedApplicationStorage")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteHostedApplicationStorage",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationStorage/DeleteHostedApplicationStorage")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteHostedApplicationStorageRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationStorages")
+                .appendPathParam(request.getHostedApplicationStorageId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteHostedApplicationStorageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteHostedApplicationStorageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteHostedDeploymentResponse deleteHostedDeployment(
+            DeleteHostedDeploymentRequest request) {
+
+        Validate.notBlank(request.getHostedDeploymentId(), "hostedDeploymentId must not be blank");
+
+        return clientCall(request, DeleteHostedDeploymentResponse::builder)
+                .logger(LOG, "deleteHostedDeployment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteHostedDeployment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/DeleteHostedDeployment")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteHostedDeploymentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedDeployments")
+                .appendPathParam(request.getHostedDeploymentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteHostedDeploymentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteHostedDeploymentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteHostedDeploymentArtifactResponse deleteHostedDeploymentArtifact(
+            DeleteHostedDeploymentArtifactRequest request) {
+
+        Validate.notBlank(request.getHostedDeploymentId(), "hostedDeploymentId must not be blank");
+
+        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
+
+        return clientCall(request, DeleteHostedDeploymentArtifactResponse::builder)
+                .logger(LOG, "deleteHostedDeploymentArtifact")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteHostedDeploymentArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/DeleteHostedDeploymentArtifact")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteHostedDeploymentArtifactRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedDeployments")
+                .appendPathParam(request.getHostedDeploymentId())
+                .appendPathParam("artifacts")
+                .appendPathParam(request.getArtifactId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteHostedDeploymentArtifactResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteHostedDeploymentArtifactResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteImportedModelResponse deleteImportedModel(DeleteImportedModelRequest request) {
 
         Validate.notBlank(request.getImportedModelId(), "importedModelId must not be blank");
@@ -695,6 +1299,64 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id", DeleteModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSemanticStoreResponse deleteSemanticStore(DeleteSemanticStoreRequest request) {
+
+        Validate.notBlank(request.getSemanticStoreId(), "semanticStoreId must not be blank");
+
+        return clientCall(request, DeleteSemanticStoreResponse::builder)
+                .logger(LOG, "deleteSemanticStore")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteSemanticStore",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStore/DeleteSemanticStore")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSemanticStoreRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("semanticStores")
+                .appendPathParam(request.getSemanticStoreId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSemanticStoreResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSemanticStoreResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteVectorStoreConnectorResponse deleteVectorStoreConnector(
+            DeleteVectorStoreConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getVectorStoreConnectorId(), "vectorStoreConnectorId must not be blank");
+
+        return clientCall(request, DeleteVectorStoreConnectorResponse::builder)
+                .logger(LOG, "deleteVectorStoreConnector")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteVectorStoreConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnector/DeleteVectorStoreConnector")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVectorStoreConnectorRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectors")
+                .appendPathParam(request.getVectorStoreConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteVectorStoreConnectorResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVectorStoreConnectorResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -818,6 +1480,125 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public GetGenerativeAiProjectResponse getGenerativeAiProject(
+            GetGenerativeAiProjectRequest request) {
+
+        Validate.notBlank(
+                request.getGenerativeAiProjectId(), "generativeAiProjectId must not be blank");
+
+        return clientCall(request, GetGenerativeAiProjectResponse::builder)
+                .logger(LOG, "getGenerativeAiProject")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetGenerativeAiProject",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProject/GetGenerativeAiProject")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetGenerativeAiProjectRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .appendPathParam(request.getGenerativeAiProjectId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.GenerativeAiProject.class,
+                        GetGenerativeAiProjectResponse.Builder::generativeAiProject)
+                .handleResponseHeaderString("etag", GetGenerativeAiProjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetGenerativeAiProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetHostedApplicationResponse getHostedApplication(GetHostedApplicationRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationId(), "hostedApplicationId must not be blank");
+
+        return clientCall(request, GetHostedApplicationResponse::builder)
+                .logger(LOG, "getHostedApplication")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetHostedApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplication/GetHostedApplication")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetHostedApplicationRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplications")
+                .appendPathParam(request.getHostedApplicationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedApplication.class,
+                        GetHostedApplicationResponse.Builder::hostedApplication)
+                .handleResponseHeaderString("etag", GetHostedApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetHostedApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetHostedApplicationStorageResponse getHostedApplicationStorage(
+            GetHostedApplicationStorageRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationStorageId(),
+                "hostedApplicationStorageId must not be blank");
+
+        return clientCall(request, GetHostedApplicationStorageResponse::builder)
+                .logger(LOG, "getHostedApplicationStorage")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetHostedApplicationStorage",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationStorage/GetHostedApplicationStorage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetHostedApplicationStorageRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationStorages")
+                .appendPathParam(request.getHostedApplicationStorageId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedApplicationStorage.class,
+                        GetHostedApplicationStorageResponse.Builder::hostedApplicationStorage)
+                .handleResponseHeaderString(
+                        "etag", GetHostedApplicationStorageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetHostedApplicationStorageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetHostedDeploymentResponse getHostedDeployment(GetHostedDeploymentRequest request) {
+
+        Validate.notBlank(request.getHostedDeploymentId(), "hostedDeploymentId must not be blank");
+
+        return clientCall(request, GetHostedDeploymentResponse::builder)
+                .logger(LOG, "getHostedDeployment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetHostedDeployment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/GetHostedDeployment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetHostedDeploymentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedDeployments")
+                .appendPathParam(request.getHostedDeploymentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedDeployment.class,
+                        GetHostedDeploymentResponse.Builder::hostedDeployment)
+                .handleResponseHeaderString("etag", GetHostedDeploymentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetHostedDeploymentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetImportedModelResponse getImportedModel(GetImportedModelRequest request) {
 
         Validate.notBlank(request.getImportedModelId(), "importedModelId must not be blank");
@@ -870,6 +1651,131 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", GetModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSemanticStoreResponse getSemanticStore(GetSemanticStoreRequest request) {
+
+        Validate.notBlank(request.getSemanticStoreId(), "semanticStoreId must not be blank");
+
+        return clientCall(request, GetSemanticStoreResponse::builder)
+                .logger(LOG, "getSemanticStore")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetSemanticStore",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStore/GetSemanticStore")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSemanticStoreRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("semanticStores")
+                .appendPathParam(request.getSemanticStoreId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.SemanticStore.class,
+                        GetSemanticStoreResponse.Builder::semanticStore)
+                .handleResponseHeaderString("etag", GetSemanticStoreResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSemanticStoreResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetVectorStoreConnectorResponse getVectorStoreConnector(
+            GetVectorStoreConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getVectorStoreConnectorId(), "vectorStoreConnectorId must not be blank");
+
+        return clientCall(request, GetVectorStoreConnectorResponse::builder)
+                .logger(LOG, "getVectorStoreConnector")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetVectorStoreConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnector/GetVectorStoreConnector")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVectorStoreConnectorRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectors")
+                .appendPathParam(request.getVectorStoreConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.VectorStoreConnector.class,
+                        GetVectorStoreConnectorResponse.Builder::vectorStoreConnector)
+                .handleResponseHeaderString("etag", GetVectorStoreConnectorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVectorStoreConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetVectorStoreConnectorFileSyncResponse getVectorStoreConnectorFileSync(
+            GetVectorStoreConnectorFileSyncRequest request) {
+
+        Validate.notBlank(
+                request.getVectorStoreConnectorFileSyncId(),
+                "vectorStoreConnectorFileSyncId must not be blank");
+
+        return clientCall(request, GetVectorStoreConnectorFileSyncResponse::builder)
+                .logger(LOG, "getVectorStoreConnectorFileSync")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetVectorStoreConnectorFileSync",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorFileSync/GetVectorStoreConnectorFileSync")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVectorStoreConnectorFileSyncRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectorFileSyncs")
+                .appendPathParam(request.getVectorStoreConnectorFileSyncId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSync.class,
+                        GetVectorStoreConnectorFileSyncResponse.Builder
+                                ::vectorStoreConnectorFileSync)
+                .handleResponseHeaderString(
+                        "etag", GetVectorStoreConnectorFileSyncResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetVectorStoreConnectorFileSyncResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetVectorStoreConnectorStatsResponse getVectorStoreConnectorStats(
+            GetVectorStoreConnectorStatsRequest request) {
+
+        Validate.notBlank(
+                request.getVectorStoreConnectorId(), "vectorStoreConnectorId must not be blank");
+
+        return clientCall(request, GetVectorStoreConnectorStatsResponse::builder)
+                .logger(LOG, "getVectorStoreConnectorStats")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetVectorStoreConnectorStats",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorStats/GetVectorStoreConnectorStats")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVectorStoreConnectorStatsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectors")
+                .appendPathParam(request.getVectorStoreConnectorId())
+                .appendPathParam("stats")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.VectorStoreConnectorStats.class,
+                        GetVectorStoreConnectorStatsResponse.Builder::vectorStoreConnectorStats)
+                .handleResponseHeaderString(
+                        "etag", GetVectorStoreConnectorStatsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetVectorStoreConnectorStatsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1030,6 +1936,7 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("resourceType", request.getResourceType())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -1048,6 +1955,155 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListGenerativeAiPrivateEndpointsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListGenerativeAiProjectsResponse listGenerativeAiProjects(
+            ListGenerativeAiProjectsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListGenerativeAiProjectsResponse::builder)
+                .logger(LOG, "listGenerativeAiProjects")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListGenerativeAiProjects",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProjectCollection/ListGenerativeAiProjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGenerativeAiProjectsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.GenerativeAiProjectCollection.class,
+                        ListGenerativeAiProjectsResponse.Builder::generativeAiProjectCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListGenerativeAiProjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListGenerativeAiProjectsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListHostedApplicationStoragesResponse listHostedApplicationStorages(
+            ListHostedApplicationStoragesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListHostedApplicationStoragesResponse::builder)
+                .logger(LOG, "listHostedApplicationStorages")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListHostedApplicationStorages",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationStorageCollection/ListHostedApplicationStorages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListHostedApplicationStoragesRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationStorages")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam(
+                        "hostedApplicationStorageType", request.getHostedApplicationStorageType())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedApplicationStorageCollection.class,
+                        ListHostedApplicationStoragesResponse.Builder
+                                ::hostedApplicationStorageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListHostedApplicationStoragesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListHostedApplicationStoragesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListHostedApplicationsResponse listHostedApplications(
+            ListHostedApplicationsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListHostedApplicationsResponse::builder)
+                .logger(LOG, "listHostedApplications")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListHostedApplications",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationCollection/ListHostedApplications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListHostedApplicationsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplications")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedApplicationCollection.class,
+                        ListHostedApplicationsResponse.Builder::hostedApplicationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListHostedApplicationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListHostedApplicationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListHostedDeploymentsResponse listHostedDeployments(
+            ListHostedDeploymentsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListHostedDeploymentsResponse::builder)
+                .logger(LOG, "listHostedDeployments")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListHostedDeployments",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeploymentCollection/ListHostedDeployments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListHostedDeploymentsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedDeployments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("applicationId", request.getApplicationId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedDeploymentCollection.class,
+                        ListHostedDeploymentsResponse.Builder::hostedDeploymentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListHostedDeploymentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListHostedDeploymentsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1128,6 +2184,207 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListModelsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListModelsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSemanticStoresResponse listSemanticStores(ListSemanticStoresRequest request) {
+
+        return clientCall(request, ListSemanticStoresResponse::builder)
+                .logger(LOG, "listSemanticStores")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListSemanticStores",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStoreCollection/ListSemanticStores")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSemanticStoresRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("semanticStores")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam(
+                        "dataSourceQueryingConnectionId",
+                        request.getDataSourceQueryingConnectionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.SemanticStoreCollection.class,
+                        ListSemanticStoresResponse.Builder::semanticStoreCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSemanticStoresResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSemanticStoresResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListVectorStoreConnectorFileSyncIngestionLogsResponse
+            listVectorStoreConnectorFileSyncIngestionLogs(
+                    ListVectorStoreConnectorFileSyncIngestionLogsRequest request) {
+
+        Validate.notBlank(
+                request.getVectorStoreConnectorFileSyncId(),
+                "vectorStoreConnectorFileSyncId must not be blank");
+
+        return clientCall(request, ListVectorStoreConnectorFileSyncIngestionLogsResponse::builder)
+                .logger(LOG, "listVectorStoreConnectorFileSyncIngestionLogs")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListVectorStoreConnectorFileSyncIngestionLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/FileSyncIngestionLogsCollection/ListVectorStoreConnectorFileSyncIngestionLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVectorStoreConnectorFileSyncIngestionLogsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectorFileSyncs")
+                .appendPathParam(request.getVectorStoreConnectorFileSyncId())
+                .appendPathParam("ingestionLogs")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.FileSyncIngestionLogsCollection.class,
+                        ListVectorStoreConnectorFileSyncIngestionLogsResponse.Builder
+                                ::fileSyncIngestionLogsCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListVectorStoreConnectorFileSyncIngestionLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListVectorStoreConnectorFileSyncIngestionLogsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListVectorStoreConnectorFileSyncsResponse listVectorStoreConnectorFileSyncs(
+            ListVectorStoreConnectorFileSyncsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVectorStoreConnectorFileSyncsResponse::builder)
+                .logger(LOG, "listVectorStoreConnectorFileSyncs")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListVectorStoreConnectorFileSyncs",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorFileSyncCollection/ListVectorStoreConnectorFileSyncs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVectorStoreConnectorFileSyncsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectorFileSyncs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("vectorStoreConnectorId", request.getVectorStoreConnectorId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSyncCollection
+                                .class,
+                        ListVectorStoreConnectorFileSyncsResponse.Builder
+                                ::vectorStoreConnectorFileSyncCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListVectorStoreConnectorFileSyncsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListVectorStoreConnectorFileSyncsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListVectorStoreConnectorIngestionLogsResponse listVectorStoreConnectorIngestionLogs(
+            ListVectorStoreConnectorIngestionLogsRequest request) {
+
+        Validate.notBlank(
+                request.getVectorStoreConnectorId(), "vectorStoreConnectorId must not be blank");
+
+        return clientCall(request, ListVectorStoreConnectorIngestionLogsResponse::builder)
+                .logger(LOG, "listVectorStoreConnectorIngestionLogs")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListVectorStoreConnectorIngestionLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorIngestionLogsCollection/ListVectorStoreConnectorIngestionLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVectorStoreConnectorIngestionLogsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectors")
+                .appendPathParam(request.getVectorStoreConnectorId())
+                .appendPathParam("ingestionLogs")
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model
+                                .VectorStoreConnectorIngestionLogsCollection.class,
+                        ListVectorStoreConnectorIngestionLogsResponse.Builder
+                                ::vectorStoreConnectorIngestionLogsCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListVectorStoreConnectorIngestionLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListVectorStoreConnectorIngestionLogsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListVectorStoreConnectorsResponse listVectorStoreConnectors(
+            ListVectorStoreConnectorsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVectorStoreConnectorsResponse::builder)
+                .logger(LOG, "listVectorStoreConnectors")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListVectorStoreConnectors",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorCollection/ListVectorStoreConnectors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVectorStoreConnectorsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectors")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vectorStoreId", request.getVectorStoreId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.VectorStoreConnectorCollection.class,
+                        ListVectorStoreConnectorsResponse.Builder::vectorStoreConnectorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVectorStoreConnectorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVectorStoreConnectorsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1450,6 +2707,116 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public UpdateGenerativeAiProjectResponse updateGenerativeAiProject(
+            UpdateGenerativeAiProjectRequest request) {
+
+        Validate.notBlank(
+                request.getGenerativeAiProjectId(), "generativeAiProjectId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateGenerativeAiProjectDetails(),
+                "updateGenerativeAiProjectDetails is required");
+
+        return clientCall(request, UpdateGenerativeAiProjectResponse::builder)
+                .logger(LOG, "updateGenerativeAiProject")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateGenerativeAiProject",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProject/UpdateGenerativeAiProject")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateGenerativeAiProjectRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .appendPathParam(request.getGenerativeAiProjectId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.GenerativeAiProject.class,
+                        UpdateGenerativeAiProjectResponse.Builder::generativeAiProject)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateGenerativeAiProjectResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateGenerativeAiProjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateGenerativeAiProjectResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateHostedApplicationResponse updateHostedApplication(
+            UpdateHostedApplicationRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationId(), "hostedApplicationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateHostedApplicationDetails(),
+                "updateHostedApplicationDetails is required");
+
+        return clientCall(request, UpdateHostedApplicationResponse::builder)
+                .logger(LOG, "updateHostedApplication")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateHostedApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplication/UpdateHostedApplication")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateHostedApplicationRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplications")
+                .appendPathParam(request.getHostedApplicationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateHostedApplicationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateHostedApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateHostedDeploymentResponse updateHostedDeployment(
+            UpdateHostedDeploymentRequest request) {
+
+        Validate.notBlank(request.getHostedDeploymentId(), "hostedDeploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateHostedDeploymentDetails(),
+                "updateHostedDeploymentDetails is required");
+
+        return clientCall(request, UpdateHostedDeploymentResponse::builder)
+                .logger(LOG, "updateHostedDeployment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateHostedDeployment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/UpdateHostedDeployment")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateHostedDeploymentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedDeployments")
+                .appendPathParam(request.getHostedDeploymentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedDeployment.class,
+                        UpdateHostedDeploymentResponse.Builder::hostedDeployment)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateHostedDeploymentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateHostedDeploymentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateHostedDeploymentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public UpdateImportedModelResponse updateImportedModel(UpdateImportedModelRequest request) {
 
         Validate.notBlank(request.getImportedModelId(), "importedModelId must not be blank");
@@ -1512,6 +2879,77 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpdateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateSemanticStoreResponse updateSemanticStore(UpdateSemanticStoreRequest request) {
+
+        Validate.notBlank(request.getSemanticStoreId(), "semanticStoreId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSemanticStoreDetails(), "updateSemanticStoreDetails is required");
+
+        return clientCall(request, UpdateSemanticStoreResponse::builder)
+                .logger(LOG, "updateSemanticStore")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateSemanticStore",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStore/UpdateSemanticStore")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSemanticStoreRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("semanticStores")
+                .appendPathParam(request.getSemanticStoreId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.SemanticStore.class,
+                        UpdateSemanticStoreResponse.Builder::semanticStore)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSemanticStoreResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateSemanticStoreResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateVectorStoreConnectorResponse updateVectorStoreConnector(
+            UpdateVectorStoreConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getVectorStoreConnectorId(), "vectorStoreConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVectorStoreConnectorDetails(),
+                "updateVectorStoreConnectorDetails is required");
+
+        return clientCall(request, UpdateVectorStoreConnectorResponse::builder)
+                .logger(LOG, "updateVectorStoreConnector")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateVectorStoreConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnector/UpdateVectorStoreConnector")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVectorStoreConnectorRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("vectorStoreConnectors")
+                .appendPathParam(request.getVectorStoreConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.VectorStoreConnector.class,
+                        UpdateVectorStoreConnectorResponse.Builder::vectorStoreConnector)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateVectorStoreConnectorResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVectorStoreConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateVectorStoreConnectorResponse.Builder::etag)
                 .callSync();
     }
 

@@ -23,11 +23,18 @@ package com.oracle.bmc.bds.model;
 public final class ActivateIamUserSyncConfigurationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"clusterAdminPassword", "isPosixAttributesAdditionRequired"})
+    @java.beans.ConstructorProperties({
+        "clusterAdminPassword",
+        "secretId",
+        "isPosixAttributesAdditionRequired"
+    })
     public ActivateIamUserSyncConfigurationDetails(
-            String clusterAdminPassword, Boolean isPosixAttributesAdditionRequired) {
+            String clusterAdminPassword,
+            String secretId,
+            Boolean isPosixAttributesAdditionRequired) {
         super();
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.isPosixAttributesAdditionRequired = isPosixAttributesAdditionRequired;
     }
 
@@ -46,6 +53,21 @@ public final class ActivateIamUserSyncConfigurationDetails
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+        /** The secretId for the clusterAdminPassword. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
             return this;
         }
         /** whether posix attribute needs to be appended to users */
@@ -71,7 +93,9 @@ public final class ActivateIamUserSyncConfigurationDetails
         public ActivateIamUserSyncConfigurationDetails build() {
             ActivateIamUserSyncConfigurationDetails model =
                     new ActivateIamUserSyncConfigurationDetails(
-                            this.clusterAdminPassword, this.isPosixAttributesAdditionRequired);
+                            this.clusterAdminPassword,
+                            this.secretId,
+                            this.isPosixAttributesAdditionRequired);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +106,9 @@ public final class ActivateIamUserSyncConfigurationDetails
         public Builder copy(ActivateIamUserSyncConfigurationDetails model) {
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("isPosixAttributesAdditionRequired")) {
                 this.isPosixAttributesAdditionRequired(
@@ -113,6 +140,19 @@ public final class ActivateIamUserSyncConfigurationDetails
         return clusterAdminPassword;
     }
 
+    /** The secretId for the clusterAdminPassword. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
+    }
+
     /** whether posix attribute needs to be appended to users */
     @com.fasterxml.jackson.annotation.JsonProperty("isPosixAttributesAdditionRequired")
     private final Boolean isPosixAttributesAdditionRequired;
@@ -142,6 +182,7 @@ public final class ActivateIamUserSyncConfigurationDetails
         sb.append("ActivateIamUserSyncConfigurationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", isPosixAttributesAdditionRequired=")
                 .append(String.valueOf(this.isPosixAttributesAdditionRequired));
         sb.append(")");
@@ -159,6 +200,7 @@ public final class ActivateIamUserSyncConfigurationDetails
 
         ActivateIamUserSyncConfigurationDetails other = (ActivateIamUserSyncConfigurationDetails) o;
         return java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(
                         this.isPosixAttributesAdditionRequired,
                         other.isPosixAttributesAdditionRequired)
@@ -174,6 +216,7 @@ public final class ActivateIamUserSyncConfigurationDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.isPosixAttributesAdditionRequired == null

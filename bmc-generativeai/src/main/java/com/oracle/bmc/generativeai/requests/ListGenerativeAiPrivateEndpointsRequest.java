@@ -90,6 +90,14 @@ public class ListGenerativeAiPrivateEndpointsRequest
     public SortBy getSortBy() {
         return sortBy;
     }
+    /** Query by the resource type of Generative AI private endpoints. */
+    private com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpoint.ResourceType resourceType;
+
+    /** Query by the resource type of Generative AI private endpoints. */
+    public com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpoint.ResourceType
+            getResourceType() {
+        return resourceType;
+    }
     /** A filter to return only resources that match the given display name exactly. */
     private String displayName;
 
@@ -223,6 +231,23 @@ public class ListGenerativeAiPrivateEndpointsRequest
             return this;
         }
 
+        /** Query by the resource type of Generative AI private endpoints. */
+        private com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpoint.ResourceType
+                resourceType = null;
+
+        /**
+         * Query by the resource type of Generative AI private endpoints.
+         *
+         * @param resourceType the value to set
+         * @return this builder instance
+         */
+        public Builder resourceType(
+                com.oracle.bmc.generativeai.model.GenerativeAiPrivateEndpoint.ResourceType
+                        resourceType) {
+            this.resourceType = resourceType;
+            return this;
+        }
+
         /** A filter to return only resources that match the given display name exactly. */
         private String displayName = null;
 
@@ -345,6 +370,7 @@ public class ListGenerativeAiPrivateEndpointsRequest
             id(o.getId());
             lifecycleState(o.getLifecycleState());
             sortBy(o.getSortBy());
+            resourceType(o.getResourceType());
             displayName(o.getDisplayName());
             limit(o.getLimit());
             page(o.getPage());
@@ -391,6 +417,7 @@ public class ListGenerativeAiPrivateEndpointsRequest
             request.id = id;
             request.lifecycleState = lifecycleState;
             request.sortBy = sortBy;
+            request.resourceType = resourceType;
             request.displayName = displayName;
             request.limit = limit;
             request.page = page;
@@ -398,7 +425,7 @@ public class ListGenerativeAiPrivateEndpointsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListGenerativeAiPrivateEndpointsRequest(compartmentId, id, lifecycleState,
-            // sortBy, displayName, limit, page, sortOrder, opcRequestId);
+            // sortBy, resourceType, displayName, limit, page, sortOrder, opcRequestId);
         }
     }
 
@@ -413,6 +440,7 @@ public class ListGenerativeAiPrivateEndpointsRequest
                 .id(id)
                 .lifecycleState(lifecycleState)
                 .sortBy(sortBy)
+                .resourceType(resourceType)
                 .displayName(displayName)
                 .limit(limit)
                 .page(page)
@@ -438,6 +466,7 @@ public class ListGenerativeAiPrivateEndpointsRequest
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",resourceType=").append(String.valueOf(this.resourceType));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -462,6 +491,7 @@ public class ListGenerativeAiPrivateEndpointsRequest
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -481,6 +511,7 @@ public class ListGenerativeAiPrivateEndpointsRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

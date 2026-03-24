@@ -26,6 +26,7 @@ public final class BdsMetastoreConfiguration
     @java.beans.ConstructorProperties({
         "id",
         "displayName",
+        "secretId",
         "metastoreType",
         "metastoreId",
         "bdsApiKeyId",
@@ -36,6 +37,7 @@ public final class BdsMetastoreConfiguration
     public BdsMetastoreConfiguration(
             String id,
             String displayName,
+            String secretId,
             MetastoreType metastoreType,
             String metastoreId,
             String bdsApiKeyId,
@@ -45,6 +47,7 @@ public final class BdsMetastoreConfiguration
         super();
         this.id = id;
         this.displayName = displayName;
+        this.secretId = secretId;
         this.metastoreType = metastoreType;
         this.metastoreId = metastoreId;
         this.bdsApiKeyId = bdsApiKeyId;
@@ -83,6 +86,21 @@ public final class BdsMetastoreConfiguration
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** The secretId for the clusterAdminPassword. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
             return this;
         }
         /** The type of the metastore in the metastore configuration. */
@@ -196,6 +214,7 @@ public final class BdsMetastoreConfiguration
                     new BdsMetastoreConfiguration(
                             this.id,
                             this.displayName,
+                            this.secretId,
                             this.metastoreType,
                             this.metastoreId,
                             this.bdsApiKeyId,
@@ -215,6 +234,9 @@ public final class BdsMetastoreConfiguration
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("metastoreType")) {
                 this.metastoreType(model.getMetastoreType());
@@ -271,6 +293,19 @@ public final class BdsMetastoreConfiguration
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /** The secretId for the clusterAdminPassword. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
     }
 
     /** The type of the metastore in the metastore configuration. */
@@ -474,6 +509,7 @@ public final class BdsMetastoreConfiguration
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", metastoreType=").append(String.valueOf(this.metastoreType));
         sb.append(", metastoreId=").append(String.valueOf(this.metastoreId));
         sb.append(", bdsApiKeyId=").append(String.valueOf(this.bdsApiKeyId));
@@ -496,6 +532,7 @@ public final class BdsMetastoreConfiguration
         BdsMetastoreConfiguration other = (BdsMetastoreConfiguration) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.metastoreType, other.metastoreType)
                 && java.util.Objects.equals(this.metastoreId, other.metastoreId)
                 && java.util.Objects.equals(this.bdsApiKeyId, other.bdsApiKeyId)
@@ -511,6 +548,7 @@ public final class BdsMetastoreConfiguration
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.metastoreType == null ? 43 : this.metastoreType.hashCode());

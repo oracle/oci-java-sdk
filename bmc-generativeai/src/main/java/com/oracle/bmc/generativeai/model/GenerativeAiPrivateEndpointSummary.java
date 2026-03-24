@@ -36,6 +36,7 @@ public final class GenerativeAiPrivateEndpointSummary
         "privateEndpointIp",
         "timeCreated",
         "timeUpdated",
+        "resourceType",
         "definedTags",
         "freeformTags",
         "systemTags",
@@ -54,6 +55,7 @@ public final class GenerativeAiPrivateEndpointSummary
             String privateEndpointIp,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            GenerativeAiPrivateEndpoint.ResourceType resourceType,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -71,6 +73,7 @@ public final class GenerativeAiPrivateEndpointSummary
         this.privateEndpointIp = privateEndpointIp;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.resourceType = resourceType;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
         this.systemTags = systemTags;
@@ -279,6 +282,21 @@ public final class GenerativeAiPrivateEndpointSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** The resource type that Generative AI private endpoint can be used for. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private GenerativeAiPrivateEndpoint.ResourceType resourceType;
+
+        /**
+         * The resource type that Generative AI private endpoint can be used for.
+         *
+         * @param resourceType the value to set
+         * @return this builder
+         */
+        public Builder resourceType(GenerativeAiPrivateEndpoint.ResourceType resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
@@ -394,6 +412,7 @@ public final class GenerativeAiPrivateEndpointSummary
                             this.privateEndpointIp,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.resourceType,
                             this.definedTags,
                             this.freeformTags,
                             this.systemTags,
@@ -441,6 +460,9 @@ public final class GenerativeAiPrivateEndpointSummary
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -641,6 +663,19 @@ public final class GenerativeAiPrivateEndpointSummary
         return timeUpdated;
     }
 
+    /** The resource type that Generative AI private endpoint can be used for. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    private final GenerativeAiPrivateEndpoint.ResourceType resourceType;
+
+    /**
+     * The resource type that Generative AI private endpoint can be used for.
+     *
+     * @return the value
+     */
+    public GenerativeAiPrivateEndpoint.ResourceType getResourceType() {
+        return resourceType;
+    }
+
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
@@ -754,6 +789,7 @@ public final class GenerativeAiPrivateEndpointSummary
         sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -784,6 +820,7 @@ public final class GenerativeAiPrivateEndpointSummary
                 && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -817,6 +854,7 @@ public final class GenerativeAiPrivateEndpointSummary
                         + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

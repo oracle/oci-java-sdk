@@ -80,6 +80,38 @@ public interface GenerativeAi extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * add image with isAutoDeploy flag.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/AddArtifactExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddArtifact API.
+     */
+    AddArtifactResponse addArtifact(AddArtifactRequest request);
+
+    /**
+     * Cancels a vectorStoreConnectorFileSync.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CancelVectorStoreConnectorFileSyncExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CancelVectorStoreConnectorFileSync API.
+     */
+    CancelVectorStoreConnectorFileSyncResponse cancelVectorStoreConnectorFileSync(
+            CancelVectorStoreConnectorFileSyncRequest request);
+
+    /**
      * Moves an API key into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -155,6 +187,63 @@ public interface GenerativeAi extends AutoCloseable {
                     ChangeGenerativeAiPrivateEndpointCompartmentRequest request);
 
     /**
+     * Moves a generativeAiProject into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ChangeGenerativeAiProjectCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeGenerativeAiProjectCompartment API.
+     */
+    ChangeGenerativeAiProjectCompartmentResponse changeGenerativeAiProjectCompartment(
+            ChangeGenerativeAiProjectCompartmentRequest request);
+
+    /**
+     * Moves a hosted application into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ChangeHostedApplicationCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeHostedApplicationCompartment API.
+     */
+    ChangeHostedApplicationCompartmentResponse changeHostedApplicationCompartment(
+            ChangeHostedApplicationCompartmentRequest request);
+
+    /**
+     * Moves a hosted application storage into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ChangeHostedApplicationStorageCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeHostedApplicationStorageCompartment API.
+     */
+    ChangeHostedApplicationStorageCompartmentResponse changeHostedApplicationStorageCompartment(
+            ChangeHostedApplicationStorageCompartmentRequest request);
+
+    /**
      * Moves an imported model into a different compartment. For information about moving resources
      * between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -190,6 +279,25 @@ public interface GenerativeAi extends AutoCloseable {
      *     ChangeModelCompartment API.
      */
     ChangeModelCompartmentResponse changeModelCompartment(ChangeModelCompartmentRequest request);
+
+    /**
+     * Moves a SemanticStore into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ChangeSemanticStoreCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeSemanticStoreCompartment API.
+     */
+    ChangeSemanticStoreCompartmentResponse changeSemanticStoreCompartment(
+            ChangeSemanticStoreCompartmentRequest request);
 
     /**
      * Creates a new API key in the specified compartment.
@@ -259,6 +367,73 @@ public interface GenerativeAi extends AutoCloseable {
             CreateGenerativeAiPrivateEndpointRequest request);
 
     /**
+     * Creates a GenerativeAiProject. The header contains an opc-work-request-id, which is the id
+     * for the WorkRequest that tracks the generativeAiProject creation progress.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateGenerativeAiProjectExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateGenerativeAiProject API.
+     */
+    CreateGenerativeAiProjectResponse createGenerativeAiProject(
+            CreateGenerativeAiProjectRequest request);
+
+    /**
+     * Creates a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateHostedApplicationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateHostedApplication API.
+     */
+    CreateHostedApplicationResponse createHostedApplication(CreateHostedApplicationRequest request);
+
+    /**
+     * Creates a hosted application storage.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateHostedApplicationStorageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateHostedApplicationStorage API.
+     */
+    CreateHostedApplicationStorageResponse createHostedApplicationStorage(
+            CreateHostedApplicationStorageRequest request);
+
+    /**
+     * Creates a hosted deployment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateHostedDeploymentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateHostedDeployment API.
+     */
+    CreateHostedDeploymentResponse createHostedDeployment(CreateHostedDeploymentRequest request);
+
+    /**
      * Import a model from ModelDataSource.
      *
      * <p>The header contains an opc-work-request-id, which is the id for the WorkRequest that
@@ -295,6 +470,59 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateModel API.
      */
     CreateModelResponse createModel(CreateModelRequest request);
+
+    /**
+     * Creates a SemanticStore.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateSemanticStoreExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSemanticStore
+     *     API.
+     */
+    CreateSemanticStoreResponse createSemanticStore(CreateSemanticStoreRequest request);
+
+    /**
+     * Creates a VectorStoreConnector. The header contains an opc-work-request-id, which is the id
+     * for the WorkRequest that tracks the vectorStoreConnector creation progress.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateVectorStoreConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateVectorStoreConnector API.
+     */
+    CreateVectorStoreConnectorResponse createVectorStoreConnector(
+            CreateVectorStoreConnectorRequest request);
+
+    /**
+     * Creates a File Sync operation for a VectorStoreConnector. The header contains an
+     * opc-work-request-id, which is the id for the WorkRequest that tracks the
+     * vectorStoreConnectorFileSync creation progress.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateVectorStoreConnectorFileSyncExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateVectorStoreConnectorFileSync API.
+     */
+    CreateVectorStoreConnectorFileSyncResponse createVectorStoreConnectorFileSync(
+            CreateVectorStoreConnectorFileSyncRequest request);
 
     /**
      * Deletes an API key.
@@ -366,6 +594,101 @@ public interface GenerativeAi extends AutoCloseable {
             DeleteGenerativeAiPrivateEndpointRequest request);
 
     /**
+     * Deletes a generativeAiProject.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteGenerativeAiProjectExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteGenerativeAiProject API.
+     */
+    DeleteGenerativeAiProjectResponse deleteGenerativeAiProject(
+            DeleteGenerativeAiProjectRequest request);
+
+    /**
+     * Deletes a hosted application. You can only delete hosted application without attached
+     * resources. Before you delete a hosting hosted application, you must delete the endpoints
+     * associated to that application. Before you delete a fine-tuning hosted application, you must
+     * delete the custom model on that application. The delete action permanently deletes the
+     * cluster. This action can't be undone.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteHostedApplicationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteHostedApplication API.
+     */
+    DeleteHostedApplicationResponse deleteHostedApplication(DeleteHostedApplicationRequest request);
+
+    /**
+     * Deletes a hosted application. You can only delete hosted application without attached
+     * resources. Before you delete a hosting hosted application, you must delete the endpoints
+     * associated to that application. Before you delete a fine-tuning hosted application, you must
+     * delete the custom model on that application. The delete action permanently deletes the
+     * cluster. This action can't be undone.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteHostedApplicationStorageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteHostedApplicationStorage API.
+     */
+    DeleteHostedApplicationStorageResponse deleteHostedApplicationStorage(
+            DeleteHostedApplicationStorageRequest request);
+
+    /**
+     * Deletes a hosted deployment. You can only delete hosted deployment without attached
+     * resources. Before you delete a hosting hosted deployment, you must delete the endpoints
+     * associated to that deployment. Before you delete a fine-tuning hosted deployment, you must
+     * delete the custom model on that deployment. The delete action permanently deletes the
+     * cluster. This action can't be undone.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteHostedDeploymentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteHostedDeployment API.
+     */
+    DeleteHostedDeploymentResponse deleteHostedDeployment(DeleteHostedDeploymentRequest request);
+
+    /**
+     * delete artifact.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteHostedDeploymentArtifactExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteHostedDeploymentArtifact API.
+     */
+    DeleteHostedDeploymentArtifactResponse deleteHostedDeploymentArtifact(
+            DeleteHostedDeploymentArtifactRequest request);
+
+    /**
      * Deletes an imported model. An imported model shouldn't be deleted if there's one or more
      * active endpoints associated with that imported model.
      *
@@ -397,6 +720,39 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteModel API.
      */
     DeleteModelResponse deleteModel(DeleteModelRequest request);
+
+    /**
+     * Deletes a semanticStore.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteSemanticStoreExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSemanticStore
+     *     API.
+     */
+    DeleteSemanticStoreResponse deleteSemanticStore(DeleteSemanticStoreRequest request);
+
+    /**
+     * Deletes a vectorStoreConnector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteVectorStoreConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteVectorStoreConnector API.
+     */
+    DeleteVectorStoreConnectorResponse deleteVectorStoreConnector(
+            DeleteVectorStoreConnectorRequest request);
 
     /**
      * Gets information about an API key.
@@ -462,6 +818,71 @@ public interface GenerativeAi extends AutoCloseable {
             GetGenerativeAiPrivateEndpointRequest request);
 
     /**
+     * Gets information about a generativeAiProject.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetGenerativeAiProjectExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetGenerativeAiProject API.
+     */
+    GetGenerativeAiProjectResponse getGenerativeAiProject(GetGenerativeAiProjectRequest request);
+
+    /**
+     * Gets information about a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetHostedApplicationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetHostedApplication API.
+     */
+    GetHostedApplicationResponse getHostedApplication(GetHostedApplicationRequest request);
+
+    /**
+     * Gets information about a hosted application storage.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetHostedApplicationStorageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetHostedApplicationStorage API.
+     */
+    GetHostedApplicationStorageResponse getHostedApplicationStorage(
+            GetHostedApplicationStorageRequest request);
+
+    /**
+     * Gets information about a hosted deployment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetHostedDeploymentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHostedDeployment
+     *     API.
+     */
+    GetHostedDeploymentResponse getHostedDeployment(GetHostedDeploymentRequest request);
+
+    /**
      * Gets information about an imported model.
      *
      * @param request The request object containing the details to send
@@ -491,6 +912,72 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModel API.
      */
     GetModelResponse getModel(GetModelRequest request);
+
+    /**
+     * Gets information about a semanticStore.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetSemanticStoreExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSemanticStore
+     *     API.
+     */
+    GetSemanticStoreResponse getSemanticStore(GetSemanticStoreRequest request);
+
+    /**
+     * Gets information about a vectorStoreConnector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetVectorStoreConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetVectorStoreConnector API.
+     */
+    GetVectorStoreConnectorResponse getVectorStoreConnector(GetVectorStoreConnectorRequest request);
+
+    /**
+     * Gets information about a vectorStoreConnectorFileSync.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetVectorStoreConnectorFileSyncExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetVectorStoreConnectorFileSync API.
+     */
+    GetVectorStoreConnectorFileSyncResponse getVectorStoreConnectorFileSync(
+            GetVectorStoreConnectorFileSyncRequest request);
+
+    /**
+     * Gets Sync statistics from a vectorStoreConnector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetVectorStoreConnectorStatsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetVectorStoreConnectorStats API.
+     */
+    GetVectorStoreConnectorStatsResponse getVectorStoreConnectorStats(
+            GetVectorStoreConnectorStatsRequest request);
 
     /**
      * Gets the details of a work request.
@@ -571,6 +1058,72 @@ public interface GenerativeAi extends AutoCloseable {
             ListGenerativeAiPrivateEndpointsRequest request);
 
     /**
+     * Lists the generativeAiProjects of a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListGenerativeAiProjectsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListGenerativeAiProjects API.
+     */
+    ListGenerativeAiProjectsResponse listGenerativeAiProjects(
+            ListGenerativeAiProjectsRequest request);
+
+    /**
+     * Lists the hosted application storage in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListHostedApplicationStoragesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListHostedApplicationStorages API.
+     */
+    ListHostedApplicationStoragesResponse listHostedApplicationStorages(
+            ListHostedApplicationStoragesRequest request);
+
+    /**
+     * Lists the hosted applications in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListHostedApplicationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListHostedApplications API.
+     */
+    ListHostedApplicationsResponse listHostedApplications(ListHostedApplicationsRequest request);
+
+    /**
+     * Lists the hosted applications in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListHostedDeploymentsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListHostedDeployments API.
+     */
+    ListHostedDeploymentsResponse listHostedDeployments(ListHostedDeploymentsRequest request);
+
+    /**
      * Lists imported models in a specific compartment.
      *
      * @param request The request object containing the details to send
@@ -601,6 +1154,91 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModels API.
      */
     ListModelsResponse listModels(ListModelsRequest request);
+
+    /**
+     * Lists the SemanticStores given specific filter.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListSemanticStoresExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSemanticStores
+     *     API.
+     */
+    ListSemanticStoresResponse listSemanticStores(ListSemanticStoresRequest request);
+
+    /**
+     * Gets Ingestion logs for a vectorStoreConnectorFileSync operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListVectorStoreConnectorFileSyncIngestionLogsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListVectorStoreConnectorFileSyncIngestionLogs API.
+     */
+    ListVectorStoreConnectorFileSyncIngestionLogsResponse
+            listVectorStoreConnectorFileSyncIngestionLogs(
+                    ListVectorStoreConnectorFileSyncIngestionLogsRequest request);
+
+    /**
+     * Lists the vectorStoreConnectorFileSyncs of a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListVectorStoreConnectorFileSyncsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListVectorStoreConnectorFileSyncs API.
+     */
+    ListVectorStoreConnectorFileSyncsResponse listVectorStoreConnectorFileSyncs(
+            ListVectorStoreConnectorFileSyncsRequest request);
+
+    /**
+     * Gets Ingestion logs for a vectorStoreConnector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListVectorStoreConnectorIngestionLogsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListVectorStoreConnectorIngestionLogs API.
+     */
+    ListVectorStoreConnectorIngestionLogsResponse listVectorStoreConnectorIngestionLogs(
+            ListVectorStoreConnectorIngestionLogsRequest request);
+
+    /**
+     * Lists the vectorStoreConnectors of a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListVectorStoreConnectorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListVectorStoreConnectors API.
+     */
+    ListVectorStoreConnectorsResponse listVectorStoreConnectors(
+            ListVectorStoreConnectorsRequest request);
 
     /**
      * Lists the errors for a work request.
@@ -745,6 +1383,55 @@ public interface GenerativeAi extends AutoCloseable {
             UpdateGenerativeAiPrivateEndpointRequest request);
 
     /**
+     * Updates the properties of a generativeAiProject.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateGenerativeAiProjectExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateGenerativeAiProject API.
+     */
+    UpdateGenerativeAiProjectResponse updateGenerativeAiProject(
+            UpdateGenerativeAiProjectRequest request);
+
+    /**
+     * Updates a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateHostedApplicationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateHostedApplication API.
+     */
+    UpdateHostedApplicationResponse updateHostedApplication(UpdateHostedApplicationRequest request);
+
+    /**
+     * Updates a hosted deployment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateHostedDeploymentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateHostedDeployment API.
+     */
+    UpdateHostedDeploymentResponse updateHostedDeployment(UpdateHostedDeploymentRequest request);
+
+    /**
      * Updates the properties of an imported model such as name, description, freeform tags, and
      * defined tags.
      *
@@ -776,6 +1463,39 @@ public interface GenerativeAi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateModel API.
      */
     UpdateModelResponse updateModel(UpdateModelRequest request);
+
+    /**
+     * Updates the properties of a SemanticStore.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateSemanticStoreExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSemanticStore
+     *     API.
+     */
+    UpdateSemanticStoreResponse updateSemanticStore(UpdateSemanticStoreRequest request);
+
+    /**
+     * Updates the properties of a vectorStoreConnector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateVectorStoreConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateVectorStoreConnector API.
+     */
+    UpdateVectorStoreConnectorResponse updateVectorStoreConnector(
+            UpdateVectorStoreConnectorRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

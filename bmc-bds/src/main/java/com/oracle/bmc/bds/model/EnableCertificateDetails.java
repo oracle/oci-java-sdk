@@ -25,6 +25,7 @@ public final class EnableCertificateDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "clusterAdminPassword",
+        "secretId",
         "services",
         "rootCertificate",
         "hostCertDetails",
@@ -32,12 +33,14 @@ public final class EnableCertificateDetails
     })
     public EnableCertificateDetails(
             String clusterAdminPassword,
+            String secretId,
             java.util.List<Service> services,
             String rootCertificate,
             java.util.List<HostCertDetails> hostCertDetails,
             String serverKeyPassword) {
         super();
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.services = services;
         this.rootCertificate = rootCertificate;
         this.hostCertDetails = hostCertDetails;
@@ -59,6 +62,21 @@ public final class EnableCertificateDetails
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+        /** The secretId for the clusterAdminPassword. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
             return this;
         }
         /** List of services for which certificate needs to be enabled. */
@@ -139,6 +157,7 @@ public final class EnableCertificateDetails
             EnableCertificateDetails model =
                     new EnableCertificateDetails(
                             this.clusterAdminPassword,
+                            this.secretId,
                             this.services,
                             this.rootCertificate,
                             this.hostCertDetails,
@@ -153,6 +172,9 @@ public final class EnableCertificateDetails
         public Builder copy(EnableCertificateDetails model) {
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("services")) {
                 this.services(model.getServices());
@@ -190,6 +212,19 @@ public final class EnableCertificateDetails
      */
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
+    }
+
+    /** The secretId for the clusterAdminPassword. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
     }
 
     /** List of services for which certificate needs to be enabled. */
@@ -270,6 +305,7 @@ public final class EnableCertificateDetails
         sb.append("EnableCertificateDetails(");
         sb.append("super=").append(super.toString());
         sb.append("clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", services=").append(String.valueOf(this.services));
         sb.append(", rootCertificate=").append(String.valueOf(this.rootCertificate));
         sb.append(", hostCertDetails=").append(String.valueOf(this.hostCertDetails));
@@ -289,6 +325,7 @@ public final class EnableCertificateDetails
 
         EnableCertificateDetails other = (EnableCertificateDetails) o;
         return java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.services, other.services)
                 && java.util.Objects.equals(this.rootCertificate, other.rootCertificate)
                 && java.util.Objects.equals(this.hostCertDetails, other.hostCertDetails)
@@ -305,6 +342,7 @@ public final class EnableCertificateDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.services == null ? 43 : this.services.hashCode());
         result =
                 (result * PRIME)

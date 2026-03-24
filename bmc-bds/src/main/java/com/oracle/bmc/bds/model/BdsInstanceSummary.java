@@ -37,6 +37,7 @@ public final class BdsInstanceSummary
         "isKafkaConfigured",
         "clusterProfile",
         "timeCreated",
+        "timeEarliestCertificateExpiration",
         "freeformTags",
         "definedTags"
     })
@@ -54,6 +55,7 @@ public final class BdsInstanceSummary
             Boolean isKafkaConfigured,
             BdsInstance.ClusterProfile clusterProfile,
             java.util.Date timeCreated,
+            java.util.Date timeEarliestCertificateExpiration,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -70,6 +72,7 @@ public final class BdsInstanceSummary
         this.isKafkaConfigured = isKafkaConfigured;
         this.clusterProfile = clusterProfile;
         this.timeCreated = timeCreated;
+        this.timeEarliestCertificateExpiration = timeEarliestCertificateExpiration;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -273,6 +276,26 @@ public final class BdsInstanceSummary
             return this;
         }
         /**
+         * The earliest time of certificate expiration date across the certificates of all current
+         * nodes under this cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestCertificateExpiration")
+        private java.util.Date timeEarliestCertificateExpiration;
+
+        /**
+         * The earliest time of certificate expiration date across the certificates of all current
+         * nodes under this cluster.
+         *
+         * @param timeEarliestCertificateExpiration the value to set
+         * @return this builder
+         */
+        public Builder timeEarliestCertificateExpiration(
+                java.util.Date timeEarliestCertificateExpiration) {
+            this.timeEarliestCertificateExpiration = timeEarliestCertificateExpiration;
+            this.__explicitlySet__.add("timeEarliestCertificateExpiration");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. For example, {@code {"bar-key": "value"}}
          */
@@ -331,6 +354,7 @@ public final class BdsInstanceSummary
                             this.isKafkaConfigured,
                             this.clusterProfile,
                             this.timeCreated,
+                            this.timeEarliestCertificateExpiration,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -380,6 +404,10 @@ public final class BdsInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeEarliestCertificateExpiration")) {
+                this.timeEarliestCertificateExpiration(
+                        model.getTimeEarliestCertificateExpiration());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -570,6 +598,23 @@ public final class BdsInstanceSummary
     }
 
     /**
+     * The earliest time of certificate expiration date across the certificates of all current nodes
+     * under this cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestCertificateExpiration")
+    private final java.util.Date timeEarliestCertificateExpiration;
+
+    /**
+     * The earliest time of certificate expiration date across the certificates of all current nodes
+     * under this cluster.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeEarliestCertificateExpiration() {
+        return timeEarliestCertificateExpiration;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. For example, {@code {"bar-key": "value"}}
      */
@@ -632,6 +677,8 @@ public final class BdsInstanceSummary
         sb.append(", isKafkaConfigured=").append(String.valueOf(this.isKafkaConfigured));
         sb.append(", clusterProfile=").append(String.valueOf(this.clusterProfile));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeEarliestCertificateExpiration=")
+                .append(String.valueOf(this.timeEarliestCertificateExpiration));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -663,6 +710,9 @@ public final class BdsInstanceSummary
                 && java.util.Objects.equals(this.isKafkaConfigured, other.isKafkaConfigured)
                 && java.util.Objects.equals(this.clusterProfile, other.clusterProfile)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(
+                        this.timeEarliestCertificateExpiration,
+                        other.timeEarliestCertificateExpiration)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -709,6 +759,11 @@ public final class BdsInstanceSummary
                 (result * PRIME)
                         + (this.clusterProfile == null ? 43 : this.clusterProfile.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeEarliestCertificateExpiration == null
+                                ? 43
+                                : this.timeEarliestCertificateExpiration.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

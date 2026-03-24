@@ -221,9 +221,10 @@ public interface Bds extends AutoCloseable {
     AddUtilityNodesResponse addUtilityNodes(AddUtilityNodesRequest request);
 
     /**
-     * Increases the size (scales out) a cluster by adding worker nodes(data/compute). The added
-     * worker nodes will have the same shape and will have the same amount of attached block storage
-     * as other worker nodes in the cluster.
+     * Increases the size (scales out) of a cluster by adding worker nodes (data/compute/edge). The
+     * added worker and compute only worker nodes will have the same amount of attached block
+     * storage as other nodes of the same type in the cluster. Edge nodes can have different block
+     * storage sizes within the valid range (50GB-10TB).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -251,6 +252,23 @@ public interface Bds extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use BackupNode API.
      */
     BackupNodeResponse backupNode(BackupNodeRequest request);
+
+    /**
+     * Admin function which allows the password reset of indicated service.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/BdsInstanceResetPasswordExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     BdsInstanceResetPassword API.
+     */
+    BdsInstanceResetPasswordResponse bdsInstanceResetPassword(
+            BdsInstanceResetPasswordRequest request);
 
     /**
      * A list of services and their certificate details.
@@ -334,6 +352,23 @@ public interface Bds extends AutoCloseable {
      *     CreateBdsCapacityReport API.
      */
     CreateBdsCapacityReportResponse createBdsCapacityReport(CreateBdsCapacityReportRequest request);
+
+    /**
+     * Create a BDS certificate configuration for the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsCertificateConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateBdsCertificateConfiguration API.
+     */
+    CreateBdsCertificateConfigurationResponse createBdsCertificateConfiguration(
+            CreateBdsCertificateConfigurationRequest request);
 
     /**
      * Creates a Big Data Service cluster.
@@ -487,6 +522,23 @@ public interface Bds extends AutoCloseable {
     DeleteBdsApiKeyResponse deleteBdsApiKey(DeleteBdsApiKeyRequest request);
 
     /**
+     * Delete the BDS certificate configuration for the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsCertificateConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteBdsCertificateConfiguration API.
+     */
+    DeleteBdsCertificateConfigurationResponse deleteBdsCertificateConfiguration(
+            DeleteBdsCertificateConfigurationRequest request);
+
+    /**
      * Deletes the cluster identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -637,6 +689,22 @@ public interface Bds extends AutoCloseable {
             ForceRefreshResourcePrincipalRequest request);
 
     /**
+     * Generating certificates under BDS cluster nodes.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GenerateBdsCertificateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GenerateBdsCertificate API.
+     */
+    GenerateBdsCertificateResponse generateBdsCertificate(GenerateBdsCertificateRequest request);
+
+    /**
      * Returns details of the autoscale configuration identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -667,6 +735,23 @@ public interface Bds extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsApiKey API.
      */
     GetBdsApiKeyResponse getBdsApiKey(GetBdsApiKeyRequest request);
+
+    /**
+     * Returns details of the BdsCertificateConfiguration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsCertificateConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetBdsCertificateConfiguration API.
+     */
+    GetBdsCertificateConfigurationResponse getBdsCertificateConfiguration(
+            GetBdsCertificateConfigurationRequest request);
 
     /**
      * Returns information about the Big Data Service cluster identified by the given ID.
@@ -907,6 +992,24 @@ public interface Bds extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsApiKeys API.
      */
     ListBdsApiKeysResponse listBdsApiKeys(ListBdsApiKeysRequest request);
+
+    /**
+     * Returns a list of BDS certificate configurations associated with this Big Data Service
+     * cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsCertificateConfigurationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListBdsCertificateConfigurations API.
+     */
+    ListBdsCertificateConfigurationsResponse listBdsCertificateConfigurations(
+            ListBdsCertificateConfigurationsRequest request);
 
     /**
      * Returns a list of cluster versions with associated odh and bds versions.
@@ -1266,6 +1369,21 @@ public interface Bds extends AutoCloseable {
             RemoveNodeReplaceConfigurationRequest request);
 
     /**
+     * Removes list of nodes from a Big Data Service cluster
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveNodesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveNodes API.
+     */
+    RemoveNodesResponse removeNodes(RemoveNodesRequest request);
+
+    /**
      * Delete the resource principal configuration for the cluster.
      *
      * @param request The request object containing the details to send
@@ -1281,6 +1399,22 @@ public interface Bds extends AutoCloseable {
      */
     RemoveResourcePrincipalConfigurationResponse removeResourcePrincipalConfiguration(
             RemoveResourcePrincipalConfigurationRequest request);
+
+    /**
+     * Renewing certificates under BDS cluster nodes.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RenewBdsCertificateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RenewBdsCertificate
+     *     API.
+     */
+    RenewBdsCertificateResponse renewBdsCertificate(RenewBdsCertificateRequest request);
 
     /**
      * Renewing TLS/SSL for various ODH services running on the BDS cluster.
@@ -1327,6 +1461,23 @@ public interface Bds extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartNode API.
      */
     RestartNodeResponse restartNode(RestartNodeRequest request);
+
+    /**
+     * Set specified BDS certificate configuration as default configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/SetDefaultBdsCertificateConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SetDefaultBdsCertificateConfiguration API.
+     */
+    SetDefaultBdsCertificateConfigurationResponse setDefaultBdsCertificateConfiguration(
+            SetDefaultBdsCertificateConfigurationRequest request);
 
     /**
      * Starts the BDS cluster that was stopped earlier.

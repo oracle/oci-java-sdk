@@ -25,6 +25,7 @@ public final class AddWorkerNodesDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "clusterAdminPassword",
+        "secretId",
         "numberOfWorkerNodes",
         "nodeType",
         "shape",
@@ -33,6 +34,7 @@ public final class AddWorkerNodesDetails
     })
     public AddWorkerNodesDetails(
             String clusterAdminPassword,
+            String secretId,
             Integer numberOfWorkerNodes,
             NodeType nodeType,
             String shape,
@@ -40,6 +42,7 @@ public final class AddWorkerNodesDetails
             ShapeConfigDetails shapeConfig) {
         super();
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.numberOfWorkerNodes = numberOfWorkerNodes;
         this.nodeType = nodeType;
         this.shape = shape;
@@ -62,6 +65,21 @@ public final class AddWorkerNodesDetails
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+        /** The secretId for the clusterAdminPassword. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
             return this;
         }
         /** Number of additional worker nodes for the cluster. */
@@ -115,16 +133,18 @@ public final class AddWorkerNodesDetails
         }
         /**
          * The size of block volume in GB to be attached to the given node. This has to be specified
-         * when adding compute only worker node at the first time. Otherwise, it's a read-only
-         * property.
+         * when adding compute only worker or edge node at the first time. For EDGE nodes. Each node
+         * can have a different block storage size within the valid range (50GB-10TB) and the value
+         * must be specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
         private Long blockVolumeSizeInGBs;
 
         /**
          * The size of block volume in GB to be attached to the given node. This has to be specified
-         * when adding compute only worker node at the first time. Otherwise, it's a read-only
-         * property.
+         * when adding compute only worker or edge node at the first time. For EDGE nodes. Each node
+         * can have a different block storage size within the valid range (50GB-10TB) and the value
+         * must be specified.
          *
          * @param blockVolumeSizeInGBs the value to set
          * @return this builder
@@ -151,6 +171,7 @@ public final class AddWorkerNodesDetails
             AddWorkerNodesDetails model =
                     new AddWorkerNodesDetails(
                             this.clusterAdminPassword,
+                            this.secretId,
                             this.numberOfWorkerNodes,
                             this.nodeType,
                             this.shape,
@@ -166,6 +187,9 @@ public final class AddWorkerNodesDetails
         public Builder copy(AddWorkerNodesDetails model) {
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("numberOfWorkerNodes")) {
                 this.numberOfWorkerNodes(model.getNumberOfWorkerNodes());
@@ -206,6 +230,19 @@ public final class AddWorkerNodesDetails
      */
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
+    }
+
+    /** The secretId for the clusterAdminPassword. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
     }
 
     /** Number of additional worker nodes for the cluster. */
@@ -288,14 +325,18 @@ public final class AddWorkerNodesDetails
 
     /**
      * The size of block volume in GB to be attached to the given node. This has to be specified
-     * when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+     * when adding compute only worker or edge node at the first time. For EDGE nodes. Each node can
+     * have a different block storage size within the valid range (50GB-10TB) and the value must be
+     * specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     private final Long blockVolumeSizeInGBs;
 
     /**
      * The size of block volume in GB to be attached to the given node. This has to be specified
-     * when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+     * when adding compute only worker or edge node at the first time. For EDGE nodes. Each node can
+     * have a different block storage size within the valid range (50GB-10TB) and the value must be
+     * specified.
      *
      * @return the value
      */
@@ -326,6 +367,7 @@ public final class AddWorkerNodesDetails
         sb.append("AddWorkerNodesDetails(");
         sb.append("super=").append(super.toString());
         sb.append("clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", numberOfWorkerNodes=").append(String.valueOf(this.numberOfWorkerNodes));
         sb.append(", nodeType=").append(String.valueOf(this.nodeType));
         sb.append(", shape=").append(String.valueOf(this.shape));
@@ -346,6 +388,7 @@ public final class AddWorkerNodesDetails
 
         AddWorkerNodesDetails other = (AddWorkerNodesDetails) o;
         return java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.numberOfWorkerNodes, other.numberOfWorkerNodes)
                 && java.util.Objects.equals(this.nodeType, other.nodeType)
                 && java.util.Objects.equals(this.shape, other.shape)
@@ -363,6 +406,7 @@ public final class AddWorkerNodesDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.numberOfWorkerNodes == null

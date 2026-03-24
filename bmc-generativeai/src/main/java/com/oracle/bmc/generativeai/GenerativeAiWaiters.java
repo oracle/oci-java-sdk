@@ -461,6 +461,455 @@ public class GenerativeAiWaiters {
      *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetGenerativeAiProjectRequest, GetGenerativeAiProjectResponse>
+            forGenerativeAiProject(
+                    GetGenerativeAiProjectRequest request,
+                    com.oracle.bmc.generativeai.model.GenerativeAiProject.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forGenerativeAiProject(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetGenerativeAiProjectRequest, GetGenerativeAiProjectResponse>
+            forGenerativeAiProject(
+                    GetGenerativeAiProjectRequest request,
+                    com.oracle.bmc.generativeai.model.GenerativeAiProject.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forGenerativeAiProject(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetGenerativeAiProjectRequest, GetGenerativeAiProjectResponse>
+            forGenerativeAiProject(
+                    GetGenerativeAiProjectRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.generativeai.model.GenerativeAiProject.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forGenerativeAiProject(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for GenerativeAiProject.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetGenerativeAiProjectRequest, GetGenerativeAiProjectResponse>
+            forGenerativeAiProject(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetGenerativeAiProjectRequest request,
+                    final com.oracle.bmc.generativeai.model.GenerativeAiProject.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.generativeai.model.GenerativeAiProject.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetGenerativeAiProjectRequest, GetGenerativeAiProjectResponse>() {
+                            @Override
+                            public GetGenerativeAiProjectResponse apply(
+                                    GetGenerativeAiProjectRequest request) {
+                                return client.getGenerativeAiProject(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetGenerativeAiProjectResponse>() {
+                            @Override
+                            public boolean test(GetGenerativeAiProjectResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getGenerativeAiProject().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.generativeai.model.GenerativeAiProject.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetHostedApplicationRequest, GetHostedApplicationResponse>
+            forHostedApplication(
+                    GetHostedApplicationRequest request,
+                    com.oracle.bmc.generativeai.model.HostedApplication.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forHostedApplication(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetHostedApplicationRequest, GetHostedApplicationResponse>
+            forHostedApplication(
+                    GetHostedApplicationRequest request,
+                    com.oracle.bmc.generativeai.model.HostedApplication.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forHostedApplication(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetHostedApplicationRequest, GetHostedApplicationResponse>
+            forHostedApplication(
+                    GetHostedApplicationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.generativeai.model.HostedApplication.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forHostedApplication(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for HostedApplication.
+    private com.oracle.bmc.waiter.Waiter<GetHostedApplicationRequest, GetHostedApplicationResponse>
+            forHostedApplication(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetHostedApplicationRequest request,
+                    final com.oracle.bmc.generativeai.model.HostedApplication.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.generativeai.model.HostedApplication.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetHostedApplicationRequest, GetHostedApplicationResponse>() {
+                            @Override
+                            public GetHostedApplicationResponse apply(
+                                    GetHostedApplicationRequest request) {
+                                return client.getHostedApplication(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetHostedApplicationResponse>() {
+                            @Override
+                            public boolean test(GetHostedApplicationResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getHostedApplication().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.generativeai.model.HostedApplication.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetHostedApplicationStorageRequest, GetHostedApplicationStorageResponse>
+            forHostedApplicationStorage(
+                    GetHostedApplicationStorageRequest request,
+                    com.oracle.bmc.generativeai.model.HostedApplicationStorage.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forHostedApplicationStorage(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetHostedApplicationStorageRequest, GetHostedApplicationStorageResponse>
+            forHostedApplicationStorage(
+                    GetHostedApplicationStorageRequest request,
+                    com.oracle.bmc.generativeai.model.HostedApplicationStorage.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forHostedApplicationStorage(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetHostedApplicationStorageRequest, GetHostedApplicationStorageResponse>
+            forHostedApplicationStorage(
+                    GetHostedApplicationStorageRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.generativeai.model.HostedApplicationStorage.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forHostedApplicationStorage(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for HostedApplicationStorage.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetHostedApplicationStorageRequest, GetHostedApplicationStorageResponse>
+            forHostedApplicationStorage(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetHostedApplicationStorageRequest request,
+                    final com.oracle.bmc.generativeai.model.HostedApplicationStorage.LifecycleState
+                                    ...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.generativeai.model.HostedApplicationStorage.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetHostedApplicationStorageRequest,
+                                GetHostedApplicationStorageResponse>() {
+                            @Override
+                            public GetHostedApplicationStorageResponse apply(
+                                    GetHostedApplicationStorageRequest request) {
+                                return client.getHostedApplicationStorage(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetHostedApplicationStorageResponse>() {
+                            @Override
+                            public boolean test(GetHostedApplicationStorageResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getHostedApplicationStorage().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.generativeai.model.HostedApplicationStorage
+                                        .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetHostedDeploymentRequest, GetHostedDeploymentResponse>
+            forHostedDeployment(
+                    GetHostedDeploymentRequest request,
+                    com.oracle.bmc.generativeai.model.HostedDeployment.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forHostedDeployment(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetHostedDeploymentRequest, GetHostedDeploymentResponse>
+            forHostedDeployment(
+                    GetHostedDeploymentRequest request,
+                    com.oracle.bmc.generativeai.model.HostedDeployment.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forHostedDeployment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetHostedDeploymentRequest, GetHostedDeploymentResponse>
+            forHostedDeployment(
+                    GetHostedDeploymentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.generativeai.model.HostedDeployment.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forHostedDeployment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for HostedDeployment.
+    private com.oracle.bmc.waiter.Waiter<GetHostedDeploymentRequest, GetHostedDeploymentResponse>
+            forHostedDeployment(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetHostedDeploymentRequest request,
+                    final com.oracle.bmc.generativeai.model.HostedDeployment.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.generativeai.model.HostedDeployment.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetHostedDeploymentRequest, GetHostedDeploymentResponse>() {
+                            @Override
+                            public GetHostedDeploymentResponse apply(
+                                    GetHostedDeploymentRequest request) {
+                                return client.getHostedDeployment(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetHostedDeploymentResponse>() {
+                            @Override
+                            public boolean test(GetHostedDeploymentResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getHostedDeployment().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.generativeai.model.HostedDeployment.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetImportedModelRequest, GetImportedModelResponse>
             forImportedModel(
                     GetImportedModelRequest request,
@@ -657,6 +1106,347 @@ public class GenerativeAiWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.generativeai.model.Model.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSemanticStoreRequest, GetSemanticStoreResponse>
+            forSemanticStore(
+                    GetSemanticStoreRequest request,
+                    com.oracle.bmc.generativeai.model.SemanticStore.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSemanticStore(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSemanticStoreRequest, GetSemanticStoreResponse>
+            forSemanticStore(
+                    GetSemanticStoreRequest request,
+                    com.oracle.bmc.generativeai.model.SemanticStore.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forSemanticStore(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSemanticStoreRequest, GetSemanticStoreResponse>
+            forSemanticStore(
+                    GetSemanticStoreRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.generativeai.model.SemanticStore.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forSemanticStore(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SemanticStore.
+    private com.oracle.bmc.waiter.Waiter<GetSemanticStoreRequest, GetSemanticStoreResponse>
+            forSemanticStore(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSemanticStoreRequest request,
+                    final com.oracle.bmc.generativeai.model.SemanticStore.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.generativeai.model.SemanticStore.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetSemanticStoreRequest, GetSemanticStoreResponse>() {
+                            @Override
+                            public GetSemanticStoreResponse apply(GetSemanticStoreRequest request) {
+                                return client.getSemanticStore(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetSemanticStoreResponse>() {
+                            @Override
+                            public boolean test(GetSemanticStoreResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSemanticStore().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.generativeai.model.SemanticStore.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVectorStoreConnectorRequest, GetVectorStoreConnectorResponse>
+            forVectorStoreConnector(
+                    GetVectorStoreConnectorRequest request,
+                    com.oracle.bmc.generativeai.model.VectorStoreConnector.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVectorStoreConnector(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVectorStoreConnectorRequest, GetVectorStoreConnectorResponse>
+            forVectorStoreConnector(
+                    GetVectorStoreConnectorRequest request,
+                    com.oracle.bmc.generativeai.model.VectorStoreConnector.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forVectorStoreConnector(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVectorStoreConnectorRequest, GetVectorStoreConnectorResponse>
+            forVectorStoreConnector(
+                    GetVectorStoreConnectorRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.generativeai.model.VectorStoreConnector.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forVectorStoreConnector(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for VectorStoreConnector.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetVectorStoreConnectorRequest, GetVectorStoreConnectorResponse>
+            forVectorStoreConnector(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVectorStoreConnectorRequest request,
+                    final com.oracle.bmc.generativeai.model.VectorStoreConnector.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.generativeai.model.VectorStoreConnector.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetVectorStoreConnectorRequest, GetVectorStoreConnectorResponse>() {
+                            @Override
+                            public GetVectorStoreConnectorResponse apply(
+                                    GetVectorStoreConnectorRequest request) {
+                                return client.getVectorStoreConnector(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetVectorStoreConnectorResponse>() {
+                            @Override
+                            public boolean test(GetVectorStoreConnectorResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getVectorStoreConnector().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.generativeai.model.VectorStoreConnector
+                                        .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVectorStoreConnectorFileSyncRequest, GetVectorStoreConnectorFileSyncResponse>
+            forVectorStoreConnectorFileSync(
+                    GetVectorStoreConnectorFileSyncRequest request,
+                    com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSync.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVectorStoreConnectorFileSync(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVectorStoreConnectorFileSyncRequest, GetVectorStoreConnectorFileSyncResponse>
+            forVectorStoreConnectorFileSync(
+                    GetVectorStoreConnectorFileSyncRequest request,
+                    com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSync.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forVectorStoreConnectorFileSync(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVectorStoreConnectorFileSyncRequest, GetVectorStoreConnectorFileSyncResponse>
+            forVectorStoreConnectorFileSync(
+                    GetVectorStoreConnectorFileSyncRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSync.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forVectorStoreConnectorFileSync(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for VectorStoreConnectorFileSync.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetVectorStoreConnectorFileSyncRequest, GetVectorStoreConnectorFileSyncResponse>
+            forVectorStoreConnectorFileSync(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVectorStoreConnectorFileSyncRequest request,
+                    final com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSync
+                                            .LifecycleState
+                                    ...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.generativeai.model.VectorStoreConnectorFileSync
+                                .LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetVectorStoreConnectorFileSyncRequest,
+                                GetVectorStoreConnectorFileSyncResponse>() {
+                            @Override
+                            public GetVectorStoreConnectorFileSyncResponse apply(
+                                    GetVectorStoreConnectorFileSyncRequest request) {
+                                return client.getVectorStoreConnectorFileSync(request);
+                            }
+                        },
+                        new java.util.function.Predicate<
+                                GetVectorStoreConnectorFileSyncResponse>() {
+                            @Override
+                            public boolean test(GetVectorStoreConnectorFileSyncResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getVectorStoreConnectorFileSync()
+                                                .getLifecycleState());
+                            }
+                        },
+                        false),
                 request);
     }
 

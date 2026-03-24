@@ -177,7 +177,8 @@ public final class ApiKeySummary extends com.oracle.bmc.http.client.internal.Exp
         /**
          * The current state of the API key.
          *
-         * <p>Allowed values are: - ACTIVE - CREATING - UPDATING - DELETING - DELETED - FAILED
+         * <p>Allowed values are: - ACTIVE - INACTIVE - CREATING - UPDATING - DELETING - DELETED -
+         * FAILED
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ApiKey.LifecycleState lifecycleState;
@@ -185,7 +186,8 @@ public final class ApiKeySummary extends com.oracle.bmc.http.client.internal.Exp
         /**
          * The current state of the API key.
          *
-         * <p>Allowed values are: - ACTIVE - CREATING - UPDATING - DELETING - DELETED - FAILED
+         * <p>Allowed values are: - ACTIVE - INACTIVE - CREATING - UPDATING - DELETING - DELETED -
+         * FAILED
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -458,7 +460,8 @@ public final class ApiKeySummary extends com.oracle.bmc.http.client.internal.Exp
     /**
      * The current state of the API key.
      *
-     * <p>Allowed values are: - ACTIVE - CREATING - UPDATING - DELETING - DELETED - FAILED
+     * <p>Allowed values are: - ACTIVE - INACTIVE - CREATING - UPDATING - DELETING - DELETED -
+     * FAILED
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ApiKey.LifecycleState lifecycleState;
@@ -466,7 +469,8 @@ public final class ApiKeySummary extends com.oracle.bmc.http.client.internal.Exp
     /**
      * The current state of the API key.
      *
-     * <p>Allowed values are: - ACTIVE - CREATING - UPDATING - DELETING - DELETED - FAILED
+     * <p>Allowed values are: - ACTIVE - INACTIVE - CREATING - UPDATING - DELETING - DELETED -
+     * FAILED
      *
      * @return the value
      */

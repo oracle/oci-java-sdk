@@ -23,10 +23,12 @@ package com.oracle.bmc.bds.model;
 public final class RemoveResourcePrincipalConfigurationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"clusterAdminPassword"})
-    public RemoveResourcePrincipalConfigurationDetails(String clusterAdminPassword) {
+    @java.beans.ConstructorProperties({"clusterAdminPassword", "secretId"})
+    public RemoveResourcePrincipalConfigurationDetails(
+            String clusterAdminPassword, String secretId) {
         super();
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,13 +48,29 @@ public final class RemoveResourcePrincipalConfigurationDetails
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
+        /** The secretId for the clusterAdminPassword. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RemoveResourcePrincipalConfigurationDetails build() {
             RemoveResourcePrincipalConfigurationDetails model =
-                    new RemoveResourcePrincipalConfigurationDetails(this.clusterAdminPassword);
+                    new RemoveResourcePrincipalConfigurationDetails(
+                            this.clusterAdminPassword, this.secretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -63,6 +81,9 @@ public final class RemoveResourcePrincipalConfigurationDetails
         public Builder copy(RemoveResourcePrincipalConfigurationDetails model) {
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             return this;
         }
@@ -90,6 +111,19 @@ public final class RemoveResourcePrincipalConfigurationDetails
         return clusterAdminPassword;
     }
 
+    /** The secretId for the clusterAdminPassword. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -106,6 +140,7 @@ public final class RemoveResourcePrincipalConfigurationDetails
         sb.append("RemoveResourcePrincipalConfigurationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(")");
         return sb.toString();
     }
@@ -122,6 +157,7 @@ public final class RemoveResourcePrincipalConfigurationDetails
         RemoveResourcePrincipalConfigurationDetails other =
                 (RemoveResourcePrincipalConfigurationDetails) o;
         return java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && super.equals(other);
     }
 
@@ -134,6 +170,7 @@ public final class RemoveResourcePrincipalConfigurationDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

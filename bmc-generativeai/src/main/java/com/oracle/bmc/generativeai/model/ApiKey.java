@@ -458,6 +458,7 @@ public final class ApiKey extends com.oracle.bmc.http.client.internal.Explicitly
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
+        Inactive("INACTIVE"),
         Updating("UPDATING"),
         Deleting("DELETING"),
         Deleted("DELETED"),

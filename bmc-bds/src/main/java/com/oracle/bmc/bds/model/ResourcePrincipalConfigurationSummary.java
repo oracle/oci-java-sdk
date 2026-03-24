@@ -55,12 +55,12 @@ public final class ResourcePrincipalConfigurationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** the ID of the ResourcePrincipalConfiguration. */
+        /** the ID of the ResourcePrincipalConfiguration defined under BDS resources, not OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * the ID of the ResourcePrincipalConfiguration.
+         * the ID of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
          *
          * @param id the value to set
          * @return this builder
@@ -258,12 +258,12 @@ public final class ResourcePrincipalConfigurationSummary
         return new Builder().copy(this);
     }
 
-    /** the ID of the ResourcePrincipalConfiguration. */
+    /** the ID of the ResourcePrincipalConfiguration defined under BDS resources, not OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * the ID of the ResourcePrincipalConfiguration.
+     * the ID of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
      *
      * @return the value
      */
