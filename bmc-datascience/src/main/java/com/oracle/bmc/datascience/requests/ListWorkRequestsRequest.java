@@ -43,6 +43,21 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getId() {
         return id;
     }
+    /**
+     * <b>Filter</b> results by the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource
+     * associated with the work request.
+     */
+    private String resourceId;
+
+    /**
+     * <b>Filter</b> results by the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource
+     * associated with the work request.
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
     /** <b>Filter</b> results by the type of the operation associated with the work request. */
     private OperationType operationType;
 
@@ -370,6 +385,26 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * <b>Filter</b> results by the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource associated with the work request.
+         */
+        private String resourceId = null;
+
+        /**
+         * <b>Filter</b> results by the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource associated with the work request.
+         *
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+
         /** <b>Filter</b> results by the type of the operation associated with the work request. */
         private OperationType operationType = null;
 
@@ -532,6 +567,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         public Builder copy(ListWorkRequestsRequest o) {
             compartmentId(o.getCompartmentId());
             id(o.getId());
+            resourceId(o.getResourceId());
             operationType(o.getOperationType());
             status(o.getStatus());
             limit(o.getLimit());
@@ -575,6 +611,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             ListWorkRequestsRequest request = new ListWorkRequestsRequest();
             request.compartmentId = compartmentId;
             request.id = id;
+            request.resourceId = resourceId;
             request.operationType = operationType;
             request.status = status;
             request.limit = limit;
@@ -583,8 +620,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, id, operationType, status, limit, page,
-            // sortOrder, sortBy, opcRequestId);
+            // new ListWorkRequestsRequest(compartmentId, id, resourceId, operationType, status,
+            // limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -597,6 +634,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return new Builder()
                 .compartmentId(compartmentId)
                 .id(id)
+                .resourceId(resourceId)
                 .operationType(operationType)
                 .status(status)
                 .limit(limit)
@@ -622,6 +660,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
         sb.append(",operationType=").append(String.valueOf(this.operationType));
         sb.append(",status=").append(String.valueOf(this.status));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -646,6 +685,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.operationType, other.operationType)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -663,6 +703,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result =
                 (result * PRIME)
                         + (this.operationType == null ? 43 : this.operationType.hashCode());

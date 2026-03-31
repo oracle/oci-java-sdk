@@ -31,39 +31,43 @@ public final class ReservedIP extends com.oracle.bmc.http.client.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * OCID of the reserved public IP address created with the virtual cloud network.
+         * Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
          *
-         * <p>Reserved public IP addresses are IP addresses that are registered using the virtual
-         * cloud network API.
+         * <p>Reserved IPs are IPs which are already registered using VCN API.
          *
-         * <p>Create a reserved public IP address. When you create the network load balancer, enter
-         * the OCID of the reserved public IP address in the reservedIp field to attach the IP
-         * address to the network load balancer. This task configures the network load balancer to
-         * listen to traffic on this IP address.
+         * <p>For public Network load balancers, customer can create a reserved Public IP and/or
+         * reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array
+         * field to attach the IP addresses to the network load balancer during create For private
+         * Network load balancers, customer can create a reserved Private IP and/or reserved IPv6
+         * and pass the OCID's in the reservedIps array field to attach the IP addresses to the
+         * network load balancer during create
          *
-         * <p>Reserved public IP addresses are not deleted when the network load balancer is
-         * deleted. The IP addresses become unattached from the network load balancer.
+         * <p>Reserved IPs will not be deleted when the Network Load balancer is deleted. They will
+         * be detached from the Network Load balancer.
          *
-         * <p>Example: "ocid1.publicip.oc1.phx.unique_ID"
+         * <p>Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example:
+         * "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * OCID of the reserved public IP address created with the virtual cloud network.
+         * Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
          *
-         * <p>Reserved public IP addresses are IP addresses that are registered using the virtual
-         * cloud network API.
+         * <p>Reserved IPs are IPs which are already registered using VCN API.
          *
-         * <p>Create a reserved public IP address. When you create the network load balancer, enter
-         * the OCID of the reserved public IP address in the reservedIp field to attach the IP
-         * address to the network load balancer. This task configures the network load balancer to
-         * listen to traffic on this IP address.
+         * <p>For public Network load balancers, customer can create a reserved Public IP and/or
+         * reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array
+         * field to attach the IP addresses to the network load balancer during create For private
+         * Network load balancers, customer can create a reserved Private IP and/or reserved IPv6
+         * and pass the OCID's in the reservedIps array field to attach the IP addresses to the
+         * network load balancer during create
          *
-         * <p>Reserved public IP addresses are not deleted when the network load balancer is
-         * deleted. The IP addresses become unattached from the network load balancer.
+         * <p>Reserved IPs will not be deleted when the Network Load balancer is deleted. They will
+         * be detached from the Network Load balancer.
          *
-         * <p>Example: "ocid1.publicip.oc1.phx.unique_ID"
+         * <p>Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example:
+         * "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
          *
          * @param id the value to set
          * @return this builder
@@ -104,39 +108,43 @@ public final class ReservedIP extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * OCID of the reserved public IP address created with the virtual cloud network.
+     * Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      *
-     * <p>Reserved public IP addresses are IP addresses that are registered using the virtual cloud
-     * network API.
+     * <p>Reserved IPs are IPs which are already registered using VCN API.
      *
-     * <p>Create a reserved public IP address. When you create the network load balancer, enter the
-     * OCID of the reserved public IP address in the reservedIp field to attach the IP address to
-     * the network load balancer. This task configures the network load balancer to listen to
-     * traffic on this IP address.
+     * <p>For public Network load balancers, customer can create a reserved Public IP and/or
+     * reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field
+     * to attach the IP addresses to the network load balancer during create For private Network
+     * load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the
+     * OCID's in the reservedIps array field to attach the IP addresses to the network load balancer
+     * during create
      *
-     * <p>Reserved public IP addresses are not deleted when the network load balancer is deleted.
-     * The IP addresses become unattached from the network load balancer.
+     * <p>Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be
+     * detached from the Network Load balancer.
      *
-     * <p>Example: "ocid1.publicip.oc1.phx.unique_ID"
+     * <p>Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example:
+     * "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * OCID of the reserved public IP address created with the virtual cloud network.
+     * Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      *
-     * <p>Reserved public IP addresses are IP addresses that are registered using the virtual cloud
-     * network API.
+     * <p>Reserved IPs are IPs which are already registered using VCN API.
      *
-     * <p>Create a reserved public IP address. When you create the network load balancer, enter the
-     * OCID of the reserved public IP address in the reservedIp field to attach the IP address to
-     * the network load balancer. This task configures the network load balancer to listen to
-     * traffic on this IP address.
+     * <p>For public Network load balancers, customer can create a reserved Public IP and/or
+     * reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field
+     * to attach the IP addresses to the network load balancer during create For private Network
+     * load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the
+     * OCID's in the reservedIps array field to attach the IP addresses to the network load balancer
+     * during create
      *
-     * <p>Reserved public IP addresses are not deleted when the network load balancer is deleted.
-     * The IP addresses become unattached from the network load balancer.
+     * <p>Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be
+     * detached from the Network Load balancer.
      *
-     * <p>Example: "ocid1.publicip.oc1.phx.unique_ID"
+     * <p>Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example:
+     * "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
      *
      * @return the value
      */

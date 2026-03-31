@@ -31,6 +31,8 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         "timeUpdated",
         "replicationScheduleId",
         "isCompleted",
+        "migrationType",
+        "migrationConfig",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -45,6 +47,8 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
             java.util.Date timeUpdated,
             String replicationScheduleId,
             Boolean isCompleted,
+            MigrationType migrationType,
+            MigrationConfig migrationConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -58,6 +62,8 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         this.timeUpdated = timeUpdated;
         this.replicationScheduleId = replicationScheduleId;
         this.isCompleted = isCompleted;
+        this.migrationType = migrationType;
+        this.migrationConfig = migrationConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -205,6 +211,34 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
+         * Type of migration project (OCI/OLVM). This determines the target environment for the
+         * migration.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
+        private MigrationType migrationType;
+
+        /**
+         * Type of migration project (OCI/OLVM). This determines the target environment for the
+         * migration.
+         *
+         * @param migrationType the value to set
+         * @return this builder
+         */
+        public Builder migrationType(MigrationType migrationType) {
+            this.migrationType = migrationType;
+            this.__explicitlySet__.add("migrationType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationConfig")
+        private MigrationConfig migrationConfig;
+
+        public Builder migrationConfig(MigrationConfig migrationConfig) {
+            this.migrationConfig = migrationConfig;
+            this.__explicitlySet__.add("migrationConfig");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. It
          * exists only for cross-compatibility. Example: {@code {"bar-key": "value"}}
          */
@@ -278,6 +312,8 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
                             this.timeUpdated,
                             this.replicationScheduleId,
                             this.isCompleted,
+                            this.migrationType,
+                            this.migrationConfig,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -315,6 +351,12 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("isCompleted")) {
                 this.isCompleted(model.getIsCompleted());
+            }
+            if (model.wasPropertyExplicitlySet("migrationType")) {
+                this.migrationType(model.getMigrationType());
+            }
+            if (model.wasPropertyExplicitlySet("migrationConfig")) {
+                this.migrationConfig(model.getMigrationConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -511,6 +553,79 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
+     * Type of migration project (OCI/OLVM). This determines the target environment for the
+     * migration.
+     */
+    public enum MigrationType implements com.oracle.bmc.http.internal.BmcEnum {
+        Oci("OCI"),
+        Olvm("OLVM"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MigrationType.class);
+
+        private final String value;
+        private static java.util.Map<String, MigrationType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MigrationType v : MigrationType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        MigrationType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MigrationType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'MigrationType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Type of migration project (OCI/OLVM). This determines the target environment for the
+     * migration.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
+    private final MigrationType migrationType;
+
+    /**
+     * Type of migration project (OCI/OLVM). This determines the target environment for the
+     * migration.
+     *
+     * @return the value
+     */
+    public MigrationType getMigrationType() {
+        return migrationType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationConfig")
+    private final MigrationConfig migrationConfig;
+
+    public MigrationConfig getMigrationConfig() {
+        return migrationConfig;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. It exists
      * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
      */
@@ -585,6 +700,8 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", replicationScheduleId=").append(String.valueOf(this.replicationScheduleId));
         sb.append(", isCompleted=").append(String.valueOf(this.isCompleted));
+        sb.append(", migrationType=").append(String.valueOf(this.migrationType));
+        sb.append(", migrationConfig=").append(String.valueOf(this.migrationConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -611,6 +728,8 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.replicationScheduleId, other.replicationScheduleId)
                 && java.util.Objects.equals(this.isCompleted, other.isCompleted)
+                && java.util.Objects.equals(this.migrationType, other.migrationType)
+                && java.util.Objects.equals(this.migrationConfig, other.migrationConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -640,6 +759,12 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
                                 ? 43
                                 : this.replicationScheduleId.hashCode());
         result = (result * PRIME) + (this.isCompleted == null ? 43 : this.isCompleted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.migrationType == null ? 43 : this.migrationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.migrationConfig == null ? 43 : this.migrationConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

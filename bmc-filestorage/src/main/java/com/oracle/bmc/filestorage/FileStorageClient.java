@@ -20,7 +20,8 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(FileStorageClient.class.getName())
                     .serviceEndpointPrefix("filestorage")
-                    .serviceEndpointTemplate("https://filestorage.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://filestorage.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
                     .endpointServiceName("filestorage")
                     .build();
 
@@ -130,12 +131,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getAddExportLockDetails(), "addExportLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("exportId", request.getExportId());
+
         return clientCall(request, AddExportLockResponse::builder)
                 .logger(LOG, "addExportLock")
                 .serviceDetails(
                         "FileStorage",
                         "AddExportLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/AddExportLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddExportLockRequest::builder)
                 .basePath("/20171215")
@@ -163,12 +168,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getAddFileSystemLockDetails(), "addFileSystemLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+
         return clientCall(request, AddFileSystemLockResponse::builder)
                 .logger(LOG, "addFileSystemLock")
                 .serviceDetails(
                         "FileStorage",
                         "AddFileSystemLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/AddFileSystemLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddFileSystemLockRequest::builder)
                 .basePath("/20171215")
@@ -200,12 +209,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getAddFilesystemSnapshotPolicyLockDetails(),
                 "addFilesystemSnapshotPolicyLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
+
         return clientCall(request, AddFilesystemSnapshotPolicyLockResponse::builder)
                 .logger(LOG, "addFilesystemSnapshotPolicyLock")
                 .serviceDetails(
                         "FileStorage",
                         "AddFilesystemSnapshotPolicyLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/AddFilesystemSnapshotPolicyLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddFilesystemSnapshotPolicyLockRequest::builder)
                 .basePath("/20171215")
@@ -235,12 +249,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getAddMountTargetLockDetails(), "addMountTargetLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
+
         return clientCall(request, AddMountTargetLockResponse::builder)
                 .logger(LOG, "addMountTargetLock")
                 .serviceDetails(
                         "FileStorage",
                         "AddMountTargetLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/AddMountTargetLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddMountTargetLockRequest::builder)
                 .basePath("/20171215")
@@ -271,12 +289,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getAddOutboundConnectorLockDetails(),
                 "addOutboundConnectorLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
+
         return clientCall(request, AddOutboundConnectorLockResponse::builder)
                 .logger(LOG, "addOutboundConnectorLock")
                 .serviceDetails(
                         "FileStorage",
                         "AddOutboundConnectorLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/AddOutboundConnectorLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddOutboundConnectorLockRequest::builder)
                 .basePath("/20171215")
@@ -304,12 +326,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getAddReplicationLockDetails(), "addReplicationLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("replicationId", request.getReplicationId());
+
         return clientCall(request, AddReplicationLockResponse::builder)
                 .logger(LOG, "addReplicationLock")
                 .serviceDetails(
                         "FileStorage",
                         "AddReplicationLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/AddReplicationLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddReplicationLockRequest::builder)
                 .basePath("/20171215")
@@ -337,12 +363,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getAddSnapshotLockDetails(), "addSnapshotLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("snapshotId", request.getSnapshotId());
+
         return clientCall(request, AddSnapshotLockResponse::builder)
                 .logger(LOG, "addSnapshotLock")
                 .serviceDetails(
                         "FileStorage",
                         "AddSnapshotLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/AddSnapshotLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddSnapshotLockRequest::builder)
                 .basePath("/20171215")
@@ -369,12 +399,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
+
         return clientCall(request, CancelDowngradeShapeMountTargetResponse::builder)
                 .logger(LOG, "cancelDowngradeShapeMountTarget")
                 .serviceDetails(
                         "FileStorage",
                         "CancelDowngradeShapeMountTarget",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/CancelDowngradeShapeMountTarget")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelDowngradeShapeMountTargetRequest::builder)
                 .basePath("/20171215")
@@ -405,12 +439,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getChangeFileSystemCompartmentDetails(),
                 "changeFileSystemCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+
         return clientCall(request, ChangeFileSystemCompartmentResponse::builder)
                 .logger(LOG, "changeFileSystemCompartment")
                 .serviceDetails(
                         "FileStorage",
                         "ChangeFileSystemCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ChangeFileSystemCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeFileSystemCompartmentRequest::builder)
                 .basePath("/20171215")
@@ -440,12 +478,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getChangeFilesystemSnapshotPolicyCompartmentDetails(),
                 "changeFilesystemSnapshotPolicyCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
+
         return clientCall(request, ChangeFilesystemSnapshotPolicyCompartmentResponse::builder)
                 .logger(LOG, "changeFilesystemSnapshotPolicyCompartment")
                 .serviceDetails(
                         "FileStorage",
                         "ChangeFilesystemSnapshotPolicyCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/ChangeFilesystemSnapshotPolicyCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeFilesystemSnapshotPolicyCompartmentRequest::builder)
                 .basePath("/20171215")
@@ -473,12 +516,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getChangeMountTargetCompartmentDetails(),
                 "changeMountTargetCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
+
         return clientCall(request, ChangeMountTargetCompartmentResponse::builder)
                 .logger(LOG, "changeMountTargetCompartment")
                 .serviceDetails(
                         "FileStorage",
                         "ChangeMountTargetCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ChangeMountTargetCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeMountTargetCompartmentRequest::builder)
                 .basePath("/20171215")
@@ -507,12 +554,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getChangeOutboundConnectorCompartmentDetails(),
                 "changeOutboundConnectorCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
+
         return clientCall(request, ChangeOutboundConnectorCompartmentResponse::builder)
                 .logger(LOG, "changeOutboundConnectorCompartment")
                 .serviceDetails(
                         "FileStorage",
                         "ChangeOutboundConnectorCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/ChangeOutboundConnectorCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOutboundConnectorCompartmentRequest::builder)
                 .basePath("/20171215")
@@ -540,12 +591,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getChangeReplicationCompartmentDetails(),
                 "changeReplicationCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("replicationId", request.getReplicationId());
+
         return clientCall(request, ChangeReplicationCompartmentResponse::builder)
                 .logger(LOG, "changeReplicationCompartment")
                 .serviceDetails(
                         "FileStorage",
                         "ChangeReplicationCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/ChangeReplicationCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeReplicationCompartmentRequest::builder)
                 .basePath("/20171215")
@@ -568,12 +623,15 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     public CreateExportResponse createExport(CreateExportRequest request) {
         Objects.requireNonNull(request.getCreateExportDetails(), "createExportDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateExportResponse::builder)
                 .logger(LOG, "createExport")
                 .serviceDetails(
                         "FileStorage",
                         "CreateExport",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/CreateExport")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateExportRequest::builder)
                 .basePath("/20171215")
@@ -596,12 +654,15 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getCreateFileSystemDetails(), "createFileSystemDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateFileSystemResponse::builder)
                 .logger(LOG, "createFileSystem")
                 .serviceDetails(
                         "FileStorage",
                         "CreateFileSystem",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/CreateFileSystem")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFileSystemRequest::builder)
                 .basePath("/20171215")
@@ -626,12 +687,15 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getCreateFilesystemSnapshotPolicyDetails(),
                 "createFilesystemSnapshotPolicyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "createFilesystemSnapshotPolicy")
                 .serviceDetails(
                         "FileStorage",
                         "CreateFilesystemSnapshotPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/CreateFilesystemSnapshotPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFilesystemSnapshotPolicyRequest::builder)
                 .basePath("/20171215")
@@ -656,12 +720,15 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getCreateMountTargetDetails(), "createMountTargetDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateMountTargetResponse::builder)
                 .logger(LOG, "createMountTarget")
                 .serviceDetails(
                         "FileStorage",
                         "CreateMountTarget",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/CreateMountTarget")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMountTargetRequest::builder)
                 .basePath("/20171215")
@@ -687,12 +754,15 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getCreateOutboundConnectorDetails(),
                 "createOutboundConnectorDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateOutboundConnectorResponse::builder)
                 .logger(LOG, "createOutboundConnector")
                 .serviceDetails(
                         "FileStorage",
                         "CreateOutboundConnector",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/CreateOutboundConnector")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOutboundConnectorRequest::builder)
                 .basePath("/20171215")
@@ -717,12 +787,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+
         return clientCall(request, CreateQuotaRuleResponse::builder)
                 .logger(LOG, "createQuotaRule")
                 .serviceDetails(
                         "FileStorage",
                         "CreateQuotaRule",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/CreateQuotaRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateQuotaRuleRequest::builder)
                 .basePath("/20171215")
@@ -748,12 +822,15 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getCreateReplicationDetails(), "createReplicationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateReplicationResponse::builder)
                 .logger(LOG, "createReplication")
                 .serviceDetails(
                         "FileStorage",
                         "CreateReplication",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/CreateReplication")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateReplicationRequest::builder)
                 .basePath("/20171215")
@@ -776,12 +853,15 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getCreateSnapshotDetails(), "createSnapshotDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateSnapshotResponse::builder)
                 .logger(LOG, "createSnapshot")
                 .serviceDetails(
                         "FileStorage",
                         "CreateSnapshot",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/CreateSnapshot")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSnapshotRequest::builder)
                 .basePath("/20171215")
@@ -804,12 +884,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getExportId(), "exportId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("exportId", request.getExportId());
+
         return clientCall(request, DeleteExportResponse::builder)
                 .logger(LOG, "deleteExport")
                 .serviceDetails(
                         "FileStorage",
                         "DeleteExport",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/DeleteExport")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteExportRequest::builder)
                 .basePath("/20171215")
@@ -829,12 +913,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+
         return clientCall(request, DeleteFileSystemResponse::builder)
                 .logger(LOG, "deleteFileSystem")
                 .serviceDetails(
                         "FileStorage",
                         "DeleteFileSystem",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DeleteFileSystem")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFileSystemRequest::builder)
                 .basePath("/20171215")
@@ -858,12 +946,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getFilesystemSnapshotPolicyId(),
                 "filesystemSnapshotPolicyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
+
         return clientCall(request, DeleteFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "deleteFilesystemSnapshotPolicy")
                 .serviceDetails(
                         "FileStorage",
                         "DeleteFilesystemSnapshotPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/DeleteFilesystemSnapshotPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFilesystemSnapshotPolicyRequest::builder)
                 .basePath("/20171215")
@@ -884,12 +977,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
+
         return clientCall(request, DeleteMountTargetResponse::builder)
                 .logger(LOG, "deleteMountTarget")
                 .serviceDetails(
                         "FileStorage",
                         "DeleteMountTarget",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/DeleteMountTarget")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMountTargetRequest::builder)
                 .basePath("/20171215")
@@ -911,12 +1008,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(
                 request.getOutboundConnectorId(), "outboundConnectorId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
+
         return clientCall(request, DeleteOutboundConnectorResponse::builder)
                 .logger(LOG, "deleteOutboundConnector")
                 .serviceDetails(
                         "FileStorage",
                         "DeleteOutboundConnector",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/DeleteOutboundConnector")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOutboundConnectorRequest::builder)
                 .basePath("/20171215")
@@ -938,12 +1039,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getQuotaRuleId(), "quotaRuleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+        requiredParametersMap.put("quotaRuleId", request.getQuotaRuleId());
+
         return clientCall(request, DeleteQuotaRuleResponse::builder)
                 .logger(LOG, "deleteQuotaRule")
                 .serviceDetails(
                         "FileStorage",
                         "DeleteQuotaRule",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DeleteQuotaRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteQuotaRuleRequest::builder)
                 .basePath("/20171215")
@@ -964,12 +1070,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("replicationId", request.getReplicationId());
+
         return clientCall(request, DeleteReplicationResponse::builder)
                 .logger(LOG, "deleteReplication")
                 .serviceDetails(
                         "FileStorage",
                         "DeleteReplication",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/DeleteReplication")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteReplicationRequest::builder)
                 .basePath("/20171215")
@@ -992,12 +1102,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(
                 request.getReplicationTargetId(), "replicationTargetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("replicationTargetId", request.getReplicationTargetId());
+
         return clientCall(request, DeleteReplicationTargetResponse::builder)
                 .logger(LOG, "deleteReplicationTarget")
                 .serviceDetails(
                         "FileStorage",
                         "DeleteReplicationTarget",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTarget/DeleteReplicationTarget")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteReplicationTargetRequest::builder)
                 .basePath("/20171215")
@@ -1017,12 +1131,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("snapshotId", request.getSnapshotId());
+
         return clientCall(request, DeleteSnapshotResponse::builder)
                 .logger(LOG, "deleteSnapshot")
                 .serviceDetails(
                         "FileStorage",
                         "DeleteSnapshot",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/DeleteSnapshot")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSnapshotRequest::builder)
                 .basePath("/20171215")
@@ -1042,12 +1160,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+
         return clientCall(request, DetachCloneResponse::builder)
                 .logger(LOG, "detachClone")
                 .serviceDetails(
                         "FileStorage",
                         "DetachClone",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DetachClone")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachCloneRequest::builder)
                 .basePath("/20171215")
@@ -1068,12 +1190,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+
         return clientCall(request, EstimateReplicationResponse::builder)
                 .logger(LOG, "estimateReplication")
                 .serviceDetails(
                         "FileStorage",
                         "EstimateReplication",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/EstimateReplication")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EstimateReplicationRequest::builder)
                 .basePath("/20171215")
@@ -1099,12 +1225,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getExportId(), "exportId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("exportId", request.getExportId());
+
         return clientCall(request, GetExportResponse::builder)
                 .logger(LOG, "getExport")
                 .serviceDetails(
                         "FileStorage",
                         "GetExport",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/GetExport")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetExportRequest::builder)
                 .basePath("/20171215")
@@ -1126,12 +1256,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getExportSetId(), "exportSetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("exportSetId", request.getExportSetId());
+
         return clientCall(request, GetExportSetResponse::builder)
                 .logger(LOG, "getExportSet")
                 .serviceDetails(
                         "FileStorage",
                         "GetExportSet",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/GetExportSet")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetExportSetRequest::builder)
                 .basePath("/20171215")
@@ -1153,12 +1287,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+
         return clientCall(request, GetFileSystemResponse::builder)
                 .logger(LOG, "getFileSystem")
                 .serviceDetails(
                         "FileStorage",
                         "GetFileSystem",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/GetFileSystem")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFileSystemRequest::builder)
                 .basePath("/20171215")
@@ -1183,12 +1321,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getFilesystemSnapshotPolicyId(),
                 "filesystemSnapshotPolicyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
+
         return clientCall(request, GetFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "getFilesystemSnapshotPolicy")
                 .serviceDetails(
                         "FileStorage",
                         "GetFilesystemSnapshotPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/GetFilesystemSnapshotPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFilesystemSnapshotPolicyRequest::builder)
                 .basePath("/20171215")
@@ -1211,12 +1354,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
+
         return clientCall(request, GetMountTargetResponse::builder)
                 .logger(LOG, "getMountTarget")
                 .serviceDetails(
                         "FileStorage",
                         "GetMountTarget",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/GetMountTarget")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMountTargetRequest::builder)
                 .basePath("/20171215")
@@ -1239,12 +1386,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(
                 request.getOutboundConnectorId(), "outboundConnectorId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
+
         return clientCall(request, GetOutboundConnectorResponse::builder)
                 .logger(LOG, "getOutboundConnector")
                 .serviceDetails(
                         "FileStorage",
                         "GetOutboundConnector",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/GetOutboundConnector")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOutboundConnectorRequest::builder)
                 .basePath("/20171215")
@@ -1268,12 +1419,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getQuotaRuleId(), "quotaRuleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+        requiredParametersMap.put("quotaRuleId", request.getQuotaRuleId());
+
         return clientCall(request, GetQuotaRuleResponse::builder)
                 .logger(LOG, "getQuotaRule")
                 .serviceDetails(
                         "FileStorage",
                         "GetQuotaRule",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/GetQuotaRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetQuotaRuleRequest::builder)
                 .basePath("/20171215")
@@ -1298,12 +1454,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("replicationId", request.getReplicationId());
+
         return clientCall(request, GetReplicationResponse::builder)
                 .logger(LOG, "getReplication")
                 .serviceDetails(
                         "FileStorage",
                         "GetReplication",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/GetReplication")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetReplicationRequest::builder)
                 .basePath("/20171215")
@@ -1326,12 +1486,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(
                 request.getReplicationTargetId(), "replicationTargetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("replicationTargetId", request.getReplicationTargetId());
+
         return clientCall(request, GetReplicationTargetResponse::builder)
                 .logger(LOG, "getReplicationTarget")
                 .serviceDetails(
                         "FileStorage",
                         "GetReplicationTarget",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTarget/GetReplicationTarget")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetReplicationTargetRequest::builder)
                 .basePath("/20171215")
@@ -1353,12 +1517,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("snapshotId", request.getSnapshotId());
+
         return clientCall(request, GetSnapshotResponse::builder)
                 .logger(LOG, "getSnapshot")
                 .serviceDetails(
                         "FileStorage",
                         "GetSnapshot",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/GetSnapshot")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSnapshotRequest::builder)
                 .basePath("/20171215")
@@ -1381,12 +1549,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
+
         return clientCall(request, ListExportSetsResponse::builder)
                 .logger(LOG, "listExportSets")
                 .serviceDetails(
                         "FileStorage",
                         "ListExportSets",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSetSummary/ListExportSets")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListExportSetsRequest::builder)
                 .basePath("/20171215")
@@ -1415,12 +1588,15 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     @Override
     public ListExportsResponse listExports(ListExportsRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListExportsResponse::builder)
                 .logger(LOG, "listExports")
                 .serviceDetails(
                         "FileStorage",
                         "ListExports",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSummary/ListExports")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListExportsRequest::builder)
                 .basePath("/20171215")
@@ -1452,12 +1628,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
+
         return clientCall(request, ListFileSystemsResponse::builder)
                 .logger(LOG, "listFileSystems")
                 .serviceDetails(
                         "FileStorage",
                         "ListFileSystems",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystemSummary/ListFileSystems")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFileSystemsRequest::builder)
                 .basePath("/20171215")
@@ -1494,12 +1675,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
+
         return clientCall(request, ListFilesystemSnapshotPoliciesResponse::builder)
                 .logger(LOG, "listFilesystemSnapshotPolicies")
                 .serviceDetails(
                         "FileStorage",
                         "ListFilesystemSnapshotPolicies",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicySummary/ListFilesystemSnapshotPolicies")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFilesystemSnapshotPoliciesRequest::builder)
                 .basePath("/20171215")
@@ -1533,12 +1719,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
+
         return clientCall(request, ListMountTargetsResponse::builder)
                 .logger(LOG, "listMountTargets")
                 .serviceDetails(
                         "FileStorage",
                         "ListMountTargets",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTargetSummary/ListMountTargets")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMountTargetsRequest::builder)
                 .basePath("/20171215")
@@ -1572,12 +1763,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
+
         return clientCall(request, ListOutboundConnectorsResponse::builder)
                 .logger(LOG, "listOutboundConnectors")
                 .serviceDetails(
                         "FileStorage",
                         "ListOutboundConnectors",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnectorSummary/ListOutboundConnectors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOutboundConnectorsRequest::builder)
                 .basePath("/20171215")
@@ -1609,12 +1805,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
         Objects.requireNonNull(request.getPrincipalType(), "principalType is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+        requiredParametersMap.put("principalType", request.getPrincipalType());
+
         return clientCall(request, ListQuotaRulesResponse::builder)
                 .logger(LOG, "listQuotaRules")
                 .serviceDetails(
                         "FileStorage",
                         "ListQuotaRules",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ListQuotaRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListQuotaRulesRequest::builder)
                 .basePath("/20171215")
@@ -1647,12 +1848,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
+
         return clientCall(request, ListReplicationTargetsResponse::builder)
                 .logger(LOG, "listReplicationTargets")
                 .serviceDetails(
                         "FileStorage",
                         "ListReplicationTargets",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTargetSummary/ListReplicationTargets")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListReplicationTargetsRequest::builder)
                 .basePath("/20171215")
@@ -1684,12 +1890,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
+
         return clientCall(request, ListReplicationsResponse::builder)
                 .logger(LOG, "listReplications")
                 .serviceDetails(
                         "FileStorage",
                         "ListReplications",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationSummary/ListReplications")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListReplicationsRequest::builder)
                 .basePath("/20171215")
@@ -1719,12 +1930,15 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     @Override
     public ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListSnapshotsResponse::builder)
                 .logger(LOG, "listSnapshots")
                 .serviceDetails(
                         "FileStorage",
                         "ListSnapshots",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/SnapshotSummary/ListSnapshots")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSnapshotsRequest::builder)
                 .basePath("/20171215")
@@ -1758,12 +1972,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getFilesystemSnapshotPolicyId(),
                 "filesystemSnapshotPolicyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
+
         return clientCall(request, PauseFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "pauseFilesystemSnapshotPolicy")
                 .serviceDetails(
                         "FileStorage",
                         "PauseFilesystemSnapshotPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/PauseFilesystemSnapshotPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PauseFilesystemSnapshotPolicyRequest::builder)
                 .basePath("/20171215")
@@ -1793,12 +2012,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getRemoveExportLockDetails(), "removeExportLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("exportId", request.getExportId());
+
         return clientCall(request, RemoveExportLockResponse::builder)
                 .logger(LOG, "removeExportLock")
                 .serviceDetails(
                         "FileStorage",
                         "RemoveExportLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/RemoveExportLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveExportLockRequest::builder)
                 .basePath("/20171215")
@@ -1827,12 +2050,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getRemoveFileSystemLockDetails(),
                 "removeFileSystemLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+
         return clientCall(request, RemoveFileSystemLockResponse::builder)
                 .logger(LOG, "removeFileSystemLock")
                 .serviceDetails(
                         "FileStorage",
                         "RemoveFileSystemLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/RemoveFileSystemLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveFileSystemLockRequest::builder)
                 .basePath("/20171215")
@@ -1864,12 +2091,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getRemoveFilesystemSnapshotPolicyLockDetails(),
                 "removeFilesystemSnapshotPolicyLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
+
         return clientCall(request, RemoveFilesystemSnapshotPolicyLockResponse::builder)
                 .logger(LOG, "removeFilesystemSnapshotPolicyLock")
                 .serviceDetails(
                         "FileStorage",
                         "RemoveFilesystemSnapshotPolicyLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/RemoveFilesystemSnapshotPolicyLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveFilesystemSnapshotPolicyLockRequest::builder)
                 .basePath("/20171215")
@@ -1902,12 +2134,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getRemoveMountTargetLockDetails(),
                 "removeMountTargetLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
+
         return clientCall(request, RemoveMountTargetLockResponse::builder)
                 .logger(LOG, "removeMountTargetLock")
                 .serviceDetails(
                         "FileStorage",
                         "RemoveMountTargetLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/RemoveMountTargetLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveMountTargetLockRequest::builder)
                 .basePath("/20171215")
@@ -1938,12 +2174,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getRemoveOutboundConnectorLockDetails(),
                 "removeOutboundConnectorLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
+
         return clientCall(request, RemoveOutboundConnectorLockResponse::builder)
                 .logger(LOG, "removeOutboundConnectorLock")
                 .serviceDetails(
                         "FileStorage",
                         "RemoveOutboundConnectorLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/RemoveOutboundConnectorLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveOutboundConnectorLockRequest::builder)
                 .basePath("/20171215")
@@ -1974,12 +2214,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getRemoveReplicationLockDetails(),
                 "removeReplicationLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("replicationId", request.getReplicationId());
+
         return clientCall(request, RemoveReplicationLockResponse::builder)
                 .logger(LOG, "removeReplicationLock")
                 .serviceDetails(
                         "FileStorage",
                         "RemoveReplicationLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/RemoveReplicationLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveReplicationLockRequest::builder)
                 .basePath("/20171215")
@@ -2007,12 +2251,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getRemoveSnapshotLockDetails(), "removeSnapshotLockDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("snapshotId", request.getSnapshotId());
+
         return clientCall(request, RemoveSnapshotLockResponse::builder)
                 .logger(LOG, "removeSnapshotLock")
                 .serviceDetails(
                         "FileStorage",
                         "RemoveSnapshotLock",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/RemoveSnapshotLock")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveSnapshotLockRequest::builder)
                 .basePath("/20171215")
@@ -2042,12 +2290,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getScheduleDowngradeShapeMountTargetDetails(),
                 "scheduleDowngradeShapeMountTargetDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
+
         return clientCall(request, ScheduleDowngradeShapeMountTargetResponse::builder)
                 .logger(LOG, "scheduleDowngradeShapeMountTarget")
                 .serviceDetails(
                         "FileStorage",
                         "ScheduleDowngradeShapeMountTarget",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ScheduleDowngradeShapeMountTarget")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ScheduleDowngradeShapeMountTargetRequest::builder)
                 .basePath("/20171215")
@@ -2077,12 +2329,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getToggleQuotaRulesDetails(), "toggleQuotaRulesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+
         return clientCall(request, ToggleQuotaRulesResponse::builder)
                 .logger(LOG, "toggleQuotaRules")
                 .serviceDetails(
                         "FileStorage",
                         "ToggleQuotaRules",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ToggleQuotaRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ToggleQuotaRulesRequest::builder)
                 .basePath("/20171215")
@@ -2108,12 +2364,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getFilesystemSnapshotPolicyId(),
                 "filesystemSnapshotPolicyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
+
         return clientCall(request, UnpauseFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "unpauseFilesystemSnapshotPolicy")
                 .serviceDetails(
                         "FileStorage",
                         "UnpauseFilesystemSnapshotPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/UnpauseFilesystemSnapshotPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UnpauseFilesystemSnapshotPolicyRequest::builder)
                 .basePath("/20171215")
@@ -2142,12 +2403,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Validate.notBlank(request.getExportId(), "exportId must not be blank");
         Objects.requireNonNull(request.getUpdateExportDetails(), "updateExportDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("exportId", request.getExportId());
+
         return clientCall(request, UpdateExportResponse::builder)
                 .logger(LOG, "updateExport")
                 .serviceDetails(
                         "FileStorage",
                         "UpdateExport",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/UpdateExport")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateExportRequest::builder)
                 .basePath("/20171215")
@@ -2174,12 +2439,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getUpdateExportSetDetails(), "updateExportSetDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("exportSetId", request.getExportSetId());
+
         return clientCall(request, UpdateExportSetResponse::builder)
                 .logger(LOG, "updateExportSet")
                 .serviceDetails(
                         "FileStorage",
                         "UpdateExportSet",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/UpdateExportSet")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateExportSetRequest::builder)
                 .basePath("/20171215")
@@ -2205,12 +2474,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getUpdateFileSystemDetails(), "updateFileSystemDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+
         return clientCall(request, UpdateFileSystemResponse::builder)
                 .logger(LOG, "updateFileSystem")
                 .serviceDetails(
                         "FileStorage",
                         "UpdateFileSystem",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/UpdateFileSystem")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFileSystemRequest::builder)
                 .basePath("/20171215")
@@ -2241,12 +2514,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getUpdateFilesystemSnapshotPolicyDetails(),
                 "updateFilesystemSnapshotPolicyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId());
+
         return clientCall(request, UpdateFilesystemSnapshotPolicyResponse::builder)
                 .logger(LOG, "updateFilesystemSnapshotPolicy")
                 .serviceDetails(
                         "FileStorage",
                         "UpdateFilesystemSnapshotPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/UpdateFilesystemSnapshotPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFilesystemSnapshotPolicyRequest::builder)
                 .basePath("/20171215")
@@ -2275,12 +2553,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getUpdateMountTargetDetails(), "updateMountTargetDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
+
         return clientCall(request, UpdateMountTargetResponse::builder)
                 .logger(LOG, "updateMountTarget")
                 .serviceDetails(
                         "FileStorage",
                         "UpdateMountTarget",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/UpdateMountTarget")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMountTargetRequest::builder)
                 .basePath("/20171215")
@@ -2310,12 +2592,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getUpdateOutboundConnectorDetails(),
                 "updateOutboundConnectorDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("outboundConnectorId", request.getOutboundConnectorId());
+
         return clientCall(request, UpdateOutboundConnectorResponse::builder)
                 .logger(LOG, "updateOutboundConnector")
                 .serviceDetails(
                         "FileStorage",
                         "UpdateOutboundConnector",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/UpdateOutboundConnector")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOutboundConnectorRequest::builder)
                 .basePath("/20171215")
@@ -2344,12 +2630,17 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         Validate.notBlank(request.getQuotaRuleId(), "quotaRuleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fileSystemId", request.getFileSystemId());
+        requiredParametersMap.put("quotaRuleId", request.getQuotaRuleId());
+
         return clientCall(request, UpdateQuotaRuleResponse::builder)
                 .logger(LOG, "updateQuotaRule")
                 .serviceDetails(
                         "FileStorage",
                         "UpdateQuotaRule",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/UpdateQuotaRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateQuotaRuleRequest::builder)
                 .basePath("/20171215")
@@ -2377,12 +2668,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getUpdateReplicationDetails(), "updateReplicationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("replicationId", request.getReplicationId());
+
         return clientCall(request, UpdateReplicationResponse::builder)
                 .logger(LOG, "updateReplication")
                 .serviceDetails(
                         "FileStorage",
                         "UpdateReplication",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/UpdateReplication")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateReplicationRequest::builder)
                 .basePath("/20171215")
@@ -2409,12 +2704,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getUpdateSnapshotDetails(), "updateSnapshotDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("snapshotId", request.getSnapshotId());
+
         return clientCall(request, UpdateSnapshotResponse::builder)
                 .logger(LOG, "updateSnapshot")
                 .serviceDetails(
                         "FileStorage",
                         "UpdateSnapshot",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/UpdateSnapshot")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSnapshotRequest::builder)
                 .basePath("/20171215")
@@ -2443,12 +2742,16 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 request.getUpgradeShapeMountTargetDetails(),
                 "upgradeShapeMountTargetDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("mountTargetId", request.getMountTargetId());
+
         return clientCall(request, UpgradeShapeMountTargetResponse::builder)
                 .logger(LOG, "upgradeShapeMountTarget")
                 .serviceDetails(
                         "FileStorage",
                         "UpgradeShapeMountTarget",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/UpgradeShapeMountTarget")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpgradeShapeMountTargetRequest::builder)
                 .basePath("/20171215")
@@ -2474,12 +2777,15 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
         Objects.requireNonNull(
                 request.getValidateKeyTabsDetails(), "validateKeyTabsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ValidateKeyTabsResponse::builder)
                 .logger(LOG, "validateKeyTabs")
                 .serviceDetails(
                         "FileStorage",
                         "ValidateKeyTabs",
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ValidateKeyTabs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateKeyTabsRequest::builder)
                 .basePath("/20171215")

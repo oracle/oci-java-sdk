@@ -26,7 +26,6 @@ public final class GenerateSqlFromNlJob
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
-        "compartmentId",
         "description",
         "semanticStoreId",
         "displayName",
@@ -43,7 +42,6 @@ public final class GenerateSqlFromNlJob
     })
     public GenerateSqlFromNlJob(
             String id,
-            String compartmentId,
             String description,
             String semanticStoreId,
             String displayName,
@@ -59,7 +57,6 @@ public final class GenerateSqlFromNlJob
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
-        this.compartmentId = compartmentId;
         this.description = description;
         this.semanticStoreId = semanticStoreId;
         this.displayName = displayName;
@@ -90,27 +87,6 @@ public final class GenerateSqlFromNlJob
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
-            return this;
-        }
-        /**
-         * Owning compartmentId
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
-         * GenerateSqlFromNlJob.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
-
-        /**
-         * Owning compartmentId
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
-         * GenerateSqlFromNlJob.
-         *
-         * @param compartmentId the value to set
-         * @return this builder
-         */
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /** An optional description of the GenerateSqlFromNlJob. */
@@ -357,7 +333,6 @@ public final class GenerateSqlFromNlJob
             GenerateSqlFromNlJob model =
                     new GenerateSqlFromNlJob(
                             this.id,
-                            this.compartmentId,
                             this.description,
                             this.semanticStoreId,
                             this.displayName,
@@ -381,9 +356,6 @@ public final class GenerateSqlFromNlJob
         public Builder copy(GenerateSqlFromNlJob model) {
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
-            }
-            if (model.wasPropertyExplicitlySet("compartmentId")) {
-                this.compartmentId(model.getCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -448,25 +420,6 @@ public final class GenerateSqlFromNlJob
      */
     public String getId() {
         return id;
-    }
-
-    /**
-     * Owning compartmentId
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
-     * GenerateSqlFromNlJob.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    private final String compartmentId;
-
-    /**
-     * Owning compartmentId
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
-     * GenerateSqlFromNlJob.
-     *
-     * @return the value
-     */
-    public String getCompartmentId() {
-        return compartmentId;
     }
 
     /** An optional description of the GenerateSqlFromNlJob. */
@@ -694,7 +647,6 @@ public final class GenerateSqlFromNlJob
         sb.append("GenerateSqlFromNlJob(");
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
-        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", semanticStoreId=").append(String.valueOf(this.semanticStoreId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -724,7 +676,6 @@ public final class GenerateSqlFromNlJob
 
         GenerateSqlFromNlJob other = (GenerateSqlFromNlJob) o;
         return java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.semanticStoreId, other.semanticStoreId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -747,9 +698,6 @@ public final class GenerateSqlFromNlJob
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)

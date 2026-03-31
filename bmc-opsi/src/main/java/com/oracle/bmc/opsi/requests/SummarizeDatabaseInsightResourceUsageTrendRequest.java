@@ -119,6 +119,18 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
         AdwExacc("ADW-EXACC"),
         ExternalAdw("EXTERNAL-ADW"),
         ExternalAtp("EXTERNAL-ATP"),
+        LhD("LH-D"),
+        ApexD("APEX-D"),
+        AjdD("AJD-D"),
+        AvdD("AVD-D"),
+        LhS("LH-S"),
+        ApexS("APEX-S"),
+        AjdS("AJD-S"),
+        AvdS("AVD-S"),
+        LhExacc("LH-EXACC"),
+        ApexExacc("APEX-EXACC"),
+        AjdExacc("AJD-EXACC"),
+        AvdExacc("AVD-EXACC"),
         ;
 
         private final String value;

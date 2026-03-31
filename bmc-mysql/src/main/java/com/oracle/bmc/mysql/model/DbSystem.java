@@ -39,6 +39,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "faultDomain",
         "shapeName",
         "mysqlVersion",
+        "controlledUpdate",
         "backupPolicy",
         "source",
         "configurationId",
@@ -88,6 +89,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             String faultDomain,
             String shapeName,
             String mysqlVersion,
+            ControlledUpdate controlledUpdate,
             BackupPolicy backupPolicy,
             DbSystemSource source,
             String configurationId,
@@ -136,6 +138,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.faultDomain = faultDomain;
         this.shapeName = shapeName;
         this.mysqlVersion = mysqlVersion;
+        this.controlledUpdate = controlledUpdate;
         this.backupPolicy = backupPolicy;
         this.source = source;
         this.configurationId = configurationId;
@@ -452,6 +455,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         public Builder mysqlVersion(String mysqlVersion) {
             this.mysqlVersion = mysqlVersion;
             this.__explicitlySet__.add("mysqlVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("controlledUpdate")
+        private ControlledUpdate controlledUpdate;
+
+        public Builder controlledUpdate(ControlledUpdate controlledUpdate) {
+            this.controlledUpdate = controlledUpdate;
+            this.__explicitlySet__.add("controlledUpdate");
             return this;
         }
 
@@ -943,6 +955,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.faultDomain,
                             this.shapeName,
                             this.mysqlVersion,
+                            this.controlledUpdate,
                             this.backupPolicy,
                             this.source,
                             this.configurationId,
@@ -1031,6 +1044,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("mysqlVersion")) {
                 this.mysqlVersion(model.getMysqlVersion());
+            }
+            if (model.wasPropertyExplicitlySet("controlledUpdate")) {
+                this.controlledUpdate(model.getControlledUpdate());
             }
             if (model.wasPropertyExplicitlySet("backupPolicy")) {
                 this.backupPolicy(model.getBackupPolicy());
@@ -1382,6 +1398,13 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
      */
     public String getMysqlVersion() {
         return mysqlVersion;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("controlledUpdate")
+    private final ControlledUpdate controlledUpdate;
+
+    public ControlledUpdate getControlledUpdate() {
+        return controlledUpdate;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
@@ -1973,6 +1996,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", mysqlVersion=").append(String.valueOf(this.mysqlVersion));
+        sb.append(", controlledUpdate=").append(String.valueOf(this.controlledUpdate));
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
         sb.append(", source=").append(String.valueOf(this.source));
         sb.append(", configurationId=").append(String.valueOf(this.configurationId));
@@ -2036,6 +2060,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.mysqlVersion, other.mysqlVersion)
+                && java.util.Objects.equals(this.controlledUpdate, other.controlledUpdate)
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
                 && java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
@@ -2114,6 +2139,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.mysqlVersion == null ? 43 : this.mysqlVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.controlledUpdate == null ? 43 : this.controlledUpdate.hashCode());
         result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
         result =

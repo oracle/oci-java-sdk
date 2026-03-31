@@ -4779,6 +4779,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("workRequests")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("id", request.getId())
+                .appendQueryParam("resourceId", request.getResourceId())
                 .appendEnumQueryParam("operationType", request.getOperationType())
                 .appendEnumQueryParam("status", request.getStatus())
                 .appendQueryParam("limit", request.getLimit())

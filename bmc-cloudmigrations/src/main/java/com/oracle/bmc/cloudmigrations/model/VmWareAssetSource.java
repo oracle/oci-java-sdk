@@ -5,7 +5,8 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Description of an asset source. <br>
+ * VMware asset source. Used for discovery of virtual machines (VMs) registered in the VMware
+ * vCenter installation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -153,6 +154,15 @@ public final class VmWareAssetSource extends AssetSource {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
         /**
          * Endpoint for VMware asset discovery and replication in the form of {@code
          * https://<host>:<port>/sdk}
@@ -249,6 +259,7 @@ public final class VmWareAssetSource extends AssetSource {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.environmentType,
                             this.vcenterEndpoint,
                             this.discoveryCredentials,
                             this.replicationCredentials,
@@ -304,6 +315,9 @@ public final class VmWareAssetSource extends AssetSource {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
+            }
             if (model.wasPropertyExplicitlySet("vcenterEndpoint")) {
                 this.vcenterEndpoint(model.getVcenterEndpoint());
             }
@@ -348,6 +362,7 @@ public final class VmWareAssetSource extends AssetSource {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType,
             String vcenterEndpoint,
             AssetSourceCredentials discoveryCredentials,
             AssetSourceCredentials replicationCredentials,
@@ -367,7 +382,8 @@ public final class VmWareAssetSource extends AssetSource {
                 timeUpdated,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                environmentType);
         this.vcenterEndpoint = vcenterEndpoint;
         this.discoveryCredentials = discoveryCredentials;
         this.replicationCredentials = replicationCredentials;

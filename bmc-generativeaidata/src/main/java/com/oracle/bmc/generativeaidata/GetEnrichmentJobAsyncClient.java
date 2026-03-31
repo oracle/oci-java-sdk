@@ -113,7 +113,6 @@ public class GetEnrichmentJobAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetEnrichmentJobRequest::builder)
                 .basePath("/20260325")
-                .appendPathParam("20260325")
                 .appendPathParam("semanticStores")
                 .appendPathParam(request.getSemanticStoreId())
                 .appendPathParam("enrichmentJobs")

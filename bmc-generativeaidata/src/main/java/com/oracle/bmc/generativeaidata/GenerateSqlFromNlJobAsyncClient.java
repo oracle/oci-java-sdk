@@ -113,7 +113,6 @@ public class GenerateSqlFromNlJobAsyncClient extends com.oracle.bmc.http.interna
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateSqlFromNlRequest::builder)
                 .basePath("/20260325")
-                .appendPathParam("20260325")
                 .appendPathParam("semanticStores")
                 .appendPathParam(request.getSemanticStoreId())
                 .appendPathParam("actions")
@@ -121,7 +120,6 @@ public class GenerateSqlFromNlJobAsyncClient extends com.oracle.bmc.http.interna
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-compartment-id", request.getOpcCompartmentId())
                 .appendHeader("if-match", request.getIfMatch())
                 .hasBody()
                 .handleBody(

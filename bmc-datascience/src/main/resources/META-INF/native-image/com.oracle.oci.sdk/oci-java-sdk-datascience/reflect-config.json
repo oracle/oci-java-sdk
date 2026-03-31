@@ -1336,6 +1336,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.datascience.model.InstanceConfiguration$NetworkAccessType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.datascience.model.InstancePoolInfrastructureConfigurationDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

@@ -23,13 +23,25 @@ package com.oracle.bmc.cloudmigrations.model;
 public final class MigrationPlanStats
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"totalEstimatedCost", "timeUpdated", "vmCount"})
+    @java.beans.ConstructorProperties({
+        "totalEstimatedCost",
+        "timeUpdated",
+        "vmCount",
+        "currentMonthlyCost",
+        "costToMigrate"
+    })
     public MigrationPlanStats(
-            CostEstimation totalEstimatedCost, java.util.Date timeUpdated, Integer vmCount) {
+            CostEstimation totalEstimatedCost,
+            java.util.Date timeUpdated,
+            Integer vmCount,
+            CurrentMonthlyCost currentMonthlyCost,
+            CostToMigrate costToMigrate) {
         super();
         this.totalEstimatedCost = totalEstimatedCost;
         this.timeUpdated = timeUpdated;
         this.vmCount = vmCount;
+        this.currentMonthlyCost = currentMonthlyCost;
+        this.costToMigrate = costToMigrate;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -76,12 +88,35 @@ public final class MigrationPlanStats
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("currentMonthlyCost")
+        private CurrentMonthlyCost currentMonthlyCost;
+
+        public Builder currentMonthlyCost(CurrentMonthlyCost currentMonthlyCost) {
+            this.currentMonthlyCost = currentMonthlyCost;
+            this.__explicitlySet__.add("currentMonthlyCost");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("costToMigrate")
+        private CostToMigrate costToMigrate;
+
+        public Builder costToMigrate(CostToMigrate costToMigrate) {
+            this.costToMigrate = costToMigrate;
+            this.__explicitlySet__.add("costToMigrate");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MigrationPlanStats build() {
             MigrationPlanStats model =
-                    new MigrationPlanStats(this.totalEstimatedCost, this.timeUpdated, this.vmCount);
+                    new MigrationPlanStats(
+                            this.totalEstimatedCost,
+                            this.timeUpdated,
+                            this.vmCount,
+                            this.currentMonthlyCost,
+                            this.costToMigrate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -98,6 +133,12 @@ public final class MigrationPlanStats
             }
             if (model.wasPropertyExplicitlySet("vmCount")) {
                 this.vmCount(model.getVmCount());
+            }
+            if (model.wasPropertyExplicitlySet("currentMonthlyCost")) {
+                this.currentMonthlyCost(model.getCurrentMonthlyCost());
+            }
+            if (model.wasPropertyExplicitlySet("costToMigrate")) {
+                this.costToMigrate(model.getCostToMigrate());
             }
             return this;
         }
@@ -145,6 +186,20 @@ public final class MigrationPlanStats
         return vmCount;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("currentMonthlyCost")
+    private final CurrentMonthlyCost currentMonthlyCost;
+
+    public CurrentMonthlyCost getCurrentMonthlyCost() {
+        return currentMonthlyCost;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("costToMigrate")
+    private final CostToMigrate costToMigrate;
+
+    public CostToMigrate getCostToMigrate() {
+        return costToMigrate;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -163,6 +218,8 @@ public final class MigrationPlanStats
         sb.append("totalEstimatedCost=").append(String.valueOf(this.totalEstimatedCost));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", vmCount=").append(String.valueOf(this.vmCount));
+        sb.append(", currentMonthlyCost=").append(String.valueOf(this.currentMonthlyCost));
+        sb.append(", costToMigrate=").append(String.valueOf(this.costToMigrate));
         sb.append(")");
         return sb.toString();
     }
@@ -180,6 +237,8 @@ public final class MigrationPlanStats
         return java.util.Objects.equals(this.totalEstimatedCost, other.totalEstimatedCost)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.vmCount, other.vmCount)
+                && java.util.Objects.equals(this.currentMonthlyCost, other.currentMonthlyCost)
+                && java.util.Objects.equals(this.costToMigrate, other.costToMigrate)
                 && super.equals(other);
     }
 
@@ -194,6 +253,14 @@ public final class MigrationPlanStats
                                 : this.totalEstimatedCost.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.vmCount == null ? 43 : this.vmCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentMonthlyCost == null
+                                ? 43
+                                : this.currentMonthlyCost.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.costToMigrate == null ? 43 : this.costToMigrate.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

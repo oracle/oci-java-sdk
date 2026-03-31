@@ -24,7 +24,10 @@ package com.oracle.bmc.cloudmigrations.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VmTargetAsset.class,
-            name = "INSTANCE")
+            name = "INSTANCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OlvmTargetAsset.class,
+            name = "OLVM_INSTANCE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -416,6 +419,7 @@ public class TargetAsset extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /** The type of target asset. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Instance("INSTANCE"),
+        OlvmInstance("OLVM_INSTANCE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

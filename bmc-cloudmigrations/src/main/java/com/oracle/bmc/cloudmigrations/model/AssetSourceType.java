@@ -11,6 +11,8 @@ package com.oracle.bmc.cloudmigrations.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public enum AssetSourceType implements com.oracle.bmc.http.internal.BmcEnum {
     Vmware("VMWARE"),
+    Aws("AWS"),
+    Olvm("OLVM"),
     ;
 
     private final String value;

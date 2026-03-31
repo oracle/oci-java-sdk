@@ -166,8 +166,9 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
             return this;
         }
         /**
-         * Whether the network load balancer should drain this server. Servers marked "isDrain"
-         * receive no incoming traffic.
+         * Whether the network load balancer should drain this server. Servers marked "isDrain" stop
+         * receiving new connections but will continue to receive traffic on existing connections
+         * until the connection is terminated or times out.
          *
          * <p>Example: {@code false}
          */
@@ -175,8 +176,9 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
         private Boolean isDrain;
 
         /**
-         * Whether the network load balancer should drain this server. Servers marked "isDrain"
-         * receive no incoming traffic.
+         * Whether the network load balancer should drain this server. Servers marked "isDrain" stop
+         * receiving new connections but will continue to receive traffic on existing connections
+         * until the connection is terminated or times out.
          *
          * <p>Example: {@code false}
          *
@@ -396,8 +398,9 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * Whether the network load balancer should drain this server. Servers marked "isDrain" receive
-     * no incoming traffic.
+     * Whether the network load balancer should drain this server. Servers marked "isDrain" stop
+     * receiving new connections but will continue to receive traffic on existing connections until
+     * the connection is terminated or times out.
      *
      * <p>Example: {@code false}
      */
@@ -405,8 +408,9 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
     private final Boolean isDrain;
 
     /**
-     * Whether the network load balancer should drain this server. Servers marked "isDrain" receive
-     * no incoming traffic.
+     * Whether the network load balancer should drain this server. Servers marked "isDrain" stop
+     * receiving new connections but will continue to receive traffic on existing connections until
+     * the connection is terminated or times out.
      *
      * <p>Example: {@code false}
      *

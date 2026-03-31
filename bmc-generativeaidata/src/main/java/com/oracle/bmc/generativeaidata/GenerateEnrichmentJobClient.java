@@ -101,7 +101,6 @@ public class GenerateEnrichmentJobClient extends com.oracle.bmc.http.internal.Ba
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateEnrichmentJobRequest::builder)
                 .basePath("/20260325")
-                .appendPathParam("20260325")
                 .appendPathParam("semanticStores")
                 .appendPathParam(request.getSemanticStoreId())
                 .appendPathParam("actions")

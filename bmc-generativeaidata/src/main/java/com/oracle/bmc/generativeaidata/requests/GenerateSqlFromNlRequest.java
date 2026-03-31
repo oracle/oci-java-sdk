@@ -56,13 +56,6 @@ public class GenerateSqlFromNlRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The ID of the compartment. */
-    private String opcCompartmentId;
-
-    /** The ID of the compartment. */
-    public String getOpcCompartmentId() {
-        return opcCompartmentId;
-    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
      * if-match} parameter to the value of the etag from a previous GET or POST response for that
@@ -168,20 +161,6 @@ public class GenerateSqlFromNlRequest
             return this;
         }
 
-        /** The ID of the compartment. */
-        private String opcCompartmentId = null;
-
-        /**
-         * The ID of the compartment.
-         *
-         * @param opcCompartmentId the value to set
-         * @return this builder instance
-         */
-        public Builder opcCompartmentId(String opcCompartmentId) {
-            this.opcCompartmentId = opcCompartmentId;
-            return this;
-        }
-
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
          * {@code if-match} parameter to the value of the etag from a previous GET or POST response
@@ -238,7 +217,6 @@ public class GenerateSqlFromNlRequest
             semanticStoreId(o.getSemanticStoreId());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
-            opcCompartmentId(o.getOpcCompartmentId());
             ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -290,11 +268,10 @@ public class GenerateSqlFromNlRequest
             request.semanticStoreId = semanticStoreId;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
-            request.opcCompartmentId = opcCompartmentId;
             request.ifMatch = ifMatch;
             return request;
             // new GenerateSqlFromNlRequest(generateSqlFromNlDetails, semanticStoreId,
-            // opcRetryToken, opcRequestId, opcCompartmentId, ifMatch);
+            // opcRetryToken, opcRequestId, ifMatch);
         }
     }
 
@@ -309,7 +286,6 @@ public class GenerateSqlFromNlRequest
                 .semanticStoreId(semanticStoreId)
                 .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId)
-                .opcCompartmentId(opcCompartmentId)
                 .ifMatch(ifMatch);
     }
 
@@ -332,7 +308,6 @@ public class GenerateSqlFromNlRequest
         sb.append(",semanticStoreId=").append(String.valueOf(this.semanticStoreId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",opcCompartmentId=").append(String.valueOf(this.opcCompartmentId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(")");
         return sb.toString();
@@ -354,7 +329,6 @@ public class GenerateSqlFromNlRequest
                 && java.util.Objects.equals(this.semanticStoreId, other.semanticStoreId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcCompartmentId, other.opcCompartmentId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
 
@@ -374,9 +348,6 @@ public class GenerateSqlFromNlRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.opcCompartmentId == null ? 43 : this.opcCompartmentId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;
     }

@@ -24,7 +24,13 @@ package com.oracle.bmc.cloudmigrations.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VmWareAssetSourceSummary.class,
-            name = "VMWARE")
+            name = "VMWARE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OlvmAssetSourceSummary.class,
+            name = "OLVM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AwsAssetSourceSummary.class,
+            name = "AWS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -43,7 +49,8 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
         "timeUpdated",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "environmentType"
     })
     protected AssetSourceSummary(
             String id,
@@ -58,7 +65,8 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -73,18 +81,19 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.environmentType = environmentType;
     }
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resourse.
+     * resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resourse.
+     * resource.
      *
      * @return the value
      */
@@ -280,6 +289,23 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
         return systemTags;
     }
 
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be
+     * discovered depending on setting.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final EnvironmentType environmentType;
+
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be
+     * discovered depending on setting.
+     *
+     * @return the value
+     */
+    public EnvironmentType getEnvironmentType() {
+        return environmentType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -308,6 +334,7 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(")");
         return sb.toString();
     }
@@ -335,6 +362,7 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && super.equals(other);
     }
 
@@ -367,6 +395,9 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

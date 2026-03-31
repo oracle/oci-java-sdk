@@ -167,8 +167,9 @@ public final class BackendSummary
             return this;
         }
         /**
-         * Whether the network load balancer should drain this server. Servers marked "isDrain"
-         * receive no incoming traffic.
+         * Whether the network load balancer should drain this server. Servers marked "isDrain" stop
+         * receiving new connections but will continue to receive traffic on existing connections
+         * until the connection is terminated or times out.
          *
          * <p>Example: {@code false}
          */
@@ -176,8 +177,9 @@ public final class BackendSummary
         private Boolean isDrain;
 
         /**
-         * Whether the network load balancer should drain this server. Servers marked "isDrain"
-         * receive no incoming traffic.
+         * Whether the network load balancer should drain this server. Servers marked "isDrain" stop
+         * receiving new connections but will continue to receive traffic on existing connections
+         * until the connection is terminated or times out.
          *
          * <p>Example: {@code false}
          *
@@ -397,8 +399,9 @@ public final class BackendSummary
     }
 
     /**
-     * Whether the network load balancer should drain this server. Servers marked "isDrain" receive
-     * no incoming traffic.
+     * Whether the network load balancer should drain this server. Servers marked "isDrain" stop
+     * receiving new connections but will continue to receive traffic on existing connections until
+     * the connection is terminated or times out.
      *
      * <p>Example: {@code false}
      */
@@ -406,8 +409,9 @@ public final class BackendSummary
     private final Boolean isDrain;
 
     /**
-     * Whether the network load balancer should drain this server. Servers marked "isDrain" receive
-     * no incoming traffic.
+     * Whether the network load balancer should drain this server. Servers marked "isDrain" stop
+     * receiving new connections but will continue to receive traffic on existing connections until
+     * the connection is terminated or times out.
      *
      * <p>Example: {@code false}
      *
