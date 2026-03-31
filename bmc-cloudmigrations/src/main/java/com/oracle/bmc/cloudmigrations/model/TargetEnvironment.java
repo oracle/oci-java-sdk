@@ -23,6 +23,9 @@ package com.oracle.bmc.cloudmigrations.model;
         defaultImpl = TargetEnvironment.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OlvmTargetEnvironment.class,
+            name = "OLVM_TARGET_ENV"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VmTargetEnvironment.class,
             name = "VM_TARGET_ENV")
 })
@@ -99,6 +102,7 @@ public class TargetEnvironment extends com.oracle.bmc.http.client.internal.Expli
     /** The type of target environment. */
     public enum TargetEnvironmentType implements com.oracle.bmc.http.internal.BmcEnum {
         VmTargetEnv("VM_TARGET_ENV"),
+        OlvmTargetEnv("OLVM_TARGET_ENV"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

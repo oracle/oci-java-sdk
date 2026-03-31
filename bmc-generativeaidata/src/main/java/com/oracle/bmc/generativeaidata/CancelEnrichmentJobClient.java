@@ -99,7 +99,6 @@ public class CancelEnrichmentJobClient extends com.oracle.bmc.http.internal.Base
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelEnrichmentJobRequest::builder)
                 .basePath("/20260325")
-                .appendPathParam("20260325")
                 .appendPathParam("semanticStores")
                 .appendPathParam(request.getSemanticStoreId())
                 .appendPathParam("enrichmentJobs")

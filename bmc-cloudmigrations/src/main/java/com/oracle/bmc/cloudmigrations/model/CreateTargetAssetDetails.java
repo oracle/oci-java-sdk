@@ -23,6 +23,9 @@ package com.oracle.bmc.cloudmigrations.model;
         defaultImpl = CreateTargetAssetDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateOlvmTargetAssetDetails.class,
+            name = "OLVM_INSTANCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateVmTargetAssetDetails.class,
             name = "INSTANCE")
 })
@@ -121,6 +124,7 @@ public class CreateTargetAssetDetails
     /** The type of target asset. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Instance("INSTANCE"),
+        OlvmInstance("OLVM_INSTANCE"),
         ;
 
         private final String value;

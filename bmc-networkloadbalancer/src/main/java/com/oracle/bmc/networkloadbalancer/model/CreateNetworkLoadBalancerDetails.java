@@ -170,12 +170,26 @@ public final class CreateNetworkLoadBalancerDetails
             this.__explicitlySet__.add("isSymmetricHashEnabled");
             return this;
         }
-        /** An array of reserved Ips. */
+        /**
+         * An array of reserved Ips. NLB supports reserved public ip, reserved private IP and
+         * reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a
+         * maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB
+         * does not support changing an IP\u2019s lifecycle state between ephemeral and reserved if
+         * the IP is already assigned to the NLB. While this type of lifecycle state change is
+         * supported by VCN IPs even when the IP is assigned to a resource, such changes will not be
+         * recognized or reflected by NLB.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
         private java.util.List<ReservedIP> reservedIps;
 
         /**
-         * An array of reserved Ips.
+         * An array of reserved Ips. NLB supports reserved public ip, reserved private IP and
+         * reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a
+         * maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB
+         * does not support changing an IP\u2019s lifecycle state between ephemeral and reserved if
+         * the IP is already assigned to the NLB. While this type of lifecycle state change is
+         * supported by VCN IPs even when the IP is assigned to a resource, such changes will not be
+         * recognized or reflected by NLB.
          *
          * @param reservedIps the value to set
          * @return this builder
@@ -633,12 +647,26 @@ public final class CreateNetworkLoadBalancerDetails
         return isSymmetricHashEnabled;
     }
 
-    /** An array of reserved Ips. */
+    /**
+     * An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved
+     * IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1
+     * allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support
+     * changing an IP\u2019s lifecycle state between ephemeral and reserved if the IP is already
+     * assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even
+     * when the IP is assigned to a resource, such changes will not be recognized or reflected by
+     * NLB.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
     private final java.util.List<ReservedIP> reservedIps;
 
     /**
-     * An array of reserved Ips.
+     * An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved
+     * IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1
+     * allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support
+     * changing an IP\u2019s lifecycle state between ephemeral and reserved if the IP is already
+     * assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even
+     * when the IP is assigned to a resource, such changes will not be recognized or reflected by
+     * NLB.
      *
      * @return the value
      */

@@ -161,6 +161,42 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ControlledUpdateDbSystemResponse controlledUpdateDbSystem(
+            ControlledUpdateDbSystemRequest request) {
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getControlledUpdateDbSystemDetails(),
+                "controlledUpdateDbSystemDetails is required");
+
+        return clientCall(request, ControlledUpdateDbSystemResponse::builder)
+                .logger(LOG, "controlledUpdateDbSystem")
+                .serviceDetails(
+                        "DbSystem",
+                        "ControlledUpdateDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/ControlledUpdateDbSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ControlledUpdateDbSystemRequest::builder)
+                .basePath("/20190415")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("controlledUpdate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ControlledUpdateDbSystemResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ControlledUpdateDbSystemResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateDbSystemResponse createDbSystem(CreateDbSystemRequest request) {
         Objects.requireNonNull(
                 request.getCreateDbSystemDetails(), "createDbSystemDetails is required");

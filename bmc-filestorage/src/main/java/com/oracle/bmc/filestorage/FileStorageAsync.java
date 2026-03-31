@@ -64,6 +64,16 @@ public interface FileStorageAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Determines whether dual stack endpoint should be used or not. Set
+     * dualStackEndpointTemplateEnabled to "true" if the user wants to enable use of dual stack
+     * endpoint template. Default value is "false"
+     *
+     * @param dualStackEndpointTemplateEnabled flag to enable the use of dual stack endpoint
+     *     template
+     */
+    void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
+
+    /**
      * Adds a lock to a resource.
      *
      * @param request The request object containing the details to send

@@ -27,6 +27,8 @@ public final class UpdateMigrationDetails
         "displayName",
         "replicationScheduleId",
         "isCompleted",
+        "migrationType",
+        "migrationConfig",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +36,16 @@ public final class UpdateMigrationDetails
             String displayName,
             String replicationScheduleId,
             Boolean isCompleted,
+            Migration.MigrationType migrationType,
+            MigrationConfig migrationConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.replicationScheduleId = replicationScheduleId;
         this.isCompleted = isCompleted;
+        this.migrationType = migrationType;
+        this.migrationConfig = migrationConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -92,6 +98,34 @@ public final class UpdateMigrationDetails
             return this;
         }
         /**
+         * Type of migration project (OCI/OLVM). This determines the target environment for the
+         * migration.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
+        private Migration.MigrationType migrationType;
+
+        /**
+         * Type of migration project (OCI/OLVM). This determines the target environment for the
+         * migration.
+         *
+         * @param migrationType the value to set
+         * @return this builder
+         */
+        public Builder migrationType(Migration.MigrationType migrationType) {
+            this.migrationType = migrationType;
+            this.__explicitlySet__.add("migrationType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationConfig")
+        private MigrationConfig migrationConfig;
+
+        public Builder migrationConfig(MigrationConfig migrationConfig) {
+            this.migrationConfig = migrationConfig;
+            this.__explicitlySet__.add("migrationConfig");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. It
          * exists only for cross-compatibility. Example: {@code {"bar-key": "value"}}
          */
@@ -140,6 +174,8 @@ public final class UpdateMigrationDetails
                             this.displayName,
                             this.replicationScheduleId,
                             this.isCompleted,
+                            this.migrationType,
+                            this.migrationConfig,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -158,6 +194,12 @@ public final class UpdateMigrationDetails
             }
             if (model.wasPropertyExplicitlySet("isCompleted")) {
                 this.isCompleted(model.getIsCompleted());
+            }
+            if (model.wasPropertyExplicitlySet("migrationType")) {
+                this.migrationType(model.getMigrationType());
+            }
+            if (model.wasPropertyExplicitlySet("migrationConfig")) {
+                this.migrationConfig(model.getMigrationConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -218,6 +260,30 @@ public final class UpdateMigrationDetails
     }
 
     /**
+     * Type of migration project (OCI/OLVM). This determines the target environment for the
+     * migration.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
+    private final Migration.MigrationType migrationType;
+
+    /**
+     * Type of migration project (OCI/OLVM). This determines the target environment for the
+     * migration.
+     *
+     * @return the value
+     */
+    public Migration.MigrationType getMigrationType() {
+        return migrationType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationConfig")
+    private final MigrationConfig migrationConfig;
+
+    public MigrationConfig getMigrationConfig() {
+        return migrationConfig;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. It exists
      * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
      */
@@ -269,6 +335,8 @@ public final class UpdateMigrationDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", replicationScheduleId=").append(String.valueOf(this.replicationScheduleId));
         sb.append(", isCompleted=").append(String.valueOf(this.isCompleted));
+        sb.append(", migrationType=").append(String.valueOf(this.migrationType));
+        sb.append(", migrationConfig=").append(String.valueOf(this.migrationConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -288,6 +356,8 @@ public final class UpdateMigrationDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.replicationScheduleId, other.replicationScheduleId)
                 && java.util.Objects.equals(this.isCompleted, other.isCompleted)
+                && java.util.Objects.equals(this.migrationType, other.migrationType)
+                && java.util.Objects.equals(this.migrationConfig, other.migrationConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -304,6 +374,12 @@ public final class UpdateMigrationDetails
                                 ? 43
                                 : this.replicationScheduleId.hashCode());
         result = (result * PRIME) + (this.isCompleted == null ? 43 : this.isCompleted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.migrationType == null ? 43 : this.migrationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.migrationConfig == null ? 43 : this.migrationConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -22,6 +22,14 @@ public enum AwrHubSourceType implements com.oracle.bmc.http.internal.BmcEnum {
     ComanagedExacsCdb("COMANAGED_EXACS_CDB"),
     ComanagedExacsPdb("COMANAGED_EXACS_PDB"),
     ComanagedExacsNoncdb("COMANAGED_EXACS_NONCDB"),
+    LhS("LH_S"),
+    ApexS("APEX_S"),
+    AjdS("AJD_S"),
+    AvdS("AVD_S"),
+    LhD("LH_D"),
+    ApexD("APEX_D"),
+    AjdD("AJD_D"),
+    AvdD("AVD_D"),
     Undefined("UNDEFINED"),
 
     /**

@@ -131,6 +131,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.integration.model.ConvertInstanceDetails$ConversionPhase",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.integration.model.CreateCustomEndpointDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

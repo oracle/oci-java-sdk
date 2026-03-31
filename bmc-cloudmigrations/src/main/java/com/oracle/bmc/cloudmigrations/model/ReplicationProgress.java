@@ -31,6 +31,7 @@ public final class ReplicationProgress
         "timeOfLastReplicationEnd",
         "timeOfLastReplicationSuccess",
         "lastReplicationStatus",
+        "lastReplicationSubStatus",
         "lastReplicationError"
     })
     public ReplicationProgress(
@@ -41,6 +42,7 @@ public final class ReplicationProgress
             java.util.Date timeOfLastReplicationEnd,
             java.util.Date timeOfLastReplicationSuccess,
             LastReplicationStatus lastReplicationStatus,
+            String lastReplicationSubStatus,
             String lastReplicationError) {
         super();
         this.percentage = percentage;
@@ -50,6 +52,7 @@ public final class ReplicationProgress
         this.timeOfLastReplicationEnd = timeOfLastReplicationEnd;
         this.timeOfLastReplicationSuccess = timeOfLastReplicationSuccess;
         this.lastReplicationStatus = lastReplicationStatus;
+        this.lastReplicationSubStatus = lastReplicationSubStatus;
         this.lastReplicationError = lastReplicationError;
     }
 
@@ -160,6 +163,21 @@ public final class ReplicationProgress
             this.__explicitlySet__.add("lastReplicationStatus");
             return this;
         }
+        /** The child status of the last replication task. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lastReplicationSubStatus")
+        private String lastReplicationSubStatus;
+
+        /**
+         * The child status of the last replication task.
+         *
+         * @param lastReplicationSubStatus the value to set
+         * @return this builder
+         */
+        public Builder lastReplicationSubStatus(String lastReplicationSubStatus) {
+            this.lastReplicationSubStatus = lastReplicationSubStatus;
+            this.__explicitlySet__.add("lastReplicationSubStatus");
+            return this;
+        }
         /** Error message if the last finished replication failed. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastReplicationError")
         private String lastReplicationError;
@@ -189,6 +207,7 @@ public final class ReplicationProgress
                             this.timeOfLastReplicationEnd,
                             this.timeOfLastReplicationSuccess,
                             this.lastReplicationStatus,
+                            this.lastReplicationSubStatus,
                             this.lastReplicationError);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -218,6 +237,9 @@ public final class ReplicationProgress
             }
             if (model.wasPropertyExplicitlySet("lastReplicationStatus")) {
                 this.lastReplicationStatus(model.getLastReplicationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("lastReplicationSubStatus")) {
+                this.lastReplicationSubStatus(model.getLastReplicationSubStatus());
             }
             if (model.wasPropertyExplicitlySet("lastReplicationError")) {
                 this.lastReplicationError(model.getLastReplicationError());
@@ -418,6 +440,19 @@ public final class ReplicationProgress
         return lastReplicationStatus;
     }
 
+    /** The child status of the last replication task. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lastReplicationSubStatus")
+    private final String lastReplicationSubStatus;
+
+    /**
+     * The child status of the last replication task.
+     *
+     * @return the value
+     */
+    public String getLastReplicationSubStatus() {
+        return lastReplicationSubStatus;
+    }
+
     /** Error message if the last finished replication failed. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastReplicationError")
     private final String lastReplicationError;
@@ -456,6 +491,8 @@ public final class ReplicationProgress
         sb.append(", timeOfLastReplicationSuccess=")
                 .append(String.valueOf(this.timeOfLastReplicationSuccess));
         sb.append(", lastReplicationStatus=").append(String.valueOf(this.lastReplicationStatus));
+        sb.append(", lastReplicationSubStatus=")
+                .append(String.valueOf(this.lastReplicationSubStatus));
         sb.append(", lastReplicationError=").append(String.valueOf(this.lastReplicationError));
         sb.append(")");
         return sb.toString();
@@ -481,6 +518,8 @@ public final class ReplicationProgress
                 && java.util.Objects.equals(
                         this.timeOfLastReplicationSuccess, other.timeOfLastReplicationSuccess)
                 && java.util.Objects.equals(this.lastReplicationStatus, other.lastReplicationStatus)
+                && java.util.Objects.equals(
+                        this.lastReplicationSubStatus, other.lastReplicationSubStatus)
                 && java.util.Objects.equals(this.lastReplicationError, other.lastReplicationError)
                 && super.equals(other);
     }
@@ -512,6 +551,11 @@ public final class ReplicationProgress
                         + (this.lastReplicationStatus == null
                                 ? 43
                                 : this.lastReplicationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastReplicationSubStatus == null
+                                ? 43
+                                : this.lastReplicationSubStatus.hashCode());
         result =
                 (result * PRIME)
                         + (this.lastReplicationError == null

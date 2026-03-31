@@ -3,6 +3,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.82.0 - 2026-03-31
+### Added 
+- Support for the Container Registry service 
+- Support for the Service Enablement Lifecycle Framework (SELF) service 
+- Support for custom CA certificates for LDAP on mount targets in the File Storage service 
+- Support for using IPv6 addresses as mount target IP addresses in the File Storage service 
+- Support for natural language to SQL (NL2SQL) in the Generative AI Data service 
+- Support for Zero Data Loss recovery in the Database service 
+- Support for private network replication in the Cloud Migrations service 
+- Support for reserved private IPs in the Network Load Balancer service 
+- Support for creating and updating model deployments with public egress in the Data Science service  
+- Support for validation of migrated Disaster Recovery instances in the Integration service 
+- Support for additional AI Autonomous Database types (Autonomous JSON DB (AJD), Autonomous APEX (APEX), and Autonomous Vector DB (AVD)) in the Ops Insights service 
+- Support for controlled updates in the MySQL HeatWave service  
+
+### Breaking Changes 
+- Method `public java.lang.String getCompartmentId()` has been removed from the model `com.oracle.bmc.generativeaidata.model.GenerateSqlFromNlJob` in the Generative AI Data service 
+- Method `public java.lang.String getOpcCompartmentId()` has been removed from the requests `com.oracle.bmc.generativeaidata.requests.GenerateSqlFromNlRequest` in the Generative AI Data service
+
 ## 3.81.3 - 2026-03-24
 ### Added 
 - Support for the Generative AI Data service 

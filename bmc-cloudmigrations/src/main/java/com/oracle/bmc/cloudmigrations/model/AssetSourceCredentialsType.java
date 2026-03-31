@@ -8,6 +8,7 @@ package com.oracle.bmc.cloudmigrations.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public enum AssetSourceCredentialsType implements com.oracle.bmc.http.internal.BmcEnum {
     Basic("BASIC"),
+    ApiKey("API_KEY"),
     ;
 
     private final String value;

@@ -27,18 +27,21 @@ public final class InstanceConfiguration
         "instanceShapeName",
         "modelDeploymentInstanceShapeConfigDetails",
         "subnetId",
-        "privateEndpointId"
+        "privateEndpointId",
+        "networkAccessType"
     })
     public InstanceConfiguration(
             String instanceShapeName,
             ModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails,
             String subnetId,
-            String privateEndpointId) {
+            String privateEndpointId,
+            NetworkAccessType networkAccessType) {
         super();
         this.instanceShapeName = instanceShapeName;
         this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
         this.subnetId = subnetId;
         this.privateEndpointId = privateEndpointId;
+        this.networkAccessType = networkAccessType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -114,6 +117,21 @@ public final class InstanceConfiguration
             this.__explicitlySet__.add("privateEndpointId");
             return this;
         }
+        /** Network Access type of model deployment. */
+        @com.fasterxml.jackson.annotation.JsonProperty("networkAccessType")
+        private NetworkAccessType networkAccessType;
+
+        /**
+         * Network Access type of model deployment.
+         *
+         * @param networkAccessType the value to set
+         * @return this builder
+         */
+        public Builder networkAccessType(NetworkAccessType networkAccessType) {
+            this.networkAccessType = networkAccessType;
+            this.__explicitlySet__.add("networkAccessType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -124,7 +142,8 @@ public final class InstanceConfiguration
                             this.instanceShapeName,
                             this.modelDeploymentInstanceShapeConfigDetails,
                             this.subnetId,
-                            this.privateEndpointId);
+                            this.privateEndpointId,
+                            this.networkAccessType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -145,6 +164,9 @@ public final class InstanceConfiguration
             }
             if (model.wasPropertyExplicitlySet("privateEndpointId")) {
                 this.privateEndpointId(model.getPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("networkAccessType")) {
+                this.networkAccessType(model.getNetworkAccessType());
             }
             return this;
         }
@@ -219,6 +241,66 @@ public final class InstanceConfiguration
         return privateEndpointId;
     }
 
+    /** Network Access type of model deployment. */
+    public enum NetworkAccessType implements com.oracle.bmc.http.internal.BmcEnum {
+        ManagedNetworkingNoInternetAccess("MANAGED_NETWORKING_NO_INTERNET_ACCESS"),
+        ManagedNetworkingInternetAccess("MANAGED_NETWORKING_INTERNET_ACCESS"),
+        CustomNetworking("CUSTOM_NETWORKING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NetworkAccessType.class);
+
+        private final String value;
+        private static java.util.Map<String, NetworkAccessType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NetworkAccessType v : NetworkAccessType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        NetworkAccessType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NetworkAccessType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'NetworkAccessType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Network Access type of model deployment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("networkAccessType")
+    private final NetworkAccessType networkAccessType;
+
+    /**
+     * Network Access type of model deployment.
+     *
+     * @return the value
+     */
+    public NetworkAccessType getNetworkAccessType() {
+        return networkAccessType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -239,6 +321,7 @@ public final class InstanceConfiguration
                 .append(String.valueOf(this.modelDeploymentInstanceShapeConfigDetails));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
+        sb.append(", networkAccessType=").append(String.valueOf(this.networkAccessType));
         sb.append(")");
         return sb.toString();
     }
@@ -259,6 +342,7 @@ public final class InstanceConfiguration
                         other.modelDeploymentInstanceShapeConfigDetails)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
+                && java.util.Objects.equals(this.networkAccessType, other.networkAccessType)
                 && super.equals(other);
     }
 
@@ -278,6 +362,9 @@ public final class InstanceConfiguration
         result =
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkAccessType == null ? 43 : this.networkAccessType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

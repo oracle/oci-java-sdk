@@ -28,6 +28,7 @@ public final class BackupDestinationDetails
         "id",
         "vpcUser",
         "vpcPassword",
+        "isZeroDataLossEnabled",
         "internetProxy",
         "dbrsPolicyId",
         "isRetentionLockEnabled",
@@ -40,6 +41,7 @@ public final class BackupDestinationDetails
             String id,
             String vpcUser,
             String vpcPassword,
+            Boolean isZeroDataLossEnabled,
             String internetProxy,
             String dbrsPolicyId,
             Boolean isRetentionLockEnabled,
@@ -51,6 +53,7 @@ public final class BackupDestinationDetails
         this.id = id;
         this.vpcUser = vpcUser;
         this.vpcPassword = vpcPassword;
+        this.isZeroDataLossEnabled = isZeroDataLossEnabled;
         this.internetProxy = internetProxy;
         this.dbrsPolicyId = dbrsPolicyId;
         this.isRetentionLockEnabled = isRetentionLockEnabled;
@@ -131,6 +134,29 @@ public final class BackupDestinationDetails
         public Builder vpcPassword(String vpcPassword) {
             this.vpcPassword = vpcPassword;
             this.__explicitlySet__.add("vpcPassword");
+            return this;
+        }
+        /**
+         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup
+         * destination in an Autonomous Container Database. When enabled, the database automatically
+         * ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery
+         * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isZeroDataLossEnabled")
+        private Boolean isZeroDataLossEnabled;
+
+        /**
+         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup
+         * destination in an Autonomous Container Database. When enabled, the database automatically
+         * ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery
+         * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+         *
+         * @param isZeroDataLossEnabled the value to set
+         * @return this builder
+         */
+        public Builder isZeroDataLossEnabled(Boolean isZeroDataLossEnabled) {
+            this.isZeroDataLossEnabled = isZeroDataLossEnabled;
+            this.__explicitlySet__.add("isZeroDataLossEnabled");
             return this;
         }
         /** Proxy URL to connect to object store. */
@@ -271,6 +297,7 @@ public final class BackupDestinationDetails
                             this.id,
                             this.vpcUser,
                             this.vpcPassword,
+                            this.isZeroDataLossEnabled,
                             this.internetProxy,
                             this.dbrsPolicyId,
                             this.isRetentionLockEnabled,
@@ -296,6 +323,9 @@ public final class BackupDestinationDetails
             }
             if (model.wasPropertyExplicitlySet("vpcPassword")) {
                 this.vpcPassword(model.getVpcPassword());
+            }
+            if (model.wasPropertyExplicitlySet("isZeroDataLossEnabled")) {
+                this.isZeroDataLossEnabled(model.getIsZeroDataLossEnabled());
             }
             if (model.wasPropertyExplicitlySet("internetProxy")) {
                 this.internetProxy(model.getInternetProxy());
@@ -438,6 +468,27 @@ public final class BackupDestinationDetails
      */
     public String getVpcPassword() {
         return vpcPassword;
+    }
+
+    /**
+     * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup
+     * destination in an Autonomous Container Database. When enabled, the database automatically
+     * ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery
+     * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isZeroDataLossEnabled")
+    private final Boolean isZeroDataLossEnabled;
+
+    /**
+     * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup
+     * destination in an Autonomous Container Database. When enabled, the database automatically
+     * ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery
+     * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+     *
+     * @return the value
+     */
+    public Boolean getIsZeroDataLossEnabled() {
+        return isZeroDataLossEnabled;
     }
 
     /** Proxy URL to connect to object store. */
@@ -623,6 +674,7 @@ public final class BackupDestinationDetails
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", vpcUser=").append(String.valueOf(this.vpcUser));
         sb.append(", vpcPassword=").append(String.valueOf(this.vpcPassword));
+        sb.append(", isZeroDataLossEnabled=").append(String.valueOf(this.isZeroDataLossEnabled));
         sb.append(", internetProxy=").append(String.valueOf(this.internetProxy));
         sb.append(", dbrsPolicyId=").append(String.valueOf(this.dbrsPolicyId));
         sb.append(", isRetentionLockEnabled=").append(String.valueOf(this.isRetentionLockEnabled));
@@ -648,6 +700,7 @@ public final class BackupDestinationDetails
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.vpcUser, other.vpcUser)
                 && java.util.Objects.equals(this.vpcPassword, other.vpcPassword)
+                && java.util.Objects.equals(this.isZeroDataLossEnabled, other.isZeroDataLossEnabled)
                 && java.util.Objects.equals(this.internetProxy, other.internetProxy)
                 && java.util.Objects.equals(this.dbrsPolicyId, other.dbrsPolicyId)
                 && java.util.Objects.equals(
@@ -668,6 +721,11 @@ public final class BackupDestinationDetails
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.vpcUser == null ? 43 : this.vpcUser.hashCode());
         result = (result * PRIME) + (this.vpcPassword == null ? 43 : this.vpcPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isZeroDataLossEnabled == null
+                                ? 43
+                                : this.isZeroDataLossEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.internetProxy == null ? 43 : this.internetProxy.hashCode());

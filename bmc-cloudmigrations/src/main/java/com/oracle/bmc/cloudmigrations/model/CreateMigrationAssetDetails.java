@@ -31,6 +31,7 @@ public final class CreateMigrationAssetDetails
         "availabilityDomain",
         "replicationCompartmentId",
         "snapShotBucketName",
+        "replicationLocationDetail",
         "dependsOn"
     })
     public CreateMigrationAssetDetails(
@@ -41,6 +42,7 @@ public final class CreateMigrationAssetDetails
             String availabilityDomain,
             String replicationCompartmentId,
             String snapShotBucketName,
+            ReplicationLocationDetail replicationLocationDetail,
             java.util.List<String> dependsOn) {
         super();
         this.displayName = displayName;
@@ -50,6 +52,7 @@ public final class CreateMigrationAssetDetails
         this.availabilityDomain = availabilityDomain;
         this.replicationCompartmentId = replicationCompartmentId;
         this.snapShotBucketName = snapShotBucketName;
+        this.replicationLocationDetail = replicationLocationDetail;
         this.dependsOn = dependsOn;
     }
 
@@ -164,6 +167,16 @@ public final class CreateMigrationAssetDetails
             this.__explicitlySet__.add("snapShotBucketName");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationLocationDetail")
+        private ReplicationLocationDetail replicationLocationDetail;
+
+        public Builder replicationLocationDetail(
+                ReplicationLocationDetail replicationLocationDetail) {
+            this.replicationLocationDetail = replicationLocationDetail;
+            this.__explicitlySet__.add("replicationLocationDetail");
+            return this;
+        }
         /** List of migration assets that depends on this asset. */
         @com.fasterxml.jackson.annotation.JsonProperty("dependsOn")
         private java.util.List<String> dependsOn;
@@ -193,6 +206,7 @@ public final class CreateMigrationAssetDetails
                             this.availabilityDomain,
                             this.replicationCompartmentId,
                             this.snapShotBucketName,
+                            this.replicationLocationDetail,
                             this.dependsOn);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -222,6 +236,9 @@ public final class CreateMigrationAssetDetails
             }
             if (model.wasPropertyExplicitlySet("snapShotBucketName")) {
                 this.snapShotBucketName(model.getSnapShotBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("replicationLocationDetail")) {
+                this.replicationLocationDetail(model.getReplicationLocationDetail());
             }
             if (model.wasPropertyExplicitlySet("dependsOn")) {
                 this.dependsOn(model.getDependsOn());
@@ -334,6 +351,13 @@ public final class CreateMigrationAssetDetails
         return snapShotBucketName;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationLocationDetail")
+    private final ReplicationLocationDetail replicationLocationDetail;
+
+    public ReplicationLocationDetail getReplicationLocationDetail() {
+        return replicationLocationDetail;
+    }
+
     /** List of migration assets that depends on this asset. */
     @com.fasterxml.jackson.annotation.JsonProperty("dependsOn")
     private final java.util.List<String> dependsOn;
@@ -370,6 +394,8 @@ public final class CreateMigrationAssetDetails
         sb.append(", replicationCompartmentId=")
                 .append(String.valueOf(this.replicationCompartmentId));
         sb.append(", snapShotBucketName=").append(String.valueOf(this.snapShotBucketName));
+        sb.append(", replicationLocationDetail=")
+                .append(String.valueOf(this.replicationLocationDetail));
         sb.append(", dependsOn=").append(String.valueOf(this.dependsOn));
         sb.append(")");
         return sb.toString();
@@ -393,6 +419,8 @@ public final class CreateMigrationAssetDetails
                 && java.util.Objects.equals(
                         this.replicationCompartmentId, other.replicationCompartmentId)
                 && java.util.Objects.equals(this.snapShotBucketName, other.snapShotBucketName)
+                && java.util.Objects.equals(
+                        this.replicationLocationDetail, other.replicationLocationDetail)
                 && java.util.Objects.equals(this.dependsOn, other.dependsOn)
                 && super.equals(other);
     }
@@ -426,6 +454,11 @@ public final class CreateMigrationAssetDetails
                         + (this.snapShotBucketName == null
                                 ? 43
                                 : this.snapShotBucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationLocationDetail == null
+                                ? 43
+                                : this.replicationLocationDetail.hashCode());
         result = (result * PRIME) + (this.dependsOn == null ? 43 : this.dependsOn.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

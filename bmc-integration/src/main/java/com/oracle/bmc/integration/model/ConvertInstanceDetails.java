@@ -23,10 +23,11 @@ package com.oracle.bmc.integration.model;
 public final class ConvertInstanceDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"conversionType"})
-    public ConvertInstanceDetails(ConversionType conversionType) {
+    @java.beans.ConstructorProperties({"conversionType", "conversionPhase"})
+    public ConvertInstanceDetails(ConversionType conversionType, ConversionPhase conversionPhase) {
         super();
         this.conversionType = conversionType;
+        this.conversionPhase = conversionPhase;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,12 +47,28 @@ public final class ConvertInstanceDetails
             this.__explicitlySet__.add("conversionType");
             return this;
         }
+        /** Conversion phase for convert instance operation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("conversionPhase")
+        private ConversionPhase conversionPhase;
+
+        /**
+         * Conversion phase for convert instance operation.
+         *
+         * @param conversionPhase the value to set
+         * @return this builder
+         */
+        public Builder conversionPhase(ConversionPhase conversionPhase) {
+            this.conversionPhase = conversionPhase;
+            this.__explicitlySet__.add("conversionPhase");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConvertInstanceDetails build() {
-            ConvertInstanceDetails model = new ConvertInstanceDetails(this.conversionType);
+            ConvertInstanceDetails model =
+                    new ConvertInstanceDetails(this.conversionType, this.conversionPhase);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +79,9 @@ public final class ConvertInstanceDetails
         public Builder copy(ConvertInstanceDetails model) {
             if (model.wasPropertyExplicitlySet("conversionType")) {
                 this.conversionType(model.getConversionType());
+            }
+            if (model.wasPropertyExplicitlySet("conversionPhase")) {
+                this.conversionPhase(model.getConversionPhase());
             }
             return this;
         }
@@ -79,6 +99,8 @@ public final class ConvertInstanceDetails
     /** Convert given instance to specified DR instance */
     public enum ConversionType implements com.oracle.bmc.http.internal.BmcEnum {
         DisasterRecovery("DISASTER_RECOVERY"),
+        DevelopmentShape("DEVELOPMENT_SHAPE"),
+        ProductionShape("PRODUCTION_SHAPE"),
         ;
 
         private final String value;
@@ -121,6 +143,53 @@ public final class ConvertInstanceDetails
         return conversionType;
     }
 
+    /** Conversion phase for convert instance operation. */
+    public enum ConversionPhase implements com.oracle.bmc.http.internal.BmcEnum {
+        BeginMigration("BEGIN_MIGRATION"),
+        CompleteMigration("COMPLETE_MIGRATION"),
+        RollbackMigration("ROLLBACK_MIGRATION"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ConversionPhase> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ConversionPhase v : ConversionPhase.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ConversionPhase(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ConversionPhase create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ConversionPhase: " + key);
+        }
+    };
+    /** Conversion phase for convert instance operation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("conversionPhase")
+    private final ConversionPhase conversionPhase;
+
+    /**
+     * Conversion phase for convert instance operation.
+     *
+     * @return the value
+     */
+    public ConversionPhase getConversionPhase() {
+        return conversionPhase;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -137,6 +206,7 @@ public final class ConvertInstanceDetails
         sb.append("ConvertInstanceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("conversionType=").append(String.valueOf(this.conversionType));
+        sb.append(", conversionPhase=").append(String.valueOf(this.conversionPhase));
         sb.append(")");
         return sb.toString();
     }
@@ -152,6 +222,7 @@ public final class ConvertInstanceDetails
 
         ConvertInstanceDetails other = (ConvertInstanceDetails) o;
         return java.util.Objects.equals(this.conversionType, other.conversionType)
+                && java.util.Objects.equals(this.conversionPhase, other.conversionPhase)
                 && super.equals(other);
     }
 
@@ -162,6 +233,9 @@ public final class ConvertInstanceDetails
         result =
                 (result * PRIME)
                         + (this.conversionType == null ? 43 : this.conversionType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conversionPhase == null ? 43 : this.conversionPhase.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

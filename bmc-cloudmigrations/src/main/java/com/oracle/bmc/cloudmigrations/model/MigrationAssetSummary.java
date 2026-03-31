@@ -42,7 +42,9 @@ public final class MigrationAssetSummary
         "dependedOnBy",
         "dependsOn",
         "replicationScheduleId",
-        "tenancyId"
+        "tenancyId",
+        "replicationLocationDetail",
+        "destinationDisks"
     })
     public MigrationAssetSummary(
             String id,
@@ -63,7 +65,9 @@ public final class MigrationAssetSummary
             java.util.List<String> dependedOnBy,
             java.util.List<String> dependsOn,
             String replicationScheduleId,
-            String tenancyId) {
+            String tenancyId,
+            ReplicationLocationDetail replicationLocationDetail,
+            java.util.Map<String, DestinationDisk> destinationDisks) {
         super();
         this.id = id;
         this.type = type;
@@ -84,6 +88,8 @@ public final class MigrationAssetSummary
         this.dependsOn = dependsOn;
         this.replicationScheduleId = replicationScheduleId;
         this.tenancyId = tenancyId;
+        this.replicationLocationDetail = replicationLocationDetail;
+        this.destinationDisks = destinationDisks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -394,6 +400,31 @@ public final class MigrationAssetSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationLocationDetail")
+        private ReplicationLocationDetail replicationLocationDetail;
+
+        public Builder replicationLocationDetail(
+                ReplicationLocationDetail replicationLocationDetail) {
+            this.replicationLocationDetail = replicationLocationDetail;
+            this.__explicitlySet__.add("replicationLocationDetail");
+            return this;
+        }
+        /** Mapping of source disk id to destination disk details */
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationDisks")
+        private java.util.Map<String, DestinationDisk> destinationDisks;
+
+        /**
+         * Mapping of source disk id to destination disk details
+         *
+         * @param destinationDisks the value to set
+         * @return this builder
+         */
+        public Builder destinationDisks(java.util.Map<String, DestinationDisk> destinationDisks) {
+            this.destinationDisks = destinationDisks;
+            this.__explicitlySet__.add("destinationDisks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -418,7 +449,9 @@ public final class MigrationAssetSummary
                             this.dependedOnBy,
                             this.dependsOn,
                             this.replicationScheduleId,
-                            this.tenancyId);
+                            this.tenancyId,
+                            this.replicationLocationDetail,
+                            this.destinationDisks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -483,6 +516,12 @@ public final class MigrationAssetSummary
             }
             if (model.wasPropertyExplicitlySet("tenancyId")) {
                 this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("replicationLocationDetail")) {
+                this.replicationLocationDetail(model.getReplicationLocationDetail());
+            }
+            if (model.wasPropertyExplicitlySet("destinationDisks")) {
+                this.destinationDisks(model.getDestinationDisks());
             }
             return this;
         }
@@ -810,6 +849,26 @@ public final class MigrationAssetSummary
         return tenancyId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationLocationDetail")
+    private final ReplicationLocationDetail replicationLocationDetail;
+
+    public ReplicationLocationDetail getReplicationLocationDetail() {
+        return replicationLocationDetail;
+    }
+
+    /** Mapping of source disk id to destination disk details */
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationDisks")
+    private final java.util.Map<String, DestinationDisk> destinationDisks;
+
+    /**
+     * Mapping of source disk id to destination disk details
+     *
+     * @return the value
+     */
+    public java.util.Map<String, DestinationDisk> getDestinationDisks() {
+        return destinationDisks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -844,6 +903,9 @@ public final class MigrationAssetSummary
         sb.append(", dependsOn=").append(String.valueOf(this.dependsOn));
         sb.append(", replicationScheduleId=").append(String.valueOf(this.replicationScheduleId));
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", replicationLocationDetail=")
+                .append(String.valueOf(this.replicationLocationDetail));
+        sb.append(", destinationDisks=").append(String.valueOf(this.destinationDisks));
         sb.append(")");
         return sb.toString();
     }
@@ -877,6 +939,9 @@ public final class MigrationAssetSummary
                 && java.util.Objects.equals(this.dependsOn, other.dependsOn)
                 && java.util.Objects.equals(this.replicationScheduleId, other.replicationScheduleId)
                 && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(
+                        this.replicationLocationDetail, other.replicationLocationDetail)
+                && java.util.Objects.equals(this.destinationDisks, other.destinationDisks)
                 && super.equals(other);
     }
 
@@ -921,6 +986,14 @@ public final class MigrationAssetSummary
                                 ? 43
                                 : this.replicationScheduleId.hashCode());
         result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationLocationDetail == null
+                                ? 43
+                                : this.replicationLocationDetail.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationDisks == null ? 43 : this.destinationDisks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
